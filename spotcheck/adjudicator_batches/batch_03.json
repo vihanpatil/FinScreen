@@ -1,0 +1,550 @@
+{
+ "batch": 3,
+ "chunks": [
+  {
+   "chunk_id": "CHK-4f661965fb1e06c9",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected, including due to changes in economic assumptions, which may include unemployment rates, real estate prices, gross domestic product levels and corporate bond spreads, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, such as the impact of trade policies, supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation's concentration of credit risk; the Corporation\u2019s ability to achieve its expense targets (including noninterest expense) and expectations regarding revenue, net interest income, operating leverage, other income, provision for credit losses, net charge-offs, effective tax rate, loan or deposit growth or other projections and targets; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and/or global systemically important bank surcharges; the potential impact of actions of the\n\non the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations, including impacts from the 2025 Budget Reconciliation Act; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of various third parties, including regulators and federal and state governments, such as from cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental goals or the impact of any changes in the Corporation\u2019s sustainability or human capital management strategy or goals; the impact of uncertain or changing political conditions, federal government shutdowns and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary, trade or regulatory policy; the emergence of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia/Ukraine conflict, the conflicts in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), civil unrest, terrorism or other geopolitical events; and other matters.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list includes 'estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation's assets and liabilities', which the near-identical chunk CHK-4c3bc718fcfa6db8 was labeled IMPAIRMENT_WRITEDOWN/HYPOTHETICAL for."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-4ff1ba432892f433",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Our investment banking business has in the past been and may in the future be adversely affected by market conditions. Poor economic conditions and other uncertain geopolitical conditions may adversely affect and have in the past adversely affected investor and CEO confidence, resulting in significant industry-wide declines in the size and number of underwritings and of advisory transactions, which would likely have and have in the past had an adverse effect on our revenues and our profit margins. In particular, because a significant portion of our investment banking revenues is derived from our participation in large transactions, a decline in the number of large transactions has in the past and would in the future adversely affect our investment banking business. Similarly, in recent years, cross-border initial public offerings and other securities offerings have accounted for a significant proportion of new issuance activity. Legislative, regulatory or other changes that limit trading in, or the issuance of, securities outside the issuers\u2019 domestic markets, that result in or could result in the delisting or removal of securities from exchanges or indices, have in the past adversely affected and would in the future adversely affect our underwriting and client intermediation businesses. Furthermore, changes, or proposed changes, to international trade and investment policies of the U.S. and other countries could negatively affect market activity levels and our revenues.\n\nPoor investment returns in our asset management and wealth management businesses, due to either general market conditions or underperformance (relative to our competitors or to benchmarks) by funds or accounts that we manage or investment products that we design or sell, affect our ability to retain existing assets and to attract new clients or additional assets from existing clients. This could affect the management and incentive fees that we earn on AUS or the commissions and net spreads that we earn for selling other investment products. To the extent that our clients choose to invest in products that we do not currently offer, we will suffer outflows and a loss of management fees. Further, if, due to changes in investor sentiment or the relative performance of certain asset classes or otherwise, clients continue to invest in products that generate lower fees (e.g., passively managed or fixed income products), our average effective management fee will decline further and our asset management and wealth management businesses could be adversely affected.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The realized 'adverse effect on our revenues and our profit margins' is attributed to 'declines in the size and number of underwritings and of advisory transactions' and to clients moving into 'products that generate lower fees' \u2014 revenue/fee compression with no rising-cost language, so MARGIN_COST_PRESSURE does not fit its cost-based definition."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-508cf9c48703c70b",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "13 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of our 2024 Annual Report on Form 10-K and in any of the Corporation\u2019s subsequent Securities and Exchange Commission filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs and the processing of electronic payments, including through the Zelle network, and related fraud, which are in various stages; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the impact of U.S. and global interest rates (including the potential for ongoing adjustments in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including changes in, or the imposition of, tariffs and/or trade barriers and the economic impacts, volatility and uncertainty resulting therefrom, and geopolitical instability; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation\u2019s concentration of credit risk; the Corporation's ability to achieve its expense targets and expectations regarding revenue, net interest income, provision for credit losses, net charge- offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of various third parties, including regulators and federal and state governments, such as from cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and machine learning; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental goals and targets or the impact of any changes in the Corporation's sustainability strategy, goals or targets; the impact of uncertain or changing political conditions or any future federal government shutdown and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary or regulatory policy; the emergence of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflicts in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. \u201cBank of America\u201d and \u201cBofA Securities\u201d are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (\u201cInvestment Banking Affiliates\u201d) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured \u00b7 May Lose Value \u00b7 Are Not Bank Guaranteed. Bank of America Corporation\u2019s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https:// newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage asserts existing proceedings \u2014 'pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to ... including matters related to our processing of unemployment benefits for California ... which are in various stages' \u2014 so the legal flag is REALIZED, and 'subject to impairment assessments' adds a hypothetical impairment flag."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-57dfdb966a01e9db",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "million, and a judgment has been executed against assets held onshore by the Firm in Russia. The total amount of the judgments exceeds the total amount of available assets that the Firm holds in Russia. The Firm continues to appeal the Russian courts' decisions, and judgments may not be executed while on appeal. Russian courts have also ordered interim freezes of Firm assets in Russia (including, among other things, funds in bank accounts, securities, shares in authorized capital, and certain trademarks, of the named defendants) pending a determination of certain underlying claims against the Firm. The Firm has challenged claims being pursued in the Russian courts and related freeze orders in other jurisdictions provided for by the parties\u2019 contractual forum selections. If further claims are enforced despite the actions taken by the Firm to challenge the claims and orders and to seek the proper application of law, the Firm\u2019s assets in Russia could be seized in full, and certain client assets could also be seized, or the Firm could be prevented from complying with its obligations.\n\nCertain of these shareholder suits relate to historical trading practices by former employees in the precious metals and U.S. treasuries markets and related conduct which were the subject of the Firm\u2019s resolutions with the DOJ, CFTC and SEC in September 2020, and fiduciary activities that were separately the subject of a resolution between JPMorgan Chase Bank, N.A. and the OCC in November 2020. One of these shareholder derivative suits was filed in the Supreme Court of the State of New York in May 2022, asserting breach of fiduciary duty and unjust enrichment claims relating to the historical trading practices and related conduct and fiduciary activities which were the subject of the resolutions described above. In December 2022, the court granted defendants\u2019 motion to dismiss this action in full, and in April 2025 the appellate court affirmed the dismissal.\n\nIn December 2024, the Consumer Financial Protection Bureau (\u201cCFPB\u201d) filed a complaint against Early Warning Services, LLC (\u201cEWS\u201d), Bank of America, N.A., Wells Fargo Bank, N.A. and JPMorgan Chase Bank, N.A. in the United States District Court for the District of Arizona. The CFPB alleged that EWS and the defendant banks failed to take sufficient efforts to prevent fraud on the Zelle network. In March 2025, the Court dismissed the complaint with prejudice at the request of the CFPB.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "unsure",
+     "auditor_label": null,
+     "auditor_reason": "The passage says judgments \"exceed... the total amount of available assets that the Firm holds in Russia\" and that the Firm \"could be prevented from complying with its obligations,\" which literally touches 'inability to meet obligations,' but it never addresses liquidity, covenants, or access to capital, so LIQUIDITY_STRESS is genuinely underdetermined."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-592a524fbc7249dd",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Maintenance of our current and future indebtedness and contractual restrictions could cause us to dedicate a substantial portion of our cash flows from operations towards debt service obligations and principal repayments; increase our vulnerability to adverse changes in general economic, industry and competitive conditions; limit our flexibility regarding changes in our business and our industry; impair our ability to obtain future financing; and restrict our ability to grant liens on property, enter into certain mergers, dispose of our assets, or materially change our business.\n\nOur ability to comply with the covenants in our indenture may be affected by events beyond our control. If we breach any of the covenants without a waiver from the note holders or lenders, then any outstanding indebtedness may be declared\n\nThe anti-takeover provisions of the Delaware General Corporation Law may discourage, delay, or prevent a change in control. Provisions in our certificate of incorporation and bylaws could make it more difficult for a third party to acquire a majority of our outstanding stock. These provisions include the ability of our Board of Directors to create and issue preferred stock, change the number of directors, and to make, amend or repeal our bylaws without prior shareholder approval; the inability of our shareholders to act by written consent or call special meetings; advance notice requirements for director nominations and shareholder proposals; and a super-majority voting requirement to amend some provisions in our certificate of incorporation and bylaws. Under our agreement with Microsoft for the Xbox, if someone makes an offer to purchase at least 30% of our outstanding common stock, Microsoft may have first and last rights of refusal to purchase the stock. These provisions could delay or prevent a change in control of NVIDIA, discourage proxy contests, and make it more difficult for shareholders to elect directors of their choosing and to cause us to take other corporate actions they desire.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The only law-related content is that \"anti-takeover provisions of the Delaware General Corporation Law may discourage, delay, or prevent a change in control\" and contractual covenant/indenture restrictions \u2014 no litigation, investigation, enforcement action, fine, or new regulatory requirement creating compliance burden."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5a1019a3cdc93587",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "The availability of our products and services and fulfillment of our customer contracts depend on the continuing operation of our information technology and communications systems. Our systems are vulnerable to damage, interference, or interruption from modifications or upgrades, terrorist attacks, state-sponsored attacks, natural disasters or pandemics, geopolitical tensions or armed conflicts, export controls and sanctions, tariffs and non-tariff trade barriers, the effects of climate change, power and transmission availability challenges, utility outages, telecommunications failures, computer viruses, software bugs, cyber attacks, supply-chain attacks, computer denial of service attacks, phishing schemes, or other attempts to harm or access our systems. Some of our data centers are located in areas with a high risk of major earthquakes or other natural disasters. Our data centers are also subject to break-ins, sabotage, and intentional acts of vandalism, and, in some cases, to potential disruptions resulting from problems experienced by facility operators or disruptions as a result of geopolitical tensions and conflicts happening in the area. Some of our systems are not fully redundant, and disaster recovery planning cannot account for all eventualities. The occurrence of a natural disaster or pandemic, closure of a facility, or other unanticipated problems affecting our data centers could result in lengthy interruptions in our service. In addition, our products and services are highly technical and complex and have contained in the past, and may contain in the future, errors or vulnerabilities, which could result in interruptions in or failure of our services or systems. Any of these incidents could impede or prevent us from effectively offering products and providing services, which could harm our business, reputation, financial condition, and operating results.\n\nOur international operations are significant to our revenues and net income, and we plan to continue growing internationally. International revenues accounted for approximately 52% of consolidated revenues in 2025. In addition to risks described elsewhere in this section, our international operations expose us to other risks, including:\n\nsanctions, tariffs, import and export controls, other market access barriers, political unrest, geopolitical tensions, changes in regimes, or armed conflict (such as ongoing conflicts in the Middle East and Ukraine), any of which may affect our business continuity, increase our operating costs, limit demand for our products and services, limit our ability to source components or final products, or prevent or impede us from operating in certain jurisdictions, complying with local laws, or offering products or services;",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The same clause states these risks \"may ... increase our operating costs\" and \"limit demand for our products and services,\" which per the disambiguation note adds MARGIN_COST_PRESSURE and DEMAND_WEAKNESS alongside the trade/supply categories."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5a303aa31119b72b",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our liquidity and access to capital could be negatively impacted by global credit market conditions. We guarantee the settlement of many of the transactions between our customers. Historically, payments under these guarantees have not been significant; however, historical trends may not be indicative of potential future losses. The risk of loss on these guarantees is specific to individual customers, but may also be driven by regional or global economic and market conditions, including, but not limited to the health of the financial institutions in a country or region. See Note 16 (Settlement and Other Risk Management) to the consolidated financial statements in Part I, Item 1 for a description of these guarantees.\n\nOur liquidity and access to capital could also be negatively impacted by the outcome of any of the legal or regulatory proceedings to which we are a party. For additional discussion of these and other risks facing our business, see Part I, Item 1A - Risk Factors of our Annual Report on Form 10-K for the year ended December 31, 2023 and Note 15 (Legal and Regulatory Proceedings) to the consolidated financial statements included in Part I, Item 1 of this Report.\n\nNet cash provided by operating activities increased $2,096 million for the nine months ended September 30, 2024, versus the comparable period in 2023, primarily due to higher net income after adjusting for non-cash items as well as lower cash payments for litigation settlements, partially offset by higher customer incentive payments.\n\nNet cash used in financing activities decreased $343 million for the nine months ended September 30, 2024, versus the comparable period in 2023, primarily due to higher cash proceeds received from debt issuances, partially offset by repayments of debt and higher cash paid for repurchases of our Class A common stock and dividends.\n\nIn April 2024, $1 billion of principal related to the 2014 USD Notes matured and was paid. In July 2024, INR28.1 billion ($336 million as of payment date) of principal related to the 2023 INR Term Loan matured and was paid.\n\nAs of September 30, 2024, we have a commercial paper program (the \u201cCommercial Paper Program\u201d), under which we are authorized to issue up to $8 billion in outstanding notes, with maturities up to 397 days from the date of issuance. In conjunction with the Commercial Paper Program, we have a committed unsecured $8 billion revolving credit facility (the \u201cCredit Facility\u201d) that expires in November 2028.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage asserts concrete realized legal activity \u2014 \"the legal or regulatory proceedings to which we are a party\" and cash flows helped by \"lower cash payments for litigation settlements\" \u2014 and the rubric says a concrete realized statement controls over the preceding hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5d312cc4245254cb",
+   "section_type": "8K_BODY",
+   "high_stakes": false,
+   "text": "Among the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates, including Venezuela; general domestic and international economic, market and political conditions, including the conflict between Russia and Ukraine, the ongoing conflict in the Middle East and the global response to these hostilities; changing refining, marketing and chemicals margins; the amount and timing of settlements on the company\u2019s commodity derivative contracts; the company\u2019s ability to realize anticipated cost savings and efficiencies associated with enterprise structural cost reduction initiatives; actions of competitors or regulators; timing of exploration expenses; changes in projected future cash flows; timing of crude oil liftings; uncertainties about the estimated quantities of crude oil, natural gas liquids and natural gas reserves; the competitiveness of alternate-energy sources or product substitutes; pace and scale of the development of large carbon capture and storage and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the company\u2019s ability to achieve the anticipated benefits from the acquisition of Hess Corporation; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The factor list includes \"the potential for gains and losses from asset dispositions or impairments,\" which matches IMPAIRMENT_WRITEDOWN (HYPOTHETICAL) and is missing from the stored set."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5ec383cc266aa5a3",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "\u201cThe people of UnitedHealth Group remain focused on making high-quality, affordable health care more available to more people while making the health system easier to navigate for patients and providers, positioning us well for growth in 2025,\u201d said Andrew Witty, chief executive officer of UnitedHealth Group.\n\nUnitedHealth Group affirmed the 2025 performance outlook established in December 2024, including revenues of $450 billion to $455 billion, net earnings of $28.15 to $28.65 per share, adjusted net earnings of $29.50 to $30.00 per share and cash flow from operations of $32 billion to $33 billion.\n\nUnitedHealth Group\u2019s 2024 revenues grew $28.7 billion or 8% year-over-year to $400.3 billion, driven primarily by serving people more comprehensively across the enterprise. Full year 2024 earnings from operations were $32.3 billion. Adjusted earnings from operations of $34.4 billion exclude the cyberattack direct response costs and South American impacts.\n\nThe full year medical care ratio was 85.5% compared to 83.2% in 2023. The increase was primarily due to previously discussed items, including the revenue effects of CMS\u2019s Medicare funding reductions, member mix and timing of Medicaid redeterminations. Factors cited on the company\u2019s third quarter earnings call, including increased hospital coding intensity and specialty medication prescribing, continued at similar levels in the fourth quarter and are reflected in the company\u2019s 2025 outlook. Days claims payable of 47.0 compared to 47.4 in third quarter 2024 and 47.9 at year end 2023. The company did not have any favorable earnings impacting medical reserve development in the fourth quarter.\n\nThe full year 2024 operating cost ratio of 13.2% compared to 14.7% in 2023, reflecting gains from business portfolio refinement and strong improvement in operating efficiencies and consumer experiences. The business portfolio refinement, including strategic transactions, will enhance growth opportunities and contributed about 80 basis points, nearly half at Optum Health with the remainder split between UnitedHealthcare and Optum Insight.\n\nCash flows from operations for the full year were $24.2 billion, or 1.6 times net income. During 2024, the company returned over $16 billion to shareholders through dividends and share repurchases. Return on equity of 23.7% in the fourth quarter, reflected the company\u2019s consistent, broad-based earnings and efficient capital structure.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEUTRAL",
+     "auditor_verdict": "disagree",
+     "auditor_label": "POSITIVE",
+     "auditor_reason": "The filer's explicit characterizations are favorable \u2014 revenues \"grew $28.7 billion or 8%,\" \"strong improvement in operating efficiencies,\" \"consistent, broad-based earnings and efficient capital structure,\" \"positioning us well for growth\" \u2014 while the one unfavorable item (medical care ratio 85.5% vs 83.2%) is stated flatly, so predominant tone leans favorable."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5f64ddabd40cf75f",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The Corporation is a holding company and depends upon its subsidiaries for liquidity. Applicable laws and regulations and intercompany arrangements entered into in connection with the Corporation\u2019s resolution plan could restrict the availability of funds from subsidiaries to the Corporation, which could\n\nadversely affect the Corporation\u2019s ability to make payments under its guarantees. In addition, the obligations of the Corporation under the guarantees of the Guaranteed Securities will be structurally subordinated to all existing and future liabilities of its subsidiaries, and claimants should look only to assets of the Corporation for payments. If the Corporation, as guarantor of the Guaranteed Notes, transfers all or substantially all of its assets to one or more direct or indirect majority-owned subsidiaries, under the indenture governing the Guaranteed Notes, the subsidiary or subsidiaries will not be required to assume the Corporation\u2019s obligations under its guarantee of the Guaranteed Notes.\n\nFor more information on factors that may affect payments to holders of the Guaranteed Securities, see Liquidity Risk \u2013 NB Holdings Corporation in this section, Item 1. Business \u2013 Insolvency and the Orderly Liquidation Authority on page 6 and Item 1A. Risk Factors \u2013 Liquidity on page 6.\n\nWe refine our underwriting and credit risk management practices as well as credit standards to meet the changing economic environment. To mitigate losses and enhance customer support in our consumer businesses, we have in place collection programs and loan modification and customer\n\nassistance infrastructures. We utilize a number of actions to mitigate losses in the commercial businesses including increasing the frequency and intensity of portfolio monitoring, hedging activity and our practice of transferring management of deteriorating commercial exposures to independent special asset officers as credits enter criticized categories.\n\nAs part of our credit risk management, we also monitor and assess transverse risks such as climate risk, which includes physical risk and transition risk. Physical risks related to severe weather events can increase credit risk, including by diminishing borrowers\u2019 repayment capacity or collateral values. Transition risks related to transitioning to a lower carbon economy can amplify credit risks through the financial impacts of changes in policy, technology or the market on our counterparties. For more information on the Corporation\u2019s climate-related risks, see the Credit and Other sections within Item 1A. Risk Factors of this Annual Report on Form 10-K.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "\"Applicable laws and regulations and intercompany arrangements ... could restrict the availability of funds from subsidiaries\" describes an existing structural/legal constraint \u2014 no litigation, investigation, enforcement action, fine, or new regulatory requirement creating compliance burden; the risk it describes is captured by the LIQUIDITY_STRESS entry."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5fbf95ab7cef5637",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Liquidity is essential to our businesses. We fund our assets primarily with globally sourced deposits in our bank entities, as well as secured and unsecured liabilities transacted in the capital markets. We rely on certain secured funding sources, such as repo markets, which are typically short-term and credit-sensitive. We also engage in asset securitization transactions, including with the government-sponsored enterprises (GSEs), to fund consumer lending activities. Our liquidity could be adversely affected by any inability to access the capital markets, illiquidity or volatility in the capital markets, the decrease in value of eligible collateral or increased collateral requirements (including as a result of credit concerns for short-term\n\nAdditionally, our liquidity or cost of funds may be negatively impacted by the unwillingness or inability of the Federal Reserve to act as lender of last resort, unexpected simultaneous draws on lines of credit or deposits, slower customer payment rates, restricted access to the assets of prime brokerage clients, the withdrawal of or failure to attract customer deposits or invested funds (which could result from attrition driven by customers seeking higher yielding deposits or securities products, customer desire to utilize an alternative financial institution perceived to be safer, changes in customer spending behavior due to inflation, decline in the economy or other drivers resulting in an increased need for cash), increased regulatory liquidity, capital and margin requirements for our U.S. or international banks and their nonbank subsidiaries, which could result in the inability to transfer liquidity internally and inefficient funding, changes in patterns of intraday liquidity usage resulting from a counterparty or technology failure or other idiosyncratic event or failure or default by a significant market participant or third party (including clearing agents, custodians, central banks or central counterparty clearinghouses (CCPs)). These factors may increase our borrowing costs and negatively impact our liquidity.\n\nSeveral of these factors may arise due to circumstances beyond our control, such as general market volatility, disruption, shock or stress, the emergence or continuation of widespread health emergencies or pandemics, and military conflicts (including the Russia/Ukraine conflict and the conflict in the Middle East). Federal Reserve policy decisions (including fluctuations in interest rates or Federal Reserve balance sheet composition), negative views or loss of confidence about us or the financial services industry generally or due to a specific news event, changes in the regulatory environment or governmental fiscal or monetary policies, actions by credit rating agencies or an operational problem that affects third parties or us. The impact of these potentially sudden events, whether within our control or not, could include an inability to sell assets or redeem investments, unforeseen outflows of cash, the need to draw on liquidity facilities, the reduction of financing balances and the loss of equity secured funding, debt repurchases to support the secondary market or meet client requests, the need for additional funding for commitments and contingencies and unexpected collateral calls, among other things, the result of which could be increased costs, a liquidity shortfall and/or impact on our liquidity coverage ratio.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage lists \"increased regulatory liquidity, capital and margin requirements for our U.S. or international banks and their nonbank subsidiaries, which could result in ... inefficient funding\" \u2014 a heightened regulatory requirement creating burden, framed hypothetically."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6063a3925ac456b8",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "While certain potential impacts are contractual and quantifiable, the full scope of the consequences of a credit rating downgrade to a financial institution is inherently uncertain, as it depends upon numerous dynamic, complex and inter-related factors and assumptions, including whether any downgrade of a company\u2019s long-term credit ratings precipitates downgrades to its short-term credit ratings, and assumptions about the potential behaviors of various customers, investors and counterparties. For more information on potential impacts of credit rating downgrades, see Liquidity Risk \u2013 Liquidity Stress Analysis on page 55.\n\nBofA Finance LLC, a Delaware limited liability company (BofA Finance), is a consolidated finance subsidiary of the Corporation that has issued and sold, and is expected to continue to issue and sell, its senior unsecured debt securities (Guaranteed Notes) that are fully and unconditionally guaranteed by the Corporation. The Corporation guarantees the due and punctual payment, on demand, of amounts payable on the Guaranteed Notes if not paid by BofA Finance. In addition, each of BAC Capital Trust XIII, BAC Capital Trust XIV and BAC Capital Trust XV, Delaware statutory trusts (collectively, the Trusts) is a 100 percent owned finance subsidiary of the Corporation that has issued and sold trust preferred securities (the Trust Preferred Securities) or capital securities (the Capital Securities and, together with the Guaranteed Notes and the Trust Preferred Securities, the Guaranteed Securities), as applicable, that remained outstanding at December 31, 2024\n\nif not paid by the Trusts, to the extent of funds held by the Trusts. This guarantee, together with the Corporation\u2019s other obligations with respect to the Trust Preferred Securities and Capital Securities, effectively constitutes a full and unconditional guarantee of the Trusts\u2019 payment obligations on the Trust Preferred Securities or Capital Securities, as applicable. No other subsidiary of the Corporation guarantees the Guaranteed Securities.\n\nThe Corporation is a holding company and depends upon its subsidiaries for liquidity. Applicable laws and regulations and intercompany arrangements entered into in connection with the Corporation\u2019s resolution plan could restrict the availability of funds from subsidiaries to the Corporation, which could adversely affect the Corporation\u2019s ability to make payments under its guarantees. In addition, the obligations of the Corporation under the guarantees of the Guaranteed Securities will be structurally subordinated to all existing and future liabilities of its subsidiaries, and claimants should look only to assets of the Corporation for payments. If the Corporation, as guarantor of the Guaranteed Notes, transfers all or substantially all of its assets to one or more direct or indirect majority-owned subsidiaries, under the indenture governing the Guaranteed Notes, the subsidiary or subsidiaries will not be required to assume the Corporation\u2019s obligations under its guarantee of the Guaranteed Notes.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "As in the parallel passage, \"Applicable laws and regulations ... could restrict the availability of funds from subsidiaries to the Corporation\" is an existing structural constraint, not litigation, investigation, enforcement, fine, or a new regulatory requirement creating compliance burden."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-614b5db3c8bfdf5c",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "This news release also includes net debt ratio and net debt-to-CFFO ratio. Net debt ratio is defined as total debt less cash and cash equivalents, time deposits and marketable securities (net debt) as a percentage of net debt plus Chevron Corporation stockholders\u2019 equity, which indicates the company\u2019s leverage, net of its cash balances. The net debt-to-CFFO ratio is defined as net debt divided by CFFO for the prior four quarters, which measures the company\u2019s ability to cover its net debt using the cash it generates from operations. The company believes these measures are useful to monitor the strength of the company\u2019s balance sheet. A reconciliation of net debt ratio and net debt-to-CFFO ratio is shown in Attachment 2.\n\nAmong the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates, including Venezuela; general domestic and international economic, market and political conditions, including the conflict between Russia and Ukraine, the conflict in the Middle East and the global response to these hostilities; changing refining, marketing and chemicals margins; the company\u2019s ability to realize anticipated cost savings and efficiencies associated with enterprise structural cost reduction initiatives; actions of competitors or regulators; timing of exploration expenses; changes in projected future cash flows; timing of crude oil liftings; uncertainties about the estimated quantities of crude oil, natural gas liquids and natural gas reserves; the competitiveness of alternate-energy sources or product substitutes; pace and scale of the development of large carbon capture and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the company\u2019s ability to achieve the anticipated benefits from the acquisition of Hess Corporation; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 20 through 27 of the company\u2019s 2024 Annual Report on Form 10-K and in subsequent filings with the U.S. Securities and Exchange Commission. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The factor list opens with \"changing crude oil and natural gas prices and demand for the company's products, and production curtailments due to market conditions,\" which matches DEMAND_WEAKNESS (HYPOTHETICAL) and is missing from the stored set."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-61a3aedc5e017159",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "A reduction in JPMorganChase\u2019s liquidity may be caused by events over which it has little or no control. For example, periods of market stress, low investor confidence and significant market illiquidity could result in higher funding costs for JPMorganChase and could limit its access to some of its traditional sources of liquidity.\n\nJPMorganChase may need to raise funding from alternative sources if its access to stable and lower-cost sources of funding, such as deposits and borrowings from Federal Home Loan Banks, is reduced. Alternative sources of funding could be more expensive or limited in availability. JPMorganChase\u2019s funding costs could also be negatively affected by actions that JPMorganChase may take in order to:\n\nJPMorgan Chase & Co. is a holding company that holds the stock of JPMorgan Chase Bank, N.A. and an intermediate holding company, JPMorgan Chase Holdings LLC (the \u201cIHC\u201d). The IHC in turn generally holds the stock of JPMorganChase\u2019s subsidiaries other than JPMorgan Chase Bank, N.A. and its subsidiaries. The IHC also owns other assets and provides intercompany lending to the Parent Company.\n\nThe ability of JPMorgan Chase Bank, N.A. and the IHC to make payments to the Parent Company is also limited. JPMorgan Chase Bank, N.A. is subject to regulatory restrictions on its dividend distributions, as well as capital adequacy requirements, such as the Supplementary Leverage Ratio (\u201cSLR\u201d), and liquidity requirements and other regulatory restrictions on its ability to make payments to the Parent Company. The IHC is prohibited from paying dividends or extending credit to the Parent Company if certain capital or liquidity thresholds are breached, or if limits are otherwise imposed by the Parent Company\u2019s management or Board of Directors.\n\nJPMorganChase closely monitors and manages, to the extent that it is able, factors that could influence its credit ratings. However, there is no assurance that JPMorganChase\u2019s credit ratings will not be downgraded in the future. Furthermore, any such downgrade could occur at times of broader market instability when JPMorganChase\u2019s options for responding to events may be more limited and general investor confidence is low.\n\nJPMorganChase is subject to various regulatory capital requirements, including leverage- and risk-based capital requirements. In addition, as a Global Systemically Important Bank (\u201cGSIB\u201d), JPMorganChase is required to hold additional capital buffers, including a GSIB surcharge, a Stress Capital Buffer (\u201cSCB\u201d), and a countercyclical buffer, each of which is reassessed at least annually. The amount of capital that JPMorganChase is required to hold in order to satisfy these leverage- and risk-based requirements could increase at any given time due to factors such as:",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage repeatedly asserts hypothetical cost pressure \u2014 \"could result in higher funding costs,\" \"Alternative sources of funding could be more expensive,\" \"JPMorganChase's funding costs could also be negatively affected\" \u2014 which matches MARGIN_COST_PRESSURE."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-633adcb87ea3de35",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Chevron\u2019s discussion of first quarter 2024 earnings with security analysts will take place on Friday, April 26, 2024, at 8:00 a.m. PT. A webcast of the meeting will be available in a listen-only mode to individual investors, media, and other interested parties on Chevron\u2019s website at\n\nThis news release contains forward-looking statements relating to Chevron\u2019s operations and lower carbon strategy that are based on management\u2019s current expectations, estimates, and projections about the petroleum, chemicals and other energy-related industries. Words or phrases such as \u201canticipates,\u201d \u201cexpects,\u201d \u201cintends,\u201d \u201cplans,\u201d \u201ctargets,\u201d \u201cadvances,\u201d \u201ccommits,\u201d \u201cdrives,\u201d \u201caims,\u201d \u201cforecasts,\u201d \u201cprojects,\u201d \u201cbelieves,\u201d \u201capproaches,\u201d \u201cseeks,\u201d \u201cschedules,\u201d \u201cestimates,\u201d \u201cpositions,\u201d \u201cpursues,\u201d \u201cprogress,\u201d \u201cmay,\u201d \u201ccan,\u201d \u201ccould,\u201d \u201cshould,\u201d \u201cwill,\u201d \u201cbudgets,\u201d \u201coutlook,\u201d \u201ctrends,\u201d \u201cguidance,\u201d \u201cfocus,\u201d \u201con track,\u201d \u201cgoals,\u201d \u201cobjectives,\u201d \u201cstrategies,\u201d \u201copportunities,\u201d \u201cpoised,\u201d \u201cpotential,\u201d \u201cambitions,\u201d \u201caspires\u201d and similar expressions, and variations or negatives of these words, are intended to identify such forward-looking statements, but not all forward-looking statements include such words. These statements are not guarantees of future performance and are subject to numerous risks, uncertainties and other factors, many of which are beyond the company\u2019s control and are difficult to predict. Therefore, actual outcomes and results may differ materially from what is expressed or forecasted in such forward-looking statements. The reader should not place undue reliance on these forward-looking statements, which speak only as of the date of this news release. Unless legally required, Chevron undertakes no obligation to update publicly any forward-looking statements, whether as a result of new information, future events or otherwise.\n\nAmong the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates; general domestic and international economic, market and political conditions, including the military conflict between Russia and Ukraine, the conflict in Israel and the global response to these hostilities; changing refining, marketing and chemicals margins; actions of competitors or regulators; timing of exploration expenses; timing of crude oil liftings; the competitiveness of alternate-energy sources or product substitutes; development of large carbon capture and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the ability to successfully integrate the operations of the company and PDC Energy, Inc. and achieve the anticipated benefits from the transaction, including the expected incremental annual free cash flow; the risk that Hess Corporation (Hess) stockholders do not approve the potential transaction, and the risk that regulatory approvals are not obtained or are obtained subject to conditions that are not anticipated by the company and Hess; potential delays in consummating the Hess transaction, including as a result of regulatory proceedings or the ongoing arbitration proceedings regarding preemptive rights in the Stabroek Block joint operating agreement; risks that such ongoing arbitration is not satisfactorily resolved and the potential transaction fails to be consummated; uncertainties as to whether the potential transaction, if consummated, will achieve its anticipated economic benefits, including as a result of regulatory proceedings and risks associated with third party contracts containing material consent, anti-assignment, transfer or other provisions that may be related to the potential transaction that are not waived or otherwise satisfactorily resolved; the company\u2019s ability to integrate Hess\u2019 operations in a successful manner and in the expected time period; the possibility that any of the anticipated benefits and projected synergies of the potential transaction will not be realized or will not be realized within the expected time period; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 20 through 26 of the company\u2019s 2023 Annual Report on Form 10-K and in subsequent filings with the U.S. Securities and Exchange Commission. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list includes \"changing crude oil and natural gas prices and demand for the company's products, and production curtailments due to market conditions,\" matching DEMAND_WEAKNESS (HYPOTHETICAL), which the stored set omits."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,452 @@
+{
+ "batch": 1,
+ "chunks": [
+  {
+   "chunk_id": "CHK-1e6d0f12ea06dfa9",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "\u201cThe core story at UnitedHealth Group remains our colleagues delivering improved experiences for the people we serve and driving balanced growth even while swiftly and effectively addressing the attack on Change Healthcare,\u201d said Andrew Witty, chief executive officer of UnitedHealth Group.\n\nThe company continues to make significant progress in restoring the affected Change Healthcare services while providing financial support to impacted health care providers. To date, the company has provided over $6 billion in advance funding and interest-free loans to support care providers in need.\n\nTotal cyberattack impacts in the first quarter amounted to $0.74 per share and the company estimates full year 2024 impacts of $1.15 to $1.35 per share. In the first quarter, this included $0.49 per share to support direct response efforts such as the Change Healthcare clearinghouse platform restoration and increased medical care expenditures as the company suspended some care management activities to help care providers with their workflow processes. The company estimates direct response costs of $0.85 to $0.95 per share for full year 2024. Direct response costs are included in net earnings and excluded from adjusted earnings per share. Additionally, Change Healthcare business disruption impacts, reflecting lost revenue and the costs of maintaining full readiness of the affected Change Healthcare services, were $0.25 per share in the first quarter. The company currently estimates $0.30 to $0.40 per share business disruption impact for full year 2024. These business disruption impacts are included in both net earnings and adjusted earnings per share.\n\nThe company updated its full year 2024 net earnings outlook to $17.60 to $18.20 per share to reflect the Brazil sale and the estimated direct response costs of the cyberattack. The company maintained its adjusted net earnings outlook of $27.50 to $28.00 per share. This adjusted earnings per share outlook excludes the impacts of the direct response costs and Brazil sale, while including the estimated $0.30 to $0.40 per share of business disruption impacts for the affected Change Healthcare services.\n\nUnitedHealth Group\u2019s first quarter 2024 revenues grew nearly $8 billion year over year to $99.8 billion. First quarter earnings from operations were $7.9 billion, including $872 million in unfavorable cyberattack effects. Adjusted earnings from operations of $8.5 billion include the Change Healthcare business disruption impacts and exclude the cyberattack direct response costs. Growth was led by a strong expansion in the number of people served at Optum and UnitedHealthcare.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The passage balances explicit favorable characterizations (\"driving balanced growth\", \"continues to make significant progress\", \"revenues grew nearly $8 billion\", \"Growth was led by a strong expansion\") against quantified adverse items (\"unfavorable cyberattack effects\", \"lost revenue\"), with no clear predominant lean."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage contains no litigation, investigation, enforcement, fine, or new-regulatory-requirement language \u2014 only a cyberattack and its \"direct response costs\" and \"increased medical care expenditures\", which support MARGIN_COST_PRESSURE alone."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-1ee19c277857680c",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Announcing $950 million of additional divestitures since the start of the second quarter of 2025, of which approximately $370 million has already closed. Occidental has repaid $3.0 billion of debt year-to-date through a combination of asset sales, organic cash flow and proceeds from warrants exercised\n\nReducing the mid-point of 2025 capital guidance by $100 million and international operating costs by $50 million, driven by continued operational efficiency gains. Year-to-date, Occidental has realized or identified $500 million in capital and operating cost reductions from the original guidance\n\n\"Continued well performance leadership and a focus on enhanced operational efficiencies enabled us to generate strong financial results in the second quarter,\" said President and Chief Executive Officer Vicki Hollub. \"By unlocking lower cost resources, accelerating our deleveraging efforts and advancing our strategic growth projects, we have positioned our portfolio to deliver long-term value.\"\n\nOil and gas pre-tax income was $934 million for the second quarter of 2025. Excluding items affecting comparability, the decrease in second quarter oil and gas income, compared to the first quarter of 2025, was due to lower commodity prices, partially offset by higher crude oil volumes and lower lease operating expense. For the second quarter of 2025, average WTI and Brent marker prices were $63.74 per barrel and $66.59 per barrel, respectively. Average worldwide realized crude oil prices decreased by 10% from the prior quarter to $63.76 per barrel. Average worldwide realized natural gas liquids prices decreased by 20% from the prior quarter to $20.71 per barrel. Average domestic realized gas prices decreased by 45% from the prior quarter to $1.33 per thousand cubic feet (Mcf).\n\nTotal average global production for the second quarter of 2025 was 1,400 thousand barrels of oil equivalent per day (Mboed). Average production for Permian, Rockies & Other Domestic, Gulf of America and International were 770 Mboed, 272 Mboed, 125 Mboed and 233 Mboed, respectively.\n\nOxyChem pre-tax income was $213 million for the second quarter of 2025. Excluding items affecting comparability, second quarter OxyChem income was relatively unchanged compared to the first quarter of 2025 and reflected negative inventory adjustments, offset by improved export demand for caustic soda and polyvinyl chloride (PVC).",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The declines cited are price-driven (\"lower commodity prices\", realized prices \"decreased by 10%\"), while volumes and costs move favorably (\"higher crude oil volumes and lower lease operating expense\", \"$500 million in capital and operating cost reductions\") and demand is described as \"improved export demand\", so neither DEMAND_WEAKNESS nor MARGIN_COST_PRESSURE is asserted."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-1ef2d821873ab79c",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "ConocoPhillips is one of the world\u2019s leading exploration and production companies based on both production and reserves, with a globally diversified asset portfolio. Headquartered in Houston, Texas, ConocoPhillips had operations and activities in 13 countries, $97 billion of total assets, and approximately 10,300 employees at Sept. 30, 2024. Production averaged 1,921 MBOED for the nine months ended Sept. 30, 2024, and proved reserves were 6.8 BBOE as of Dec. 31, 2023.\n\nThis news release contains forward-looking statements as defined under the federal securities laws. Forward-looking statements relate to future events, plans and anticipated results of operations, business strategies, and other aspects of our operations or operating results. Words and phrases such as \u201cambition,\u201d \u201canticipate,\u201d \u201cbelieve,\u201d \u201cbudget,\u201d \u201ccontinue,\u201d \u201ccould,\u201d \u201ceffort,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cforecast,\u201d \u201cgoal,\u201d \u201cguidance,\u201d \u201cintend,\u201d \u201cmay,\u201d \u201cobjective,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cpotential,\u201d \u201cpredict,\u201d \u201cprojection,\u201d \u201cseek,\u201d \u201cshould,\u201d \u201ctarget,\u201d \u201cwill,\u201d \u201cwould,\u201d and other similar words can be used to identify forward-looking statements. However, the absence of these words does not mean that the statements are not forward-looking. Where, in any forward-looking statement, the company expresses an expectation or belief as to future results, such expectation or belief is expressed in good faith and believed to be reasonable at the time such forward-looking statement is made. However, these statements are not guarantees of future performance and involve certain risks, uncertainties and other factors beyond our control. Therefore, actual outcomes and results may differ materially from what is expressed or forecast in the forward-looking statements. Factors that could cause actual results or events to differ materially from what is presented include changes in commodity prices, including a prolonged decline in these prices relative to historical or future expected levels; global and regional changes in the demand, supply, prices, differentials or other market conditions affecting oil and gas, including changes resulting from any ongoing military conflict, including the conflicts in Ukraine and the Middle East, and the global response to such conflict, security threats on facilities and infrastructure, or from a public health crisis or from the imposition or lifting of crude oil production quotas or other actions that might be imposed by OPEC and other producing countries and the resulting company or third-party actions in response to such changes; insufficient liquidity or other factors, such as those listed herein, that could impact our ability to repurchase shares and declare and pay dividends such that we suspend our share repurchase program and reduce, suspend, or totally eliminate dividend payments in the future, whether variable or fixed; changes in expected levels of oil and gas reserves or production; potential failures or delays in achieving expected reserve or production levels from existing and future oil and gas developments, including due to operating hazards, drilling risks or unsuccessful exploratory activities; unexpected cost increases, inflationary pressures or technical difficulties in constructing, maintaining or modifying company facilities; legislative and regulatory initiatives addressing global climate change or other environmental concerns; public health crises, including pandemics (such as COVID-19) and epidemics and any impacts or related company or government policies or actions; investment in and development of competing or alternative energy sources; potential failures or delays in delivering on our current or future low-carbon strategy, including our inability to develop new technologies; disruptions or interruptions impacting the transportation for our oil and gas production; international monetary conditions and exchange rate fluctuations; changes in international trade relationships or governmental policies, including the imposition of price caps, or the imposition of trade restrictions or tariffs on any materials or products (such as aluminum and steel) used in the operation of our business, including any sanctions imposed as a result of any ongoing military conflict, including the conflicts in Ukraine and the Middle East; our ability to collect payments when due, including our ability to collect payments from the government of Venezuela or PDVSA; our ability to complete the proposed acquisition of Marathon Oil Corporation (Marathon Oil) or any other announced or any other future dispositions or acquisitions on time, if at all; the possibility that regulatory approvals, consents or authorizations for the Marathon Oil acquisition or any other announced or any other future dispositions or acquisitions will not be received on a timely basis, if at all, or that such approvals may be subject to conditions neither we nor Marathon Oil anticipated or may require modification to the terms of the transactions or our remaining business; business disruptions relating to the Marathon Oil acquisition or following any other announced or other future dispositions or acquisitions, including the diversion of management time and attention; the ability to deploy net proceeds from our announced or any future dispositions in the manner and timeframe we anticipate, if at all; the receipt of other requisite approvals for the Marathon Oil acquisition, the satisfaction of other closing conditions on a timely basis or at all or the failure of the Marathon Oil acquisition to close for any other reason or to close on anticipated terms; our ability to successfully integrate Marathon Oil\u2019s business and technologies, which may result in the combined company not operating as effectively and efficiently as expected; our ability to achieve the expected benefits and synergies from the Marathon Oil acquisition in a timely manner, or at all; potential liability for remedial actions under existing or future environmental regulations; potential liability resulting from pending or future litigation, including litigation related directly or indirectly to our transaction with Concho Resources Inc.; the impact of competition and consolidation in the oil and gas industry; limited access to capital or insurance or significantly higher cost of capital or insurance related to illiquidity or uncertainty in the domestic or international financial markets or investor sentiment; general domestic and international economic and political conditions or developments, including as a result of any ongoing military conflict, including the conflicts in Ukraine and the Middle East; changes in fiscal regime or tax, environmental and other laws applicable to our business; and disruptions resulting from accidents, extraordinary weather events, civil unrest, political events, war, terrorism, cybersecurity threats or information technology failures, constraints or disruptions; and other economic, business, competitive and/or regulatory factors affecting our business generally as set forth in our filings with the Securities and Exchange Commission. Unless legally",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The factor list also enumerates \"unexpected cost increases, inflationary pressures\" (MARGIN_COST_PRESSURE) and \"disruptions or interruptions impacting the transportation for our oil and gas production\" (SUPPLY_INPUT_CONSTRAINT), the same phrases labeled in the near-identical chunk CHK-37071b0d23fc00d8."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-20a6b53a4954df29",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Current-period information is preliminary and based on company data available at the time of the presentation. 15 Bank of America Corporation and Subsidiaries Selected Financial Data (In millions, except per share data) Year Ended December 31 Fourth Quarter 2023 Third Quarter 2023 Fourth Quarter 2022Summary Income Statement 2023 2022 Net interest income $ 56,931 $ 52,462 $ 13,946 $ 14,379 $ 14,681 Noninterest income 41,650 42,488 8,013 10,788 9,851 Total revenue, net of interest expense 98,581 94,950 21,959 25,167 24,532 Provision for credit losses 4,394 2,543 1,104 1,234 1,092 Noninterest expense 65,845 61,438 17,731 15,838 15,543 Income before income taxes 28,342 30,969 3,124 8,095 7,897 Income tax expense 1,827 3,441 (20) 293 765 Net income $ 26,515 $ 27,528 $ 3,144 $ 7,802 $ 7,132 Preferred stock dividends and other 1,649 1,513 306 532 228 Net income applicable to common shareholders $ 24,866 $ 26,015 $ 2,838 $ 7,270 $ 6,904 Average common shares issued and outstanding 8,028.6 8,113.7 7,990.9 8,017.1 8,088.3 Average diluted common shares issued and outstanding 8,080.5 8,167.5 8,062.5 8,075.9 8,155.7 Summary Average Balance Sheet Total cash and cash equivalents $ 350,465 $ 223,593 $ 405,052 $ 378,955 $ 203,366 Total debt securities 794,192 922,730 802,657 752,569 869,084 Total loans and leases 1,046,256 1,016,782 1,050,705 1,046,254 1,039,247 Total earning assets 2,753,600 2,700,860 2,829,765 2,738,699 2,647,712 Total assets 3,153,513 3,135,894 3,213,159 3,128,466 3,074,289 Total deposits 1,887,541 1,986,158 1,905,011 1,876,153 1,925,544 Common shareholders\u2019 equity 254,956 241,981 260,221 256,578 243,647 Total shareholders\u2019 equity 283,353 270,299 288,618 284,975 272,629 Performance Ratios Return on average assets 0.84 % 0.88 % 0.39 % 0.99 % 0.92 % Return on average common shareholders\u2019 equity 9.75 10.75 4.33 11.24 11.24 Return on average tangible common shareholders\u2019 equity (1) 13.46 15.15 5.92 15.47 15.79 Per Common Share Information Earnings $ 3.10 $ 3.21 $ 0.36 $ 0.91 $ 0.85 Diluted earnings 3.08 3.19 0.35 0.90 0.85 Dividends paid 0.92 0.86 0.24 0.24 0.22 Book value 33.34 30.61 33.34 32.65 30.61 Tangible book value (1) 24.46 21.83 24.46 23.79 21.83 Summary Period-End Balance Sheet December 31 2023 September 30 2023 December 31 2022 Total cash and cash equivalents $ 333,073 $ 351,726 $ 230,203 Total debt securities 871,407 778,873 862,819 Total loans and leases 1,053,732 1,049,149 1,045,747 Total earning assets 2,808,175 2,761,184 2,640,827 Total assets 3,179,876 3,153,090 3,051,375 Total deposits 1,923,827 1,884,601 1,930,341 Common shareholders\u2019 equity 263,249 258,667 244,800 Total shareholders\u2019 equity 291,646 287,064 273,197 Common shares issued and outstanding 7,895.5 7,923.4 7,996.8 Year Ended December 31 Fourth Quarter 2023 Third Quarter 2023 Fourth Quarter 2022Credit Quality 2023 2022 Total net charge-offs $ 3,799 $ 2,172 $ 1,192 $ 931 $ 689 Net charge-offs as a percentage of average loans and leases outstanding (2) 0.36 % 0.21 % 0.45 % 0.35 % 0.26 % Provision for credit losses $ 4,394 $ 2,543 $ 1,104 $ 1,234 $ 1,092 December 31 2023 September 30 2023 December 31 2022 Total nonperforming loans, leases and foreclosed properties (3) $ 5,630 $ 4,993 $ 3,978 Nonperforming loans, leases and foreclosed properties as a percentage of total loans, leases and foreclosed properties (3) 0.54 % 0.48 % 0.38 % Allowance for credit losses $ 14,551 $ 14,640 $ 14,222 Allowance for loan and lease losses 13,342 13,287 12,682 Allowance for loan and lease losses as a percentage of total loans and leases outstanding (2) 1.27 % 1.27 % 1.22 % For footnotes, see page 16.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The chunk is a bare selected-financial-data table (\"Noninterest expense 65,845 61,438\") with no narrative characterizing costs or margins, so no category language is present \u2014 inference from unlabeled numbers is the same failure the rubric bars for sentiment."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-20d940b1855c8068",
+   "section_type": "MDA",
+   "high_stakes": true,
+   "text": "As of March 31, 2026, our current liabilities exceeded current assets by $10.2 billion. We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations. We have strong short- and long-term debt ratings that have enabled and should continue to enable us to refinance our debt as it becomes due at favorable rates in commercial paper and bond markets. In addition, we have agreements with a diverse group of financial institutions that, if needed, should provide sufficient funding to meet short-term financing requirements.\n\nAdjusted free cash flow is defined as operating cash flow less capital spending and excluding payments for the transitional tax resulting from the 2017 U.S. Tax Act. Adjusted free cash flow represents the cash that the Company is able to generate after taking into account planned maintenance and asset expansion. We view adjusted free cash\n\nAdjusted free cash flow productivity is defined as the ratio of adjusted free cash flow to net earnings excluding the gain from the dissolution of the Glad joint venture business. We view adjusted free cash flow productivity as a useful measure to help investors understand P&G\u2019s ability to generate cash. Adjusted free cash flow productivity is used by management in making operating decisions, in allocating financial resources and for budget planning purposes. This measure is also used in assessing the achievement of management goals for at-risk compensation.\n\nIn January 2026, the Glad joint venture agreement between the Company and Clorox expired. Under the terms of the agreement, Clorox purchased the Company\u2019s minority interest in the venture at fair market value, for $476 million. This transaction was accounted for as a dissolution of the Glad joint venture business and the Company recorded an after-tax gain of $261 million.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "A working-capital deficit stated alongside \"We anticipate being able to support our short-term liquidity and operating needs\", \"strong short- and long-term debt ratings\" and \"sufficient funding to meet short-term financing requirements\" is not an explicit statement of insufficient liquidity or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-25405f4c6adb83fc",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Gains or losses on these instruments can have a direct impact on our results of operations, unless we have effectively mitigated the risk of our exposures. Increases in interest rates may cause decreases in residential mortgage loan originations and could impact the origination of corporate debt. In addition, increases in interest rates or changes in spreads may adversely impact the fair value of our debt securities and, accordingly, for debt securities classified as available-for-sale (AFS), adversely affect accumulated other comprehensive income and, thus, our capital levels. Increases in interest rates or changes in spreads could also adversely impact our regulatory liquidity position and requirements, which include eligible AFS debt securities and held-to-maturity (HTM) debt securities. As our liquidity is dependent on the fair value of these assets, increases in market interest rates and/or wider spreads, have adversely impacted and may continue to adversely impact the fair value of debt securities, adversely affecting liquidity levels.\n\nLiquidity is essential to our businesses and is primarily supported by globally sourced deposits in our bank entities, as well as secured and unsecured liabilities transacted in the capital markets. We rely on certain secured funding sources, such as repo markets, which are typically short-term and may be credit-sensitive. We also engage in asset securitization transactions, including with the government-sponsored\n\nenterprises (GSEs), to help fund a portion of our consumer lending activities. Our liquidity could be adversely affected by any inability to access the capital markets, illiquidity or volatility in the capital markets, the decrease in value of eligible collateral or increased collateral requirements (including as a result of credit concerns for short-term borrowing), changes to our relationships with our funding providers based on real or perceived changes in our risk profile, prolonged federal government shutdowns, or uncertainty regarding the impact of potential GSE privatization.\n\nAlso, our liquidity or cost of funds may be negatively impacted by the unwillingness or inability of the Federal Reserve to act as lender of last resort, unexpected simultaneous draws on credit lines or deposits, slower client payment rates, restricted access to the assets of prime brokerage clients, the failure to attract or retain client deposits or invested funds, including large-scale deposit migration (e.g., from attrition resulting from clients seeking higher yielding deposits or to an alternative financial institution perceived to be safer, changing investment preferences or securities products, moving balances into digital assets (e.g., stablecoin) or other alternative non-bank financial platforms, changes to spending behavior due to inflation, a decline in the economy or other drivers resulting in an increased need for cash), increased regulatory liquidity, capital and margin requirements for our U.S. or international banks and their nonbank subsidiaries, which could result in the inability to transfer liquidity internally, changes in patterns of intraday liquidity usage resulting from a counterparty or technology failure or other idiosyncratic event or failure, the default by a significant market participant or third party (including clearing agents, custodians, central banks or central counterparty clearinghouses (CCPs)) or the inability to sell assets due to illiquid markets (e.g., no market exists or market saturation). These factors may increase our borrowing costs and negatively impact our liquidity.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Every cost statement is hedged (\"These factors may increase our borrowing costs\", \"our liquidity or cost of funds may be negatively impacted\"); the only realized clause (\"have adversely impacted... the fair value of debt securities\") concerns asset valuation, not cost or margin."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-260ff9f71cde6085",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "In the first six months of 2025, cash provided by operating activities was $9.6 billion. Excluding a $0.6 billion change in operating working capital, ConocoPhillips generated CFO of $10.2 billion and received disposition proceeds of $1.3 billion. The company funded $6.7 billion of capital expenditures and investments, repurchased $2.7 billion of shares, paid $2.0 billion in ordinary dividends and retired debt of $0.7 billion at maturity.\n\nThird-quarter 2025 production is expected to be 2.33 to 2.37 million barrels of oil equivalent per day (MMBOED). Full-year production is expected to be 2.35 to 2.37 MMBOED. The midpoint of full-year production guidance remains unchanged, even after adjusting for announced and closed dispositions.\n\nThis news release contains forward-looking statements as defined under the federal securities laws. Forward-looking statements relate to future events, including, without limitation, statements regarding our future financial position, business strategy, budgets, projected revenues, costs and plans, objectives of management for future operations, the anticipated benefits of our acquisition of Marathon Oil Corporation (Marathon Oil), the anticipated impact of our acquisition of Marathon Oil on the combined company\u2019s business and future financial and operating results and the expected amount and timing of synergies from our acquisition of Marathon Oil and other aspects of our operations or operating results. Words and phrases such as \u201cambition,\u201d \u201canticipate,\u201d \u201cbelieve,\u201d \u201cbudget,\u201d \u201ccontinue,\u201d \u201ccould,\u201d \u201ceffort,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cforecast,\u201d \u201cgoal,\u201d \u201cguidance,\u201d \u201cintend,\u201d \u201cmay,\u201d \u201cobjective,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cpotential,\u201d \u201cpredict,\u201d \u201cprojection,\u201d \u201cseek,\u201d \u201cshould,\u201d \u201ctarget,\u201d \u201cwill,\u201d \u201cwould,\u201d and other similar words can be used to identify forward-looking statements. However, the absence of these words does not mean that the statements are not forward-looking. Where, in any forward-looking statement, the company expresses an expectation or belief as to future results, such expectation or belief is expressed in good faith and believed to be reasonable at the time such forward-looking statement is made. However, these statements are not guarantees of future performance and involve certain risks, uncertainties and other factors beyond our control. Therefore, actual outcomes and results may differ materially from what is expressed or forecast in the forward-looking statements. Factors that could cause actual results or events to differ materially from what is presented include, but are not limited to, the following: effects of volatile commodity prices, including prolonged periods of low commodity prices, which may adversely impact our operating results and our ability to execute on our strategy and could result in recognition of impairment charges on our long-lived assets, leaseholds and nonconsolidated equity investments; global and regional changes in the demand, supply, prices, differentials or other market conditions affecting oil and gas, including changes as a result of any ongoing military conflict and the global response to such conflict, security threats on facilities and infrastructure, global health crises, the imposition or lifting of crude oil production quotas or other actions that might be imposed by OPEC and other producing countries or the resulting company or third-party actions in response to such changes; the potential for insufficient liquidity or other factors, such as those described herein, that could impact our ability to repurchase shares and declare and pay dividends, whether fixed or variable; potential failures or delays in achieving expected reserve or production levels from existing and future oil and gas developments, including due to operating hazards, drilling risks and the inherent uncertainties in predicting reserves and reservoir performance; reductions in our reserve replacement rates, whether as a result of significant declines in commodity prices or otherwise; unsuccessful exploratory drilling activities or the inability to obtain access to exploratory acreage; failure to progress or complete announced and future development plans related to constructing, modifying or operating E&P and LNG facilities, or unexpected changes in costs, inflationary pressures or technical equipment related to such plans; significant operational or investment changes imposed by legislative and regulatory initiatives and international agreements addressing environmental concerns, including initiatives addressing the impact of global climate change, such as limiting or reducing GHG emissions, regulations concerning hydraulic fracturing, methane emissions, flaring or water disposal and prohibitions on commodity exports; broader societal attention to and efforts to address climate change may cause substantial investment in and increased adoption of competing or alternative energy sources; risks, uncertainties and high costs that may prevent us from successfully executing on our Climate Risk Strategy; lack or inadequacy of, or disruptions in reliable transportation for our crude oil, bitumen, natural gas, LNG and NGLs; inability to timely obtain or maintain permits, including those necessary for construction, drilling and/or development, or inability to make capital expenditures required to maintain compliance with any necessary permits or applicable laws or regulations; potential disruption or interruption of our operations and any resulting consequences due to accidents, extraordinary weather events, supply chain disruptions, civil unrest, political events, war, terrorism, cybersecurity threats or information technology failures, constraints or disruptions; liability for remedial actions, including removal and reclamation obligations, under existing or future environmental regulations and litigation; liability resulting from pending or future litigation or our failure to comply with applicable laws and regulations; general domestic and international economic, political and diplomatic developments, including deterioration of international trade relationships, the imposition of trade restrictions or tariffs relating to commodities and material or products (such as aluminum and steel) used in the operation of our business, expropriation of assets, changes in governmental policies relating to commodity pricing, including the",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The factor list also states \"unexpected changes in costs, inflationary pressures\" and \"high costs that may prevent us from successfully executing on our Climate Risk Strategy\", which is MARGIN_COST_PRESSURE (hypothetical)."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-27d81a2e10b53249",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "\u2013 Exxon Mobil Corporation today announced third-quarter 2024 earnings of $8.6 billion, or $1.92 per share assuming dilution. Cash flow from operating activities was $17.6 billion and free cash flow was $11.3 billion. Capital and exploration expenditures were $7.2 billion in the third quarter, bringing year-to-date 2024 expenditures to $20 billion, in line with the company's full-year guidance of $28 billion.\n\n. In Product Solutions, we've high-graded our refining footprint and increased high-value product sales. And across the entire company, we\u2019ve achieved $11.3 billion of structural cost savings since 2019. Our strategy is delivering leading returns of 20% so far this year for our shareholders, and we are continuing that growth with a 4% increase in our quarterly dividend payment announced today. We\u2019ve now increased our annual dividend for 42 years in a row, a claim that less than 4% of the S&P 500 companies can make. Furthermore, we lead industry in total shareholder returns for the past 3, 5 and 10 years.\n\n. Strong advantaged volume growth from Guyana and Permian assets including Pioneer, and increased high-value product sales more than offset lower base volumes from divestments of non-strategic assets and scheduled maintenance. Structural cost savings partly offset higher expenses from depreciation, scheduled maintenance, development of new businesses and 2025 project start-ups.\n\nAchieved $11.3 billion of cumulative Structural Cost Savings versus 2019, including an additional $1.6 billion of savings during the year and $0.6 billion during the quarter. The company is on track to deliver cumulative savings totaling $15 billion through the end of 2027 versus 2019.\n\nContingent on the U.S. federal government implementing regulations that are consistent with the Inflation Reduction Act's legislative intent, the Baytown facility is expected to be the world\u2019s largest of its kind upon startup, capable of producing up to 1 billion cubic feet of hydrogen per day and more than 1 million tons of low-carbon ammonia per year. A final investment decision is expected in 2025 with anticipated startup in 2029.\n\nper year from the New Generation Gas Gathering (NG3) project being built in Louisiana. NG3 will gather and treat natural gas produced in east Texas and Louisiana for delivery to U.S. Gulf Coast markets, including for LNG export. This is ExxonMobil's first agreement with a natural gas processing customer and brings the total contracted CO",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage states \"Structural cost savings partly offset higher expenses from depreciation, scheduled maintenance, development of new businesses and 2025 project start-ups\" \u2014 a realized rise in operating expenses weighing on earnings."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-286abfb2fd30a6b3",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "In addition, JPMorganChase could be required to make significant investments in technology in order to transition effectively to more robust security protections, including quantum-resistant encryption. Any such transition may not be completed before relevant threats become operational, and JPMorganChase\u2019s interconnectedness with third parties who may be slower to adopt such protections could further increase its vulnerability to data compromise.\n\nJPMorganChase could become increasingly vulnerable to cyber attacks if it does not, in a timely manner, identify and address emerging threats, known vulnerabilities or shortcomings in its cybersecurity controls, or if it fails to prioritize or complete enhancements to address them particularly in jurisdictions that could pose a heightened risk to its operations, including enhancements relating to:\n\ndetecting, escalating and effectively addressing in a timely manner any vulnerabilities that may be present either in internally-developed software or externally-provided software or services, including vulnerabilities that could allow the attackers to exploit unknown security flaws in software and hardware (i.e., \u201czero-day vulnerabilities\u201d)\n\nAny of the above cybersecurity risks to which JPMorganChase may be exposed could also affect JPMorganChase\u2019s vendors or other third parties with which it does business or is interconnected, including governmental entities and other market participants. A successful circumvention of JPMorganChase\u2019s systems of any of those third parties could cause serious negative consequences, including:\n\nThe extent of a particular cyber attack, the methods used by threat actors, and the steps that JPMorganChase may need to take to investigate the attack may not be immediately clear, and it could take a significant amount of time before such an investigation can be completed. While such an investigation is ongoing, JPMorganChase may not know the full extent of the harm caused by the cyber attack, and that damage could continue to spread. These factors could\n\ninhibit JPMorganChase\u2019s ability to provide rapid, full and reliable information about the cyber attack to its clients, customers, counterparties and regulators, as well as the public. Furthermore, it may not be clear how best to contain and remediate the harm caused by the cyber attack, and certain errors or actions could be repeated or compounded before they are discovered and remediated. Any or all of these factors could further increase the costs and consequences of a cyber attack.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage is purely cyber-risk narrative; regulators appear only as recipients of information (\"provide rapid, full and reliable information about the cyber attack to its clients, customers, counterparties and regulators\"), with no litigation, investigation, enforcement action, or new regulatory requirement asserted."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-2a15698f98209cf0",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Net earnings increased $624 million, or 5%, to $13.1 billion, as the increase in other non-operating income/(expense), net, the components of which are described above, were partially offset by the decrease in operating income. Foreign exchange had a positive impact of approximately $185 million on net earnings for the period, including both transactional and translational impacts from converting earnings from foreign subsidiaries to U.S. dollars. Net earnings attributable to Procter & Gamble increased $643 million, or 5%, to $13.0 billion for the period. Diluted EPS increased 7% to $5.36 versus the prior year period due to the increase in net earnings. Core EPS, which represents diluted EPS excluding the charges for incremental restructuring and the gain from the dissolution of the Glad joint venture business, increased 2% to $5.46.\n\nThe following discussion provides a review of results by reportable business segment. Analysis of the results for the three and nine months ended March 31, 2026, is provided based on a comparison to the three and nine months ended March 31, 2025. The primary financial measures used to evaluate segment performance are net sales and net earnings. The table below provides supplemental information on net sales, earnings before income taxes and net earnings by reportable business segment for the three and nine months ended March 31, 2026, versus the comparable prior year period (dollar amounts in millions):\n\nBeauty net sales increased 11% to $3.9 billion, driven by a 5% increase in unit volume, favorable foreign exchange of 4%, positive impacts of pricing of 1% and favorable product mix of 1%. Excluding the impact of acquisitions and divestitures and foreign exchange, organic sales increased 7%. Global market share of the Beauty segment decreased 0.3 points.\n\nHair Care net sales increased double digits driven by an increase in unit volume, favorable foreign exchange and positive impacts of innovation-based pricing (primarily in North America and Europe), partially offset by unfavorable geographic mix. The volume increase was driven by growth in Europe, Latin America, Greater China and Asia Pacific (all due to innovation). Organic sales increased mid-single digits driven by growth in all regions, led by low-teens growth in Europe, double-digit growth in Latin America and mid-single-digit growth in Asia Pacific. Global market share of the Hair Care category decreased 0.5 points.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "No rising-cost or margin language appears; the passage reports \"Net earnings increased $624 million, or 5%\" and sales/volume growth, with restructuring mentioned only as a non-GAAP exclusion (\"excluding the charges for incremental restructuring\") and \"the decrease in operating income\" given no cost cause."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-2a67a8f40a82a9fc",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "While business and other practices throughout the world differ, our principal entities are subject in their operations worldwide to rules and regulations relating to corrupt and illegal payments, hiring practices and money laundering, as well as laws relating to doing business with certain individuals, groups and countries, such as the FCPA, the BSA and the U.K. Bribery Act. While we have invested and continue to invest significant resources in training and in compliance monitoring, the geographical diversity of our operations, employees, clients and consumers, as well as the vendors and other third parties that we deal with, greatly increases the risk that we may be found in violation of such rules or regulations and such violations have in the past and could in the future subject us to significant penalties or adversely affect our reputation. See for example, \u201c1MDB-Related Matters\u201d in Note 27 to the consolidated financial statements in Part II, Item 8 of this Form 10-K.\n\nAs part of our commodities business, we purchase and sell certain physical commodities, arrange for their storage and transport, and engage in market making of commodities. The commodities involved in these activities may include crude oil, refined oil products, natural gas, liquefied natural gas, electric power, agricultural products, base, precious and other metals, minerals (including unenriched uranium), emission credits, coal, freight and related products and indices.\n\nThese activities subject us and/or the entities in which we invest to extensive and evolving federal, state and local energy, environmental, antitrust and other governmental laws and regulations worldwide, including environmental laws and regulations relating to, among others, air quality, water quality, waste management, transportation of hazardous substances, natural resources, site remediation and health and safety. Additionally, rising climate change concerns have led to additional laws and regulations, regulatory scrutiny and disclosure obligations that have increased and could further increase the operating costs and could adversely affect the profitability of certain of our investments and activities.\n\nThere may be substantial costs in complying with current or future laws and regulations relating to our commodities-related activities and investments. Compliance with these laws and regulations requires significant commitments of capital toward environmental and operational monitoring, development of appropriate operational and supervisory procedures and processes, payment of emission fees and carbon or other taxes, and application for, and holding of, permits and licenses.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The cost clause is past-tense realized \u2014 \"laws and regulations, regulatory scrutiny and disclosure obligations that have increased and could further increase the operating costs\" \u2014 so under the rule that a concrete realized statement controls, MARGIN_COST_PRESSURE is REALIZED, not HYPOTHETICAL."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-2c1f39167b159575",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Statements about planned 2024 and 2025 benchmark debt issuances and the amount, composition and location of GCLA we expect to hold are subject to the risk that actual issuances and GCLA levels may differ, possibly materially, from that currently expected due to changes in market conditions, business opportunities or our funding and projected liquidity needs.\n\nStatements about the proposed sales of Asset & Wealth Management historical principal investments are subject to the risks that buyers may not bid on these assets or bid at levels, or with terms, that are unacceptable to us, and that the performance of these activities may deteriorate as a result of the proposed sales, and statements about the pending sale of the seller financing loan portfolio and our ability to transition the GM credit card program to another issuer are subject to the risk that the transaction may not close on the anticipated timeline or at all, including due to a failure to obtain requisite regulatory approval.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "unsure",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only trigger is transaction-closing risk \"including due to a failure to obtain requisite regulatory approval\"; the rubric does not settle whether M&A approval risk counts as LEGAL_REGULATORY_ACTION (no litigation, investigation, enforcement, or compliance-burden language)."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The text only cautions that \"actual issuances and GCLA levels may differ, possibly materially, from that currently expected\" \u2014 that is not an explicit statement of insufficient liquidity, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-2d239bad2509078e",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Launched Enterprise-Wide Cost Realignment Program Expected to Deliver Annual Net Cost Savings of at Least $3.5 Billion, of Which Approximately $1.0 Billion is Expected to be Realized in 2023 and at Least an Additional $2.5 Billion is Expected to be Realized in 2024 (Compared to Midpoint of SI&A and R&D Expense Guidance Provided on August 1, 2023)\n\nDr. Albert Bourla, Chairman and Chief Executive Officer, stated: \u201cWe are encouraged by the strong performance of Pfizer\u2019s non-COVID products in the third quarter of 2023, including significant contributions from new launches and robust year-over-year growth for several key in-line brands. We also have achieved several recent milestones that speak to the underlying strength and breadth of our scientific pipeline, including the U.S. and European Commission (EC) approval and launch of Abrysvo in pregnant individuals, and EC approval and launch of Abrysvo in older adults; the U.S. approval and launch of Elrexfio; U.S. approvals of Penbraya, Velsipity and of the Braftovi+Mektovi combination in\n\n\u201cIn addition, we continue to make progress toward our proposed acquisition of Seagen, a global leader in discovering, developing and commercializing transformative oncology medicines that we believe can help us conquer cancer in the coming years\u2014and earlier this month, we received unconditional antitrust clearance from the EC on the proposed acquisition, a decision we believe confirms our view that the transaction is pro-competitive, reflective of our complementary portfolios and good for patients.\n\n\u201cWith a significant uncertainty removed by our recently announced amended Paxlovid supply agreement with the U.S. government, our expectation of additional clarification on global vaccination and treatment rates by the end of the year, and the breakthroughs continuing to emerge from our pipeline, we look forward to concluding 2023 with positive momentum that showcases Pfizer\u2019s long-term growth potential.\u201d\n\nDavid Denton, Chief Financial Officer and Executive Vice President, stated: \u201cWe are extremely pleased by the strong 10% operational revenue growth of Pfizer\u2019s non-COVID products in the third quarter of 2023. With expected contributions from our new product launches, this puts us squarely on track to meet our full-year non-COVID operational revenue growth target of 6% to 8%. In addition, we launched our cost realignment program, from which we expect to achieve at least $3.5 billion of net cost savings by the end of 2024. Combined with the momentum of our non-COVID product portfolio and U.S. commercialization of Paxlovid, we expect the program to yield improved operating margins this year and help drive Pfizer\u2019s growth through the end of the decade and beyond.\u201d",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The cost program is described only prospectively and favorably (\"Cost Realignment Program Expected to Deliver Annual Net Cost Savings of at Least $3.5 Billion\") with no charge, write-down, or asset-value reduction recorded."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-2f6149132ba17914",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Forward-looking statements involve estimates, expectations, projections, goals, forecasts, assumptions, risks and uncertainties. Actual outcomes or results may differ from anticipated results, sometimes materially. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: general economic conditions, including slowdowns and recessions, domestically or internationally; Occidental\u2019s indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; Occidental\u2019s ability to successfully monetize select assets and repay or refinance debt and the impact of changes in Occidental\u2019s credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, Occidental\u2019s products and services; actions by the Organization of the Petroleum Exporting Countries (OPEC) and non-OPEC oil producing countries; results from operations and competitive conditions; future impairments of Occidental's proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including Occidental's ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; Occidental's ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections, projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses; uncertainties about the estimated quantities of oil, NGL and natural gas reserves; lower-than-expected production from development projects or acquisitions; Occidental\u2019s ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve Occidental\u2019s competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver Occidental\u2019s oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; government actions, war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events; health, safety and environmental (HSE) risks, costs and liability under existing or future federal, regional, state, provincial, tribal, local and international HSE laws, regulations and litigation (including related to climate change or remedial actions or assessments); legislative or regulatory changes, including changes relating to hydraulic fracturing or other oil and natural gas operations, retroactive royalty or production tax regimes, and deep-water and onshore drilling and permitting regulations; Occidental's ability to recognize intended benefits",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "This list contains the same \"disruptions to, capacity constraints in, or other limitations on the pipeline systems\" and \"general economic conditions, including slowdowns and recessions\" / \"supply and demand considerations\" language that was labeled SUPPLY_INPUT_CONSTRAINT and DEMAND_WEAKNESS in the near-identical chunk CHK-26a8b292ada5a7cb."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-321affda719793c4",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "During the three and nine months ended September 30, 2022, the net impact of the company\u2019s adjustment related to unrealized gains and losses on our equity and trading debt securities resulted in increases of $78 million and $501 million, respectively, to our non-GAAP income before income taxes.\n\nDuring the three and nine months ended September 29, 2023, the company recorded net charges of $4 million and $15 million, respectively, related to restructuring our manufacturing operations in the United States. Additionally, the company recorded net charges of $4 million and $11 million, respectively, for the amortization of noncompete agreements related to the BODYARMOR acquisition in 2021. The company also recorded charges of $1 million and $7 million, respectively, related to tax litigation expense. During the nine months ended September 29, 2023, the company recorded charges totaling $35 million related to the discontinuation of certain manufacturing operations in Asia Pacific.\n\nDuring the three and nine months ended September 30, 2022, the company recorded net charges of $8 million and $31 million, respectively, related to restructuring our manufacturing operations in the United States. Additionally, the company recorded net charges of $15 million and $23 million, respectively, related to the BODYARMOR acquisition, which included various transition and transaction costs, employee retention costs and the amortization of noncompete agreements, net of the reimbursement of distributor termination fees.\n\nDuring the three and nine months ended September 29, 2023, the company recorded $5 million and $33 million, respectively, of excess tax benefits associated with the company\u2019s stock-based compensation arrangements and net income tax benefits of $106 million and $111 million, respectively, for changes to our uncertain tax positions, including interest and penalties, as well as for various discrete tax items. Additionally, the company recorded net income tax benefits of $75 million and $77 million, respectively, associated with return to provision adjustments. During the nine months ended September 29, 2023, the company recorded a net income tax benefit of $90 million related to a change in tax law in a certain foreign jurisdiction.\n\nDuring the three and nine months ended September 30, 2022, the company recorded $4 million and $70 million, respectively, of excess tax benefits associated with the company\u2019s stock-based compensation arrangements. The company also recorded a net income tax benefit of $10 million and net income tax expense of $13 million, respectively, for changes to our uncertain tax positions, including interest and penalties, as well as for various discrete tax items. During the three and nine months ended September 30, 2022, the company recorded net income tax expense of $12 million associated with return to provision adjustments.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage also records quantified litigation cost \u2014 \"charges of $1 million and $7 million, respectively, related to tax litigation expense\" \u2014 a realized LEGAL_REGULATORY_ACTION match."
+    }
+   ]
+  }
+ ]
+}

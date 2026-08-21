@@ -1,0 +1,26 @@
+ticker,cik,sector,company_name
+AAPL,320193,tech,Apple Inc.
+MSFT,789019,tech,Microsoft Corp
+GOOGL,1652044,tech,Alphabet Inc.
+NVDA,1045810,tech,NVIDIA Corp
+CSCO,858877,tech,Cisco Systems Inc.
+JPM,19617,financials,JPMorgan Chase & Co
+BAC,70858,financials,Bank of America Corp
+GS,886982,financials,Goldman Sachs Group Inc
+MA,1141391,financials,Mastercard Inc
+V,1403161,financials,Visa Inc.
+JNJ,200406,healthcare,Johnson & Johnson
+UNH,731766,healthcare,UnitedHealth Group Inc
+PFE,78003,healthcare,Pfizer Inc
+ABBV,1551152,healthcare,AbbVie Inc.
+MRK,310158,healthcare,Merck & Co. Inc.
+XOM,34088,energy,Exxon Mobil Corp
+CVX,93410,energy,Chevron Corp
+COP,1163165,energy,ConocoPhillips
+SLB,87347,energy,SLB Limited (fka Schlumberger)
+OXY,797468,energy,Occidental Petroleum Corp
+PG,80424,consumer,Procter & Gamble Co
+KO,21344,consumer,Coca-Cola Co
+WMT,104169,consumer,Walmart Inc.
+HD,354950,consumer,Home Depot Inc.
+MCD,63908,consumer,McDonald's Corp

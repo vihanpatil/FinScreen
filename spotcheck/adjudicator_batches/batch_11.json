@@ -1,0 +1,316 @@
+{
+ "batch": 11,
+ "chunks": [
+  {
+   "chunk_id": "CHK-f0a4156898144c9e",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Total operating income increased 9% and operating margin was 30.5%. Excluding the $3.5 billion charge related to the European Commission (EC) fine, operating income increased 22% and operating margin was 33.9%, benefitting from strong revenue growth and continued efficiencies in the expense base.\n\n\u201cOur full stack approach to AI is delivering strong momentum and we\u2019re shipping at speed, including the global rollout of AI Overviews and AI Mode in Search in record time. In addition to topping leaderboards, our first party models, like Gemini, now process 7 billion tokens per minute, via direct API use by our customers. The Gemini App now has over 650 million monthly active users. We continue to drive strong growth in new businesses. Google Cloud accelerated, ending the quarter with $155 billion in backlog. And we have over 300 million paid subscriptions led by Google One and YouTube Premium.\u201d\n\nIn addition to the costs included in Alphabet-level activities, hedging gains (losses) related to revenue were $17 million and $(207) million for the three months ended September 30, 2024 and 2025, respectively. Alphabet-level activities include charges related to employee severance and office space charges.\n\nOn September 5, 2025, the EC announced its decision that Google had infringed European competition laws. The EC decision imposed a $3.5 billion fine which we accrued in general and administrative expenses in our Google Services segment for the three months ended September 30, 2025.\n\nChanges to U.S. tax law enacted on July 4, 2025, allow, among other things, for immediate expensing of domestic research and experimentation costs and accelerated depreciation on eligible capital expenditures, the effects of which are included in operating cash flows for the three months ended September 30, 2025.\n\nA live audio webcast of our third quarter 2025 earnings release call will be available on YouTube at https://www.youtube.com/watch?v=hA1OEi6TRYU. The call begins today at 2:30 PM (PT) / 5:30 PM (ET). This press release, including the reconciliations of certain non-GAAP measures to their nearest comparable GAAP measures, is also available at http://abc.xyz/investor.\n\n, which are on file with the SEC and are available on our investor relations website at http://abc.xyz/investor and on the SEC website at www.sec.gov. Additional information will also be set forth in our Quarterly Report on Form 10-Q for the quarter ended September 30, 2025, and may be set forth in other reports and filings we make with the SEC. All information provided in this release and in the attachments is as of",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The only support for an impairment label is \"charges related to employee severance and office space charges,\" which uses no impairment or write-down language and is not stated as an asset-value reduction."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f17c4c21c37c3cfd",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Reports Second-Quarter Diluted EPS of $0.52 on a GAAP Basis, a Decrease of 32.5 Percent; Adjusted Diluted EPS of $2.97, an Increase of 12.1 Percent; These Results Include an Unfavorable Impact of $0.42 Per Share Related to Acquired IPR&D and Milestones Expense\n\nSecond-Quarter Global Net Revenues from the Immunology Portfolio Were $7.631 Billion, an Increase of 9.5 Percent on a Reported Basis, or 9.2 Percent on an Operational Basis; Global Skyrizi Net Revenues Were $4.423 Billion; Global Rinvoq Net Revenues Were $2.028 Billion; Global Humira Net Revenues Were $1.180 Billion\n\nSecond-Quarter Global Net Revenues from the Neuroscience Portfolio Were $2.683 Billion, an Increase of 24.2 Percent on a Reported Basis, or 24.0 Percent on an Operational Basis; Global Vraylar Net Revenues Were $900 Million; Global Botox Therapeutic Net Revenues Were $928 Million; Combined Global Ubrelvy and Qulipta Net Revenues Were $605 Million\n\nSecond-Quarter Global Net Revenues from the Oncology Portfolio Were $1.676 Billion, an Increase of 2.6 Percent on a Reported Basis, or 2.4 Percent on an Operational Basis; Global Imbruvica Net Revenues Were $754 Million; Global Venclexta Net Revenues Were $691 Million; Global Elahere Net Revenues Were $159 Million\n\nSecond-Quarter Global Net Revenues from the Aesthetics Portfolio Were $1.279 Billion, a Decrease of 8.1 Percent on a Reported Basis, or 8.0 Percent on an Operational Basis; Global Botox Cosmetic Net Revenues Were $692 Million; Global Juvederm Net Revenues Were $260 Million\n\n\"AbbVie delivered another outstanding quarter with strong performance from our diversified growth platform. We also made meaningful pipeline progress with several regulatory approvals, encouraging clinical data and strategic investments in promising external innovation,\" said Robert A. Michael, chairman and chief executive officer, AbbVie. \"We're entering the second half of the year with substantial momentum and are once again raising our full-year outlook.\"\n\nThe approval was supported by data from the pivotal Phase 3 SELECT-GCA trial, which met the primary endpoint of sustained remission and key secondary endpoints. This marks the ninth approved indication for Rinvoq in the U.S., across rheumatology, gastroenterology and dermatology.\n\nAbbVie announced positive topline results from the first of two pivotal studies in the Phase 3 UP-AA clinical program evaluating the safety and efficacy of Rinvoq in adult and adolescent patients with severe alopecia areata (AA). In the study, Rinvoq achieved the primary endpoint, demonstrating that 44.6% and 54.3% of patients with severe AA treated with Rinvoq 15mg and 30mg, respectively, reached 80% or more scalp hair coverage at week 24 as defined by the severity of alopecia tool (SALT) score \u226420. Key secondary endpoints, including improvements in eyebrows and eyelashes, as well as the percentage of subjects with 90% or more scalp coverage (SALT \u226410) and complete scalp hair coverage (SALT=0) at Week 24, were also met. Rinvoq's safety profile in AA was generally consistent with that in approved indications, and no new safety signals were identified in this study.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The only cost item is \"an Unfavorable Impact of $0.42 Per Share Related to Acquired IPR&D and Milestones Expense\" \u2014 a discrete business-development charge with no input/labor/operating cost or margin-compression language; the portfolio declines (\"a Decrease of 8.1 Percent\") carry no demand attribution."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f19db19d49816c95",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Our business is based on successfully attracting and retaining talented employees representing diverse backgrounds, experiences, and skill sets. The market for highly skilled workers and leaders in our industry is extremely competitive. Maintaining our brand and reputation, as well as a diverse and inclusive work environment that enables all our employees to thrive, are important to our ability to recruit and retain employees. We are also limited in our ability to recruit internationally by restrictive domestic immigration laws. Changes to U.S. immigration policies that restrain the flow of technical and professional talent may inhibit our ability to adequately staff our research and development efforts. If we are less successful in our recruiting efforts, or if we cannot retain highly skilled workers and key leaders, our ability to develop and deliver successful products and services may be adversely affected. Effective succession planning is also important to our long-term success. Failure to ensure effective transfer of knowledge and smooth transitions involving key employees could hinder our strategic planning and execution. How employment-related laws are interpreted and applied to our workforce practices may result in increased operating costs and less flexibility in how we meet our workforce needs. Our global workforce is predominantly non-unionized, although we do have some employees in the U.S. and internationally who are represented by unions or works councils. In the U.S., there has been a general increase in workers exercising their right to form or join a union. The unionization of significant employee populations could result in higher costs and other operational changes necessary to respond to changing conditions and to establish new relationships with worker representatives.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Immigration policy restraining \"the flow of technical and professional talent\" is labor availability (SUPPLY_INPUT_CONSTRAINT), not tariffs/export controls/trade restrictions, and the passage twice states cost impact \u2014 \"may result in increased operating costs\" and unionization \"could result in higher costs.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f37c2dc42fa71095",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "We rely on the short- and long-term debt capital markets to fund a significant portion of our day-to-day operations, and the cost and availability of debt financing is influenced by our credit ratings. Credit ratings are also important when we are competing in certain markets, such as OTC derivatives, and when we seek to engage in longer-term transactions. See \u201cRisk Factors\u201d in Part I, Item 1A of this Form 10-K for information about the risks associated with a reduction in our credit ratings.\n\nCertain of our derivatives have been transacted under bilateral agreements with counterparties who may require us to post collateral or terminate the transactions based on changes in our credit ratings. We manage our GCLA to ensure we would, among other potential requirements, be able to make the additional collateral or termination payments that may be required in the event of a two-notch reduction in our long-term credit ratings, as well as collateral that has not been called by counterparties, but is available to them. See Note 7 to the consolidated financial statements for further information about derivatives with credit-related contingent features and the additional collateral or termination payments related to our net derivative liabilities under bilateral agreements that could have been called by counterparties in the event of a one- or two-notch downgrade in our credit ratings.\n\nOur cash and cash equivalents decreased by $248 million to $241.58 billion at the end of 2023, due to net cash used for investing and operating activities, partially offset by net cash provided by financing activities and the effect of exchange rate changes on cash and cash equivalents. The net cash used for investing activities primarily reflected net purchases of investments (primarily U.S. government obligations accounted for as held-to-maturity securities). The net cash used for operating activities primarily reflected cash outflows from trading assets and customer and other receivables and payables, net (reflecting a decrease in customer and other payables, partially offset by a decrease in customer and other receivables), partially offset by cash inflows from collateralized transactions (reflecting an increase in collateralized financings, partially offset by an increase in collateralized agreements), net earnings and trading liabilities. The net cash provided by financing activities primarily reflected cash inflows from deposits (reflecting increases in consumer deposits, brokered certificates of deposits and other deposits, partially offset by decreases in deposits sweep program balances and private bank deposits), partially offset by net repayments of unsecured long-term borrowings. The increase in cash and cash equivalents as a result of changes in foreign exchange rates was due to the U.S. dollar weakening during 2023.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage's liquidity posture is affirmative \u2014 \"We manage our GCLA to ensure we would ... be able to make the additional collateral or termination payments that may be required in the event of a two-notch reduction\" \u2014 with no statement of insufficient liquidity, inability to meet obligations, or doubt about capital access."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f40924b77ec1535a",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "to those segments to match liabilities (i.e., deposits) and allocated shareholders\u2019 equity. Average allocated assets were $944.4 billion and $948.0 billion for the three and nine months ended September 30, 2024 compared to $955.7 billion and $981.8 billion for the same periods in 2023, and period-end allocated assets were $953.6 billion and $972.9 billion at September 30, 2024 and December 31, 2023.\n\nThe income tax benefit decreased $251 million to $2.0 billion due to lower tax preference benefits primarily related to tax credit investment activity. Both periods included income tax benefit adjustments to eliminate the FTE treatment of certain tax credits recorded in\n\nRisk is inherent in all our business activities. The seven key types of risk faced by the Corporation are strategic, credit, market, liquidity, compliance, operational and reputational. Sound risk management enables us to serve our customers and deliver for our shareholders. If not managed well, risk can result in financial loss, regulatory sanctions and penalties, and damage to our reputation, each of which may adversely impact our ability to execute our business strategies. We take a comprehensive approach to risk management with a defined Risk Framework and an articulated Risk Appetite Statement, which are approved annually by the Enterprise Risk Committee (ERC) and the Board.\n\nThe Federal Reserve requires BHCs to submit a capital plan and planned capital actions on an annual basis, consistent with the rules governing capital planning and the SCB requirement, which include supervisory stress testing by the Federal Reserve. Based on the results of our 2024 CCAR stress test, our SCB increased to 3.2 percent from 2.5 percent, resulting in a CET1 minimum requirement of 10.7 percent. The new SCB is effective from October 1, 2024 through September 30, 2025.\n\nIn October 2021, the Board authorized the repurchase of up to $25 billion of common stock over time. This authorization was modified in September 2023 to include common stock repurchases to offset shares awarded under the Corporation\u2019s equity-based compensation plans when determining the remaining repurchase authority. On July 24, 2024, the Board authorized a $25 billion common stock repurchase program, effective August 1, 2024, which replaced the Corporation\u2019s previous program that expired on August 1, 2024.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "\"The income tax benefit decreased $251 million ... due to lower tax preference benefits\" is a reduced tax benefit, not rising input/labor/operating costs compressing margins; no cost or margin language appears anywhere in the passage."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f48d551bd3a90b44",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "\u201cwould,\u201d \u201cshould,\u201d \u201ccould,\u201d \u201cmay,\u201d \u201cmight,\u201d \u201canticipate,\u201d \u201cplan,\u201d \u201cintend,\u201d \u201cbelieve,\u201d \u201cexpect,\u201d \u201caim,\u201d \u201cgoal,\u201d \u201ctarget,\u201d \u201cobjective,\u201d \u201ccommit,\u201d \u201cadvance,\u201d \u201cguidance,\u201d \u201cpriority,\u201d \u201cfocus,\u201d \u201cassumption,\u201d \u201clikely\u201d or similar expressions that convey the prospective nature of events or outcomes are generally indicative of forward-looking statements. You should not place undue reliance on these forward-looking statements, which speak only as of the date of this press release unless an earlier date is specified. Unless legally required, Occidental does not undertake any obligation to update, modify or withdraw any forward-looking statement as a result of new information, future events or otherwise.\n\nForward-looking statements involve estimates, expectations, projections, goals, forecasts, assumptions, risks and uncertainties. Actual outcomes or results may differ from anticipated results, sometimes materially. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: general economic conditions, including slowdowns and recessions, domestically or internationally; Occidental\u2019s indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; Occidental\u2019s ability to successfully monetize select assets and repay or refinance debt and the impact of changes in Occidental\u2019s credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, Occidental\u2019s products and services; actions by the Organization of the Petroleum Exporting Countries (OPEC) and non-OPEC oil producing countries; results from operations and competitive conditions; future impairments of Occidental\u2019s proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; government actions (including the effects of announced or future tariff increases and other geopolitical, trade, tariff, fiscal and regulatory uncertainties), war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events (such as in Latin America); inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including Occidental\u2019s ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; Occidental\u2019s ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections or projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses, including retained liabilities and indemnification obligations associated with the chemical business; uncertainties about the estimated quantities of oil, NGL and natural gas reserves; lower-than-expected production from development projects or acquisitions; Occidental\u2019s ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve Occidental\u2019s competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver Occidental\u2019s oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; health, safety and environmental (HSE) risks, costs and liability under existing or future federal, regional, state, provincial, tribal, local and international HSE laws, regulations and litigation (including related to climate change or remedial actions or assessments); legislative or regulatory changes, including changes relating to hydraulic fracturing or other oil and natural gas operations, retroactive royalty or production tax regimes, and deep-water and onshore drilling and permitting regulations; Occidental\u2019s ability to recognize intended benefits from its business strategies and initiatives, such as the sale of OxyChem, Occidental\u2019s low-carbon ventures businesses and announced greenhouse gas emissions reduction targets or net-zero goals; changes in government grant or loan programs; potential liability resulting from pending or future litigation, government investigations and other proceedings; disruption or interruption of production or facility damage due to accidents, chemical releases, labor unrest, weather, power outages, natural disasters, cyber-attacks, terrorist acts or insurgent activity; the scope and duration of global or regional health pandemics or epidemics and actions taken by government authorities and other third parties in connection therewith; the creditworthiness and performance of Occidental\u2019s counterparties, including financial institutions, operating partners and other parties; failure of risk management; Occidental\u2019s ability to retain and hire key personnel; supply, transportation and labor constraints; reorganization or restructuring of Occidental\u2019s operations; changes in state, federal or international tax rates, deductions, incentives or credits; and actions by third parties that are beyond Occidental\u2019s control.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only demand-related items are neutral references \u2014 \"supply and demand considerations for, and the prices of, Occidental's products and services\" and \"general economic conditions, including slowdowns and recessions\" \u2014 which assert no softening of demand; note this same factor list appears in CHK-eabab8fd53f7afa4 where DEMAND_WEAKNESS was not stored."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f50efc4f79f92aba",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Our investment banking, client intermediation, asset management and wealth management businesses have been adversely affected and may in the future be adversely affected by market uncertainty or lack of confidence among investors and CEOs due to declines in economic activity and other unfavorable economic, geopolitical or market conditions.\n\nOur asset management and wealth management businesses have been and may in the future be adversely affected by the poor investment performance of our investment products or a client preference for products other than those which we offer or for products that generate lower fees.\n\nA failure to protect our computer systems, networks and information, and our clients\u2019 information, against cyber attacks and similar threats could impair our ability to conduct our businesses, result in the disclosure, theft or destruction of confidential information, damage our reputation and cause losses.\n\nMany of our businesses, by their nature, do not produce predictable earnings, and all of our businesses are materially affected by conditions in the global financial markets and economic conditions generally, both directly and through their impact on client activity levels and creditworthiness. These conditions can change suddenly and negatively.\n\nOur financial performance is highly dependent on the environment in which our businesses operate. A favorable business environment is generally characterized by, among other factors, high global gross domestic product growth, regulatory and market conditions that result in transparent, liquid and efficient capital markets, low inflation, business, consumer and investor confidence, stable geopolitical conditions and strong business earnings.\n\nUnfavorable or uncertain economic and market conditions can be caused by: low levels of or declines in economic growth, business activity or investor, business or consumer confidence; concerns over a potential recession; changes in consumer spending or borrowing patterns; pandemics; limitations on the availability or increases in the cost of credit and capital; illiquid markets; increases in inflation, interest rates, exchange rate or basic commodity price volatility or default rates; high levels of inflation or stagflation; concerns about sovereign defaults; uncertainty concerning fiscal or monetary policy, government shutdowns, debt ceilings or funding; the extent of and uncertainty about potential increases in tax rates and other regulatory changes; limitations on international trade and travel; laws and regulations that limit trading in, or the issuance of, securities of issuers outside their domestic markets; outbreaks or worsening of domestic or international tensions or hostilities, terrorism, nuclear proliferation, cybersecurity threats or attacks and other forms of disruption to or curtailment of global communication, energy transmission or transportation networks or other geopolitical instability or uncertainty; corporate, political or other scandals that reduce investor confidence in capital markets; extreme weather events or other natural disasters; or a combination of these or other factors.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The enumerated conditions include \"limitations on international trade and travel\" and \"laws and regulations that limit trading in, or the issuance of, securities of issuers outside their domestic markets,\" which are cross-border trade/policy restrictions in hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-fb76d50bc8c28177",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "As of September 30, 2025, SLB had $3.6 billion of cash and short-term investments on hand and committed debt facility agreements with commercial banks aggregating $5.0 billion, all of which was available. SLB believes these amounts are sufficient to meet future business requirements for at least the next 12 months and beyond.\n\nSLB has a global footprint in more than 100 countries. As of September 30, 2025, only two of those countries (the United States and Mexico) individually accounted for greater than 10% of SLB\u2019s net receivable balance. As of September 30, 2025, the United States and Mexico each represented 11% of SLB's net accounts receivable balance. While SLB has recently experienced delays in payment from its primary customer in Mexico, these receivables are not in dispute and SLB has not historically had any material write-offs due to uncollectible accounts receivable relating to this customer.\n\nThis third-quarter 2025 Form 10-Q, as well as other statements we make, contain \u201cforward-looking statements\u201d within the meaning of the federal securities laws, which include any statements that are not historical facts. Such statements often contain words such as \u201cexpect,\u201d \u201cmay,\u201d \u201ccan,\u201d \u201cbelieve,\u201d \u201cpredict,\u201d \u201cplan,\u201d \u201cpotential,\u201d \u201cprojected,\u201d \u201cprojections,\u201d \u201cprecursor,\u201d \u201cforecast,\u201d \u201coutlook,\u201d \u201cexpectations,\u201d \u201cestimate,\u201d \u201cintend,\u201d \u201canticipate,\u201d \u201cambition,\u201d \u201cgoal,\u201d \u201ctarget,\u201d \u201cscheduled,\u201d \u201cthink,\u201d \u201cshould,\u201d \u201ccould,\u201d \u201cwould,\u201d \u201cwill,\u201d \u201csee,\u201d \u201clikely,\u201d and other similar words. Forward-looking statements address matters that are, to varying degrees, uncertain, such as statements about SLB\u2019s financial and performance targets and other forecasts or expectations regarding, or dependent on, its business outlook; growth for SLB as a whole and for each of its Divisions (and for specified business lines, geographic areas, or technologies within each Division); the benefits of the ChampionX acquisition, including the ability of SLB to integrate the ChampionX business successfully and to achieve anticipated synergies and value creation from the acquisition; oil and natural gas demand and production growth; oil and natural gas prices; forecasts or expectations regarding energy transition and global climate change; improvements in operating procedures and technology; capital expenditures by SLB and the oil and gas industry; the business strategies of SLB, including digital and \u201cfit for basin,\u201d as well as the strategies of SLB\u2019s customers; SLB\u2019s capital allocation plans, including dividend plans and share repurchase programs; SLB\u2019s APS projects, joint ventures, and other alliances; the impact of ongoing or escalating conflicts on global energy supply; access to raw materials; future global economic and geopolitical conditions; future liquidity, including free cash flow; and future results of operations, such as margin levels. These statements are subject to risks and uncertainties, including, but not limited to, changing global economic and geopolitical conditions; changes in exploration and production spending by SLB\u2019s customers, and changes in the level of oil and natural gas exploration and development; the results of operations and financial condition of SLB\u2019s customers and suppliers; SLB\u2019s inability to",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "No litigation, investigation, enforcement or regulatory-requirement language appears in the passage, while the forward-looking list expressly includes \"access to raw materials\" and \"the impact of ongoing or escalating conflicts on global energy supply.\""
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage states the opposite of liquidity stress \u2014 \"$3.6 billion of cash and short-term investments on hand and committed debt facility agreements ... aggregating $5.0 billion, all of which was available. SLB believes these amounts are sufficient to meet future business requirements for at least the next 12 months and beyond.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-fe8029229aaac684",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "This news release also includes net debt ratio. Net debt ratio is defined as total debt less cash and cash equivalents and marketable securities as a percentage of total debt less cash and cash equivalents and marketable securities, plus Chevron Corporation stockholders\u2019 equity, which indicates the company\u2019s leverage, net of its cash balances. The company believes this measure is useful to monitor the strength of the company\u2019s balance sheet. A reconciliation of net debt ratio is shown in Attachment 2.\n\nThis news release contains forward-looking statements relating to Chevron\u2019s operations and energy transition plans that are based on management\u2019s current expectations, estimates and projections about the petroleum, chemicals and other energy-related industries. Words or phrases such as \u201canticipates,\u201d \u201cexpects,\u201d \u201cintends,\u201d \u201cplans,\u201d \u201ctargets,\u201d \u201cadvances,\u201d \u201ccommits,\u201d \u201cdrives,\u201d \u201caims,\u201d \u201cforecasts,\u201d \u201cprojects,\u201d \u201cbelieves,\u201d \u201capproaches,\u201d \u201cseeks,\u201d \u201cschedules,\u201d \u201cestimates,\u201d \u201cpositions,\u201d \u201cpursues,\u201d \u201cprogress,\u201d \u201cmay,\u201d \u201ccan,\u201d \u201ccould,\u201d \u201cshould,\u201d \u201cwill,\u201d \u201cbudgets,\u201d \u201coutlook,\u201d \u201ctrends,\u201d \u201cguidance,\u201d \u201cfocus,\u201d \u201con track,\u201d \u201cgoals,\u201d \u201cobjectives,\u201d \u201cstrategies,\u201d \u201copportunities,\u201d \u201cpoised,\u201d \u201cpotential,\u201d \u201cambitions,\u201d \u201caspires\u201d and similar expressions are intended to identify such forward-looking statements. These statements are not guarantees of future performance and are subject to certain risks, uncertainties and other factors, many of which are beyond the company\u2019s control and are difficult to predict. Therefore, actual outcomes and results may differ materially from what is expressed or forecasted in such forward-looking statements. The reader should not place undue reliance on these forward-looking statements, which speak only as of the date of this news release. Unless legally required, Chevron undertakes no obligation to update publicly any forward-looking statements, whether as a result of new information, future events or otherwise.\n\nAmong the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics (including coronavirus (COVID-19)) and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates; general domestic and international economic, market and political conditions, including the military conflict between Russia and Ukraine, the war between Israel and Hamas and the global response to these hostilities; changing refining, marketing and chemicals margins; actions of competitors or regulators; timing of exploration expenses; timing of crude oil liftings; the competitiveness of alternate-energy sources or product substitutes; development of large carbon capture and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war (including the war between Israel and Hamas and related military operations), accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures to limit or reduce greenhouse gas emissions; the potential liability resulting from pending or future litigation; the ability to successfully integrate the operations of the company and PDC Energy, Inc. and achieve the anticipated benefits from the transaction, including the expected incremental annual free cash flow; the risk that Hess Corporation (Hess) stockholders do not approve the potential transaction, and the risk that regulatory approvals are not obtained or are obtained subject to conditions that are not anticipated by the company and Hess; potential delays in consummating the potential transaction, including as a result of regulatory approvals; the company\u2019s ability to integrate Hess\u2019 operations in a successful manner and in the expected time period; the possibility that any of the anticipated benefits and projected synergies of the potential transaction will not be realized or will not be realized within the expected time period; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; the receipt of required Board authorizations to implement capital allocation strategies, including future stock repurchase programs and dividend payments; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 20 through 26 of the company\u2019s 2022 Annual Report on Form 10-K and in subsequent filings with the U.S. Securities and Exchange Commission. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The factor list expressly enumerates \"government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions\" (trade policy) and \"the potential for gains and losses from asset dispositions or impairments\" (impairment), both in hypothetical framing."
+    }
+   ]
+  }
+ ]
+}

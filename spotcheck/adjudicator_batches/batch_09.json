@@ -1,0 +1,453 @@
+{
+ "batch": 9,
+ "chunks": [
+  {
+   "chunk_id": "CHK-bb31b8bd67c539a0",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "litigation in Russia seeking payments that the Firm cannot make under, and is contractually excused from paying as a result of, relevant sanctions laws. In claims involving the Firm and claims filed against other financial institutions, Russian courts have disregarded the parties\u2019 contractual agreements concerning forum selection and did not recognize foreign sanctions laws as a basis for not making payment. Russian courts have entered judgment against the Firm in a number of claims, including one for $\n\nmillion, and a judgment has been executed against assets held onshore by the Firm in Russia. The total amount of the judgments exceeds the total amount of available assets that the Firm holds in Russia. Russian courts have nevertheless allowed plaintiffs to withhold dividends due to the Firm\u2019s clients for the purpose of satisfying judgments, which the Firm is opposing as unlawful. The Firm continues to appeal the Russian courts' decisions, and judgments may not be executed while on appeal. Russian courts have also ordered interim freezes of Firm assets in Russia (including, among other things, funds in bank accounts, securities, shares in authorized capital, and certain trademarks, of the named defendants) pending a determination of certain underlying claims against the Firm. The Firm has challenged claims being pursued in the Russian courts and related freeze orders in other jurisdictions provided for by the parties\u2019 contractual forum selections. If further claims are enforced despite the actions taken by the Firm to challenge the claims and orders and to seek the proper application of law, the Firm\u2019s assets in Russia could be seized in full, and certain client assets could also be seized, or the Firm could be prevented from complying with its obligations.\n\n. A shareholder derivative action purporting to act on behalf of the Firm is pending in the United States District Court for the Eastern District of New York against the Firm, its Board of Directors and certain of its current and former officers relating to historical trading practices by former employees in the precious metals and U.S. treasuries markets and related conduct which were the subject of the Firm\u2019s resolutions with the DOJ, CFTC and SEC in September 2020. Defendants have moved to dismiss the complaint.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage concerns seizure of \"assets in Russia\" under court judgments, not the Firm's liquidity \u2014 it states no insufficient liquidity, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-bf0b41252e4ef0df",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "In the first six months of 2026, cash provided by operating activities was $11.7 billion. Excluding a change in working capital, ConocoPhillips generated CFO of $12.6 billion and received disposition proceeds of $0.2 billion. The company funded $6.0 billion of capital expenditures and investments, repurchased $3.0 billion of shares, and paid $2.1 billion in ordinary dividends.\n\nThis news release contains forward-looking statements as defined under the federal securities laws. Forward-looking statements relate to future events, including, without limitation, statements regarding our future financial position, business strategy, budgets, projected revenues, costs and plans, and objectives of management for future operations. Words and phrases such as \u201cambition,\u201d \u201canticipate,\u201d \u201cbelieve,\u201d \u201cbudget,\u201d \u201ccontinue,\u201d \u201ccould,\u201d \u201ceffort,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cforecast,\u201d \u201cgoal,\u201d \u201cguidance,\u201d \u201cintend,\u201d \u201cmay,\u201d \u201cobjective,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cpotential,\u201d \u201cpredict,\u201d \u201cprojection,\u201d \u201cseek,\u201d \u201cshould,\u201d \u201ctarget,\u201d \u201cwill,\u201d \u201cwould,\u201d and other similar words can be used to identify forward-looking statements. However, the absence of these words does not mean that the statements are not forward-looking. Where, in any forward-looking statement, the company expresses an expectation or belief as to future results, such expectation or belief is expressed in good faith and believed to be reasonable at the time such forward-looking statement is made. However, these statements are not guarantees of future performance and involve certain risks, uncertainties and other factors beyond our control. Therefore, actual outcomes and results may differ materially from what is expressed or forecast in the forward-looking statements. Factors that could cause actual results or events to differ materially from what is presented include, but are not limited to, the following: effects of volatile commodity prices, including prolonged periods of low commodity prices, which may adversely impact our operating results and our ability to execute on our strategy and could result in recognition of impairment charges on our long-lived assets, leaseholds and nonconsolidated equity investments; global and regional changes in the demand, supply, prices, differentials or other market conditions affecting oil and gas, including changes as a result of any ongoing military conflict and the global response to such conflict, security threats on facilities and infrastructure, global health crises, the imposition or lifting of crude oil production quotas or other actions that might be imposed by OPEC and other producing countries or the resulting company or third-party actions in response to such changes; the potential for insufficient liquidity or other factors that could impact our ability to repurchase shares and declare and pay dividends; potential failures or delays in achieving expected reserve or production levels from existing and future oil and gas developments, including due to operating hazards, drilling risks and the inherent uncertainties in predicting reserves and reservoir performance; reductions in our reserve replacement rates, whether as a result of significant declines in commodity prices or otherwise; unsuccessful exploratory drilling activities or the inability to obtain access to exploratory acreage; failure to progress or complete announced and future development plans related to constructing, modifying or operating E&P and LNG facilities, or unexpected changes in costs, inflationary pressures or technical equipment related to such plans; significant operational or investment changes imposed by legislative and regulatory initiatives and international agreements addressing environmental concerns, including initiatives addressing the impact of global climate change, such as limiting or reducing GHG emissions, regulations concerning hydraulic fracturing, methane emissions, flaring or water disposal and prohibitions on commodity exports; substantial investment in and increased adoption of competing or alternative energy sources; risks, uncertainties and high costs that may prevent us from successfully executing on our Climate-related Risk Strategy; lack or inadequacy of, or disruptions in reliable transportation for our crude oil, bitumen, natural gas, LNG and NGLs; inability to timely obtain or maintain permits, including those necessary for construction, drilling and/or development, or inability to make capital expenditures required to maintain compliance with any necessary permits or applicable laws or regulations; potential disruption or interruption of our operations and any resulting consequences due to accidents, extraordinary weather events, supply chain disruptions, civil unrest, political events, war, terrorism, cybersecurity threats or information technology failures, constraints or disruptions; liability for remedial actions, including removal and reclamation obligations, under existing or future environmental regulations and litigation; liability resulting from pending or future litigation or our failure to comply with applicable laws and regulations; general domestic and international economic, political and diplomatic developments, including deterioration of international trade relationships, the imposition of trade restrictions or tariffs relating to commodities and material or products (such as aluminum and steel) used in the operation of our business, expropriation of assets, changes in governmental policies relating to commodity pricing, including the imposition of price caps, sanctions or other adverse regulations or taxation policies; competition and consolidation in the oil and gas E&P industry, including competition for sources of supply, services, personnel and equipment; any limitations on our access to capital or increase in our cost of capital or insurance, including as a result of illiquidity, changes or uncertainty in domestic or international financial markets, foreign currency exchange rate fluctuations or investment sentiment;",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list includes \"unexpected changes in costs, inflationary pressures\" and \"increase in our cost of capital,\" which is generic cost-pressure language warranting MARGIN_COST_PRESSURE."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-bf6f1b960f07100e",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Health Care segment organic sales increased four percent versus year ago. Oral Care organic sales increased low single digits driven by product mix from premium innovation, partially offset by volume declines. Personal Health Care organic sales increased high single digits due to volume growth and increased pricing, primarily in Latin America and Europe.\n\nBaby, Feminine and Family Care segment organic sales decreased one percent versus year ago. Baby Care organic sales decreased low single digits due to volume declines, partially offset by favorable geographic and product mix. Feminine Care organic sales were unchanged as favorable geographic mix was offset by volume declines. Family Care organic sales decreased low single digits driven by volume declines, unfavorable product mix and merchandising investments.\n\nReported gross margin for the quarter decreased 20 basis points versus the prior year. Core gross margin for the quarter decreased 30 basis points versus the prior year and on a currency-neutral basis decreased 10 basis points. Benefits from gross productivity savings of 160 basis points and increased pricing of 30 basis points were more than fully offset by 120 basis points of unfavorable mix, 40 basis points of product reinvestments, 30 basis points of unfavorable commodity costs and 10 basis points of rounding and other items.\n\nReported and core selling, general and administrative expense (SG&A) as a percentage of sales declined 120 basis points versus year ago and declined 100 basis points on a currency-neutral basis. The decline was driven by 120 basis points of productivity savings, which includes adjustments to expected variable compensation payouts, partially offset by 20 basis points of reinvestments and other items.\n\nThe Company updated fiscal 2025 diluted net earnings per share growth guidance to be in the range of 6% to 8% versus fiscal 2024 diluted net EPS of $6.02. P&G now expects fiscal 2025 core earnings per share growth to be in the range of $6.72 to $6.82 per share, which equates to two to four percent growth versus fiscal 2024 core EPS of $6.59.\n\nP&G continues to expect a commodity cost headwind of approximately $200 million after tax for fiscal 2025. The Company now expects unfavorable foreign exchange rates will be a headwind of approximately $200 million after tax. Collectively these impacts are a headwind of $0.16 per share.",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "LOWERED",
+     "auditor_verdict": "unsure",
+     "auditor_label": "NONE",
+     "auditor_reason": "The passage says only that it \"updated fiscal 2025 diluted net earnings per share growth guidance\" and \"now expects\" a range, never stating a prior figure or that a target was decreased, while \"P&G continues to expect a commodity cost headwind of approximately $200 million\" reads as reaffirmation \u2014 so LOWERED versus MAINTAINED/NONE is underdetermined by the text."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c15c7aad0a480a12",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Reports First-Quarter Diluted EPS of $0.77 on a GAAP Basis, an Increase of 492.3 Percent; Adjusted Diluted EPS of $2.31, a Decrease of 6.1 Percent; These Results Include an Unfavorable Impact of $0.08 Per Share Related to Acquired IPR&D and Milestones Expense\n\nFirst-Quarter Global Net Revenues from the Immunology Portfolio Were $5.371 Billion, a Decrease of 3.9 Percent on a Reported Basis, or 3.1 Percent on an Operational Basis, Due to Humira Biosimilar Competition; Global Humira Net Revenues Were $2.270 Billion; Global Skyrizi Net Revenues Were $2.008 Billion; Global Rinvoq Net Revenues Were $1.093 Billion\n\nFirst-Quarter Global Net Revenues from the Oncology Portfolio Were $1.543 Billion, an Increase of 9.0 Percent on a Reported Basis, or 9.8 Percent on an Operational Basis; Global Imbruvica Net Revenues Were $838 Million; Global Venclexta Net Revenues Were $614 Million\n\nFirst-Quarter Global Net Revenues from the Neuroscience Portfolio Were $1.965 Billion, an Increase of 15.9 Percent on a Reported Basis, or 16.0 Percent on an Operational Basis; Global Botox Therapeutic Net Revenues Were $748 Million; Global Vraylar Net Revenues Were $694 Million; Combined Global Ubrelvy and Qulipta Net Revenues Were $334 Million\n\nFirst-Quarter Global Net Revenues from the Aesthetics Portfolio Were $1.249 Billion, a Decrease of 4.0 Percent on a Reported Basis, or 2.5 Percent on an Operational Basis; Global Botox Cosmetic Net Revenues Were $633 Million; Global Juvederm Net Revenues Were $297 Million\n\n\"We continue to demonstrate outstanding operational execution and delivered another quarter of strong results,\" said Richard A. Gonzalez, chairman and chief executive officer, AbbVie. \"I couldn\u2019t be more proud of the organization we have built over the past 11 years. We\u2019ve established an exemplary company culture, developed a productive R&D engine, delivered top-tier financial performance and made a remarkable impact on patients and the communities we serve.\"\n\n\"I want to thank Rick for his exceptional leadership since AbbVie\u2019s inception and I am deeply honored to serve as the company's next CEO,\" said Robert A. Michael, president and chief operating officer, AbbVie. \"First quarter results were well ahead of our expectations, driven by excellent performance from our ex-Humira growth platform. Based on our strong results and significant momentum, we are raising our full-year outlook.\"",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage contains no tariff, export-control, sanctions or trade-restriction language at all; the only adverse driver named is \"Humira Biosimilar Competition.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c17d2149a239bbcd",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": true,
+   "text": "In certain circumstances, it may not be possible or economic to hedge our exposures and, to the extent that we do so, the hedge may be ineffective or may greatly reduce our ability to profit from increases in the values of the assets. This is particularly the case for credit products, including leveraged loans, private credit, and private equities or other securities that are not freely tradable or lack established and liquid trading markets. Sudden declines and significant volatility in the prices of assets have in the past substantially curtailed or eliminated and may in the future substantially curtail or eliminate the trading markets for certain assets, which may make it difficult to sell, hedge or value such assets. We may incur losses from time to time as trading markets deteriorate or cease to function, including with respect to loan commitments we have made or securities offerings we have underwritten. The inability to sell or effectively hedge assets reduces our ability to limit losses in such positions and the difficulty in valuing assets has in the past negatively affected and may in the future negatively affect our capital, liquidity or leverage ratios, our funding costs and our ability to deploy capital.\n\nWe post collateral to support our obligations and receive collateral that supports the obligations of our clients and counterparties. When the value of the assets posted as collateral or the credit ratings of the party posting collateral decline, the party posting the collateral may need to provide additional collateral or, if possible, reduce its trading position. An example of such a situation is a \u201cmargin call\u201d in connection with a brokerage account. Therefore, declines in the value of asset classes used as collateral mean that either the cost of funding positions is increased or the size of positions is decreased or both. If we are the party providing collateral, this can increase our costs and reduce our profitability and if we are the party receiving collateral, this can also increase our risk and/or reduce our profitability by reducing the level of business done with our clients and counterparties.\n\nIn addition, volatile or less liquid markets increase the difficulty of valuing assets, which can lead to costly and time-consuming disputes over asset values and the level of required collateral, as well as increased credit risk to the recipient of the collateral due to delays in receiving adequate collateral. In cases where we foreclose on collateral, sudden declines in the value or liquidity of the collateral have in the past resulted in and may in the future result in significant losses to us, especially where there is a single type of collateral supporting the obligation. In addition, we have been and may in the future be subject to claims that the foreclosure was not permitted under the legal documents, was conducted in an improper manner, including in violation of law, or caused a client or counterparty to incur significant losses or go out of business.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The text says difficulty valuing assets \"has in the past negatively affected ... our capital, liquidity or leverage ratios,\" which is an adverse-effect statement about market illiquidity of assets, not an explicit assertion of insufficient liquidity, inability to meet obligations, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c312bb3593eb146c",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Technology Risk monitors cybersecurity threats and risks from information security and cybersecurity matters on an ongoing basis, and allocates resources and directs operations in a manner designed to mitigate those risks. For example, in response to the proliferation of AI-enabled fraud and ransomware attacks that continue to be reported globally, we have emphasized phishing and cybersecurity training for our employees and allocated additional resources for business continuity. However, despite these efforts, we cannot eliminate all cybersecurity risks or provide assurances that we have not had occurrences of undetected cybersecurity incidents.\n\n, both directly and through its committees, including its Risk Committee and Technology Risk Subcommittee, oversees our risk management policies and practices, including cybersecurity risks, and information security and cybersecurity matters. Our chief risk officer, chief information officer and chief technology officer, among others, periodically brief the Board on operational and technology risks, including cybersecurity risks, relevant to us. The Board also receives regular briefings from our CISO on a range of cybersecurity-related topics, including the status of our Cybersecurity Program, emerging cybersecurity threats, mitigation strategies and related regulatory engagements. In addition, these are topics on which various directors maintain an ongoing dialogue with our CISO, chief information officer and chief technology officer.\n\nis responsible for managing and implementing the Cybersecurity Program and reports directly to our chief information officer. Our CISO oversees our Technology Risk team, which assesses and manages material risks from cybersecurity threats, sets firmwide control requirements, assesses adherence to controls, and oversees incident detection and response.\n\nIn addition, we have a series of committees and steering groups that oversee the implementation of our cybersecurity risk management strategy and framework. These committees and steering groups are informed about cybersecurity incidents and risks by designated members of Technology Risk, who periodically report to these committees and steering groups about the Cybersecurity Program, including the efforts of the Technology Risk teams to prevent, detect, mitigate and remediate incidents and threats. These committees and steering groups enable formal escalation and reporting of risks, and our CISO and other members of Technology Risk provide regular briefings to senior management.\n\nThe Digital Risk Office Steering Group oversees Engineering risk decisions, monitors control performance and reviews approaches to comply with current and emerging regulation applicable to Engineering. This steering group is co-chaired by our CISO, chief technology officer and chief digital risk officer, and reports to the Firmwide Technology Risk Committee.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage is a governance description of cybersecurity oversight; its only regulatory words are passing mentions of \"related regulatory engagements\" and reviewing \"approaches to comply with current and emerging regulation,\" with no litigation, investigation, enforcement action or specified new requirement."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c4b5970980b73de4",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Our hardware products such as Xbox consoles, Surface devices, and other devices we design and market are highly complex. Failure to prevent, detect, or address defects in design, manufacture, or associated software could result in recalls, safety alerts, or product liability claims, which could adversely affect our business and results of operations.\n\nGovernment agencies closely scrutinize us under U.S. and foreign competition laws. Governments are actively enforcing competition laws and regulations and enacting new regulations to intervene in digital markets, and this includes markets such as the EU, the United Kingdom, the U.S., and China. Some jurisdictions also allow competitors or consumers to assert claims of anti-competitive conduct. U.S. and foreign antitrust authorities have previously brought enforcement actions and continue to scrutinize our business.\n\nOur portfolio of first-party devices continues to grow; at the same time, our OEM partners offer a large variety of devices for our platforms. As a result, we increasingly both cooperate and compete with our OEM partners, creating a risk that we fail to do so in compliance with competition rules. Regulatory scrutiny in this area may increase. Certain foreign governments, particularly in China and other countries in Asia, have advanced arguments under their competition laws that exert downward pressure on royalties for our intellectual property.\n\nCompetition law enforcement actions and court decisions along with new market regulations may result in fines or hinder our ability to provide the benefits of our software to consumers and businesses, reducing the attractiveness of our products and the revenue that comes from them. New competition law actions or obligations under market regulation schemes could be initiated, potentially using previous actions as precedent. The outcome of such actions, or steps taken to avoid them, could adversely affect us in a variety of ways, including\n\ncausing us to withdraw products from or modify products for certain markets, decreasing the value of our assets, adversely affecting our ability to monetize our products, or inhibiting our ability to consummate acquisition or impose conditions on acquisitions that may reduce their value, which may adversely affect our business, financial condition, and results of operations.\n\nThe Foreign Corrupt Practices Act (\u201cFCPA\u201d) and other anti-corruption laws and regulations (\u201cAnti-Corruption Laws\u201d) prohibit corrupt payments by our employees, vendors, or agents, and the accounting provisions of the FCPA require us to maintain accurate books and records and adequate internal controls. From time to time, we receive inquiries from authorities in the U.S. and elsewhere which may be based on reports from employees and others about our business activities outside the U.S. and our compliance with Anti-Corruption Laws. Periodically, we receive such reports directly and investigate them, and also cooperate with investigations by U.S. and foreign law enforcement authorities. An example of increasing international regulatory complexity is the EU Whistleblower Directive, initiated in 2021, which presents compliance challenges as it is implemented in different forms by EU member states. Most countries in which we operate also have competition laws that prohibit competitors from colluding or otherwise attempting to reduce competition between themselves. While we devote substantial resources to our U.S. and international compliance programs and have implemented policies, training, and internal controls designed to reduce the risk of corrupt payments and collusive activity, our employees, partners, vendors, or agents may violate our policies. Our failure to comply with Anti-Corruption Laws or competition laws could result in significant fines and penalties, criminal sanctions against us, our officers, or our employees, prohibitions on the conduct of our business, and damage to our reputation, which could adversely affect our business, financial condition, and results of operations.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Per the modality rule the concrete realized statements \u2014 \"antitrust authorities have previously brought enforcement actions and continue to scrutinize our business\" and \"we receive inquiries from authorities ... cooperate with investigations\" \u2014 control for this category, so a single REALIZED entry rather than a REALIZED plus HYPOTHETICAL pair."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c660bd098ec54fa1",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Additionally, changes in AbbVie's structure, operations, revenues, costs, or efficiency resulting from major transactions such as acquisitions, divestitures, mergers, alliances, joint ventures, restructurings or other strategic initiatives, may result in greater than expected costs, may take longer than expected to complete or encounter other difficulties, including the need for regulatory approval where appropriate.\n\nIn 2023, three wholesale distributors (McKesson Corporation, Cardinal Health, Inc. and AmerisourceBergen Corporation) accounted for substantially all of AbbVie's pharmaceutical product sales in the United States. If one of its significant wholesale distributors encounters financial or other difficulties, such distributor may decrease the amount of business that it does with AbbVie, and AbbVie may be unable to collect all the amounts that the distributor owes it on a timely basis or at all, which could adversely affect AbbVie's business and results of operations.\n\nThe amount of debt that AbbVie has incurred and intends to incur could have important consequences to AbbVie and its investors. These consequences include, among other things, requiring a portion of AbbVie's cash flow from operations to make interest payments on this debt and reducing the cash flow available to fund capital expenditures and other corporate purposes and to grow AbbVie's business. To the extent AbbVie incurs additional indebtedness or interest rates increase, these risks could increase further. In addition, AbbVie's cash flow from operations may not be sufficient to repay all of the outstanding debt as it becomes due, and AbbVie may not be able to borrow money, sell assets, or otherwise raise funds on acceptable terms, or at all, to refinance its debt.\n\nAbbVie may need additional financing in the future to meet its capital needs or to make opportunistic acquisitions. For example, it may need to increase its investment in research and development activities. The capital and credit markets may experience extreme volatility and disruption, which may lead to uncertainty and liquidity issues for both borrowers and investors, and AbbVie may be unable to obtain any desired additional financing on terms favorable to it, if at all. If AbbVie loses its investment grade credit rating or adequate funds are not available on acceptable terms, AbbVie may be unable to fund its expansion, successfully develop or enhance products, or respond to competitive pressures, any of which could negatively affect AbbVie's business. If AbbVie raises additional funds by issuing debt or entering into credit facilities, it may be subject to limitations on its operations due to restrictive covenants. Failure to comply with these covenants could adversely affect AbbVie's business.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only regulatory phrase is \"including the need for regulatory approval where appropriate,\" which is not litigation/enforcement/compliance-burden language, while \"such distributor may decrease the amount of business that it does with AbbVie\" is hypothetical declining-orders language."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c78bfe4041721e87",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "As we saw during the heights of the COVID-19 pandemic, these types of disruptions place strain on the domestic and international supply chain, which affected and may in the future negatively affect the flow or availability of certain products. Even when we are able to find alternate sources for certain products, they may cost more or require us to incur higher transportation costs, which could adversely impact our profitability and financial condition. Increased demand for online purchases of products, which we experienced during the COVID-19 pandemic, can impact our fulfillment operations, as well as those of our third-party carriers, resulting in delays in delivering products to customers and increases in our out-of-stock levels.\n\nWe and our suppliers have experienced, and may continue to experience, labor shortages at some of our distribution and fulfillment centers both due to unexpected events such as the COVID-19 pandemic and to the competitive labor market. Such labor shortages, whether temporary or sustained, may adversely impact the flow or availability of products to our stores and customers.\n\nAny of these circumstances could impair our ability to meet customer demand for products and result in lost sales, increased supply chain costs, or damage to our reputation, any of which could negatively impact our business performance or financial condition.\n\nOur customers and associates expect a safe store environment in which to shop and work, and maintaining that environment helps protect against loss or theft of our inventory (also called \u201cshrink\u201d). Like other retailers, we have seen an increase in shrink in recent years, particularly as a result of organized retail crime. While we have a number of initiatives underway to address shrink, minimize theft, and maintain safety in and around our stores, these efforts require operational changes that may increase costs and reduce margins, and they may negatively impact the customer experience. Furthermore, an unsafe environment or negative incidents in or around our stores may erode trust and confidence with customers, associates, or potential associates, which can adversely impact sales, associate morale and retention, and our brand and reputation.\n\nOur business, like that of most retailers, involves the collection, use, retention, management, transmission, and deletion of personal information (including identifiers, localization, internet activity, preferences, and payment information) from our customers, associates, job applicants, and business partners, as well as confidential Company information. We also work with third-party service providers that provide technology, systems and services that we use in connection with the handling of information. Our information systems, and those of our third-party service providers, are vulnerable to continually evolving data protection and cybersecurity risks. Unauthorized parties have in the past gained access, and will continue to attempt to gain access, to these systems and data through fraud or other means of deceiving or coercing our associates or third-party service providers, which could jeopardize the confidentiality, integrity, or availability of such information systems or our information. Hardware, software or applications we develop or obtain from third parties may contain exploitable vulnerabilities, bugs, or defects in design, maintenance or manufacture or other problems that could unexpectedly compromise information security. We have experienced and continue to face the ongoing risk of exploitation of our software providers and our software development and implementation process, including from coding and process vulnerabilities and the installation of so-called back doors that provide unauthorized access to systems and data. The increased use of a remote workforce has also expanded the possible attack surface areas. In addition, the risk of cyber-attacks has increased in connection with geopolitical conflicts and ongoing trade and diplomatic tensions. In light of the conflicts in Europe and the Middle East and other geopolitical events, nation-state actors or their supporters may launch retaliatory cyber-attacks, and may attempt to cause supply chain and other third-party service provider disruptions, or take other geopolitically-motivated retaliatory actions that may disrupt our business operations, result in data compromise, or both. Nation-state actors have in the past carried out, and may in the future carry out, cyber-attacks to achieve their aims and goals, which may include espionage",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage contains no litigation, investigation, enforcement or regulatory-requirement language \u2014 the legal-sounding content is \"organized retail crime\" and cyber-attacks by \"nation-state actors,\" which are threats to the company, not legal/regulatory actions against it."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c8eaa073478b2fd4",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our revolving bank credit facilities provide liquidity support for our commercial paper borrowing program, which facilitates the private placement of unsecured debt through independent broker-dealers, and are available for general corporate purposes. For more information on our commercial paper and bank credit facilities, see Note 8 of Notes to the Consolidated Financial Statements included in Part II, Item 8, \u201cFinancial Statements and Supplementary Data\u201d in our 2024 10-K.\n\nAs a result of an increased MCR impacting our regulated insurance and HMO subsidiaries, the specified levels of required statutory capital required to be maintained are expected to increase. While we continue to maintain significant levels of excess statutory capital in our subsidiaries, the amount of dividends our subsidiaries are able to pay to their parent companies during the remainder of 2025 may be impacted. During the six months ended June 30, 2025, our domestic insurance and HMO subsidiaries paid their parent companies dividends of $1.9 billion.\n\nDuring the six months ended June 30, 2025, we repurchased approximately 12.1 million shares at an average price of $454.82 per share. As of June 30, 2025, we had Board of Directors\u2019 authorization to purchase up to 21.0 million shares of our common stock. The Board of Directors from time to time may further amend the share repurchase program in order to increase the authorized number of shares which may be repurchased under the program.\n\nAs of June 30, 2025, we have entered into agreements to acquire companies in the health care sector, subject to regulatory approval and other customary closing conditions. The total anticipated consideration required for these acquisitions, excluding the payoff of acquired indebtedness, was approximately $4 billion.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage states \"we continue to maintain significant levels of excess statutory capital\" and describes credit facilities providing liquidity support; that subsidiary dividends \"may be impacted\" is an internal cash-flow constraint, not an explicit statement of insufficient liquidity or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-c9e269daefe59113",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "To facilitate the execution of our resolution plan, we formed Funding IHC. In exchange for an unsecured subordinated funding note and equity interest, Group Inc. transferred certain intercompany receivables and substantially all of its GCLA to Funding IHC, and agreed to transfer additional GCLA above prescribed thresholds.\n\nWe also put in place a Capital and Liquidity Support Agreement (CLSA) among Group Inc., Funding IHC and our major subsidiaries. Under the CLSA, Funding IHC has provided Group Inc. with a committed line of credit that allows Group Inc. to draw sufficient funds to meet its cash needs during the ordinary course of business. In addition, if our financial resources deteriorate so severely that resolution may be imminent, (i) the committed line of credit will automatically terminate and the unsecured subordinated funding note will automatically be forgiven, (ii) all intercompany receivables owed by the major subsidiaries to Group Inc. will be transferred to Funding IHC or their maturities will be extended to five years, (iii) Group Inc. will be obligated to transfer substantially all of its remaining intercompany receivables and GCLA (other than an amount to fund anticipated bankruptcy expenses) to Funding IHC, and (iv) Funding IHC will be obligated to provide capital and liquidity support to the major subsidiaries. Group Inc.\u2019s and Funding IHC\u2019s obligations under the CLSA are secured pursuant to a related security agreement. Such actions would materially and adversely affect Group Inc.\u2019s liquidity. As a result, during a period of severe stress, Group Inc. might commence bankruptcy proceedings at an earlier time than it otherwise would if the CLSA and related security agreement had not been implemented.\n\nIf Group Inc.\u2019s proposed resolution strategy were successful, Group Inc.\u2019s security holders could face losses while the third-party creditors of Group Inc.\u2019s major subsidiaries would incur no losses because those subsidiaries would continue to operate and not enter resolution or bankruptcy proceedings. As part of the strategy, Group Inc. could also seek to elevate the priority of its guarantee obligations relating to its major subsidiaries\u2019 derivative contracts or transfer them to another entity so that cross-default and early termination rights would be stayed under the ISDA Protocols, as applicable, which would result in holders of Group Inc.\u2019s eligible long-term debt and holders of Group Inc.\u2019s other debt securities incurring losses ahead of the beneficiaries of those guarantee obligations. It is also possible that holders of Group Inc.\u2019s eligible long-term debt and other debt securities could incur losses ahead of other similarly situated creditors of Group Inc.\u2019s major subsidiaries.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage describes the firm's own intercompany arrangements (\"we formed Funding IHC,\" \"We also put in place a Capital and Liquidity Support Agreement\") and bankruptcy scenarios; it names no regulator, litigation, investigation, fine or new requirement, and the compliance steps it does describe are completed rather than hypothetical."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-caba5b31603dddd8",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Actual outcomes or results may differ from anticipated results, sometimes materially. Forward-looking and other statements regarding Occidental's sustainability efforts and aspirations are not an indication that these statements are necessarily material to investors or require disclosure in Occidental's filings with the SEC. In addition, historical, current and forward-looking sustainability-related statements may be based on standards for measuring progress that are still developing, internal controls and processes that continue to evolve and assumptions that are subject to change in the future, including future rulemaking. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: general economic conditions, including slowdowns and recessions, domestically or internationally; Occidental\u2019s indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; Occidental\u2019s ability to successfully monetize select assets and repay or refinance debt and the impact of changes in Occidental\u2019s credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, Occidental\u2019s products and services; actions by OPEC and non-OPEC oil producing countries; results from operations and competitive conditions; future impairments of Occidental's proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including Occidental's ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; Occidental's ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections, projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses; uncertainties about the estimated quantities of oil, NGL and natural gas reserves; lower-than-expected production from development projects or acquisitions; Occidental\u2019s ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve Occidental\u2019s competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver Occidental\u2019s oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; government actions, war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events; health, safety and environmental (HSE) risks, costs and liability under existing or future federal, regional, state, provincial, tribal, local and international HSE laws, regulations and litigation (including related to climate change or remedial actions or assessments); legislative or regulatory changes, including changes relating to hydraulic fracturing or other oil and natural gas operations, retroactive royalty or production tax regimes and deep-water and onshore drilling and permitting regulations; Occidental's ability to recognize intended benefits from its business strategies and initiatives, such as Occidental's low-carbon ventures businesses or announced greenhouse gas emissions reduction targets or net-zero goals; potential liability resulting from pending or future litigation, government investigations and other proceedings; disruption or interruption of production or manufacturing or facility damage due to accidents, chemical releases, labor unrest, weather, power outages, natural disasters, cyber-attacks, terrorist acts or insurgent activity; the scope and duration of global or regional health pandemics or epidemics, and actions taken by government authorities and other third parties in connection therewith; the creditworthiness and performance of Occidental's counterparties, including financial institutions, operating partners and other parties; failure of risk management; Occidental\u2019s ability to retain and hire key personnel; supply, transportation and labor constraints; reorganization or restructuring of Occidental\u2019s operations; changes in state, federal or international tax rates; and actions by third parties that are beyond Occidental's control.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list names \"general economic conditions, including slowdowns and recessions\" and \"supply and demand considerations for, and the prices of, Occidental's products and services,\" which is hypothetical demand-weakness language."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-cb87c70eb0767692",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our liquidity and access to capital could be negatively impacted by global credit market conditions. We guarantee the settlement of many of the transactions between our customers. Historically, payments under these guarantees have not been significant; however, historical trends may not be an indication of potential future losses. The risk of loss on these guarantees is specific to individual customers, but may also be driven by regional or global economic conditions, including, but not limited to the health of the financial institutions in a country or region. See Note 16 (Settlement and Other Risk Management) to the consolidated financial statements in Part I, Item 1 for a description of these guarantees.\n\nOur liquidity and access to capital could also be negatively impacted by the outcome of any of the legal or regulatory proceedings to which we are a party. For additional discussion of these and other risks facing our business, see Part I, Item 1A - Risk Factors of our Annual Report on Form 10-K for the year ended December 31, 2022 and Note 15 (Legal and Regulatory Proceedings) to the consolidated financial statements included in Part I, Item 1 of this Report.\n\nNet cash provided by operating activities decreased $245 million for the nine months ended September 30, 2023, versus the comparable period in 2022, primarily due to higher net income after adjusting for non-cash items and an increase in restricted security deposits held for customers, more than offset by restricted cash paid for litigation settlement, higher employee incentives paid, higher customer incentive payments and timing of settlement with customers.\n\nNet cash used in investing activities increased $17 million for the nine months ended September 30, 2023, versus the comparable period in 2022, primarily due to an increase in capitalized software and purchases of investments in time deposits partially offset by less cash paid for business acquisitions in the current year.\n\nNet cash used in financing activities increased $424 million for the nine months ended September 30, 2023, versus the comparable period in 2022, primarily due to higher repurchases of our Class A common stock in the current year partially offset by higher proceeds from debt issuances.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage asserts realized legal matters \u2014 \"the legal or regulatory proceedings to which we are a party\" and cash flow \"more than offset by restricted cash paid for litigation settlement\" \u2014 so the concrete realized statement controls the modality."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-cd90426dd4a1c920",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "CINCINNATI, January 22, 2026 - The Procter & Gamble Company (NYSE:PG) reported second quarter fiscal year 2026 net sales of $22.2 billion, an increase of one percent versus the prior year. Organic sales, which excludes the impacts of foreign exchange and acquisitions and divestitures, were unchanged versus the prior year. Diluted net earnings per share were $1.78, a decrease of five percent versus prior year, due primarily to incremental restructuring charges in the current year. Core earnings per share were $1.88, in-line versus prior year.\n\nOperating cash flow was $5.0 billion, and net earnings were $4.3 billion for the quarter. Adjusted free cash flow productivity was 88%. Adjusted free cash flow productivity is calculated as operating cash flow less capital spending, as a percentage of net earnings. The Company returned $4.8 billion of cash to shareowners via $2.5 billion of dividend payments and $2.3 billion of share repurchases.\n\n\u201cOur results in the second quarter keep us on track to deliver within our fiscal year guidance ranges for organic sales growth, core EPS growth and adjusted free cash flow productivity in a challenging consumer and geopolitical environment,\u201d said Shailesh Jejurikar, President and Chief Executive Officer. \u201cWe have confidence in our plans to deliver stronger results in the second-half of the fiscal year. We remain committed to our integrated growth strategy and are excited by the opportunity ahead to reinvent P&G and create the CPG company of the future, delivering long-term balanced top- and bottom-line growth and value creation.\u201d\n\nNet sales in the second quarter of fiscal year 2026 were $22.2 billion, a one percent increase versus the prior year. Organic sales, which exclude the impacts of foreign exchange and acquisitions and divestitures, were unchanged as a one percent increase from higher pricing was offset by a unit volume decline of one percent. Mix had a neutral impact on sales for the quarter.\n\nBeauty segment organic sales increased four percent versus year ago. Hair Care organic sales increased mid-single digits driven by volume increases and innovation-driven pricing in Latin America and Europe, partially offset by unfavorable geographic mix. Personal Care organic sales increased mid-single digits due to innovation-driven volume growth and pricing in North America, partially offset by negative impacts from geographic mix. Skin Care organic sales increased low single digits due to favorable premium product mix and pricing, primarily in Greater China, partially offset by volume declines.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The only impairment-adjacent language is \"incremental restructuring charges in the current year,\" with no asset write-down stated, so it does not meet the rubric's \"restructuring charges tied to asset value reduction\" test."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ce2710d1b304bea6",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": true,
+   "text": "Numerous regulations have been adopted that impose more stringent liquidity requirements on large financial institutions, including us. These regulations require us to hold large amounts of highly liquid assets and reduce our flexibility to source and deploy funding. In addition, our need to manage our operations in light of certain regulatory requirements when applicable thresholds are met has in the past limited and may in the future limit our ability to raise deposits in GSIB or other funding, which could adversely affect our liquidity or ability to respond efficiently to liquidity stress.\n\nWidening credit spreads, as well as significant declines in the availability of credit, have in the past adversely affected our ability to borrow on a secured and unsecured basis and may do so in the future. We fund ourselves on an unsecured basis by issuing long-term debt and commercial paper, by raising deposits at our bank subsidiaries, by issuing hybrid financial instruments and by obtaining loans or lines of credit from commercial or other banking entities. We seek to finance many of our assets on a secured basis. Any disruptions in the credit markets may make it harder and more expensive to obtain funding for our businesses. If our available funding is limited or we are forced to fund our operations at a higher cost, these conditions may require us to curtail our business activities and increase our cost of funding, both of which could reduce our profitability, particularly in our businesses that involve investing, lending and market making.\n\nOur clients engaging in mergers, acquisitions and other types of strategic transactions often rely on access to the secured and unsecured credit markets to finance their transactions. A lack of available credit or an increased cost of credit can adversely affect the size, volume and timing of our clients\u2019 merger and acquisition transactions, particularly large transactions, and adversely affect our advisory and underwriting businesses.\n\nOur credit businesses have been and may in the future be negatively affected by a lack of liquidity in credit markets. A lack of liquidity reduces price transparency, increases price volatility and decreases transaction volumes and size, all of which can increase transaction risk or decrease the profitability of these businesses.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Every cost statement is conditional (\"may make it harder and more expensive to obtain funding,\" \"if we are forced to fund our operations at a higher cost... increase our cost of funding\"); the realized past-tense clause concerns \"our ability to borrow,\" not a realized cost increase, so MARGIN_COST_PRESSURE is HYPOTHETICAL."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "agree",
+     "auditor_label": null,
+     "auditor_reason": null,
+     "note": "not contested \u2014 both raters agree; adjudicate anyway as advisory input for the owner (high-stakes chunk)"
+    }
+   ]
+  }
+ ]
+}

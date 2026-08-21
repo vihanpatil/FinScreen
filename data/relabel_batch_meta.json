@@ -1,0 +1,12 @@
+{
+  "batch_id": "msgbatch_01KrfTWXeVN79Us9wthnGLaG",
+  "mode": "full-relabel",
+  "variant": "disabled-4000",
+  "requests_file": "data/batch_requests_relabel.jsonl",
+  "n_submitted": 4219,
+  "model": "claude-sonnet-5",
+  "submitted_at": "2026-08-11 05:48:52.983179+00:00",
+  "asserted_max_tokens": 4000,
+  "asserted_thinking": "disabled",
+  "purpose": "re-label the 4,219 rows mistakenly run at max_tokens=500/adaptive so corpus provenance is homogeneous"
+}

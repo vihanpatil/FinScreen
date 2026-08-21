@@ -1,0 +1,210 @@
+# ============================================================================
+# PROVENANCE OF THIS FILE
+#   Produced by:  python3 spotcheck/compute_agreement.py \
+#                     --input spotcheck/combined_judgments.csv --format csv
+#   Input:        spotcheck/combined_judgments.csv (1,222 judgments; source =
+#                 model-auditor 1023 / model-adjudicator 95 / owner 104)
+#   Run date:     2026-08-18
+#   Regenerated:  2026-08-18 — every rate, count and CI below verified
+#                 identical to the prior run; only the header/legend prose
+#                 changed. The PROVENANCE APPENDIX at the bottom is
+#                 hand-maintained and is NOT emitted by the script.
+# ============================================================================
+
+==============================================================================
+FinScreen Week 3 spot-check — agreement report
+==============================================================================
+
+HEADER / SCOPE NOTE: distress_tier categories are reported in a SEPARATE section below and are EXCLUDED from every headline/macro agreement number in this report, per labeling_rubric.md §5 and the Week 3 definition-of-done. This exclusion is also asserted in code (assert_distress_excluded_from_headline).
+
+TIER-B CAVEAT: Tier B (guidance non-NONE, a per-category REALIZED red-flag quota, and 2 named chunks) is a deliberate OVERSAMPLE of thin/rare categories. Any agreement rate pooled across all tiers is therefore NOT representative of the corpus's true base rates. Tier C (proportional stratified random fill) is reported separately below as the base-rate-representative estimate.
+
+TIER LEGEND: A = all distress positives, exhaustive. B = thin/rare-category oversample. C = proportional stratified random fill -- the ONLY base-rate-representative slice. D = the config-disagreement set (chunks whose red_flags differed between the two labeling configs), judged blind.
+
+METRIC NOTE: red_flags is scored as an EXACT-SET MATCH -- one added, dropped, or re-modalized category on a multi-category chunk marks the whole chunk a disagreement. Its rate is NOT comparable to the single-value sentiment / guidance_direction rates printed beside it, and it is not a per-category error rate. Section 3's per-tier figures likewise POOL all three headline fields together; for a red-flags-only per-tier breakdown see HANDOFF.md 2a.
+
+------------------------------------------------------------------------------
+SECTION 1 — HEADLINE per-label-category agreement (all tiers pooled; NOT base-rate-representative — see caveat above)
+------------------------------------------------------------------------------
+
+  guidance_direction
+    n reviewed (agree+disagree+unsure) = 145, unfilled = 0, coverage = 100.0%
+    agree=138  disagree=7  unsure=0
+    agreement rate = 95.2%  (95% Wilson CI: [90.4%, 97.6%])  [excludes 'unsure' from numerator/denominator]
+
+  red_flags (EXACT-SET MATCH — see METRIC NOTE above)
+    n reviewed (agree+disagree+unsure) = 399, unfilled = 0, coverage = 100.0%
+    agree=253  disagree=146  unsure=0
+    agreement rate = 63.4%  (95% Wilson CI: [58.6%, 68.0%])  [excludes 'unsure' from numerator/denominator]
+
+  sentiment
+    n reviewed (agree+disagree+unsure) = 279, unfilled = 0, coverage = 100.0%
+    agree=264  disagree=15  unsure=0
+    agreement rate = 94.6%  (95% Wilson CI: [91.3%, 96.7%])  [excludes 'unsure' from numerator/denominator]
+
+------------------------------------------------------------------------------
+SECTION 2 — Distress tier (SEPARATE, excluded from headline above, per rubric §5)
+------------------------------------------------------------------------------
+
+  distress_tier
+    n reviewed (agree+disagree+unsure) = 399, unfilled = 0, coverage = 100.0%
+    agree=376  disagree=23  unsure=0
+    agreement rate = 94.2%  (95% Wilson CI: [91.5%, 96.1%])  [excludes 'unsure' from numerator/denominator]
+
+------------------------------------------------------------------------------
+SECTION 3 — Per-tier breakdown (A / B / C / D)
+------------------------------------------------------------------------------
+
+  Tier A (headline fields only, distress excluded)
+    n reviewed (agree+disagree+unsure) = 294, unfilled = 0, coverage = 100.0%
+    agree=226  disagree=68  unsure=0
+    agreement rate = 76.9%  (95% Wilson CI: [71.7%, 81.3%])  [excludes 'unsure' from numerator/denominator]
+
+  Tier B (headline fields only, distress excluded)
+    n reviewed (agree+disagree+unsure) = 355, unfilled = 0, coverage = 100.0%
+    agree=296  disagree=59  unsure=0
+    agreement rate = 83.4%  (95% Wilson CI: [79.2%, 86.9%])  [excludes 'unsure' from numerator/denominator]
+
+  Tier C (headline fields only, distress excluded)
+    n reviewed (agree+disagree+unsure) = 70, unfilled = 0, coverage = 100.0%
+    agree=59  disagree=11  unsure=0
+    agreement rate = 84.3%  (95% Wilson CI: [74.0%, 91.0%])  [excludes 'unsure' from numerator/denominator]
+
+  Tier D (headline fields only, distress excluded)
+    n reviewed (agree+disagree+unsure) = 104, unfilled = 0, coverage = 100.0%
+    agree=74  disagree=30  unsure=0
+    agreement rate = 71.2%  (95% Wilson CI: [61.8%, 79.0%])  [excludes 'unsure' from numerator/denominator]
+
+  Tier C is the base-rate-representative slice (proportional stratified random sample) — use Tier C's numbers above, not the all-tiers pooled numbers in Section 1, for any claim about the corpus's true base-rate agreement.
+
+------------------------------------------------------------------------------
+SECTION 4 — Per-section_type breakdown
+------------------------------------------------------------------------------
+
+  8K_BODY
+    n reviewed (agree+disagree+unsure) = 6, unfilled = 0, coverage = 100.0%
+    agree=5  disagree=1  unsure=0
+    agreement rate = 83.3%  (95% Wilson CI: [43.6%, 97.0%])  [excludes 'unsure' from numerator/denominator]
+
+  EX99_PRESS_RELEASE
+    n reviewed (agree+disagree+unsure) = 429, unfilled = 0, coverage = 100.0%
+    agree=359  disagree=70  unsure=0
+    agreement rate = 83.7%  (95% Wilson CI: [79.9%, 86.9%])  [excludes 'unsure' from numerator/denominator]
+
+  MDA
+    n reviewed (agree+disagree+unsure) = 268, unfilled = 0, coverage = 100.0%
+    agree=220  disagree=48  unsure=0
+    agreement rate = 82.1%  (95% Wilson CI: [77.1%, 86.2%])  [excludes 'unsure' from numerator/denominator]
+
+  RISK_FACTORS
+    n reviewed (agree+disagree+unsure) = 120, unfilled = 0, coverage = 100.0%
+    agree=71  disagree=49  unsure=0
+    agreement rate = 59.2%  (95% Wilson CI: [50.2%, 67.5%])  [excludes 'unsure' from numerator/denominator]
+
+------------------------------------------------------------------------------
+SECTION 5 — Rubric-revision candidates (95% CI lower bound < 70%)
+------------------------------------------------------------------------------
+  Bar of 70% is a documented judgment call made in this script (not specified numerically by labeling_rubric.md). It is not exposed as a CLI flag — edit CI_LOWER_BOUND_BAR at the top of this file to change it.
+
+  FLAGGED: red_flags — agreement 63.4%, 95% CI lower bound 58.6% < 70%
+    disagreement notes: 72 of 146 disagreements carry a note (the owner-sourced rows). Adjudicator-resolved rows carry their reasoning as briefs in adjudicator_verdicts.json, not as field_note text.
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=TRADE_POLICY_EXPOSURE-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-REALIZED; MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=TRADE_POLICY_EXPOSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=(no flags)
+      - owner explicit: use auditor set (adds SUPPLY_INPUT_CONSTRAINT-HYP, DEMAND_WEAKNESS-HYP)
+      - owner-ratified adjudicator ruling (conf=medium): correct=DEMAND_WEAKNESS-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner explicit: use auditor set (adds MARGIN_COST_PRESSURE-HYP)
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=TRADE_POLICY_EXPOSURE-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=(no flags)
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-REALIZED; LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=DEMAND_WEAKNESS-REALIZED; SUPPLY_INPUT_CONSTRAINT-REALIZED; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=(no flags)
+      - owner-ratified adjudicator ruling (conf=high): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=(no flags)
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=(no flags)
+      - owner-ratified adjudicator ruling (conf=medium): correct=SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-REALIZED; MARGIN_COST_PRESSURE-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner explicit: use auditor set (adds MARGIN_COST_PRESSURE-HYP)
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=high): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-REALIZED; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=TRADE_POLICY_EXPOSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=DEMAND_WEAKNESS-REALIZED
+      - owner-ratified adjudicator ruling (conf=high): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-REALIZED; LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=SUPPLY_INPUT_CONSTRAINT-REALIZED; MARGIN_COST_PRESSURE-REALIZED; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=DEMAND_WEAKNESS-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; MARGIN_COST_PRESSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=DEMAND_WEAKNESS-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=SUPPLY_INPUT_CONSTRAINT-REALIZED; TRADE_POLICY_EXPOSURE-REALIZED; MARGIN_COST_PRESSURE-REALIZED; DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner explicit: use auditor set (adds MARGIN_COST_PRESSURE-HYP)
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL
+      - owner explicit: use auditor LEGAL_REGULATORY_ACTION-REALIZED rather than no flags
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-REALIZED; IMPAIRMENT_WRITEDOWN-REALIZED; SUPPLY_INPUT_CONSTRAINT-REALIZED
+      - owner-ratified adjudicator ruling (conf=high): correct=LEGAL_REGULATORY_ACTION-REALIZED; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=DEMAND_WEAKNESS-HYPOTHETICAL
+      - owner explicit: use auditor set (adds DEMAND_WEAKNESS-HYP)
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-HYPOTHETICAL; DEMAND_WEAKNESS-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=high): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=MARGIN_COST_PRESSURE-REALIZED
+      - owner-ratified adjudicator ruling (conf=medium): correct=(no flags)
+      - owner-ratified adjudicator ruling (conf=medium): correct=IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; LEGAL_REGULATORY_ACTION-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=high): correct=(no flags)
+      - owner-ratified adjudicator ruling (conf=medium): correct=SUPPLY_INPUT_CONSTRAINT-REALIZED; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=LEGAL_REGULATORY_ACTION-HYPOTHETICAL; TRADE_POLICY_EXPOSURE-HYPOTHETICAL; IMPAIRMENT_WRITEDOWN-HYPOTHETICAL; SUPPLY_INPUT_CONSTRAINT-HYPOTHETICAL; MARGIN_COST_PRESSURE-HYPOTHETICAL
+      - owner-ratified adjudicator ruling (conf=medium): correct=(no flags)
+
+==============================================================================
+Done. Missing/unfilled judgments are reported as coverage gaps above, never imputed.
+==============================================================================
+
+==============================================================================
+PROVENANCE APPENDIX (required by HANDOFF §3, 2026-08-18 epistemic clause)
+==============================================================================
+
+Every judgment above is one of:
+  model-auditor      — blind second-rater agreed with the stored label (two-model consensus)
+  model-adjudicator  — third-rater model resolved a rater dispute (not escalated)
+  owner              — the owner's own ruling (method=bulk-ratified: the 2026-08-18
+                       medium+-confidence block ratification; method=explicit: Part B
+                       high-stakes chunks and the 8-case final round)
+
+These rates measure MODEL-CONSENSUS agreement, adjudicated per the above —
+they are NOT human validation of ground truth. Only owner rows carry human
+judgment. Per-category provenance mix:
+
+  sentiment {'model-auditor': 263, 'model-adjudicator': 10, 'owner': 6}
+  guidance_direction {'model-auditor': 137, 'owner': 5, 'model-adjudicator': 3}
+  red_flags {'model-auditor': 251, 'model-adjudicator': 74, 'owner': 74}
+  distress_tier {'model-auditor': 372, 'owner': 19, 'model-adjudicator': 8}
+
+  owner rows by method: {'bulk-ratified': 85, 'explicit': 19}
+  excluded, documented: CHK-8e69547e0900a8dd (genuine refusal, no stored labels; 3 applicable fields unjudgeable)
+  owner-confirmed consequence: all 9 REALIZED LIQUIDITY_STRESS labels ruled incorrect (class now n=0 corpus-wide); labels.parquet stays frozen.

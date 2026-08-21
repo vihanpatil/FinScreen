@@ -1,0 +1,535 @@
+{
+ "batch": 5,
+ "chunks": [
+  {
+   "chunk_id": "CHK-712e160926dd0f0f",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "This news release contains forward-looking statements relating to Chevron\u2019s operations, assets and strategy that are based on management\u2019s current expectations, estimates, and projections about the petroleum, chemicals, and other energy-related industries. Words or phrases such as \u201canticipates,\u201d \u201cexpects,\u201d \u201cintends,\u201d \u201cplans,\u201d \u201ctargets,\u201d \u201cadvances,\u201d \u201ccommits,\u201d \u201cdrives,\u201d \u201caims,\u201d \u201cforecasts,\u201d \u201cprojects,\u201d \u201cbelieves,\u201d \u201capproaches,\u201d \u201cseeks,\u201d \u201cschedules,\u201d \u201cestimates,\u201d \u201cpositions,\u201d \u201cpursues,\u201d \u201cprogress,\u201d \u201cdesign,\u201d \u201cenable,\u201d \u201cmay,\u201d \u201ccan,\u201d \u201ccould,\u201d \u201cshould,\u201d \u201cwill,\u201d \u201cbudgets,\u201d \u201coutlook,\u201d \u201ctrends,\u201d \u201cguidance,\u201d \u201cfocus,\u201d \u201con track,\u201d \u201ctrajectory,\u201d \u201cgoals,\u201d \u201cobjectives,\u201d \u201cstrategies,\u201d \u201copportunities,\u201d \u201cpoised,\u201d \u201cpotential,\u201d \u201cambitions,\u201d \u201cfuture,\u201d \u201caspires\u201d and similar expressions, and variations or negatives of these words, are intended to identify such forward-looking statements, but not all forward-looking statements include such words. These statements are not guarantees of future performance and are subject to numerous risks, uncertainties and other factors, many of which are beyond the company\u2019s control and are difficult to predict. Therefore, actual outcomes and results may differ materially from what is expressed or forecasted in such forward-looking statements. The reader should not place undue reliance on these forward-looking statements, which speak only as of the date of this news release. Unless legally required, Chevron undertakes no obligation to update publicly any forward-looking statements, whether as a result of new information, future events or otherwise.\n\nAmong the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates; general domestic and international economic, market and political conditions, including the military conflict between Russia and Ukraine, the conflict in the Middle East and the global response to these hostilities; changing refining, marketing and chemicals margins; the company\u2019s ability to realize anticipated cost savings and efficiencies associated with enterprise structural cost reduction initiatives; actions of competitors or regulators; timing of exploration expenses; changes in projected future cash flows; timing of crude oil liftings; uncertainties about the estimated quantities of crude oil, natural gas liquids and natural gas reserves; the competitiveness of alternate-energy sources or product substitutes; pace and scale of the development of large carbon capture and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the risk that regulatory approvals and clearances related to the Hess Corporation (Hess) transaction are not obtained or are not obtained in a timely manner or are obtained subject to conditions that are not anticipated by the company and Hess; potential delays in consummating the Hess transaction, including as a result of the ongoing arbitration proceedings regarding preemptive rights in the Stabroek Block joint operating agreement; risks that such ongoing arbitration is not satisfactorily resolved and the potential transaction fails to be consummated; uncertainties as to whether the potential transaction, if consummated, will achieve its anticipated economic benefits, including as a result of risks associated with third party contracts containing material consent, anti-assignment, transfer or other provisions that may be related to the potential transaction that are not waived or otherwise satisfactorily resolved; the company\u2019s ability to integrate Hess\u2019 operations in a successful manner and in the expected time period; the possibility that any of the anticipated benefits and projected synergies of the potential transaction will not be realized or will not be realized within the expected time period; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 20 through 27 of the company\u2019s 2024 Annual Report on Form 10-K and in subsequent filings with the U.S. Securities and Exchange Commission. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list opens with \"changing crude oil and natural gas prices and demand for the company's products, and production curtailments due to market conditions,\" which matches DEMAND_WEAKNESS in hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-71ae72a62a6050c2",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Liquidity is essential to our businesses. It is of critical importance to us, as most of the failures of financial institutions have occurred in large part due to insufficient liquidity. Our liquidity may be impaired by an inability to access secured and/or unsecured debt markets, an inability to raise or retain deposits, an inability to access funds from our subsidiaries or otherwise allocate liquidity optimally, an inability to sell assets or redeem our investments, lack of timely settlement of transactions, unusual deposit outflows, or other unforeseen outflows of cash or collateral, such as in March 2020, when corporate clients drew on revolving credit facilities in response to the COVID-19 pandemic. This situation may arise due to circumstances that we may be unable to control, such as a general market or economic disruption or an operational problem that affects third parties or us, or even by the perception among market participants that we, or other market participants, are experiencing greater liquidity risk.\n\nWe employ structured products to benefit our clients and hedge our own risks. The financial instruments that we hold and the contracts to which we are a party are often complex, and these complex structured products often do not have readily available markets to access in times of liquidity stress. Our investing and financing activities may lead to situations where the holdings from these activities represent a significant portion of specific markets, which could restrict liquidity for our positions.\n\nFurther, our ability to sell assets may be impaired if there is not generally a liquid market for such assets, as well as in circumstances where other market participants are seeking to sell similar otherwise generally liquid assets at the same time, as is likely to occur in a liquidity or other market crisis or in response to changes to rules or regulations. For example, in 2021, an investment management firm with large positions with several financial institutions defaulted, resulting in rapidly declining prices in the securities underlying those positions. In addition, clearinghouses, exchanges and other financial institutions with which we interact may exercise set-off rights or the right to require additional collateral, including in difficult market conditions, which could further impair our liquidity.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage is entirely about liquidity impairment, hedging and collateral calls; it contains no statement about costs, expenses or margins to support MARGIN_COST_PRESSURE."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-72b3914493b61187",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "P&G expects fiscal year 2027 diluted net earnings per share growth in the range of one to five percent versus fiscal 2026 GAAP EPS of $6.62. GAAP EPS includes expected non-core restructuring charges of $0.13 to $0.17 per share. P&G expects its fiscal 2027 core earnings per share growth in the range of in-line to three percent versus fiscal 2026 core EPS of $6.89. This outlook equates to a range of $6.89 to $7.11 per share, with a mid-point estimate of $7.00, or an increase of one and a half percent.\n\nThe Company estimates a headwind of approximately $1 billion after-tax driven by higher raw materials, energy and transportation costs, $150 million after-tax from higher net interest expense, $150 million after-tax from lower non-operating income and $50 million after-tax from unfavorable foreign exchange rates. Combined, these impacts equate to a headwind of $0.56 per share for fiscal 2027, or an eight percent drag on core EPS growth.\n\nThe following provides definitions of the non-GAAP measures used in Procter & Gamble's July 29, 2026 earnings release and the reconciliation to the most closely related GAAP measure. We believe that these measures provide useful perspective on underlying business trends (i.e., trends excluding non-recurring or unusual items) and results and provide a supplemental measure of period-to-period results. The non-GAAP measures described below are used by management in making operating decisions, allocating financial resources and for business strategy purposes. These measures may be useful to investors, as they provide supplemental information about business performance and provide investors a view of our business results through the eyes of management. These measures are also used to evaluate senior management and are a factor in determining their at-risk compensation. These non-GAAP measures are not intended to be considered by the user in place of the related GAAP measures but rather as supplemental information to our business results. These non-GAAP measures may not be the same as similar measures used by other companies due to possible differences in method and in the items or events being adjusted. The Company is not able to reconcile its forward-looking non-GAAP cash flow and tax rate measures because the Company cannot predict the timing and amounts of discrete items such as acquisition and divestitures, which could significantly impact GAAP results. Note that certain columns and rows may not add due to rounding.",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "RAISED",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NONE",
+     "auditor_reason": "The passage issues an initial fiscal 2027 outlook (\"growth in the range of one to five percent versus fiscal 2026 GAAP EPS of $6.62\") but never states that any target was increased versus a previously issued figure."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-72b5eb35cf3bc9e9",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Bank of America Corporation (the Corporation) and its management may make certain statements that constitute \u201cforward-looking statements\u201d within the meaning of the Private Securities Litigation Reform Act of 1995. These statements can be identified by the fact that they do not relate strictly to historical or current facts. Forward-looking statements often use words such as \u201canticipates,\u201d \u201ctargets,\u201d \u201cexpects,\u201d \u201chopes,\u201d \u201cestimates,\u201d \u201cintends,\u201d \u201cplans,\u201d \u201cgoals,\u201d \u201cbelieves,\u201d \u201ccontinue\u201d and other similar expressions or future or conditional verbs such as \u201cwill,\u201d \u201cmay,\u201d \u201cmight,\u201d \u201cshould,\u201d \u201cwould\u201d and \u201ccould.\u201d Forward-looking statements represent the Corporation\u2019s current expectations, plans or forecasts of its future results, revenues, liquidity, net interest income, provision for credit losses, expenses, efficiency ratio, capital measures, strategy, deposits, assets, and future business and economic conditions more generally, and other future matters. These statements are not guarantees of future results or performance and involve certain known and unknown risks, uncertainties and assumptions that are difficult to predict and are often beyond the Corporation\u2019s control. Actual outcomes and results may differ materially from those expressed in, or implied by, any of these forward-looking statements.\n\n: and in any of the Corporation\u2019s subsequent Securities and Exchange Commission filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage resulting from pending or future litigation and regulatory investigations, proceedings and enforcement actions, including as a result of our participation in and execution of government programs related to the Coronavirus Disease 2019 (COVID-19) pandemic, such as the processing of unemployment benefits for California and certain other states; the possibility that the Corporation\u2019s future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the possibility that the Corporation could face increased claims from one or more parties involved in mortgage securitizations; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of U.S. and global interest rates, inflation, currency exchange rates, economic conditions, trade policies and tensions, including tariffs, and potential geopolitical instability; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of supply chain disruptions, inflationary pressures and",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage asserts existing matters \u2014 \"pending or future litigation and regulatory investigations, proceedings and enforcement actions, including ... the processing of unemployment benefits for California and certain other states\" \u2014 naming concrete current proceedings, so REALIZED controls for that category."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-755a1e33868cb4d8",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "We delivered a solid first quarter in a dynamic operating environment. We\u2019re serving customers and members in more ways, which is fueling our growth. We\u2019re well positioned, maintaining flexibility to navigate the near-term while continuing to invest to create value for the long-term.\u201d\n\nThe following forward-looking statements reflect the Company\u2019s expectations as of May 15, 2025, and are subject to substantial uncertainty. The Company\u2019s results may be materially affected by many factors, such as fluctuations in foreign currency exchange rates, changes in global economic and geopolitical conditions, tariff and trade policies, customer demand and spending, inflation, interest rates, world events, and the various other factors detailed in this release. Additionally, guidance is provided on a non-GAAP basis as the Company cannot predict certain elements that are included in reported GAAP results, such as the changes in fair value of the Company\u2019s equity and other investments. Growth rates reflect an adjusted basis for prior year results.\n\n\u201cGiven the dynamic nature of the backdrop, and the range of near-term outcomes being exceedingly wide and difficult to predict, we felt it best to hold from providing a specific range of guidance for operating income growth and EPS for the second quarter. With a longer view into the full year, we believe we can navigate well and achieve our full year guidance,\u201d said John David Rainey, Walmart Inc. executive vice president and chief financial officer.\n\nThis release and related management commentary contains statements that may be \"forward-looking statements\" as defined in, and are intended to enjoy the protection of the safe harbor for forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended. Assumptions on which such forward-looking statements are based are also forward-looking statements. Statements of our guidance, projections, estimates, expectations, plans, and objectives for the second quarter and remainder of fiscal 2026 in this release and related management commentary are forward-looking statements. Assumptions on which such forward-looking statements are based are also forward-looking statements. Such forward-looking statements are not statements of historical facts, but instead express our estimates or expectations for our consolidated economic performance or results of operations for future periods or as of future dates or events or developments that may occur in the future or discuss our plans, objectives or goals. These forward-looking statements can be identified by their use of words or phrases such as \u201canticipate,\u201d \u201ccould,\u201d \u201ccould be,\u201d \u201cbelieve,\u201d \u201cexpect,\u201d \u201cforecast,\u201d \u201cplan,\u201d \u201cprojected,\u201d \u201cwill be\u201d \u201cwill improve,\u201d variations of such words or phrases or similar words and phrases denoting anticipated or expected occurrences or results. The forward-looking statements that we make are based on our knowledge of our business and our operating environment and assumptions that we believe to be or will believe to be reasonable when such forward-looking statements were or are made. Our actual results may differ materially from those expressed in or implied by any of these forward-looking statements as a result of changes in circumstances, assumptions not being realized or other risks, uncertainties and factors including: the impact of pandemics on our business and the global economy; economic, capital markets and business conditions; trends and events around the world and in the markets in which we operate; currency exchange rate fluctuations, changes in market interest rates and market levels of wages; changes in the size of various markets, including eCommerce markets; unemployment levels; inflation or deflation, generally and in particular product categories; consumer confidence, disposable income, credit availability, spending levels, shopping patterns, debt levels and demand for certain merchandise; the effectiveness of the implementation and operation of our strategies, plans, programs and initiatives; unexpected changes in our objectives and plans; the impact of acquisitions, investments, divestitures, store or club closures, and other strategic decisions; our ability to successfully integrate acquired businesses, including within the eCommerce space; changes in the trading prices of certain equity investments we hold; initiatives of competitors, competitors' entry into and expansion in our markets, and competitive pressures; customer traffic and average ticket in our stores and clubs and on our eCommerce websites; the mix of merchandise we sell, the cost of goods we sell and the shrinkage we experience; trends in consumer shopping habits around the world and in the markets in which we operate; our gross profit margins; the financial performance of Walmart and each of its segments, including the amounts of our cash flow during various periods; transportation, energy and utility costs; commodity prices and the price of gasoline and diesel fuel; supply chain disruptions and disruptions in seasonal buying patterns; the availability of goods from suppliers and the cost of goods acquired from suppliers; consumer acceptance of and response to our stores, clubs, eCommerce platforms, programs, merchandise offerings and delivery methods; cyber security events affecting us and related costs and impact to the business; developments in, outcomes of, and costs incurred in legal or regulatory proceedings to which we are a party or are subject, and the liabilities, obligations and expenses, if any, that we may incur in connection therewith; casualty and accident-related costs and insurance costs; consumer enrollment in health and drug insurance programs and such programs\u2019 reimbursement rates and drug formularies; our effective tax rate and the factors affecting our effective tax rate, including assessments of certain tax contingencies, valuation allowances, changes in law, administrative audit outcomes, impact of discrete items and the mix of earnings between the U.S. and Walmart's international operations; changes in existing tax, labor and other laws and regulations and changes in tax rates including the enactment of laws and the adoption and interpretation of administrative rules and regulations; the imposition of new taxes on imports, new tariffs and changes in existing tariff rates; the imposition of new trade restrictions and changes in existing trade restrictions; adoption or creation of new, and modification of existing, governmental policies, programs, initiatives and actions in the markets in which Walmart operates and elsewhere and actions with respect to such policies, programs and initiatives; changes in accounting estimates or judgments; the level of public assistance payments; natural disasters, changes in climate, geopolitical events and catastrophic events; and changes in generally accepted accounting principles in the United States.",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "WITHDRAWN",
+     "auditor_verdict": "unsure",
+     "auditor_label": "MAINTAINED",
+     "auditor_reason": "The passage both declines to issue new quarterly guidance (\"we felt it best to hold from providing a specific range of guidance ... for the second quarter\") and affirms existing full-year guidance (\"we believe we can navigate well and achieve our full year guidance\"), so WITHDRAWN versus MAINTAINED is genuinely underdetermined."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The factor list expressly includes \"the cost of goods we sell,\" \"our gross profit margins,\" and \"transportation, energy and utility costs,\" which matches MARGIN_COST_PRESSURE in hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-763e4a3f53291a60",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "CINCINNATI, October 18, 2023 - The Procter & Gamble Company (NYSE:PG) reported first quarter fiscal year 2024 net sales of $21.9 billion, an increase of six percent versus the prior year. Organic sales, which excludes the impacts of foreign exchange and acquisitions and divestitures, increased seven percent. Diluted net earnings per share were $1.83, an increase of 17% versus prior year.\n\nOperating cash flow was $4.9 billion, and net earnings were $4.6 billion for the quarter. Adjusted free cash flow productivity was 97%, which is calculated as operating cash flow excluding capital spending and certain other items, as a percentage of net earnings. The Company returned $3.8 billion of cash to shareowners via approximately $2.3 billion of dividend payments and $1.5 billion of common stock repurchases.\n\n\u201cWe delivered very strong results in the first quarter of fiscal year 2024, putting us on track to deliver towards the higher end of our fiscal year guidance ranges for organic sales and core EPS growth,\u201d said Jon Moeller, Chairman of the Board, President and Chief Executive Officer. \u201cWe remain committed to our integrated strategy of a focused product portfolio of daily use categories where performance drives brand choice, superiority \u2014 across product performance, packaging, brand communication, retail execution and consumer and customer value \u2014 productivity, constructive disruption and an agile and accountable organization. The P&G team\u2019s execution of this strategy has enabled us to build and sustain strong momentum. We have confidence this remains the right strategy to deliver balanced growth and value creation.\u201d\n\nNet sales in the first quarter of fiscal year 2024 were $21.9 billion, a six percent increase versus the prior year. Unfavorable foreign exchange had a one percent impact on net sales. Organic sales, which exclude the impacts of foreign exchange and acquisitions and divestitures, increased seven percent. The organic sales increase was driven by a seven percent increase from higher pricing and one percent increase due to favorable product mix, partially offset by a one percent decrease in shipment volumes.\n\nBeauty segment organic sales increased five percent versus year ago. Skin and Personal Care organic sales grew low single digits as higher pricing and innovation-based volume growth were partially offset by unfavorable mix due to lower sales of SK-II. Hair Care organic sales increased high single digits driven primarily by increased pricing.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage states the organic sales increase was \"partially offset by a one percent decrease in shipment volumes\" and \"lower sales of SK-II,\" an explicit realized unfavorable volume trend."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-780f19ce14752544",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "The Company is guiding for a modest headwind from net interest income and expense in fiscal year 2025. In addition, the prior fiscal year included benefits from minor brand divestitures that are unlikely to repeat to the same extent in fiscal year 2025. Combined, these are roughly a $0.04 headwind to core EPS.\n\nRisks and uncertainties to which our forward-looking statements are subject include, without limitation: (1) the ability to successfully manage global financial risks, including foreign currency fluctuations, currency exchange, pricing controls or tariffs; (2) the ability to successfully manage local, regional or global economic volatility, including reduced market growth rates, and to generate sufficient income and cash flow to allow the Company to effect the expected share repurchases and dividend payments; (3) the ability to successfully manage uncertainties related to changing political and geopolitical conditions and potential implications such as exchange rate fluctuations, market contraction, boycotts, sanctions, tariffs or other trade controls; (4) the ability to manage disruptions in credit markets or to our banking partners or changes to our credit rating; (5) the ability to maintain key manufacturing and supply arrangements (including execution of supply chain optimizations and sole supplier and sole manufacturing plant arrangements) and to manage disruption of business due to various factors, including ones outside of our control, such as natural disasters, acts of war or terrorism or disease outbreaks; (6) the ability to successfully manage cost fluctuations and pressures, including prices of commodities and raw materials and costs of labor, transportation, energy, pension and healthcare; (7) the ability to compete with our local and global competitors in new and existing sales channels, including by successfully responding to competitive factors such as prices, promotional incentives and trade terms for products; (8) the ability to manage and maintain key customer relationships; (9) the ability to protect our reputation and brand equity by successfully managing real or perceived issues, including concerns about safety, quality, ingredients, efficacy, packaging content, supply chain practices or similar matters that may arise; (10) the ability to successfully manage the financial, legal, reputational and operational risk associated with third-party relationships, such as our suppliers, contract manufacturers, distributors, contractors and external business partners; (11) the ability to rely on and maintain key company and third-party information and operational",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The only characterized item is \"a modest headwind ... roughly a $0.04 headwind to core EPS,\" with the remainder an enumerated risk list, so there is no predominant unfavorable characterization of results or condition."
+    },
+    {
+     "field": "guidance_direction",
+     "stored_label": "LOWERED",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NONE",
+     "auditor_reason": "\"Guiding for a modest headwind from net interest income and expense\" quantifies one element but never states that a forward-looking target has been decreased versus a prior figure."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-797963e890d61222",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "13 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of the Corporation\u2019s 2024 Annual Report on Form 10-K and in any of the Corporation\u2019s subsequent U.S. Securities and Exchange Commission (SEC) filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory inquiries, demands, requests, investigations, proceedings and enforcement actions, which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs and the processing of electronic payments, including through the Zelle network, and related fraud, which are in various stages; in connection with ongoing litigation, the impact of certain changes to Visa\u2019s and Mastercard\u2019s respective card payment network rules and reductions in interchange fees for U.S.-based merchants; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the impact of U.S. and global interest rates (including the potential for ongoing fluctuations in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including changes in, or the imposition of, tariffs and / or trade barriers and the economic impacts, volatility and uncertainty resulting therefrom, which may have varying effects across industries and geographies, and geopolitical instability; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, which may include unemployment rates, real estate prices, gross domestic product levels and corporate bond spreads, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of trade policies, supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation\u2019s concentration of credit risk; the Corporation's ability to achieve its expense targets (including noninterest expense) and expectations regarding revenue, net interest income, operating leverage, other income, provision for credit losses, net charge-offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations, including impacts from the 2025 budget reconciliation legislation; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of various third parties, including regulators and federal and state governments, such as from cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and machine learning; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental goals or the impact of any changes in the Corporation's sustainability or human capital management strategy or goals; the impact of uncertain or changing political conditions, federal government shutdowns and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary, trade or regulatory policy; the emergence of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflicts in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), civil unrest, terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. \u201cBank of America\u201d and \u201cBofA Securities\u201d are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (\u201cInvestment Banking Affiliates\u201d) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured \u00b7 May Lose Value \u00b7 Are Not Bank Guaranteed. Bank of America Corporation\u2019s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https:// newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage asserts matters as existing \u2014 proceedings \"which the Corporation is subject to in the ordinary course of business, including ... the processing of electronic payments, including through the Zelle network ... which are in various stages\" and \"in connection with ongoing litigation\" \u2014 so the category is realized."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-79acc163abb1739a",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "CINCINNATI, April 24, 2025 - The Procter & Gamble Company (NYSE:PG) reported third quarter fiscal year 2025 net sales of $19.8 billion, a decrease of two percent versus the prior year. Organic sales, which excludes the impacts of foreign exchange and acquisitions and divestitures, increased one percent versus the prior year. Diluted and core net earnings per share were $1.54, each an increase of 1% versus prior year.\n\nOperating cash flow was $3.7 billion, and net earnings were $3.8 billion for the quarter. Adjusted free cash flow productivity was 75%. Adjusted free cash flow productivity is calculated as operating cash flow less capital spending, as a percentage of net earnings. The Company returned $3.8 billion of cash to shareowners via $2.4 billion of dividend payments and $1.4 billion of share repurchases. The dividend increase announced earlier this month marks the 69th consecutive year that P&G has increased its dividend and the 135th consecutive year that P&G has paid a dividend since its incorporation in 1890.\n\n\u201cWe delivered modest organic sales and EPS growth this quarter in a challenging and volatile consumer and geopolitical environment,\u201d said Jon Moeller, Chairman of the Board, President and Chief Executive Officer. \u201cWe\u2019re making appropriate adjustments to our near-term outlook to reflect underlying market conditions while remaining confident in the longer-term growth prospects for our brands and the markets where we compete. We remain committed to our integrated growth strategy of a focused product portfolio of daily use categories where performance drives brand choice, superiority \u2014 across product performance, packaging, brand communication, retail execution and consumer and customer value \u2014 productivity, constructive disruption and an agile and accountable organization. We\u2019re maintaining investments in superior innovation across price tiers to improve value for consumers and drive category growth.\u201d\n\nNet sales in the third quarter of fiscal year 2025 were $19.8 billion, a two percent decrease versus the prior year. Organic sales, which exclude the impacts of foreign exchange and acquisitions and divestitures, increased one percent driven by higher pricing. Mix and organic volume had a neutral impact on sales for the quarter.\n\nBeauty segment organic sales increased two percent versus year ago. Hair Care organic sales was unchanged as increased pricing in Latin America and North America and favorable premium product mix were offset by volume declines primarily in Greater China. Personal Care organic sales increased high single digits driven by innovation-driven volume growth, partially offset by negative impacts from geographic mix. Skin Care organic sales declined low single digits due to volume declines and unfavorable geographic mix, partially offset by increased pricing primarily in Greater China.",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "LOWERED",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NONE",
+     "auditor_reason": "\"We're making appropriate adjustments to our near-term outlook to reflect underlying market conditions\" names no figure and does not state that any target was decreased, which the rubric treats as vague caution, i.e. NONE."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-79ed6dfdf32fb6a0",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "14 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of the Corporation\u2019s 2023 Annual Report on Form 10-K and in any of the Corporation\u2019s subsequent Securities and Exchange Commission filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, of which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs, the processing of electronic payments and related fraud and the rates paid on uninvested cash in investment advisory accounts that is swept into interest-paying bank deposits, which are in various stages; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the possibility that the Corporation could face increased claims from one or more parties involved in mortgage securitizations; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of U.S. and global interest rates (including the potential for ongoing adjustments in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including tariffs and potential significant increases thereto, and potential geopolitical instability; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation\u2019s concentration of credit risk; the Corporation's ability to achieve its expense targets and expectations regarding revenue, net interest income, provision for credit losses, net charge-offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including, but not limited to, recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of third parties, including as a result of cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and machine learning; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental, social and governance goals and commitments or the impact of any changes in the Corporation's sustainability strategy or commitments generally; the impact of uncertain or changing political conditions or any future federal government shutdown and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary or regulatory policy; the emergence or continuation of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflict in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. \u201cBank of America\u201d and \u201cBofA Securities\u201d are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (\u201cInvestment Banking Affiliates\u201d) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured \u00b7 May Lose Value \u00b7 Are Not Bank Guaranteed. Bank of America Corporation\u2019s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https:// newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The litigation clause states matters \"of which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits ... which are in various stages,\" a present-tense assertion of existing proceedings."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-7a757bbb054432e5",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "CINCINNATI, October 18, 2024 - The Procter & Gamble Company (NYSE:PG) reported first quarter fiscal year 2025 net sales of $21.7 billion, a decrease of one percent versus the prior year. Organic sales, which excludes the impacts of foreign exchange and acquisitions and divestitures, increased two percent, on a prior year base period of seven percent growth. Diluted net earnings per share were $1.61, a decrease of 12% versus prior year due to higher non-core restructuring charges. Core earnings per share were $1.93, an increase of five percent versus prior year.\n\nOperating cash flow was $4.3 billion, and net earnings were $4.0 billion for the quarter. Adjusted free cash flow productivity was 82%, in line with expectations. Adjusted free cash flow productivity is calculated as operating cash flow less capital spending, as a percentage of net earnings excluding a non-cash charge for accumulated foreign currency translation losses due to the substantial liquidation of operations in Argentina. The Company returned nearly $4.4 billion of cash to shareowners via over $2.4 billion of dividend payments and over $1.9 billion of share repurchases.\n\n\u201cOur organic sales growth, earnings and cash results in the first quarter keep us on track to deliver within our guidance ranges on all key financial metrics for the fiscal year,\u201d said Jon Moeller, Chairman of the Board, President and Chief Executive Officer. \u201cWe remain committed to our integrated growth strategy of a focused product portfolio of daily use categories where performance drives brand choice, superiority \u2014 across product performance, packaging, brand communication, retail execution and consumer and customer value \u2014 productivity, constructive disruption and an agile and accountable organization. We have confidence this remains the right strategy to deliver balanced growth and value creation.\u201d\n\nNet sales in the first quarter of fiscal year 2025 were $21.7 billion, a one percent decrease versus the prior year. Organic sales, which exclude the impacts of foreign exchange and acquisitions and divestitures, increased two percent. The organic sales increase was driven by a one percent increase from higher pricing and a one percent increase in organic volume (which excludes the impact of acquisitions and divestitures). Mix had a neutral impact on sales growth for the quarter.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "POSITIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "Headline results are mixed \u2014 \"net sales ... a decrease of one percent\" and \"Diluted net earnings per share ... a decrease of 12%\" against organic sales +2% and core EPS +5% \u2014 with no strongly favorable characterization beyond \"on track to deliver within our guidance ranges.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-7d41e6195666fa22",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "P&G maintained its fiscal 2024 diluted net earnings per share growth in the range of six to nine percent versus fiscal 2023 EPS of $5.90. This outlook equates to a range of $6.25 to $6.43 per share. The Company highlighted that it is maintaining the EPS range despite an incremental $600 million dollars after tax of foreign exchange headwinds since its initial fiscal 2024 guidance in late July.\n\nThe Company said it expects tailwinds of approximately $800 million after tax due to favorable commodity costs for fiscal year 2024. However, unfavorable foreign exchange rates are now expected to be a headwind of approximately $1 billion after tax. The Company continues to expect the net impact of interest expense and interest income to be a headwind of approximately $200 million after tax.\n\nThe Company is unable to reconcile its forward-looking non-GAAP cash flow and tax rate measures without unreasonable efforts given the unpredictability of the timing and amounts of discrete items, such as acquisitions, divestitures, or impairments, which could significantly impact GAAP results.\n\nCertain statements in this release, other than purely historical information, including estimates, projections, statements relating to our business plans, objectives and expected operating results, and the assumptions upon which those statements are based, are \"forward-looking statements\" within the meaning of the Private Securities Litigation Reform Act of 1995, Section 27A of the Securities Act of 1933 and Section 21E of the Securities Exchange Act of 1934. These forward-looking statements generally are identified by the words \"believe,\" \"project,\" \"expect,\" \"anticipate,\" \"estimate,\" \"intend,\" \"strategy,\" \"future,\" \"opportunity,\" \"plan,\" \"may,\" \"should,\" \"will,\" \"would,\" \"will be,\" \"will continue,\" \"will likely result\" and similar expressions. Forward-looking statements are based on current expectations and assumptions, which are subject to risks and uncertainties that may cause results to differ materially from those expressed or implied in the forward-looking statements. We undertake no obligation to update or revise publicly any forward-looking statements, whether because of new information, future events or otherwise, except to the extent required by law.\n\nRisks and uncertainties to which our forward-looking statements are subject include, without limitation: (1) the ability to successfully manage global financial risks, including foreign currency fluctuations, currency exchange or pricing controls and localized volatility; (2) the ability to successfully manage local, regional or global economic volatility, including reduced market growth rates, and to generate sufficient income and cash flow to allow the Company to effect the expected share repurchases and dividend payments; (3) the ability to manage disruptions in credit markets or to our banking partners or changes to our credit rating; (4) the ability to maintain key manufacturing and supply arrangements (including execution of supply chain optimizations and sole supplier and sole manufacturing plant arrangements) and to manage disruption of business due to various factors, including ones outside of our control, such as natural disasters, acts of war (including the Russia-Ukraine War) or terrorism or disease outbreaks; (5) the ability to successfully manage cost fluctuations and pressures, including prices of commodities and raw materials and costs of labor, transportation, energy, pension and healthcare; (6) the ability to stay on the leading edge of innovation, obtain necessary intellectual property protections and successfully respond to changing consumer habits, evolving digital marketing and selling platform requirements and technological advances attained by, and patents granted to, competitors; (7) the ability to compete with our local and global competitors in new and existing sales channels, including by",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The realized cost statement here is favorable (\"tailwinds of approximately $800 million after tax due to favorable commodity costs\"); the cost-pressure language is the hypothetical risk item \"(5) the ability to successfully manage cost fluctuations and pressures,\" and item (4) \"the ability to maintain key manufacturing and supply arrangements ... and to manage disruption of business\" adds SUPPLY_INPUT_CONSTRAINT."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-7e4708622046a2c1",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "These statements may relate to, among other things, (i) our future plans and results, including our target ROE, ROTE, efficiency ratio, CET1 capital ratio, total credit alternative assets, total alternative AUS, long-term wealth management inflows, percentage growth rate for Management and other fees from alternatives and annual third-party commitments in our alternatives business, and how they can be achieved, (ii) trends in or growth opportunities for our businesses, including the timing, costs, profitability, benefits and other aspects of business and strategic initiatives, such as OneGS 3.0, and their impact on our efficiency ratio, (iii) the opportunities and challenges presented by AI, (iv) our Investment banking fees backlog and future advisory and capital markets results, (v) expenses we may incur, including the level of future compensation expense, (vi) the projected growth of our deposits and other funding, (vii) our business and expense savings initiatives, including OneGS 3.0, (viii) our planned benchmark debt issuances, (ix) our credit exposures, (x) our expected provision for credit losses and the adequacy of our allowance for credit losses, (xi) the objectives and effectiveness of our BCP, information security program, risk management and liquidity policies, (xii) our resolution plan and its implications for stakeholders, (xiii) the effect of changes to regulations, and our future status, activities or reporting under banking and financial regulation, (xiv) our expected tax rate, (xv) the future state of our liquidity and regulatory capital ratios, and our prospective capital distributions (including dividends and repurchases), (xvi) our expected SCB and G-SIB surcharge, (xvii) legal proceedings, governmental investigations or other contingencies, (xviii) the asset recovery guarantee and applications for exemptions and authorizations from regulatory authorities related to our 1Malaysia Development Berhad (1MDB) settlements, (xix) the effectiveness of our management of our human capital and changes in headcount, (xx) our sustainability goals, (xxi) future inflation, (xxii) our ability to transition the Apple Card program to another issuer and (xxiii) the effectiveness of our cybersecurity risk management process.\n\nStatements about our total credit alternative assets, total alternative AUS, long-term wealth management inflows, percentage growth rate for Management and other fees from alternatives targets and annual third-party commitments in our alternatives business are based on our current expectations regarding our fundraising prospects and are subject to the risk that actual inflows or fees may be lower than expected due to, among other factors, competition from other asset managers, changes in investment preferences and changes in economic or market conditions.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Item (xviii) refers to \"applications for exemptions and authorizations from regulatory authorities related to our 1Malaysia Development Berhad (1MDB) settlements,\" treating the settlements as concluded fact rather than a possibility."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-808a6628c2a2a073",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "We have a large portfolio of financial instruments, including loans and loan commitments, securities financing agreements, asset-backed secured financings, derivative assets and liabilities, debt securities, marketable equity securities and certain other assets and liabilities that we measure at fair value and are subject to valuation and impairment assessments. We determine these values based on applicable accounting guidance, which, for financial instruments measured at fair value, requires an entity to base fair value on exit price and to maximize the use of observable inputs and minimize the use of unobservable inputs in fair value measurements. The fair values of these financial instruments include adjustments for market liquidity, credit quality, funding impact on certain derivatives and other transaction-specific factors, where appropriate.\n\nGains or losses on these instruments can have a direct impact on our results of operations, unless we have effectively mitigated the risk of our exposures. Increases in interest rates may cause decreases in residential mortgage loan originations and could impact the origination of corporate debt. In addition, increases in interest rates or changes in spreads may continue to adversely impact the fair value of our debt securities and, accordingly, for debt securities classified as available-for-sale (AFS), adversely affect accumulated other comprehensive income and, thus, our capital levels. Increases in interest rates could also adversely impact our regulatory liquidity position and requirements, which include certain AFS debt securities and the use of repurchase agreements against a portion of the held-to-maturity (HTM) debt securities. As our liquidity is dependent on the fair value of these assets, increases in market interest rates, which have adversely impacted and may continue to adversely impact the fair value of debt securities, could adversely affect liquidity levels.\n\nFair values may be impacted by declining values of the underlying assets or the prices at which observable market transactions occur and the continued availability of these transactions or indices. The financial strength of counterparties, with whom we have economically hedged some of our exposure to these assets, also will affect the fair value of these assets. Sudden declines and volatility in the prices of assets may curtail or eliminate trading activities in these assets, which may make it difficult to sell, hedge or value these assets. The inability to sell or effectively hedge assets reduces our ability to limit losses in such positions, and the difficulty in valuing assets may increase our risk-weighted assets (RWA), which requires us to maintain additional capital and increases our funding costs. Values of AUM also impact revenues in our wealth management and related advisory businesses for asset-based management and performance fees. Declines in values of AUM can result in lower fees earned for managing such assets.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only cost statement is conditional \u2014 \"the difficulty in valuing assets may increase our risk-weighted assets (RWA), which requires us to maintain additional capital and increases our funding costs\" \u2014 while the realized clause (\"have adversely impacted ... the fair value of debt securities\") concerns valuation, not costs."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-80ca7b8667eae9dc",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "commodity prices, including prolonged periods of low commodity prices, which may adversely impact our operating results and our ability to execute on our strategy and could result in recognition of impairment charges on our long-lived assets, leaseholds and nonconsolidated equity investments; global and regional changes in the demand, supply, prices, differentials or other market conditions affecting oil and gas, including changes as a result of any ongoing military conflict and the global response to such conflict, security threats on facilities and infrastructure, global health crises, the imposition or lifting of crude oil production quotas or other actions that might be imposed\n\nby OPEC and other producing countries or the resulting company or third-party actions in response to such changes; the potential for insufficient liquidity or other factors, such as those described herein, that could impact our ability to repurchase shares and declare and pay\n\nand future oil and gas developments, including due to operating hazards, drilling risks and the inherent uncertainties in predicting reserves and reservoir performance; reductions in our reserve replacement rates, whether as a result of significant declines in commodity prices or otherwise; unsuccessful exploratory drilling activities or the inability to obtain access to exploratory acreage; failure to progress or complete announced and future development plans related to constructing, modifying or operating E&P and LNG facilities, or unexpected changes in costs, inflationary pressures or technical equipment related to such plans; significant operational or investment changes imposed by legislative and regulatory initiatives and international agreements addressing environmental concerns, including initiatives\n\nbroader societal attention to and efforts to address climate change may cause substantial investment in and increased adoption of competing or alternative energy sources; risks, uncertainties and high costs that may prevent us from successfully executing on our Climate Risk Strategy; lack or inadequacy of, or disruptions in reliable transportation for our crude oil, bitumen, natural gas, LNG and NGLs; inability to timely obtain or maintain permits, including those necessary for construction, drilling and/or development, or inability to make capital expenditures required to maintain compliance with any necessary permits or applicable laws or regulations; potential disruption or interruption of",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The passage is entirely a safe-harbor enumeration of hypothetical risks (\"which may adversely impact,\" \"could result in,\" \"the potential for\") with no characterization of actual current results or condition, which the rubric treats as mechanical/procedural disclosure."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Adds SUPPLY_INPUT_CONSTRAINT for \"lack or inadequacy of, or disruptions in reliable transportation for our crude oil, bitumen, natural gas, LNG and NGLs\" and \"potential disruption or interruption of\" production/development plans."
+    }
+   ]
+  }
+ ]
+}

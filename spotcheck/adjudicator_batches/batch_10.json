@@ -1,0 +1,416 @@
+{
+ "batch": 10,
+ "chunks": [
+  {
+   "chunk_id": "CHK-cf10074322ae7f8e",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Further, our specialty trade and MRO customers, who have higher spend and longer-term relationships than a typical retail customer, increasingly use trade credit to finance their purchases, as do some of our other Pros in order to purchase our products. Their ability to pay is highly dependent on the economic strength of the industry in which they operate. If these customers are unable to repay the trade credit invoice, we may face greater default risk, which could reduce our cash flow and adversely affect our results of operations.\n\nWe are subject to various U.S. federal, state and local laws and regulations, as well as international laws and regulations, that govern numerous aspects of our business. In recent years, a number of new laws and regulations have been adopted, new executive orders have been announced, there has been expanded enforcement and differing interpretations of certain existing laws and regulations by federal, state, local and international agencies, and the interpretation of certain laws and regulations has become increasingly complex. These laws and regulations, and related executive orders, interpretations and enforcement activity, may change as a result of a variety of factors, including political, economic or social events. Changes in, expanded regulatory investigations or enforcement of, litigation regarding, or adoption of new federal, state, local or international laws, regulations and/or executive orders governing minimum wage or living wage requirements; the classification of exempt and non-exempt employees; the distinction between employees and contractors; diversity, equity, and inclusion programs; immigration; and other human capital management matters; healthcare; data privacy, governance, and cybersecurity; the sale, marketing, sourcing, and pricing of our products; transportation, logistics and interstate delivery operations, including Department of Transportation regulations on vehicles and drivers; international trade and tariffs; supply chain transparency; the sourcing of raw materials, including timber and minerals, used in our products; taxes, including changes to corporate tax rates; restrictions on carbon dioxide and other greenhouse gas emissions; competition and antitrust requirements and enforcement; sustainability programs, transparency and reporting; unclaimed property; energy costs and consumption; or hazardous waste disposal and other environmental matters, including with respect to our installation services business, could increase our costs of doing business or impact our sales, operations or profitability.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The strongest liquidity language is \"we may face greater default risk, which could reduce our cash flow\" \u2014 not an explicit statement of insufficient liquidity, inability to meet obligations, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-d53a38bf4a53dae4",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our liquidity and access to capital could also be negatively impacted by the outcome of any of the legal or regulatory proceedings to which we are a party. For additional discussion of these and other risks facing our business, see Part I, Item 1A - Risk Factors - Legal and Regulatory Risks and Note 21 (Legal and Regulatory Proceedings) to the consolidated financial statements included in Part II, Item 8.\n\nNet cash provided by operating activities increased $0.8 billion in 2023 versus the prior year, primarily due to higher net income after adjusting for non-cash items and an increase in restricted security deposits held for customers, partially offset by restricted cash paid for litigation settlement, higher employee incentives paid and higher customer incentives payments.\n\nNet cash used in investing activities decreased $0.1 billion in 2023 versus the prior year, primarily due to less cash paid for business acquisitions in the current year, partially offset by an increase in purchases of investments in time deposits.\n\nNet cash used in financing activities decreased $0.8 billion in 2023 versus the prior year, primarily due to lower debt payments and higher proceeds from debt issuances in the current year, partially offset by higher repurchases of our Class A common stock and higher dividend payments.\n\nIn March 2023, we issued $750 million principal amount of notes due March 2028 and $750 million principal amount of notes due March 2033 (collectively the \u201c2023 USD Notes\u201d). The net proceeds from the issuance of the 2023 USD Notes, after deducting the original issue discount, underwriting discount and offering expenses, were $1.489 billion. In April 2023, we entered into an additional unsecured INR4.97 billion ($61 million as of the date of settlement) term loan, originally due July 2023 (the \u201cApril 2023 INR Term Loan\u201d). In July 2023, we modified and combined the existing 2022 INR Term Loan and April 2023 INR Term Loan (the \u201c2023 INR Term Loan\u201d), increasing the total unsecured loans to INR28.1 billion ($342 million as of the date of settlement). The 2023 INR Term Loan is due July 2024.\n\nAs of December 31, 2023, we have a commercial paper program (the \u201cCommercial Paper Program\u201d), under which we are authorized to issue up to $8 billion in outstanding notes, with maturities up to 397 days from the date of issuance. In conjunction with the Commercial Paper Program, we have a committed unsecured $8 billion revolving credit facility (the \u201cCredit Facility\u201d) which now expires in November 2028.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage asserts concrete realized legal activity \u2014 \"restricted cash paid for litigation settlement\" and \"the legal or regulatory proceedings to which we are a party\" \u2014 so the realized statement controls over the \"could also be negatively impacted\" framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-d74facbd628dfc96",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": true,
+   "text": "In 2023, U.S. banking regulators issued notices of proposed rulemaking to revise the measurement of RWA and the G-SIB surcharge calculation, both of which may be re-proposed. Also, in 2023, U.S. banking regulators issued proposed changes to the long-term debt requirements for TLAC, which may impact eligibility of certain debt instruments, and in 2024, the Federal Reserve separately confirmed it is considering changes to existing, as well as new, liquidity requirements. The timing and composition of any such proposals or re-proposals remain uncertain due to various factors, including changes of leadership positions in the U.S. bank regulatory agencies.\n\nOur ability to pay dividends or repurchase common stock depends, in part, on our ability to maintain regulatory capital levels above minimum requirements plus buffers. If increases occur in our SCB, G-SIB surcharge or countercyclical capital buffer, our dividends and common stock repurchases, could decrease. For example, in 2024, our SCB increased by 70 bps to 3.2 percent and our G-SIB surcharge increased 50 bps to 3.0 percent. Our G-SIB surcharge is expected to increase to 3.5 percent from 3.0 percent in 2027, and could further increase in the future. The Federal Reserve could also limit or prohibit capital actions (e.g., impacts to dividends and common stock repurchases) as a result of economic disruptions or events.\n\nExtensive regulatory evaluation of our capital planning practices by the Federal Reserve includes stress testing on parts of our business using hypothetical economic scenarios prepared by the Federal Reserve. Those scenarios may affect our CCAR stress test results, which may impact our SCB level and require us to hold additional capital. In 2024, the Federal Reserve announced that it intends to propose potential changes to bank stress tests, which could impact our SCB.\n\nChanges to and compliance with the regulatory capital and liquidity requirements may impact our operations by requiring us to liquidate assets, increase borrowings, issue additional securities, reduce common stock repurchases or dividends, limit compensation practices, cease or alter certain operations, pricing strategies and business activities or hold highly liquid assets, adversely affecting our results of operations.\n\nAccounting policies and methods are fundamental to how we record and report our financial condition and results of operations. Some of these policies require the use of estimates and assumptions that may affect the reported value of our assets or liabilities and results of operations and are critical because they require management to make difficult, subjective and complex judgments about matters that are inherently uncertain. If assumptions, estimates or judgments are erroneously applied, we could be required to correct and restate prior-period financial statements. Accounting standard-setters and those who interpret the accounting standards, including the SEC, banking regulators and our independent registered public accounting firm may also amend or even reverse their previous interpretations or positions on how various standards should be applied. These changes may be difficult to predict and could impact the preparation and reporting of our financial statements, including the application of new or revised standards retrospectively, resulting in unexpected losses, revisions to prior-period financial statements and other adverse impacts to us, including legal and regulatory risk.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Per \u00a76, where a passage mixes hypothetical framing with a concrete realized impact (\"in 2024, our SCB increased by 70 bps to 3.2 percent and our G-SIB surcharge increased 50 bps\"), the category takes a single REALIZED label rather than both modalities."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "ACCOUNTING_RESTATEMENT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "agree",
+     "auditor_label": null,
+     "auditor_reason": null,
+     "note": "not contested \u2014 both raters agree; adjudicate anyway as advisory input for the owner (high-stakes chunk)"
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-d98216f40c3dbb93",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The Orthopaedics franchise sales were $8.9 billion in 2023, representing an increase of 4.1% from 2022. The growth in hips reflects global procedure growth and continued strength of the portfolio partially offset by volume-based procurement impacts and Russia sanctions. The growth in knees was primarily driven by procedures, benefits from recent product additions to the ATTUNE portfolio and pull through related to the VELYS Robotic assisted solution. This was partially offset by stocking dynamics, primarily outside the U.S. The growth in Trauma was driven by global procedures and the adoption of recently launched products. This was partially offset by volume-based procurement impacts. The growth in Spine, Sports & Other was primarily driven by Digital Solutions, Shoulders, Sports and Craniomaxillofacial products partially offset by Russia sanctions and supply constraints, primarily outside the U.S.\n\nThe Interventional Solutions franchise achieved sales of $6.4 billion in 2023, representing an increase of 47.7% from 2022, which includes sales from Abiomed acquired on December 22, 2022. Electrophysiology grew by double digits due to global procedure growth, new product performance and commercial execution. This was partially offset by the impacts of volume-based procurement in China. Abiomed sales reflect the strength of all commercialized regions and continued adoption of Impella 5.5 and Impella RP.\n\nThe Vision franchise achieved sales of $5.1 billion in 2023, representing an increase of 4.6% from 2022. The Contact Lenses/Other growth was primarily driven by the continued strong performance in the ACUVUE OASYS 1-Day family including recent launches and commercial execution. This was partially offset by impacts of U.S. stocking dynamics, Russia sanctions, impacts from strategic portfolio decisions and supply challenges. The Surgical operational growth was primarily driven by cataract procedure growth, continued strength of recent innovations and reduction of prior year stocking outside the U.S. This was partially offset by softer Refractive and premium IOL markets and Russia sanctions.\n\nConsolidated earnings before provision for taxes on income was $15.1 billion and $19.4 billion for the years 2023 and 2022, respectively. As a percent to sales, consolidated earnings before provision for taxes on income was 17.7% and 24.2%, in 2023 and 2022, respectively.\n\nResearch and development activities represent a significant part of the Company's business. These expenditures relate to the processes of discovering, testing and developing new products, upfront payments and developmental milestones, improving existing products, as well as ensuring product efficacy and regulatory compliance prior to launch. The Company remains committed to investing in research and development with the aim of delivering high quality and innovative products.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEUTRAL",
+     "auditor_verdict": "disagree",
+     "auditor_label": "POSITIVE",
+     "auditor_reason": "All three franchise paragraphs lead with favorable characterization (\"growth... continued strength of the portfolio,\" \"strength of all commercialized regions,\" \"continued strong performance\") with negatives only as \"partially offset by\" clauses, while the pretax earnings decline is stated as bare unqualified numbers, which the rubric says is not itself sentiment."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-d9f9c2729c76438b",
+   "section_type": "MDA",
+   "high_stakes": true,
+   "text": "For the three months ended September 30, 2024, Corporate net sales increased $19 million to $163 million due to an increase in net sales of incidental businesses managed at the corporate level. Corporate net earnings decreased $539 million to a loss of $707 million for the quarter due primarily to incremental restructuring charges.\n\nOperating cash flow was $4.3 billion fiscal year to date, a decrease of $602 million versus the prior year period. Net earnings, adjusted for non-cash items (depreciation and amortization, share-based compensation expense, deferred income taxes and gain/loss on sale of assets), generated $5.8 billion of operating cash flow. Working capital and other impacts used $1.5 billion of cash in the period primarily driven by the payment of prior fiscal year-end incentive compensation accruals, reduction in postretirement benefit accruals and current portion of the transitional tax payments related to the U.S. Tax Act. Days sales outstanding were flat and Days inventory on hand increased one day.\n\nAs of September 30, 2024, our current liabilities exceeded current assets by $9.0 billion. We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations. We have strong short- and long-term debt ratings that have enabled and should continue to enable us to refinance our debt as it becomes due at favorable rates in commercial paper and bond markets. In addition, we have agreements with a diverse group of financial institutions that, if needed, should provide sufficient funding to meet short-term financing requirements.\n\nAdjusted free cash flow productivity is defined as the ratio of adjusted free cash flow to net earnings excluding a non-cash charge for accumulated foreign currency translation losses due to the substantial liquidation of operations in Argentina. We view adjusted free cash flow productivity as a useful measure to help investors understand P&G\u2019s ability to generate cash. Adjusted free cash flow productivity is used by management in making operating decisions, in allocating financial resources and for budget planning purposes. This measure is also used in assessing the achievement of management goals for at-risk compensation.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The working-capital deficit is immediately paired with affirmative sufficiency language \u2014 \"We anticipate being able to support our short-term liquidity and operating needs,\" \"strong short- and long-term debt ratings,\" \"should provide sufficient funding\" \u2014 which is the opposite of an explicit insufficient-liquidity statement."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-dd2feb0fef6d7570",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "AbbVie announced positive topline results from its pivotal Phase 3 TEMPO-2 trial evaluating tavapadon as a flexible-dose monotherapy in early Parkinson's disease (PD). In the study, tavapadon met the primary endpoint, demonstrating a statistically significant improvement from baseline in the Movement Disorder Society - Unified Parkinson\u2019s Disease Rating Scale (MDS-UPDRS) Parts II and III combined score at week 26. Tavapadon also met the key secondary endpoint, demonstrating statistically significant improvement from baseline in the MDS-UPDRS Part II score. Tavapadon has demonstrated positive results across all three Phase 3 TEMPO trials and AbbVie remains on track to submit a New Drug Application (NDA) to the U.S. Food and Drug Administration (FDA) later this year.\n\nAbbVie announced that its two Phase 2 EMPOWER trials investigating emraclidine as a once-daily, oral monotherapy treatment for adults with schizophrenia who are experiencing an acute exacerbation of psychotic symptoms, did not meet their primary endpoint of showing a statistically significant reduction (improvement) in the change from baseline in the Positive and Negative Syndrome Scale (PANSS) total score compared to the placebo group at week 6. Following the results of these trials, AbbVie began an evaluation of the emraclidine intangible asset for impairment which resulted in a significant decrease in the estimated future cash flows for the product. Based on the revised cash flows, the company recorded a non-cash after-tax intangible asset impairment charge of $3.5 billion. AbbVie continues to evaluate information with respect to the Cerevel-related clinical development programs and will monitor the remaining intangible assets of $3.6 billion.\n\nAbbVie is issuing its adjusted diluted EPS guidance for the full-year 2025 of $12.12 to $12.32. The company's 2025 adjusted diluted EPS guidance excludes any impact from acquired IPR&D and milestones that may be incurred during 2025, as both cannot be reliably forecasted.\n\nAbbVie is raising its long-term outlook for Skyrizi and Rinvoq revenues. The company now expects combined Skyrizi and Rinvoq 2027 revenues of more than $31 billion, an increase of approximately $4 billion compared to previous guidance for combined revenues of more than $27 billion in 2027. This guidance assumes Skyrizi revenues of more than $20 billion and Rinvoq revenues of more than $11 billion in 2027.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The passage is genuinely balanced: two favorable items (\"tavapadon met the primary endpoint... positive results across all three Phase 3 TEMPO trials\" and \"raising its long-term outlook... an increase of approximately $4 billion\") against one unfavorable item (trials that \"did not meet their primary endpoint\" plus a \"$3.5 billion\" impairment), with no clear lean."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-dfc4e1148876ddab",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "In addition, our broker-dealer and bank entities and their subsidiaries are subject to restrictions on their ability to lend or transact with affiliates and to minimum regulatory capital and other requirements, as well as restrictions on their ability to use funds deposited with them in brokerage or bank accounts to fund their businesses. Additional restrictions on related-party transactions, increased capital and liquidity requirements and additional limitations on the use of funds on deposit in bank or brokerage accounts, as well as lower earnings, can reduce the amount of funds available to meet the obligations of Group Inc., including under the FRB\u2019s source of strength requirement, and even require Group Inc. to provide additional funding to such subsidiaries. Restrictions or regulatory action of that kind could impede access to funds that Group Inc. needs to make payments on its obligations, including debt obligations, or dividend payments. In addition, Group Inc.\u2019s right to participate in a distribution of assets upon a subsidiary\u2019s liquidation or reorganization is subject to the prior claims of the subsidiary\u2019s creditors.\n\nThere has been a trend towards increased regulation and supervision of our subsidiaries by the governments and regulators in the countries in which those subsidiaries are located or do business. Concerns about protecting clients and creditors of financial institutions that are controlled by persons or entities located outside of the country in which such entities are located or do business have caused or may cause a number of governments and regulators to take additional steps to \u201cring fence\u201d or require internal total loss-absorbing capacity (which may also be subject to \u201cbail-in\u201d powers, as described below) at those entities in order to protect clients and creditors of those entities in the event of financial difficulties involving those entities. The result has been and may continue to be additional limitations on our ability to efficiently move capital and liquidity among our affiliated entities, or to Group Inc., including in times of stress, thereby increasing the overall level of capital and liquidity required by us on a consolidated basis.\n\nFurthermore, Group Inc. has guaranteed the payment obligations of certain of its subsidiaries, including GS&Co. and GS Bank USA, subject to certain exceptions. In addition, Group Inc. guarantees many of the obligations of its other consolidated subsidiaries on a transaction-by-transaction basis, as negotiated with counterparties. These guarantees may require Group Inc. to provide substantial funds or assets to its subsidiaries or their creditors or counterparties at a time when Group Inc. is in need of liquidity to fund its own obligations.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage asserts realized regulatory burden \u2014 entities \"are subject to restrictions on their ability to lend or transact with affiliates,\" \"There has been a trend towards increased regulation,\" and \"The result has been and may continue to be additional limitations on our ability to efficiently move capital and liquidity\" \u2014 so the realized statement controls."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-e160279f1e0089c8",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our ROIC for the trailing twelve-month period was 31.9% at the end of the second quarter of fiscal 2024 and 41.5% at the end of the second quarter of fiscal 2023. The decrease in ROIC was primarily driven by higher average long-term debt levels due to the financing of the SRS acquisition and lower operating income. See the\n\nOn March 27, 2024, we entered into a definitive agreement to acquire SRS, a leading residential specialty trade distribution company across several verticals serving the professional roofer, landscaper and pool contractor. On June 18, 2024, following the satisfaction or waiver of the applicable closing conditions, including receipt of the requisite regulatory approvals, the acquisition was completed and all merger consideration was transferred. We believe the acquisition of SRS will accelerate the Company\u2019s growth with the residential professional customer. The acquisition is expected to complement our existing capabilities and enable us to better serve complex project purchase occasions with the renovator/remodeler, while also establishing the Company as a leading specialty trade distributor across multiple verticals. Refer to\n\nNet sales for the second quarter of fiscal 2024 were $43.2 billion, an increase of 0.6% from $42.9 billion for the second quarter of fiscal 2023. The increase in net sales for the second quarter of fiscal 2024 was driven by sales from the SRS acquisition, the acquisitions we completed in fiscal 2023, and new store openings. Net sales attributable to SRS since the completion of the acquisition and included within our results for the second quarter of fiscal 2024 totaled $1.3 billion. This increase in net sales was partially offset by the impact of a negative comparable sales environment, primarily driven by decreases in comparable customer transactions and comparable average ticket.\n\nOnline sales, which consist of sales generated through our websites and mobile applications for products picked up at our stores or delivered to customer locations, represented 14.9% of net sales during the second quarter of fiscal 2024 and increased by 3.9% compared to the second quarter of fiscal 2023.\n\nTotal comparable sales for the second quarter of fiscal 2024 decreased 3.3%, reflecting a 2.2% decrease in comparable customer transactions and a 1.3% decrease in comparable average ticket compared to the second quarter of fiscal 2023. The decrease in comparable customer transactions primarily reflects the impact of heightened macroeconomic uncertainties and other macroeconomic factors, including the impacts of a persisting high interest rate environment pressuring home improvement demand. The decrease in comparable average ticket primarily reflects price stabilization relative to last year, slightly offset by demand for new and innovative products.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "No rising cost or margin compression is stated; the ROIC decline is attributed to \"higher average long-term debt levels due to the financing of the SRS acquisition and lower operating income,\" and the ticket decline to \"price stabilization,\" neither of which is input/operating cost pressure."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-e4db6e68025eb549",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Net sales for the Walmart U.S. segment increased $5.5 billion or 5.0% and $14.7 billion or 4.5% for the three and nine months ended October 31, 2024, respectively, when compared to the same periods in the previous fiscal year. The increases were due to comparable sales of 5.1% and 4.7% for the three and nine months ended October 31, 2024, respectively, driven by growth in transactions and unit volumes, with strong sales in grocery and health and wellness. The Walmart U.S. segment's eCommerce sales positively contributed approximately 2.8% to comparable sales for both the three and nine months ended October 31, 2024, which was primarily driven by store-fulfilled pickup and delivery.\n\nGross profit rate increased 42 and 46 basis points for the three and nine months ended October 31, 2024, respectively, when compared to the same periods in the previous fiscal year. The increases were primarily driven by managing prices aligned to our competitive price gaps and growth in higher margin businesses, partially offset by mix shifts into lower margin merchandise categories.\n\nOperating expenses as a percentage of net sales increased 33 and 41 basis points for the three and nine months ended October 31, 2024, respectively, when compared to the same periods in the previous fiscal year. The increase for the three months ended October 31, 2024 was primarily due to hurricane-related recovery expenses and increased marketing and depreciation expenses. The increase for the nine months ended October 31, 2024 was primarily related to increased marketing and depreciation expenses, as well as higher variable pay as a result of exceeding planned performance.\n\nNet sales for the Walmart International segment increased $2.3 billion or 8.0% and $7.5 billion or 9.1% for the three and nine months ended October 31, 2024, respectively, when compared to the same periods in the previous fiscal year. The increases were primarily due to positive comparable sales in the majority of our international markets led by strength in eCommerce and the shift in timing of Flipkart's BBD sales event. Net sales for the three and nine months ended October 31, 2024 were negatively affected by $1.2 billion and $1.1 billion, respectively, due to fluctuations in currency exchange rates.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "\"Operating expenses as a percentage of net sales increased 33 and 41 basis points... primarily due to hurricane-related recovery expenses and increased marketing and depreciation expenses\" is an explicit realized cost increase pressuring the expense ratio."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-e61d787afb309069",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Certain assumptions used in the EVS measure may differ from those required in the fair value measurement note to the Consolidated Financial Statements. For example, certain assets and liabilities with no stated maturity, such as credit card receivables and deposits, have longer assumed durations in the EVS measure. Additional information on long-term debt and held to maturity investment securities is disclosed on page 95 in Note 2.\n\nThe Firm quantifies the market risk of certain debt and equity and credit and funding-related exposures by assessing the potential impact on net revenue, other comprehensive income (\u201cOCI\u201d) and noninterest expense due to changes in relevant market variables. Refer to the predominant business activities that give rise to market risk on page 142 of JPMorganChase\u2019s 2024 Form 10-K for additional information on the positions captured in other sensitivity-based measures.\n\nThe table below represents the potential impact to net revenue, OCI or noninterest expense for market risk-sensitive instruments that are not included in VaR or earnings-at-risk. Where appropriate, instruments used for hedging purposes are reported net of the positions being hedged. The sensitivities disclosed in the table below may not be representative of the actual gain or loss that would have been realized at March 31, 2025 and December 31, 2024, as the movement in market parameters across maturities may vary and are not intended to imply management\u2019s expectation of future changes in these sensitivities.\n\nThe following table presents the Firm\u2019s top 20 exposures by country (excluding the U.S.) as of March 31, 2025 and their comparative exposures as of December 31, 2024. The top 20 country exposures represent the Firm\u2019s largest total exposures by individual country. Country exposures may fluctuate from period to period due to a variety of factors, including client activity, market flows and liquidity management activities undertaken by the Firm.\n\nThe Firm continues to monitor its exposure to Russia, which corresponds to cash placed with the central bank, but which excludes deposits placed on behalf of clients at the Deposit Insurance Agency of Russia. The Firm currently believes that its remaining exposure to Russia is not material. Refer to Note 24 on pages 165-166 for information concerning Russian litigation.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The only legal mention is a bare cross-reference, \"Refer to Note 24 on pages 165-166 for information concerning Russian litigation,\" with no substantive discussion, which \u00a74 excludes from counting."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-e6250cd26ed8326f",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Actual outcomes or results may differ from anticipated results, sometimes materially. Forward-looking and other statements regarding the Company's sustainability efforts and aspirations are not an indication that these statements are necessarily material to investors or require disclosure in the Company's filings with the SEC. In addition, historical, current and forward-looking sustainability-related statements may be based on standards for measuring progress that are still developing, internal controls and processes that continue to evolve and definitions, assumptions, data sources and estimates or measurements that are subject to change in the future, including through rulemaking or guidance. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: general economic conditions, including slowdowns and recessions, domestically or internationally; the Company's indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; the Company's ability to successfully monetize select assets and repay or refinance debt and the impact of changes in the Company's credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, the Company's products and services; actions by OPEC and non-OPEC oil producing countries; results from operations and competitive conditions; future impairments of the Company's proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; government actions (including the effects of announced or future tariff increases and other geopolitical, trade, tariff, fiscal and regulatory uncertainties), war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events (such as in Latin America); inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including the Company's ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; the Company's ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections or projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses, including retained liabilities and indemnification obligations associated with the chemical business; uncertainties about the estimated quantities of oil, NGL and natural gas reserves; lower-than-expected production from development projects or acquisitions; the Company's ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve the Company's competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver the Company's oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; HSE risks, costs and liability under existing or future federal, regional, state, provincial, tribal, local and international HSE laws, regulations and litigation (including related to climate change or remedial actions or assessments); legislative or regulatory changes, including changes relating to hydraulic fracturing or other oil and natural gas operations, retroactive royalty or production tax regimes, and deep-water and onshore drilling and permitting regulations; the Company's ability to recognize intended benefits from its business strategies and initiatives, such as the Company's low-carbon ventures businesses and announced GHG emissions reduction targets or net-zero goals; changes in government grant or loan programs; potential liability resulting from pending or future litigation, government investigations and other proceedings; disruption or interruption of production or facility damage due to accidents, chemical releases, labor unrest, weather, power outages, natural disasters, cyber-attacks, terrorist acts or insurgent activity; the scope and duration of global or regional health pandemics or epidemics and actions taken by government authorities and other third parties in connection therewith; the creditworthiness and performance of the Company's counterparties, including financial institutions, operating partners and other parties; failure of risk management; the Company's ability to retain and hire key personnel; supply, transportation and labor constraints; reorganization or restructuring of the Company's operations; changes in state, federal or international tax rates, deductions, incentives or credits; and actions by third parties that are beyond the Company's control.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"unexpected changes in costs,\" \"inflation, its impact on markets and economic activity,\" and \"increased costs\" support MARGIN_COST_PRESSURE, while the only demand language is the neutral phrase \"supply and demand considerations for, and the prices of, the Company's products and services,\" which does not assert softening demand."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-e7538505b191c9fd",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "If JPMorgan Chase is unable to reduce positions effectively during a market dislocation, this can increase both the market and credit risks associated with those positions and the level of risk-weighted-assets (\u201cRWA\u201d) that JPMorgan Chase holds on its balance sheet. These factors could adversely affect JPMorgan Chase\u2019s capital position, funding costs and the profitability of its businesses.\n\nA reduction in JPMorgan Chase\u2019s liquidity may be caused by events over which it has little or no control. For example, periods of market stress, low investor confidence and significant market illiquidity could result in higher funding costs for JPMorgan Chase and could limit its access to some of its traditional sources of liquidity.\n\nJPMorgan Chase may need to raise funding from alternative sources if its access to stable and lower-cost sources of funding, such as deposits and borrowings from Federal Home Loan Banks, is reduced. Alternative sources of funding could be more expensive or limited in availability. JPMorgan Chase\u2019s funding costs could also be negatively affected by actions that JPMorgan Chase may take in order to:\n\nJPMorgan Chase & Co. is a holding company that holds the stock of JPMorgan Chase Bank, N.A. and an intermediate holding company, JPMorgan Chase Holdings LLC (the \u201cIHC\u201d). The IHC in turn generally holds the stock of JPMorgan Chase\u2019s subsidiaries other than JPMorgan Chase Bank, N.A. and its subsidiaries. The IHC also owns other assets and provides intercompany lending to the Parent Company.\n\nlimited. JPMorgan Chase Bank, N.A. is subject to regulatory restrictions on its dividend distributions, as well as capital adequacy requirements, such as the Supplementary Leverage Ratio (\u201cSLR\u201d), and liquidity requirements and other regulatory restrictions on its ability to make payments to the Parent Company. The IHC is prohibited from paying dividends or extending credit to the Parent Company if certain capital or liquidity thresholds are breached, or if limits are otherwise imposed by the Parent Company\u2019s management or Board of Directors.\n\nAs a result of these arrangements, the ability of the Parent Company to make various payments is dependent on its receiving dividends from JPMorgan Chase Bank, N.A. and dividends and borrowings from the IHC. These limitations could affect the Parent Company\u2019s ability to:",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage states that market stress \"could result in higher funding costs,\" that \"Alternative sources of funding could be more expensive,\" and that these factors \"could adversely affect... funding costs and the profitability of its businesses\" \u2014 explicit hypothetical cost pressure on profitability."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ed1212d8058db87d",
+   "section_type": "MDA",
+   "high_stakes": true,
+   "text": "Liquidity risk is the risk that the Firm will be unable to meet its contractual and contingent financial obligations as they arise or that it does not have the appropriate amount, composition and tenor of funding and liquidity to support its assets and liabilities. Refer to pages 97-104 of JPMorgan Chase\u2019s 2022 Form 10-K and the Firm\u2019s U.S. LCR Disclosure reports, which are available on the Firm\u2019s website, for a further discussion of the Firm\u2019s liquidity risk.\n\nUnder the LCR rule, the amount of eligible HQLA held by JPMorgan Chase Bank, N.A. that is in excess of its stand-alone 100% minimum LCR requirement, and that is not transferable to non-bank affiliates, must be excluded from the Firm\u2019s reported eligible HQLA. The LCR for both the Firm and JPMorgan Chase Bank, N.A. is required to be a minimum of 100%.\n\nJPMorgan Chase Bank, N.A.'s average LCR decreased during the three months ended September 30, 2023, compared with the three months ended June 30, 2023, reflecting the full quarter impact associated with First Republic in the third quarter as the First Republic acquisition occurred on May 1, 2023. JPMorgan Chase Bank, N.A.\u2019s HQLA was further impacted by a reduction in cash primarily driven by a decline in average deposits and higher average loans, predominantly offset by CIB market activities.\n\nJPMorgan Chase Bank, N.A.\u2019s average LCR for the three months ended September 30, 2023 decreased when compared with the same period in the prior year, reflecting a decrease in JPMorgan Chase Bank, N.A.\u2019s HQLA as a result of a reduction in cash from a decline in average deposits and loan growth, as well as the impact of First Republic and lower market values of HQLA-eligible investment securities.\n\nActions by the Federal Reserve have impacted depositor behavior, resulting in reductions to system-wide deposits, including those held by the Firm. Each of the Firm and JPMorgan Chase Bank, N.A.'s average LCR may fluctuate from period to period due to changes in their respective eligible HQLA and estimated net cash outflows as a result of ongoing business activity and from the continued impacts of Federal Reserve actions as well as other factors.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage contains no cost or margin language at all \u2014 the declines described are \"a reduction in cash primarily driven by a decline in average deposits and higher average loans\" and lower HQLA, not rising costs compressing margins."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only insufficiency language is the definitional \"Liquidity risk is the risk that the Firm will be unable to meet its contractual and contingent financial obligations as they arise\"; the LCR merely \"decreased\" with no statement that it fell below the \"minimum of 100%\" requirement, so nothing is asserted as realized."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-edee526ead997236",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Federal Reserve rules require that JPMorgan Chase & Co. (the \u201cParent Company\u201d) maintain minimum levels of unsecured external long-term debt and other loss-absorbing capacity with specific terms (\u201celigible LTD\u201d) for purposes of recapitalizing JPMorgan Chase\u2019s operating subsidiaries if the Parent Company were to enter into a resolution either:\n\nThe preferred \u201csingle point of entry\u201d strategy under JPMorgan Chase\u2019s resolution plan contemplates that only the Parent Company would enter bankruptcy proceedings. JPMorgan Chase\u2019s subsidiaries would be recapitalized, as needed, so that they could continue normal operations or subsequently be divested or wound down in an orderly manner. As a result, the Parent Company\u2019s losses and any losses incurred by its subsidiaries would be imposed first on holders of the Parent Company\u2019s equity securities and thereafter on its unsecured creditors, including holders of eligible LTD and other debt securities. Claims of holders of those securities would have a junior position to the claims of creditors of JPMorgan Chase\u2019s subsidiaries and to the claims of priority (as determined by statute) and secured creditors of the Parent Company.\n\nAccordingly, in a resolution of the Parent Company in bankruptcy, holders of eligible LTD and other debt securities of the Parent Company would realize value only to the extent available to the Parent Company as a shareholder of JPMorgan Chase Bank, N.A. and its other subsidiaries, and only after any claims of priority and secured creditors of the Parent Company have been fully repaid.\n\nIf the Parent Company were to approach, or enter into, a resolution, none of the Parent Company, the Federal Reserve or the FDIC is obligated to follow JPMorgan Chase\u2019s preferred resolution strategy, and losses to holders of eligible LTD and other debt and equity securities of the Parent Company, under whatever strategy is ultimately followed, could be greater than they might have been under JPMorgan Chase\u2019s preferred strategy.\n\nPolitical developments in the U.S. and other countries can cause uncertainty in the economic environment and market conditions in which JPMorgan Chase operates its businesses. Certain governmental policy initiatives, as well as heightened geopolitical tensions, could significantly affect U.S. and global economic growth and cause higher volatility in the financial markets, including:",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"Federal Reserve rules require that JPMorgan Chase & Co. ... maintain minimum levels of unsecured external long-term debt and other loss-absorbing capacity\" plus the FDIC/Federal Reserve resolution-authority discussion is a regulatory requirement/proceeding framing that fits LEGAL_REGULATORY_ACTION, framed conditionally (\"If the Parent Company were to approach, or enter into, a resolution\")."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-f057d33c4569dba2",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our manufacturing facility in Rocky Mount, NC was damaged by a tornado in July 2023. The facility is a key producer of sterile injectables and is responsible for manufacturing nearly 25 percent of all our sterile injectables, including anesthesia, analgesia, and micronutrients. While manufacturing has resumed, the supply of medicines impacted by the tornado is expected to be affected through 2024.\n\nWe incurred losses in 2023 and in the first six months of 2024 that were partially offset by insurance recoveries received in 2023. We expect to record additional insurance recoveries in future periods, but we are unable to predict the timing of receipt with certainty.\n\n\u2013\u2013We periodically encounter supply delays, disruptions and shortages, including due to voluntary product recalls and natural or man-made disasters. In response to requests from various regulatory authorities, manufacturers across the pharmaceutical industry, including Pfizer, are evaluating their product portfolios for the potential presence or formation of nitrosamines. In 2021, Pfizer recalled all lots of Chantix in the U.S. due to the presence of a nitrosamine, N-nitroso-varenicline, at or above the FDA interim acceptable intake limit. Regulatory authorities have issued updated guidance on nitrosamine acceptable intake levels. With this guidance, which included an updated intake level for N-nitroso-varenicline, we expect to make regulatory submissions in the second half of 2024 to potentially enable Chantix to return to market in the U.S. and in certain international markets.\n\nExcept for the impact of the tornado in Rocky Mount, NC discussed above, we have not seen a significant disruption of our supply chain in the first six months of 2024 and through the date of filing of this Form 10-Q, and all of our manufacturing sites globally have continued to operate at or near normal levels. We continue to monitor industry demand for certain components and raw materials and implement mitigation strategies in an effort to reduce any potential risk or impact to product supply, including active supplier management, qualification of additional suppliers and advanced purchasing to the extent possible. For information on risks related to product manufacturing, see the\n\n\u2013\u2013In June 2024, we announced that CIFFREO, a Phase 3 study evaluating fordadistrogene movaparvovec in ambulatory patients with DMD did not meet its primary endpoint and that key secondary endpoints also did not show a significant difference between participants treated with fordadistrogene movaparvovec and placebo. See the",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "\"We incurred losses in 2023 and in the first six months of 2024 that were partially offset by insurance recoveries\" is a casualty loss, not the rising input/labor/operating costs compressing margins that MARGIN_COST_PRESSURE requires \u2014 the passage never mentions costs or margins."
+    }
+   ]
+  }
+ ]
+}

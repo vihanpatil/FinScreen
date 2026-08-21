@@ -1,0 +1,512 @@
+{
+ "batch": 4,
+ "chunks": [
+  {
+   "chunk_id": "CHK-63c795c981b93651",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "AbbVie announced the EC approved Maviret (glecaprevir/pibrentasvir) for the treatment of acute hepatitis C virus (HCV) infection in adults and children aged 3 years and older. This approval gives clinicians an option to initiate treatment as soon as acute infection is confirmed and makes Maviret the only treatment approved in the EU for both acute and chronic HCV infection.\n\nAbbVie is updating its adjusted diluted EPS guidance to include the impact of the proposed Apogee Therapeutics acquisition, which is expected to be $0.14 dilutive in 2026, based upon an anticipated close in the third quarter of this year. This dilution is partially offset by $0.10 of overperformance. As a result, AbbVie is updating its adjusted diluted EPS guidance range for the full year 2026 from $13.91 - $14.11 to $13.87 - $14.07, reflecting a change of $0.04 at the midpoint.\n\nThe company's 2026 adjusted diluted EPS guidance includes an unfavorable impact of $0.58 per share related to acquired IPR&D and milestones expense incurred year-to-date through the second quarter 2026. This guidance excludes any impact from acquired IPR&D and milestones that may be incurred beyond the second quarter of 2026, as both cannot be reliably forecasted.\n\nSome statements in this news release are, or may be considered, forward-looking statements for purposes of the Private Securities Litigation Reform Act of 1995. The words \u201cbelieve,\u201d \u201cexpect,\u201d \u201canticipate,\u201d \u201cproject\u201d and similar expressions and uses of future or conditional verbs, generally identify forward-looking statements. AbbVie cautions that these forward-looking statements are subject to risks and uncertainties that may cause actual results to differ materially from those expressed or implied in the forward-looking statements. Such risks and uncertainties include, but are not limited to, risks related to the proposed acquisition of Apogee Therapeutics, Inc. (\"Apogee\"), including the possibility that such acquisition may not be consummated on the anticipated timeframe or at all, risks related to the ability to realize the anticipated benefits of the proposed acquisition on the anticipated timeframe or at all, risks that the costs to consummate the acquisition or to obtain the anticipated benefits of the proposed acquisition could be greater than expected, the failure to obtain applicable regulatory or Apogee stockholder approval in a timely manner or otherwise, the risk that an event occurs that could give rise to the right of AbbVie or Apogee to terminate the merger agreement, risks related to the ability of AbbVie and Apogee to successfully integrate the businesses and the possibility that such integration may be more difficult, time consuming or costly than expected, risks that the proposed acquisition disrupts Apogee's or AbbVie's current plans and operations and makes it more difficult to maintain business and operational relationships, the diversion of management's attention from ongoing business operations and opportunities due to the proposed transaction, negative effects of the consummation of the proposed acquisition on business or employee relationships or the market price of AbbVie's common stock and/or operating results, significant transaction costs, the assumption of unknown liabilities, the risk of litigation and/or regulatory actions related to the proposed acquisition, the risk that zumilokibart (APG777) or other Apogee pipeline assets may not demonstrate the anticipated success, safety, or efficacy in ongoing or future clinical trials, the risk that positive interim clinical trial results for zumilokibart (APG777) may not be predictive of results in later-stage or larger clinical trials, challenges to intellectual property, competition from other products, difficulties inherent in the research and development process, adverse litigation or government action, changes to laws and regulations applicable to AbbVie's industry, the impact of global macroeconomic factors, such as economic downturns or uncertainty, international conflict, trade disputes, tariffs and other uncertainties and risks associated with global business operations. Additional information about the economic, competitive, governmental, technological and other factors that may affect AbbVie's and Apogee's operations is set forth in Item 1A, \u201cRisk Factors,\u201d of AbbVie's 2025 Annual Report on Form 10-K, which has been filed with the Securities and Exchange Commission, as updated by its Quarterly Reports on Form 10-Q and in other documents that AbbVie subsequently files with the Securities and Exchange Commission that update, supplement or supersede such information; and Item 1A, \"Risk Factors,\" of Apogee's most recently filed Annual Report on Form 10-K and subsequent Quarterly Reports on Form 10-Q and in other documents that Apogee subsequently files with the Securities and Exchange Commission that update, supplement or supersede such information. AbbVie undertakes no obligation, and specifically declines, to release publicly any revisions to forward-looking statements as a result of subsequent events or developments, except as required by law.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The risk enumeration names \"the impact of global macroeconomic factors, such as ... international conflict, trade disputes, tariffs,\" which matches TRADE_POLICY_EXPOSURE (HYPOTHETICAL)."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-63e60e27dfa3e15d",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "\u201cPfizer had another strong quarter of focused execution and we\u2019re pleased with our progress in advancing our R&D pipeline, driving our commercial performance and expanding our margins. We continue to strengthen our company for the future and we\u2019re confident in our ability to create further value for patients and our shareholders.\u201d\n\n\u201cOur robust second-quarter Revenue and EPS performance demonstrates our continued focus on commercial execution and operational efficiency. We raised our full-year 2025 Adjusted diluted EPS guidance, demonstrating confidence in our ability to execute against our strategic priorities and deliver strong results for shareholders.\u201d\n\nNo share repurchases have been completed to date in 2025. As of August 5, 2025, Pfizer\u2019s remaining share repurchase authorization is $3.3 billion. Current financial guidance does not anticipate any share repurchases in 2025. The company expects to continue to de-lever in a prudent manner in order to maintain a balanced capital allocation strategy. This includes maintaining the flexibility to deploy capital towards potential value-creating business development transactions and the potential to return capital to shareholders through share repurchases.\n\nSecond-quarter 2025 revenues totaled $14.7 billion, an increase of $1.4 billion, or 10%, compared to the prior-year quarter, reflecting an operational increase of $1.3 billion, or 10%, as well as a favorable impact of foreign exchange of $22 million. The operational increase was primarily driven by an increase in revenues for the Vyndaqel family, Comirnaty, Paxlovid, Padcev, Eliquis and several other products across categories despite the unfavorable impact of higher manufacturer discounts resulting from the Inflation Reduction Act (IRA) Medicare Part D Redesign.\n\nVyndaqel family (Vyndaqel, Vyndamax, Vynmac) globally, up 21% operationally, driven largely by strong demand with continuing uptake in patient diagnosis primarily in the U.S. and certain international developed markets, partially offset by lower net price in the U.S. mostly due to the impact of higher manufacturer discounts resulting from the IRA Medicare Part D Redesign;\n\nPaxlovid globally, up 71% operationally, driven primarily by higher net price in the U.S. following the transition from the U.S. government agreement as well as a favorable adjustment of rebate accruals related to prior periods, partially offset by lower COVID-19 infections across the U.S. and certain international markets as well as lower international government purchases;",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Paxlovid growth was \"partially offset by lower COVID-19 infections across the U.S. and certain international markets as well as lower international government purchases\" \u2014 a realized decline in orders/demand."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-66a6349cf2ada191",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "New or amended laws and regulations, or new or different applications or interpretations of existing laws and regulations, including those related to drilling, manufacturing or production processes (including flaring and well stimulation techniques such as hydraulic fracturing and acidization), pipelines, labor and employment, taxes, royalty rates, permitted production rates, entitlements, import, export and use of raw materials, equipment or products, use or increased use of land, water and other natural resources, air emissions (including restrictions, taxes or fees on emissions of methane, CO\n\n, or other substances), water recycling and disposal, waste minimization and disposal, public and occupational health and safety, the manufacturing of chemicals, asset integrity management, the marketing or export of commodities, security, environmental protection, and climate change-related and sustainability initiatives, all of which may restrict or prohibit activities of Occidental or its contractors or customers, increase Occidental\u2019s costs or reduce demand for Occidental\u2019s products;\n\nViolation of certain laws and regulations, which may result in strict, joint and several liability and the imposition of significant administrative, civil or criminal fines and penalties and may also result in liability for remedial actions or assessments. Litigation, orders or other proceedings asserting strict, joint and several liability under such laws and regulations may seek to impose significant administrative, civil or criminal fines and penalties, damages or remedial actions or to require significant changes to, or even closure of, facilities or operations;\n\nExamples of provisions of recent U.S. federal statutes and regulations that affect key aspects of taxation, land use and production or manufacturing operations and present the foregoing types of risks are described in this risk factor, and examples of those regarding climate change and GHG and other air emissions are described in the next risk factor below.\n\nIn August 2022, Congress passed and President Biden signed the IRA, which imposed new or reinstated corporate taxes and fees, including those described below, that could have an adverse effect on Occidental\u2019s tax liability. The IRA enacted a new corporate alternative minimum tax (CAMT) that, starting in tax year 2023, imposes a 15% minimum tax on the adjusted financial statement income (AFSI), net the CAMT foreign tax credit, of corporations with average AFSI exceeding $1 billion for three preceding consecutive tax years. In 2023, the IRS issued five notices providing interim guidance on the CAMT and has indicated it will promulgate CAMT regulations in 2024. The IRA also imposed a 1% excise tax on the aggregate fair market value of corporate share repurchases, net of certain corporate share issuances and other adjustments, by certain corporations during the taxable year. In 2023, the IRS issued two notices containing interim guidance clarifying that corporations are not required to report or pay the excise tax until such time and in such manner dictated by IRS regulations that are expected to be issued in 2024. The IRA also provided significant policy support and incentives, including enhanced tax credits, for DAC, CCUS, hydrogen and other low-carbon projects. Finally, the IRA expanded GHG emissions reporting requirements and imposed a new methane emissions charge on owners or operators of various U.S. oil and gas facilities, as described in the next risk factor on climate change and GHG emissions. For additional discussion of such matters, see",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The lead sentence says new or amended laws \"may restrict or prohibit activities of Occidental ... increase Occidental's costs or reduce demand for Occidental's products,\" which explicitly states hypothetical cost and demand impacts."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-673bcdde24691f7f",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Any acquisition, investment or entry into a new business could subject us to new regulations, both directly as a result of the new business as well as in the other existing parts of our business, with which we would need to comply. This compliance could increase our costs, and we could be subject to liability or reputational harm to the extent we cannot meet any such compliance requirements. Additionally, targets that we acquire have had, and may in the future have, data practices that do not initially conform to our privacy, data protection and information security standards and data governance model, which could lead to regulatory scrutiny and reputational harm. These targets also have resulted in, and may in the future lead to, information security vulnerabilities for us.\n\nWe are a guarantor of certain third-party obligations, including those of certain of our customers and service providers. In this capacity, we are exposed to credit and liquidity risk. We may incur significant losses in connection with transaction settlements if a customer fails to fund its daily settlement obligations due to technical problems, liquidity shortfalls, insolvency or other reasons. The recent increased speed of bank failures as recently seen in the U.S. could increase the potential for such losses. Concurrent settlement failures of more than one of our larger customers or of several smaller customers either on a given day or over a condensed period of time may exceed our available resources. Additionally, certain non-guaranteed transactions as well as chargebacks to acquirers in the event of acquirer default could result in elevated brand risk and the potential for financial loss. These impacts could materially and adversely affect our results of operations.\n\nProvisions contained in our amended and restated certificate of incorporation and bylaws and Delaware law could be considered anti-takeover provisions, including provisions that could delay or prevent entirely a merger or acquisition that our stockholders consider favorable. These provisions may also discourage acquisition proposals or have the effect of delaying or preventing entirely a change in control, which could harm our stock price. For example, subject to limited exceptions, our amended and restated certificate of incorporation prohibits any person from beneficially owning more than 15% of any of the Class A common stock or any other class or series of our stock with general voting power, or more than 15% of our total voting power. In addition:",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage states new regulations from an acquisition would require compliance and \"This compliance could increase our costs,\" an explicit hypothetical cost-pressure statement."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-69ed2c9e4573621c",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "We rely on our ability to manage and process data accurately, timely and completely, including capturing, transporting, aggregating, using, transmitting data externally, and retaining and protecting data appropriately. While we continually update our policies, programs, processes and practices and take steps to leverage emerging technologies, such as automation, AI and robotics, our data management processes may not be effective and are subject to weaknesses and failures, including human error, data limitations, process delays, system failure or failed controls. Failure to effectively manage data accurately, timely and completely may adversely impact its quality and reliability and our ability to manage current and emerging risks, produce accurate financial, nonfinancial, regulatory, operational, environmental and social reporting, detect or surveil potential misconduct or non-compliance with LRRs, and to manage our business needs, strategic decision-making, resolution strategy and operations. The failure to establish and maintain effective, efficient and controlled data management could adversely impact our development of products and client relationships and increase operational losses and regulatory and reputational harm.\n\nClimate-related matters present short-, medium- and long-term risks. This includes physical risks such as extreme weather events and natural disasters, including floods, wildfires, hurricanes and tornados, and chronic risks such as rising average global temperatures and sea levels. These events could adversely impact our facilities, employees and clients\u2019 ability to repay outstanding loans, disrupt our operations or those of our clients or third parties, disrupt supply chains or distribution networks, damage collateral and/or result in market volatility, cause rapid deposit outflows, drawdowns of credit facilities or insurance shortfalls, or deteriorate the value of collateral.\n\nregulatory, compliance and legal requirements could alter our strategic planning, limit certain business activities and products and services offered, amplify credit and market risks, negatively impact asset values, insurance availability and cost, require capital expenditures and changes in technology and markets, increase expenses and adversely impact our capital requirements and results of operations. Climate-related regulatory approaches and disclosure continue to evolve and diverge across jurisdictions (including the availability of certain reporting exemptions), including among the U.S. and non-U.S., and within the U.S., which could adversely impact our legal, compliance and public disclosure risks and costs. Availability, quality and disclosure of climate-related data, including from third parties, remain challenging, which may result in legal, compliance and/or reputational harm.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The climate paragraph states these events could \"disrupt supply chains or distribution networks,\" which is the rubric's own trigger language for SUPPLY_INPUT_CONSTRAINT in hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6b01edf54938b070",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Reports Third-Quarter Diluted EPS of $0.88 on a GAAP Basis, a Decrease of 12.0 Percent; Adjusted Diluted EPS of $3.00, an Increase of 1.7 Percent; These Results Include an Unfavorable Impact of $0.04 Per Share Related to Acquired IPR&D and Milestones Expense\n\nThird-Quarter Global Net Revenues from the Immunology Portfolio Were $7.046 Billion, an Increase of 3.9 Percent on a Reported Basis, or 4.8 Percent on an Operational Basis; Global Humira Net Revenues Were $2.227 Billion; Global Skyrizi Net Revenues Were $3.205 Billion; Global Rinvoq Net Revenues Were $1.614 Billion\n\nThird-Quarter Global Net Revenues from the Oncology Portfolio Were $1.687 Billion, an Increase of 11.6 Percent on a Reported Basis, or 13.0 Percent on an Operational Basis; Global Imbruvica Net Revenues Were $828 Million; Global Venclexta Net Revenues Were $677 Million\n\nThird-Quarter Global Net Revenues from the Neuroscience Portfolio Were $2.363 Billion, an Increase of 15.6 Percent on a Reported Basis, or 16.0 Percent on an Operational Basis; Global Botox Therapeutic Net Revenues Were $848 Million; Global Vraylar Net Revenues Were $875 Million; Combined Global Ubrelvy and Qulipta Net Revenues Were $445 Million\n\nThird-Quarter Global Net Revenues from the Aesthetics Portfolio Were $1.239 Billion, a Decrease of 0.1 Percent on a Reported Basis, or an Increase of 1.8 Percent on an Operational Basis; Global Botox Cosmetic Net Revenues Were $671 Million; Global Juvederm Net Revenues Were $258 Million\n\n\"We delivered another quarter of strong commercial execution and significant pipeline progress,\" said Robert A. Michael, chief executive officer, AbbVie. \"Based upon the momentum of AbbVie's business and our confidence in the long-term growth outlook, we are once again raising our full-year guidance and are increasing our quarterly dividend.\"\n\nGlobal Humira net revenues of $2.227 billion decreased 37.2 percent on a reported basis, or 36.5 percent on an operational basis. U.S. Humira net revenues were $1.765 billion, a decrease of 41.6 percent. Internationally, Humira net revenues were $462 million, a decrease of 12.4 percent on a reported basis, or 7.8 percent on an operational basis.\n\nAbbVie announced that it completed its acquisition of Cerevel, adding a pipeline of highly complementary assets to AbbVie's existing neuroscience portfolio. Cerevel's pipeline includes emraclidine, a potential best-in-class, next-generation antipsychotic, that is being studied for the treatment of schizophrenia; tavapadon, a first-in-class dopamine D1/D5 selective partial agonist for the management of Parkinson's disease (PD); as well as CVL-354, a potential best-in-class kappa opioid receptor (KOR) antagonist being studied for the treatment of major depressive disorder (MDD). Cerevel is a strong strategic fit for AbbVie and has potential to meaningfully impact revenue into the next decade.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The only cost item is an \"Unfavorable Impact of $0.04 Per Share Related to Acquired IPR&D and Milestones Expense,\" a discrete charge rather than rising input/labor/operating costs compressing margins."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6b65cd171cc4e7fb",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Among the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates, including Venezuela; general domestic and international economic, market and political conditions, including the conflict between Russia and Ukraine, the ongoing conflict in the Middle East and the global response to these hostilities; changing refining, marketing and chemicals margins; the amount and timing of settlements on the company\u2019s commodity derivative contracts; the company\u2019s ability to realize anticipated cost savings and efficiencies associated with enterprise structural cost reduction initiatives; actions of competitors or regulators; timing of exploration expenses; changes in projected future cash flows; timing of crude oil liftings; uncertainties about the estimated quantities of crude oil, natural gas liquids and natural gas reserves; the competitiveness of alternate-energy sources or product substitutes; pace and scale of the development of large carbon capture and storage and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the company\u2019s ability to achieve the anticipated benefits from the acquisition of Hess Corporation; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 21 through 27 of the company\u2019s 2025 Annual Report on Form 10-K, and as updated in the future. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The same factor list includes \"the potential for gains and losses from asset dispositions or impairments,\" which matches IMPAIRMENT_WRITEDOWN in hypothetical framing at the same threshold used for the other list items."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6bba885b1dcf8678",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": ", security, or responsible business practices, we could experience lost sales and increased costs and be exposed to legal, financial and reputational risks, as well as governmental enforcement actions. Actual, potential or perceived product safety or security concerns, including health- or privacy- related concerns, could expose, and in some cases have exposed, us to litigation or governmental enforcement actions, and could result in costly product recalls and other liabilities. For instance, certain of the Company\u2019s suppliers have also been involved in litigation or governmental enforcement actions related to perfluoroalkyl and polyfluoroalkyl substances, also known as \u201cPFAS,\u201d and we could be exposed to similar actions. For any actions related to actual, potential, or perceived product-safety concerns, we may not be successful in obtaining adequate contractual indemnification and insurance coverage from our suppliers and service providers, which may result in claims having an adverse effect on our business, financial condition and results of operations. Even with adequate insurance and indemnification, our reputation as a provider of high-quality products, including both national brand names and our proprietary products, could suffer, damaging our reputation and impacting customer loyalty.\n\nIn addition, we and our customers have expectations around responsible sourcing, which has been an increasing focus of government regulators. Under the terms of our standard supplier buying agreements, our suppliers must comply with our responsible sourcing standards, which cover a variety of expectations across multiple areas, including supply chain transparency, health and safety, environmental laws and regulations, compensation, hours of work, and prohibitions on child and forced labor. Further, suppliers must comply with Company policies and applicable law, including the laws of the jurisdictions from which products and materials are sourced, regarding the sourcing of raw materials, including timber and minerals, used in our products. We have a responsible sourcing audit process, but we are also dependent on our suppliers to ensure that the products and services we provide to our customers comply with our standards and applicable law, including with respect to information provided by suppliers to government agencies about the source of the products or the constituent elements of those products. Further, the supply chain for some of the products we sell may be too attenuated for us to know with certainty the source of their components, such as timber, minerals, or other raw materials. Actual, potential or perceived supplier non-compliance with our standards or applicable law \u2014 including allegations of non-compliance raised by non-governmental organizations or in third-party reports \u2014 could, and in certain instances in the past has, exposed us to litigation or governmental enforcement actions and resulted in costly product recalls; resulted in inability to sell certain products due to failure to meet our standards or due to customs actions, including regulatory enforcement inquiries, holds, detentions, and exclusions; impacted our reputation; and resulted in termination of supplier relationships and/or other liabilities.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "unsure",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The supplier discussion is about compliance and traceability (\"too attenuated for us to know with certainty the source of their components\") rather than a constraint on supply, and where supply consequences are stated they are past-tense (\"in certain instances in the past has ... resulted in termination of supplier relationships\"), so the stored SUPPLY_INPUT_CONSTRAINT/HYPOTHETICAL pairing is underdetermined."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6c4fc11022d87c7c",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Cash flow from operations in the first quarter of 2026 was lower than a year ago primarily due to higher working capital outflows largely resulting from the sharp increase in commodity prices in March 2026. Adjusted free cash flow benefited from a $1 billion loan repayment from TCO.\n\nThe company\u2019s Board of Directors declared a quarterly dividend of one dollar and seventy-eight cents ($1.78) per share, payable June 10, 2026, to all holders of common stock as shown on the transfer records of the corporation at the close of business on May 19, 2026.\n\nChevron is one of the world\u2019s leading integrated energy companies. We believe affordable, reliable and ever-cleaner energy is essential to enabling human progress. Chevron produces crude oil and natural gas; manufactures transportation fuels, lubricants, petrochemicals and additives; and develops technologies that enhance our business and the industry. We aim to grow our oil and gas business, lower the carbon intensity of operations, and grow new energies businesses. More information about Chevron is available at\n\nChevron\u2019s discussion of first quarter 2026 earnings with security analysts will take place on Friday, May 1, 2026, at 10:00 a.m. CT. A webcast of the meeting will be available in a listen-only mode to individual investors, media, and other interested parties on Chevron\u2019s website at\n\nThis news release contains forward-looking statements relating to Chevron\u2019s operations, assets, and strategy that are based on management\u2019s current expectations, estimates and projections about the petroleum, chemicals and other energy-related industries. Words or phrases such as \u201canticipates,\u201d \u201cexpects,\u201d \u201cintends,\u201d \u201cplans,\u201d \u201ctargets,\u201d \u201cadvances,\u201d \u201ccommits,\u201d \u201cdrives,\u201d \u201caims,\u201d \u201cforecasts,\u201d \u201cprojects,\u201d \u201cbelieves,\u201d \u201capproaches,\u201d \u201cseeks,\u201d \u201cschedules,\u201d \u201cestimates,\u201d \u201cpositions,\u201d \u201cpursues,\u201d \u201cprogress,\u201d \u201cdesign,\u201d \u201cenable,\u201d \u201cmay,\u201d \u201ccan,\u201d \u201ccould,\u201d \u201cshould,\u201d \u201cwill,\u201d \u201cbudgets,\u201d \u201coutlook,\u201d \u201ctrends,\u201d \u201cguidance,\u201d \u201cfocus,\u201d \u201con track,\u201d \u201ctrajectory,\u201d \u201cgoals,\u201d \u201cobjectives,\u201d \u201cstrategies,\u201d \u201copportunities,\u201d \u201cpoised,\u201d \u201cpotential,\u201d \u201cambitions,\u201d \u201cfuture,\u201d \u201caspires\u201d and similar expressions, and variations or negatives of these words, are intended to identify such forward-looking statements, but not all forward-looking statements include such words. These statements are not guarantees of future performance and are subject to numerous risks, uncertainties and other factors, many of which are beyond the company\u2019s control and are difficult to predict. Therefore, actual outcomes and results may differ materially from what is expressed or forecasted in such forward-looking statements. The reader should not place undue reliance on these forward-looking statements, which speak only as of the date of this news release. Unless legally required, Chevron undertakes no obligation to update publicly any forward-looking statements, whether as a result of new information, future events or otherwise.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage attributes lower cash flow to \"higher working capital outflows largely resulting from the sharp increase in commodity prices,\" a working-capital/cash-flow effect; no cost of goods, expense or margin impact is asserted."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6c60ac55215be937",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Page 2 of 17 \u2022 Optum supported more than 120 million consumers and generated revenues of $65.7 billion and earnings of $4.0 billion, representing 160 basis points of margin expansion year-over-year. UnitedHealth Group Updated 2026 Full Year Guidance ($ in millions, except per share data) Reported Operating Earnings Adjusted Operating Earnings UnitedHealthcare > $12,000 > $12,000 Optum Health > $2,275 > $2,215 Optum Insight > $4,925 > $4,750 Optum Rx > $6,250 > $6,250 Optum (a) > $13,450 > $13,215 UnitedHealth Group > $25,450 > $25,215 Medical Care Ratio 88.1% \u00b1 25 bps Tax Rate ~18.5% Cash Flows from Operations ~$24,000 Share Repurchase At Least $5,000 Net Earnings to UNH Shareholders > $16,750 Diluted Adjusted (b) Net Earnings per Share $18.45 - $18.95 $19.50 - $20.00 (a) Refer to page 7 of this release for a bridge of Optum Reported to Adjusted Operating Earnings. (b) Refer to page 16 of this release for a reconciliation of the non-GAAP measure.\n\nPage 3 of 17 Addressing America\u2019s Healthcare Challenges with Sustainable Solutions UnitedHealth Group remains committed to addressing the issues that make health care costly and complicated for the people and providers we serve. Recent actions taken to address these issues include: Governance, Oversight and Transparency Making the health system work better for everyone starts with trust, transparency and accountability. The company is strengthening that foundation by deepening oversight and renewing its leadership culture. \u2022 Refreshed leadership roles and re-energizing the company\u2019s culture and commitment to mission. \u2022 Created a new Public Responsibility Committee for the Board of Directors, named a new Lead Independent Director and committee chairs and added a new independent director. \u2022 Published comprehensive reviews of its business practices, which included risk assessment operations, care services management and prescription drug manufacturer discounts, and implemented all recommended improvements from the reviews. \u2022 Released an independent review of the HouseCalls program that showed the sampled diagnoses were overwhelmingly supported by medical records, with an error rate nearly three times lower than the rate reported by CMS\u2019s most recent audits. United Health Foundation The United Health Foundation has been refreshed, expanding its priorities to include rural health, maternal and children's health and behavioral health, among others. \u2022 Committed $1 billion to the United Health Foundation to support key initiatives, including improving rural health care, strengthening maternal and children's health and addressing behavioral health challenges. Affordability, Rural Care and Benefits The company is taking steps to increase support and access and decrease costs for all communities served. \u2022 Committed to voluntarily eliminating and rebating profits from individual Affordable Care Act coverage offerings in 2026, returning this money directly to approximately 1 million ACA members as Congress works toward longer-term solutions to strengthen the stability and affordability of these plans. \u2022 Announced support for 1,500 rural hospitals and their associated providers by accelerating payments, cutting reimbursement timelines in half and exempting these providers from most medical prior approval requirements. \u2022 A nationwide coverage expansion for doula care with employer-sponsored plans, with more than 7 million members eligible for coverage by January 2027. Prior Approval Reform The company is removing prior approval requirements, standardizing processes across the industry, cutting back on paperwork and increasing transparency into the prior approval process, making it quicker and simpler for doctors to treat patients. \u2022 Eliminating 30% of current prior approval volume by the end of 2026. \u2022 Eliminating nearly two-thirds of prior approval requirements for pediatric care, including waivers for certain procedures performed at leading pediatric hospitals by the end of 2026. \u2022 Leading an industry-wide effort to standardize prior approval requirements for electronic submissions, with more than 70% of UnitedHealthcare prior approvals expected to be included by the end of 2026. \u2022 Publicly reporting prior approval metrics to help care providers and the public better understand the process. \u2022 Expanding eligibility for UnitedHealthcare's Gold Card program \u2013 exempting high-performing providers from routine approval requirements entirely \u2013 and removing requirements for home health services, representing nearly 10% of total UHC prior approval volume. Pharmacy Reform and Drug Affordability To combat high prescription drug costs, the company is lowering out-of-pocket costs for patients and bringing greater transparency to pharmacy benefits, setting a new standard for the industry. \u2022 Launched the industry\u2019s first fully transparent, fee-based pharmacy care model to bring greater clarity, predictability and affordability by decoupling PBM pricing from drug list prices and prescription volume, aligning incentives with patients and plan sponsors and introducing digital tools that allow consumers to view and compare medication costs upfront. \u2022 Committed to 100% pass-through of manufacturer drug rebate discounts to clients by January 1, 2028. \u2022 Eliminated 33% of drug reauthorizations \u2013 representing 11% of pharmacy prior approvals \u2013 for a list of nearly 270 chronic condition medications. \u2022 Increased minimum payments to independent and community physicians for brand name drugs, benefitting approximately 2,300 independent and community pharmacies.",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "MAINTAINED",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NONE",
+     "auditor_reason": "The table is headed \"Updated 2026 Full Year Guidance\" and nowhere reaffirms prior figures unchanged, so MAINTAINED's \"explicitly reaffirms previously-issued guidance\" test is not met (no raise or cut versus a prior figure is stated either)."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The only regulatory content \u2014 \"an error rate nearly three times lower than the rate reported by CMS's most recent audits\" and \"Published comprehensive reviews of its business practices\" \u2014 is stated as having occurred, not as something that may occur."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6cfb7bb16c8ef2fc",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "As of December 31, 2023, we were contingently liable for guarantees of indebtedness owed by third parties of $633 million, of which $87 million was related to VIEs. Our guarantees are primarily related to third-party customers, bottlers and vendors and arose through the normal course of business. These guarantees have various terms, and none of these guarantees is individually significant. These amounts represent the maximum potential future payments that we could be required to make under the guarantees. However, management has concluded that the likelihood of any significant amounts being paid by our Company under these guarantees is remote. As of December 31, 2023, we were not directly liable for the debt of any unconsolidated entity.\n\nOur international operations are subject to certain opportunities and risks, including currency fluctuations and governmental actions. We closely monitor our operations in each country and seek to adopt appropriate strategies that are responsive to changing economic and political environments as well as to fluctuations in currencies. Due to the geographic diversity of our operations, weakness in some currencies may be offset by strength in other currencies over time.\n\nThe percentages in the table above do not include the effects of our hedging activities and, therefore, do not reflect the actual impact of fluctuations in foreign currency exchange rates on our operating results. Our hedging activities are designed to mitigate, over time, a portion of the potentially unfavorable impact of exchange rate fluctuations on our net income.\n\nThe total impact of foreign currency exchange rate fluctuations on net operating revenues, including the effect of our hedging activities, was a decrease of 4% and 7% in 2023 and 2022, respectively. The total impact of foreign currency exchange rate fluctuations on income before income taxes, including the effect of our hedging activities, was a decrease of 8% and 6% in 2023 and 2022, respectively.\n\nForeign currency exchange gains and losses are primarily the result of the remeasurement of monetary assets and liabilities from certain currencies into functional currencies. The effects of the remeasurement of these assets and liabilities are partially offset by the impact of our economic hedging program for certain exposures on our consolidated balance sheet. Refer to Note 5 of Notes to Consolidated Financial Statements. Foreign currency exchange gains and losses are recorded in the line item other income (loss) \u2014 net in our consolidated statement of income. Refer to the heading \u201cOperations Review \u2014 Other Income (Loss) \u2014 Net\u201d above. The Company recorded net foreign currency exchange losses of $312 million and $236 million during the years ended December 31, 2023 and 2022, respectively.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The only adverse items are currency effects \u2014 \"net foreign currency exchange losses of $312 million\" and FX \"decrease of 4%\" on revenues \u2014 which are remeasurement/translation impacts, not rising input, labor or operating costs compressing margins."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6ee72154bd45ec80",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "We have developed and maintain comprehensive contingency plans that are designed to prepare us in advance to respond in the event of potential adverse economic, operational, financial or market stress conditions. These contingency plans include our Financial Contingency and Recovery Plan, which provides monitoring, escalation, actions and routines designed to enable us to increase capital and/or liquidity, access funding sources and reduce risk through consideration of potential options that include asset sales, business sales, capital or debt issuances, and other risk reducing strategies at various levels of capital or liquidity depletion during a period of stress. We also maintain a Resolution Plan to limit adverse systemic impacts that could be associated with a potential resolution of Bank of America.\n\nStrategic risk is embedded in every business and is one of the major risk categories along with credit, market, liquidity, compliance, operational and reputational risks. This risk results from incorrect assumptions about external or internal factors, inappropriate business plans, ineffective business strategy execution, or failure to respond in a timely manner to changes in the regulatory, macroeconomic or competitive environments in the geographic locations in which we operate, such as competitor actions, changing customer preferences, product obsolescence and technology developments.\n\nAn aspect of strategic risk is the risk that the Corporation\u2019s capital levels are not adequate to meet minimum regulatory requirements and support execution of business activities or absorb losses from risks during normal or adverse economic and market conditions. As such, capital risk is managed in parallel to strategic risk.\n\nWe manage strategic risk through the Strategic Risk Enterprise Policy and integration into the strategic planning process, among other activities. Our strategic plan is consistent with our risk appetite, capital plan and liquidity requirements, and specifically addresses strategic risks impacting each business.\n\nOn an annual basis, the Board reviews and approves the strategic plan, capital plan, financial operating plan and Risk Appetite Statement. With oversight by the Board, senior management directs the lines of business to execute our strategic plan consistent with our core operating principles and risk appetite. The executive management team monitors business performance throughout the year and provides the Board with regular progress reports on whether strategic objectives and timelines are being met, including reports on strategic risks and if additional or alternative actions need to be considered or implemented. The regular executive reviews focus on assessing forecasted earnings and returns on capital, the current risk profile, current capital and liquidity requirements, staffing levels and changes required to support the strategic plan, stress testing results, and other qualitative factors such as market growth rates and peer analysis.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage describes plans to \"increase capital and/or liquidity, access funding sources\" at \"various levels of capital or liquidity depletion during a period of stress,\" i.e. hypothetical liquidity depletion, the same framing flagged in the companion contingency-funding chunk."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6fb2d683aa33ce99",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "If the supply of certain pharmaceuticals provided by one or more of our vendors were to be disrupted for any reason, our pharmacy operations could be severely affected until at least such time as we could obtain a new supplier for such\n\nOne or a combination of the factors above may adversely affect the volumes of brand name and generic pharmaceuticals we sell, our cost of sales associated with our retail pharmacy operations, the net sales and gross margin of those operations or result in the loss of cross-store or cross-club selling opportunities. In addition, these and other factors may adversely affect the type, volume and mix of services we provide and the reimbursement we receive for health and wellness services rendered. Any of these developments could, in turn, adversely affect our overall net sales, other results of operations, cash flows and liquidity.\n\nWe are subject to risks related to our engagement of independent contractors or other third-party service providers. The qualification processes and background checks we utilize when engaging independent contractors may not reveal all potentially relevant information, including accurate worker authorization information and criminal history. If these independent contractors engage in misconduct, consumers may not consider our goods and services safe, and we may receive negative press coverage. Further, we have in the past incurred, and may in the future incur, losses from various types of fraud with respect to unauthorized uses of another person's identity and use of fraudulent identification documents. Any physical injury, loss of life, fraud, property and/or financial damage caused by our independent contractors or third-party service providers could adversely affect our business reputation, which could negatively affect demand for our goods and services, lead to increased regulatory or litigation exposure and adversely affect our financial performance.\n\nWe believe that the price of our stock generally reflects high market expectations for our future operating results. Any failure to meet or delay in meeting these expectations, including our consolidated net sales, consolidated operating income, growth rates, eCommerce growth rates, advertising and other higher-margin initiatives (which are expected to help drive our operating income growth at a rate faster than net sales over the long term), capital expenditures, comparable store and club sales growth rates or earnings and adjusted earnings per share could cause the market price of our stock to decline, as could changes in our dividend or stock repurchase programs or policies, changes in our effective tax rates, changes in our financial estimates and recommendations by securities analysts or, failure of our performance to compare favorably to that of other retailers may have a negative effect on the price of our stock.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The text explicitly says the factors \"may adversely affect the volumes of brand name and generic pharmaceuticals we sell\" and could \"negatively affect demand for our goods and services\" (DEMAND_WEAKNESS), and \"may adversely affect ... our cost of sales ... and gross margin of those operations\" (MARGIN_COST_PRESSURE)."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-6fd41b8a9a0a068c",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": ": and in any of the Corporation\u2019s subsequent Securities and Exchange Commission filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs and the processing of electronic payments, including through the Zelle network, and related fraud, which are in various stages; the possibility that the Corporation\u2019s future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of U.S. and global interest rates (including the potential for ongoing adjustments in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including increased tariffs, and geopolitical instability; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic\n\nassumptions, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation's concentration of credit risk; the Corporation\u2019s ability to achieve its expense targets and expectations regarding revenue, net interest income, provision for credit losses, net charge-offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and/or global systemically important bank surcharges; the potential impact of actions of the",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The passage is a cautionary enumeration of uncertainties (\"the possibility that ...\", \"the risk that ...\") rather than a characterization of the filer's current results or condition, so no predominant unfavorable tone about results is asserted."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The litigation clause asserts existing matters as fact \u2014 proceedings \"which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California ... which are in various stages\" \u2014 so the concrete realized statement controls the modality."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-70dca87fa269e140",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Many of our businesses have net \u201clong\u201d positions in debt securities, loans, derivatives, mortgages, equities (including private equity and real estate) and most other asset classes. These include positions we take when we act as a principal to facilitate our clients\u2019 activities, including our exchange-based market-making activities, or commit large amounts of capital to maintain positions in interest rate and credit products, as well as through our currencies, commodities, equities and mortgage-related activities. In addition, we invest in similar asset classes. Substantially all of our investing and market-making positions and a portion of our loans are marked-to-market on a daily or other periodic basis and declines in asset values directly and promptly impact our earnings, unless we have effectively \u201chedged\u201d our exposures to those declines.\n\nIn certain circumstances (particularly in the case of credit products, including leveraged loans, and private equities or other securities that are not freely tradable or lack established and liquid trading markets), it may not be possible or economic to hedge our exposures and, to the extent that we do so, the hedge may be ineffective or may greatly reduce our ability to profit from increases in the values of the assets. Sudden declines and significant volatility in the prices of assets have in the past substantially curtailed or eliminated, and may in the future substantially curtail or eliminate, the trading markets for certain assets, which may make it difficult to sell, hedge or value such assets. We may incur losses from time to time as trading markets deteriorate or cease to function, including with respect to loan commitments we have made or securities offerings we have underwritten. The inability to sell or effectively hedge assets reduces our ability to limit losses in such positions and the difficulty in valuing assets has in the past negatively affected, and may in the future negatively affect, our capital, liquidity or leverage ratios, our funding costs and our ability to deploy capital.\n\nIn our exchange-based market-making activities, we are obligated by stock exchange rules to maintain an orderly market, including by purchasing securities in a declining market. In markets where asset values are declining and in volatile markets, this results in losses and an increased need for liquidity.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The cost claim is asserted as having occurred: \"the difficulty in valuing assets has in the past negatively affected, and may in the future negatively affect, our capital, liquidity or leverage ratios, our funding costs.\""
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Same sentence asserts a past occurrence affecting \"our capital, liquidity or leverage ratios,\" and \"In markets where asset values are declining ... this results in losses and an increased need for liquidity\" is present-tense, not hedged as merely possible."
+    }
+   ]
+  }
+ ]
+}

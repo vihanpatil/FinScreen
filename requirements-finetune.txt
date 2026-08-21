@@ -1,0 +1,31 @@
+# requirements-finetune.txt — pinned deps for the Week 4 QLoRA fine-tune.
+#
+# DO NOT `pip install -r requirements-finetune.txt` on the local dev
+# machine used to write/review finetune/ code. This file targets a CUDA
+# GPU box (rented, gated on explicit owner sign-off per the standing $5
+# rule) and pulls torch/transformers/peft/bitsandbytes/accelerate, which
+# are heavy, GPU-oriented packages not needed for anything that runs
+# locally (split.py, check_leakage.py, prepare_dataset.py,
+# train_qlora.py --dry-run, eval.py --dry-run all run on the light deps in
+# the repo's main requirements.txt: pandas/pyarrow/numpy/pyyaml).
+#
+# Install this ONLY on the rented GPU instance, after GPU rental has been
+# explicitly approved (provider/instance/estimated hours confirmed with the
+# owner). Versions pinned to a mutually-compatible CUDA 12.1-class set as
+# of this project's build time -- reconfirm compatibility with whatever
+# CUDA version the rented instance actually has before installing, since
+# torch/bitsandbytes wheels are CUDA-version-specific and a mismatch is a
+# common source of wasted GPU-rental time (and thus wasted money against
+# the $50 ceiling).
+
+torch==2.5.1
+transformers==4.46.3
+peft==0.13.2
+bitsandbytes==0.44.1
+accelerate==1.1.1
+datasets==3.1.0
+sentencepiece==0.2.0
+protobuf==5.28.3
+huggingface-hub==0.26.2
+safetensors==0.4.5
+pyyaml==6.0.2

@@ -1,0 +1,63 @@
+# --- Python standard ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.Python
+build/
+dist/
+.venv/
+venv/
+env/
+.env
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# --- OS ---
+.DS_Store
+
+# --- FinScreen data cache ---
+# data/raw/ holds cached raw EDGAR JSON responses (submissions dumps, filing
+# indices, the bulk ticker map). It is fully regenerable by re-running the
+# ingestion script against data/universe.csv (idempotent, same rate-limited
+# client) and can grow to tens/hundreds of MB across the universe, so it is
+# excluded from version control rather than committed.
+#
+# data/universe.csv IS versioned deliberately -- it's the locked, hand-chosen
+# company list and is not regenerable from anything else.
+#
+# data/filings_metadata.db (SQLite) is a small, deterministic derived
+# artifact (a few thousand rows of filing metadata) -- it is NOT excluded
+# here so the ingested metadata snapshot is reproducible/inspectable without
+# re-hitting EDGAR, but if it grows large in later weeks this choice should
+# be revisited.
+data/raw/
+
+# --- Bulk / regenerable artifacts (added for public GitHub push) ---
+# Batch API request payloads: ~308 MB across variants, three of them 77 MB
+# each (over GitHub's 50 MB warning threshold). Fully regenerable by
+# re-running build_batch_requests.py against data/labeling_corpus.parquet.
+data/*.jsonl
+
+# Derived text/price corpora. Regenerable from data/raw/ via extract.py +
+# chunk.py, and from the price client, respectively.
+data/filings.parquet
+data/labeling_corpus.parquet
+data/prices.parquet
+data/paragraph_occurrence_map.parquet
+
+# Bootstrap label sets. NOTE: unlike everything else here, these are NOT
+# free to regenerate -- they cost real Batch API spend. They are excluded to
+# keep the repo lean, which means git is NOT a backup for them. Keep an
+# independent copy. To version them instead, delete the four lines below.
+data/labels.parquet
+data/labels_pre_relabel.parquet
+data/labels_relabel.parquet
+data/labels_corrective.parquet
+
+# Fine-tune datasets: 41 MB, deterministically derived from labels.parquet
+# via finetune/prepare_dataset.py and finetune/split.py (seeded splits).
+finetune/prepared/
+finetune/splits/

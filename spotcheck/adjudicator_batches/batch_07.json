@@ -1,0 +1,507 @@
+{
+ "batch": 7,
+ "chunks": [
+  {
+   "chunk_id": "CHK-9244fa69e814c4d9",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "We are party to a large number of derivatives transactions that may expose us to unexpected market, credit and operational risks that could cause us to suffer unexpected losses. Fluctuations in asset values or rates or an unanticipated credit event, including unforeseen circumstances that may cause previously uncorrelated factors to become correlated, may lead to losses resulting from risks not taken into account or anticipated in the development, structuring or pricing of a derivative instrument. Certain derivative contracts and other trading agreements provide that upon the occurrence of certain specified events, such as a change to our or our affiliates\u2019 credit ratings, we may be required to provide additional collateral or take other remedial actions, and we could experience increased difficulty obtaining funding or hedging risks. In some cases our counterparties may have the right to terminate or otherwise diminish our rights under these contracts or agreements upon the occurrence of such events.\n\nWe are also a member of various CCPs, which results in credit risk exposure to those CCPs. In the event that one or more members of a CCP default on their obligations, we may be required to pay a portion of any losses incurred by the CCP as a result of that default. A CCP may also, at its discretion, modify the margin we are required to post, which could mean unexpected and increased funding costs and exposure to that CCP. As a clearing member, we are exposed to the risk of non-performance by our clients for which we clear transactions, which may not be covered by available collateral. Additionally, default by a significant market participant may result in further risk and potential losses.\n\nWe do business throughout the world, including in emerging markets. Economic or geopolitical stress in one or more countries could have a negative impact regionally or globally, resulting in, among other things, market volatility, reduced market value and economic output. Our liquidity and credit risk could be adversely impacted by, and our businesses and revenues derived from non-U.S. jurisdictions are subject to, risk of loss from financial, social or judicial instability, economic sanctions, changes in government leadership, including as a result of electoral outcomes or otherwise, changes in governmental policies or policies of central banks, expropriation, nationalization and/or confiscation of assets, price controls, high inflation, natural disasters, the emergence or continuation of widespread health emergencies or pandemics, capital controls, currency re-denomination risk from a country exiting the EU or otherwise, currency fluctuations, foreign exchange controls or movements (caused by devaluation or de-pegging), unfavorable political and diplomatic developments, oil price fluctuations and changes in legislation. These risks are especially elevated in emerging markets.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"economic sanctions\" is explicitly named among emerging-market risks, and a CCP margin change \"could mean unexpected and increased funding costs.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-95a6b8eff02c5ed4",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "During the three and six months ended June 28, 2024, the company recorded net charges of $7 million and $10 million, respectively, related to restructuring our manufacturing operations in the United States. Additionally, the company recorded charges of $3 million and $7 million, respectively, for the amortization of noncompete agreements related to the BODYARMOR acquisition. The company also recorded net benefits of $2 million and $1 million, respectively, related to a revision of management\u2019s estimates for tax litigation expense.\n\nDuring the three and six months ended June 27, 2025, the company recorded $6 million and $25 million, respectively, of excess tax benefits associated with the company\u2019s stock-based compensation arrangements and net income tax expense of $21 million and $35 million, respectively, primarily associated with return to provision adjustments. The company also\n\n$4 million, respectively, for changes to our uncertain tax positions, including interest and penalties, as well as for various discrete tax items. Additionally, the company recorded net income tax expense of $84 million related to the resolution of certain foreign tax matters and recorded expense of $22 million for other costs directly related to those matters.\n\nThis press release may contain statements, estimates or projections that constitute \u201cforward-looking statements\u201d as defined under U.S. federal securities laws. Generally, the words \u201cbelieve,\u201d\u201dopportunity,\u201d \u201cahead,\u201d \u201cexpect,\u201d \u201cintend,\u201d \u201cestimate,\u201d \u201canticipate,\u201d \u201cproject,\u201d \u201cwill\u201d and similar expressions identify forward-looking statements, which generally are not historical in nature. Forward-looking statements are subject to certain risks and uncertainties that could cause The Coca-Cola Company\u2019s actual results to differ materially from its historical experience and our present expectations or projections. These risks include, but are not limited to, unfavorable economic and geopolitical conditions, including the direct or indirect negative impacts of the conflict between Russia and Ukraine and conflicts in the Middle East; increased competition; an inability to be successful in our innovation activities; changes in the retail landscape or the loss of key retail or foodservice customers; an inability to expand our business in emerging and developing markets; an inability to successfully manage the potential negative consequences of our productivity initiatives; an inability to attract or retain specialized or top talent with perspectives, experiences and backgrounds that reflect the broad range of consumers and markets we serve around the world; disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs; an inability to successfully integrate and manage our acquired businesses, brands or bottling operations or an inability to realize a significant portion of the anticipated benefits of our joint ventures or strategic relationships; failure by our third-party service providers and business partners to satisfactorily fulfill their commitments and responsibilities; an inability to renew collective bargaining agreements on satisfactory terms, or we or our bottling partners experience strikes, work stoppages, labor shortages or labor unrest; obesity and other health-related concerns; evolving consumer product and shopping preferences; product safety and quality concerns; perceived negative health consequences of processing and of certain ingredients, such as non-nutritive sweeteners, color additives and biotechnology-derived substances, and of other substances present in our beverage products or packaging materials; failure to digitalize the Coca-Cola system; damage to our brand image, corporate reputation and social license to operate from negative publicity, whether or not warranted, concerning product safety or quality, workplace and human rights, obesity or other issues; an inability to successfully manage new product launches; an inability to maintain good relationships with our bottling partners; deterioration in our bottling partners\u2019 financial condition; an inability to successfully manage our refranchising activities; increases in income tax rates, changes in income tax laws or the unfavorable resolution of tax matters, including the outcome of our ongoing tax dispute or any related disputes with the U.S. Internal Revenue Service (\u201cIRS\u201d); the possibility that the assumptions used to calculate our estimated aggregate incremental tax and interest liability related to the potential unfavorable outcome of the ongoing tax dispute with the IRS could significantly change; increased or new indirect taxes; changes in laws and regulations relating to beverage containers and packaging; significant additional labeling or warning requirements or limitations on the marketing or sale of our products; litigation or legal proceedings; conducting business in markets with high-risk legal compliance environments; failure to adequately protect, or disputes relating to, trademarks, formulas and other intellectual property rights; changes in, or failure to comply with, the laws and regulations applicable to our products or our business operations; fluctuations in foreign currency exchange rates; interest rate increases; an inability to achieve our overall long-term growth objectives; default by or failure of one or more of our counterparty financial institutions; impairment charges; an inability to protect our information systems against service interruption, misappropriation of data or cybersecurity incidents; failure to comply with privacy and data protection laws; evolving sustainability regulatory requirements and expectations; increasing concerns about the environmental impact of plastic bottles and other packaging materials; water scarcity and poor quality; increased demand for food products, decreased agricultural productivity and increased regulation of ingredient sourcing due diligence; climate change and legal or regulatory responses thereto; adverse weather conditions; and other risks discussed in our filings with the Securities and Exchange Commission (\u201cSEC\u201d), including our Annual Report on Form 10-K for the year ended December 31, 2024, and subsequently filed Quarterly Report on Form 10-Q, which are available from the SEC. You should not place undue reliance on forward-looking statements, which speak only as of the date they are made. We undertake no obligation to publicly update or revise any forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The company \"recorded net charges of $7 million and $10 million ... related to restructuring our manufacturing operations,\" a realized charge that controls over the hypothetical \"impairment charges\" list item, and \"the loss of key retail or foodservice customers\" plus \"evolving consumer product and shopping preferences\" add hypothetical demand weakness."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-95a7cf23f319ee70",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": true,
+   "text": "To be competitive and execute our business strategy successfully, we must attract, retain and motivate our executives and key employees and recruit and develop capable and diverse talent. Labor is subject to external factors that are beyond our control, including our industry\u2019s highly competitive market for skilled workers and leaders, cost inflation and workforce participation rates. Changes in immigration and work permit regulations or in their administration or interpretation could impair our ability to attract and retain qualified employees. Competition for personnel results in increased costs in the form of cash and stock-based compensation, and in times of stock price volatility, as we have experienced in the past and may experience in the future, the retentive value of our stock-based compensation may decrease. Additionally, we are highly dependent on the services of our longstanding executive team. Failure to ensure effective succession planning, transfer of knowledge and smooth transitions involving executives and key employees could hinder our strategic planning and execution and long-term success.\n\nWe rely upon internal processes and information systems to support key business functions, including our assessment of internal controls over financial reporting as required by Section 404 of the Sarbanes-Oxley Act. The efficient operation and scalability of these processes and systems is critical to support our growth. We continue to design and implement updated accounting functionality related to a new enterprise resource planning, or ERP, system. Any ERP system implementation may introduce problems, such as quality issues or programming errors, that could have an impact on our continued ability to successfully operate our business or to timely and accurately report our financial results. These changes may be costly and disruptive to our operations and could impose substantial demands on management time. Failure to implement new or updated controls, or difficulties encountered in their implementation, could harm our operating results or cause us to fail to meet our reporting obligations.\n\nIdentification of material weaknesses in our internal controls, even if quickly remediated once disclosed, may cause investors to lose confidence in our financial statements and our stock price may decline. Remediation of any material weakness could require us to incur significant expenses, and if we fail to remediate any material weakness, our financial statements may be inaccurate, we may be required to restate our financial statements, our ability to report our financial results on a timely and accurate basis may be adversely affected, our access to the capital markets may be restricted, our stock price may decline, and we may be subject to sanctions or investigation by regulatory authorities.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage states that failure to remediate a material weakness means \"we may be subject to sanctions or investigation by regulatory authorities,\" a hypothetical enforcement/investigation exposure."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "ACCOUNTING_RESTATEMENT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "agree",
+     "auditor_label": null,
+     "auditor_reason": null,
+     "note": "not contested \u2014 both raters agree; adjudicate anyway as advisory input for the owner (high-stakes chunk)"
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-995038f4b6ac9fc2",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Comparable EPS (non-GAAP) percentage growth is expected to include an approximate 5% currency headwind based on the current rates and including the impact of hedged positions, in addition to an approximate 1% headwind from acquisitions, divestitures and structural changes. \u2014 No Update\n\nThe company expects to generate free cash flow excluding the fairlife contingent consideration payment (non-GAAP) of at least $9.8 billion. This consists of cash flow from operations excluding the fairlife contingent consideration payment (non-GAAP) of approximately $12.0 billion, less capital expenditures of approximately $2.2 billion. \u2014 Updated from $9.5 billion\n\nThe company is hosting a conference call with investors and analysts to discuss third quarter 2025 operating results today, Oct. 21, 2025, at 8:30 a.m. ET. The company invites participants to listen to a live webcast of the conference call on the company\u2019s website, http://www.coca-colacompany.com, in the \u201cInvestors\u201d section. An audio replay in downloadable digital format and a transcript of the call will be available on the website within 24 hours following the call. Further, the \u201cInvestors\u201d section of the website includes certain supplemental information and a reconciliation of non-GAAP financial measures to the company\u2019s results as reported under GAAP, which may be used during the call when discussing financial results.\n\nDuring the three months ended September 26, 2025, intersegment revenues were $178 million for Europe, Middle East & Africa, $1 million for Latin America, $4 million for North America, $68 million for Asia Pacific and $2 million for Bottling Investments. During the three months ended September 27, 2024, intersegment revenues were $172 million for Europe, Middle East & Africa, $1 million for North America, $77 million for Asia Pacific and $2 million for Bottling Investments.\n\nDuring the nine months ended September 26, 2025, intersegment revenues were $522 million for Europe, Middle East & Africa, $1 million for Latin America, $7 million for North America, $272 million for Asia Pacific and $6 million for Bottling Investments. During the nine months ended September 27, 2024, intersegment revenues were $524 million for Europe, Middle East & Africa, $7 million for North America, $419 million for Asia Pacific and $6 million for Bottling Investments.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "POSITIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The passage is guidance components and tables \u2014 \"an approximate 5% currency headwind,\" \"an approximate 1% headwind,\" free-cash-flow and intersegment-revenue figures, and conference-call logistics \u2014 with no predominant favorable characterization of results or condition."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage names no tariffs, sanctions, export controls or trade restrictions; the only headwinds cited are currency and \"acquisitions, divestitures and structural changes.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-99f3b96d396824bd",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The following table shows the aggregate fair value of net derivative payables related to OTC and OTC-cleared derivatives that contain contingent collateral or termination features that may be triggered upon a ratings downgrade, and the associated collateral the Firm has posted in the normal course of business, at June 30, 2025 and December 31, 2024.\n\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPMorgan Chase & Co. and its subsidiaries, predominantly JPMorgan Chase Bank, N.A., at June 30, 2025 and December 31, 2024, related to OTC and OTC-cleared derivative contracts with contingent collateral or termination features that may be triggered upon a ratings downgrade. Derivatives contracts generally require additional collateral to be posted or terminations to be triggered when the predefined rating threshold is breached. A downgrade by a single rating agency that does not result in a rating lower than a preexisting corresponding rating provided by another major rating agency will generally not result in additional collateral (except in certain instances in which additional initial margin may be required upon a ratings downgrade), nor in termination payment requirements. The liquidity impact in the table is calculated based upon a downgrade below the lowest current rating of the rating agencies referred to in the derivative contract.\n\nThe following tables present derivative instruments, by contract type, used in fair value hedge accounting relationships, as well as pre-tax gains/(losses) recorded on such derivatives and the related hedged items for the three and six months ended June 30, 2025 and 2024, respectively. The Firm includes gains/(losses) on the hedging derivative in the same line item in the Consolidated statements of income as the related hedged item.\n\nAs of June 30, 2025 and December 31, 2024, the following amounts were recorded on the Consolidated balance sheets related to certain cumulative fair value hedge basis adjustments that are expected to reverse through the income statement in future periods as an adjustment to yield.\n\nbillion at June 30, 2025 and December 31, 2024, respectively, to which the Firm applies fair value hedge accounting. As a result of the application of hedge accounting, these inventories are carried at fair value, thus recognizing unrealized gains and losses in current periods. Since the Firm exits these positions at fair value, there is no incremental impact to net income in future periods.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage is a derivatives collateral/hedge-accounting disclosure with contractual \"contingent collateral or termination features that may be triggered upon a ratings downgrade\" \u2014 no litigation, investigation, enforcement action or regulatory requirement."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "A quantified downgrade-sensitivity disclosure (\"The liquidity impact in the table is calculated based upon a downgrade below the lowest current rating\") is not an explicit statement of insufficient liquidity, inability to meet obligations, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-9b3e336a83e95d61",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Revenues at Optum Insight were consistent due to growth in technology services, offset by the business disruption impacts from the Change Healthcare cyberattack. Earnings from operations decreased primarily due to the business disruption impacts and direct response costs related to the Change Healthcare cyberattack.\n\nRevenues and earnings from operations at Optum Rx increased due to higher script volumes from both new clients and growth in existing clients and growth in pharmacy services. Optum Rx fulfilled 395 million and 378 million adjusted scripts in the first quarters of 2024 and 2023, respectively.\n\nDecreased cash flows provided by operating activities were primarily driven by the receipt of the April CMS premium payment of $11.2 billion in March 2023 and Change Healthcare cyberattack response actions, including the acceleration of provider payments and the timing of public-sector cash receipts. Other significant changes in sources or uses of cash year-over-year included decreased cash paid for acquisitions and net purchases of investments; offset by decreased customer funds administered; loans to care providers in response to the Change Healthcare cyberattack, included in other uses of cash; increased common stock repurchases and decreased net issuances of short-term borrowings and long-term debt.\n\nAs of March 31, 2024, our cash, cash equivalent, available-for-sale debt securities and equity securities balances of $76.7 billion included approximately $28.4 billion of cash and cash equivalents (of which $2.1 billion was available for general corporate use), $44.1 billion of debt securities and $4.1 billion of investments in equity securities. Given the significant portion of our portfolio held in cash and cash equivalents, we do not anticipate fluctuations in the aggregate fair value of our financial assets to have a material impact on our liquidity or capital position. Our available-for-sale debt securities portfolio had a weighted-average duration of 4.0 years and a weighted-average credit rating of \u201cDouble A\u201d as of March 31, 2024. When multiple credit ratings are available for an individual security, the average of the available ratings is used to determine the weighted-average credit rating.\n\nA summary of our cash requirements as of December 31, 2023 was disclosed in Part II, Item 7, \u201cManagement\u2019s Discussion and Analysis of Financial Condition and Results of Operations\u201d in our 2023 10-K. During the three months ended March 31, 2024, there were no material changes to this previously disclosed information outside the ordinary course of business. We believe our capital resources are sufficient to meet future, short-term and long-term, liquidity needs. We continually evaluate opportunities to expand our operations, including through internal development of new products, programs and technology applications and business combinations.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage attributes results to \"the business disruption impacts and direct response costs related to the Change Healthcare cyberattack\" and CMS premium timing \u2014 no litigation, investigation, enforcement action or regulatory requirement is described."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-9c4e6f3861daa896",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Our revenues and profitability and those of our competitors have been and will continue to be impacted by requirements relating to capital, leverage, liquidity and long-term funding levels, requirements related to resolution and recovery planning, derivatives clearing and margin rules and levels of regulatory oversight, as well as limitations on which and, if permitted, how certain business activities may be carried out by financial institutions. The laws, regulations and accounting standards, that apply to our businesses are often complex and, in many cases, we must make interpretive decisions regarding the application of those laws, regulations and accounting standards to our business activities. Changes in interpretations, whether in response to regulatory guidance, industry conventions, our own reassessments or otherwise, could adversely affect our businesses, results of operations or ability to satisfy applicable regulatory requirements, such as capital or liquidity requirements.\n\nIf there are new laws or regulations or changes in the interpretation or enforcement of existing laws or regulations applicable to our businesses or those of our clients, including capital, liquidity, leverage, long-term debt, total loss-absorbing capacity and margin requirements, restrictions on leveraged lending or other business practices, reporting requirements, requirements relating to recovery and resolution planning, tax burdens and compensation restrictions, that are imposed on a limited subset of financial institutions (whether based on size, method of funding, activities, geography or other criteria), compliance with these new laws or regulations, or changes in the enforcement of existing laws or regulations, could adversely affect our ability to compete effectively with other institutions that are not affected in the same way. In addition, regulation imposed on financial institutions or market participants generally, such as taxes on stock transfers, share repurchases and other financial transactions, could adversely impact levels of market activity more broadly, and thus impact our businesses. Changes to laws or regulations, such as tax laws, could also have a disproportionate impact on us, based on the way those laws or regulations are applied to financial services and financial firms or due to our corporate structure or where or how we provide these services.\n\nThese developments could impact our profitability in the affected jurisdictions, or even make it uneconomic for us to continue to conduct all or certain of our businesses in those jurisdictions, or could cause us to incur significant costs associated with changing our business practices, restructuring our businesses, moving all or certain of our businesses and our employees to other locations or complying with applicable capital requirements, including reducing dividends or share repurchases, liquidating assets or raising capital in a manner that adversely increases our funding costs or otherwise adversely affects our shareholders and creditors.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "unsure",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Categories match, but modality is genuinely underdetermined: the passage opens with an unhedged past-tense assertion (\"Our revenues and profitability ... have been and will continue to be impacted by requirements relating to capital, leverage, liquidity\") which reads REALIZED, while the remainder is a conditional enumeration (\"If there are new laws or regulations ... could adversely affect\")."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-9d1f3820572c181c",
+   "section_type": "MDA",
+   "high_stakes": true,
+   "text": "As of December 31, 2025, our current liabilities exceeded current assets by $10.1 billion. We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations. We have strong short- and long-term debt ratings that have enabled and should continue to enable us to refinance our debt as it becomes due at favorable rates in commercial paper and bond markets. In addition, we have agreements with a diverse group of financial institutions that, if needed, should provide sufficient funding to meet short-term financing requirements.\n\nunderlying business trends (i.e., trends excluding non-recurring or unusual items) and results and provide a supplemental measure of period-to-period results. The non-GAAP measures described below are used by management in making operating decisions, allocating financial resources and for business strategy purposes. These measures may be useful to investors, as they provide supplemental information about business performance and provide investors a view of our business results through the eyes of management. These measures are also used to evaluate senior management and are a factor in determining their at-risk compensation. These non-GAAP measures are not intended to be considered by the user in place of the related GAAP measures but rather as supplemental information to our business results. These non-GAAP measures may not be the same as similar measures used by other companies due to possible differences in method and in the items or events being adjusted.\n\nWe do not view the above items to be part of our sustainable results, and their exclusion from Core earnings measures provides a more comparable measure of year-on-year results. This item is also excluded when evaluating senior management in determining their at-risk compensation.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage states the opposite of liquidity insufficiency \u2014 \"We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations\" and \"should provide sufficient funding to meet short-term financing requirements\" \u2014 so the bare negative working-capital figure is not an explicit statement of insufficient liquidity."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-9ecbb75bcc8121dd",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "In its decision, the court concluded that the blocked-income regulation was inconsistent with IRC Section 482 and that the IRS therefore could not reallocate income from 3M\u2019s subsidiary in Brazil to 3M in contravention of Brazilian restrictions on the payment of royalties. Further, the U.S. Court of Appeals for the Eighth Circuit specifically rejected the IRS\u2019 argument that the ability of 3M\u2019s subsidiary in Brazil to pay dividends, rather than royalties, meant that royalty income should not be treated as blocked. Both of these conclusions are highly supportive of the Company\u2019s position in its case and reinforce its prior conclusions. On August 2, 2024, the Tax Court entered a decision reflecting additional federal income tax of $2.7 billion for the 2007 through 2009 tax years. With applicable interest, the total liability for the 2007 through 2009 tax years resulting from the Tax Court\u2019s decision is $6.0 billion, for which the IRS issued the Company invoices on September 3, 2024. The Company paid the IRS Tax Litigation Deposit on September 10, 2024, which stopped interest from accruing on the additional tax due for the 2007 through 2009 tax years. That amount, plus interest earned, would be refunded in full or in part if the Company\u2019s tax positions are ultimately sustained on appeal. For the three and six months ended July 3, 2026, the Company recorded net interest income of $43 million and $98 million, respectively, and for the three and six months ended June 27, 2025, the Company recorded net interest income of $54 million and $107 million, respectively, related to this tax payment in the line item income taxes in our consolidated statements of income, in accordance with our accounting policy. The payment of the IRS invoices and the related accrued interest were recorded in the line item other noncurrent assets in our consolidated balance sheets as of July 3, 2026 and December 31, 2025. On October 22, 2024, the Company appealed the Tax Court\u2019s decision to the U.S. Court of Appeals for the Eleventh Circuit. The Company filed its principal appellate brief with the U.S. Court of Appeals for the Eleventh Circuit on March 12, 2025. The IRS filed its appellate brief on July 7, 2025. The Company filed its reply brief on August 27, 2025. The U.S. Court of Appeals for the Eleventh Circuit heard the case on June 25, 2026. The Company strongly disagrees with the IRS\u2019 positions and the portions of the Opinions affirming such positions and intends to vigorously defend our positions utilizing every available avenue of appeal. While the Company believes that it is more likely than not that we will ultimately prevail in this litigation upon appeal, it is possible that all, or some portion of, the adjustments proposed by the IRS and sustained by the Tax Court could ultimately be upheld. In that event, the Company would not receive a refund of the applicable portion or all of the $6.0 billion it paid in response to the IRS invoices issued in September 2024 and the related accrued interest receivable of $514 million as of July 3, 2026. Additionally, the Company would likely be subject to significant additional liabilities for subsequent years, which could have a material adverse impact on the Company\u2019s financial position, results of operations and cash flows. The Company estimates that the potential aggregate remaining incremental tax and interest liability for the tax years 2010 through 2025 could be approximately $14 billion as of December 31, 2025. Additional income tax and interest on any unpaid potential liabilities for the 2010 through 2025 tax years would continue to accrue until the time any such potential liability, or portion thereof, were to be paid. The Company estimates the impact of the continued application of the methodology asserted by the IRS and affirmed in the Opinions for the three and six months ended July 3, 2026 would increase the potential aggregate incremental tax and interest liability by approximately $450 million and $900 million, respectively. Refer to Note 9 of Notes to Consolidated Financial Statements for additional information on the tax litigation.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The strongest liquidity-adjacent language is a contingent tax liability that \"could have a material adverse impact on the Company's financial position, results of operations and cash flows\" \u2014 no statement of insufficient liquidity, inability to meet obligations, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a045e5fc55276c7f",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "AbbVie competes with other research-based pharmaceutical and biotechnology companies that research, develop, manufacture, market and sell proprietary pharmaceutical products and biologics. All of these competitors may introduce new products or develop technological advances that compete with AbbVie\u2019s products in therapeutic areas such as immunology, oncology, aesthetics, neuroscience and eye care. In addition, as AbbVie products lose exclusivity, competition surrounding such products will increase and generic and biosimilar products will increasingly penetrate the markets. Furthermore, consolidation among certain pharmaceutical and biotechnology companies can enhance such advantages. These advantages may make it difficult for us to compete with them successfully to discover, develop and market new products and for our current products to compete with new products or indications they may bring to market. AbbVie cannot predict with certainty the timing or impact of the introduction by competitors of new products or technological advances. Such competing products may be safer, more effective, more effectively marketed or sold, have lower prices or better insurance coverage or reimbursement levels, or have superior performance features than AbbVie\u2019s products, and this may negatively impact AbbVie\u2019s business and results of operations.\n\nThe manufacture of many of AbbVie's products is a highly exacting and complex process, due in part to strict regulatory requirements. Problems may arise during manufacturing for a variety of reasons, including equipment malfunction, failure to follow specific protocols and procedures, problems with raw materials, delays related to the construction of new facilities or the expansion of existing facilities, including those intended to support future demand for AbbVie's products, changes in manufacturing production sites and limits to manufacturing capacity due to regulatory requirements, changes in the types of products produced, physical limitations that could inhibit continuous supply, labor shortages, supply chain disruption, pandemics, man-made or natural disasters and environmental factors. If problems arise during the production of a batch of product, such batch of product may have to be discarded and AbbVie may experience product shortages or incur added expenses. This could, among other things, lead to increased costs, lost revenue, damage to customer relations, time and expense spent investigating the cause and, depending on the cause, similar losses with respect to other batches or products. If problems are not discovered before the product is released to the market, recall and product liability costs may also be incurred.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage explicitly states cost impact alongside the supply cause \u2014 \"AbbVie may experience product shortages or incur added expenses. This could ... lead to increased costs, lost revenue\" \u2014 which under the disambiguation note requires MARGIN_COST_PRESSURE in addition to the causal category."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a3833d399f8255a1",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Reports Second-Quarter Diluted EPS of $2.03 on a GAAP Basis, an Increase of 290.4 Percent; Adjusted Diluted EPS of $3.65, an Increase of 22.9 Percent; These Results Include an Unfavorable Impact of $0.17 Per Share Related to Acquired IPR&D and Milestones Expense\n\nSecond-Quarter Global Net Revenues from the Immunology Portfolio Were $8.786 Billion, an Increase of 15.1 Percent on a Reported Basis, or 14.6 Percent on an Operational Basis; Global Skyrizi Net Revenues Were $5.505 Billion; Global Rinvoq Net Revenues Were $2.525 Billion; Global Humira Net Revenues Were $756 Million\n\nSecond-Quarter Global Net Revenues from the Neuroscience Portfolio Were $3.228 Billion, an Increase of 20.3 Percent on a Reported Basis, or 19.8 Percent on an Operational Basis; Global Vraylar Net Revenues Were $1.071 Billion; Global Botox Therapeutic Net Revenues Were $1.042 Billion; Combined Global Ubrelvy and Qulipta Net Revenues Were $742 Million; Global Vyalev Net Revenues Were $256 Million\n\nSecond-Quarter Global Net Revenues from the Oncology Portfolio Were $1.650 Billion, a Decrease of 1.5 Percent on a Reported Basis, or 2.4 Percent on an Operational Basis; Global Venclexta Net Revenues Were $771 Million; Global Imbruvica Net Revenues Were $532 Million; Global Elahere Net Revenues Were $211 Million\n\nSecond-Quarter Global Net Revenues from the Aesthetics Portfolio Were $1.282 Billion, an Increase of 0.3 Percent on a Reported Basis, or a Decrease of 0.9 Percent on an Operational Basis; Global Botox Cosmetic Net Revenues Were $728 Million; Global Juvederm Net Revenues Were $245 Million\n\nUpdates 2026 Adjusted Diluted EPS Guidance Range from $13.91 - $14.11 to $13.87 - $14.07; Now Includes a $0.14 per Share Dilutive Impact Related to the Proposed Acquisition of Apogee Therapeutics, Which is Anticipated to Close in the Third Quarter of 2026; Includes an Unfavorable Impact of $0.58 Per Share Related to Acquired IPR&D and Milestones Expense Incurred Year-To-Date Through the Second Quarter 2026\n\n\u201cAbbVie delivered another excellent quarter, marked by outstanding execution and pipeline advancement. We also announced the proposed acquisition of Apogee Therapeutics, which strengthens our ability to deliver innovative medicines to patients, bolsters our immunology leadership and creates significant shareholder value,\u201d said Robert A. Michael, chairman and chief executive officer, AbbVie. \u201cBased on our substantial momentum, AbbVie's long-term outlook remains very strong.\u201d",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage contains no impairment or write-down language; the only charge referenced is \"Acquired IPR&D and Milestones Expense\" and a \"$0.14 per Share Dilutive Impact Related to the Proposed Acquisition,\" neither of which is an asset impairment or write-down."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a4c88f8c6f8e09a4",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Throughout 2023, the Company faced disruptions to our operations due to international conflicts, including the conflict between Russia and Ukraine and conflicts in the Middle East. These conflicts have resulted, and could continue to result, in volatile commodity markets; logistical, transportation and supply chain disruptions; increased risk of cyber incidents or other disruptions to our information systems; reputational risk; heightened risks to employee safety; business disruptions (including labor shortages); reduced availability and increased costs of transportation, energy, packaging, raw materials and other input costs; sanctions, export controls and other legislation or regulation; or difficulty protecting and enforcing our intellectual property rights. While we currently do not anticipate that the effects of these conflicts will have a material impact on our results of operations, we cannot predict how and the extent to which these conflicts will continue to affect our employees, operations, customers or business partners.\n\nWe operate in the highly competitive commercial beverage industry. For additional information regarding the competitive environment in which we operate, including the names of certain of our significant competitors, refer to the heading \u201cCompetition\u201d set forth in Part I, \u201cItem 1. Business\u201d of this report. Our ability to maintain or gain share of sales in the global market or in regional or local markets may be limited as a result of actions by competitors. Competitive pressures may cause the Company and our bottling partners to reduce prices we charge customers or may restrict our and our bottlers\u2019 ability to increase prices, as may be necessary in response to commodity and other cost increases. Such pressures may also increase marketing costs along with in-store placement, slotting and other marketing fees. In addition, the rapid growth of e\u2011commerce may create additional consumer price deflation by, among other things, facilitating comparison shopping, and could potentially threaten the value of some of our legacy route-to-market strategies and thus negatively affect revenues. If we do not continuously strengthen our capabilities in marketing and innovation to maintain consumer interest, brand loyalty and market share while strategically expanding into other profitable categories of the commercial beverage industry, our business could be negatively affected.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"Throughout 2023, the Company faced disruptions to our operations\" and \"These conflicts have resulted, and could continue to result, in ... supply chain disruptions ... increased costs of transportation, energy, packaging, raw materials ... sanctions, export controls\" are unhedged past-tense assertions, so those three categories are REALIZED (only the competition paragraph is hypothetical)."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a577d6f06c53b689",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "We increasingly rely on new and evolving technologies, including those powered by or incorporating AI, as part of our internal operations and in the delivery of our products and services. AI technologies are subject to evolving and uncertain U.S. federal, state, and international laws and regulations. Emerging requirements may impose new compliance obligations, increase operating costs, or limit certain uses of AI.\n\nBecause we operate as a holding company, we are dependent on dividends and administrative expense reimbursements from our subsidiaries to fund our obligations. Many of these subsidiaries are regulated by state departments of insurance or similar regulatory authorities. We are also required by law or regulation to maintain specific prescribed minimum amounts of capital in these subsidiaries. The levels of required capitalization depend primarily on the volume of premium revenues generated and medical costs incurred by the applicable subsidiary. In most states, we are required to seek approval by state regulatory authorities before we transfer money or pay dividends from our regulated subsidiaries exceeding specified amounts. An inability of our regulated subsidiaries to pay dividends to their parent companies in the desired amounts or at the time of our choosing could adversely affect our ability to reinvest in our business through capital expenditures or business acquisitions, as well as our ability to maintain our corporate quarterly dividend payment, repurchase shares of our common stock and repay our debt. If we are unable to obtain sufficient funds from our subsidiaries to fund our obligations, our results of operations, financial position and cash flows could be materially and adversely affected.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"Emerging requirements may impose new compliance obligations, increase operating costs, or limit certain uses of AI\" explicitly states a cost impact, which matches MARGIN_COST_PRESSURE (hypothetical) alongside the regulatory category."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a5ae56d1c5a0aee6",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "The financial services industry generally and our businesses in particular have been subject to negative publicity. Our reputation and businesses may be adversely affected by negative publicity or information regarding our businesses, personnel, corporate engagement programs and other initiatives, whether or not accurate or true, that may be posted on social media or other internet forums or published by news organizations. Postings on these types of forums may also adversely impact risk positions of our clients and other parties that owe us money, securities or other assets and increase the chance that they will not perform their obligations to us or reduce the revenues we receive from their use of our services. The speed and pervasiveness with which information can be disseminated through these channels, in particular social media, may magnify risks relating to negative publicity.\n\nIn 2023, the rapid dissemination of negative information through social media, in part, is believed to have led to the collapse of Silicon Valley Bank (SVB). SVB suffered a level of deposit withdrawals within a time period not previously experienced by a financial institution. We could also be subject to rapid deposit withdrawals or other outflows as a result of negative social media posts or other negative publicity.\n\nClaims of collusion or anti-competitive conduct have become more common. Financial institutions (including us) have been subject to civil cases and investigatory demands relating to alleged bid-rigging, group boycotts or other anti-competitive practices. Antitrust laws generally provide for joint and several liability and treble damages. These claims have resulted in significant settlements and fines for us in the past and may do so in the future.\n\nIn conducting our businesses and supporting our global operations, we are subject to risks of possible nationalization, expropriation, price controls, capital controls, exchange controls, communications and other content restrictions, and other restrictive governmental actions. For example, sanctions have been imposed by the U.S. and the E.U. on certain individuals and companies in Russia and Venezuela. In many countries, the laws and regulations applicable to the securities and financial services industries and many of the transactions in which we are involved are uncertain and evolving, and it may be difficult for us to determine the exact requirements of local laws in every market. We have been, in some cases, subject to divergent and conflicting laws and regulations across markets, and we are increasingly subject to the risk that the jurisdictions in which we operate have implemented or may implement laws and regulations that directly conflict with those of another jurisdiction. Any determination by local regulators that we have not acted in compliance with the application of local laws in a particular market or our failure to develop effective working relationships with local regulators could have a significant and negative effect not only on our businesses in that market, but also on our reputation generally. Further, in some jurisdictions a failure, or alleged failure, to comply with laws and regulations has subjected and may in the future subject us and our personnel not only to civil actions, but also criminal actions and other sanctions. We are also subject to the enhanced risk that transactions we structure might not be legally enforceable in all cases.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage substantively discusses cross-border restrictive governmental action and states it as fact \u2014 \"sanctions have been imposed by the U.S. and the E.U. on certain individuals and companies in Russia and Venezuela\" \u2014 which matches TRADE_POLICY_EXPOSURE, REALIZED."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a787c4ef45504dd1",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": true,
+   "text": "The company did not reflect any favorable earnings impacting medical reserve development in the quarter. Out of prudence, due to the potential for the cyberattack to affect claims receipt timing, the company reflected an additional $800 million of claims reserves.\n\nDays claims payable of 47.1 compared to 47.9 in fourth quarter 2023 and 47.8 in first quarter 2023. Within this, the acceleration of payments to care providers and the Brazil sale reduced reported days claims payable by three days. The company\u2019s medical costs payable balance increased $1.6 billion from year-end 2023 to $34 billion. The change was due to a $3 billion increase in the incurred but not yet reported (IBNR) component of this balance in part to prudently accommodate the related ongoing claims receipt assessment, partially offset by a reduction in the fully processed claims component due to accelerated care provider claims payments.\n\nOverall care patterns in the first quarter were consistent with the company\u2019s expectations. The first quarter 2024 medical care ratio at 84.3% included 40 basis points of impact due to accommodations to support care providers. The increase from the prior year 82.2% was due to the previously noted revenue effects of the Medicare funding reductions, considerations driven\n\nThe first quarter 2024 operating cost ratio of 14.1% included approximately 30 basis points of impact due to costs incurred to support the company\u2019s direct response efforts. The result compared to 14.8% in 2023, reflecting strong operating cost management, partially offset by continued growth of the services businesses and investments to support growth.\n\nCash flows from operations from the first quarter 2024 were $1.1 billion and were affected by approximately $3 billion due to the company\u2019s cyberattack response actions, including funding acceleration to care providers, and were additionally impacted due to the timing of public sector cash receipts. The company returned $4.8 billion to shareholders in the first quarter through dividends and share repurchases.\n\nUnitedHealthcare total domestic consumers served grew by nearly 2 million in the first quarter 2024, led by commercial and senior, offset by expected member attrition in Medicaid due to ongoing eligibility redeterminations. Growth across the UnitedHealthcare portfolio reflects strong customer response to the company\u2019s innovative and affordable benefit offerings.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Nothing in the passage describes litigation, an investigation, an enforcement action, a fine, or a new compliance requirement \u2014 the only governmental reference is \"the previously noted revenue effects of the Medicare funding reductions,\" a payment-rate change, so LEGAL_REGULATORY_ACTION is unsupported."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "\"Cash flows from operations ... were $1.1 billion and were affected by approximately $3 billion due to the company's cyberattack response actions\" describes a cash-flow timing impact, not insufficient liquidity or inability to meet obligations; the same passage reports \"returned $4.8 billion to shareholders.\""
+    }
+   ]
+  }
+ ]
+}

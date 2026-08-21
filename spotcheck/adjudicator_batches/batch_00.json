@@ -1,0 +1,539 @@
+{
+ "batch": 0,
+ "chunks": [
+  {
+   "chunk_id": "CHK-0155a36a6f8dca5a",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "undue reliance on these forward-looking statements, which speak only as of the date of this press release unless an earlier date is specified. Unless legally required, Occidental does not undertake any obligation to update, modify or withdraw any forward-looking statements as a result of new information, future events or otherwise.\n\nActual outcomes or results may differ from anticipated results, sometimes materially. Forward-looking and other statements regarding Occidental's sustainability efforts and aspirations are not an indication that these statements are necessarily material to investors or require disclosure in Occidental's filings with the U.S. Securities and Exchange Commission (SEC). In addition, historical, current and forward-looking sustainability-related statements may be based on standards for measuring progress that are still developing, internal controls and processes that continue to evolve and assumptions that are subject to change in the future, including future rulemaking. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: general economic conditions, including slowdowns and recessions, domestically or internationally; Occidental\u2019s indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; Occidental\u2019s ability to successfully monetize select assets and repay or refinance debt and the impact of changes in Occidental\u2019s credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, Occidental\u2019s products and services; actions by the Organization of the Petroleum Exporting Countries (OPEC) and non-OPEC oil producing countries; the scope and duration of global or regional health pandemics or epidemics, and actions taken by government authorities and other third parties in connection therewith; results from operations and competitive conditions; future impairments of Occidental's proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including Occidental's ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; Occidental's ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures, including the CrownRock Acquisition; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections, projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses; uncertainties about the estimated quantities of oil, NGL and natural gas reserves; lower-than-expected production from development projects or acquisitions; Occidental\u2019s ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve Occidental\u2019s competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver Occidental\u2019s oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; government actions, war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events; health, safety and environmental (HSE) risks, costs and liability under existing or future federal, regional, state, provincial, tribal, local and international HSE laws, regulations and litigation (including related to climate change or remedial actions or assessments); legislative or regulatory changes, including changes relating to hydraulic fracturing or other oil and natural gas operations, retroactive royalty or production tax regimes, and deep-water and onshore drilling and permitting regulations; Occidental's ability to recognize intended benefits from its business strategies and",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only demand-related wording is direction-neutral ('supply and demand considerations for, and the prices of, Occidental's products and services'); nothing in the list asserts softening demand, so DEMAND_WEAKNESS is unsupported."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-02c976cdaea2cca2",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "faith and believed to be reasonable at the time such forward-looking statement is made. However, these statements are not guarantees of future performance and involve certain risks, uncertainties and other factors beyond our control. Therefore, actual outcomes and results may differ materially from what is expressed or forecast in the forward-looking statements. Factors that could cause actual results or events to differ materially from what is presented include, but are not limited to, the following: effects of volatile commodity prices, including prolonged periods of low commodity prices, which may adversely impact our operating results and our ability to execute on our strategy and could result in recognition of impairment charges on our long-lived assets, leaseholds and nonconsolidated equity investments; global and regional changes in the demand, supply, prices, differentials or other market conditions affecting oil and gas, including changes as a result of any ongoing military conflict and the global response to such conflict, security threats on facilities and infrastructure, global health crises, the imposition or lifting of crude oil production quotas or other actions that might be imposed by OPEC and other producing countries or the resulting company or third-party actions in response to such changes; the potential for insufficient liquidity or other factors, such as those described herein, that could impact our ability to repurchase shares and declare and pay dividends, whether fixed or variable; potential failures or delays in achieving expected reserve or production levels from existing and future oil and gas developments, including due to operating hazards, drilling risks and the inherent uncertainties in predicting reserves and reservoir performance; reductions in our reserve replacement rates, whether as a result of significant declines in commodity prices or otherwise; unsuccessful exploratory drilling activities or the inability to obtain access to exploratory acreage; failure to progress or complete announced and future development plans related to constructing, modifying or operating E&P and LNG facilities, or unexpected changes in costs, inflationary pressures or technical equipment related to such plans; significant operational or investment changes imposed by legislative and regulatory initiatives and international agreements addressing environmental concerns, including initiatives addressing the impact of global climate change, such as limiting or reducing GHG emissions, regulations concerning hydraulic fracturing, methane emissions, flaring or water disposal and prohibitions on commodity exports; broader societal attention to and efforts to address climate change may cause substantial investment in and increased adoption of competing or alternative energy sources; risks, uncertainties and high costs that may prevent us from successfully executing on our Climate Risk Strategy; lack or inadequacy of, or disruptions in reliable transportation for our crude oil, bitumen, natural gas, LNG and NGLs; inability to timely obtain or maintain permits, including those necessary for construction, drilling and/or development, or inability to make capital expenditures required to maintain compliance with any necessary permits or applicable laws or regulations; potential disruption or interruption of our operations and any resulting consequences due to accidents, extraordinary weather events, supply chain disruptions, civil unrest, political events, war, terrorism, cybersecurity threats or information technology failures, constraints or disruptions; liability for remedial actions, including removal and reclamation obligations, under existing or future environmental regulations and litigation; liability resulting from pending or future litigation or our failure to comply with applicable laws and regulations; general domestic and international economic, political and diplomatic developments, including deterioration of international trade relationships, the imposition of trade restrictions or tariffs relating to commodities and material or products (such as aluminum and steel) used in the operation of our business, expropriation of assets, changes in governmental policies relating to commodity pricing, including the imposition of price caps, sanctions or other adverse regulations or taxation policies; competition and consolidation in the oil and gas E&P industry, including competition for sources of supply, services, personnel and equipment; any limitations on our access to capital or increase in our cost of capital or insurance, including as a result of illiquidity, changes or uncertainty in domestic or international financial markets, foreign currency exchange rate fluctuations or investment sentiment; challenges or delays to our execution of, or successful implementation of the acquisition of Marathon Oil or any future asset dispositions or acquisitions we elect to pursue; potential disruption of our operations, including the diversion of management time and attention; our inability to realize anticipated cost savings or capital expenditure reductions; difficulties integrating acquired businesses and technologies; or other unanticipated changes; our inability to deploy the net proceeds from any asset dispositions that are pending or that we elect to undertake in the future in the manner and timeframe we anticipate, if at all; the operation, financing and management of risks of our joint ventures; the ability of our customers and other contractual counterparties to satisfy their obligations to us, including our ability to collect payments when due from the government of Venezuela or PDVSA; uncertainty as to the long-term value of our common stock; and other economic, business, competitive and/or regulatory factors affecting our business generally as set forth in our filings with the Securities and Exchange Commission. Unless legally required, ConocoPhillips expressly disclaims any obligation to update any forward-looking statements, whether as a result of new information, future events or otherwise.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "MARGIN_COST_PRESSURE is missing although the factor list expressly names 'unexpected changes in costs, inflationary pressures' and 'increase in our cost of capital or insurance'."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-044d7fa21c2d4322",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Geopolitical events (such as Russia\u2019s invasion of Ukraine) and resulting OFAC sanctions, adverse trade policies, enforcement of U.S. laws related to countering the financing of terrorism, economic sanctions and anti-corruption, or other types of government actions could lead affected or other jurisdictions to take actions in response that could adversely affect our business. Moreover, given our decision to suspend business operations in Russia, other separate jurisdictions may decide to begin to or increase their focus on growing local payment networks and other solutions.\n\nGovernments have been increasingly creating and expanding local payments structures (such as the Brazilian Instant Payment System-PIX, FedNow in the U.S. and UPI in India), which are increasingly being considered as alternatives to traditional domestic payment solutions and schemes such as ours.\n\nSuch developments prevent us from utilizing our global switching capabilities for domestic or regional customers. In addition, to the extent a jurisdiction determines us not to be in compliance with regulatory requirements (including those related to data localization), we have been, and may again in the future be, subject to resource and time pressures in order to come back into compliance. Our inability to effect change in, or work with, these jurisdictions could adversely affect our ability to maintain or increase our revenues and extend our global brand.\n\nAdditionally, some jurisdictions have implemented, or may implement, foreign ownership restrictions, which could potentially have the effect of forcing or inducing the transfer of our technology and proprietary information as a condition of access to their markets. Such restrictions could adversely impact our ability to compete in these markets.\n\nWe are subject to increasingly complex, fragmented and divergent laws and regulations related to privacy and data protection, data use and governance, AI and information security in the jurisdictions in which we do business. While policymakers around the globe look to the EU and the GDPR when adopting new or updated privacy and data protection laws, divergences have occurred and continue to occur. As a result, new or updated privacy and data protection and information security laws and regulations have led, and may continue to lead, to similar, stricter or at times conflicting requirements, creating an uncertain regulatory environment. For example, some jurisdictions have implemented or are otherwise considering requirements to collect, store and/or process data within their borders, as well as prohibitions on the transfer of data abroad, leading to technological and operational implications. Other jurisdictions have adopted or are otherwise considering adopting sector-specific regulations for the payments industry and other industries in which we participate, including forced data sharing requirements or additional verification requirements. In addition, laws and regulations on AI, data governance and credit decisioning may overlap or conflict with, or diverge from, general privacy rules. Overall, these myriad laws and regulations may require us to modify our data processing practices and policies, incur substantial compliance-related costs and expenses, and otherwise suffer adverse impacts on our business. Failure to comply with any of these laws, regulations and requirements could result in fines, sanctions or other enforcement actions or penalties, which could materially and adversely affect our results of operations and overall business, as well as have an impact on our reputation.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage asserts concrete occurrences \u2014 'we have been, and may again in the future be, subject to resource and time pressures in order to come back into compliance' and laws that 'have led ... to similar, stricter or at times conflicting requirements' \u2014 and a realized statement controls over surrounding hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-060bb35a20101e04",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Furthermore, Group Inc. has guaranteed the payment obligations of certain of its subsidiaries, including GS&Co. and GS Bank USA, subject to certain exceptions. In addition, Group Inc. guarantees many of the obligations of other of its consolidated subsidiaries on a transaction-by-transaction basis, as negotiated with counterparties. These guarantees may require Group Inc. to provide substantial funds or assets to its subsidiaries or their creditors or counterparties at a time when Group Inc. is in need of liquidity to fund its own obligations.\n\nWe are exposed to the risk that third parties that owe us money, securities or other assets will not perform their obligations. These parties may default on their obligations to us due to bankruptcy, lack of liquidity, operational failure or other reasons. A failure of a significant market participant, or even concerns about a default by such an institution, has in the past led and could in the future lead to significant liquidity problems, losses or defaults by other institutions, which in turn could adversely affect us. We are also exposed to the risk of a special assessment, including under the FDIA or OLA in the event of the failure of a bank or non-bank financial institution, which has in the past adversely affected and may in the future adversely affect our results of operations.\n\nConcentration of risk increases the potential for significant losses in our market-making, underwriting, investing and financing activities. The number and size of these transactions has affected and may in the future affect our results of operations in a given period. Moreover, because of concentrated risk, we may suffer losses even when economic and market conditions are generally favorable for our competitors. Disruptions in the credit markets can make it difficult to hedge these credit exposures effectively or economically. In addition, we extend large commitments as part of our credit origination activities. Disruptions in the credit markets have in the past substantially curtailed or eliminated and may in the future substantially curtail or eliminate the trading markets for loans we originate. These disruptions have in the past made and may in the future make it difficult for us to sell or value such assets, which have in the past resulted and may in the future result in losses for us.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Nothing here describes input/labor/operating cost pressure (the losses discussed are counterparty and market losses), and the special assessment 'under the FDIA or OLA ... has in the past adversely affected ... our results of operations' is a realized statement."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-07eed8cfa3cc6947",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Many of the government health care coverage programs we participate in are subject to the prior satisfaction of certain conditions or performance standards or benchmarks. For example, as part of the ACA, CMS has a system providing various quality bonus payments to Medicare Advantage plans meeting specified quality star ratings at the individual plan or local contract level. The star rating system considers various measures adopted by CMS, including, among others, quality of care, preventive services, chronic illness management, handling of appeals and customer satisfaction. Plans must have a rating of four stars or higher to qualify for bonus payments. If we do not maintain or continue to improve our star ratings, our plans may not be eligible for quality bonuses and we may experience a negative impact on our revenues and the benefits our plans can offer, which could materially and adversely affect the marketability of our plans and the number of people we serve. Any changes in standards or care delivery models applying to government health care programs, including Medicare and Medicaid, or our inability to maintain or improve our quality scores and star ratings to meet evolving government performance requirements or to match the performance of our competitors could result in limitations to our participation in or exclusion from these or other government programs, which could materially and adversely affect our results of operations, financial position and cash flows.\n\nCMS uses various payment mechanisms to allocate funding and adjust monthly capitation payments for Medicare programs. For Medicare Advantage plans, these adjustments are made according to the predicted health status of each beneficiary as supported by data from health care providers. For Medicare Part D plans, payment adjustments are driven by risk-sharing provisions based on a comparison of costs forecasted in our annual bids to actual prescription drug costs. Some state Medicaid programs utilize a similar process. For example, our UnitedHealthcare Medicare & Retirement and UnitedHealthcare Community & State businesses submit information relating to the health status of enrollees to CMS or state agencies for purposes of determining the amount of certain payments to us. CMS and the Office of Inspector General for HHS periodically perform risk adjustment data validation (RADV) audits of selected Medicare health plans to validate the coding practices of and supporting documentation maintained by health care providers. Some of our local plans have been selected for such audits, which in the past have resulted and in future periods could result in retrospective adjustments to payments made to our health plans, fines, corrective action plans or other adverse action by CMS.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'Some of our local plans have been selected for such audits, which in the past have resulted ... in retrospective adjustments to payments ..., fines, corrective action plans' asserts an actual, already-occurred regulatory action, so modality is REALIZED."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-081921fe16eebd72",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "13 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of the Corporation's 2024 Annual Report on Form 10-K and in any of the Corporation\u2019s subsequent U.S. Securities and Exchange Commission filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs and the processing of electronic payments, including through the Zelle network, and related fraud, which are in various stages; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the impact of U.S. and global interest rates (including the potential for ongoing fluctuations in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including changes in, or the imposition of, tariffs and / or trade barriers and the economic impacts, volatility and uncertainty resulting therefrom, which may have varying effects across industries and geographies and geopolitical instability; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, which may include unemployment rates, real estate prices, gross domestic product levels and corporate bond spreads, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of trade policies, supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation\u2019s concentration of credit risk; the Corporation's ability to achieve its expense targets and expectations regarding revenue, net interest income, provision for credit losses, net charge-offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations, including impacts from the 2025 budget reconciliation legislation; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of various third parties, including regulators and federal and state governments, such as from cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and machine learning; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental goals or the impact of any changes in the Corporation's sustainability or human capital management strategy or goals; the impact of uncertain or changing political conditions or any future federal government shutdown and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary, trade or regulatory policy; the emergence of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflicts in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. \u201cBank of America\u201d and \u201cBofA Securities\u201d are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (\u201cInvestment Banking Affiliates\u201d) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured \u00b7 May Lose Value \u00b7 Are Not Bank Guaranteed. Bank of America Corporation\u2019s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https:// newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage states existing matters \u2014 'pending ... litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to ..., including matters related to our processing of unemployment benefits for California ..., which are in various stages' \u2014 so the legal category is REALIZED rather than HYPOTHETICAL."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-088e7e55e663a543",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Producing oil and natural gas reservoirs generally are characterized by declining production rates that vary depending upon reservoir characteristics and other factors. Unless Occidental conducts successful exploration or development activities, acquires properties containing proved reserves, or both, proved reserves will generally decline and negatively impact Occidental\u2019s businesses. Occidental may not be successful in finding, developing or acquiring additional reserves, and its efforts may not be economic. Its ability to make the necessary capital investment to maintain or expand its asset base of oil and gas reserves would be limited to the extent cash flow from operations is reduced and external sources of capital become limited or unavailable. The value of Occidental\u2019s securities and its ability to raise capital will be adversely\n\nimpacted if it is not able to replace reserves that are depleted by production or replace its declining production with new production by successfully allocating annual capital to maintain its reserves and production base. Occidental expects infill development projects, extensions, discoveries and improved recovery to continue as main sources for reserve additions but factors such as geology, government regulations and permits, the effectiveness of development plans and the ability to make the necessary capital investments or acquire capital are partially or fully outside management\u2019s control and could cause results to differ materially from expectations.\n\nReported oil and gas reserves are an estimate based on periodic review of reservoir characteristics and recoverability, including production decline rates, operating performance and economic feasibility at the prescribed weighted average commodity prices, future operating costs and capital expenditures, workover and remedial costs, assumed effects of regulation by government agencies, the quantity, quality and interpretation of relevant data, taxes and availability of funds. The procedures and methods for estimating the reserves by Occidental\u2019s internal engineers were reviewed by independent petroleum consultants. The process of estimating oil and natural gas reserves, however, is complex and requires significant decisions and assumptions in the evaluation of available geological, geophysical, engineering and economic data for each reservoir and is therefore inherently uncertain. Actual production, revenues, expenditures, oil, NGL and natural gas prices and taxes with respect to Occidental\u2019s reserves may vary from estimates and the variance may be material. If Occidental were required to make significant negative reserve revisions, its results of operations and stock price could be adversely affected.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage is entirely supply/production-side ('reservoirs generally are characterized by declining production rates', 'proved reserves will generally decline', 'may not be successful in finding, developing or acquiring additional reserves') and says nothing about customer demand."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-0b5e321f5a9b7dc3",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The Firm measures certain equity securities without readily determinable fair values at cost less impairment (if any), plus or minus observable price changes from an identical or similar investment of the same issuer (i.e., measurement alternative), with such changes recognized in other income.\n\nIn its determination of the new carrying values upon observable price changes, the Firm may adjust the prices if deemed necessary to arrive at the Firm\u2019s estimated fair values. Such adjustments may include adjustments to reflect the different rights and obligations of similar securities, and other adjustments that are consistent with the Firm\u2019s valuation techniques for private equity direct investments.\n\n, that are measured under the measurement alternative and the related adjustments recorded during the periods presented for those securities with observable price changes. These securities are included in the nonrecurring fair value tables when applicable price changes are observable.\n\nmillion Visa Class B common shares (\u201cVisa B shares\u201d). These shares are subject to certain transfer restrictions and are convertible into Visa Class A common shares (\u201cVisa A shares\u201d) at a specified conversion rate upon final resolution of certain litigation matters involving Visa. On October 2, 2023, Visa filed a Current Report on Form 8-K with the SEC indicating that the conversion rate of Visa B shares to Visa A shares decreased from\n\neffective September 28, 2023. The conversion rate may be further adjusted by Visa depending on developments related to the litigation matters. The outcome of those litigation matters, and the effect that the resolution of those matters may have on the conversion rate, is unknown. Accordingly, as of September 30, 2023, there is significant uncertainty regarding when the transfer restrictions on Visa B shares may be terminated and what the final conversion rate for the Visa B shares will be. As a result of these considerations, as well as differences in voting rights, Visa B shares are not considered to be similar to Visa A shares, and they continue to be held at their nominal carrying value.\n\nIn connection with prior sales of Visa B shares, the Firm has entered into derivative instruments with the purchasers of the shares under which the Firm retains the risk associated with changes in the conversion rate. Under the terms of the derivative instruments, the Firm will (a) make or receive payments based on subsequent changes in the conversion rate and (b) make periodic interest payments to the purchasers of the Visa B shares. The payments under the derivative instruments will continue as long as the Visa B shares remain subject to transfer restrictions. The derivative instruments are accounted for at fair value using a discounted cash flow methodology based upon the Firm\u2019s estimate of the timing and magnitude of final resolution of the litigation matters. The derivative instruments are recorded in trading liabilities, and changes in fair value are recognized in other income. As of September 30, 2023, the Firm held derivative instruments associated with",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The litigation is asserted as existing and already consequential \u2014 shares convert 'upon final resolution of certain litigation matters involving Visa' and 'the conversion rate ... decreased ... effective September 28, 2023' \u2014 so REALIZED, not HYPOTHETICAL."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-0cd21022266b6704",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "This press release contains forward-looking statements within the meaning of the \u201csafe harbor\u201d provisions of the Private Securities Litigation Reform Act of 1995, including, but not limited to, statements about Occidental\u2019s expectations, beliefs, plans or forecasts, including the proposed sale of OxyChem to Berkshire Hathaway Inc. (Berkshire) and the benefits of such sale. All statements other than statements of historical fact are \u201cforward-looking statements\u201d for purposes of federal and state securities laws, including, but not limited to: any projections of earnings, revenue or other financial items or future financial position or sources of financing; any statements of the plans, strategies and objectives of management for future operations or business strategy; any statements regarding future economic conditions or performance; any statements of belief; and any statements of assumptions underlying any of the foregoing. Words such as \u201cestimate,\u201d \u201cproject,\u201d \u201cpredict,\u201d \u201cwill,\u201d \u201cwould,\u201d \u201cshould,\u201d \u201ccould,\u201d \u201cmay,\u201d \u201cmight,\u201d \u201canticipate,\u201d \u201cplan,\u201d \u201cintend,\u201d \u201cbelieve,\u201d \u201cexpect,\u201d \u201caim,\u201d \u201cgoal,\u201d \u201ctarget,\u201d\n\nForward-looking statements involve estimates, expectations, projections, goals, forecasts, assumptions, risks and uncertainties. Actual outcomes or results may differ from anticipated results, sometimes materially. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: Occidental\u2019s ability to consummate the proposed transaction with Berkshire (the Transaction); the possibility that any or all of the conditions to the Transaction may not be satisfied or waived, including the failure to obtain the regulatory approvals required for the Transaction on the terms expected or on the anticipated schedule or at all; the occurrence of any event, change or other circumstance that could give rise to the termination of the purchase agreement relating to the Transaction; the effect of the announcement or pendency of the Transaction on our ability to attract, motivate or retain key executives and employees, our ability to maintain relationships with our customers, vendors, service providers and others with whom we do business, or our operating results and business generally; risks related to the Transaction diverting management\u2019s attention from our ongoing business operations; that the Transaction may not achieve some or all or any of the anticipated benefits or be completed in accordance with expected plans and timelines; general economic conditions, including slowdowns and recessions, domestically or internationally; Occidental\u2019s indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; Occidental\u2019s ability to successfully monetize select assets and repay or refinance debt and the impact of changes in Occidental\u2019s credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, Occidental\u2019s products and services; actions by the Organization of the Petroleum Exporting Countries (OPEC) and non-OPEC oil producing countries; results from operations and competitive conditions; future impairments of Occidental's proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; government actions (including the effects of announced or future tariff increases and other geopolitical, trade, tariff, fiscal and regulatory uncertainties), war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events; inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including Occidental's ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; Occidental's ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections or projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses; uncertainties about the estimated quantities of oil, NGL and natural gas reserves; lower-than-expected production from development projects or acquisitions; Occidental\u2019s ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve Occidental\u2019s competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver Occidental\u2019s oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; health, safety and environmental (HSE) risks, costs and liability under existing or future federal, regional, state, provincial, tribal, local and international HSE laws, regulations and litigation (including related to climate change or remedial actions or assessments); legislative or regulatory changes, including changes relating to hydraulic fracturing or other oil and natural gas operations, retroactive royalty or production tax regimes, and deep-water and onshore drilling and permitting regulations; Occidental's ability to recognize intended benefits from its business strategies and initiatives, such as Occidental's low-carbon ventures businesses or announced greenhouse gas emissions reduction targets or net-zero goals; changes in government grant or loan programs; potential liability resulting from pending or future litigation, government investigations and other proceedings; disruption or interruption of production or manufacturing or facility damage due to accidents, chemical releases, labor unrest, weather, power outages, natural disasters, cyber-attacks, terrorist acts or insurgent activity; the scope and duration of global or regional health pandemics or epidemics, and actions taken by government authorities and other third parties in connection therewith; the creditworthiness and performance of Occidental's counterparties, including financial institutions, operating partners and other parties; failure of risk management; Occidental\u2019s ability to retain and hire key personnel; supply, transportation and labor constraints; reorganization or restructuring of Occidental\u2019s",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "MARGIN_COST_PRESSURE is missing although the factor list expressly names 'unexpected changes in costs', 'inflation, its impact on markets and economic activity' and 'increased costs' from acquisitions."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-0d4fb5ca9c78e569",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Strong operational performance results in the Company increasing 2026 guidance with estimated reported sales of $101.1 Billion or 7.3% at the midpoint, and increasing adjusted EPS* guidance by $0.13 to $11.68 or 8.2% at the midpoint. The adjusted operational EPS*\n\nAdvancing significant innovation for patients with approvals of TREMFYA to inhibit the progression of structural joint damage in adults with active psoriatic arthritis, CAPLYTA for the prevention of relapse in schizophrenia, and Dual Energy THERMOCOOL SMARTTOUCH SF platform; fortifying future with data from RYBREVANT FASPRO in advanced head and neck cancer, TALVEY plus DARZALEX FASPRO in earlier-line relapsed or refractory multiple myeloma, and OTTAVA in upper abdominal procedures\n\n\u2013 Johnson & Johnson (NYSE: JNJ) today announced results for second-quarter 2026. \u201cJohnson & Johnson delivered strong second-quarter results, demonstrating the power of our innovation, the depth of our portfolio and the momentum in our pipeline as we advance transformative treatments that address the world\u2019s toughest health challenges,\u201d said Joaquin Duato, Chairman and Chief Executive Officer, Johnson & Johnson. \u201cWith raised guidance and quarterly sales surpassing $25 billion, we are on track to meet our 2026 target of more than $100 billion in annual revenue for the first time in our Company\u2019s 140-year history.\u201d\n\nInnovative Medicine worldwide operational sales grew 6.8%*, with divestitures negatively impacting growth by 10 basis points. Growth was primarily driven by DARZALEX, CARVYKTI, TECVAYLI and RYBREVANT/LAZCLUZE in Oncology, TREMFYA and Other Immunology in Immunology, and SPRAVATO and CAPLYTA in Neuroscience. Growth was partially offset by STELARA (an approximate 760 basis points impact) and REMICADE in Immunology, as well as IMBRUVICA and ZYTIGA in Oncology.\n\nMedTech worldwide operational sales grew 3.6%*, with net acquisitions and divestitures negatively impacting growth by 10 basis points. Growth was primarily driven by wound closure products and biosurgery products in Surgery, electrophysiology products and Shockwave in Cardiovascular, contact lenses in Vision, and trauma in Orthopaedics.\n\nThis press release contains \u201cforward-looking statements\u201d as defined in the Private Securities Litigation Reform Act of 1995 regarding, among other things: future operating and financial performance, product development, and market position and business strategy. The reader is cautioned not to rely on these forward-looking statements. These statements are based on current expectations of future events. If underlying assumptions prove inaccurate or known or unknown risks or uncertainties materialize, actual results could vary materially from the expectations and projections of Johnson & Johnson. Risks and uncertainties include, but are not limited to: economic factors, such as interest rate and currency exchange rate fluctuations or changes to applicable laws and regulations; competition, including technological advances, new products and patents attained by competitors; challenges inherent in new product research and development, including uncertainty of clinical success and obtaining regulatory approvals; uncertainty of commercial success for new and existing products; challenges to patents; the impact of patent expirations; the ability of the Company to successfully execute strategic plans, including restructuring plans; the impact of business combinations and divestitures; manufacturing difficulties or delays, internally or within the supply chain; product efficacy or safety concerns resulting in product recalls or regulatory action; significant adverse litigation or government action, including related to product liability claims; changes to applicable laws and regulations, including tax laws and global health care reforms; trends toward health care cost containment; changes in behavior and spending patterns of purchasers of health care products and services; financial instability of international economies and legal systems and sovereign risk; increased scrutiny of the health care industry by government agencies; and the Company's ability to successfully separate the Company's Orthopaedics business and realize the anticipated benefits from the planned separation",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The 'Risks and uncertainties include' enumeration expressly names 'manufacturing difficulties or delays, internally or within the supply chain' and 'significant adverse litigation or government action, including related to product liability claims', which the empty stored list omits."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-10c141ea657ccfd8",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "% of the combined Mastercard-branded and Visa-branded payment card sales volume. A number of these actions are pending in the United States District Court for the Southern District of New York, and that court has scheduled a trial of the claims brought by several merchants to begin in October 2025.\n\n. JPMorganChase has responded to inquiries from various governmental agencies and entities around the world relating primarily to the British Bankers Association\u2019s (\u201cBBA\u201d) London Interbank Offered Rate (\u201cLIBOR\u201d) for various currencies and the European Banking Federation\u2019s Euro Interbank Offered Rate (\u201cEURIBOR\u201d). The Swiss Competition Commission\u2019s investigation of the Firm relating to EURIBOR has been settled, and the Firm paid a penalty and costs of approximately\n\nmillion Swiss franc. The Firm appealed a December 2016 decision by the European Commission against the Firm and other banks finding an infringement of European antitrust rules relating to EURIBOR. In December 2023, the European General Court annulled the fine imposed by the European Commission, but exercised its discretion to re-impose a fine in an identical amount. In March 2024, the Firm filed an appeal of this decision with the Court of Justice of the European Union.\n\nIn addition, a lawsuit filed by a group of individual plaintiffs asserting antitrust claims, alleging that the Firm and other defendants were engaged in an unlawful agreement to set U.S. dollar LIBOR and conspired to monopolize the market for LIBOR-based consumer loans and credit cards was dismissed in October 2023 and affirmed on appeal by the United States Court of Appeals for the Ninth Circuit in December 2024. The Firm has resolved all non-U.S. dollar LIBOR actions.\n\nsanctions. The Firm has faced actual and threatened litigation in Russia seeking payments that the Firm cannot make under, and is contractually excused from paying as a result of, relevant sanctions laws. In claims involving the Firm and claims filed against other financial institutions, Russian courts have disregarded the parties\u2019 contractual agreements concerning forum selection and did not recognize foreign sanctions laws as a basis for not making payment. Russian courts have entered judgment against the Firm in a number of claims, including one for $",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "This is a procedural recitation of legal proceedings with mixed outcomes ('was dismissed ... and affirmed on appeal', 'The Firm has resolved all non-U.S. dollar LIBOR actions' alongside 'Russian courts have entered judgment against the Firm'), with no characterization of results or condition."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-14cd2d5c71dd774f",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "We currently maintain investment grade credit ratings with Moody\u2019s Investors Service and Standard & Poor\u2019s Ratings Services. Rating agencies routinely evaluate us, and their ratings of our long-term and short-term debt are based on a number of factors. Any downgrade of our credit ratings by a credit rating agency, whether as a result of our actions or factors which are beyond our control, can increase the cost of borrowing under any indebtedness we may incur, reduce market capacity for our commercial paper or require the posting of additional collateral under our derivative contracts. There can be no assurance that we will be able to maintain our credit ratings, and any additional actual or anticipated changes or downgrades in our credit ratings, including any announcement that our ratings are under review for a downgrade, may have a negative impact on our liquidity, capital position and access to capital markets.\n\nOur continued growth requires us to recruit and retain talented employees representing diverse backgrounds, experiences, and skill sets. The market for highly skilled workers and leaders in our industry is extremely competitive and our ability to compete depends on our ability to hire, develop and motivate highly skilled personnel in all areas of our organization. Maintaining our brand and reputation, as well as a diverse, equitable and inclusive work environment enables us to attract top talent. If we are less successful in our recruiting efforts, or if we cannot retain highly skilled workers and key leaders, our ability to develop and deliver successful products and services may be adversely affected. In addition, effective succession planning is important to our long-term success. Any unsuccessful implementation of our succession plans or failure to ensure effective transfer of knowledge and smooth transitions involving key employees could adversely affect our business, financial condition, or results of operations.\n\nClimate change resulting from increased concentrations of carbon dioxide and other greenhouse gases in the atmosphere could present risks to our operations, including an adverse impact on global temperatures, weather patterns and the frequency and severity of extreme weather and natural disasters. Natural disasters and extreme weather conditions, such as a hurricane, tornado, earthquake, wildfire or flooding, may pose physical risks to our facilities and disrupt the operation of our supply chain. The impacts of the changing climate on water resources may result in water scarcity, limiting our ability to access sufficient high-quality water in certain locations, which may increase operational costs.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "No litigation, investigation or regulatory requirement is mentioned anywhere; the passage instead flags disruption of 'the operation of our supply chain', inability to 'retain highly skilled workers', and 'water scarcity, limiting our ability to access sufficient high-quality water ... which may increase operational costs'."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-15093bf4b3d166ff",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "and oceans, as well as inefficient use of resources when packaging materials are not collected and recycled or reused. We and our bottling partners sell certain of our beverage products in plastic bottles and use other packaging materials that, while largely recyclable, may not be regularly recovered and recycled due to lack of collection and recycling infrastructure. If we and our bottling partners do not, or are perceived not to, act responsibly to address plastic materials recoverability and recycling concerns and associated waste management issues, our corporate image and brand reputation could be damaged, which may cause some consumers to reduce or discontinue consumption of some of our beverage products. In addition, from time to time we establish and publicly announce voluntary goals to reduce the Coca-Cola system\u2019s impact on the environment by, for example, using more recycled content in our packaging materials. We have also taken and continue to take actions to expand our use of reusable packaging (including refillable or returnable glass and plastic bottles, as well as dispensed and fountain delivery models where consumers use refillable containers for our beverages); participate in programs and initiatives to reclaim or recover bottles and other packaging materials that are already in the environment; and take other actions and participate in other programs and initiatives organized or sponsored by nongovernmental organizations and other groups. If we and our bottling partners fail to achieve or improperly report on our progress toward achieving our announced environmental goals, or revise our goals, and/or discontinue our environmental initiatives, the resulting negative publicity could adversely affect consumer preference for our products. In addition, tariffs and trade policies may impact the availability and cost of alternative packaging materials, leading us to rely more on plastic packaging than desired.\n\nIn response to environmental concerns, governmental entities in the United States and in many other jurisdictions around the world have adopted, or are considering adopting, regulations and policies designed to mandate or encourage plastic packaging waste reduction and an increase in recycling rates and/or recycled content minimums, or, in some cases, restrict or even prohibit the use of certain plastic containers or packaging materials. These regulations and policies, whatever their scope or form, could increase the cost of our beverage products or otherwise put the Company at a competitive disadvantage. In addition, our increased focus on reducing plastic container waste and other packaging materials waste has in the past and may continue to require us or our bottling partners to incur additional expenses and to increase our capital expenditures. A reduction in consumer demand for our products and/or an increase in costs and expenditures relating to production and distribution as a result of these environmental concerns regarding plastic bottles and other packaging materials could have an adverse effect on our business and results of operations.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Two modalities differ: 'governmental entities ... have adopted ... regulations and policies designed to mandate ... recycled content minimums' and the focus on packaging waste 'has in the past ... require[d] us or our bottling partners to incur additional expenses and to increase our capital expenditures' are past-tense actual statements."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-1730b1d1ffc49698",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": ", the world's largest home improvement retailer, today reported sales of $41.4 billion for the third quarter of fiscal 2025, an increase of $1.1 billion, or 2.8% from the third quarter of fiscal 2024. Total sales include approximately $900 million from the recent acquisition of GMS Inc. (GMS), which represents approximately eight weeks of sales in the quarter. Comparable sales for the third quarter of fiscal 2025 increased 0.2%, and comparable sales in the U.S. increased 0.1%.\n\n\u201cOur results missed our expectations primarily due to the lack of storms in the third quarter, which resulted in greater than expected pressure in certain categories. Additionally, while underlying demand in the business remained relatively stable sequentially, an expected increase in demand in the third quarter did not materialize. We believe that consumer uncertainty and continued pressure in housing are disproportionately impacting home improvement demand,\u201d said Ted Decker, chair, president and CEO. \u201cOur teams are continuing to execute at a high level and we believe we are growing our market share. I would like to thank our associates for their continued hard work and dedication.\u201d\n\nThe company updated its fiscal 2025 guidance, a 52-week year compared to fiscal 2024, a 53-week year, to reflect its third quarter performance, continued pressure in the fourth quarter from the lack of storm activity, ongoing consumer uncertainty and housing pressure, and the inclusion of GMS.\n\nAt the end of the third quarter, the company operated a total of 2,356 retail stores and over 1,200 SRS locations across all 50 states, the District of Columbia, Puerto Rico, the U.S. Virgin Islands, Guam, 10 Canadian provinces and Mexico. The Company employs over 470,000 associates. The Home Depot's stock is traded on the New York Stock Exchange (NYSE: HD) and is included in the Dow Jones industrial average and Standard & Poor's 500 index.\n\nCertain statements contained herein constitute \"forward-looking statements\" under the federal securities laws, including as defined in the Private Securities Litigation Reform Act of 1995. Forward-looking statements are based on currently available information and our current assumptions, expectations and projections about future events, and use words such as \u201cmay,\u201d \u201cwill,\u201d \u201ccould,\u201d \u201cshould,\u201d \u201cwould,\u201d \u201canticipate,\u201d \u201cintend,\u201d \u201cestimate,\u201d \u201cproject,\u201d \u201cplan,\u201d \u201cbelieve,\u201d \u201cexpect,\u201d \u201ctarget,\u201d \"prospects,\u201d \u201cpotential,\u201d \"commit\u201d and \"forecast,\u201d or words of similar import or meaning or refer to future time periods. Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales growth; comparable sales; the effects of competition; our brand and reputation; implementation of interconnected retail, store, supply chain, technology, innovation and other strategic initiatives, including with respect to real estate; inventory and in-stock positions; the state of the economy; the state of the housing and home improvement markets; the state of the credit markets, including mortgages, home equity loans, and consumer and trade credit; the impact of tariffs, trade policy changes or restrictions, or international trade disputes and efforts and ability to continue to diversify our supply chain; issues related to the payment methods we accept; demand for credit offerings including trade credit; management of relationships with our associates, jobseekers, suppliers and service providers; cost and availability of labor; costs of fuel and other energy sources; events that could disrupt our business, supply chain, technology infrastructure, or demand for our products and services, such as tariffs, trade policy changes or restrictions or international trade disputes, natural disasters, climate change, public health issues, cybersecurity events, labor disputes, geopolitical conflicts, military conflicts, or acts of war; our ability to maintain a safe and secure store environment; our ability to address expectations regarding sustainability and human capital management matters and meet related goals; continuation or suspension of share repurchases; net earnings performance; earnings per share; future dividends; capital allocation and expenditures; liquidity; return on invested capital; expense leverage; changes in interest rates; changes in foreign currency exchange rates; commodity or other price inflation and deflation; our ability to issue debt on terms and at rates acceptable to us; the impact and expected outcome of investigations, inquiries, claims, and litigation, including compliance with related settlements; the challenges of operating in international markets; the adequacy of insurance coverage; the effect of accounting charges; the effect of adopting certain accounting standards; the impact of legal and regulatory changes, including executive orders and other administrative or legislative actions, such as changes to tax laws and regulations; store openings and closures; guidance for fiscal 2025 and beyond; financial outlook; and the impact of acquired companies, including SRS and GMS, on our organization and the ability to recognize the anticipated benefits of completed or pending acquisitions.",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "LOWERED",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NONE",
+     "auditor_reason": "The passage says only that the company 'updated its fiscal 2025 guidance ... to reflect its third quarter performance' \u2014 it states no decreased figure and no direction, and the rubric requires a specific target stated as decreased versus a prior figure."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-1b3bd0967f01aef3",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "13 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of the Corporation\u2019s 2023 Annual Report on Form 10-K and in any of the Corporation\u2019s subsequent Securities and Exchange Commission filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, of which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs, the processing of electronic payments and related fraud and the rates paid on uninvested cash in investment advisory accounts that is swept into interest-paying bank deposits, which are in various stages; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the possibility that the Corporation could face increased claims from one or more parties involved in mortgage securitizations; the Corporation\u2019s ability to resolve representations and warranties repurchase and related claims; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of U.S. and global interest rates (including the potential for ongoing reductions in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including tariffs, and potential geopolitical instability; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation\u2019s concentration of credit risk; the Corporation's ability to achieve its expense targets and expectations regarding revenue, net interest income, provision for credit losses, net charge-offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including, but not limited to, recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of third parties, including as a result of cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and machine learning; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental, social and governance goals and commitments or the impact of any changes in the Corporation's sustainability strategy or commitments generally; the impact of uncertain or changing political conditions or any future federal government shutdown and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary or regulatory policy; the emergence or continuation of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflict in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. \u201cBank of America\u201d and \u201cBofA Securities\u201d are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (\u201cInvestment Banking Affiliates\u201d) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured \u00b7 May Lose Value \u00b7 Are Not Bank Guaranteed. Bank of America Corporation\u2019s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https:// newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage asserts existing matters \u2014 'pending ... litigation and regulatory investigations, proceedings and enforcement actions, of which the Corporation is subject to ..., including matters related to our processing of unemployment benefits for California ..., which are in various stages' \u2014 so the legal category is REALIZED."
+    }
+   ]
+  }
+ ]
+}

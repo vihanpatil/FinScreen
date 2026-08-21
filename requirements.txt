@@ -1,0 +1,43 @@
+requests==2.31.0
+pandas==2.2.3
+# Added Week 2 (extract.py):
+pyarrow==21.0.0        # parquet read/write for data/filings.parquet
+beautifulsoup4==4.12.3  # robust HTML parsing for real-world 10-K/10-Q/8-K
+                         # documents -- these are large, deeply-nested, often
+                         # iXBRL-tagged real filings, not the small stable
+                         # index-page markup ingest_metadata.py's hand-rolled
+                         # regex parser handles; bs4 is the standard, boring,
+                         # well-documented tool for this, not a
+                         # framework-of-the-month pick.
+                         # NOTE: deliberately using the stdlib "html.parser"
+                         # backend, not lxml -- lxml parses faster but
+                         # silently returns EMPTY text for the malformed/
+                         # truncated HTML fragments extract.py's anchor-based
+                         # slicing intentionally produces (a fragment that
+                         # starts mid-document with a dangling closing tag).
+                         # This was found the hard way: every anchor-based
+                         # extraction attempt was silently falling through to
+                         # the lower-confidence regex fallback with no error
+                         # raised. html.parser has no such issue and needs no
+                         # extra dependency, so lxml isn't installed at all.
+# Added Week 3 (chunk.py, build_batch_requests.py):
+tiktoken==0.8.0          # optional -- used only by build_batch_requests.py's
+                         # estimate_cost() to get a real BPE token count
+                         # (cl100k_base, a proxy for Claude's own tokenizer,
+                         # which isn't callable locally) instead of a flat
+                         # words*1.35 guess. build_batch_requests.py degrades
+                         # gracefully to the word-count heuristic if this
+                         # isn't installed -- not required for the pipeline
+                         # itself to run, only for a tighter cost estimate.
+# Added Week 3 (submit_labeling_batch.py) -- owner sign-off (canary-first)
+# received, money gate cleared. submit_batch() in build_batch_requests.py
+# remains an intentional stub; the real submission path is
+# submit_labeling_batch.py, gated per-mode (--canary vs. --full
+# --confirm-full) rather than by a hard NotImplementedError.
+anthropic==0.121.0       # Batch API client (messages.batches.create/
+                         # retrieve/results) and Message/Usage response
+                         # models (real billed token counts incl.
+                         # cache_creation_input_tokens/cache_read_input_tokens)
+python-dotenv==1.0.1     # loads ANTHROPIC_API_KEY from project .env;
+                         # .env is gitignored and its value is never
+                         # printed/logged anywhere in this codebase

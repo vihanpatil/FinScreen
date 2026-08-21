@@ -1,0 +1,493 @@
+{
+ "batch": 6,
+ "chunks": [
+  {
+   "chunk_id": "CHK-80f17c876ef344ca",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "ROI was 15.5% and 15.0% for fiscal 2025 and 2024, respectively. The increase in ROI was the result of an increase in operating income, primarily due to improvements in business performance, partially offset by an increase in average invested capital primarily due to higher purchases of property and equipment.\n\nWe define free cash flow as net cash provided by operating activities in a period minus payments for property and equipment made in that period. We had net cash provided by operating activities of $36.4 billion, $35.7 billion and $28.8 billion for fiscal 2025, 2024 and 2023, respectively. We generated free cash flow of $12.7 billion, $15.1 billion and $12.0 billion for fiscal 2025, 2024 and 2023, respectively. The increase in net cash provided by operating activities in fiscal 2025 is primarily due to an increase in cash provided by operating income and lapping the payment of accrued opioid legal charges in the prior year, partially offset by increased inventory purchases. Free cash flow for fiscal 2025 decreased when compared to fiscal 2024 due to an increase of $3.2 billion in capital expenditures to support our investment strategy, partially offset by the increase in net cash provided by operating activities described above. Net cash provided by operating activities for fiscal 2024 increased when compared to fiscal 2023 primarily due to higher cash provided by operating income, as well as timing of certain payments and strategic inventory management as part of working capital initiatives, partially offset by payment of the remaining accrued opioid legal charges. Free cash flow for fiscal 2024 increased when compared to fiscal 2023 due to the increase in net cash provided by operating activities described above, partially offset by an increase of $3.7 billion in capital expenditures to support our investment strategy.\n\nOur total revenues increased $32.9 billion or 5.1% and $36.8 billion or 6.0% for fiscal 2025 and 2024, respectively, when compared to the previous fiscal year. These increases in revenues were primarily due to increases in net sales, which increased $31.9 billion or 5.0% and $36.8 billion or 6.1% for fiscal 2025 and 2024, respectively, when compared to the previous fiscal year. The increases were primarily due to strong positive comparable sales across our U.S. segments and international markets, driven primarily by growth in transactions and unit volumes, which included strength in eCommerce as well as strong sales in grocery, and health and wellness. Net sales were negatively impacted by $3.2 billion and positively impacted by $3.0 billion of fluctuations in currency exchange rates during fiscal 2025 and 2024, respectively. Membership and other income increased $1.0 billion and $0.1 billion for fiscal 2025 and fiscal 2024, primarily driven by growth in membership fee income globally.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage twice cites \"the payment of accrued opioid legal charges\" as a driver of the cash-flow variance, a realized litigation charge."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8153748ce0e68c39",
+   "section_type": "MDA",
+   "high_stakes": true,
+   "text": "As of December 31, 2023, our current liabilities exceeded current assets by $12.8 billion. We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations. We have strong short- and long-term debt ratings that have enabled and should continue to enable us to refinance our debt as it becomes due at favorable rates in commercial paper and bond markets. In addition, we have agreements with a diverse group of financial institutions that, if needed, should provide sufficient credit funding to meet short-term financing requirements.\n\nAdjusted free cash flow productivity is defined as the ratio of adjusted free cash flow to net earnings excluding the Gillette intangible asset impairment charge. We view adjusted free cash flow productivity as a useful measure to help investors understand P&G\u2019s ability to generate cash. Adjusted free cash flow productivity is used by management in making operating decisions, in allocating financial resources and for budget planning purposes. This measure is also used in assessing the achievement of management goals for at-risk compensation.\n\nCore EPS is a measure of the Company's diluted EPS excluding items that are not judged by management to be part of the Company's sustainable results or trends. Management views this non-GAAP measure as a useful supplemental measure of Company performance over time. This measure is also used in assessing the achievement of management goals for at-risk compensation. The Core earnings measures included in the following reconciliation tables refer to the equivalent GAAP measures adjusted as applicable for the following items:\n\n: As discussed in Note 4 to the Consolidated Financial Statements, the Company recognized in the three months ended December 31, 2023, a non-cash, after-tax impairment charge of $1.0 billion ($1.3 billion before tax) to adjust the carrying value of the Gillette intangible asset acquired as part of the Company's 2005 acquisition of The Gillette Company.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage affirmatively asserts liquidity adequacy \u2014 \"We anticipate being able to support our short-term liquidity and operating needs,\" \"strong short- and long-term debt ratings,\" \"sufficient credit funding\" \u2014 so the working-capital deficit is not an explicit statement of insufficient liquidity."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-819d5d4c3fa4cd08",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Please read the following discussion and analysis of our financial condition and results of operations together with \"Note About Forward-Looking Statements\" and our consolidated financial statements and related notes included under Item 1 of this Quarterly Report on Form 10-Q as well as our Annual Report on Form 10-K for the fiscal year ended December 31, 2023, including Part I, Item 1A \"Risk Factors,\" as updated in our Quarterly Report on Form 10-Q for the quarter ended March 31, 2024 and in this Quarterly Report on Form 10-Q.\n\nCost of revenues was $35.5 billion, an increase of 11% year over year, primarily driven by increases in content acquisition costs, TAC, depreciation expense, digital services tax related to the recently enacted law in Canada, which is applied retroactively, and other technical infrastructure operations costs.\n\nOperating expenses were $21.8 billion, an increase of 5% year over year, primarily driven by increases in compensation expenses, depreciation expense, and third-party services fees. The increase in compensation expenses was largely due to an increase in SBC expenses, which primarily reflects the\n\ne three months ended June 30, 2024. On July 23, 2024, Alphabet announced a cash dividend of $0.20 per share that will be paid on September 16, 2024, to stockholders of record as of September 9, 2024, on each of the company\u2019s Class A, Class B, and Class C shares. For additional information, see Note 9 of the Notes to Consolidated Financial Statements included in Item 1 of this Quarterly Report on Form 10-Q.\n\ne $3.3 billion and $12.3 billion, respectively, totaling $15.6 billion for the three months ended June 30, 2024. For additional information, see Note 9 of the Notes to Consolidated Financial Statements included in Item 1 of this Quarterly Report on Form 10-Q.\n\nGoogle Search & other revenues increased $5.9 billion and $11.7 billion from the three and six months ended June 30, 2023 to the three and six months ended June 30, 2024, respectively. The overall growth was driven by interrelated factors including increases in search queries resulting from growth in user adoption and usage on mobile devices; growth in advertiser spending; and improvements we have made in ad formats and delivery.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The \"digital services tax related to the recently enacted law in Canada, which is applied retroactively\" is a newly enacted tax law creating cost, i.e. a regulatory requirement, not a tariff/export control/sanction/trade restriction."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-81a3c6aa50ac835f",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Includes liquid securities and other cash collateral held at third-party custodians related to derivative instruments where an appropriate legal opinion has been obtained. For some counterparties, the collateral amounts of financial instruments may exceed the derivative receivables and derivative payables balances. Where this is the case, the total amount reported is limited to the net derivative receivables and net derivative payables balances with that counterparty.\n\nThe following table shows the aggregate fair value of net derivative payables related to OTC and OTC-cleared derivatives that contain contingent collateral or termination features that may be triggered upon a ratings downgrade, and the associated collateral the Firm has posted in the normal course of business, at September 30, 2023 and December 31, 2022.\n\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPMorgan Chase & Co. and its subsidiaries, predominantly JPMorgan Chase Bank, N.A., at September 30, 2023 and December 31, 2022, related to OTC and OTC-cleared derivative contracts with contingent collateral or termination features that may be triggered upon a ratings downgrade. Derivatives contracts generally require additional collateral to be posted or terminations to be triggered when the predefined rating threshold is breached. A downgrade by a single rating agency that does not result in a rating lower than a preexisting corresponding rating provided by another major rating agency will generally not result in additional collateral (except in certain instances in which additional initial margin may be required upon a ratings downgrade), nor in termination payment requirements. The liquidity impact in the table is calculated based upon a downgrade below the lowest current rating of the rating agencies referred to in the derivative contract.\n\nIn certain instances the Firm enters into transactions in which it transfers financial assets but maintains the economic exposure to the transferred assets by entering into a derivative with the same counterparty in contemplation of the initial transfer. The Firm generally accounts for such transfers as collateralized financing transactions as described in Note 11, but in limited circumstances they may qualify to be accounted for as a sale and a derivative under U.S. GAAP. The amount of such transfers accounted for as a sale where the associated derivative was outstanding was not material at both September 30, 2023 and December 31, 2022.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage contains no litigation, investigation, enforcement action or regulatory requirement \u2014 only contractual \"contingent collateral or termination features that may be triggered upon a ratings downgrade\" and a reference to an \"appropriate legal opinion.\""
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "A routine ratings-downgrade collateral sensitivity table (\"The liquidity impact in the table is calculated based upon a downgrade below the lowest current rating\") states no insufficiency of liquidity, inability to meet obligations, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-853b6716b0242ffd",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "In addition, the prior fiscal year included benefits from minor brand divestitures and favorable tax impacts that are unlikely to repeat to the same extent in fiscal year 2025. Combined, these are an additional $0.10 to $0.12 headwind to core EPS.\n\nRisks and uncertainties to which our forward-looking statements are subject include, without limitation: (1) the ability to successfully manage global financial risks, including foreign currency fluctuations, currency exchange or pricing controls; (2) the ability to successfully manage local, regional or global economic volatility, including reduced market growth rates, and to generate sufficient income and cash flow to allow the Company to effect the expected share repurchases and dividend payments; (3) the ability to successfully manage uncertainties related to changing political and geopolitical conditions and potential implications such as exchange rate fluctuations, market contraction, boycotts, sanctions or other trade controls; (4) the ability to manage disruptions in credit markets or to our banking partners or changes to our credit rating; (5) the ability to maintain key manufacturing and supply arrangements (including execution of supply chain optimizations and sole supplier and sole manufacturing plant arrangements) and to manage disruption of business due to various factors, including ones outside of our control, such as natural disasters, acts of war or terrorism or disease outbreaks; (6) the ability to successfully manage cost fluctuations and pressures, including prices of commodities and raw materials and costs of labor, transportation, energy, pension and healthcare; (7) the ability to compete with our local and global competitors in new and existing sales channels, including by successfully responding to competitive factors such as prices, promotional incentives and trade terms for products; (8) the ability to manage and maintain key customer relationships; (9) the ability to protect our reputation and brand equity by successfully managing real or perceived issues, including concerns about safety, quality, ingredients, efficacy, packaging content, supply chain practices or similar matters that may arise; (10) the ability to successfully manage the financial, legal, reputational and operational risk associated with third-party relationships, such as our suppliers, contract manufacturers, distributors, contractors and external business partners; (11) the ability to rely on and maintain key company and third-party information and operational",
+   "contested_fields": [
+    {
+     "field": "guidance_direction",
+     "stored_label": "LOWERED",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NONE",
+     "auditor_reason": "The passage quantifies a component headwind (\"an additional $0.10 to $0.12 headwind to core EPS\") but never states that a specific forward EPS/revenue target has been decreased versus a prior figure."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only cost-pressure language is the hypothetical risk item \"(6) the ability to successfully manage cost fluctuations and pressures, including prices of commodities and raw materials\"; the realized $0.10-$0.12 headwind comes from lapping divestiture and tax benefits, not costs."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-85c8d5bd365e3c8d",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Revenue from the Networking product category increased by 18%, or $5.3 billion. Revenue grew in both campus switching and data center switching. This was primarily driven by strong growth in our Catalyst 9000 series, Nexus 9000 series and Meraki switching offerings. The increase in enterprise routing was primarily driven by growth in Catalyst 8000 routers, SD-WAN and IoT routing offerings. Wireless grew primarily driven by our WiFi-6 products and Meraki offerings. Revenue in routed optical networking was flat, primarily driven by growth in our Core routing portfolio, including our Cisco 8000 series offerings and growth in our webscale provider market.\n\nThe Security product category consists of our Network Security, Identity and Access Management, SASE and Threat Intelligence, Detection, and Response offerings. Revenue in our Security product category increased by 32%, or $1.2 billion, primarily driven by the contribution of Splunk offerings and growth across the portfolio. The Security product category grew 4%, not including the contribution from Splunk offerings.\n\nThe Observability product category consists of our network assurance, monitoring and analytics and observability suite offerings. Revenue in our Observability product category increased by 27%, or $176 million, driven by growth in our ThousandEyes offering and the contribution from Observability Suite, our Splunk offering. Product revenue in the Observability product category increased 15%, not including the contribution from Splunk.\n\nServices revenue increased 5%, driven by growth in our solution support, advisory services and software support offerings. The acquisition of Splunk also contributed to the growth in services revenue for fiscal 2024. Services revenue increased across all of our geographic segments. Services revenue grew 3%, not including the contribution from Splunk.\n\nProduct gross margin increased by 2.0 percentage points primarily driven by favorable product mix, productivity benefits, largely driven by lower freight and other costs, and benefits from Splunk. This was partially offset by the amortization of purchased intangible assets primarily related to Splunk, and negative impacts from pricing.\n\nIn past periods, we took multiple actions in order to mitigate component shortages and address significant supply constraints. These supply constraints resulted in the need to secure long-term supply and increased inventory supply chain balances compared to historical levels. This in turn has significantly increased our supply chain exposure, which has resulted in negative impacts to our product gross margin in recent periods and may result in further negative impacts in future periods. This exposure includes potential material excess and obsolete or other charges if product demand significantly decreases for a sustained duration, we are unable to generate demand for certain products planned for development, or we are unable to mitigate the remaining supply chain exposures.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Adds DEMAND_WEAKNESS for the conditional \"if product demand significantly decreases for a sustained duration, we are unable to generate demand for certain products planned for development.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-876f46bf645b0e54",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Reported selling, general and administrative expense (SG&A) as a percentage of sales increased 10 basis points versus year ago. Core SG&A as a percentage of sales decreased 10 basis points versus year ago and decreased 20 basis points on a currency-neutral basis. Core SG&A excluded the impact from incremental restructuring charges. The Core SG&A decrease was driven by 120 basis points of productivity savings, 90 basis points of positive scale impacts of the net sales increase and 20 basis points of rounding and other items, partially offset by 210 basis points of reinvestments.\n\nReported operating margin for the quarter decreased 150 basis points versus the prior year. Core operating margin for the quarter decreased 80 basis points versus the prior year and decreased 70 basis points on a currency-neutral basis. Core operating margin included gross productivity savings of 330 basis points.\n\nP&G maintained its outlook for fiscal 2026 diluted net earnings per share growth to be in the range of one percent to six percent versus fiscal 2025 diluted net EPS of $6.51. P&G also maintained its fiscal 2026 core earnings per share growth to be in the range of in-line to up four percent versus fiscal 2025 core EPS of $6.83. This outlook equates to a range of $6.83 to $7.09 per share.\n\nP&G now expects commodity costs to be a headwind of approximately $150 million after tax and higher costs from tariffs are estimated at approximately $400 million after tax for fiscal 2026. The Company continues to expect a net headwind of roughly $250 million after-tax from modestly higher net interest expense and a higher core effective tax rate versus the prior year. Foreign exchange is forecasted to be a tailwind of approximately $200 million after tax. Collectively these impacts equate to a headwind of $0.25 per share for fiscal 2026. The Company also noted it is increasing investments in innovation and demand creation to maintain positive momentum with consumers. Given these factors, P&G now expects fiscal 2026 EPS results to be toward the lower-end of the guidance range.\n\nRisks and uncertainties to which our forward-looking statements are subject include, without limitation: (1) the ability to successfully manage global financial risks, including foreign currency fluctuations, changes in global interest rates and rate differentials, currency exchange, pricing controls or tariffs; (2) the ability to successfully manage local, regional or global economic volatility, including reduced market growth rates, and to generate sufficient income and cash flow to allow the Company to effect the expected share repurchases and dividend payments; (3) the ability to successfully manage uncertainties related to changing political and geopolitical conditions and potential implications such as exchange rate fluctuations, market contraction, boycotts, variability and unpredictability in trade relations, sanctions, tariffs or other trade controls; (4) the ability to manage disruptions in credit markets or to our banking partners or changes to our credit rating; (5) the ability to maintain key manufacturing and supply arrangements (including execution of supply chain optimizations and sole supplier and sole manufacturing plant arrangements) and to manage disruption of business due to various factors, including ones outside of our control, such as natural disasters, conflicts or acts of war (such as the conflict in the Middle East), terrorism or disease outbreaks; (6) the ability to successfully manage cost fluctuations and pressures, including prices of commodities and raw materials and costs of labor, transportation, energy, pension and healthcare; (7) the ability to compete with our local and global competitors in new and existing sales channels, including by successfully responding to competitive factors such as prices, promotional incentives and trade terms for products; (8) the ability to manage and maintain key customer relationships; (9) the ability to protect our reputation and brand equity by successfully managing real or perceived issues, including concerns about safety, quality, ingredients, efficacy, packaging content, supply chain practices, social or environmental practices or similar matters that may arise; (10) the ability to successfully manage the financial, legal, reputational and operational risk associated with third-party",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only legal content is the generic risk-list phrase \"the financial, legal, reputational and operational risk associated with third-party\" relationships \u2014 no litigation, investigation, enforcement action or regulatory requirement is described."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-87d7f6be8a95c376",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "If Group Inc.\u2019s proposed resolution strategy were not successful, Group Inc.\u2019s financial condition would be adversely impacted and Group Inc.\u2019s security holders, including debtholders, may as a consequence be in a worse position than if the strategy had not been implemented. In all cases, any payments to debtholders are dependent on our ability to make such payments and are therefore subject to our credit risk.\n\nAs a result of our recovery and resolution planning processes, including incorporating feedback from our regulators, we may incur increased operational, funding or other costs and face limitations on our ability to structure our internal organization or engage in internal or external activities in a manner that we may otherwise deem most operationally efficient.\n\nAs part of our commodities business, we purchase and sell certain physical commodities, arrange for their storage and transport, and engage in market making of commodities. The commodities involved in these activities may include crude oil, refined oil products, natural gas, liquefied natural gas, electric power, agricultural products, metals (base and precious), minerals (including unenriched uranium), emission credits, coal, freight and related products and indices.\n\nThese activities subject us and/or the entities in which we invest to extensive and evolving federal, state and local energy, environmental, antitrust and other governmental laws and regulations worldwide, including environmental laws and regulations relating to, among others, air quality, water quality, waste management, transportation of hazardous substances, natural resources, site remediation and health and safety. Additionally, rising climate change concerns have led to additional regulation, regulatory scrutiny and disclosure obligations that have increased and could further increase the operating costs and could adversely affect the profitability of certain of our investments and activities.\n\nThere may be substantial costs in complying with current or future laws and regulations relating to our commodities-related activities and investments. Compliance with these laws and regulations requires significant commitments of capital toward environmental monitoring, renovation of storage facilities or transport vessels, payment of emission fees and carbon or other taxes, and application for, and holding of, permits and licenses.\n\nCommodities involved in our intermediation activities and investments are also subject to the risk of unforeseen or catastrophic events, which are likely to be outside of our control, including those arising from the breakdown or failure of transport vessels, storage facilities or other equipment or processes or other mechanical malfunctions, fires, leaks, spills or release of hazardous substances, performance below expected levels of output or efficiency, terrorist attacks, extreme weather events or other natural disasters or other hostile or catastrophic events. In addition, we rely on third-party suppliers or service providers to perform their contractual obligations and any failure on their part, including the failure to obtain raw materials at reasonable prices or to safely transport or store commodities, could expose us to costs or losses. Also, while we seek to insure against potential risks, we do not have insurance to cover some of these risks and the insurance that we have may be inadequate to cover our losses.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"rising climate change concerns have led to additional regulation, regulatory scrutiny and disclosure obligations that have increased ... the operating costs\" is a present-perfect realized assertion that controls over the surrounding hypothetical framing, and \"the failure to obtain raw materials at reasonable prices or to safely transport or store commodities\" adds a supply constraint."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-888e11429f923bfd",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Earnings and adjusted earnings decreased from the third quarter of 2022 primarily due to lower prices. The company\u2019s total average realized price was $60.05 per BOE, 28% lower than the $83.07 per BOE realized in the third quarter of 2022.\n\nFor the quarter, cash provided by operating activities was $5.4 billion. Excluding working capital, ConocoPhillips generated CFO of $5.5 billion and received proceeds of $0.2 billion primarily from the sale of a Lower 48 equity investment. In addition, the company funded $2.5 billion of capital expenditures and investments, paid $1.3 billion in ordinary dividends and VROC and repurchased $1.3 billion of shares.\n\nConocoPhillips\u2019 nine-month 2023 earnings were $8.0 billion, or $6.54 per share, compared with nine-month 2022 earnings of $15.4 billion, or $11.93 per share. Nine-month 2023 adjusted earnings were $7.8 billion, or $6.38 per share, compared with nine-month 2022 adjusted earnings of $14.0 billion, or $10.79 per share.\n\nProduction for the first nine months of 2023 was 1,801 MBOED, an increase of 70 MBOED from the same period a year ago. After adjusting for impacts from closed acquisitions and dispositions, production increased 72 MBOED or 4% from the same period a year ago. Organic growth from Lower 48 and other development programs more than offset decline and downtime.\n\nEarnings and adjusted earnings for the first nine months of 2023 decreased from the same period a year ago primarily due to lower prices. The company\u2019s total realized price during this period was $58.45 per BOE, 29% lower than the $82.82 per BOE realized in the first nine months of 2022.\n\nIn the first nine months of 2023, cash provided by operating activities was $14.7 billion. Excluding a $1.2 billion change in working capital, ConocoPhillips generated CFO of $15.9 billion and received disposition proceeds of $0.6 billion. The company funded $8.4 billion of capital expenditures and investments, repurchased $4.3 billion of shares and paid $4.2 billion in ordinary dividends and VROC.\n\nFourth-quarter 2023 production is expected to be 1.86 to 1.90 million barrels of oil equivalent per day (MMBOED). Full-year production is expected to be approximately 1.82 MMBOED, as compared to prior guidance of 1.80 to 1.81 MMBOED, due to the Surmont acquisition.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "Earnings fell \"primarily due to lower prices\" (a 28% lower realized price per BOE) \u2014 a revenue/price decline, not rising input, labor or operating costs compressing margin; the passage names no cost increase."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8ae1b96bc6174d32",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "To estimate the potential impact of an adverse macroeconomic environment on our allowance for credit losses, we, among other things, compared the expected credit losses under the weighted average forecast used in the calculation of allowance for credit losses as of September 2025 (which was weighted towards the baseline and adverse economic scenarios) to the expected credit losses under a 100% weighted adverse economic scenario. The adverse economic scenario of the forecast model reflects a global recession in the fourth quarter of 2025 through the third quarter of 2026, resulting in an economic contraction and rising unemployment rates. A 100% weighting to the adverse economic scenario would have resulted in an approximate $0.7 billion increase in our allowance for credit losses as of September 2025. This hypothetical increase does not take into consideration any potential adjustments to qualitative reserves. The forecasts of macroeconomic conditions are inherently uncertain and do not take into account any other offsetting or correlated effects. The actual credit loss in an adverse macroeconomic environment may differ significantly from this estimate. See Note 9 to the consolidated financial statements for further information about the allowance for credit losses.\n\nDuring the third quarter of 2025, the operating environment was generally characterized by prolonged geopolitical tensions and continued broad macroeconomic concerns, including concerns and uncertainty about inflation, central bank policies and changes in international trade policies (including tariffs). Industry-wide investment banking activity levels experienced an increase in industry-wide completed mergers and acquisitions volumes and equity underwriting volumes compared with the second quarter of 2025, while debt underwriting volumes were lower. In market making, activity levels decreased compared with the prior quarter. Additionally, global equity prices were generally higher compared with the end of the second quarter of 2025. In the U.S., the rate of unemployment remained low and the pace of growth in consumer spending improved compared with the second quarter of 2025.\n\nIf uncertainty and concerns about geopolitical tensions and the economic outlook remain elevated or grow, including those about inflation, central bank policies, the duration of the current federal government shutdown in the U.S. and changes in international trade policies, including the imposition of tariffs, it may lead to a decline in asset prices, a further decline in market-making activity levels, or a decline in investment banking activity levels, and net revenues and provision for credit losses would likely be negatively impacted. See \u201cSegment Assets and Operating Results \u2014 Segment Operating Results\u201d for information about the operating environment and material trends and uncertainties that may impact our results of operations.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"In market making, activity levels decreased compared with the prior quarter\" and \"debt underwriting volumes were lower\" are realized activity declines (the later \"further decline\" confirms it), and no passage language describes the firm's own input/operating costs rising, so MARGIN_COST_PRESSURE is unsupported."
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage discusses borrower credit losses (\"$0.7 billion increase in our allowance for credit losses\") and revenue sensitivity, never insufficient liquidity, inability to meet obligations, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8b605e474fc6bdcc",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our manufacturing facility in Rocky Mount, NC was damaged by a tornado in July 2023. The facility is a key producer of sterile injectables and is responsible for manufacturing nearly 25 percent of all our sterile injectables\u2014including anesthesia, analgesia, and micronutrients. Supply of medicines has recovered from the impact of the tornado. We incurred losses in 2023 and 2024 that were partially offset by insurance recoveries received.\n\nWe periodically encounter supply delays, disruptions and shortages, including due to voluntary product recalls and natural or man-made disasters. In response to requests from various regulatory authorities, manufacturers across the pharmaceutical industry, including Pfizer, are evaluating their product portfolios for the potential presence or formation of nitrosamines and we are actively engaging with regulatory authorities on this topic. If nitrosamines are detected above certain levels in our products, this may lead to market action for such products. For example, in 2021, Pfizer recalled all lots of Chantix due to the presence of a nitrosamine, N-nitroso-varenicline, at or above acceptable intake limits communicated by various regulatory authorities. Regulatory authorities have since issued updated guidance on nitrosamine acceptable intake levels. With this guidance, which included an updated intake level for N-nitroso-varenicline, we have started making regulatory submissions to potentially enable Chantix to return to market in the U.S. and in certain international markets.\n\nExcept for the impact of the tornado in Rocky Mount, NC discussed above, we have not seen a significant disruption of our supply chain in 2024 and through the date of filing of this Form 10-K, and all of our manufacturing sites globally have continued to operate at or near normal levels. We do not anticipate the availability of raw materials to have a significant impact on our operations in 2025, but are monitoring potential supply chain disruptions as a result of ongoing geopolitical and trade negotiations, which could, among other things, impact costs. We are continuing to monitor and implement mitigation strategies to reduce any potential risk or impact including active supplier management, qualification of additional suppliers and advanced purchasing to the extent possible. For information on risks related to product manufacturing, see the",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The adverse events are counterbalanced by the passage's own reassurance \u2014 \"Supply of medicines has recovered,\" \"we have not seen a significant disruption of our supply chain in 2024,\" \"all of our manufacturing sites globally have continued to operate at or near normal levels\" \u2014 leaving no clear unfavorable lean."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8cfdeaae0076e69f",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Health Care segment organic sales increased ten percent versus year ago. Oral Care organic sales increased high single digits due to increased pricing and favorable product mix. Personal Health Care organic sales increased double digits due to increased pricing and volume growth due to innovation and strong demand for respiratory products.\n\nFabric and Home Care segment organic sales increased nine percent versus year ago. Fabric Care organic sales increased high single digits due to increased pricing and favorable product mix, partially offset by volume declines primarily in Asia. Home Care organic sales increased low teens due to increased pricing and favorable premium products mix.\n\nBaby, Feminine and Family Care segment organic sales increased seven percent versus year ago. Baby Care organic sales increased mid-single digits due to increased pricing and favorable product mix, partially offset by pricing-related volume declines. Organic sales grew in all regions. Feminine Care organic sales increased high single digits driven by increased pricing and favorable geographic and product mix, partially offset by pricing-related volume declines. All regions grew organic sales.\n\nGross margin for the quarter increased 460 basis points versus year ago, 520 basis points on a currency-neutral basis. The increase was driven by benefits of 330 basis points from increased pricing, 160 basis points of favorable commodity costs and 150 basis points from gross productivity savings. These were partially offset by 60 basis points of negative product mix and 60 basis points of product reinvestments and other impacts.\n\nSelling, general and administrative expense (SG&A) as a percentage of sales increased 220 basis points versus year ago and 180 basis points on a currency-neutral basis. The increase was driven by 260 basis points of marketing investments, 140 basis points of wage inflation and other impacts, partially offset by 160 basis points of net sales growth leverage and 60 basis points of productivity savings.\n\nP&G adjusted its guidance range for fiscal 2024 all-in sales growth to be in the range of two to four percent versus the prior year. Foreign exchange is now expected to be a headwind of approximately one to two percentage points to all-in sales growth. The Company maintained its outlook for organic sales growth in the range of four to five percent.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage states unfavorable volume trends three times \u2014 \"volume declines primarily in Asia\" and \"pricing-related volume declines\" for Baby Care and Feminine Care."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8d77e3d537575946",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Several of these factors may arise from circumstances beyond our control, such as general market volatility, disruption, shock or stress, stress in sovereign debt markets, the emergence of widespread health emergencies or pandemics, sanctions and geopolitical events and/or turmoil (including military conflicts). Federal Reserve policy decisions (including fluctuations in interest rates or Federal Reserve balance sheet composition), negative views or loss of confidence about us, the financial services industry or the U.S. monetary system generally, or due to a specific news event (e.g., bank failures), the further development and acceptance of nonbank digital asset ecosystems (e.g., stablecoin), changes in the regulatory environment or governmental fiscal or monetary policies, actions by credit rating agencies or an operational problem that affects third parties or us. The impact of these potentially sudden events, whether within our control or not, could result in our inability to sell assets or redeem investments, unforeseen outflows of cash, draws on liquidity facilities, reduced financing balances, the loss of equity secured funding, debt repurchases to support the secondary market or meet client requests, the need for additional funding for commitments and contingencies and unexpected collateral calls, among other things, the result of which could be increased costs, a liquidity shortfall and/or impact on our liquidity coverage ratio and net stable funding ratio.\n\nOur liquidity and cost of funds may be impacted by reputational damage, investor behavior and confidence, debt market disruption, firm specific concerns or prevailing market conditions, including changes in interest and currency exchange rates, significant fluctuations in equity and futures prices, lower\n\ntrading volumes and prices of securitized products and our credit spreads. Increases in interest rates and our credit spreads can increase funding costs and result in mark-to-market or credit valuation adjustment exposures. Credit spread changes are market driven and may be influenced by market perceptions of our creditworthiness, including credit rating changes or changes in broader financial market and macroeconomic conditions. Changes to interest rates and our credit spreads occur continuously and may be unpredictable and highly volatile. We may also experience net interest margin compression from offering higher than expected deposit rates in order to attract and maintain deposits or otherwise. Concentrations within our funding profile, such as by maturity, currency or counterparty, can also reduce our funding efficiency.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "\"sanctions and geopolitical events and/or turmoil (including military conflicts)\" is named as a factor beyond the firm's control, and sanctions are an explicit TRADE_POLICY_EXPOSURE trigger."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8d908f0adf713b9b",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "\u201cThe diversified, durable growth across UnitedHealth Group stems from our colleagues\u2019 commitment to ensuring high-quality, affordable care is available to the people we serve, and positions us well for the near and long-term,\u201d said Andrew Witty, chief executive officer of UnitedHealth Group.\n\nThe company updated its full year 2024 net earnings outlook to $15.95 to $16.40 per share to reflect the classification to held for sale of its remaining South America operations and the estimated Change Healthcare cyberattack impacts. The company completed the sale of its larger Brazilian operations in the first quarter of 2024.\n\nThe company affirmed the adjusted net earnings outlook of $27.50 to $28.00 per share established at its November 2023 Investor Conference. The consistent outlook absorbs an estimated $0.60 to $0.70 per share of business disruption impacts for the affected Change Healthcare services, which has increased $0.30 per share since the initial estimate was provided last quarter.\n\nThe company has restored the majority of the affected Change Healthcare services while continuing to provide financial support to the remaining health care providers in need. To date, the company has provided over $9 billion in advance funding and interest-free loans to support care providers.\n\nTotal cyberattack impacts in the second quarter were $0.92 per share. This included $0.64 per share to support direct response efforts such as the Change Healthcare clearinghouse platform restoration and increased medical care expenditures. Additionally, Change Healthcare business disruption impacts, reflecting lost revenue and the costs of maintaining full readiness of the affected Change Healthcare services, were $0.28 per share in the second quarter.\n\nThe company currently estimates the total full year 2024 impact at $1.90 to $2.05 per share. Within this, direct response costs are estimated at $1.30 to $1.35, an increase of $0.40 to $0.45 from the initial estimate. The change is due to the company\u2019s care provider financial support initiatives and consumer notification costs. Business disruption impacts are estimated at $0.60 to $0.70 per share.\n\nHaving completed the sale of its Brazilian business, the company intends to sell its remaining South American operations. Total South American impacts in the quarter were $1.28 per share, the majority of which is non-cash and is due to the cumulative impact of foreign currency losses.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage describes a cyberattack, service restoration, provider funding and a South America divestiture, but names no litigation, investigation, enforcement action, fine or regulatory requirement."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-8f30c8ae3920d287",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "HOUSTON\u2014Nov. 6, 2025\u2014ConocoPhillips (NYSE: COP) today reported third-quarter 2025 earnings of $1.7 billion, or $1.38 per share, compared with third-quarter 2024 earnings of $2.1 billion, or $1.76 per share. Excluding special items, third-quarter 2025 adjusted earnings were $2.0 billion, or $1.61 per share, compared with third-quarter 2024 adjusted earnings of $2.1 billion, or $1.78 per share. Special items for the quarter primarily relate to restructuring costs.\n\n\"ConocoPhillips again demonstrated strong operational and financial performance in the third quarter, resulting in higher production and reduced operating cost guidance for 2025. We increased our base dividend by 8%, consistent with our goal to provide top quartile dividend growth in the S&P 500,\u201d said Ryan Lance, chairman and chief executive officer. \u201cLooking to 2026, we expect lower capital and operating costs with flat to modest production growth. Willow total project capital is updated to $8.5 to $9 billion, with total LNG project capital reduced to $3.4 billion. Powered by our deep, durable and diverse portfolio, we remain on track to deliver an expected $7 billion in incremental free cash flow by 2029, including $1 billion each year from 2026 through 2028.\u201d\n\nAt the Willow project in Alaska, the company updated project capital guidance to $8.5 to $9.0 billion, primarily due to general inflation and localized North Slope and marine cost escalation. With Willow nearing 50% completion and the key milestones achieved to date, the company has narrowed expected first oil to early 2029.\n\nConocoPhillips continues to progress its three equity LNG projects: North Field East (NFE) and North Field South (NFS) in Qatar and PALNG on the U.S. Gulf Coast. The company has reduced its total LNG project capital guidance to $3.4 billion after securing a $0.6 billion credit against Port Arthur capital spending. Taking into account this credit, the company is approximately 80% complete with total LNG project capital. All three projects remain on schedule with first LNG from NFE expected in 2026.\n\nConocoPhillips has executed dispositions of over $3.0 billion in 2025 and is on track to meet its $5 billion disposition target by year-end 2026. On October 1, 2025, the company closed the disposition of Anadarko Basin assets for $1.3 billion. Additionally, in the fourth quarter of 2025, the sale of certain noncore assets closed or are expected to close for approximately $0.5 billion, subject to customary closing adjustments.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "Willow \"project capital guidance\" was raised to $8.5-$9.0 billion \"primarily due to general inflation and localized North Slope and marine cost escalation\" \u2014 an explicit realized cost escalation."
+    }
+   ]
+  }
+ ]
+}

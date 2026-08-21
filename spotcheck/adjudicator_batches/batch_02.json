@@ -1,0 +1,475 @@
+{
+ "batch": 2,
+ "chunks": [
+  {
+   "chunk_id": "CHK-368b20f81522585c",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "The markets in which we compete are characterized by rapid change, converging technologies, and a migration to networking and communications solutions that offer relative advantages. These market factors represent a competitive threat to us. We compete with numerous vendors in each product category. The overall number of our competitors providing niche product solutions may increase. Also, the identity and composition of competitors may change as we increase our activity in newer product areas, and in key priority areas. For example, as products related to network programmability, such as software defined networking (SDN) products, have become more prevalent, we have faced increased competition from companies that develop networking products based on commoditized hardware, referred to as \u201cwhite box\u201d hardware, to the extent customers decide to purchase those product offerings instead of ours. In addition, the growth in demand for technology delivered as a service enables new competitors to enter the market. As we continue to expand globally, we may see new competition in different geographic regions. In particular, we have experienced price-focused competition from competitors in Asia, especially from China, and we anticipate this will continue. For information regarding our competitors, see the section entitled \u201cCompetition\u201d contained in \u201cItem 1. Business\u201d of this report.\n\nIn recent years, we have shifted our business model to deliver more recurring software and subscription offerings. This shift in our business model was accelerated by recent acquisitions, including our acquisition of Splunk in the third quarter of fiscal 2024. Market acceptance of our software subscription offerings, which includes our as-a-service solutions, can be affected by a variety of factors, including: security, reliability, performance, terms of service, support terms, customer preference, community engagement, concerns regarding data privacy or data protection, and the enactment of laws or regulations in jurisdictions in which we operate. To generate sales growth for our software subscription offerings, we need to convince potential customers to purchase new licenses or subscriptions and generate timely renewals and additional purchases from existing customers. Any failure to do so could result in decreased revenue, reduced sales, increased churn or otherwise negatively impact our results of\n\noperations and financial condition. Further, growth of our software subscription offerings depends, in part, on the ability of customers to use and access these solutions. We have experienced, and may in the future experience, interruptions in service, storage failures, and other performance-related problems due to a variety of factors, such as infrastructure and software changes, human or software errors, capacity constraints, unauthorized access, denial of service or other cyber attacks. In some instances, we may not be able to timely identify the cause or causes of these performance problems and, even if timely identified, we may be unable to timely remediate the underlying cause. It may become increasingly difficult to maintain and improve our performance for our software subscription offerings, especially during peak usage times and as our solutions become more complex and our user traffic increases. Performance-related issues of our software subscription offerings may result in increased operational costs, delays in new feature rollouts, customer loss, reputational damage, and legal or regulatory liability, including liability under customer contracts or for losses suffered by our customers.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The only cost-category language is hedged \u2014 \"Performance-related issues... may result in increased operational costs\"; the realized statement \"we have experienced price-focused competition from competitors in Asia\" is price competition, not rising input/labor/operating costs, so the modality should be HYPOTHETICAL."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-36fd4c50691dae2c",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "The following discussion sets forth the material risk factors that could affect JPMorgan Chase\u2019s financial condition and operations. Readers should not consider any descriptions of these factors to be a complete set of all potential risks that could affect the Firm. Any of the risk factors discussed below could by itself, or combined with other factors, materially and adversely affect JPMorgan Chase\u2019s business, results of operations, financial condition, capital position, liquidity, competitive position or reputation, including by materially increasing expenses or decreasing revenues, which could result in material losses or a decrease in earnings.\n\nrisks, including the impact that applicable laws, rules and regulations in the highly-regulated and supervised financial services industry, as well as changes to or in the application, interpretation or enforcement of those laws, rules and regulations, can have on JPMorgan Chase\u2019s business and operations, including JPMorgan Chase incurring additional costs associated with assessments, levies or other governmental charges; the ways in which differences in financial services regulation and supervision in different jurisdictions or with respect to certain competitors can negatively impact JPMorgan Chase\u2019s business; the penalties and collateral consequences, and higher compliance and operational costs, that JPMorgan Chase may incur when resolving a regulatory investigation; the ways in which less predictable legal and regulatory frameworks in certain jurisdictions can negatively impact JPMorgan Chase\u2019s operations and financial results; and the losses that security holders will absorb if JPMorgan Chase were to enter into a resolution.\n\nrisks, including the effects that economic and market events and conditions, governmental policies, changes in interest rates and credit spreads, and market fluctuations can have on JPMorgan Chase\u2019s consumer and wholesale businesses and its investment and market-making positions and on JPMorgan Chase\u2019s earnings and its liquidity and capital levels.\n\nrisks, including potential negative effects from adverse changes in the financial condition of clients, customers, counterparties, custodians and central counterparties; the potential for losses due to declines in the value of collateral in stressed market conditions; and potential negative impacts from concentrations of credit risk with respect to clients, customers, counterparties and other market participants.\n\nrisks, including the risk that JPMorgan Chase\u2019s liquidity could be impaired by market-wide illiquidity or disruption, unforeseen liquidity or capital requirements, the inability to sell assets, default by a significant market participant, unanticipated outflows of cash or collateral, or lack of market or customer confidence in JPMorgan Chase; the dependence of JPMorgan Chase & Co. on the cash flows of its subsidiaries; and the potential adverse effects that any downgrade in any of JPMorgan Chase\u2019s credit ratings may have on its liquidity and cost of funding.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The enumeration explicitly names cost increases \u2014 \"incurring additional costs associated with assessments, levies or other governmental charges\", \"higher compliance and operational costs\", \"materially increasing expenses\" \u2014 which the rubric's disambiguation note says to label alongside the causal category."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-378cdfb3414be188",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Responding to these investigations and lawsuits, regardless of the ultimate outcome of the proceeding, is time-consuming and expensive and can divert the time and effort of our senior management from our business. Penalties and fines sought by regulatory authorities have increased substantially and certain regulators have been more likely in recent years to commence enforcement actions or to support legislation targeted at the financial services industry. Governmental authorities may also be more likely to pursue criminal or other actions, including seeking admissions of wrongdoing or guilty pleas, in connection with the resolution of an inquiry or investigation to the extent a company is viewed as having previously engaged in criminal, regulatory or other misconduct. Adverse publicity, governmental scrutiny and legal and enforcement proceedings can also have a negative impact on our reputation and on the morale and performance of our employees, which could adversely affect our businesses and results of operations. Further, we are subject to regulatory settlements, orders and feedback that require significant remediation activities and enhancements to existing controls, systems and procedures, which has required and will require us to commit significant resources, including hiring, as well as testing the operation and effectiveness of new controls, policies and procedures. The failure to complete these remediation activities in a timely manner could lead to higher operating expenses, reputational damage and other negative consequences.\n\nThe financial services industry generally and our businesses in particular have been subject to negative publicity. Our reputation and businesses may be adversely affected by negative publicity or information regarding our businesses and personnel, whether or not accurate or true, that may be posted on social media or other internet forums or published by news organizations. Postings on these types of forums may also adversely impact risk positions of our clients and other parties that owe us money, securities or other assets and increase the chance that they will not perform their obligations to us or reduce the revenues we receive from their use of our services. The speed and pervasiveness with which information can be disseminated through these channels, in particular social media, may magnify risks relating to negative publicity.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage asserts existing proceedings and orders as fact \u2014 \"Responding to these investigations and lawsuits... is time-consuming and expensive\" and \"we are subject to regulatory settlements, orders and feedback that require significant remediation activities... which has required and will require us to commit significant resources, including hiring\" \u2014 so LEGAL_REGULATORY_ACTION is REALIZED and the stated cost burden (\"higher operating expenses\") adds MARGIN_COST_PRESSURE."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-39e6bb4c54f4be8b",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "At September 30, 2023 and December 31, 2022, nonperforming assets excluded mortgage loans 90 or more days past due and insured by U.S. government agencies of $188 million and $302 million, respectively. These amounts have been excluded based upon the government guarantee.\n\nTotal credit card loans increased from December 31, 2022 reflecting growth from new accounts and revolving balances which continued to normalize to pre-pandemic levels. The September 30, 2023 30+ and 90+ day delinquency rates of 1.94% and 0.94%, respectively, increased compared to the December 31, 2022 30+ and 90+ day delinquency rates of 1.45% and 0.68% respectively. Net charge-offs increased for the three and nine months ended September 30, 2023 compared to the same periods in the prior year as delinquencies have normalized.\n\nConsistent with the Firm\u2019s policy, all credit card loans typically remain on accrual status until charged off. However, the Firm\u2019s allowance for loan losses includes the estimated uncollectible portion of accrued and billed interest and fee income. Refer to Note 12 for further information about this portfolio, including information about delinquencies.\n\nFor the three and nine months ended September 30, 2023, credit card FDMs were $197 million and $489 million, respectively. FDMs increased for the three and nine months ended September 30, 2023 compared to credit card TDRs in the same periods in the prior year, as delinquencies have normalized. In addition to FDMs, the Firm also had $29 million of loans subject to trial modification where the terms of the loans have not been permanently modified for both the three and nine months ended September 30, 2023. The changes to the TDR accounting guidance eliminated the TDR reasonably expected and concession assessment criteria. Accordingly, trial modifications were considered TDRs, but not FDMs.\n\nIn its wholesale businesses, the Firm is exposed to credit risk primarily through its underwriting, lending, market-making, and hedging activities with and for clients and counterparties, as well as through various operating services (such as cash management and clearing activities), securities financing activities and cash placed with banks. A portion of the loans originated or acquired by the Firm\u2019s wholesale businesses is generally retained on the balance sheet. The Firm distributes a significant percentage of the loans that it originates into the market as part of its syndicated loan business and to manage portfolio concentrations and credit risk. The wholesale portfolio is actively managed, in part by conducting ongoing, in-depth reviews of client credit quality and transaction structure inclusive of collateral where applicable, and of industry, product and client concentrations. Refer to the industry discussion on pages 72-75 for further information.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "Delinquency and charge-off increases are reported as bare figures and the filer's own characterization is neutralizing ('continued to normalize to pre-pandemic levels', 'as delinquencies have normalized'), with the remainder mechanical credit-risk-management description."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "Nothing describes softening demand \u2014 'Total credit card loans increased ... reflecting growth from new accounts'; the unfavorable content is credit-quality (delinquencies, charge-offs, FDMs), which is not one of the six categories."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-3a80c5cce8740b57",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Occidental Petroleum Corporation (\"Occidental\") is providing the following summary of earnings considerations that management believes will impact results for the third quarter of 2025. The summary is intended only to provide information regarding current estimates of these factors. It is not comprehensive of all results for and changes that have occurred in the third quarter of 2025 and is not an estimate of the third quarter of 2025 earnings for Occidental. Further, this summary may not account for all adjustments and charges required to fully reflect changes in industry conditions, is preliminary and is subject to finalization of Occidental's financial reporting process for the third quarter of 2025.\n\nThe Third Quarter 2025 Earnings Considerations (\"Earnings Considerations\") contain forward-looking statements within the meaning of the \u201csafe harbor\u201d provisions of the Private Securities Litigation Reform Act of 1995, including, but not limited to, statements about Occidental\u2019s expectations, beliefs, plans or forecasts. All statements other than statements of historical fact are \u201cforward-looking statements\u201d for purposes of federal and state securities laws, including, but not limited to: any projections of earnings, revenue or other financial items or future financial position or sources of financing; any statements of the plans, strategies and objectives of management for future operations or business strategy; any statements regarding future economic conditions or performance; any statements of belief; and any statements of assumptions underlying any of the foregoing. Words such as \u201cestimate,\u201d \u201cwill,\u201d \u201cmay,\u201d \u201cintend,\u201d \u201cbelieve,\u201d \u201csubject to,\u201d \u201cexpect,\u201d \u201ccould\u201d or similar expressions that convey the prospective nature of events or outcomes are generally indicative of forward-looking statements. You should not place undue reliance on these forward-looking statements, which speak only as of the date of the Earnings Considerations unless an earlier date is specified. Unless legally required, Occidental does not undertake any obligation to update, modify or withdraw any forward-looking statements as a result of new information, future events or otherwise.\n\nActual outcomes or results, including the impact of the aforementioned factors for the third quarter 2025, may differ from anticipated results or estimates, sometimes materially. Factors that could cause results to differ from those projected or assumed in any forward-looking statement include, but are not limited to: general economic conditions, including slowdowns and recessions, domestically or internationally; Occidental\u2019s indebtedness and other payment obligations, including the need to generate sufficient cash flows to fund operations; Occidental\u2019s ability to successfully monetize select assets and repay or refinance debt and the impact of changes in Occidental\u2019s credit ratings or future increases in interest rates; assumptions about energy markets; global and local commodity and commodity-futures pricing fluctuations and volatility; supply and demand considerations for, and the prices of, Occidental\u2019s products and services; actions by the Organization of the Petroleum Exporting Countries (\"OPEC\") and non-OPEC oil producing countries; results from operations and competitive conditions; future impairments of Occidental's proved and unproved oil and gas properties or equity investments, or write-downs of productive assets, causing charges to earnings; unexpected changes in costs; inflation, its impact on markets and economic activity and related monetary policy actions by governments in response to inflation; availability of capital resources, levels of capital expenditures and contractual obligations; the regulatory approval environment, including Occidental's ability to timely obtain or maintain permits or other government approvals, including those necessary for drilling and/or development projects; Occidental's ability to successfully complete, or any material delay of, field developments, expansion projects, capital expenditures, efficiency projects, acquisitions or divestitures, including the proposed sale of Occidental's chemical business to Berkshire Hathaway Inc.; risks associated with acquisitions, mergers and joint ventures, such as difficulties integrating businesses, uncertainty associated with financial projections or projected synergies, restructuring, increased costs and adverse tax consequences; uncertainties and liabilities associated with acquired and divested properties and businesses; uncertainties about the estimated quantities of oil, natural gas liquid (NGL) and natural gas reserves; lower-than-expected production from development projects or acquisitions; Occidental\u2019s ability to realize the anticipated benefits from prior or future streamlining actions to reduce fixed costs, simplify or improve processes and improve Occidental\u2019s competitiveness; exploration, drilling and other operational risks; disruptions to, capacity constraints in, or other limitations on the pipeline systems that deliver Occidental\u2019s oil and natural gas and other processing and transportation considerations; volatility in the securities, capital or credit markets, including capital market disruptions and instability of financial institutions; government actions (including geopolitical, trade, tariff and regulatory uncertainties), war (including the Russia-Ukraine war and conflicts in the Middle East) and political conditions and events; health, safety and",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The same factor list contains 'disruptions to, capacity constraints in, or other limitations on the pipeline systems' (supply/capacity constraint) and 'the regulatory approval environment, including ... ability to timely obtain or maintain permits or other government approvals', both omitted from the stored set."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-3c02dabf73fb5f37",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "and Fixed Income Financing. Equity Markets revenue was $3.2 billion, up 15%, predominantly driven by higher revenue across products, notably in Derivatives. Securities Services revenue was $1.4 billion, up 12%, driven by higher deposit balances as well as fee growth on higher client activity and market levels.\n\nThe provision for credit losses was $696 million, driven by a reserve build in the Commercial & Industrial portfolio, which reflected the impact of net lending activity and credit quality changes on certain exposures, partially offset by a decrease in the weight placed on the adverse scenarios. The net reserve build was $371 million and net charge-offs were $325 million. In the prior year, the provision was $384 million, the net reserve build was $220 million and net charge-offs were $164 million.\n\nfor consumer deposits as well as lower rates, partially offset by the impact of securities activity including activity in prior quarters. Noninterest revenue was $49 million, down $7.7 billion, driven by the absence of the $7.9 billion net gain related to Visa shares in the prior year, partially offset by lower net investment securities losses.\n\nTangible common equity (\u201cTCE\u201d), return on tangible common equity (\u201cROTCE\u201d) and tangible book value per share (\u201cTBVPS\u201d) are each non-GAAP financial measures. TCE represents the Firm\u2019s common stockholders\u2019 equity (i.e., total stockholders\u2019 equity less preferred stock) less goodwill and identifiable intangible assets (other than mortgage servicing rights), net of related deferred tax liabilities. For a reconciliation from common stockholders\u2019 equity to TCE, refer to page 10 of the Earnings Release Financial Supplement. ROTCE measures the Firm\u2019s net income applicable to common equity as a percentage of average TCE. TBVPS represents the Firm\u2019s TCE at period-end divided by common shares at period-end. Book value per share was $122.51, $119.24 and $111.29 at June 30, 2025, March 31, 2025 and June 30, 2024, respectively. TCE, ROTCE and TBVPS are utilized by the Firm, as well as investors and analysts, in assessing the Firm\u2019s use of equity.\n\nSecond-quarter 2025 net income and earnings per share excluding the $774 million income tax benefit are non-GAAP financial measures. Excluding this item resulted in a decrease of $774 million (after tax) to reported net income from $15.0 billion to $14.2 billion and a decrease of $0.28 per share to reported EPS from $5.24 to $4.96. Management believes these measures provide useful information to investors and analysts in assessing the Firm\u2019s results.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "POSITIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "Favorable content is confined to the opening ('up 15%', 'up 12%'), offset by 'provision for credit losses was $696 million, driven by a reserve build', net charge-offs roughly doubled, and 'Noninterest revenue was $49 million, down $7.7 billion', with the balance mechanical non-GAAP definitions."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "No visible language asserts rising input/labor/operating costs; the only cost-adjacent fragment is the truncated 'for consumer deposits as well as lower rates', and a credit-loss reserve build is not one of the six categories."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-3cceda41247c7e73",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "where the degree of accessible liquidity declines significantly, we may not be able to reduce our positions and risks associated with such holdings, so we may suffer larger than expected losses when adverse price movements take place. This risk can be exacerbated where we hold a position that is large relative to the available liquidity.\n\nGains or losses on these instruments can have a direct impact on our results of operations, unless we have effectively mitigated the risk of our exposures. Increases in interest rates may cause decreases in residential mortgage loan originations and could impact the origination of corporate debt. In addition, increases in interest rates or changes in spreads may continue to adversely impact the fair value of our debt securities and, accordingly, for debt securities classified as available-for-sale (AFS), adversely affect accumulated other comprehensive income and, thus, our capital levels. Increases in interest rates or changes in spreads could also adversely impact our regulatory liquidity position and requirements, which include eligible AFS debt securities and held-to-maturity (HTM) debt securities. As our liquidity is dependent on the fair value of these assets, increases in market interest rates and/or wider spreads, have adversely impacted and may continue to adversely impact the fair value of debt securities, adversely affecting liquidity levels.\n\nsuch as repo markets, which are typically short-term and credit-sensitive. We also engage in asset securitization transactions, including with the government-sponsored enterprises (GSEs), to help fund a portion of our consumer lending activities. Our liquidity could be adversely affected by any inability to access the capital markets, illiquidity or volatility in the capital markets, the decrease in value of eligible collateral or increased collateral requirements (including as a result of credit concerns for short-term borrowing), changes to our relationships with our funding providers based on real or perceived changes in our risk profile, prolonged federal government shutdowns, or uncertainties regarding the impact of GSE privatization, should it occur.\n\nAlso, our liquidity or cost of funds may be negatively impacted by the unwillingness or inability of the Federal Reserve to act as lender of last resort, unexpected simultaneous draws on lines of credit or deposits, slower client payment rates, restricted access to the assets of prime brokerage clients, the withdrawal of or failure to attract client deposits or invested funds (e.g., from attrition driven by clients seeking higher yielding deposits or securities products, desiring to utilize an alternative financial institution perceived to be safer, changing spending behavior due to inflation, decline in the economy or other drivers resulting in an increased need for cash), increased regulatory liquidity, capital and margin requirements for our U.S. or international banks and their nonbank subsidiaries, which could result in the inability to transfer liquidity internally, changes in patterns of intraday liquidity usage resulting from a counterparty or technology failure or other idiosyncratic event or failure, the default by a significant market participant or third party (including clearing agents, custodians, central banks or central counterparty clearinghouses (CCPs)) or the inability to sell assets due to illiquid markets (e.g., no market exists or market saturation). These factors may increase our borrowing costs and negatively impact our liquidity.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Every cost statement is hedged \u2014 'These factors may increase our borrowing costs' and 'our liquidity or cost of funds may be negatively impacted'; the one past-tense clause ('have adversely impacted ... the fair value of debt securities') concerns asset fair value and liquidity, not cost or margin."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-439d0a52f40682b3",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Optum Insight revenue increased 35% compared to a year ago due to the addition of Change Healthcare and growth across its technology-enabled offerings, which serve health systems, care providers, health plans and life sciences organizations. Optum Insight continues to build and invest in advanced data capabilities to meet the rising needs of its customers. The revenue backlog increased by more than $7 billion to over $31 billion compared to last year.\n\nOptum Rx revenue increased 14% in the third quarter due to growth in serving new clients, expanded relationships with existing clients and continued advancement in the comprehensive scope of pharmacy services offered, including specialty and community-based pharmacy offerings. Adjusted scripts grew to over 383 million compared to 359 million last year.\n\nUnitedHealth Group (NYSE: UNH) is a health care and well-being company with a mission to help people live healthier lives and help make the health system work better for everyone through two distinct and complementary businesses. Optum delivers care aided by technology and data, empowering people, partners and providers with the guidance and tools they need to achieve better health. UnitedHealthcare offers a full range of health benefits, enabling affordable coverage, simplifying the health care experience and delivering access to high-quality care. Visit UnitedHealth Group at\n\nAs previously announced, UnitedHealth Group will discuss the company\u2019s results, strategy and future outlook on a conference call with investors at 8:45 a.m. Eastern Time today. UnitedHealth Group will host a live webcast of this conference call from the Investor Relations page of the company\u2019s website (\n\nThis news release presents non-GAAP financial information provided as a complement to the results provided in accordance with accounting principles generally accepted in the United States of America (\u201cGAAP\u201d). A reconciliation of the non-GAAP financial information to the most directly comparable GAAP financial measure is provided in the accompanying tables found at the end of this release.\n\nThe statements, estimates, projections, guidance or outlook contained in this document include \u201cforward-looking\u201d statements which are intended to take advantage of the \u201csafe harbor\u201d provisions of the federal securities law. The words \u201cbelieve,\u201d \u201cexpect,\u201d \u201cintend,\u201d \u201cestimate,\u201d \u201canticipate,\u201d \u201cforecast,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cproject,\u201d \u201cshould\u201d and similar expressions identify forward-looking statements. These statements may contain information about financial prospects, economic conditions and trends and involve risks and uncertainties. Actual results could differ materially from those that management expects, depending on the outcome of certain factors including: our ability to effectively estimate, price for and manage medical costs; new or changes in existing health care laws or regulations, or their enforcement or application; reductions in revenue or delays to cash flows received under government programs; changes in Medicare, the CMS star ratings program or the application of risk adjustment",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The forward-looking factor list names 'new or changes in existing health care laws or regulations, or their enforcement or application' and 'changes in Medicare, the CMS star ratings program or the application of risk adjustment', which matches the regulatory category in hypothetical framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-46264353c74f8445",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Governments and regulators have adopted regulations, imposed taxes, adopted compensation restrictions or otherwise put forward various proposals that have impacted or may impact our ability to conduct certain of our businesses in a cost-effective manner or at all in certain or all jurisdictions, including proposals relating to restrictions on the type of activities in which financial institutions are permitted to engage. These or other similar rules, many of which do not apply to all our U.S. or non-U.S. competitors, could impact our ability to compete effectively.\n\nPricing and other competitive pressures in our businesses have continued to increase, particularly in situations where some of our competitors may seek to increase market share by reducing prices. For example, in connection with investment banking and other assignments, in response to competitive pressure we have experienced, we have extended and priced credit at levels that in some cases have not fully compensated us for the risks we undertook.\n\nThe financial services industry is highly interrelated in that a significant volume of transactions occur among a limited number of members of that industry. Many transactions are syndicated to other financial institutions, and financial institutions are often counterparties in transactions. This has led to claims by other market participants and regulators that such institutions have colluded in order to manipulate markets or market prices, including allegations that antitrust laws have been violated. While we have extensive procedures and controls that are designed to identify and prevent such activities, they may not be effective. Allegations of such activities, particularly by regulators, can have a negative reputational impact and can subject us to large fines and settlements, and potentially significant penalties, including treble damages.\n\nTechnology is fundamental to our business and our industry. The growth of electronic trading and the introduction of new technologies is changing our businesses and presenting us with new challenges. Securities, futures and options transactions are increasingly occurring electronically, both on our own systems and through other alternative trading systems, and it appears that the trend toward alternative trading systems will continue. Some of these alternative trading systems compete with us, particularly our exchange-based market-making activities, and we may experience continued competitive pressures in these and other areas. In addition, the increased use by our clients of low-cost electronic trading systems and direct electronic access to trading markets has caused and could continue to cause a reduction in commissions and spreads. As our clients increasingly use our systems to trade directly in the markets, we may incur liabilities as a result of their use of our order routing and execution infrastructure.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The regulatory flag is asserted in the past tense, not hypothetically: 'Governments and regulators have adopted regulations, imposed taxes ... that have impacted ... our ability to conduct certain of our businesses in a cost-effective manner', and 'This has led to claims by other market participants and regulators'."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-473d53d20b4ee672",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Challenging economic conditions, including rising inflation, or other changes, worldwide have from time to time contributed, and may continue to contribute, to slowdowns in the communications and networking industries at large, as well as in specific segments and markets in which we operate, resulting in: reduced demand for our products as a result of continued constraints on IT-related capital spending by our customers, particularly service provider and cloud as well as enterprise and other customer markets as well; increased price competition for our products, not only from our competitors but also as a consequence of customers disposing of unutilized products; risk of excess and obsolete inventories; risk of supply constraints;\n\nAs a result of a variety of factors discussed in this report, our revenue for a particular quarter is difficult to predict, especially in light of a challenging and inconsistent global macroeconomic environment (including as a result of the on-going Russia and Ukraine war and the Israel-Hamas war), and related market uncertainty. Our revenue may grow at a slower rate than in past periods, or decline as it did in the second quarter of fiscal 2024, and in certain prior periods on a year-over-year basis. Our ability to meet financial expectations could also be adversely affected if the nonlinear sales pattern seen in some of our past quarters recurs in future periods. For example, we are currently seeing some slowing in orders from customers, particularly enterprise, service provider and cloud customers, as they implement elevated levels of product shipments from prior quarters, as discussed above. We have experienced periods of time during which shipments have exceeded net bookings or manufacturing issues have delayed shipments, leading to nonlinearity in shipping patterns. In addition to making it difficult to predict revenue for a particular period, nonlinearity in shipping can increase costs, because irregular shipment patterns result in periods of underutilized capacity and periods in which overtime expenses may be incurred, as well as in potential additional inventory management-related costs. In addition, to the extent that manufacturing issues and any related component shortages result in delayed shipments in the future, and particularly in periods in which our contract manufacturers are operating at higher levels of capacity, it is possible that revenue for a quarter could be adversely affected if such matters occur and are not remediated within the same quarter.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "'We have experienced periods of time during which shipments have exceeded net bookings or manufacturing issues have delayed shipments, leading to nonlinearity in shipping patterns' is a standalone past-tense assertion with a stated consequence, so the supply constraint is REALIZED, not hypothetical."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-47796e21159f9b39",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "We are currently in litigation with the IRS for tax years 2007 through 2009. On November 18, 2020, the Tax Court issued the Opinion in which it predominantly sided with the IRS. On November 8, 2023, the Tax Court issued a supplemental opinion, siding with the IRS in concluding both that certain U.S. tax regulations (known as the blocked-income regulations) that address the effect of certain Brazilian legal restrictions on royalty payments by the Company\u2019s licensee in Brazil apply to the Company\u2019s operations and that the Tax Court opinion in the\n\nrestrictions on the payment of royalties. Further, the U.S. Court of Appeals for the Eighth Circuit specifically rejected the IRS\u2019 argument that the ability of 3M\u2019s subsidiary in Brazil to pay dividends, rather than royalties, meant that royalty income should not be treated as blocked. Both of these conclusions are highly supportive of the Company\u2019s position in its case and reinforce its prior conclusions. On August 2, 2024, the Tax Court entered a decision reflecting additional federal income tax of $2.7 billion for the 2007 through 2009 tax years. With applicable interest, the total liability for the 2007 through 2009 tax years resulting from the Tax Court\u2019s decision is $6.0 billion, for which the IRS issued the Company invoices on September 3, 2024. The Company paid the IRS Tax Litigation Deposit on September 10, 2024, which stopped interest from accruing on the additional tax due for the 2007 through 2009 tax years. That amount, plus interest earned, would be refunded in full or in part if the Company\u2019s tax positions are ultimately sustained on appeal. For the three and nine months ended September 26, 2025, the Company recorded net interest income of $55 million and $162 million, respectively, related to this tax payment in the line item income taxes in our consolidated statements of income, in accordance with our accounting policy. The payment of the IRS invoices and the related accrued interest were recorded in the line item other noncurrent assets in our consolidated balance sheets as of September 26, 2025 and December 31, 2024. On October 22, 2024, the Company appealed the Tax Court\u2019s decision to the U.S. Court of Appeals for the Eleventh Circuit. The Company filed its principal appellate brief with the U.S. Court of Appeals for the Eleventh Circuit on March 12, 2025. The IRS filed its appellate brief on July 7, 2025. The Company filed its reply brief on August 27, 2025. The Company strongly disagrees with the IRS\u2019 positions and the portions of the Opinions affirming such positions and intends to vigorously defend our positions utilizing every available avenue of appeal. While the Company believes that it is more likely than not that we will ultimately prevail in this litigation upon appeal, it is possible that all, or some portion of, the adjustments proposed by the IRS and sustained by the Tax Court could ultimately be upheld. In that event, the Company would not receive a refund of the applicable portion or all of the $6.0 billion it paid in response to the IRS invoices issued in September 2024 and the related accrued interest receivable of $313 million as of September 26, 2025. Additionally, the Company would likely be subject to significant additional liabilities for subsequent years, which could have a material adverse impact on the Company\u2019s financial position, results of operations and cash flows. The Company estimates that the potential aggregate remaining incremental tax and interest liability for the tax years 2010 through 2024 could be approximately $12 billion as of December 31, 2024. Additional income tax and interest on any unpaid potential liabilities for the 2010 through 2024 tax years would continue to accrue until the time any such potential liability, or portion thereof, were to be paid. The Company estimates the impact of the continued application of the methodology asserted by the IRS and affirmed in the Opinions for the three and nine months ended September 26, 2025 would increase the potential aggregate incremental tax and interest liability by approximately $400 million and $1.2 billion, respectively. Refer to Note 9 of Notes to Consolidated Financial Statements for additional information on the tax litigation.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The strongest statement is that additional liabilities 'could have a material adverse impact on the Company's financial position, results of operations and cash flows' \u2014 there is no explicit statement of insufficient liquidity, inability to meet obligations, covenant breach, or doubt about access to capital."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-488ef0aea1fef3ec",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "$9.1 billion for the nine months ended September 30, 2023, compared to $12.8 billion for the nine months ended September 30, 2022. The decrease in operating cash flow from continuing operations was primarily due to lower commodity prices as compared to the same period in 2022.\n\nOccidental\u2019s net cash used by investing activities was $5.0 billion for the nine months ended September 30, 2023, compared to $3.0 billion for the nine months ended September 30, 2022. Capital expenditures, of which the majority were for the oil and gas segment, were approximately $4.7 billion for the nine months ended September 30, 2023, compared to $3.0 billion for the nine months ended September 30, 2022. Also included in cash flow used by investing activities is Occidental's additional investment in NET Power, a clean energy technology company, totaling $351 million for the nine months ended September 30, 2023. For the nine months ended September 2023, Occidental sold certain non-core proved and unproved properties in the Permian Basin for proceeds of $202 million as well as sold WES 5.1 million of its limited partner units owned by Occidental for proceeds of $128 million.\n\nOccidental\u2019s net cash used by financing activities was $4.4 billion for the nine months ended September 30, 2023, compared to $11.4 billion for the nine months ended September 30, 2022. Cash used by financing activities for the nine months ended September 30, 2023 reflected treasury share repurchases of $1.6 billion. An additional $175 million of treasury share repurchases settled subsequent to September 30, 2023 for total common share repurchases of $1.8 billion in the nine months ended September 30, 2023. As of September 30, 2023, Occidental had $1.2 billion remaining of the $3.0 billion share repurchase program that was announced in February 2023. The program does not obligate Occidental to acquire any specific number of shares and may be discontinued at any time. Financing cash flows also included redemptions of preferred stock with a face value of $1.5 billion, $151 million in redemption premiums and dividend payments of $1.0 billion on preferred and common stock. Additionally, cash flows from financing activities for the nine months ended September 30, 2023, included the proceeds from and subsequent repayment of $0.9 billion from the receivable securitization facilities. Cash used by financing activities for the nine months ended September 30, 2022 reflected repayments of debt of $8.3 billion, dividend payments of $863 million on preferred and common stock, and treasury share repurchases of $2.5 billion.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "Apart from one attributed decline ('The decrease in operating cash flow ... primarily due to lower commodity prices'), the passage is mechanical cash-flow narrative on capex, asset sales, buybacks, preferred redemptions and dividends, with no predominant unfavorable characterization."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "'Lower commodity prices' is a realized-price/revenue driver, not rising input, labor or operating costs; no cost or margin compression language appears anywhere in the passage."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-48ec091598b2925f",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Chevron\u2019s discussion of third quarter 2024 earnings with security analysts will take place on Friday, November 1, 2024, at 8:00 a.m. PT. A webcast of the meeting will be available in a listen-only mode to individual investors, media, and other interested parties on Chevron\u2019s website at\n\nAs used in this news release, the term \u201cChevron\u201d and such terms as \u201cthe company,\u201d \u201cthe corporation,\u201d \u201cour,\u201d \u201cwe,\u201d \u201cus\u201d and \u201cits\u201d may refer to Chevron Corporation, one or more of its consolidated subsidiaries, or to all of them taken as a whole. All of these terms are used for convenience only and are not intended as a precise description of any of the separate companies, each of which manages its own affairs. Structural cost reductions describe decreases in operating expenses from operational efficiencies, divestments, and other cost saving measures that are expected to be sustainable compared with 2024 levels.\n\nThis news release also includes net debt ratio. Net debt ratio is defined as total debt less cash and cash equivalents, time deposits and marketable securities as a percentage of total debt less cash and cash equivalents, time deposits and marketable securities, plus Chevron Corporation stockholders\u2019 equity, which indicates the company\u2019s leverage, net of its cash balances. The company believes this measure is useful to monitor the strength of the company\u2019s balance sheet. A reconciliation of net debt ratio is shown in Attachment 2.\n\nAmong the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates; general domestic and international economic, market and political conditions, including the military conflict between Russia and Ukraine, the conflict in Israel and the global response to these hostilities; changing refining, marketing and chemicals margins; the company\u2019s ability to realize anticipated cost savings and efficiencies associated with enterprise structural cost reduction initiatives; actions of competitors or regulators; timing of exploration expenses; timing of crude oil liftings; the competitiveness of alternate-energy sources or product substitutes; development of large carbon capture and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the risk that regulatory approvals and clearances with respect to the Hess Corporation (Hess) transaction are not obtained or are obtained subject to conditions that are not anticipated by the company and Hess; potential delays in consummating the Hess transaction, including as a result of the ongoing arbitration proceedings regarding preemptive rights in the Stabroek Block joint operating agreement; risks that such ongoing arbitration is not satisfactorily resolved and the potential transaction fails to be consummated; uncertainties as to whether the potential transaction, if consummated, will achieve its anticipated economic benefits, including as a result of risks associated with third party contracts containing material consent, anti-assignment, transfer or other provisions that may be related to the potential transaction that are not waived or otherwise satisfactorily resolved; the company\u2019s ability to integrate Hess\u2019 operations in a successful manner and in the expected time period; the possibility that any of the anticipated benefits and projected synergies of the potential transaction will not be realized or will not be realized within the expected time period; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 20 through 26 of the company\u2019s 2023 Annual Report on Form 10-K and in subsequent filings with the U.S. Securities and Exchange Commission. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list contains 'escalation of the cost of goods and services', 'changing refining, marketing and chemicals margins' and 'higher inflation and related impacts', so MARGIN_COST_PRESSURE (hypothetical) is missing from the stored set."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-4bd56ba72e7ad374",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "OxyChem concentrates on the chlorovinyls chain, beginning with the co-production of caustic soda and chlorine. Caustic soda and chlorine are marketed to external customers. In addition, chlorine, together with ethylene, is converted through a series of intermediate products into PVC. OxyChem seeks to be a low-cost producer in order to generate cash flow in excess of its normal capital expenditure requirements and achieve above-cost-of-capital returns. OxyChem\u2019s focus on chlorovinyls allows it to maximize the benefits of integration and take advantage of economies of scale. Capital is employed to sustain production capacity and to focus on projects and developments designed to improve the competitiveness of segment assets. Acquisitions and plant development opportunities may be pursued when they are expected to enhance the existing core chlor-alkali and PVC businesses or take advantage of other specific opportunities. The expansion and conversion of the Battleground chlor-alkali plant to membrane technology commenced in 2023 with completion expected in 2026. In 2023, capital expenditures for OxyChem totaled $535 million.\n\nAlthough the United States economic growth was slightly higher than that of 2022, demand for domestically produced products decreased, including liquid caustic soda and PVC. High global inflationary pressures resulted in slowing demand for many products, as ethylene and energy costs remained advantaged over global pricing. Caustic soda prices were lower in 2023 and PVC pricing decreased slightly in 2023 after moving downward significantly during the second half of 2022, as supply chain constraints, high interest rates, global logistics and high inflation continued to disrupt global supply and demand balances.\n\nDomestic PVC demand softened for a second consecutive year in 2023, resulting in a 13% year over year decrease in demand. To offset domestic losses and maintain utilization rates, USGC export volume increased by 30% compared to 2022. Year over year industry operating rates were down 1% in 2023 due to weak global market conditions. High interest rates, slowing housing starts, and inflation continue to keep a ceiling on domestic PVC demand. PVC exports represented 36% of total North American sales in 2023 compared to 27% in 2022.\n\nIndustry performance will depend on the health of the global economy. Response to inflation will continue to control the housing and construction sectors during 2024. Product margins will depend on market supply and demand balances, feedstock and energy prices, supply chain interruptions, labor constraints and inflation. Sustained strong performance in the petroleum industry should strengthen the demand and margins for some of Occidental\u2019s products that are consumed by industry participants. U.S. commodity export markets could be impacted by the relative strength of the U.S. dollar. Approximately $0.7 billion of Occidental\u2019s worldwide capital budget is expected to be allocated to OxyChem in 2024.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "'supply chain constraints, high interest rates, global logistics and high inflation continued to disrupt global supply and demand balances' is a realized supply constraint that is missing, while cost pressure is only prospective ('Product margins will depend on ... feedstock and energy prices ... and inflation') since realized costs were favorable ('ethylene and energy costs remained advantaged')."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-4e7221d2ac62dce4",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The U.S. federal regulatory capital standards include a framework for setting a discretionary countercyclical capital buffer taking into account the macro financial environment in which large, internationally active banks function. As of December 31, 2023, the U.S. countercyclical capital buffer remained at 0%. The Federal Reserve will continue to review the buffer at least annually. The buffer can be increased if the Federal Reserve, FDIC and OCC determine that systemic risks are meaningfully above normal and can be calibrated up to an additional 2.5% of RWA subject to a 12-month implementation period.\n\nFailure to maintain regulatory capital equal to or in excess of the risk-based regulatory capital minimum plus the capital conservation buffer (inclusive of the GSIB surcharge) and any countercyclical buffer will result in limitations to the amount of capital that the Firm may distribute, such as through dividends and common share repurchases, as well as on discretionary bonus payments for certain executive officers.\n\nBanking organizations subject to the Basel III Advanced approach are currently required to have a minimum SLR of 3.0%. Certain banking organizations, including the Firm, are also required to hold an additional 2.0% leverage buffer. The SLR is defined as Tier 1 capital under Basel III divided by the Firm\u2019s total leverage exposure. Total leverage exposure is calculated by taking the Firm\u2019s total average on-balance sheet assets, less amounts permitted to be deducted for Tier 1 capital, and adding certain off-balance sheet exposures, as defined in regulatory capital rules. Refer to SLR on page 98 for additional information.\n\nFailure to maintain an SLR equal to or greater than the regulatory requirement will result in limitations on the amount of capital that the Firm may distribute such as through dividends and common share repurchases, as well as on discretionary bonus payments for certain executive officers.\n\nIn addition to meeting the capital ratio requirements of Basel III, the Firm and its principal IDI subsidiary, JPMorgan Chase Bank, N.A. must also maintain minimum capital and leverage ratios in order to be \u201cwell-capitalized\u201d under the regulations issued by the Federal Reserve and the Prompt Corrective Action requirements of the FDIC Improvement Act, respectively. Refer to Note 27 for additional information.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage only describes the standing capital framework and that 'Failure to maintain regulatory capital ... will result in limitations to the amount of capital that the Firm may distribute' \u2014 a distribution restriction, not insufficient liquidity, inability to meet obligations, debt-covenant breach, or doubt about access to capital."
+    }
+   ]
+  }
+ ]
+}

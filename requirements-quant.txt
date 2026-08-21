@@ -1,0 +1,16 @@
+# Phase C (features.py, backtest.py) additional dependencies, on top of
+# requirements.txt (pandas/pyarrow already present there). Kept as a separate
+# file rather than an edit to requirements.txt so the ingestion/labeling and
+# spotcheck paths keep installing without a compiler-linked dependency
+# (HANDOFF.md §6 Step 3 / ROADMAP.md Phase C). Installed 2026-08-18 on the
+# owner's Mac:
+#   python3 -m pip install --user xgboost scipy
+#   brew install libomp   # xgboost's compiled extension needs libomp.dylib
+#                           # on macOS. LightGBM needs it too -- see
+#                           # backtest.py's "Why XGBoost, not LightGBM".
+xgboost==2.1.4
+scipy==1.13.1   # scipy.stats.spearmanr for the per-fold Spearman rank IC
+                 # metric (backtest.py); scipy was already present in this
+                 # environment (spotcheck/compute_agreement.py's Wilson CI
+                 # uses it too) but is listed here explicitly since
+                 # backtest.py imports it directly.

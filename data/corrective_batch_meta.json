@@ -1,0 +1,9 @@
+{
+  "batch_id": "msgbatch_01Mw3sFCi3fZXnV5U86PJR1o",
+  "mode": "full-corrective",
+  "variant": "disabled-4000",
+  "requests_file": "data/batch_requests_corrective.jsonl",
+  "n_submitted": 2528,
+  "model": "claude-sonnet-5",
+  "processing_status": "in_progress"
+}

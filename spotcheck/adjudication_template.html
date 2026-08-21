@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FinScreen Adjudication — 174 contested chunks</title>
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --panel: #ffffff;
+    --border: #ddd;
+    --agree: #2e7d32;
+    --disagree: #c62828;
+    --unsure: #ef6c00;
+    --muted: #888;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0; background: var(--bg); color: #222;
+  }
+  header {
+    background: #1b1b2f; color: #fff; padding: 10px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; }
+  #progress { font-size: 13px; }
+  #progress-bar-outer {
+    width: 160px; height: 8px; background: #444; border-radius: 4px; overflow: hidden;
+  }
+  #progress-bar-inner { height: 100%; background: #4caf50; width: 0%; }
+  .nav-controls { display: flex; gap: 6px; align-items: center; margin-left: auto; flex-wrap: wrap; }
+  button {
+    font-size: 13px; padding: 5px 10px; border-radius: 4px; border: 1px solid #999;
+    background: #fff; cursor: pointer;
+  }
+  button:hover { background: #eee; }
+  header button { background: #2d2d44; color: #fff; border-color: #555; }
+  header button:hover { background: #3d3d5c; }
+  header select { font-size: 13px; padding: 4px; background: #2d2d44; color: #fff; border: 1px solid #555; border-radius: 4px; }
+  input[type=number] { width: 60px; padding: 4px; }
+  #epistemics-bar {
+    background: #fffde7; border-bottom: 1px solid #d0c98d; padding: 7px 16px;
+    font-size: 12.5px; line-height: 1.45;
+  }
+  main { display: flex; gap: 0; height: calc(100vh - 118px); }
+  #text-pane {
+    flex: 1 1 50%; overflow-y: auto; padding: 16px 20px; background: var(--panel);
+    border-right: 1px solid var(--border);
+  }
+  #labels-pane { flex: 1 1 50%; overflow-y: auto; padding: 16px 20px; }
+  .meta-row { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .tier-badge {
+    display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 11px;
+    background: #333; color: #fff; margin-right: 4px;
+  }
+  .group-badge { background: #4a148c; }
+  .stakes-banner {
+    background: #fce4ec; border: 1px solid #c2185b; border-radius: 6px; padding: 8px 10px;
+    font-size: 12.5px; margin-bottom: 12px;
+  }
+  #chunk-text {
+    white-space: pre-wrap; font-size: 14.5px; line-height: 1.55; font-family: Georgia, serif;
+  }
+  .field-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+    padding: 10px 12px; margin-bottom: 12px;
+  }
+  .field-card h3 { margin: 0 0 6px 0; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; color: #444; }
+  .field-value { font-size: 14px; margin-bottom: 8px; }
+  .na-card { opacity: .55; }
+  .na-card .field-value { font-style: italic; color: var(--muted); }
+  /* Parse-failed rows reuse review_app_template.html's failed-card /
+     discrepancy-note pattern: loud, and never rendered as an empty result. */
+  .failed-card { background: #fff3e0; border-color: #ef6c00; }
+  .failed-card .field-value { font-style: italic; color: #6d4c41; }
+  .discrepancy-note {
+    background: #fff3e0; border: 1px solid #ef6c00; border-radius: 6px; padding: 8px 10px;
+    font-size: 12.5px; margin-bottom: 12px;
+  }
+  .out-of-scope { opacity: .7; }
+  .out-of-scope-note { font-size: 11.5px; color: var(--muted); font-style: italic; }
+  .stored-label-caption, .auditor-caption {
+    font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .auditor-block {
+    border-top: 1px dashed var(--border); margin-top: 6px; padding-top: 6px; margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .verdict-badge {
+    display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; color: #fff;
+    margin-right: 6px; text-transform: uppercase;
+  }
+  .verdict-agree { background: var(--agree); }
+  .verdict-disagree { background: var(--disagree); }
+  .verdict-unsure { background: var(--unsure); }
+  .verdict-na { background: #999; }
+  .auditor-reason { font-style: italic; color: #555; font-size: 12.5px; margin-top: 3px; }
+  .judgment-btns { display: flex; gap: 6px; margin-bottom: 6px; }
+  .jbtn { flex: 1; }
+  .jbtn.active-agree { background: var(--agree); color: #fff; border-color: var(--agree); }
+  .jbtn.active-disagree { background: var(--disagree); color: #fff; border-color: var(--disagree); }
+  .jbtn.active-unsure { background: var(--unsure); color: #fff; border-color: var(--unsure); }
+  textarea.field-note {
+    width: 100%; font-size: 12px; padding: 5px; border: 1px solid var(--border); border-radius: 4px;
+    resize: vertical; min-height: 32px;
+  }
+  .rf-entry { border-left: 3px solid #999; padding-left: 8px; margin-bottom: 4px; }
+  #example-note-box {
+    width: 100%; min-height: 50px; font-size: 13px; padding: 6px; border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  .import-export-bar {
+    display: flex; gap: 6px; flex-wrap: wrap; padding: 8px 16px; background: #eee;
+    border-top: 1px solid var(--border); align-items: center;
+  }
+  #status-msg { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>FinScreen Adjudication<br><span style="font-weight:400;font-size:11px;">174 contested chunks (of 400 spot-checked)</span></h1>
+  <div id="progress">
+    <span id="progress-text">0 / 174 chunks fully adjudicated</span>
+    <div id="progress-bar-outer"><div id="progress-bar-inner"></div></div>
+  </div>
+  <div class="nav-controls">
+    <select id="group-filter">
+      <option value="all">All (174)</option>
+    </select>
+    <button id="btn-prev">&larr; Prev</button>
+    <input type="number" id="jump-input" min="1" value="1">
+    <button id="btn-jump">Go</button>
+    <button id="btn-next">Next &rarr;</button>
+  </div>
+</header>
+
+<div id="epistemics-bar">
+  <strong>What you are judging:</strong> the STORED label (from the bootstrap labeling run).
+  <strong>agree</strong> = stored label is correct &nbsp;·&nbsp;
+  <strong>disagree</strong> = stored label is wrong (say what is right in the note — the auditor's proposal is shown for reference) &nbsp;·&nbsp;
+  <strong>unsure</strong> = the rubric genuinely underdetermines it.
+  The auditor verdicts shown below each label are a <em>second-rater model's</em> judgments — reference material, not ground truth, and never a substitute for yours.
+  Judge from the passage text alone; ignore company identity even where the text names it.
+</div>
+
+<main>
+  <div id="text-pane">
+    <div class="meta-row" id="meta-row"></div>
+    <div id="stakes-banner-slot"></div>
+    <div id="chunk-text"></div>
+  </div>
+  <div id="labels-pane">
+    <div id="labels-container"></div>
+    <div class="field-card">
+      <h3>Chunk-level note</h3>
+      <textarea id="example-note-box" placeholder="Free-text note about this chunk as a whole (optional)"></textarea>
+    </div>
+  </div>
+</main>
+
+<div class="import-export-bar">
+  <button id="btn-export-csv">Export CSV</button>
+  <button id="btn-export-json">Export JSON</button>
+  <label style="font-size:12px;">Import JSON:
+    <input type="file" id="import-file" accept="application/json">
+  </label>
+  <button id="btn-clear" title="Clears all progress in this browser">Clear all progress</button>
+  <span id="status-msg"></span>
+</div>
+
+<script>
+/*__REVIEW_APP_JS__*/
+</script>
+
+<script>
+const ADJUDICATION_DATA = /*__ADJUDICATION_DATA_JSON__*/;
+</script>
+
+<script>
+(function () {
+  "use strict";
+  const R = window.FinScreenReview;
+  // Distinct key: never collides with review_tool.html's saved state.
+  const STORAGE_KEY = "finscreen_adjudication_174_v1";
+
+  const DATA = ADJUDICATION_DATA.records;
+  const GROUPS = ADJUDICATION_DATA.groups; // [{key, label, count}]
+  const byId = {};
+  DATA.forEach((ex) => { byId[ex.chunk_id] = ex; });
+
+  const VALID_JUDGMENTS = ["agree", "disagree", "unsure"];
+
+  // Fields the owner can actually judge on a record. Normally the record's
+  // adjudication_scope (contested fields + stakes-mandated distress_tier).
+  // A chunk whose labeling FAILED has no stored label to agree or disagree
+  // with, so it contributes zero judgeable fields — nothing is asked, and
+  // nothing lands in the export. (build_adjudication_view.py asserts no such
+  // row reaches this view at all; this is the defence-in-depth half.)
+  function scopeFieldsFor(ex) {
+    if (ex.labeling_failed) return [];
+    return ex.adjudication_scope || [];
+  }
+
+  // ---- state reconciliation (pure) ----
+  // Written as a pure function for the same reason review_app.js is: it has
+  // no DOM/localStorage dependency, so its behaviour can be reasoned about
+  // and exercised directly. It is the guard against a stale saved blob: the
+  // file can be rebuilt in place with a different record set, and whatever
+  // is in localStorage under STORAGE_KEY must be reconciled against the
+  // CURRENT records rather than trusted as-is (rendering used to throw on a
+  // missing entry.fields key).
+  //
+  // For every current record: an entry exists, carrying EXACTLY that
+  // record's judgeable fields — matching saved judgments/notes preserved,
+  // missing ones fresh-initialised, saved fields no longer in scope dropped.
+  // Chunk keys not in the current record set are dropped entirely.
+  // Returns a new object; `saved` is never mutated.
+  function reconcileState(saved, records) {
+    const src = (saved && typeof saved === "object") ? saved : {};
+    const out = {};
+    for (const ex of records) {
+      const savedEntry = src[ex.chunk_id];
+      const savedFields = (savedEntry && savedEntry.fields && typeof savedEntry.fields === "object")
+        ? savedEntry.fields : {};
+      const perField = {};
+      for (const f of scopeFieldsFor(ex)) {
+        const sf = savedFields[f];
+        const judgment = (sf && VALID_JUDGMENTS.indexOf(sf.judgment) !== -1) ? sf.judgment : null;
+        const note = (sf && typeof sf.note === "string") ? sf.note : "";
+        perField[f] = { judgment: judgment, note: note };
+      }
+      out[ex.chunk_id] = {
+        chunk_id: ex.chunk_id,
+        fields: perField,
+        example_note: (savedEntry && typeof savedEntry.example_note === "string")
+          ? savedEntry.example_note : "",
+      };
+    }
+    return out;
+  }
+
+  // Pure: what reconciliation had to change about a saved blob.
+  function reconciliationDiff(saved, records) {
+    const src = (saved && typeof saved === "object") ? saved : {};
+    const current = {};
+    records.forEach((ex) => { current[ex.chunk_id] = ex; });
+    const droppedChunks = Object.keys(src).filter((id) => !(id in current));
+    const addedChunks = records.map((ex) => ex.chunk_id).filter((id) => !(id in src));
+    let droppedFields = 0;
+    let addedFields = 0;
+    for (const ex of records) {
+      const savedFields = (src[ex.chunk_id] && src[ex.chunk_id].fields) || {};
+      const scope = scopeFieldsFor(ex);
+      addedFields += scope.filter((f) => !(f in savedFields)).length;
+      droppedFields += Object.keys(savedFields).filter((f) => scope.indexOf(f) === -1).length;
+    }
+    return { droppedChunks: droppedChunks, addedChunks: addedChunks,
+             droppedFields: droppedFields, addedFields: addedFields };
+  }
+
+  function buildScopedInitialState() {
+    return reconcileState({}, DATA);
+  }
+
+  let state = loadState();
+  let filterKey = "all";
+  let filteredIdx = DATA.map((_, i) => i);
+  let pos = 0;
+
+  function loadState() {
+    let saved = null;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") saved = parsed;
+      }
+    } catch (e) {
+      console.warn("Failed to load saved state, starting fresh.", e);
+      saved = null;
+    }
+    if (saved) {
+      const d = reconciliationDiff(saved, DATA);
+      if (d.droppedChunks.length || d.addedChunks.length || d.droppedFields || d.addedFields) {
+        console.warn(
+          "Saved progress did not match this build's record set and was " +
+          "reconciled against it: dropped " + d.droppedChunks.length +
+          " unknown chunk(s) / " + d.droppedFields + " out-of-scope field(s); " +
+          "fresh-initialised " + d.addedChunks.length + " new chunk(s) / " +
+          d.addedFields + " new field(s). Matching judgments were preserved.",
+          d
+        );
+      }
+    }
+    // Deliberately NOT persisted here: the un-reconciled blob stays in
+    // localStorage as the only recoverable copy of any judgment this build
+    // dropped, until the owner's next action overwrites it. Reconciliation is
+    // idempotent, so re-reading it on every load costs nothing.
+    return reconcileState(saved, DATA);
+  }
+
+  function saveState() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  const FIELD_LABELS = {
+    sentiment: "Sentiment",
+    guidance_direction: "Guidance direction",
+    red_flags: "Red flags (6-category taxonomy)",
+    distress_tier: "Distress tier",
+  };
+
+  function fmtLabelValue(field, value) {
+    if (field === "sentiment" || field === "guidance_direction") {
+      return value === null || value === undefined ? "(none returned)" : String(value);
+    }
+    return null; // list fields rendered as entries
+  }
+
+  function renderListValue(container, list, pairForm) {
+    if (!list || list.length === 0) {
+      container.textContent = "(no matches)";
+      return;
+    }
+    container.innerHTML = "";
+    list.forEach((e) => {
+      const d = document.createElement("div");
+      d.className = "rf-entry";
+      d.textContent = pairForm ? e[0] + " — " + e[1] : e.category + " — " + e.modality;
+      container.appendChild(d);
+    });
+  }
+
+  function render() {
+    const ex = DATA[filteredIdx[pos]];
+    const entry = state[ex.chunk_id];
+
+    document.getElementById("jump-input").value = pos + 1;
+    document.getElementById("jump-input").max = filteredIdx.length;
+    document.getElementById("meta-row").innerHTML =
+      `<span class="tier-badge">chunk_id: ${ex.chunk_id}</span>` +
+      `<span class="tier-badge">${ex.section_type}</span>` +
+      `<span class="tier-badge">primary_tier: ${ex.primary_tier}</span>` +
+      `<span class="tier-badge">tiers: ${ex.tiers}</span>` +
+      (ex.subtier ? `<span class="tier-badge">${ex.subtier}</span>` : "") +
+      `<span class="tier-badge group-badge">${ex.group_label}</span>` +
+      `<br>word_count=${ex.word_count} · position ${pos + 1} of ${filteredIdx.length}` +
+      (filterKey === "all" ? "" : " (filtered)");
+
+    const bannerSlot = document.getElementById("stakes-banner-slot");
+    bannerSlot.innerHTML = "";
+    if (ex.high_stakes) {
+      const b = document.createElement("div");
+      b.className = "stakes-banner";
+      b.innerHTML =
+        "<strong>HIGH-STAKES distress chunk.</strong> One of the 11 " +
+        "REALIZED LIQUIDITY_STRESS / ACCOUNTING_RESTATEMENT positives — " +
+        "your distress_tier adjudication is required here even where the " +
+        "auditor agreed (in-scope by stakes, per the ratified protocol).";
+      bannerSlot.appendChild(b);
+    }
+
+    document.getElementById("chunk-text").textContent = ex.text;
+
+    const container = document.getElementById("labels-container");
+    container.innerHTML = "";
+
+    const scopeFields = scopeFieldsFor(ex);
+
+    if (ex.labeling_failed) {
+      const div = document.createElement("div");
+      div.className = "discrepancy-note";
+      div.innerHTML =
+        "<strong>Labeling failed for this chunk — there is nothing to adjudicate.</strong><br>" +
+        "parse_ok=False. parse_error: " + (ex.parse_error || "(none recorded)") +
+        "<br>No stored label exists for any field, so \"is the stored label " +
+        "correct?\" is not a question that can be asked here: every field " +
+        "below reads 'NOT AVAILABLE (labeling failed)' rather than an " +
+        "implied empty result, and no judgment buttons are shown. " +
+        "For the corpus's one known instance (CHK-8e69547e0900a8dd) the " +
+        "stored parse_error reads like a mid-string token truncation, but a " +
+        "direct Batch API re-query resolved it as a genuine bio-category " +
+        "refusal (stop_reason=refusal) — HANDOFF.md §2; it is excluded by " +
+        "predicate upstream, not deleted. Any row reaching this view means " +
+        "the scope rule changed and build_adjudication_view.py's " +
+        "assert_no_failed_rows_in_scope() was bypassed.";
+      container.appendChild(div);
+      console.warn("Parse-failed chunk rendered in the adjudication view:", ex.chunk_id);
+    }
+
+    for (const field of R.FIELD_NAMES) {
+      const applicable = !!ex.applicability[field];
+      const inScope = scopeFields.indexOf(field) !== -1;
+      const card = document.createElement("div");
+      card.className = "field-card" + (applicable ? "" : " na-card") +
+        (applicable && !inScope && !ex.labeling_failed ? " out-of-scope" : "") +
+        (ex.labeling_failed ? " failed-card" : "");
+
+      const h3 = document.createElement("h3");
+      h3.textContent = FIELD_LABELS[field];
+      card.appendChild(h3);
+
+      if (!applicable) {
+        const v = document.createElement("div");
+        v.className = "field-value";
+        v.textContent = "NOT APPLICABLE for section_type=" + ex.section_type + " (per rubric §1 applicability matrix).";
+        card.appendChild(v);
+        container.appendChild(card);
+        continue;
+      }
+
+      if (ex.labeling_failed) {
+        const v = document.createElement("div");
+        v.className = "field-value";
+        v.textContent = "NOT AVAILABLE (labeling failed for this chunk — see note above). "
+          + "This is the absence of a label, not an empty result.";
+        card.appendChild(v);
+        container.appendChild(card);
+        continue;
+      }
+
+      const storedCap = document.createElement("div");
+      storedCap.className = "stored-label-caption";
+      storedCap.textContent = "Stored label (bootstrap run)";
+      card.appendChild(storedCap);
+
+      const valueDiv = document.createElement("div");
+      valueDiv.className = "field-value";
+      const scalar = fmtLabelValue(field, ex.labels[field]);
+      if (scalar !== null) valueDiv.textContent = scalar;
+      else renderListValue(valueDiv, ex.labels[field], false);
+      card.appendChild(valueDiv);
+
+      const aud = ex.auditor[field];
+      const audBlock = document.createElement("div");
+      audBlock.className = "auditor-block";
+      const audCap = document.createElement("div");
+      audCap.className = "auditor-caption";
+      audCap.textContent = "Second-rater (model) verdict — reference only";
+      audBlock.appendChild(audCap);
+      const badge = document.createElement("span");
+      const vclass = aud.verdict === "n/a" ? "na" : aud.verdict;
+      badge.className = "verdict-badge verdict-" + vclass;
+      badge.textContent = aud.verdict;
+      audBlock.appendChild(badge);
+      if (aud.verdict === "disagree" || aud.verdict === "unsure") {
+        const mine = document.createElement("div");
+        mine.style.marginTop = "4px";
+        const mineCap = document.createElement("span");
+        mineCap.className = "auditor-caption";
+        mineCap.textContent = "auditor's label: ";
+        mine.appendChild(mineCap);
+        const mineVal = document.createElement("span");
+        if (field === "sentiment" || field === "guidance_direction") {
+          mineVal.textContent = aud.my_label === null || aud.my_label === undefined ? "—" : String(aud.my_label);
+          mine.appendChild(mineVal);
+        } else if (Array.isArray(aud.my_label)) {
+          const listDiv = document.createElement("div");
+          renderListValue(listDiv, aud.my_label, true);
+          mine.appendChild(listDiv);
+        } else {
+          mineVal.textContent = "—";
+          mine.appendChild(mineVal);
+        }
+        audBlock.appendChild(mine);
+        if (aud.reason) {
+          const rs = document.createElement("div");
+          rs.className = "auditor-reason";
+          rs.textContent = aud.reason;
+          audBlock.appendChild(rs);
+        }
+      }
+      card.appendChild(audBlock);
+
+      if (inScope) {
+        const btnRow = document.createElement("div");
+        btnRow.className = "judgment-btns";
+        ["agree", "disagree", "unsure"].forEach((j) => {
+          const b = document.createElement("button");
+          b.className = "jbtn";
+          b.textContent = j;
+          if (entry.fields[field].judgment === j) b.classList.add("active-" + j);
+          b.addEventListener("click", () => {
+            entry.fields[field].judgment = entry.fields[field].judgment === j ? null : j;
+            saveState();
+            render();
+          });
+          btnRow.appendChild(b);
+        });
+        card.appendChild(btnRow);
+
+        const note = document.createElement("textarea");
+        note.className = "field-note";
+        note.placeholder = "Note about this field (optional; if you disagree, say what the right label is)";
+        note.value = entry.fields[field].note || "";
+        note.addEventListener("input", () => {
+          entry.fields[field].note = note.value;
+          saveState();
+        });
+        card.appendChild(note);
+      } else {
+        const n = document.createElement("div");
+        n.className = "out-of-scope-note";
+        n.textContent = "Auditor agreed with the stored label — outside this adjudication pass's scope (recorded downstream as a model-agree, not as your judgment).";
+        card.appendChild(n);
+      }
+
+      container.appendChild(card);
+    }
+
+    const exNoteBox = document.getElementById("example-note-box");
+    exNoteBox.value = entry.example_note || "";
+    exNoteBox.oninput = () => {
+      entry.example_note = exNoteBox.value;
+      saveState();
+    };
+
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const p = R.computeExampleProgress(state);
+    const f = R.computeProgress(state);
+    document.getElementById("progress-text").textContent =
+      `${p.done} / ${p.total} chunks fully adjudicated (${f.judgedFields} / ${f.totalFields} field judgments)`;
+    document.getElementById("progress-bar-inner").style.width = (100 * p.done / p.total) + "%";
+  }
+
+  function applyFilter() {
+    filteredIdx = [];
+    DATA.forEach((ex, i) => {
+      if (filterKey === "all" || ex.group === filterKey) filteredIdx.push(i);
+    });
+    if (filteredIdx.length === 0) filteredIdx = DATA.map((_, i) => i);
+    pos = 0;
+    render();
+  }
+
+  const sel = document.getElementById("group-filter");
+  sel.innerHTML = "";
+  const optAll = document.createElement("option");
+  optAll.value = "all";
+  optAll.textContent = `All (${DATA.length})`;
+  sel.appendChild(optAll);
+  GROUPS.forEach((g) => {
+    const o = document.createElement("option");
+    o.value = g.key;
+    o.textContent = `${g.label} (${g.count})`;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", () => {
+    filterKey = sel.value;
+    applyFilter();
+  });
+
+  document.getElementById("btn-prev").addEventListener("click", () => {
+    pos = Math.max(0, pos - 1);
+    render();
+  });
+  document.getElementById("btn-next").addEventListener("click", () => {
+    pos = Math.min(filteredIdx.length - 1, pos + 1);
+    render();
+  });
+  document.getElementById("btn-jump").addEventListener("click", () => {
+    const v = parseInt(document.getElementById("jump-input").value, 10);
+    if (!isNaN(v) && v >= 1 && v <= filteredIdx.length) {
+      pos = v - 1;
+      render();
+    }
+  });
+
+  function downloadBlob(filename, content, mime) {
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }
+
+  document.getElementById("btn-export-csv").addEventListener("click", () => {
+    const csv = R.stateToCsvString(byId, state);
+    downloadBlob("adjudication_174_export.csv", csv, "text/csv");
+    setStatus("Exported CSV.");
+  });
+  document.getElementById("btn-export-json").addEventListener("click", () => {
+    const json = R.stateToJsonString(state);
+    downloadBlob("adjudication_174_export.json", json, "application/json");
+    setStatus("Exported JSON.");
+  });
+  document.getElementById("import-file").addEventListener("change", (evt) => {
+    const file = evt.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const imported = R.jsonStringToState(reader.result);
+        // Same guard as loadState: an export from another build (or from
+        // review_tool.html's full-400 pass) is reconciled against the
+        // current records, never trusted as-is.
+        const d = reconciliationDiff(imported, DATA);
+        state = reconcileState(imported, DATA);
+        saveState();
+        render();
+        setStatus(
+          "Imported " + file.name + "." +
+          ((d.droppedChunks.length || d.addedChunks.length || d.droppedFields || d.addedFields)
+            ? " Reconciled against this build: dropped " + d.droppedChunks.length +
+              " unknown chunk(s) / " + d.droppedFields + " out-of-scope field(s), " +
+              "fresh-initialised " + d.addedChunks.length + " chunk(s) / " +
+              d.addedFields + " field(s)."
+            : "")
+        );
+      } catch (e) {
+        setStatus("Import failed: " + e.message);
+      }
+    };
+    reader.readAsText(file);
+  });
+  document.getElementById("btn-clear").addEventListener("click", () => {
+    if (confirm("Clear all adjudication progress in this browser? This cannot be undone (export first if you want a backup).")) {
+      state = buildScopedInitialState();
+      saveState();
+      render();
+      setStatus("All progress cleared.");
+    }
+  });
+
+  function setStatus(msg) {
+    document.getElementById("status-msg").textContent = msg;
+  }
+
+  // Exposed for inspection/testing (same spirit as review_app.js's exported
+  // api): these are pure and can be exercised from the console without
+  // touching localStorage.
+  window.FinScreenAdjudication = {
+    STORAGE_KEY: STORAGE_KEY,
+    scopeFieldsFor: scopeFieldsFor,
+    reconcileState: reconcileState,
+    reconciliationDiff: reconciliationDiff,
+    buildScopedInitialState: buildScopedInitialState,
+  };
+
+  applyFilter();
+})();
+</script>
+
+</body>
+</html>

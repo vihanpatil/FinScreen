@@ -1,0 +1,466 @@
+{
+ "batch": 8,
+ "chunks": [
+  {
+   "chunk_id": "CHK-a7e5a720287a5e1f",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Page 7 of 17 UnitedHealth Group 2026 Outlook ($ and weighted-average shares in millions; except per share data) As of January 27, 2026 As of July 16, 2026 Operating Earnings UnitedHealthcare > $10,800 > $12,000 Optum Health > $2,200 > $2,275 Optum Insight > $4,750 > $4,925 Optum Rx > $6,250 > $6,250 Optum > $13,200 > $13,450 UnitedHealth Group > $24,000 > $25,450 Net Earnings to UNH Shareholders > $15,600 > $16,750 Diluted Net Earnings per Share to UNH Shareholders > $17.10 $18.45 - $18.95 Adjusted Earnings per Share (1) > $17.75 $19.50 - $20.00 Medical Care Ratio 88.8% \u00b1 50 bps 88.1% \u00b1 25 bps Tax Rate ~19.25% ~18.5% Cash Flows from Operations > $18,000 ~$24,000 Share Repurchase ~$2,500 At Least $5,000 (1) Refer to page 16 of this release for a reconciliation of non-GAAP measures. Below outlines the 2026 Reported to Adjusted Earnings Bridge for Optum as of July 16, 2026. Optum 2026 Reported to Adjusted Earnings Bridge ($ in millions) Optum Health Optum Insight Optum Rx Total Optum 2026 Reported Operating Earnings Guidance > $2,275 (1) > $4,925 > $6,250 > $13,450 Net Portfolio Divestitures, Restructuring and Other $345 $(175) - $170 Net Change in Third Party Loss Contracts $(405) - - $(405) 2026 Adjusted Operating Earnings > $2,215 > $4,750 > $6,250 > $13,215 Adjusted Operating Earnings as of January 27, 2026 > $1,577 > $4,750 > $6,250 > $12,577 (1) Optum Health includes $405 million of 2026 operating earnings related to the net change in loss contracts reserve, which will be excluded from adjusted operating earnings and adjusted earnings per share.\n\nPage 8 of 17 About UnitedHealth Group UnitedHealth Group (NYSE: UNH) is a health care and well-being company with a mission to help people live healthier lives and help make the health system work better for everyone through two distinct and complementary businesses. Optum delivers care aided by technology and data, empowering people, partners and providers with the guidance and tools they need to achieve better health. UnitedHealthcare offers a full range of health benefits, enabling affordable coverage, simplifying the health care experience and delivering access to high-quality care. Visit UnitedHealth Group at www.unitedhealthgroup.com and follow UnitedHealth Group on LinkedIn. Earnings Conference Call As previously announced, UnitedHealth Group will discuss the company\u2019s results, strategy and future outlook on a conference call with investors at 8:00 a.m. Eastern Time today. UnitedHealth Group will host a live webcast of this conference call from the Investor Relations page of the company\u2019s website (www.unitedhealthgroup.com). Following the call, a webcast replay will be on the Investor Relations page through July 30, 2026. This earnings release and the Form 8-K dated July 16, 2026, can also be accessed from the Investor Relations page of the company\u2019s website. Non-GAAP Financial Information This news release presents non-GAAP financial information provided as a complement to the results provided in accordance with accounting principles generally accepted in the United States of America (\u201cGAAP\u201d). A reconciliation of the non-GAAP financial information to the most directly comparable GAAP financial measure is provided in the accompanying tables found at the end of this release. Forward-Looking Statements The statements, estimates, projections, guidance or outlook contained in this document include \u201cforward-looking\u201d statements which are intended to take advantage of the \u201csafe harbor\u201d provisions of the federal securities laws. The words \u201cbelieve,\u201d \u201cexpect,\u201d \u201cintend,\u201d \u201cestimate,\u201d \u201canticipate,\u201d \u201cforecast,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cproject,\u201d \u201cshould\u201d and similar expressions identify forward-looking statements. These statements may contain information about financial prospects, economic conditions and trends and involve risks and uncertainties. Actual results could differ materially from those that management expects, depending on the outcome of certain factors including: our ability to effectively estimate, price for and manage medical costs; new or changes in existing health care laws or regulations, or their enforcement or application; cyberattacks, other privacy/data security incidents, or our failure to comply with related regulations; reductions in revenue or delays to cash flows received under government programs; changes in Medicare, the CMS star ratings program or the application of risk adjustment data validation audits; our ability to successfully execute initiatives designed to simplify and improve the consumer healthcare experience; our ability to effectively execute our value-based care strategies; the DOJ\u2019s legal actions concerning our participation in the Medicare program; our ability to maintain and achieve improvement in quality scores impacting revenue; failure to maintain effective and efficient information systems or if our technology products do not operate as intended; risks and uncertainties associated with our businesses providing pharmacy care services; competitive pressures, including our ability to maintain or increase our market share; changes in or challenges to our public sector contract awards; failure to achieve targeted operating cost productivity improvements; failure to develop and maintain satisfactory relationships with health care payers, physicians, hospitals and other service providers; the impact of potential changes in tax laws and regulations; increases in costs and other liabilities associated with litigation, government investigations, audits or reviews; risks and uncertainties associated with our increasing use of artificial intelligence and other emerging technologies; failure to complete, manage or integrate strategic transactions; risks and uncertainties associated with the sale of our remaining operations in South America; risks associated with public health crises arising from large-scale medical emergencies, pandemics, natural disasters and other extreme events; failure to attract, develop, retain, and manage the succession of key employees and executives; our investment portfolio performance; impairment of our goodwill and intangible assets; failure to protect proprietary rights to our databases, software and related products; downgrades in our credit ratings; and our ability to obtain sufficient funds from our regulated subsidiaries or from external financings to fund our obligations, reinvest in our business, maintain our debt to total capital ratio at targeted levels, maintain our quarterly dividend payment cycle, or continue repurchasing shares of our common stock. This above list is not exhaustive. We discuss these matters, and certain risks that may affect our business operations, financial condition and results of operations, more fully in our filings with the SEC, including our reports on Forms 10-K, 10-Q and 8-K. By their nature, forward-looking statements are not guarantees of future performance or results and are subject to risks, uncertainties and assumptions that are difficult to predict or quantify. Actual results may vary materially from expectations expressed or implied in this document or any of our prior communications. You should not place undue reliance on forward- looking statements, which speak only as of the date they are made. We do not undertake to update or revise any forward- looking statements, except as required by law. Investors: Media: investor_relations@uhg.com uhgmedia@uhg.com",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "POSITIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "The passage is an outlook table plus an \"About\" section and forward-looking boilerplate with no characterization of results \u2014 per the rule that numbers in a flat tone without qualitative characterization are NEUTRAL, and it discusses no current results at all."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The risk enumeration substantively names \"the DOJ's legal actions concerning our participation in the Medicare program,\" \"increases in costs and other liabilities associated with litigation, government investigations, audits or reviews,\" and \"impairment of our goodwill and intangible assets.\""
+    },
+    {
+     "field": "distress_tier",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list includes \"our ability to obtain sufficient funds from our regulated subsidiaries or from external financings to fund our obligations,\" a hypothetical inability to fund obligations."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-aa46accff3e8a9a9",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "Such restrictions could include additional unilateral or multilateral export controls on certain products or technology, including but not limited to AI technologies. As geopolitical tensions have increased, semiconductors associated with AI, including GPUs and related products, are increasingly the focus of export control restrictions proposed by stakeholders in the U.S. and its allies. The United States has imposed unilateral worldwide controls restricting GPUs and associated products, and it is likely that additional unilateral or multilateral controls will be adopted. Such controls have been and may again be very broad in scope and application, prohibit us from exporting our products to any or all customers in one or more markets, and could negatively impact our manufacturing, testing and warehousing locations and options, or could impose other conditions that limit our ability to serve demand abroad and could negatively and materially impact our business, revenue and financial results. Export controls targeting GPUs and semiconductors associated with AI, which have been imposed and are increasingly likely to be further tightened, would further restrict our ability to export our technology, products, or services even though competitors may not be subject to similar restrictions, creating a competitive disadvantage for us and negatively impacting our business and financial results. Export controls targeting GPUs and semiconductors associated with AI have subjected and may in the future subject downstream users of our products to additional restrictions on the use, resale, repair, or transfer of our products, negatively impacting our business and financial results. Controls could negatively impact our cost and/or ability to provide services such as NVIDIA AI cloud services and could impact the cost and/or ability for our CSPs and customers to provide services to their end customers, even outside China.\n\nDuring the third quarter of fiscal year 2024, the USG announced new and updated licensing requirements for exports to China and Country Groups D:1, D:4, and D:5 (including but not limited to, Saudi Arabia, the United Arab Emirates, and Vietnam, but excluding Israel) of our products exceeding certain performance thresholds, including, but not limited to, the A100, A800, H100, H800, L4, L40, L40S RTX 4090, GB200 NVL72, and B200. The licensing requirements also apply to the export of products exceeding certain performance thresholds to a party headquartered in, or with an ultimate parent headquartered in, Country Group D5, including China.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ],
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The passage describes regulatory restriction on the ability to sell (\"limit our ability to serve demand abroad,\" \"prohibit us from exporting our products\"), not softening customer demand, declining orders, or unfavorable volume trends, so DEMAND_WEAKNESS is unsupported."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ab593457a437b4e1",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The weighted average maturity of our unsecured long-term borrowings as of December 2024 was approximately seven years. To mitigate refinancing risk, we seek to limit the principal amount of debt maturing over the course of any monthly, quarterly, semi-annual or annual time horizon. We enter into interest rate swaps to convert a portion of our unsecured long-term borrowings into floating-rate obligations to manage our exposure to interest rates. See Note 14 to the consolidated financial statements for further information about our unsecured long-term borrowings.\n\nBased on our 2024 CCAR submission, the FRB increased our SCB from 5.5% to 6.2%, resulting in a Standardized CET1 capital ratio requirement of 13.7% for the period from October 1, 2024 through September 30, 2025. See \u201cShare Repurchase Program\u201d for further information about common stock repurchases and dividends and \u201cConsolidated Regulatory Capital\u201d for further information about the G-SIB surcharge. We published a summary of our annual DFAST results in June 2024. See \u201cBusiness \u2014 Available Information\u201d in Part I, Item 1 of this Form 10-K.\n\nWe review and make any necessary adjustments to our attributed equity in January each year, to reflect, among other things, our most recent stress test results and changes to our regulatory capital requirements. On January 1, 2024, our allocation of attributed equity changed (relative to the allocation as of December 2023) as follows: attributed equity increased by approximately $1.6 billion for Platform Solutions, while attributed equity decreased by approximately $1.2 billion for Asset & Wealth Management and approximately $0.4 billion for Global Banking & Markets. On January 1, 2025, our allocation of attributed equity changed (relative to the allocation as of December 2024) as follows: attributed equity increased by approximately $0.4 billion for Global Banking & Markets, while attributed equity decreased by approximately $0.3 billion for Asset & Wealth Management and approximately $0.1 billion for Platform Solutions. See \u201cResults of Operations \u2014 Segment Assets and Operating Results \u2014 Segment Operating Results\u201d for information about our average quarterly attributed equity by segment.\n\n2023, the Board approved a share repurchase program authorizing repurchases of up to $30 billion of our common stock. The program has no set expiration or termination date. See \u201cMarket for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\u201d in Part II, Item 5 of this Form 10-K and Note 19 to the consolidated financial statements for further information about our share repurchase program, and see above for information about our capital planning and stress testing process.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "\"Based on our 2024 CCAR submission, the FRB increased our SCB from 5.5% to 6.2%, resulting in a Standardized CET1 capital ratio requirement of 13.7%\" is a concrete, realized regulator-imposed requirement increase."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ada25902c99cb4cd",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Our operating performance could also be negatively affected if our franchisees experience food safety or other operational problems or project an image inconsistent with our brand and values, particularly if our contractual and other rights and remedies are limited, costly to exercise or subjected to litigation and potential delays. If franchisees do not successfully operate restaurants in a manner consistent with our required standards, our brand\u2019s image and reputation could be harmed, which in turn could hurt our business and operating results.\n\nOur ownership mix also affects our results and financial condition. The decision to own restaurants or to operate under franchise or license agreements is driven by many factors whose interrelationship is complex. The benefits of our more heavily franchised structure depend on various factors, including whether we have effectively selected franchisees, licensees and/or affiliates that meet our rigorous standards, whether we are able to successfully integrate them into our structure and whether their performance and the resulting ownership mix supports our brand and financial objectives.\n\nOur success depends in part on our System\u2019s ability to effectively attract, recruit, develop, motivate and retain qualified individuals to work in McDonald\u2019s restaurants and to maintain appropriately-staffed restaurants in an intensely competitive labor market. We and our franchisees have experienced and may continue to experience challenges in adequately staffing certain McDonald\u2019s restaurants, which can negatively impact operations, including speed of service to customers, and customer satisfaction levels. The System\u2019s ability to meet its labor needs is generally subject to external factors, including the availability of sufficient workforce, unemployment levels and prevailing wages in the markets in which we operate.\n\nFurther, our System has experienced increased costs and competition associated with attracting, recruiting, developing, motivating and retaining qualified employees, as well as with promoting awareness of the opportunities of working at McDonald\u2019s restaurants. We and our franchisees also continue to be impacted by increasingly complex U.S. and international laws and regulations affecting our respective workforces. These laws and regulations are increasingly focused on, and in certain cases impose requirements with respect to, employment matters such as wages and hours, healthcare, immigration, retirement and other employee benefits and workplace practices. Such laws and regulations can expose us and our franchisees to increased costs and other effects of compliance, including potential liability, and all such labor and compliance costs could have a negative impact on our Company-operated margins and franchisee profitability.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "Labor availability is explicitly in scope for SUPPLY_INPUT_CONSTRAINT and the passage asserts it as realized: \"We and our franchisees have experienced and may continue to experience challenges in adequately staffing certain McDonald's restaurants, which can negatively impact operations.\""
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ada949d3a57decdf",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The following tables present, as of June 30, 2026 and December 31, 2025, gross and net derivative receivables and payables by contract and settlement type. Derivative receivables and payables, as well as the related cash collateral from the same counterparty, have been netted on the Consolidated balance sheets where the Firm has obtained an appropriate legal opinion with respect to the master netting agreement. Where such a legal opinion has not been either sought or obtained, amounts are not eligible for netting on the Consolidated balance sheets, and those derivative receivables and payables are shown separately in the tables.\n\nThe following table shows the aggregate fair value of net derivative payables related to OTC and OTC-cleared derivatives that contain contingent collateral or termination features that may be triggered upon a ratings downgrade, and the associated collateral the Firm has posted in the normal course of business, at June 30, 2026 and December 31, 2025.\n\nThe following table shows the impact of a single-notch and two-notch downgrade of the long-term issuer ratings of JPMorgan Chase & Co. and its subsidiaries, predominantly JPMorgan Chase Bank, N.A., at June 30, 2026 and December 31, 2025, related to OTC and OTC-cleared derivative contracts with contingent collateral or termination features that may be triggered upon a ratings downgrade. Derivative contracts generally require additional collateral to be posted or terminations to be triggered when the predefined rating threshold is breached. A downgrade by a single rating agency that does not result in a rating lower than a preexisting corresponding rating provided by another major rating agency will generally not result in additional collateral (except in certain instances in which additional initial margin may be required upon a ratings downgrade), nor in termination payment requirements. The liquidity impact in the table is calculated based upon a downgrade below the lowest current rating of the rating agencies referred to in the derivative contract.\n\nThe following tables present derivative instruments, by contract type, used in fair value hedge accounting relationships, as well as pre-tax gains/(losses) recorded on such derivatives and the related hedged items for the three and six months ended June 30, 2026 and 2025, respectively. The Firm includes gains/(losses) on the hedging derivative in the same line item in the Consolidated statements of income as the related hedged item.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage describes derivative netting tables and downgrade-triggered collateral features; its only legal reference is \"where the Firm has obtained an appropriate legal opinion with respect to the master netting agreement,\" which is not litigation, investigation, enforcement, or a new regulatory requirement."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ae4a4d016fa7f83c",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "Gross margin decreased in fiscal year 2026 as our business model transitioned from offering Hopper HGX systems to Blackwell full-scale datacenter solutions. The gross margin decrease was also impacted by a $4.5 billion charge associated with H20 excess inventory and purchase obligations.\n\nOur consolidated financial statements are prepared in accordance with accounting principles generally accepted in the United States, or U.S. GAAP. The preparation of these financial statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities, revenue, cost of revenue, expenses and related disclosure of contingencies. Critical accounting estimates are those estimates that involve a significant level of estimation uncertainty and could have a material impact on our financial condition or results of operations. We have critical accounting estimates in the areas of inventories, income taxes, non-marketable equity securities, and revenue recognition. Refer to Note 1 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for a summary of significant accounting policies.\n\nThe net effect on our gross margin from inventory provisions and sales of items previously written down was an unfavorable impact of 2.6% in fiscal year 2026 and 2.3% in fiscal year 2025. Our inventory and capacity purchase commitments are based on forecasts of future customer demand and consider our third-party manufacturers' lead times and constraints. Our manufacturing lead times can be and have been long, and in some cases, extended beyond twelve months for some products. We may place non-cancellable inventory orders for certain product components in advance of our historical lead times, pay premiums and provide deposits to secure future supply and capacity. We also adjust to other market factors, such as product offerings and pricing actions by our competitors, new product transitions, and macroeconomic conditions - all of which may impact demand for our products.\n\nNon-marketable equity securities consist of investments in private companies without readily determinable fair values. They are measured at cost minus impairment, if any, and are adjusted for observable price changes in orderly transactions for a similar investment in the same issuer (the measurement alternative). These adjustments may require use of unobservable inputs.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "No tariff, export-control, sanction, or trade-restriction language appears anywhere in the passage (the charge is described only as \"associated with H20 excess inventory and purchase obligations\"), while \"our third-party manufacturers' lead times and constraints\" and \"Our manufacturing lead times can be and have been long, and in some cases, extended beyond twelve months\" support SUPPLY_INPUT_CONSTRAINT, REALIZED."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-b0fc6a0be9c4bf27",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "A reduction in certain of our credit ratings or the ratings of certain asset-backed securitizations may have a material adverse effect on our liquidity, potential loss of access to credit markets, the related cost of funds, our businesses and on certain revenues, particularly in those businesses where counterparty creditworthiness is critical. In addition, under the terms of certain OTC derivative contracts and other trading agreements, in the event of downgrades of our or our rated subsidiaries\u2019 credit ratings, the counterparties to those agreements may require us to provide additional collateral, or to terminate these contracts or agreements, which could cause us to sustain losses and/or adversely impact our liquidity. If the short-term credit ratings of our Parent, bank or broker-dealer\n\nWhile certain potential impacts are contractual and quantifiable, the full scope of the consequences of a credit rating downgrade to a financial institution is inherently uncertain, as it depends upon numerous dynamic, complex and inter-related factors and assumptions, including whether any downgrade of a company\u2019s long-term credit ratings precipitates downgrades to its short-term credit ratings, and assumptions about the potential behaviors of various customers, investors and counterparties. For more information on potential impacts\n\nBofA Finance LLC, a Delaware limited liability company (BofA Finance), is a consolidated finance subsidiary of the Corporation that has issued and sold, and is expected to continue to issue and sell, its senior unsecured debt securities (Guaranteed Notes) that are fully and unconditionally guaranteed by the Corporation. The Corporation guarantees the due and punctual payment, on demand, of amounts payable on the Guaranteed Notes if not paid by BofA Finance. In addition, each of BAC Capital Trust XIII, BAC Capital Trust XIV and BAC Capital Trust XV, Delaware statutory trusts (collectively, the Trusts) is a 100 percent owned finance subsidiary of the Corporation that has issued and sold trust preferred securities (the Trust Preferred Securities) or capital securities (the Capital Securities and, together with the Guaranteed Notes and the Trust Preferred Securities, the Guaranteed Securities), as applicable, that remained outstanding at December 31, 2023. The Corporation guarantees the payment of amounts and distributions with respect to the Trust Preferred Securities and Capital Securities if not paid by the Trusts, to the extent of funds held by the Trusts. This guarantee, together with the Corporation\u2019s other obligations with respect to the Trust Preferred Securities and Capital Securities, effectively constitutes a full and unconditional guarantee of the Trusts\u2019 payment obligations on the Trust Preferred Securities or Capital Securities, as applicable. No other subsidiary of the Corporation guarantees the Guaranteed Securities.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage describes credit-rating downgrades, counterparty collateral/termination rights and a finance-subsidiary guarantee structure \u2014 no litigation, investigation, enforcement action, fine or new regulatory requirement is mentioned, so LEGAL_REGULATORY_ACTION has no textual basis."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-b11d29f7063e72c9",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "(MK-3000, formerly EYE103), is an investigational, potentially first-in-class tetravalent, tri-specific antibody that acts as an agonist of the Wingless-related integration site signaling pathway, which is in clinical development for the treatment of diabetic macular edema and neovascular age-related macular degeneration. The transaction was accounted for as an asset acquisition. Merck recorded net assets of $21 million, as well as a charge of $1.35 billion to\n\nexpenses, or $0.52 per share, in the third quarter and first nine months of 2024 related to the acquisition. Additionally, a $100 million developmental milestone was triggered in the third quarter of 2024 upon initiation of a Phase 2/3 clinical trial evaluating\n\nAdditionally in July 2024, Merck and Orion Corporation (Orion) announced the mutual exercise of an option to convert the companies\u2019 ongoing co-development and co-commercialization agreement for opevesostat (MK-5684/ODM-208), an investigational cytochrome P450 11A1 (CYP11A1) inhibitor, and other candidates targeting CYP11A1, into an exclusive global license for Merck. With the exercise of the option, Merck assumed full responsibility for all past and future development and commercialization expenses associated with the candidates covered by the original agreement. In addition, Orion became eligible to receive developmental, regulatory and sales-based milestone payments, as well as annually tiered royalties on net sales for any commercialized licensed product. Orion retained responsibility for the manufacture of clinical and commercial supply for Merck. No payment was associated with the exercise of the option, which became effective in September of 2024.\n\nexpenses in the first nine months of 2024 related to the transaction. There are no future contingent payments associated with the acquisition. In August 2024, Merck and Daiichi Sankyo expanded their existing global co-development and co-commercialization agreement to include MK-6070.\n\nIn 2022, the U.S. Congress passed the Inflation Reduction Act (IRA), which made significant changes to how drugs are covered and paid for under the Medicare program, including the creation of financial penalties for drugs whose prices rise faster than the rate of inflation, redesign of the Medicare Part D program to require manufacturers to bear more of the liability for certain drug benefits, and government price-setting for certain Medicare Part D drugs (starting in 2026) and Medicare Part B drugs (starting in 2028). In August 2023, the U.S. Department of Health and Human Services (HHS), through the Centers for Medicare & Medicaid Services (CMS), announced that",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The $1.35 billion \"charge to expenses\" is an asset-acquisition/IPR&D charge, not an impairment or write-down of asset value, while \"In 2022, the U.S. Congress passed the Inflation Reduction Act (IRA), which made significant changes\" and \"In August 2023 ... CMS ... announced\" are past-tense enacted regulatory changes, i.e. REALIZED rather than HYPOTHETICAL."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-b15e159ac224a2ae",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "During the six months ended June 27, 2025 and June 28, 2024, the Company paid dividends of $2,283 million and $2,184 million, respectively. As a result of the timing of our quarterly reporting periods as well as our dividend payment dates, the Company paid substantially all of the 2024 and 2025 second quarterly dividends in the third quarter of each year.\n\nOur Board of Directors approved the Company\u2019s regular quarterly dividend of $0.51 per share at its July 2025 meeting. This dividend is payable on October 1, 2025 to shareowners of record as of the close of business on September 15, 2025.\n\nDuring the six months ended June 27, 2025 and June 28, 2024, the total cash outflow for other financing activities was $106 million and $9 million, respectively. The cash outflow during the six months ended June 27, 2025 included $104 million of the $6,173 million final milestone payment for fairlife.\n\nDue to the geographic diversity of our operations, weakness in some currencies may be offset by strength in other currencies over time. Our hedging activities are designed to mitigate, over time, a portion of the impact of exchange rate fluctuations on our net income. Taking into account the effects of our hedging activities, the impact of fluctuations in foreign currency exchange rates decreased our operating income for the three and six months ended June 27, 2025 by 14% and 16%, respectively.",
+   "contested_fields": [
+    {
+     "field": "sentiment",
+     "stored_label": "NEGATIVE",
+     "auditor_verdict": "disagree",
+     "auditor_label": "NEUTRAL",
+     "auditor_reason": "Three of the four paragraphs are mechanical disclosure (dividends paid, dividend declared, financing cash outflow) and the FX paragraph is hedged with \"weakness in some currencies may be offset by strength in other currencies,\" so the passage as a whole has no predominant unfavorable characterization."
+    },
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The only adverse item is that \"fluctuations in foreign currency exchange rates decreased our operating income,\" which is a translation/FX effect, not rising input, labor or operating costs compressing margins."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-b4544749a5786416",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "13 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of the Corporation\u2019s 2025 Annual Report on Form 10-K and in any of the Corporation\u2019s subsequent U.S. Securities and Exchange Commission (SEC) filings: the Corporation\u2019s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory inquiries, demands, requests, investigations, proceedings and enforcement actions, which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation\u2019s anti-money laundering and economic sanctions programs and the processing of electronic payments, including through the Zelle network, and related fraud, which are in various stages; in connection with ongoing litigation, the impact of certain changes to Visa\u2019s and Mastercard\u2019s respective card payment network rules and reductions in interchange fees for U.S.-based merchants; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the impact of U.S. and global interest rates (including the potential for ongoing fluctuations in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including changes in, or the imposition of, tariffs and / or trade barriers and the economic impacts, volatility and uncertainty resulting therefrom, which may have varying effects across industries and geographies, and geopolitical instability; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation\u2019s exposures to such risks, including direct, indirect and operational; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation\u2019s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including a deterioration in private credit markets, bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected, including due to changes in economic assumptions, which may include unemployment rates, real estate prices, gross domestic product levels and corporate bond spreads, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, such as the impact of trade policies, supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation\u2019s concentration of credit risk; the Corporation's ability to achieve its expense targets (including noninterest expense) and expectations regarding revenue, net interest income, operating leverage, other income, provision for credit losses, net charge-offs, effective tax rate, loan or deposit growth or other projections and targets; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation\u2019s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation\u2019s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation\u2019s capital plans; the effect of changes in or interpretations of income tax laws and regulations, including impacts from the 2025 Budget Reconciliation Act; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation\u2019s operations or information systems, or those of various third parties, including regulators and federal and state governments, such as from cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and the ability to achieve its potential benefits, such as increased productivity and cost savings; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental goals or the impact of any changes in the Corporation's sustainability or human capital management strategy or goals; the impact of uncertain or changing political conditions, federal government shutdowns, including partial shutdowns, and uncertainty regarding the federal government\u2019s debt limit or changes in fiscal, monetary, trade or regulatory policy; the emergence of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflicts in the Middle East, the possible expansion of such conflicts and potential geopolitical and economic consequences), civil unrest, terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. \u201cBank of America\u201d and \u201cBofA Securities\u201d are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (\u201cInvestment Banking Affiliates\u201d) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured \u00b7 May Lose Value \u00b7 Are Not Bank Guaranteed. Bank of America Corporation\u2019s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https://newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage asserts existing matters as fact \u2014 \"pending ... litigation and regulatory inquiries ... which the Corporation is subject to,\" naming the California unemployment-benefit processing, Zelle and AML matters \"which are in various stages,\" plus \"in connection with ongoing litigation\" \u2014 so the concrete realized statement controls the modality for LEGAL_REGULATORY_ACTION."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-b4d83adf862a5660",
+   "section_type": "EX99_PRESS_RELEASE",
+   "high_stakes": false,
+   "text": "Net oil-equivalent production during the quarter was down 19,000 barrels per day from a year earlier primarily due to asset sales in Canada and Republic of Congo, partly offset by higher production in Kazakhstan as FGP at TCO reached nameplate capacity.\n\nChevron\u2019s discussion of second quarter 2025 earnings with security analysts will take place on Friday, August 1, 2025, at 10:00 a.m. CT. A webcast of the meeting will be available in a listen-only mode to individual investors, media, and other interested parties on Chevron\u2019s website at\n\nThis news release also includes cash flow from operations excluding working capital, free cash flow and adjusted free cash flow. Cash flow from operations excluding working capital is defined as net cash provided by operating activities less net changes in operating working capital, and represents cash generated by operating activities excluding the timing impacts of working capital. Free cash flow is defined as net cash provided by operating activities less capital expenditures and generally represents the cash available to creditors and investors after investing in the business. Adjusted free cash flow is defined as free cash flow excluding working capital plus proceeds and deposits related to asset sales and returns of investments plus net repayment (borrowing) of loans by equity affiliates and generally represents the cash available to creditors and investors after investing in the business excluding the timing impacts of working capital. The company believes these measures are useful to monitor the financial health of the company and its performance over time. Reconciliations of cash flow from operations excluding working capital, free cash flow and adjusted free cash flow are shown in Attachment 3.\n\nAmong the important factors that could cause actual results to differ materially from those in the forward-looking statements are: changing crude oil and natural gas prices and demand for the company\u2019s products, and production curtailments due to market conditions; crude oil production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries and other producing countries; technological advancements; changes to government policies in the countries in which the company operates; public health crises, such as pandemics and epidemics, and any related government policies and actions; disruptions in the company\u2019s global supply chain, including supply chain constraints and escalation of the cost of goods and services; changing economic, regulatory and political environments in the various countries in which the company operates; general domestic and international economic, market and political conditions, including the conflict between Russia and Ukraine, the conflict in the Middle East and the global response to these hostilities; changing refining, marketing and chemicals margins; the company\u2019s ability to realize anticipated cost savings and efficiencies associated with enterprise structural cost reduction initiatives; actions of competitors or regulators; timing of exploration expenses; changes in projected future cash flows; timing of crude oil liftings; uncertainties about the estimated quantities of crude oil, natural gas liquids and natural gas reserves; the competitiveness of alternate-energy sources or product substitutes; pace and scale of the development of large carbon capture and offset markets; the results of operations and financial condition of the company\u2019s suppliers, vendors, partners and equity affiliates; the inability or failure of the company\u2019s joint-venture partners to fund their share of operations and development activities; the potential failure to achieve expected net production from existing and future crude oil and natural gas development projects; potential delays in the development, construction or start-up of planned projects; the potential disruption or interruption of the company\u2019s operations due to war, accidents, political events, civil unrest, severe weather, cyber threats, terrorist acts, or other natural or human causes beyond the company\u2019s control; the potential liability for remedial actions or assessments under existing or future environmental regulations and litigation; significant operational, investment or product changes undertaken or required by existing or future environmental statutes and regulations, including international agreements and national or regional legislation and regulatory measures related to greenhouse gas emissions and climate change; the potential liability resulting from pending or future litigation; the company\u2019s ability to successfully integrate the operations of the company and Hess Corporation and achieve the anticipated benefits and projected synergies from the transaction; the company\u2019s future acquisitions or dispositions of assets or shares or the delay or failure of such transactions to close based on required closing conditions; the potential for gains and losses from asset dispositions or impairments; government mandated sales, divestitures, recapitalizations, taxes and tax audits, tariffs, sanctions, changes in fiscal terms or restrictions on scope of company operations; foreign currency movements compared with the U.S. dollar; higher inflation and related impacts; material reductions in corporate liquidity and access to debt markets; changes to the company\u2019s capital allocation strategies; the effects of changed accounting rules under generally accepted accounting principles promulgated by rule-setting bodies; the company\u2019s ability to identify and mitigate the risks and hazards inherent in operating in the global energy industry; and the factors set forth under the heading \u201cRisk Factors\u201d on pages 20 through 27 of the company\u2019s 2024 Annual Report on Form 10-K and in subsequent filings with the U.S. Securities and Exchange Commission. Other unpredictable or unknown factors not discussed in this news release could also have material adverse effects on forward-looking statements.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The list names \"escalation of the cost of goods and services\" and \"higher inflation and related impacts,\" which is explicit cost/margin pressure language that should be labeled alongside the named supply-chain cause."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-b864f22ed7db9217",
+   "section_type": "MDA",
+   "high_stakes": false,
+   "text": "The Company currently has several candidates under regulatory review in the U.S. and internationally, as well as in late-stage clinical development. A chart reflecting the Company\u2019s current research pipeline as of February 21, 2025 and related discussion is set forth in Item 1. \u201cBusiness\n\nMerck continues to remain focused on pursuing opportunities that have the potential to drive both near- and long-term growth. Certain recent transactions are summarized below; additional details are included in Note 3 to the consolidated financial statements. Merck actively monitors the landscape for growth opportunities that meet the Company\u2019s strategic criteria.\n\nexpenses in 2024, or $0.18 per share, for the upfront payment, which was made in January 2025. LaNova is also eligible to receive milestone payments associated with the technology transfer, development, regulatory approval and commercialization of MK-2010 (LM-299) across multiple indications.\n\nexpenses in 2024, or $0.04 per share, for the upfront payment, which was made in February 2025. Hansoh is also eligible to receive future contingent milestone payments associated with the development, regulatory approval and commercialization of MK-4082 (HS-10535) as well as tiered royalties on future net sales of MK-4082 (HS-10535), if approved. Under the agreement, Hansoh may co-promote or solely commercialize MK-4082 (HS-10535) in Chinese mainland, Hong Kong and Macau, subject to certain conditions.\n\nIn September 2024, Merck acquired MK-1045 (formally CN201), a novel investigational clinical-stage bispecific antibody for the treatment of B-cell associated diseases, from Curon Biopharmaceutical (Curon) for an upfront payment of $700 million. In addition, Curon is eligible to receive future contingent developmental and regulatory milestone payments. The transaction was accounted for as an asset acquisition. Merck recorded a charge of $750 million (reflecting the upfront payment and other related costs) to\n\nexpenses, or $0.29 per share, in 2024 related to the execution of the transaction. In connection with the agreement, Merck is also obligated to pay a third party future contingent developmental, regulatory and sales-based milestone payments, as well as tiered royalties ranging from a mid-single-digit rate to a low-double-digit rate on future net sales of MK-1045, if approved.\n\nIn July 2024, Merck acquired EyeBio, a privately held ophthalmology-focused biotechnology company, for $1.2 billion (including payments to settle share-based equity awards) and also incurred $207 million of transaction costs. The acquisition agreement also provides for former EyeBio shareholders to receive future contingent developmental, regulatory and sales-based milestone payments. EyeBio\u2019s lead candidate, MK-3000 (formerly EYE103), is an investigational, potentially first-in-class tetravalent, tri-specific antibody that acts as an agonist of the Wingless-related integration site signaling pathway, which is in clinical development for the treatment of diabetic macular edema and neovascular age-related macular degeneration. The transaction was accounted for as an asset acquisition. Merck recorded net assets of $21 million, as well as a charge of $1.35 billion to",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The charges cited \u2014 \"a charge of $750 million (reflecting the upfront payment and other related costs)\" and \"a charge of $1.35 billion\" \u2014 are acquisition/IPR&D payments expensed at acquisition, not asset impairments, goodwill/inventory write-downs, or restructuring tied to asset value reduction."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ba3a1dcd71201c66",
+   "section_type": "MDA",
+   "high_stakes": true,
+   "text": "As of December 31, 2024, our current liabilities exceeded current assets by $8.2 billion. We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations. We have strong short- and long-term debt ratings that have enabled and should continue to enable us to refinance our debt as it becomes due at favorable rates in commercial paper and bond markets. In addition, we have agreements with a diverse group of financial institutions that, if needed, should provide sufficient funding to meet short-term financing requirements.\n\nIn accordance with the SEC's Regulation S-K Item 10(e), the following provides definitions of the non-GAAP measures and the reconciliation to the most closely related GAAP measure. We believe that these measures provide useful perspective on underlying business trends (i.e., trends excluding non-recurring or unusual items) and results and provide a supplemental measure of period-to-period results. The non-GAAP measures described below are used by management in making operating decisions, allocating financial resources and for business strategy purposes. These measures may be useful to investors, as they provide supplemental information about business performance and provide investors a view of our business results through the eyes of management. These measures are also used to evaluate senior management and are a factor in determining their at-risk\n\ncompensation. These non-GAAP measures are not intended to be considered by the user in place of the related GAAP measures but rather as supplemental information to our business results. These non-GAAP measures may not be the same as similar measures used by other companies due to possible differences in method and in the items or events being adjusted.",
+   "contested_fields": [
+    {
+     "field": "distress_tier",
+     "stored_label": [
+      [
+       "LIQUIDITY_STRESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "The passage affirmatively denies liquidity insufficiency \u2014 \"We anticipate being able to support our short-term liquidity and operating needs largely through cash generated from operations\" and \"strong short- and long-term debt ratings\" \u2014 so the working-capital figure alone is not an explicit statement of insufficient liquidity or inability to meet obligations."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ba71626c30a964a9",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "In addition, we frequently update our information technology hardware, software, processes and systems. The risk of system disruption is increased when significant system changes are undertaken. If we fail to timely or successfully integrate and update our information systems and processes, system disruptions may occur and we may fail to realize the cost savings or operational benefits anticipated to be derived from these initiatives and our business, results of operations, financial condition and cash flows could be negatively impacted.\n\nIncreasingly, customers are using computers, tablets and smart phones to shop with us and with our competitors and to do comparison shopping. We use social media, online advertising and email to interact with our customers and as a means to enhance their shopping experience. As a part of our omni-channel sales strategy, we offer various pickup, delivery and shipping programs including options where many products available for purchase online can be picked up by the customer or member at a local Walmart store or Sam's Club, which provides additional customer traffic at such stores and clubs. Omni-channel\n\nretailing is a rapidly evolving part of the retail industry and of our operations around the world, and we continue to make investments in supply chain automation and enhancements to support our omni-channel strategy. We must anticipate and meet our customers' changing expectations while adjusting for technology investments and developments in our competitors' operations through focusing on the building and delivery of a seamless shopping experience across all channels by each operating segment. We continue to invest in AI and generative AI technologies to enhance our customers\u2019 shopping experience and our associate work experience and to improve efficiencies of our supply chain, operations, management functions and talent recruitment and development; however, these are evolving technologies and there are inherent operational and legal complexities associated with implementation of these technologies within our business. When integrating and introducing AI and generative AI technologies into our platforms, processes and systems, we may be exposed to new or expanded liabilities and risks due to elevated governmental scrutiny and monitoring, litigation, data privacy risks and compliance issues in a disparate and at times conflicting regulatory environment, all of which could negatively affect our financial performance and business reputation.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "The passage states \"we may be exposed to new or expanded liabilities and risks due to elevated governmental scrutiny and monitoring, litigation, data privacy risks and compliance issues in a disparate and at times conflicting regulatory environment,\" which is hypothetical legal/regulatory exposure."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-bad78b83459c59b2",
+   "section_type": "RISK_FACTORS",
+   "high_stakes": false,
+   "text": "We depend on our ability to attract, develop and retain qualified employees and executives, including those with diverse talents, backgrounds, experiences and perspectives, to operate and expand our business. While we have development and succession plans in place for our key employees and executives, these plans do not guarantee that the services of our key employees and executives will continue to be available to us. If we are unable to attract, develop, retain and effectively manage the development and succession plans for key employees and executives, our business, results of operations and future performance could be adversely affected. Experienced and highly skilled employees and executives in the health care and technology industries are in high demand and the market for their services is competitive. We may have difficulty in replacing key executives because of the limited number of qualified individuals in these industries with the breadth of skills and experience required to operate and successfully expand our business. Adverse changes to our corporate culture could harm our business operations and our ability to retain key employees and executives.\n\nMarket fluctuations could impair the value of our investment portfolio and our profitability. Volatility in interest rates affects our interest income and the market value of our investments in debt securities of varying maturities which constitute the substantial majority of the fair value of our investments as of December 31, 2024. In addition, a delay in payment of principal or interest by issuers, or defaults by issuers (primarily issuers of our investments in corporate and municipal bonds), could reduce our investment income and require us to write down the value of our investments which could adversely affect our profitability and equity.\n\nAs of December 31, 2024, our goodwill and other intangible assets had a carrying value of $130 billion, representing 44% of our total consolidated assets. We periodically evaluate our goodwill and other intangible assets to determine whether all or a portion of their carrying values may be impaired, in which case a charge to earnings may be necessary. The value of our goodwill may be materially and adversely impacted if businesses we acquire perform in a manner inconsistent with our assumptions. In addition, from time to time we divest businesses, and any such divestiture could result in significant asset impairment and disposition charges, including those related to goodwill and other intangible assets. Any future evaluations requiring an impairment of our goodwill and other intangible assets could materially and adversely affect our results of operations and equity in the period in which the impairment occurs. A material decrease in equity could, in turn, adversely affect our credit ratings.",
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "IMPAIRMENT_WRITEDOWN",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_reason": "No cost/margin language appears (the adverse effects cited are to \"investment income\" and \"profitability and equity\" from write-downs), while \"the limited number of qualified individuals in these industries\" and employees \"in high demand ... the market for their services is competitive\" is labor-availability constraint language."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+# config.yaml — QLoRA training config for FinScreen's Week 4 fine-tune.
+# Consumed by train_qlora.py. See MODEL_CHOICE.md for why this base model,
+# and finetune/README.md for what is/isn't runnable without a GPU.
+#
+# NOTHING in this file triggers a download or a GPU action by itself --
+# train_qlora.py only reads it. A real (non---dry-run) run is GATED on the
+# owner approving GPU rental (provider/instance/estimated hours), per the
+# standing $5 rule and ROADMAP.md Week 4's money gate.
+
+model:
+  base_model_id: "Qwen/Qwen2.5-7B-Instruct"   # see MODEL_CHOICE.md
+  license: "Apache-2.0"
+  trust_remote_code: false
+  load_in_4bit: true                          # QLoRA
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+data:
+  train_path: "prepared/train.jsonl"
+  eval_path: "prepared/eval.jsonl"
+  # Token counts below are ESTIMATED (word_count * 1.35), not measured --
+  # no tokenizer can be loaded offline in this environment. Re-measure with
+  # the real Qwen2.5 tokenizer before finalizing max_seq_length for a real
+  # run; see train_qlora.py's --dry-run output and its printed caveat.
+  max_seq_length: 2048
+  estimated_token_multiplier_words_to_tokens: 1.35
+
+training:
+  output_dir: "checkpoints/qwen2.5-7b-finscreen-lora"
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  optim: "paged_adamw_8bit"
+  logging_steps: 10
+  eval_strategy: "steps"
+  eval_steps: 100
+  save_strategy: "steps"
+  save_steps: 100
+  save_total_limit: 3
+  seed: 42
+  bf16: true
+  gradient_checkpointing: true
+  report_to: []                                # no external experiment tracker wired up
+
+# GPU rental is NOT decided/booked by this file. Per ROADMAP.md Week 4's
+# money gate: confirm provider, instance type, and estimated hours with the
+# owner before renting anything. DISCOVERY.md §4's session-snapshot figures
+# (RTX 4090 ~$0.34-0.40/hr, A100 80GB ~$0.67-1.99/hr) are stale by
+# definition and must be reconfirmed at the provider before a real rental.
+gpu_rental_placeholder:
+  provider: "TBD -- RunPod or Vast.ai, per DISCOVERY.md §4, not yet selected"
+  instance: "TBD -- likely a single RTX 4090 (24GB) class GPU given 7B QLoRA fits comfortably"
+  estimated_hours: "TBD -- depends on measured (not estimated) train-set token count once a tokenizer is available"
+  status: "NOT APPROVED -- do not rent until the owner explicitly confirms this section"
