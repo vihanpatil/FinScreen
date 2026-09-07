@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": "CHK-9a078c27c149b5b4",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "\"Global Humira sales decreased 32% in 2023... primarily driven by direct biosimilar competition\" and \"the impact of biosimilar erosion\" assert a realized loss of product volume/share (the failed CANOVA trial and Botox/Produodopa items match no taxonomy category)."
+  },
+  {
+    "chunk_id": "CHK-6288d0f21a02af3a",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"Regulations and other initiatives to make platforms responsible for preventing or eliminating harmful content online have been enacted\" is an existence claim about regulation already in effect (P1), with only the liability/oversight consequences hypothetical; the trailing \"may increase our costs\" is a generic consequence list that fails mining depth for MARGIN_COST_PRESSURE."
+  },
+  {
+    "chunk_id": "CHK-e31cd185b1dc5201",
+    "red_flags": [],
+    "reason": "Routine portfolio metrics only — \"Retained loans decreased... driven by paydowns,\" \"Net charge-offs decreased compared to the prior year\" — with no assertion of a write-down of carrying value, no demand, supply, tariff, cost or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-7ac2fc7a617e9668",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"We have incurred and may in the future incur inventory provisions or impairments\" is an occurrence claim (REALIZED per P1); \"Customers may delay purchasing existing products... or may not be able to adopt our new products as fast as forecasted\" is a standalone hypothetical demand assertion; \"could result in quality or production issues that could increase inventory provisions, warranty, or other costs\" and \"may cause us to incur additional costs\" assert projected operating-cost increases whose cause is neither supply shortage nor tariffs."
+  },
+  {
+    "chunk_id": "CHK-e2be31d72e7b104f",
+    "red_flags": [],
+    "reason": "The passage is executive commentary on \"strong 8% operational revenue growth,\" approvals, an acquisition and \"at least $4.0 billion in annual net cost savings\" — no impairment, demand, supply, tariff, cost-pressure or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-d19832deac747b17",
+    "red_flags": [],
+    "reason": "Only credit ratings and debt issuance/repayment amounts; \"our cost of borrowing could increase\" is a financing-cost contingency, not input/labor/operating cost compressing margins, and no other category is asserted."
+  },
+  {
+    "chunk_id": "CHK-8b0f62bfc6175763",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"$82 million, or 21 percent, were 180 days or more past due and had been written down to the estimated fair value of the collateral, less costs to sell\" is an explicit realized reduction of asset carrying value (as opposed to a mere charge-off/nonperforming-balance metric)."
+  },
+  {
+    "chunk_id": "CHK-f0a062f8564d384f",
+    "red_flags": [["TRADE_POLICY_EXPOSURE", "REALIZED"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"]],
+    "reason": "\"including the sanctions and restrictions related to the ongoing Russia-Ukraine war\" asserts existing sanctions/trade restrictions (REALIZED existence claim under P1, only \"may cause further disruptions\" being projected), while \"delays or cancellations of customer orders\" and delays in \"the manufacture or shipment of our products\" are standalone hypothetical demand and production assertions."
+  },
+  {
+    "chunk_id": "CHK-a181e53a75ff6eb6",
+    "red_flags": [["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"]],
+    "reason": "\"we may have to increase the amount of these incentives and pricing discounts... we may not be able to grow our volume... to compensate for the additional costs\" plus \"increased pressure on prices increases the importance of cost containment\" is a projected cost/margin squeeze with no supply or tariff cause; \"potential action from third-party patent holders, including notices or inquiries threatening litigation... for alleged patent infringement\" is a standalone hypothetical litigation assertion."
+  },
+  {
+    "chunk_id": "CHK-a1223d23f2089ce0",
+    "red_flags": [["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "reason": "\"We continue to monitor government actions and changes in policies across the globe, including those related to tariffs\" asserts that these tariff-related developments exist (REALIZED existence claim), with only the effect — \"if at all, are uncertain\" — left projected; the non-GAAP definition's \"impairments\" and \"litigation judgments and settlements\" are definitional mentions that do not count."
+  },
+  {
+    "chunk_id": "CHK-b122dd4bbd9e4242",
+    "red_flags": [["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"]],
+    "reason": "\"The cost of measures to protect products and customer-facing services could reduce our operating margins\" and \"may cause higher operating expenses\" are explicit projected margin/cost pressure; \"lead customers to reduce or delay future purchases of products or subscriptions\" is a projected demand deferral; \"may lead to claims against us\" and \"subject us to liability under laws that protect personal data\" assert hypothetical legal exposure."
+  },
+  {
+    "chunk_id": "CHK-9be672e8c210c416",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"Changes to the U.S. health care system enacted in prior years... have contributed to pricing pressure\" and \"the U.S. Congress passed the American Rescue Plan Act, which included a provision that eliminates the statutory cap on rebates drug manufacturers pay to Medicaid beginning in January 2024\" are enacted requirements already in force (REALIZED); the $656 million acquisition charge is purchase accounting, not an impairment, and \"pricing pressure\" is revenue-side, not input cost."
+  },
+  {
+    "chunk_id": "CHK-9f3013e812996c67",
+    "red_flags": [],
+    "reason": "Balance-sheet disclosure of \"income taxes payable of $4.2 billion,\" \"long-term taxes payable of $7.1 billion primarily related to uncertain tax positions\" and \"$44.0 billion\" of purchase commitments asserts amounts owed, not any litigation, investigation, new compliance burden, or other category."
+  },
+  {
+    "chunk_id": "CHK-b5e4aa3d798cca2b",
+    "red_flags": [],
+    "reason": "Allowance-for-credit-losses methodology and a modeled scenario (\"A 100% weighting to the adverse economic scenario would have resulted in an approximate $0.8 billion increase in our allowance\") — a hypothetical reserve estimate, not an asserted write-down, demand, supply, tariff, cost or legal event."
+  },
+  {
+    "chunk_id": "CHK-d3b4f5daaa09dbf3",
+    "red_flags": [],
+    "reason": "Dividends, a \"$5.0 billion increase to the existing stock repurchase authorization,\" repurchases and routine receivable/credit-loss monitoring; no category language is asserted."
+  },
+  {
+    "chunk_id": "CHK-3ec5f86d7a1a5a7e",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"we recorded charges of $98 million... primarily as a result of settlements with a number of U.K. merchants\" and \"a legal provision associated with the ATM non-discrimination rule surcharge complaints\" and \"claims of merchants who opted out of the U.S. merchant class litigation\" are recorded, already-occurred legal settlements/provisions."
+  },
+  {
+    "chunk_id": "CHK-d3617ab0722153c6",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"We are currently under Internal Revenue Service (\\\"IRS\\\") audit for prior tax years and have received Notices of Proposed Adjustment... the IRS is seeking an additional tax payment of $28.9 billion plus penalties and interest\" asserts an existing audit and claim (REALIZED controls over the surrounding could/may framing)."
+  },
+  {
+    "chunk_id": "CHK-31266f0841ea2cef",
+    "red_flags": [],
+    "reason": "Financing narrative only — factoring of receivables, \"$6.0 billion aggregate principal amount of senior unsecured notes,\" dividends and treasury purchases — with no red-flag category asserted."
+  },
+  {
+    "chunk_id": "CHK-89a8284b157fcee0",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"We are a party to lawsuits in the normal course of our business\" is an existence claim (REALIZED per P1), reinforced by \"the OECD... has made changes, including a Pillar Two framework that imposes a minimum tax rate of 15% in each taxing jurisdiction.\""
+  },
+  {
+    "chunk_id": "CHK-b8f5d5a6709fccf2",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"Such conditions also have caused and in future periods could continue to cause employers to stop offering certain health care coverage\" is a realized loss of covered business; \"could increase the risk of shortages of necessary items\" and \"restricting availability of or our ability to deliver pharmaceuticals or other supplies\" are projected supply constraints; \"could increase our operating costs\" and \"the premiums and fees we charge may not be sufficient to cover our medical and administrative costs\" are projected cost/margin pressure with no supply or tariff cause."
+  },
+  {
+    "chunk_id": "CHK-03a55a82cb666a8f",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "\"revenues of $23.5 billion decreased 5% year-over-year due to ~700,000 fewer value-based-care patients served\" and \"Adjusted scripts were 387 million compared to 414 million last year due to membership declines\" are realized unfavorable volume trends."
+  },
+  {
+    "chunk_id": "CHK-91cd090467f7fa4b",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"], ["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"higher costs associated with inflationary pressures experienced over the past several years\" is causeless cost-inflation language (always MARGIN_COST_PRESSURE) and \"ongoing negotiations and developments regarding international trade policies have led to uncertainty... and have adversely impacted\" asserts realized trade-policy impact; separately, \"the carrying value of these loans has been reduced to the estimated collateral value less costs to sell\" is a realized asset write-down."
+  },
+  {
+    "chunk_id": "CHK-b822a3b51f377c90",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"incremental non-core restructuring charges including the limited market portfolio restructuring with the substantial liquidation of its operations in Argentina incurred in fiscal 2025\" is a recorded restructuring charge tied to asset/operation liquidation; the Glad dissolution produced a \"gain of $261 million,\" not a write-down."
+  },
+  {
+    "chunk_id": "CHK-fa97d43bd7e68b7f",
+    "red_flags": [],
+    "reason": "Introductory/forward-looking-statement boilerplate and a firm description (\"$4.1 trillion in assets\", segment reorganization) that names no risk category with any substantive assertion."
+  },
+  {
+    "chunk_id": "CHK-9440a842a6e25106",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"Provisions for inventory and excess inventory purchase obligations totaled $5.3 billion, including $4.5 billion associated with H20 excess inventory\" is a realized inventory write-down, and \"Gross margins decreased to 60.5%... primarily due to a $4.5 billion charge... and the initial ramp of more sophisticated systems\" states realized margin compression; no tariff or export-control cause is named in this passage."
+  },
+  {
+    "chunk_id": "CHK-25bb787add681003",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"Effective January 1, 2026, the Corporation and its insured depository institutions early adopted a final rule on modified enhanced SLR requirements\" and \"on January 1, 2027, the Corporation's G-SIB surcharge will increase by 50 bps... which will increase the Corporation's minimum capital ratio requirements\" are regulatory requirements already in force/determined that impose added obligations."
+  },
+  {
+    "chunk_id": "CHK-3136bb941118a944",
+    "red_flags": [],
+    "reason": "Reputational-risk governance and critical-accounting-estimate process description (\"actual results may differ from estimated amounts\") matches none of the six categories."
+  },
+  {
+    "chunk_id": "CHK-0398179a92983a81",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"net charges of $4 million and $15 million... related to restructuring our manufacturing operations\" and \"charges totaling $35 million related to the discontinuation of certain manufacturing operations in Asia Pacific\" are realized restructuring/asset-reduction charges; \"tax litigation expense\" and \"our ongoing tax dispute... with the U.S. Internal Revenue Service\" are realized legal matters; within the risk enumeration the elaborated clause \"disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs\" (plus \"labor shortages\") clears mining depth and states both a supply cause and an explicit input-cost impact."
+  },
+  {
+    "chunk_id": "CHK-4f5ac4dfd9a92402",
+    "red_flags": [],
+    "reason": "Deal-termination risk only — \"we will be required to pay certain costs relating to the acquisition; and we may be required to pay a termination fee\" — and \"failure to obtain required regulatory approvals\" is a merger-clearance condition, not litigation, enforcement, or a new compliance requirement."
+  },
+  {
+    "chunk_id": "CHK-5b27b3fb37e80adb",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"our non-U.S. businesses and operations are subject to U.S. laws... such as the FCPA\" and \"A reduction... in government funding for these programs... has affected\" assert obligations already in force and impacts already incurred; the word \"tariffs\" appears only as one noun inside the list \"taxation, licensing, tariffs, intellectual property, investment...\" and fails the mining-depth rule."
+  },
+  {
+    "chunk_id": "CHK-12a3b9d1fabc91c4",
+    "red_flags": [],
+    "reason": "A truncated provision figure (\"net provisions of $577 million for the fourth quarter of 2023\") plus conference-call dial-in logistics — bare credit-provision numbers with no asserted write-down or other category language."
+  },
+  {
+    "chunk_id": "CHK-be4a7965ef974798",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"we are responding to demands and requests relating to our past or current policies and practices,\" \"have resulted and could result in further litigation and/or government investigations,\" and \"have resulted in and will likely continue to result in injunctive relief and judgments, orders, settlements, penalties and fines adverse to us\" are existence/occurrence claims."
+  },
+  {
+    "chunk_id": "CHK-02448edabce0e6c8",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "The passage states as fact that \"a $4.5 billion charge associated with H20 excess inventory and purchase obligations\" was recorded in the prior-year quarter (cited via its \"non-recurrence\"); \"tariffs\" appears only as one word in the definitional cost-of-revenue list and fails mining depth."
+  },
+  {
+    "chunk_id": "CHK-d9d89e70d8d0cb94",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "The restructuring \"included the termination of partnered and non-partnered development program costs, asset impairments and asset divestments\" is a realized impairment, and \"charges for talc matters of approximately $5.1 billion and $7.0 billion\" are recorded charges for claims matters (read from the filing's own term \"matters,\" not outside knowledge — flagged with that caveat)."
+  },
+  {
+    "chunk_id": "CHK-20ee38bf0e3d1d63",
+    "red_flags": [],
+    "reason": "Descriptive derivative-disclosure narrative about netting and ratings-downgrade collateral triggers (\"may be triggered upon a ratings downgrade\") — no demand, supply, tariff, impairment, cost or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-f2c057910fd98c51",
+    "red_flags": [["TRADE_POLICY_EXPOSURE", "REALIZED"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"]],
+    "reason": "\"such as economic sanctions, trade restrictions... including those related to the on-going Russia and Ukraine war\" asserts existing restrictions (REALIZED existence claim), while \"delays or cancellations of customer orders or the manufacture or shipment of our products\" supplies standalone hypothetical demand and production assertions; the debt/commercial-paper paragraph adds no category."
+  },
+  {
+    "chunk_id": "CHK-44229fe8daf163b8",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"higher intangible asset impairment charges\" is a recorded impairment, and \"the EC suspended the Oxbryta marketing authorization,\" \"the FDA... has placed the Oxbryta... investigational new drug application on clinical hold,\" plus \"Many countries... have enacted legislation for global minimum taxation... generally effective for Pfizer since 2024\" are regulatory actions/requirements already in force."
+  },
+  {
+    "chunk_id": "CHK-19023f47d28336a9",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"]],
+    "reason": "\"Many of these transactions expose JPMorgan Chase to the credit risk of its clients and counterparties, and can involve JPMorgan Chase in disputes and litigation if a client or counterparty defaults\" meaningfully asserts litigation risk but only conditionally; the market-volatility and CCP-loss language matches no red-flag category."
+  },
+  {
+    "chunk_id": "CHK-aa27b8137fcceeef",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"]],
+    "reason": "\"may also result in new or additional legal or regulatory requirements\" (and cyber incidents that \"could result in... regulatory action\") is projected regulation; \"we may experience disruption in, or an increase in the costs associated with sourcing, manufacturing and distribution of our products\" states both a projected supply disruption and an explicit projected input-cost increase; \"the impacts of climate change have an influence on customer preferences, and failure to provide climate-friendly products could potentially result in loss of market share\" is demand-driven share loss."
+  },
+  {
+    "chunk_id": "CHK-01ce7d715046a026",
+    "red_flags": [],
+    "reason": "Purely definitional non-GAAP glossary (\"proforma underlying production,\" \"Return of capital is defined as the total of dividends and share repurchases,\" \"Reserve replacement is defined by the company as a ratio\") with no risk or event assertion."
+  }
+]

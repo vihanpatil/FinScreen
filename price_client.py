@@ -177,6 +177,13 @@ class PriceClient:
         self.verbose = verbose
         self.throttle = Throttle(min_interval_seconds)
         self.request_count = 0  # incremented only on actual network GETs
+        # `meta` block of the most recent Yahoo response served by
+        # get_daily_bars() (None when the bars came from Stooq). This client is
+        # documented single-threaded/sequential, so "most recent" is
+        # unambiguous. ingest_prices.py reads it for the free symbol /
+        # instrumentType sanity tripwire (F2_SPEC §6.4) without needing the
+        # whole raw payload plumbed back through.
+        self.last_yahoo_meta: Optional[dict] = None
 
     # -- low-level, always sequential + throttled + retried ----------------
 
@@ -286,12 +293,29 @@ class PriceClient:
 
     # -- combined: try Stooq, document+fall through to Yahoo -------------
 
-    def get_daily_bars(self, ticker: str, force: bool = False) -> tuple[pd.DataFrame, str]:
+    def get_daily_bars(
+        self, ticker: str, force: bool = False, source: str = "stooq-first"
+    ) -> tuple[pd.DataFrame, str]:
         """Return (DataFrame[date,open,high,low,close,volume], source_name).
-        Tries Stooq first (per task spec); on ANY PriceFetchError, records
-        why and falls through to Yahoo. Raises PriceFetchError only if both
-        sources fail.
+
+        `source="stooq-first"` (the default, E1/F1 behaviour) tries Stooq and,
+        on ANY PriceFetchError, records why and falls through to Yahoo; it
+        raises PriceFetchError only if both fail. `source="yahoo"` goes
+        straight to Yahoo -- what E2's ingest_prices.py passes by default,
+        because Stooq has been bot-gated site-wide since 2026-08-18 and 213
+        deliberate failures are wasteful and impolite (F2_SPEC §6.4). Neither
+        code path is deleted: the choice is one flag.
+
+        Side effect: sets `self.last_yahoo_meta` to the response's `meta` block
+        when the bars came from Yahoo, else None.
         """
+        if source not in ("stooq-first", "yahoo"):
+            raise ValueError(f"unknown price source {source!r}")
+        self.last_yahoo_meta = None
+        if source == "yahoo":
+            data = self.fetch_yahoo(ticker, force=force)
+            self.last_yahoo_meta = data["chart"]["result"][0].get("meta", {})
+            return parse_yahoo_chart(data), "yahoo_finance_chart"
         try:
             text = self.fetch_stooq(ticker, force=force)
             df = parse_stooq_csv(text)
@@ -301,6 +325,7 @@ class PriceClient:
                 print(f"  [{ticker}] Stooq failed ({stooq_err}); trying Yahoo fallback")
             try:
                 data = self.fetch_yahoo(ticker, force=force)
+                self.last_yahoo_meta = data["chart"]["result"][0].get("meta", {})
                 df = parse_yahoo_chart(data)
                 return df, "yahoo_finance_chart"
             except PriceFetchError as yahoo_err:

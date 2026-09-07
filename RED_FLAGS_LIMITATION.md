@@ -115,7 +115,24 @@ rubric revision or re-label must encode them:
     binding — the bootstrap pass applied it inconsistently in both
     directions. This is not a fourth principle.
 
-## Proposed rubric revision (PENDING owner ratification — not applied)
+## Proposed rubric revision — **RATIFIED AND APPLIED 2026-08-26**
+
+> **AMENDMENT 2026-08-26.** The owner ratified this revision as rubric
+> **v1.2** and lifted the §5 spend freeze for exactly one purpose: a
+> single Batch API re-label of all 6,747 E1 chunks under it (HANDOFF §3,
+> 2026-08-26, "F2.5 closure rulings", ruling 1). All three items below are
+> now applied to `labeling_rubric.md` (§4 twice, §6 once) with a matching
+> hand-synced `SYSTEM_PROMPT` edit per the 2026-08-10 sync rule. The
+> "no re-label occurs regardless" paragraph at the end of this section is
+> **superseded** — a re-label is exactly what was authorized. E1's
+> `data/labels.parquet` still stays FROZEN: the v1.2 labels land in a new
+> artifact, `data/labels_v12.parquet`. **P2 was deliberately not encoded**
+> — it governs `distress_tier`, this section never proposed a §5 edit for
+> it, and the ratification names this section; it remains documented in
+> the distress-tier addendum below. Prep record:
+> `data/hardening/status/G1_repair_prep.md`.
+
+### Original text (2026-08-18, as proposed)
 
 Per the standing sync rule (HANDOFF §3, 2026-08-10): if adopted,
 `labeling_rubric.md` §4/§6 get the following clarifications AND

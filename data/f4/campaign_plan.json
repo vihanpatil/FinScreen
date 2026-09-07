@@ -1,0 +1,474 @@
+{
+  "run_id": "F4-e2-label-v1",
+  "created_utc": "2026-08-28T05:39:24.398789+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "owner_rulings": {
+    "window_rule": "W1_core (HANDOFF \u00a73 2026-08-27, re-confirmed post-demotion)",
+    "line_rule": "reflow_v1 (full)",
+    "guidance_missing_to_none": "ADOPTED AT THE LABELING WRITER, with the guidance_imputed_none audit flag (eval A.7)",
+    "red_flags_status": "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3."
+  },
+  "inputs": {
+    "chunks_parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/chunks_v1.parquet",
+      "sha256": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+      "n_rows": 317081
+    },
+    "corpus_parquet_sha256": "15853e9f54902a933f0372869209a353ab3f052cb5c7dc1f897297f75b53f417",
+    "chunks_manifest": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/chunks_v1_manifest.json",
+      "sha256": "b90d81b516b5db59ddd4a639d96b4f3e074940bee34c305cbd2b0c34e8db346d"
+    },
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_chars": 1825,
+    "mlx_data_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12",
+    "train_jsonl_sha256": "396aef131bec0e5cffc22df94fe310e07a8e440d9d5a020b09772699a2931a43",
+    "valid_jsonl_sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+    "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "adapter_sha256_expected": "cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3",
+    "train_manifest": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/manifest.json",
+    "reference_eval_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2",
+    "schema_template": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet",
+      "sha256": "ca373b953504535b2f35ee374a6b6c1a6360000261748db365ee23c231e475e7",
+      "role": "ARROW SCHEMA ONLY \u2014 never a teacher for these rows"
+    }
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "max_seq_length": 2048,
+    "answer_token_reserve": 256,
+    "prompt_token_budget": 1792,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.to_messages()/render() via label_e2.render_prompt_ids(); token-exact prefix of the training sequence rendering"
+  },
+  "segmentation": {
+    "rule": "contiguous corpus-order row ranges, cut on home_accession_number boundaries so no filing is split across nights",
+    "target_segment_rows": 13500,
+    "n_segments": 24
+  },
+  "segments": [
+    {
+      "segment_id": "seg-001",
+      "row_start": 0,
+      "row_end": 13227,
+      "n_rows": 13227,
+      "first_chunk_id": "E2CHK-ae05821151f7ecf7",
+      "last_chunk_id": "E2CHK-7598f2c394867d55",
+      "n_accessions": 547,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4276,
+        "8K_BODY": 101,
+        "MDA": 7505,
+        "RISK_FACTORS": 1345
+      },
+      "chunk_id_list_sha256": "32ec5c0ceb7d53a4067911bc0d1df9fc0b294c800c9ef809ad1c80687b71efeb",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-001"
+    },
+    {
+      "segment_id": "seg-002",
+      "row_start": 13227,
+      "row_end": 26556,
+      "n_rows": 13329,
+      "first_chunk_id": "E2CHK-c47147c29c3a72bc",
+      "last_chunk_id": "E2CHK-46f167a2c4df4ea7",
+      "n_accessions": 427,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 2876,
+        "MDA": 7316,
+        "RISK_FACTORS": 3072,
+        "8K_BODY": 65
+      },
+      "chunk_id_list_sha256": "b128b7b4fb37eecf3ab429a8e70c9cf72fd5a35411d10bed612bf112afa2144d",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-002"
+    },
+    {
+      "segment_id": "seg-003",
+      "row_start": 26556,
+      "row_end": 39775,
+      "n_rows": 13219,
+      "first_chunk_id": "E2CHK-2e2326ad7daaf054",
+      "last_chunk_id": "E2CHK-3e0933a3920448f2",
+      "n_accessions": 630,
+      "by_section_type": {
+        "MDA": 7668,
+        "RISK_FACTORS": 1074,
+        "EX99_PRESS_RELEASE": 4403,
+        "8K_BODY": 74
+      },
+      "chunk_id_list_sha256": "3c118a98c4b5ed681442e2429f6aa3a0cd309fc5dee36fedfb22165ae58b1e88",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-003"
+    },
+    {
+      "segment_id": "seg-004",
+      "row_start": 39775,
+      "row_end": 53124,
+      "n_rows": 13349,
+      "first_chunk_id": "E2CHK-8f8dd28f0b3454ee",
+      "last_chunk_id": "E2CHK-8ec304328cda1330",
+      "n_accessions": 617,
+      "by_section_type": {
+        "MDA": 6949,
+        "RISK_FACTORS": 1546,
+        "EX99_PRESS_RELEASE": 4821,
+        "8K_BODY": 33
+      },
+      "chunk_id_list_sha256": "dd3e39cc97795ed4ec954d769263dc5c65ee9ee255d28c959f3aeda3047287a8",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-004"
+    },
+    {
+      "segment_id": "seg-005",
+      "row_start": 53124,
+      "row_end": 66338,
+      "n_rows": 13214,
+      "first_chunk_id": "E2CHK-ea067ea676182c34",
+      "last_chunk_id": "E2CHK-f684efcf261f0ade",
+      "n_accessions": 543,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 3464,
+        "MDA": 7529,
+        "RISK_FACTORS": 2197,
+        "8K_BODY": 24
+      },
+      "chunk_id_list_sha256": "3cb5f71c6c6f23ee5ce83c3dc762ccef971e4bdb3341b5eeecdfd6283f036c4f",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-005"
+    },
+    {
+      "segment_id": "seg-006",
+      "row_start": 66338,
+      "row_end": 79550,
+      "n_rows": 13212,
+      "first_chunk_id": "E2CHK-5d00e40ed6f2546a",
+      "last_chunk_id": "E2CHK-a31b8192b1cce778",
+      "n_accessions": 662,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4681,
+        "MDA": 7603,
+        "RISK_FACTORS": 893,
+        "8K_BODY": 35
+      },
+      "chunk_id_list_sha256": "08ec063cb5d9453e1d7ebd5ccf11b6e0b2103e6cc397a0b735a1493eaf636282",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-006"
+    },
+    {
+      "segment_id": "seg-007",
+      "row_start": 79550,
+      "row_end": 92781,
+      "n_rows": 13231,
+      "first_chunk_id": "E2CHK-af1e8cee9ed1adf0",
+      "last_chunk_id": "E2CHK-92d7a4062612e314",
+      "n_accessions": 499,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 3289,
+        "MDA": 7428,
+        "RISK_FACTORS": 2503,
+        "8K_BODY": 11
+      },
+      "chunk_id_list_sha256": "23d44f343623d97e8b7b3ab4e5b5ff289e31a7968078f6d8bc21be590b32f2e6",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-007"
+    },
+    {
+      "segment_id": "seg-008",
+      "row_start": 92781,
+      "row_end": 105995,
+      "n_rows": 13214,
+      "first_chunk_id": "E2CHK-bb2f6fbf84a5d14a",
+      "last_chunk_id": "E2CHK-d1a09fd4a0c68b92",
+      "n_accessions": 645,
+      "by_section_type": {
+        "MDA": 7743,
+        "RISK_FACTORS": 1032,
+        "EX99_PRESS_RELEASE": 4414,
+        "8K_BODY": 25
+      },
+      "chunk_id_list_sha256": "a72cea6aaca2eeb230ec219083a7d1764b1fe9e80f53c717e6035e108cfc4d04",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-008"
+    },
+    {
+      "segment_id": "seg-009",
+      "row_start": 105995,
+      "row_end": 119212,
+      "n_rows": 13217,
+      "first_chunk_id": "E2CHK-e17a55e9994e178c",
+      "last_chunk_id": "E2CHK-a0339a84e1a5364c",
+      "n_accessions": 534,
+      "by_section_type": {
+        "MDA": 6665,
+        "EX99_PRESS_RELEASE": 3704,
+        "RISK_FACTORS": 2822,
+        "8K_BODY": 26
+      },
+      "chunk_id_list_sha256": "c733a605be015ec86be99f5bf9ec8dc034850b99e1226dadb5fae61608a2c4c4",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-009"
+    },
+    {
+      "segment_id": "seg-010",
+      "row_start": 119212,
+      "row_end": 132460,
+      "n_rows": 13248,
+      "first_chunk_id": "E2CHK-3a0f5ff46e5cad2e",
+      "last_chunk_id": "E2CHK-0f5c25ef31c26ca6",
+      "n_accessions": 692,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4348,
+        "MDA": 7615,
+        "RISK_FACTORS": 1241,
+        "8K_BODY": 44
+      },
+      "chunk_id_list_sha256": "c966b0fd50eb27048cac6fb9d7c519aa4fe2c4b57dbfb6aae0421c46ca1084f1",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-010"
+    },
+    {
+      "segment_id": "seg-011",
+      "row_start": 132460,
+      "row_end": 145701,
+      "n_rows": 13241,
+      "first_chunk_id": "E2CHK-4cf4ecc9217e7adb",
+      "last_chunk_id": "E2CHK-1378abb7f5046529",
+      "n_accessions": 492,
+      "by_section_type": {
+        "MDA": 6885,
+        "EX99_PRESS_RELEASE": 3243,
+        "RISK_FACTORS": 3093,
+        "8K_BODY": 20
+      },
+      "chunk_id_list_sha256": "211680f6e121bb9d85398d886e323ea1429104fb507532508c1068107a0e3d03",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-011"
+    },
+    {
+      "segment_id": "seg-012",
+      "row_start": 145701,
+      "row_end": 158945,
+      "n_rows": 13244,
+      "first_chunk_id": "E2CHK-5d3d447986f4a151",
+      "last_chunk_id": "E2CHK-5613beb923cd61a2",
+      "n_accessions": 622,
+      "by_section_type": {
+        "8K_BODY": 62,
+        "EX99_PRESS_RELEASE": 4044,
+        "MDA": 7594,
+        "RISK_FACTORS": 1544
+      },
+      "chunk_id_list_sha256": "2f8ebca5c5c520e3ff6172f75ca56ab1f395455e9825ee7437ee0050e74e2d7e",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-012"
+    },
+    {
+      "segment_id": "seg-013",
+      "row_start": 158945,
+      "row_end": 172186,
+      "n_rows": 13241,
+      "first_chunk_id": "E2CHK-e692f64c3bac4f57",
+      "last_chunk_id": "E2CHK-e42288814abebc88",
+      "n_accessions": 595,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4325,
+        "MDA": 6497,
+        "RISK_FACTORS": 2383,
+        "8K_BODY": 36
+      },
+      "chunk_id_list_sha256": "f018701880ccd7bbccb6e8469d26e14d7cb6594c7286c8aeb6fe923eda6ff0ec",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013"
+    },
+    {
+      "segment_id": "seg-014",
+      "row_start": 172186,
+      "row_end": 185435,
+      "n_rows": 13249,
+      "first_chunk_id": "E2CHK-31fc0176482ec9c3",
+      "last_chunk_id": "E2CHK-504790084bf23850",
+      "n_accessions": 573,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 3381,
+        "MDA": 7348,
+        "RISK_FACTORS": 2493,
+        "8K_BODY": 27
+      },
+      "chunk_id_list_sha256": "21ea719021260b20e6dc7d9420f7dab937c78082536e2fa40002bb61e84271b6",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-014"
+    },
+    {
+      "segment_id": "seg-015",
+      "row_start": 185435,
+      "row_end": 198664,
+      "n_rows": 13229,
+      "first_chunk_id": "E2CHK-5b5098ff89f8ba40",
+      "last_chunk_id": "E2CHK-6ce12461d8786fe7",
+      "n_accessions": 648,
+      "by_section_type": {
+        "MDA": 7199,
+        "EX99_PRESS_RELEASE": 4315,
+        "RISK_FACTORS": 1673,
+        "8K_BODY": 42
+      },
+      "chunk_id_list_sha256": "4805a7c62cd7aad811a788f8ac175a463dd6e98606fca73e60fb96f52ae7c736",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-015"
+    },
+    {
+      "segment_id": "seg-016",
+      "row_start": 198664,
+      "row_end": 211892,
+      "n_rows": 13228,
+      "first_chunk_id": "E2CHK-4655eb04735ae70e",
+      "last_chunk_id": "E2CHK-2e979e26fe504696",
+      "n_accessions": 560,
+      "by_section_type": {
+        "MDA": 6957,
+        "RISK_FACTORS": 2950,
+        "EX99_PRESS_RELEASE": 3286,
+        "8K_BODY": 35
+      },
+      "chunk_id_list_sha256": "0598c6d22ae577bd4d4008dd37d0c73e5f688c25aca093c35582e5868843f355",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-016"
+    },
+    {
+      "segment_id": "seg-017",
+      "row_start": 211892,
+      "row_end": 225120,
+      "n_rows": 13228,
+      "first_chunk_id": "E2CHK-4aa85a9cf546b6f3",
+      "last_chunk_id": "E2CHK-f1e92687a36c820b",
+      "n_accessions": 701,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4622,
+        "MDA": 7261,
+        "RISK_FACTORS": 1310,
+        "8K_BODY": 35
+      },
+      "chunk_id_list_sha256": "6a99454dfae03b942e52d425b7eeeecb0f12513227bdd92e4c877bfcae4d46d8",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-017"
+    },
+    {
+      "segment_id": "seg-018",
+      "row_start": 225120,
+      "row_end": 238348,
+      "n_rows": 13228,
+      "first_chunk_id": "E2CHK-b515cd70b0357abf",
+      "last_chunk_id": "E2CHK-d812e898572f609d",
+      "n_accessions": 563,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 3172,
+        "MDA": 6960,
+        "RISK_FACTORS": 3087,
+        "8K_BODY": 9
+      },
+      "chunk_id_list_sha256": "432276dc5904ae9c9ddd5631e5faaa77c9177a0bf923cb294f7cd764360e6044",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-018"
+    },
+    {
+      "segment_id": "seg-019",
+      "row_start": 238348,
+      "row_end": 251577,
+      "n_rows": 13229,
+      "first_chunk_id": "E2CHK-f1ef8794909895ed",
+      "last_chunk_id": "E2CHK-078c40a81d83e053",
+      "n_accessions": 709,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4616,
+        "8K_BODY": 18,
+        "MDA": 7137,
+        "RISK_FACTORS": 1458
+      },
+      "chunk_id_list_sha256": "2f64f987bcad3b7112ea39aa07ea058d4f9ba7887d6474bb2716f23ad35be576",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-019"
+    },
+    {
+      "segment_id": "seg-020",
+      "row_start": 251577,
+      "row_end": 264804,
+      "n_rows": 13227,
+      "first_chunk_id": "E2CHK-df7146cade7c5e84",
+      "last_chunk_id": "E2CHK-085bd2bbf8fa8f89",
+      "n_accessions": 598,
+      "by_section_type": {
+        "MDA": 6734,
+        "RISK_FACTORS": 3007,
+        "EX99_PRESS_RELEASE": 3478,
+        "8K_BODY": 8
+      },
+      "chunk_id_list_sha256": "cc2f820cc525dae307e073a092aec7970fcdc7432e15455202af8be8b3bc86a0",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-020"
+    },
+    {
+      "segment_id": "seg-021",
+      "row_start": 264804,
+      "row_end": 278030,
+      "n_rows": 13226,
+      "first_chunk_id": "E2CHK-0cc2f8501a8ed758",
+      "last_chunk_id": "E2CHK-5e327081d872798b",
+      "n_accessions": 705,
+      "by_section_type": {
+        "MDA": 6918,
+        "RISK_FACTORS": 1644,
+        "EX99_PRESS_RELEASE": 4657,
+        "8K_BODY": 7
+      },
+      "chunk_id_list_sha256": "d429a6c3a1c38bf3dda2b02d702601f1e5faffd05cf7cda9f639a27ab3d013a6",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-021"
+    },
+    {
+      "segment_id": "seg-022",
+      "row_start": 278030,
+      "row_end": 291299,
+      "n_rows": 13269,
+      "first_chunk_id": "E2CHK-52e02e3c941a50f9",
+      "last_chunk_id": "E2CHK-707bef3be8b63025",
+      "n_accessions": 622,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 3341,
+        "MDA": 7037,
+        "RISK_FACTORS": 2878,
+        "8K_BODY": 13
+      },
+      "chunk_id_list_sha256": "d19307dcbe57f51283ec904877d38a6f82999124d5b969b38385458cd0fa158a",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-022"
+    },
+    {
+      "segment_id": "seg-023",
+      "row_start": 291299,
+      "row_end": 304589,
+      "n_rows": 13290,
+      "first_chunk_id": "E2CHK-f2369740e13897c9",
+      "last_chunk_id": "E2CHK-123f13ab7d1ad133",
+      "n_accessions": 665,
+      "by_section_type": {
+        "EX99_PRESS_RELEASE": 4207,
+        "MDA": 6682,
+        "RISK_FACTORS": 2381,
+        "8K_BODY": 20
+      },
+      "chunk_id_list_sha256": "fdc76f77990f075a5e52c91e17ba1d3c03198d0a35c1793334f44e7da855c8b7",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-023"
+    },
+    {
+      "segment_id": "seg-024",
+      "row_start": 304589,
+      "row_end": 317081,
+      "n_rows": 12492,
+      "first_chunk_id": "E2CHK-6c63fcca978f3f50",
+      "last_chunk_id": "E2CHK-cf1e05f971e6a17f",
+      "n_accessions": 661,
+      "by_section_type": {
+        "MDA": 6868,
+        "RISK_FACTORS": 2022,
+        "EX99_PRESS_RELEASE": 3582,
+        "8K_BODY": 20
+      },
+      "chunk_id_list_sha256": "3b6eb0b7d2670d05afd5f659dd5dd861791851119281703fdd60a842aa1daf90",
+      "dir": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-024"
+    }
+  ],
+  "caveats": [
+    "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3.",
+    "These labels are the STUDENT's, produced locally on MLX. They are not Claude labels and they were never validated against human ground truth. The student's held-out agreement with its own v1.2 teacher (n=1,010) is: sentiment 0.836, red_flags exact-set 0.631 / micro F1 0.795, guidance 0.521 raw. Agreement is not accuracy.",
+    "guidance_direction: missing->NONE is APPLIED AT THIS WRITER (owner-ruled 2026-08-27), scoped to guidance-APPLICABLE section types only (EX99_PRESS_RELEASE, 8K_BODY \u2014 the section types the teacher's own JSON schema asked for the field). Every imputed row carries guidance_imputed_none=true. An explicitly emitted NONE carries false. The underlying omission rate WORSENED between epochs (321 -> 385 of 6,746 on E1), which is the disclosed cost of adopting the rule.",
+    "distress_tier was never a training target (HANDOFF \u00a77). The column is uniformly empty for schema compatibility and carries no information.",
+    "8K_BODY (n=790 chunks here) is not evaluable as a class \u2014 E1 had 8 such chunks from 2 tickers and the student has effectively no supervision for it (HANDOFF \u00a77). Do not report a per-class metric on it.",
+    "Window rule W1-core: the corpus was restricted to stratum=='core' BEFORE dedup, so a chunk's source_* back-references cover core-stratum sections only. The extension stratum is unlabeled this round.",
+    "The four population-gate columns in the F3 corpus are NOT point-in-time (P4 \u00a75.1 / P5 \u00a78.2): they may be set by a LATER-dated filing. Use them for triage, never for conditioning in a walk-forward.",
+    "Passages are head-truncated to fit 2048 tokens including a fixed 256-token answer reserve. Truncated rows carry passage_was_head_truncated=true; only the passage TAIL is ever dropped.",
+    "E1's data/labels.parquet and data/labels_v12.parquet are frozen and were opened READ-ONLY (the latter only as an arrow SCHEMA TEMPLATE, never as a teacher for these rows)."
+  ]
+}

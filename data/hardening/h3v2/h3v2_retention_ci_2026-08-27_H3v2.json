@@ -1,0 +1,453 @@
+{
+ "generated_utc": "2026-08-27T22:41:11.406160+00:00",
+ "campaign": "H3v2 -- rubric v1.2 student vs rubric v1.2 teacher",
+ "n_boot": 4000,
+ "seed": 0,
+ "resample_unit": "filing (the 630-row feature table's rows), with replacement",
+ "machinery": "h3_retention_ci.bootstrap imported verbatim; only the input tables differ",
+ "note_pooled": "POOLED IS AN UPPER BOUND: 5,736/6,746 = 85.0% of pooled chunks are the student's own training rows.",
+ "eval_only": {
+  "pearson": {
+   "sentiment_negative_share": {
+    "point": 0.783292941856042,
+    "ci_lo": 0.613033325823706,
+    "ci_hi": 0.893464518840967,
+    "n_degenerate_resamples": 0
+   },
+   "sentiment_mean_score": {
+    "point": 0.8696269134372111,
+    "ci_lo": 0.8152717222831758,
+    "ci_hi": 0.9108875519618651,
+    "n_degenerate_resamples": 0
+   },
+   "guidance_signed_mean": {
+    "point": 0.935925480061717,
+    "ci_lo": 0.7455153351765371,
+    "ci_hi": 1.0,
+    "n_degenerate_resamples": 13
+   },
+   "guidance_any_present": {
+    "point": 0.7534105749568217,
+    "ci_lo": 0.5356151345102288,
+    "ci_hi": 0.9113973673926868,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_any_rate_press": {
+    "point": 0.8744093770706419,
+    "ci_lo": 0.8293411352598837,
+    "ci_hi": 0.9117859475813422,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_risk_factors": {
+    "point": 0.9018547031836732,
+    "ci_lo": 0.8140572744147295,
+    "ci_hi": 0.9615673776015394,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors": {
+    "point": 0.9744257919624788,
+    "ci_lo": 0.9380750054793905,
+    "ci_hi": 1.0,
+    "n_degenerate_resamples": 11
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors": {
+    "point": 0.915946298003703,
+    "ci_lo": 0.7972427907919669,
+    "ci_hi": 0.9589981445938424,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_risk_factors": {
+    "point": 0.744260352838084,
+    "ci_lo": 0.5444480022648119,
+    "ci_hi": 0.942063790758666,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors": {
+    "point": 0.9188968805236821,
+    "ci_lo": 0.7546303500952277,
+    "ci_hi": 0.9702428689207795,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors": {
+    "point": 0.9697676253851657,
+    "ci_lo": 0.9469360025433496,
+    "ci_hi": 0.9918141594785085,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_mda": {
+    "point": 0.42383165026363895,
+    "ci_lo": 0.10414753861118742,
+    "ci_hi": 0.6934475548281549,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_mda": {
+    "point": 0.9275415657355446,
+    "ci_lo": 0.8548895857501697,
+    "ci_hi": 0.9790324517024297,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_mda": {
+    "point": 0.8076663292740978,
+    "ci_lo": 0.7093110744699739,
+    "ci_hi": 0.8895868711510877,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_mda": {
+    "point": 0.5999773060310752,
+    "ci_lo": 0.3514529015344615,
+    "ci_hi": 0.7664117513714981,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda": {
+    "point": 0.7187285608687256,
+    "ci_lo": 0.48577065673485725,
+    "ci_hi": 0.8952474071652241,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_mda": {
+    "point": 0.7908907743575019,
+    "ci_lo": 0.58822163141425,
+    "ci_hi": 0.9069400374333523,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_12_mean": {
+    "point": 0.807815653202281,
+    "ci_lo": 0.7503327194317249,
+    "ci_hi": 0.8527957389676394,
+    "n_degenerate_resamples": 0
+   }
+  },
+  "spearman": {
+   "sentiment_negative_share": {
+    "point": 0.7310700073512524,
+    "ci_lo": 0.6357787847992123,
+    "ci_hi": 0.8115455403809493,
+    "n_degenerate_resamples": 0
+   },
+   "sentiment_mean_score": {
+    "point": 0.8031562888897426,
+    "ci_lo": 0.7279324171020035,
+    "ci_hi": 0.861345662980144,
+    "n_degenerate_resamples": 0
+   },
+   "guidance_signed_mean": {
+    "point": 0.9069420008141769,
+    "ci_lo": 0.6666666666666667,
+    "ci_hi": 1.0,
+    "n_degenerate_resamples": 13
+   },
+   "guidance_any_present": {
+    "point": 0.7534105749568177,
+    "ci_lo": 0.5356151345102288,
+    "ci_hi": 0.9113973673926883,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_any_rate_press": {
+    "point": 0.8661249030869005,
+    "ci_lo": 0.809725073134014,
+    "ci_hi": 0.9096315976729854,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_risk_factors": {
+    "point": 0.8710255984576121,
+    "ci_lo": 0.6781542194626442,
+    "ci_hi": 0.9600305428740037,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors": {
+    "point": 1.0,
+    "ci_lo": 0.9999999999999998,
+    "ci_hi": 1.0,
+    "n_degenerate_resamples": 11
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors": {
+    "point": 0.7319267768169639,
+    "ci_lo": 0.4215684284235605,
+    "ci_hi": 0.9113295867054194,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_risk_factors": {
+    "point": 0.8023013587826403,
+    "ci_lo": 0.5638309947189498,
+    "ci_hi": 0.9507943219635708,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors": {
+    "point": 0.8273476482563362,
+    "ci_lo": 0.5874141548705782,
+    "ci_hi": 0.936865356393671,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors": {
+    "point": 0.9776994217346557,
+    "ci_lo": 0.9102447058978196,
+    "ci_hi": 1.0,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_mda": {
+    "point": 0.4112100757491872,
+    "ci_lo": 0.1097744925597563,
+    "ci_hi": 0.6819590406383383,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_mda": {
+    "point": 0.9500063701864855,
+    "ci_lo": 0.8667205470565416,
+    "ci_hi": 0.9944095258777161,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_mda": {
+    "point": 0.8097239655991174,
+    "ci_lo": 0.6850587221222979,
+    "ci_hi": 0.8927694473942596,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_mda": {
+    "point": 0.5598243408503084,
+    "ci_lo": 0.3057890911327111,
+    "ci_hi": 0.75657645479675,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda": {
+    "point": 0.7497312778783144,
+    "ci_lo": 0.5264809805801305,
+    "ci_hi": 0.9275104166205175,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_mda": {
+    "point": 0.7221649312005981,
+    "ci_lo": 0.47353006122918706,
+    "ci_hi": 0.8975878174547564,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_12_mean": {
+    "point": 0.7844134804593517,
+    "ci_lo": 0.7074555855752253,
+    "ci_hi": 0.8376961685795873,
+    "n_degenerate_resamples": 0
+   }
+  }
+ },
+ "pooled_UPPER_BOUND": {
+  "pearson": {
+   "sentiment_negative_share": {
+    "point": 0.8126395732154116,
+    "ci_lo": 0.6996682039297928,
+    "ci_hi": 0.9019992863504009,
+    "n_degenerate_resamples": 0
+   },
+   "sentiment_mean_score": {
+    "point": 0.9137423387885835,
+    "ci_lo": 0.8837779487150922,
+    "ci_hi": 0.938572481854725,
+    "n_degenerate_resamples": 0
+   },
+   "guidance_signed_mean": {
+    "point": 0.62484447226985,
+    "ci_lo": 0.3271096166474884,
+    "ci_hi": 0.8776445150098325,
+    "n_degenerate_resamples": 0
+   },
+   "guidance_any_present": {
+    "point": 0.8609997829711572,
+    "ci_lo": 0.7865771435979813,
+    "ci_hi": 0.9242146026932886,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_any_rate_press": {
+    "point": 0.9125983042191144,
+    "ci_lo": 0.8689492562391007,
+    "ci_hi": 0.9457256422669282,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_risk_factors": {
+    "point": 0.9230094288208216,
+    "ci_lo": 0.867410359438972,
+    "ci_hi": 0.9622133264750143,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors": {
+    "point": 0.9591448191638162,
+    "ci_lo": 0.9358827608703952,
+    "ci_hi": 0.9785471731971428,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors": {
+    "point": 0.9504826223184635,
+    "ci_lo": 0.9216185557597955,
+    "ci_hi": 0.9707207515573207,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_risk_factors": {
+    "point": 0.8562981281441039,
+    "ci_lo": 0.7529462086396292,
+    "ci_hi": 0.932541822706361,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors": {
+    "point": 0.9545055689417079,
+    "ci_lo": 0.922127241168863,
+    "ci_hi": 0.9737599539539389,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors": {
+    "point": 0.9368231134707371,
+    "ci_lo": 0.8507431559765408,
+    "ci_hi": 0.9888356022177281,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_mda": {
+    "point": 0.8507198820036063,
+    "ci_lo": 0.7906003318266771,
+    "ci_hi": 0.9042151612796926,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_mda": {
+    "point": 0.6705294546834257,
+    "ci_lo": 0.48817189549041456,
+    "ci_hi": 0.8707682891216231,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_mda": {
+    "point": 0.9490219609406025,
+    "ci_lo": 0.930385818960292,
+    "ci_hi": 0.964255569146001,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_mda": {
+    "point": 0.6437729992858239,
+    "ci_lo": 0.47087196556733696,
+    "ci_hi": 0.8098358165559929,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda": {
+    "point": 0.8703567533528899,
+    "ci_lo": 0.7969482841221729,
+    "ci_hi": 0.9287502240370976,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_mda": {
+    "point": 0.90017360949201,
+    "ci_lo": 0.8510955867387135,
+    "ci_hi": 0.9362580538999439,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_12_mean": {
+    "point": 0.8720698617181674,
+    "ci_lo": 0.8402265268133908,
+    "ci_hi": 0.9059760507499115,
+    "n_degenerate_resamples": 0
+   }
+  },
+  "spearman": {
+   "sentiment_negative_share": {
+    "point": 0.8278107769802019,
+    "ci_lo": 0.781525986736585,
+    "ci_hi": 0.8687898044040387,
+    "n_degenerate_resamples": 0
+   },
+   "sentiment_mean_score": {
+    "point": 0.8887076633992794,
+    "ci_lo": 0.8584043759881759,
+    "ci_hi": 0.9139536519555734,
+    "n_degenerate_resamples": 0
+   },
+   "guidance_signed_mean": {
+    "point": 0.6322432179151088,
+    "ci_lo": 0.34126025575829144,
+    "ci_hi": 0.8719376521185441,
+    "n_degenerate_resamples": 0
+   },
+   "guidance_any_present": {
+    "point": 0.8609997829711564,
+    "ci_lo": 0.786577143597983,
+    "ci_hi": 0.9242146026932908,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_any_rate_press": {
+    "point": 0.9147088950056252,
+    "ci_lo": 0.8738152636857331,
+    "ci_hi": 0.9465510026018032,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_risk_factors": {
+    "point": 0.9013671282036867,
+    "ci_lo": 0.829025558920199,
+    "ci_hi": 0.9518028431538704,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors": {
+    "point": 0.9551237343462301,
+    "ci_lo": 0.925796214743925,
+    "ci_hi": 0.9763530944169613,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors": {
+    "point": 0.9179343001374964,
+    "ci_lo": 0.8699854212125855,
+    "ci_hi": 0.9510214068119397,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_risk_factors": {
+    "point": 0.8520992272028137,
+    "ci_lo": 0.7523216442449087,
+    "ci_hi": 0.9249773699305406,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors": {
+    "point": 0.9271762967498057,
+    "ci_lo": 0.8892612467019839,
+    "ci_hi": 0.9513175723022028,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors": {
+    "point": 0.9300944484690509,
+    "ci_lo": 0.8514303358174682,
+    "ci_hi": 0.98151090572976,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_DEMAND_WEAKNESS_rate_mda": {
+    "point": 0.87287278141558,
+    "ci_lo": 0.8252739115615974,
+    "ci_hi": 0.9112592034776331,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_mda": {
+    "point": 0.8780347201381091,
+    "ci_lo": 0.8079457139174591,
+    "ci_hi": 0.9351043474328797,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_LEGAL_REGULATORY_ACTION_rate_mda": {
+    "point": 0.9264712552109005,
+    "ci_lo": 0.8996766559809225,
+    "ci_hi": 0.9464264818510031,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_MARGIN_COST_PRESSURE_rate_mda": {
+    "point": 0.7438970659801228,
+    "ci_lo": 0.6498013994626005,
+    "ci_hi": 0.8216717378277826,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda": {
+    "point": 0.8849656835245234,
+    "ci_lo": 0.833181583152583,
+    "ci_hi": 0.9277343212921668,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_TRADE_POLICY_EXPOSURE_rate_mda": {
+    "point": 0.8589317641621756,
+    "ci_lo": 0.7946971683175917,
+    "ci_hi": 0.9115144751443934,
+    "n_degenerate_resamples": 0
+   },
+   "redflag_12_mean": {
+    "point": 0.8874140337950412,
+    "ci_lo": 0.8647801123810969,
+    "ci_hi": 0.9044646336069946,
+    "n_degenerate_resamples": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,362 @@
+[
+  {
+    "chunk_id": "CHK-6288d0f21a02af3a",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The passage states flatly that \"Regulations and other initiatives to make platforms responsible for preventing or eliminating harmful content online have been enacted,\" and elsewhere assumes those rules bind the filer (\"if we fail to comply with content moderation regulations\"). Section 6's realized-controls rule (P1) makes an existence claim about regulation already in effect REALIZED even inside may/could framing, with only the projected oversight and liability hypothetical. The trailing \"may increase our costs, damage our reputation or brands, or negatively impact our revenues or margins\" is a generic consequence tail that fails the mining-depth bar, so no cost flag is added.",
+    "pattern": "enacted-regulation-existence-claim-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-e31cd185b1dc5201",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "high",
+    "brief": "This is a portfolio-composition narrative: \"Retained loans decreased ... driven by paydowns,\" \"Net recoveries were higher,\" \"Net charge-offs decreased compared to the prior year.\" Nothing in it asserts rising input, labor or operating costs compressing margins, which is what section 4's MARGIN_COST_PRESSURE definition requires, and no demand, supply, tariff, write-down or legal assertion appears either. The stored flag has no textual anchor at all.",
+    "pattern": "bank-credit-metrics-no-cost-flag",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-7ac2fc7a617e9668",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "\"We have incurred and may in the future incur inventory provisions or impairments\" is an occurrence claim, so IMPAIRMENT_WRITEDOWN is REALIZED, and \"Customers may delay purchasing existing products\" carries DEMAND_WEAKNESS as HYPOTHETICAL. The stored SUPPLY_INPUT_CONSTRAINT is hard to support: the passage says the company is *increasing* \"supply and capacity purchases\" and describes only added \"complexity,\" not a shortage or disruption limiting production. Meanwhile \"may cause us to incur additional costs\" names no supply or tariff cause, which the section 4 disambiguation note routes to MARGIN_COST_PRESSURE; the owner should weigh whether supply-chain complexity plus \"quality or production issues\" is enough to earn SUPPLY_INPUT_CONSTRAINT.",
+    "pattern": "supply-chain-complexity-vs-constraint",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-d19832deac747b17",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "high",
+    "brief": "The only cost sentence is \"If our credit ratings were to be downgraded ... our cost of borrowing could increase,\" which is a financing cost, not the \"input/labor/operating costs compressing margins\" that section 4 defines as MARGIN_COST_PRESSURE (its examples are input costs, freight and labor). The rest is credit-rating methodology and debt issuance and repayment amounts, which match no category.",
+    "pattern": "financing-cost-not-margin-cost-pressure",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-8b0f62bfc6175763",
+    "verdict": "disagree",
+    "correct_label": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The passage states that \"$82 million, or 21 percent, were 180 days or more past due and had been written down to the estimated fair value of the collateral, less costs to sell\" — past tense, an actual reduction of an asset's carrying value, which is squarely section 4's IMPAIRMENT_WRITEDOWN (\"asset impairments ... wrote down\") at REALIZED modality. The rest of the passage is nonperforming and concentration statistics that carry no flag. The owner should weigh the precedent: routine bank credit tables use this write-down-to-collateral wording constantly, so ruling it in will flag many bank chunks.",
+    "pattern": "loan-carrying-value-writedown-as-impairment",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-f0a062f8564d384f",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"including the sanctions and restrictions related to the ongoing Russia-Ukraine war\" asserts that specific sanctions exist; under the section 6 realized-controls rule the existence claim is REALIZED and only \"may cause further disruptions\" stays hypothetical, so the stored HYPOTHETICAL for trade policy is wrong. The clause \"delays or cancellations of customer orders or the manufacture or shipment of our products\" carries two distinct standalone assertions — projected demand loss and projected production/shipment constraint — so SUPPLY_INPUT_CONSTRAINT belongs alongside DEMAND_WEAKNESS.",
+    "pattern": "existing-sanctions-existence-claim-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-a181e53a75ff6eb6",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "\"potential action from third-party patent holders, including notices or inquiries threatening litigation against us or our customers for alleged patent infringement or demanding significant license fees\" is an elaborated clause, not a bare noun, so it clears the section 4 mining-depth bar and earns LEGAL_REGULATORY_ACTION; \"potential\" keeps it HYPOTHETICAL. The stored MARGIN_COST_PRESSURE is correctly kept on \"the additional costs related to these increased incentives and pricing discounts\" and \"further additional expenses,\" but the stored set is incomplete.",
+    "pattern": "elaborated-risk-clause-clears-mining-depth",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-a1223d23f2089ce0",
+    "verdict": "disagree",
+    "correct_label": [["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"We continue to monitor government actions and changes in policies across the globe, including those related to tariffs\" asserts that the tariff-related policy changes exist and calls them \"these developments\"; only their effect is hedged (\"if at all, are uncertain\"). The section 6 realized-controls rule says an existence claim is REALIZED and only the projected consequences are HYPOTHETICAL, so the stored HYPOTHETICAL understates it. The non-GAAP paragraph's \"impairments\" and \"litigation judgments and settlements\" are definitional mentions with no substantive discussion and add nothing.",
+    "pattern": "monitoring-existing-tariff-developments-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-b122dd4bbd9e4242",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "The stored two flags are right, but the passage also says security problems could \"lead customers to reduce or delay future purchases of products or subscriptions to services\" and \"could inhibit sales of our products or services,\" which is the hypothetical form of section 4's DEMAND_WEAKNESS trigger \"customers deferred purchases.\" It is a standalone assertion about this company, so it clears mining depth and gets HYPOTHETICAL modality rather than omission.",
+    "pattern": "customer-purchase-deferral-is-demand-weakness",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-9be672e8c210c416",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "LEGAL_REGULATORY_ACTION REALIZED is right — \"Changes to the U.S. health care system enacted in prior years\" and \"the U.S. Congress passed the American Rescue Plan Act, which included a provision that eliminates the statutory cap on rebates\" are requirements already in force. The other two stored flags fail: the text describes \"a charge of $656 million\" recorded in an asset acquisition and never calls it an impairment or write-down, and \"pressure on product pricing\" is price/revenue erosion, not the \"rising input/labor/operating costs\" that section 4 requires for MARGIN_COST_PRESSURE.",
+    "pattern": "price-pressure-not-cost-pressure",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-b5e4aa3d798cca2b",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "high",
+    "brief": "The passage describes allowance-for-credit-losses methodology and a modeled scenario: \"A 100% weighting to the adverse economic scenario would have resulted in an approximate $0.8 billion increase in our allowance.\" That is a reserve-estimation disclosure, not an assertion of rising input, labor or operating costs, so MARGIN_COST_PRESSURE has no basis, and no other of the six categories is asserted.",
+    "pattern": "credit-loss-methodology-no-flag",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-89a8284b157fcee0",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "high",
+    "brief": "\"We are a party to lawsuits in the normal course of our business\" is a present-tense existence claim, which section 6's realized-controls rule labels REALIZED (its own example: \"We are subject to pending investigations ... in various stages\"). The surrounding \"could materially harm\" language is the projected consequence and does not downgrade the existence claim; \"the OECD ... has made changes, including a Pillar Two framework that imposes a minimum tax rate of 15%\" points the same way.",
+    "pattern": "party-to-lawsuits-existence-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-b8f5d5a6709fccf2",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "\"Such conditions also have caused and in future periods could continue to cause employers to stop offering certain health care coverage\" is the exact shape of section 6's realized example (\"have in the past resulted in fines, and could result in additional fines\"), so DEMAND_WEAKNESS is REALIZED, not HYPOTHETICAL. The passage separately asserts a projected supply constraint — \"restricting availability of or our ability to deliver pharmaceuticals or other supplies\" and \"could increase the risk of shortages of necessary items\" — which is specific enough to stand alone and earns SUPPLY_INPUT_CONSTRAINT at HYPOTHETICAL.",
+    "pattern": "have-caused-and-could-continue-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-91cd090467f7fa4b",
+    "verdict": "disagree",
+    "correct_label": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The sentence's main verbs are past tense — trade-policy \"developments ... have led to uncertainty ... and have adversely impacted\" — so TRADE_POLICY_EXPOSURE is REALIZED, not HYPOTHETICAL, and \"higher costs associated with inflationary pressures experienced over the past several years\" is causeless cost inflation, which the section 4 note says is always MARGIN_COST_PRESSURE. The passage also states \"the carrying value of these loans has been reduced to the estimated collateral value less costs to sell,\" a realized asset write-down. The owner should weigh the same recurring question as the other bank chunk: whether routine loan carrying-value reduction should count as IMPAIRMENT_WRITEDOWN.",
+    "pattern": "loan-carrying-value-writedown-as-impairment",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-9440a842a6e25106",
+    "verdict": "disagree",
+    "correct_label": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "confidence": "high",
+    "brief": "The inventory and margin flags hold: \"Provisions for inventory and excess inventory purchase obligations totaled $5.3 billion\" and \"Gross margins decreased to 60.5% ... primarily due to a $4.5 billion charge\" plus large realized expense increases. But no tariff, export-control, sanction or trade-restriction language appears anywhere in this passage, so TRADE_POLICY_EXPOSURE could only come from outside knowledge of what the product is, which section 0 forbids.",
+    "pattern": "trade-policy-flag-without-textual-basis",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-0398179a92983a81",
+    "verdict": "disagree",
+    "correct_label": [["IMPAIRMENT_WRITEDOWN", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "The three stored flags are supported (restructuring and discontinuation charges, \"tax litigation expense\" and the \"ongoing tax dispute ... with the IRS\", and input-cost risk language). The same clause the stored label already mined for cost pressure — \"disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs\" — names the supply disruption first, and with \"labor shortages or labor unrest\" it clears the section 4 mining-depth bar as a standalone assertion, so SUPPLY_INPUT_CONSTRAINT must be added at HYPOTHETICAL.",
+    "pattern": "elaborated-risk-clause-clears-mining-depth",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-5b27b3fb37e80adb",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "high",
+    "brief": "The stored label lists the same category twice with both modalities, which section 6 forecloses: where a passage contains both framings, \"the concrete realized statement controls.\" Here \"our non-U.S. businesses and operations are subject to U.S. laws ... such as the FCPA\" and funding reductions that \"has affected\" are occurrence claims, so the single correct entry is REALIZED. The lone word \"tariffs\" sits inside the noun list \"taxation, licensing, tariffs, intellectual property, investment\" and fails mining depth.",
+    "pattern": "duplicate-modality-collapses-to-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-02448edabce0e6c8",
+    "verdict": "disagree",
+    "correct_label": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "confidence": "high",
+    "brief": "\"tariffs\" appears exactly once, as one item in a definitional list of what cost of revenue \"consists primarily of\" — a passing single-word mention with no substantive discussion, which section 4 explicitly says does not count. The impairment flag stands: the passage asserts as fact a \"$4.5 billion charge associated with H20 excess inventory and purchase obligations\" recorded in the prior-year quarter.",
+    "pattern": "single-word-tariff-mention-fails-mining-depth",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-f2c057910fd98c51",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"economic sanctions, trade restrictions ... including those related to the on-going Russia and Ukraine war\" asserts that those restrictions exist, and section 6's realized-controls rule makes that existence claim REALIZED with only \"may cause further disruptions\" hypothetical. \"delays or cancellations of customer orders or the manufacture or shipment of our products\" supplies both a demand assertion and a separate production/shipment constraint, so SUPPLY_INPUT_CONSTRAINT is missing from the stored set; the debt paragraph adds no category.",
+    "pattern": "existing-sanctions-existence-claim-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-19023f47d28336a9",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "Both raters missed something. The auditor is right that litigation is asserted — \"can involve JPMorgan Chase in disputes and litigation if a client or counterparty defaults\" is a standalone conditional assertion, so LEGAL_REGULATORY_ACTION at HYPOTHETICAL — but wrong to drop cost pressure, because the CCP sentence says replacing contracts would \"thereby increas[e] its operational costs,\" a causeless projected operating-cost increase that the section 4 note routes to MARGIN_COST_PRESSURE. The correct set is both, at HYPOTHETICAL.",
+    "pattern": "conditional-litigation-and-operational-cost-both-flag",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-aa27b8137fcceeef",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "The three stored flags are fine, but \"we may experience disruption in, or an increase in the costs associated with sourcing, manufacturing and distribution of our products\" states two things at once: a projected supply/production disruption and a projected cost increase. Section 4's disambiguation note is explicit that categories are not mutually exclusive — label the causal category and the cost category — so SUPPLY_INPUT_CONSTRAINT at HYPOTHETICAL belongs in the set.",
+    "pattern": "sourcing-disruption-plus-cost-both-flag",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-90f40730f8c06857",
+    "verdict": "disagree",
+    "correct_label": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"increased medical costs in 2025 ... have added to the compounding impact of the previous multi-year rate shortfalls\" is realized, causeless cost pressure, so that flag stands. The regulatory material, however, is reimbursement rate-setting — \"Medicare Advantage rate notices,\" the \"Advanced Notice for 2027,\" \"revisions to the risk adjustment model\" — and section 4's LEGAL_REGULATORY_ACTION covers litigation, investigations, enforcement, fines or new requirements creating compliance burden, none of which is asserted. The owner must weigh whether adverse government payment-rate actions should count as regulatory action, since this recurs across healthcare filings.",
+    "pattern": "government-rate-setting-not-legal-action",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-345a9b27b337fad9",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "The one margin decline is attributed to credit and revenue, not costs: \"total risk-adjusted margin decreased 188 bps ... primarily driven by higher net credit losses, lower net fee income and lower interest margin,\" while the passage reports \"The operating margin was 24 percent compared to 23 percent a year ago.\" The bare offsetting phrase \"partially offset by higher noninterest expense\" does not assert rising costs compressing margins as section 4 defines MARGIN_COST_PRESSURE.",
+    "pattern": "expense-mention-without-margin-compression",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-ab18a41358ea7b90",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "confidence": "high",
+    "brief": "Both categories are right but both modalities are wrong: \"a number of new laws and regulations have been adopted, there has been expanded enforcement of certain existing laws and regulations\" is an occurrence claim, and \"These changing rules, regulations and stakeholder expectations have resulted in ... increased general and administrative expenses\" is a realized cost increase. Section 6's realized-controls rule keeps both REALIZED despite the surrounding \"could increase our costs\" framing.",
+    "pattern": "adopted-laws-and-realized-compliance-costs",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-26cb4453026e531d",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "high",
+    "brief": "The only cost items are financing and tax — \"Interest expense was $225 million ... due primarily to higher interest rates\" and a higher effective tax rate — neither of which is the \"input/labor/operating costs\" section 4 requires. The operating narrative runs the other way: \"Operating income increased $828 million, or 17% ... due to the increase in net sales and the increase in operating margin.\"",
+    "pattern": "financing-cost-not-margin-cost-pressure",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-bb31ef3b9a6f9b9f",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "The deposit decline is a funding-mix movement, attributed to \"an increase in customer spending and debt payments, customers' movement of balances to higher yielding investment alternatives and seasonal outflows,\" inside a passage that calls the deposit base \"a stable, low-cost and consistent source of liquidity.\" Nothing characterizes softening demand for the company's products or an unfavorable volume trend in the sense of section 4's DEMAND_WEAKNESS, and the remaining debt-issuance detail matches no category.",
+    "pattern": "deposit-outflow-not-demand-weakness",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-e27237d716eaa7ec",
+    "verdict": "disagree",
+    "correct_label": [["IMPAIRMENT_WRITEDOWN", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "The stored DEMAND_WEAKNESS REALIZED has no anchor — the word \"demand\" appears only as one noun in the safe-harbor list (\"changes in the demand, supply, prices, differentials\"), which the mining-depth rule excludes, and nothing in the results narrative characterizes weakening demand. What is realized is a production constraint: \"Organic growth from Lower 48 was more than offset by downtime, which includes the impact of the Middle East conflict on Qatar.\" The four hypothetical safe-harbor flags stand, since clauses like \"the imposition of trade restrictions or tariffs relating to commodities and material or products (such as aluminum and steel) used in the operation of our business\" and \"unexpected changes in costs, inflationary pressures\" clear mining depth.",
+    "pattern": "realized-production-downtime-is-supply-constraint",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-a577c2ef70bba5da",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "I land between the two raters. \"Compliance with these evolving regulatory regimes and legal requirements depends on our ability to improve ... our processes, controls, surveillance\" presupposes regimes already imposing obligations, so LEGAL_REGULATORY_ACTION is REALIZED; but the auditor goes too far in dropping cost pressure, because the same sentence ends \"could increase our compliance costs,\" a company-specific projected cost increase that the section 4 note routes to MARGIN_COST_PRESSURE. The stored SUPPLY and TRADE flags come only from the bare noun string \"labor shortages, wage pressures, supply chain disruptions and higher inflation,\" which is the mining-depth rule's own negative example; the owner must weigh whether a noun-list subject with a company-specific cost predicate clears that bar.",
+    "pattern": "noun-list-subject-with-company-specific-cost-predicate",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-8bc68653c9266e17",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "confidence": "medium",
+    "brief": "The stored label double-lists one category with both modalities; section 6 says the concrete realized statement controls, and here it is unmistakable — \"there were 20 sites around the U.S. in which we were identified as a potentially responsible party under CERCLA\" and \"we also have been made a party to cost recovery litigation.\" Section 4's disambiguation note then requires the cost category too, since a named regulatory cause carries an explicit cost impact: \"potential new laws, regulations and permitting requirements ... could result in increased costs,\" which is projected, hence HYPOTHETICAL.",
+    "pattern": "duplicate-modality-collapses-to-realized",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-12cd46e7623c59cb",
+    "verdict": "agree",
+    "correct_label": null,
+    "confidence": "medium",
+    "brief": "Both flags survive. \"increases in the prices we pay for brand name and generic prescription drugs we sell\" is causeless input-cost language that section 4 says is always MARGIN_COST_PRESSURE, and \"changes in laws or regulations ... related to the use of third-party financial assistance to assist our pharmacy customers with paying for drugs\" is an elaborated regulatory-change clause, not a bare noun, so it clears mining depth. The rubric is explicit that boilerplate clearing that bar is still labeled, with HYPOTHETICAL modality rather than omission distinguishing it from a realized event.",
+    "pattern": "regulatory-change-risk-clears-legal-category",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-0b054cbbb29a61a9",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The realized volume declines support DEMAND_WEAKNESS: \"a 1% decrease in unit volume ... due to declines in Europe ... and Greater China (due to market decline)\" and Health Care's \"3% decrease in unit volume.\" Cost pressure does not fit: the passage twice says \"Net earnings margin increased due to an increase in gross margin,\" and the only expense item is discretionary \"marketing spending,\" not the rising input, labor or operating costs compressing margins that section 4 requires.",
+    "pattern": "expense-mention-without-margin-compression",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-8e3b16bcc5140b99",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The legal flag is right and realized — \"the French Competition Authority collected information from us ... as part of an ongoing inquiry\" and \"We have also received, and continue to receive, broad requests for information from competition regulators.\" The stored trade-policy flag rests only on \"import and export requirements and tariffs\" inside an opening list of regulated areas, a passing enumeration mention the mining-depth rule excludes; meanwhile \"Such requests have been and are likely to be expensive and burdensome\" asserts a realized cost impact from a regulatory cause, which section 4's note labels MARGIN_COST_PRESSURE alongside the causal category.",
+    "pattern": "single-word-tariff-mention-fails-mining-depth",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-2d6b130dae96d639",
+    "verdict": "disagree",
+    "correct_label": [["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["SUPPLY_INPUT_CONSTRAINT", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"Recent U.S. trade policy actions, including the introduction of tariff replacement measures\" is an existence claim, so section 6 makes TRADE_POLICY_EXPOSURE REALIZED while its consequence — \"could increase costs over time\" — is the named-cause cost impact that section 4 labels MARGIN_COST_PRESSURE at HYPOTHETICAL. The stored DEMAND_WEAKNESS rests on \"could affect demand,\" which states no direction and does not assert softening. The owner must weigh the supply call: \"have resulted in the suspension of substantial supply\" is realized, but it describes the global commodity market rather than this filer's own inputs or production.",
+    "pattern": "market-level-supply-disruption-for-a-producer",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-91f8865d5d329ba0",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The passage states as present fact that \"we have certain financial protections pursuant to the respective retrospective responsibility plans\" and treats the covered \"settlements, judgments, losses, or liabilities\" as given, with only the plans' failure conditional — section 6's realized-controls rule says the existence claim survives the surrounding \"could materially harm\" framing. The owner must weigh that the chunk begins mid-sentence and the referent of \"such settlements, judgments\" lies outside the passage, so the existence claim is inferred from anaphora rather than stated in view.",
+    "pattern": "anaphoric-litigation-reference-across-chunk-boundary",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-19cafa44a097bad7",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "Nothing here is litigation, an investigation, an enforcement action, a fine or a new compliance requirement: the adverse facts are \"the business disruption effects of the cyberattack, which were $867 million\" and membership that \"moderated as expected ... due to the now concluded Medicaid eligibility redeterminations process.\" A government eligibility-determination process is program administration, not the regulatory action section 4 defines, and a cyberattack maps to no category.",
+    "pattern": "government-program-process-not-legal-action",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-9b3e336a83e95d61",
+    "verdict": "disagree",
+    "correct_label": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"Earnings from operations decreased primarily due to the business disruption impacts and direct response costs related to the Change Healthcare cyberattack\" is a realized operating-cost increase with no supply or tariff cause, so MARGIN_COST_PRESSURE REALIZED stands. But the passage contains no litigation, investigation, enforcement action or regulatory requirement at all — the remaining content is cash-flow timing and an affirmation that \"our capital resources are sufficient\" — so the stored LEGAL_REGULATORY_ACTION has no textual basis.",
+    "pattern": "no-textual-basis-for-legal-flag",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-c9c880cd26c93351",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "Section 4's TRADE_POLICY_EXPOSURE covers tariffs, export controls, sanctions and cross-border trade restrictions; \"a one percent non-deductible federal excise tax (buyback tax) ... on ... corporate share repurchases\" is a domestic tax on capital returns and fits none of those. I also decline to substitute a legal/regulatory flag: the passage says the tax \"did not have a material impact,\" and the CCAR reference is descriptive of an existing process with no asserted burden.",
+    "pattern": "domestic-excise-tax-not-trade-policy",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-6a886686cf3ff7a8",
+    "verdict": "disagree",
+    "correct_label": [["MARGIN_COST_PRESSURE", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"The gross margin decline of 210 basis points was driven by unfavorable product mix, higher commodity costs and higher cost of tariffs\" is realized margin compression with tariffs named as a cause, so section 4's disambiguation note requires both the causal and the cost category, both REALIZED. DEMAND_WEAKNESS does not hold: segment volumes rose, and the regional declines and share losses are attributed to \"competitive activity,\" whereas the category requires unfavorable volume trends or market-share loss attributed to demand.",
+    "pattern": "competitive-share-loss-not-demand-weakness",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-01b4b83aef6d859e",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "\"clients have become more cautious amid an increase in market volatility driven by geopolitical and trade-related tensions\" is present-perfect and asserts both the client pullback and the trade-driven volatility as having occurred, so section 6 makes both flags REALIZED rather than HYPOTHETICAL. The stored cost flag rests on \"lower rates and deposit margin compression,\" which is a rate-spread and revenue effect, not the rising input, labor or operating costs section 4 requires.",
+    "pattern": "spread-compression-not-cost-pressure",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-afcb6a1c9c5fe757",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "The margin language is generic industry description — \"Industry margins are sometimes volatile and can be affected by ... costs of materials and services\" — which asserts nothing about this filer's own costs, and the earnings variances turn on \"lower natural gas realizations\" (price) and higher DD&A \"mainly from higher production.\" Production rose 12 percent with only \"planned downtime in Nigeria\" as an offset, so nothing supports a realized cost-pressure flag or any other category.",
+    "pattern": "generic-industry-margin-description-no-flag",
+    "needs_human": false
+  }
+]

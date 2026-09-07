@@ -1,0 +1,405 @@
+{
+  "generated_utc": "2026-08-26T16:43:13.887573+00:00",
+  "what_this_is": "teacher-vs-teacher label shift between rubric v1.1 and v1.2. Same corpus, same model id (claude-sonnet-5), same decoding config (thinking=disabled, max_tokens=4000). NOT an accuracy measurement \u2014 neither side is ground truth.",
+  "sources": {
+    "v11": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels.parquet",
+      "rows": 6747,
+      "labeled": 6746
+    },
+    "v12": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet",
+      "rows": 6747,
+      "labeled": 6747
+    }
+  },
+  "comparable_population": {
+    "n": 6746,
+    "note": "chunks with a usable label on BOTH sides",
+    "asymmetric_rows": {
+      "labeled_in_v11_only": [],
+      "labeled_in_v12_only": [
+        "CHK-8e69547e0900a8dd"
+      ]
+    },
+    "by_section_type": {
+      "MDA": 3961,
+      "RISK_FACTORS": 1606,
+      "EX99_PRESS_RELEASE": 1171,
+      "8K_BODY": 8
+    },
+    "by_split": {
+      "train": 5736,
+      "eval": 1010
+    }
+  },
+  "sentiment": {
+    "n_applicable_both": 5140,
+    "n_changed": 236,
+    "pct_changed": 4.59,
+    "v11_distribution": {
+      "NEUTRAL": 3436,
+      "POSITIVE": 1024,
+      "NEGATIVE": 680
+    },
+    "v12_distribution": {
+      "NEUTRAL": 3385,
+      "POSITIVE": 1046,
+      "NEGATIVE": 709
+    },
+    "transitions": {
+      "NEUTRAL -> NEGATIVE": 74,
+      "NEUTRAL -> POSITIVE": 68,
+      "POSITIVE -> NEUTRAL": 47,
+      "NEGATIVE -> NEUTRAL": 44,
+      "NEGATIVE -> POSITIVE": 2,
+      "POSITIVE -> NEGATIVE": 1
+    },
+    "applicability_only_v11": 0,
+    "applicability_only_v12": 0
+  },
+  "guidance_direction": {
+    "n_applicable_both": 1179,
+    "n_changed": 14,
+    "pct_changed": 1.19,
+    "v11_distribution": {
+      "NONE": 1096,
+      "RAISED": 34,
+      "MAINTAINED": 34,
+      "LOWERED": 14,
+      "WITHDRAWN": 1
+    },
+    "v12_distribution": {
+      "NONE": 1098,
+      "RAISED": 35,
+      "MAINTAINED": 30,
+      "LOWERED": 15,
+      "WITHDRAWN": 1
+    },
+    "transitions": {
+      "MAINTAINED -> NONE": 5,
+      "NONE -> MAINTAINED": 3,
+      "NONE -> RAISED": 2,
+      "MAINTAINED -> LOWERED": 2,
+      "RAISED -> NONE": 1,
+      "LOWERED -> NONE": 1
+    },
+    "applicability_only_v11": 0,
+    "applicability_only_v12": 0
+  },
+  "red_flags": {
+    "field": "red_flags",
+    "n_rows": 6746,
+    "exact_set": {
+      "n_changed": 1854,
+      "pct_changed": 27.48,
+      "agreement_pct": 72.52,
+      "decomposition": {
+        "mixed (adds+modality)": 67,
+        "adds only": 658,
+        "modality only": 410,
+        "drops only": 472,
+        "mixed (adds+drops)": 192,
+        "mixed (drops+modality)": 44,
+        "mixed (adds+drops+modality)": 11
+      }
+    },
+    "per_category_decisions": {
+      "n_decisions": 40476,
+      "n_changed": 2372,
+      "pct_changed": 5.86,
+      "agreement_pct": 94.14
+    },
+    "rows_with_at_least_one": {
+      "v11": 4416,
+      "v12": 4513,
+      "delta": 97
+    },
+    "total_flags": {
+      "v11": 7715,
+      "v12": 7933,
+      "delta": 218
+    },
+    "per_category": {
+      "DEMAND_WEAKNESS": {
+        "v11_rows": 1318,
+        "v12_rows": 1313,
+        "delta": -5,
+        "pct_change": -0.4,
+        "added_rows": 163,
+        "dropped_rows": 168,
+        "modality": {
+          "HYPOTHETICAL": {
+            "v11": 529,
+            "v12": 516,
+            "delta": -13
+          },
+          "REALIZED": {
+            "v11": 797,
+            "v12": 803,
+            "delta": 6
+          }
+        },
+        "hypothetical_to_realized": 27,
+        "realized_to_hypothetical": 14
+      },
+      "SUPPLY_INPUT_CONSTRAINT": {
+        "v11_rows": 607,
+        "v12_rows": 567,
+        "delta": -40,
+        "pct_change": -6.6,
+        "added_rows": 46,
+        "dropped_rows": 86,
+        "modality": {
+          "HYPOTHETICAL": {
+            "v11": 458,
+            "v12": 403,
+            "delta": -55
+          },
+          "REALIZED": {
+            "v11": 158,
+            "v12": 174,
+            "delta": 16
+          }
+        },
+        "hypothetical_to_realized": 22,
+        "realized_to_hypothetical": 4
+      },
+      "TRADE_POLICY_EXPOSURE": {
+        "v11_rows": 699,
+        "v12_rows": 702,
+        "delta": 3,
+        "pct_change": 0.4,
+        "added_rows": 64,
+        "dropped_rows": 61,
+        "modality": {
+          "HYPOTHETICAL": {
+            "v11": 477,
+            "v12": 442,
+            "delta": -35
+          },
+          "REALIZED": {
+            "v11": 236,
+            "v12": 270,
+            "delta": 34
+          }
+        },
+        "hypothetical_to_realized": 29,
+        "realized_to_hypothetical": 7
+      },
+      "IMPAIRMENT_WRITEDOWN": {
+        "v11_rows": 1015,
+        "v12_rows": 1028,
+        "delta": 13,
+        "pct_change": 1.3,
+        "added_rows": 97,
+        "dropped_rows": 84,
+        "modality": {
+          "HYPOTHETICAL": {
+            "v11": 252,
+            "v12": 246,
+            "delta": -6
+          },
+          "REALIZED": {
+            "v11": 766,
+            "v12": 787,
+            "delta": 21
+          }
+        },
+        "hypothetical_to_realized": 8,
+        "realized_to_hypothetical": 3
+      },
+      "MARGIN_COST_PRESSURE": {
+        "v11_rows": 1736,
+        "v12_rows": 2030,
+        "delta": 294,
+        "pct_change": 16.9,
+        "added_rows": 479,
+        "dropped_rows": 185,
+        "modality": {
+          "HYPOTHETICAL": {
+            "v11": 538,
+            "v12": 672,
+            "delta": 134
+          },
+          "REALIZED": {
+            "v11": 1199,
+            "v12": 1370,
+            "delta": 171
+          }
+        },
+        "hypothetical_to_realized": 53,
+        "realized_to_hypothetical": 24
+      },
+      "LEGAL_REGULATORY_ACTION": {
+        "v11_rows": 2257,
+        "v12_rows": 2215,
+        "delta": -42,
+        "pct_change": -1.9,
+        "added_rows": 170,
+        "dropped_rows": 212,
+        "modality": {
+          "HYPOTHETICAL": {
+            "v11": 1258,
+            "v12": 884,
+            "delta": -374
+          },
+          "REALIZED": {
+            "v11": 1047,
+            "v12": 1366,
+            "delta": 319
+          }
+        },
+        "hypothetical_to_realized": 300,
+        "realized_to_hypothetical": 10
+      }
+    }
+  },
+  "distress_tier": {
+    "WARNING": "distress_tier is never a training target and never a headline metric (HANDOFF \u00a77). Reported here only because rubric v1.2's \u00a76 modality rule is shared vocabulary and therefore reaches it.",
+    "positive_rows": {
+      "v11": 162,
+      "v12": 129,
+      "delta": -33
+    },
+    "by_tier_modality": {
+      "ACCOUNTING_RESTATEMENT/HYPOTHETICAL": {
+        "v11": 2,
+        "v12": 2,
+        "delta": 0
+      },
+      "LIQUIDITY_STRESS/HYPOTHETICAL": {
+        "v11": 151,
+        "v12": 112,
+        "delta": -39
+      },
+      "LIQUIDITY_STRESS/REALIZED": {
+        "v11": 9,
+        "v12": 15,
+        "delta": 6
+      }
+    },
+    "row_transitions": {
+      "positive_both": 108,
+      "positive_v11_only (dropped)": 54,
+      "positive_v12_only (added)": 21,
+      "negative_both": 6563,
+      "positive_both_but_changed": 5
+    }
+  },
+  "red_flags_by_section_type": {
+    "8K_BODY": {
+      "n_rows": 8,
+      "exact_set_changed": 2,
+      "exact_set_pct_changed": 25.0,
+      "rows_with_at_least_one": {
+        "v11": 5,
+        "v12": 5,
+        "delta": 0
+      },
+      "total_flags": {
+        "v11": 15,
+        "v12": 17,
+        "delta": 2
+      }
+    },
+    "EX99_PRESS_RELEASE": {
+      "n_rows": 1171,
+      "exact_set_changed": 305,
+      "exact_set_pct_changed": 26.05,
+      "rows_with_at_least_one": {
+        "v11": 698,
+        "v12": 711,
+        "delta": 13
+      },
+      "total_flags": {
+        "v11": 1255,
+        "v12": 1313,
+        "delta": 58
+      }
+    },
+    "MDA": {
+      "n_rows": 3961,
+      "exact_set_changed": 879,
+      "exact_set_pct_changed": 22.19,
+      "rows_with_at_least_one": {
+        "v11": 2228,
+        "v12": 2309,
+        "delta": 81
+      },
+      "total_flags": {
+        "v11": 3690,
+        "v12": 3850,
+        "delta": 160
+      }
+    },
+    "RISK_FACTORS": {
+      "n_rows": 1606,
+      "exact_set_changed": 668,
+      "exact_set_pct_changed": 41.59,
+      "rows_with_at_least_one": {
+        "v11": 1485,
+        "v12": 1488,
+        "delta": 3
+      },
+      "total_flags": {
+        "v11": 2755,
+        "v12": 2753,
+        "delta": -2
+      }
+    }
+  },
+  "by_split": {
+    "train": {
+      "n_rows": 5736,
+      "exact_set_changed": 1571,
+      "exact_set_pct_changed": 27.39,
+      "total_flags": {
+        "v11": 6551,
+        "v12": 6729,
+        "delta": 178
+      },
+      "per_category_delta": {
+        "DEMAND_WEAKNESS": -9,
+        "SUPPLY_INPUT_CONSTRAINT": -24,
+        "TRADE_POLICY_EXPOSURE": 1,
+        "IMPAIRMENT_WRITEDOWN": 14,
+        "MARGIN_COST_PRESSURE": 248,
+        "LEGAL_REGULATORY_ACTION": -44
+      },
+      "sentiment_pct_changed": 4.22
+    },
+    "eval": {
+      "n_rows": 1010,
+      "exact_set_changed": 283,
+      "exact_set_pct_changed": 28.02,
+      "total_flags": {
+        "v11": 1164,
+        "v12": 1204,
+        "delta": 40
+      },
+      "per_category_delta": {
+        "DEMAND_WEAKNESS": 4,
+        "SUPPLY_INPUT_CONSTRAINT": -16,
+        "TRADE_POLICY_EXPOSURE": 2,
+        "IMPAIRMENT_WRITEDOWN": -1,
+        "MARGIN_COST_PRESSURE": 46,
+        "LEGAL_REGULATORY_ACTION": 2
+      },
+      "sentiment_pct_changed": 6.4
+    }
+  },
+  "reconciliation_with_hardening_progress": {
+    "quoted_in_HARDENING_PROGRESS": {
+      "red_flag_rows": 4515,
+      "distress_rows": 130
+    },
+    "recomputed_over_all_6747_labeled_rows": {
+      "red_flag_rows": 4514,
+      "distress_rows": 129
+    },
+    "difference": "-1 each",
+    "cause": "the quoted figures were computed while CHK-1c1812ed45219a3a was still unanswered and carried NULL (not empty) red_flags / distress_tier; a null-inclusive predicate counted it as a positive. It has since been labeled by the completion batch with an EMPTY set for both fields, so the correct counts are the same either way.",
+    "authoritative": "the recomputed figures"
+  }
+}

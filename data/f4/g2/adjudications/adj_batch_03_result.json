@@ -1,0 +1,402 @@
+[
+ {
+  "chunk_id": "E2CHK-3148c5ccd6f61f0c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The only prose is flat and factual: the generic dispensing rate \"increased to 89.1%... primarily driven by a decrease in COVID-19 vaccinations,\" and the commentary bullet is procedural (\"Revenues primarily relate to products for which the Company no longer solicits or accepts new customers\"). Everything else is a segment table whose line items (\"Restructuring charges,\" \"Operating loss\") are column labels, not characterizations. Rubric section 2 says magnitude of a number alone isn't sentiment - the text has to characterize it - so a bare table plus neutral narrative is NEUTRAL, not NEGATIVE.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-24b6855a3e22af3c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage runs both directions in flat language: \"Total revenue increased 12% YoY to $28.1B\" and \"The sequential increase of $4.9B was primarily the result of increased free cash flow\" against \"Our operating income decreased 40% YoY\" and a margin line of \"-501 bp.\" Drivers are given as neutral +/- bullet lists with no favorable or unfavorable adjectives anywhere. Rubric section 2's mixed-passage rule says label by predominant tone and, if genuinely balanced with no lean, use NEUTRAL; top-line growth against bottom-line decline with no characterizing words is exactly that. The owner should weigh whether a flat recitation where every profit metric falls but every revenue/cash metric rises counts as balanced (my call) or as predominantly unfavorable.",
+  "pattern": "topline-growth-with-bottomline-decline",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-8a0a66af1210f721",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The text says the company \"is providing full year 2024 guidance\" with figures such as \"Revenue between $9.075 billion to $9.225 billion\" - an initiation, with no prior figure quoted and no statement that any target was increased. Rubric section 3 defines RAISED as a target that \"has been increased versus a prior figure,\" which this passage never asserts, so RAISED fails on its own terms and NONE is the only residual label. The owner must weigh where newly-issued (not revised) quantified guidance belongs, since section 3's preamble mentions \"issues new guidance\" but the five labels offer no home for it except NONE.",
+  "pattern": "new-or-initiated-guidance-not-raised",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-abd2f287f4fb05a2",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "The filer characterizes its own results favorably in its own words: \"We reported solid fourth quarter and full-year results as all our businesses achieved strong organic growth, with record client activity,\" plus \"Record full-year sales and trading revenue,\" \"record ~40,000 net new relationships,\" and \"Strong capital and liquidity levels.\" The declines (net income $3.1B vs $7.1B, revenue \"decreased $2.6 billion, or 10%\") are reported as bare figures with no unfavorable characterization and are explicitly attributed to disclosed one-time items. Rubric section 2 lists \"explicitly favorable characterization by the filer\" as a POSITIVE trigger and directs judging predominant tone rather than counting sentences.",
+  "pattern": "explicit-filer-characterization-controls",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-467320dd59f87847",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "Every characterizing phrase in the passage is favorable: \"We are proud of our performance... we continued to deliver solid, consistent results,\" \"We look forward to the future with confidence,\" \"tremendous opportunity,\" alongside revenues \"increased 5.4 percent\" and adjusted EPS \"increased 6.4 percent.\" The GAAP loss (\"$(0.76) decreased 129.5 percent\") is stated as a bare number with no unfavorable characterization attached. Rubric section 2 makes explicitly favorable filer characterization a POSITIVE trigger and says magnitude of a number alone is not sentiment, so the predominant tone here is favorable.",
+  "pattern": "explicit-filer-characterization-controls",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-467320dd59f87847",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "MAINTAINED",
+  "confidence": "medium",
+  "brief": "The headline says guidance is \"UPDATED FOR INCLUSION OF BARD\" and gives a new range ($10.85-$11.00), but nowhere states that a target was increased versus a prior figure, which rubric section 3 requires for RAISED. The one explicit direction word in the passage is reaffirmation: \"The Company reaffirms that the acquisition of C.R. Bard is expected to be accretive to adjusted dilutive earnings per share on a high-single digit basis in fiscal year 2019,\" which matches MAINTAINED (\"explicitly reaffirms previously-issued guidance without changing it\"). The owner must weigh whether an explicit reaffirmation of a secondary quantified target should control when the headline metric is restated without a stated direction.",
+  "pattern": "explicit-reaffirmation-controls-mixed-revisions",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-8b3bac8422ef1b11",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "The passage repeatedly characterizes its own drivers favorably: \"We benefited from higher sales and business growth across the majority of our segments,\" \"We benefited from favorable morbidity experience,\" \"benefited from favorable claims experience.\" The quantified walk nets strongly positive (+$293 million and +$41 million against -$18 million and -$29 million), and even the unfavorable Market Factors paragraph lists many offsetting favorable items. Rubric section 2's predominant-tone rule therefore lands on POSITIVE rather than balanced.",
+  "pattern": "filer-benefit-language-net-favorable",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9df306a8ee4ef6a4",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "This chunk is conference-call logistics (\"The conference call will be webcast simultaneously in the listen only mode\") plus per-share and EBITDA reconciliation tables. There is no characterization of results anywhere - no adjective describes performance as good or bad. Rubric section 2 assigns NEUTRAL to procedural narrative and purely mechanical disclosure, and says magnitude of a number alone isn't sentiment.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-77ae5a3574840b81",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a revenue-by-platform table with column headers \"$ Increase\" and \"% Increase\" and a rounding footnote; the only non-numeric sentence is \"The percentages of total are presented as calculated.\" No sentence characterizes performance favorably or unfavorably. Rubric section 2: a passage reporting large numbers in a flat tone with no qualitative characterization either way is NEUTRAL.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d50bea6ae29510b8",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "This is a product-level revenue table with mixed signs (\"Enbrel (Outside Canada) 1,410 1,852 (24%)\" alongside \"Xeljanz... 63% 64%\") and no prose at all. Nothing in the text characterizes the results as weak or strong. Rubric section 2's bare-numbers rule makes this NEUTRAL, not NEGATIVE.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-2d90e2ccfe435d5c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "The narrative is a variance walk that is predominantly favorable: \"Gross operating margin... increased 16 percent to $172 million,\" \"increased $21 million,\" \"increased $16 million,\" \"led to a $7 million increase,\" against only a \"$13 million decrease\" and a \"$3 million decrease.\" Rubric section 2's own NEGATIVE example (\"Revenue declined... as demand softened\") shows that plain directional language, without emotive adjectives, does carry sentiment, so the symmetric increase language reads as improvement. The owner must weigh whether an adjective-free MD&A variance walk that nets favorable should be POSITIVE (my call) or NEUTRAL descriptive narrative, because this pattern recurs across many chunks.",
+  "pattern": "directional-variance-narrative",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-dc843d3a2623c573",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The guidance bullets all use the word \"Initiates\" - \"Initiates Q4 FY20 Revenue Guidance of $4.743 Billion to $4.753 Billion\" and \"Initiates Q1 FY21 Revenue Guidance\" - with no prior figure and no statement that any target was increased. Rubric section 3 requires for RAISED that the passage \"states that a specific forward-looking financial target... has been increased versus a prior figure,\" which this text never does. NONE is the residual; the owner must rule once on where newly-initiated guidance belongs.",
+  "pattern": "new-or-initiated-guidance-not-raised",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-57aced8928bd9a1d",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The bulk is structural and procedural (\"Please read the following discussion and analysis... together with 'Note about Forward-Looking Statements'\"; \"We report Google in two segments\"), and the trend paragraph speaks about long-term industry shifts (\"we expect that this online shift will continue to benefit our business\"), not about current results. Rubric section 2 asks for tone \"regarding the business's current results and condition\" and assigns NEUTRAL to descriptive/procedural narrative. Generic forward optimism about a secular trend does not make the passage's predominant tone favorable.",
+  "pattern": "procedural-mdna-intro",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-22f9206e6562326a",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The outlook reads \"The company now expects fiscal 2018 GAAP earnings per diluted share... of $5.32 to $5.37,\" giving a quantified figure but neither a prior figure nor any statement of direction; \"now expects\" signals an update, not an increase. Rubric section 3 requires RAISED to state that the target \"has been increased versus a prior figure,\" so RAISED is unsupported and NONE is the residual. The owner must weigh whether \"now expects\" plus a fresh number should be read as an upward revision without any comparative in the text.",
+  "pattern": "new-or-initiated-guidance-not-raised",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-9cf41ac3a9678062",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a segment supplemental schedule - \"Adjusted earnings available to common shareholders $ 171 $ 29,\" \"Less: Total notable items\" - plus \"See footnotes on last page.\" There is no sentence characterizing results at all, favorable or unfavorable. Rubric section 2: bare numbers in a flat tone are NEUTRAL; the text has to characterize them.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-80517001894518ed",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a schedule titled \"Catastrophe Loss Charge by Event\" listing event names and net loss amounts with no narrative sentence anywhere. Rubric section 2 directs judging the passage's own characterization rather than the reader's view of whether the subject matter is bad, and classifies purely mechanical disclosure as NEUTRAL. A loss table with no characterizing prose is therefore NEUTRAL, not NEGATIVE.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-77d05055cdf09936",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "The filer's own characterizations are favorable throughout: \"The Company increased its adjusted earnings guidance,\" \"Positive contributors to Consumer operational results,\" \"Worldwide operational sales growth was driven by new products and the strength of core products,\" \"Strong growth in new products.\" The reported declines (\"a decrease of 7.0%\", \"a decrease of 6.6%\") are each immediately decomposed into operational increases offset by currency. Under rubric section 2's predominant-tone rule, favorable characterization by the filer dominates this passage.",
+  "pattern": "reported-decline-framed-as-operational-growth",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d36b7ebe315b5249",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "Favorable and unfavorable characterizations are both explicit and roughly matched: \"loss per share* was $6.85... included a $5.8 billion after-tax non-cash impairment charge\" and \"challenging retail environment\" (twice) against \"operational results in line with expectations,\" \"Adjusted earnings per share increased 3.4 percent,\" \"sales increased 6.3 percent,\" and \"We're encouraged by our first quarter of U.S. Healthcare positive adjusted EBITDA... strong execution in pharmacy.\" Rubric section 2's mixed rule says that when a passage is genuinely balanced with no clear lean, the label is NEUTRAL. Neither pole predominates here.",
+  "pattern": "balanced-mixed-earnings-release",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d36b7ebe315b5249",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "MAINTAINED",
+  "confidence": "medium",
+  "brief": "The passage says it is \"Narrowing fiscal 2024 adjusted EPS guidance to $3.20 to $3.35\" without quoting the prior range or stating that the target was decreased, so LOWERED's requirement in rubric section 3 (\"has been decreased versus a prior figure\") is not met. The only explicit direction statement is a reaffirmation: \"Maintaining U.S. Healthcare adjusted EBITDA to be breakeven at the midpoint of the guidance range of ($50) million to $50 million,\" which fits MAINTAINED. The owner must weigh whether a narrowed range with unfavorable stated reasons should count as LOWERED, and whether an explicitly maintained segment metric can carry the label when the headline metric is merely narrowed.",
+  "pattern": "explicit-reaffirmation-controls-mixed-revisions",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-62aed2d9df1dab81",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "This is a GAAP-to-non-GAAP reconciliation grid - \"Operating income (loss) $ (152,029) (40 %) $ 167,766... $ 18,058 5 %\" - with a single mechanical footnote about payroll taxes on employee stock transactions. No sentence characterizes the results. Rubric section 2 assigns NEUTRAL to purely mechanical disclosure and says a number's magnitude alone isn't sentiment.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d3ed4b842ec0082c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a segment earnings statement with line items such as \"Impairment 697 1,429 2,126\" and \"Net income (loss) attributable to... $ (1,003)\", followed by footnotes explaining hedging amounts. Those are table captions and mechanical footnotes, not characterizations of performance. Rubric section 2's bare-numbers rule makes this NEUTRAL even though the figures are losses.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4f560e57c0051a11",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The text is an amortization and adjusted-EPS reconciliation schedule ending in \"See pages 3-5 for disclosures related to the use of non-GAAP financial measures.\" No sentence describes performance as favorable or unfavorable. Rubric section 2 classifies purely mechanical disclosure as NEUTRAL.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4f560e57c0051a11",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The only forward figures are two bare table lines - \"2020 adjusted earnings per share outlook >= $4.37\" and \"2020 adjusted earnings per share growth outlook >= 11%\" - with no prior figure and no revision language of any kind. Rubric section 3's RAISED requires the passage to state that a target \"has been increased versus a prior figure,\" which nothing here does. NONE is the residual; the owner should rule once on unrevised forward outlook lines in reconciliation tables.",
+  "pattern": "new-or-initiated-guidance-not-raised",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-658a9ac193f51aec",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a metrics table (\"Free Cash Flow - YoY 2835 % (41 )% 174 %...\", \"Revenue - TTM\", \"Revenue by region\") with signs running both directions and no narrative sentence. Rubric section 2: magnitude and direction of tabulated figures alone are not sentiment - the text has to characterize them, and it never does.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4fa532d3a2d17f1e",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The passage is a condensed income statement plus an accounting-presentation note (\"The prior period amount reported for BlackRock Solutions and advisory of $174 million... has been reclassified to conform to the current presentation\"). That is exactly the \"purely mechanical disclosure\" case rubric section 2 assigns to NEUTRAL, and no sentence characterizes results favorably.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-cd70cef40486e00d",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The growth statements (\"ARR grew to $4.0 billion... Year-over-year growth 27 %\", against 35% a year earlier) sit beside explicit offsetting caveats: \"we excluded approximately $26.0 million from ARR after a distributor... provided notice,\" and net retention \"can fluctuate... ongoing increased contraction... which may reduce our dollar-based net retention rate.\" The remainder is definitional accounting description of revenue and cost components. Rubric section 2 assigns NEUTRAL to mechanical disclosure and to mixed passages with no clear lean.",
+  "pattern": "growth-metric-with-offsetting-caveats",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-e2b50bc7b83e55e1",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "Every adverse element is hedged and unresolved: \"the impact of the FERC's policy... is unknown at this time,\" \"the FERC or our shippers may challenge the cost-of-service rates,\" \"may decrease in the future,\" \"The extent of any revenue reduction... if any, will depend on a detailed review.\" Nothing asserts a current unfavorable result or condition. Rubric section 2 asks for tone about the business's current results and condition and assigns NEUTRAL to descriptive/factual passages, so hypothetical regulatory uncertainty does not make the passage NEGATIVE.",
+  "pattern": "hypothetical-regulatory-uncertainty",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-993aebfd867560b5",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is supplemental statistics - \"Average paid PEO worksite employees during the period 704,000 616,000,\" \"Average investment balances at cost,\" \"Net Impact from Client Funds Strategy $ 131.6 $ 108.7 21 %\" - plus a definitional footnote for \"pays per control.\" No sentence characterizes performance. Rubric section 2's bare-numbers rule yields NEUTRAL.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-2066076789fd74d5",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a non-GAAP metrics table with definitional footnotes (\"Defined as net income before interest expense, income taxes and depreciation...\") followed by conference-call dial-in logistics. Both are procedural/mechanical, which rubric section 2 assigns to NEUTRAL, and no sentence characterizes the losses shown in the table.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4f5e27f7fdc80654",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is a hypothetical risk enumeration (\"the risk that Altria's reported earnings... may be adversely affected by unfavorable foreign currency exchange rates\") followed by contact details and a bare consolidated statement of earnings. Neither part characterizes results: the risk list is forward-looking boilerplate and the statement is tabulated figures. Rubric section 2 says magnitude alone isn't sentiment, so NEUTRAL rather than POSITIVE.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-373ad9d2105f676c",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "high",
+  "brief": "Both outlook references are comparisons of realized results to a past outlook - EPS \"within the previously provided outlook of $0.33 to $0.38 per share\" and \"above the previously provided outlook of $0.27 to $0.32\" - not a forward commitment. Rubric section 3 requires MAINTAINED to be an explicit reaffirmation of previously-issued guidance, and puts passages that \"only describe historical/current-period results\" in NONE. Reporting that an actual came in within a prior range is a historical statement, not a reaffirmation.",
+  "pattern": "actuals-vs-prior-outlook-not-guidance",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-1e2619c28f2f551f",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "MAINTAINED",
+  "confidence": "medium",
+  "brief": "The bottom-line target is explicitly held: \"Guidance range for Adjusted diluted EPS was reaffirmed at $2.82 to $2.92,\" and revenue guidance carries no 'previously' note. The revisions that did occur run both ways and are mostly cost lines moving favorably (\"Adjusted cost of sales... was lowered by 400 basis points... to reflect the favorable impact of product mix\"; \"Adjusted R&D expenses was increased by $500 million\"). Rubric section 3's mixed rule says to prefer the label matching the passage's overall framing, and the framing here is an EPS reaffirmation with line-item reallocation, not a guidance cut. The owner must weigh this against the genuinely reduced New Pfizer operating cash flow range ($10.0-11.0B, \"previously $11.0 to $12.0 billion\").",
+  "pattern": "explicit-reaffirmation-controls-mixed-revisions",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-b9201930e2c6eb33",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is three reconciliation tables - core EPS growth ranges, free cash flow, and adjusted free cash flow productivity - with one footnote listing what the adjustments relate to. There is no sentence characterizing performance in any direction. Rubric section 2 classifies purely mechanical disclosure as NEUTRAL and says numbers alone aren't sentiment.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-b9201930e2c6eb33",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The only forward content is a table row, \"FY 2019 (Estimate) +16% to +23%... Core EPS Growth +3% to +8%,\" with no prior figure, no comparative, and no revision language. Rubric section 3 requires RAISED to state that a target \"has been increased versus a prior figure,\" which the table does not do, leaving NONE. The owner should rule once on bare forward-estimate rows inside non-GAAP reconciliation tables.",
+  "pattern": "new-or-initiated-guidance-not-raised",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-881ca5c9182d3a82",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The guidance bullets read \"Full year 2017 GAAP net income is now expected to be greater than $10.35\" and \"adjusted net income is now expected to be greater than $11.70\" - an updated quantified figure, but the passage never states a prior figure or that the target was increased, which rubric section 3 requires for RAISED. Inferring an upward revision from \"now\" and \"our updated 2017 outlook\" would go beyond what the text asserts, contrary to rubric section 0. This is the closest case in the family, so the owner must weigh whether \"now expected\" plus favorable framing suffices for RAISED.",
+  "pattern": "new-or-initiated-guidance-not-raised",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-67a82ff15c983117",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is the tail of an income statement plus a full balance sheet (\"Total assets $ 75,851 $ 71,571,\" \"Total liabilities and shareholders' equity\"), with the only words being line-item names and \"'NM' = calculation not meaningful.\" Nothing characterizes results. Rubric section 2: magnitude of numbers alone isn't sentiment, so NEUTRAL.",
+  "pattern": "bare-numeric-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-ce6eac4707573983",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The narrative cuts both ways - \"operating expenses declined 7%... partially offset by... higher legal and related and repositioning costs,\" \"Cost of credit of $387 million increased 5%,\" \"net loan loss reserve build... compared to a net loan loss reserve release,\" against \"Net credit losses declined 56%\" and \"continued improvement in the North America mortgage portfolio.\" The remaining half of the chunk is a bare regional table in which most segment income lines are lower than the prior-year quarter. Rubric section 2's mixed rule sends a genuinely balanced passage with no clear lean to NEUTRAL.",
+  "pattern": "mixed-variance-walk-plus-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-cd7baf5cae71f612",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "Apart from a running page header, the chunk is boilerplate: a non-GAAP caveat, a corporate description, a note that the company \"was withdrawing its 2020 guidance expectations and 2021 outlook,\" and a long forward-looking-statement risk enumeration (\"No assurances can be given that the forward-looking statements... will occur as projected\"). Rubric section 2 assigns NEUTRAL to procedural and purely mechanical disclosure and directs labeling by predominant tone, which here is disclaimer text rather than any characterization of results.",
+  "pattern": "boilerplate-dominant-press-release-tail",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-0511b5cde4fac95e",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is hedged regulatory speculation on both sides: revenues \"may decrease in the future,\" but \"other components in the cost of service rate calculation may increase and result in a newly calculated cost of service rate that is the same as or greater than the prior,\" and \"We are unable to predict what, if any, changes may be proposed.\" No current result or condition is characterized unfavorably. Rubric section 2's NEUTRAL definition covers descriptive/factual passages with no predominant lean; hypothetical future rate risk is not a NEGATIVE characterization.",
+  "pattern": "hypothetical-regulatory-uncertainty",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d547ce5ba2d65450",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEGATIVE",
+  "confidence": "medium",
+  "brief": "The passage's concrete assertions about condition are unfavorable: production \"has been halted because of coronavirus-related safety risks,\" \"the company withdrew guidance for 2020 financial performance,\" \"today's economic environment remains too ambiguous to provide full-year 2020 financial guidance,\" and \"the company expects second-quarter adjusted EBIT to be a loss of more than $5 billion, as year-over-year industry volumes decline significantly in every region.\" The favorable material is limited to praise of the crisis response (\"Our team in China did a very good job\") and a forward product list, and the transformation language itself is unfavorable (\"there is no grace period,\" leadership changes to \"help fix\" the Automotive business). Under rubric section 2's predominant-tone rule, deterioration dominates.",
+  "pattern": "crisis-narrative-with-management-reassurance",
+  "needs_human": false
+ }
+]

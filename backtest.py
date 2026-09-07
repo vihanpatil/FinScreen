@@ -35,6 +35,22 @@ the tiny-N/overfitting risk both share equally. Nothing here claims
 XGBoost is intrinsically better for this problem.
 
 -----------------------------------------------------------------------
+Feature specification is PRE-REGISTERED, not chosen per run (H2, 2026-08-25)
+-----------------------------------------------------------------------
+`spec.py` owns the transformation. PRIMARY = PIT trailing cross-sectional
+percentile ranks; SECONDARY = raw levels (E1's shipped behaviour), which is
+reported as a MANDATORY pair on every run, never dropped and never
+selected-after-the-fact. Reason: raw levels encode company identity almost
+exactly (ICC 0.987 on `log_total_assets`), so both arms of the
+text-vs-numeric comparison ride the same company-persistence term. Two
+zero-information benchmarks (size-only rank; ticker-training-mean rank) are
+standing report rows for the same reason, and on E1 both BEAT both fitted
+models. Every run also reports a within-fold bootstrap noise anchor and a
+label-embargo census. See `spec.py`'s module docstring for the full
+definitions and the contamination warning attached to any E1 number
+computed under the primary spec.
+
+-----------------------------------------------------------------------
 Walk-forward fold design
 -----------------------------------------------------------------------
 Sort every observation by `filing_date` (public availability date --
@@ -128,6 +144,7 @@ full-sample folds) and is reported plainly, not smoothed over.
 
 from __future__ import annotations
 
+import argparse
 import datetime as _dt
 from pathlib import Path
 from typing import Optional
@@ -138,6 +155,7 @@ from scipy.stats import spearmanr
 from xgboost import XGBRegressor
 
 import features as F
+import spec as S
 
 REPO_ROOT = Path(__file__).resolve().parent
 DATA_DIR = REPO_ROOT / "data"
@@ -146,6 +164,14 @@ BACKTEST_REPORT_OUTPUT = DATA_DIR / "backtest_report.md"
 
 TARGET_COL = "target_excess_return"
 FILING_DATE_COL = "filing_date"
+
+# H2 (F2.5 hardening, 2026-08-25): the feature specification is
+# PRE-REGISTERED in `spec.py`, not chosen per run. PRIMARY = PIT trailing
+# cross-sectional percentile ranks; SECONDARY = raw levels, reported
+# alongside as a mandatory pair. Read `spec.py`'s module docstring §1
+# before changing this line -- the whole point is that it is not an
+# analysis-time degree of freedom.
+ACTIVE_SPEC = S.PRIMARY_SPEC
 
 NUMERIC_FEATURES = F.NUMERIC_FEATURE_NAMES
 TEXT_FEATURES = F.TEXT_FEATURE_NAMES_NON_REDFLAG + F.RED_FLAG_FEATURE_NAMES
@@ -488,6 +514,90 @@ def fit_full_sample_importance(df: pd.DataFrame, feature_cols: list[str]) -> pd.
 
 
 # ---------------------------------------------------------------------------
+# Standing diagnostics (H2) -- computed on EVERY run, reported in EVERY
+# generated report: the two zero-information benchmarks, the within-fold
+# bootstrap noise anchor per specification, and the label-embargo census.
+# ---------------------------------------------------------------------------
+
+
+def build_spec_frames(df_raw: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    """One modeling frame per pre-registered specification. The transform is
+    applied to the FULL feature list on the FULL row set BEFORE any subsetting
+    (the form-controlled ablation restricts the observation set, not the
+    feature definition -- so its rows keep the percentiles they were assigned
+    against the whole trailing cross-section)."""
+    return {
+        S.PRIMARY_SPEC: S.transform_frame(df_raw, S.PRIMARY_SPEC, FULL_FEATURES),
+        S.SECONDARY_SPEC: df_raw,
+    }
+
+
+def compute_standing_diagnostics(
+    df_raw: pd.DataFrame,
+    spec_frames: dict[str, pd.DataFrame],
+    folds: list[dict],
+    keep_mask: pd.Series,
+    active_spec: str = ACTIVE_SPEC,
+) -> dict:
+    """Everything `spec.py` needs to render the standing report sections.
+    Zero-information benchmarks are computed on the RAW frame by design (they
+    are properties of the folds and the target, not of a feature transform);
+    the bootstrap anchor is computed once per specification because the
+    specification changes the noise, and therefore changes the MDE."""
+    bench_df = S.zero_information_benchmarks(df_raw, folds, TARGET_COL, keep_mask=keep_mask)
+    bench_summary = S.zero_information_summary(bench_df)
+    boot = {}
+    for spec_name, frame in spec_frames.items():
+        boot[spec_name] = S.bootstrap_noise_anchor(
+            frame, folds, FULL_FEATURES, NUMERIC_FEATURES, fit_predict, TARGET_COL,
+            keep_mask=keep_mask,
+        )
+    return {
+        "active_spec": active_spec,
+        "bench_df": bench_df,
+        "bench_summary": bench_summary,
+        "bootstrap": boot,
+        "embargo_census": S.embargo_census(df_raw, folds),
+    }
+
+
+def standing_section_lines(standing: Optional[dict]) -> list[str]:
+    """Render the standing sections, in a fixed order, whether or not the
+    inputs exist (a missing input prints an explicit NOT COMPUTED notice --
+    never a silently absent section)."""
+    if standing is None:
+        return (
+            S.zero_information_section_lines(None, None)
+            + S.bootstrap_section_lines(None, None)
+            + S.embargo_section_lines(None)
+        )
+    lines = S.zero_information_section_lines(standing.get("bench_df"), standing.get("bench_summary"))
+    for spec_name in S.SPEC_NAMES:
+        entry = standing.get("bootstrap", {}).get(spec_name)
+        per_fold, summary = entry if entry else (None, None)
+        lines += S.bootstrap_section_lines(per_fold, summary, S.spec_label(spec_name))
+    lines += S.embargo_section_lines(standing.get("embargo_census"))
+    return lines
+
+
+def comparison_frame(results: dict[str, pd.DataFrame]) -> pd.DataFrame:
+    """The numeric-only vs. text+numeric per-fold comparison table."""
+    return pd.DataFrame(
+        {
+            "test_quarter": results["numeric_only"]["test_quarter"],
+            "IC_numeric_only": results["numeric_only"]["spearman_ic"],
+            "IC_text_and_numeric": results["text_and_numeric"]["spearman_ic"],
+            "IC_delta_text_minus_numeric": results["text_and_numeric"]["spearman_ic"] - results["numeric_only"]["spearman_ic"],
+            "spread_numeric_only": results["numeric_only"]["quintile_spread"],
+            "spread_text_and_numeric": results["text_and_numeric"]["quintile_spread"],
+            "IC_dedup_numeric_only": results["numeric_only"]["spearman_ic_dedup"],
+            "IC_dedup_text_and_numeric": results["text_and_numeric"]["spearman_ic_dedup"],
+            "IC_dedup_delta_text_minus_numeric": results["text_and_numeric"]["spearman_ic_dedup"] - results["numeric_only"]["spearman_ic_dedup"],
+        }
+    )
+
+
+# ---------------------------------------------------------------------------
 # Report
 # ---------------------------------------------------------------------------
 
@@ -507,10 +617,17 @@ def _fmt_table(df: pd.DataFrame, cols: list[str]) -> list[str]:
 
 
 def _summary_row(series: pd.Series) -> str:
+    """`std` is the SAMPLE standard deviation (ddof=1). H2 fix, 2026-08-25:
+    this and the three cross-fold delta summaries below used ddof=0 -- a
+    POPULATION std over six fold deltas -- which understates the noise
+    anchor by sqrt(5/6)=0.913 and propagated that optimism into every MDE
+    in `EXPANSION_PLAN.md` §2a
+    (`data/reevaluation_2026-08-25/methodology_audit.md` defect 1)."""
     s = series.dropna()
     if s.empty:
         return "mean=NaN, std=NaN, min=NaN, max=NaN (all folds NaN)"
-    return f"mean={s.mean():.4f}, std={s.std(ddof=0):.4f}, min={s.min():.4f}, max={s.max():.4f}, n_folds_with_value={len(s)}/{len(series)}"
+    std = f"{s.std(ddof=1):.4f}" if len(s) > 1 else "NaN (n=1)"
+    return f"mean={s.mean():.4f}, std={std}, min={s.min():.4f}, max={s.max():.4f}, n_folds_with_value={len(s)}/{len(series)}"
 
 
 def write_backtest_report(
@@ -523,7 +640,17 @@ def write_backtest_report(
     df_form: pd.DataFrame,
     folds_form: list[dict],
     results_form: dict[str, pd.DataFrame],
+    standing: Optional[dict] = None,
+    results_secondary: Optional[dict[str, pd.DataFrame]] = None,
+    output_path: Optional[Path] = None,
 ) -> None:
+    """`standing` carries the H2 standing diagnostics
+    (`compute_standing_diagnostics()`); `results_secondary` is the mandatory
+    paired run under the SECONDARY specification. Both default to None so
+    older call sites keep working -- but when they are None the report says
+    so in bold rather than omitting the sections."""
+    active_spec = (standing or {}).get("active_spec", ACTIVE_SPEC)
+    out_path = Path(output_path) if output_path is not None else BACKTEST_REPORT_OUTPUT
     lines = []
     lines.append("# FinScreen Phase C -- walk-forward backtest report")
     lines.append("")
@@ -535,8 +662,9 @@ def write_backtest_report(
     lines.append(
         f"*Generated by `backtest.py` on "
         f"{_dt.datetime.now().strftime('%Y-%m-%d %H:%M')} from `{_feat_path}` "
-        f"({len(df) + n_target_dropped} rows, last written {_feat_mtime}). "
-        f"Re-running `backtest.py` overwrites this file -- if you are reading it as a "
+        f"({len(df) + n_target_dropped} rows, last written {_feat_mtime}), "
+        f"under feature specification `{active_spec}`. "
+        f"Re-running `backtest.py` overwrites its default output -- if you are reading it as a "
         f"go/no-go gate file, check that this stamp is the vintage you were pointed at.*"
     )
     lines.append("")
@@ -593,6 +721,8 @@ def write_backtest_report(
         "variance entirely."
     )
     lines.append("")
+
+    lines.extend(S.specification_section_lines(active_spec))
 
     lines.append("## Fold structure")
     lines.append("")
@@ -666,31 +796,22 @@ def write_backtest_report(
         )
         lines.append("")
 
-    lines.append("## Numeric-only vs. text+numeric -- per-fold comparison (RAW and deduplicated)")
-    lines.append("")
-    comp = pd.DataFrame(
-        {
-            "test_quarter": results["numeric_only"]["test_quarter"],
-            "IC_numeric_only": results["numeric_only"]["spearman_ic"],
-            "IC_text_and_numeric": results["text_and_numeric"]["spearman_ic"],
-            "IC_delta_text_minus_numeric": results["text_and_numeric"]["spearman_ic"] - results["numeric_only"]["spearman_ic"],
-            "spread_numeric_only": results["numeric_only"]["quintile_spread"],
-            "spread_text_and_numeric": results["text_and_numeric"]["quintile_spread"],
-            "IC_dedup_numeric_only": results["numeric_only"]["spearman_ic_dedup"],
-            "IC_dedup_text_and_numeric": results["text_and_numeric"]["spearman_ic_dedup"],
-            "IC_dedup_delta_text_minus_numeric": results["text_and_numeric"]["spearman_ic_dedup"] - results["numeric_only"]["spearman_ic_dedup"],
-        }
+    lines.append(
+        f"## Numeric-only vs. text+numeric -- per-fold comparison (RAW and deduplicated), "
+        f"specification `{active_spec}`"
     )
+    lines.append("")
+    comp = comparison_frame(results)
     lines.extend(_fmt_table(comp, list(comp.columns)))
     lines.append("")
     lines.append(
         f"Cross-fold mean IC delta, RAW (text+numeric minus numeric-only): "
         f"{comp['IC_delta_text_minus_numeric'].mean():.4f} "
-        f"(std {comp['IC_delta_text_minus_numeric'].std(ddof=0):.4f}, "
+        f"(sample std, ddof=1 {comp['IC_delta_text_minus_numeric'].std(ddof=1):.4f}, "
         f"positive in {(comp['IC_delta_text_minus_numeric'] > 0).sum()}/{len(comp)} folds). "
         f"Cross-fold mean IC delta, DEDUPLICATED: "
         f"{comp['IC_dedup_delta_text_minus_numeric'].mean():.4f} "
-        f"(std {comp['IC_dedup_delta_text_minus_numeric'].std(ddof=0):.4f}, "
+        f"(sample std, ddof=1 {comp['IC_dedup_delta_text_minus_numeric'].std(ddof=1):.4f}, "
         f"positive in {(comp['IC_dedup_delta_text_minus_numeric'] > 0).sum()}/{comp['IC_dedup_delta_text_minus_numeric'].notna().sum()} "
         f"folds; no fold is NaN in this build). "
         "**Read the sign of the two means against each other.** When the RAW and DEDUPLICATED deltas disagree in sign, that disagreement IS the finding: one column favours text, the other favours numeric-only, and neither is distinguishable from zero at six folds. Fragility, not a direction, is what this backtest supports concluding in that case. "
@@ -700,6 +821,59 @@ def write_backtest_report(
         "spreads, never a single point estimate)."
     )
     lines.append("")
+
+    # ---- MANDATORY paired secondary specification ------------------------
+    secondary_name = S.SECONDARY_SPEC if active_spec == S.PRIMARY_SPEC else S.PRIMARY_SPEC
+    lines.append(f"## Paired secondary specification (`{secondary_name}`) -- MANDATORY, always reported")
+    lines.append("")
+    if results_secondary is None:
+        lines.append(
+            "**NOT COMPUTED IN THIS RUN.** The pre-registration requires both specifications to be "
+            "reported as a pair (`spec.py` §1). A report showing only one of them cannot be read "
+            "for specification sensitivity, which on E1 was 0.056 in the headline delta -- roughly "
+            "3x E2's optimistic MDE."
+        )
+        lines.append("")
+    else:
+        comp2 = comparison_frame(results_secondary)
+        lines.append(
+            "Identical folds, identical dedup mask, identical `XGB_PARAMS`, identical feature "
+            "lists -- the ONLY difference is the feature transform."
+        )
+        lines.append("")
+        lines.extend(_fmt_table(comp2, list(comp2.columns)))
+        lines.append("")
+        d1 = comp["IC_dedup_delta_text_minus_numeric"].mean()
+        d2 = comp2["IC_dedup_delta_text_minus_numeric"].mean()
+        lines.append(
+            f"Cross-fold mean DEDUP IC delta under `{secondary_name}`: {d2:.4f} "
+            f"(sample std, ddof=1 {comp2['IC_dedup_delta_text_minus_numeric'].std(ddof=1):.4f}, "
+            f"positive in {(comp2['IC_dedup_delta_text_minus_numeric'] > 0).sum()}/"
+            f"{comp2['IC_dedup_delta_text_minus_numeric'].notna().sum()} folds), versus "
+            f"{d1:.4f} under `{active_spec}` above."
+        )
+        lines.append("")
+        lines.append(
+            f"**SPECIFICATION SENSITIVITY = {abs(d1 - d2):.4f}** in the headline estimand, from a "
+            "transform choice alone. Read this number before reading either delta: where it is "
+            "comparable to or larger than the design's MDE, neither specification's point estimate "
+            "is interpretable on its own, and the honest statement is that the estimand is not "
+            "resolved at this precision. Both numbers are reported always; neither may be selected "
+            "after the fact."
+        )
+        lines.append("")
+        lines.append(
+            "**A SMALL number on this line is not reassurance.** It compares two PINNED "
+            "implementations. The sensitivity WITHIN the primary transform family -- across seven "
+            "mutually-defensible, all look-ahead-free implementations of the same named transform "
+            "-- was measured at 0.059 on E1 (H2, 2026-08-25; see the specification section above). "
+            "Specification risk lives in the implementation details, which is why the "
+            "pre-registration pins a function and its arguments rather than a transform's name."
+        )
+        lines.append("")
+
+    # ---- Standing H2 sections (benchmarks / bootstrap / embargo) ---------
+    lines.extend(standing_section_lines(standing))
 
     lines.append("## Company-quarter deduplication -- methodology (fixes near-duplicate-pair non-independence, found in red-team review)")
     lines.append("")
@@ -778,7 +952,7 @@ def write_backtest_report(
     lines.append(
         f"Cross-fold mean IC delta, form-controlled (text+numeric minus numeric-only): "
         f"{form_comp['IC_delta_text_minus_numeric'].mean():.4f} "
-        f"(std {form_comp['IC_delta_text_minus_numeric'].std(ddof=0):.4f}, "
+        f"(sample std, ddof=1 {form_comp['IC_delta_text_minus_numeric'].std(ddof=1):.4f}, "
         f"positive in {(form_comp['IC_delta_text_minus_numeric'] > 0).sum()}/{len(form_comp)} folds), "
         f"vs. the full-sample RAW delta of {comp['IC_delta_text_minus_numeric'].mean():.4f} reported "
         "above. **Per-fold N here is small (n_test column above) -- read this as a directional "
@@ -897,22 +1071,39 @@ def write_backtest_report(
         "this system. This screening score is a research signal, not investment advice, in any "
         "phase, for any audience."
     )
+    lines.append(
+        "- **Specification sensitivity is a first-class uncertainty here, not a robustness "
+        "footnote.** On E1 the headline dedup delta moved 0.056 between the two specifications "
+        "reported above -- roughly 3x E2's optimistic MDE of 0.019. Any MDE or null bound quoted "
+        "for this design must be read against the specification-sensitivity number in the paired "
+        "section above, and the primary/secondary split must be fixed BEFORE results exist "
+        "(gate G3), never after."
+    )
     lines.append("")
 
-    BACKTEST_REPORT_OUTPUT.write_text("\n".join(lines))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(lines))
 
 
-def main() -> None:
+def main(output_path: Optional[Path] = None, active_spec: str = ACTIVE_SPEC) -> None:
     print("Loading data/features.parquet...")
-    df, n_dropped = load_modeling_frame()
-    print(f"{len(df)} usable observations ({n_dropped} dropped for incomplete target window)")
+    df_raw, n_dropped = load_modeling_frame()
+    print(f"{len(df_raw)} usable observations ({n_dropped} dropped for incomplete target window)")
 
-    folds = build_walk_forward_folds(df, BURN_IN_END)
-    assert_no_fold_leakage(df, folds)
+    folds = build_walk_forward_folds(df_raw, BURN_IN_END)
+    assert_no_fold_leakage(df_raw, folds)
     print(f"{len(folds)} walk-forward folds built and leakage-checked")
 
-    keep_mask = company_quarter_dedup_keep_mask(df)
+    keep_mask = company_quarter_dedup_keep_mask(df_raw)
+
+    print(f"Building pre-registered specification frames (active: {active_spec})...")
+    spec_frames = build_spec_frames(df_raw)
+    df = spec_frames[active_spec]
+    secondary_spec = S.SECONDARY_SPEC if active_spec == S.PRIMARY_SPEC else S.PRIMARY_SPEC
+
     results = run_backtest(df, folds, keep_mask=keep_mask)
+    print(f"Running mandatory paired secondary specification ({secondary_spec})...")
+    results_secondary = run_backtest(spec_frames[secondary_spec], folds, keep_mask=keep_mask)
     dedup_stats = compute_dedup_diagnostics(df)
     print(
         f"Company-quarter dedup: {dedup_stats['n_clusters']} clusters from {len(df)} rows "
@@ -928,8 +1119,23 @@ def main() -> None:
         "text_and_numeric": fit_full_sample_importance(df, FULL_FEATURES),
     }
 
-    write_backtest_report(df, n_dropped, folds, results, importances, dedup_stats, df_form, folds_form, results_form)
-    print(f"Wrote {BACKTEST_REPORT_OUTPUT}")
+    print("Computing standing diagnostics (zero-information benchmarks, bootstrap anchor, embargo census)...")
+    standing = compute_standing_diagnostics(df_raw, spec_frames, folds, keep_mask, active_spec=active_spec)
+    print(standing["bench_summary"].to_string(index=False))
+    for spec_name, (per_fold, summary) in standing["bootstrap"].items():
+        print(
+            f"bootstrap anchor [{spec_name}]: mean within-fold SD "
+            f"{summary['mean_within_fold_bootstrap_sd']:.4f} (RMS {summary['rms_within_fold_bootstrap_sd']:.4f}), "
+            f"cross-fold sample std {summary['cross_fold_std_ddof1']:.4f}, implied floor "
+            f"{summary['implied_regime_floor_sd']:.4f}"
+        )
+
+    out_path = Path(output_path) if output_path is not None else BACKTEST_REPORT_OUTPUT
+    write_backtest_report(
+        df, n_dropped, folds, results, importances, dedup_stats, df_form, folds_form, results_form,
+        standing=standing, results_secondary=results_secondary, output_path=out_path,
+    )
+    print(f"Wrote {out_path}")
 
     print("\n=== Numeric-only per-fold Spearman IC (raw / dedup) ===")
     print(results["numeric_only"][["test_quarter", "n_train", "n_test", "spearman_ic", "spearman_ic_dedup", "quintile_spread", "quintile_spread_dedup"]].to_string(index=False))
@@ -941,5 +1147,23 @@ def main() -> None:
     print(results_form["text_and_numeric"][["test_quarter", "n_train", "n_test", "spearman_ic", "quintile_spread"]].to_string(index=False))
 
 
+def _parse_args(argv=None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="FinScreen walk-forward backtest")
+    p.add_argument(
+        "--out", type=Path, default=None,
+        help=(
+            "Write the report here instead of data/backtest_report.md. Use this for any "
+            "re-derivation: E1's frozen go/no-go report must never be overwritten."
+        ),
+    )
+    p.add_argument(
+        "--spec", choices=list(S.SPEC_NAMES), default=ACTIVE_SPEC,
+        help="Which pre-registered specification is the ACTIVE one for this run's headline tables. "
+             "The other is always reported as the mandatory paired secondary.",
+    )
+    return p.parse_args(argv)
+
+
 if __name__ == "__main__":
-    main()
+    _args = _parse_args()
+    main(output_path=_args.out, active_spec=_args.spec)

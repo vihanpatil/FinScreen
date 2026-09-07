@@ -1,0 +1,124 @@
+==========================================================================
+HUMANA INC 0000049071-19-000023 10-K MDA toc_recovered_f1 3366w ratio=0.26
+  HEAD: ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Executive Overview General Humana Inc., headquartered in Louisville, Kentucky, is a leading health and well-being company committed to helping our millions 
+  TAIL: Retail and Group and Specialty segment customers and are described in Note 17 to the consolidated financial statements included in
+==========================================================================
+Philip Morris International Inc. 0001413329-16-000076 10-K RISK_FACTORS toc_recovered_f1 3013w ratio=0.29
+  HEAD: Item 1A. Risk Factors. The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks
+  TAIL: including government regulations. Accordingly, our costs may increase significantly if we must replace such third parties with our own resources.
+==========================================================================
+Philip Morris International Inc. 0001413329-17-000014 10-K RISK_FACTORS toc_recovered_f1 3020w ratio=0.29
+  HEAD: Item 1A. Risk Factors. The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks
+  TAIL: including government regulations. Accordingly, our costs may increase significantly if we must replace such third parties with our own resources.
+==========================================================================
+HONEYWELL INTERNATIONAL INC 0000930413-16-005457 10-K RISK_FACTORS toc_recovered_f2 3036w ratio=0.29
+  HEAD: Item 1A. Risk Factors Cautionary Statement about Forward-Looking Statements We describe many of the trends and other factors that drive our business and future results in Item 7. Management’s Discussion and Analysis of Financial Condition,
+  TAIL: is no or insufficient insurance coverage could adversely affect our results of operations, cash flows, liquidity and financial condition. 10
+==========================================================================
+HONEYWELL INTERNATIONAL INC 0000930413-16-005457 10-K MDA toc_recovered_f2 3869w ratio=0.29
+  HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition, Results of Operations and in other parts of this report (including this Item 1A). Such discussions contain forward-looking statements within the meaning of Section 21E of
+  TAIL: Company) for the three years ended December 31, 2015. All references to Notes relate to Notes to Financial Statements in
+==========================================================================
+Philip Morris International Inc. 0001413329-18-000007 10-K RISK_FACTORS toc_recovered_f1 3179w ratio=0.31
+  HEAD: Item 1A. Risk Factors. The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks
+  TAIL: including government regulations. Accordingly, our costs may increase significantly if we must replace such third parties with our own resources.
+==========================================================================
+HUMANA INC 0000049071-18-000014 10-K MDA toc_recovered_f1 4116w ratio=0.31
+  HEAD: ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Executive Overview General Humana Inc., headquartered in Louisville, Kentucky, is a leading health and well-being company committed to helping our millions 
+  TAIL: and Specialty, and Individual Commercial segment customers and are described in Note 17 to the consolidated financial statements included in
+==========================================================================
+Philip Morris International Inc. 0001413329-19-000007 10-K RISK_FACTORS toc_recovered_f1 3532w ratio=0.34
+  HEAD: Item 1A. Risk Factors. The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks
+  TAIL: including government regulations. Accordingly, our costs may increase significantly if we must replace such third parties with our own resources.
+==========================================================================
+Shire plc 0000936402-18-000013 10-Q MDA toc_recovered_f1 3438w ratio=0.37
+  HEAD: Table of Contents Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations The following discussion should be read in conjunction with Shire’s Unaudited Consolidated Financial Statements and related notes appearin
+  TAIL: have been no significant changes in the Company's critical accounting policies during the three months ended March 31, 2018 .
+==========================================================================
+Philip Morris International Inc. 0001413329-20-000007 10-K RISK_FACTORS toc_recovered_f1 3888w ratio=0.37
+  HEAD: Item 1A. Risk Factors. The following risk factors should be read carefully in connection with evaluating our business and the forward-looking statements contained in this Annual Report on Form 10-K. Any of the following risks
+  TAIL: including government regulations. Accordingly, our costs may increase significantly if we must replace such third parties with our own resources.
+==========================================================================
+COCA COLA CO 0000021344-18-000008 10-K MDA toc_recovered_f2 4916w ratio=0.37
+  HEAD: Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations" of this report, which is incorporated herein by reference. For information regarding how we measure the volume of Company beverage products sold
+  TAIL: controlling interest in CCBA, refer to Note 2 of Notes to Consolidated Financial Statements set forth in Part II, "
+==========================================================================
+HONEYWELL INTERNATIONAL INC 0000930413-18-000292 10-K MDA toc_recovered_f2 4952w ratio=0.38
+  HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations and in other parts of this report (including this Item 1A). Such discussions contain forward-looking statements within the meaning of Section 21E
+  TAIL: for the three years ended December 31, 2017. All references to Notes relate to Notes to Consolidated Financial Statements in
+==========================================================================
+HUMANA INC 0000049071-17-000019 10-K MDA toc_recovered_f1 5052w ratio=0.38
+  HEAD: ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Executive Overview General Humana Inc., headquartered in Louisville, Kentucky, is a leading health and well-being company focused on making it easy for
+  TAIL: and an increase in policyholder life expectancies as discussed further in Note 18 to the consolidated financial statements included in
+==========================================================================
+HONEYWELL INTERNATIONAL INC 0000930413-19-000366 10-K MDA toc_recovered_f2 5072w ratio=0.39
+  HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations and in other parts of this report (including this Item 1A). Such discussions contain forward-looking statements within the meaning of Section 21E
+  TAIL: for the three years ended December 31, 2018. All references to Notes relate to Notes to Consolidated Financial Statements in
+==========================================================================
+HONEYWELL INTERNATIONAL INC 0000930413-18-000292 10-K RISK_FACTORS toc_recovered_f2 4102w ratio=0.39
+  HEAD: Item 1A. Risk Factors Cautionary Statement About Forward-Looking Statements We describe many of the trends and other factors that drive our business and future results in Item 7. Management’s Discussion and Analysis of Financial Condition
+  TAIL: is no or insufficient insurance coverage could adversely affect our results of operations, cash flows, liquidity and financial condition. 12
+==========================================================================
+HONEYWELL INTERNATIONAL INC 0000930413-19-000366 10-K RISK_FACTORS toc_recovered_f2 4164w ratio=0.40
+  HEAD: Item 1A. Risk Factors Cautionary Statement About Forward-Looking Statements We describe many of the trends and other factors that drive our business and future results in Item 7. Management’s Discussion and Analysis of Financial Condition
+  TAIL: is no or insufficient insurance coverage could adversely affect our results of operations, cash flows, liquidity and financial condition. 12
+==========================================================================
+COCA COLA CO 0000021344-17-000009 10-K MDA toc_recovered_f2 5328w ratio=0.41
+  HEAD: Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations" of this report, which is incorporated herein by reference. We own numerous valuable nonalcoholic beverage brands, including the following: Coca-Cola Georgi
+  TAIL: South African bottling operations, refer to Note 2 of Notes to Consolidated Financial Statements set forth in Part II, "
+==========================================================================
+HUMANA INC 0000049071-16-000117 10-K MDA toc_recovered_f1 5545w ratio=0.42
+  HEAD: ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Executive Overview General Humana Inc., headquartered in Louisville, Kentucky, is a leading health and well-being company focused on making it easy for
+  TAIL: programs, to our Retail and Group customers and are described in Note 17 to the consolidated financial statements included in
+==========================================================================
+UNITEDHEALTH GROUP INC 0000731766-17-000016 10-Q MDA toc_recovered_f1 4095w ratio=0.44
+  HEAD: Table of Contents ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion should be read together with the accompanying Condensed Consolidated Financial Statements and Notes and with our
+  TAIL: not undertake to update or revise any forward-looking statements, except as required by applicable securities laws. 22 Table of Contents
+==========================================================================
+UNITEDHEALTH GROUP INC 0000731766-17-000028 10-Q MDA toc_recovered_f1 4435w ratio=0.48
+  HEAD: ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion should be read together with the accompanying Condensed Consolidated Financial Statements and Notes and with our 2016 10-K, includi
+  TAIL: not undertake to update or revise any forward-looking statements, except as required by applicable securities laws. 23 Table of Contents
+==========================================================================
+UNITEDHEALTH GROUP INC 0000731766-17-000045 10-Q MDA toc_recovered_f1 4487w ratio=0.48
+  HEAD: ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion should be read together with the accompanying Condensed Consolidated Financial Statements and Notes and with our 2016 10-K, includi
+  TAIL: are made. We do not undertake to update or revise any forward-looking statements, except as required by applicable securities laws.
+==========================================================================
+UNITEDHEALTH GROUP INC 0000731766-16-000068 10-Q MDA toc_recovered_f1 4524w ratio=0.49
+  HEAD: ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion should be read together with the accompanying Condensed Consolidated Financial Statements and Notes and with our 2015 10-K, includi
+  TAIL: are made. We do not undertake to update or revise any forward-looking statements, except as required by applicable securities laws.
+==========================================================================
+CATERPILLAR INC 0000018230-17-000041 10-K MDA toc_recovered_f1 26514w ratio=2.02
+  HEAD: Table of Contents Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations. This Management’s Discussion and Analysis of Financial Condition and Results of Operations should be read in conjunction with our
+  TAIL: businesses and investments. 9 Elimination of change in investment and common stock related to Financial Products. 66 Table of Contents
+==========================================================================
+Philip Morris International Inc. 0001413329-16-000076 10-K MDA toc_recovered_f1 27419w ratio=2.09
+  HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations. The following discussion should be read in conjunction with the other sections of this Annual Report on Form 10-K, including the consolidated
+  TAIL: forward-looking statement that we may make from time to time, except in the normal course of our public disclosure obligations.
+==========================================================================
+INTERNATIONAL BUSINESS MACHINES CORP 0000051143-15-000005 10-Q MDA toc_recovered_f2 23236w ratio=2.49
+  HEAD: Item 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL CONDITION FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 201 5 Snapshot Financial Results Summary: Yr. to Yr. Percent/ (Dollars in millions
+  TAIL: in materials incorporated therein or herein by reference. The company assumes no obligation to update or revise any forward-looking statements.
+==========================================================================
+INTERNATIONAL BUSINESS MACHINES CORP 0000051143-15-000009 10-Q MDA toc_recovered_f2 23319w ratio=2.50
+  HEAD: Item 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF RESULTS OF OPERATIONS AND FINANCIAL CONDITION FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 201 5 Snapshot Financial Results Summary - Three Months Ended September 30: Yr.
+  TAIL: in materials incorporated therein or herein by reference. The company assumes no obligation to update or revise any forward-looking statements.
+==========================================================================
+PFIZER INC 0000078003-20-000037 10-Q MDA toc_recovered_f1 28167w ratio=3.02
+  HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Introduction See the Glossary of Defined Terms at the beginning of this Quarterly Report on Form 10-Q for terms used throughout this
+  TAIL: an in-line product, regulatory authorities may not share our views and may require additional data or may deny approval altogether.
+==========================================================================
+PFIZER INC 0000078003-19-000026 10-Q MDA toc_recovered_f1 30898w ratio=3.31
+  HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Introduction See the Glossary of Defined Terms at the beginning of this Quarterly Report on Form 10-Q for terms used throughout this
+  TAIL: Contingencies and Certain Commitments : Legal Proceedings in Part I, Item 1, of this Quarterly Report on Form 10-Q. 92
+==========================================================================
+PFIZER INC 0000078003-20-000060 10-Q MDA toc_recovered_f1 35188w ratio=3.77
+  HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Introduction See the Glossary of Defined Terms at the beginning of this Quarterly Report on Form 10-Q for terms used throughout this
+  TAIL: in-line product, regulatory authorities may not share our views and may require additional data or may deny approval altogether. 97
+==========================================================================
+PFIZER INC 0000078003-19-000064 10-Q MDA toc_recovered_f1 37928w ratio=4.07
+  HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Introduction See the Glossary of Defined Terms at the beginning of this Quarterly Report on Form 10-Q for terms used throughout this
+  TAIL: 12A. Contingencies and Certain Commitments : Legal Proceedings in Part I, Item 1, of this Quarterly Report on Form 10-Q.
+==========================================================================
+PFIZER INC 0000078003-19-000082 10-Q MDA toc_recovered_f1 40752w ratio=4.37
+  HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Introduction See the Glossary of Defined Terms at the beginning of this Quarterly Report on Form 10-Q for terms used throughout this
+  TAIL: 12A. Contingencies and Certain Commitments : Legal Proceedings in Part I, Item 1, of this Quarterly Report on Form 10-Q.

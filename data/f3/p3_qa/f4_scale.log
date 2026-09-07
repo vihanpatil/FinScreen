@@ -1,0 +1,30 @@
+--- scanning corpus, variant=as_is ---
+    sections=28900 occurrences=1303855
+  as_is      W1_full                  sections= 28900 paras= 1303855 canon=  830851 dedup=0.363 chunks= 199403
+  as_is      W1_full_core             sections= 20832 paras=  972109 canon=  603226 dedup=0.380 chunks= 146571
+  as_is      W2_spell_plus12m         sections= 19495 paras=  861261 canon=  568380 dedup=0.340 chunks= 135351
+  as_is      W2_spell_plus12m_core    sections= 14327 paras=  644389 canon=  417004 dedup=0.353 chunks=  99965
+  as_is      W3_spell_only            sections= 16029 paras=  711867 canon=  475588 dedup=0.332 chunks= 113398
+  as_is      W3_spell_only_core       sections= 11779 paras=  527442 canon=  346258 dedup=0.344 chunks=  83010
+--- scanning corpus, variant=reflow_v1 ---
+    sections=28900 occurrences=4076349
+  reflow_v1  W1_full                  sections= 28900 paras= 4076349 canon= 2991059 dedup=0.266 chunks= 433798
+  reflow_v1  W1_full_core             sections= 20832 paras= 2977013 canon= 2150145 dedup=0.278 chunks= 314211
+  reflow_v1  W2_spell_plus12m         sections= 19495 paras= 2764040 canon= 2079150 dedup=0.248 chunks= 299294
+  reflow_v1  W2_spell_plus12m_core    sections= 14327 paras= 2051842 canon= 1529449 dedup=0.255 chunks= 220641
+  reflow_v1  W3_spell_only            sections= 16029 paras= 2259734 canon= 1704146 dedup=0.246 chunks= 245901
+  reflow_v1  W3_spell_only_core       sections= 11779 paras= 1671176 canon= 1251469 dedup=0.251 chunks= 180734
+
+   variant                  rule  sections  chunks  hours_at_1068_per_h  overnights_10h
+    as_is               W1_full     28900  199403                186.7           18.67
+    as_is          W1_full_core     20832  146571                137.2           13.72
+    as_is      W2_spell_plus12m     19495  135351                126.7           12.67
+    as_is W2_spell_plus12m_core     14327   99965                 93.6            9.36
+    as_is         W3_spell_only     16029  113398                106.2           10.62
+    as_is    W3_spell_only_core     11779   83010                 77.7            7.77
+reflow_v1               W1_full     28900  433798                406.2           40.62
+reflow_v1          W1_full_core     20832  314211                294.2           29.42
+reflow_v1      W2_spell_plus12m     19495  299294                280.2           28.02
+reflow_v1 W2_spell_plus12m_core     14327  220641                206.6           20.66
+reflow_v1         W3_spell_only     16029  245901                230.2           23.02
+reflow_v1    W3_spell_only_core     11779  180734                169.2           16.92

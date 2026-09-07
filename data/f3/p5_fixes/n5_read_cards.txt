@@ -1,0 +1,342 @@
+
+==============================================================================
+0001562762-21-000027  10-K MDA  2021-02-16  matches=7
+--- SHIPPED(last): 20487 words, start=130490
+    HEAD: Item 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Management’s Discussion and Analysis is the company’s analysis of its financial performance and of significant trends that may affect future performance. It should be read in conjunction with the financial statements and
+    TAIL: this 2020 Annual Report on Form 10-K and any additional risks described in our other filings with the SEC. 77
+--- CANDIDATE(first>=500): 37153 words, start=21620
+    HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations. Alaska North Slope Gas In 2016, we, along with affiliates of Exxon Mobil Corporation, BP p.l.c. and Alaska Gasline Development Corporation (AGDC), a state-owned corporation, completed preliminary FEED technical work for a
+    TAIL: this 2020 Annual Report on Form 10-K and any additional risks described in our other filings with the SEC. 77
+
+==============================================================================
+0001562762-18-000040  10-K MDA  2018-02-23  matches=4
+--- SHIPPED(last): 28898 words, start=159494
+    HEAD: Item 7 Management’s Discussion and Analysis of Financial Condition and Results of Operations—Critical Accounting Policies and Estimates—Foreign Currency Translation”. While we have in the past entered into transactions to hedge portions of our foreign currency translation exposure, these transactions are expensive, and it is very
+    TAIL: Given the significance of performance requirements within our advertising and other arrangements, actual payments could differ significantly from these estimates.
+--- CANDIDATE(first>=500): 43894 words, start=61215
+    HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Reporting Segments and Geographic Information”, “Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Description of Line Items—Net revenues” and Note 7, Segments to our consolidated financial statement s included
+    TAIL: Given the significance of performance requirements within our advertising and other arrangements, actual payments could differ significantly from these estimates.
+
+==============================================================================
+0001562762-16-000352  10-K MDA  2016-02-26  matches=5
+--- SHIPPED(last): 23319 words, start=250695
+    HEAD: ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS You should read the following discussion and analysis of our financial condition and results of our operations in conjunction with our “Selected Financial Data” and our audited consolidated financial statements and the
+    TAIL: Given the significance of performance requirements within our advertising and other arrangements, actual payments could differ significantly from these estimates.
+--- CANDIDATE(first>=500): 50803 words, start=74070
+    HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Reporting Segments and Geographic Information”, “Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Description of Line Items—Net revenues” and Note 7, Segments to our consolidated financial statement s included
+    TAIL: Given the significance of performance requirements within our advertising and other arrangements, actual payments could differ significantly from these estimates.
+
+==============================================================================
+0000950103-16-011313  10-K MDA  2016-02-23  matches=5
+--- SHIPPED(last): 12689 words, start=212050
+    HEAD: ITEM 7: Management’s discussion and analysis of financial condition and results of operations The following discussion should be read in conjunction with the Company’s consolidated financial statements contained in ITEM 15: Exhibits and Financial Statement Schedules in this Annual Report on Form 10-K. Overview The
+    TAIL: outstanding swap and forward foreign exchange contracts to manage the currency risk associated with intercompany transactions. For further information, see
+--- CANDIDATE(first>=500): 13572 words, start=206534
+    HEAD: ITEM 7: Management’s Discussion and Analysis of Financial Condition and Results of Operations and with ITEM 15: Exhibits and Financial Statement Schedules in this Annual Report on Form 10-K. Year to December 31, 2015 2014 2013 2012 2011 $’M $’M $’M $’M $’M Statements of
+    TAIL: outstanding swap and forward foreign exchange contracts to manage the currency risk associated with intercompany transactions. For further information, see
+
+==============================================================================
+0001562762-19-000047  10-K MDA  2019-02-28  matches=3
+--- SHIPPED(last): 24664 words, start=58277
+    HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Description of Line Items—Net revenues” and Note 7, Segments to our audited consolidated financial statements included elsewhere in this report and incorporated by reference in this Item 1. Offices We are a Delaware
+    TAIL: 2017 and 2018 long-term retention plans (the “2011, 2012, 2013, 2014, 2015, 2016, 2017 and 2018 LTRPs”, respectively). See “
+--- CANDIDATE(first>=500): 24681 words, start=58134
+    HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Reporting Segments and Geographic Information”, “Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Description of Line Items—Net revenues” and Note 7, Segments to our audited consolidated financial statements included
+    TAIL: 2017 and 2018 long-term retention plans (the “2011, 2012, 2013, 2014, 2015, 2016, 2017 and 2018 LTRPs”, respectively). See “
+
+==============================================================================
+0001562762-17-000024  10-K MDA  2017-02-24  matches=4
+--- SHIPPED(last): 28944 words, start=165327
+    HEAD: Item 7 Management’s Discussion and Analysis of Financial Condition and Results of Operations—Critical accounting policies and estimates—Foreign Currency Translation”. While we have in the past entered into transactions to hedge portions of our foreign currency translation exposure, these transactions are expensive, and it is very
+    TAIL: Given the significance of performance requirements within our advertising and other arrangements, actual payments could differ significantly from these estimates.
+--- CANDIDATE(first>=500): 44360 words, start=64056
+    HEAD: Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Reporting Segments and Geographic Information”, “Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations—Description of Line Items—Net revenues” and Note 7, Segments to our consolidated financial statement s included
+    TAIL: Given the significance of performance requirements within our advertising and other arrangements, actual payments could differ significantly from these estimates.
+
+==============================================================================
+0000723125-19-000094  10-K RISK_FACTORS  2019-10-17  matches=4
+--- SHIPPED(last): 23672 words, start=195556
+    HEAD: Item 1A. Risk Factors." Changes in currency exchange rates could materially adversely affect our results of operations or financial condition. The functional currency for all of our operations is the U.S. dollar. The substantial majority of our sales are transacted in the U.S. dollar; however,
+    TAIL: of the Board October 17, 2019 (Robert E. Switz) Director /s/ MaryAnn Wright Director October 17, 2019 (MaryAnn Wright) 93
+--- CANDIDATE(first>=500): 20132 words, start=4798
+    HEAD: Item 1A. Risk Factors." All period references are to our fiscal periods unless otherwise indicated. Definitions of Commonly Used Terms As used herein, "we," "our," "us," and similar terms include Micron Technology, Inc. and our consolidated subsidiaries, unless the context indicates otherwise. Abbreviations, terms, or
+    TAIL: of the corporate reorganization proceedings could have a material adverse effect on our business, results of operations, or financial condition.
+
+==============================================================================
+0000723125-17-000131  10-K RISK_FACTORS  2017-10-26  matches=6
+--- SHIPPED(last): 27976 words, start=173514
+    HEAD: Item 1A. Risk Factors." Changes in currency exchange rates could materially adversely affect our results of operations or financial condition. The functional currency for all of our operations is the U.S. dollar. The substantial majority of our sales are transacted in the U.S. dollar; however,
+    TAIL: 2017 (Lawrence N. Mondry) /s/ Robert E. Switz Chairman of the Board October 26, 2017 (Robert E. Switz) Director 97
+--- CANDIDATE(first>=500): 15133 words, start=7113
+    HEAD: Item 1A. Risk Factors." All period references are to our fiscal periods unless otherwise indicated. Overview Micron Technology, Inc., including its consolidated subsidiaries, is an industry leader in innovative memory and storage solutions. Through our global brands – Micron®, Crucial®, and Ballistix® – our broad
+    TAIL: could incur significant losses, which could have a material adverse effect on our business, results of operations, or financial condition.
+
+==============================================================================
+0000034088-18-000015  10-K RISK_FACTORS  2018-02-28  matches=9
+--- SHIPPED(last): 30394 words, start=163226
+    HEAD: Item 1A. Risk Factors for a more complete discussion of risks. The Corporation’s financial strength enables it to make large, long-term capital expenditures. Capital and exploration expenditures in 2017 were $23.1 billion, reflecting the Corporation’s continued active investment program. The Corporation anticipates an investment level
+    TAIL: liquids proved reserves attributable to consolidated subsidiaries and equity companies. For additional information on natural gas liquids proved reserves see
+--- CANDIDATE(first>=500): 2578 words, start=10691
+    HEAD: ITEM 1A. RISK FACTORS ExxonMobil’s financial and operating results are subject to a variety of risks inherent in the global oil, gas, and petrochemical businesses. Many of these risk factors are not within the Company’s control and could adversely affect our business, our financial and
+    TAIL: and business plans could differ materially due to, among other things, the factors discussed above and elsewhere in this report.
+
+==============================================================================
+0000723125-15-000112  10-K RISK_FACTORS  2015-10-27  matches=6
+--- SHIPPED(last): 30782 words, start=171009
+    HEAD: Item 1A. Risk Factors." Changes in currency exchange rates could materially adversely affect our results of operations or financial condition. 40 The functional currency for all of our consolidated subsidiaries is the U.S. dollar. The substantial majority of our revenues are transacted in the U.S.
+    TAIL: 2014 3,155 — (544 ) (168 ) 2,443 Year ended August 29, 2013 1,470 1,292 418 (25 ) 3,155 106
+--- CANDIDATE(first>=500): 13444 words, start=6745
+    HEAD: Item 1A. Risk Factors." All period references are to our fiscal periods unless otherwise indicated. Corporate Information Micron, a Delaware corporation, was incorporated in 1978. Our executive offices are located at 8000 South Federal Way, Boise, Idaho 83716-9632 and our telephone number is (208) 368-4000.
+    TAIL: of such default, we could incur significant losses, which could adversely impact our business, results of operations, or financial condition.
+
+==============================================================================
+0001035002-22-000007  10-K RISK_FACTORS  2022-02-22  matches=9
+--- SHIPPED(last): 32564 words, start=204857
+    HEAD: ITEM 1A. RISK FACTORS—Risks Related to Our Business, Industry, and Operations— Legal, regulatory, and political matters and developments regarding climate change, GHG or other air emissions, fuel efficiency, or the environment may decrease the demand for our petroleum-based products and could adversely affect our performance
+    TAIL: Weisenburger Director February 22, 2022 (Randall J. Weisenburger) /s/ Rayford Wilkins, Jr. Director February 22, 2022 (Rayford Wilkins, Jr.) 145
+--- CANDIDATE(first>=500): 16627 words, start=13226
+    HEAD: ITEM 1A. RISK FACTORS—Legal, Governmental, and Regulatory Risks— Compliance with, or developments concerning, the Renewable and Low-Carbon Fuel Blending Programs, and other regulations, policies, and standards impacting the demand for low-carbon fuels could adversely affect our performance .” In addition, see Note 1 of Notes
+    TAIL: we will be able to obtain the full amount of our insurance coverage for insured events. 31 Table of Contents
+
+==============================================================================
+0001104659-21-025751  10-K RISK_FACTORS  2021-02-19  matches=3
+--- SHIPPED(last): 85 words, start=64609
+    HEAD: Item 1A. Risk Factors” of this Form 10-K, may cause actual results to differ materially from current expectations, estimates, projections, forecasts, and from past results. No assurance can be made that any expectation, estimate, or projection contained in a forward-looking statement will be achieved or
+    TAIL: release publicly any revisions to forward-looking statements as the result of subsequent events or developments, except as required by law.
+--- CANDIDATE(first>=500): 4076 words, start=36515
+    HEAD: ITEM 1A. RISK FACTORS In addition to the other information in this report, the following risk factors should be considered before deciding to invest in any of Abbott’s securities. Additional risks and uncertainties not presently known to Abbott, or risks Abbott currently considers immaterial, could
+    TAIL: release publicly any revisions to forward-looking statements as the result of subsequent events or developments, except as required by law.
+
+==============================================================================
+0000034088-22-000011  10-K RISK_FACTORS  2022-02-23  matches=8
+--- SHIPPED(last): 28793 words, start=182704
+    HEAD: Item 1A. Risk Factors for a more complete discussion of risks. The Corporation’s financial strength enables it to make large, long-term capital expenditures. Capital and exploration expenditures in 2021 were $16.6 billion, reflecting the Corporation’s continued active investment program. The Corporation plans to invest in
+    TAIL: liquids proved reserves attributable to consolidated subsidiaries and equity companies. For additional information on natural gas liquids proved reserves see
+--- CANDIDATE(first>=500): 273 words, start=10238
+    HEAD: item 1A. Risk Factors in this report, compliance with existing and potential future government regulations, including taxes, environmental regulations, and other government regulations and policies that directly or indirectly affect the production and sale of our products, may have material effects on the capital expenditures,
+    TAIL: the election of governments, and risks attendant to foreign operations may be found in “Item 1A. Risk Factors” and “
+
+==============================================================================
+0000034088-19-000010  10-K RISK_FACTORS  2019-02-27  matches=8
+--- SHIPPED(last): 28950 words, start=162992
+    HEAD: Item 1A. Risk Factors for a more complete discussion of risks. The Corporation’s financial strength enables it to make large, long-term capital expenditures. Capital and exploration expenditures in 2018 were $25.9 billion, reflecting the Corporation’s continued active investment program. The Corporation anticipates an investment level
+    TAIL: liquids proved reserves attributable to consolidated subsidiaries and equity companies. For additional information on natural gas liquids proved reserves see
+--- CANDIDATE(first>=500): 2679 words, start=10252
+    HEAD: ITEM 1A. RISK FACTORS ExxonMobil’s financial and operating results are subject to a variety of risks inherent in the global oil, gas, and petrochemical businesses. Many of these risk factors are not within the Company’s control and could adversely affect our business, our financial and
+    TAIL: and business plans could differ materially due to, among other things, the factors discussed above and elsewhere in this report.
+
+==============================================================================
+0001047469-18-000856  10-K RISK_FACTORS  2018-02-16  matches=2
+--- SHIPPED(last): 83 words, start=58452
+    HEAD: Item 1A. Risk Factors" of this Form 10-K, may cause actual results to differ materially from current expectations, estimates, projections, forecasts, and from past results. No assurance can be made that any expectation, estimate, or projection contained in a forward-looking statement will be achieved or
+    TAIL: release publicly any revisions to forward-looking statements as the result of subsequent events or developments, except as required by law.
+--- CANDIDATE(first>=500): 3654 words, start=33380
+    HEAD: ITEM 1A. RISK FACTORS In addition to the other information in this report, the following risk factors should be considered before deciding to invest in any of Abbott's securities. Additional risks and uncertainties not presently known to Abbott, or risks Abbott currently considers immaterial, could
+    TAIL: release publicly any revisions to forward-looking statements as the result of subsequent events or developments, except as required by law.
+
+==============================================================================
+0001047469-17-000744  10-K RISK_FACTORS  2017-02-17  matches=2
+--- SHIPPED(last): 83 words, start=60977
+    HEAD: Item 1A. Risk Factors" of this Form 10-K, may cause actual results to differ materially from current expectations, estimates, projections, forecasts, and from past results. No assurance can be made that any expectation, estimate, or projection contained in a forward-looking statement will be achieved or
+    TAIL: release publicly any revisions to forward-looking statements as the result of subsequent events or developments, except as required by law.
+--- CANDIDATE(first>=500): 4077 words, start=33066
+    HEAD: ITEM 1A. RISK FACTORS In addition to the other information in this report, the following risk factors should be considered before deciding to invest in any of Abbott's securities. Additional risks and uncertainties not presently known to Abbott, or risks Abbott currently considers immaterial, could
+    TAIL: release publicly any revisions to forward-looking statements as the result of subsequent events or developments, except as required by law.
+
+==============================================================================
+0000732717-24-000022  10-Q MDA  2024-05-02  matches=12
+--- SHIPPED(last): 398 words, start=91877
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations- Continued Dollars in millions except per share amounts Dividends on common stock declared by our Board of Directors totaled $0.2775 per share in the first three months of 2024 and 2023. Our
+    TAIL: factors that affect total capital, and reflects our recent debt issuances, repayments and reclassifications related to redemption of noncontrolling interests.
+--- CANDIDATE(first>=500): 5169 words, start=60365
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Dollars in millions except per share amounts OVERVIEW AT&T Inc. is referred to as “we,” “AT&T” or the “Company” throughout this document. AT&T products and services are provided or offered by subsidiaries
+    TAIL: factors that affect total capital, and reflects our recent debt issuances, repayments and reclassifications related to redemption of noncontrolling interests.
+
+==============================================================================
+0000732717-15-000079  10-Q MDA  2015-08-07  matches=18
+--- SHIPPED(last): 716 words, start=109529
+    HEAD: Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations - Continued Dollars in millions except per share amounts On January 21, 2015, we entered into a $9,155 credit agreement (the "Syndicated Credit Agreement") containing (i) a $6,286 term loan facility (the
+    TAIL: contribution of $175 was made to the trust during the second quarter of 2015. 37 AT&T INC. JUNE 30, 2015
+--- CANDIDATE(first>=500): 10183 words, start=49235
+    HEAD: Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations Dollars in millions except per share amounts RESULTS OF OPERATIONS For ease of reading, AT&T Inc. is referred to as "we," "AT&T" or the "Company" throughout this document, and the names of
+    TAIL: contribution of $175 was made to the trust during the second quarter of 2015. 37 AT&T INC. JUNE 30, 2015
+
+==============================================================================
+0000024741-17-000060  10-Q MDA  2017-10-26  matches=8
+--- SHIPPED(last): 4416 words, start=127673
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: Schlesinger ﻿ Date Edward Schlesinger ﻿ Vice President and Corporate Controller ﻿ © 2017 Corning Incorporated. All Rights Reserved. 53
+--- CANDIDATE(first>=500): 8183 words, start=104535
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: Schlesinger ﻿ Date Edward Schlesinger ﻿ Vice President and Corporate Controller ﻿ © 2017 Corning Incorporated. All Rights Reserved. 53
+
+==============================================================================
+0000024741-18-000053  10-Q MDA  2018-10-24  matches=5
+--- SHIPPED(last): 6259 words, start=103487
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: ﻿ Date Edward A. Schlesinger ﻿ Vice President and Corporate Controller ﻿ © 2018 Corning Incorporated. All Rights Reserved. 48
+--- CANDIDATE(first>=500): 6844 words, start=99968
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: ﻿ Date Edward A. Schlesinger ﻿ Vice President and Corporate Controller ﻿ © 2018 Corning Incorporated. All Rights Reserved. 48
+
+==============================================================================
+0000732717-17-000055  10-Q MDA  2017-05-04  matches=23
+--- SHIPPED(last): 341 words, start=121830
+    HEAD: Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations - Continued Dollars in millions except per share and per subscriber amounts Collateral Arrangements During the first three months of 2017, we received $396 of additional cash collateral, on a net basis,
+    TAIL: not impose any limitations on our ability to declare a dividend or repurchase shares. 42 AT&T INC. MARCH 31, 2017
+--- CANDIDATE(first>=500): 11376 words, start=50373
+    HEAD: Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations Dollars in millions except per share and per subscriber amounts RESULTS OF OPERATIONS AT&T is a holding company whose subsidiaries and affiliates operate in the communications and digital entertainment services industry. Our
+    TAIL: not impose any limitations on our ability to declare a dividend or repurchase shares. 42 AT&T INC. MARCH 31, 2017
+
+==============================================================================
+0000024741-15-000045  10-Q MDA  2015-07-30  matches=11
+--- SHIPPED(last): 3361 words, start=139221
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: actions and charges; and · other risks detailed in Corning’s SEC filings. © 2015 Corning Incorporated. All Rights Reserved. 59
+--- CANDIDATE(first>=500): 14899 words, start=67595
+    HEAD: ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS ORGANIZATION OF INFORMATION Management’s Discussion and Analysis of Financial Condition and Results of Operations (“MD&A”) provides a historical and prospective narrative on the Company’s financial condition and results of operations. This interim
+    TAIL: actions and charges; and · other risks detailed in Corning’s SEC filings. © 2015 Corning Incorporated. All Rights Reserved. 59
+
+==============================================================================
+0001001039-16-000418  10-Q MDA  2016-05-10  matches=2
+--- SHIPPED(last): 13 words, start=135247
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations.
+    TAIL: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations.
+--- CANDIDATE(first>=500): 12182 words, start=58127
+    HEAD: Item 2: Management’s Discussion and Analysis of Financial Condition and Results of Operations ORGANIZATION OF INFORMATION Management’s Discussion and Analysis provides a narrative of the Company’s financial performance and condition that should be read in conjunction with the accompanying financial statements. It includes the following
+    TAIL: as stated above. The Company does not enter into these transactions or any other hedging transactions for speculative purposes. 46
+
+==============================================================================
+0001628280-18-001147  10-Q MDA  2018-02-06  matches=2
+--- SHIPPED(last): 13 words, start=120992
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations.
+    TAIL: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations.
+--- CANDIDATE(first>=500): 8638 words, start=65412
+    HEAD: Item 2: Management’s Discussion and Analysis of Financial Condition and Results of Operations ORGANIZATION OF INFORMATION Management’s Discussion and Analysis provides a narrative of the Company’s financial performance and condition that should be read in conjunction with the accompanying financial statements. It includes the following
+    TAIL: as stated above. The Company does not enter into these transactions or any other hedging transactions for speculative purposes. 38
+
+==============================================================================
+0000024741-17-000026  10-Q MDA  2017-04-25  matches=8
+--- SHIPPED(last): 3873 words, start=102533
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: Schlesinger ﻿ Date Edward Schlesinger ﻿ Vice President and Corporate Controller ﻿ © 2017 Corning Incorporated. All Rights Reserved. 47
+--- CANDIDATE(first>=500): 6823 words, start=84207
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: Schlesinger ﻿ Date Edward Schlesinger ﻿ Vice President and Corporate Controller ﻿ © 2017 Corning Incorporated. All Rights Reserved. 47
+
+==============================================================================
+0000024741-16-000105  10-Q MDA  2016-07-27  matches=11
+--- SHIPPED(last): 2868 words, start=129733
+    HEAD: Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations, Results of Operations – Core Performance Measures, Reconciliation of Non-GAAP Measures, “Items which we exclude from GAAP measures to arrive at core performance measures” for the descriptions of the footnoted reconciling items.
+    TAIL: actions and charges; and - other risks detailed in Corning’s SEC filings. © 2016 Corning Incorporated. All Rights Reserved. 57
+--- CANDIDATE(first>=500): 12849 words, start=67359
+    HEAD: ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS ORGANIZATION OF INFORMATION Management’s Discussion and Analysis of Financial Condition and Results of Operations (“MD&A”) provides a historical and prospective narrative on the Company’s financial condition and results of operations. This interim
+    TAIL: actions and charges; and - other risks detailed in Corning’s SEC filings. © 2016 Corning Incorporated. All Rights Reserved. 57
+
+==============================================================================
+0001628280-15-008083  10-Q RISK_FACTORS  2015-10-30  matches=2
+--- SHIPPED(last): 77 words, start=166561
+    HEAD: Item 1A. Risk Factors" in our Annual Report on Form 10-K for the year ended December 31, 2014 reflect certain risks associated with existing and potential lines of business and contain "forward-looking statements" as discussed in Part I, Item 2 of this report. Readers should
+    TAIL: as our business, financial condition or results of operations could be adversely affected if any of these risks actually occur.
+--- CANDIDATE(first>=500): 89 words, start=166499
+    HEAD: ITEM 1A. RISK FACTORS. The risk factors set forth in Part I, "Item 1A. Risk Factors" in our Annual Report on Form 10-K for the year ended December 31, 2014 reflect certain risks associated with existing and potential lines of business and contain "forward-looking statements"
+    TAIL: as our business, financial condition or results of operations could be adversely affected if any of these risks actually occur.
+
+==============================================================================
+0000723125-17-000037  10-Q RISK_FACTORS  2017-03-28  matches=4
+--- SHIPPED(last): 7515 words, start=119734
+    HEAD: ITEM 1A. RISK FACTORS In addition to the factors discussed elsewhere in this Form 10-Q, the following are important factors which could cause actual results or events to differ materially from those contained in any forward-looking statements made by us. The order of these factors
+    TAIL: of such default, we could incur significant losses, which could adversely impact our business, results of operations, or financial condition.
+--- CANDIDATE(first>=500): 14906 words, start=75469
+    HEAD: Item 1A. Risk Factors." This discussion should be read in conjunction with the consolidated financial statements and accompanying notes for the year ended September 1, 2016. All period references are to our fiscal periods unless otherwise indicated. Our fiscal year is the 52 or 53-week
+    TAIL: of such default, we could incur significant losses, which could adversely impact our business, results of operations, or financial condition.
+
+==============================================================================
+0001633917-16-000161  10-Q RISK_FACTORS  2016-04-28  matches=2
+--- SHIPPED(last): 2712 words, start=164815
+    HEAD: Item 1A: Risk Factors We are subject to various risks and uncertainties, including those described in Part I, Item 1A, "Risk Factors" in our Annual Report on Form 10-K for the year ended December 31, 2015, which could materially affect our business, results of operations,
+    TAIL: reduce their use of our products and result in significant penalties and fines, which could materially harm our business. 48
+--- CANDIDATE(first>=500): 14071 words, start=92323
+    HEAD: Item 1A: Risk Factors” of this Quarterly Report on Form 10-Q as well as in our unaudited condensed combined and consolidated financial statements, related notes, and the other information appearing elsewhere in this report and our other filings with the Securities and Exchange Commission, or
+    TAIL: reduce their use of our products and result in significant penalties and fines, which could materially harm our business. 48
+
+==============================================================================
+0001558370-16-006167  10-Q RISK_FACTORS  2016-05-26  matches=2
+--- SHIPPED(last): 88 words, start=137502
+    HEAD: Item 1A. Risk Factors See the Company’s most recent annual report filed on Form 10-K (Part I, Item 1A). There has been no material change in this information. The risks described in the annual report on Form 10-K, and the “Safe Harbor Statement” in this
+    TAIL: or operating results. One should not consider the risk factors to be a complete discussion of risks, uncertainties and assumptions.
+--- CANDIDATE(first>=500): 3039 words, start=118266
+    HEAD: Item 1A. Risk Factors of the Company’s most recent annual report on Form 10-K and quarterly reports on Form 10-Q). Critical Accounting Policies See the Company’s critical accounting policies discussed in the Management’s Discussion and Analysis of the most recent annual report filed on Form
+    TAIL: or operating results. One should not consider the risk factors to be a complete discussion of risks, uncertainties and assumptions.
+
+==============================================================================
+0001558370-23-016700  10-Q RISK_FACTORS  2023-10-25  matches=3
+--- SHIPPED(last): 56 words, start=140878
+    HEAD: Item 1A. Risk Factors. There have been no material changes to the risk factors previously disclosed in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2022, as updated by Part II, Item 1A of our Quarterly
+    TAIL: updated by Part II, Item 1A of our Quarterly Report on Form 10-Q for the quarter ended March 31, 2023.
+--- CANDIDATE(first>=500): 9642 words, start=78264
+    HEAD: Item 1A. Risk Factors , included in our Quarterly Report on Form 10-Q for the quarterly period ended March 31, 2023. We assume no obligation to update any forward-looking statement, including financial estimates and forecasts, whether as a result of future events, circumstances or developments
+    TAIL: updated by Part II, Item 1A of our Quarterly Report on Form 10-Q for the quarter ended March 31, 2023.
+
+==============================================================================
+0000024741-15-000058  10-Q RISK_FACTORS  2015-10-27  matches=3
+--- SHIPPED(last): 70 words, start=157660
+    HEAD: Item 1A. Risk Factors in our 2014 Form 10-K, which could materially impact our business, financial condition or future results. Risks disclosed in our 2014 Form 10-K are not the only risks facing our Company. Additional risks and uncertainties not currently known to us or
+    TAIL: may materially adversely impact our business, financial condition or operating results. © 2015 Corning Incorporated. All Rights Res erved. 58
+--- CANDIDATE(first>=500): 94 words, start=157516
+    HEAD: ITEM 1A. RISK FACTORS In addition to other information set forth in this report, you should carefully consider the factors discussed in Part I, Item 1A. Risk Factors in our 2014 Form 10-K, which could materially impact our business, financial condition or future results. Risks
+    TAIL: may materially adversely impact our business, financial condition or operating results. © 2015 Corning Incorporated. All Rights Res erved. 58
+
+==============================================================================
+0000950103-15-005935  10-Q RISK_FACTORS  2015-07-30  matches=3
+--- SHIPPED(last): 31 words, start=163265
+    HEAD: ITEM 1A. RISK FACTORS There have been no material changes from the risk factors set forth in the Company’s Annual Report on Form 10-K for the year ended December 31, 2014.
+    TAIL: the risk factors set forth in the Company’s Annual Report on Form 10-K for the year ended December 31, 2014.
+--- CANDIDATE(first>=500): 390 words, start=5358
+    HEAD: Item 1A: Risk Factors” in Shire’s Annual Report on Form 10-K for the year ended December 31, 2014. 2 The following are trademarks either owned or licensed by Shire plc or its subsidiaries, which are the subject of trademark registrations in certain territories, or which
+    TAIL: 59 PART II OTHER INFORMATION PART II OTHER INFORMATION 59 ITEM 1. LEGAL PROCEEDINGS 59 ITEM 1A. RISK FACTORS 59
+
+==============================================================================
+0000723125-18-000156  10-Q RISK_FACTORS  2018-12-19  matches=3
+--- SHIPPED(last): 9801 words, start=98307
+    HEAD: ITEM 1A. RISK FACTORS In addition to the factors discussed elsewhere in this Form 10-Q, the following are important factors, the order of which is not necessarily indicative of the level of risk that each poses to us, which could cause actual results or events
+    TAIL: of the corporate reorganization proceedings could have a material adverse effect on our business, results of operations, or financial condition.
+--- CANDIDATE(first>=500): 24619 words, start=5901
+    HEAD: Item 1A. Risk Factors." PART I. FINANCIAL INFORMATION ITEM 1. FINANCIAL STATEMENTS MICRON TECHNOLOGY, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions except per share amounts) (Unaudited) Quarter ended November 29, 2018 November 30, 2017 Revenue $ 7,913 $ 6,803 Cost of goods sold 3,298 3,056
+    TAIL: of the corporate reorganization proceedings could have a material adverse effect on our business, results of operations, or financial condition.
+
+==============================================================================
+0000024741-15-000045  10-Q RISK_FACTORS  2015-07-30  matches=3
+--- SHIPPED(last): 69 words, start=164739
+    HEAD: Item 1A. Risk Factors in our 2014 Form 10-K, which could materially impact our business, financial condition or future results. Risks disclosed in our 2014 Form 10-K are not the only risks facing our Company. Additional risks and uncertainties not currently known to us or
+    TAIL: immaterial may materially adversely impact our business, financial condition or operating results. © 2015 Corning Incorporated. All Rights Reserved. 61
+--- CANDIDATE(first>=500): 93 words, start=164595
+    HEAD: ITEM 1A. RISK FACTORS In addition to other information set forth in this report, you should carefully consider the factors discussed in Part I, Item 1A. Risk Factors in our 2014 Form 10-K, which could materially impact our business, financial condition or future results. Risks
+    TAIL: immaterial may materially adversely impact our business, financial condition or operating results. © 2015 Corning Incorporated. All Rights Reserved. 61
+
+==============================================================================
+0001065088-20-000030  10-Q RISK_FACTORS  2020-07-29  matches=4
+--- SHIPPED(last): 16030 words, start=166658
+    HEAD: Item 1A: Risk Factors You should carefully review the following discussion of the risks that may affect our business, results of operations and financial condition, as well as our condensed consolidated financial statements and notes thereto and the other information appearing in this report, for
+    TAIL: obligations to PayPal may be significant and these risks could negatively affect our results of operations and financial condition. 72
+--- CANDIDATE(first>=500): 26598 words, start=99788
+    HEAD: Item 1A: Risk Factors” of this Quarterly Report on Form 10-Q as well as in our unaudited condensed consolidated financial statements, related notes, and the other information appearing elsewhere in this report and our other filings with the Securities and Exchange Commission (“SEC”). We do
+    TAIL: obligations to PayPal may be significant and these risks could negatively affect our results of operations and financial condition. 72
+
+==============================================================================
+0001558370-17-004638  10-Q RISK_FACTORS  2017-06-02  matches=2
+--- SHIPPED(last): 88 words, start=138643
+    HEAD: Item 1A. Risk Factors See the Company’s most recent annual report filed on Form 10-K (Part I, Item 1A). There has been no material change in this information. The risks described in the annual report on Form 10-K, and the “Safe Harbor Statement” in this
+    TAIL: or operating results. One should not consider the risk factors to be a complete discussion of risks, uncertainties, and assumptions.
+--- CANDIDATE(first>=500): 3036 words, start=119502
+    HEAD: Item 1A. Risk Factors of the Company’s most recent annual report on Form 10-K and quarterly reports on Form 10-Q). Critical Accounting Policies See the Company’s critical accounting policies discussed in the Management’s Discussion and Analysis of the most recent annual report filed on Form
+    TAIL: or operating results. One should not consider the risk factors to be a complete discussion of risks, uncertainties, and assumptions.
+
+==============================================================================
+0001558370-18-007303  10-Q RISK_FACTORS  2018-08-30  matches=2
+--- SHIPPED(last): 88 words, start=155569
+    HEAD: Item 1A. Risk Factors See the Company’s most recent annual report filed on Form 10-K (Part I, Item 1A). There has been no material change in this information. The risks described in the annual report on Form 10-K, and the “Safe Harbor Statement” in this
+    TAIL: or operating results. One should not consider the risk factors to be a complete discussion of risks, uncertainties, and assumptions.
+--- CANDIDATE(first>=500): 3472 words, start=133458
+    HEAD: Item 1A. Risk Factors of the Company’s most recent annual report on Form 10-K and quarterly reports on Form 10-Q). Critical Accounting Policies See the Company’s critical accounting policies discussed in the Management’s Discussion and Analysis of the most recent annual report filed on Form
+    TAIL: or operating results. One should not consider the risk factors to be a complete discussion of risks, uncertainties, and assumptions.

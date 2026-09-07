@@ -1,0 +1,188 @@
+[
+ {
+  "chunk_id": "E2CHK-7ae98f76f805239a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is purely definitional/mechanical (\"Measure of the total U.S. dollar sum of all transactions\", \"Defined as net income as a percentage of net revenues\") plus safe-harbor boilerplate with no characterization of results; no flags because \"known and unknown risks, uncertainties and other factors\" and the reference to the \"Risk Factors\" section are pointers, not standalone assertions, and \"local currency inflation effects\" appears only as an excluded item in a calculation methodology, not as cost pressure."
+ },
+ {
+  "chunk_id": "E2CHK-d5ccec4276df1c4e",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No MARGIN_COST_PRESSURE despite \"Sales and marketing expenses increased $729 million or 4%\" because the cause is named as \"the impact of the Activision Blizzard acquisition and investments in commercial sales\" and the passage reports expenses falling as a share of revenue (\"(1)ppt\") with G&A \"decreased $175 million or 9%\", so no cost/margin compression is asserted; sentiment NEUTRAL as the register is flat expense-line narration."
+ },
+ {
+  "chunk_id": "E2CHK-200ad84cdaebbf04",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Modality REALIZED under the realized-controls rule because the passage affirms existence, not mere possibility: \"we are involved in disputes or regulatory inquiries\", \"The number and significance of these disputes and inquiries have increased\", and \"We have responded to inquiries from regulatory agencies\" — only the \"enforcement actions, injunctions, fines or penalties\" are projected; sentiment NEGATIVE on the passage's unfavorable framing (\"harm to our reputation\", \"substantial number of complaints\", \"could materially adversely affect our business\")."
+ },
+ {
+  "chunk_id": "E2CHK-4f259a30da9e1084",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No IMPAIRMENT_WRITEDOWN because the only relevant text is the bare line item \"Charges associated with restructuring and other activities (86)\" with no asset-value reduction stated, and the rubric limits restructuring charges to those \"tied to asset value reduction\"; sentiment NEUTRAL because the passage is tabular segment data plus a mechanical note on \"the correction of a regional misclassification\" with \"no impact on the consolidated financial results\" and no favorable or unfavorable characterization."
+ },
+ {
+  "chunk_id": "E2CHK-945c77855269495a",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "LOWERED",
+  "red_flags": [],
+  "reason": "Guidance LOWERED is explicit and quantified — \"2019 EPS guidance range lowered to $4.57 to $4.67 on a reported basis and $5.55 to $5.65 on a non-GAAP basis\"; sentiment POSITIVE despite that cut because the passage's characterization of results and condition is favorable (\"Reports Strong Fourth-Quarter and Full-Year 2018 Financial Results\", \"revenue increased 5 percent\", \"delivered strong volume growth\"), and the \"negative Phase 3 confirmatory trial\" is a trial outcome, not an agency decision, so no LEGAL_REGULATORY_ACTION."
+ },
+ {
+  "chunk_id": "E2CHK-cbb9da8be4757a0c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL as genuinely balanced under the rubric's tie-breaker — favorable self-characterization (\"made meaningful progress\", \"delivered over 300 basis points of adjusted gross margin expansion\") against \"pressure from its sales volume declines\", a \"net reduction in positions of 5,800 to 7,000\", and the need to \"restore a solid double-digit adjusted operating margin\"; IMPAIRMENT_WRITEDOWN is HYPOTHETICAL because the \"asset write-offs\" are components of charges the Company \"expects to take\" \"once fully implemented\", while DEMAND_WEAKNESS is REALIZED on the asserted \"sales volume declines\"; guidance NONE because the $1.2–1.6bn charge and $0.8–1.0bn benefit ranges are new plan estimates, not a raised, lowered, or reaffirmed prior figure."
+ },
+ {
+  "chunk_id": "E2CHK-01f938193ec0c29a",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment POSITIVE rather than NEUTRAL because the passage supplies favorable characterizations beyond bare magnitudes — \"Gross margin for energy generation and storage increased from -106.7% to 28.9%\", \"improved gross margin of energy storage sales\", and \"growing popularity of our Powerpack and Powerwall offerings\"; no MARGIN_COST_PRESSURE because the large cost increases are attributed to \"the inclusion of energy generation and storage costs from SolarCity\" and are accompanied by margin expansion, not compression."
+ },
+ {
+  "chunk_id": "E2CHK-6a7987db7eb55fac",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN REALIZED rests on the affirmative carrying-value reduction \"In September, goodwill was reduced by $27 million, net of taxes\", which matches the category's named \"goodwill write-downs\" example and the addendum's consistency rule on carrying-value reductions, even though the stated cause is \"a purchase price adjustment\"; sentiment NEUTRAL because the surrounding text is footnote and calendar mechanics (\"September's written premium includes the first two days of October\") with no favorable or unfavorable lean."
+ },
+ {
+  "chunk_id": "E2CHK-6b132b3219f72f17",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No flags because the entire risk content is a single safe-harbor noun enumeration — \"inflation and its impacts on discretionary spending and on our costs, shortages, and other disruptions in the labor supply, ... trade policy changes or additional tariffs, ... fluctuations in fuel and energy costs\" — which the addendum's rule that safe-harbor noun lists ordinarily fail mining depth resolves to no flags; sentiment NEUTRAL because the remainder is boilerplate plus an unnarrated income statement, and declining \"Net sales $ 22,347\" versus \"$ 23,659\" is magnitude without characterization."
+ },
+ {
+  "chunk_id": "E2CHK-d2383b7fdaba3894",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "LEGAL_REGULATORY_ACTION is REALIZED and double-labels with MARGIN_COST_PRESSURE REALIZED under the addendum's regulation-plus-incurred-cost rule, because \"laws and regulations ... require it to make substantial expenditures\" and \"The implementation of these regulations has required ... Sunoco LP to make additional capital or other expenditures\" are existence-and-already-incurred-cost claims, with only \"the adoption of future regulations could require\" projected; SUPPLY_INPUT_CONSTRAINT is flagged HYPOTHETICAL despite the addendum's market-wide-disruption caution because the clause ties the shortfall to the filer's own operations — \"any sustained decrease in the supply of crude oil, refined products, renewable fuels or anhydrous ammonia in markets Sunoco LP serves could result in a significant reduction in throughputs in its pipelines\"; TRADE_POLICY_EXPOSURE is withheld because \"changes in laws, regulations, sanctions or taxation\" is a bare noun list."
+ },
+ {
+  "chunk_id": "E2CHK-5444ca8574726e44",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No LEGAL_REGULATORY_ACTION because \"In any judicial proceeding involving any dispute, controversy or claim between the parties hereto\" is a conditional forum-selection provision and the addendum forbids inferring an existing legal event where no proceeding is affirmatively stated; sentiment NEUTRAL as the passage is pure contract mechanics (\"Further Assurances\", \"Governing Law\", \"Waiver of Jury Trial\") with no statement about business results or condition."
+ },
+ {
+  "chunk_id": "E2CHK-16945c1850fb826e",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "Guidance MAINTAINED on the explicit reaffirmation \"2024 outlook reaffirmed with capital objectives designed to improve efficiency and drive per-share growth\", which restates a previously issued outlook without changing it, rather than NONE — \"Fourth-quarter production exceeds top end of guidance range\" is historical and the dividend increase is not a forward financial target; sentiment POSITIVE on \"Record-setting oil volumes\", \"Balance sheet continued to strengthen\", and \"delivering a solid quarter of execution that surpassed our operational and financial targets\"."
+ },
+ {
+  "chunk_id": "E2CHK-e0da585f7f4710f9",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED because the passage states new ranges against explicitly named prior figures — \"EPS in the range of $9.94 to $10.11\" versus \"Previously, the Company expected GAAP EPS in the range of $9.55 to $9.90\"; no LEGAL_REGULATORY_ACTION because the regulatory content is routine and favorable (\"Agreement was reached with the U.S. Food and Drug Administration ... through a Special Protocol Assessment\", \"Global regulatory submissions\") with no adverse approval, labeling, enforcement, or compliance-cost action."
+ },
+ {
+  "chunk_id": "E2CHK-e230c4d51fc42ccd",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the narrative is unadorned attribution (\"Revenue increased by $98.8 million, or 52%\", \"Cost of revenue ... increased by $84.3 million, or 129%\") with no favorable or unfavorable characterization, and magnitude alone is not sentiment; MARGIN_COST_PRESSURE REALIZED because the passage states an actual margin compression alongside the cost increase — \"Gross margin 48 % 66 % (18 )%\"."
+ },
+ {
+  "chunk_id": "E2CHK-f1b85b95d5d61041",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance NONE because \"Electronic Arts assumes no obligation and does not intend to update these forward-looking statements\" is a standard non-update disclaimer, not withdrawal or suspension of an issued figure, and no forward target is raised, lowered, or reaffirmed; sentiment NEUTRAL as the passage is disclaimer language plus an unnarrated statement of operations."
+ },
+ {
+  "chunk_id": "E2CHK-e45e9cdca77850ee",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No LEGAL_REGULATORY_ACTION despite \"under the provisions of the PPACA ... the Branded Prescription Drug Fee is imposed on pharmaceutical manufacturers\" because the addendum's boundary excludes ordinary compliance with an existing fee/tax regime owed under standing law, and \"(and future litigation related thereto)\" is a parenthetical noun inside a factor enumeration that fails mining depth; sentiment NEUTRAL as the passage only enumerates the determinants of future funding needs without characterizing results."
+ },
+ {
+  "chunk_id": "E2CHK-e83deb713d8c9f5b",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is a GAAP-to-non-GAAP reconciliation and its accounting footnotes (\"Model S gross profit deferred due to lease accounting\", \"an estimated incremental warranty reserve of $14.9 million ... is included\"), i.e. purely mechanical disclosure with no characterization of the reported losses either way."
+ },
+ {
+  "chunk_id": "E2CHK-d4da76e5274c7ff2",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the content is computational tables and their captions (\"COMPUTATION OF NET INCOME AND COMPREHENSIVE INCOME PER SHARE & INVESTMENT RESULTS\", \"% Growth in NPW 18 %\") with no qualitative characterization of the numbers, and magnitude alone is not sentiment."
+ },
+ {
+  "chunk_id": "E2CHK-57fcec50ebcdeb2d",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "MARGIN_COST_PRESSURE REALIZED on the causeless cost-increase clauses that explicitly offset income — \"an increase in amortization related to new account origination costs\" and \"the impact of increased debit and credit card sales volume was offset by higher rewards costs and partner payments\"; sentiment NEUTRAL because the passage is an evenly mixed driver attribution (\"higher Fixed Income Markets revenue ... largely offset by lower revenue in Securitized Products and Rates\", \"lower Equity Markets revenue ... predominantly offset by higher revenue in Prime Finance\") with no predominant lean; DEMAND_WEAKNESS withheld because \"lower debt underwriting fees largely driven by lower non-investment grade loans\" is a revenue attribution rather than an assertion of softening customer demand."
+ },
+ {
+  "chunk_id": "E2CHK-5712e6777412f816",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No IMPAIRMENT_WRITEDOWN because \"we recognized a loss on this investment of approximately $17 million\" is a fair-value remeasurement of an equity holding, not the asset impairment, goodwill, or inventory write-down language the category names; sentiment NEUTRAL because the passage flatly recites a mix of gains and losses (\"recognized a gain on this investment of approximately $10 million\", \"offset by a $7.5 million loss\") and tax-rate mechanics with no characterization."
+ }
+]

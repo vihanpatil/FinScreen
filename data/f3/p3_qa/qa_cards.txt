@@ -1,0 +1,2479 @@
+
+
+########## CARD 01 [T1_BASE] SRS over OK rows
+### ADVANCED MICRO DEVICES INC | CIK 2488 | 8-K | EX99_PRESS_RELEASE | 2018-04-25 | 0000002488-18-000058
+    method=whole_document conf=high status=OK flags=[]
+    words=3696 chars=23144 prose_paras=14 prose_share=0.4578 below_floor=False
+--- HEAD ---
+NEWS RELEASE
+Media Contact
+Drew Prairie
+512-602-4425
+drew.prairie@amd.com
+Investor Contact
+Laura Graves
+408-749-5467
+laura.graves@amd.com
+AMD Reports First Quarter 2018 Financial Results
+- Revenue increased 40 percent year-over-year -
+SANTA CLARA, Calif. - April 25, 2018 -
+AMD
+(NASDAQ:AMD) today announced revenue for the first quarter of 2018 of $1.65 billion, operating income of $120 million, net income of $81 million, and diluted earnings per share of $0.08. On a non-GAAP
+(1)
+basis, operating income was $152 million, net income was $121 million, and diluted earnings per share was $0.11.
+GAAP Financial Results
+Year-over-Year and Quarter-over-Quarter
+Q1 2018
+Q1 2017
+Y/Y
+Q4 2017
+Q/Q
+Revenue
+$1.65B
+$1.18B
+Up 40%
+$1.34B
+Up 23%
+Gross Margin %
+36%
+32%
+Up 4 pp
+34%
+Up 2 pp
+Operating Expense
+$477M
+$394M
+Up $83M
+$454M
+Up $23M
+Operating Expense %
+29%
+33%
+Down 4 pp
+34%
+Down 5 pp
+Operating income (loss)
+$120M
+$11M
+Up $109M
+$(2)M
+Up $122M
+Net income (loss)
+$81M
+$(33)M
+Up $114M
+$(19)M
+Up $100M
+Earnings (loss) per share
+$0.08
+$(0.04)
+Up $0.12
+$(0.02)
+Up $0.10
+Non-GAAP Financial Results
+(1)
+Year-over-Year and Quarter-over-Quarter
+Q1 2018
+Q1 2017
+Y/Y
+Q4 2017
+Q/Q
+Revenue
+$1.65B
+$1.18B
+Up 40%
+$1.34B
+
+--- MID ---
+esults to differ materially from current expectations include, without limitation, the following: Intel Corporation’s dominance of the microprocessor market and its aggressive business practices; the ability of GLOBALFOUNDRIES Inc. to satisfy AMD’s manufacturing requirements; the ability of third party manufacturers to manufacture AMD products on a timely basis in sufficient quantities and using competitive technologies; the ability of third party manufacturers to achieve expected manufacturing yields; AMD’s ability to introduce products on a timely basis with features and performance levels t
+--- TAIL ---
+low in the financial earnings press release because management believes it is of importance to investors to understand the nature of these cash flows. The Company’s calculation of free cash flow may or may not be consistent with the calculation of this measure by other companies in the same industry. Investors should not view free cash flow as an alternative to GAAP liquidity measures of cash flows from operating activities.
+The Company has provided reconciliations within the earnings press release of these non-GAAP financial measures to the most directly comparable GAAP financial measures.
+10
+
+
+########## CARD 02 [T1_BASE] SRS over OK rows
+### COCA COLA CO | CIK 21344 | 10-Q | MDA | 2016-10-27 | 0000021344-16-000076
+    method=anchor conf=high status=OK flags=[]
+    words=18966 chars=121665 prose_paras=119 prose_share=0.5882 below_floor=False
+--- HEAD ---
+Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations
+When used in this report, the terms "The Coca-Cola Company," "Company," "we," "us" and "our" mean The Coca-Cola Company and all entities included in our condensed consolidated financial statements.
+CRITICAL ACCOUNTING POLICIES AND ESTIMATES
+Recoverability of Current and Noncurrent Assets
+Our Company faces many uncertainties and risks related to various economic, political and regulatory environments in the countries in which we operate, particularly in developing and emerging markets. Refer to the heading "Item 1A. Risk Factors" in Part I and "Our Business — Challenges and Risks" in Part II of our Annual Report on Form 10-K for the year ended
+December 31, 2015
+. As a result, management must make numerous assumptions that involve a significant amount of judgment when performing recoverability and impairment tests of noncurrent assets in various regions around the world.
+We perform recoverability and impairment tests of noncurrent assets in accordance with accounting principles generally accepted in the United States ("U.S. GAAP"). For certain assets, recoverability and/or impairment tests a
+--- MID ---
+tion technology systems standardization, and resource and cost reallocation. Second, we will increase the effectiveness of our marketing investments by transforming our marketing and commercial model to redeploy resources into more consumer-facing marketing investments to accelerate growth.
+53
+In October 2014, the Company announced that we were further expanding our productivity and reinvestment program and extending it through 2019. The expansion of the productivity initiatives will focus on four key areas: restructuring the Company's global supply chain; implementing zero-based work, an evol
+--- TAIL ---
+-term debt increased primarily due to a portion of the Company's long-term debt maturing within the next 12 months and being reclassified as current. Refer to the heading "Cash Flows from Financing Activities" above for additional information.
+•
+Long-term debt increased due to the Company's recent issuances of Australian dollar-, euro- and U.S. dollar-denominated debt, partially offset by a portion of the Company's long-term debt maturing within the next 12 months and being reclassified as current. Refer to the heading "Cash Flows from Financing Activities" above for additional information.
+65
+
+
+########## CARD 03 [T1_BASE] SRS over OK rows
+### CHEVRON CORP | CIK 93410 | 10-Q | RISK_FACTORS | 2022-11-03 | 0000093410-22-000075
+    method=anchor conf=high status=OK flags=[]
+    words=59 chars=368 prose_paras=1 prose_share=0.9153 below_floor=False
+--- HEAD ---
+Item 1A.
+Risk Factors
+Some inherent risks could materially impact the company’s financial results of operations or financial condition. Information about risk factors for the nine months ended September 30, 2022, does not differ materially from that set forth under the heading “Risk Factors” on pages 20 through 25 of the company’s 2021 Annual Report on Form 10-K.
+40
+
+
+########## CARD 04 [T1_BASE] SRS over OK rows
+### DANAHER CORP /DE/ | CIK 313616 | 10-K | RISK_FACTORS | 2021-02-25 | 0000313616-21-000045
+    method=anchor conf=high status=OK flags=[]
+    words=14682 chars=99502 prose_paras=90 prose_share=0.8656 below_floor=False
+--- HEAD ---
+ITEM 1A. RISK FACTORS
+You should carefully consider the risks and uncertainties described below, together with the information included elsewhere in this Annual Report on Form 10-K and other documents we file with the SEC. The risks and uncertainties described below are those that we have identified as material, but are not the only risks and uncertainties facing us. Our business is also subject to general risks and uncertainties that affect many other companies, such as market conditions, economic conditions, geopolitical events, changes in laws, regulations or accounting rules, fluctuations in interest rates, terrorism, wars or conflicts, major health concerns including epidemics, natural disasters or other disruptions of expected business conditions. Additional risks and uncertainties not currently known to us or that we currently believe are immaterial also may impair our business and financial statements, including our results of operations, liquidity, financial condition and stock price.
+15
+Business and Strategic Risks
+The COVID-19 pandemic has adversely impacted, and continues to pose risks to, certain elements of our business and our financial statements, the nature and ext
+--- MID ---
+ed availability of key raw materials or commodities and external events such as natural disasters, pandemic health issues, war, terrorist actions, governmental actions (such as trade protectionism) and legislative or regulatory changes. Any of these factors can result in production interruptions, delays, extended lead times and inefficiencies.
+Because we cannot always immediately adapt our production capacity and related cost structures to changing market conditions, at times our manufacturing capacity exceeds or falls short of our production requirements. Any or all of these problems can resu
+--- TAIL ---
+ess can have an adverse effect on the demand for these products and services. In addition, in certain of our markets our growth depends in part upon the introduction of new regulations. In these markets, the delay or failure of governmental and other entities to adopt or enforce new regulations, the adoption of new regulations which our products and services are not positioned to address or the repeal of existing regulations, can adversely affect demand. In addition, regulatory deadlines can result in substantially different levels of demand for our products and services from period-to-period.
+
+
+########## CARD 05 [T1_BASE] SRS over OK rows
+### Autodesk, Inc. | CIK 769397 | 8-K | EX99_PRESS_RELEASE | 2022-02-24 | 0000769397-22-000013
+    method=whole_document conf=high status=OK flags=[]
+    words=5186 chars=34497 prose_paras=26 prose_share=0.4443 below_floor=False
+--- HEAD ---
+AUTODESK, INC. ANNOUNCES FISCAL 2022 FOURTH QUARTER AND FULL-YEAR RESULTS
+Record fiscal 2022 fourth quarter and full-year revenue, cash flow from operating activities, and free cash flow
+SAN FRANCISCO, FEBRUARY 24, 2022
+--
+Autodesk, Inc.
+(NASDAQ: ADSK) today reported financial results for the fourth quarter of fiscal 2022.
+All growth rates are compared to the fourth quarter and full year of fiscal 2021 unless otherwise noted. A reconciliation of GAAP to non-GAAP results is provided in the accompanying tables. For definitions, please view the Glossary of Terms later in this document.
+Fourth Quarter Fiscal 2022 Financial Highlights
+•
+Total revenue increased 17 percent to $1.21 billion;
+•
+GAAP operating margin was 12 percent, down 6 percentage points, including lease-related charges of $104 million;
+•
+Non-GAAP operating margin was 35 percent, up 5 percentage points;
+•
+GAAP diluted EPS was $0.40, including a $0.47 negative impact of lease-related charges; non-GAAP diluted EPS was $1.50;
+•
+Cash flow from operating activities was $723 million; free cash flow was $716 million.
+“By delivering greater value to our customers through the cloud and leading them to new ways of working, we are b
+--- MID ---
+d revenue from our subscription plan offerings. It excludes subscription revenue related to consumer product offerings, select Creative Finishing product offerings, and third-party products. Recurring revenue acquired with the acquisition of a business is captured when total subscriptions are captured in our systems and may cause variability in the comparison of this calculation.
+Remaining Performance Obligations (RPO):
+The sum of total short-term, long-term, and unbilled deferred revenue. Current remaining performance obligations is the amount of revenue we expect to recognize in the next twe
+--- TAIL ---
+ charges
+0.47
+—
+0.47
+—
+Loss (gain) on strategic investments and dispositions, net
+0.04
+0.04
+(0.02)
+0.19
+Discrete GAAP tax items
+(0.05)
+(0.22)
+(0.33)
+(0.20)
+Release of valuation allowance on deferred tax assets
+—
+(3.05)
+—
+(3.06)
+Income tax effect of non-GAAP adjustments
+(0.15)
+(0.28)
+(0.34)
+(0.50)
+Non-GAAP diluted net income per share
+$
+1.50
+$
+1.18
+$
+5.07
+$
+4.05
+Net cash provided by operating activities
+$
+722.8
+$
+657.6
+$
+1,531.3
+$
+1,437.2
+Capital expenditures
+(6.5)
+(23.5)
+(56.0)
+(91.1)
+Free cash flow
+$
+716.3
+$
+634.1
+$
+1,475.3
+$
+1,346.1
+________________
+(1)
+Totals may not sum due to rounding.
+15
+
+
+########## CARD 06 [T1_BASE] SRS over OK rows
+### CADENCE DESIGN SYSTEMS INC | CIK 813672 | 10-Q | RISK_FACTORS | 2021-07-26 | 0000813672-21-000028
+    method=anchor conf=high status=OK flags=[]
+    words=13297 chars=87483 prose_paras=96 prose_share=0.8436 below_floor=False
+--- HEAD ---
+Item 1A. Risk Factors
+Our operations and financial results are subject to various material risks and uncertainties, including those described in the sections below, that could adversely affect our business, financial condition, results of operations, cash flows, and the trading price of our common stock, and make an investment in our Company speculative or risky.
+Business and Operational Risks
+The ongoing COVID-19 pandemic could continue to adversely affect our business, results of operations and financial condition.
+We are unable to accurately predict the full impact that the COVID-19 pandemic will have on our results of operations, financial condition, liquidity and cash flows due to numerous uncertainties, including the duration and severity of the pandemic, the efficacy and distribution of vaccines and containment measures. Our compliance with these measures has impacted our day-to-day operations and could disrupt our business and operations, as well as that of our key customers, suppliers (including contract manufacturers) and other counterparties, for an indefinite period of time. To support the health and well-being of our employees, customers, partners and communities, a va
+--- MID ---
+ophic event impacts a significant number of our customers, resulting in decreased demand for their and our products, or our ability to provide services and maintenance to our customers, our business and results of operations could be adversely impacted.
+Risks Related to Customers, Suppliers and Industry Competition
+Customer consolidation could affect our operating results.
+There has been a trend toward customer consolidation in the semiconductor industry through business combinations, including mergers, asset acquisitions and strategic partnerships. If this trend continues, it could make us mo
+--- TAIL ---
+In addition, the 2024 Notes currently have an investment grade credit rating, and any credit rating assigned could be lowered or withdrawn entirely by a credit rating agency if, in that credit rating agency’s judgment, future circumstances relating to the basis of the credit rating, such as adverse changes, so warrant. Consequently, real or anticipated changes in our credit ratings will generally affect the market value of the 2024 Notes. Any future lowering of the credit ratings of the 2024 Notes likely would make it more difficult or more expensive for us to obtain additional debt financing.
+
+
+########## CARD 07 [T1_BASE] SRS over OK rows
+### CONSOLIDATED EDISON INC | CIK 1047862 | 8-K | EX99_PRESS_RELEASE | 2024-02-15 | 0001047862-24-000013
+    method=whole_document conf=high status=OK flags=[]
+    words=3945 chars=24501 prose_paras=20 prose_share=0.5926 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+Media Relations
+Consolidated Edison, Inc.
+212 460 4111 (24 hours)
+4 Irving Place
+New York, NY 10003
+www.conEdison.com
+FOR IMMEDIATE RELEASE
+Contact: Allan Drury
+February 15, 2024
+212-460-4111
+CON EDISON REPORTS 2023 EARNINGS
+NEW YORK
+- Consolidated Edison, Inc. (Con Edison) (NYSE: ED) today reported 2023 net income for common stock of $2,519 million or $7.25 a share compared with $1,660 million or $4.68 a share in 2022. Adjusted earnings (non-GAAP) were $1,762 million or $5.07 a share in the 2023 period compared with $1,620 million or $4.57 a share in 2022. Adjusted earnings and adjusted earnings per share in the 2023 and 2022 periods exclude the effects of hypothetical liquidation at book value (HLBV) accounting for tax equity investments,
+the gain and other impacts related to the sale of its former subsidiary, Con Edison Clean Energy Businesses, Inc. (the Clean Energy Businesses), the net mark-to-market effects of the Clean Energy Businesses and the related tax impacts on the parent company. Adjusted earnings and adjusted earnings per share in the 2022 period exclude the impact on the remeasurement of deferred state income taxes related to dispositions prior to 2022.
+--- MID ---
+
+—
+0.04
+—
+13
+—
+0.04
+—
+13
+Remeasurement of deferred state taxes related to dispositions prior to 2022 (net of federal taxes)
+—
+0.04
+—
+13
+—
+0.04
+—
+13
+HLBV effects (pre-tax)
+0.02
+(0.05)
+5
+(18)
+0.02
+(0.17)
+11
+(61)
+Income taxes (c)
+—
+0.02
+(1)
+5
+(0.01)
+0.05
+(3)
+19
+HLBV effects (net of tax)
+0.02
+(0.03)
+4
+(13)
+0.01
+(0.12)
+8
+(42)
+Net mark-to-market effects (pre-tax)
+—
+(0.06)
+—
+(19)
+0.04
+(0.51)
+13
+(181)
+Income taxes (d)
+—
+0.02
+—
+6
+(0.01)
+0.16
+(4)
+56
+Net mark-to-market effects (net of tax)
+—
+(0.04)
+—
+(13)
+0.03
+(0.35)
+9
+(125)
+Adjusted earnings per share and adjusted earnings (non-GAAP basis)
+$1.00
+$0.81
+$
+--- TAIL ---
+ates were approved. Effective November 1, 2023, revenues from CECONY’s steam sales are also subject to a weather normalization clause, as a result of which, delivery revenues reflect normal weather conditions during the heating season. In general, the Utilities recover on a current basis the fuel, gas purchased for resale and purchased power costs they incur in supplying energy to their full-service customers. Accordingly, such costs do not generally affect Con Edison’s results of operations.
+b.
+On March 1, 2023, Con Edison completed the sale of all of the stock of the Clean Energy Businesses.
+
+
+########## CARD 08 [T1_BASE] SRS over OK rows
+### NETFLIX INC | CIK 1065280 | 10-Q | MDA | 2026-07-17 | 0001065280-26-000212
+    method=anchor conf=high status=OK flags=[]
+    words=5769 chars=36817 prose_paras=41 prose_share=0.6192 below_floor=False
+--- HEAD ---
+Item 2.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations
+Forward-Looking Statements
+This Quarterly Report on Form 10-Q contains forward-looking statements within the meaning of the federal securities laws. These forward-looking statements include, but are not limited to, statements regarding: our core strategy; our ability to improve our content offerings and service; our future financial performance, including expectations regarding revenues, deferred revenue, operating income and margin, net income, expenses, and profitability; liquidity, including the sufficiency of our capital resources, net cash provided by (used in) operating activities, access to financing sources and free cash flows; capital allocation strategies, including any stock repurchases or repurchase programs; stock price volatility; impact of foreign exchange rate fluctuations, including on net income and revenues; expectations regarding hedging activity; impact of interest rate fluctuations; adequacy of existing facilities; future regulatory changes and their impact on our business; intellectual property; cybersecurity; price changes and testing; accounting treatment for chang
+--- MID ---
+xpenses was primarily due to a $105 million increase in personnel-related costs and a $107 million increase in third-party expenses, driven by higher legal fees and transaction-related costs, including those associated with the WBD transaction.
+Interest Expense
+Interest expense consists primarily of the interest associated with our outstanding debt obligations and the amortization of debt issuance costs. See Note 7
+Debt
+in the accompanying notes to our consolidated financial statements for further detail on our debt obligations.
+Three months ended June 30, 2026 as compared to the three months 
+--- TAIL ---
+Basis of Presentation and Summary of Significant Accounting Policies” of the Notes to consolidated Financial Statements in Part I, Item 1 of this Form 10-Q and in the Notes to Consolidated Financial Statements in Part II, Item 8 of our Annual Report on Form 10-K for the year ended December 31, 2025, describe the significant accounting policies and methods used in the preparation of the Company’s consolidated financial statements. There have been no material changes to the Company’s critical accounting estimates included in our Annual Report on Form 10-K for the year ended December 31, 2025.
+36
+
+
+########## CARD 09 [T1_BASE] SRS over OK rows
+### Booking Holdings Inc. | CIK 1075531 | 10-Q | MDA | 2016-05-04 | 0001075531-16-000099
+    method=anchor conf=high status=OK flags=[]
+    words=11643 chars=76444 prose_paras=70 prose_share=0.6406 below_floor=False
+--- HEAD ---
+Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations
+The following discussion should be read in conjunction with our Unaudited Consolidated Financial Statements, including the notes to those statements, included elsewhere in this Quarterly Report, and the Section entitled
+"
+Special Note Regarding Forward-Looking Statements
+"
+at the end of Management's Discussion and Analysis of Financial Condition and Results of Operations in this Quarterly Report. As discussed in more detail in the Section entitled
+"
+Special Note Regarding Forward-Looking Statements,
+"
+this discussion contains forward-looking statements, which involve risks and uncertainties. Our actual results may differ materially from the results discussed in the forward-looking statements. Factors that might cause those differences include those discussed in
+"
+Risk Factors
+"
+and elsewhere in this Quarterly Report. The information on our websites is not a part of this Quarterly Report and is not incorporated herein by reference.
+We evaluate our results of operations on both an as reported and constant currency basis. We calculate constant currency by converting our current-year period fi
+--- MID ---
+2,119
+1,867
+13.5
+%
+Total
+$
+16,653
+$
+13,775
+20.9
+%
+Gross bookings increased by
+20.9%
+for the
+three
+months ended
+March 31, 2016
+compared to the three months ended
+March 31, 2015
+(growth on a constant currency basis was approximately
+26%
+), principally due to growth of
+30.5%
+in accommodation room night reservations and growth of
+10.9%
+in rental car day reservations, partially offset by the impact of foreign exchange rate fluctuations. ADRs were down slightly year-over-year on a constant currency basis. The U.S. Dollar was stronger against the Euro and many other currencies for the three months en
+--- TAIL ---
+ts for various reasons including the risks we face which are more fully described in Part II Item 1A, Risk Factors. Unless required by law, we undertake no obligation to update publicly any forward-looking statements, whether as a result of new information, future events or otherwise. However, readers should carefully review the reports and documents we file or furnish from time to time with the Securities and Exchange Commission, particularly our Annual Report on Form 10-K for the year ended
+December 31, 2015
+, and our subsequent Quarterly Reports on Form 10-Q and Current Reports on Form 8-K.
+
+
+########## CARD 10 [T1_BASE] SRS over OK rows
+### MERCADOLIBRE INC | CIK 1099590 | 8-K | EX99_PRESS_RELEASE | 2015-08-05 | 0001171843-15-004374
+    method=whole_document conf=high status=OK flags=[]
+    words=4024 chars=26694 prose_paras=22 prose_share=0.3961 below_floor=False
+--- HEAD ---
+EXHIBIT 99.1
+MercadoLibre, Inc. Reports Second Quarter 2015 Financial Results
+30.2 million Sold Items, up 28%, 18.1 million Total Payment Transactions, up 76%
+Net Revenues of $154.3 million, growing 17% in USD, 88% in local currencies
+Net Income was $19.5 million resulting in a $0.44 EPS.
+BUENOS AIRES, Argentina, Aug. 5, 2015 (GLOBE NEWSWIRE) -- MercadoLibre, Inc. (Nasdaq:MELI) (http://www.mercadolibre.com), Latin America's leading e-commerce technology company, today reported second quarter financial results for the period ended June 30, 2015.
+Pedro Arnt, Chief Financial Officer of MercadoLibre, Inc., commented, "Our second quarter results continue to show that our business is performing well despite a tough macro-economic environment. As such, we would like to re-emphasize our focus on growing MercadoLibre for the long run. We will continue the task at hand of building out and investing behind our enhanced marketplace vision and overall ecosystem, with the increased confidence that these solid results have given us."
+Second Quarter 2015 Operational Highlights
+Items sold in the second quarter of 2015 accelerated to 27.8%, reaching 30.2 million. Gross Merchandise Volume was $1,653.
+--- MID ---
+
+1,499
+1,642
+Deferred tax liabilities
+1,702
+1,645
+Other liabilities
+8,048
+4,176
+Dividends payable
+4,548
+7,330
+Total current liabilities
+345,679
+292,623
+Non-current liabilities:
+Salaries and social security payable
+10,913
+11,326
+Loans payable and other financial liabilities
+286,525
+282,184
+Deferred tax liabilities
+21,620
+18,746
+Other liabilities
+11,455
+6,181
+Total non-current liabilities
+330,513
+318,437
+Total liabilities
+$ 676,192
+$ 611,060
+Commitments and contingencies
+Equity:
+Common stock, $0.001 par value, 110,000,000 shares authorized,
+44,155,589 and 44,154,572 shares issued and outstanding
+--- TAIL ---
+
+$ 31.8
+Weighted average of outstanding common shares
+44,155,035
+44,153,658
+44,155,271
+44,153,818
+Adjusted Earnings per share
+$ 1.22
+$ 1.35
+$ 0.44
+$ 0.72
+Adjusted Blended Tax Rate (2)
+37.5%
+31.8%
+41.9%
+32.2%
+(**) Stated in millions of U.S. dollars, except for share data. The table above may not total due to rounding.
+(1) Income tax charge related to the Venezuela devaluation under local tax rules.
+(2) Adjusted Income and asset tax over Adjusted Net income before income / asset tax expense.
+CONTACT: MercadoLibre, Inc.
+Investor Relations
+investor@mercadolibre.com
+http://investor.mercadolibre.com
+
+
+########## CARD 11 [T1_BASE] SRS over OK rows
+### HUMANA INC | CIK 49071 | 8-K | EX99_PRESS_RELEASE | 2016-08-03 | 0001193125-16-669144
+    method=whole_document conf=high status=OK flags=[]
+    words=10826 chars=70531 prose_paras=19 prose_share=0.0727 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+n e w s
+r e l e a s e
+Humana Inc.
+500 West Main Street
+P.O. Box 1438
+Louisville, KY 40201-1438
+http://www.humana.com
+FOR MORE INFORMATION CONTACT:
+Regina Nethery
+Humana Investor Relations
+(502) 580-3644
+e-mail:
+Rnethery@humana.com
+Tom Noland
+Humana Corporate Communications
+(502) 580-3674
+e-mail:
+Tnoland@humana.com
+Humana Reports Second Quarter 2016 Financial Results;
+Reaffirms Recent 2016 Financial Guidance Increase
+•
+All major lines of business are exceeding management’s original expectations, with the exception of individual commercial
+•
+Enhanced consumer participation and engagement helping to drive improvement in Medicare Advantage and Healthcare Services results
+•
+Humana awarded Department of Defense TRICARE East Region contract
+LOUISVILLE, KY (August 3, 2016)
+– Humana Inc. (NYSE: HUM) today reported diluted earnings per common share (EPS) for the quarter ended June 30, 2016 (2Q 2016) versus the quarter ended June 30, 2015 (2Q 2015) and for the six months ended June 30, 2016 (1H 2016) versus for
+the six months ended June 30, 2015 (1H 2015) as follows:
+Consolidated pretax income
+(in millions)
+2Q 2016
+2Q 2015
+Recast (a)
+1H 2016
+1H 2015
+Recast (a)
+Generally Accepted 
+--- MID ---
+n in 2Q 2015, an increase of $60 million, or 23 percent, while Adjusted pretax income for the Retail
+segment of $326 million in 2Q 2016 increased $59 million, or 22 percent, from $267 million of Adjusted pretax income for the Retail segment in 2Q 2015. Both the GAAP and Adjusted year-over-year increases resulted from an improvement in results
+across most business lines in the segment, partially offset by a year-over-year decline in results for the company’s Individual Commercial business.
+•
+For 1H 2016, GAAP pretax income for the Retail Segment of $474 million decreased by $161 million, or 25 
+--- TAIL ---
+balances
+Change in year-end medical membership from prior year end
+•
+Individual Medicare Advantage
+– Up 75,000 to 90,000 (prior guidance up 100k to 120k)
+Medicare stand-alone PDP excludes membership associated with the Limited Income Newly Eligible Transition program.
+•
+Group Medicare Advantage
+– Down 120,000
+to 125,000 (no change from prior guidance)
+•
+Medicare stand-alone PDP
+– Up 400,000 to
+425,000 (prior guidance up 300k to 330k)
+•
+Individual Commercial
+– Down 200,000 to
+300,000 (no change from prior guidance)
+•
+Group commercial fully insured
+– Down 40,000 to 45,000 (new guidance point)
+24
+
+
+########## CARD 12 [T1_BASE] SRS over OK rows
+### APACHE CORP | CIK 6769 | 8-K | EX99_PRESS_RELEASE | 2017-05-04 | 0001193125-17-157723
+    method=whole_document conf=high status=OK flags=[]
+    words=4546 chars=28319 prose_paras=1 prose_share=0.0101 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+NEWS RELEASE
+APACHE CORPORATION ANNOUNCES FIRST-QUARTER 2017 FINANCIAL AND OPERATIONAL RESULTS
+•
+Delivered
+first-quarter
+production
+of
+481,000
+barrels
+of
+oil
+equivalent
+(Boe)
+per
+day
+and
+adjusted
+production
+of
+398,000
+Boe
+per
+day,
+which
+excludes
+Egypt
+noncontrolling
+interest,
+Egypt
+tax
+barrels
+and
+1,100
+Boe
+per
+day
+of
+divested
+volumes;
+•
+Returned
+to
+profitability
+with
+GAAP
+earnings
+of
+$
+213
+million
+or
+$0.56
+per
+diluted
+common
+share
+and
+adjusted
+earnings
+of
+$31
+million
+or
+$0.08
+per
+share;
+•
+Delivered
+capital
+costs
+and
+lease
+operating
+expenses
+(LOE)
+below
+plan
+and
+lowered
+LOE
+per
+Boe
+guidance
+for
+full-year
+2017;
+•
+Closed
+on
+$466
+million
+of
+non
+core
+asset
+sales;
+and
+•
+Announcing
+delivery
+of
+first
+gas
+at
+Alpine
+High
+midstream,
+two
+months
+ahead
+of
+schedule.
+As
+a
+result,
+raising
+North
+American
+production
+guidance
+to
+256,000
+to
+264,000
+Boe
+per
+day
+for
+full-year
+2017.
+HOUSTON, May 4, 2017 – Apache Corporation (NYSE: APA) (Nasdaq: APA) today announced its financial and operational results for the
+first quarter 2017.
+Apache reported earnings of $213 million or $0.56 per diluted common share during the first quarter of 2017.
+These results include a number of items outside of core
+--- MID ---
+epletion and amortization:
+Oil and gas property and equipment
+538
+636
+Other assets
+38
+42
+Asset retirement obligation accretion
+36
+38
+Impairments
+8
+—
+Financing costs, net
+100
+105
+1,340
+1,465
+INCOME (LOSS) BEFORE INCOME TAXES
+538
+(382
+)
+Current income tax provision (benefit)
+188
+(10
+)
+Deferred income tax provision (benefit)
+83
+(1
+)
+INCOME (LOSS) INCLUDING NONCONTROLLING INTEREST
+267
+(371
+)
+Net income attributable to noncontrolling interest
+54
+1
+INCOME (LOSS) ATTRIBUTABLE TO COMMON STOCK
+$
+213
+$
+(372
+)
+NET INCOME (LOSS) PER COMMON SHARE:
+Basic
+$
+0.56
+$
+(0.98
+)
+Diluted
+$
+0.56
+$
+(0.98
+)
+WEIGHTED-AV
+--- TAIL ---
+
+Costs incurred in oil and gas property:
+Acquisitions
+Unproved
+$
+49
+$
+19
+Exploration and development
+513
+476
+562
+495
+GTP capital investments:
+GTP facilities
+142
+—
+Total Costs incurred and GTP capital investments
+$
+704
+$
+495
+Reconciliation of Costs incurred and GTP to Oil and gas capital investment
+Asset retirement obligations incurred and revisions
+$
+(15
+)
+$
+(1
+)
+Asset retirement obligations settled
+13
+15
+Exploration expense other than dry hole expense and unproved leasehold impairments
+(25
+)
+(24
+)
+Less noncontrolling interest
+(31
+)
+(57
+)
+Total Oil and gas capital investment
+$
+646
+$
+428
+Page 7
+
+
+########## CARD 13 [T1_BASE] SRS over OK rows
+### Palantir Technologies Inc. | CIK 1321655 | 10-Q | RISK_FACTORS | 2022-08-08 | 0001321655-22-000016
+    method=anchor conf=high status=OK flags=[]
+    words=42268 chars=277102 prose_paras=274 prose_share=0.8687 below_floor=False
+--- HEAD ---
+ITEM 1A. RISK FACTORS
+Investing in our Class A common stock involves a high degree of risk. You should carefully consider the risks and uncertainties described below, together with all of the other information in this Quarterly Report on Form 10-Q, including the section titled “Management’s Discussion and Analysis of Financial Condition and Results of Operations” and our condensed consolidated financial statements and accompanying notes, before making a decision to invest in our Class A common stock. Our business, financial condition, results of operations, or prospects could also be harmed by risks and uncertainties not currently known to us or that we currently do not believe are material. If any of the risks actually occur, our business, financial condition, results of operations, and prospects could be adversely affected. In that event, the trading price of our Class A common stock could decline, and you could lose part or all of your investment.
+Risk Factor Summary
+Our business is subject to numerous risks and uncertainties that you should consider before investing in our Class A common stock. These risks are described more fully below and include, but are not limited to, risk
+--- MID ---
+s. Any intellectual property claims, with or without merit, are difficult to predict, could be very time-consuming and expensive to settle or litigate, could divert our management’s attention and other resources, and may not be covered by the insurance that we carry. These claims could subject us to significant liability for damages, potentially including treble damages if we are found to have willfully infringed a third party’s intellectual property rights. These claims could also result in our having to stop using technology, branding or marks found to be in violation of a third party’s righ
+--- TAIL ---
+rency, while our non-U.S. operating expenses are often denominated in local currencies. Additionally, as we expand our non-U.S. operations, a larger portion of our operating expenses may be denominated in local currencies. In recent months, the U.S. dollar has strengthened compared to other currencies. Continued increases in the value of the U.S. dollar and decreases in the value of foreign currencies could result in the dollar equivalent of our revenues being lower, result in increased expenses for our non-U.S. operations, or otherwise impact our financial condition and results of operations.
+
+
+########## CARD 14 [T1_BASE] SRS over OK rows
+### REGENERON PHARMACEUTICALS, INC. | CIK 872589 | 8-K | EX99_PRESS_RELEASE | 2019-08-06 | 0001532176-19-000024
+    method=whole_document conf=high status=OK flags=[]
+    words=4191 chars=27499 prose_paras=16 prose_share=0.3999 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+Press Release
+Regeneron Reports Second Quarter 2019 Financial and Operating Results
+•
+Second quarter 2019 revenues increased
+20%
+to
+$1.93 billion
+versus second quarter 2018
+◦
+EYLEA
+®
+U.S. net sales increased
+17%
+to
+$1.16 billion
+versus second quarter 2018
+◦
+Dupixent
+®
+global net sales, which are recorded by the Company's collaborator Sanofi, increased
+166%
+to
+$557 million
+versus second quarter 2018
+•
+For the first time on a quarterly basis, the antibody collaboration with Sanofi achieved profitability
+•
+Second quarter 2019 GAAP diluted EPS was
+$1.68
+and second quarter non-GAAP diluted EPS
+(1)
+was
+$6.02
+. GAAP diluted EPS includes
+$3.55
+impact related to the Alnylam up-front payment and unrealized losses on the Alnylam equity investment.
+•
+Important regulatory approvals
+◦
+FDA approved EYLEA for diabetic retinopathy and Dupixent for chronic rhinosinusitis with nasal polyposis
+◦
+European Commission approved Libtayo
+®
+for metastatic or locally advanced cutaneous squamous cell carcinoma and Dupixent for adolescents with atopic dermatitis
+Tarrytown, New York (
+August 6, 2019
+)
+-- Regeneron Pharmaceuticals, Inc. (NASDAQ:
+REGN
+)
+today announced financial results for the second
+--- MID ---
+tors' respective sales and the Company's share of the profits or losses from commercialization of products for the most recent fiscal quarter. The Company's estimates for such quarter are reconciled to actual results in the subsequent fiscal quarter, and the Company's share of the profit or loss is adjusted on a prospective basis accordingly, if necessary.
+6
+Conference Call Information
+Regeneron will host a conference call and simultaneous webcast to discuss its second quarter 2019 financial and operating results on Tuesday,
+August 6, 2019
+, at 8:30 AM. To access this call, dial (800) 708-4540
+--- TAIL ---
+173.3
+$
+931.0
+$
+298.1
+$
+42.5
+$
+340.6
+Praluent
+$
+49.4
+$
+88.2
+$
+137.6
+$
+73.2
+$
+60.2
+$
+133.4
+Kevzara
+$
+54.9
+$
+37.3
+$
+92.2
+$
+28.2
+$
+8.3
+$
+36.5
+ZALTRAP
+$
+1.8
+$
+49.3
+$
+51.1
+$
+5.1
+$
+49.6
+$
+54.7
+*
+Bayer records net product sales of EYLEA outside the United States and Sanofi records global net product sales of Dupixent, Praluent, Kevzara, and ZALTRAP. Refer to Table 4 for the Company's share of profits/losses recorded in connection with sales of EYLEA outside the United States and global sales of Dupixent, Praluent, and Kevzara. Sanofi pays the Company a percentage of aggregate net sales of ZALTRAP.
+14
+
+
+########## CARD 15 [T1_BASE] SRS over OK rows
+### Uber Technologies, Inc | CIK 1543151 | 10-K | RISK_FACTORS | 2022-02-24 | 0001543151-22-000008
+    method=anchor conf=high status=OK flags=[]
+    words=35206 chars=232037 prose_paras=208 prose_share=0.9029 below_floor=False
+--- HEAD ---
+ITEM 1A. RISK FACTORS
+Certain factors may have a material adverse effect on our business, financial condition, and results of operations. You should carefully consider the following risks, together with all of the other information contained in this Annual Report on Form 10-K, including the sections titled “Special Note Regarding Forward-Looking Statements” and “Management’s Discussion and Analysis of Financial Condition and Results of Operations” and our financial statements and the related notes included elsewhere in this Annual Report on Form 10-K. Any of the following risks could have an adverse effect on our business, financial condition, operating results, or prospects and could cause the trading price of our common stock to decline, which would cause you to lose all or part of your investment. Our business, financial condition, operating results, or prospects could also be harmed by risks and uncertainties not currently known to us or that we currently do not believe are material.
+Risk Factor Summary
+The following are some of these risks, any of which could have an adverse effect on our business financial condition, operating results, or prospects.
+•
+The COVID-19 pandemic an
+--- MID ---
+arget for such attacks. Although we have developed, and continue to develop, systems and processes that are designed to protect our data and that of platform users, and to prevent data loss, undesirable activities on our platform, and security breaches, we cannot guarantee that such measures will provide absolute security. Our efforts on this front may be unsuccessful as a result of, for example, software bugs or other technical malfunctions; employee, contractor, or vendor error or malfeasance; government surveillance; or other threats that evolve, and we may incur significant costs in protec
+--- TAIL ---
+ we have a material weakness in our internal control over financial reporting, we could lose investor confidence in the accuracy and completeness of our financial reports, the market price of our common stock could decline, and we could be subject to sanctions or investigations by the stock exchange on which our securities are listed, the SEC or other regulatory authorities. Failure to remedy any material weakness in our internal control over financial reporting, or to implement or maintain these and other effective control systems, could also restrict our future access to the capital markets.
+
+
+########## CARD 16 [T1_BASE] SRS over OK rows
+### Targa Resources Corp. | CIK 1389170 | 8-K | EX99_PRESS_RELEASE | 2019-02-20 | 0001564590-19-003346
+    method=whole_document conf=high status=OK flags=[]
+    words=9173 chars=58485 prose_paras=65 prose_share=0.5482 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+811 Louisiana, Suite 2100
+Houston, TX 77002
+713.584.1000
+Targa Resources Corp. Reports
+Fourth Quarter and Full Year 2018 Financial Results and Provides 2019 Operational and Financial Guidance
+HOUSTON – February 20, 2019 - Targa Resources Corp. (NYSE: TRGP) (“TRC”, the “Company” or “Targa”) today reported fourth quarter and full year 2018 results.
+Fourth Quarter and Full Year 2018 Financial Results
+Fourth quarter 2018 net income (loss) attributable to Targa Resources Corp. was ($106.4) million compared to $283.1 million for the fourth quarter of 2017. The fourth quarter of 2018 included a pre-tax non-cash loss of $210.0 million from the impairment of goodwill. For the full year 2018, net income attributable to Targa Resources Corp. was $1.6 million compared to $54.0 million for 2017.
+The Company reported earnings before interest, income taxes, depreciation and amortization, and other non-cash items (“Adjusted EBITDA”) of $375.8 million for the fourth quarter of 2018 compared to $328.4 million for the fourth quarter of 2017. For the full year 2018, Adjusted EBITDA was $1,366.3 million compared to $1,139.8 million for 2017 (see the section of this release entitled “Targa 
+--- MID ---
+ Texas
+28.2
+100
+%
+28.2
+28.2
+SouthOK
+57.6
+Varies (6)
+41.1
+57.6
+WestOK
+22.4
+100
+%
+22.4
+22.4
+Total Central
+155.2
+125.3
+155.2
+Badlands
+11.8
+100
+%
+11.8
+11.8
+Total Field
+441.9
+365.2
+395.1
+(1)
+Plant natural gas inlet represents the volume of natural gas passing through the meter located at the inlet of a natural gas processing plant, other than Badlands.
+(2)
+Plant natural gas inlet volumes and gross NGL production volumes include producer take-in-kind volumes.
+(3)
+For these volume statistics presented, the numerator is the total volume sold during the quarter and the denominator is the number of cale
+--- TAIL ---
+ filings with the Securities and Exchange Commission, including its Annual Report on Form 10-K for the year ended December 31, 2017, and any subsequently filed Quarterly Reports on Form 10-Q and Current Reports on Form 8-K. The Company does not undertake an obligation to update or revise any forward-looking statement, whether as a result of new information, future events or otherwise.
+Contact the Company's investor relations department by email at InvestorRelations@targaresources.com or by phone at (713) 584-1133.
+Sanjay Lad
+Director – Investor Relations
+Jennifer Kneale
+Chief Financial Officer
+
+
+########## CARD 17 [T2_NEWOLD] pre-2019 periodic, CIK not in E1's 25
+### TARGET CORP | CIK 27419 | 10-Q | RISK_FACTORS | 2017-08-21 | 0000027419-17-000027
+    method=anchor conf=high status=OK flags=[]
+    words=31 chars=166 prose_paras=0 prose_share=0.0 below_floor=False
+--- HEAD ---
+Item 1A. Risk Factors
+There have been no material changes to the risk factors described in our Annual Report on Form 10-K for the fiscal year ended
+January 28, 2017
+.
+
+
+########## CARD 18 [T2_NEWOLD] pre-2019 periodic, CIK not in E1's 25
+### HUMANA INC | CIK 49071 | 10-Q | RISK_FACTORS | 2017-08-02 | 0000049071-17-000143
+    method=anchor conf=high status=OK flags=[]
+    words=19 chars=100 prose_paras=0 prose_share=0.0 below_floor=False
+--- HEAD ---
+Item 1A. Risk Factors
+There have been no changes to the risk factors included in our 2016 Form 10-K.
+
+
+########## CARD 19 [T2_NEWOLD] pre-2019 periodic, CIK not in E1's 25
+### Autodesk, Inc. | CIK 769397 | 10-Q | MDA | 2017-05-31 | 0000769397-17-000031
+    method=anchor conf=high status=OK flags=[]
+    words=12458 chars=80180 prose_paras=83 prose_share=0.559 below_floor=False
+--- HEAD ---
+ITEM 2.
+MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS
+The discussion in our MD&A and elsewhere in this Form 10-Q contains trend analyses and other forward-looking statements within the meaning of Section 27A of the Securities Act of 1933 and Section 21E of the Securities Exchange Act of 1934. Forward-looking statements are any statements that look to future events and consist of, among other things, our business strategies, including those discussed in “Strategy” and “Overview of the Three Months Ended April 30, 2017 and 2016” below, future net revenue, operating expenses, recurring revenue, annualized recurring revenue, annualized revenue per subscription, other future financial results (by product type and geography) and subscriptions, the effectiveness of our efforts to successfully manage transitions to new business models and markets, our expectations regarding the continued transition of our business model, our ability to increase our subscription base, expected market trends, including the growth of cloud and mobile computing, the effect of unemployment, the availability of credit, our expectations for our restructuring, the effects of
+--- MID ---
+nt and training for such personnel, the costs of programs aimed at increasing revenue, such as advertising, trade shows and expositions, and various sales and promotional programs. Marketing and sales expenses also include labor costs associated with sales and order management, sales and dealer commissions, payment processing fees, the cost of supplies and equipment, gains and losses on our operating expense cash flow hedges, and allocated IT and facilities costs.
+Marketing and sales expenses increased
+6%
+for the
+three
+months ended
+April 30, 2017
+as compared to the same period in the prior fis
+--- TAIL ---
+riptions acquired with the acquisition of a business are captured once the data conforms to our subscription count methodology and when added, may cause variability in the comparison of this calculation.
+Unbilled deferred revenue
+—
+Unbilled deferred revenue represents contractually stated or committed orders under multi-year billing plans for subscription, services, license and maintenance for which the associated revenue has not been recognized and the customer has not been invoiced. Unbilled deferred revenue is not included on our Consolidated Balance Sheet until invoiced to the customer.
+43
+
+
+########## CARD 20 [T2_NEWOLD] pre-2019 periodic, CIK not in E1's 25
+### EXPAND ENERGY Corp | CIK 895126 | 10-Q | MDA | 2016-08-04 | 0000895126-16-000516
+    method=anchor conf=high status=OK flags=[]
+    words=14480 chars=90025 prose_paras=79 prose_share=0.4695 below_floor=False
+--- HEAD ---
+TABLE OF CONTENTS
+ITEM 2.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations
+Financial Data
+The following table sets forth certain information regarding our production volumes, oil, natural gas and NGL sales, average sales prices received, and other operating income and expenses for the periods indicated:
+Three Months Ended
+June 30,
+Six Months Ended
+June 30,
+2016
+2015
+2016
+2015
+Net Production:
+Oil (mmbbl)
+8
+11
+17
+22
+Natural gas (bcf)
+269
+275
+546
+539
+NGL (mmbbl)
+7
+7
+13
+14
+Oil equivalent (mmboe)
+(a)
+60
+64
+121
+126
+Oil, Natural Gas and NGL Sales ($ in millions)
+(b)
+:
+Oil sales
+$
+355
+$
+594
+$
+610
+$
+1,080
+Oil derivatives – realized gains (losses)
+(c)
+11
+182
+84
+417
+Oil derivatives – unrealized gains (losses)
+(c)
+(168
+)
+(234
+)
+(240
+)
+(344
+)
+Total oil sales
+198
+542
+454
+1,153
+Natural gas sales
+440
+577
+923
+1,347
+Natural gas derivatives – realized gains (losses)
+(c)
+92
+71
+242
+271
+Natural gas derivatives – unrealized gains (losses)
+(c)
+(365
+)
+(67
+)
+(335
+)
+(231
+)
+Total natural gas sales
+167
+581
+830
+1,387
+NGL sales
+89
+93
+163
+219
+NGL derivatives – realized gains (losses)
+(c)
+(3
+)
+—
+(3
+)
+—
+NGL derivatives – unrealized gains (losses)
+(c)
+(11
+)
+—
+(11
+)
+—
+Total NGL sa
+--- MID ---
+imarily the result of operating efficiencies across most of our operating areas. Production expenses in the Current Quarter and the Prior Quarter included approximately $15 million and $31 million, or $0.25 and $0.48 per boe, respectively, associated with VPP production volumes. We anticipate a continued decrease in production expenses associated with VPP production volumes as the contractually scheduled volumes under our VPP agreements decrease and operating efficiencies generally improve. Additionally, in connection with certain divestitures in the Current Quarter, we purchased the remaining
+--- TAIL ---
+r inability to increase or maintain our liquidity through debt repurchases, capital exchanges, asset sales, joint ventures, farmouts or other means.
+We caution you not to place undue reliance on the forward-looking statements contained in this report, which speak only as of the filing date, and we undertake no obligation to update this information except as required by applicable law. We urge you to carefully review and consider the disclosures made in this report and our other filings with the SEC that attempt to advise interested parties of the risks and factors that may affect our business.
+
+
+########## CARD 21 [T2_NEWOLD] pre-2019 periodic, CIK not in E1's 25
+### MCKESSON CORP | CIK 927653 | 10-Q | MDA | 2017-01-26 | 0000927653-17-000003
+    method=anchor conf=high status=OK flags=[]
+    words=7722 chars=49499 prose_paras=50 prose_share=0.5411 below_floor=False
+--- HEAD ---
+Table of Contents
+McKESSON CORPORATION
+FINANCIAL REVIEW
+(UNAUDITED)
+Item 2.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations.
+GENERAL
+Management’s discussion and analysis of financial condition and results of operations, referred to as the Financial Review, is intended to assist the reader in the understanding and assessment of significant changes and trends related to the results of operations and financial position of the Company together with its subsidiaries. This discussion and analysis should be read in conjunction with the condensed consolidated financial statements and accompanying financial notes in Item 1 of Part I of this Quarterly Report on Form 10-Q and in Item 8 of Part II of our Annual Report on Form 10-K for the fiscal year ended March 31, 2016 previously filed with the SEC on May 5, 2016 (“2016 Annual Report”).
+The Company’s fiscal year begins on April 1 and ends on March 31. Unless otherwise noted, all references to a particular year shall mean the Company’s fiscal year.
+Certain statements in this report constitute forward-looking statements. See “Factors Affecting Forward-Looking Statements” included in this Quarterly Report o
+--- MID ---
+ng lower compensation and benefit costs and outside service fees.
+35
+Table of Contents
+McKESSON CORPORATION
+FINANCIAL REVIEW (CONTINUED)
+(UNAUDITED)
+Acquisition Expenses and Related Adjustments
+Acquisition expenses and related adjustments, which include transaction and integration expenses that are directly related to business acquisitions and the proposed Healthcare Technology Net Asset Exchange, were
+$75 million
+and $
+23 million
+for the third quarters of 2017 and 2016 and
+$165 million
+and
+$86 million
+for the first nine months of 2017 and 2016. These expenses primarily include consulting fees
+--- TAIL ---
+places.
+These and other risks and uncertainties are described herein and in other information contained in our publicly available Securities and Exchange Commission filings and press releases. Readers are cautioned not to place undue reliance on forward‑looking statements, which speak only as of the date such statements were first made. Except to the extent required by law, we undertake no obligation to publicly release the result of any revisions to our forward-looking statements to reflect events or circumstances after the date hereof, or to reflect the occurrence of unanticipated events.
+41
+
+
+########## CARD 22 [T2_NEWOLD] pre-2019 periodic, CIK not in E1's 25
+### Walgreens Boots Alliance, Inc. | CIK 1618921 | 10-Q | MDA | 2017-04-05 | 0001618921-17-000026
+    method=anchor conf=high status=OK flags=[]
+    words=12530 chars=81029 prose_paras=55 prose_share=0.4802 below_floor=False
+--- HEAD ---
+Item 2.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations
+The following discussion and analysis of our financial condition and results of operations should be read together with the financial statements and the related notes included elsewhere herein and the consolidated financial statements, accompanying notes and Management’s Discussion and Analysis of Financial Condition and Results of Operations and other disclosures contained in the Walgreens Boots Alliance, Inc. Annual Report on Form 10-K for the fiscal year ended
+August 31, 2016
+. This discussion contains forward-looking statements that involve risks and uncertainties. Our actual results may differ materially from those discussed in forward-looking statements. Factors that might cause a difference include, but are not limited to, those discussed under “Cautionary Note Regarding Forward-Looking Statements” and in Item 1A “Risk Factors” in our Form 10-K for the fiscal year ended
+August 31, 2016
+. References herein to the “Company”, “we”, “us”, or “our” refer to Walgreens Boots Alliance, Inc. and its subsidiaries, except as otherwise indicated or the context otherwise requires.
+INTRODUCTION A
+--- MID ---
+ certain information related to current period operating results in “constant currency,” which is a non-GAAP financial measure. These amounts are calculated by translating current period results at the foreign currency exchange rates used in the comparable period in the prior year. The Company presents such constant currency financial information because it has significant operations outside of the United States reporting in currencies other than the U.S. dollar and this presentation provides a framework to assess how its business performed excluding the impact of foreign currency exchange rat
+--- TAIL ---
+rialize, or should underlying assumptions prove incorrect, actual results may vary materially from those indicated or anticipated by such forward-looking statements. Accordingly, you are cautioned not to place undue reliance on these forward-looking statements, which speak only as of the date they are made. Except to the extent required by law, we do not undertake, and expressly disclaim, any duty or obligation to update publicly any forward-looking statement after the date the statement is made, whether as a result of new information, future events, changes in assumptions or otherwise.
+-
+48
+-
+
+
+########## CARD 23 [T2_NEWOLD] pre-2019 earnings
+### EMERSON ELECTRIC CO | CIK 32604 | 8-K | EX99_PRESS_RELEASE | 2017-08-01 | 0000032604-17-000031
+    method=whole_document conf=high status=OK flags=[]
+    words=2579 chars=16343 prose_paras=10 prose_share=0.4157 below_floor=False
+--- HEAD ---
+Media Contact: Mark Polzin (314) 982-1758
+EMERSON REPORTS THIRD QUARTER 2017 RESULTS
+•
+Net sales of $4.0 billion increased 10 percent, with underlying sales up 4 percent
+•
+Reported earnings per share from continuing operations decreased 7 percent to $0.63
+•
+Earnings per share from continuing operations were flat at $0.68 excluding a ($0.05) impact from the Valves & Controls business acquired during the quarter
+•
+Operating cash flow from continuing operations increased 23 percent to $774 million
+•
+Based on strong operational performance, the company is raising full-year earnings per share guidance
+ST. LOUIS, August 1, 2017 – Emerson (NYSE: EMR) today announced net sales in the third quarter ended June 30, 2017 were up 10 percent, with underlying sales up 4 percent excluding unfavorable currency of 1 percent and an impact from acquisitions of 7 percent. The third quarter results reflected a return to growth for the company as both platforms delivered net and underlying sales growth and had high-single digit order rates in the quarter. Automation Solutions net and underlying sales turned positive in the quarter, driven by favorable trends in energy related, hybrid and general industri
+--- MID ---
+ted to close in the fourth quarter.
+(tables attached)
+- more -
+Page 4
+Table 1
+EMERSON AND SUBSIDIARIES
+CONSOLIDATED OPERATING RESULTS
+(AMOUNTS IN MILLIONS EXCEPT PER SHARE, UNAUDITED)
+Quarter Ended June 30
+Percent
+2016
+2017
+Change
+Net sales
+$3,674
+$4,039
+10%
+Costs and expenses:
+Cost of sales
+2,081
+2,361
+SG&A expenses
+852
+931
+Other deductions, net
+39
+87
+Interest expense, net
+46
+39
+Earnings from continuing operations before income taxes
+656
+621
+(5)%
+Income taxes
+205
+202
+Earnings from continuing operations
+451
+419
+(7)%
+Discontinued operations, net of tax
+38
+6
+Net earnings
+489
+425
+Less: Noncontrol
+--- TAIL ---
+& Controls first year acquisition accounting charges*
+$2.50 - $2.60
+$2.58 - $2.62
+Valves & Controls operations
+~ $0.05
+~ $0.05
+Earnings per share from continuing ops excl. Valves & Controls
+$2.55 - $2.65
+$2.63 - $2.67
+Automation Solutions Segment EBIT Margin
+Q3 FY16
+Q3 FY17
+Change
+Automation Solutions Segment EBIT margin (GAAP)
+16.2
+%
+15.5
+%
+(70) bps
+Valves & Controls impact
+—
+%
+2.4
+%
+240 bps
+Automation Solutions Segment EBIT margin excluding Valves & Controls*
+16.2
+%
+17.9
+%
+170 bps
+Note: Underlying sales and orders exclude the impact of acquisitions, divestitures and currency translation.
+###
+
+
+########## CARD 24 [T2_NEWOLD] pre-2019 earnings
+### LAM RESEARCH CORP | CIK 707549 | 8-K | EX99_PRESS_RELEASE | 2017-07-26 | 0000707549-17-000095
+    method=whole_document conf=high status=OK flags=[]
+    words=3537 chars=22522 prose_paras=8 prose_share=0.2061 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+FOR IMMEDIATE RELEASE
+Lam Research Corporation Contacts:
+Satya Kumar, Investor Relations, phone: 510-572-1615, e-mail:
+investor.relations@lamresearch.com
+Lam Research Corporation Reports Financial Results for the Quarter Ended
+June 25, 2017
+FREMONT, Calif.,
+July 26, 2017
+- Lam Research Corp. (Nasdaq: LRCX) today announced financial results for the quarter ended
+June 25, 2017
+(the "
+June 2017
+quarter").
+Highlights for the
+June 2017
+quarter were as follows:
+•
+Shipments of
+$2.54 billion
+and revenue of
+$2.34 billion
+.
+•
+GAAP gross margin of
+45.6%
+, GAAP operating margin of
+25.9%
+, and GAAP diluted EPS of
+$2.82
+.
+•
+Non-GAAP gross margin of
+46.5%
+, non-GAAP operating margin of
+27.7%
+, and non-GAAP diluted EPS of
+$3.11
+.
+Key Financial Data for the Quarters Ended
+June 25, 2017
+and
+March 26, 2017
+(in thousands, except per-share data, percentages, and basis points)
+U.S. GAAP
+June 2017
+March 2017
+Change Q/Q
+Shipments
+$
+2,542,664
+$
+2,412,656
++ 5%
+Revenue
+$
+2,344,907
+$
+2,153,995
++ 9%
+Gross margin as percentage of revenue
+45.6
+%
+45.1
+%
++ 50 bps
+Operating margin as percentage of revenue
+25.9
+%
+25.0
+%
++ 90 bps
+Diluted EPS
+$
+2.82
+$
+3.10
+- 9%
+Non-GAAP
+June 2017
+March 2017
+Change Q/Q
+Shi
+--- MID ---
+992
+1,811,673
+960,117
+Income tax (expense) benefit
+(77,071
+)
+44,133
+(23,053
+)
+(113,910
+)
+(46,068
+)
+Net income
+$
+526,424
+$
+574,713
+$
+258,939
+$
+1,697,763
+$
+914,049
+Net income per share:
+Basic
+$
+3.25
+$
+3.52
+$
+1.62
+$
+10.47
+$
+5.75
+Diluted
+$
+2.82
+$
+3.10
+$
+1.46
+$
+9.24
+$
+5.22
+Number of shares used in per share calculations:
+Basic
+162,213
+163,408
+159,862
+162,222
+158,919
+Diluted
+186,427
+185,094
+177,649
+183,770
+175,159
+Cash dividend declared per common share
+$
+0.45
+$
+0.45
+$
+0.30
+$
+1.65
+$
+1.20
+(1) Derived from audited financial statements.
+4
+Lam Announces Financial Results for the June 2017 Quarter
+LAM RE
+--- TAIL ---
+ansaction
+(16,083
+)
+(16,083
+)
+(16,083
+)
+(16,083
+)
+Costs associated with business process reengineering
+(4,813
+)
+(2,674
+)
+—
+—
+KLA-Tencor acquisition-related costs
+—
+—
+—
+(9,972
+)
+Product rationalization
+—
+—
+(1,650
+)
+—
+Cost associated with campus consolidation
+—
+—
+(995
+)
+(2,561
+)
+Litigation settlement
+—
+—
+(4,000
+)
+—
+Non-GAAP operating expenses
+$
+440,126
+$
+414,229
+$
+384,241
+$
+371,634
+Non-GAAP operating income
+$
+650,085
+$
+578,425
+$
+489,933
+$
+365,813
+GAAP operating margin as percent of revenue
+25.9
+%
+25.0
+%
+23.4
+%
+19.4
+%
+Non-GAAP operating margin as a percent of revenue
+27.7
+%
+26.9
+%
+26.0
+%
+22.4
+%
+9
+
+
+########## CARD 25 [T2_NEWOLD] pre-2019 earnings
+### NORTHROP GRUMMAN CORP /DE/ | CIK 1133421 | 8-K | EX99_PRESS_RELEASE | 2017-04-26 | 0001133421-17-000019
+    method=whole_document conf=high status=OK flags=[]
+    words=3622 chars=23803 prose_paras=14 prose_share=0.2869 below_floor=False
+--- HEAD ---
+Exhibit 99
+News Release
+Contact:
+Tim Paynter (Media)
+703-280-2720
+timothy.paynter@ngc.com
+Steve Movius (Investors)
+703-280-4575
+steve.movius@ngc.com
+Northrop Grumman Reports
+First
+Quarter 2017
+Financial Results
+•
+Q1 Sales Increase
+5 percent
+to
+$6.3 Billion
+•
+Q1 EPS Increase
+20 percent
+to
+$3.63
+•
+2017 EPS Guidance Increased to $11.80 to $12.10
+FALLS CHURCH, Va. –
+April 26, 2017
+– Northrop Grumman Corporation (NYSE: NOC) reported
+first
+quarter 2017 sales
+increased
+5 percent
+to
+$6.3 billion
+from
+$6.0 billion
+in the
+first
+quarter of 2016. First quarter
+2017
+net earnings
+increased
+15 percent
+to
+$640 million
+from
+$556 million
+in the prior year period. First quarter 2017 diluted earnings per share increased
+20 percent
+to
+$3.63
+from
+$3.03
+in the
+first
+quarter of
+2016
+. First quarter
+2017
+diluted earnings per share are based on
+176.1 million
+weighted average diluted shares outstanding compared with
+183.4 million
+in the prior year period, a
+4 percent
+decrease
+.
+“First quarter results are a strong start to the year, with solid operational performance from all three of our businesses. We continue to position our company for long-term profitable growth," said Wes Bush, chairman, chief executive
+--- MID ---
+ Factors” in our 2016 Annual Report on Form 10-K and other filings with the SEC. They include:
+•
+our dependence on the U.S. Government for a substantial portion of our business
+•
+significant delays or reductions in appropriations for our programs and U.S. Government funding more broadly
+•
+investigations, claims, disputes and/or litigation
+•
+our exposure to additional risks as a result of our international business
+•
+the improper conduct of employees, agents, subcontractors, suppliers, business partners or joint ventures in which we participate and the impact on our reputation, our ability to d
+--- TAIL ---
+financial statements as a supplemental measure in evaluating the financial performance and operational trends of our sectors. Segment operating income is reconciled in Table 1.
+Segment operating margin rate:
+Segment operating income as defined above, and reconciled in Table 1, divided by sales. This measure may be useful to investors and other users of our financial statements as a supplemental measure in evaluating the financial performance and operational trends of our sectors.
+#
+Northrop Grumman Corporation
+2980 Fairview Park Drive • Falls Church, VA 22042-4511
+www.northropgrumman.com/media
+
+
+########## CARD 26 [T2_NEWOLD] pre-2019 earnings
+### Energy Transfer LP | CIK 1276187 | 8-K | EX99_PRESS_RELEASE | 2016-08-04 | 0001276187-16-000211
+    method=whole_document conf=high status=OK flags=[]
+    words=3025 chars=19057 prose_paras=15 prose_share=0.4509 below_floor=False
+--- HEAD ---
+ENERGY TRANSFER EQUITY
+REPORTS SECOND QUARTER RESULTS
+Dallas - August 3, 2016
+-
+Energy Transfer Equity, L.P. (NYSE:ETE)
+(“ETE” or the “Partnership”) today reported financial results for the quarter ended
+June 30, 2016
+.
+ETE’s net income attributable to partners was
+$241 million
+for the three months ended
+June 30, 2016
+compared to
+$298 million
+for the three months ended
+June 30, 2015
+. Distributable Cash Flow, as adjusted, for the three months ended
+June 30, 2016
+was
+$276 million
+compared to
+$335 million
+for the three months ended
+June 30, 2015
+. The decreases in net income attributable to partners and Distributable Cash Flow, as adjusted, were primarily driven by the $75 million reduction in incentive distributions from ETP, as described below.
+The Partnership’s recent key accomplishments and other developments include the following:
+•
+In July 2016, ETE announced a $0.285 distribution per ETE common unit for the quarter ended June 30, 2016, or $1.14 per unit on an annualized basis.
+•
+As of June 30, 2016, ETE’s
+$1.5 billion
+revolving credit facility had
+$885 million
+of outstanding borrowings and its leverage ratio, as defined by the credit agreement, was 3.18x.
+•
+In light of Energy 
+--- MID ---
+me
+$
+239
+$
+298
+$
+550
+$
+580
+NET INCOME PER LIMITED PARTNER UNIT:
+Basic
+$
+0.23
+$
+0.28
+$
+0.53
+$
+0.54
+Diluted
+$
+0.23
+$
+0.28
+$
+0.52
+$
+0.54
+WEIGHTED AVERAGE NUMBER OF UNITS OUTSTANDING:
+Basic
+1,048.9
+1,076.0
+1,046.9
+1,077.2
+Diluted
+1,063.8
+1,077.6
+1,052.5
+1,079.0
+4
+ENERGY TRANSFER EQUITY, L.P.
+SUPPLEMENTAL INFORMATION
+(Dollars in millions)
+(unaudited)
+Three Months Ended
+June 30,
+Six Months Ended
+June 30,
+2016
+2015
+2016
+2015
+Cash distributions from ETP associated with:
+Limited partner interest
+$
+2
+$
+24
+$
+5
+$
+48
+Class H Units
+88
+62
+171
+118
+General partner interest
+8
+7
+16
+15
+Incentive distribution righ
+--- TAIL ---
+016
+2015
+2016
+2015
+SELLING, GENERAL AND ADMINISTRATIVE EXPENSES
+$
+(44
+)
+$
+(29
+)
+$
+(81
+)
+$
+(57
+)
+OTHER INCOME (EXPENSE):
+Interest expense, net of interest capitalized
+(82
+)
+(72
+)
+(163
+)
+(133
+)
+Equity in earnings of unconsolidated affiliates
+369
+398
+799
+771
+Other, net
+(2
+)
+—
+(2
+)
+1
+INCOME BEFORE INCOME TAXES
+241
+297
+553
+582
+Income tax benefit
+—
+(1
+)
+—
+—
+NET INCOME
+241
+298
+553
+582
+General Partner’s interest in net income
+1
+—
+2
+1
+Convertible Unitholders' interest in income
+1
+—
+1
+—
+Class D Unitholder’s interest in net income
+—
+—
+—
+1
+Limited Partners’ interest in net income
+$
+239
+$
+298
+$
+550
+$
+580
+9
+
+
+########## CARD 27 [T2_NEWOLD] 2019+ new filer
+### CrowdStrike Holdings, Inc. | CIK 1535527 | 8-K | EX99_PRESS_RELEASE | 2021-12-01 | 0001535527-21-000026
+    method=whole_document conf=high status=OK flags=[]
+    words=5793 chars=39266 prose_paras=27 prose_share=0.3822 below_floor=False
+--- HEAD ---
+CrowdStrike Reports Third Quarter Fiscal Year 2022 Financial Results
+•
+Net new ARR growth accelerates
+•
+Ending ARR grows 67% year-over-year to surpass $1.5 billion
+•
+Adds over 1,600 net new subscription customers for the second consecutive quarter
+•
+Delivers record operating and free cash flow
+SUNNYVALE, Calif., December 1, 2021
+-- CrowdStrike Holdings, Inc. (Nasdaq: CRWD), a leader in cloud-delivered endpoint and workload protection, today announced financial results for the third quarter fiscal year 2022, ended October 31, 2021.
+“CrowdStrike delivered a robust third quarter with broad-based strength across multiple areas of the business leading to net new ARR growth accelerating and ending ARR growing 67% year-over-year to surpass the $1.5 billion milestone. Our outstanding results this quarter demonstrate the flywheel effect of our platform and reflect continued strong customer adoption for our core products in addition to the growing success of our newer product initiatives including identity protection, log management and cloud. With our leading technology, unmatched platform and approach to stopping breaches, we continue to eclipse our competitors and extend our leadership po
+--- MID ---
+ortization of intangible assets
+9,072
+579
+Amortization of deferred contract acquisition costs
+79,712
+44,940
+Non-cash operating lease costs
+6,727
+7,666
+Stock-based compensation expense
+217,315
+101,961
+Gain on sale of debt securities, net
+—
+(1,347)
+Amortization of marketable securities purchased at a premium
+—
+578
+Non-cash interest expense
+1,824
+506
+Change in fair value of strategic investments
+(4,356)
+—
+Changes in operating assets and liabilities, net of impact of acquisitions
+Accounts receivable, net
+(40,644)
+(6,603)
+Deferred contract acquisition costs
+(151,901)
+(84,741)
+Prepaid expenses and o
+--- TAIL ---
+such organization notifies us that it is not renewing its subscription.
+Magic Number
+Magic Number is calculated by performing the following calculation for the most recent four quarters and taking the average: annualizing the difference between a quarter’s Subscription Revenue and the prior quarter’s Subscription Revenue, and then dividing the resulting number by the previous quarter’s Non-GAAP Sales & Marketing Expense. Magic Number = Average of previous four quarters: ((Quarter Subscription Revenue – Prior Quarter Subscription Revenue) x 4) / Prior Quarter Non-GAAP Sales & Marketing Expense.
+
+
+########## CARD 28 [T2_NEWOLD] 2019+ new filer
+### Uber Technologies, Inc | CIK 1543151 | 10-Q | RISK_FACTORS | 2020-08-07 | 0001543151-20-000029
+    method=anchor conf=high status=OK flags=[]
+    words=34933 chars=230097 prose_paras=208 prose_share=0.9192 below_floor=False
+--- HEAD ---
+ITEM 1A. RISK FACTORS
+Certain factors may have a material adverse effect on our business, financial condition, and results of operations. You should carefully consider the following risks, together with all of the other information contained in this Quarterly Report on Form 10-Q, including the sections titled “Special Note Regarding Forward-Looking Statements” and “Management’s Discussion and Analysis of Financial Condition and Results of Operations” and our financial statements and the related notes included elsewhere in this Quarterly Report on Form 10-Q. Any of the following risks could have an adverse effect on our business, financial condition, operating results, or prospects and could cause the trading price of our common stock to decline, which would cause you to lose all or part of your investment. Our business, financial condition, operating results, or prospects could also be harmed by risks and uncertainties not currently known to us or that we currently do not believe are material.
+Risks Related to Our Business
+The novel coronavirus (“COVID-19”) pandemic and the impact of actions to mitigate the pandemic has adversely impacted and could continue to adversely impact our 
+--- MID ---
+not provide us with the most current version of such software, we may be required to seek comparable software from other sources, which may be more expensive or inferior, or may not be available at all, any of which would adversely affect our business.
+Our business depends upon the interoperability of our platform across devices, operating systems, and third-party applications that we do not control.
+One of the most important features of our platform is its broad interoperability with a range of devices, operating systems, and third-party applications. Our platform is accessible from the web a
+--- TAIL ---
+ exclusive-forum provisions may limit a stockholder’s ability to bring a claim in a judicial forum that it finds favorable for disputes with us or our directors, officers, or other employees, which may discourage lawsuits against us and our directors, officers, and other employees. If any other court of competent jurisdiction were to find either exclusive-forum provision in our amended and restated certificate of incorporation to be inapplicable or unenforceable, we may incur additional costs associated with resolving the dispute in other jurisdictions, which could seriously harm our business.
+
+
+########## CARD 29 [T2_NEWOLD] 2019+ new filer
+### EIDP, Inc. | CIK 30554 | 10-K | RISK_FACTORS | 2026-02-12 | 0001755672-26-000004
+    method=anchor conf=high status=OK flags=[]
+    words=10009 chars=69518 prose_paras=78 prose_share=0.9103 below_floor=False
+--- HEAD ---
+Table Of Contents
+Part I
+ITEM 1A. RISK FACTORS
+Risks Related to Our Industry
+Corteva may not be able to obtain or maintain the necessary regulatory approvals for some of its products, including its seed and crop protection products, which could restrict its ability to sell those products in some markets.
+Regulatory and legislative requirements affect the development, manufacture and distribution of Corteva’s products, including the testing and planting of seeds containing Corteva’s biotechnology traits and the import of crops grown from those seeds, and non-compliance can harm Corteva’s sales and profitability.
+Seed products incorporating biotechnology derived traits and crop protection products must be extensively tested for safety, efficacy and environmental impact before they can be registered for production, use, sale or commercialization in a given market. In certain jurisdictions, Corteva must periodically renew its approvals for both biotechnology and crop protection products, which typically require Corteva to demonstrate compliance with then-current standards which generally are more stringent since the prior registration. The regulatory approvals process is lengthy, costl
+--- MID ---
+ in aggregate $242 million within accounts and notes receivable - net and $733 million within other assets in the company’s Consolidated Balance Sheets. Any failure by, or inability to pay, these liabilities in line with the indemnification provisions of the Separation Agreements may have a material adverse effect on Corteva and its financial condition and results of operations.
+In the ordinary course of business, Corteva may make certain commitments, including representations, warranties and indemnities relating to current and past operations, including those related to divested businesses an
+--- TAIL ---
+hat Corteva will receive a tax opinion from external counsel to the effect that, among other things, the Proposed Separation will qualify as a tax-free spin-off for U.S. federal income tax purposes, any such opinion is not binding on the U.S. Internal Revenue Service. Accordingly, the U.S. Internal Revenue Service may reach conclusions with respect to the Proposed Separation that are different from the conclusion reached in such opinion. If the Proposed Separation is ultimately determined to be taxable, either Corteva or Corteva’s stockholders could incur significant income tax liabilities.
+23
+
+
+########## CARD 30 [T2_NEWOLD] extension stratum, sector E1 never had
+### AMERICAN ELECTRIC POWER CO INC | CIK 4904 | 10-K | MDA | 2023-02-23 | 0000004904-23-000011
+    method=incorporated_by_reference_unresolved conf=low status=FLAGGED flags=['mda_stub_external_document', 'below_length_floor']
+    words=149 chars=995 prose_paras=2 prose_share=0.8456 below_floor=True
+--- HEAD ---
+ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS
+AEP
+The information required by this item is incorporated herein by reference to the material under Management’s Discussion and Analysis of Financial Condition and Results of Operations in the 2022 Annual Report. Year-to-year comparisons between 2021 and 2020 have been omitted from this Form 10-K but may be found in "Management's Discussion and Analysis of Financial Condition" in Part II, Item 7 of our Form 10-K for the fiscal year ended December 31, 2021, which specific discussion is incorporated herein by reference.
+AEP Texas, AEPTCo, APCo, I&M, OPCo, PSO and SWEPCo
+Omitted pursuant to Instruction I(2)(a). Management’s narrative analysis of the results of operations and other information required by Instruction I(2)(a) is incorporated herein by reference to the material under Management’s Discussion and Analysis of Financial Condition and Results of Operations in the 2022 Annual Report.
+
+
+########## CARD 31 [T2_NEWOLD] extension stratum, sector E1 never had
+### REALTY INCOME CORP | CIK 726728 | 10-K | RISK_FACTORS | 2023-02-22 | 0000726728-23-000044
+    method=anchor conf=high status=OK flags=[]
+    words=11627 chars=74511 prose_paras=75 prose_share=0.8252 below_floor=False
+--- HEAD ---
+Item 1A:
+Risk Factors
+This “Risk Factors” section contains references to our “capital stock” and to our “stockholders.” Unless expressly stated otherwise, the references to our “capital stock” represent our common stock and any class or series of
+preferred stock which may be outstanding from time to time, while the references to our “stockholders” represent holders of our common stock.
+Risks Related to Our Business and Industry
+In order to grow we need to continue to acquire investment properties. The acquisition of investment properties may be subject to competitive pressures.
+We face competition in the acquisition and operation of our properties. We expect competition from businesses, individuals, fiduciary accounts and plans, and other entities engaged in real estate investment and financing. This competition may result in a higher cost for properties we wish to purchase.
+Negative market conditions or adverse events affecting our existing or potential clients, or the industries in which they operate, could have an adverse impact on our ability to attract new clients, re-lease space, collect rent or renew leases, which could adversely affect our cash flow from operations and inhi
+--- MID ---
+s beyond the control of our management.
+Real estate property investments are illiquid. We may not be able to acquire or dispose of properties when desired or on favorable terms.
+Real estate investments are relatively illiquid. Our ability to quickly buy, sell or exchange any of our properties in response to changes in economic and other conditions will be limited and U.S. and foreign tax and regulatory regimes and authorities may impose or have the effect of restricting or limiting our ability to sell properties. No assurances can be given that we will recognize full value, at a price and at t
+--- TAIL ---
+r lease revenue currently tied to RPI in the U.K. Inflationary periods may cause us to experience increased costs of financing, make it difficult to refinance debt at attractive rates or at all, and may adversely affect the properties we can acquire if the cost of financing an acquisition is in excess of our anticipated earnings from such property thereby limiting the properties that can be acquired. All of these may have an adverse effect on our results of operations, financial condition and liquidity. To the extent periods of high inflation are prolonged, these results may be exacerbated.
+35
+
+
+########## CARD 32 [T2_NEWOLD] extension stratum, sector E1 never had
+### Vistra Corp. | CIK 1692819 | 10-Q | MDA | 2023-08-09 | 0001628280-23-028436
+    method=anchor conf=high status=OK flags=[]
+    words=13250 chars=79803 prose_paras=84 prose_share=0.5488 below_floor=False
+--- HEAD ---
+Item 2.
+MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS
+The discussion below, as well as other portions of this quarterly report on Form 10-Q, contain forward-looking statements within the meaning of Section 27A of the Securities Act, Section 21E of the Exchange Act and the Private Securities Litigation Reform Act of 1995. In addition, management may make forward-looking statements orally or in other writing, including, but not limited to, in press releases, quarterly earnings calls, executive presentations, in the annual report to stockholders and in other filings with the SEC. Readers can usually identify these forward-looking statements by the use of such words as may," "will," "should,” “likely,” “plans,” “projects,” “expects,” “anticipates,” “believes” or similar words. These statements involve a number of risks and uncertainties. Actual results could materially differ from those anticipated by such forward-looking statements. For more discussion about risk factors that could cause or contribute to such differences, see Part II, Item 7 "Management’s Discussion and Analysis of Financial Condition and Results of Operations" and Part I, Item 
+--- MID ---
+merger expenses
+(2)
+1
+—
+—
+1
+—
+17
+17
+Impairment of long-lived assets
+—
+—
+—
+—
+49
+—
+—
+49
+PJM capacity performance default impacts (c)
+—
+—
+6
+—
+2
+—
+—
+8
+Winter Storm Uri impacts (d)
+(39)
+1
+—
+—
+—
+—
+—
+(38)
+Other, net
+12
+(6)
+3
+2
+18
+2
+(34)
+(3)
+Adjusted EBITDA
+$
+469
+$
+590
+$
+212
+$
+109
+$
+203
+$
+18
+$
+(21)
+$
+1,580
+____________
+(a)
+Includes $22 million of unrealized mark-to-market net gains on interest rate swaps.
+(b)
+Includes nuclear fuel amortization of $42 million in the Texas segment.
+(c)
+Represents estimate of anticipated market participant defaults on PJM capacity performance penalties due to extreme mag
+--- TAIL ---
+wed money by Vistra Operations or any Guarantor Subsidiary for failure to pay principal when due at final maturity or that results in the acceleration of such indebtedness in an aggregate amount of $300 million or more, may result in a termination of the Secured LOC Facilities.
+Guarantees
+See Note 13 to the Financial Statements for discussion of guarantees.
+COMMITMENTS AND CONTINGENCIES
+See Note 13 to the Financial Statements for discussion of commitments and contingencies.
+CHANGES IN ACCOUNTING STANDARDS
+See Note 1 to the Financial Statements for discussion of changes in accounting standards.
+
+
+########## CARD 33 [T3_FLAG] reason_code=earnings_population_gate
+### Tesla, Inc. | CIK 1318605 | 8-K | EX99_PRESS_RELEASE | 2024-10-02 | 0001628280-24-041816
+    method=whole_document conf=medium status=FLAGGED flags=['earnings_population_gate']
+    words=285 chars=1833 prose_paras=2 prose_share=0.5684 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+Tesla Third Quarter 2024 Production, Deliveries & Deployments
+In the third quarter, we produced approximately 470,000
+vehicles, delivered approximately 463,000 vehicles and deployed 6.9 GWh of energy storage products.
+Production
+Deliveries
+Subject to operating lease accounting
+Model 3/Y
+443,668
+439,975
+3%
+Other Models
+26,128
+22,915
+1%
+Total
+469,796
+462,890
+3%
+***
+Tesla will post its financial results for the third quarter of 2024 after market close on Wednesday, October 23, 2024. At that time, Tesla will issue a brief advisory containing a link to the Q3 2024 update, which will be available on Tesla’s Investor Relations website. Tesla management will hold a live question and answer webcast that day at 4:30 p.m. Central Time (5:30 p.m. Eastern Time) to discuss the Company’s financial and business results and outlook.
+What
+: Tesla Q3 2024 Financial Results and Q&A Webcast
+When
+: Wednesday, October 23, 2024
+Time
+: 4:30 p.m. Central Time / 5:30 p.m. Eastern Time
+Q3 2024 Update
+:
+https://ir.tesla.com
+Webcast
+:
+https://ir.tesla.com
+(live and replay)
+Approximately two hours after the Q&A session, an archived version of the webcast will be available on the Company’s website.
+F
+--- MID ---
+tober 23, 2024
+Time
+: 4:30 p.m. Central Time / 5:30 p.m. Eastern Time
+Q3 2024 Update
+:
+https://ir.tesla.com
+Webcast
+:
+https://ir.tesla.com
+(live and replay)
+Approximately two hours after the Q&A session, an archived version of the webcast will be available on the Company’s website.
+For additional information, please visit
+https://ir.tesla.com
+.
+Investor Relations Contact:
+ir@tesla.com
+***
+Our net income and cash flow results will be announced along with the rest of our financial performance when we announce Q3 earnings. Tesla vehicle deliveries and storage deployments represent only two measur
+--- TAIL ---
+ visit
+https://ir.tesla.com
+.
+Investor Relations Contact:
+ir@tesla.com
+***
+Our net income and cash flow results will be announced along with the rest of our financial performance when we announce Q3 earnings. Tesla vehicle deliveries and storage deployments represent only two measures of the Company’s financial performance and should not be relied on as an indicator of quarterly financial results, which depend on a variety of factors, including average selling price, cost of sales, foreign exchange movements and others as to be disclosed in the 10-Q for the quarter ended on September 30, 2024.
+
+
+########## CARD 34 [T3_FLAG] reason_code=heading_regex_fallback
+### WASTE MANAGEMENT INC | CIK 823768 | 10-Q | MDA | 2025-04-29 | 0001558370-25-005805
+    method=heading_regex conf=low status=FLAGGED flags=['heading_regex_fallback']
+    words=8056 chars=53467 prose_paras=56 prose_share=0.6493 below_floor=False
+--- HEAD ---
+Item 2.
+Management’s Discussion and Analysis of Financial Condition and
+Results of Operations.
+The following discussion should be read in conjunction with the Condensed Consolidated Financial Statements and notes thereto included under Item 1 and our Consolidated Financial Statements and notes thereto and related Management’s Discussion and Analysis of Financial Condition and Results of Operations included in our Annual Report on Form 10-K for the year ended December 31, 2024.
+This Quarterly Report on Form 10-Q contains certain forward-looking statements that are made subject to the safe harbor protections provided by the Private Securities Litigation Reform Act of 1995. Forward-looking statements are often identified by the words, “will,” “may,” “should,” “continue,” “anticipate,” “believe,” “expect,” “plan,” “forecast,” “project,” “estimate,” “intend,” and words of a similar nature and include estimates or projections of financial and other data; comments on expectations relating to future periods; plans or objectives for the future; and statements of opinions, views or beliefs about current and future events, circumstances or performance. You should view these statements with ca
+--- MID ---
+ commodity prices.
+Energy Surcharge and Mandated Fees —
+These fees decreased $2 million for the first quarter of 2025 as compared with the prior year period. Our energy surcharge revenues declined $9 million primarily due to a decline in the market prices for diesel fuel of approximately 8.5% in the first quarter of 2025 as compared with the prior year period. This decline was partially offset by a $7 million increase in our mandated fees primarily related to fees and taxes assessed by various state, county and municipal government agencies at our landfills and transfer stations, particularly 
+--- TAIL ---
+in
+financial
+outlook.
+We
+take
+proactive
+steps
+to
+recover
+and
+mitigate
+inflationary
+cost
+pressures
+through
+our
+overall
+pricing
+efforts
+and
+by
+managing
+our
+costs
+through
+efficiency,
+labor
+productivity
+and
+investments
+in
+technology
+to
+automate
+certain
+aspects
+of
+our
+business.
+These
+efforts
+may
+not
+be
+successful
+for
+various
+reasons
+including
+the
+pace
+of
+inflation,
+operating
+cost
+inefficiencies,
+market
+responses
+and
+contractual
+limitations,
+such
+38
+as
+the
+timing
+lag
+in
+our
+ability
+to
+recover
+increased
+costs
+under
+certain
+contracts
+that
+are
+tied
+to
+a
+price
+escalation
+index with a lookback provision.
+
+
+########## CARD 35 [T3_FLAG] reason_code=head_keyword_absent
+### TRUIST FINANCIAL CORP | CIK 92230 | 10-Q | MDA | 2022-08-01 | 0000092230-22-000083
+    method=anchor conf=medium status=FLAGGED flags=['head_keyword_absent']
+    words=11889 chars=73558 prose_paras=77 prose_share=0.6201 below_floor=False
+--- HEAD ---
+Regulatory Considerations
+The regulatory framework applicable to banking organizations is intended primarily for the protection of depositors and the stability of the financial system, rather than for the protection of shareholders and creditors. Truist is subject to banking laws and regulations, and various other laws and regulations, which affect the operations and management of Truist and its ability to make distributions to shareholders. Truist and its subsidiaries are also subject to supervision and examination by multiple regulators. The descriptions below summarize updates since the filing of the Annual Report on Form 10-K for the year ended December 31, 2021 to state and federal laws to which Truist is subject. These descriptions do not summarize all possible or proposed changes in current laws or regulations and are not intended to be a substitute for the related statues or regulatory provisions. Refer to Truist’s Annual Report on Form 10-K for the year ended December 31, 2021 for additional disclosures.
+In March 2022, the U.S. enacted federal legislation that is intended to minimize legal and economic uncertainty following U.S. dollar LIBOR’s cessation by replacing LIBOR 
+--- MID ---
+Wealth, Corporate and Commercial Banking, and Insurance Holdings, with functional activities included in Other, Treasury, and Corporate. The Company’s business segment structure is based on the manner in which financial information is evaluated by management as well as the products and services provided or the type of client served. See “Note 18. Operating Segments” herein and “Note 21. Operating Segments” in Truist’s Annual Report on Form 10-K for the year ended December 31, 2021 for additional disclosures related to Truist’s reportable business segments, including additional details related 
+--- TAIL ---
+ent program to manage the residual risks associated with integrating heritage BB&T and heritage SunTrust. While integration activities are largely complete, the Board and Executive Leadership oversee the change management program, which is designed to ensure appropriate oversight of application and data center decommissioning and residual integration activities, achieved through Truist’s risk management process.
+Truist Financial Corporation 57
+Refer to Truist’s Annual Report on Form 10-K for the year ended December 31, 2021 for additional disclosures under the section titled “Risk Management.”
+
+
+########## CARD 36 [T3_FLAG] reason_code=no_toc_and_no_heading_match
+### NOT IN CORPUS (FAIL row): EMERSON ELECTRIC CO 10-K MDA 2021-11-15 0000032604-21-000038 reason=no_toc_and_no_heading_match
+
+
+########## CARD 37 [T3_FLAG] reason_code=item_absent_from_toc
+### NOT IN CORPUS (FAIL row): AMERICAN ELECTRIC POWER CO INC 10-Q MDA 2016-11-02 0000004904-16-000102 reason=item_absent_from_toc
+
+
+########## CARD 38 [T3_FLAG] reason_code=earnings_supplemental_diluted
+### UNION PACIFIC CORP | CIK 100885 | 8-K | EX99_PRESS_RELEASE | 2015-10-22 | 0000100885-15-000186
+    method=whole_document conf=medium status=FLAGGED flags=['earnings_supplemental_diluted']
+    words=2887 chars=18160 prose_paras=10 prose_share=0.3142 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+Union Pacific Reports Third Quarter 2015 Results
+Third Quarter Diluted Earnings per Share down 2 Percent
+FOR IMMEDIATE RELEASE
+Third Quarter Results
+·
+Diluted earnings per share of $1.50 declined 2 percent.
+·
+Operating income totaled $2.2 billion, down 5 percent.
+·
+Operating ratio of 60.3 percent, improved 2 points.
+Omaha, Neb., October 22, 2015
+– Union Pacific Corporation (NYSE: UNP) today reported 2015 third quarter net income of $1.3 billion, or $1.50 per diluted share, compared to $1.4 billion, or $1.53 per diluted share, in the third quarter 2014.
+“Total volumes decreased about 6 percent in the quarter, more than offsetting another quarter of solid core pricing gains,” said Lance Fritz, Union Pacific chairman, president and chief executive officer. “On the cost side, we’ve made significant progress aligning our resources to current demand, and I am pleased to report a quarterly record operating ratio of 60.3 percent.”
+-more-
+-
+2
+-
+Third Quarter Summary
+Operating revenue of $5.6 billion was down 10 percent in the third quarter 2015 compared to the third quarter 2014. Third quarter business volumes, as measured by total revenue carloads, declined about 6 percent com
+--- MID ---
+)
+pts
+Effective Tax Rate
+37.5%
+37.9%
+(0.4)
+pts
+37.8%
+38.0%
+(0.2)
+pts
+1
+UNION PACIFIC CORPORATION AND SUBSIDIARY COMPANIES
+Freight Revenues Statistics (unaudited)
+3rd Quarter
+Year-to-Date
+For the Periods Ended September 30,
+2015
+2014
+%
+2015
+2014
+%
+Freight Revenues (Millions)
+Agricultural Products
+$
+880
+$
+915
+(4)
+%
+$
+2,686
+$
+2,759
+(3)
+%
+Automotive
+529
+527
+-
+1,605
+1,560
+3
+Chemicals
+882
+936
+(6)
+2,684
+2,742
+(2)
+Coal
+898
+1,099
+(18)
+2,492
+3,049
+(18)
+Industrial Products
+979
+1,161
+(16)
+2,966
+3,302
+(10)
+Intermodal
+1,047
+1,181
+(11)
+3,101
+3,354
+(8)
+Total
+$
+5,215
+$
+5,819
+(10)
+%
+$
+15,534
+$
+16,766
+(7)
+%
+Reve
+--- TAIL ---
+djusted debt to capital (a/b)
+44.5%
+41.3%
+*
+Total debt plus net present value of operating leases plus after-tax unfunded pension and OPEB obligation divided by total debt plus net present value of operating leases plus after-tax unfunded pension and OPEB obligation plus equity. Operating leases were discounted using 4.9% at September 30, 2015, and 5.3% at December 31, 2014. The discount rate reflects our effective interest rate. Management believes this is an important measure in evaluating the total amount of leverage in our capital structure including off-balance sheet lease
+obligations
+.
+8
+
+
+########## CARD 39 [T3_FLAG] reason_code=below_length_floor
+### UNION PACIFIC CORP | CIK 100885 | 10-Q | MDA | 2016-04-21 | 0000100885-16-000339
+    method=heading_regex conf=low status=FLAGGED flags=['heading_regex_fallback', 'below_length_floor']
+    words=15 chars=98 prose_paras=0 prose_share=0.0 below_floor=True
+--- HEAD ---
+Item 2.
+Management's Discussion and Analysis of Financial Condition and Results of Operations
+20
+﻿
+
+
+########## CARD 40 [T3_FLAG] reason_code=mda_stub_external_document
+### NUCOR CORP | CIK 73309 | 10-K | MDA | 2017-02-28 | 0001193125-17-062124
+    method=incorporated_by_reference_unresolved conf=low status=FLAGGED flags=['mda_stub_external_document', 'below_length_floor']
+    words=37 chars=252 prose_paras=0 prose_share=0.0 below_floor=True
+--- HEAD ---
+Item 7.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations
+The information required by this item is incorporated by reference to Nucor’s 2016 Annual Report, page 4 (Forward-Looking Statements)
+and pages 26 through 45.

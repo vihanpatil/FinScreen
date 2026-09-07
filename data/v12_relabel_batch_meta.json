@@ -1,0 +1,13 @@
+{
+  "batch_id": "msgbatch_01UdoUkZfuaTRJzokZDfbFYN",
+  "mode": "full",
+  "variant": "v12_relabel",
+  "requests_file": "data/batch_requests_v12.jsonl",
+  "n_submitted": 6747,
+  "model": "claude-sonnet-5",
+  "asserted_max_tokens": 4000,
+  "asserted_thinking": "disabled",
+  "rubric_version": "v1.2",
+  "system_prompt_sha256": "30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+  "processing_status": "in_progress"
+}

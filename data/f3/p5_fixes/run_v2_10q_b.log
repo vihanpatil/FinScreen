@@ -1,0 +1,33 @@
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0008: 500 filings -> 1000 attempts / 931 sections  {'OK': 770, 'FLAGGED': 161, 'ITEM_ABSENT_FROM_TOC': 69}  cache_miss=0  394.5s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0009: 500 filings -> 1000 attempts / 972 sections  {'OK': 916, 'FLAGGED': 56, 'ITEM_ABSENT_FROM_TOC': 19, 'FAIL': 9}  cache_miss=0  404.7s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0010: 500 filings -> 1000 attempts / 912 sections  {'OK': 830, 'FLAGGED': 82, 'FAIL': 54, 'ITEM_ABSENT_FROM_TOC': 34}  cache_miss=0  593.2s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0011: 500 filings -> 1000 attempts / 927 sections  {'OK': 922, 'ITEM_ABSENT_FROM_TOC': 49, 'FAIL': 24, 'FLAGGED': 5}  cache_miss=0  370.2s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0012: 500 filings -> 1000 attempts / 903 sections  {'OK': 626, 'FLAGGED': 277, 'ITEM_ABSENT_FROM_TOC': 77, 'FAIL': 20}  cache_miss=0  481.6s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0013: 500 filings -> 1000 attempts / 931 sections  {'OK': 897, 'ITEM_ABSENT_FROM_TOC': 61, 'FLAGGED': 34, 'FAIL': 8}  cache_miss=0  417.6s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0014: 500 filings -> 1000 attempts / 971 sections  {'OK': 911, 'FLAGGED': 60, 'ITEM_ABSENT_FROM_TOC': 18, 'FAIL': 11}  cache_miss=0  289.2s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0015: 9 filings -> 18 attempts / 14 sections  {'OK': 14, 'ITEM_ABSENT_FROM_TOC': 3, 'FAIL': 1}  cache_miss=0  6.3s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+WORKER 8-15 DONE 2026-08-28T03:08:13Z

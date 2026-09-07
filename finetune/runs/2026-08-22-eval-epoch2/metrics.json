@@ -1,0 +1,1717 @@
+{
+  "headline": {
+    "n_rows": 1002,
+    "parse": {
+      "n_missing_prediction": 0,
+      "n_unparseable": 0,
+      "parse_failure_rate": 0.0,
+      "reasons": {}
+    },
+    "schema": {
+      "n_rows_with_violations": 0,
+      "violation_rate": 0.0,
+      "issues": {}
+    },
+    "sentiment": {
+      "n": 867,
+      "exact_match": 0.8351,
+      "n_correct": 724,
+      "per_class": {
+        "POSITIVE": {
+          "support": 247,
+          "tp": 225,
+          "fp": 31,
+          "fn": 22,
+          "precision": 0.879,
+          "recall": 0.911,
+          "f1": 0.895
+        },
+        "NEUTRAL": {
+          "support": 507,
+          "tp": 444,
+          "fp": 62,
+          "fn": 63,
+          "precision": 0.877,
+          "recall": 0.876,
+          "f1": 0.877
+        },
+        "NEGATIVE": {
+          "support": 113,
+          "tp": 55,
+          "fp": 20,
+          "fn": 58,
+          "precision": 0.733,
+          "recall": 0.487,
+          "f1": 0.585
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "POSITIVE",
+          "NEUTRAL",
+          "NEGATIVE"
+        ],
+        "precision": 0.83,
+        "recall": 0.758,
+        "f1": 0.786
+      },
+      "zero_support_classes": [],
+      "failure_attribution": {
+        "__MISSING_FIELD__": 30
+      },
+      "confusion": {
+        "NEGATIVE->NEUTRAL": 40,
+        "NEGATIVE->POSITIVE": 5,
+        "NEGATIVE->__MISSING_FIELD__": 13,
+        "NEUTRAL->NEGATIVE": 20,
+        "NEUTRAL->POSITIVE": 26,
+        "NEUTRAL->__MISSING_FIELD__": 17,
+        "POSITIVE->NEUTRAL": 22
+      }
+    },
+    "guidance_direction": {
+      "n": 570,
+      "exact_match": 0.5877,
+      "n_correct": 335,
+      "per_class": {
+        "RAISED": {
+          "support": 7,
+          "tp": 5,
+          "fp": 1,
+          "fn": 2,
+          "precision": 0.833,
+          "recall": 0.714,
+          "f1": 0.769
+        },
+        "MAINTAINED": {
+          "support": 7,
+          "tp": 3,
+          "fp": 3,
+          "fn": 4,
+          "precision": 0.5,
+          "recall": 0.429,
+          "f1": 0.462
+        },
+        "LOWERED": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "WITHDRAWN": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NONE": {
+          "support": 553,
+          "tp": 324,
+          "fp": 5,
+          "fn": 229,
+          "precision": 0.985,
+          "recall": 0.586,
+          "f1": 0.735
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "RAISED",
+          "MAINTAINED",
+          "LOWERED",
+          "NONE"
+        ],
+        "precision": 0.83,
+        "recall": 0.682,
+        "f1": 0.741
+      },
+      "zero_support_classes": [
+        "WITHDRAWN"
+      ],
+      "failure_attribution": {
+        "__MISSING_FIELD__": 226
+      },
+      "confusion": {
+        "MAINTAINED->NONE": 4,
+        "NONE->MAINTAINED": 2,
+        "NONE->RAISED": 1,
+        "NONE->__MISSING_FIELD__": 226,
+        "RAISED->MAINTAINED": 1,
+        "RAISED->NONE": 1
+      }
+    },
+    "red_flags": {
+      "n": 1002,
+      "n_parse_failed": 0,
+      "exact_set_match_category_modality": {
+        "n_match": 650,
+        "n": 1002,
+        "rate": 0.6487
+      },
+      "exact_set_match_category_only": {
+        "n_match": 660,
+        "n": 1002,
+        "rate": 0.6587
+      },
+      "per_category": {
+        "DEMAND_WEAKNESS": {
+          "support": 202,
+          "tp": 122,
+          "fp": 14,
+          "fn": 80,
+          "tn": 786,
+          "precision": 0.897,
+          "recall": 0.604,
+          "f1": 0.722
+        },
+        "SUPPLY_INPUT_CONSTRAINT": {
+          "support": 148,
+          "tp": 107,
+          "fp": 14,
+          "fn": 41,
+          "tn": 840,
+          "precision": 0.884,
+          "recall": 0.723,
+          "f1": 0.796
+        },
+        "TRADE_POLICY_EXPOSURE": {
+          "support": 105,
+          "tp": 86,
+          "fp": 12,
+          "fn": 19,
+          "tn": 885,
+          "precision": 0.878,
+          "recall": 0.819,
+          "f1": 0.847
+        },
+        "IMPAIRMENT_WRITEDOWN": {
+          "support": 154,
+          "tp": 133,
+          "fp": 20,
+          "fn": 21,
+          "tn": 828,
+          "precision": 0.869,
+          "recall": 0.864,
+          "f1": 0.866
+        },
+        "MARGIN_COST_PRESSURE": {
+          "support": 242,
+          "tp": 162,
+          "fp": 48,
+          "fn": 80,
+          "tn": 712,
+          "precision": 0.771,
+          "recall": 0.669,
+          "f1": 0.717
+        },
+        "LEGAL_REGULATORY_ACTION": {
+          "support": 297,
+          "tp": 233,
+          "fp": 43,
+          "fn": 64,
+          "tn": 662,
+          "precision": 0.844,
+          "recall": 0.785,
+          "f1": 0.813
+        }
+      },
+      "per_category_decisions": {
+        "n_decisions": 6012,
+        "n_errors": 456,
+        "error_rate": 0.0758,
+        "agreement_rate": 0.9242
+      },
+      "micro": {
+        "precision": 0.848,
+        "recall": 0.734,
+        "f1": 0.787,
+        "tp": 843,
+        "fp": 151,
+        "fn": 305
+      },
+      "macro_over_supported_categories": {
+        "categories": [
+          "DEMAND_WEAKNESS",
+          "SUPPLY_INPUT_CONSTRAINT",
+          "TRADE_POLICY_EXPOSURE",
+          "IMPAIRMENT_WRITEDOWN",
+          "MARGIN_COST_PRESSURE",
+          "LEGAL_REGULATORY_ACTION"
+        ],
+        "precision": 0.857,
+        "recall": 0.744,
+        "f1": 0.793
+      },
+      "zero_support_categories": [],
+      "modality_given_category_agreed": {
+        "n": 843,
+        "n_agree": 807,
+        "rate": 0.9573,
+        "confusion": {
+          "REALIZED->HYPOTHETICAL": 20,
+          "HYPOTHETICAL->REALIZED": 16
+        }
+      }
+    },
+    "field_presence": {
+      "sentiment": {
+        "counts": {
+          "gold_no_pred_no": 134,
+          "gold_yes_pred_yes": 837,
+          "gold_yes_pred_no": 30,
+          "gold_no_pred_yes": 1
+        },
+        "n_determined": 1002,
+        "n_agree": 971,
+        "agreement_rate": 0.9691
+      },
+      "guidance_direction": {
+        "counts": {
+          "gold_no_pred_no": 425,
+          "gold_yes_pred_yes": 344,
+          "gold_yes_pred_no": 226,
+          "gold_no_pred_yes": 7
+        },
+        "n_determined": 1002,
+        "n_agree": 769,
+        "agreement_rate": 0.7675
+      }
+    }
+  },
+  "headline_row_count": 1002,
+  "excluded_row_count": 8,
+  "excluded_slice_8K_BODY": {
+    "n_rows": 8,
+    "parse": {
+      "n_missing_prediction": 0,
+      "n_unparseable": 0,
+      "parse_failure_rate": 0.0,
+      "reasons": {}
+    },
+    "schema": {
+      "n_rows_with_violations": 0,
+      "violation_rate": 0.0,
+      "issues": {}
+    },
+    "sentiment": {
+      "n": 8,
+      "exact_match": 1.0,
+      "n_correct": 8,
+      "per_class": {
+        "POSITIVE": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NEUTRAL": {
+          "support": 6,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NEGATIVE": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "NEUTRAL",
+          "NEGATIVE"
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "zero_support_classes": [
+        "POSITIVE"
+      ],
+      "failure_attribution": {},
+      "confusion": {}
+    },
+    "guidance_direction": {
+      "n": 8,
+      "exact_match": 0.5,
+      "n_correct": 4,
+      "per_class": {
+        "RAISED": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MAINTAINED": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOWERED": {
+          "support": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "WITHDRAWN": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NONE": {
+          "support": 8,
+          "tp": 4,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "NONE"
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.667
+      },
+      "zero_support_classes": [
+        "RAISED",
+        "MAINTAINED",
+        "LOWERED",
+        "WITHDRAWN"
+      ],
+      "failure_attribution": {
+        "__MISSING_FIELD__": 3
+      },
+      "confusion": {
+        "NONE->LOWERED": 1,
+        "NONE->__MISSING_FIELD__": 3
+      }
+    },
+    "red_flags": {
+      "n": 8,
+      "n_parse_failed": 0,
+      "exact_set_match_category_modality": {
+        "n_match": 5,
+        "n": 8,
+        "rate": 0.625
+      },
+      "exact_set_match_category_only": {
+        "n_match": 5,
+        "n": 8,
+        "rate": 0.625
+      },
+      "per_category": {
+        "DEMAND_WEAKNESS": {
+          "support": 1,
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "tn": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "SUPPLY_INPUT_CONSTRAINT": {
+          "support": 2,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "tn": 6,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        },
+        "TRADE_POLICY_EXPOSURE": {
+          "support": 2,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "tn": 6,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        },
+        "IMPAIRMENT_WRITEDOWN": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "MARGIN_COST_PRESSURE": {
+          "support": 3,
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "tn": 4,
+          "precision": 0.667,
+          "recall": 0.667,
+          "f1": 0.667
+        },
+        "LEGAL_REGULATORY_ACTION": {
+          "support": 5,
+          "tp": 4,
+          "fp": 0,
+          "fn": 1,
+          "tn": 3,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.889
+        }
+      },
+      "per_category_decisions": {
+        "n_decisions": 48,
+        "n_errors": 6,
+        "error_rate": 0.125,
+        "agreement_rate": 0.875
+      },
+      "micro": {
+        "precision": 0.909,
+        "recall": 0.667,
+        "f1": 0.769,
+        "tp": 10,
+        "fp": 1,
+        "fn": 5
+      },
+      "macro_over_supported_categories": {
+        "categories": [
+          "DEMAND_WEAKNESS",
+          "SUPPLY_INPUT_CONSTRAINT",
+          "TRADE_POLICY_EXPOSURE",
+          "IMPAIRMENT_WRITEDOWN",
+          "MARGIN_COST_PRESSURE",
+          "LEGAL_REGULATORY_ACTION"
+        ],
+        "precision": 0.778,
+        "recall": 0.578,
+        "f1": 0.648
+      },
+      "zero_support_categories": [],
+      "modality_given_category_agreed": {
+        "n": 10,
+        "n_agree": 10,
+        "rate": 1.0,
+        "confusion": {}
+      }
+    },
+    "field_presence": {
+      "sentiment": {
+        "counts": {
+          "gold_yes_pred_yes": 8
+        },
+        "n_determined": 8,
+        "n_agree": 8,
+        "agreement_rate": 1.0
+      },
+      "guidance_direction": {
+        "counts": {
+          "gold_yes_pred_no": 3,
+          "gold_yes_pred_yes": 5
+        },
+        "n_determined": 8,
+        "n_agree": 5,
+        "agreement_rate": 0.625
+      }
+    }
+  },
+  "by_section_type": {
+    "EX99_PRESS_RELEASE": {
+      "n_rows": 570,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 570,
+        "exact_match": 0.8614,
+        "n_correct": 491,
+        "per_class": {
+          "POSITIVE": {
+            "support": 178,
+            "tp": 162,
+            "fp": 18,
+            "fn": 16,
+            "precision": 0.9,
+            "recall": 0.91,
+            "f1": 0.905
+          },
+          "NEUTRAL": {
+            "support": 327,
+            "tp": 300,
+            "fp": 47,
+            "fn": 27,
+            "precision": 0.865,
+            "recall": 0.917,
+            "f1": 0.89
+          },
+          "NEGATIVE": {
+            "support": 65,
+            "tp": 29,
+            "fp": 13,
+            "fn": 36,
+            "precision": 0.69,
+            "recall": 0.446,
+            "f1": 0.542
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "POSITIVE",
+            "NEUTRAL",
+            "NEGATIVE"
+          ],
+          "precision": 0.818,
+          "recall": 0.758,
+          "f1": 0.779
+        },
+        "zero_support_classes": [],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 1
+        },
+        "confusion": {
+          "NEGATIVE->NEUTRAL": 31,
+          "NEGATIVE->POSITIVE": 5,
+          "NEUTRAL->NEGATIVE": 13,
+          "NEUTRAL->POSITIVE": 13,
+          "NEUTRAL->__MISSING_FIELD__": 1,
+          "POSITIVE->NEUTRAL": 16
+        }
+      },
+      "guidance_direction": {
+        "n": 570,
+        "exact_match": 0.5877,
+        "n_correct": 335,
+        "per_class": {
+          "RAISED": {
+            "support": 7,
+            "tp": 5,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.833,
+            "recall": 0.714,
+            "f1": 0.769
+          },
+          "MAINTAINED": {
+            "support": 7,
+            "tp": 3,
+            "fp": 3,
+            "fn": 4,
+            "precision": 0.5,
+            "recall": 0.429,
+            "f1": 0.462
+          },
+          "LOWERED": {
+            "support": 3,
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 553,
+            "tp": 324,
+            "fp": 5,
+            "fn": 229,
+            "precision": 0.985,
+            "recall": 0.586,
+            "f1": 0.735
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "RAISED",
+            "MAINTAINED",
+            "LOWERED",
+            "NONE"
+          ],
+          "precision": 0.83,
+          "recall": 0.682,
+          "f1": 0.741
+        },
+        "zero_support_classes": [
+          "WITHDRAWN"
+        ],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 226
+        },
+        "confusion": {
+          "MAINTAINED->NONE": 4,
+          "NONE->MAINTAINED": 2,
+          "NONE->RAISED": 1,
+          "NONE->__MISSING_FIELD__": 226,
+          "RAISED->MAINTAINED": 1,
+          "RAISED->NONE": 1
+        }
+      },
+      "red_flags": {
+        "n": 570,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 385,
+          "n": 570,
+          "rate": 0.6754
+        },
+        "exact_set_match_category_only": {
+          "n_match": 390,
+          "n": 570,
+          "rate": 0.6842
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 69,
+            "tp": 37,
+            "fp": 3,
+            "fn": 32,
+            "tn": 498,
+            "precision": 0.925,
+            "recall": 0.536,
+            "f1": 0.679
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 80,
+            "tp": 52,
+            "fp": 9,
+            "fn": 28,
+            "tn": 481,
+            "precision": 0.852,
+            "recall": 0.65,
+            "f1": 0.738
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 57,
+            "tp": 41,
+            "fp": 6,
+            "fn": 16,
+            "tn": 507,
+            "precision": 0.872,
+            "recall": 0.719,
+            "f1": 0.788
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 109,
+            "tp": 93,
+            "fp": 17,
+            "fn": 16,
+            "tn": 444,
+            "precision": 0.845,
+            "recall": 0.853,
+            "f1": 0.849
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 151,
+            "tp": 98,
+            "fp": 23,
+            "fn": 53,
+            "tn": 396,
+            "precision": 0.81,
+            "recall": 0.649,
+            "f1": 0.721
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 141,
+            "tp": 112,
+            "fp": 17,
+            "fn": 29,
+            "tn": 412,
+            "precision": 0.868,
+            "recall": 0.794,
+            "f1": 0.83
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 3420,
+          "n_errors": 249,
+          "error_rate": 0.0728,
+          "agreement_rate": 0.9272
+        },
+        "micro": {
+          "precision": 0.852,
+          "recall": 0.713,
+          "f1": 0.777,
+          "tp": 433,
+          "fp": 75,
+          "fn": 174
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "TRADE_POLICY_EXPOSURE",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.862,
+          "recall": 0.7,
+          "f1": 0.768
+        },
+        "zero_support_categories": [],
+        "modality_given_category_agreed": {
+          "n": 433,
+          "n_agree": 423,
+          "rate": 0.9769,
+          "confusion": {
+            "HYPOTHETICAL->REALIZED": 7,
+            "REALIZED->HYPOTHETICAL": 3
+          }
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_yes_pred_yes": 569,
+            "gold_yes_pred_no": 1
+          },
+          "n_determined": 570,
+          "n_agree": 569,
+          "agreement_rate": 0.9982
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_yes_pred_yes": 344,
+            "gold_yes_pred_no": 226
+          },
+          "n_determined": 570,
+          "n_agree": 344,
+          "agreement_rate": 0.6035
+        }
+      }
+    },
+    "MDA": {
+      "n_rows": 297,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 297,
+        "exact_match": 0.7845,
+        "n_correct": 233,
+        "per_class": {
+          "POSITIVE": {
+            "support": 69,
+            "tp": 63,
+            "fp": 13,
+            "fn": 6,
+            "precision": 0.829,
+            "recall": 0.913,
+            "f1": 0.869
+          },
+          "NEUTRAL": {
+            "support": 180,
+            "tp": 144,
+            "fp": 15,
+            "fn": 36,
+            "precision": 0.906,
+            "recall": 0.8,
+            "f1": 0.85
+          },
+          "NEGATIVE": {
+            "support": 48,
+            "tp": 26,
+            "fp": 7,
+            "fn": 22,
+            "precision": 0.788,
+            "recall": 0.542,
+            "f1": 0.642
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "POSITIVE",
+            "NEUTRAL",
+            "NEGATIVE"
+          ],
+          "precision": 0.841,
+          "recall": 0.752,
+          "f1": 0.787
+        },
+        "zero_support_classes": [],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 29
+        },
+        "confusion": {
+          "NEGATIVE->NEUTRAL": 9,
+          "NEGATIVE->__MISSING_FIELD__": 13,
+          "NEUTRAL->NEGATIVE": 7,
+          "NEUTRAL->POSITIVE": 13,
+          "NEUTRAL->__MISSING_FIELD__": 16,
+          "POSITIVE->NEUTRAL": 6
+        }
+      },
+      "guidance_direction": {
+        "n": 0,
+        "exact_match": 0.0,
+        "n_correct": 0,
+        "per_class": {
+          "RAISED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "MAINTAINED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "LOWERED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [],
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "zero_support_classes": [
+          "RAISED",
+          "MAINTAINED",
+          "LOWERED",
+          "WITHDRAWN",
+          "NONE"
+        ],
+        "failure_attribution": {},
+        "confusion": {}
+      },
+      "red_flags": {
+        "n": 297,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 192,
+          "n": 297,
+          "rate": 0.6465
+        },
+        "exact_set_match_category_only": {
+          "n_match": 193,
+          "n": 297,
+          "rate": 0.6498
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 88,
+            "tp": 55,
+            "fp": 5,
+            "fn": 33,
+            "tn": 204,
+            "precision": 0.917,
+            "recall": 0.625,
+            "f1": 0.743
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 28,
+            "tp": 21,
+            "fp": 2,
+            "fn": 7,
+            "tn": 267,
+            "precision": 0.913,
+            "recall": 0.75,
+            "f1": 0.824
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 29,
+            "tp": 26,
+            "fp": 3,
+            "fn": 3,
+            "tn": 265,
+            "precision": 0.897,
+            "recall": 0.897,
+            "f1": 0.897
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 36,
+            "tp": 33,
+            "fp": 3,
+            "fn": 3,
+            "tn": 258,
+            "precision": 0.917,
+            "recall": 0.917,
+            "f1": 0.917
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 59,
+            "tp": 44,
+            "fp": 20,
+            "fn": 15,
+            "tn": 218,
+            "precision": 0.688,
+            "recall": 0.746,
+            "f1": 0.715
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 71,
+            "tp": 46,
+            "fp": 16,
+            "fn": 25,
+            "tn": 210,
+            "precision": 0.742,
+            "recall": 0.648,
+            "f1": 0.692
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 1782,
+          "n_errors": 135,
+          "error_rate": 0.0758,
+          "agreement_rate": 0.9242
+        },
+        "micro": {
+          "precision": 0.821,
+          "recall": 0.723,
+          "f1": 0.769,
+          "tp": 225,
+          "fp": 49,
+          "fn": 86
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "TRADE_POLICY_EXPOSURE",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.846,
+          "recall": 0.764,
+          "f1": 0.798
+        },
+        "zero_support_categories": [],
+        "modality_given_category_agreed": {
+          "n": 225,
+          "n_agree": 211,
+          "rate": 0.9378,
+          "confusion": {
+            "HYPOTHETICAL->REALIZED": 4,
+            "REALIZED->HYPOTHETICAL": 10
+          }
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_yes_pred_yes": 268,
+            "gold_yes_pred_no": 29
+          },
+          "n_determined": 297,
+          "n_agree": 268,
+          "agreement_rate": 0.9024
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_no_pred_no": 290,
+            "gold_no_pred_yes": 7
+          },
+          "n_determined": 297,
+          "n_agree": 290,
+          "agreement_rate": 0.9764
+        }
+      }
+    },
+    "RISK_FACTORS": {
+      "n_rows": 135,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 0,
+        "exact_match": 0.0,
+        "n_correct": 0,
+        "per_class": {
+          "POSITIVE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NEUTRAL": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NEGATIVE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [],
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "zero_support_classes": [
+          "POSITIVE",
+          "NEUTRAL",
+          "NEGATIVE"
+        ],
+        "failure_attribution": {},
+        "confusion": {}
+      },
+      "guidance_direction": {
+        "n": 0,
+        "exact_match": 0.0,
+        "n_correct": 0,
+        "per_class": {
+          "RAISED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "MAINTAINED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "LOWERED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [],
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "zero_support_classes": [
+          "RAISED",
+          "MAINTAINED",
+          "LOWERED",
+          "WITHDRAWN",
+          "NONE"
+        ],
+        "failure_attribution": {},
+        "confusion": {}
+      },
+      "red_flags": {
+        "n": 135,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 73,
+          "n": 135,
+          "rate": 0.5407
+        },
+        "exact_set_match_category_only": {
+          "n_match": 77,
+          "n": 135,
+          "rate": 0.5704
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 45,
+            "tp": 30,
+            "fp": 6,
+            "fn": 15,
+            "tn": 84,
+            "precision": 0.833,
+            "recall": 0.667,
+            "f1": 0.741
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 40,
+            "tp": 34,
+            "fp": 3,
+            "fn": 6,
+            "tn": 92,
+            "precision": 0.919,
+            "recall": 0.85,
+            "f1": 0.883
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 19,
+            "tp": 19,
+            "fp": 3,
+            "fn": 0,
+            "tn": 113,
+            "precision": 0.864,
+            "recall": 1.0,
+            "f1": 0.927
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 9,
+            "tp": 7,
+            "fp": 0,
+            "fn": 2,
+            "tn": 126,
+            "precision": 1.0,
+            "recall": 0.778,
+            "f1": 0.875
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 32,
+            "tp": 20,
+            "fp": 5,
+            "fn": 12,
+            "tn": 98,
+            "precision": 0.8,
+            "recall": 0.625,
+            "f1": 0.702
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 85,
+            "tp": 75,
+            "fp": 10,
+            "fn": 10,
+            "tn": 40,
+            "precision": 0.882,
+            "recall": 0.882,
+            "f1": 0.882
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 810,
+          "n_errors": 72,
+          "error_rate": 0.0889,
+          "agreement_rate": 0.9111
+        },
+        "micro": {
+          "precision": 0.873,
+          "recall": 0.804,
+          "f1": 0.837,
+          "tp": 185,
+          "fp": 27,
+          "fn": 45
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "TRADE_POLICY_EXPOSURE",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.883,
+          "recall": 0.8,
+          "f1": 0.835
+        },
+        "zero_support_categories": [],
+        "modality_given_category_agreed": {
+          "n": 185,
+          "n_agree": 173,
+          "rate": 0.9351,
+          "confusion": {
+            "REALIZED->HYPOTHETICAL": 7,
+            "HYPOTHETICAL->REALIZED": 5
+          }
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_no_pred_no": 134,
+            "gold_no_pred_yes": 1
+          },
+          "n_determined": 135,
+          "n_agree": 134,
+          "agreement_rate": 0.9926
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_no_pred_no": 135
+          },
+          "n_determined": 135,
+          "n_agree": 135,
+          "agreement_rate": 1.0
+        }
+      }
+    }
+  },
+  "section_type_counts": {
+    "RISK_FACTORS": 135,
+    "MDA": 297,
+    "EX99_PRESS_RELEASE": 570,
+    "8K_BODY": 8
+  },
+  "post_rule_missing_guidance_as_none": {
+    "added_utc_date": "2026-08-25",
+    "added_by": "post-rule recomputation from stored predictions; no model invoked, no network, 0 Anthropic API calls, $0",
+    "rule": "On a row whose TEACHER label contains a guidance_direction field, a student output that omits that key entirely is read as NONE. Nothing else changes: unparseable output, invalid enums and wrong values stay errors; no other field or metric is affected.",
+    "adoption_status": "PROPOSED, NOT ADOPTED. Proposed at the epoch-1 read (HANDOFF.md \u00a73, gate-G1 entry, 2026-08-21). Formal adoption is the owner's decision at the G1 read and is NOT implied by this block existing. If declined, the raw figure in headline.guidance_direction stands.",
+    "why_here": "The gate-G1 ruling required the epoch-2 re-eval to report guidance_direction both raw and post-ruled; the 2026-08-22 report shipped only the raw figure.",
+    "scope": {
+      "applies_to_rows": "the 570 guidance-applicable headline rows (8K_BODY excluded)",
+      "sentinel_rewritten": "__MISSING_FIELD__",
+      "sentinels_left_as_errors": [
+        "__UNPARSEABLE__",
+        "__INVALID_ENUM__"
+      ],
+      "fields_unaffected": [
+        "sentiment",
+        "red_flags",
+        "field_presence",
+        "parse",
+        "schema"
+      ],
+      "distress_tier": "excluded entirely \u2014 never a training target or headline metric (HANDOFF.md \u00a77)"
+    },
+    "headline_guidance_direction": {
+      "raw": {
+        "n": 570,
+        "exact_match": 0.5877,
+        "n_correct": 335,
+        "per_class": {
+          "RAISED": {
+            "support": 7,
+            "tp": 5,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.833,
+            "recall": 0.714,
+            "f1": 0.769
+          },
+          "MAINTAINED": {
+            "support": 7,
+            "tp": 3,
+            "fp": 3,
+            "fn": 4,
+            "precision": 0.5,
+            "recall": 0.429,
+            "f1": 0.462
+          },
+          "LOWERED": {
+            "support": 3,
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 553,
+            "tp": 324,
+            "fp": 5,
+            "fn": 229,
+            "precision": 0.985,
+            "recall": 0.586,
+            "f1": 0.735
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "RAISED",
+            "MAINTAINED",
+            "LOWERED",
+            "NONE"
+          ],
+          "precision": 0.83,
+          "recall": 0.682,
+          "f1": 0.741
+        },
+        "zero_support_classes": [
+          "WITHDRAWN"
+        ],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 226
+        },
+        "confusion": {
+          "MAINTAINED->NONE": 4,
+          "NONE->MAINTAINED": 2,
+          "NONE->RAISED": 1,
+          "NONE->__MISSING_FIELD__": 226,
+          "RAISED->MAINTAINED": 1,
+          "RAISED->NONE": 1
+        }
+      },
+      "post_rule": {
+        "n": 570,
+        "exact_match": 0.9842,
+        "n_correct": 561,
+        "per_class": {
+          "RAISED": {
+            "support": 7,
+            "tp": 5,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.833,
+            "recall": 0.714,
+            "f1": 0.769
+          },
+          "MAINTAINED": {
+            "support": 7,
+            "tp": 3,
+            "fp": 3,
+            "fn": 4,
+            "precision": 0.5,
+            "recall": 0.429,
+            "f1": 0.462
+          },
+          "LOWERED": {
+            "support": 3,
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 553,
+            "tp": 550,
+            "fp": 5,
+            "fn": 3,
+            "precision": 0.991,
+            "recall": 0.995,
+            "f1": 0.993
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "RAISED",
+            "MAINTAINED",
+            "LOWERED",
+            "NONE"
+          ],
+          "precision": 0.831,
+          "recall": 0.784,
+          "f1": 0.806
+        },
+        "zero_support_classes": [
+          "WITHDRAWN"
+        ],
+        "failure_attribution": {},
+        "confusion": {
+          "MAINTAINED->NONE": 4,
+          "NONE->MAINTAINED": 2,
+          "NONE->RAISED": 1,
+          "RAISED->MAINTAINED": 1,
+          "RAISED->NONE": 1
+        }
+      },
+      "raw_reproduced_from_predictions": true,
+      "raw_matches_shipped_report": true,
+      "derivation_check": {
+        "main_session_derivation": "335 exact matches + 226 NONE->__MISSING_FIELD__ = 561/570",
+        "recomputed_n_correct": 561,
+        "recomputed_n": 570,
+        "derivation_was_exactly_right": true
+      },
+      "rows_rewritten_by_rule": 226,
+      "rows_rewritten_whose_teacher_label_was_NONE": 226,
+      "rows_rewritten_whose_teacher_label_was_not_NONE": 0,
+      "rule_never_laundered_a_real_miss": true
+    },
+    "surviving_error_decomposition": {
+      "n_errors": 9,
+      "by_kind": {
+        "missed_real_guidance": {
+          "n": 5,
+          "rows": [
+            {
+              "chunk_id": "CHK-8f26c91deeaff05f",
+              "gold": "MAINTAINED",
+              "pred": "NONE"
+            },
+            {
+              "chunk_id": "CHK-56b7947ccd9dc822",
+              "gold": "MAINTAINED",
+              "pred": "NONE"
+            },
+            {
+              "chunk_id": "CHK-ef45841b13a70a29",
+              "gold": "MAINTAINED",
+              "pred": "NONE"
+            },
+            {
+              "chunk_id": "CHK-995038f4b6ac9fc2",
+              "gold": "RAISED",
+              "pred": "NONE"
+            },
+            {
+              "chunk_id": "CHK-6c60ac55215be937",
+              "gold": "MAINTAINED",
+              "pred": "NONE"
+            }
+          ]
+        },
+        "spurious_guidance": {
+          "n": 3,
+          "rows": [
+            {
+              "chunk_id": "CHK-513efb04fa834419",
+              "gold": "NONE",
+              "pred": "MAINTAINED"
+            },
+            {
+              "chunk_id": "CHK-09802f1bf7c93da7",
+              "gold": "NONE",
+              "pred": "RAISED"
+            },
+            {
+              "chunk_id": "CHK-dfbdc9005df6cd50",
+              "gold": "NONE",
+              "pred": "MAINTAINED"
+            }
+          ]
+        },
+        "wrong_direction": {
+          "n": 1,
+          "rows": [
+            {
+              "chunk_id": "CHK-7bd9948d100abc87",
+              "gold": "RAISED",
+              "pred": "MAINTAINED"
+            }
+          ]
+        }
+      },
+      "n_parse_or_schema_failures_among_them": 0
+    },
+    "majority_class_caveat": {
+      "note": "The post-ruled 98.4% is carried by the majority class. Read the non-NONE line before quoting the headline.",
+      "teacher_NONE_rows": 553,
+      "teacher_NONE_correct": 550,
+      "teacher_non_NONE_rows": 17,
+      "teacher_non_NONE_correct": 11,
+      "teacher_non_NONE_rate": 0.6471,
+      "stability": "n=17 non-NONE rows (RAISED 7 / MAINTAINED 7 / LOWERED 3) \u2014 not a stable estimate; WITHDRAWN has zero eval support and is not evaluable (HANDOFF.md \u00a77)."
+    },
+    "out_of_scope_context_not_in_this_denominator": {
+      "headline_rows_with_no_teacher_guidance_field": 432,
+      "of_those_student_emitted_guidance_anyway": 7,
+      "values_emitted": {
+        "NONE": 7
+      },
+      "note": "All over-emissions are NONE, so the student's field-presence disagreement with the teacher is entirely 'omitted vs explicit NONE' in both directions and never a substantive guidance claim. Evidence for the rule, not a decision on it."
+    },
+    "epoch_comparison_same_rule": {
+      "note": "Epoch 2's raw guidance gain is entirely field-emission behaviour. Post-ruled, the two epochs are tied to the row.",
+      "epoch1_run": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-21-eval-epoch1",
+      "epoch1_raw": {
+        "n_correct": 272,
+        "n": 570,
+        "exact_match": 0.4772,
+        "missing_field": 289
+      },
+      "epoch1_post_rule": {
+        "n_correct": 561,
+        "n": 570,
+        "exact_match": 0.9842
+      },
+      "epoch2_raw": {
+        "n_correct": 335,
+        "n": 570,
+        "exact_match": 0.5877,
+        "missing_field": 226
+      },
+      "epoch2_post_rule": {
+        "n_correct": 561,
+        "n": 570,
+        "exact_match": 0.9842
+      },
+      "shared_error_chunks": [
+        "CHK-09802f1bf7c93da7",
+        "CHK-56b7947ccd9dc822",
+        "CHK-6c60ac55215be937",
+        "CHK-7bd9948d100abc87",
+        "CHK-8f26c91deeaff05f",
+        "CHK-995038f4b6ac9fc2",
+        "CHK-dfbdc9005df6cd50",
+        "CHK-ef45841b13a70a29"
+      ],
+      "fixed_by_epoch2": [
+        "CHK-923aa492ae6784dc"
+      ],
+      "broken_by_epoch2": [
+        "CHK-513efb04fa834419"
+      ],
+      "same_eval_rows_sha256": true,
+      "same_instruction_sha256": true
+    },
+    "excluded_slice_8K_BODY_not_evaluable": {
+      "reason": "n=8 corpus-wide from only 2 tickers (BAC, CVX); all 8 landed in the eval split. No per-class estimate on 8 rows from 2 issuers is stable, so 8K_BODY rows are excluded from every headline table and reported separately below (HANDOFF.md \u00a77).",
+      "raw": {
+        "n_correct": 4,
+        "n": 8,
+        "exact_match": 0.5
+      },
+      "post_rule": {
+        "n_correct": 7,
+        "n": 8,
+        "exact_match": 0.875
+      },
+      "do_not_average_into_anything": true
+    },
+    "by_section_type_note": "All 570 guidance-applicable headline rows are EX99_PRESS_RELEASE; MDA and RISK_FACTORS are never asked for guidance. So the post-ruled per-section guidance column equals the headline figure exactly.",
+    "if_adopted": "Adopting this at the eval bench without applying the same normalisation in the F4 labeling writer would leave the reported number describing something the produced labels do not do. On adoption, persist an omitted guidance_direction as NONE in the E2 labeling path and flag normalised-NONE vs emitted-NONE per row so the choice stays auditable and reversible.",
+    "interpretation": "These are AGREEMENT-WITH-THE-TEACHER rates, not accuracy. 98.4% post-ruled agreement means the student reproduces Claude's guidance labels including their errors.",
+    "provenance": {
+      "predictions_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-22-eval-epoch2/predictions.jsonl",
+      "predictions_sha256": "b6d55552035784ed291929dc9e7f8da9556a83850a594ee072911db57972b2a6",
+      "eval_rows_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/valid.jsonl",
+      "eval_rows_sha256": "deb63b76992404ecaf4fdc4c3a3acbea9b0c3bb7f655064aec7191ebc9ab0736",
+      "eval_rows_sha_matches_report_provenance_table": true,
+      "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+      "epoch1_predictions_sha256": "84b721fdb44ce489fd1af437a2f23efed91532ba87017a63ac7f14cab23f8b45",
+      "scoring_code": "finetune/eval.py \u2014 load_eval_rows(), parse_model_output(), predicted_single_label(), score_single_label(); unmodified",
+      "model_invoked": null,
+      "network_calls": 0,
+      "anthropic_api_calls": 0,
+      "cost_usd": 0.0
+    }
+  }
+}

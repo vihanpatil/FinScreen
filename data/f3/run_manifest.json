@@ -1,0 +1,1512 @@
+{
+ "runs": [
+  {
+   "run_id": "f3-20260827T150538Z",
+   "started_utc": "2026-08-27T15:05:38.881204+00:00",
+   "ended_utc": "2026-08-27T15:31:08.958214+00:00",
+   "argv": [
+    "--segment",
+    "earnings"
+   ],
+   "segments": [
+    "earnings"
+   ],
+   "shard_size": null,
+   "shard": null,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "earnings",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1289,
+      "FLAGGED": 210,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 169.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1174,
+      "FLAGGED": 324,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 193.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1289,
+      "FLAGGED": 210,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 233.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1224,
+      "FLAGGED": 275,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 260.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1495,
+     "status_counts": {
+      "OK": 1238,
+      "FLAGGED": 257,
+      "FAIL": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 213.8,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1500,
+     "status_counts": {
+      "OK": 1260,
+      "FLAGGED": 240
+     },
+     "cache_miss": 0,
+     "elapsed_s": 234.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1143,
+      "FLAGGED": 355,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 219.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "earnings",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 67,
+     "attempts": 67,
+     "sections": 67,
+     "status_counts": {
+      "OK": 58,
+      "FLAGGED": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 5.6,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": []
+  },
+  {
+   "run_id": "f3-20260827T153127Z",
+   "started_utc": "2026-08-27T15:31:27.212787+00:00",
+   "ended_utc": "2026-08-27T16:22:23.232021+00:00",
+   "argv": [
+    "--segment",
+    "10-K"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": null,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 453,
+     "status_counts": {
+      "OK": 420,
+      "FAIL": 47,
+      "FLAGGED": 33
+     },
+     "cache_miss": 0,
+     "elapsed_s": 362.8,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 487,
+     "status_counts": {
+      "OK": 403,
+      "FLAGGED": 84,
+      "FAIL": 13
+     },
+     "cache_miss": 0,
+     "elapsed_s": 416.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 489,
+     "status_counts": {
+      "OK": 438,
+      "FLAGGED": 51,
+      "FAIL": 11
+     },
+     "cache_miss": 0,
+     "elapsed_s": 300.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 434,
+     "status_counts": {
+      "OK": 415,
+      "FAIL": 66,
+      "FLAGGED": 19
+     },
+     "cache_miss": 0,
+     "elapsed_s": 346.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 478,
+     "status_counts": {
+      "OK": 472,
+      "FAIL": 22,
+      "FLAGGED": 6
+     },
+     "cache_miss": 0,
+     "elapsed_s": 334.4,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 493,
+     "status_counts": {
+      "OK": 448,
+      "FLAGGED": 45,
+      "FAIL": 7
+     },
+     "cache_miss": 0,
+     "elapsed_s": 275.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 477,
+     "status_counts": {
+      "OK": 437,
+      "FLAGGED": 40,
+      "FAIL": 23
+     },
+     "cache_miss": 0,
+     "elapsed_s": 304.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 475,
+     "status_counts": {
+      "OK": 431,
+      "FLAGGED": 44,
+      "FAIL": 25
+     },
+     "cache_miss": 0,
+     "elapsed_s": 240.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 484,
+     "status_counts": {
+      "OK": 405,
+      "FLAGGED": 79,
+      "FAIL": 16
+     },
+     "cache_miss": 0,
+     "elapsed_s": 334.4,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-K",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 195,
+     "attempts": 390,
+     "sections": 376,
+     "status_counts": {
+      "OK": 370,
+      "FAIL": 14,
+      "FLAGGED": 6
+     },
+     "cache_miss": 0,
+     "elapsed_s": 141.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": []
+  },
+  {
+   "run_id": "f3-20260827T162237Z",
+   "started_utc": "2026-08-27T16:22:37.938332+00:00",
+   "ended_utc": "2026-08-27T17:56:22.824318+00:00",
+   "argv": [
+    "--segment",
+    "10-Q"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": null,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 842,
+     "status_counts": {
+      "OK": 768,
+      "FAIL": 89,
+      "FLAGGED": 74,
+      "EXPECTED_ABSENT": 69
+     },
+     "cache_miss": 0,
+     "elapsed_s": 586.4,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 825,
+     "status_counts": {
+      "OK": 751,
+      "FAIL": 88,
+      "EXPECTED_ABSENT": 87,
+      "FLAGGED": 74
+     },
+     "cache_miss": 0,
+     "elapsed_s": 197.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 973,
+     "status_counts": {
+      "OK": 750,
+      "FLAGGED": 223,
+      "EXPECTED_ABSENT": 21,
+      "FAIL": 6
+     },
+     "cache_miss": 0,
+     "elapsed_s": 600.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 919,
+     "status_counts": {
+      "OK": 766,
+      "FLAGGED": 153,
+      "EXPECTED_ABSENT": 41,
+      "FAIL": 40
+     },
+     "cache_miss": 0,
+     "elapsed_s": 290.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 960,
+     "status_counts": {
+      "OK": 827,
+      "FLAGGED": 133,
+      "EXPECTED_ABSENT": 22,
+      "FAIL": 18
+     },
+     "cache_miss": 0,
+     "elapsed_s": 274.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 774,
+     "status_counts": {
+      "OK": 774,
+      "FAIL": 136,
+      "EXPECTED_ABSENT": 90
+     },
+     "cache_miss": 0,
+     "elapsed_s": 532.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 924,
+     "status_counts": {
+      "OK": 882,
+      "EXPECTED_ABSENT": 54,
+      "FLAGGED": 42,
+      "FAIL": 22
+     },
+     "cache_miss": 0,
+     "elapsed_s": 485.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 947,
+     "status_counts": {
+      "OK": 927,
+      "EXPECTED_ABSENT": 50,
+      "FLAGGED": 20,
+      "FAIL": 3
+     },
+     "cache_miss": 0,
+     "elapsed_s": 274.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 915,
+     "status_counts": {
+      "OK": 770,
+      "FLAGGED": 145,
+      "EXPECTED_ABSENT": 77,
+      "FAIL": 8
+     },
+     "cache_miss": 0,
+     "elapsed_s": 313.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 972,
+     "status_counts": {
+      "OK": 916,
+      "FLAGGED": 56,
+      "EXPECTED_ABSENT": 19,
+      "FAIL": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 334.3,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 10,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 907,
+     "status_counts": {
+      "OK": 830,
+      "FLAGGED": 77,
+      "FAIL": 55,
+      "EXPECTED_ABSENT": 38
+     },
+     "cache_miss": 0,
+     "elapsed_s": 443.8,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 11,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 923,
+     "status_counts": {
+      "OK": 922,
+      "EXPECTED_ABSENT": 52,
+      "FAIL": 25,
+      "FLAGGED": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 310.7,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 12,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 903,
+     "status_counts": {
+      "OK": 626,
+      "FLAGGED": 277,
+      "EXPECTED_ABSENT": 77,
+      "FAIL": 20
+     },
+     "cache_miss": 0,
+     "elapsed_s": 400.6,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 13,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 931,
+     "status_counts": {
+      "OK": 897,
+      "EXPECTED_ABSENT": 61,
+      "FLAGGED": 34,
+      "FAIL": 8
+     },
+     "cache_miss": 0,
+     "elapsed_s": 335.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 14,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 970,
+     "status_counts": {
+      "OK": 911,
+      "FLAGGED": 59,
+      "EXPECTED_ABSENT": 18,
+      "FAIL": 12
+     },
+     "cache_miss": 0,
+     "elapsed_s": 242.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    },
+    {
+     "segment": "10-Q",
+     "shard": 15,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 9,
+     "attempts": 18,
+     "sections": 14,
+     "status_counts": {
+      "OK": 14,
+      "EXPECTED_ABSENT": 3,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 4.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": []
+  },
+  {
+   "run_id": "f3-20260827T175636Z",
+   "started_utc": "2026-08-27T17:56:36.437255+00:00",
+   "ended_utc": "2026-08-27T17:56:36.515733+00:00",
+   "argv": [
+    "--merge"
+   ],
+   "segments": [
+    "earnings",
+    "10-K",
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": null,
+   "limit": null,
+   "merge": {
+    "complete": true,
+    "shards_found": {
+     "earnings": 8,
+     "10-K": 10,
+     "10-Q": 16
+    },
+    "shards_expected": {
+     "earnings": 8,
+     "10-K": 10,
+     "10-Q": 16
+    },
+    "attempts": 30475,
+    "sections": 28900,
+    "status_counts": {
+     "OK": 25245,
+     "FLAGGED": 3655,
+     "FAIL": 796,
+     "EXPECTED_ABSENT": 779
+    },
+    "warnings": []
+   },
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "earnings",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1289,
+      "FLAGGED": 210,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 169.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1174,
+      "FLAGGED": 324,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 193.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1289,
+      "FLAGGED": 210,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 233.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1224,
+      "FLAGGED": 275,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 260.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1495,
+     "status_counts": {
+      "OK": 1238,
+      "FLAGGED": 257,
+      "FAIL": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 213.8,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1500,
+     "status_counts": {
+      "OK": 1260,
+      "FLAGGED": 240
+     },
+     "cache_miss": 0,
+     "elapsed_s": 234.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1143,
+      "FLAGGED": 355,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 219.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260827T150538Z",
+     "filings": 67,
+     "attempts": 67,
+     "sections": 67,
+     "status_counts": {
+      "OK": 58,
+      "FLAGGED": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 5.6,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 453,
+     "status_counts": {
+      "OK": 420,
+      "FAIL": 47,
+      "FLAGGED": 33
+     },
+     "cache_miss": 0,
+     "elapsed_s": 362.8,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 487,
+     "status_counts": {
+      "OK": 403,
+      "FLAGGED": 84,
+      "FAIL": 13
+     },
+     "cache_miss": 0,
+     "elapsed_s": 416.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 489,
+     "status_counts": {
+      "OK": 438,
+      "FLAGGED": 51,
+      "FAIL": 11
+     },
+     "cache_miss": 0,
+     "elapsed_s": 300.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 434,
+     "status_counts": {
+      "OK": 415,
+      "FAIL": 66,
+      "FLAGGED": 19
+     },
+     "cache_miss": 0,
+     "elapsed_s": 346.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 478,
+     "status_counts": {
+      "OK": 472,
+      "FAIL": 22,
+      "FLAGGED": 6
+     },
+     "cache_miss": 0,
+     "elapsed_s": 334.4,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 493,
+     "status_counts": {
+      "OK": 448,
+      "FLAGGED": 45,
+      "FAIL": 7
+     },
+     "cache_miss": 0,
+     "elapsed_s": 275.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 477,
+     "status_counts": {
+      "OK": 437,
+      "FLAGGED": 40,
+      "FAIL": 23
+     },
+     "cache_miss": 0,
+     "elapsed_s": 304.2,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 475,
+     "status_counts": {
+      "OK": 431,
+      "FLAGGED": 44,
+      "FAIL": 25
+     },
+     "cache_miss": 0,
+     "elapsed_s": 240.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 484,
+     "status_counts": {
+      "OK": 405,
+      "FLAGGED": 79,
+      "FAIL": 16
+     },
+     "cache_miss": 0,
+     "elapsed_s": 334.4,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260827T153127Z",
+     "filings": 195,
+     "attempts": 390,
+     "sections": 376,
+     "status_counts": {
+      "OK": 370,
+      "FAIL": 14,
+      "FLAGGED": 6
+     },
+     "cache_miss": 0,
+     "elapsed_s": 141.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 842,
+     "status_counts": {
+      "OK": 768,
+      "FAIL": 89,
+      "FLAGGED": 74,
+      "EXPECTED_ABSENT": 69
+     },
+     "cache_miss": 0,
+     "elapsed_s": 586.4,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 825,
+     "status_counts": {
+      "OK": 751,
+      "FAIL": 88,
+      "EXPECTED_ABSENT": 87,
+      "FLAGGED": 74
+     },
+     "cache_miss": 0,
+     "elapsed_s": 197.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 973,
+     "status_counts": {
+      "OK": 750,
+      "FLAGGED": 223,
+      "EXPECTED_ABSENT": 21,
+      "FAIL": 6
+     },
+     "cache_miss": 0,
+     "elapsed_s": 600.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 919,
+     "status_counts": {
+      "OK": 766,
+      "FLAGGED": 153,
+      "EXPECTED_ABSENT": 41,
+      "FAIL": 40
+     },
+     "cache_miss": 0,
+     "elapsed_s": 290.9,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 960,
+     "status_counts": {
+      "OK": 827,
+      "FLAGGED": 133,
+      "EXPECTED_ABSENT": 22,
+      "FAIL": 18
+     },
+     "cache_miss": 0,
+     "elapsed_s": 274.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 774,
+     "status_counts": {
+      "OK": 774,
+      "FAIL": 136,
+      "EXPECTED_ABSENT": 90
+     },
+     "cache_miss": 0,
+     "elapsed_s": 532.1,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 924,
+     "status_counts": {
+      "OK": 882,
+      "EXPECTED_ABSENT": 54,
+      "FLAGGED": 42,
+      "FAIL": 22
+     },
+     "cache_miss": 0,
+     "elapsed_s": 485.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 947,
+     "status_counts": {
+      "OK": 927,
+      "EXPECTED_ABSENT": 50,
+      "FLAGGED": 20,
+      "FAIL": 3
+     },
+     "cache_miss": 0,
+     "elapsed_s": 274.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 915,
+     "status_counts": {
+      "OK": 770,
+      "FLAGGED": 145,
+      "EXPECTED_ABSENT": 77,
+      "FAIL": 8
+     },
+     "cache_miss": 0,
+     "elapsed_s": 313.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 972,
+     "status_counts": {
+      "OK": 916,
+      "FLAGGED": 56,
+      "EXPECTED_ABSENT": 19,
+      "FAIL": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 334.3,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 10,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 907,
+     "status_counts": {
+      "OK": 830,
+      "FLAGGED": 77,
+      "FAIL": 55,
+      "EXPECTED_ABSENT": 38
+     },
+     "cache_miss": 0,
+     "elapsed_s": 443.8,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 11,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 923,
+     "status_counts": {
+      "OK": 922,
+      "EXPECTED_ABSENT": 52,
+      "FAIL": 25,
+      "FLAGGED": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 310.7,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 12,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 903,
+     "status_counts": {
+      "OK": 626,
+      "FLAGGED": 277,
+      "EXPECTED_ABSENT": 77,
+      "FAIL": 20
+     },
+     "cache_miss": 0,
+     "elapsed_s": 400.6,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 13,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 931,
+     "status_counts": {
+      "OK": 897,
+      "EXPECTED_ABSENT": 61,
+      "FLAGGED": 34,
+      "FAIL": 8
+     },
+     "cache_miss": 0,
+     "elapsed_s": 335.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 14,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 970,
+     "status_counts": {
+      "OK": 911,
+      "FLAGGED": 59,
+      "EXPECTED_ABSENT": 18,
+      "FAIL": 12
+     },
+     "cache_miss": 0,
+     "elapsed_s": 242.0,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 15,
+     "limit": null,
+     "run_id": "f3-20260827T162237Z",
+     "filings": 9,
+     "attempts": 18,
+     "sections": 14,
+     "status_counts": {
+      "OK": 14,
+      "EXPECTED_ABSENT": 3,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 4.5,
+     "extractor_sha256": "b9acceea837796e598113eb35d3af53404ec33a101cd26b6d87623200d95ecdd",
+     "skipped": true
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": []
+  }
+ ]
+}

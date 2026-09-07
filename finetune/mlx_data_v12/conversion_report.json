@@ -1,0 +1,377 @@
+{
+  "max_seq_length": 2048,
+  "prepared_dir": "finetune/prepared_v12",
+  "splits": {
+    "train": {
+      "source_file": "finetune/prepared_v12/train.jsonl",
+      "source_sha256": "91d95653c1fb1a304610bfb948564ef8fc5f4c4d5d8c20a0037bec33e5bae580",
+      "output_file": "finetune/mlx_data_v12/train.jsonl",
+      "output_sha256": "396aef131bec0e5cffc22df94fe310e07a8e440d9d5a020b09772699a2931a43",
+      "n_examples": 5736,
+      "n_passage_truncated": 2,
+      "truncated": [
+        {
+          "chunk_id": "CHK-e27237d716eaa7ec",
+          "passage_chars_before": 8917,
+          "passage_chars_after": 7867,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-278fd8fbecde0702",
+          "passage_chars_before": 9547,
+          "passage_chars_after": 7846,
+          "rendered_tokens_after": 2048
+        }
+      ],
+      "rendered_tokens": {
+        "mean": 999.7,
+        "p50": 993,
+        "p95": 1170,
+        "p99": 1399,
+        "max": 2048,
+        "total": 5734081
+      },
+      "loss_bearing_tokens": {
+        "mean": 37.4,
+        "max": 152,
+        "total": 214334
+      }
+    },
+    "eval": {
+      "source_file": "finetune/prepared_v12/eval.jsonl",
+      "source_sha256": "0229d0ba90d8331d0e6b6ead5d72dc1f1ccc5c085998ad5695f7f8e4e35d2ac5",
+      "output_file": "finetune/mlx_data_v12/valid.jsonl",
+      "output_sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+      "n_examples": 1010,
+      "n_passage_truncated": 50,
+      "truncated": [
+        {
+          "chunk_id": "CHK-d9ae65a63500b559",
+          "passage_chars_before": 6834,
+          "passage_chars_after": 5146,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-7839d1bf0899bc5b",
+          "passage_chars_before": 5715,
+          "passage_chars_after": 5453,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-9c778449f0b68cdb",
+          "passage_chars_before": 6238,
+          "passage_chars_after": 6236,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-01b548d279ce0612",
+          "passage_chars_before": 5042,
+          "passage_chars_after": 4661,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-258bcb4afe9d552e",
+          "passage_chars_before": 3624,
+          "passage_chars_after": 2891,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-208ec0430b51af79",
+          "passage_chars_before": 6231,
+          "passage_chars_after": 5433,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c5a4797a146a9333",
+          "passage_chars_before": 5179,
+          "passage_chars_after": 5076,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-19a5d2c8b1782da7",
+          "passage_chars_before": 5022,
+          "passage_chars_after": 4641,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-3b0aa8a7e9377f8d",
+          "passage_chars_before": 3592,
+          "passage_chars_after": 2905,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-9e5a598dea8b8509",
+          "passage_chars_before": 5462,
+          "passage_chars_after": 5370,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-774201ad189e6dc8",
+          "passage_chars_before": 5997,
+          "passage_chars_after": 4614,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-20a6b53a4954df29",
+          "passage_chars_before": 3623,
+          "passage_chars_after": 2891,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c8e34d5c3890f209",
+          "passage_chars_before": 5027,
+          "passage_chars_after": 4652,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-b5e1f8364239ec15",
+          "passage_chars_before": 6438,
+          "passage_chars_after": 4596,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-759e39d0da6b3e04",
+          "passage_chars_before": 6538,
+          "passage_chars_after": 5757,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-1d0146967622581a",
+          "passage_chars_before": 5189,
+          "passage_chars_after": 4692,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c166f0a63341541e",
+          "passage_chars_before": 3628,
+          "passage_chars_after": 2900,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-07c9e03852e22130",
+          "passage_chars_before": 7186,
+          "passage_chars_after": 5926,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-d4df0b319f691a9c",
+          "passage_chars_before": 5034,
+          "passage_chars_after": 4652,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-4c05639d9e5b8ced",
+          "passage_chars_before": 8199,
+          "passage_chars_after": 5337,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-b95097c07502cb5d",
+          "passage_chars_before": 7010,
+          "passage_chars_after": 6211,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-5ead5da9375f42b4",
+          "passage_chars_before": 6765,
+          "passage_chars_after": 5319,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c96cd86387228a98",
+          "passage_chars_before": 5027,
+          "passage_chars_after": 4641,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-f76b9aeb821e6677",
+          "passage_chars_before": 3605,
+          "passage_chars_after": 2890,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-28bfe1471a0f3135",
+          "passage_chars_before": 5351,
+          "passage_chars_after": 4926,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-f518e6567b440f5d",
+          "passage_chars_before": 7183,
+          "passage_chars_after": 5134,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-a91534271400b30a",
+          "passage_chars_before": 5022,
+          "passage_chars_after": 4641,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-1a15cd95a12fdb5d",
+          "passage_chars_before": 3594,
+          "passage_chars_after": 2904,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-a7e5a720287a5e1f",
+          "passage_chars_before": 7440,
+          "passage_chars_after": 6824,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-e4299d1773883e04",
+          "passage_chars_before": 5031,
+          "passage_chars_after": 4656,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-1b3bc1e5a291f822",
+          "passage_chars_before": 3616,
+          "passage_chars_after": 2917,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-800e72474434f0c5",
+          "passage_chars_before": 5316,
+          "passage_chars_after": 4902,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-3403ebca8e8e6f90",
+          "passage_chars_before": 6433,
+          "passage_chars_after": 5993,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-a4d5d4cccfb913b7",
+          "passage_chars_before": 7501,
+          "passage_chars_after": 3576,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-8d583b364eda6153",
+          "passage_chars_before": 3572,
+          "passage_chars_after": 2912,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-997f0a34375e8d71",
+          "passage_chars_before": 4893,
+          "passage_chars_after": 4585,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-66f8ccf195b5e1d2",
+          "passage_chars_before": 6941,
+          "passage_chars_after": 5488,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-e504dceb5c84989a",
+          "passage_chars_before": 5566,
+          "passage_chars_after": 4882,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-944c990113db417d",
+          "passage_chars_before": 7094,
+          "passage_chars_after": 5310,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-04e0baaa607ba95d",
+          "passage_chars_before": 6609,
+          "passage_chars_after": 6221,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-d0636999104ff0a6",
+          "passage_chars_before": 5043,
+          "passage_chars_after": 4661,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-b2c36185edf5be70",
+          "passage_chars_before": 3626,
+          "passage_chars_after": 2910,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-eaddb39aa3da204a",
+          "passage_chars_before": 5284,
+          "passage_chars_after": 5004,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-2a00ea9b53890d95",
+          "passage_chars_before": 5717,
+          "passage_chars_after": 5450,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-268770a0b955e8e1",
+          "passage_chars_before": 6780,
+          "passage_chars_after": 5329,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-3057f8866c831355",
+          "passage_chars_before": 6460,
+          "passage_chars_after": 6169,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-30c2a322fb3f913d",
+          "passage_chars_before": 5714,
+          "passage_chars_after": 5453,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-36203e121d7c8a6a",
+          "passage_chars_before": 6342,
+          "passage_chars_after": 5965,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-50e75001dc511681",
+          "passage_chars_before": 8228,
+          "passage_chars_after": 8054,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-ab061c985323c1fe",
+          "passage_chars_before": 7811,
+          "passage_chars_after": 6722,
+          "rendered_tokens_after": 2048
+        }
+      ],
+      "rendered_tokens": {
+        "mean": 1148.3,
+        "p50": 1027,
+        "p95": 2031,
+        "p99": 2048,
+        "max": 2048,
+        "total": 1159761
+      },
+      "loss_bearing_tokens": {
+        "mean": 42.8,
+        "max": 152,
+        "total": 43270
+      }
+    }
+  },
+  "instruction": {
+    "sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "chars": 1825,
+    "byte_identical_across_all_rows": true,
+    "source": "prepare_dataset.py::INSTRUCTION \u2014 the TRAINING instruction, frozen across E1 and the v1.2 retrain"
+  },
+  "leakage_check": {
+    "train_chunk_ids": 5736,
+    "eval_chunk_ids": 1010,
+    "intersection": 0,
+    "instruction_byte_identical": true
+  },
+  "tokenizer_source": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+}

@@ -1,0 +1,1271 @@
+cik,company_name,sector,stratum,form,section_type,n_attempt,n_ok,n_flagged,n_item_absent_from_toc,n_fail,fail_rate,flag_rate,n_pre2019,fail_rate_pre2019,fail_rate_2019plus,top_reason_code,n_low_confidence,median_words
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,item_absent_from_toc,34,0.0
+21665,COLGATE PALMOLIVE CO,consumer,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-Q,MDA,34,0,0,0,34,1.0,0.0,10,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+36104,US BANCORP \DE\,financials,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-Q,RISK_FACTORS,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+831001,CITIGROUP INC,financials,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+831001,CITIGROUP INC,financials,core,10-Q,RISK_FACTORS,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+1390777,Bank of New York Mellon Corp,financials,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,item_absent_from_toc,34,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-K,MDA,11,0,0,0,11,1.0,0.0,4,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,4,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,3,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+831001,CITIGROUP INC,financials,core,10-K,MDA,11,0,0,0,11,1.0,0.0,3,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+831001,CITIGROUP INC,financials,core,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,3,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,10-K,MDA,11,0,0,0,11,1.0,0.0,3,1.0,1.0,item_absent_from_toc,11,0.0
+1571949,"Intercontinental Exchange, Inc.",financials,core,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,3,1.0,1.0,item_absent_from_toc,11,0.0
+1105705,"WARNER MEDIA, LLC",consumer,core,10-Q,MDA,9,0,0,0,9,1.0,0.0,9,1.0,,item_absent_from_toc,9,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-Q,RISK_FACTORS,34,0,5,0,29,0.8529,0.1471,10,1.0,0.7917,no_toc_and_no_heading_match,34,0.0
+895421,MORGAN STANLEY,financials,core,10-Q,MDA,34,5,0,0,29,0.8529,0.0,11,0.5455,1.0,item_absent_from_toc,29,0.0
+24741,CORNING INC /NY,materials_realestate,extension,10-K,MDA,11,0,2,0,9,0.8182,0.1818,3,0.6667,0.875,item_absent_from_toc,11,0.0
+24741,CORNING INC /NY,materials_realestate,extension,10-K,RISK_FACTORS,11,0,2,0,9,0.8182,0.1818,3,0.6667,0.875,item_absent_from_toc,11,0.0
+895421,MORGAN STANLEY,financials,core,10-K,MDA,11,2,0,0,9,0.8182,0.0,3,0.3333,1.0,item_absent_from_toc,9,0.0
+895421,MORGAN STANLEY,financials,core,10-K,RISK_FACTORS,11,2,0,0,9,0.8182,0.0,3,0.3333,1.0,item_absent_from_toc,9,0.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,10-K,MDA,11,3,1,0,7,0.6364,0.0909,3,0.6667,0.625,item_absent_from_toc,7,0.0
+310764,STRYKER CORP,healthcare,core,10-Q,RISK_FACTORS,34,0,17,0,17,0.5,0.5,11,1.0,0.2609,no_toc_and_no_heading_match,34,15.5
+6769,APACHE CORP,energy,core,10-Q,MDA,29,15,0,0,14,0.4828,0.0,11,0.1818,0.6667,item_absent_from_toc,14,4570.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,10-K,RISK_FACTORS,11,3,3,0,5,0.4545,0.2727,3,0.0,0.625,item_absent_from_toc,8,3036.0
+34088,EXXON MOBIL CORP,energy,core,10-Q,RISK_FACTORS,34,0,9,11,14,0.4118,0.2647,11,1.0,0.1304,no_toc_and_no_heading_match,34,0.0
+1358071,CONCHO RESOURCES INC,energy,core,10-K,MDA,5,1,2,0,2,0.4,0.4,3,0.3333,0.5,mda_stub_unresolved_same_doc,4,1184.0
+1358071,CONCHO RESOURCES INC,energy,core,10-K,RISK_FACTORS,5,1,2,0,2,0.4,0.4,3,0.3333,0.5,heading_regex_fallback,4,13087.0
+4281,Howmet Aerospace Inc.,materials_realestate,extension,10-Q,RISK_FACTORS,34,17,4,0,13,0.3824,0.1176,11,0.9091,0.1304,no_toc_and_no_heading_match,17,38.0
+310158,"Merck & Co., Inc.",healthcare,core,10-Q,RISK_FACTORS,34,9,0,12,13,0.3824,0.0,11,1.0,0.087,no_toc_and_no_heading_match,25,0.0
+21344,COCA COLA CO,consumer,core,10-K,MDA,11,7,0,0,4,0.3636,0.0,3,0.6667,0.25,toc_recovery_declined,4,16958.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-K,MDA,11,0,7,0,4,0.3636,0.6364,3,1.0,0.125,heading_regex_fallback,11,88695.0
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,10-Q,RISK_FACTORS,34,20,2,0,12,0.3529,0.0588,11,1.0,0.0435,toc_recovery_declined,12,40.0
+6769,APACHE CORP,energy,core,10-K,MDA,9,2,4,0,3,0.3333,0.4444,3,0.0,0.5,toc_recovered_f1,7,12804.0
+87347,SLB LIMITED/NV,energy,core,10-Q,RISK_FACTORS,34,23,0,0,11,0.3235,0.0,11,0.7273,0.1304,anchor_span_below_min_chars,11,43.0
+100885,UNION PACIFIC CORP,industrials,extension,10-Q,RISK_FACTORS,34,24,0,0,10,0.2941,0.0,11,0.8182,0.0435,no_toc_and_no_heading_match,10,74.5
+1099590,MERCADOLIBRE INC,financials,core,10-Q,MDA,34,24,0,0,10,0.2941,0.0,11,0.8182,0.0435,item_absent_from_toc,10,13463.0
+86312,"TRAVELERS COMPANIES, INC.",financials,core,10-K,MDA,11,8,0,0,3,0.2727,0.0,3,1.0,0.0,item_absent_from_toc,3,34229.0
+766704,WELLTOWER INC.,materials_realestate,extension,10-K,RISK_FACTORS,11,8,0,0,3,0.2727,0.0,3,1.0,0.0,item_absent_from_toc,3,14233.0
+1163165,CONOCOPHILLIPS,energy,core,10-K,MDA,11,5,3,0,3,0.2727,0.2727,3,0.6667,0.125,item_absent_from_toc,6,18192.0
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,10-K,MDA,11,8,0,0,3,0.2727,0.0,3,1.0,0.0,item_absent_from_toc,3,8898.0
+63908,MCDONALDS CORP,consumer,core,10-K,RISK_FACTORS,11,7,2,0,2,0.1818,0.1818,3,0.0,0.25,below_length_floor,4,5175.0
+97476,TEXAS INSTRUMENTS INC,tech,core,10-K,MDA,11,0,9,0,2,0.1818,0.8182,3,0.3333,0.125,heading_regex_fallback,11,2793.0
+315189,DEERE & CO,industrials,extension,10-K,MDA,11,0,9,0,2,0.1818,0.8182,4,0.5,0.0,mda_stub_unresolved_same_doc,11,23.0
+315189,DEERE & CO,industrials,extension,10-K,RISK_FACTORS,11,9,0,0,2,0.1818,0.0,4,0.5,0.0,item_absent_from_toc,2,7535.0
+1555280,Zoetis Inc.,healthcare,core,10-K,MDA,11,9,0,0,2,0.1818,0.0,3,0.6667,0.0,toc_recovery_declined,2,16183.0
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,10-Q,MDA,34,29,0,0,5,0.1471,0.0,11,0.4545,0.0,toc_recovery_declined,5,39323.5
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,10-K,RISK_FACTORS,11,10,0,0,1,0.0909,0.0,3,0.3333,0.0,toc_recovery_declined,1,16500.0
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,10-K,MDA,11,10,0,0,1,0.0909,0.0,3,0.3333,0.0,item_absent_from_toc,1,16629.0
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,10-K,RISK_FACTORS,11,10,0,0,1,0.0909,0.0,3,0.3333,0.0,item_absent_from_toc,1,8466.0
+50863,INTEL CORP,tech,core,10-K,RISK_FACTORS,11,9,1,0,1,0.0909,0.0909,3,0.3333,0.0,no_toc_and_no_heading_match,1,16967.0
+106535,WEYERHAEUSER CO,materials_realestate,extension,10-K,MDA,11,6,4,0,1,0.0909,0.3636,3,0.0,0.125,head_keyword_absent,1,7594.0
+732717,AT&T INC.,utilities,extension,10-K,MDA,11,6,4,0,1,0.0909,0.3636,3,0.0,0.125,mda_stub_external_document,5,10026.0
+922224,PPL Corp,utilities,extension,10-K,MDA,11,10,0,0,1,0.0909,0.0,3,0.3333,0.0,item_absent_from_toc,1,17800.0
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,10-Q,MDA,34,31,0,0,3,0.0882,0.0,11,0.2727,0.0,item_absent_from_toc,3,10302.5
+1137789,Seagate Technology Holdings plc,tech,core,10-K,MDA,12,11,0,0,1,0.0833,0.0,4,0.25,0.0,item_absent_from_toc,1,6287.5
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,8-K,EX99_PRESS_RELEASE,91,11,73,0,7,0.0769,0.8022,38,0.1579,0.0189,earnings_population_gate,7,9551.0
+1707925,LINDE PLC,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,31,28,1,0,2,0.0645,0.0323,0,,0.0645,empty_after_extraction,2,5570.0
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,10-Q,MDA,34,1,31,0,2,0.0588,0.9118,11,0.1818,0.0,head_keyword_absent,2,23486.5
+1739940,Cigna Group,healthcare,core,8-K,EX99_PRESS_RELEASE,30,29,0,0,1,0.0333,0.0,0,,0.0333,empty_after_extraction,1,4791.0
+72741,EVERSOURCE ENERGY,utilities,extension,10-Q,MDA,34,30,3,0,1,0.0294,0.0882,11,0.0909,0.0,below_length_floor,4,17175.5
+97476,TEXAS INSTRUMENTS INC,tech,core,10-Q,MDA,34,0,33,0,1,0.0294,0.9706,11,0.0,0.0435,heading_regex_fallback,34,2621.0
+732717,AT&T INC.,utilities,extension,10-Q,RISK_FACTORS,34,0,33,0,1,0.0294,0.9706,11,0.0909,0.0,heading_regex_fallback,34,67.0
+37996,FORD MOTOR CO,consumer,core,8-K,EX99_PRESS_RELEASE,48,39,8,0,1,0.0208,0.1667,15,0.0,0.0303,earnings_population_gate,1,6499.0
+1099219,METLIFE INC,financials,core,8-K,EX99_PRESS_RELEASE,72,19,52,0,1,0.0139,0.7222,24,0.0,0.0208,earnings_population_gate,1,8654.0
+1318605,"Tesla, Inc.",consumer,core,8-K,EX99_PRESS_RELEASE,93,0,93,0,0,0.0,1.0,30,0.0,0.0,earnings_population_gate,0,795.0
+1551152,AbbVie Inc.,healthcare,core,8-K,EX99_PRESS_RELEASE,65,26,39,0,0,0.0,0.6,14,0.0,0.0,earnings_population_gate,0,4206.0
+31462,ECOLAB INC.,consumer,core,8-K,EX99_PRESS_RELEASE,62,31,31,0,0,0.0,0.5,19,0.0,0.0,earnings_population_gate,0,5916.5
+1110803,"ILLUMINA, INC.",healthcare,core,8-K,EX99_PRESS_RELEASE,62,26,36,0,0,0.0,0.5806,20,0.0,0.0,earnings_population_gate,0,4198.5
+766704,WELLTOWER INC.,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,58,33,25,0,0,0.0,0.431,13,0.0,0.0,earnings_population_gate,0,5476.0
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,8-K,EX99_PRESS_RELEASE,58,28,30,0,0,0.0,0.5172,16,0.0,0.0,earnings_population_gate,0,8558.0
+313616,DANAHER CORP /DE/,industrials,extension,8-K,EX99_PRESS_RELEASE,57,32,25,0,0,0.0,0.4386,17,0.0,0.0,earnings_population_gate,0,3835.0
+320187,"NIKE, Inc.",consumer,core,8-K,EX99_PRESS_RELEASE,57,31,26,0,0,0.0,0.4561,26,0.0,0.0,earnings_population_gate,0,2608.0
+1035267,INTUITIVE SURGICAL INC,healthcare,core,8-K,EX99_PRESS_RELEASE,57,33,24,0,0,0.0,0.4211,17,0.0,0.0,earnings_population_gate,0,3361.0
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,8-K,EX99_PRESS_RELEASE,56,27,29,0,0,0.0,0.5179,17,0.0,0.0,earnings_population_gate,0,5362.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,8-K,EX99_PRESS_RELEASE,55,36,19,0,0,0.0,0.3455,18,0.0,0.0,earnings_population_gate,0,5220.0
+66740,3M CO,healthcare,core,8-K,EX99_PRESS_RELEASE,54,14,40,0,0,0.0,0.7407,17,0.0,0.0,earnings_supplemental_diluted,0,5225.0
+79879,PPG INDUSTRIES INC,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,54,36,18,0,0,0.0,0.3333,19,0.0,0.0,earnings_population_gate,0,3489.0
+1137789,Seagate Technology Holdings plc,tech,core,8-K,EX99_PRESS_RELEASE,54,37,17,0,0,0.0,0.3148,21,0.0,0.0,earnings_population_gate,0,3223.0
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,8-K,EX99_PRESS_RELEASE,53,39,14,0,0,0.0,0.2642,21,0.0,0.0,earnings_population_gate,0,8410.0
+896878,INTUIT INC.,tech,core,8-K,EX99_PRESS_RELEASE,53,35,18,0,0,0.0,0.3396,17,0.0,0.0,earnings_population_gate,0,5373.0
+1645590,Hewlett Packard Enterprise Co,tech,core,8-K,EX99_PRESS_RELEASE,53,33,20,0,0,0.0,0.3774,16,0.0,0.0,earnings_population_gate,0,8127.0
+4281,Howmet Aerospace Inc.,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,53,37,16,0,0,0.0,0.3019,19,0.0,0.0,earnings_population_gate,0,7378.0
+896159,Chubb Ltd,financials,core,8-K,EX99_PRESS_RELEASE,53,38,15,0,0,0.0,0.283,19,0.0,0.0,earnings_population_gate,0,5007.0
+1297996,"DIGITAL REALTY TRUST, INC.",materials_realestate,extension,8-K,EX99_PRESS_RELEASE,53,37,16,0,0,0.0,0.3019,21,0.0,0.0,earnings_population_gate,0,17988.0
+10795,BECTON DICKINSON & CO,healthcare,core,8-K,EX99_PRESS_RELEASE,52,39,13,0,0,0.0,0.25,15,0.0,0.0,earnings_population_gate,0,6028.0
+92122,SOUTHERN CO,utilities,extension,8-K,EX99_PRESS_RELEASE,52,37,15,0,0,0.0,0.2885,21,0.0,0.0,earnings_population_gate,0,948.0
+1136893,"Fidelity National Information Services, Inc.",financials,core,8-K,EX99_PRESS_RELEASE,52,38,14,0,0,0.0,0.2692,16,0.0,0.0,earnings_population_gate,0,6003.5
+32604,EMERSON ELECTRIC CO,industrials,extension,8-K,EX99_PRESS_RELEASE,51,37,14,0,0,0.0,0.2745,16,0.0,0.0,earnings_population_gate,0,3262.0
+12927,BOEING CO,industrials,extension,8-K,EX99_PRESS_RELEASE,50,40,10,0,0,0.0,0.2,17,0.0,0.0,earnings_population_gate,0,4104.0
+59478,ELI LILLY & Co,healthcare,core,8-K,EX99_PRESS_RELEASE,50,35,15,0,0,0.0,0.3,14,0.0,0.0,earnings_population_gate,0,5885.0
+72741,EVERSOURCE ENERGY,utilities,extension,8-K,EX99_PRESS_RELEASE,50,41,9,0,0,0.0,0.18,14,0.0,0.0,earnings_population_gate,0,1746.5
+798354,FISERV INC,financials,core,8-K,EX99_PRESS_RELEASE,50,40,10,0,0,0.0,0.2,14,0.0,0.0,earnings_population_gate,0,5031.0
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,8-K,EX99_PRESS_RELEASE,50,40,10,0,0,0.0,0.2,15,0.0,0.0,earnings_population_gate,0,4493.5
+922224,PPL Corp,utilities,extension,8-K,EX99_PRESS_RELEASE,50,38,12,0,0,0.0,0.24,17,0.0,0.0,earnings_population_gate,0,4873.0
+1539838,"Diamondback Energy, Inc.",energy,core,8-K,EX99_PRESS_RELEASE,50,28,22,0,0,0.0,0.44,15,0.0,0.0,earnings_population_gate,0,5266.5
+33213,EQT Corp,energy,core,8-K,EX99_PRESS_RELEASE,49,25,24,0,0,0.0,0.4898,14,0.0,0.0,earnings_population_gate,0,7087.0
+34088,EXXON MOBIL CORP,energy,core,8-K,EX99_PRESS_RELEASE,49,40,9,0,0,0.0,0.1837,18,0.0,0.0,earnings_population_gate,0,4588.0
+64803,CVS HEALTH Corp,consumer,core,8-K,EX99_PRESS_RELEASE,49,39,10,0,0,0.0,0.2041,16,0.0,0.0,earnings_population_gate,0,7774.0
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,49,41,8,0,0,0.0,0.1633,14,0.0,0.0,earnings_population_gate,0,19489.0
+1123360,GLOBAL PAYMENTS INC,financials,core,8-K,EX99_PRESS_RELEASE,49,41,8,0,0,0.0,0.1633,15,0.0,0.0,earnings_population_gate,0,5522.0
+2488,ADVANCED MICRO DEVICES INC,tech,core,8-K,EX99_PRESS_RELEASE,48,42,6,0,0,0.0,0.125,16,0.0,0.0,earnings_population_gate,0,4813.0
+78003,PFIZER INC,healthcare,core,8-K,EX99_PRESS_RELEASE,48,42,6,0,0,0.0,0.125,15,0.0,0.0,earnings_population_gate,0,17460.5
+200406,JOHNSON & JOHNSON,healthcare,core,8-K,EX99_PRESS_RELEASE,48,42,6,0,0,0.0,0.125,14,0.0,0.0,earnings_population_gate,0,2162.5
+310764,STRYKER CORP,healthcare,core,8-K,EX99_PRESS_RELEASE,48,42,6,0,0,0.0,0.125,17,0.0,0.0,earnings_population_gate,0,3878.5
+769397,"Autodesk, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,48,40,8,0,0,0.0,0.1667,16,0.0,0.0,earnings_population_gate,0,4914.0
+1389170,Targa Resources Corp.,energy,core,8-K,EX99_PRESS_RELEASE,48,42,6,0,0,0.0,0.125,16,0.0,0.0,earnings_population_gate,0,7128.0
+831001,CITIGROUP INC,financials,core,8-K,EX99_PRESS_RELEASE,48,38,10,0,0,0.0,0.2083,17,0.0,0.0,earnings_population_gate,0,5638.0
+1800,ABBOTT LABORATORIES,healthcare,core,8-K,EX99_PRESS_RELEASE,48,43,5,0,0,0.0,0.1042,17,0.0,0.0,earnings_population_gate,0,5077.5
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,8-K,EX99_PRESS_RELEASE,48,39,9,0,0,0.0,0.1875,14,0.0,0.0,earnings_population_gate,0,4803.5
+1551182,Eaton Corp plc,industrials,extension,8-K,EX99_PRESS_RELEASE,48,42,6,0,0,0.0,0.125,16,0.0,0.0,earnings_population_gate,0,3125.5
+1637459,Kraft Heinz Co,consumer,core,8-K,EX99_PRESS_RELEASE,48,40,8,0,0,0.0,0.1667,16,0.0,0.0,earnings_population_gate,0,5459.0
+1510295,Marathon Petroleum Corp,energy,core,8-K,EX99_PRESS_RELEASE,48,39,9,0,0,0.0,0.1875,16,0.0,0.0,earnings_population_gate,0,5250.0
+2969,"Air Products & Chemicals, Inc.",materials_realestate,extension,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,15,0.0,0.0,earnings_population_gate,0,6170.0
+18230,CATERPILLAR INC,industrials,extension,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,15,0.0,0.0,earnings_population_gate,0,8626.0
+63908,MCDONALDS CORP,consumer,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,1925.0
+72971,WELLS FARGO & COMPANY/MN,financials,core,8-K,EX99_PRESS_RELEASE,47,42,5,0,0,0.0,0.1064,16,0.0,0.0,earnings_population_gate,0,5058.0
+86312,"TRAVELERS COMPANIES, INC.",financials,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,9645.0
+89800,SHERWIN WILLIAMS CO,consumer,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,3602.0
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,8-K,EX99_PRESS_RELEASE,47,42,5,0,0,0.0,0.1064,14,0.0,0.0,earnings_population_gate,0,4624.0
+732717,AT&T INC.,utilities,extension,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,2896.0
+829224,STARBUCKS CORP,consumer,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,5998.0
+849399,Gen Digital Inc.,tech,core,8-K,EX99_PRESS_RELEASE,47,42,5,0,0,0.0,0.1064,16,0.0,0.0,earnings_population_gate,0,5202.0
+875320,VERTEX PHARMACEUTICALS INC / MA,healthcare,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,16,0.0,0.0,earnings_population_gate,0,4819.0
+886982,GOLDMAN SACHS GROUP INC,financials,core,8-K,EX99_PRESS_RELEASE,47,42,5,0,0,0.0,0.1064,14,0.0,0.0,earnings_population_gate,0,4329.0
+1099590,MERCADOLIBRE INC,financials,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,15,0.0,0.0,earnings_population_gate,0,4124.0
+1090012,DEVON ENERGY CORP/DE,energy,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,16,0.0,0.0,earnings_population_gate,0,2133.0
+1051470,CROWN CASTLE INC.,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,47,42,5,0,0,0.0,0.1064,14,0.0,0.0,earnings_population_gate,0,9546.0
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,tech,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,4306.0
+1065280,NETFLIX INC,consumer,core,8-K,EX99_PRESS_RELEASE,47,43,4,0,0,0.0,0.0851,14,0.0,0.0,earnings_population_gate,0,4507.0
+1552000,MPLX LP,energy,core,8-K,EX99_PRESS_RELEASE,47,42,5,0,0,0.0,0.1064,16,0.0,0.0,earnings_population_gate,0,5981.0
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,6150.5
+24741,CORNING INC /NY,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,6253.0
+27419,TARGET CORP,consumer,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,3776.0
+50863,INTEL CORP,tech,core,8-K,EX99_PRESS_RELEASE,46,40,6,0,0,0.0,0.1304,14,0.0,0.0,earnings_supplemental_diluted,0,5525.0
+64040,S&P Global Inc.,industrials,extension,8-K,EX99_PRESS_RELEASE,46,41,5,0,0,0.0,0.1087,13,0.0,0.0,earnings_population_gate,0,6904.5
+93410,CHEVRON CORP,energy,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,14,0.0,0.0,earnings_population_gate,0,4060.0
+100885,UNION PACIFIC CORP,industrials,extension,8-K,EX99_PRESS_RELEASE,46,17,29,0,0,0.0,0.6304,14,0.0,0.0,earnings_supplemental_diluted,0,3437.0
+106040,WESTERN DIGITAL CORP,tech,core,8-K,EX99_PRESS_RELEASE,46,41,5,0,0,0.0,0.1087,16,0.0,0.0,earnings_population_gate,0,3705.0
+320193,Apple Inc.,tech,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,1827.0
+712515,ELECTRONIC ARTS INC.,tech,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,15,0.0,0.0,earnings_population_gate,0,4115.5
+726728,REALTY INCOME CORP,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,46,43,3,0,0,0.0,0.0652,14,0.0,0.0,earnings_population_gate,0,5328.0
+764180,"ALTRIA GROUP, INC.",consumer,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,8799.0
+882095,"GILEAD SCIENCES, INC.",healthcare,core,8-K,EX99_PRESS_RELEASE,46,43,3,0,0,0.0,0.0652,14,0.0,0.0,earnings_population_gate,0,5866.0
+895126,EXPAND ENERGY Corp,energy,core,8-K,EX99_PRESS_RELEASE,46,36,10,0,0,0.0,0.2174,16,0.0,0.0,earnings_population_gate,0,4789.0
+927653,MCKESSON CORP,healthcare,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,14,0.0,0.0,earnings_population_gate,0,7337.0
+936468,LOCKHEED MARTIN CORP,industrials,extension,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,6333.5
+1035002,VALERO ENERGY CORP/TX,energy,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,14,0.0,0.0,earnings_population_gate,0,6984.5
+1045810,NVIDIA CORP,tech,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,14,0.0,0.0,earnings_population_gate,0,3332.0
+1047862,CONSOLIDATED EDISON INC,utilities,extension,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,2604.0
+1065088,EBAY INC,financials,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,5712.5
+1075531,Booking Holdings Inc.,industrials,extension,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,15,0.0,0.0,earnings_population_gate,0,4021.5
+1103982,"Mondelez International, Inc.",consumer,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,15,0.0,0.0,earnings_population_gate,0,11665.5
+310158,"Merck & Co., Inc.",healthcare,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,6551.0
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,14,0.0,0.0,earnings_population_gate,0,3935.0
+1404912,KKR & Co. Inc.,financials,core,8-K,EX99_PRESS_RELEASE,46,20,26,0,0,0.0,0.5652,14,0.0,0.0,earnings_supplemental_diluted,0,11837.0
+1141391,Mastercard Inc,financials,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,15,0.0,0.0,earnings_population_gate,0,5760.5
+1373715,"ServiceNow, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,46,43,3,0,0,0.0,0.0652,14,0.0,0.0,earnings_population_gate,0,5634.5
+1467858,General Motors Co,consumer,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,15,0.0,0.0,earnings_population_gate,0,1771.0
+1534701,Phillips 66,energy,core,8-K,EX99_PRESS_RELEASE,46,42,4,0,0,0.0,0.087,14,0.0,0.0,earnings_population_gate,0,3814.5
+1555280,Zoetis Inc.,healthcare,core,8-K,EX99_PRESS_RELEASE,46,44,2,0,0,0.0,0.0435,15,0.0,0.0,earnings_population_gate,0,6661.0
+3570,"Cheniere Energy, Inc.",utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4510.0
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2883.0
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5552.0
+19617,JPMORGAN CHASE & CO,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3907.0
+21344,COCA COLA CO,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,12751.0
+36104,US BANCORP \DE\,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,11115.0
+40533,GENERAL DYNAMICS CORP,industrials,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2983.0
+47217,HP INC,tech,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,14,0.0,0.0,earnings_population_gate,0,6800.0
+49071,HUMANA INC,healthcare,core,8-K,EX99_PRESS_RELEASE,45,42,3,0,0,0.0,0.0667,14,0.0,0.0,earnings_population_gate,0,4361.0
+55785,KIMBERLY CLARK CORP,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4680.0
+60667,LOWES COMPANIES INC,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2609.0
+62709,"MARSH & MCLENNAN COMPANIES, INC.",financials,core,8-K,EX99_PRESS_RELEASE,45,1,44,0,0,0.0,0.9778,14,0.0,0.0,earnings_supplemental_diluted,0,4977.0
+70858,BANK OF AMERICA CORP /DE/,financials,core,8-K,EX99_PRESS_RELEASE,45,44,1,0,0,0.0,0.0222,14,0.0,0.0,earnings_population_gate,0,9214.0
+77476,PEPSICO INC,consumer,core,8-K,EX99_PRESS_RELEASE,45,9,36,0,0,0.0,0.8,14,0.0,0.0,earnings_supplemental_diluted,0,7606.0
+80424,PROCTER & GAMBLE Co,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4858.0
+80661,PROGRESSIVE CORP/OH/,financials,core,8-K,EX99_PRESS_RELEASE,45,0,45,0,0,0.0,1.0,14,0.0,0.0,earnings_supplemental_diluted,0,3066.0
+1032208,SEMPRA,utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5270.0
+92230,TRUIST FINANCIAL CORP,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7645.0
+97476,TEXAS INSTRUMENTS INC,tech,core,8-K,EX99_PRESS_RELEASE,45,11,34,0,0,0.0,0.7556,14,0.0,0.0,earnings_supplemental_diluted,0,2416.0
+104169,Walmart Inc.,consumer,core,8-K,EX99_PRESS_RELEASE,45,42,3,0,0,0.0,0.0667,14,0.0,0.0,earnings_supplemental_diluted,0,5503.0
+107263,"WILLIAMS COMPANIES, INC.",energy,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,8205.0
+109198,TJX COMPANIES INC /DE/,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3753.0
+316709,SCHWAB CHARLES CORP,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,6109.0
+318154,AMGEN INC,healthcare,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7918.0
+354950,"HOME DEPOT, INC.",consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,1846.0
+731766,UNITEDHEALTH GROUP INC,healthcare,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3497.0
+732712,VERIZON COMMUNICATIONS INC,utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5359.0
+753308,NEXTERA ENERGY INC,utilities,extension,8-K,EX99_PRESS_RELEASE,45,44,1,0,0,0.0,0.0222,14,0.0,0.0,earnings_population_gate,0,8820.0
+804328,QUALCOMM INC/DE,tech,core,8-K,EX99_PRESS_RELEASE,45,31,14,0,0,0.0,0.3111,14,0.0,0.0,earnings_supplemental_diluted,0,4649.0
+813672,CADENCE DESIGN SYSTEMS INC,tech,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3499.0
+821189,EOG RESOURCES INC,energy,core,8-K,EX99_PRESS_RELEASE,45,38,7,0,0,0.0,0.1556,14,0.0,0.0,earnings_population_gate,0,8492.0
+827052,EDISON INTERNATIONAL,utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3576.0
+858877,"CISCO SYSTEMS, INC.",tech,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5396.0
+906107,VIVMARK RESIDENTIAL,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,11830.0
+915912,AVALONBAY COMMUNITIES INC,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7805.0
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,1166.0
+1045609,"Prologis, Inc.",materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,1567.0
+1101239,EQUINIX INC,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7293.0
+1341439,ORACLE CORP,tech,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,14,0.0,0.0,earnings_population_gate,0,5615.0
+789019,MICROSOFT CORP,tech,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2859.0
+1001250,ESTEE LAUDER COMPANIES INC,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7513.0
+1018724,AMAZON COM INC,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7153.0
+1039684,ONEOK INC /NEW/,energy,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,15,0.0,0.0,earnings_population_gate,0,6114.0
+1053507,AMERICAN TOWER CORP /MA/,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,8227.0
+1060391,"REPUBLIC SERVICES, INC.",utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5494.0
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,energy,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,6765.0
+1090727,UNITED PARCEL SERVICE INC,industrials,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3585.0
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,6898.0
+1099800,Edwards Lifesciences Corp,healthcare,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4062.0
+1166691,COMCAST CORP,consumer,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,13,0.0,0.0,earnings_population_gate,0,6153.0
+315189,DEERE & CO,industrials,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5895.0
+823768,WASTE MANAGEMENT INC,utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4947.0
+1571949,"Intercontinental Exchange, Inc.",financials,core,8-K,EX99_PRESS_RELEASE,45,44,1,0,0,0.0,0.0222,14,0.0,0.0,earnings_population_gate,0,3299.0
+1108524,"Salesforce, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,15,0.0,0.0,earnings_population_gate,0,6305.0
+1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5456.0
+1156039,"Elevance Health, Inc.",healthcare,core,8-K,EX99_PRESS_RELEASE,45,33,12,0,0,0.0,0.2667,15,0.0,0.0,earnings_supplemental_diluted,0,4966.0
+1156375,CME GROUP INC.,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2491.0
+1164727,NEWMONT Corp /DE/,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,16292.0
+1163165,CONOCOPHILLIPS,energy,core,8-K,EX99_PRESS_RELEASE,45,44,1,0,0,0.0,0.0222,14,0.0,0.0,earnings_population_gate,0,3124.0
+1393818,Blackstone Inc.,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,13251.0
+87347,SLB LIMITED/NV,energy,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,8467.0
+1403161,VISA INC.,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5717.0
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,6905.0
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5047.0
+1276187,Energy Transfer LP,energy,core,8-K,EX99_PRESS_RELEASE,45,13,32,0,0,0.0,0.7111,14,0.0,0.0,earnings_supplemental_diluted,0,6103.0
+1283699,"T-Mobile US, Inc.",utilities,extension,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5318.0
+1326801,"Meta Platforms, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2919.0
+1390777,Bank of New York Mellon Corp,financials,core,8-K,EX99_PRESS_RELEASE,45,44,1,0,0,0.0,0.0222,14,0.0,0.0,earnings_population_gate,0,5487.0
+1413329,Philip Morris International Inc.,consumer,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,14888.0
+1506307,"KINDER MORGAN, INC.",energy,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,7229.0
+1596532,"Arista Networks, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,14,0.0,0.0,earnings_population_gate,0,2647.0
+1613103,Medtronic plc,healthcare,core,8-K,EX99_PRESS_RELEASE,45,43,2,0,0,0.0,0.0444,15,0.0,0.0,earnings_population_gate,0,6360.0
+315293,Aon plc,financials,core,8-K,EX99_PRESS_RELEASE,45,45,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5997.0
+1652044,Alphabet Inc.,tech,core,8-K,EX99_PRESS_RELEASE,45,39,6,0,0,0.0,0.1333,13,0.0,0.0,earnings_supplemental_diluted,0,3480.0
+6951,APPLIED MATERIALS INC /DE,tech,core,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3449.5
+21665,COLGATE PALMOLIVE CO,consumer,core,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5677.5
+49826,ILLINOIS TOOL WORKS INC,industrials,extension,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,2568.0
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,8-K,EX99_PRESS_RELEASE,44,38,6,0,0,0.0,0.1364,10,0.0,0.0,earnings_population_gate,0,3883.0
+72903,XCEL ENERGY INC,utilities,extension,8-K,EX99_PRESS_RELEASE,44,43,1,0,0,0.0,0.0227,14,0.0,0.0,earnings_population_gate,0,7766.5
+101829,RTX Corp,industrials,extension,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,13,0.0,0.0,ok,0,5686.5
+106535,WEYERHAEUSER CO,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,13,0.0,0.0,ok,0,3245.5
+707549,LAM RESEARCH CORP,tech,core,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,13,0.0,0.0,ok,0,2900.5
+715957,"DOMINION ENERGY, INC",utilities,extension,8-K,EX99_PRESS_RELEASE,44,43,1,0,0,0.0,0.0227,13,0.0,0.0,earnings_population_gate,0,3446.0
+723125,MICRON TECHNOLOGY INC,tech,core,8-K,EX99_PRESS_RELEASE,44,38,6,0,0,0.0,0.1364,14,0.0,0.0,earnings_population_gate,0,2762.0
+875045,BIOGEN INC.,healthcare,core,8-K,EX99_PRESS_RELEASE,44,39,5,0,0,0.0,0.1136,14,0.0,0.0,earnings_population_gate,0,6025.5
+895421,MORGAN STANLEY,financials,core,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4020.5
+1063761,SIMON PROPERTY GROUP INC.,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,15271.5
+1109357,EXELON CORP,utilities,extension,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,12621.5
+73309,NUCOR CORP,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3111.0
+1633917,"PayPal Holdings, Inc.",financials,core,8-K,EX99_PRESS_RELEASE,44,38,6,0,0,0.0,0.1364,13,0.0,0.0,earnings_population_gate,0,6199.5
+1327567,Palo Alto Networks Inc,tech,core,8-K,EX99_PRESS_RELEASE,44,44,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3106.0
+1512673,"Block, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,43,43,0,0,0,0.0,0.0,12,0.0,0.0,ok,0,9744.0
+1318220,"Waste Connections, Inc.",utilities,extension,8-K,EX99_PRESS_RELEASE,42,40,2,0,0,0.0,0.0476,10,0.0,0.0,earnings_population_gate,0,4235.5
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,8-K,EX99_PRESS_RELEASE,42,14,28,0,0,0.0,0.6667,15,0.0,0.0,earnings_population_gate,0,7467.0
+1666700,"DuPont de Nemours, Inc.",materials_realestate,extension,8-K,EX99_PRESS_RELEASE,42,31,11,0,0,0.0,0.2619,6,0.0,0.0,earnings_population_gate,0,7043.0
+1393612,Discover Financial Services,financials,core,8-K,EX99_PRESS_RELEASE,42,38,4,0,0,0.0,0.0952,14,0.0,0.0,earnings_population_gate,0,1804.0
+4447,HESS CORP,energy,core,8-K,EX99_PRESS_RELEASE,40,40,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,6603.0
+1564408,Snap Inc,tech,core,8-K,EX99_PRESS_RELEASE,40,35,5,0,0,0.0,0.125,7,0.0,0.0,earnings_population_gate,0,5260.5
+1682852,"Moderna, Inc.",healthcare,core,8-K,EX99_PRESS_RELEASE,39,20,19,0,0,0.0,0.4872,0,,0.0,earnings_population_gate,0,3566.0
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,8-K,EX99_PRESS_RELEASE,38,1,37,0,0,0.0,0.9737,17,0.0,0.0,earnings_population_gate,0,6134.5
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,8-K,8K_BODY,38,1,37,0,0,0.0,0.9737,15,0.0,0.0,earnings_population_gate,0,1294.0
+1364742,"BlackRock Finance, Inc.",financials,core,8-K,EX99_PRESS_RELEASE,37,2,35,0,0,0.0,0.9459,14,0.0,0.0,earnings_supplemental_diluted,0,8419.0
+1067983,BERKSHIRE HATHAWAY INC,financials,core,8-K,EX99_PRESS_RELEASE,37,37,0,0,0,0.0,0.0,7,0.0,0.0,ok,0,901.0
+1692819,Vistra Corp.,utilities,extension,8-K,EX99_PRESS_RELEASE,37,37,0,0,0,0.0,0.0,6,0.0,0.0,ok,0,5410.0
+895728,ENBRIDGE INC,energy,core,8-K,EX99_PRESS_RELEASE,35,35,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,8554.0
+2488,ADVANCED MICRO DEVICES INC,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5087.5
+2488,ADVANCED MICRO DEVICES INC,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,15738.0
+2969,"Air Products & Chemicals, Inc.",materials_realestate,extension,10-Q,MDA,34,31,3,0,0,0.0,0.0882,10,0.0,0.0,below_length_floor,0,10701.0
+2969,"Air Products & Chemicals, Inc.",materials_realestate,extension,10-Q,RISK_FACTORS,34,3,0,31,0,0.0,0.0,10,0.0,0.0,item_absent_from_toc,31,0.0
+3570,"Cheniere Energy, Inc.",utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11984.5
+3570,"Cheniere Energy, Inc.",utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,31.0
+4281,Howmet Aerospace Inc.,materials_realestate,extension,10-Q,MDA,34,17,17,0,0,0.0,0.5,11,0.0,0.0,heading_regex_fallback,17,5428.5
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,233.5
+6951,APPLIED MATERIALS INC /DE,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,8615.5
+6951,APPLIED MATERIALS INC /DE,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,9057.0
+10795,BECTON DICKINSON & CO,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,8878.5
+10795,BECTON DICKINSON & CO,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,35.0
+12927,BOEING CO,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8520.5
+12927,BOEING CO,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,39.0
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9748.5
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,22.0
+18230,CATERPILLAR INC,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,16218.0
+18230,CATERPILLAR INC,industrials,extension,10-Q,RISK_FACTORS,34,20,0,14,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,14,31.0
+19617,JPMORGAN CHASE & CO,financials,core,10-Q,MDA,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,below_length_floor,1,96969.0
+19617,JPMORGAN CHASE & CO,financials,core,10-Q,RISK_FACTORS,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,heading_regex_fallback,1,67.5
+21344,COCA COLA CO,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13503.5
+21344,COCA COLA CO,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,106.5
+21665,COLGATE PALMOLIVE CO,consumer,core,10-Q,RISK_FACTORS,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,38.0
+24741,CORNING INC /NY,materials_realestate,extension,10-Q,MDA,34,22,12,0,0,0.0,0.3529,11,0.0,0.0,heading_regex_fallback,12,8033.0
+24741,CORNING INC /NY,materials_realestate,extension,10-Q,RISK_FACTORS,34,19,15,0,0,0.0,0.4412,11,0.0,0.0,heading_regex_fallback,12,111.0
+29915,DOW CHEMICAL CO /DE/,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10021.0
+29915,DOW CHEMICAL CO /DE/,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,48.0
+30554,"EIDP, Inc.",materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8676.5
+30554,"EIDP, Inc.",materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,36.5
+33213,EQT Corp,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8068.5
+33213,EQT Corp,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,48.0
+34088,EXXON MOBIL CORP,energy,core,10-Q,MDA,34,11,23,0,0,0.0,0.6765,11,0.0,0.0,heading_regex_fallback,23,3999.5
+36104,US BANCORP \DE\,financials,core,10-Q,RISK_FACTORS,34,0,27,7,0,0.0,0.7941,11,0.0,0.0,heading_regex_fallback,34,47.0
+37996,FORD MOTOR CO,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13245.5
+37996,FORD MOTOR CO,consumer,core,10-Q,RISK_FACTORS,34,8,0,26,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,26,0.0
+40533,GENERAL DYNAMICS CORP,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5947.5
+40533,GENERAL DYNAMICS CORP,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,34.0
+45012,HALLIBURTON CO,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5994.5
+45012,HALLIBURTON CO,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,60.0
+49071,HUMANA INC,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9861.0
+49071,HUMANA INC,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,19.0
+49826,ILLINOIS TOOL WORKS INC,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10439.5
+49826,ILLINOIS TOOL WORKS INC,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,77.0
+50863,INTEL CORP,tech,core,10-Q,MDA,34,3,31,0,0,0.0,0.9118,11,0.0,0.0,head_keyword_absent,5,6982.0
+50863,INTEL CORP,tech,core,10-Q,RISK_FACTORS,34,29,5,0,0,0.0,0.1471,11,0.0,0.0,heading_regex_fallback,5,543.5
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,10-Q,MDA,34,30,4,0,0,0.0,0.1176,11,0.0,0.0,toc_recovered_f2,3,18747.5
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,10-Q,RISK_FACTORS,34,0,0,34,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,34,0.0
+55785,KIMBERLY CLARK CORP,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4394.0
+55785,KIMBERLY CLARK CORP,materials_realestate,extension,10-Q,RISK_FACTORS,34,1,0,33,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,33,0.0
+59478,ELI LILLY & Co,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6737.5
+59478,ELI LILLY & Co,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,58.0
+62709,"MARSH & MCLENNAN COMPANIES, INC.",financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7770.5
+62709,"MARSH & MCLENNAN COMPANIES, INC.",financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,93.5
+63908,MCDONALDS CORP,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12180.5
+63908,MCDONALDS CORP,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,40.0
+64040,S&P Global Inc.,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11300.5
+64040,S&P Global Inc.,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,62.0
+64803,CVS HEALTH Corp,consumer,core,10-Q,MDA,34,23,11,0,0,0.0,0.3235,11,0.0,0.0,head_keyword_absent,0,10955.0
+64803,CVS HEALTH Corp,consumer,core,10-Q,RISK_FACTORS,34,23,0,11,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,11,64.0
+66740,3M CO,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11143.0
+66740,3M CO,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,3016.0
+70858,BANK OF AMERICA CORP /DE/,financials,core,10-Q,MDA,34,5,29,0,0,0.0,0.8529,11,0.0,0.0,head_keyword_absent,0,32909.5
+70858,BANK OF AMERICA CORP /DE/,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,31.0
+72741,EVERSOURCE ENERGY,utilities,extension,10-Q,RISK_FACTORS,34,0,34,0,0,0.0,1.0,11,0.0,0.0,head_keyword_absent,17,179.0
+72903,XCEL ENERGY INC,utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10405.0
+72903,XCEL ENERGY INC,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,55.0
+72971,WELLS FARGO & COMPANY/MN,financials,core,10-Q,MDA,34,0,34,0,0,0.0,1.0,11,0.0,0.0,head_keyword_absent,0,26094.5
+72971,WELLS FARGO & COMPANY/MN,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,33.0
+77476,PEPSICO INC,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10150.5
+77476,PEPSICO INC,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,23.0
+78003,PFIZER INC,healthcare,core,10-Q,MDA,34,18,16,0,0,0.0,0.4706,11,0.0,0.0,head_keyword_absent,0,22086.5
+78003,PFIZER INC,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,68.5
+79879,PPG INDUSTRIES INC,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6185.0
+79879,PPG INDUSTRIES INC,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,23.5
+80661,PROGRESSIVE CORP/OH/,financials,core,10-Q,MDA,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,14555.0
+80661,PROGRESSIVE CORP/OH/,financials,core,10-Q,RISK_FACTORS,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,41.0
+86312,"TRAVELERS COMPANIES, INC.",financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,21278.5
+86312,"TRAVELERS COMPANIES, INC.",financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,89.0
+1032208,SEMPRA,utilities,extension,10-Q,MDA,34,30,4,0,0,0.0,0.1176,11,0.0,0.0,heading_regex_fallback,4,18481.5
+1032208,SEMPRA,utilities,extension,10-Q,RISK_FACTORS,34,30,4,0,0,0.0,0.1176,11,0.0,0.0,heading_regex_fallback,4,167.0
+89800,SHERWIN WILLIAMS CO,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7061.0
+89800,SHERWIN WILLIAMS CO,consumer,core,10-Q,RISK_FACTORS,34,31,0,3,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,3,96.0
+92122,SOUTHERN CO,utilities,extension,10-Q,MDA,34,20,14,0,0,0.0,0.4118,11,0.0,0.0,head_keyword_absent,0,24585.5
+92122,SOUTHERN CO,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,42.0
+92230,TRUIST FINANCIAL CORP,financials,core,10-Q,MDA,34,21,13,0,0,0.0,0.3824,11,0.0,0.0,head_keyword_absent,0,12230.0
+92230,TRUIST FINANCIAL CORP,financials,core,10-Q,RISK_FACTORS,34,31,0,3,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,3,58.0
+93410,CHEVRON CORP,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7684.0
+93410,CHEVRON CORP,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,93.0
+97476,TEXAS INSTRUMENTS INC,tech,core,10-Q,RISK_FACTORS,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,31.0
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,10-Q,MDA,34,32,2,0,0,0.0,0.0588,11,0.0,0.0,heading_regex_fallback,2,5609.5
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,10-Q,RISK_FACTORS,34,32,2,0,0,0.0,0.0588,11,0.0,0.0,heading_regex_fallback,2,1188.0
+100885,UNION PACIFIC CORP,industrials,extension,10-Q,MDA,34,24,10,0,0,0.0,0.2941,11,0.0,0.0,below_length_floor,10,6725.0
+101829,RTX Corp,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11019.5
+101829,RTX Corp,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,84.5
+106535,WEYERHAEUSER CO,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7260.0
+106535,WEYERHAEUSER CO,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,25.5
+107263,"WILLIAMS COMPANIES, INC.",energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9532.0
+107263,"WILLIAMS COMPANIES, INC.",energy,core,10-Q,RISK_FACTORS,34,31,0,3,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,3,57.0
+200406,JOHNSON & JOHNSON,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7449.5
+200406,JOHNSON & JOHNSON,healthcare,core,10-Q,RISK_FACTORS,34,3,0,31,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,31,0.0
+310158,"Merck & Co., Inc.",healthcare,core,10-Q,MDA,34,21,13,0,0,0.0,0.3824,11,0.0,0.0,heading_regex_fallback,13,11857.0
+310764,STRYKER CORP,healthcare,core,10-Q,MDA,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,5670.5
+313616,DANAHER CORP /DE/,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11672.0
+313616,DANAHER CORP /DE/,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,187.5
+316709,SCHWAB CHARLES CORP,financials,core,10-Q,MDA,34,30,4,0,0,0.0,0.1176,11,0.0,0.0,heading_regex_fallback,4,14611.5
+316709,SCHWAB CHARLES CORP,financials,core,10-Q,RISK_FACTORS,34,30,4,0,0,0.0,0.1176,11,0.0,0.0,heading_regex_fallback,4,38.0
+318154,AMGEN INC,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6312.5
+318154,AMGEN INC,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,3982.0
+320193,Apple Inc.,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,4359.5
+320193,Apple Inc.,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,1005.5
+712515,ELECTRONIC ARTS INC.,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9981.0
+712515,ELECTRONIC ARTS INC.,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8185.0
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,35.0
+723125,MICRON TECHNOLOGY INC,tech,core,10-Q,MDA,34,21,13,0,0,0.0,0.3824,11,0.0,0.0,heading_regex_fallback,13,5297.0
+723125,MICRON TECHNOLOGY INC,tech,core,10-Q,RISK_FACTORS,34,21,13,0,0,0.0,0.3824,11,0.0,0.0,heading_regex_fallback,13,12521.5
+726728,REALTY INCOME CORP,materials_realestate,extension,10-Q,MDA,34,23,11,0,0,0.0,0.3235,11,0.0,0.0,head_keyword_absent,0,16876.5
+726728,REALTY INCOME CORP,materials_realestate,extension,10-Q,RISK_FACTORS,34,20,0,14,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,14,58.0
+731766,UNITEDHEALTH GROUP INC,healthcare,core,10-Q,MDA,34,26,8,0,0,0.0,0.2353,11,0.0,0.0,toc_recovered_f1,8,4537.5
+731766,UNITEDHEALTH GROUP INC,healthcare,core,10-Q,RISK_FACTORS,34,26,8,0,0,0.0,0.2353,11,0.0,0.0,toc_recovered_f1,8,103.0
+732712,VERIZON COMMUNICATIONS INC,utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13590.5
+732712,VERIZON COMMUNICATIONS INC,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,37.0
+732717,AT&T INC.,utilities,extension,10-Q,MDA,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,9500.0
+753308,NEXTERA ENERGY INC,utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8341.0
+753308,NEXTERA ENERGY INC,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,117.0
+764180,"ALTRIA GROUP, INC.",consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,20926.0
+764180,"ALTRIA GROUP, INC.",consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,78.0
+766704,WELLTOWER INC.,materials_realestate,extension,10-Q,MDA,34,25,9,0,0,0.0,0.2647,11,0.0,0.0,toc_recovered_f2,9,13741.0
+766704,WELLTOWER INC.,materials_realestate,extension,10-Q,RISK_FACTORS,34,25,0,9,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,9,34.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4495.5
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,10-Q,RISK_FACTORS,34,26,0,8,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,8,51.0
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9187.0
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,108.0
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5243.5
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,10-Q,RISK_FACTORS,34,23,0,11,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,11,32.0
+798354,FISERV INC,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7609.5
+798354,FISERV INC,financials,core,10-Q,RISK_FACTORS,34,3,1,30,0,0.0,0.0294,11,0.0,0.0,item_absent_from_toc,30,0.0
+804328,QUALCOMM INC/DE,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,22890.0
+804328,QUALCOMM INC/DE,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,86.0
+813672,CADENCE DESIGN SYSTEMS INC,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6079.5
+813672,CADENCE DESIGN SYSTEMS INC,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11300.5
+821189,EOG RESOURCES INC,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8437.5
+821189,EOG RESOURCES INC,energy,core,10-Q,RISK_FACTORS,34,3,0,31,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,31,0.0
+829224,STARBUCKS CORP,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,7919.0
+829224,STARBUCKS CORP,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,48.0
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,21475.5
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,47.0
+849399,Gen Digital Inc.,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5434.5
+849399,Gen Digital Inc.,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10579.0
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11109.5
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,28726.5
+875045,BIOGEN INC.,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12394.0
+875045,BIOGEN INC.,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11304.0
+875320,VERTEX PHARMACEUTICALS INC / MA,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7160.5
+875320,VERTEX PHARMACEUTICALS INC / MA,healthcare,core,10-Q,RISK_FACTORS,34,19,15,0,0,0.0,0.4412,11,0.0,0.0,toc_recovered_f1,0,754.0
+882095,"GILEAD SCIENCES, INC.",healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5623.5
+882095,"GILEAD SCIENCES, INC.",healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12268.0
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,10-Q,MDA,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,toc_recovered_f1,0,11208.0
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,49.5
+886982,GOLDMAN SACHS GROUP INC,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,43464.0
+886982,GOLDMAN SACHS GROUP INC,financials,core,10-Q,RISK_FACTORS,34,3,0,31,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,31,0.0
+895126,EXPAND ENERGY Corp,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7472.5
+895126,EXPAND ENERGY Corp,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,73.0
+895421,MORGAN STANLEY,financials,core,10-Q,RISK_FACTORS,34,0,0,34,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,34,0.0
+896159,Chubb Ltd,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,18842.5
+896159,Chubb Ltd,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,41.0
+906107,VIVMARK RESIDENTIAL,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9067.0
+906107,VIVMARK RESIDENTIAL,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,42.0
+915912,AVALONBAY COMMUNITIES INC,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13574.5
+915912,AVALONBAY COMMUNITIES INC,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,119.0
+922224,PPL Corp,utilities,extension,10-Q,MDA,34,0,34,0,0,0.0,1.0,11,0.0,0.0,head_keyword_absent,0,15604.5
+922224,PPL Corp,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,29.0
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,60337.0
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,10-Q,RISK_FACTORS,34,32,2,0,0,0.0,0.0588,11,0.0,0.0,toc_recovered_f1,0,45.0
+927653,MCKESSON CORP,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8014.0
+927653,MCKESSON CORP,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,51.0
+936468,LOCKHEED MARTIN CORP,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10490.5
+936468,LOCKHEED MARTIN CORP,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,130.0
+1099219,METLIFE INC,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,36025.5
+1099219,METLIFE INC,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,68.0
+1067983,BERKSHIRE HATHAWAY INC,financials,core,10-Q,MDA,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,heading_regex_fallback,1,12934.5
+1067983,BERKSHIRE HATHAWAY INC,financials,core,10-Q,RISK_FACTORS,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,heading_regex_fallback,1,97.0
+1318605,"Tesla, Inc.",consumer,core,10-Q,MDA,34,26,8,0,0,0.0,0.2353,11,0.0,0.0,head_foreign_item,0,6625.5
+1318605,"Tesla, Inc.",consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13531.0
+1090012,DEVON ENERGY CORP/DE,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6960.0
+1090012,DEVON ENERGY CORP/DE,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,28.5
+1389170,Targa Resources Corp.,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10692.5
+1389170,Targa Resources Corp.,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,40.0
+87347,SLB LIMITED/NV,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,3639.5
+1045609,"Prologis, Inc.",materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11466.5
+1045609,"Prologis, Inc.",materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,36.0
+715957,"DOMINION ENERGY, INC",utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8009.0
+715957,"DOMINION ENERGY, INC",utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,131.0
+73309,NUCOR CORP,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5693.0
+73309,NUCOR CORP,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,37.0
+1018724,AMAZON COM INC,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6895.5
+1018724,AMAZON COM INC,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7353.5
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,10-Q,RISK_FACTORS,34,3,0,31,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,31,0.0
+1035002,VALERO ENERGY CORP/TX,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11450.0
+1035002,VALERO ENERGY CORP/TX,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,32.0
+1035267,INTUITIVE SURGICAL INC,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,14226.5
+1035267,INTUITIVE SURGICAL INC,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,108.0
+1039684,ONEOK INC /NEW/,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11233.0
+1039684,ONEOK INC /NEW/,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,127.0
+1063761,SIMON PROPERTY GROUP INC.,materials_realestate,extension,10-Q,MDA,34,4,30,0,0,0.0,0.8824,11,0.0,0.0,heading_regex_fallback,22,9148.0
+1063761,SIMON PROPERTY GROUP INC.,materials_realestate,extension,10-Q,RISK_FACTORS,34,12,22,0,0,0.0,0.6471,11,0.0,0.0,heading_regex_fallback,22,22.0
+1047862,CONSOLIDATED EDISON INC,utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,14803.0
+1047862,CONSOLIDATED EDISON INC,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,25.0
+1051470,CROWN CASTLE INC.,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8442.5
+1051470,CROWN CASTLE INC.,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,24.0
+1053507,AMERICAN TOWER CORP /MA/,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13279.5
+1053507,AMERICAN TOWER CORP /MA/,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,23.0
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9552.5
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,48.0
+1060391,"REPUBLIC SERVICES, INC.",utilities,extension,10-Q,MDA,34,9,25,0,0,0.0,0.7353,11,0.0,0.0,head_keyword_absent,0,10554.5
+1060391,"REPUBLIC SERVICES, INC.",utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,39.5
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,15385.0
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,99.0
+1065088,EBAY INC,financials,core,10-Q,MDA,34,14,20,0,0,0.0,0.5882,11,0.0,0.0,heading_regex_fallback,20,7291.0
+1065088,EBAY INC,financials,core,10-Q,RISK_FACTORS,34,14,20,0,0,0.0,0.5882,11,0.0,0.0,heading_regex_fallback,20,6995.0
+1065280,NETFLIX INC,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6960.5
+1065280,NETFLIX INC,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,39.0
+1075531,Booking Holdings Inc.,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11475.0
+1075531,Booking Holdings Inc.,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,17738.0
+1090727,UNITED PARCEL SERVICE INC,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9517.5
+1090727,UNITED PARCEL SERVICE INC,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,104.0
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7050.5
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,42.0
+1099590,MERCADOLIBRE INC,financials,core,10-Q,RISK_FACTORS,34,21,3,10,0,0.0,0.0882,11,0.0,0.0,item_absent_from_toc,10,31.0
+1099800,Edwards Lifesciences Corp,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,3925.0
+1099800,Edwards Lifesciences Corp,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,49.0
+1101239,EQUINIX INC,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12023.5
+1101239,EQUINIX INC,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,18222.0
+1103982,"Mondelez International, Inc.",consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,14273.0
+1103982,"Mondelez International, Inc.",consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,28.0
+1800,ABBOTT LABORATORIES,healthcare,core,10-Q,MDA,34,22,12,0,0,0.0,0.3529,11,0.0,0.0,head_keyword_absent,0,3853.0
+1800,ABBOTT LABORATORIES,healthcare,core,10-Q,RISK_FACTORS,34,2,0,32,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,32,0.0
+31462,ECOLAB INC.,consumer,core,10-Q,MDA,34,1,33,0,0,0.0,0.9706,11,0.0,0.0,heading_regex_fallback,33,9129.5
+31462,ECOLAB INC.,consumer,core,10-Q,RISK_FACTORS,34,1,33,0,0,0.0,0.9706,11,0.0,0.0,heading_regex_fallback,33,125.0
+1551152,AbbVie Inc.,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5998.5
+1551152,AbbVie Inc.,healthcare,core,10-Q,RISK_FACTORS,34,5,0,29,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,29,0.0
+823768,WASTE MANAGEMENT INC,utilities,extension,10-Q,MDA,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,9177.5
+823768,WASTE MANAGEMENT INC,utilities,extension,10-Q,RISK_FACTORS,34,0,34,0,0,0.0,1.0,11,0.0,0.0,heading_regex_fallback,34,41.0
+1297996,"DIGITAL REALTY TRUST, INC.",materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,15303.5
+1297996,"DIGITAL REALTY TRUST, INC.",materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,40.0
+1109357,EXELON CORP,utilities,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,21458.5
+1109357,EXELON CORP,utilities,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,36.5
+1110803,"ILLUMINA, INC.",healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4960.0
+1110803,"ILLUMINA, INC.",healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,176.5
+1123360,GLOBAL PAYMENTS INC,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6589.5
+1123360,GLOBAL PAYMENTS INC,financials,core,10-Q,RISK_FACTORS,34,29,0,5,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,5,59.0
+1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6789.5
+1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,26.0
+1136893,"Fidelity National Information Services, Inc.",financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6912.0
+1136893,"Fidelity National Information Services, Inc.",financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,50.0
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,41066.5
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,119.0
+1141391,Mastercard Inc,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7437.0
+1141391,Mastercard Inc,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,34.0
+1156039,"Elevance Health, Inc.",healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10318.5
+1156039,"Elevance Health, Inc.",healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,26.0
+1156375,CME GROUP INC.,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5368.0
+1156375,CME GROUP INC.,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,42.5
+1163165,CONOCOPHILLIPS,energy,core,10-Q,MDA,34,28,6,0,0,0.0,0.1765,11,0.0,0.0,heading_regex_fallback,6,10567.0
+1163165,CONOCOPHILLIPS,energy,core,10-Q,RISK_FACTORS,34,28,6,0,0,0.0,0.1765,11,0.0,0.0,heading_regex_fallback,6,30.5
+1164727,NEWMONT Corp /DE/,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,18567.0
+1164727,NEWMONT Corp /DE/,materials_realestate,extension,10-Q,RISK_FACTORS,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,head_keyword_absent,0,84.0
+1166691,COMCAST CORP,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9363.5
+1166691,COMCAST CORP,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,27.0
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8416.0
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,39.0
+1222333,SPDR GOLD TRUST,financials,core,10-Q,MDA,34,30,4,0,0,0.0,0.1176,10,0.0,0.0,head_foreign_item,0,1875.0
+1222333,SPDR GOLD TRUST,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,114.0
+1393818,Blackstone Inc.,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,33038.0
+1393818,Blackstone Inc.,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,239.0
+1276187,Energy Transfer LP,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12754.0
+1276187,Energy Transfer LP,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,212.0
+1283699,"T-Mobile US, Inc.",utilities,extension,10-Q,MDA,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,toc_recovered_f1,1,12906.5
+1283699,"T-Mobile US, Inc.",utilities,extension,10-Q,RISK_FACTORS,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,toc_recovered_f1,1,1182.5
+1326801,"Meta Platforms, Inc.",tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7428.5
+1326801,"Meta Platforms, Inc.",tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,24962.0
+1373715,"ServiceNow, Inc.",tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8369.5
+1373715,"ServiceNow, Inc.",tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5954.5
+1390777,Bank of New York Mellon Corp,financials,core,10-Q,RISK_FACTORS,34,3,5,26,0,0.0,0.1471,11,0.0,0.0,item_absent_from_toc,31,0.0
+1403161,VISA INC.,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,5281.5
+1403161,VISA INC.,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,44.0
+1404912,KKR & Co. Inc.,financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,44144.5
+1404912,KKR & Co. Inc.,financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,40.0
+1413329,Philip Morris International Inc.,consumer,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,27822.0
+1413329,Philip Morris International Inc.,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,57.5
+1467858,General Motors Co,consumer,core,10-Q,MDA,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,head_keyword_absent,0,11860.5
+1467858,General Motors Co,consumer,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,62.0
+1506307,"KINDER MORGAN, INC.",energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,9877.5
+1506307,"KINDER MORGAN, INC.",energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,48.0
+1510295,Marathon Petroleum Corp,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12360.0
+1510295,Marathon Petroleum Corp,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,38.5
+1534701,Phillips 66,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10719.5
+1534701,Phillips 66,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,27.0
+1539838,"Diamondback Energy, Inc.",energy,core,10-Q,MDA,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,toc_recovered_f1,1,8822.5
+1539838,"Diamondback Energy, Inc.",energy,core,10-Q,RISK_FACTORS,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,toc_recovered_f1,1,149.5
+1551182,Eaton Corp plc,industrials,extension,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4910.0
+1551182,Eaton Corp plc,industrials,extension,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,37.0
+1552000,MPLX LP,energy,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10716.0
+1552000,MPLX LP,energy,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,39.0
+1555280,Zoetis Inc.,healthcare,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12134.5
+1555280,Zoetis Inc.,healthcare,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,1053.0
+1571949,"Intercontinental Exchange, Inc.",financials,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,15683.5
+1571949,"Intercontinental Exchange, Inc.",financials,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,144.0
+1596532,"Arista Networks, Inc.",tech,core,10-Q,MDA,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5210.0
+1596532,"Arista Networks, Inc.",tech,core,10-Q,RISK_FACTORS,34,34,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,27103.5
+315293,Aon plc,financials,core,10-Q,MDA,34,29,5,0,0,0.0,0.1471,11,0.0,0.0,heading_regex_fallback,5,10236.0
+315293,Aon plc,financials,core,10-Q,RISK_FACTORS,34,29,5,0,0,0.0,0.1471,11,0.0,0.0,heading_regex_fallback,5,93.0
+1633917,"PayPal Holdings, Inc.",financials,core,10-Q,MDA,34,31,3,0,0,0.0,0.0882,11,0.0,0.0,heading_regex_fallback,3,9529.5
+1633917,"PayPal Holdings, Inc.",financials,core,10-Q,RISK_FACTORS,34,31,3,0,0,0.0,0.0882,11,0.0,0.0,heading_regex_fallback,3,4123.5
+1637459,Kraft Heinz Co,consumer,core,10-Q,MDA,34,32,2,0,0,0.0,0.0588,11,0.0,0.0,heading_regex_fallback,1,9974.0
+1637459,Kraft Heinz Co,consumer,core,10-Q,RISK_FACTORS,34,33,1,0,0,0.0,0.0294,11,0.0,0.0,heading_regex_fallback,1,29.5
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,10-Q,MDA,33,19,14,0,0,0.0,0.4242,10,0.0,0.0,toc_recovered_f1,12,7582.0
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,10-Q,RISK_FACTORS,33,19,14,0,0,0.0,0.4242,10,0.0,0.0,toc_recovered_f1,14,35.0
+27419,TARGET CORP,consumer,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4307.0
+27419,TARGET CORP,consumer,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,34.0
+47217,HP INC,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,6968.0
+47217,HP INC,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,90.0
+60667,LOWES COMPANIES INC,consumer,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4726.0
+60667,LOWES COMPANIES INC,consumer,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,38.0
+80424,PROCTER & GAMBLE Co,consumer,core,10-Q,MDA,33,9,24,0,0,0.0,0.7273,10,0.0,0.0,heading_regex_fallback,24,11065.0
+80424,PROCTER & GAMBLE Co,consumer,core,10-Q,RISK_FACTORS,33,9,24,0,0,0.0,0.7273,10,0.0,0.0,heading_regex_fallback,24,32.0
+104169,Walmart Inc.,consumer,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7798.0
+104169,Walmart Inc.,consumer,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,142.0
+106040,WESTERN DIGITAL CORP,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,6639.0
+106040,WESTERN DIGITAL CORP,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,1248.0
+109198,TJX COMPANIES INC /DE/,consumer,core,10-Q,MDA,33,19,14,0,0,0.0,0.4242,11,0.0,0.0,heading_regex_fallback,14,6110.0
+109198,TJX COMPANIES INC /DE/,consumer,core,10-Q,RISK_FACTORS,33,19,14,0,0,0.0,0.4242,11,0.0,0.0,heading_regex_fallback,14,46.0
+320187,"NIKE, Inc.",consumer,core,10-Q,MDA,33,12,21,0,0,0.0,0.6364,10,0.0,0.0,heading_regex_fallback,21,11286.0
+320187,"NIKE, Inc.",consumer,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,38.0
+354950,"HOME DEPOT, INC.",consumer,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,4102.0
+354950,"HOME DEPOT, INC.",consumer,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,100.0
+707549,LAM RESEARCH CORP,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,5329.0
+707549,LAM RESEARCH CORP,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,9995.0
+769397,"Autodesk, Inc.",tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12226.0
+769397,"Autodesk, Inc.",tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12443.0
+858877,"CISCO SYSTEMS, INC.",tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,12752.0
+858877,"CISCO SYSTEMS, INC.",tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,12940.0
+896878,INTUIT INC.,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,8262.0
+896878,INTUIT INC.,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,12386.0
+789019,MICROSOFT CORP,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,8648.0
+789019,MICROSOFT CORP,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,9720.0
+1341439,ORACLE CORP,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11045.0
+1341439,ORACLE CORP,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,115.0
+1001250,ESTEE LAUDER COMPANIES INC,consumer,core,10-Q,MDA,33,21,12,0,0,0.0,0.3636,10,0.0,0.0,head_keyword_absent,0,12204.0
+1001250,ESTEE LAUDER COMPANIES INC,consumer,core,10-Q,RISK_FACTORS,33,0,0,33,0,0.0,0.0,10,0.0,0.0,item_absent_from_toc,33,0.0
+1045810,NVIDIA CORP,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,5152.0
+1045810,NVIDIA CORP,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,2136.0
+1137789,Seagate Technology Holdings plc,tech,core,10-Q,MDA,33,31,2,0,0,0.0,0.0606,10,0.0,0.0,head_keyword_absent,0,4923.0
+1137789,Seagate Technology Holdings plc,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,129.0
+315189,DEERE & CO,industrials,extension,10-Q,MDA,33,0,33,0,0,0.0,1.0,10,0.0,0.0,heading_regex_fallback,33,6651.0
+315189,DEERE & CO,industrials,extension,10-Q,RISK_FACTORS,33,0,33,0,0,0.0,1.0,10,0.0,0.0,heading_regex_fallback,33,88.0
+1108524,"Salesforce, Inc.",tech,core,10-Q,MDA,33,25,8,0,0,0.0,0.2424,11,0.0,0.0,toc_recovered_f1,8,8967.0
+1108524,"Salesforce, Inc.",tech,core,10-Q,RISK_FACTORS,33,25,8,0,0,0.0,0.2424,11,0.0,0.0,toc_recovered_f1,8,17564.0
+1327567,Palo Alto Networks Inc,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,7994.0
+1327567,Palo Alto Networks Inc,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,19633.0
+1613103,Medtronic plc,healthcare,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,12367.0
+1613103,Medtronic plc,healthcare,core,10-Q,RISK_FACTORS,33,0,0,33,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,33,0.0
+1652044,Alphabet Inc.,tech,core,10-Q,MDA,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,7516.0
+1652044,Alphabet Inc.,tech,core,10-Q,RISK_FACTORS,33,33,0,0,0,0.0,0.0,10,0.0,0.0,ok,0,93.0
+718877,"Activision Blizzard, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,33,33,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,9344.0
+1126975,"Magellan Midstream Partners, L.P.",energy,core,8-K,EX99_PRESS_RELEASE,33,33,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4068.0
+1730168,Broadcom Inc.,tech,core,8-K,EX99_PRESS_RELEASE,33,33,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4126.0
+1543151,"Uber Technologies, Inc",financials,core,8-K,EX99_PRESS_RELEASE,33,25,8,0,0,0.0,0.2424,0,,0.0,earnings_population_gate,0,7290.0
+1645590,Hewlett Packard Enterprise Co,tech,core,10-Q,MDA,32,32,0,0,0,0.0,0.0,9,0.0,0.0,ok,0,11911.5
+1645590,Hewlett Packard Enterprise Co,tech,core,10-Q,RISK_FACTORS,32,32,0,0,0,0.0,0.0,9,0.0,0.0,ok,0,595.5
+1512673,"Block, Inc.",tech,core,10-Q,MDA,32,32,0,0,0,0.0,0.0,9,0.0,0.0,ok,0,8292.5
+1512673,"Block, Inc.",tech,core,10-Q,RISK_FACTORS,32,32,0,0,0,0.0,0.0,9,0.0,0.0,ok,0,25696.5
+45012,HALLIBURTON CO,energy,core,8-K,8K_BODY,32,30,2,0,0,0.0,0.0625,15,0.0,0.0,earnings_population_gate,0,4247.0
+1318220,"Waste Connections, Inc.",utilities,extension,10-Q,MDA,31,30,1,0,0,0.0,0.0323,8,0.0,0.0,head_keyword_absent,0,15214.0
+1318220,"Waste Connections, Inc.",utilities,extension,10-Q,RISK_FACTORS,31,3,0,28,0,0.0,0.0,8,0.0,0.0,item_absent_from_toc,28,0.0
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,10-Q,MDA,31,31,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,13060.0
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,10-Q,RISK_FACTORS,31,31,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,56.0
+1393612,Discover Financial Services,financials,core,10-Q,MDA,30,30,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,15423.0
+1393612,Discover Financial Services,financials,core,10-Q,RISK_FACTORS,30,30,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,30.0
+4447,HESS CORP,energy,core,10-Q,MDA,30,30,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8154.5
+4447,HESS CORP,energy,core,10-Q,RISK_FACTORS,30,8,0,22,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,22,0.0
+1535527,"CrowdStrike Holdings, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,30,26,4,0,0,0.0,0.1333,0,,0.0,earnings_population_gate,0,5550.0
+1418091,"TWITTER, INC.",tech,core,8-K,EX99_PRESS_RELEASE,30,28,2,0,0,0.0,0.0667,15,0.0,0.0,earnings_population_gate,0,6970.5
+1744489,Walt Disney Co,consumer,core,8-K,EX99_PRESS_RELEASE,30,20,10,0,0,0.0,0.3333,0,,0.0,earnings_supplemental_diluted,0,7085.0
+6769,APACHE CORP,energy,core,10-Q,RISK_FACTORS,29,27,2,0,0,0.0,0.069,11,0.0,0.0,heading_regex_fallback,2,102.0
+1564408,Snap Inc,tech,core,10-Q,MDA,29,29,0,0,0,0.0,0.0,6,0.0,0.0,ok,0,6754.0
+1564408,Snap Inc,tech,core,10-Q,RISK_FACTORS,29,29,0,0,0,0.0,0.0,6,0.0,0.0,ok,0,27556.0
+1692819,Vistra Corp.,utilities,extension,10-Q,MDA,29,29,0,0,0,0.0,0.0,6,0.0,0.0,ok,0,10594.0
+1692819,Vistra Corp.,utilities,extension,10-Q,RISK_FACTORS,29,29,0,0,0,0.0,0.0,6,0.0,0.0,ok,0,78.0
+1585521,"Zoom Communications, Inc.",tech,core,8-K,EX99_PRESS_RELEASE,29,29,0,0,0,0.0,0.0,0,,0.0,ok,0,3752.0
+1751788,DOW INC.,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,29,29,0,0,0,0.0,0.0,0,,0.0,ok,0,6565.0
+1364742,"BlackRock Finance, Inc.",financials,core,10-Q,MDA,28,28,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,14638.0
+1364742,"BlackRock Finance, Inc.",financials,core,10-Q,RISK_FACTORS,28,14,0,14,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,14,23.0
+804753,CERNER Corp,tech,core,8-K,EX99_PRESS_RELEASE,28,28,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,3780.5
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,10-Q,MDA,27,27,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7579.0
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,10-Q,RISK_FACTORS,27,27,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,151.0
+1666700,"DuPont de Nemours, Inc.",materials_realestate,extension,10-Q,MDA,27,27,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,7612.0
+1666700,"DuPont de Nemours, Inc.",materials_realestate,extension,10-Q,RISK_FACTORS,27,27,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,549.0
+895728,ENBRIDGE INC,energy,core,10-Q,MDA,26,26,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9718.0
+895728,ENBRIDGE INC,energy,core,10-Q,RISK_FACTORS,26,26,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,67.0
+718877,"Activision Blizzard, Inc.",tech,core,10-Q,MDA,25,14,11,0,0,0.0,0.44,11,0.0,0.0,head_keyword_absent,0,12263.0
+718877,"Activision Blizzard, Inc.",tech,core,10-Q,RISK_FACTORS,25,25,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,90.0
+1126975,"Magellan Midstream Partners, L.P.",energy,core,10-Q,MDA,25,0,25,0,0,0.0,1.0,11,0.0,0.0,head_keyword_absent,0,4983.0
+1126975,"Magellan Midstream Partners, L.P.",energy,core,10-Q,RISK_FACTORS,25,25,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,98.0
+1707925,LINDE PLC,materials_realestate,extension,10-Q,MDA,25,23,2,0,0,0.0,0.08,2,0.0,0.0,below_length_floor,0,7738.0
+1707925,LINDE PLC,materials_realestate,extension,10-Q,RISK_FACTORS,25,25,0,0,0,0.0,0.0,2,0.0,0.0,ok,0,43.0
+1730168,Broadcom Inc.,tech,core,10-Q,MDA,25,25,0,0,0,0.0,0.0,2,0.0,0.0,ok,0,5229.0
+1730168,Broadcom Inc.,tech,core,10-Q,RISK_FACTORS,25,25,0,0,0,0.0,0.0,2,0.0,0.0,ok,0,15712.0
+1578845,Allergan plc,healthcare,core,8-K,EX99_PRESS_RELEASE,25,14,11,0,0,0.0,0.44,18,0.0,0.0,earnings_population_gate,0,9863.0
+1321655,Palantir Technologies Inc.,tech,core,8-K,EX99_PRESS_RELEASE,24,24,0,0,0,0.0,0.0,0,,0.0,ok,0,3349.5
+1739940,Cigna Group,healthcare,core,10-Q,MDA,23,20,3,0,0,0.0,0.1304,0,,0.0,heading_regex_fallback,2,10015.0
+1739940,Cigna Group,healthcare,core,10-Q,RISK_FACTORS,23,13,2,8,0,0.0,0.087,0,,0.0,item_absent_from_toc,10,46.0
+1543151,"Uber Technologies, Inc",financials,core,10-Q,MDA,23,23,0,0,0,0.0,0.0,0,,0.0,ok,0,9882.0
+1543151,"Uber Technologies, Inc",financials,core,10-Q,RISK_FACTORS,23,23,0,0,0,0.0,0.0,0,,0.0,ok,0,34933.0
+1682852,"Moderna, Inc.",healthcare,core,10-Q,MDA,23,22,1,0,0,0.0,0.0435,0,,0.0,toc_recovered_f1,0,8013.0
+1682852,"Moderna, Inc.",healthcare,core,10-Q,RISK_FACTORS,23,23,0,0,0,0.0,0.0,0,,0.0,ok,0,72.0
+1744489,Walt Disney Co,consumer,core,10-Q,MDA,23,6,17,0,0,0.0,0.7391,0,,0.0,heading_regex_fallback,17,16807.0
+1744489,Walt Disney Co,consumer,core,10-Q,RISK_FACTORS,23,6,17,0,0,0.0,0.7391,0,,0.0,heading_regex_fallback,17,1476.0
+6769,APACHE CORP,energy,core,8-K,EX99_PRESS_RELEASE,23,23,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,5243.0
+1640147,Snowflake Inc.,tech,core,8-K,EX99_PRESS_RELEASE,23,23,0,0,0,0.0,0.0,0,,0.0,ok,0,5749.0
+1418091,"TWITTER, INC.",tech,core,10-Q,MDA,22,22,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6957.0
+1418091,"TWITTER, INC.",tech,core,10-Q,RISK_FACTORS,22,22,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,19232.0
+1535527,"CrowdStrike Holdings, Inc.",tech,core,10-Q,MDA,22,22,0,0,0,0.0,0.0,0,,0.0,ok,0,9750.0
+1535527,"CrowdStrike Holdings, Inc.",tech,core,10-Q,RISK_FACTORS,22,22,0,0,0,0.0,0.0,0,,0.0,ok,0,24621.5
+1585521,"Zoom Communications, Inc.",tech,core,10-Q,MDA,22,22,0,0,0,0.0,0.0,0,,0.0,ok,0,6343.5
+1585521,"Zoom Communications, Inc.",tech,core,10-Q,RISK_FACTORS,22,22,0,0,0,0.0,0.0,0,,0.0,ok,0,28785.5
+816284,CELGENE CORP /DE/,healthcare,core,8-K,EX99_PRESS_RELEASE,22,14,8,0,0,0.0,0.3636,17,0.0,0.0,earnings_population_gate,0,5340.0
+1358071,CONCHO RESOURCES INC,energy,core,8-K,EX99_PRESS_RELEASE,22,16,6,0,0,0.0,0.2727,14,0.0,0.0,earnings_population_gate,0,5325.0
+804753,CERNER Corp,tech,core,10-Q,MDA,21,21,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,6482.0
+804753,CERNER Corp,tech,core,10-Q,RISK_FACTORS,21,6,0,15,0,0.0,0.0,11,0.0,0.0,item_absent_from_toc,15,0.0
+1782754,AZEK Co Inc.,consumer,core,8-K,EX99_PRESS_RELEASE,21,19,2,0,0,0.0,0.0952,0,,0.0,earnings_population_gate,0,6478.0
+1047122,RAYTHEON CO/,industrials,extension,8-K,EX99_PRESS_RELEASE,19,19,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4231.0
+1321655,Palantir Technologies Inc.,tech,core,10-Q,MDA,18,18,0,0,0,0.0,0.0,0,,0.0,ok,0,7519.5
+1321655,Palantir Technologies Inc.,tech,core,10-Q,RISK_FACTORS,18,18,0,0,0,0.0,0.0,0,,0.0,ok,0,44643.0
+1868275,Constellation Energy Corp,utilities,extension,8-K,EX99_PRESS_RELEASE,18,18,0,0,0,0.0,0.0,0,,0.0,ok,0,4742.0
+1161154,"Energy Transfer Operating, L.P.",energy,core,10-Q,MDA,17,17,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10450.0
+1161154,"Energy Transfer Operating, L.P.",energy,core,10-Q,RISK_FACTORS,17,11,6,0,0,0.0,0.3529,11,0.0,0.0,head_keyword_absent,0,706.0
+1358071,CONCHO RESOURCES INC,energy,core,10-Q,MDA,17,11,6,0,0,0.0,0.3529,11,0.0,0.0,heading_regex_fallback,6,8742.0
+1358071,CONCHO RESOURCES INC,energy,core,10-Q,RISK_FACTORS,17,11,6,0,0,0.0,0.3529,11,0.0,0.0,heading_regex_fallback,6,421.0
+1640147,Snowflake Inc.,tech,core,10-Q,MDA,17,17,0,0,0,0.0,0.0,0,,0.0,ok,0,11174.0
+1640147,Snowflake Inc.,tech,core,10-Q,RISK_FACTORS,17,17,0,0,0,0.0,0.0,0,,0.0,ok,0,17770.0
+773910,ANADARKO PETROLEUM CORP,energy,core,8-K,EX99_PRESS_RELEASE,17,17,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4323.0
+33213,EQT Corp,energy,core,8-K,8K_BODY,16,0,16,0,0,0.0,1.0,0,,0.0,below_length_floor,0,301.5
+1782754,AZEK Co Inc.,consumer,core,10-Q,MDA,15,15,0,0,0,0.0,0.0,0,,0.0,ok,0,9509.0
+1782754,AZEK Co Inc.,consumer,core,10-Q,RISK_FACTORS,15,15,0,0,0,0.0,0.0,0,,0.0,ok,0,99.0
+1578845,Allergan plc,healthcare,core,10-Q,MDA,15,15,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,11684.0
+1578845,Allergan plc,healthcare,core,10-Q,RISK_FACTORS,15,4,11,0,0,0.0,0.7333,11,0.0,0.0,head_foreign_item,0,35.0
+701221,Cigna Holding Co,healthcare,core,8-K,EX99_PRESS_RELEASE,15,11,4,0,0,0.0,0.2667,15,0.0,,earnings_population_gate,0,4424.0
+1001039,TWDC Enterprises 18 Corp.,consumer,core,8-K,EX99_PRESS_RELEASE,15,15,0,0,0,0.0,0.0,14,0.0,0.0,ok,0,4550.0
+1122304,AETNA INC /PA/,healthcare,core,8-K,EX99_PRESS_RELEASE,15,13,2,0,0,0.0,0.1333,15,0.0,,earnings_population_gate,0,8208.0
+816284,CELGENE CORP /DE/,healthcare,core,10-Q,MDA,14,14,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,10897.5
+816284,CELGENE CORP /DE/,healthcare,core,10-Q,RISK_FACTORS,14,14,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,8376.0
+1047122,RAYTHEON CO/,industrials,extension,10-Q,MDA,14,14,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,19125.5
+1047122,RAYTHEON CO/,industrials,extension,10-Q,RISK_FACTORS,14,14,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,99.5
+1868275,Constellation Energy Corp,utilities,extension,10-Q,MDA,14,14,0,0,0,0.0,0.0,0,,0.0,ok,0,9111.0
+1868275,Constellation Energy Corp,utilities,extension,10-Q,RISK_FACTORS,14,14,0,0,0,0.0,0.0,0,,0.0,ok,0,28.0
+45012,HALLIBURTON CO,energy,core,8-K,EX99_PRESS_RELEASE,14,14,0,0,0,0.0,0.0,0,,0.0,ok,0,4744.5
+936402,Shire plc,healthcare,core,8-K,EX99_PRESS_RELEASE,14,14,0,0,0,0.0,0.0,14,0.0,,ok,0,9232.5
+884905,LINDE INC,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,14,14,0,0,0,0.0,0.0,14,0.0,,ok,0,5996.5
+1161154,"Energy Transfer Operating, L.P.",energy,core,8-K,EX99_PRESS_RELEASE,14,6,8,0,0,0.0,0.5714,14,0.0,,earnings_supplemental_diluted,0,3904.5
+1532063,Express Scripts Holding Co.,consumer,core,8-K,EX99_PRESS_RELEASE,14,8,6,0,0,0.0,0.4286,14,0.0,,earnings_supplemental_diluted,0,5130.5
+1539838,"Diamondback Energy, Inc.",energy,core,8-K,8K_BODY,14,0,14,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,1023.5
+773910,ANADARKO PETROLEUM CORP,energy,core,10-Q,MDA,13,13,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,7696.0
+773910,ANADARKO PETROLEUM CORP,energy,core,10-Q,RISK_FACTORS,13,13,0,0,0,0.0,0.0,11,0.0,0.0,ok,0,37.0
+1105705,"WARNER MEDIA, LLC",consumer,core,8-K,EX99_PRESS_RELEASE,13,11,2,0,0,0.0,0.1538,13,0.0,,earnings_population_gate,0,6769.0
+1483096,WILLIAMS PARTNERS L.P.,energy,core,8-K,EX99_PRESS_RELEASE,13,13,0,0,0,0.0,0.0,13,0.0,,ok,0,9811.0
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,10-K,MDA,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,8641.0
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,10-K,RISK_FACTORS,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,4932.5
+80424,PROCTER & GAMBLE Co,consumer,core,10-K,MDA,12,11,1,0,0,0.0,0.0833,4,0.0,0.0,heading_regex_fallback,1,16665.0
+80424,PROCTER & GAMBLE Co,consumer,core,10-K,RISK_FACTORS,12,11,1,0,0,0.0,0.0833,4,0.0,0.0,heading_regex_fallback,1,5249.0
+106040,WESTERN DIGITAL CORP,tech,core,10-K,MDA,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,7862.5
+106040,WESTERN DIGITAL CORP,tech,core,10-K,RISK_FACTORS,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,12856.0
+320187,"NIKE, Inc.",consumer,core,10-K,MDA,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,14421.0
+320187,"NIKE, Inc.",consumer,core,10-K,RISK_FACTORS,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,12788.5
+707549,LAM RESEARCH CORP,tech,core,10-K,MDA,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,7983.0
+707549,LAM RESEARCH CORP,tech,core,10-K,RISK_FACTORS,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,10406.0
+789019,MICROSOFT CORP,tech,core,10-K,MDA,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,9024.5
+789019,MICROSOFT CORP,tech,core,10-K,RISK_FACTORS,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,9796.5
+1001250,ESTEE LAUDER COMPANIES INC,consumer,core,10-K,MDA,12,9,3,0,0,0.0,0.25,4,0.0,0.0,head_keyword_absent,0,15885.0
+1001250,ESTEE LAUDER COMPANIES INC,consumer,core,10-K,RISK_FACTORS,12,7,5,0,0,0.0,0.4167,4,0.0,0.0,head_keyword_absent,0,5022.0
+1137789,Seagate Technology Holdings plc,tech,core,10-K,RISK_FACTORS,12,12,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,14131.0
+2488,ADVANCED MICRO DEVICES INC,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,5785.0
+2488,ADVANCED MICRO DEVICES INC,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16683.0
+2969,"Air Products & Chemicals, Inc.",materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,16169.0
+2969,"Air Products & Chemicals, Inc.",materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,4882.0
+3570,"Cheniere Energy, Inc.",utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13833.0
+3570,"Cheniere Energy, Inc.",utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10966.0
+4281,Howmet Aerospace Inc.,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12810.0
+4281,Howmet Aerospace Inc.,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8216.0
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,10-K,MDA,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,mda_stub_external_document,5,1824.0
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8172.0
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,67594.0
+6951,APPLIED MATERIALS INC /DE,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,10033.0
+6951,APPLIED MATERIALS INC /DE,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,8928.0
+10795,BECTON DICKINSON & CO,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,12655.0
+10795,BECTON DICKINSON & CO,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,7200.0
+12927,BOEING CO,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13955.0
+12927,BOEING CO,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7064.0
+18230,CATERPILLAR INC,industrials,extension,10-K,MDA,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,toc_recovered_f1,3,19480.0
+18230,CATERPILLAR INC,industrials,extension,10-K,RISK_FACTORS,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,toc_recovered_f1,3,7913.0
+19617,JPMORGAN CHASE & CO,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,60224.0
+19617,JPMORGAN CHASE & CO,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16942.0
+21344,COCA COLA CO,consumer,core,10-K,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,toc_recovered_f1,4,12580.0
+21665,COLGATE PALMOLIVE CO,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16134.0
+21665,COLGATE PALMOLIVE CO,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7113.0
+27419,TARGET CORP,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6240.0
+27419,TARGET CORP,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4364.0
+29915,DOW CHEMICAL CO /DE/,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19840.0
+29915,DOW CHEMICAL CO /DE/,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3304.0
+30554,"EIDP, Inc.",materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19517.0
+30554,"EIDP, Inc.",materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10009.0
+33213,EQT Corp,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8997.0
+33213,EQT Corp,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14835.0
+34088,EXXON MOBIL CORP,energy,core,10-K,MDA,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,mda_stub_unresolved_same_doc,4,14482.0
+34088,EXXON MOBIL CORP,energy,core,10-K,RISK_FACTORS,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,heading_regex_fallback,7,28793.0
+36104,US BANCORP \DE\,financials,core,10-K,MDA,11,0,11,0,0,0.0,1.0,3,0.0,0.0,mda_stub_external_document,11,49.0
+36104,US BANCORP \DE\,financials,core,10-K,RISK_FACTORS,11,0,11,0,0,0.0,1.0,3,0.0,0.0,below_length_floor,11,39.0
+37996,FORD MOTOR CO,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,23123.0
+37996,FORD MOTOR CO,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7549.0
+40533,GENERAL DYNAMICS CORP,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9717.0
+40533,GENERAL DYNAMICS CORP,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,2956.0
+45012,HALLIBURTON CO,energy,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,mda_stub_unresolved_same_doc,4,6812.0
+45012,HALLIBURTON CO,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7024.0
+47217,HP INC,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,11387.0
+47217,HP INC,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,13472.0
+49071,HUMANA INC,healthcare,core,10-K,MDA,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,toc_recovered_f1,5,11530.0
+49071,HUMANA INC,healthcare,core,10-K,RISK_FACTORS,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,toc_recovered_f1,5,10738.0
+49826,ILLINOIS TOOL WORKS INC,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12543.0
+49826,ILLINOIS TOOL WORKS INC,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3624.0
+50863,INTEL CORP,tech,core,10-K,MDA,11,3,8,0,0,0.0,0.7273,3,0.0,0.0,head_keyword_absent,1,17891.0
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,10-K,MDA,11,0,11,0,0,0.0,1.0,3,0.0,0.0,mda_stub_external_document,11,32.0
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,10-K,RISK_FACTORS,11,3,8,0,0,0.0,0.7273,3,0.0,0.0,heading_regex_fallback,8,5108.0
+55785,KIMBERLY CLARK CORP,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7784.0
+55785,KIMBERLY CLARK CORP,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3278.0
+59478,ELI LILLY & Co,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12131.0
+59478,ELI LILLY & Co,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4991.0
+60667,LOWES COMPANIES INC,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8446.0
+60667,LOWES COMPANIES INC,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6108.0
+62709,"MARSH & MCLENNAN COMPANIES, INC.",financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11086.0
+62709,"MARSH & MCLENNAN COMPANIES, INC.",financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13793.0
+63908,MCDONALDS CORP,consumer,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,mda_stub_resolved,0,12768.0
+64040,S&P Global Inc.,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18866.0
+64040,S&P Global Inc.,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12106.0
+64803,CVS HEALTH Corp,consumer,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,mda_stub_external_document,4,16471.0
+64803,CVS HEALTH Corp,consumer,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,22838.0
+66740,3M CO,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16681.0
+66740,3M CO,healthcare,core,10-K,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,below_length_floor,0,3281.0
+70858,BANK OF AMERICA CORP /DE/,financials,core,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,head_foreign_item,0,49501.0
+70858,BANK OF AMERICA CORP /DE/,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16633.0
+72741,EVERSOURCE ENERGY,utilities,extension,10-K,MDA,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,25180.0
+72741,EVERSOURCE ENERGY,utilities,extension,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,5000.0
+72903,XCEL ENERGY INC,utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16338.0
+72903,XCEL ENERGY INC,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6829.0
+72971,WELLS FARGO & COMPANY/MN,financials,core,10-K,MDA,11,0,11,0,0,0.0,1.0,3,0.0,0.0,mda_stub_external_document,11,42.0
+72971,WELLS FARGO & COMPANY/MN,financials,core,10-K,RISK_FACTORS,11,0,11,0,0,0.0,1.0,3,0.0,0.0,below_length_floor,11,43.0
+77476,PEPSICO INC,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,40480.0
+77476,PEPSICO INC,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9606.0
+78003,PFIZER INC,healthcare,core,10-K,MDA,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,mda_stub_unresolved_same_doc,5,15125.0
+78003,PFIZER INC,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11662.0
+79879,PPG INDUSTRIES INC,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9451.0
+79879,PPG INDUSTRIES INC,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3078.0
+80661,PROGRESSIVE CORP/OH/,financials,core,10-K,MDA,11,0,11,0,0,0.0,1.0,3,0.0,0.0,mda_stub_external_document,11,35.0
+80661,PROGRESSIVE CORP/OH/,financials,core,10-K,RISK_FACTORS,11,0,11,0,0,0.0,1.0,3,0.0,0.0,heading_regex_fallback,11,10045.0
+86312,"TRAVELERS COMPANIES, INC.",financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12698.0
+1032208,SEMPRA,utilities,extension,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,mda_stub_unresolved_same_doc,2,22554.0
+1032208,SEMPRA,utilities,extension,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,20390.0
+89800,SHERWIN WILLIAMS CO,consumer,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,mda_stub_external_document,4,9306.0
+89800,SHERWIN WILLIAMS CO,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7109.0
+92122,SOUTHERN CO,utilities,extension,10-K,MDA,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,mda_stub_unresolved_same_doc,1,149401.0
+92122,SOUTHERN CO,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10940.0
+92230,TRUIST FINANCIAL CORP,financials,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,head_keyword_absent,0,14635.0
+92230,TRUIST FINANCIAL CORP,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12465.0
+93410,CHEVRON CORP,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,15563.0
+93410,CHEVRON CORP,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4267.0
+97476,TEXAS INSTRUMENTS INC,tech,core,10-K,RISK_FACTORS,11,0,11,0,0,0.0,1.0,3,0.0,0.0,heading_regex_fallback,11,3817.0
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6539.0
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6424.0
+100885,UNION PACIFIC CORP,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10901.0
+100885,UNION PACIFIC CORP,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4352.0
+101829,RTX Corp,industrials,extension,10-K,MDA,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,mda_stub_external_document,5,19187.0
+101829,RTX Corp,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13389.0
+104169,Walmart Inc.,consumer,core,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,mda_stub_external_document,2,10141.0
+104169,Walmart Inc.,consumer,core,10-K,RISK_FACTORS,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,heading_regex_fallback,2,9597.0
+106535,WEYERHAEUSER CO,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8731.0
+107263,"WILLIAMS COMPANIES, INC.",energy,core,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,head_keyword_absent,0,14693.0
+107263,"WILLIAMS COMPANIES, INC.",energy,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,toc_recovered_f1,1,10051.0
+109198,TJX COMPANIES INC /DE/,consumer,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,heading_regex_fallback,4,8072.0
+109198,TJX COMPANIES INC /DE/,consumer,core,10-K,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,heading_regex_fallback,4,8705.0
+200406,JOHNSON & JOHNSON,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10266.0
+200406,JOHNSON & JOHNSON,healthcare,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,below_length_floor,0,5178.0
+310158,"Merck & Co., Inc.",healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,21645.0
+310158,"Merck & Co., Inc.",healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10272.0
+310764,STRYKER CORP,healthcare,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,heading_regex_fallback,4,7522.0
+310764,STRYKER CORP,healthcare,core,10-K,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,heading_regex_fallback,4,5361.0
+313616,DANAHER CORP /DE/,industrials,extension,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,toc_recovered_f1,4,15663.0
+313616,DANAHER CORP /DE/,industrials,extension,10-K,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,toc_recovered_f1,4,14314.0
+316709,SCHWAB CHARLES CORP,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,21858.0
+316709,SCHWAB CHARLES CORP,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6888.0
+318154,AMGEN INC,healthcare,core,10-K,MDA,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,toc_recovered_f1,1,11678.0
+318154,AMGEN INC,healthcare,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,toc_recovered_f1,1,21549.0
+320193,Apple Inc.,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,4923.0
+320193,Apple Inc.,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,8789.0
+354950,"HOME DEPOT, INC.",consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4851.0
+354950,"HOME DEPOT, INC.",consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9196.0
+712515,ELECTRONIC ARTS INC.,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9544.0
+712515,ELECTRONIC ARTS INC.,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8180.0
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,32052.0
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,15196.0
+723125,MICRON TECHNOLOGY INC,tech,core,10-K,MDA,11,6,5,0,0,0.0,0.4545,4,0.0,0.0,heading_regex_fallback,4,5446.0
+723125,MICRON TECHNOLOGY INC,tech,core,10-K,RISK_FACTORS,11,6,5,0,0,0.0,0.4545,4,0.0,0.0,heading_regex_fallback,5,15246.0
+726728,REALTY INCOME CORP,materials_realestate,extension,10-K,MDA,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,head_keyword_absent,0,10631.0
+726728,REALTY INCOME CORP,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11627.0
+731766,UNITEDHEALTH GROUP INC,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6841.0
+731766,UNITEDHEALTH GROUP INC,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9651.0
+732712,VERIZON COMMUNICATIONS INC,utilities,extension,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,mda_stub_external_document,2,16934.0
+732712,VERIZON COMMUNICATIONS INC,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3734.0
+732717,AT&T INC.,utilities,extension,10-K,RISK_FACTORS,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,below_length_floor,4,6143.0
+753308,NEXTERA ENERGY INC,utilities,extension,10-K,MDA,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,toc_recovered_f1,0,13631.0
+753308,NEXTERA ENERGY INC,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10647.0
+764180,"ALTRIA GROUP, INC.",consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,22810.0
+764180,"ALTRIA GROUP, INC.",consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7338.0
+766704,WELLTOWER INC.,materials_realestate,extension,10-K,MDA,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,toc_recovered_f2,3,15099.0
+769397,"Autodesk, Inc.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13939.0
+769397,"Autodesk, Inc.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12633.0
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14487.0
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10964.0
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19374.0
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,10-K,RISK_FACTORS,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,below_length_floor,0,6476.0
+798354,FISERV INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10744.0
+798354,FISERV INC,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8613.0
+804328,QUALCOMM INC/DE,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,8747.0
+804328,QUALCOMM INC/DE,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,16679.0
+813672,CADENCE DESIGN SYSTEMS INC,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7670.0
+813672,CADENCE DESIGN SYSTEMS INC,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12912.0
+821189,EOG RESOURCES INC,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10826.0
+821189,EOG RESOURCES INC,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9377.0
+829224,STARBUCKS CORP,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,11032.0
+829224,STARBUCKS CORP,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,8254.0
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,15943.0
+849399,Gen Digital Inc.,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6797.0
+849399,Gen Digital Inc.,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11216.0
+858877,"CISCO SYSTEMS, INC.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,11972.0
+858877,"CISCO SYSTEMS, INC.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,12618.0
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9409.0
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,28799.0
+875045,BIOGEN INC.,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16829.0
+875045,BIOGEN INC.,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11259.0
+875320,VERTEX PHARMACEUTICALS INC / MA,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10806.0
+875320,VERTEX PHARMACEUTICALS INC / MA,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16863.0
+882095,"GILEAD SCIENCES, INC.",healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9443.0
+882095,"GILEAD SCIENCES, INC.",healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11773.0
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14446.0
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11458.0
+886982,GOLDMAN SACHS GROUP INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,41579.0
+886982,GOLDMAN SACHS GROUP INC,financials,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,head_keyword_absent,0,19522.0
+895126,EXPAND ENERGY Corp,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9836.0
+895126,EXPAND ENERGY Corp,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11284.0
+896159,Chubb Ltd,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,30014.0
+896159,Chubb Ltd,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10902.0
+896878,INTUIT INC.,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,10490.0
+896878,INTUIT INC.,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,12308.0
+906107,VIVMARK RESIDENTIAL,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11045.0
+906107,VIVMARK RESIDENTIAL,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9406.0
+915912,AVALONBAY COMMUNITIES INC,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12617.0
+915912,AVALONBAY COMMUNITIES INC,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8445.0
+922224,PPL Corp,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6040.0
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,34258.0
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,toc_recovered_f1,0,14763.0
+927653,MCKESSON CORP,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13910.0
+927653,MCKESSON CORP,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8754.0
+936468,LOCKHEED MARTIN CORP,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,21567.0
+936468,LOCKHEED MARTIN CORP,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10984.0
+1099219,METLIFE INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,46963.0
+1099219,METLIFE INC,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11111.0
+1318605,"Tesla, Inc.",consumer,core,10-K,MDA,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,head_keyword_absent,0,9653.0
+1318605,"Tesla, Inc.",consumer,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,head_keyword_absent,0,13377.0
+1090012,DEVON ENERGY CORP/DE,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11127.0
+1090012,DEVON ENERGY CORP/DE,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,5786.0
+715957,"DOMINION ENERGY, INC",utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16661.0
+715957,"DOMINION ENERGY, INC",utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8872.0
+1389170,Targa Resources Corp.,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12405.0
+1389170,Targa Resources Corp.,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18111.0
+1067983,BERKSHIRE HATHAWAY INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19497.0
+1067983,BERKSHIRE HATHAWAY INC,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,2692.0
+1341439,ORACLE CORP,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13331.0
+1341439,ORACLE CORP,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11279.0
+87347,SLB LIMITED/NV,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6976.0
+87347,SLB LIMITED/NV,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3590.0
+1045609,"Prologis, Inc.",materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10711.0
+1045609,"Prologis, Inc.",materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7940.0
+73309,NUCOR CORP,materials_realestate,extension,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,mda_stub_external_document,4,8548.0
+73309,NUCOR CORP,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,3517.0
+1018724,AMAZON COM INC,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7568.0
+1018724,AMAZON COM INC,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7400.0
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11607.0
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11860.0
+1035002,VALERO ENERGY CORP/TX,energy,core,10-K,MDA,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,mda_stub_unresolved_same_doc,1,12749.0
+1035002,VALERO ENERGY CORP/TX,energy,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,7564.0
+1035267,INTUITIVE SURGICAL INC,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16436.0
+1035267,INTUITIVE SURGICAL INC,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,21098.0
+1039684,ONEOK INC /NEW/,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10764.0
+1039684,ONEOK INC /NEW/,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11514.0
+1045810,NVIDIA CORP,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6437.0
+1045810,NVIDIA CORP,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10389.0
+1645590,Hewlett Packard Enterprise Co,tech,core,10-K,MDA,11,5,6,0,0,0.0,0.5455,4,0.0,0.0,mda_stub_unresolved_same_doc,5,2866.0
+1645590,Hewlett Packard Enterprise Co,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,14100.0
+1551152,AbbVie Inc.,healthcare,core,10-K,MDA,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,9581.0
+1551152,AbbVie Inc.,healthcare,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,heading_regex_fallback,1,7757.0
+1800,ABBOTT LABORATORIES,healthcare,core,10-K,MDA,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,heading_regex_fallback,7,11649.0
+1800,ABBOTT LABORATORIES,healthcare,core,10-K,RISK_FACTORS,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,heading_regex_fallback,7,4077.0
+1063761,SIMON PROPERTY GROUP INC.,materials_realestate,extension,10-K,MDA,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,head_keyword_absent,0,12279.0
+1063761,SIMON PROPERTY GROUP INC.,materials_realestate,extension,10-K,RISK_FACTORS,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,head_keyword_absent,0,11826.0
+1047862,CONSOLIDATED EDISON INC,utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16647.0
+1047862,CONSOLIDATED EDISON INC,utilities,extension,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,below_length_floor,0,3137.0
+1051470,CROWN CASTLE INC.,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11538.0
+1051470,CROWN CASTLE INC.,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9487.0
+1053507,AMERICAN TOWER CORP /MA/,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18635.0
+1053507,AMERICAN TOWER CORP /MA/,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7262.0
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11021.0
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8946.0
+1060391,"REPUBLIC SERVICES, INC.",utilities,extension,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,head_keyword_absent,0,16658.0
+1060391,"REPUBLIC SERVICES, INC.",utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8348.0
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19102.0
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16699.0
+1065088,EBAY INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10824.0
+1065088,EBAY INC,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14315.0
+1065280,NETFLIX INC,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,5756.0
+1065280,NETFLIX INC,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10299.0
+1075531,Booking Holdings Inc.,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14858.0
+1075531,Booking Holdings Inc.,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18606.0
+1090727,UNITED PARCEL SERVICE INC,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,15574.0
+1090727,UNITED PARCEL SERVICE INC,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,5707.0
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9696.0
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7820.0
+1099590,MERCADOLIBRE INC,financials,core,10-K,MDA,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,heading_regex_fallback,4,15508.0
+1099590,MERCADOLIBRE INC,financials,core,10-K,RISK_FACTORS,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,heading_regex_fallback,4,17089.0
+1099800,Edwards Lifesciences Corp,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7180.0
+1099800,Edwards Lifesciences Corp,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7005.0
+1101239,EQUINIX INC,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13246.0
+1101239,EQUINIX INC,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18126.0
+1103982,"Mondelez International, Inc.",consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19901.0
+1103982,"Mondelez International, Inc.",consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9915.0
+823768,WASTE MANAGEMENT INC,utilities,extension,10-K,MDA,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,head_keyword_absent,0,18338.0
+823768,WASTE MANAGEMENT INC,utilities,extension,10-K,RISK_FACTORS,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,head_keyword_absent,0,10440.0
+1297996,"DIGITAL REALTY TRUST, INC.",materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18842.0
+1297996,"DIGITAL REALTY TRUST, INC.",materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,23259.0
+31462,ECOLAB INC.,consumer,core,10-K,MDA,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,heading_regex_fallback,7,14435.0
+31462,ECOLAB INC.,consumer,core,10-K,RISK_FACTORS,11,0,11,0,0,0.0,1.0,3,0.0,0.0,heading_regex_fallback,7,5678.0
+1108524,"Salesforce, Inc.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9270.0
+1108524,"Salesforce, Inc.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16691.0
+1109357,EXELON CORP,utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,32570.0
+1109357,EXELON CORP,utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9649.0
+1110803,"ILLUMINA, INC.",healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8156.0
+1110803,"ILLUMINA, INC.",healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,42346.0
+1123360,GLOBAL PAYMENTS INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12000.0
+1123360,GLOBAL PAYMENTS INC,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10828.0
+1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10897.0
+1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10410.0
+1136893,"Fidelity National Information Services, Inc.",financials,core,10-K,MDA,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,toc_recovered_f1,5,8672.0
+1136893,"Fidelity National Information Services, Inc.",financials,core,10-K,RISK_FACTORS,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,toc_recovered_f1,5,12186.0
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,57284.0
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10569.0
+1141391,Mastercard Inc,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8533.0
+1141391,Mastercard Inc,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11261.0
+1156039,"Elevance Health, Inc.",healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,17464.0
+1156039,"Elevance Health, Inc.",healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12743.0
+1156375,CME GROUP INC.,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9791.0
+1156375,CME GROUP INC.,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9230.0
+1163165,CONOCOPHILLIPS,energy,core,10-K,RISK_FACTORS,11,8,3,0,0,0.0,0.2727,3,0.0,0.0,heading_regex_fallback,3,6218.0
+1164727,NEWMONT Corp /DE/,materials_realestate,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,25455.0
+1164727,NEWMONT Corp /DE/,materials_realestate,extension,10-K,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,3,0.0,0.0,head_keyword_absent,0,18743.0
+1166691,COMCAST CORP,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14563.0
+1166691,COMCAST CORP,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,6584.0
+1222333,SPDR GOLD TRUST,financials,core,10-K,MDA,11,10,1,0,0,0.0,0.0909,4,0.0,0.0,heading_regex_fallback,1,2478.0
+1222333,SPDR GOLD TRUST,financials,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,4,0.0,0.0,heading_regex_fallback,1,6433.0
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7107.0
+1393818,Blackstone Inc.,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,28573.0
+1393818,Blackstone Inc.,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,40974.0
+1276187,Energy Transfer LP,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,23775.0
+1276187,Energy Transfer LP,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,32770.0
+1283699,"T-Mobile US, Inc.",utilities,extension,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14769.0
+1283699,"T-Mobile US, Inc.",utilities,extension,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10669.0
+1326801,"Meta Platforms, Inc.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10689.0
+1326801,"Meta Platforms, Inc.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,25297.0
+1327567,Palo Alto Networks Inc,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,9161.0
+1327567,Palo Alto Networks Inc,tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,19602.0
+1373715,"ServiceNow, Inc.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10908.0
+1373715,"ServiceNow, Inc.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12392.0
+1390777,Bank of New York Mellon Corp,financials,core,10-K,MDA,11,0,11,0,0,0.0,1.0,3,0.0,0.0,mda_stub_external_document,11,53.0
+1390777,Bank of New York Mellon Corp,financials,core,10-K,RISK_FACTORS,11,0,11,0,0,0.0,1.0,3,0.0,0.0,below_length_floor,0,29.0
+1403161,VISA INC.,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,9364.0
+1403161,VISA INC.,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,9949.0
+1404912,KKR & Co. Inc.,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,40498.0
+1404912,KKR & Co. Inc.,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,53595.0
+1413329,Philip Morris International Inc.,consumer,core,10-K,MDA,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,toc_recovered_f1,5,25216.0
+1413329,Philip Morris International Inc.,consumer,core,10-K,RISK_FACTORS,11,6,5,0,0,0.0,0.4545,3,0.0,0.0,toc_recovered_f1,5,4769.0
+1467858,General Motors Co,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13595.0
+1467858,General Motors Co,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7407.0
+1506307,"KINDER MORGAN, INC.",energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14159.0
+1506307,"KINDER MORGAN, INC.",energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10811.0
+1510295,Marathon Petroleum Corp,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18634.0
+1510295,Marathon Petroleum Corp,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10959.0
+1512673,"Block, Inc.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11008.0
+1512673,"Block, Inc.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,23545.0
+1534701,Phillips 66,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,17765.0
+1534701,Phillips 66,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7177.0
+1539838,"Diamondback Energy, Inc.",energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11351.0
+1539838,"Diamondback Energy, Inc.",energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,20081.0
+1551182,Eaton Corp plc,industrials,extension,10-K,MDA,11,0,11,0,0,0.0,1.0,3,0.0,0.0,mda_stub_unresolved_same_doc,11,36.0
+1551182,Eaton Corp plc,industrials,extension,10-K,RISK_FACTORS,11,4,7,0,0,0.0,0.6364,3,0.0,0.0,below_length_floor,0,1429.0
+1552000,MPLX LP,energy,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,15132.0
+1552000,MPLX LP,energy,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,18145.0
+1555280,Zoetis Inc.,healthcare,core,10-K,RISK_FACTORS,11,9,2,0,0,0.0,0.1818,3,0.0,0.0,toc_recovered_f1,2,15560.0
+1571949,"Intercontinental Exchange, Inc.",financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,20499.0
+1596532,"Arista Networks, Inc.",tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7680.0
+1596532,"Arista Networks, Inc.",tech,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,26611.0
+1613103,Medtronic plc,healthcare,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13417.0
+1613103,Medtronic plc,healthcare,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,10815.0
+315293,Aon plc,financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13164.0
+315293,Aon plc,financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13592.0
+1633917,"PayPal Holdings, Inc.",financials,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12587.0
+1633917,"PayPal Holdings, Inc.",financials,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12990.0
+1637459,Kraft Heinz Co,consumer,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,12905.0
+1637459,Kraft Heinz Co,consumer,core,10-K,RISK_FACTORS,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11539.0
+1652044,Alphabet Inc.,tech,core,10-K,MDA,11,11,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9290.0
+1652044,Alphabet Inc.,tech,core,10-K,RISK_FACTORS,11,10,1,0,0,0.0,0.0909,3,0.0,0.0,toc_recovered_f1,0,10856.0
+884905,LINDE INC,materials_realestate,extension,10-Q,MDA,11,11,0,0,0,0.0,0.0,11,0.0,,ok,0,9169.0
+884905,LINDE INC,materials_realestate,extension,10-Q,RISK_FACTORS,11,11,0,0,0,0.0,0.0,11,0.0,,ok,0,29.0
+936402,Shire plc,healthcare,core,10-Q,MDA,11,6,5,0,0,0.0,0.4545,11,0.0,,heading_regex_fallback,4,5130.0
+936402,Shire plc,healthcare,core,10-Q,RISK_FACTORS,11,6,5,0,0,0.0,0.4545,11,0.0,,heading_regex_fallback,4,37.0
+1001039,TWDC Enterprises 18 Corp.,consumer,core,10-Q,MDA,11,0,11,0,0,0.0,1.0,10,0.0,0.0,heading_regex_fallback,11,12357.0
+1001039,TWDC Enterprises 18 Corp.,consumer,core,10-Q,RISK_FACTORS,11,0,11,0,0,0.0,1.0,10,0.0,0.0,heading_regex_fallback,11,265.0
+701221,Cigna Holding Co,healthcare,core,10-Q,MDA,11,2,9,0,0,0.0,0.8182,11,0.0,,head_keyword_absent,0,10590.0
+701221,Cigna Holding Co,healthcare,core,10-Q,RISK_FACTORS,11,0,0,11,0,0.0,0.0,11,0.0,,item_absent_from_toc,11,0.0
+1122304,AETNA INC /PA/,healthcare,core,10-Q,MDA,11,7,4,0,0,0.0,0.3636,11,0.0,,heading_regex_fallback,4,8831.0
+1122304,AETNA INC /PA/,healthcare,core,10-Q,RISK_FACTORS,11,7,4,0,0,0.0,0.3636,11,0.0,,heading_regex_fallback,4,62.0
+1532063,Express Scripts Holding Co.,consumer,core,10-Q,MDA,11,11,0,0,0,0.0,0.0,11,0.0,,ok,0,6772.0
+1532063,Express Scripts Holding Co.,consumer,core,10-Q,RISK_FACTORS,11,6,0,5,0,0.0,0.0,11,0.0,,item_absent_from_toc,5,632.0
+849395,CRH PUBLIC LTD CO,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,11,11,0,0,0,0.0,0.0,0,,0.0,ok,0,5942.0
+1318220,"Waste Connections, Inc.",utilities,extension,10-K,MDA,10,10,0,0,0,0.0,0.0,2,0.0,0.0,ok,0,17913.5
+1318220,"Waste Connections, Inc.",utilities,extension,10-K,RISK_FACTORS,10,10,0,0,0,0.0,0.0,2,0.0,0.0,ok,0,10824.0
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,10-K,MDA,10,10,0,0,0,0.0,0.0,4,0.0,0.0,ok,0,15163.0
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,10-K,RISK_FACTORS,10,9,1,0,0,0.0,0.1,4,0.0,0.0,toc_recovered_f2,1,15687.5
+1393612,Discover Financial Services,financials,core,10-K,MDA,10,10,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,17522.0
+1393612,Discover Financial Services,financials,core,10-K,RISK_FACTORS,10,10,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13940.0
+4447,HESS CORP,energy,core,10-K,MDA,10,10,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13007.0
+4447,HESS CORP,energy,core,10-K,RISK_FACTORS,10,10,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,4046.5
+1483096,WILLIAMS PARTNERS L.P.,energy,core,10-Q,MDA,10,10,0,0,0,0.0,0.0,10,0.0,,ok,0,11731.5
+1483096,WILLIAMS PARTNERS L.P.,energy,core,10-Q,RISK_FACTORS,10,6,0,4,0,0.0,0.0,10,0.0,,item_absent_from_toc,4,199.5
+30554,"EIDP, Inc.",materials_realestate,extension,8-K,EX99_PRESS_RELEASE,10,8,2,0,0,0.0,0.2,10,0.0,,earnings_population_gate,0,6667.0
+895728,ENBRIDGE INC,energy,core,10-K,MDA,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,16140.0
+895728,ENBRIDGE INC,energy,core,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,8142.0
+1364742,"BlackRock Finance, Inc.",financials,core,10-K,MDA,9,9,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,17973.0
+1364742,"BlackRock Finance, Inc.",financials,core,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11671.0
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,10-K,MDA,9,8,1,0,0,0.0,0.1111,3,0.0,0.0,mda_stub_unresolved_same_doc,1,10159.0
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,15326.0
+6769,APACHE CORP,energy,core,10-K,RISK_FACTORS,9,5,4,0,0,0.0,0.4444,3,0.0,0.0,toc_recovered_f1,4,7466.0
+1564408,Snap Inc,tech,core,10-K,MDA,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,7981.0
+1564408,Snap Inc,tech,core,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,26949.0
+1707925,LINDE PLC,materials_realestate,extension,10-K,MDA,9,8,1,0,0,0.0,0.1111,1,0.0,0.0,mda_stub_unresolved_same_doc,1,11463.0
+1707925,LINDE PLC,materials_realestate,extension,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,4114.0
+1666700,"DuPont de Nemours, Inc.",materials_realestate,extension,10-K,MDA,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,17092.0
+1666700,"DuPont de Nemours, Inc.",materials_realestate,extension,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,8294.0
+1692819,Vistra Corp.,utilities,extension,10-K,MDA,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,14810.0
+1692819,Vistra Corp.,utilities,extension,10-K,RISK_FACTORS,9,9,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,21003.0
+1105705,"WARNER MEDIA, LLC",consumer,core,10-Q,RISK_FACTORS,9,9,0,0,0,0.0,0.0,9,0.0,,ok,0,40.0
+29915,DOW CHEMICAL CO /DE/,materials_realestate,extension,8-K,EX99_PRESS_RELEASE,9,9,0,0,0,0.0,0.0,9,0.0,,ok,0,7477.0
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,8-K,8K_BODY,9,0,9,0,0,0.0,1.0,9,0.0,,earnings_population_gate,0,6735.0
+1996810,GE Vernova Inc.,industrials,extension,8-K,EX99_PRESS_RELEASE,9,9,0,0,0,0.0,0.0,0,,0.0,ok,0,5256.0
+718877,"Activision Blizzard, Inc.",tech,core,10-K,MDA,8,8,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,16952.5
+718877,"Activision Blizzard, Inc.",tech,core,10-K,RISK_FACTORS,8,8,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13311.5
+1739940,Cigna Group,healthcare,core,10-K,MDA,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,13480.5
+1739940,Cigna Group,healthcare,core,10-K,RISK_FACTORS,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,12374.0
+1126975,"Magellan Midstream Partners, L.P.",energy,core,10-K,MDA,8,8,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8281.5
+1126975,"Magellan Midstream Partners, L.P.",energy,core,10-K,RISK_FACTORS,8,8,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,14225.0
+1682852,"Moderna, Inc.",healthcare,core,10-K,MDA,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,8473.0
+1682852,"Moderna, Inc.",healthcare,core,10-K,RISK_FACTORS,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,31606.0
+1730168,Broadcom Inc.,tech,core,10-K,MDA,8,8,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,8333.0
+1730168,Broadcom Inc.,tech,core,10-K,RISK_FACTORS,8,8,0,0,0,0.0,0.0,1,0.0,0.0,ok,0,15813.0
+1012569,"Energy Transfer, LP",energy,core,10-Q,MDA,8,8,0,0,0,0.0,0.0,8,0.0,,ok,0,7564.0
+1012569,"Energy Transfer, LP",energy,core,10-Q,RISK_FACTORS,8,8,0,0,0,0.0,0.0,8,0.0,,ok,0,38.5
+849395,CRH PUBLIC LTD CO,materials_realestate,extension,10-Q,MDA,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,8498.5
+849395,CRH PUBLIC LTD CO,materials_realestate,extension,10-Q,RISK_FACTORS,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,27.0
+1996810,GE Vernova Inc.,industrials,extension,10-Q,MDA,8,8,0,0,0,0.0,0.0,0,,0.0,ok,0,10061.5
+1996810,GE Vernova Inc.,industrials,extension,10-Q,RISK_FACTORS,8,5,0,3,0,0.0,0.0,0,,0.0,item_absent_from_toc,3,55.0
+1012569,"Energy Transfer, LP",energy,core,8-K,EX99_PRESS_RELEASE,8,0,8,0,0,0.0,1.0,8,0.0,,earnings_supplemental_diluted,0,6502.5
+804753,CERNER Corp,tech,core,10-K,MDA,7,7,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7236.0
+804753,CERNER Corp,tech,core,10-K,RISK_FACTORS,7,7,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11970.0
+1418091,"TWITTER, INC.",tech,core,10-K,MDA,7,7,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,11858.0
+1418091,"TWITTER, INC.",tech,core,10-K,RISK_FACTORS,7,7,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19257.0
+1535527,"CrowdStrike Holdings, Inc.",tech,core,10-K,MDA,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,8921.0
+1535527,"CrowdStrike Holdings, Inc.",tech,core,10-K,RISK_FACTORS,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,25119.0
+1543151,"Uber Technologies, Inc",financials,core,10-K,MDA,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,13483.0
+1543151,"Uber Technologies, Inc",financials,core,10-K,RISK_FACTORS,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,35054.0
+1585521,"Zoom Communications, Inc.",tech,core,10-K,MDA,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,7842.0
+1585521,"Zoom Communications, Inc.",tech,core,10-K,RISK_FACTORS,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,29718.0
+1744489,Walt Disney Co,consumer,core,10-K,MDA,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,13771.0
+1744489,Walt Disney Co,consumer,core,10-K,RISK_FACTORS,7,7,0,0,0,0.0,0.0,0,,0.0,ok,0,8470.0
+821189,EOG RESOURCES INC,energy,core,8-K,8K_BODY,7,0,7,0,0,0.0,1.0,1,0.0,0.0,earnings_population_gate,0,1697.0
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,8-K,8K_BODY,7,0,7,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,741.0
+1373835,Spectra Energy Corp.,energy,core,8-K,EX99_PRESS_RELEASE,7,7,0,0,0,0.0,0.0,7,0.0,,ok,0,5205.0
+1358071,CONCHO RESOURCES INC,energy,core,8-K,8K_BODY,7,0,7,0,0,0.0,1.0,0,,0.0,below_length_floor,0,433.0
+1161154,"Energy Transfer Operating, L.P.",energy,core,10-K,MDA,6,6,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,25113.0
+1161154,"Energy Transfer Operating, L.P.",energy,core,10-K,RISK_FACTORS,6,6,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,27097.5
+1321655,Palantir Technologies Inc.,tech,core,10-K,MDA,6,6,0,0,0,0.0,0.0,0,,0.0,ok,0,8647.5
+1321655,Palantir Technologies Inc.,tech,core,10-K,RISK_FACTORS,6,6,0,0,0,0.0,0.0,0,,0.0,ok,0,44018.0
+1640147,Snowflake Inc.,tech,core,10-K,MDA,6,6,0,0,0,0.0,0.0,0,,0.0,ok,0,11912.0
+1640147,Snowflake Inc.,tech,core,10-K,RISK_FACTORS,6,6,0,0,0,0.0,0.0,0,,0.0,ok,0,18275.5
+790070,EMC CORP,tech,core,8-K,EX99_PRESS_RELEASE,6,4,2,0,0,0.0,0.3333,6,0.0,,earnings_population_gate,0,6636.5
+1271024,LINKEDIN CORP,tech,core,8-K,EX99_PRESS_RELEASE,6,6,0,0,0,0.0,0.0,6,0.0,,ok,0,6248.5
+1633917,"PayPal Holdings, Inc.",financials,core,8-K,8K_BODY,6,0,6,0,0,0.0,1.0,1,0.0,0.0,earnings_population_gate,0,505.5
+1782754,AZEK Co Inc.,consumer,core,10-K,MDA,5,5,0,0,0,0.0,0.0,0,,0.0,ok,0,15701.0
+1782754,AZEK Co Inc.,consumer,core,10-K,RISK_FACTORS,5,5,0,0,0,0.0,0.0,0,,0.0,ok,0,17277.0
+1047122,RAYTHEON CO/,industrials,extension,10-K,MDA,5,5,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,30732.0
+1047122,RAYTHEON CO/,industrials,extension,10-K,RISK_FACTORS,5,5,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,7452.0
+1578845,Allergan plc,healthcare,core,10-K,MDA,5,5,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,23653.0
+1578845,Allergan plc,healthcare,core,10-K,RISK_FACTORS,5,5,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,19378.0
+1868275,Constellation Energy Corp,utilities,extension,10-K,MDA,5,5,0,0,0,0.0,0.0,0,,0.0,ok,0,15357.0
+1868275,Constellation Energy Corp,utilities,extension,10-K,RISK_FACTORS,5,5,0,0,0,0.0,0.0,0,,0.0,ok,0,10709.0
+1271024,LINKEDIN CORP,tech,core,10-Q,MDA,5,5,0,0,0,0.0,0.0,5,0.0,,ok,0,8077.0
+1271024,LINKEDIN CORP,tech,core,10-Q,RISK_FACTORS,5,5,0,0,0,0.0,0.0,5,0.0,,ok,0,17366.0
+1373835,Spectra Energy Corp.,energy,core,10-Q,MDA,5,5,0,0,0,0.0,0.0,5,0.0,,ok,0,6315.0
+1373835,Spectra Energy Corp.,energy,core,10-Q,RISK_FACTORS,5,5,0,0,0,0.0,0.0,5,0.0,,ok,0,66.0
+875045,BIOGEN INC.,healthcare,core,8-K,8K_BODY,5,0,5,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,689.0
+773910,ANADARKO PETROLEUM CORP,energy,core,10-K,MDA,4,4,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,13893.0
+773910,ANADARKO PETROLEUM CORP,energy,core,10-K,RISK_FACTORS,4,4,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,9633.5
+816284,CELGENE CORP /DE/,healthcare,core,10-K,MDA,4,0,4,0,0,0.0,1.0,3,0.0,0.0,head_keyword_absent,0,3483.0
+816284,CELGENE CORP /DE/,healthcare,core,10-K,RISK_FACTORS,4,4,0,0,0,0.0,0.0,3,0.0,0.0,ok,0,8427.0
+1001039,TWDC Enterprises 18 Corp.,consumer,core,10-K,MDA,4,4,0,0,0,0.0,0.0,4,0.0,,ok,0,14886.5
+1001039,TWDC Enterprises 18 Corp.,consumer,core,10-K,RISK_FACTORS,4,4,0,0,0,0.0,0.0,4,0.0,,ok,0,4061.5
+790070,EMC CORP,tech,core,10-Q,MDA,4,4,0,0,0,0.0,0.0,4,0.0,,ok,0,12199.0
+790070,EMC CORP,tech,core,10-Q,RISK_FACTORS,4,4,0,0,0,0.0,0.0,4,0.0,,ok,0,7602.5
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,8-K,8K_BODY,4,0,4,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,864.0
+1510295,Marathon Petroleum Corp,energy,core,8-K,8K_BODY,4,0,4,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,459.5
+884905,LINDE INC,materials_realestate,extension,10-K,MDA,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,16715.0
+884905,LINDE INC,materials_realestate,extension,10-K,RISK_FACTORS,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,3221.0
+936402,Shire plc,healthcare,core,10-K,MDA,3,2,1,0,0,0.0,0.3333,3,0.0,,heading_regex_fallback,1,13592.0
+936402,Shire plc,healthcare,core,10-K,RISK_FACTORS,3,2,1,0,0,0.0,0.3333,3,0.0,,heading_regex_fallback,1,11098.0
+701221,Cigna Holding Co,healthcare,core,10-K,MDA,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,14898.0
+701221,Cigna Holding Co,healthcare,core,10-K,RISK_FACTORS,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,9561.0
+1122304,AETNA INC /PA/,healthcare,core,10-K,MDA,3,2,1,0,0,0.0,0.3333,3,0.0,,mda_stub_external_document,1,25786.0
+1122304,AETNA INC /PA/,healthcare,core,10-K,RISK_FACTORS,3,2,1,0,0,0.0,0.3333,3,0.0,,below_length_floor,1,23241.0
+1105705,"WARNER MEDIA, LLC",consumer,core,10-K,MDA,3,0,3,0,0,0.0,1.0,3,0.0,,mda_stub_unresolved_same_doc,2,46.0
+1105705,"WARNER MEDIA, LLC",consumer,core,10-K,RISK_FACTORS,3,0,3,0,0,0.0,1.0,3,0.0,,heading_regex_fallback,3,7387.0
+1483096,WILLIAMS PARTNERS L.P.,energy,core,10-K,MDA,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,16768.0
+1483096,WILLIAMS PARTNERS L.P.,energy,core,10-K,RISK_FACTORS,3,2,1,0,0,0.0,0.3333,3,0.0,,toc_recovered_f1,1,16550.0
+1532063,Express Scripts Holding Co.,consumer,core,10-K,MDA,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,8688.0
+1532063,Express Scripts Holding Co.,consumer,core,10-K,RISK_FACTORS,3,3,0,0,0,0.0,0.0,3,0.0,,ok,0,5871.0
+849395,CRH PUBLIC LTD CO,materials_realestate,extension,10-K,MDA,3,3,0,0,0,0.0,0.0,0,,0.0,ok,0,12714.0
+849395,CRH PUBLIC LTD CO,materials_realestate,extension,10-K,RISK_FACTORS,3,3,0,0,0,0.0,0.0,0,,0.0,ok,0,6988.0
+32604,EMERSON ELECTRIC CO,industrials,extension,8-K,8K_BODY,3,0,3,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,1730.0
+49071,HUMANA INC,healthcare,core,8-K,8K_BODY,3,0,3,0,0,0.0,1.0,2,0.0,0.0,earnings_item202_block_thin,0,535.0
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,8-K,8K_BODY,3,0,3,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,1307.0
+1156039,"Elevance Health, Inc.",healthcare,core,8-K,8K_BODY,3,0,3,0,0,0.0,1.0,2,0.0,0.0,earnings_population_gate,0,1237.0
+1543151,"Uber Technologies, Inc",financials,core,8-K,8K_BODY,3,0,3,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,686.0
+1012569,"Energy Transfer, LP",energy,core,10-K,MDA,2,2,0,0,0,0.0,0.0,2,0.0,,ok,0,26384.0
+1012569,"Energy Transfer, LP",energy,core,10-K,RISK_FACTORS,2,2,0,0,0,0.0,0.0,2,0.0,,ok,0,26582.5
+1373835,Spectra Energy Corp.,energy,core,10-K,MDA,2,2,0,0,0,0.0,0.0,2,0.0,,ok,0,17672.0
+1373835,Spectra Energy Corp.,energy,core,10-K,RISK_FACTORS,2,2,0,0,0,0.0,0.0,2,0.0,,ok,0,4150.5
+1996810,GE Vernova Inc.,industrials,extension,10-K,MDA,2,2,0,0,0,0.0,0.0,0,,0.0,ok,0,11761.0
+1996810,GE Vernova Inc.,industrials,extension,10-K,RISK_FACTORS,2,2,0,0,0,0.0,0.0,0,,0.0,ok,0,18195.5
+64803,CVS HEALTH Corp,consumer,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,1575.5
+93410,CHEVRON CORP,energy,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,1498.5
+701221,Cigna Holding Co,healthcare,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,2,0.0,,earnings_item202_block_thin,0,1326.0
+1035002,VALERO ENERGY CORP/TX,energy,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,2273.0
+1110803,"ILLUMINA, INC.",healthcare,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,2,0.0,,below_length_floor,0,454.0
+1578845,Allergan plc,healthcare,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,2,0.0,,earnings_item202_block_thin,0,417.0
+1467858,General Motors Co,consumer,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,0,,0.0,below_length_floor,0,696.5
+1596532,"Arista Networks, Inc.",tech,core,8-K,8K_BODY,2,0,2,0,0,0.0,1.0,1,0.0,0.0,below_length_floor,0,422.0
+790070,EMC CORP,tech,core,10-K,MDA,1,1,0,0,0,0.0,0.0,1,0.0,,ok,0,15763.0
+790070,EMC CORP,tech,core,10-K,RISK_FACTORS,1,1,0,0,0,0.0,0.0,1,0.0,,ok,0,7667.0
+1271024,LINKEDIN CORP,tech,core,10-K,MDA,1,1,0,0,0,0.0,0.0,1,0.0,,ok,0,14250.0
+1271024,LINKEDIN CORP,tech,core,10-K,RISK_FACTORS,1,1,0,0,0,0.0,0.0,1,0.0,,ok,0,16658.0
+59478,ELI LILLY & Co,healthcare,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,512.0
+70858,BANK OF AMERICA CORP /DE/,financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,665.0
+72903,XCEL ENERGY INC,utilities,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,earnings_item202_block_thin,0,1419.0
+72971,WELLS FARGO & COMPANY/MN,financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,below_length_floor,0,450.0
+78003,PFIZER INC,healthcare,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,823.0
+92122,SOUTHERN CO,utilities,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,1740.0
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,629.0
+100885,UNION PACIFIC CORP,industrials,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,below_length_floor,0,354.0
+313616,DANAHER CORP /DE/,industrials,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,730.0
+753308,NEXTERA ENERGY INC,utilities,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,1952.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,3528.0
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,580.0
+886982,GOLDMAN SACHS GROUP INC,financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,2225.0
+1051470,CROWN CASTLE INC.,materials_realestate,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,511.0
+1163165,CONOCOPHILLIPS,energy,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,earnings_item202_block_thin,0,685.0
+726728,REALTY INCOME CORP,materials_realestate,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,1526.0
+882095,"GILEAD SCIENCES, INC.",healthcare,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,below_length_floor,0,495.0
+1571949,"Intercontinental Exchange, Inc.",financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,below_length_floor,0,301.0
+1404912,KKR & Co. Inc.,financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,1853.0
+1390777,Bank of New York Mellon Corp,financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,below_length_floor,0,438.0
+1099219,METLIFE INC,financials,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,below_length_floor,0,107.0
+97476,TEXAS INSTRUMENTS INC,tech,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,below_length_floor,0,215.0
+849399,Gen Digital Inc.,tech,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,below_length_floor,0,319.0
+766704,WELLTOWER INC.,materials_realestate,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,694.0
+106040,WESTERN DIGITAL CORP,tech,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_population_gate,0,1030.0
+1373715,"ServiceNow, Inc.",tech,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,1,0.0,,below_length_floor,0,199.0
+1552000,MPLX LP,energy,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,below_length_floor,0,415.0
+1564408,Snap Inc,tech,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,below_length_floor,0,302.0
+715957,"DOMINION ENERGY, INC",utilities,extension,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,562.0
+1637459,Kraft Heinz Co,consumer,core,8-K,8K_BODY,1,0,1,0,0,0.0,1.0,0,,0.0,earnings_item202_block_thin,0,4258.0

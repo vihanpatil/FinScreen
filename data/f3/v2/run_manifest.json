@@ -1,0 +1,3737 @@
+{
+ "runs": [
+  {
+   "run_id": "f3-20260828T033247Z",
+   "started_utc": "2026-08-28T03:32:47.284342+00:00",
+   "ended_utc": "2026-08-28T03:38:42.069177+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "5",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 5,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 493,
+     "status_counts": {
+      "OK": 448,
+      "FLAGGED": 45,
+      "FAIL": 7
+     },
+     "cache_miss": 0,
+     "elapsed_s": 354.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T033247Z",
+   "started_utc": "2026-08-28T03:32:47.295211+00:00",
+   "ended_utc": "2026-08-28T03:38:54.305461+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "4",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 4,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 985,
+     "status_counts": {
+      "OK": 827,
+      "FLAGGED": 158,
+      "ITEM_ABSENT_FROM_TOC": 14,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 366.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {
+    "nike_10q_mda_shared_toc_anchor": 21
+   },
+   "edge_handlers_dead": []
+  },
+  {
+   "run_id": "f3-20260828T033247Z",
+   "started_utc": "2026-08-28T03:32:47.283068+00:00",
+   "ended_utc": "2026-08-28T03:45:01.812100+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "10",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 10,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 10,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 912,
+     "status_counts": {
+      "OK": 830,
+      "FLAGGED": 82,
+      "FAIL": 54,
+      "ITEM_ABSENT_FROM_TOC": 34
+     },
+     "cache_miss": 0,
+     "elapsed_s": 734.4,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T033842Z",
+   "started_utc": "2026-08-28T03:38:42.644189+00:00",
+   "ended_utc": "2026-08-28T03:47:49.113189+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "6",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 6,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260828T033842Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 488,
+     "status_counts": {
+      "OK": 437,
+      "FLAGGED": 51,
+      "FAIL": 12
+     },
+     "cache_miss": 0,
+     "elapsed_s": 546.4,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T033854Z",
+   "started_utc": "2026-08-28T03:38:54.849062+00:00",
+   "ended_utc": "2026-08-28T03:52:20.468144+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "5",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 5,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260828T033854Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 779,
+     "status_counts": {
+      "OK": 774,
+      "FAIL": 136,
+      "ITEM_ABSENT_FROM_TOC": 85,
+      "FLAGGED": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 805.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T034502Z",
+   "started_utc": "2026-08-28T03:45:02.486214+00:00",
+   "ended_utc": "2026-08-28T03:53:00.143251+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "11",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 11,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 11,
+     "limit": null,
+     "run_id": "f3-20260828T034502Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 927,
+     "status_counts": {
+      "OK": 922,
+      "ITEM_ABSENT_FROM_TOC": 49,
+      "FAIL": 24,
+      "FLAGGED": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 477.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T034749Z",
+   "started_utc": "2026-08-28T03:47:49.783542+00:00",
+   "ended_utc": "2026-08-28T03:53:16.716541+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "7",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 7,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260828T034749Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 488,
+     "status_counts": {
+      "OK": 431,
+      "FLAGGED": 57,
+      "FAIL": 12
+     },
+     "cache_miss": 0,
+     "elapsed_s": 326.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T035317Z",
+   "started_utc": "2026-08-28T03:53:17.289324+00:00",
+   "ended_utc": "2026-08-28T04:00:13.404414+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "8",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 8,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260828T035317Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 484,
+     "status_counts": {
+      "OK": 405,
+      "FLAGGED": 79,
+      "FAIL": 16
+     },
+     "cache_miss": 0,
+     "elapsed_s": 416.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T035300Z",
+   "started_utc": "2026-08-28T03:53:00.689534+00:00",
+   "ended_utc": "2026-08-28T04:01:50.430999+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "12",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 12,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 12,
+     "limit": null,
+     "run_id": "f3-20260828T035300Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 903,
+     "status_counts": {
+      "OK": 626,
+      "FLAGGED": 277,
+      "ITEM_ABSENT_FROM_TOC": 77,
+      "FAIL": 20
+     },
+     "cache_miss": 0,
+     "elapsed_s": 529.7,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T035221Z",
+   "started_utc": "2026-08-28T03:52:21.017219+00:00",
+   "ended_utc": "2026-08-28T04:02:51.596086+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "6",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 6,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260828T035221Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 940,
+     "status_counts": {
+      "OK": 882,
+      "FLAGGED": 58,
+      "ITEM_ABSENT_FROM_TOC": 40,
+      "FAIL": 20
+     },
+     "cache_miss": 0,
+     "elapsed_s": 630.5,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040014Z",
+   "started_utc": "2026-08-28T04:00:14.005578+00:00",
+   "ended_utc": "2026-08-28T04:03:23.706831+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "9",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 9,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260828T040014Z",
+     "filings": 195,
+     "attempts": 390,
+     "sections": 385,
+     "status_counts": {
+      "OK": 370,
+      "FLAGGED": 15,
+      "FAIL": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 189.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T033247Z",
+   "started_utc": "2026-08-28T03:32:47.283114+00:00",
+   "ended_utc": "2026-08-28T04:05:59.724260+00:00",
+   "argv": [
+    "--segment",
+    "earnings",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "earnings"
+   ],
+   "shard_size": null,
+   "shard": null,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "earnings",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1287,
+      "FLAGGED": 212,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 205.0,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1174,
+      "FLAGGED": 324,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 266.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1289,
+      "FLAGGED": 210,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 368.5,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1224,
+      "FLAGGED": 275,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 340.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1495,
+     "status_counts": {
+      "OK": 1238,
+      "FLAGGED": 257,
+      "FAIL": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 258.4,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1500,
+     "status_counts": {
+      "OK": 1260,
+      "FLAGGED": 240
+     },
+     "cache_miss": 0,
+     "elapsed_s": 282.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1143,
+      "FLAGGED": 355,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 265.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    },
+    {
+     "segment": "earnings",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 67,
+     "attempts": 67,
+     "sections": 67,
+     "status_counts": {
+      "OK": 58,
+      "FLAGGED": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 6.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040252Z",
+   "started_utc": "2026-08-28T04:02:52.117755+00:00",
+   "ended_utc": "2026-08-28T04:09:02.271793+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "7",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 7,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260828T040252Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 947,
+     "status_counts": {
+      "OK": 927,
+      "ITEM_ABSENT_FROM_TOC": 50,
+      "FLAGGED": 20,
+      "FAIL": 3
+     },
+     "cache_miss": 0,
+     "elapsed_s": 370.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040150Z",
+   "started_utc": "2026-08-28T04:01:50.952470+00:00",
+   "ended_utc": "2026-08-28T04:09:24.822406+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "13",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 13,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 13,
+     "limit": null,
+     "run_id": "f3-20260828T040150Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 931,
+     "status_counts": {
+      "OK": 897,
+      "ITEM_ABSENT_FROM_TOC": 61,
+      "FLAGGED": 34,
+      "FAIL": 8
+     },
+     "cache_miss": 0,
+     "elapsed_s": 453.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040600Z",
+   "started_utc": "2026-08-28T04:06:00.282813+00:00",
+   "ended_utc": "2026-08-28T04:16:02.368983+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "0",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 0,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260828T040600Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 463,
+     "status_counts": {
+      "OK": 420,
+      "FLAGGED": 43,
+      "FAIL": 37
+     },
+     "cache_miss": 0,
+     "elapsed_s": 602.0,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040925Z",
+   "started_utc": "2026-08-28T04:09:25.378235+00:00",
+   "ended_utc": "2026-08-28T04:16:13.290908+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "14",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 14,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 14,
+     "limit": null,
+     "run_id": "f3-20260828T040925Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 971,
+     "status_counts": {
+      "OK": 911,
+      "FLAGGED": 60,
+      "ITEM_ABSENT_FROM_TOC": 18,
+      "FAIL": 11
+     },
+     "cache_miss": 0,
+     "elapsed_s": 407.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T041613Z",
+   "started_utc": "2026-08-28T04:16:13.889567+00:00",
+   "ended_utc": "2026-08-28T04:16:24.184460+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "15",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 15,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 15,
+     "limit": null,
+     "run_id": "f3-20260828T041613Z",
+     "filings": 9,
+     "attempts": 18,
+     "sections": 14,
+     "status_counts": {
+      "OK": 14,
+      "ITEM_ABSENT_FROM_TOC": 3,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 10.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040902Z",
+   "started_utc": "2026-08-28T04:09:02.909913+00:00",
+   "ended_utc": "2026-08-28T04:18:50.321662+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "8",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 8,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260828T040902Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 931,
+     "status_counts": {
+      "OK": 770,
+      "FLAGGED": 161,
+      "ITEM_ABSENT_FROM_TOC": 69
+     },
+     "cache_miss": 0,
+     "elapsed_s": 587.3,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T040324Z",
+   "started_utc": "2026-08-28T04:03:24.260872+00:00",
+   "ended_utc": "2026-08-28T04:22:49.549377+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "0",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 0,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260828T040324Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 872,
+     "status_counts": {
+      "OK": 768,
+      "FLAGGED": 104,
+      "FAIL": 87,
+      "ITEM_ABSENT_FROM_TOC": 41
+     },
+     "cache_miss": 0,
+     "elapsed_s": 1165.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T041505Z",
+   "started_utc": "2026-08-28T04:15:05.857039+00:00",
+   "ended_utc": "2026-08-28T04:25:36.539912+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "4",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 4,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T041505Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 482,
+     "status_counts": {
+      "OK": 472,
+      "FAIL": 18,
+      "FLAGGED": 10
+     },
+     "cache_miss": 0,
+     "elapsed_s": 630.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T041505Z",
+   "started_utc": "2026-08-28T04:15:05.856329+00:00",
+   "ended_utc": "2026-08-28T04:26:47.721440+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "3",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 3,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T041505Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 440,
+     "status_counts": {
+      "OK": 415,
+      "FAIL": 60,
+      "FLAGGED": 25
+     },
+     "cache_miss": 0,
+     "elapsed_s": 701.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T041603Z",
+   "started_utc": "2026-08-28T04:16:03.037952+00:00",
+   "ended_utc": "2026-08-28T04:28:46.242610+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "1",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 1,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260828T041603Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 497,
+     "status_counts": {
+      "OK": 403,
+      "FLAGGED": 94,
+      "FAIL": 3
+     },
+     "cache_miss": 0,
+     "elapsed_s": 763.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T041851Z",
+   "started_utc": "2026-08-28T04:18:51.032491+00:00",
+   "ended_utc": "2026-08-28T04:28:59.911029+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "9",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 9,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260828T041851Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 972,
+     "status_counts": {
+      "OK": 916,
+      "FLAGGED": 56,
+      "ITEM_ABSENT_FROM_TOC": 19,
+      "FAIL": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 608.7,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T042250Z",
+   "started_utc": "2026-08-28T04:22:50.173466+00:00",
+   "ended_utc": "2026-08-28T04:29:33.220121+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "1",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 1,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260828T042250Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 828,
+     "status_counts": {
+      "OK": 751,
+      "ITEM_ABSENT_FROM_TOC": 87,
+      "FAIL": 85,
+      "FLAGGED": 77
+     },
+     "cache_miss": 0,
+     "elapsed_s": 403.0,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T042544Z",
+   "started_utc": "2026-08-28T04:25:44.424060+00:00",
+   "ended_utc": "2026-08-28T04:34:23.597056+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "3",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 3,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T042544Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 919,
+     "status_counts": {
+      "OK": 766,
+      "FLAGGED": 153,
+      "ITEM_ABSENT_FROM_TOC": 41,
+      "FAIL": 40
+     },
+     "cache_miss": 0,
+     "elapsed_s": 519.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T042544Z",
+   "started_utc": "2026-08-28T04:25:44.429531+00:00",
+   "ended_utc": "2026-08-28T04:34:38.741674+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "2",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 2,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T042544Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 500,
+     "status_counts": {
+      "OK": 438,
+      "FLAGGED": 62
+     },
+     "cache_miss": 0,
+     "elapsed_s": 534.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T042847Z",
+   "started_utc": "2026-08-28T04:28:47.094397+00:00",
+   "ended_utc": "2026-08-28T04:36:29.050444+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "2",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 2,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T042847Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 500,
+     "status_counts": {
+      "OK": 438,
+      "FLAGGED": 62
+     },
+     "cache_miss": 0,
+     "elapsed_s": 461.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T043629Z",
+   "started_utc": "2026-08-28T04:36:29.527951+00:00",
+   "ended_utc": "2026-08-28T04:36:29.576003+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "3",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 3,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T041505Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 440,
+     "status_counts": {
+      "OK": 415,
+      "FAIL": 60,
+      "FLAGGED": 25
+     },
+     "cache_miss": 0,
+     "elapsed_s": 701.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T043629Z",
+   "started_utc": "2026-08-28T04:36:29.975814+00:00",
+   "ended_utc": "2026-08-28T04:36:30.029233+00:00",
+   "argv": [
+    "--segment",
+    "10-K",
+    "--shard",
+    "4",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-K"
+   ],
+   "shard_size": null,
+   "shard": 4,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-K",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T041505Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 482,
+     "status_counts": {
+      "OK": 472,
+      "FAIL": 18,
+      "FLAGGED": 10
+     },
+     "cache_miss": 0,
+     "elapsed_s": 630.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T042933Z",
+   "started_utc": "2026-08-28T04:29:33.812196+00:00",
+   "ended_utc": "2026-08-28T04:42:33.755820+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "2",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 2,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T042933Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 991,
+     "status_counts": {
+      "OK": 750,
+      "FLAGGED": 241,
+      "ITEM_ABSENT_FROM_TOC": 8,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 779.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663"
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T044234Z",
+   "started_utc": "2026-08-28T04:42:34.187842+00:00",
+   "ended_utc": "2026-08-28T04:42:34.244517+00:00",
+   "argv": [
+    "--segment",
+    "10-Q",
+    "--shard",
+    "3",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": 3,
+   "limit": null,
+   "merge": false,
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "10-Q",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T042544Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 919,
+     "status_counts": {
+      "OK": 766,
+      "FLAGGED": 153,
+      "ITEM_ABSENT_FROM_TOC": 41,
+      "FAIL": 40
+     },
+     "cache_miss": 0,
+     "elapsed_s": 519.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  },
+  {
+   "run_id": "f3-20260828T044316Z",
+   "started_utc": "2026-08-28T04:43:16.811078+00:00",
+   "ended_utc": "2026-08-28T04:43:16.898123+00:00",
+   "argv": [
+    "--merge",
+    "--out-dir",
+    "data/f3/v2",
+    "--out-parquet",
+    "data/filings_e2_v2.parquet"
+   ],
+   "segments": [
+    "earnings",
+    "10-K",
+    "10-Q"
+   ],
+   "shard_size": null,
+   "shard": null,
+   "limit": null,
+   "merge": {
+    "complete": true,
+    "shards_found": {
+     "earnings": 8,
+     "10-K": 10,
+     "10-Q": 16
+    },
+    "shards_expected": {
+     "earnings": 8,
+     "10-K": 10,
+     "10-Q": 16
+    },
+    "attempts": 30475,
+    "sections": 29097,
+    "status_counts": {
+     "OK": 25243,
+     "FLAGGED": 3854,
+     "ITEM_ABSENT_FROM_TOC": 696,
+     "FAIL": 682
+    },
+    "warnings": []
+   },
+   "git_rev": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+   "extract_py_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+   "db_sha256": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+   "db_path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_metadata_e2.db",
+   "out_parquet": "data/filings_e2_v2.parquet",
+   "network_gets": 0,
+   "cache_miss": 0,
+   "extractor_version": "f3.1",
+   "constants": {
+    "MIN_SECTION_CHARS": 30,
+    "MIN_SECTION_WORDS": {
+     "10-K|MDA": 1500,
+     "10-K|RISK_FACTORS": 2000,
+     "10-Q|MDA": 1000,
+     "10-Q|RISK_FACTORS": 15,
+     "8-K|8K_BODY": 500,
+     "8-K|EX99_PRESS_RELEASE": 250
+    },
+    "MDA_STUB_WORD_CEILING": 1500,
+    "EARNINGS_THIN_DOCUMENT_CHARS": 1500,
+    "ITEM202_THIN_BLOCK_WORDS": 200,
+    "ITEM202_PREFIX_LARGE_CHARS": 4000,
+    "SUPPLEMENTAL_DILUTED_SHARE": 0.5,
+    "SUPPLEMENTAL_MARKERS": [
+     "supplemental information",
+     "supplemental financial information",
+     "supplemental operating",
+     "supplemental data"
+    ],
+    "RESULTS_SIGNATURE_MARKERS": [
+     "today reported",
+     "today announced",
+     "announced today",
+     "for immediate release",
+     "announced results",
+     "reports first",
+     "reports second",
+     "reports third",
+     "reports fourth",
+     "reports results",
+     "announces first",
+     "announces second",
+     "announces third",
+     "announces fourth",
+     "per diluted share"
+    ],
+    "MIN_PROSE_WORDS": 40
+   },
+   "shards": [
+    {
+     "segment": "earnings",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1287,
+      "FLAGGED": 212,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 205.0,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1174,
+      "FLAGGED": 324,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 266.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1289,
+      "FLAGGED": 210,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 368.5,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1499,
+     "status_counts": {
+      "OK": 1224,
+      "FLAGGED": 275,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 340.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1495,
+     "status_counts": {
+      "OK": 1238,
+      "FLAGGED": 257,
+      "FAIL": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 258.4,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1500,
+     "status_counts": {
+      "OK": 1260,
+      "FLAGGED": 240
+     },
+     "cache_miss": 0,
+     "elapsed_s": 282.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 1500,
+     "attempts": 1500,
+     "sections": 1498,
+     "status_counts": {
+      "OK": 1143,
+      "FLAGGED": 355,
+      "FAIL": 2
+     },
+     "cache_miss": 0,
+     "elapsed_s": 265.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "earnings",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 67,
+     "attempts": 67,
+     "sections": 67,
+     "status_counts": {
+      "OK": 58,
+      "FLAGGED": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 6.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260828T040600Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 463,
+     "status_counts": {
+      "OK": 420,
+      "FLAGGED": 43,
+      "FAIL": 37
+     },
+     "cache_miss": 0,
+     "elapsed_s": 602.0,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260828T041603Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 497,
+     "status_counts": {
+      "OK": 403,
+      "FLAGGED": 94,
+      "FAIL": 3
+     },
+     "cache_miss": 0,
+     "elapsed_s": 763.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T042847Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 500,
+     "status_counts": {
+      "OK": 438,
+      "FLAGGED": 62
+     },
+     "cache_miss": 0,
+     "elapsed_s": 461.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T041505Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 440,
+     "status_counts": {
+      "OK": 415,
+      "FAIL": 60,
+      "FLAGGED": 25
+     },
+     "cache_miss": 0,
+     "elapsed_s": 701.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T041505Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 482,
+     "status_counts": {
+      "OK": 472,
+      "FAIL": 18,
+      "FLAGGED": 10
+     },
+     "cache_miss": 0,
+     "elapsed_s": 630.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 493,
+     "status_counts": {
+      "OK": 448,
+      "FLAGGED": 45,
+      "FAIL": 7
+     },
+     "cache_miss": 0,
+     "elapsed_s": 354.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260828T033842Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 488,
+     "status_counts": {
+      "OK": 437,
+      "FLAGGED": 51,
+      "FAIL": 12
+     },
+     "cache_miss": 0,
+     "elapsed_s": 546.4,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260828T034749Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 488,
+     "status_counts": {
+      "OK": 431,
+      "FLAGGED": 57,
+      "FAIL": 12
+     },
+     "cache_miss": 0,
+     "elapsed_s": 326.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260828T035317Z",
+     "filings": 250,
+     "attempts": 500,
+     "sections": 484,
+     "status_counts": {
+      "OK": 405,
+      "FLAGGED": 79,
+      "FAIL": 16
+     },
+     "cache_miss": 0,
+     "elapsed_s": 416.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-K",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260828T040014Z",
+     "filings": 195,
+     "attempts": 390,
+     "sections": 385,
+     "status_counts": {
+      "OK": 370,
+      "FLAGGED": 15,
+      "FAIL": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 189.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 0,
+     "limit": null,
+     "run_id": "f3-20260828T040324Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 872,
+     "status_counts": {
+      "OK": 768,
+      "FLAGGED": 104,
+      "FAIL": 87,
+      "ITEM_ABSENT_FROM_TOC": 41
+     },
+     "cache_miss": 0,
+     "elapsed_s": 1165.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 1,
+     "limit": null,
+     "run_id": "f3-20260828T042250Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 828,
+     "status_counts": {
+      "OK": 751,
+      "ITEM_ABSENT_FROM_TOC": 87,
+      "FAIL": 85,
+      "FLAGGED": 77
+     },
+     "cache_miss": 0,
+     "elapsed_s": 403.0,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 2,
+     "limit": null,
+     "run_id": "f3-20260828T042933Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 991,
+     "status_counts": {
+      "OK": 750,
+      "FLAGGED": 241,
+      "ITEM_ABSENT_FROM_TOC": 8,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 779.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 3,
+     "limit": null,
+     "run_id": "f3-20260828T042544Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 919,
+     "status_counts": {
+      "OK": 766,
+      "FLAGGED": 153,
+      "ITEM_ABSENT_FROM_TOC": 41,
+      "FAIL": 40
+     },
+     "cache_miss": 0,
+     "elapsed_s": 519.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 4,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 985,
+     "status_counts": {
+      "OK": 827,
+      "FLAGGED": 158,
+      "ITEM_ABSENT_FROM_TOC": 14,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 366.9,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 5,
+     "limit": null,
+     "run_id": "f3-20260828T033854Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 779,
+     "status_counts": {
+      "OK": 774,
+      "FAIL": 136,
+      "ITEM_ABSENT_FROM_TOC": 85,
+      "FLAGGED": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 805.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 6,
+     "limit": null,
+     "run_id": "f3-20260828T035221Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 940,
+     "status_counts": {
+      "OK": 882,
+      "FLAGGED": 58,
+      "ITEM_ABSENT_FROM_TOC": 40,
+      "FAIL": 20
+     },
+     "cache_miss": 0,
+     "elapsed_s": 630.5,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 7,
+     "limit": null,
+     "run_id": "f3-20260828T040252Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 947,
+     "status_counts": {
+      "OK": 927,
+      "ITEM_ABSENT_FROM_TOC": 50,
+      "FLAGGED": 20,
+      "FAIL": 3
+     },
+     "cache_miss": 0,
+     "elapsed_s": 370.1,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 8,
+     "limit": null,
+     "run_id": "f3-20260828T040902Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 931,
+     "status_counts": {
+      "OK": 770,
+      "FLAGGED": 161,
+      "ITEM_ABSENT_FROM_TOC": 69
+     },
+     "cache_miss": 0,
+     "elapsed_s": 587.3,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 9,
+     "limit": null,
+     "run_id": "f3-20260828T041851Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 972,
+     "status_counts": {
+      "OK": 916,
+      "FLAGGED": 56,
+      "ITEM_ABSENT_FROM_TOC": 19,
+      "FAIL": 9
+     },
+     "cache_miss": 0,
+     "elapsed_s": 608.7,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 10,
+     "limit": null,
+     "run_id": "f3-20260828T033247Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 912,
+     "status_counts": {
+      "OK": 830,
+      "FLAGGED": 82,
+      "FAIL": 54,
+      "ITEM_ABSENT_FROM_TOC": 34
+     },
+     "cache_miss": 0,
+     "elapsed_s": 734.4,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 11,
+     "limit": null,
+     "run_id": "f3-20260828T034502Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 927,
+     "status_counts": {
+      "OK": 922,
+      "ITEM_ABSENT_FROM_TOC": 49,
+      "FAIL": 24,
+      "FLAGGED": 5
+     },
+     "cache_miss": 0,
+     "elapsed_s": 477.6,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 12,
+     "limit": null,
+     "run_id": "f3-20260828T035300Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 903,
+     "status_counts": {
+      "OK": 626,
+      "FLAGGED": 277,
+      "ITEM_ABSENT_FROM_TOC": 77,
+      "FAIL": 20
+     },
+     "cache_miss": 0,
+     "elapsed_s": 529.7,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 13,
+     "limit": null,
+     "run_id": "f3-20260828T040150Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 931,
+     "status_counts": {
+      "OK": 897,
+      "ITEM_ABSENT_FROM_TOC": 61,
+      "FLAGGED": 34,
+      "FAIL": 8
+     },
+     "cache_miss": 0,
+     "elapsed_s": 453.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 14,
+     "limit": null,
+     "run_id": "f3-20260828T040925Z",
+     "filings": 500,
+     "attempts": 1000,
+     "sections": 971,
+     "status_counts": {
+      "OK": 911,
+      "FLAGGED": 60,
+      "ITEM_ABSENT_FROM_TOC": 18,
+      "FAIL": 11
+     },
+     "cache_miss": 0,
+     "elapsed_s": 407.8,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    },
+    {
+     "segment": "10-Q",
+     "shard": 15,
+     "limit": null,
+     "run_id": "f3-20260828T041613Z",
+     "filings": 9,
+     "attempts": 18,
+     "sections": 14,
+     "status_counts": {
+      "OK": 14,
+      "ITEM_ABSENT_FROM_TOC": 3,
+      "FAIL": 1
+     },
+     "cache_miss": 0,
+     "elapsed_s": 10.2,
+     "extractor_sha256": "a5a519b1f436e4e798c94655d243a851fbaed1957a4c2970f1b7dac545385663",
+     "skipped": true
+    }
+   ],
+   "edge_handlers_fired": {},
+   "edge_handlers_dead": [
+    "nike_10q_mda_shared_toc_anchor"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": "CHK-46170d39d555b713",
+    "red_flags": [],
+    "reason": "Passage reports sales, store count, cash flow and an acquisition; the only unfavorable items ('decrease in our inventory turnover ratio was primarily driven by higher average inventory levels', ROIC decline 'driven by higher average long-term debt') match none of the six categories, and the merger's 'required regulatory approvals' are routine closing conditions, not a regulatory action."
+  },
+  {
+    "chunk_id": "CHK-acb665619cf4c201",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"], ["SUPPLY_INPUT_CONSTRAINT", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"]],
+    "reason": "'Our costs are subject to fluctuations due to changes in commodity and input material prices, transportation costs, inflationary impacts' and 'Volatility in the market price of commodities and input materials directly affects our costs' is present-tense causeless cost-inflation language (MARGIN_COST_PRESSURE, REALIZED), while 'Disruptions in manufacturing, supply and distribution operations can lead to increased costs' and 'Legal or regulatory requirements ... may result in increased costs' are standalone hypothetical assertions; the tariff mention sits inside a noun enumeration ('currency controls, new or increased tariffs, foreign exchange') and fails the mining-depth bar."
+  },
+  {
+    "chunk_id": "CHK-e5bc1110b721c9d0",
+    "red_flags": [],
+    "reason": "The credit disclosure reports improvement ('criticized utilized exposure for commercial real estate decreased $1.9 billion', 'net charge-offs decreased $200 million', 'nonperforming commercial loans and leases decreased $67 million'); routine loan-loss/charge-off accounting, including carrying value 'reduced to the estimated collateral value less costs to sell', is credit-loss measurement rather than the asset impairment/write-down the taxonomy describes."
+  },
+  {
+    "chunk_id": "CHK-0891458deead1084",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "HYPOTHETICAL"]],
+    "reason": "'[I]f the programs fail or are abandoned during development, then the Company will not recover the fair value of the IPR&D ... and the Company may recognize impairment charges, which could be material' is a conditional impairment statement; the $200 million upfront license charge is an expense, not an asset write-down, and drug-approval uncertainty is not an enforcement action or compliance requirement."
+  },
+  {
+    "chunk_id": "CHK-6b2dda078288e7f4",
+    "red_flags": [],
+    "reason": "The passage is confined to market-risk measurement mechanics ('Models used to measure market risk are inherently imprecise', 'Average Total VaR ... increased by $2 million'), which matches none of the six categories."
+  },
+  {
+    "chunk_id": "CHK-10fa0f637d2af709",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "'Allowances have been recorded for receivables believed to be uncollectible' and 'a $469 million write-off during 2017 as a result of the political and economic conditions in Venezuela' assert completed reductions in asset carrying value in the past tense."
+  },
+  {
+    "chunk_id": "CHK-fb41149be5005622",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "Amid growth commentary the passage states Collaboration revenue was flat 'offset by a decline in Meetings and Collaboration Devices' — an asserted, already-occurred product-line revenue decline."
+  },
+  {
+    "chunk_id": "CHK-b9378d83465f30a4",
+    "red_flags": [],
+    "reason": "Cash-flow and interest-rate/VaR methodology narrative ('cash and cash equivalents decreased by $35.25 billion ... primarily due to net cash used for operating and investing activities') carries no language from any of the six categories."
+  },
+  {
+    "chunk_id": "CHK-b98cdf202aea3da5",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'Some of the models ... are subject to review by, and require the approval of, JPMorgan Chase's regulators. These reviews are required before JPMorgan Chase may use those models ... under Basel III' asserts an existing regulatory requirement imposing obligations now; only the consequence ('may be subject to higher capital charges') is projected."
+  },
+  {
+    "chunk_id": "CHK-ec2e37a31da1680d",
+    "red_flags": [],
+    "reason": "Segment results are reported favorably or neutrally ('Revenue of $5.6 billion increased 6%', 'Average deposits of $288 billion decreased $8 billion, or 3%', 'Noninterest expense ... increased 7%, driven by revenue-related incentives') with pretax margin flat at 25% and no assertion of cost/margin pressure or any other category."
+  },
+  {
+    "chunk_id": "CHK-dbe4ca5103ef7787",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "Operating expense growth is attributed in part to recorded 'litigation provisions', an already-incurred legal charge; the bare 'restructuring charge in the third quarter of 2024' is not tied to any asset value reduction, so IMPAIRMENT_WRITEDOWN is not asserted."
+  },
+  {
+    "chunk_id": "CHK-fb76d50bc8c28177",
+    "red_flags": [],
+    "reason": "The realized fact stated ('SLB has recently experienced delays in payment from its primary customer in Mexico, these receivables are not in dispute') is a receivables-timing item outside the six categories, and the remaining risk material is a safe-harbor noun enumeration ('access to raw materials; future global economic and geopolitical conditions') failing the mining-depth bar."
+  },
+  {
+    "chunk_id": "CHK-dfa9c00013b8da66",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'The Company is also currently subject to antitrust investigations in various jurisdictions', 'is the subject of investigations in Europe', 'subject to litigation relating to the App Store, which has resulted in changes to the Company's business practices' and the DMA 'which the Company is required to comply with by March 2024' are existence claims, realized despite the surrounding could/may framing."
+  },
+  {
+    "chunk_id": "CHK-ce89dc9ac38baf7a",
+    "red_flags": [],
+    "reason": "Guarantee, collateral and pledged-asset disclosure ('the Firm expects the risk of loss to be remote', 'The Firm pledges financial assets that it owns to maintain potential borrowing capacity') contains no category language."
+  },
+  {
+    "chunk_id": "CHK-22f4f718a827cfbb",
+    "red_flags": [],
+    "reason": "Asset-management and investment-portfolio disclosure ('we raised $33 billion in third-party commitments', 'The impact of historical principal investments to our pre-tax earnings was $38 million ... and $(158) million') reports figures without asserting any of the six categories."
+  },
+  {
+    "chunk_id": "CHK-dd3eaf03ad0b5be2",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "reason": "'We are a party to lawsuits in the normal course of our business', 'there are existing claims and lawsuits in Russia' and 'we are subject to the continuous examination of our income tax returns by the Internal Revenue Service' are existence claims, and the sanctions exposure is likewise stated as having occurred ('our decision to stop business operations and orderly wind down our business in Russia ... and related trade restrictions and sanctions')."
+  },
+  {
+    "chunk_id": "CHK-7edd7aedaa803873",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "reason": "Operating income growth was 'partially offset by higher input costs and marketing investments' (realized, causeless cost increase), and the company states its operations 'are subject to global trade dynamics that may impact certain components of the company's cost structure across its markets. At this time, the company expects the impact to be manageable' — an existence claim about current trade exposure whose magnitude alone is projected."
+  },
+  {
+    "chunk_id": "CHK-d0ef61c0b55f6ba1",
+    "red_flags": [],
+    "reason": "Business description and acquisition narrative ('We now expect to reflect synergies that significantly exceed our initial $500 million guidance', closing 'subject to regulatory clearances and other customary closing conditions') contains no category language."
+  },
+  {
+    "chunk_id": "CHK-ad27e454857187ed",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'U.K. regulators have designated Vocalink ... to be a \"specified service provider\"' is a completed regulatory action already imposing oversight, with only the further consequences ('could face additional regulatory scrutiny, fines, sanctions or other penalties') projected; 'cost overruns' appears only as a noun in a diversification-risk list."
+  },
+  {
+    "chunk_id": "CHK-ee8fcb128ed03507",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'[C]hanges to U.S. tax laws now require (i) a 15% alternative minimum tax ... beginning in 2023 and (ii) a non-deductible 1% excise tax' and 'many European countries have ongoing government-mandated price reductions' are regulations already in effect; payer rebate/pricing pressure is revenue-side, not input-cost, so MARGIN_COST_PRESSURE is not asserted."
+  },
+  {
+    "chunk_id": "CHK-5a868ca64fd69324",
+    "red_flags": [],
+    "reason": "Liquidity and rating narrative ('Moody's changed its outlook on our long-term debt to Negative; S&P downgraded our short-term rating from A-1+ to A-1', 'a decrease in advance payments for Comirnaty and Paxlovid') describes financing and cash-flow timing items that fall outside the six red-flag categories."
+  },
+  {
+    "chunk_id": "CHK-96872e14a41afc81",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "The list names actual proceedings in progress — 'pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to ... including matters related to our processing of unemployment benefits for California and certain other states ... which are in various stages' — while the tariff, supply-chain and inflation items appear only as nouns inside the enumeration and fail the mining-depth bar."
+  },
+  {
+    "chunk_id": "CHK-2d46eae9a8604ce0",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'[G]reater government scrutiny of practices related to the handling of personal information has in some cases resulted in, and could in the future lead to, the adoption of applicable law ... that is stricter' asserts that stricter law has already been adopted, so the existence claim controls over the surrounding could-framing."
+  },
+  {
+    "chunk_id": "CHK-e7d89e372a854602",
+    "red_flags": [],
+    "reason": "Pure safe-harbor factor enumeration ('These include global or regional changes in the supply and demand for oil ...; changes in law, regulations, taxes, trade sanctions, or policies ...; supply, transportation ...'), a list of nouns rather than standalone assertions about the company, so no category clears the mining-depth bar."
+  },
+  {
+    "chunk_id": "CHK-cba14df4f4356898",
+    "red_flags": [],
+    "reason": "Pipeline and corporate highlights ('The study met its primary endpoint', 'No safety signals were reported in the trial', 'Pfizer sold 640 million ordinary shares of its investment in Haleon') contain no category language."
+  },
+  {
+    "chunk_id": "CHK-d2f35a326b8be475",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'U.K. regulators have designated Vocalink ... to be a \"specified service provider\"' is a completed regulatory designation; the technology-obsolescence consequence ('could lead to a decline in the use of our products') stems from the company's own execution risk rather than an asserted softening of market demand."
+  },
+  {
+    "chunk_id": "CHK-fad5e7dae193e277",
+    "red_flags": [],
+    "reason": "Allowance-methodology and sensitivity disclosure ('the acquired wholesale portfolio was incorporated into the Firm's modeled credit loss estimates', 'its estimates of expected credit losses were reasonable and appropriate') asserts none of the six categories."
+  },
+  {
+    "chunk_id": "CHK-3f638f56d6776ec0",
+    "red_flags": [],
+    "reason": "Results release plus safe-harbor noun list ('effects of global and regional economic conditions ...; reliance on third parties for components ...; effects of unfavorable legal proceedings, government investigations') — an enumeration with no assertion that any such event exists, failing the mining-depth bar."
+  },
+  {
+    "chunk_id": "CHK-75bea33f953ea32a",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "'[A]n other-than-temporary impairment charge of $34 million related to an equity method investee in Latin America' is a recorded, past-tense write-down."
+  },
+  {
+    "chunk_id": "CHK-42fff2c20dcf6204",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'We remain under audit by the IRS for tax years 2014 to 2017 ... we received Notices of Proposed Adjustment ... the IRS is seeking an additional tax payment of $28.9 billion plus penalties and interest' states an examination and claim that already exist."
+  },
+  {
+    "chunk_id": "CHK-920de4be1d751c3e",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "'The volume decrease was primarily driven by declines in Greater China (due to market contraction and portfolio rationalization) and Asia Pacific (due to increased pricing)' plus 'a decrease in unit volume of 1%' is an asserted, already-occurred unfavorable volume trend attributed partly to market contraction; costs are described as falling ('lower commodity costs'), so no margin flag."
+  },
+  {
+    "chunk_id": "CHK-d8f2f91c7bbfa2cc",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "'Professional Visualization revenue was down 24% from a year ago. The year-on-year decrease primarily reflects lower sell-in to partners following normalization of channel inventory levels' asserts a realized decline in shipments/volume, notwithstanding the strong Data Center demand described elsewhere."
+  },
+  {
+    "chunk_id": "CHK-79cc15cb7d850a44",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'We are incurring significant and increasing costs and liabilities to build and maintain infrastructure ..., invest in cybersecurity, and hire talent' is present-tense causeless cost-increase language, and 'Pricing and delivery models, which are subject to increasing regulatory scrutiny and requirements' asserts scrutiny that already exists; device-market 'increased market saturation' appears only as a noun in a competitive-characteristics list."
+  },
+  {
+    "chunk_id": "CHK-3677d9e79dc81bb4",
+    "red_flags": [["TRADE_POLICY_EXPOSURE", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"]],
+    "reason": "'[O]ur compliance with sanctions and our decision to suspend our business operations in Russia has led, and could further lead, to other legal ramifications ... including fines ... and/or lawsuits' asserts both sanctions exposure and legal consequences that have already occurred, while 'decreased cross-border activity could decrease the revenue we receive' is a standalone but conditional volume-decline assertion."
+  },
+  {
+    "chunk_id": "CHK-d90839b449f965f3",
+    "red_flags": [],
+    "reason": "Liquidity-management description affirming adequacy ('maintains liquidity ... at levels sufficient to comply with liquidity risk tolerances and minimum liquidity requirements') matches none of the six red-flag categories."
+  },
+  {
+    "chunk_id": "CHK-b1696523cd5b4504",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "'We face significant legal risks in our business, with a high volume of claims against us', cyber/AI matters 'which have resulted in ... related litigation (including class actions) or government enforcement', and 'entered into orders or settlements with certain government agencies' are all statements of proceedings that exist or have occurred."
+  },
+  {
+    "chunk_id": "CHK-a1853548628ae483",
+    "red_flags": [],
+    "reason": "A bare cautionary noun list ('potential liability resulting from pending or future litigation, government investigations and other proceedings; ... supply, transportation and labor constraints; ... changes in state, federal or international tax rates') — the rubric's paradigm of nouns rather than standalone assertions, so no category clears the mining-depth bar."
+  },
+  {
+    "chunk_id": "CHK-1da899d1c99d94e7",
+    "red_flags": [],
+    "reason": "Forward-looking-statement boilerplate enumerating single-noun risk items ('inflation; changes in monetary policy by governments; pricing pressure; ... availability and cost of raw materials; ... challenges in SLB's supply chain'), none of which asserts the risk specifically enough to stand alone as a sentence about the company."
+  },
+  {
+    "chunk_id": "CHK-0884ab0ec3a75518",
+    "red_flags": [],
+    "reason": "Mechanical disclosure about extra selling days, the conference call, intersegment revenues and non-GAAP definitions contains no category language."
+  },
+  {
+    "chunk_id": "CHK-122484e0b932ad36",
+    "red_flags": [],
+    "reason": "The release characterizes conditions favorably ('Asset quality remained strong, with net charge-offs at $1.5 billion for the sixth consecutive quarter', 'Consumer delinquencies have been stabilizing'), and the 2% expense increase is attributed to 'investments in people and technology' with the efficiency ratio improving to 51%, so no cost/margin pressure is asserted."
+  }
+]

@@ -1,0 +1,245 @@
+cik,name,stratum,chosen_ticker,all_candidates,status,fetched,has_usable_prices,reason
+1800,ABBOTT LABORATORIES,core,ABT,ABT,resolved,True,True,CIK-verified from submissions.json
+2488,ADVANCED MICRO DEVICES INC,core,AMD,AMD,resolved,True,True,CIK-verified from submissions.json
+2969,"Air Products & Chemicals, Inc.",extension,APD,APD,resolved,True,True,CIK-verified from submissions.json
+3570,"Cheniere Energy, Inc.",extension,LNG,LNG,resolved,True,True,CIK-verified from submissions.json
+4281,Howmet Aerospace Inc.,extension,HWM,HWM,resolved,True,True,CIK-verified from submissions.json
+4447,HESS CORP,core,,,censored,False,False,submissions.json carries no ticker at all
+4904,AMERICAN ELECTRIC POWER CO INC,extension,AEP,,override,True,True,evidenced override (upstream_ticker_wobble); submissions.json carries no ticker at all
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",core,AIG,AIG,resolved,True,True,CIK-verified from submissions.json
+6769,APACHE CORP,core,,,censored,False,False,submissions.json carries no ticker at all
+6951,APPLIED MATERIALS INC /DE,core,AMAT,AMAT,resolved,True,True,CIK-verified from submissions.json
+8670,AUTOMATIC DATA PROCESSING INC,core,ADP,ADP,resolved,True,True,CIK-verified from submissions.json
+10795,BECTON DICKINSON & CO,core,BDX,BDX,resolved,True,True,CIK-verified from submissions.json
+12927,BOEING CO,extension,BA,"BA,BA-PA",resolved,True,True,CIK-verified from submissions.json
+14272,BRISTOL MYERS SQUIBB CO,core,BMY,"BMY,CELG-RI",resolved,True,True,CIK-verified from submissions.json
+18230,CATERPILLAR INC,extension,CAT,CAT,resolved,True,True,CIK-verified from submissions.json
+19617,JPMORGAN CHASE & CO,core,JPM,"JPM,JPM-PC,AMJB,JPM-PD,JPM-PJ,JPM-PK,JPM-PL,JPM-PM,VYLD",resolved,True,True,CIK-verified from submissions.json
+21344,COCA COLA CO,core,KO,KO,resolved,True,True,CIK-verified from submissions.json
+21665,COLGATE PALMOLIVE CO,core,CL,CL,resolved,True,True,CIK-verified from submissions.json
+24741,CORNING INC /NY,extension,GLW,GLW,resolved,True,True,CIK-verified from submissions.json
+27419,TARGET CORP,core,TGT,TGT,resolved,True,True,CIK-verified from submissions.json
+29915,DOW CHEMICAL CO /DE/,extension,,,censored,False,False,"Dow Chemical Co /DE/ is deliberately censored, never mapped to DOW: today's DOW is Dow Inc (CIK 1751788), a 2019 spin-off whose price history does not contain Dow Chemical's pre-2019 series. MEASURED 2026-08-24: CIK 29915's submissions carry an empty tickers[]; the bulk map resolves DOW to CIK 1751788 'DOW INC.'"
+30554,"EIDP, Inc.",extension,,"CTA-PB,CTA-PA",censored,False,False,"no common-share ticker in submissions (non-common only: CTA-PB, CTA-PA)"
+31462,ECOLAB INC.,core,ECL,ECL,resolved,True,True,CIK-verified from submissions.json
+32604,EMERSON ELECTRIC CO,extension,EMR,EMR,resolved,True,True,CIK-verified from submissions.json
+33213,EQT Corp,core,EQT,EQT,resolved,True,True,CIK-verified from submissions.json
+34088,EXXON MOBIL CORP,core,XOM,,override,True,True,"evidenced override (successor_cik_reorganization) [successor_reorg: XOM bulk-maps to CIK 2115436, the trap signature, overridden on reorganisation evidence + a series-continuity check + a standing WARN]; submissions.json carries no ticker at all"
+36104,US BANCORP \DE\,core,USB,"USB,USB-PA,USB-PH,USB-PP,USB-PQ,USB-PR,USB-PS",resolved,True,True,CIK-verified from submissions.json
+37996,FORD MOTOR CO,core,F,"F,F-PB,F-PC,F-PD",resolved,True,True,CIK-verified from submissions.json
+40533,GENERAL DYNAMICS CORP,extension,GD,GD,resolved,True,True,CIK-verified from submissions.json
+45012,HALLIBURTON CO,core,HAL,HAL,resolved,True,True,CIK-verified from submissions.json
+47217,HP INC,core,HPQ,HPQ,resolved,True,True,CIK-verified from submissions.json
+49071,HUMANA INC,core,HUM,HUM,resolved,True,True,CIK-verified from submissions.json
+49826,ILLINOIS TOOL WORKS INC,extension,ITW,ITW,resolved,True,True,CIK-verified from submissions.json
+50863,INTEL CORP,core,INTC,INTC,resolved,True,True,CIK-verified from submissions.json
+51143,INTERNATIONAL BUSINESS MACHINES CORP,core,IBM,IBM,resolved,True,True,CIK-verified from submissions.json
+55785,KIMBERLY CLARK CORP,extension,KMB,KMB,resolved,True,True,CIK-verified from submissions.json
+59478,ELI LILLY & Co,core,LLY,LLY,resolved,True,True,CIK-verified from submissions.json
+60667,LOWES COMPANIES INC,core,LOW,LOW,resolved,True,True,CIK-verified from submissions.json
+62709,"MARSH & MCLENNAN COMPANIES, INC.",core,MRSH,MRSH,resolved,True,True,CIK-verified from submissions.json
+63908,MCDONALDS CORP,core,MCD,MCD,resolved,True,True,CIK-verified from submissions.json
+64040,S&P Global Inc.,extension,SPGI,SPGI,resolved,True,True,CIK-verified from submissions.json
+64803,CVS HEALTH Corp,core,CVS,CVS,resolved,True,True,CIK-verified from submissions.json
+66740,3M CO,core,MMM,MMM,resolved,True,True,CIK-verified from submissions.json
+70858,BANK OF AMERICA CORP /DE/,core,BAC,"BAC,BML-PG,BML-PL,BAC-PB,BAC-PK,BAC-PE,BAC-PL,BAC-PM,BAC-PN,BAC-PO,BAC-PP,BAC-PQ,BAC-PS,BACRP,BML-PH,BML-PJ,MER-PK",resolved,True,True,CIK-verified from submissions.json
+72741,EVERSOURCE ENERGY,extension,ES,ES,resolved,True,True,CIK-verified from submissions.json
+72903,XCEL ENERGY INC,extension,XEL,"XEL,XELLL",resolved,True,True,CIK-verified from submissions.json
+72971,WELLS FARGO & COMPANY/MN,core,WFC,"WFC,WFC-PY,WFC-PL,WFC-PC,WFCNP,WFC-PA,WFC-PD,WFC-PZ",resolved,True,True,CIK-verified from submissions.json
+73309,NUCOR CORP,extension,NUE,NUE,resolved,True,True,CIK-verified from submissions.json
+77476,PEPSICO INC,core,PEP,PEP,resolved,True,True,CIK-verified from submissions.json
+78003,PFIZER INC,core,PFE,PFE,resolved,True,True,CIK-verified from submissions.json
+79879,PPG INDUSTRIES INC,extension,PPG,PPG,resolved,True,True,CIK-verified from submissions.json
+80424,PROCTER & GAMBLE Co,core,PG,PG,resolved,True,True,CIK-verified from submissions.json
+80661,PROGRESSIVE CORP/OH/,core,PGR,PGR,resolved,True,True,CIK-verified from submissions.json
+86312,"TRAVELERS COMPANIES, INC.",core,TRV,TRV,resolved,True,True,CIK-verified from submissions.json
+87347,SLB LIMITED/NV,core,SLB,SLB,resolved,True,True,CIK-verified from submissions.json
+89800,SHERWIN WILLIAMS CO,core,SHW,SHW,resolved,True,True,CIK-verified from submissions.json
+92122,SOUTHERN CO,extension,SO,"SO,SOJC,SOJD,SOJE,SOJF,SOMN",resolved,True,True,CIK-verified from submissions.json
+92230,TRUIST FINANCIAL CORP,core,TFC,"TFC,TFC-PI,TFC-PO,TFC-PR",resolved,True,True,CIK-verified from submissions.json
+93410,CHEVRON CORP,core,CVX,CVX,resolved,True,True,CIK-verified from submissions.json
+97476,TEXAS INSTRUMENTS INC,core,TXN,TXN,resolved,True,True,CIK-verified from submissions.json
+97745,THERMO FISHER SCIENTIFIC INC.,extension,TMO,TMO,resolved,True,True,CIK-verified from submissions.json
+100885,UNION PACIFIC CORP,extension,UNP,UNP,resolved,True,True,CIK-verified from submissions.json
+101829,RTX Corp,extension,RTX,RTX,resolved,True,True,CIK-verified from submissions.json
+104169,Walmart Inc.,core,WMT,WMT,resolved,True,True,CIK-verified from submissions.json
+106040,WESTERN DIGITAL CORP,core,WDC,WDC,resolved,True,True,CIK-verified from submissions.json
+106535,WEYERHAEUSER CO,extension,WY,WY,resolved,True,True,CIK-verified from submissions.json
+107263,"WILLIAMS COMPANIES, INC.",core,WMB,WMB,resolved,True,True,CIK-verified from submissions.json
+109198,TJX COMPANIES INC /DE/,core,TJX,TJX,resolved,True,True,CIK-verified from submissions.json
+200406,JOHNSON & JOHNSON,core,JNJ,JNJ,resolved,True,True,CIK-verified from submissions.json
+310158,"Merck & Co., Inc.",core,MRK,MRK,resolved,True,True,CIK-verified from submissions.json
+310764,STRYKER CORP,core,SYK,SYK,resolved,True,True,CIK-verified from submissions.json
+313616,DANAHER CORP /DE/,extension,DHR,DHR,resolved,True,True,CIK-verified from submissions.json
+315189,DEERE & CO,extension,DE,DE,resolved,True,True,CIK-verified from submissions.json
+315293,Aon plc,core,AON,AON,resolved,True,True,CIK-verified from submissions.json
+316709,SCHWAB CHARLES CORP,core,SCHW,"SCHW,SCHW-PD,SCHW-PJ",resolved,True,True,CIK-verified from submissions.json
+318154,AMGEN INC,core,AMGN,AMGN,resolved,True,True,CIK-verified from submissions.json
+320187,"NIKE, Inc.",core,NKE,NKE,resolved,True,True,CIK-verified from submissions.json
+320193,Apple Inc.,core,AAPL,AAPL,resolved,True,True,CIK-verified from submissions.json
+354950,"HOME DEPOT, INC.",core,HD,HD,resolved,True,True,CIK-verified from submissions.json
+701221,Cigna Holding Co,core,,,censored,False,False,submissions.json carries no ticker at all
+707549,LAM RESEARCH CORP,core,LRCX,LRCX,resolved,True,True,CIK-verified from submissions.json
+712515,ELECTRONIC ARTS INC.,core,EA,EA,resolved_no_coverage,True,False,"CIK-verified from submissions.json (absent from company_tickers.json; absence never censors); FETCHED as EA but 0 of 6 rows fall inside its coverage window [2015-07-02, 2022-08-05] (series spans 2026-07-17..2026-08-10) -- no usable prices, counted in the OPERATIVE censoring pair"
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",core,PNC,PNC,resolved,True,True,CIK-verified from submissions.json
+715957,"DOMINION ENERGY, INC",extension,D,D,resolved,True,True,CIK-verified from submissions.json
+718877,"Activision Blizzard, Inc.",core,,,censored,False,False,submissions.json carries no ticker at all
+723125,MICRON TECHNOLOGY INC,core,MU,MU,resolved,True,True,CIK-verified from submissions.json
+726728,REALTY INCOME CORP,extension,O,O,resolved,True,True,CIK-verified from submissions.json
+731766,UNITEDHEALTH GROUP INC,core,UNH,UNH,resolved,True,True,CIK-verified from submissions.json
+732712,VERIZON COMMUNICATIONS INC,extension,VZ,VZ,resolved,True,True,CIK-verified from submissions.json
+732717,AT&T INC.,extension,T,"T,TBB,T-PA,T-PC",resolved,True,True,CIK-verified from submissions.json
+753308,NEXTERA ENERGY INC,extension,NEE,"NEE,NEE-PN,NEE-PS,NEE-PT,NEE-PU,NEE-PV,NEE-PW",resolved,True,True,CIK-verified from submissions.json
+764180,"ALTRIA GROUP, INC.",core,MO,MO,resolved,True,True,CIK-verified from submissions.json
+766704,WELLTOWER INC.,extension,WELL,WELL,resolved,True,True,CIK-verified from submissions.json
+769397,"Autodesk, Inc.",core,ADSK,ADSK,resolved,True,True,CIK-verified from submissions.json
+773840,HONEYWELL INTERNATIONAL INC,extension,HON,HON,resolved,True,True,CIK-verified from submissions.json
+773910,ANADARKO PETROLEUM CORP,core,,,censored,False,False,submissions.json carries no ticker at all
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,extension,PEG,PEG,resolved,True,True,CIK-verified from submissions.json
+789019,MICROSOFT CORP,core,MSFT,MSFT,resolved,True,True,CIK-verified from submissions.json
+790070,EMC CORP,core,,,censored,False,False,submissions.json carries no ticker at all
+797468,OCCIDENTAL PETROLEUM CORP /DE/,core,OXY,"OXY,OXY-WT",resolved,True,True,CIK-verified from submissions.json
+798354,FISERV INC,core,FISV,FISV,resolved,True,True,CIK-verified from submissions.json
+804328,QUALCOMM INC/DE,core,QCOM,QCOM,resolved,True,True,CIK-verified from submissions.json
+804753,CERNER Corp,core,,,censored,False,False,submissions.json carries no ticker at all
+813672,CADENCE DESIGN SYSTEMS INC,core,CDNS,CDNS,resolved,True,True,CIK-verified from submissions.json
+816284,CELGENE CORP /DE/,core,,,censored,False,False,submissions.json carries no ticker at all
+821189,EOG RESOURCES INC,core,EOG,EOG,resolved,True,True,CIK-verified from submissions.json
+823768,WASTE MANAGEMENT INC,extension,WM,WM,resolved,True,True,CIK-verified from submissions.json
+827052,EDISON INTERNATIONAL,extension,EIX,EIX,resolved,True,True,CIK-verified from submissions.json
+829224,STARBUCKS CORP,core,SBUX,SBUX,resolved,True,True,CIK-verified from submissions.json
+831001,CITIGROUP INC,core,C,"C,C-PN,C-PR",resolved,True,True,CIK-verified from submissions.json
+831259,FREEPORT-MCMORAN INC,extension,FCX,FCX,resolved,True,True,CIK-verified from submissions.json
+849395,CRH PUBLIC LTD CO,extension,CRH,CRH,resolved,True,True,CIK-verified from submissions.json
+849399,Gen Digital Inc.,core,GEN,"GEN,GENVR",resolved,True,True,CIK-verified from submissions.json
+858877,"CISCO SYSTEMS, INC.",core,CSCO,CSCO,resolved,True,True,CIK-verified from submissions.json
+872589,"REGENERON PHARMACEUTICALS, INC.",core,REGN,REGN,resolved,True,True,CIK-verified from submissions.json
+875045,BIOGEN INC.,core,BIIB,BIIB,resolved,True,True,CIK-verified from submissions.json
+875320,VERTEX PHARMACEUTICALS INC / MA,core,VRTX,VRTX,resolved,True,True,CIK-verified from submissions.json
+882095,"GILEAD SCIENCES, INC.",core,GILD,GILD,resolved,True,True,CIK-verified from submissions.json
+884905,LINDE INC,extension,,,censored,False,False,submissions.json carries no ticker at all
+885725,BOSTON SCIENTIFIC CORP,core,BSX,BSX,resolved,True,True,CIK-verified from submissions.json
+886982,GOLDMAN SACHS GROUP INC,core,GS,"GS,GSCE,GS-PA,GS-PC,GS-PD",resolved,True,True,CIK-verified from submissions.json
+895126,EXPAND ENERGY Corp,core,EXE,EXE,resolved,True,True,CIK-verified from submissions.json
+895421,MORGAN STANLEY,core,MS,"MS,MS-PK,MS-PE,MS-PA,MS-PF,MS-PI,MS-PL,MS-PO,MS-PP,MS-PQ",resolved,True,True,CIK-verified from submissions.json
+895728,ENBRIDGE INC,core,ENB,"ENB,EBBNF,EBBGF,EBGEF,EBRGF,EBRZF,ENBFF,ENBGF,ENBHF,ENBMF,ENBNF,ENBOF,ENBRF,ENBSF,ENFFF,ENNPF",resolved,True,True,CIK-verified from submissions.json
+896159,Chubb Ltd,core,CB,CB,resolved,True,True,CIK-verified from submissions.json
+896878,INTUIT INC.,core,INTU,INTU,resolved,True,True,CIK-verified from submissions.json
+906107,VIVMARK RESIDENTIAL,extension,VMRK,VMRK,resolved,True,True,CIK-verified from submissions.json
+915912,AVALONBAY COMMUNITIES INC,extension,AVB,AVB,resolved,True,True,CIK-verified from submissions.json
+922224,PPL Corp,extension,PPL,"PPL,PPLC",resolved,True,True,CIK-verified from submissions.json
+927628,CAPITAL ONE FINANCIAL CORP,core,COF,"COF,COF-PI,COF-PJ,COF-PK,COF-PL,COF-PN",resolved,True,True,CIK-verified from submissions.json
+927653,MCKESSON CORP,core,MCK,MCK,resolved,True,True,CIK-verified from submissions.json
+936402,Shire plc,core,,,censored,False,False,submissions.json carries no ticker at all
+936468,LOCKHEED MARTIN CORP,extension,LMT,LMT,resolved,True,True,CIK-verified from submissions.json
+1001039,TWDC Enterprises 18 Corp.,core,,,censored,False,False,submissions.json carries no ticker at all
+1001250,ESTEE LAUDER COMPANIES INC,core,EL,EL,resolved,True,True,CIK-verified from submissions.json
+1012569,"Energy Transfer, LP",core,,,censored,False,False,submissions.json carries no ticker at all
+1018724,AMAZON COM INC,core,AMZN,AMZN,resolved,True,True,CIK-verified from submissions.json
+1032208,SEMPRA,extension,SRE,"SRE,SREA",resolved,True,True,CIK-verified from submissions.json
+1034054,SBA COMMUNICATIONS CORP,extension,SBAC,SBAC,resolved,True,True,CIK-verified from submissions.json
+1035002,VALERO ENERGY CORP/TX,core,VLO,VLO,resolved,True,True,CIK-verified from submissions.json
+1035267,INTUITIVE SURGICAL INC,core,ISRG,ISRG,resolved,True,True,CIK-verified from submissions.json
+1038357,PIONEER NATURAL RESOURCES CO,core,,,censored,False,False,submissions.json carries no ticker at all
+1039684,ONEOK INC /NEW/,core,OKE,OKE,resolved,True,True,CIK-verified from submissions.json
+1045609,"Prologis, Inc.",extension,PLD,"PLD,PLDGP",resolved,True,True,CIK-verified from submissions.json
+1045810,NVIDIA CORP,core,NVDA,NVDA,resolved,True,True,CIK-verified from submissions.json
+1047122,RAYTHEON CO/,extension,,,censored,False,False,submissions.json carries no ticker at all
+1047862,CONSOLIDATED EDISON INC,extension,ED,ED,resolved,True,True,CIK-verified from submissions.json
+1051470,CROWN CASTLE INC.,extension,CCI,CCI,resolved,True,True,CIK-verified from submissions.json
+1053507,AMERICAN TOWER CORP /MA/,extension,AMT,AMT,resolved,True,True,CIK-verified from submissions.json
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,core,CTSH,CTSH,resolved,True,True,CIK-verified from submissions.json
+1060391,"REPUBLIC SERVICES, INC.",extension,RSG,RSG,resolved,True,True,CIK-verified from submissions.json
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,core,EPD,"EPD,EPDU",resolved,True,True,CIK-verified from submissions.json
+1063761,SIMON PROPERTY GROUP INC.,extension,SPG,"SPG,SPG-PJ",resolved,True,True,CIK-verified from submissions.json
+1065088,EBAY INC,core,EBAY,EBAY,resolved,True,True,CIK-verified from submissions.json
+1065280,NETFLIX INC,core,NFLX,NFLX,resolved,True,True,CIK-verified from submissions.json
+1067983,BERKSHIRE HATHAWAY INC,core,BRK-B,"BRK-B,BRK-A",resolved,True,True,CIK-verified from submissions.json
+1075531,Booking Holdings Inc.,extension,BKNG,BKNG,resolved,True,True,CIK-verified from submissions.json
+1090012,DEVON ENERGY CORP/DE,core,DVN,DVN,resolved,True,True,CIK-verified from submissions.json
+1090727,UNITED PARCEL SERVICE INC,extension,UPS,UPS,resolved,True,True,CIK-verified from submissions.json
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",core,CHTR,CHTR,resolved,True,True,CIK-verified from submissions.json
+1099219,METLIFE INC,core,MET,"MET,MET-PA,MET-PE,MET-PF",resolved,True,True,CIK-verified from submissions.json
+1099590,MERCADOLIBRE INC,core,MELI,MELI,resolved,True,True,CIK-verified from submissions.json
+1099800,Edwards Lifesciences Corp,core,EW,EW,resolved,True,True,CIK-verified from submissions.json
+1101239,EQUINIX INC,extension,EQIX,EQIX,resolved,True,True,CIK-verified from submissions.json
+1103982,"Mondelez International, Inc.",core,MDLZ,MDLZ,resolved,True,True,CIK-verified from submissions.json
+1105705,"WARNER MEDIA, LLC",core,,,censored,False,False,submissions.json carries no ticker at all
+1108524,"Salesforce, Inc.",core,CRM,CRM,resolved,True,True,CIK-verified from submissions.json
+1109357,EXELON CORP,extension,EXC,EXC,resolved,True,True,CIK-verified from submissions.json
+1110803,"ILLUMINA, INC.",core,ILMN,ILMN,resolved,True,True,CIK-verified from submissions.json
+1122304,AETNA INC /PA/,core,,,censored,False,False,submissions.json carries no ticker at all
+1123360,GLOBAL PAYMENTS INC,core,GPN,GPN,resolved,True,True,CIK-verified from submissions.json
+1126975,"Magellan Midstream Partners, L.P.",core,,,censored,False,False,submissions.json carries no ticker at all
+1133421,NORTHROP GRUMMAN CORP /DE/,extension,NOC,NOC,resolved,True,True,CIK-verified from submissions.json
+1136893,"Fidelity National Information Services, Inc.",core,FIS,FIS,resolved,True,True,CIK-verified from submissions.json
+1137774,PRUDENTIAL FINANCIAL INC,core,PRU,"PRU,PFH,PRH,PRS",resolved,True,True,CIK-verified from submissions.json
+1137789,Seagate Technology Holdings plc,core,STX,STX,resolved,True,True,CIK-verified from submissions.json
+1141391,Mastercard Inc,core,MA,MA,resolved,True,True,CIK-verified from submissions.json
+1156039,"Elevance Health, Inc.",core,ELV,ELV,resolved,True,True,CIK-verified from submissions.json
+1156375,CME GROUP INC.,core,CME,CME,resolved,True,True,CIK-verified from submissions.json
+1161154,"Energy Transfer Operating, L.P.",core,,,censored,False,False,submissions.json carries no ticker at all
+1163165,CONOCOPHILLIPS,core,COP,COP,resolved,True,True,CIK-verified from submissions.json
+1164727,NEWMONT Corp /DE/,extension,NEM,"NEM,NEMCL",resolved,True,True,CIK-verified from submissions.json
+1166691,COMCAST CORP,core,CMCSA,"CMCSA,CCZ",resolved,True,True,CIK-verified from submissions.json
+1222333,SPDR GOLD TRUST,core,GLD,GLD,resolved,True,True,CIK-verified from submissions.json
+1271024,LINKEDIN CORP,core,,,censored,False,False,submissions.json carries no ticker at all
+1276187,Energy Transfer LP,core,ET,"ET,ET-PI",resolved,True,True,CIK-verified from submissions.json
+1283699,"T-Mobile US, Inc.",extension,TMUS,"TMUS,TMUSI,TMUSL,TMUSZ",resolved,True,True,CIK-verified from submissions.json
+1297996,"DIGITAL REALTY TRUST, INC.",extension,DLR,"DLR,DLR-PK,DLR-PJ,DLR-PL",resolved,True,True,CIK-verified from submissions.json
+1318220,"Waste Connections, Inc.",extension,WCN,WCN,resolved,True,True,CIK-verified from submissions.json
+1318605,"Tesla, Inc.",core,TSLA,TSLA,resolved,True,True,CIK-verified from submissions.json
+1321655,Palantir Technologies Inc.,core,PLTR,PLTR,resolved,True,True,CIK-verified from submissions.json
+1326801,"Meta Platforms, Inc.",core,META,META,resolved,True,True,CIK-verified from submissions.json
+1327567,Palo Alto Networks Inc,core,PANW,PANW,resolved,True,True,CIK-verified from submissions.json
+1341439,ORACLE CORP,core,ORCL,"ORCL,ORCL-PD",resolved,True,True,CIK-verified from submissions.json
+1358071,CONCHO RESOURCES INC,core,,,censored,False,False,submissions.json carries no ticker at all
+1364742,"BlackRock Finance, Inc.",core,,,censored,False,False,submissions.json carries no ticker at all
+1373715,"ServiceNow, Inc.",core,NOW,NOW,resolved,True,True,CIK-verified from submissions.json
+1373835,Spectra Energy Corp.,core,,,censored,False,False,submissions.json carries no ticker at all
+1389170,Targa Resources Corp.,core,TRGP,TRGP,resolved,True,True,CIK-verified from submissions.json
+1390777,Bank of New York Mellon Corp,core,BNY,"BNY,BNY-PK",resolved,True,True,CIK-verified from submissions.json
+1393612,Discover Financial Services,core,,,censored,False,False,submissions.json carries no ticker at all
+1393818,Blackstone Inc.,core,BX,BX,resolved,True,True,CIK-verified from submissions.json
+1403161,VISA INC.,core,V,V,resolved,True,True,CIK-verified from submissions.json
+1404912,KKR & Co. Inc.,core,KKR,"KKR,KKR-PD,KKRS,KKRT",resolved,True,True,CIK-verified from submissions.json
+1413329,Philip Morris International Inc.,core,PM,PM,resolved,True,True,CIK-verified from submissions.json
+1418091,"TWITTER, INC.",core,,,censored,False,False,submissions.json carries no ticker at all
+1467858,General Motors Co,core,GM,GM,resolved,True,True,CIK-verified from submissions.json
+1483096,WILLIAMS PARTNERS L.P.,core,,,censored,False,False,submissions.json carries no ticker at all
+1489393,LyondellBasell Industries N.V.,extension,LYB,LYB,resolved,True,True,CIK-verified from submissions.json
+1506307,"KINDER MORGAN, INC.",core,KMI,"KMI,EP-PC",resolved,True,True,CIK-verified from submissions.json
+1510295,Marathon Petroleum Corp,core,MPC,MPC,resolved,True,True,CIK-verified from submissions.json
+1512673,"Block, Inc.",core,XYZ,"XYZ,BSQKZ",resolved,True,True,CIK-verified from submissions.json
+1532063,Express Scripts Holding Co.,core,,,censored,False,False,submissions.json carries no ticker at all
+1534701,Phillips 66,core,PSX,PSX,resolved,True,True,CIK-verified from submissions.json
+1535527,"CrowdStrike Holdings, Inc.",core,CRWD,CRWD,resolved,True,True,CIK-verified from submissions.json
+1539838,"Diamondback Energy, Inc.",core,FANG,FANG,resolved,True,True,CIK-verified from submissions.json
+1543151,"Uber Technologies, Inc",core,UBER,UBER,resolved,True,True,CIK-verified from submissions.json
+1551152,AbbVie Inc.,core,ABBV,ABBV,resolved,True,True,CIK-verified from submissions.json
+1551182,Eaton Corp plc,extension,ETN,ETN,resolved,True,True,CIK-verified from submissions.json
+1552000,MPLX LP,core,MPLX,"MPLX,MPLXP",resolved,True,True,CIK-verified from submissions.json
+1555280,Zoetis Inc.,core,ZTS,ZTS,resolved,True,True,CIK-verified from submissions.json
+1564408,Snap Inc,core,SNAP,SNAP,resolved,True,True,CIK-verified from submissions.json
+1571949,"Intercontinental Exchange, Inc.",core,ICE,ICE,resolved,True,True,CIK-verified from submissions.json
+1578845,Allergan plc,core,,,censored,False,False,submissions.json carries no ticker at all
+1585521,"Zoom Communications, Inc.",core,ZM,ZM,resolved,True,True,CIK-verified from submissions.json
+1596532,"Arista Networks, Inc.",core,ANET,ANET,resolved,True,True,CIK-verified from submissions.json
+1613103,Medtronic plc,core,MDT,MDT,resolved,True,True,CIK-verified from submissions.json
+1618921,"Walgreens Boots Alliance, Inc.",core,,,censored,False,False,submissions.json carries no ticker at all
+1633917,"PayPal Holdings, Inc.",core,PYPL,PYPL,resolved,True,True,CIK-verified from submissions.json
+1637459,Kraft Heinz Co,core,KHC,KHC,resolved,True,True,CIK-verified from submissions.json
+1640147,Snowflake Inc.,core,SNOW,SNOW,resolved,True,True,CIK-verified from submissions.json
+1645590,Hewlett Packard Enterprise Co,core,HPE,"HPE,HPE-PC",resolved,True,True,CIK-verified from submissions.json
+1652044,Alphabet Inc.,core,GOOGL,"GOOGL,GOOG,GOOGM,GOOGN",resolved,True,True,CIK-verified from submissions.json
+1666700,"DuPont de Nemours, Inc.",extension,DD,DD,resolved,True,True,CIK-verified from submissions.json
+1682852,"Moderna, Inc.",core,MRNA,MRNA,resolved,True,True,CIK-verified from submissions.json
+1692819,Vistra Corp.,extension,VST,VST,resolved,True,True,CIK-verified from submissions.json
+1707925,LINDE PLC,extension,LIN,LIN,resolved,True,True,CIK-verified from submissions.json
+1730168,Broadcom Inc.,core,AVGO,AVGO,resolved,True,True,CIK-verified from submissions.json
+1739940,Cigna Group,core,CI,CI,resolved,True,True,CIK-verified from submissions.json
+1744489,Walt Disney Co,core,DIS,DIS,resolved,True,True,CIK-verified from submissions.json
+1751788,DOW INC.,extension,DOW,DOW,resolved,True,True,CIK-verified from submissions.json
+1782754,AZEK Co Inc.,core,,,censored,False,False,submissions.json carries no ticker at all
+1868275,Constellation Energy Corp,extension,CEG,CEG,resolved,True,True,CIK-verified from submissions.json
+1996810,GE Vernova Inc.,extension,GEV,GEV,resolved,True,True,CIK-verified from submissions.json

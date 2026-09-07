@@ -1,0 +1,236 @@
+[
+ {
+  "chunk_id": "E2CHK-254e479a0e14017c",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A1, ADJUDICATOR-RIGHT): 2017 outlook vs 2016 actual != raised prior guidance. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-28641af1dd53a56c",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A2, ADJUDICATOR-RIGHT): Quantified projection, no explicit reaffirmation. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-9992a913245c70dc",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A3, ADJUDICATOR-RIGHT): Guidance table, but no prior-guidance comparison. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-b9cbe918d3cead0a",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A4, ADJUDICATOR-RIGHT): Clearly fresh fiscal-2020 guidance. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-cf5aa0cd9c95e4ee",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A5, ADJUDICATOR-RIGHT): New 2022 guidance; 'updated 2021' does not give direction. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-d31e86fcdacacb90",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A6, ADJUDICATOR-RIGHT): Fresh Q1 guidance. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-df0f98a67031f9fb",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A7, ADJUDICATOR-RIGHT): Initial 2018 guidance; dividend increase is irrelevant. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-f6a580a23f5c73c2",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A8, ADJUDICATOR-RIGHT): Fresh fiscal-2022 guidance, no reaffirmation. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-f8154d76409080a3",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A9, ADJUDICATOR-RIGHT): Guidance range shown without directional language. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-ffe43fc41893b067",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A10, ADJUDICATOR-RIGHT): FY2022 ranges, no prior target. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-22f9206e6562326a",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A11, ADJUDICATOR-RIGHT): 'Now expects' proves an update, not that it moved upward. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-4f560e57c0051a11",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A12, ADJUDICATOR-RIGHT): Bare quantified outlook; no revision direction. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-881ca5c9182d3a82",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A13, ADJUDICATOR-RIGHT): Very close, but 'now expected' + 'updated outlook' still doesn't tell us up/down. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-8a0a66af1210f721",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A14, ADJUDICATOR-RIGHT): Explicit initial full-year guidance. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-b9201930e2c6eb33",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A15, ADJUDICATOR-RIGHT): Forward estimate table only. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-dc843d3a2623c573",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A16, ADJUDICATOR-RIGHT): 'Initiates' is almost the canonical case for new-but-undirected guidance. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-0138602f200d6bcb",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A17, ADJUDICATOR-RIGHT): $2.4B vs 2024 actual $2.6B is not evidence prior 2025 guidance was lowered. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-0d980c1e7832cb26",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A18, ADJUDICATOR-RIGHT): Vertex 'provided' new 2026 guidance. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-179659419a317bb8",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A19, ADJUDICATOR-RIGHT): New 2022 guidance plus updated 2021 values, but no direction of update. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-3f14cf282cf504e8",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A20, ADJUDICATOR-RIGHT): Restated outlook does not meet the explicit-reaffirmation standard. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-9ed330a5a63136c9",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A21, ADJUDICATOR-RIGHT): Specific forward figure but no prior guidance comparison. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-af98d865cf1fcf87",
+  "field": "guidance_direction",
+  "correct_label": "NONE",
+  "note": "owner ruling 2026-09-07 (A22, ADJUDICATOR-RIGHT): New quarterly outlook; YoY expected growth != guidance raise. Policy ruling (owner, 2026-09-07): guidance_direction = NONE when the company issues quantified guidance but the passage does not establish that the guidance was raised, lowered, maintained, or withdrawn relative to PRIOR GUIDANCE; NONE = no directional action established, not 'no guidance exists'. Comparison to a prior-period ACTUAL is not a revision."
+ },
+ {
+  "chunk_id": "E2CHK-0ce0f271a0db498d",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A23, STORED-RIGHT (adjudicator upheld)): A percentage table by itself should not manufacture sentiment."
+ },
+ {
+  "chunk_id": "E2CHK-19cbfdfda539b797",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A24, ADJUDICATOR-RIGHT): Same rule: largely raw tables/reconciliations."
+ },
+ {
+  "chunk_id": "E2CHK-c139014881563565",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A25, STORED-RIGHT (adjudicator upheld)): Procedural capital return + tables; no real tonal characterization."
+ },
+ {
+  "chunk_id": "E2CHK-dfb41597a10fbecc",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A26, ADJUDICATOR-RIGHT): Strong-looking numbers, but still a reconciliation table with no filer characterization."
+ },
+ {
+  "chunk_id": "E2CHK-1e2619c28f2f551f",
+  "field": "guidance_direction",
+  "correct_label": "MAINTAINED",
+  "note": "owner ruling 2026-09-07 (A27, ADJUDICATOR-RIGHT): Explicit EPS reaffirmation controls the mixed line-item revisions."
+ },
+ {
+  "chunk_id": "E2CHK-467320dd59f87847",
+  "field": "guidance_direction",
+  "correct_label": "MAINTAINED",
+  "note": "owner ruling 2026-09-07 (A28, ADJUDICATOR-RIGHT): Explicit reaffirmation exists; no textual support for RAISED."
+ },
+ {
+  "chunk_id": "E2CHK-d36b7ebe315b5249",
+  "field": "guidance_direction",
+  "correct_label": "MAINTAINED",
+  "note": "owner ruling 2026-09-07 (A29, ADJUDICATOR-RIGHT): 'Narrowing' alone does not establish downward movement without the old range; an explicit maintained metric is present."
+ },
+ {
+  "chunk_id": "E2CHK-040942506845bb80",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A30, STORED-RIGHT (adjudicator upheld)): Pure hypothetical safe-harbor risk list should not make tone negative."
+ },
+ {
+  "chunk_id": "E2CHK-53c7e256395f4d8f",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A31, ADJUDICATOR-RIGHT): Reserve walk is mechanical/mixed; safe-harbor adverse possibilities shouldn't dominate tone."
+ },
+ {
+  "chunk_id": "E2CHK-2d90e2ccfe435d5c",
+  "field": "sentiment",
+  "correct_label": "POSITIVE",
+  "note": "owner ruling 2026-09-07 (A32, ADJUDICATOR-RIGHT): Unlike a raw table, the prose repeatedly narrates realized margin increases and favorable drivers."
+ },
+ {
+  "chunk_id": "E2CHK-195c4f302b0636bf",
+  "field": "guidance_direction",
+  "correct_label": "MAINTAINED",
+  "note": "owner ruling 2026-09-07 (A33, ADJUDICATOR-RIGHT): 'Holding our outlook' is explicit; steering toward low end does not change the range."
+ },
+ {
+  "chunk_id": "E2CHK-2683c59700eec6d3",
+  "field": "sentiment",
+  "correct_label": "POSITIVE",
+  "note": "owner ruling 2026-09-07 (A34, ADJUDICATOR-RIGHT): 'Significant progress' and 'strong strategic and financial position' directly characterize present condition."
+ },
+ {
+  "chunk_id": "E2CHK-6696be4c00546807",
+  "field": "guidance_direction",
+  "correct_label": "MAINTAINED",
+  "note": "owner ruling 2026-09-07 (A35, STORED-RIGHT (adjudicator upheld)): Adjusted earnings explicitly remain within prior guidance; expected actual outperformance isn't a new raised target."
+ },
+ {
+  "chunk_id": "E2CHK-abb5c701902a9312",
+  "field": "sentiment",
+  "correct_label": "NEUTRAL",
+  "note": "owner ruling 2026-09-07 (A36, STORED-RIGHT (overrides adjudicator)): Owner disagrees with adjudicator: promotional awards/records shouldn't overpower genuinely mixed financial performance (net income and pretax income declined, IB fees fell sharply, while revenue, pre-provision income and digital metrics improved)."
+ },
+ {
+  "chunk_id": "E2CHK-a55a42eef205eb7f",
+  "field": "guidance_direction",
+  "correct_label": "MAINTAINED",
+  "note": "owner ruling 2026-09-07 (A37, ADJUDICATOR-RIGHT): 'Remain on track' for a previously announced $750M savings target is a textbook quantified reaffirmation."
+ },
+ {
+  "chunk_id": "E2CHK-c930635e1e19d252",
+  "field": "sentiment",
+  "correct_label": "POSITIVE",
+  "note": "owner ruling 2026-09-07 (A38, ADJUDICATOR-RIGHT): Current results are explicitly 'strong' and 'excellent'; COVID-driven withdrawal is separate from current-results tone."
+ },
+ {
+  "chunk_id": "E2CHK-24b6855a3e22af3c",
+  "field": "sentiment",
+  "correct_label": "NEGATIVE",
+  "note": "owner ruling 2026-09-07 (A39, STORED-RIGHT (overrides adjudicator)): Owner disagrees with adjudicator: profitability deterioration dominates (operating income -40%, margin -501 bps, adjusted EBITDA down, net income -37%, EPS -31 to -37%, opex +50%); calling that balanced understates the deterioration in core earnings."
+ }
+]

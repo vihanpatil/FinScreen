@@ -1,0 +1,364 @@
+{
+  "max_seq_length": 2048,
+  "splits": {
+    "train": {
+      "source_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared/train.jsonl",
+      "source_sha256": "59a4221fe2db60f876f9cb9282a6071870620499dfcf3c2c5b736f18f1d0e2cd",
+      "output_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/train.jsonl",
+      "output_sha256": "d4dc4ec8323b19ae90e4fe00e0eb78c70f16315d40fbd10ef996d4a30a237bbe",
+      "n_examples": 5736,
+      "n_passage_truncated": 2,
+      "truncated": [
+        {
+          "chunk_id": "CHK-e27237d716eaa7ec",
+          "passage_chars_before": 8917,
+          "passage_chars_after": 8372,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-278fd8fbecde0702",
+          "passage_chars_before": 9547,
+          "passage_chars_after": 8333,
+          "rendered_tokens_after": 2048
+        }
+      ],
+      "rendered_tokens": {
+        "mean": 999.3,
+        "p50": 992,
+        "p95": 1170,
+        "p99": 1397,
+        "max": 2048,
+        "total": 5732033
+      },
+      "loss_bearing_tokens": {
+        "mean": 37.0,
+        "max": 135,
+        "total": 212117
+      }
+    },
+    "eval": {
+      "source_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared/eval.jsonl",
+      "source_sha256": "b441716b8f73cae678d38b2b3f19f7d70126d8db0613aeadab98437ef4f26dd9",
+      "output_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/valid.jsonl",
+      "output_sha256": "deb63b76992404ecaf4fdc4c3a3acbea9b0c3bb7f655064aec7191ebc9ab0736",
+      "n_examples": 1010,
+      "n_passage_truncated": 49,
+      "truncated": [
+        {
+          "chunk_id": "CHK-1d0146967622581a",
+          "passage_chars_before": 5189,
+          "passage_chars_after": 4692,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c166f0a63341541e",
+          "passage_chars_before": 3628,
+          "passage_chars_after": 2900,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-01b548d279ce0612",
+          "passage_chars_before": 5042,
+          "passage_chars_after": 4661,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-b95097c07502cb5d",
+          "passage_chars_before": 7010,
+          "passage_chars_after": 6211,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-5ead5da9375f42b4",
+          "passage_chars_before": 6765,
+          "passage_chars_after": 5319,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-f518e6567b440f5d",
+          "passage_chars_before": 7183,
+          "passage_chars_after": 5134,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-19a5d2c8b1782da7",
+          "passage_chars_before": 5022,
+          "passage_chars_after": 4641,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-eaddb39aa3da204a",
+          "passage_chars_before": 5284,
+          "passage_chars_after": 5004,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-8d583b364eda6153",
+          "passage_chars_before": 3572,
+          "passage_chars_after": 2912,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-20a6b53a4954df29",
+          "passage_chars_before": 3623,
+          "passage_chars_after": 2890,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-07c9e03852e22130",
+          "passage_chars_before": 7186,
+          "passage_chars_after": 5985,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-d9ae65a63500b559",
+          "passage_chars_before": 6834,
+          "passage_chars_after": 5146,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-997f0a34375e8d71",
+          "passage_chars_before": 4893,
+          "passage_chars_after": 4585,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-944c990113db417d",
+          "passage_chars_before": 7094,
+          "passage_chars_after": 5310,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-04e0baaa607ba95d",
+          "passage_chars_before": 6609,
+          "passage_chars_after": 6221,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-2a00ea9b53890d95",
+          "passage_chars_before": 5717,
+          "passage_chars_after": 5452,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-258bcb4afe9d552e",
+          "passage_chars_before": 3624,
+          "passage_chars_after": 2909,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-d0636999104ff0a6",
+          "passage_chars_before": 5043,
+          "passage_chars_after": 4661,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-b2c36185edf5be70",
+          "passage_chars_before": 3626,
+          "passage_chars_after": 2910,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-a7e5a720287a5e1f",
+          "passage_chars_before": 7440,
+          "passage_chars_after": 7035,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-a91534271400b30a",
+          "passage_chars_before": 5022,
+          "passage_chars_after": 4641,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c96cd86387228a98",
+          "passage_chars_before": 5027,
+          "passage_chars_after": 4641,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-268770a0b955e8e1",
+          "passage_chars_before": 6780,
+          "passage_chars_after": 5329,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-7839d1bf0899bc5b",
+          "passage_chars_before": 5715,
+          "passage_chars_after": 5453,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-3b0aa8a7e9377f8d",
+          "passage_chars_before": 3592,
+          "passage_chars_after": 2872,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-1a15cd95a12fdb5d",
+          "passage_chars_before": 3594,
+          "passage_chars_after": 2904,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-f76b9aeb821e6677",
+          "passage_chars_before": 3605,
+          "passage_chars_after": 2890,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-e4299d1773883e04",
+          "passage_chars_before": 5031,
+          "passage_chars_after": 4656,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-28bfe1471a0f3135",
+          "passage_chars_before": 5351,
+          "passage_chars_after": 4926,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-1b3bc1e5a291f822",
+          "passage_chars_before": 3616,
+          "passage_chars_after": 2914,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c8e34d5c3890f209",
+          "passage_chars_before": 5027,
+          "passage_chars_after": 4652,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-d4df0b319f691a9c",
+          "passage_chars_before": 5034,
+          "passage_chars_after": 4652,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-800e72474434f0c5",
+          "passage_chars_before": 5316,
+          "passage_chars_after": 4978,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-208ec0430b51af79",
+          "passage_chars_before": 6231,
+          "passage_chars_after": 5433,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-9e5a598dea8b8509",
+          "passage_chars_before": 5462,
+          "passage_chars_after": 5370,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-30c2a322fb3f913d",
+          "passage_chars_before": 5714,
+          "passage_chars_after": 5453,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-3057f8866c831355",
+          "passage_chars_before": 6460,
+          "passage_chars_after": 6169,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-66f8ccf195b5e1d2",
+          "passage_chars_before": 6941,
+          "passage_chars_after": 5488,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-3403ebca8e8e6f90",
+          "passage_chars_before": 6433,
+          "passage_chars_after": 5993,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-50e75001dc511681",
+          "passage_chars_before": 8228,
+          "passage_chars_after": 8054,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-b5e1f8364239ec15",
+          "passage_chars_before": 6438,
+          "passage_chars_after": 4596,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-e504dceb5c84989a",
+          "passage_chars_before": 5566,
+          "passage_chars_after": 4883,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-4c05639d9e5b8ced",
+          "passage_chars_before": 8199,
+          "passage_chars_after": 5337,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-c5a4797a146a9333",
+          "passage_chars_before": 5179,
+          "passage_chars_after": 5076,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-759e39d0da6b3e04",
+          "passage_chars_before": 6538,
+          "passage_chars_after": 5757,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-36203e121d7c8a6a",
+          "passage_chars_before": 6342,
+          "passage_chars_after": 5965,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-774201ad189e6dc8",
+          "passage_chars_before": 5997,
+          "passage_chars_after": 4699,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-a4d5d4cccfb913b7",
+          "passage_chars_before": 7501,
+          "passage_chars_after": 3621,
+          "rendered_tokens_after": 2048
+        },
+        {
+          "chunk_id": "CHK-ab061c985323c1fe",
+          "passage_chars_before": 7811,
+          "passage_chars_after": 6722,
+          "rendered_tokens_after": 2048
+        }
+      ],
+      "rendered_tokens": {
+        "mean": 1147.8,
+        "p50": 1028,
+        "p95": 2031,
+        "p99": 2048,
+        "max": 2048,
+        "total": 1159319
+      },
+      "loss_bearing_tokens": {
+        "mean": 42.3,
+        "max": 152,
+        "total": 42697
+      }
+    }
+  },
+  "leakage_check": {
+    "train_chunk_ids": 5736,
+    "eval_chunk_ids": 1010,
+    "intersection": 0,
+    "instruction_byte_identical": true
+  },
+  "tokenizer_source": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+}

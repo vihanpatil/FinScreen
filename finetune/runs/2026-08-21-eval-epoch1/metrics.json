@@ -1,0 +1,1368 @@
+{
+  "headline": {
+    "n_rows": 1002,
+    "parse": {
+      "n_missing_prediction": 0,
+      "n_unparseable": 0,
+      "parse_failure_rate": 0.0,
+      "reasons": {}
+    },
+    "schema": {
+      "n_rows_with_violations": 0,
+      "violation_rate": 0.0,
+      "issues": {}
+    },
+    "sentiment": {
+      "n": 867,
+      "exact_match": 0.8166,
+      "n_correct": 708,
+      "per_class": {
+        "POSITIVE": {
+          "support": 247,
+          "tp": 227,
+          "fp": 51,
+          "fn": 20,
+          "precision": 0.817,
+          "recall": 0.919,
+          "f1": 0.865
+        },
+        "NEUTRAL": {
+          "support": 507,
+          "tp": 433,
+          "fp": 62,
+          "fn": 74,
+          "precision": 0.875,
+          "recall": 0.854,
+          "f1": 0.864
+        },
+        "NEGATIVE": {
+          "support": 113,
+          "tp": 48,
+          "fp": 12,
+          "fn": 65,
+          "precision": 0.8,
+          "recall": 0.425,
+          "f1": 0.555
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "POSITIVE",
+          "NEUTRAL",
+          "NEGATIVE"
+        ],
+        "precision": 0.831,
+        "recall": 0.733,
+        "f1": 0.761
+      },
+      "zero_support_classes": [],
+      "failure_attribution": {
+        "__MISSING_FIELD__": 34
+      },
+      "confusion": {
+        "NEGATIVE->NEUTRAL": 42,
+        "NEGATIVE->POSITIVE": 9,
+        "NEGATIVE->__MISSING_FIELD__": 14,
+        "NEUTRAL->NEGATIVE": 12,
+        "NEUTRAL->POSITIVE": 42,
+        "NEUTRAL->__MISSING_FIELD__": 20,
+        "POSITIVE->NEUTRAL": 20
+      }
+    },
+    "guidance_direction": {
+      "n": 570,
+      "exact_match": 0.4772,
+      "n_correct": 272,
+      "per_class": {
+        "RAISED": {
+          "support": 7,
+          "tp": 5,
+          "fp": 1,
+          "fn": 2,
+          "precision": 0.833,
+          "recall": 0.714,
+          "f1": 0.769
+        },
+        "MAINTAINED": {
+          "support": 7,
+          "tp": 3,
+          "fp": 4,
+          "fn": 4,
+          "precision": 0.429,
+          "recall": 0.429,
+          "f1": 0.429
+        },
+        "LOWERED": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "WITHDRAWN": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NONE": {
+          "support": 553,
+          "tp": 261,
+          "fp": 4,
+          "fn": 292,
+          "precision": 0.985,
+          "recall": 0.472,
+          "f1": 0.638
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "RAISED",
+          "MAINTAINED",
+          "LOWERED",
+          "NONE"
+        ],
+        "precision": 0.812,
+        "recall": 0.654,
+        "f1": 0.709
+      },
+      "zero_support_classes": [
+        "WITHDRAWN"
+      ],
+      "failure_attribution": {
+        "__MISSING_FIELD__": 289
+      },
+      "confusion": {
+        "MAINTAINED->NONE": 4,
+        "NONE->MAINTAINED": 2,
+        "NONE->RAISED": 1,
+        "NONE->__MISSING_FIELD__": 289,
+        "RAISED->MAINTAINED": 2
+      }
+    },
+    "red_flags": {
+      "n": 1002,
+      "n_parse_failed": 0,
+      "exact_set_match_category_modality": {
+        "n_match": 629,
+        "n": 1002,
+        "rate": 0.6277
+      },
+      "exact_set_match_category_only": {
+        "n_match": 637,
+        "n": 1002,
+        "rate": 0.6357
+      },
+      "per_category": {
+        "DEMAND_WEAKNESS": {
+          "support": 202,
+          "tp": 118,
+          "fp": 18,
+          "fn": 84,
+          "tn": 782,
+          "precision": 0.868,
+          "recall": 0.584,
+          "f1": 0.698
+        },
+        "SUPPLY_INPUT_CONSTRAINT": {
+          "support": 148,
+          "tp": 81,
+          "fp": 3,
+          "fn": 67,
+          "tn": 851,
+          "precision": 0.964,
+          "recall": 0.547,
+          "f1": 0.698
+        },
+        "TRADE_POLICY_EXPOSURE": {
+          "support": 105,
+          "tp": 80,
+          "fp": 14,
+          "fn": 25,
+          "tn": 883,
+          "precision": 0.851,
+          "recall": 0.762,
+          "f1": 0.804
+        },
+        "IMPAIRMENT_WRITEDOWN": {
+          "support": 154,
+          "tp": 131,
+          "fp": 20,
+          "fn": 23,
+          "tn": 828,
+          "precision": 0.868,
+          "recall": 0.851,
+          "f1": 0.859
+        },
+        "MARGIN_COST_PRESSURE": {
+          "support": 242,
+          "tp": 149,
+          "fp": 59,
+          "fn": 93,
+          "tn": 701,
+          "precision": 0.716,
+          "recall": 0.616,
+          "f1": 0.662
+        },
+        "LEGAL_REGULATORY_ACTION": {
+          "support": 297,
+          "tp": 241,
+          "fp": 44,
+          "fn": 56,
+          "tn": 661,
+          "precision": 0.846,
+          "recall": 0.811,
+          "f1": 0.828
+        }
+      },
+      "per_category_decisions": {
+        "n_decisions": 6012,
+        "n_errors": 506,
+        "error_rate": 0.0842,
+        "agreement_rate": 0.9158
+      },
+      "micro": {
+        "precision": 0.835,
+        "recall": 0.697,
+        "f1": 0.76,
+        "tp": 800,
+        "fp": 158,
+        "fn": 348
+      },
+      "macro_over_supported_categories": {
+        "categories": [
+          "DEMAND_WEAKNESS",
+          "SUPPLY_INPUT_CONSTRAINT",
+          "TRADE_POLICY_EXPOSURE",
+          "IMPAIRMENT_WRITEDOWN",
+          "MARGIN_COST_PRESSURE",
+          "LEGAL_REGULATORY_ACTION"
+        ],
+        "precision": 0.852,
+        "recall": 0.695,
+        "f1": 0.758
+      },
+      "zero_support_categories": [],
+      "modality_given_category_agreed": {
+        "n": 800,
+        "n_agree": 761,
+        "rate": 0.9513,
+        "confusion": {
+          "REALIZED->HYPOTHETICAL": 19,
+          "HYPOTHETICAL->REALIZED": 20
+        }
+      }
+    },
+    "field_presence": {
+      "sentiment": {
+        "counts": {
+          "gold_no_pred_no": 133,
+          "gold_yes_pred_yes": 833,
+          "gold_yes_pred_no": 34,
+          "gold_no_pred_yes": 2
+        },
+        "n_determined": 1002,
+        "n_agree": 966,
+        "agreement_rate": 0.9641
+      },
+      "guidance_direction": {
+        "counts": {
+          "gold_no_pred_no": 423,
+          "gold_yes_pred_no": 289,
+          "gold_yes_pred_yes": 281,
+          "gold_no_pred_yes": 9
+        },
+        "n_determined": 1002,
+        "n_agree": 704,
+        "agreement_rate": 0.7026
+      }
+    }
+  },
+  "headline_row_count": 1002,
+  "excluded_row_count": 8,
+  "excluded_slice_8K_BODY": {
+    "n_rows": 8,
+    "parse": {
+      "n_missing_prediction": 0,
+      "n_unparseable": 0,
+      "parse_failure_rate": 0.0,
+      "reasons": {}
+    },
+    "schema": {
+      "n_rows_with_violations": 0,
+      "violation_rate": 0.0,
+      "issues": {}
+    },
+    "sentiment": {
+      "n": 8,
+      "exact_match": 1.0,
+      "n_correct": 8,
+      "per_class": {
+        "POSITIVE": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NEUTRAL": {
+          "support": 6,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "NEGATIVE": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "NEUTRAL",
+          "NEGATIVE"
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "zero_support_classes": [
+        "POSITIVE"
+      ],
+      "failure_attribution": {},
+      "confusion": {}
+    },
+    "guidance_direction": {
+      "n": 8,
+      "exact_match": 0.25,
+      "n_correct": 2,
+      "per_class": {
+        "RAISED": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "MAINTAINED": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "LOWERED": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "WITHDRAWN": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NONE": {
+          "support": 8,
+          "tp": 2,
+          "fp": 0,
+          "fn": 6,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        }
+      },
+      "macro_over_supported_classes": {
+        "classes": [
+          "NONE"
+        ],
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "zero_support_classes": [
+        "RAISED",
+        "MAINTAINED",
+        "LOWERED",
+        "WITHDRAWN"
+      ],
+      "failure_attribution": {
+        "__MISSING_FIELD__": 6
+      },
+      "confusion": {
+        "NONE->__MISSING_FIELD__": 6
+      }
+    },
+    "red_flags": {
+      "n": 8,
+      "n_parse_failed": 0,
+      "exact_set_match_category_modality": {
+        "n_match": 5,
+        "n": 8,
+        "rate": 0.625
+      },
+      "exact_set_match_category_only": {
+        "n_match": 5,
+        "n": 8,
+        "rate": 0.625
+      },
+      "per_category": {
+        "DEMAND_WEAKNESS": {
+          "support": 1,
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "tn": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "SUPPLY_INPUT_CONSTRAINT": {
+          "support": 2,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "tn": 6,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        },
+        "TRADE_POLICY_EXPOSURE": {
+          "support": 2,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "tn": 6,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        },
+        "IMPAIRMENT_WRITEDOWN": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "MARGIN_COST_PRESSURE": {
+          "support": 3,
+          "tp": 2,
+          "fp": 1,
+          "fn": 1,
+          "tn": 4,
+          "precision": 0.667,
+          "recall": 0.667,
+          "f1": 0.667
+        },
+        "LEGAL_REGULATORY_ACTION": {
+          "support": 5,
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "tn": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "per_category_decisions": {
+        "n_decisions": 48,
+        "n_errors": 5,
+        "error_rate": 0.1042,
+        "agreement_rate": 0.8958
+      },
+      "micro": {
+        "precision": 0.917,
+        "recall": 0.733,
+        "f1": 0.815,
+        "tp": 11,
+        "fp": 1,
+        "fn": 4
+      },
+      "macro_over_supported_categories": {
+        "categories": [
+          "DEMAND_WEAKNESS",
+          "SUPPLY_INPUT_CONSTRAINT",
+          "TRADE_POLICY_EXPOSURE",
+          "IMPAIRMENT_WRITEDOWN",
+          "MARGIN_COST_PRESSURE",
+          "LEGAL_REGULATORY_ACTION"
+        ],
+        "precision": 0.778,
+        "recall": 0.611,
+        "f1": 0.667
+      },
+      "zero_support_categories": [],
+      "modality_given_category_agreed": {
+        "n": 11,
+        "n_agree": 11,
+        "rate": 1.0,
+        "confusion": {}
+      }
+    },
+    "field_presence": {
+      "sentiment": {
+        "counts": {
+          "gold_yes_pred_yes": 8
+        },
+        "n_determined": 8,
+        "n_agree": 8,
+        "agreement_rate": 1.0
+      },
+      "guidance_direction": {
+        "counts": {
+          "gold_yes_pred_no": 6,
+          "gold_yes_pred_yes": 2
+        },
+        "n_determined": 8,
+        "n_agree": 2,
+        "agreement_rate": 0.25
+      }
+    }
+  },
+  "by_section_type": {
+    "EX99_PRESS_RELEASE": {
+      "n_rows": 570,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 570,
+        "exact_match": 0.8333,
+        "n_correct": 475,
+        "per_class": {
+          "POSITIVE": {
+            "support": 178,
+            "tp": 166,
+            "fp": 40,
+            "fn": 12,
+            "precision": 0.806,
+            "recall": 0.933,
+            "f1": 0.865
+          },
+          "NEUTRAL": {
+            "support": 327,
+            "tp": 284,
+            "fp": 42,
+            "fn": 43,
+            "precision": 0.871,
+            "recall": 0.869,
+            "f1": 0.87
+          },
+          "NEGATIVE": {
+            "support": 65,
+            "tp": 25,
+            "fp": 7,
+            "fn": 40,
+            "precision": 0.781,
+            "recall": 0.385,
+            "f1": 0.515
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "POSITIVE",
+            "NEUTRAL",
+            "NEGATIVE"
+          ],
+          "precision": 0.819,
+          "recall": 0.729,
+          "f1": 0.75
+        },
+        "zero_support_classes": [],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 6
+        },
+        "confusion": {
+          "NEGATIVE->NEUTRAL": 30,
+          "NEGATIVE->POSITIVE": 9,
+          "NEGATIVE->__MISSING_FIELD__": 1,
+          "NEUTRAL->NEGATIVE": 7,
+          "NEUTRAL->POSITIVE": 31,
+          "NEUTRAL->__MISSING_FIELD__": 5,
+          "POSITIVE->NEUTRAL": 12
+        }
+      },
+      "guidance_direction": {
+        "n": 570,
+        "exact_match": 0.4772,
+        "n_correct": 272,
+        "per_class": {
+          "RAISED": {
+            "support": 7,
+            "tp": 5,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.833,
+            "recall": 0.714,
+            "f1": 0.769
+          },
+          "MAINTAINED": {
+            "support": 7,
+            "tp": 3,
+            "fp": 4,
+            "fn": 4,
+            "precision": 0.429,
+            "recall": 0.429,
+            "f1": 0.429
+          },
+          "LOWERED": {
+            "support": 3,
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 553,
+            "tp": 261,
+            "fp": 4,
+            "fn": 292,
+            "precision": 0.985,
+            "recall": 0.472,
+            "f1": 0.638
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "RAISED",
+            "MAINTAINED",
+            "LOWERED",
+            "NONE"
+          ],
+          "precision": 0.812,
+          "recall": 0.654,
+          "f1": 0.709
+        },
+        "zero_support_classes": [
+          "WITHDRAWN"
+        ],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 289
+        },
+        "confusion": {
+          "MAINTAINED->NONE": 4,
+          "NONE->MAINTAINED": 2,
+          "NONE->RAISED": 1,
+          "NONE->__MISSING_FIELD__": 289,
+          "RAISED->MAINTAINED": 2
+        }
+      },
+      "red_flags": {
+        "n": 570,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 366,
+          "n": 570,
+          "rate": 0.6421
+        },
+        "exact_set_match_category_only": {
+          "n_match": 369,
+          "n": 570,
+          "rate": 0.6474
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 69,
+            "tp": 37,
+            "fp": 3,
+            "fn": 32,
+            "tn": 498,
+            "precision": 0.925,
+            "recall": 0.536,
+            "f1": 0.679
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 80,
+            "tp": 36,
+            "fp": 1,
+            "fn": 44,
+            "tn": 489,
+            "precision": 0.973,
+            "recall": 0.45,
+            "f1": 0.615
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 57,
+            "tp": 36,
+            "fp": 7,
+            "fn": 21,
+            "tn": 506,
+            "precision": 0.837,
+            "recall": 0.632,
+            "f1": 0.72
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 109,
+            "tp": 89,
+            "fp": 16,
+            "fn": 20,
+            "tn": 445,
+            "precision": 0.848,
+            "recall": 0.817,
+            "f1": 0.832
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 151,
+            "tp": 88,
+            "fp": 31,
+            "fn": 63,
+            "tn": 388,
+            "precision": 0.739,
+            "recall": 0.583,
+            "f1": 0.652
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 141,
+            "tp": 109,
+            "fp": 18,
+            "fn": 32,
+            "tn": 411,
+            "precision": 0.858,
+            "recall": 0.773,
+            "f1": 0.813
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 3420,
+          "n_errors": 288,
+          "error_rate": 0.0842,
+          "agreement_rate": 0.9158
+        },
+        "micro": {
+          "precision": 0.839,
+          "recall": 0.651,
+          "f1": 0.733,
+          "tp": 395,
+          "fp": 76,
+          "fn": 212
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "TRADE_POLICY_EXPOSURE",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.863,
+          "recall": 0.632,
+          "f1": 0.719
+        },
+        "zero_support_categories": [],
+        "modality_given_category_agreed": {
+          "n": 395,
+          "n_agree": 384,
+          "rate": 0.9722,
+          "confusion": {
+            "HYPOTHETICAL->REALIZED": 11
+          }
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_yes_pred_yes": 564,
+            "gold_yes_pred_no": 6
+          },
+          "n_determined": 570,
+          "n_agree": 564,
+          "agreement_rate": 0.9895
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_yes_pred_no": 289,
+            "gold_yes_pred_yes": 281
+          },
+          "n_determined": 570,
+          "n_agree": 281,
+          "agreement_rate": 0.493
+        }
+      }
+    },
+    "MDA": {
+      "n_rows": 297,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 297,
+        "exact_match": 0.7845,
+        "n_correct": 233,
+        "per_class": {
+          "POSITIVE": {
+            "support": 69,
+            "tp": 61,
+            "fp": 11,
+            "fn": 8,
+            "precision": 0.847,
+            "recall": 0.884,
+            "f1": 0.865
+          },
+          "NEUTRAL": {
+            "support": 180,
+            "tp": 149,
+            "fp": 20,
+            "fn": 31,
+            "precision": 0.882,
+            "recall": 0.828,
+            "f1": 0.854
+          },
+          "NEGATIVE": {
+            "support": 48,
+            "tp": 23,
+            "fp": 5,
+            "fn": 25,
+            "precision": 0.821,
+            "recall": 0.479,
+            "f1": 0.605
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "POSITIVE",
+            "NEUTRAL",
+            "NEGATIVE"
+          ],
+          "precision": 0.85,
+          "recall": 0.73,
+          "f1": 0.775
+        },
+        "zero_support_classes": [],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 28
+        },
+        "confusion": {
+          "NEGATIVE->NEUTRAL": 12,
+          "NEGATIVE->__MISSING_FIELD__": 13,
+          "NEUTRAL->NEGATIVE": 5,
+          "NEUTRAL->POSITIVE": 11,
+          "NEUTRAL->__MISSING_FIELD__": 15,
+          "POSITIVE->NEUTRAL": 8
+        }
+      },
+      "guidance_direction": {
+        "n": 0,
+        "exact_match": 0.0,
+        "n_correct": 0,
+        "per_class": {
+          "RAISED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "MAINTAINED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "LOWERED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [],
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "zero_support_classes": [
+          "RAISED",
+          "MAINTAINED",
+          "LOWERED",
+          "WITHDRAWN",
+          "NONE"
+        ],
+        "failure_attribution": {},
+        "confusion": {}
+      },
+      "red_flags": {
+        "n": 297,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 190,
+          "n": 297,
+          "rate": 0.6397
+        },
+        "exact_set_match_category_only": {
+          "n_match": 192,
+          "n": 297,
+          "rate": 0.6465
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 88,
+            "tp": 55,
+            "fp": 7,
+            "fn": 33,
+            "tn": 202,
+            "precision": 0.887,
+            "recall": 0.625,
+            "f1": 0.733
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 28,
+            "tp": 14,
+            "fp": 0,
+            "fn": 14,
+            "tn": 269,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.667
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 29,
+            "tp": 25,
+            "fp": 6,
+            "fn": 4,
+            "tn": 262,
+            "precision": 0.806,
+            "recall": 0.862,
+            "f1": 0.833
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 36,
+            "tp": 35,
+            "fp": 4,
+            "fn": 1,
+            "tn": 257,
+            "precision": 0.897,
+            "recall": 0.972,
+            "f1": 0.933
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 59,
+            "tp": 42,
+            "fp": 23,
+            "fn": 17,
+            "tn": 215,
+            "precision": 0.646,
+            "recall": 0.712,
+            "f1": 0.677
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 71,
+            "tp": 53,
+            "fp": 16,
+            "fn": 18,
+            "tn": 210,
+            "precision": 0.768,
+            "recall": 0.746,
+            "f1": 0.757
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 1782,
+          "n_errors": 143,
+          "error_rate": 0.0802,
+          "agreement_rate": 0.9198
+        },
+        "micro": {
+          "precision": 0.8,
+          "recall": 0.72,
+          "f1": 0.758,
+          "tp": 224,
+          "fp": 56,
+          "fn": 87
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "TRADE_POLICY_EXPOSURE",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.834,
+          "recall": 0.736,
+          "f1": 0.767
+        },
+        "zero_support_categories": [],
+        "modality_given_category_agreed": {
+          "n": 224,
+          "n_agree": 209,
+          "rate": 0.933,
+          "confusion": {
+            "REALIZED->HYPOTHETICAL": 10,
+            "HYPOTHETICAL->REALIZED": 5
+          }
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_yes_pred_yes": 269,
+            "gold_yes_pred_no": 28
+          },
+          "n_determined": 297,
+          "n_agree": 269,
+          "agreement_rate": 0.9057
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_no_pred_no": 288,
+            "gold_no_pred_yes": 9
+          },
+          "n_determined": 297,
+          "n_agree": 288,
+          "agreement_rate": 0.9697
+        }
+      }
+    },
+    "RISK_FACTORS": {
+      "n_rows": 135,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 0,
+        "exact_match": 0.0,
+        "n_correct": 0,
+        "per_class": {
+          "POSITIVE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NEUTRAL": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NEGATIVE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [],
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "zero_support_classes": [
+          "POSITIVE",
+          "NEUTRAL",
+          "NEGATIVE"
+        ],
+        "failure_attribution": {},
+        "confusion": {}
+      },
+      "guidance_direction": {
+        "n": 0,
+        "exact_match": 0.0,
+        "n_correct": 0,
+        "per_class": {
+          "RAISED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "MAINTAINED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "LOWERED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [],
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "zero_support_classes": [
+          "RAISED",
+          "MAINTAINED",
+          "LOWERED",
+          "WITHDRAWN",
+          "NONE"
+        ],
+        "failure_attribution": {},
+        "confusion": {}
+      },
+      "red_flags": {
+        "n": 135,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 73,
+          "n": 135,
+          "rate": 0.5407
+        },
+        "exact_set_match_category_only": {
+          "n_match": 76,
+          "n": 135,
+          "rate": 0.563
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 45,
+            "tp": 26,
+            "fp": 8,
+            "fn": 19,
+            "tn": 82,
+            "precision": 0.765,
+            "recall": 0.578,
+            "f1": 0.658
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 40,
+            "tp": 31,
+            "fp": 2,
+            "fn": 9,
+            "tn": 93,
+            "precision": 0.939,
+            "recall": 0.775,
+            "f1": 0.849
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 19,
+            "tp": 19,
+            "fp": 1,
+            "fn": 0,
+            "tn": 115,
+            "precision": 0.95,
+            "recall": 1.0,
+            "f1": 0.974
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 9,
+            "tp": 7,
+            "fp": 0,
+            "fn": 2,
+            "tn": 126,
+            "precision": 1.0,
+            "recall": 0.778,
+            "f1": 0.875
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 32,
+            "tp": 19,
+            "fp": 5,
+            "fn": 13,
+            "tn": 98,
+            "precision": 0.792,
+            "recall": 0.594,
+            "f1": 0.679
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 85,
+            "tp": 79,
+            "fp": 10,
+            "fn": 6,
+            "tn": 40,
+            "precision": 0.888,
+            "recall": 0.929,
+            "f1": 0.908
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 810,
+          "n_errors": 75,
+          "error_rate": 0.0926,
+          "agreement_rate": 0.9074
+        },
+        "micro": {
+          "precision": 0.874,
+          "recall": 0.787,
+          "f1": 0.828,
+          "tp": 181,
+          "fp": 26,
+          "fn": 49
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "TRADE_POLICY_EXPOSURE",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.889,
+          "recall": 0.776,
+          "f1": 0.824
+        },
+        "zero_support_categories": [],
+        "modality_given_category_agreed": {
+          "n": 181,
+          "n_agree": 168,
+          "rate": 0.9282,
+          "confusion": {
+            "REALIZED->HYPOTHETICAL": 9,
+            "HYPOTHETICAL->REALIZED": 4
+          }
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_no_pred_no": 133,
+            "gold_no_pred_yes": 2
+          },
+          "n_determined": 135,
+          "n_agree": 133,
+          "agreement_rate": 0.9852
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_no_pred_no": 135
+          },
+          "n_determined": 135,
+          "n_agree": 135,
+          "agreement_rate": 1.0
+        }
+      }
+    }
+  },
+  "section_type_counts": {
+    "RISK_FACTORS": 135,
+    "MDA": 297,
+    "EX99_PRESS_RELEASE": 570,
+    "8K_BODY": 8
+  }
+}

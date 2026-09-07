@@ -1,0 +1,46 @@
+# manual_exclusions.csv -- registrants removed from a candidate universe BY HAND,
+# with the evidence written down. Consumed by build_universe_e2.py
+# (load_manual_exclusions); every row that bites is written to the variant's
+# reject log as `manual_exclusion` and printed in data/E2_UNIVERSE_REPORT.md.
+# Nothing here is ever dropped silently.
+#
+# COLUMNS
+#   cik             EDGAR CIK (integer, no leading zeros)
+#   name            registrant name, for humans; not used for matching
+#   reason          short machine-ish tag for the defect class
+#   evidence        the primary-source facts that justify removal. MANDATORY.
+#   evidence_filed  EDGAR filing date on which that evidence became public
+#   effective_from  first reconstitution date the exclusion applies to (inclusive,
+#                   blank = unbounded). If both this and evidence_filed are set,
+#                   the loader REQUIRES evidence_filed < effective_from, so a
+#                   dated exclusion can never encode hindsight.
+#   effective_to    last reconstitution date it applies to (inclusive, blank = unbounded)
+#   applies_to      semicolon-separated variant names. Defaults to hybrid136 only:
+#                   continuity5 and broad8 are the frozen option record behind the
+#                   owner's 2026-08-21 decision and must keep reproducing byte-identically.
+#   date_added      when the row was added, and by whom in the git log
+#   superseded_by_rule
+#                   OPTIONAL, provenance only. Semicolon-separated names of the
+#                   ratified float-integrity rules (newer_zero_float,
+#                   min_public_shares) that now cover this case systematically.
+#                   A row is annotated, NOT deleted: deleting it would erase the
+#                   discovery that motivated the rule and leave the report
+#                   claiming the rule appeared from nowhere. An annotated row
+#                   still bites -- the annotation is a note in the audit trail,
+#                   not an off switch. Verified against cached EDGAR data at
+#                   every reconstitution date the row covers before it was set;
+#                   an unverified annotation would be worse than none.
+#
+# A row with NO effective_from means the datum was never valid at any date (a
+# tagging error). A DATED row means the world changed -- the registrant stopped
+# having public equity -- and the change was itself publicly filed before the
+# first date the row bites.
+#
+# The '#' character starts a comment line and must not appear inside any value.
+cik,name,reason,evidence,evidence_filed,effective_from,effective_to,applies_to,date_added,superseded_by_rule
+1616314,"MedEquities Realty Trust, Inc.",float_scaled_1000x_whole_history,"Both nonzero dei:EntityPublicFloat facts it ever filed are 1000x too large, so the within-registrant sanitizer sees a smooth 358.2 -> 316.7 series (ratio 1.13) and passes them. FY2017 10-K accn 0001564590-18-002682 tags float 358216529000 USD and, on the SAME cover page, 31886684 common shares outstanding: an implied non-affiliate price of 11234 USD/share. FY2018 10-K accn 0001564590-19-004100 tags 316714569000 USD against 31840651 shares: 9947 USD/share. us-gaap:Assets on those same 10-Ks is 0.58B and 0.63B USD, so the tagged float is 615x and 503x total assets. Dividing by 1000 gives floats of 358.2M and 316.7M USD and per-share prices of 11.23 and 9.94, consistent with a small healthcare REIT that IPO-ed in Oct 2016 at 12 USD. Selected as a materials_realestate member at 2018/2019/2020 on a float that would have made it a top-5 US company.",2018-02-21,,,hybrid136,2026-08-21,
+1690881,"ASV HOLDINGS, INC.",float_and_shares_scaled_1000x_on_10k_cover,"The 10-K cover mis-scales float AND share count together, so the implied price looks normal (5.77 USD) and only the registrant's own 10-Qs give it away. FY2018 10-K accn 0001564590-19-010131 (and its two 10-K/As) tag float 57069720000 USD and 9896878000 shares outstanding, while the 10-Q filed three months earlier (accn 0001564590-18-026249) reports 9835512 shares -- exactly 1000x smaller. Same pattern on the FY2017 10-K (float 79870000000 USD, 9815482000 shares vs 9822217 on the adjacent 10-Q). us-gaap:Assets is 87.6M USD at 2018-12-31, so the tagged float is 651x total assets. Real float is about 57.1M USD. Only two distinct float instants exist (79.9B then 57.1B, ratio 1.40), so the adjacent-disclosure sanitizer has nothing to catch. Entered the industrials bucket at 2019-07-01 at rank 11 of 12 as a 57B USD large cap; the company made compact track loaders and was bought by Yanmar for about 64M USD in Oct 2019.",2019-03-29,,,hybrid136,2026-08-21,
+1853513,"Mister Car Wash, Inc.",float_scaled_1000x_whole_history,"Every one of its six dei:EntityPublicFloat facts is 1000x too large, so there is no clean neighbour anywhere in its history: 1.381e12, 8.809e11, 8.557e11, 6.755e11 and 6.036e11 USD for instants 2021-06-30 through 2025-06-30. Share counts on the same covers are correctly scaled and smooth (296M -> 328M), giving implied non-affiliate prices of 4583, 2867, 2712, 2085 and 1837 USD/share for a Nasdaq stock that IPO-ed in June 2021 at 15 USD. us-gaap:Assets on the same 10-Ks runs 2.45B - 3.17B USD, so the tagged float is 190x to 285x total assets; dividing float by 1000 gives 0.19x - 0.56x, and non-affiliate fractions of 23 percent rising to 28 percent, consistent with Leonard Green selling down after the IPO. This is a CORE-stratum error: it was a selected consumer member of continuity5 (and so of hybrid136 core) at 2023, 2024, 2025 and 2026, ranked 2nd/3rd in its bucket and 5th/7th/9th/12th by float in the whole universe.",2023-02-24,,,hybrid136,2026-08-21,
+30554,"EIDP, Inc.",no_public_common_equity,"Not a scale error: the float value is correct but describes a company that no longer exists as a public issuer. EIDP (formerly E. I. du Pont de Nemours) became a wholly-owned subsidiary of DowDuPont on 2017-08-31. Its FY2017 10-K accn 0000030554-18-000002, filed 2018-02-15 and therefore public before the 2018-07-01 reconstitution, reports 100 common shares outstanding while still disclosing the pre-merger 70.0B USD float measured 2017-06-30. Its FY2018 10-K accn 0000030554-19-000005 (filed 2019-02-11) tags float 0, which the sanitizer discards as zero_or_negative, letting the fossil 70.0B USD value win again at 2019-07-01. Only preferred series CTA-PA/CTA-PB remain listed. Membership at 2016-07-01 and 2017-07-01 is legitimate (864M-872M shares, real float) and is deliberately NOT excluded.",2018-02-15,2018-07-01,,hybrid136,2026-08-21,newer_zero_float;min_public_shares
+29915,DOW CHEMICAL CO /DE/,no_public_common_equity,"Same DowDuPont mechanism as EIDP, arriving through the zero-float route. Dow Chemical became a wholly-owned subsidiary of DowDuPont on 2017-08-31; its FY2017 10-K accn 0000029915-18-000007, filed 2018-02-15 and public before the 2018-07-01 reconstitution, reports 100 common shares outstanding and tags dei:EntityPublicFloat = 0. The sanitizer drops that zero as zero_or_negative, so pit_float_asof falls back to the superseded 55.8B USD value measured 2016-06-30, and Dow enters the 2018 materials_realestate bucket as a large cap with no publicly traded common stock. Membership at 2016-07-01 and 2017-07-01 is legitimate and is NOT excluded.",2018-02-15,2018-07-01,,hybrid136,2026-08-21,newer_zero_float;min_public_shares
+1161154,"Energy Transfer Operating, L.P.",no_public_common_equity,"Became a wholly-owned subsidiary of Energy Transfer LP in the Oct 2018 ETE/ETP merger. Its FY2019 10-K accn 0001161154-20-000010, filed 2020-02-21 and public before the 2020-07-01 reconstitution, tags dei:EntityPublicFloat = 0. That zero is discarded as zero_or_negative and the superseded 21.63B USD value measured 2018-06-30 wins instead, putting a partnership with no publicly traded common units into the 2020 energy bucket. This is a CORE-stratum row. Membership at 2018-07-01 and 2019-07-01 rests on float measured while ETP units were still public and is NOT excluded.",2020-02-21,2020-07-01,,hybrid136,2026-08-21,newer_zero_float

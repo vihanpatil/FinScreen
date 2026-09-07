@@ -1,0 +1,282 @@
+{
+ "provenance": "model-consensus + owner rulings on the escalated subset; NOT human validation of ground truth",
+ "n_drawn": 200,
+ "n_rated": 200,
+ "n_evaluable": 200,
+ "n_nonevaluable": 0,
+ "nonevaluable_reasons": {},
+ "P1_exact_set_error": {
+  "k": 84,
+  "n": 200,
+  "point": 0.42,
+  "wilson_95": [
+   0.3537348235017175,
+   0.48928053744521394
+  ],
+  "kstar_for_demotion": 84,
+  "phat_star": 0.42,
+  "demote": true,
+  "rule": "demote iff Wilson lower bound STRICTLY > 0.35 (boundary equality does NOT demote)"
+ },
+ "P1_nonevaluable_bounds": {
+  "all_nonevaluable_as_error": [
+   0.3537348235017175,
+   0.48928053744521394
+  ],
+  "all_nonevaluable_as_agree": [
+   0.3537348235017175,
+   0.48928053744521394
+  ]
+ },
+ "S1_category_set_error": {
+  "k": 71,
+  "n": 200,
+  "wilson_95": [
+   0.29198518653239286,
+   0.4234801551839203
+  ],
+  "note": "P1 minus S1 is the share of exact-set error that is modality-only"
+ },
+ "S2_per_category_decision_error": {
+  "k": 127,
+  "n_decisions": 1200,
+  "point": 0.10583333333333333,
+  "cluster_bootstrap_95": [
+   0.08583333333333333,
+   0.1275
+  ],
+  "naive_binomial_95_ANTICONSERVATIVE": [
+   0.08966801961298809,
+   0.1245143113514843
+  ],
+  "note": "the 6 category decisions inside a chunk are not independent; the cluster bootstrap (resampling chunks) is the honest interval. v1.1's 7.5% [91.4, 93.5] was the naive one."
+ },
+ "S3_by_section": {
+  "EX99_PRESS_RELEASE": {
+   "k": 12,
+   "n": 35,
+   "point": 0.34285714285714286,
+   "wilson_95": [
+    0.20831495282688925,
+    0.5084835312726328
+   ]
+  },
+  "MDA": {
+   "k": 43,
+   "n": 117,
+   "point": 0.36752136752136755,
+   "wilson_95": [
+    0.2856667089149571,
+    0.4577991174229928
+   ]
+  },
+  "RISK_FACTORS": {
+   "k": 29,
+   "n": 48,
+   "point": 0.6041666666666666,
+   "wilson_95": [
+    0.4631015459693511,
+    0.7297937350404942
+   ]
+  }
+ },
+ "S4_per_category": {
+  "DEMAND_WEAKNESS": {
+   "stored_present_base": {
+    "k": 11,
+    "n": 27,
+    "point": 0.4074074074074074,
+    "wilson_95": [
+     0.24514513372857344,
+     0.5927361694463591
+    ]
+   },
+   "reference_present_base": {
+    "k": 10,
+    "n": 26,
+    "point": 0.38461538461538464,
+    "wilson_95": [
+     0.22428359511834428,
+     0.5746547996057992
+    ]
+   }
+  },
+  "SUPPLY_INPUT_CONSTRAINT": {
+   "stored_present_base": {
+    "k": 7,
+    "n": 8,
+    "point": 0.875,
+    "wilson_95": [
+     0.5291051942301386,
+     0.9775830911367038
+    ]
+   },
+   "reference_present_base": {
+    "k": 11,
+    "n": 12,
+    "point": 0.9166666666666666,
+    "wilson_95": [
+     0.6461140782014047,
+     0.9851352905492264
+    ]
+   }
+  },
+  "TRADE_POLICY_EXPOSURE": {
+   "stored_present_base": {
+    "k": 18,
+    "n": 27,
+    "point": 0.6666666666666666,
+    "wilson_95": [
+     0.47824419872105484,
+     0.8135694555640665
+    ]
+   },
+   "reference_present_base": {
+    "k": 8,
+    "n": 17,
+    "point": 0.47058823529411764,
+    "wilson_95": [
+     0.26164801196088106,
+     0.6903710268845051
+    ]
+   }
+  },
+  "IMPAIRMENT_WRITEDOWN": {
+   "stored_present_base": {
+    "k": 6,
+    "n": 24,
+    "point": 0.25,
+    "wilson_95": [
+     0.1199920347934233,
+     0.4489982531210644
+    ]
+   },
+   "reference_present_base": {
+    "k": 3,
+    "n": 21,
+    "point": 0.14285714285714285,
+    "wilson_95": [
+     0.04980921798213492,
+     0.346364941492295
+    ]
+   }
+  },
+  "MARGIN_COST_PRESSURE": {
+   "stored_present_base": {
+    "k": 32,
+    "n": 65,
+    "point": 0.49230769230769234,
+    "wilson_95": [
+     0.37463636042469284,
+     0.6108375390779336
+    ]
+   },
+   "reference_present_base": {
+    "k": 9,
+    "n": 42,
+    "point": 0.21428571428571427,
+    "wilson_95": [
+     0.11705668531051237,
+     0.3594013789804373
+    ]
+   }
+  },
+  "LEGAL_REGULATORY_ACTION": {
+   "stored_present_base": {
+    "k": 25,
+    "n": 68,
+    "point": 0.36764705882352944,
+    "wilson_95": [
+     0.26300294660514806,
+     0.48644584072698266
+    ]
+   },
+   "reference_present_base": {
+    "k": 18,
+    "n": 61,
+    "point": 0.29508196721311475,
+    "wilson_95": [
+     0.19554865403985322,
+     0.4188963935838945
+    ]
+   }
+  }
+ },
+ "S5_by_v11_change": {
+  "False": {
+   "k": 46,
+   "n": 145,
+   "point": 0.31724137931034485,
+   "wilson_95": [
+    0.24704058770171988,
+    0.3968761667540236
+   ]
+  },
+  "True": {
+   "k": 38,
+   "n": 55,
+   "point": 0.6909090909090909,
+   "wilson_95": [
+    0.5597116084861727,
+    0.7971787547942276
+   ]
+  }
+ },
+ "S6_error_modes": {
+  "spurious_flags": 68,
+  "missed_flags": 28,
+  "wrong_modality": 31,
+  "note": "counts of category-level corrections on error rows; no CI (descriptive)"
+ },
+ "S7_rater_replicate": {
+  "n": 40,
+  "exact_set_agreement": 0.9,
+  "wilson_95": [
+   0.7694792561952611,
+   0.9604211124044252
+  ],
+  "note": "rater A is the primary rater for all 200; this arm never feeds P1. It bounds how much of P1 is rater noise."
+ },
+ "S8_owner_probe": {
+  "probe_ids_written_to": "probe_ids.json",
+  "n_probe": 20,
+  "n_ruled": 20,
+  "overturned": 0,
+  "wilson_95_on_hidden_shared_error": [
+   -1.3877787807814457e-17,
+   0.16113012549493322
+  ],
+  "escalation_triggered": false,
+  "escalation_rule": "if >= 2 of 20 uncontested rows are overturned, adjudicate ALL uncontested rows ONCE and recompute P1. No re-draw, no n increase."
+ },
+ "comparison_v11_tierC": {
+  "v11_tierC": {
+   "k": 9,
+   "n": 36,
+   "point": 0.25,
+   "wilson_95": [
+    0.13750323839225387,
+    0.41070767683203424
+   ]
+  },
+  "v12": {
+   "k": 84,
+   "n": 200,
+   "point": 0.42,
+   "wilson_95": [
+    0.3537348235017175,
+    0.48928053744521394
+   ]
+  },
+  "difference_v12_minus_v11_newcombe_95": [
+   -0.003833342627638875,
+   0.3021185613035797
+  ],
+  "caveats": [
+   "different rubrics: a v1.1 label judged under v1.1 vs a v1.2 label judged under v1.2 \u2014 the target moved, so this is NOT a test that the rubric repair worked",
+   "different frames: v1.1 Tier C was drawn from the residual pool after the exhaustive A/B strata were removed; the frame-induced bias is +0.45 pts (design doc \u00a75.3), inside its own +-13.7 pt CI",
+   "different raters and adjudication rounds",
+   "DESCRIPTIVE ONLY \u2014 no decision reads this row"
+  ]
+ }
+}

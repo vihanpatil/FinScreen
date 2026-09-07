@@ -1,0 +1,645 @@
+[
+ {
+  "chunk_id": "E2CHK-cc5d2223bb5c7434",
+  "field": "red_flags",
+  "text": "We have goodwill and intangible assets recorded on our balance sheet. We periodically evaluate the recoverability of the carrying value of our goodwill and intangible assets whenever events or changes in circumstances indicate such value may not be recoverable. An impairment assessment involves judgment as to assumptions regarding future sales and cash flow and the impact of market conditions on those assumptions. Future events and changing market conditions may impact our assumptions and change our estimates of future sales and cash flow, resulting in us incurring substantial impairment charges, which would adversely affect our results of operations or financial condition.\n\n5 Protracted duration of economic downturns in cyclical segments of the economy may depress the demand for some of our products and adversely affect our sales, earnings, cash flow or financial condition.\n\nThroughout 2018, interest rates, including mortgage rates, rose and may continue to rise in 2019\n\n. Although interest rates remain low by historical standards, this increase may adversely affect the demand for new residential homes, existing home turnover and new non-residential construction. Challenging market conditions are expected to continue for the foreseeable future and may worsen. A worsening in these segments will reduce the demand for some of our products and may adversely impact sales, earnings and cash flow.\n\nIn the U.S. construction and housing segments, the recent demand for new construction has caused contractors to experience a shortage of skilled workers, resulting in project backlogs and an adverse effect on the growth rate of demand for our products. While we expect to see higher demand for our products as project backlogs are reduced in the future, this labor shortage may adversely impact our sales, earnings, cash flow or financial condition.\n\nWe purchase raw materials (including titanium dioxide and petrochemical feedstock sources, such as propylene and ethylene) and energy for use in the manufacturing, distribution and sale of our products. Factors such as political instability, higher tariffs and adverse weather conditions, including hurricanes, and other natural disasters can disrupt raw material and fuel supplies and increase our costs. Although raw materials and energy supplies (including oil and natural gas) are generally available from various sources in sufficient quantities, unexpected shortages and increases in the cost of raw materials and energy, or any deterioration in our relationships with or the financial viability of our suppliers, may have an adverse effect on our earnings or cash flow in the event we are unable to offset higher costs in a timely manner by sufficiently decreasing our operating costs or raising the prices of our products. In recent years, some raw material and energy prices have increased, particularly titanium dioxide and petrochemical feedstock sources, such as propylene and ethylene, as well as metal and plastic packaging. The cost of raw materials and energy has in the past experienced, and likely will in the future continue to experience, periods of volatility.",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "HYPOTHETICAL"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-ce249c623371ab45",
+  "field": "red_flags",
+  "text": ") (23 ) Costs related to the sale of land in Mexico — — (3 ) Other (income) expense, net, non-GAAP $ 31 $ 7 $ 22 25 (Dollars in Millions Except Per Share Amounts) Operating Profit Operating profit decreased\n\n22% to $ 2,789 in 2015 from $3,557 in 2014 . Operating profit in 2014 was even with 2013 .\n\nIn 2015, 2014 and 2013, Operating profit included charges related to the 2012 Restructuring Program, Venezuela Remeasurements and foreign competition law matters. In 2015, Operating profit also included a charge related to the change in accounting for the Company’s Venezuelan operations and a gain on the sale of the Company’s laundry detergent business in the South Pacific. In 2014 and 2013, Operating profit also included costs related to the sale of land in Mexico. Excluding these items in all years, as applicable, Operating profit decreased\n\n5% in 2015 , primarily due to lower Gross profit, partially offset by a decrease in Selling, general and administrative expenses, and Operating profit increased 2% in 2014 , primarily due to lower Selling, general and administrative expenses, which more than offset a decrease in Gross profit.\n\nOperating profit margin was 17.4% in 2015 , compared with 20.6% in 2014 and 20.4% in 2013 . Excluding the items described above in both periods as applicable, Operating profit margin increased 50 bps to 24.9% in 2015 compared to\n\n24.4% in 2014 . This increase is mainly due to a decrease in Selling, general and administrative expenses as a percentage of Net sales ( 60 bps). Excluding the items described above in both periods as applicable, Operating profit margin increased\n\n60 bps in 2014 compared to 2013 , primarily due to a decrease in Selling, general and administrative expenses as a percentage of Net sales (60 bps). 2015 2014 % Change 2013 % Change Operating profit, GAAP $ 2,789 $\n\n3,557 (22 )% $ 3,556 — % Venezuela accounting change 1,084 — — 2012 Restructuring Program 254 286 371 Venezuela remeasurement charges 34 327 172 Gain on sale of South Pacific laundry detergent business (187 ) — — Charges for foreign competition law matters",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-5d92515d9b56cd6f",
+  "field": "red_flags",
+  "text": "and our employees, attempts to render our data or systems (or those of third-parties with whom we do business) corrupted or unusable, threats to the security of our facilities and infrastructure as well as those of third-parties with whom we do business and attempted cyber\n\nterrorism. In addition, computers control oil and gas production, processing equipment and distribution systems globally and are necessary to deliver our production to market. A disruption, failure, or a cyber breach of these operating systems, or of the networks and infrastructure\n\non which they rely, many of which are not owned or operated by us, could damage critical production, distribution or storage assets, delay or prevent delivery to markets or make it difficult or impossible to accurately account for production and settle transactions.\n\nAlthough we have experienced occasional breaches of our cyber security, none of these breaches have had a material effect on our business, operations or reputation. As cyber attacks continue to evolve, we must continually expend additional resources to continue to modify or enhance our protective measures\n\nor to investigate and remediate any vulnerabilities detected. Our implementation of various procedures and controls to monitor and mitigate security threats and to increase security for our information, facilities and infrastructure may result in increased costs. Despite our ongoing investments in security\n\nresources, talent and business practices, we are unable to assure that any security measures will be effective. If our systems and infrastructure were to be breached, damaged or disrupted, we could be subject to serious negative consequences, including disruption of\n\nour operations, damage to our reputation, a loss of counterparty trust, reimbursement or other costs, increased compliance costs, significant litigation exposure and legal liability or regulatory fines, penalties or intervention. Any of these could materially and adversely affect our business, results of operations or financial condition.\n\nAlthough we have business continuity plans in place, our operations may be adversely affected by significant and widespread disruption to our systems and infrastructure that support our business. While we continue to evolve and modify our business continuity plans, there can be no assurance that they will",
+  "stored_label": [],
+  "rater_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-d36b7ebe315b5249",
+  "field": "red_flags",
+  "text": "Exhibit 99.1 Walgreens Boots Alliance Reports Fiscal 2024 Second Quarter Results Second quarter operational results in line with expectations, U.S. Healthcare achieved adjusted EBITDA profitability, narrowing full-year adjusted EPS guidance range Second quarter financial highlights • Second quarter loss per share* was $6.85 compared to earnings per share of $0.81 in the\n\nyear-ago quarter; Second quarter results included a $5.8 billion after-tax non-cash impairment charge related to VillageMD goodwill • Adjusted earnings per share (EPS)** increased 3.4 percent to $1.20, up 2.8 percent on a constant currency basis reflecting lower adjusted effective tax rate** and improved profitability in U.S. Healthcare\n\n• Second quarter sales increased 6.3 percent year-over-year to $37.1 billion, up 5.7 percent on a constant currency basis Fiscal 2024 guidance 1 • Narrowing fiscal 2024 adjusted EPS** guidance to $3.20 to $3.35, reflecting challenging retail environment in the\n\nU.S., early wind-down of sale-leaseback program, and lower earnings due to Cencora share sales, offset by execution in pharmacy services and a lower adjusted effective tax rate** • Maintaining U.S. Healthcare adjusted EBITDA** to be breakeven at the midpoint of the guidance range of ($50)\n\nmillion to $50 million DEERFIELD, Ill. — March 28, 2024 — Walgreens Boots Alliance, Inc. (Nasdaq: WBA) today announced financial results for the second quarter of fiscal 2024, which ended February 29, 2024. Chief Executive Officer Tim Wentworth said: “We’re encouraged by our first quarter of U.S. Healthcare positive adjusted EBITDA and continued topline growth alongside another quarter of strong\n\nexecution in pharmacy, as we look to re-energize and evolve its impact both at Walgreens and at large. As we continue to operate in a challenging retail environment, we are taking actions to focus on customer engagement and value. We remain confident in our goal of achieving $1 billion in cost savings this year. We are continuing to strategically review\n\nour portfolio over the next three months in an effort to ensure it drives growth and delivers value. Our team members, led by WBA’s new executive committee with a track record of operational excellence, are powering our progress as we map\n\ngrowth opportunities, aim to create long-term value across our businesses and execute the hard work to simplify and strengthen WBA.” 1 The Company does not provide a reconciliation for non-GAAP estimates on a forward-looking basis where it is unable to provide a meaningful or accurate calculation or estimation of reconciling items and the information is not available without unreasonable effort and the Company is unable to address the probable",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-62aed2d9df1dab81",
+  "field": "red_flags",
+  "text": "% 3 % — % — % 75 % Professional services and other gross margin (31 %) 43 % — % — % 12 % Total gross margin 65 % 6 % — % — % 71 % Operating expenses:\n\nSales and marketing 203,287 53 % (49,791) — — 153,496 39 % Research and development 123,149 32 % (61,686) (1,200) — 60,263 16 % General and administrative 75,187 20 % (33,868) (412) (143) 40,764 11 % Total operating expenses 401,623\n\n105 % (145,345) (1,612) (143) 254,523 66 % Operating income (loss) $ (152,029) (40 %) $ 167,766 $ 2,178 $ 143 $ 18,058 5 % Operating margin (40 %) 44 % 1 % — % 5 % (1) Stock-based compensation-related charges included approximately $21.7 million of employer payroll tax-related expenses on employee stock transactions.\n\nThree Months Ended January 31, 2021 GAAP amounts GAAP amounts as a % of revenue Stock-based compensation-related charges (1) Amortization of acquired intangibles Expenses associated with acquisitions and strategic investments Non-GAAP amounts Non-GAAP amounts as a % of revenue Revenue:\n\nProduct revenue $ 178,288 94 % Professional services and other revenue 12,177 6 % Revenue 190,465 100 % Year-over-year growth 117 % Cost of revenue: Cost of product revenue 63,770 33 % $ (10,171) $ (566) $ — $ 53,033\n\n28 % Cost of professional services and other revenue 19,134 11 % (8,702) — — 10,432 5 % Total cost of revenue 82,904 44 % (18,873) (566) — 63,465 33 % Gross profit (loss): Product gross profit 114,518 10,171 566\n\n— 125,255 Professional services and other gross profit (loss) (6,957) 8,702 — — 1,745 Total gross profit 107,561 56 % 18,873 566 — 127,000 67 % Product gross margin 64 % 6 % — % — % 70 % Professional services and other gross margin\n\n(57 %) 71 % — % — % 14 % Total gross margin 56 % 11 % — % — % 67 % Operating expenses: Sales and marketing 154,050 81 % (52,438) — — 101,612 54 % Research and development\n\n93,997 49 % (53,440) — — 40,557 21 % General and administrative 59,911 31 % (28,713) (352) (44) 30,802 16 % Total operating expenses 307,958 161 % (134,591) (352) (44) 172,971 91 % Operating loss $ (200,397) (105 %) $",
+  "stored_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-ce124a805a8a90ac",
+  "field": "red_flags",
+  "text": "$ 1,355 $ 1,115 $ 0.82 17.3 % Non-GAAP Adjustments: Restructuring and associated costs (2) — (22) 0.3 77 1.0 77 65 0.05 15.6 Acquisition-related items (3) — (2) — 4 0.1 4 3 — 25.0 (Gain)/loss on minority investments (4)\n\n— — — — — 25 26 0.02 (4.0) IPR&D charges (8) — — — 15 0.2 15 15 0.01 — Amortization of intangible assets — — — 445 6.0 445 378 0.28 15.1 Certain tax adjustments, net (9) —\n\n— — — — — 58 0.04 — Non-GAAP $ 7,481 $ 2,179 70.9 % $ 2,085 27.9 % $ 1,921 $ 1,660 $ 1.22 13.3 % See description of non-GAAP financial measures at the end of the earnings press release.\n\n(5) The charges represent incremental costs of complying with the new European Union medical device regulations for previously registered products and primarily include charges for contractors supporting the project and other direct third-party expenses. (6) The net charge relates to the exit of businesses and is primarily comprised of intangible asset impairments.\n\n(7) The benefit relates to the impact of tax reform in Switzerland. (8) The charges represent acquired IPR&D in connection with an asset acquisition. (9) The charges relate to the impact of tax reform in the United States. 11 MEDTRONIC PLC\n\nGAAP TO NON-GAAP RECONCILIATIONS (Unaudited) Six months ended October 25, 2019 (in millions, except per share data) Net Sales Cost of Products Sold Gross Margin Percent Operating Profit Operating Profit Percent Income Before Income Taxes Net Income attributable to Medtronic\n\nDiluted EPS (1) Effective Tax Rate GAAP $ 15,199 $ 4,760 68.7 % $ 2,836 18.7 % $ 2,271 $ 2,228 $ 1.65 1.0 % Non-GAAP Adjustments: Restructuring and associated costs (2) — (67) 0.4 218 1.4 218 187 0.14\n\n14.2 Acquisition-related items (3) — — — 46 0.3 46 40 0.03 13.0 Certain litigation charges — — — 168 1.1 168 136 0.10 19.0 (Gain)/loss on minority investments (4) — — — — — (11) (9) (0.01) 18.2 Debt tender premium and other charges (5)\n\n— — — (7) — 406 320 0.24 21.2 Medical device regulations (6) — (7) — 18 0.1 18 16 0.01 11.1 Exit of businesses (7) — — — 41 0.3 41 35 0.03 14.6 Contribution to Medtronic Foundation —",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-ca351fee70f42ff4",
+  "field": "red_flags",
+  "text": "26 Table of Contents Nine months ended September 30, 2023 as compared to the nine months ended September 30, 2022 Nine Months Ended Change September 30, 2023 September 30, 2022 YTD'23 vs. YTD'22 (in thousands, except percentages) Cost of revenues\n\n$ 14,407,883 $ 13,764,125 $ 643,758 5 % As a percentage of revenues 58 % 58 %\n\nThe increase in cost of revenues for the nine months ended September 30, 2023 as compared to the nine months ended September 30, 2022 was primarily due to a $362 million increase in content amortization relating to our existing and new content, including more exclusive and original programming. Other costs of revenues increased $282 million primarily due to an increase in other content expenses.\n\nMarketing expenses consist primarily of advertising expenses and certain payments made to our marketing and advertising sales partners, including consumer electronics (“CE”) manufacturers, multichannel video programming distributors (“MVPDs”), mobile operators, and internet service providers (“ISPs”). Advertising expenses include promotional activities such as digital and television advertising. Marketing expenses also include payroll, stock-based compensation, facilities, and other related expenses for personnel that support marketing activities.\n\nThree months ended September 30, 2023 as compared to the three months ended September 30, 2022 Three Months Ended Change September 30, 2023 September 30, 2022 Q3'23 vs. Q3'22 (in thousands, except percentages) Marketing $ 558,736 $ 567,954 $ (9,218)\n\n(2) % As a percentage of revenues 7 % 7 % The decrease in marketing expenses was primarily due to a $37 million decrease in advertising expenses and an $8 million decrease in payments to our marketing partners, partially offset by a $36 million increase in personnel-related costs.\n\nNine months ended September 30, 2023 as compared to the nine months ended September 30, 2022 Nine Months Ended Change September 30, 2023 September 30, 2022 YTD'23 vs. YTD'22 (in thousands, except percentages) Marketing $ 1,741,266 $ 1,698,892 $ 42,374\n\n2 % As a percentage of revenues 7 % 7 % The increase in marketing expenses was primarily due to a $70 million increase in advertising expenses, partially offset by a $28 million decrease in payments to our marketing partners.",
+  "stored_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-fdc144152bb9692f",
+  "field": "red_flags",
+  "text": "PMI's total shipment volume decreased by 13.3% to 119.0 billion units, notably due to: • PMI Duty Free, down by 70.8%, or by 58.8% excluding the net unfavorable impact of estimated distributor inventory movements (principally due to cigarettes), mainly reflecting the lower total market; and\n\n• Turkey, down by 8.5%, mainly reflecting the lower total market and a lower market share, notably due to adult smoker down-trading following the 2019 price increases. Fourth-Quarter The estimated total market in the Middle East & Africa decreased, mainly due to:\n\n• International Duty Free, down by 66.6%, reflecting the same factors as for the full year; partly offset by • Egypt, up by 8.4%, primarily reflecting stock replenishment following pandemic-related supply-chain shortages involving competitors' products; and •\n\nTurkey, up by 7.7%, mainly reflecting a lower prevalence of illicit trade, due mainly to: pandemic-related border restrictions and the impact of a favorable comparison versus a relatively high prevalence of illicit trade related to cut tobacco in the fourth quarter of 2019 (which continued into the first half of 2020, as noted for the full year); partly offset by the impact of lockdown measures on adult smoker average daily consumption.\n\nPMI's total shipment volume decreased by 9.3% to 30.1 billion units, notably due to: • PMI Duty Free, down by 77.1%, or by 62.7% excluding the net unfavorable impact of estimated distributor inventory movements (due to cigarettes), mainly reflecting the lower total market;\n\npartly offset by • Turkey, up by 7.3%, primarily reflecting the higher total market. - 18 - SOUTH & SOUTHEAST ASIA REGION Full-Year Financial Summary - Years Ended December 31, Change Fav./(Unfav.) Variance Fav./(Unfav.) 2020 2019 Total Excl. Curr. Total\n\nCur- rency Price Vol/ Mix Cost/ Other (in millions) Net Revenues $ 4,396 $ 5,094 (13.7) % (13.3) % (698) (19) (44) (635) — Operating Income $ 1,709 $ 2,163 (21.0) % (21.1) % (454) 2 (44) (457) 45 Asset Impairment & Exit Costs (1)\n\n(23) (20) (15.0) % (15.0) % (3) — — — (3) Adjusted Operating Income $ 1,732 $ 2,183 (20.7) % (20.8) % (451) 2 (44) (457) 48 Adjusted Operating Income Margin 39.4 % 42.9 % (3.5)pp (3.7)pp (1) Included in marketing, administration and research costs at the consolidated operating income level.",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-b7915473737b6825",
+  "field": "red_flags",
+  "text": "Recall charges were $76 in the three months and $82 in the six months 2021 and minimal in the three and six months 2020. Charges were primarily due to the previously disclosed Rejuvenate and ABG II Modular-Neck hip stems. Refer to Note 6 to our Consolidated Financial Statements for further information.\n\nAmortization of intangible assets was $149 and $110 in the three months and $330 and $228 in the six months 2021 and 2020. The increase in 2021 was primarily due to the acquisition of Wright Medical in the fourth quarter of 2020. Refer to Note 7 to our Consolidated Financial Statements for further information.\n\nOperating income (loss) increased $752 to 17.0% of sales in the three months 2021 from (0.7)% of sales in 2020. Excluding the impact of the items noted below, operating income increased to 25.9% of sales in 2021 from 12.5% in 2020 primarily due to leverage from higher sales volumes and disciplined spending to facilitate our growth.\n\nOperating income increased $576 or 93.7% to 14.4% of sales in the six months 2021 from 9.7% of sales in 2020. Excluding the impact of the items noted below, operating income increased to 24.7% of sales in 2021 from 19.0% in 2020 primarily due to leverage from higher sales volumes and disciplined spending to facilitate our growth.\n\nPercent Net Sales Three Months 2021 2020 2021 2020 Reported $ 732 $ (20) 17.0 % (0.7) % Inventory stepped-up to fair value 58 3 1.4 0.1 Other acquisition and integration-related 62 16 1.4 0.6 Amortization of purchased intangible assets\n\n149 110 3.5 4.0 Restructuring-related and other charges 17 209 0.4 7.5 Medical device regulations 26 22 0.6 0.8 Recall-related matters 76 — 1.8 — Regulatory and legal matters (9) 5 (0.2) 0.2 Adjusted $ 1,111 $ 345 25.9 %\n\n12.5 % Percent Net Sales Six Months 2021 2020 2021 2020 Reported $ 1,191 $ 615 14.4 % 9.7 % Inventory stepped-up to fair value 137 9 1.7 0.1 Other acquisition and integration-related 232 47 2.8 0.7 Amortization of purchased intangible assets\n\n330 228 4.0 3.7 Restructuring-related and other charges 31 263 0.4 4.1 Medical device regulations 45 46 0.5 0.7 Recall-related matters 82 (6) 1.0 (0.1) Regulatory and legal matters (9) 5 (0.1) 0.1 Adjusted $ 2,039 $ 1,207 24.7 %",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-30362d4945bdde07",
+  "field": "red_flags",
+  "text": "2 Less: OTTI losses realized on securities reclassified to noninterest income (1 ) (1 ) (1 ) Net increase (decrease), pre-tax 62 17 97 (21 ) Effect of income taxes (24 ) (6 ) (37 ) 8 Net increase (decrease),\n\nafter-tax 38 11 60 (13 ) Net unrealized gains (losses) on cash flow hedge derivatives Increase in net unrealized gains (losses) on cash flow hedge derivatives 39 126 17 391 Less: Net gains (losses) realized as a yield adjustment reclassified to loan interest income\n\n44 56 90 116 Less: Net gains (losses) realized as a yield adjustment reclassified to investment securities interest income 5 8 11 13 Less: Net gains (losses) realized on sales of securities reclassified to noninterest income (1 ) 3 (1\n\n) Net increase (decrease), pre-tax (10 ) 63 (87 ) 263 Effect of income taxes 4 (23 ) 32 (96 ) Net increase (decrease), after-tax (6 ) 40 (55 ) 167 Pension and other postretirement benefit plan adjustments Net pension and other postretirement benefit activity\n\n36 (7 ) (38 ) (5 ) Amortization of actuarial loss (gain) reclassified to other noninterest expense 11 12 24 24 Amortization of prior service cost (credit) reclassified to other noninterest expense (2 ) (2 ) (3 ) (4 )\n\nNet increase (decrease), pre-tax 45 3 (17 ) 15 Effect of income taxes (17 ) (1 ) 6 (5 ) Net increase (decrease), after-tax 28 2 (11 ) 10 Other PNC’s portion of BlackRock’s OCI 20 13 22 (12 )\n\nNet investment hedge derivatives (36 ) 80 (50 ) 109 Foreign currency translation adjustments and other 38 (81 ) 54 (112 ) Net increase (decrease), pre-tax 22 12 26 (15 ) Effect of income taxes 6 (34 ) 10 (35\n\n) Net increase (decrease), after-tax 28 (22 ) 36 (50 ) Total other comprehensive income, pre-tax 270 368 239 1,019 Total other comprehensive income, tax effect (89 ) (164 ) (72 ) (413 ) Total other comprehensive income, after-tax $\n\n181 $ 204 $ 167 $ 606 The PNC Financial Services Group, Inc. – Form 10-Q 75 Table 67: Accumulated Other Comprehensive Income (Loss) Components In millions, after-tax Net unrealized gains (losses) on non-OTTI securities Net unrealized gains (losses) on",
+  "stored_label": [],
+  "rater_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-2d6fc9a160857d12",
+  "field": "red_flags",
+  "text": "Purchases of our products and services are dependent upon the commencement of new design projects by semiconductor and electronics systems companies. The IC and electronics systems industries are cyclical and are characterized by constant and rapid technological change, rapid product obsolescence and price erosion, evolving standards, short product life cycles and wide fluctuations in product supply and demand.\n\nThe semiconductor and electronics systems industries have also experienced significant downturns in connection with, or in anticipation of, maturing product cycles of both these industries’ and their customers’ products. The current outlook for the global economy is uncertain and may result in a decrease in spending on our products and services despite recent growth.\n\nUncertainty caused by challenging global political and economic conditions, including inflation, interest rates, bank failures, U.S. deficit concerns, geopolitical conflicts and other adverse changes to international relationships among countries in which we or our customers operate or do business, protectionist measures or decline in corporate or consumer spending could negatively impact our customers’ businesses, reducing the number of new chip designs and their overall research and development spending, including their spending on our products and services, and as a result decrease demand for our products and services. Adverse developments that affect financial institutions, transactional counterparties or other third parties, such as bank failures and failure by Congress to increase the U.S. federal debt ceiling on a timely basis, or concerns or speculation about any similar events or risks, have led and could lead to further credit downgrades and market-wide liquidity problems, which in turn may cause customers and other third parties to become unable to meet their obligations under various types of financial arrangements as well as general disruptions or instability in the financial markets. Public health emergencies and reactionary measures by governments and businesses have also had, and could in the future have, the effect of curtailing economic activity and causing substantial volatility and disruption in global markets. Decreased bookings for our products and services, customer bankruptcies, consolidation among our customers, or problems or delays with our hardware suppliers or with the supply or delivery of our hardware products could also adversely affect our ability to grow our business or adversely affect our future revenue and financial results.",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-ce72bb5abc821df6",
+  "field": "red_flags",
+  "text": "JUUL Investment Update •\n\nAs previously disclosed, we exercised our option to be released from our JUUL non-competition obligations on September 29, 2022, resulting in (i) the permanent termination of our non-competition obligations to JUUL, (ii) the loss of our JUUL board designation rights (other than the right to appoint one independent director so long as our ownership continues to be at least 10%), our preemptive rights, our consent rights and certain other rights with respect to our investment in JUUL and (iii) the conversion of our JUUL shares to single vote common stock, significantly reducing our voting power.\n\n• While we retain our 35% economic stake in JUUL, we are exploring all options to build a U.S. Food and Drug Administration (FDA) authorized portfolio of e-vapor products that will help adult smokers transition away from cigarettes. 2022 Full-Year Guidance\n\nWe narrow our guidance for 2022 full-year adjusted diluted EPS to be in a range of $4.81 to $4.89, representing a growth rate of 4.5% to 6% from an adjusted diluted EPS base of $4.61 in 2021. While the 2022 full-year adjusted diluted EPS guidance accounts for a range of scenarios, the external environment remains dynamic. We will continue to monitor conditions related to (i) the economy, including the impact of high inflation, rising interest rates and global supply chain disruptions, (ii) ATC dynamics, including disposable income, purchasing patterns and adoption of smoke-free products, and (iii) regulatory and legislative developments.\n\nIQOS system in 2022. 3 We expect our 2022 capital expenditures to be between $175 million and $225 million, a change from our previous expectation of $200 million to $250 million.\n\nOur full-year adjusted diluted EPS guidance range excludes the impact of certain income and expense items that management believes are not part of underlying operations. These items may include, for example, loss on early extinguishment of debt, restructuring charges, asset impairment charges, acquisition-related and disposition-related costs, equity investment-related special items (including any changes in fair value of our equity investment recorded at fair value and any changes in the fair value of related warrants and preemptive rights), certain income tax items, charges associated with tobacco and health and certain other litigation items, and resolutions of certain non-participating manufacturer (NPM) adjustment disputes under the MSA (such dispute resolutions are referred to as NPM Adjustment Items). See Table 1 below for the income and expense items for the first nine months of 2022.",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-cd70cef40486e00d",
+  "field": "red_flags",
+  "text": "32 Table of Contents Key Metrics We monitor the following key metrics to help us evaluate our business, identify trends affecting our business, formulate business plans, and make strategic decisions. Annual Recurring Revenue (“ARR”)\n\nThe following table sets forth our ARR as of the dates presented (dollars in thousands): As of October 31, 2024 2023 Annual recurring revenue $ 4,017,540 $ 3,153,243 Year-over-year growth 27 % 35 %\n\nARR grew to $4.0 billion as of October 31, 2024, of which $153.0 million and $582.3 million was net new ARR added for the three and nine months ended October 31, 2024, respectively. ARR grew to $3.2 billion as of October 31, 2023, of which $223.1 million and $593.5 million was net new ARR added for the three and nine months ended October 31, 2023, respectively.\n\nWhile we normally recognize ARR contraction in the quarter a transaction is subject to renew, in the third quarter of fiscal 2025, we excluded approximately $26.0 million from ARR after a distributor in the federal space provided notice of its intention to exercise transferability rights with respect to a transaction, and we concluded that the transaction would not recur.\n\nOur dollar-based net retention rate was 115% as of October 31, 2024. Our dollar-based net retention rate can fluctuate from period to period due to large customer contracts in a given period and ongoing increased contraction associated with our customer commitment packages, which may reduce our dollar-based net retention rate in subsequent periods.\n\n33 Table of Contents Components of Our Results of Operations Revenue Subscription Revenue.\n\nProfessional Services Cost of Revenue. Professional services cost of revenue consists primarily of employee-related costs, such as salaries and bonuses, stock-based compensation expense, consulting expense, and an allocated portion of facilities and administrative costs. Gross Profit and Gross Margin\n\nGross profit and gross margin have been and will continue to be affected by various factors, including the timing of our acquisition of new subscription customers, renewals from existing subscription customers, sales of additional modules to existing subscription customers, the data center and bandwidth costs associated with operating our cloud platform, the extent to which we expand our customer support and cloud operations organizations, and the extent to which we can increase the efficiency of our technology, infrastructure, and data centers through technological improvements. We expect our gross profit to increase in dollar amount and our gross margin to increase modestly over the long term as we grow our business, although our gross margin could fluctuate from period to period depending on the interplay of these factors. Demand for our incident response services is driven by the number of breaches experienced by non-customers. Also, we view our professional services solutions in the context of our larger business and as a significant lead generator for new subscriptions. Because of these factors, our services revenue and gross margin may fluctuate over time.",
+  "stored_label": [],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-373ad9d2105f676c",
+  "field": "red_flags",
+  "text": "EXHIBIT 99.1 HP Inc. 1501 Page Mill Road Palo Alto, CA 94304 hp.com News Release HP Inc. Reports First Quarter 2016 Results Editorial Contacts PALO ALTO, CA — (Marketwired) – Feb 24, 2016 – HP (NYSE:HPQ) HP Inc. Media Relations\n\nMediaRelations@hp.com HP Inc. Investor Relations investorrelations@hp.com ● First quarter net revenue of $12.2 billion, down 12% from the prior-year period and down 5% in constant currency ● First quarter non-GAAP diluted net earnings per share from contining operations of $0.36 – within the previously provided outlook of $0.33 to $0.38 per share\n\n● First quarter GAAP diluted net earnings per share from continuing operations of $0.36 – above the previously provided outlook of $0.27 to $0.32 per share ● First quarter returned more than $1.0 billion to shareholders in the form of share repurchases and dividends\n\n● First quarter net cash used in operating activities was ($108) million Page 1 of 17 HP Inc's fiscal 2016 first quarter financial performance Q1 FY16 Q1 FY15 Y/Y GAAP net revenue ($B) $12.2 $13.9 (12%) GAAP operating margin from continuing operations\n\n7.6% 8.1% (0.5 pts.) . GAAP net earnings from continuing operations ($B) $0.7 $0.8 (16%) GAAP diluted net earnings per share from continuing operations $0.36 $0.41 (12%) Non-GAAP operating margin from continuing operations 7.5% 7.9% (0.4pts.) . Non-GAAP net earnings from continuing operations ($B)\n\n$0.6 $0.8 (16%) Non-GAAP diluted net earnings per share from continuing operations $0.36 $0.41 (12%) Net Cash (used in) / provided by operating activities ($M) (1) ($108) $744 N/M Notes to table Information about HP Inc.'s use of non-GAAP financial information is provided under \"Use of non-GAAP financial information\" below.\n\nThe consolidated condensed statement of cash flows for the three months ended January 31, 2015 represents the combined cash flows of HP prior to separation, as previously filed, and has not been adjusted to reflect the effect at the separation of Hewlett Packard Enterprise Company.\n\nN/M Not meaningful HP Inc. (HP) announced first quarter net revenue of $12.2 billion, down 12% from the prior-year period and down 5% in constant currency.\n\nFirst quarter GAAP diluted net earnings per share (EPS) from continuing operations was $0.36, down from $0.41 in the prior-year period and above the previously provided outlook of $0.27 to $0.32. First quarter non-GAAP diluted net EPS from continuing operations was $0.36, down from $0.41 in the prior-year period and within its previously provided outlook of $0.33 to $0.38. First quarter non-GAAP net earnings from continuing operations and non-GAAP diluted net EPS from continuing operations exclude after-tax costs of $5 million, rounding to $0.00 per diluted share, respectively, related to non-operating retirement-related credits, restructuring charges, and the amortization of intangible assets.",
+  "stored_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-1e2619c28f2f551f",
+  "field": "red_flags",
+  "text": "▪ Guidance range for Adjusted cost of sales (3) as a percentage of revenues was lowered by 400 basis points to a range of 19.5% to 20.5% , primarily to reflect the favorable impact of product mix and other efficiencies.\n\n▪ Guidance range for Adjusted SI&A expenses (3) was lowered by $500 million to a range of $11.5 to $12.5 billion , primarily to reflect incremental cost-savings opportunities, primarily reductions in indirect SI&A spend associated with corporate enabling functions, as well as actual and anticipated COVID-19-related spending reductions.\n\n▪ Guidance range for Adjusted R&D expenses (3) was increased by $500 million to a range of $8.6 to $9.0 billion\n\n, solely to reflect incremental investments Pfizer anticipates making in 2020 to combat the COVID-19 pandemic, including development of potential anti-viral treatments and a potential vaccine, as well as the evaluation of existing Pfizer medicines, which are the subject of novel research projects for investigation in COVID-19 patients.\n\n▪ Guidance range for Adjusted diluted EPS (3) was reaffirmed at $2.82 to $2.92 , absorbing a $0.04 unfavorable impact from changes in foreign exchange rates since mid-January 2020. Revenues $48.5 to $50.5 billion Adjusted Cost of Sales (3) as a Percentage of Revenues\n\n19.5% to 20.5% (previously 19.9% to 20.9%) Adjusted SI&A Expenses (3) $11.5 to $12.5 billion (previously $12.0 to $13.0 billion) Adjusted R&D Expenses (3) $8.6 to $9.0 billion (previously $8.1 to $8.5 billion) Adjusted Other (Income)/Deductions (3) Approximately $800 million of income\n\nEffective Tax Rate on Adjusted Income (3) Approximately 15.0% Adjusted Diluted EPS (3) $2.82 to $2.92 Financial guidance for Adjusted diluted EPS (3) continues to assume no share repurchases in 2020. - 5 - 2020 Financial Guidance for New Pfizer\n\n(8) Pfizer’s updated 2020 financial guidance for New Pfizer (8) is presented below. New Pfizer (8) revenue guidance absorbs a $500 million unfavorable impact from changes in foreign exchange rates since mid-January 2020. New Pfizer (8) financial guidance reflects a full-year 2020 pro forma view of the company assuming the pending Upjohn combination with Mylan was completed at the beginning of 2020.\n\nRevenues $40.7 to $42.3 billion Adjusted IBT Margin (9) Approximately 37.0% Adjusted Diluted EPS (3) $2.25 to $2.35 Operating Cash Flow $10.0 to $11.0 billion (previously $11.0 to $12.0 billion) Financial guidance for New Pfizer (8) operating cash flow now includes a $1.25 billion voluntary contribution to the U.S. qualified pension plans, planned for the second half of 2020.",
+  "stored_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-1e231bbaae6e73fa",
+  "field": "red_flags",
+  "text": "1 | enabled us to compete and win, and a resilient, diversified business supported by strong industry fundamentals, we are well positioned to deliver our next wave of innovation and remain confident in our ability to deliver sustained value for shareholders.\"\n\nSEGMENT HIGHLIGHTS\n\nZoetis organizes and manages its commercial operations across two segments: United States (U.S.) and International. Within these segments, the company delivers a diverse portfolio of products for companion animals and livestock, tailored to local trends and customer needs. In the first quarter of 2026\n\nwas $1.1 billion, reflecting a decrease of 8% on both a reported and an organic operational basis relative to the first quarter of 2025. Companion animal product sales decreased 11% due to softer end-market demand and an increasingly competitive landscape. The company's key dermatology franchise and Simparica Trio\n\n® faced heightened competitive pressure and persistent macroeconomic-driven price sensitivity. Also contributing to the decline was the impact of generic competition on the Convenia ® and Cerenia ® brands, as well as lower sales of Librela ® ,\n\nthe company's monoclonal antibody (mAb) product for osteoarthritis (OA) pain. Sales of livestock products increased 7% on both a reported and organic operational basis in the quarter, supported by broad-based strength across cattle, poultry and swine. Cattle performance was driven primarily by favorable producer economics in beef cattle, supply timing and expanded targeted use of parasiticides in response to New World screwworm. Poultry performance benefited from increased vaccine sales tied to disease outbreak activity, while swine growth reflected improved supply for a key antibiotic product.\n\nwas $1.1 billion, a 17% increase on a reported basis and a 10% increase on an organic operational basis compared with the first quarter of 2025. Companion animal product sales grew 15% on a reported basis and 7% on an organic operational basis, led by the company's parasiticides portfolio, including Simparica Trio, along with contributions from diagnostics, vaccines, and the timing of price increases. These gains were partially offset by lower sales of key dermatology products, driven primarily by competitive dynamics. Sales of livestock products grew 19% on a reported basis and 14% on an organic operational basis, driven by broad-based growth across all core species",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-576b4d2140d86cd6",
+  "field": "red_flags",
+  "text": "143.7 622.3 83.5 Performance Coatings Group 1,374.3 143.8 1,217.6 113.7 Administrative 0.5 (258.5 ) 1.3 (193.2 ) Consolidated totals $ 4,656.0 $ 509.0 $ 4,146.7 $ 392.3 The Sherwin-Williams Company and Subsidiaries Condensed Consolidated Balance Sheets (Unaudited) (millions of dollars)\n\nMarch 31, 2021 2020 Assets Current assets: Cash and cash equivalents $ 314.7 $ 238.5 Accounts receivable, less allowance 2,414.1 2,291.5 Inventories 1,847.3 1,954.8 Other current assets 533.5 443.2 Total current assets 5,109.6 4,928.0 Property, plant and equipment, net 1,780.4\n\n1,829.5 Goodwill 7,011.3 6,958.7 Intangible assets 4,210.0 4,585.4 Operating lease right-of-use assets 1,728.8 1,683.4 Other assets 594.9 585.3 Total Assets $ 20,435.0 $ 20,570.3 Liabilities and Shareholders’ Equity Current liabilities: Short-term borrowings $ 818.1 $ 1,051.5 Accounts payable 2,217.0 1,958.4\n\nCompensation and taxes withheld 551.2 438.0 Accrued taxes 282.6 106.5 Current portion of long-term debt 428.5 429.5 Current portion of operating lease liabilities 385.8 371.1 Other accruals 968.4 865.2 Total current liabilities 5,651.6 5,220.2 Long-term debt 7,862.4 8,289.2 Postretirement benefits other than pensions\n\n274.3 262.8 Deferred income taxes 797.8 949.5 Long-term operating lease liabilities 1,402.9 1,373.7 Other long-term liabilities 1,367.3 1,185.8 Shareholders’ equity 3,078.7 3,289.1 Total Liabilities and Shareholders’ Equity $ 20,435.0 $ 20,570.3 The Sherwin-Williams Company and Subsidiaries Selected Information (Unaudited) (millions of dollars, except store count data)\n\nThree Months Ended March 31, 2021 2020 Depreciation $ 65.4 $ 66.5 Capital expenditures 64.3 106.6 Cash dividends 151.8 122.9 Amortization of intangibles 79.2 78.1 Significant components of Other general expense - net: Provision for environmental related matters - net\n\n$ 2.5 $ 2.2 Loss on divestiture 111.9 — Loss on sale or disposition of assets 3.1 1.5 Significant components of Other (income) expense - net: Loss on extinguishment of debt $ — $ 21.3 Investment and royalty (income) expense\n\n(6.5 ) 2.3 Net expense from banking activities 2.6 2.8 Foreign currency transaction related losses 2.5 3.9 Other (1) (0.8 ) (7.9 ) Store Count Data: The Americas Group - net new stores 11 2 The Americas Group - total stores",
+  "stored_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-ce6eac4707573983",
+  "field": "red_flags",
+  "text": "was $704 million, compared to $87 million in the prior year period, primarily reflecting the higher revenues. Citi Holdings operating expenses declined 7% to $1.2 billion, primarily driven by the ongoing decline in assets, partially offset by transaction-related episodic expenses and higher legal and related and repositioning costs. Operating expenses in the fourth quarter 2015 included legal and related expenses of $160 million, compared to $61 million in the prior year period, and $111 million of repositioning charges, compared to $101 million in the prior year period. Cost of credit of $387 million increased 5%. The net loan loss reserve build was $71 million, compared to a net loan loss reserve release of $214 million in the prior year period, primarily\n\n7 reflecting the impact of asset sales. Net credit losses declined 56% to $182 million, reflecting the impact of ongoing divestiture activity as well as continued improvement in the North America mortgage portfolio. Citi Holdings allowance for credit losses\n\nwas $2.0 billion at the end of the fourth quarter 2015, or 4.5% of loans, compared to $4.9 billion, or 6.1% of loans, in the prior year period. 90+ days delinquent consumer loans in Citi Holdings decreased 59% to $0.8 billion, or 2.0% of loans.\n\nCiticorp Results by Region(a) Revenues Income from Continuing Ops. ($ in millions) 4Q’15 3Q’15 4Q’14 4Q’15 3Q’15 4Q’14 North America Global Consumer Banking 4,810 4,821 5,096 985 1,063 1,137 Institutional Clients Group 2,871 3,250 2,475 580 887 613 Total North America\n\n$ 7,681 $ 8,071 $ 7,571 $ 1,565 $ 1,950 $ 1,750 EMEA Global Consumer Banking 231 243 260 (4 ) 9 (20 ) Institutional Clients Group 2,095 2,214 2,050 224 392 237 Total EMEA $ 2,326 $ 2,457 $\n\n2,310 $ 220 $ 401 $ 217 Latin America Global Consumer Banking 1,717 1,923 2,069 147 312 263 Institutional Clients Group 862 1,166 986 124 467 307 Total Latin America $ 2,579 $ 3,089 $ 3,055 $ 271 $ 779\n\n$ 570 Asia Global Consumer Banking 1,433 1,473 1,603 217 298 308 Institutional Clients Group 1,603 1,746 1,637 431 521 513 Total Asia $ 3,036 $ 3,219 $ 3,240 $ 648 $ 819 $ 821 Corporate / Other $ 107",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-cd7baf5cae71f612",
+  "field": "red_flags",
+  "text": "ONEOK Announces 14% Year-Over-Year Increase in Third Quarter 2020 Operating Income Oct. 27, 2020 Page 8 These non-GAAP financial measures exclude some, but not all, items that affect net income. Additionally, these calculations may not be comparable with similarly titled measures of other companies. Reconciliations of net income to adjusted EBITDA, distributable cash flow and coverage ratio are included in the tables. ONEOK, Inc. (pronounced ONE-OAK) (NYSE: OKE) is a leading midstream service provider and owner of one of the nation's premier natural gas liquids (NGL) systems, connecting NGL supply in the Rocky Mountain, Mid-Continent and Permian regions with key market centers and an extensive network of natural gas gathering, processing, storage and transportation assets. ONEOK is a FORTUNE 500 company and is included in the S&P 500. For information about ONEOK, visit the website: www.oneok.com For the latest news about ONEOK, find us on LinkedIn, Instagram, Facebook and Twitter. ONEOK’s news release issued on April 28, 2020, provided that, given the current environment, continued commodity price and market volatility, and uncertainty surrounding the COVID-19 pandemic, ONEOK was withdrawing its 2020 guidance expectations and 2021 outlook, originally provided on Feb. 24, 2020, as well as its prior dividend guidance, and that previously provided guidance and outlooks should no longer be relied upon. This news release contains certain \"forward-looking statements\" within the meaning of federal securities laws. Words such as “anticipates,” “believes,” “continues,” “could,” “estimates,” “expects,” “forecasts,” “goal,” “guidance,” “intends,” “may,” “might,” “outlook,” “plans,” “potential,” “projects,” “scheduled,” “should,” “will,” ‘would,” and similar expressions may be used to identify forward-looking statements. Forward-looking statements are not statements of historical fact and reflect our current views about future events. Such forward-looking statements include, but are not limited to, statements about the benefits of the transaction involving us, including future financial and operating results, our plans, objectives, expectations and intentions, and other statements that are not historical facts, including future results of operations, projected cash flow and liquidity, business strategy, expected synergies or cost savings, and other plans and objectives for future operations. No assurances can be given that the forward-looking statements contained in this news release will occur as projected and actual results may differ materially from those projected. Forward-looking statements are based on current expectations, estimates and assumptions that involve a number of risks and uncertainties, many of which are beyond our control, and are not guarantees of future results. Accordingly, there are or will be important factors that could cause actual results to differ materially from those indicated in such statements and, therefore, you should not place undue reliance on any such statements and caution must be exercised in relying on forward-looking statements. These risks and uncertainties include, without limitation, the following: • the impact on drilling and production by factors beyond our control, including the demand for natural gas and crude oil; producers’ desire and ability to drill and obtain necessary permits; regulatory compliance; reserve performance; and capacity constraints and/or shut downs on the pipelines that transport crude oil, natural gas and NGLs from producing areas and our facilities; • the effects of weather and other natural phenomena, including climate change, on our operations, demand for our services and energy prices; • the length, severity and reemergence of a pandemic or other health crisis, such as the recent outbreak of COVID-19 and the measures that international, federal, state and local governments, agencies, law enforcement and/or health authorities implement to address it, which may (as with COVID-19) precipitate or exacerbate one or more of the factors herein, reduce the demand for natural gas, NGLs and crude oil and significantly disrupt or prevent us and our customers and counterparties from operating in the ordinary course for an extended period and increase the cost of operating our business; • the timing and extent of changes in energy commodity prices, including changes due to production decisions by other countries, such as the failure of countries to abide by recent agreements to reduce production volumes; • economic climate and growth in the geographic areas in which we operate; -more-",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-0511b5cde4fac95e",
+  "field": "red_flags",
+  "text": "Even without action on the NOPR or NOI, the FERC or our shippers may challenge the cost of service rates we charge. FERC’s establishment of a just and reasonable rate is based on many components, and tax-related changes will affect two such components, the allowance for income taxes and the amount for accumulated deferred income taxes, while other pipeline costs also will continue to affect FERC’s determination of just and reasonable cost of service rates. Although changes in these two tax related components may decrease, other components in the cost of service rate calculation may increase and result in a newly calculated cost of service rate that is the same as or greater than the prior cost of service rate. Moreover, we receive revenues from our pipelines based on\n\na variety of rate structures, including cost of service rates, negotiated rates, discounted rates and market-based rates. Many of our interstate pipelines, such as ETC Tiger Pipeline, LLC, MEP and FEP, have negotiated market rates that were agreed to by customers in connection with long-term contracts entered into to support the construction of the pipelines. Other systems, such as FGT, Transwestern and Panhandle, have a mix of tariff rate, discount rate, and negotiated rate agreements. We do not expect market-based rates, negotiated rates or discounted rates that are not tied to the cost of service rates to be affected by the Revised Policy Statement or any final regulations that may result from the March 15, 2018 proposals. The revenues we receive from natural gas transportation services we provide pursuant to cost of service based rates may decrease in the future as a result of the ultimate outcome of the NOI, the NOPR, and the Revised Policy Statement, combined with the reduced corporate federal income tax rate established in the Tax Act. The extent of any revenue reduction related to our cost of service rates, if any, will depend on a detailed review of all of ETP’s cost of service components and the outcomes of any challenges to our rates by the FERC or our shippers.\n\nFERC issued a Notice of Inquiry on April 19, 2018 (“Pipeline Certification NOI”), thereby initiating a review of its policies on certification of natural gas pipelines, including an examination of its long-standing Policy Statement on Certification of New Interstate Natural Gas Pipeline Facilities, issued in 1999, that is used to determine whether to grant certificates for new pipeline projects. We are unable to predict what, if any, changes may be proposed as a result of the Pipeline Certification NOI that will affect our natural gas pipeline business or when such proposals, if any, might become effective. We do not expect that any change in this policy would affect us in a materially different manner than any other natural gas pipeline company operating in the United States.",
+  "stored_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-f06ad5ad94e40c95",
+  "field": "red_flags",
+  "text": "Financial services institutions are interrelated as a result of trading, clearing, counterparty or other relationships. BB&T has exposure to many different industries and counterparties, and BB&T and certain of its subsidiaries routinely execute transactions with counterparties in the financial services industry, including brokers and dealers, commercial banks, investment banks, mutual and hedge funds and other institutions. Many of these transactions expose BB&T to credit risk in the event of default of its counterparty. In addition, BB&T's credit risk may be exacerbated when collateral is liquidated at prices not sufficient to recover the full amount of the loan or derivative exposure. These types of losses could materially adversely affect BB&T's results of operations or financial condition.\n\nLiquidity Risk BB&T's liquidity could be impaired by an inability to access the capital markets, an unforeseen outflow of cash or a reduction in the credit ratings for BB&T or its subsidiaries.\n\nLiquidity is essential to BB&T's businesses. When volatility or disruptions occur in the capital markets, BB&T's ability to access capital could be materially impaired. Additionally, other factors outside of BB&T's control, such as a general market disruption or an operational problem that affects third parties, could impair BB&T's ability to access capital markets or create an unforeseen outflow of cash or deposits. BB&T's inability to access the capital markets could constrain its ability to make new loans or meet its existing lending commitments and could ultimately jeopardize its overall liquidity and capitalization.\n\nBB&T Corporation 20\n\nBB&T's credit ratings are also important to its liquidity. Rating agencies regularly evaluate BB&T and its subsidiaries, and their ratings are based on a number of factors, including the financial strength of BB&T and its subsidiaries, as well as factors not entirely within BB&T's control, including conditions affecting the financial services industry generally. As a result, there can be no assurance that BB&T will maintain its current ratings. A reduction in BB&T's credit ratings could adversely affect BB&T's liquidity and competitive position, increase its borrowing costs, limit its access to the capital markets or trigger unfavorable contractual obligations.\n\nIn connection with the pending SunTrust merger, Moody's placed BB&T's credit ratings under review for possible downgrade. Market Risk Instability in economic conditions and geopolitical matters as well as volatility in financial markets could have a material adverse effect on BB&T's operations, earnings and financial condition.",
+  "stored_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-7f49f7c526083241",
+  "field": "red_flags",
+  "text": "In 2021, our operating results are expected to benefit from growth in our Northeast G&P gathering and processing volumes. We also anticipate increases from Transco expansion projects and higher Gulf of Mexico results primarily due to lower anticipated hurricane impacts. These increases will be partially offset by a decrease in West results, including a reduction in NGL transportation volumes on OPPL and certain fee reductions in the Haynesville area in exchange for upstream value in natural gas properties. We also expect a modest increase in expenses, including higher operating taxes.\n\nOur growth capital and investment expenditures in 2021 are expected to be in a range from $1.0 billion to $1.2 billion. Growth capital spending in 2021 primarily includes Transco expansions, all of which are fully contracted with firm transportation agreements, and projects supporting the Northeast G&P business and opportunities in the Haynesville area. In addition to growth capital and investment expenditures, we also remain committed to projects that maintain our assets for safe and reliable operations, as well as projects that meet legal, regulatory, and/or contractual commitments.\n\n• Opposition to, and legal regulations affecting, our infrastructure projects, including the risk of delay or denial in permits and approvals needed for our projects; • Counterparty credit and performance risk, including unexpected developments in customer bankruptcy proceedings; • Unexpected significant increases in capital expenditures or delays in capital project execution;\n\n44 • General economic, financial markets, or further industry downturns, including increased interest rates; • Physical damages to facilities, including damage to offshore facilities by weather-related events; • Other risks set forth under Part I, Item 1A. Risk Factors in this report.\n\nIn May 2019, we received approval from the FERC to expand Transco’s existing natural gas transmission system to provide incremental firm transportation capacity from Station 195 in Pennsylvania to the Rockaway Delivery Lateral transfer point in New York. However, approvals required for the project from the New York State Department of Environmental Conservation and the New Jersey Department of Environmental Protection were denied in May 2020. We have not refiled our applications for those approvals. Considering that the customer precedent agreements and FERC certificate for the project remain in effect, we had previously concluded that the probability of completing the project was sufficient to not require impairment. However, recent developments in the political and regulatory environments have caused us to slightly lower that assessed probability such that the capitalized project costs now require impairment. See further discussion in Critical Accounting Estimates.",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-217a3455ffbbeb82",
+  "field": "red_flags",
+  "text": "(50) (72) 22 (74) (165) 91 Net income $ 404 $ 454 $ (50) $ 1,365 $ 2,023 $ (658) Combined ratio 101.0 % 98.2 % 2.8 pts 101.0 % 96.0 % 5.0 pts Impact on combined ratio Net (favorable) unfavorable prior year reserve development\n\n1.6 pts (0.2) pts 1.8 pts (0.1) pts (1.9) pts 1.8 pts Catastrophes, net of reinsurance 8.8 pts 5.9 pts 2.9 pts 10.3 pts 5.7 pts 4.6 pts Underlying combined ratio 90.6 % 92.5 % (1.9) pts 90.8 % 92.2\n\n% (1.4) pts Net written premiums Business Insurance $ 5,080 $ 4,370 16 % $ 15,412 $ 13,245 16 % Bond & Specialty Insurance 1,003 964 4 2,853 2,808 2 Personal Insurance 4,410 3,864 14 11,942 10,532 13 Total $\n\n10,493 $ 9,198 14 % $ 30,207 $ 26,585 14 % Third Quarter 2023 Results (All comparisons vs. third quarter 2022, unless noted otherwise)\n\nNet income of $404 million decreased $50 million, due to lower core income, partially offset by lower net realized investment losses. Core income of $454 million decreased $72 million, primarily due to higher catastrophe losses and net unfavorable prior year reserve development (driven by the Company’s run-off businesses) compared to net favorable prior year reserve development in the prior year quarter, partially offset by a higher underlying underwriting gain and higher net investment income. The underlying underwriting gain benefited from higher business volumes. Net realized investment losses were $65 million pre-tax ($50 million after-tax), compared to $93 million pre-tax ($72 million after-tax) in the prior year quarter.\n\nThe combined ratio of 101.0% increased 2.8 points due to higher catastrophe losses (2.9 points) and net unfavorable prior year reserve development compared to net favorable prior year reserve development in the prior year quarter (1.8 points), partially offset by a lower underlying combined ratio (1.9 points).\n\n• The underlying combined ratio of 90.6% improved 1.9 points. See below for further details by segment. • Net unfavorable prior year reserve development in Business Insurance was partially offset by net favorable prior year reserve development in Bond & Specialty Insurance and Personal Insurance. See below for further details by segment.",
+  "stored_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-d547ce5ba2d65450",
+  "field": "red_flags",
+  "text": "“We quickly zeroed in on taking care of customers and controlling costs,” said Ford COO Jim Farley. “Our team in China did a very good job managing through the crisis and provided us with a valuable template for bringing back up operations in the rest of the world.” Saying “there is no grace period for transforming Ford,” Farley two weeks ago announced leadership changes to help fix, accelerate and grow the company’s Automotive business. Central to the plan is renewing and continually refining effectiveness in product development and launch execution, including of increasingly smart, connected vehicles. Next week in Europe, the company will begin a phased restart of its production outside China that has been halted because of coronavirus-related safety risks, with enhanced safety standards in place to protect workers. As it brings up manufacturing, Ford will resume its ambitious cycle of new-product introductions. In the U.S., for example, the company is in the process of lowering the average age of Ford-brand vehicles from more than five years in 2017 to about three years by 2023. Among forthcoming launches are: • The all-electric Mustang Mach-E, which was unveiled last November • A redesigned F-150, America’s top-selling vehicle for 43 years, featuring a hybrid- electric version • A small, rugged off-road utility vehicle • Continuation of a multiyear series of market-specific Ford and Lincoln vehicles in China, many of which will be electric • Electrified versions of the Lincoln Corsair and Ford Escape and Kuga in Europe, and • The much-anticipated return of the legendary Ford Bronco in 2021. Outlook In March, the company withdrew guidance for 2020 financial performance it had given in early February. That outlook excluded possible implications of the coronavirus, which at the time had not yet reached pandemic stage. According to Stone, today’s economic environment remains too ambiguous to provide full-year 2020 financial guidance. He said the company expects second-quarter adjusted EBIT to be a loss of more than $5 billion, as year-over-year industry volumes decline significantly in every region. Ford’s actual results could differ materially from guidance due to risks, uncertainties and other factors, including those detailed in the company’s Cautionary Note on Forward Looking Statements. The company plans to report second-quarter 2020 financial results on July 30. # # # 4",
+  "stored_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-2e806ececa6a76a3",
+  "field": "red_flags",
+  "text": "Table of Content s Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations CAUTIONARY STATEMENT PURSUANT TO THE PRIVATE SECURITIES LITIGATION REFORM ACT OF 1995\n\nCertain statements herein are “forward-looking” statements within the meaning of the Private Securities Litigation Reform Act of 1995. Generally, these statements can be identified by the use of words such as “aim,” “anticipate,” “believe,” “continue,” “could,” “estimate,” “expect,” “feel,” “forecast,” “intend,” “may,” “outlook,” “plan,” “potential,” “project,” “seek,” “should,” “will,” “would,” and similar expressions intended to identify forward-looking statements, although not all forward-looking statements contain these identifying words. These statements include statements relating to trends in or expectations relating to the expected effects of our initiatives, strategies and plans, as well as trends in or expectations regarding our financial results and long-term growth model and drivers, our focus on accelerating growth in high-returning businesses, the conversion of several market operations to fully licensed models, expanding our licensing to Nestlé of our consumer packaged goods and Foodservice businesses and its effects on our Channel Development segment results, tax rates, business opportunities and expansion, strategic acquisitions, expenses, dividends, share repurchases, commodity costs and our mitigation strategies, liquidity, cash flow from operations, use of cash and cash requirements, investments, borrowing capacity and use of proceeds, repatriation of cash to the U.S., the likely issuance of additional debt and the applicable interest rate, the impact of the COVID-19 outbreak on our financial results, credits available to us under the CARES Act and other government credits, the expected effects of new accounting pronouncements and the estimated impact of changes in U.S. tax law, including on tax rates, investments funded by these changes, and potential outcomes and effects of legal proceedings. Such statements are based on currently available operating, financial and competitive information and are subject to various risks and uncertainties. Actual future results and trends may differ materially depending on a variety of factors, including, but not limited to: further spread of COVID-19; regulatory measures or voluntary actions that may be put in place to limit the spread of COVID-19, including restrictions on business operations or social distancing requirements, and the duration of such restrictions; the potential for a resurgence of COVID-19 infections in a given geographic region after it has hit its “peak”; fluctuations in U.S. and international economies and currencies; our ability to preserve, grow and leverage our brands; the ability of our business partners and third-party providers to fulfill their responsibilities and commitments; potential negative effects of incidents involving food or beverage-borne illnesses, tampering, adulteration, contamination or mislabeling; potential negative effects of material breaches of our information technology systems to the extent we experience a material breach; material failures of our information technology systems; costs associated with, and the successful execution of, the Company’s initiatives and plans, including the integration of the East China business and the successful expansion of our Global Coffee Alliance with Nestlé; our ability to obtain financing on acceptable terms; the acceptance of the Company’s products by our customers, evolving consumer preferences and tastes and the availability of consumer financing; changes in the availability and cost of labor; the impact of competition; inherent risks of operating a global business; the prices and availability of coffee, dairy and other raw materials; the effect of legal proceedings; the disruption to our business related to COVID-19; the effects of changes in tax laws and related guidance and regulations that may be implemented and other risks detailed in our filings with the SEC, including in Part I Item IA",
+  "stored_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-4f259a30da9e1084",
+  "field": "red_flags",
+  "text": "1 — Net sales $ 3,481 $ 3,361 By Geographic Region (1) : The Americas $ 1,174 $ 1,197 Europe, United Kingdom and Ireland and Emerging Markets (\"EUKEM\") 901 868 Asia/Pacific 873 806 Mainland China 532 490 3,480 3,361 Returns associated with restructuring and other activities\n\n1 — Net sales $ 3,481 $ 3,361 OPERATING INCOME (LOSS) By Product Category: Skin Care $ 187 $ 117 Makeup (15) (185) Fragrance 86 60 Hair Care (12) (18) Other 9 11 255 (15) Charges associated with restructuring and other activities\n\n(86) (106) Operating income (loss) $ 169 $ (121) By Geographic Region (1)(2) : The Americas $ 87 $ (85) EUKEM 6 10 Asia/Pacific 150 76 Mainland China 12 (16) 255 (15) Charges associated with restructuring and other activities (86)\n\n(106) Operating income (loss) $ 169 $ (121) (1) The net sales and operating results from the Company’s travel retail business are included in the Asia/Pacific region. (2)\n\nOperating results by geographic region for the fiscal 2025 first quarter have been adjusted to reflect the correction of a regional misclassification in the amounts furnished in the Form 8-K on October 2, 2025 related to a one-time charge during the fiscal 2025 first quarter. The misclassification was offset in the fiscal 2025 second quarter (quarter-to-date period) furnished amounts, and the adjusted amounts will be reflected in the fiscal 2026 second quarter Form 10-Q. No other periods were impacted and there is no impact on the consolidated financial results or results by product category.\n\nWe operate on a global basis, with the majority of our net sales generated outside the United States. Accordingly, fluctuations in foreign currency exchange rates affect our results of operations. Therefore, we present certain net sales, operating results and diluted net earnings (loss) per common share information excluding the effect of foreign currency rate fluctuations to provide a framework for assessing the performance of our underlying business outside the United States. Constant currency information compares results between periods as if exchange rates had remained constant period-over-period. We calculate constant currency information by translating current-period results using prior-year monthly average foreign currency exchange rates and adjusting for the period-over-period impact of foreign currency cash flow hedging activities.",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-945c77855269495a",
+  "field": "red_flags",
+  "text": "February 6, 2019 Eli Lilly and Company Lilly Corporate Center Indianapolis, Indiana 46285 U.S.A. +1.317.276.2000 www.lilly.com For Release: Immediately Refer to: Mark Taylor; mark.taylor@lilly.com; (317) 276-5795 (Media) Kevin Hern; hern_kevin_r@lilly.com; (317) 277-1838 (Investors) Lilly Reports Strong Fourth-Quarter and Full-Year 2018 Financial Results, Lowers 2019 EPS Guidance to Reflect the Pending Acquisition of Loxo Oncology\n\n• Fourth-quarter 2018 revenue increased 5 percent , driven by increased demand for newer medicines, while operating expenses increased 1 percent . Full-year 2018 revenue increased 7 percent to $ 24.556 billion . • Fourth-quarter 2018 earnings per share (EPS) grew to\n\n$1.10 on a reported basis, or $1.33 on a non-GAAP basis. Full-year 2018 EPS grew to $3.13 on a reported basis and $5.55 on a non-GAAP basis. • Pharmaceutical revenue in the fourth quarter of 2018 grew 5 percent , driven by 11 percent volume growth. Newer medicines, including Trulicity, Taltz, Basaglar, Olumiant, Jardiance, Verzenio and Lartruvo, represented approximately\n\n38 percent of pharmaceutical revenue and delivered strong volume growth. • The pending acquisition of Loxo Oncology is expected to broaden the scope of Lilly’s oncology portfolio into precision medicines. • Lilly plans to launch an exchange offer to Lilly shareholders in the first half of 2019 in order to divest its remaining ownership interest in Elanco Animal Health.\n\n2019 EPS guidance range lowered to $4.57 to $4.67 on a reported basis and $5.55 to $5.65 on a non-GAAP basis, primarily due to the anticipated impacts of both the pending acquisition of Loxo Oncology and the negative Phase 3 confirmatory trial for Lartruvo, partially offset by a more favorable underlying business outlook.\n\nEli Lilly and Company (NYSE: LLY) today announced financial results for the fourth quarter and full year of 2018. $ in millions, except per share data Fourth Quarter % Full Year % 2018 2017 Change 2018 2017 Change Revenue $\n\n6,438.6 $ 6,160.7 5% $ 24,555.7 $ 22,871.3 7% Net Income (Loss) – Reported 1,125.1 (1,656.9 ) NM 3,232.0 (204.1 ) NM Earnings (Loss) Per Share – Reported 1.10 (1.58 ) NM 3.13 (0.19 ) NM Net Income – Non-GAAP\n\n1,357.6 1,206.7 13% 5,734.6 4,530.4 27% EPS – Non-GAAP 1.33 1.14 17% 5.55 4.28 30%",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-cbb9da8be4757a0c",
+  "field": "red_flags",
+  "text": "In February 2025, the Company announced the expansion of its PRGP, including the restructuring program. Actions under the plan are expected to be substantially executed in fiscal 2025 and 2026 and completed in fiscal 2027, with nearly all of the full run-rate benefits expected to be realized during fiscal 2027. The plan is designed to further transform the Company’s operating model to fund a return to sales growth and restore a solid double-digit adjusted operating margin over the next few years, and continue to mitigate impacts from external volatility.\n\nThe Company has made meaningful progress in the execution of its PRGP, as evident by adjusted gross margin expansion, the advancement of planned initiatives, internally and with external partners, and cumulative actions under its restructuring program. In each of the three quarters of fiscal 2025, the Company has delivered over 300 basis points of adjusted gross margin expansion, despite pressure from its sales volume declines, through initiatives designed to (i) enhance operational efficiencies; (ii) reduce excess inventory; and (iii) improve the realization of net strategic pricing actions by reducing discounts and promotions.\n\nRestructuring Program Component of the PRGP\n\nRelating specifically to the restructuring program component of the PRGP, once fully implemented, the Company expects to take restructuring and other charges of between $1.2 billion and $1.6 billion, before taxes, consisting of employee-related costs, contract terminations, asset write-offs, and other costs associated with implementing these initiatives. The restructuring program is expected to yield annual gross benefits of between $0.8 billion and $1.0 billion, before taxes, to help restore operating margin and also fuel reinvestment in consumer-facing areas to drive sustainable sales growth.\n\nThe Company estimates a net reduction in positions of 5,800 to 7,000, including approvals to date. This net reduction takes into account the elimination of positions after retraining and redeployment of certain employees in select areas. Approvals for specific initiatives under this restructuring program, in total, are expected to be completed by the end of fiscal 2026. The restructuring program’s focus includes (i) reorganization and rightsizing of certain areas and (ii) simplification and acceleration of processes, along with the focus on (i) outsourcing of select services and (ii) evolution of go-to-market footprint and selling models.",
+  "stored_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-6b132b3219f72f17",
+  "field": "red_flags",
+  "text": "Such statements involve risks and uncertainties, and we can give no assurance that they will prove to be correct. Actual results may differ materially from those expressed or implied in such statements.\n\nA wide variety of potential risks, uncertainties, and other factors could materially affect our ability to achieve the results either expressed or implied by these forward-looking statements including, but not limited to, changes in general economic conditions, such as volatility and/or lack of liquidity from time to time in U.S. and world financial markets and the consequent reduced availability and/or higher cost of borrowing to Lowe's and its customers, slower rates of growth in real disposable personal income that could affect the rate of growth in consumer spending, inflation and its impacts on discretionary spending and on our costs, shortages, and other disruptions in the labor supply, interest rate and currency fluctuations, home price appreciation or decreasing housing turnover, age of housing stock, the availability of consumer credit and of mortgage financing, trade policy changes or additional tariffs, outbreaks of pandemics, fluctuations in fuel and energy costs, inflation or deflation of commodity prices, natural disasters, armed conflicts, acts of both domestic and international terrorism, and other factors that can negatively affect our customers.\n\nLOW-IR ### Contacts: Shareholder/Analyst Inquiries: Media Inquiries: Kate Pearlman Steve Salazar 704-775-3856 steve.j.salazar@lowes.com kate.pearlman@lowes.com Lowe’s Companies, Inc. Consolidated Statements of Current Earnings and Accumulated Deficit (Unaudited) In Millions, Except Per Share and Percentage Data Three Months Ended May 5, 2023\n\nApril 29, 2022 Current Earnings Amount % Sales Amount % Sales Net sales $ 22,347 100.00 $ 23,659 100.00 Cost of sales 14,820 66.32 15,609 65.97 Gross margin 7,527 33.68 8,050 34.03 Expenses: Selling, general and administrative 3,824 17.12 4,303\n\n18.19 Depreciation and amortization 415 1.85 445 1.88 Operating income 3,288 14.71 3,302 13.96 Interest – net 349 1.56 243 1.03 Pre-tax earnings 2,939 13.15 3,059 12.93 Income tax provision 679 3.04 726 3.07 Net earnings $ 2,260 10.11 $\n\n2,333 9.86 Weighted average common shares outstanding – basic 596 660 Basic earnings per common share (1) $ 3.78 $ 3.52 Weighted average common shares outstanding – diluted 597 662 Diluted earnings per common share (1) $ 3.77 $ 3.51",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-d2383b7fdaba3894",
+  "field": "red_flags",
+  "text": "• higher fuel taxes or other governmental or regulatory actions that increase, directly or indirectly, the cost of gasoline; • an increase in aggregate automotive engine fuel economy; • new government and regulatory actions or court decisions requiring the phase out or reduced use of gasoline-fueled vehicles;\n\n• the increased use of and public demand for use of alternative fuel sources or electric vehicles; • an increase in the market price of crude oil that increases refined product prices, which may reduce demand for refined products and increase demand for alternative products; and\n\n• adverse weather events resulting in decreased corn acres planted, which may reduce demand for anhydrous ammonia.\n\nSimilarly, any sustained decrease in the supply of crude oil, refined products, renewable fuels or anhydrous ammonia in markets Sunoco LP serves could result in a significant reduction in throughputs in its pipelines and storage in its terminals, which would reduce Sunoco LP’s cash flows and undermine Sunoco LP’s ability to make distributions to its unitholders. Factors that tend to decrease supply and, by extension, utilization of Sunoco LP’s pipelines and terminals include:\n\n• prolonged periods of low prices for crude oil and refined products that result in decreased exploration and development activity and reduced production in markets served by Sunoco LP’s pipelines and storage terminals; • macroeconomic forces affecting, or actions taken by, oil and gas producing nations that impact the supply of and prices for crude oil and refined products;\n\n• a lack of drilling services, equipment or skilled personnel available to producers to accommodate production needs; • changes in laws, regulations, sanctions or taxation that directly or indirectly delay supply or production or increase the cost of production of refined products; and\n\n• political unrest or hostilities, activist interference and the resulting governmental response thereto. Sunoco LP’s operations are subject to federal, state and local laws and regulations, in the U.S., in Mexico and in Europe, relating to environmental, health, safety and security that require it to make substantial expenditures.\n\nSunoco LP’s operations are subject to increasingly stringent international, federal, state and local environmental, health, safety and security laws and regulations. Transporting, storing and distributing hazardous materials, including petroleum products, entails the risk of releasing these products into the environment, potentially causing substantial expenditures for a response action, significant government penalties, liability to government agencies including for damages to natural resources, personal injury or property damages to private parties and significant business interruption. Further, Sunoco LP’s pipeline facilities are subject to the pipeline integrity and safety regulations of various federal and state regulatory agencies, as well as cybersecurity directives. In recent years, increased regulatory focus on pipeline integrity, safety and security has resulted in various proposed or adopted regulations. The implementation of these regulations has required, and the adoption of future regulations could require Sunoco LP to make additional capital or other expenditures, including to install new or modified safety or security measures, or to conduct new or more extensive inspection and maintenance programs.",
+  "stored_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-e230c4d51fc42ccd",
+  "field": "red_flags",
+  "text": "September 30, Nine Months Ended September 30, 2020 2019 2020 2019 Revenue 100 % 100 % 100 % 100 % Cost of revenue 52 34 37 32 Gross profit 48 66 63 68 Operating expenses: Sales and marketing 116 63\n\n70 66 Research and development 108 40 61 45 General and administrative 117 39 64 41 Total operating expenses 341 142 195 152 Loss from operations (293 ) (76 ) (132 ) (84 ) Interest income — 2 1 3\n\nInterest expense (1 ) — (2 ) — Change in fair value of warrants (3 ) 1 — 1 Other income (expense), net (1 ) 1 — — Loss before provision (benefit) for income taxes (298 ) (72 ) (133\n\n) (80 ) Provision (benefit) for income taxes (3 ) 1 (1 ) 2 Net loss (295 )% (73 )% (132 )% (82 )% Comparison of the Three Months Ended September 30, 2020 and 2019 Revenue Three Months Ended September 30,\n\nChange 2020 2019 Amount % Revenue: Government $ 162,561 $ 96,801 $ 65,760 68 % Commercial 126,805 93,740 33,065 35 % Total revenue $ 289,366 $ 190,541 $ 98,825 52 % Revenue increased by $98.8 million, or 52%, for the three months ended September 30, 2020 compared\n\nto the three months ended September 30, 2019. Revenue from government customers increased by $65.8 million, or 68%, for the three months ended September 30, 2020 compared to the three months ended September 30, 2019, primarily in the United States. Of the increase, $46.7 million was from customers existing as of December 31, 2019. Revenue from commercial customers increased by $33.1 million, or 35%, for the three months ended September 30, 2020 compared\n\nto the three months ended September 30, 2019. The increase is primarily due to an increase of $24.3 million from customers existing as of December 31, 2019. 46 Table of Contents Cost of Revenue and Gross Profit Three Months Ended\n\nSeptember 30, Change 2020 2019 Amount % Cost of revenue $ 149,340 $ 65,073 $ 84,267 129 % Gross profit 140,026 125,468 14,558 12 % Gross margin 48 % 66 % (18 )% Cost of revenue for the three months ended September 30, 2020 increased by $84.3 million, or 129%,",
+  "stored_label": [],
+  "rater_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ]
+ },
+ {
+  "chunk_id": "E2CHK-e45e9cdca77850ee",
+  "field": "red_flags",
+  "text": "The amount we need to fund operations will depend on various factors, including revenues from net product sales, the potential regulatory approval and commercialization of our product candidates and the timing thereof, the status of competitive products, the success of our research and development programs, the potential future need to expand our professional and support staff and facilities, the status of patents and other intellectual property rights (and future litigation related thereto), the delay or failure of a clinical trial of any of our potential drug candidates, and the continuation, extent, and success of our collaborations (in particular those with Sanofi and Bayer HealthCare). Clinical trial costs are dependent, among other things, on the size and duration of trials, fees charged for services provided by clinical trial investigators and other third parties, the costs for manufacturing the product candidate for use in the trials, and for supplies, laboratory tests, and other expenses. The amount of funding that will be required for our clinical programs depends upon the results of our research and preclinical programs and early-stage clinical trials, regulatory requirements, the duration and results of clinical trials underway and of additional clinical trials that we decide to initiate, and the various factors that affect the cost of each trial as described above.\n\nIn addition to our anticipated commercialization costs for EYLEA and Praluent, our commercialization costs over the next few years will depend on, among other things, whether or not our antibody product candidates in later stage clinical development receive regulatory approval, the market potential for product candidates, and the commercialization terms of our collaboration agreements, if applicable (whereby some or all commercialization costs may be shared with our collaborators). Currently, we are required to pay royalties on sales of certain commercial products. In the future, if we are able to successfully develop, market, and sell certain of our product candidates, we may be required to pay additional royalties or share the profits from such sales pursuant to our license or collaboration agreements. In addition, under the provisions of the PPACA and the Health Care and Education Reconciliation Act of 2010, the Branded Prescription Drug Fee is imposed on pharmaceutical manufacturers that sell branded",
+  "stored_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "rater_label": []
+ },
+ {
+  "chunk_id": "E2CHK-57fcec50ebcdeb2d",
+  "field": "red_flags",
+  "text": "• lower debt underwriting fees largely driven by lower non-investment grade loans. Refer to CIB segment results on pages 22-26 and Note 5 for additional information. Principal transactions revenue increased, reflecting the net impact in CIB of: • higher Fixed Income Markets revenue driven by higher revenue in Commodities and Credit, largely offset by lower revenue in Securitized Products and Rates, and\n\n• lower Equity Markets revenue, particularly in Equity Derivatives, predominantly offset by higher revenue in Prime Finance. Principal transactions revenue in CIB generally has offsets across other revenue lines, including net interest income. The Firm assesses the performance of its Markets business on a total net revenue basis.\n\nRefer to CIB segment results on pages 22-26 and Note 5 for additional information. Lending- and deposit-related fees increased, reflecting: • in CIB, higher cash management fees in Payments as a result of higher volume, and • in CCB, higher deposit-related fees as a result of higher transaction volume and new accounts.\n\nRefer to CCB and CIB segment results on pages 19-21 and pages 22-26, respectively, and Note 5 for additional information. Asset management fees increased predominantly driven by higher average market levels and net inflows in AWM and CCB. Refer to CCB and AWM segment results on pages 19-21 and pages 27-29, respectively, and Note 5 for additional information.\n\nincreased in CIB and AWM, predominantly due to higher brokerage commissions on higher volume and, to a lesser extent, higher custody fees as a result of higher market levels and client activity. Refer to CIB and AWM segment results on pages 22-26 and pages 27-29, respectively, and Note 5 for additional information.\n\nwas a net gain compared with a net loss in the prior year; these results were associated with repositioning the investment securities portfolio in Treasury and CIO. Refer to Corporate results on pages 30-31 and Note 9 for additional information.\n\ndecreased driven by lower income in CCB, reflecting an increase in amortization related to new account origination costs, predominantly offset by higher annual fees. Net interchange income was relatively flat as the impact of increased debit and credit card sales volume was offset by higher rewards costs and partner payments. Refer to CCB segment results on pages 19-21 and Note 5 for additional information.",
+  "stored_label": [],
+  "rater_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ]
+ }
+]

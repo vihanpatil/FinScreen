@@ -1,0 +1,310 @@
+{
+  "run_id": "2026-08-26-v12-epoch1",
+  "generated_utc": "2026-08-26T16:41:30.204746+00:00",
+  "git_head": "b6546bf8ddc42710ef26098702a2d6ae0778816c",
+  "what_this_run_is": "Epoch 1 of the rubric-v1.2 retrain (G1 repair campaign). Same base model, same LoRA recipe, same frozen train/eval split as the 2026-08-21 epoch-1 run. The only thing that changed is the TEACHER LABELS: data/labels.parquet (rubric v1.1) -> data/labels_v12.parquet (rubric v1.2).",
+  "cost": {
+    "usd": 0.0,
+    "anthropic_api_calls": 0,
+    "gpu_rental": "none \u2014 local Apple Silicon"
+  },
+  "authorization": {
+    "campaign": "G1 REPAIR \u2014 rubric v1.2 re-label + retrain",
+    "scope": "ONE EPOCH per launch; the epoch-2 continuation is PLANNED but is a separate launch",
+    "ratification": "HANDOFF.md \u00a73, 2026-08-26 \u2014 F2.5 closure rulings, ruling 1: repair the instrument (re-label under rubric v1.2 + retrain, ~2 nights)",
+    "recorded_in": "HARDENING_PROGRESS.md, 'G1 REPAIR CAMPAIGN' section",
+    "labels": "data/labels_v12.parquet \u2014 batch msgbatch_01UdoUkZfuaTRJzokZDfbFYN, rubric v1.2, system-prompt sha256 30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+    "cost": "$0 \u2014 local Apple Silicon MLX. The Anthropic spend freeze is RE-SEALED (account balance ~$0); this training run makes ZERO API calls.",
+    "note": "G1 itself is still UNRULED. This retrain produces the repaired instrument the owner will rule on; it is not itself an acceptance.",
+    "hard_rules": [
+      "The train/eval split is frozen. split.py was NOT run; membership came from finetune/splits/manifest.parquet by join.",
+      "distress_tier is never a training target and never a headline metric.",
+      "Long compute runs in the MAIN SESSION as an auto-resume chain (HANDOFF \u00a74). No agent launches training."
+    ]
+  },
+  "labels": {
+    "v12": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet",
+      "exists": true,
+      "sha256": "ca373b953504535b2f35ee374a6b6c1a6360000261748db365ee23c231e475e7",
+      "bytes": 10106377,
+      "rows": 6747,
+      "labeled": 6747,
+      "batch_id": "msgbatch_01UdoUkZfuaTRJzokZDfbFYN (6,746) + msgbatch_01RvQpZofwP2yrHNnuJVmFZu (1, the completion row)",
+      "rubric_version": "v1.2"
+    },
+    "v12_pre_completion_backup": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet.pre_completion",
+      "exists": true,
+      "sha256": "168272c9d1a1fd76d2fdabe9b717ba807d3a619c50dc62db55ebe527f8695ff2",
+      "bytes": 10105861
+    },
+    "v12_completion_audit": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12_completion.parquet",
+      "exists": true,
+      "sha256": "161653af6af3c77f9b88955ce158782e9799ba20148de92377fe8594205f6080",
+      "bytes": 35067
+    },
+    "e1_v11_frozen_reference": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels.parquet",
+      "exists": true,
+      "sha256": "c3531f03cda602bc2ed7fb7743d5d01f78ed722f2a58bd82922f5b8ccc3daa72",
+      "bytes": 10063011,
+      "rows": 6747,
+      "labeled": 6746,
+      "note": "FROZEN \u2014 read-only reference, never written"
+    },
+    "corpus": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labeling_corpus.parquet",
+      "exists": true,
+      "sha256": "5067494c870f82e5326d067e7846f9ede848b8f2aa19b0e988d49ecee45bc294",
+      "bytes": 9233764
+    }
+  },
+  "split": {
+    "frozen_manifest": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits/manifest.parquet",
+      "exists": true,
+      "sha256": "dff0a2d0b647cc7c7f5da2d8a9ffe5b1069302190263eb449bb48a72c56816f7",
+      "bytes": 141090,
+      "rows": 6746,
+      "note": "THE source of membership. split.py was NOT run."
+    },
+    "builder": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/build_splits_v12.py",
+      "exists": true,
+      "sha256": "31e245168b51b9961dfe078c1d40b827104c348fba5346c9f1f646e82d17e8db",
+      "bytes": 11755
+    },
+    "build_report": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/build_report.json",
+      "exists": true,
+      "sha256": "9eefaf1261e0e664819788f73bf0c3a51007bb91933a1beb413d364143ef89a3",
+      "bytes": 1826
+    },
+    "train": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/train.parquet",
+      "exists": true,
+      "sha256": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10",
+      "bytes": 7250862,
+      "rows": 5736
+    },
+    "eval": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/eval.parquet",
+      "exists": true,
+      "sha256": "0b98531b35cade544e8b80676bb8005d1570e0f9f5bcd1338b9e05a3d2df9f55",
+      "bytes": 1326655,
+      "rows": 1010
+    },
+    "manifest": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/manifest.parquet",
+      "exists": true,
+      "sha256": "b76923b14507bbb1bc76e774e64e39d60fe3967c1bf0bb735edbf0072a2dafd8",
+      "bytes": 141615,
+      "rows": 6746
+    },
+    "counts": {
+      "train": 5736,
+      "eval": 1010,
+      "frozen_train": 5736,
+      "frozen_eval": 1010
+    },
+    "gaps": {
+      "n": 0,
+      "rows": []
+    },
+    "e1_refusal_chunk": {
+      "chunk_id": "CHK-8e69547e0900a8dd",
+      "in_frozen_manifest": false,
+      "labels_under_v12": true,
+      "kept_out_of_both_splits": true,
+      "reason": "the split is frozen; membership is label-value-independent"
+    },
+    "e1_splits_untouched": {
+      "train": {
+        "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits/train.parquet",
+        "exists": true,
+        "sha256": "5c90c2e505ca7d3105088df6cdab6d255c96026a5c37b44d95143112230e373e",
+        "bytes": 8367243,
+        "rows": 5736
+      },
+      "eval": {
+        "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits/eval.parquet",
+        "exists": true,
+        "sha256": "f446ce6d83f1e2ee7a752a0d4821b7ce27c5c56821a0a64cb729ce8b0b41d3af",
+        "bytes": 1621809,
+        "rows": 1010
+      }
+    }
+  },
+  "prepared": {
+    "builder": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepare_dataset.py",
+      "exists": true,
+      "sha256": "bea4ad659cabe8f57a9f5a99a58864860f2d16bb98e7b2da55c20fe41bcc33a0",
+      "bytes": 7913
+    },
+    "train": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared_v12/train.jsonl",
+      "exists": true,
+      "sha256": "91d95653c1fb1a304610bfb948564ef8fc5f4c4d5d8c20a0037bec33e5bae580",
+      "bytes": 27534206,
+      "rows": 5736
+    },
+    "eval": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared_v12/eval.jsonl",
+      "exists": true,
+      "sha256": "0229d0ba90d8331d0e6b6ead5d72dc1f1ccc5c085998ad5695f7f8e4e35d2ac5",
+      "bytes": 5288268,
+      "rows": 1010
+    },
+    "e1_prepared_untouched": {
+      "train": {
+        "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared/train.jsonl",
+        "exists": true,
+        "sha256": "59a4221fe2db60f876f9cb9282a6071870620499dfcf3c2c5b736f18f1d0e2cd",
+        "bytes": 27523141
+      },
+      "eval": {
+        "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared/eval.jsonl",
+        "exists": true,
+        "sha256": "b441716b8f73cae678d38b2b3f19f7d70126d8db0613aeadab98437ef4f26dd9",
+        "bytes": 5285676
+      }
+    }
+  },
+  "mlx_data": {
+    "converter": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/convert_to_mlx.py",
+      "exists": true,
+      "sha256": "b81ea81345b4e7f84e6767ce5786464bf1d6739c4823103199263a16152baf54",
+      "bytes": 14701
+    },
+    "train": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12/train.jsonl",
+      "exists": true,
+      "sha256": "396aef131bec0e5cffc22df94fe310e07a8e440d9d5a020b09772699a2931a43",
+      "bytes": 27955919,
+      "rows": 5736
+    },
+    "valid": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12/valid.jsonl",
+      "exists": true,
+      "sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+      "bytes": 5322906,
+      "rows": 1010
+    },
+    "conversion_report": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12/conversion_report.json",
+      "exists": true,
+      "sha256": "d039f5348014df4e74d5bdd6744382d823ffdf4175e9569e1edfc5826256f568",
+      "bytes": 11717
+    },
+    "max_seq_length": 2048,
+    "head_truncated": {
+      "train": 2,
+      "eval": 50
+    },
+    "e1_mlx_data_untouched": {
+      "train": {
+        "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/train.jsonl",
+        "exists": true,
+        "sha256": "d4dc4ec8323b19ae90e4fe00e0eb78c70f16315d40fbd10ef996d4a30a237bbe",
+        "bytes": 27945846
+      },
+      "valid": {
+        "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/valid.jsonl",
+        "exists": true,
+        "sha256": "deb63b76992404ecaf4fdc4c3a3acbea9b0c3bb7f655064aec7191ebc9ab0736",
+        "bytes": 5320780
+      }
+    }
+  },
+  "instruction": {
+    "role": "TRAINING instruction \u2014 the `system` turn of every training and inference prompt",
+    "source": "finetune/prepare_dataset.py::INSTRUCTION",
+    "sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "chars": 1825,
+    "frozen_across": "E1 epoch-1, E1 epoch-2, and this rubric-v1.2 retrain \u2014 byte-identical",
+    "why_frozen": "keeping it fixed makes the v1.1-student vs v1.2-student comparison single-axis (label values moved, nothing else). It is NOT the labeling system prompt: see labeling_system_prompt below."
+  },
+  "labeling_system_prompt": {
+    "role": "LABELING system prompt \u2014 what the TEACHER (claude-sonnet-5) was told when it produced data/labels_v12.parquet. It is NOT the training instruction.",
+    "source": "build_batch_requests.py::SYSTEM_PROMPT",
+    "sha256": "30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+    "chars": 9521,
+    "rubric_version": "v1.2",
+    "qwen2_5_tokens": 1904,
+    "relationship_to_training_instruction": "hand-synced restatement, not a verbatim embed (HANDOFF \u00a73, 2026-08-10 sync rule). Substituting it for the training instruction is INFEASIBLE at max_seq_length 2048: it renders to 1,934 tokens with an empty passage, leaving ~114 tokens for the passage against a measured mean of ~660."
+  },
+  "rubric": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/labeling_rubric.md",
+    "exists": true,
+    "sha256": "46dea3c886846849c82ae2b65d8e29ef95016dece706cd19a2e00b8d99c30b25",
+    "bytes": 22823,
+    "version": "v1.2"
+  },
+  "prompt_rendering_contract": {
+    "format": "mlx-lm chat format: {'messages': [system, user, assistant]}",
+    "system": "the TRAINING instruction, byte-identical across all rows (verified)",
+    "user": "the raw passage text and nothing else",
+    "assistant": "the target JSON string",
+    "inference_equivalent": "apply_chat_template(messages[:2], add_generation_prompt=True)",
+    "loss_region": "tokens[offset:], offset = len(apply_chat_template(messages[:-1], add_generation_prompt=True))",
+    "look_ahead_bias": "no ticker, CIK, filing date, section_type string, or outcome framing is added anywhere; the conversion is a pure re-serialization",
+    "verified_against_E1": {
+      "shared_rows": 6746,
+      "rows_only_in_E1": 0,
+      "rows_only_in_v12": 0,
+      "split_side_differs": 0,
+      "system_turn_differs": 0,
+      "passage_turn_differs": 14,
+      "assistant_json_differs": 2034,
+      "inference_prompt_token_identical": 6732,
+      "note": "the 14 are ALL among the 52 head-truncated rows (2 train / 12 eval). convert_to_mlx.py truncates the passage until the rendered sequence INCLUDING the answer fits 2048, so a longer v1.2 answer keeps slightly less passage. All 14 are a strict head-prefix relation \u2014 only the passage TAIL moved. This is a real, small second axis: state it at G1."
+    }
+  },
+  "base_model": {
+    "repo": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+    "snapshot": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "hf_revision": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071",
+    "sha_source": "HF blob filename (content-addressed) \u2014 identical to the value recorded in the 2026-08-21 epoch-1 and epoch-2 manifests",
+    "license": "apache-2.0"
+  },
+  "reference_adapters_v11_student": {
+    "epoch1_final": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-final-from-2250/adapters.safetensors",
+      "exists": true,
+      "sha256": "3c6adc9eedaec2adc7f7b4bd3c4c2b3e8b2e970ac63f6679570562be948f25e8",
+      "bytes": 11541328
+    },
+    "epoch2_final": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors",
+      "exists": true,
+      "sha256": "9c08e3cb3f1f917c3c6903cc0154f9d175d928f0116edc60e2dd1b2e0f9e7fa8",
+      "bytes": 11541328
+    },
+    "note": "the v1.1 student, for comparison at the G1 read. NOT resumed from \u2014 the v1.2 epoch-1 run starts from the base model, exactly as the 2026-08-20 epoch-1 did."
+  },
+  "label_shift_report": {
+    "generator": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/hardening/label_shift_v11_v12.py",
+      "exists": true,
+      "sha256": "cdc702dcef56f26ad2ceba1bac66c80c55da04374aa764c22a7ef2306041700c",
+      "bytes": 20178
+    },
+    "json": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/hardening/label_shift_v11_v12.json",
+      "exists": true,
+      "sha256": "144ae0828f8405ef2a5f137c5d5ec31727e6e2aaaf886926055794f398efa662",
+      "bytes": 10163
+    },
+    "markdown": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/hardening/LABEL_SHIFT_v11_v12.md",
+      "exists": true,
+      "sha256": "55e93dec27ce4f407f36fd983e8047f477ba9436faeeb6c73cf859bfb3938688",
+      "bytes": 5841
+    }
+  }
+}

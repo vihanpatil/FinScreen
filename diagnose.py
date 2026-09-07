@@ -56,8 +56,10 @@ exactly.
 
 from __future__ import annotations
 
+import argparse
 import datetime as _dt
 from pathlib import Path
+from typing import Optional
 
 import numpy as np
 import pandas as pd
@@ -66,6 +68,7 @@ from xgboost import XGBRegressor
 
 import backtest as B
 import features as F
+import spec as S
 
 REPO_ROOT = Path(__file__).resolve().parent
 DATA_DIR = REPO_ROOT / "data"
@@ -219,7 +222,12 @@ def family_delta_summary(long_df: pd.DataFrame, families_order: list[str]) -> pd
                 "family": name,
                 "n_folds": len(sub),
                 "mean_delta_dedup_vs_numeric": d_dedup.mean() if len(d_dedup) else np.nan,
-                "std_delta_dedup_vs_numeric": d_dedup.std(ddof=0) if len(d_dedup) else np.nan,
+                # SAMPLE std (ddof=1). H2 fix, 2026-08-25: this was ddof=0 --
+                # a POPULATION std over six fold deltas, which understates the
+                # noise anchor by sqrt(5/6)=0.913 and propagated that optimism
+                # into every MDE in EXPANSION_PLAN.md §2a
+                # (data/reevaluation_2026-08-25/methodology_audit.md defect 1).
+                "std_delta_dedup_vs_numeric": d_dedup.std(ddof=1) if len(d_dedup) > 1 else np.nan,
                 "positive_folds_dedup": int((d_dedup > 0).sum()),
                 "n_folds_dedup_valid": len(d_dedup),
                 "mean_delta_raw_vs_numeric": d_raw.mean() if len(d_raw) else np.nan,
@@ -494,7 +502,15 @@ def write_diagnosis_report(
     fold_sens: pd.DataFrame,
     perm_df: pd.DataFrame,
     perm_summary: pd.DataFrame,
+    standing: Optional[dict] = None,
+    output_path: Optional[Path] = None,
 ) -> None:
+    """`standing` carries the H2 standing diagnostics
+    (`backtest.compute_standing_diagnostics()`). It defaults to None so older
+    call sites keep working -- but when it is None the standing sections say
+    NOT COMPUTED in bold rather than being silently absent."""
+    active_spec = (standing or {}).get("active_spec", B.ACTIVE_SPEC)
+    out_path = Path(output_path) if output_path is not None else DIAGNOSIS_REPORT_OUTPUT
     lines: list[str] = []
     lines.append("# FinScreen Phase D -- signal diagnosis report")
     lines.append("")
@@ -529,6 +545,16 @@ def write_diagnosis_report(
         f"filing-level observations ({n_target_dropped} dropped for an incomplete target window), "
         "roughly HALF that many independent company-quarter bets (8-K + 10-Q/10-K near-duplicate "
         "pairs). Every N below inherits this caveat; it is not re-derived per table."
+    )
+    lines.append("")
+
+    lines.extend(S.specification_section_lines(active_spec))
+    lines.append(
+        "**Specification note specific to the leave-one-company-out analysis (§2):** dropping a "
+        "ticker removes its ROWS from train and test; it does not remove that ticker from the "
+        "trailing cross-sections other rows were ranked against, exactly as it does not remove its "
+        "footprint from the frozen `target_excess_return` benchmark. Both are stated, neither is "
+        "silently corrected."
     )
     lines.append("")
 
@@ -717,6 +743,9 @@ def write_diagnosis_report(
     lines.extend(_fmt_table(perm_df, ["test_quarter", "n_test", "redflag_column", "baseline_ic", "mean_ic_drop_when_permuted"]))
     lines.append("")
 
+    # ---- Standing H2 sections (benchmarks / bootstrap / embargo) ----------
+    lines.extend(B.standing_section_lines(standing))
+
     # ---- Analysis 5: what this can and cannot conclude ---------------------
     lines.append("## 5. What this diagnosis can and cannot conclude")
     lines.append("")
@@ -770,7 +799,8 @@ def write_diagnosis_report(
     )
     lines.append("")
 
-    DIAGNOSIS_REPORT_OUTPUT.write_text("\n".join(lines))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(lines))
 
 
 # ---------------------------------------------------------------------------
@@ -778,14 +808,19 @@ def write_diagnosis_report(
 # ---------------------------------------------------------------------------
 
 
-def main() -> None:
+def main(output_path: Optional[Path] = None, active_spec: str = None) -> None:
+    active_spec = active_spec or B.ACTIVE_SPEC
     print("Loading data/features.parquet via backtest.load_modeling_frame()...")
-    df, n_dropped = B.load_modeling_frame()
-    print(f"{len(df)} usable observations ({n_dropped} dropped for incomplete target window)")
+    df_raw, n_dropped = B.load_modeling_frame()
+    print(f"{len(df_raw)} usable observations ({n_dropped} dropped for incomplete target window)")
 
-    folds = B.build_walk_forward_folds(df, B.BURN_IN_END)
-    B.assert_no_fold_leakage(df, folds)
+    folds = B.build_walk_forward_folds(df_raw, B.BURN_IN_END)
+    B.assert_no_fold_leakage(df_raw, folds)
     print(f"{len(folds)} walk-forward folds (byte-identical construction to backtest.py)")
+
+    print(f"Applying pre-registered feature specification: {active_spec}")
+    spec_frames = B.build_spec_frames(df_raw)
+    df = spec_frames[active_spec]
 
     families_order = list(FEATURE_FAMILIES.keys())
 
@@ -827,14 +862,33 @@ def main() -> None:
     perm_summary = redflag_permutation_summary(perm_df)
     print(perm_summary.to_string(index=False))
 
+    print("\n--- Standing H2 diagnostics (zero-information benchmarks, bootstrap anchor, embargo census) ---")
+    standing = B.compute_standing_diagnostics(df_raw, spec_frames, folds, keep_mask, active_spec=active_spec)
+    print(standing["bench_summary"].to_string(index=False))
+
+    out_path = Path(output_path) if output_path is not None else DIAGNOSIS_REPORT_OUTPUT
     write_diagnosis_report(
         df, n_dropped, families_order, results_full, long_full, summary_full,
         df_form, results_form, long_form, summary_form,
         loco_df, loco_baseline, sector_agg, per_ticker_df,
         fold_sens, perm_df, perm_summary,
+        standing=standing, output_path=out_path,
     )
-    print(f"\nWrote {DIAGNOSIS_REPORT_OUTPUT}")
+    print(f"\nWrote {out_path}")
+
+
+def _parse_args(argv=None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="FinScreen Phase D signal diagnosis")
+    p.add_argument(
+        "--out", type=Path, default=None,
+        help="Write the report here instead of data/diagnosis_report.md. Use this for any "
+             "re-derivation: E1's frozen diagnosis report must never be overwritten.",
+    )
+    p.add_argument("--spec", choices=list(S.SPEC_NAMES), default=None,
+                   help="Pre-registered feature specification for this run (default: backtest.ACTIVE_SPEC).")
+    return p.parse_args(argv)
 
 
 if __name__ == "__main__":
-    main()
+    _args = _parse_args()
+    main(output_path=_args.out, active_spec=_args.spec)

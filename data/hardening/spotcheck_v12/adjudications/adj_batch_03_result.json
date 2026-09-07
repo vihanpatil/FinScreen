@@ -1,0 +1,101 @@
+[
+  {
+    "chunk_id": "CHK-ad27e454857187ed",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "high",
+    "brief": "The passage states that 'U.K. regulators have designated Vocalink ... to be a \"specified service provider\"' — an action that has already occurred and already imposes oversight, so §6's realized-controls rule fixes the modality at REALIZED even though the rest of the paragraph is 'could'-framed. §4 asks for one entry per matched category and §6 says the concrete realized statement controls over surrounding hypothetical framing, so listing LEGAL_REGULATORY_ACTION twice with both modalities is not a valid label. Nothing else clears the bar: 'cost overruns, delays in delivery and performance problems' appears only as nouns inside a diversification-risk enumeration, which the mining-depth rule excludes.",
+    "pattern": "duplicate-category-both-modalities",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-ee8fcb128ed03507",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "'[C]hanges to U.S. tax laws now require ... a 15% alternative minimum tax ... beginning in 2023' and 'many European countries have ongoing government-mandated price reductions' describe regimes already in force, which is §6's third realized-controls example ('New regulations effective this year impose additional compliance obligations ... which may increase our costs' → REALIZED), so the stored HYPOTHETICAL is wrong. The MARGIN_COST_PRESSURE entry also fails: every pressure named here is revenue-side price pressure ('additional pricing pressures', 'higher or incremental rebates or discounts'), while §4 defines that category as 'rising input/labor/operating costs compressing margins' with cost-side trigger examples only.",
+    "pattern": "revenue-pricing-pressure-not-margin-cost",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-5a868ca64fd69324",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "This is cash-flow and financing narrative, and the text itself attributes the change to 'the timing of receipts and payments in the ordinary course of business, including a decrease in advance payments' — a timing item, not an assertion of softening demand or declining orders, so DEMAND_WEAKNESS is not asserted. The rating actions ('Moody's changed its outlook on our long-term debt to Negative; S&P downgraded our short-term rating from A-1+ to A-1') and the note offering match none of §4's six categories, and no litigation, investigation, or regulatory requirement appears anywhere in the passage, so LEGAL_REGULATORY_ACTION has no textual basis.",
+    "pattern": "financing-and-cashflow-items-outside-taxonomy",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-96872e14a41afc81",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "The litigation item names actual matters and their status — 'pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to ... including matters related to our processing of unemployment benefits for California ... which are in various stages' — which is §6's first realized-controls example almost verbatim, so LEGAL_REGULATORY_ACTION REALIZED stands. The other three stored flags rest on nouns inside macro enumeration items ('trade policies and tensions, including changes in, or the imposition of, tariffs and / or trade barriers'; 'the impact of trade policies, supply chain disruptions, inflationary pressures and labor shortages on economic conditions'), which describe economy-wide conditions with no company-specific mechanism and so fail the §4 mining-depth rule.",
+    "pattern": "safe-harbor-noun-list-mining-depth",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-2d46eae9a8604ce0",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "confidence": "high",
+    "brief": "'[G]reater government scrutiny of practices related to the handling of personal information has in some cases resulted in, and could in the future lead to, the adoption of applicable law ... that is stricter' asserts that the scrutiny exists and has already produced stricter law. That is exactly §6's second realized-controls example ('Audits ... have in the past resulted in fines, and could result in additional fines' → REALIZED), and the rule states that surrounding could/may framing does not downgrade an existence claim, so the stored HYPOTHETICAL is wrong.",
+    "pattern": "existence-claim-realized-modality",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-e7d89e372a854602",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "low",
+    "brief": "The passage is a single safe-harbor factor enumeration — 'These include global or regional changes in the supply and demand for oil ...; changes in law, regulations, taxes, trade sanctions, or policies ...' — the §4 mining-depth rule's paradigm list of nouns rather than assertions, and 'trade sanctions' in particular is a bare noun, so TRADE_POLICY_EXPOSURE cannot survive on any reading. Stored is wrong either way: if the list flags nothing, all three entries go; if the named already-existing regimes ('the punitive European taxes on the oil and gas sector', 'standards imposed by various jurisdictions') are what earns the legal flag, then §6's realized-controls rule makes that flag REALIZED, never the stored HYPOTHETICAL.",
+    "pattern": "safe-harbor-noun-list-mining-depth",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-d8f2f91c7bbfa2cc",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "'Professional Visualization revenue was down 24% from a year ago' and 'The year-on-year decrease primarily reflects lower sell-in to partners' is a past-tense, already-occurred decline in partner orders, and §4's DEMAND_WEAKNESS lists 'declining orders/bookings, unfavorable volume trends' disjunctively — it does not require the cause to be end-demand deterioration. Red flags are a presence-based multi-label field (§4), not a predominant-tone judgment like sentiment, so the strong Data Center demand described elsewhere in the same passage does not cancel the match.",
+    "pattern": "segment-decline-in-positive-mda",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-79cc15cb7d850a44",
+    "verdict": "disagree",
+    "correct_label": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "confidence": "medium",
+    "brief": "'Pricing and delivery models, which are subject to increasing regulatory scrutiny and requirements' is a present-tense claim that the scrutiny and requirements already exist, and §6's realized-controls rule says such an existence claim is REALIZED even when embedded among 'may'-framed consequences ('we may be subject to government audits'). MARGIN_COST_PRESSURE REALIZED is uncontested and correct on 'We are incurring significant and increasing costs and liabilities to build and maintain infrastructure', so only the legal modality changes.",
+    "pattern": "existence-claim-realized-modality",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-3677d9e79dc81bb4",
+    "verdict": "disagree",
+    "correct_label": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "confidence": "high",
+    "brief": "'[O]ur compliance with sanctions and our decision to suspend our business operations in Russia has led, and could further lead, to other legal ramifications' asserts sanctions the company is already complying with and a suspension already carried out — squarely §4's TRADE_POLICY_EXPOSURE ('sanctions, trade restrictions') and REALIZED under §6, and it stands alone as a sentence about this company, so the mining-depth rule is no obstacle. The stored set is right on the other two entries but omits this category, and red_flags requires an exact set match.",
+    "pattern": "missed-realized-sanctions-exposure",
+    "needs_human": false
+  },
+  {
+    "chunk_id": "CHK-a1853548628ae483",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "low",
+    "brief": "The entire passage is a semicolon-separated cautionary noun list ('potential liability resulting from pending or future litigation, government investigations and other proceedings; ... supply, transportation and labor constraints; ... changes in state, federal or international tax rates'), which the §4 mining-depth rule treats as nouns rather than assertions about this company. Stored fails under either reading: if the list flags nothing, both entries go; if 'potential liability resulting from pending ... litigation' does clear the bar, then 'pending' is an existence claim and §6's realized-controls rule makes it REALIZED, not the stored HYPOTHETICAL.",
+    "pattern": "safe-harbor-noun-list-mining-depth",
+    "needs_human": true
+  },
+  {
+    "chunk_id": "CHK-1da899d1c99d94e7",
+    "verdict": "disagree",
+    "correct_label": [],
+    "confidence": "medium",
+    "brief": "The risk items are single nouns strung through a forward-looking-statements paragraph — 'foreign currency risk; inflation; changes in monetary policy by governments; pricing pressure; ... availability and cost of raw materials; ... challenges in SLB's supply chain; production declines' — and none asserts the risk specifically enough to stand alone as a sentence about the company, so the §4 mining-depth rule flags none of them. The P3 corollary that causeless cost-inflation language is 'always' MARGIN_COST_PRESSURE is expressly conditioned on clearing that same bar, and the bare word 'inflation' does not clear it.",
+    "pattern": "safe-harbor-noun-list-mining-depth",
+    "needs_human": false
+  }
+]

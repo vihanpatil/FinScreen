@@ -1,0 +1,34 @@
+{
+  "batch_id": "msgbatch_01RvQpZofwP2yrHNnuJVmFZu",
+  "mode": "complete-missing",
+  "variant": "v12_relabel",
+  "requests_file": "data/batch_requests_v12.jsonl",
+  "against": "data/labels_v12.parquet",
+  "n_submitted": 1,
+  "custom_ids": [
+    "CHK-1c1812ed45219a3a"
+  ],
+  "max_missing_guard": 3,
+  "n_rows_in_target": 6747,
+  "n_excluded_answered_failures": 0,
+  "model": "claude-sonnet-5",
+  "asserted_max_tokens": 4000,
+  "asserted_thinking": "disabled",
+  "rubric_version": "v1.2",
+  "system_prompt_sha256": "30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+  "estimated_cost": {
+    "n_requests": 1,
+    "cache_write_input_tokens_est": 1893,
+    "plain_input_tokens_est": 776,
+    "output_tokens_per_request_est": 68.31,
+    "total_output_tokens_est": 68.31,
+    "cost_usd_by_tier": {
+      "standard": 0.007355,
+      "intro": 0.004904
+    },
+    "assumptions": "Batch discount applied; every request charged a full 1h cache WRITE on its system prefix (no warm cache at this batch size); token counts are the cl100k_base proxy, not Claude's tokenizer.",
+    "output_tokens_basis": "mean measured output_tokens over 3961 answered section_type=['MDA'] row(s) in data/labels_v12.parquet"
+  },
+  "submitted_at": "2026-08-26T16:31:36.429887+00:00",
+  "processing_status": "in_progress"
+}

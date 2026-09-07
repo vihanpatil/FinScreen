@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": "CHK-7793c902db2116e3",
+    "red_flags": [],
+    "reason": "Purely descriptive funding/liquidity disclosure — \"$1.4 trillion of available cash and securities\", \"available borrowing capacity\", \"compliant with the 100% minimum NSFR requirement\" — with no adverse demand, supply, trade, impairment, cost or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-409c1216eab9adc5",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "\"Abrysvo globally, down 62% operationally, driven primarily by a significant reduction in vaccination rates\" and \"Xeljanz globally, down 29% ... driven primarily by lower demand globally\" are past-tense demand declines; the R&D increase is attributed \"primarily\" to pipeline investment, not cost pressure, so no MARGIN_COST_PRESSURE."
+  },
+  {
+    "chunk_id": "CHK-468c0aa690633dd1",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"The decrease in operating income was primarily driven by unfavorable price/mix, higher commodity costs\" (Asia Pacific) and North America income \"partially offset by higher commodity costs\" — realized input-cost pressure with no supply-shortage or tariff cause named; volumes rose everywhere, so no DEMAND_WEAKNESS."
+  },
+  {
+    "chunk_id": "CHK-ef591fae885bf7ad",
+    "red_flags": [["TRADE_POLICY_EXPOSURE", "HYPOTHETICAL"]],
+    "reason": "\"potential tariff impacts, including risks relating to entering into binding final agreements with the U.S. Government and its impact on the applicability of Section 232 tariffs\" is a specific standalone trade-policy assertion, but framed as potential rather than as tariffs already borne."
+  },
+  {
+    "chunk_id": "CHK-403480a1dddc23de",
+    "red_flags": [],
+    "reason": "Credit-risk-management narrative — \"we use credit risk limits\", \"our aggregate credit exposure decreased slightly\" — counterparty credit risk is not one of the six categories and no adverse operating condition is asserted."
+  },
+  {
+    "chunk_id": "CHK-e85f6aad8d6e1b55",
+    "red_flags": [["SUPPLY_INPUT_CONSTRAINT", "REALIZED"]],
+    "reason": "\"losses on settled financial hedges that were not offset by the associated physical shipments due to Middle East supply disruptions\" plus \"Middle East volume impacts\" asserts a disruption that already occurred; \"Higher prices and margins\" and \"structural cost savings\" defeat any cost-pressure flag."
+  },
+  {
+    "chunk_id": "CHK-30c5a4bf715d85f1",
+    "red_flags": [],
+    "reason": "Mechanical derivative-exposure disclosure — the only change cited is \"The decrease was primarily as a result of market movements\" — no category language present."
+  },
+  {
+    "chunk_id": "CHK-350195f4e82fd0e6",
+    "red_flags": [],
+    "reason": "The macro clause is a bare-noun enumeration (\"currency and interest rate fluctuations, capital and exchange controls, ... including inflation, recession, ... trade regulations, tax laws\") that fails the mining-depth rule, and the Comirnaty paragraph describes a commercial-market transition rather than asserting demand, cost or regulatory action against the company."
+  },
+  {
+    "chunk_id": "CHK-080a5b8208e985e5",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"], ["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"Systemwide sales and revenue have continued to be negatively impacted by the war in the Middle East\" is a realized unfavorable sales trend, and \"non-cash impairment charges associated with the sale of McDonald's business in South Korea\" is a recorded write-down."
+  },
+  {
+    "chunk_id": "CHK-0688ad8842f5c28f",
+    "red_flags": [["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"other changes in spend, including market drivers, such as inflation\" and \"the ability to offset inflationary pressure\" is causeless cost-inflation language tied to the company's own spend (always MARGIN_COST_PRESSURE per §4), but it appears only in definitional/forward-looking framing with realized cost *savings*, not a realized cost increase."
+  },
+  {
+    "chunk_id": "CHK-b74c6da3ee7bf9cc",
+    "red_flags": [],
+    "reason": "The risk items (\"manufacturing difficulties or delays, internally or within the supply chain\"; \"significant adverse litigation or government action\") are category names inside a boilerplate semicolon enumeration that do not assert anything specific enough to stand alone about this company, and the results narrative reports growth (\"operational sales grew 5.3%\")."
+  },
+  {
+    "chunk_id": "CHK-60ea8b5c6acb2a56",
+    "red_flags": [],
+    "reason": "Revenue-line variance narrative; the declines cited (\"Market making revenues ... 6% lower\", \"significantly lower net revenues from intermediation activities\") are attributed to product-mix and market activity, not to softening customer demand, and the passage elsewhere notes \"generally higher market volumes\"."
+  },
+  {
+    "chunk_id": "CHK-6f517fe795f8a9da",
+    "red_flags": [],
+    "reason": "Capital-return and debt-reference disclosure — \"declared a quarterly cash dividend of $0.76 per share\", \"share repurchase programs\" — contains no category language."
+  },
+  {
+    "chunk_id": "CHK-934745364be1cb6a",
+    "red_flags": [["TRADE_POLICY_EXPOSURE", "REALIZED"], ["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"we were effectively foreclosed from competing in China's data center computing/compute market\" and \"subject to a 25% tariff upon importation\" are realized export-control/tariff effects, and \"China's antitrust regulators published their preliminary finding that ... we violated the terms of China's approval of our Mellanox acquisition\" is an existing regulatory action."
+  },
+  {
+    "chunk_id": "CHK-b715b0b5267c5ba5",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"an intangible asset impairment charge of $630 million incurred during the three months ended March 31, 2023\" is a recorded write-down; the SG&A increase is attributed to one-time \"acquisition and integration costs\", not to rising input/labor costs."
+  },
+  {
+    "chunk_id": "CHK-21bdba6b810a5062",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"the Toxic Substances Control Act (TSCA) was amended\", \"the EPA issued a proposed rule with respect to one chemical used in OxyChem's manufacturing operations\" and \"the IWG set an interim value of $51 per metric ton\" are existence claims (only the restriction and \"costs could increase\" are projected); the country-risk clause is a bare-noun list failing mining depth."
+  },
+  {
+    "chunk_id": "CHK-7dadf21b7716c1c9",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "\"The decrease in platform revenues was primarily due to Google Play, driven by the fee structure changes we announced in 2021 as well as a decrease in buyer spending\" states a realized decline in customer spending, notwithstanding the passage's overall growth narrative."
+  },
+  {
+    "chunk_id": "CHK-91a584ef6b2fc23a",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"it has been challenged by the Commission\" and \"The Company is also subject to new and changing laws ... including ... mandatory age verification requirements\" are existence claims of a live regulatory challenge and in-force obligations; only the fines and further challenges are projected."
+  },
+  {
+    "chunk_id": "CHK-f8a3f57bd2c71f2f",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"]],
+    "reason": "\"we could face additional regulatory scrutiny, fines, sanctions or other penalties\" is a substantive standalone assertion but purely conditional, with no statement that any action or investigation exists; the cyber-threat discussion falls outside the six categories."
+  },
+  {
+    "chunk_id": "CHK-b4fa81dc066ab0b5",
+    "red_flags": [],
+    "reason": "\"corporate shared costs ... including certain fines and settlements\" and \"charges associated with employee severance and office space reductions\" are passing mentions inside a segment-cost-allocation policy description with no substantive discussion, amounts or identified matters."
+  },
+  {
+    "chunk_id": "CHK-2c97d000eddd46c5",
+    "red_flags": [],
+    "reason": "\"impairments\" and \"litigation judgments and settlements\" appear only as definitional items in a non-GAAP measurement policy (\"our non-GAAP financial measures exclude, where applicable ...\"), a passing category mention with no substantive discussion."
+  },
+  {
+    "chunk_id": "CHK-9f98338d398f2bfa",
+    "red_flags": [],
+    "reason": "All lines report increases (\"52% higher\", \"25% higher\"); the sole decline, \"significantly lower revenues in interest rate products and mortgages\", is a trading-mix statement with no demand, cost, supply, trade, impairment or legal language."
+  },
+  {
+    "chunk_id": "CHK-911594522f0a4798",
+    "red_flags": [],
+    "reason": "Securitization/VIE footnote — \"the Firm did not consolidate any U.S. GSE and government agency re-securitization VIEs\", investments \"were not driven by market illiquidity\" — no category language."
+  },
+  {
+    "chunk_id": "CHK-eb8185e18f5630a7",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"]],
+    "reason": "\"HHS announced that Lenvima has been selected for government price setting\", the enacted \"American Rescue Plan Act ... eliminated the statutory cap on rebates\", and 340B restrictions \"are having a negative impact on the Company's performance\" are realized regulatory facts, while \"could cause a decline in vaccine uptake\" is a specific but conditional demand assertion."
+  },
+  {
+    "chunk_id": "CHK-41d0f87f408dd14e",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"Expenditures for remediation and environmental liabilities were $8 million in 2025\" and accrued environmental liabilities \"totaled $42 million\" are realized regulatory compliance costs; the IPR&D paragraph only describes impairment-testing methodology (\"If the fair value is less than the carrying amount, an impairment loss is recognized\") without asserting any impairment."
+  },
+  {
+    "chunk_id": "CHK-ce7990b4e2b41572",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"Operating expenses as a percentage of net sales increased 40 basis points ... primarily driven by higher compensation related expenses ... as well as previously announced wage investments\" is realized labor-cost pressure on the expense ratio."
+  },
+  {
+    "chunk_id": "CHK-cc0cdc2e84d0af17",
+    "red_flags": [],
+    "reason": "Liquidity-metric narrative — the LCR decrease is attributed to \"repurchases of and dividends on common stock\" and \"loan growth\", and the Firm reports \"$1.5 trillion ... of available cash and securities\" — none of the six categories appear."
+  },
+  {
+    "chunk_id": "CHK-305a101bf35c60e7",
+    "red_flags": [],
+    "reason": "Business-model description of segments and franchising (\"The Company is primarily a franchisor\") with no adverse demand, cost, supply, trade, impairment or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-ebef12cdee5ddbe6",
+    "red_flags": [],
+    "reason": "Financing and credit-rating discussion; the only adverse clause, \"If our credit ratings were to be downgraded ... our cost of borrowing could increase\", concerns financing cost rather than the input/labor/operating costs MARGIN_COST_PRESSURE covers."
+  },
+  {
+    "chunk_id": "CHK-bed93e2ff380364c",
+    "red_flags": [],
+    "reason": "\"Operating margin increased 30 basis points\" and the bare mention of \"the decrease in net sales\" carry no demand or cost attribution, and the \"non-cash charge for accumulated foreign currency translation losses due to the substantial liquidation of operations in Argentina\" is a currency-translation recycling, not an asset impairment or write-down."
+  },
+  {
+    "chunk_id": "CHK-ae48d23bb424ea90",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "Expense growth is attributed repeatedly to labor cost: \"The remaining increase was primarily due to higher personnel costs\" for both the three- and nine-month periods."
+  },
+  {
+    "chunk_id": "CHK-709fca1998a1ccc7",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["IMPAIRMENT_WRITEDOWN", "HYPOTHETICAL"]],
+    "reason": "\"operations, properties and assets are subject to extensive health, safety and environmental laws\" whose \"[c]osts of compliance ... are significant\" is a realized existence claim, while \"decrease demand for the Company's oil, NGL, natural gas and other products\" and \"potentially resulting in impairments\" are specific but conditional."
+  },
+  {
+    "chunk_id": "CHK-fea5f68551086dd8",
+    "red_flags": [],
+    "reason": "Entirely an information-security risk discussion (\"the nation-state attack described in the prior risk factor\", \"zero-day vulnerabilities\"); cybersecurity is not one of the six red-flag categories and no demand, supply, trade, impairment, cost or legal assertion is made."
+  },
+  {
+    "chunk_id": "CHK-c964a3cba37226b3",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"We are also subject to a variety of laws and regulations governing the development, use, and deployment of AI technologies\" and \"The EU has adopted a comprehensive AI Act\" are existence claims; only \"add increased compliance costs\" is projected."
+  },
+  {
+    "chunk_id": "CHK-d120d9c91d3ae3ab",
+    "red_flags": [],
+    "reason": "Acquisition pro-forma tables and an auditor review report expressing that \"we are not aware of any material modifications\" — no category language."
+  },
+  {
+    "chunk_id": "CHK-c810ec0b76f57e23",
+    "red_flags": [],
+    "reason": "Risk-governance structure description (\"The Board Risk Committee is the principal committee that oversees risk matters\") with no assertion of any demand, supply, trade, impairment, cost or legal event."
+  },
+  {
+    "chunk_id": "CHK-adea90bea439a33c",
+    "red_flags": [],
+    "reason": "Tax-provision mechanics, a disclosure-standard description, and forward-looking-statement boilerplate; the risk bullet (\"natural or man-made disasters or calamities, including health emergencies ... geopolitical instabilities\") is a bare-noun enumeration and none of its items map to the six categories."
+  },
+  {
+    "chunk_id": "CHK-3e14e7fba8cbc18e",
+    "red_flags": [],
+    "reason": "Company-profile and conference-call logistics plus generic safe-harbor wording (\"Actual results may differ from those set forth in the forward-looking statements\") that names no specific risk assertion."
+  },
+  {
+    "chunk_id": "CHK-948ccfffb6b98659",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"The Inflation Reduction Act (IRA), enacted in the United States on August 16, 2022, imposes several new taxes that were effective in 2023, including a 15 percent minimum tax on book income\" — enacted and in effect, so REALIZED despite the added statement that it \"has not had a material impact\"."
+  },
+  {
+    "chunk_id": "CHK-e922e4f7a10dad00",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"We have incurred and will continue to incur substantial capital, operating and maintenance, and remediation expenditures as a result of these laws and regulations\" and \"in 2024, New York and Vermont passed legislation seeking to hold certain energy companies financially responsible\" are occurrence claims; the compliance-cost impact is captured within this category rather than double-labeled."
+  }
+]

@@ -1,0 +1,28 @@
+cik,company_name,sector,stratum,form,section_type,n_attempt,n_ok,n_flagged,n_expected_absent,n_fail,fail_rate,flag_rate,n_pre2019,fail_rate_pre2019,fail_rate_2019plus,top_reason_code,n_low_confidence,median_words
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,item_absent_from_toc,34,0.0
+21665,COLGATE PALMOLIVE CO,consumer,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-Q,MDA,34,0,0,0,34,1.0,0.0,10,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+36104,US BANCORP \DE\,financials,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-Q,RISK_FACTORS,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+831001,CITIGROUP INC,financials,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+831001,CITIGROUP INC,financials,core,10-Q,RISK_FACTORS,34,0,0,0,34,1.0,0.0,11,1.0,1.0,no_toc_and_no_heading_match,34,0.0
+1390777,Bank of New York Mellon Corp,financials,core,10-Q,MDA,34,0,0,0,34,1.0,0.0,11,1.0,1.0,item_absent_from_toc,34,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-K,MDA,11,0,0,0,11,1.0,0.0,4,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,4,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+827052,EDISON INTERNATIONAL,utilities,extension,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,3,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+831001,CITIGROUP INC,financials,core,10-K,MDA,11,0,0,0,11,1.0,0.0,3,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+831001,CITIGROUP INC,financials,core,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,3,1.0,1.0,no_toc_and_no_heading_match,11,0.0
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,10-K,MDA,11,0,0,0,11,1.0,0.0,3,1.0,1.0,item_absent_from_toc,11,0.0
+1571949,"Intercontinental Exchange, Inc.",financials,core,10-K,RISK_FACTORS,11,0,0,0,11,1.0,0.0,3,1.0,1.0,item_absent_from_toc,11,0.0
+1105705,"WARNER MEDIA, LLC",consumer,core,10-Q,MDA,9,0,0,0,9,1.0,0.0,9,1.0,,item_absent_from_toc,9,0.0
+32604,EMERSON ELECTRIC CO,industrials,extension,10-Q,RISK_FACTORS,34,0,5,0,29,0.8529,0.1471,10,1.0,0.7917,no_toc_and_no_heading_match,34,0.0
+895421,MORGAN STANLEY,financials,core,10-Q,MDA,34,5,0,0,29,0.8529,0.0,11,0.5455,1.0,item_absent_from_toc,29,0.0
+24741,CORNING INC /NY,materials_realestate,extension,10-K,MDA,11,0,2,0,9,0.8182,0.1818,3,0.6667,0.875,item_absent_from_toc,11,0.0
+24741,CORNING INC /NY,materials_realestate,extension,10-K,RISK_FACTORS,11,0,2,0,9,0.8182,0.1818,3,0.6667,0.875,item_absent_from_toc,11,0.0
+895421,MORGAN STANLEY,financials,core,10-K,MDA,11,2,0,0,9,0.8182,0.0,3,0.3333,1.0,item_absent_from_toc,9,0.0
+895421,MORGAN STANLEY,financials,core,10-K,RISK_FACTORS,11,2,0,0,9,0.8182,0.0,3,0.3333,1.0,item_absent_from_toc,9,0.0
+6769,APACHE CORP,energy,core,10-K,MDA,9,2,0,0,7,0.7778,0.0,3,0.6667,0.8333,item_absent_from_toc,7,0.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,10-K,RISK_FACTORS,11,3,0,0,8,0.7273,0.0,3,0.6667,0.75,item_absent_from_toc,8,0.0
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,10-K,MDA,11,3,1,0,7,0.6364,0.0909,3,0.6667,0.625,item_absent_from_toc,7,0.0
+310764,STRYKER CORP,healthcare,core,10-Q,RISK_FACTORS,34,0,17,0,17,0.5,0.5,11,1.0,0.2609,no_toc_and_no_heading_match,34,15.5

@@ -1,0 +1,4 @@
+[10-K] 2445 filings -> 10 shards of 250
+  shard 10-K_0003: 250 filings -> 500 attempts / 440 sections  {'OK': 415, 'FAIL': 60, 'FLAGGED': 25}  cache_miss=0  701.8s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']

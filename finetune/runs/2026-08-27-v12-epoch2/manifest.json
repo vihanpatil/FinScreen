@@ -1,0 +1,550 @@
+{
+  "run_id": "2026-08-27-v12-epoch2",
+  "tag": "v12-epoch2",
+  "created_utc": "2026-08-27T05:18:52.311512+00:00",
+  "created_local": "2026-08-27T00:18:52.311632",
+  "purpose": "FinScreen Phase D \u2014 local MLX 4-bit QLoRA fine-tune of Qwen2.5-7B-Instruct on SEC-filing chunk labels. Research/screening classifier only: it extracts sentiment / red-flag categories / guidance-direction from text. It does not predict prices, recommend trades, or connect to any brokerage.",
+  "owner_authorization": {
+    "campaign": "G1 REPAIR \u2014 rubric v1.2 re-label + retrain",
+    "scope": "ONE EPOCH per launch; the epoch-2 continuation is PLANNED but is a separate launch",
+    "ratification": "HANDOFF.md \u00a73, 2026-08-26 \u2014 F2.5 closure rulings, ruling 1: repair the instrument (re-label under rubric v1.2 + retrain, ~2 nights)",
+    "recorded_in": "HARDENING_PROGRESS.md, 'G1 REPAIR CAMPAIGN' section",
+    "labels": "data/labels_v12.parquet \u2014 batch msgbatch_01UdoUkZfuaTRJzokZDfbFYN, rubric v1.2, system-prompt sha256 30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+    "cost": "$0 \u2014 local Apple Silicon MLX. The Anthropic spend freeze is RE-SEALED (account balance ~$0); this training run makes ZERO API calls.",
+    "note": "G1 itself is still UNRULED. This retrain produces the repaired instrument the owner will rule on; it is not itself an acceptance.",
+    "hard_rules": [
+      "The train/eval split is frozen. split.py was NOT run; membership came from finetune/splits/manifest.parquet by join.",
+      "distress_tier is never a training target and never a headline metric.",
+      "Long compute runs in the MAIN SESSION as an auto-resume chain (HANDOFF \u00a74). No agent launches training."
+    ],
+    "source_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-26-v12-epoch1/authorization.json",
+    "source_sha256": "1da94e91928d9daa8be4946f702b830c56b192ff2016e9428fbeeae2d0465cc6"
+  },
+  "cost": {
+    "usd": 0.0,
+    "gpu_rental": "none \u2014 local Apple Silicon only",
+    "api_calls": 0
+  },
+  "machine": {
+    "chip": "Apple M5",
+    "memory_bytes": 17179869184,
+    "macos": "26.5.1",
+    "python": "3.11.10"
+  },
+  "versions": {
+    "mlx": "0.32.1",
+    "device": {
+      "device_name": "Apple M5",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g17g",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx_lm": "0.31.3",
+    "transformers": "5.15.1",
+    "numpy": "2.4.6"
+  },
+  "model": {
+    "repo": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "resolved_snapshot_path": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "hf_revision": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_file": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed/model.safetensors",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071",
+    "quantization": "MLX affine group-wise, group_size 64, 4 bits (4.5 effective bits/weight)",
+    "identity_verified": {
+      "chat_template": "ChatML <|im_start|>/<|im_end|> (genuine Qwen2.5-Instruct template)",
+      "eos_token": "<|im_end|> (151645) \u2014 the Instruct EOS; the base model uses <|endoftext|>",
+      "readme": "states conversion from Qwen/Qwen2.5-7B-Instruct",
+      "base_model_metadata_tag": "Qwen/Qwen2.5-7B \u2014 confirmed an auto-populated slip, not the actual weights",
+      "instruct_generation_check": "passed \u2014 answered an instruction directly rather than continuing text",
+      "license": "apache-2.0"
+    }
+  },
+  "data": {
+    "dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12",
+    "expected_rows": {
+      "train.jsonl": 5736,
+      "valid.jsonl": 1010
+    },
+    "files": {
+      "train.jsonl": {
+        "rows": 5736,
+        "sha256": "396aef131bec0e5cffc22df94fe310e07a8e440d9d5a020b09772699a2931a43",
+        "bytes": 27955919
+      },
+      "valid.jsonl": {
+        "rows": 1010,
+        "sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+        "bytes": 5322906
+      }
+    },
+    "conversion_report": {
+      "max_seq_length": 2048,
+      "prepared_dir": "finetune/prepared_v12",
+      "splits": {
+        "train": {
+          "source_file": "finetune/prepared_v12/train.jsonl",
+          "source_sha256": "91d95653c1fb1a304610bfb948564ef8fc5f4c4d5d8c20a0037bec33e5bae580",
+          "output_file": "finetune/mlx_data_v12/train.jsonl",
+          "output_sha256": "396aef131bec0e5cffc22df94fe310e07a8e440d9d5a020b09772699a2931a43",
+          "n_examples": 5736,
+          "n_passage_truncated": 2,
+          "truncated": [
+            {
+              "chunk_id": "CHK-e27237d716eaa7ec",
+              "passage_chars_before": 8917,
+              "passage_chars_after": 7867,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-278fd8fbecde0702",
+              "passage_chars_before": 9547,
+              "passage_chars_after": 7846,
+              "rendered_tokens_after": 2048
+            }
+          ],
+          "rendered_tokens": {
+            "mean": 999.7,
+            "p50": 993,
+            "p95": 1170,
+            "p99": 1399,
+            "max": 2048,
+            "total": 5734081
+          },
+          "loss_bearing_tokens": {
+            "mean": 37.4,
+            "max": 152,
+            "total": 214334
+          }
+        },
+        "eval": {
+          "source_file": "finetune/prepared_v12/eval.jsonl",
+          "source_sha256": "0229d0ba90d8331d0e6b6ead5d72dc1f1ccc5c085998ad5695f7f8e4e35d2ac5",
+          "output_file": "finetune/mlx_data_v12/valid.jsonl",
+          "output_sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+          "n_examples": 1010,
+          "n_passage_truncated": 50,
+          "truncated": [
+            {
+              "chunk_id": "CHK-d9ae65a63500b559",
+              "passage_chars_before": 6834,
+              "passage_chars_after": 5146,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-7839d1bf0899bc5b",
+              "passage_chars_before": 5715,
+              "passage_chars_after": 5453,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-9c778449f0b68cdb",
+              "passage_chars_before": 6238,
+              "passage_chars_after": 6236,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-01b548d279ce0612",
+              "passage_chars_before": 5042,
+              "passage_chars_after": 4661,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-258bcb4afe9d552e",
+              "passage_chars_before": 3624,
+              "passage_chars_after": 2891,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-208ec0430b51af79",
+              "passage_chars_before": 6231,
+              "passage_chars_after": 5433,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-c5a4797a146a9333",
+              "passage_chars_before": 5179,
+              "passage_chars_after": 5076,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-19a5d2c8b1782da7",
+              "passage_chars_before": 5022,
+              "passage_chars_after": 4641,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-3b0aa8a7e9377f8d",
+              "passage_chars_before": 3592,
+              "passage_chars_after": 2905,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-9e5a598dea8b8509",
+              "passage_chars_before": 5462,
+              "passage_chars_after": 5370,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-774201ad189e6dc8",
+              "passage_chars_before": 5997,
+              "passage_chars_after": 4614,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-20a6b53a4954df29",
+              "passage_chars_before": 3623,
+              "passage_chars_after": 2891,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-c8e34d5c3890f209",
+              "passage_chars_before": 5027,
+              "passage_chars_after": 4652,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-b5e1f8364239ec15",
+              "passage_chars_before": 6438,
+              "passage_chars_after": 4596,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-759e39d0da6b3e04",
+              "passage_chars_before": 6538,
+              "passage_chars_after": 5757,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-1d0146967622581a",
+              "passage_chars_before": 5189,
+              "passage_chars_after": 4692,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-c166f0a63341541e",
+              "passage_chars_before": 3628,
+              "passage_chars_after": 2900,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-07c9e03852e22130",
+              "passage_chars_before": 7186,
+              "passage_chars_after": 5926,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-d4df0b319f691a9c",
+              "passage_chars_before": 5034,
+              "passage_chars_after": 4652,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-4c05639d9e5b8ced",
+              "passage_chars_before": 8199,
+              "passage_chars_after": 5337,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-b95097c07502cb5d",
+              "passage_chars_before": 7010,
+              "passage_chars_after": 6211,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-5ead5da9375f42b4",
+              "passage_chars_before": 6765,
+              "passage_chars_after": 5319,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-c96cd86387228a98",
+              "passage_chars_before": 5027,
+              "passage_chars_after": 4641,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-f76b9aeb821e6677",
+              "passage_chars_before": 3605,
+              "passage_chars_after": 2890,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-28bfe1471a0f3135",
+              "passage_chars_before": 5351,
+              "passage_chars_after": 4926,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-f518e6567b440f5d",
+              "passage_chars_before": 7183,
+              "passage_chars_after": 5134,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-a91534271400b30a",
+              "passage_chars_before": 5022,
+              "passage_chars_after": 4641,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-1a15cd95a12fdb5d",
+              "passage_chars_before": 3594,
+              "passage_chars_after": 2904,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-a7e5a720287a5e1f",
+              "passage_chars_before": 7440,
+              "passage_chars_after": 6824,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-e4299d1773883e04",
+              "passage_chars_before": 5031,
+              "passage_chars_after": 4656,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-1b3bc1e5a291f822",
+              "passage_chars_before": 3616,
+              "passage_chars_after": 2917,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-800e72474434f0c5",
+              "passage_chars_before": 5316,
+              "passage_chars_after": 4902,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-3403ebca8e8e6f90",
+              "passage_chars_before": 6433,
+              "passage_chars_after": 5993,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-a4d5d4cccfb913b7",
+              "passage_chars_before": 7501,
+              "passage_chars_after": 3576,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-8d583b364eda6153",
+              "passage_chars_before": 3572,
+              "passage_chars_after": 2912,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-997f0a34375e8d71",
+              "passage_chars_before": 4893,
+              "passage_chars_after": 4585,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-66f8ccf195b5e1d2",
+              "passage_chars_before": 6941,
+              "passage_chars_after": 5488,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-e504dceb5c84989a",
+              "passage_chars_before": 5566,
+              "passage_chars_after": 4882,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-944c990113db417d",
+              "passage_chars_before": 7094,
+              "passage_chars_after": 5310,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-04e0baaa607ba95d",
+              "passage_chars_before": 6609,
+              "passage_chars_after": 6221,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-d0636999104ff0a6",
+              "passage_chars_before": 5043,
+              "passage_chars_after": 4661,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-b2c36185edf5be70",
+              "passage_chars_before": 3626,
+              "passage_chars_after": 2910,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-eaddb39aa3da204a",
+              "passage_chars_before": 5284,
+              "passage_chars_after": 5004,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-2a00ea9b53890d95",
+              "passage_chars_before": 5717,
+              "passage_chars_after": 5450,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-268770a0b955e8e1",
+              "passage_chars_before": 6780,
+              "passage_chars_after": 5329,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-3057f8866c831355",
+              "passage_chars_before": 6460,
+              "passage_chars_after": 6169,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-30c2a322fb3f913d",
+              "passage_chars_before": 5714,
+              "passage_chars_after": 5453,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-36203e121d7c8a6a",
+              "passage_chars_before": 6342,
+              "passage_chars_after": 5965,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-50e75001dc511681",
+              "passage_chars_before": 8228,
+              "passage_chars_after": 8054,
+              "rendered_tokens_after": 2048
+            },
+            {
+              "chunk_id": "CHK-ab061c985323c1fe",
+              "passage_chars_before": 7811,
+              "passage_chars_after": 6722,
+              "rendered_tokens_after": 2048
+            }
+          ],
+          "rendered_tokens": {
+            "mean": 1148.3,
+            "p50": 1027,
+            "p95": 2031,
+            "p99": 2048,
+            "max": 2048,
+            "total": 1159761
+          },
+          "loss_bearing_tokens": {
+            "mean": 42.8,
+            "max": 152,
+            "total": 43270
+          }
+        }
+      },
+      "instruction": {
+        "sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+        "chars": 1825,
+        "byte_identical_across_all_rows": true,
+        "source": "prepare_dataset.py::INSTRUCTION \u2014 the TRAINING instruction, frozen across E1 and the v1.2 retrain"
+      },
+      "leakage_check": {
+        "train_chunk_ids": 5736,
+        "eval_chunk_ids": 1010,
+        "intersection": 0,
+        "instruction_byte_identical": true
+      },
+      "tokenizer_source": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+    },
+    "verified_against_conversion_report": true
+  },
+  "prompt_rendering_contract": {
+    "format": "mlx-lm chat format: {'messages': [system, user, assistant]}",
+    "system": "the byte-identical instruction from PROMPT_TEMPLATE.md",
+    "user": "the raw passage text and nothing else",
+    "assistant": "the target JSON string",
+    "mirrors": "build_batch_requests.py::build_request (system=instruction, user=passage)",
+    "inference_equivalent": "apply_chat_template(messages[:2], add_generation_prompt=True)",
+    "loss_region": "tokens[offset:] where offset = len(apply_chat_template(messages[:-1], add_generation_prompt=True))",
+    "look_ahead_bias": "no ticker, CIK, filing date, section_type string, or outcome framing is added by the conversion; it is a pure re-serialization of prepare_dataset.py's output"
+  },
+  "config_source": "/Users/vihanpatil/personal/projects/FinScreen/finetune/config_mlx.yaml",
+  "resolved_config_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/mlx_lora_config.yaml",
+  "resolved_config_sha256": "2efa4ea4d39101e8273515e90f1e95e632958f248b4a4e08a445a9b5f4d37b17",
+  "resolved_config": {
+    "model": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "train": true,
+    "fine_tune_type": "lora",
+    "optimizer": "adamw",
+    "optimizer_config": {
+      "adamw": {
+        "weight_decay": 0.0
+      }
+    },
+    "data": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12",
+    "mask_prompt": true,
+    "batch_size": 1,
+    "grad_accumulation_steps": 4,
+    "max_seq_length": 2048,
+    "grad_checkpoint": true,
+    "num_layers": 16,
+    "lora_parameters": {
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05,
+      "keys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj"
+      ]
+    },
+    "iters": 5736,
+    "learning_rate": 0.0001,
+    "lr_schedule": {
+      "name": "cosine_decay",
+      "arguments": [
+        0.0001,
+        1414
+      ],
+      "warmup": 20,
+      "warmup_init": 1e-07
+    },
+    "steps_per_report": 10,
+    "steps_per_eval": 500,
+    "val_batches": 25,
+    "save_every": 100,
+    "seed": 42,
+    "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "clear_cache_threshold": 0,
+    "resume_adapter_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch1/adapters.safetensors"
+  },
+  "derived": {
+    "iters_are_micro_batches": true,
+    "optimizer_updates": 1434,
+    "effective_batch_size": 4,
+    "epochs": 1.0,
+    "lr_schedule_units": "OPTIMIZER UPDATES (verified on-box), not micro-batch iters"
+  },
+  "config_yaml_substitutions": {
+    "lora.lora_alpha -> lora_parameters.scale": "MLX has no `alpha`; `scale` is a direct multiplier on the adapter output. PEFT's effective multiplier is alpha/r, so config.yaml's lora_alpha=32 with r=16 maps to scale=2.0. Copying 32 across (16x) or accepting mlx-lm's 20.0 default (10x) would silently change effective LoRA strength.",
+    "bnb_4bit_quant_type: nf4 -> MLX affine group-wise quantization": "Dropped, not renamed: MLX quantizes with affine group-wise quantization (group_size 64, 4 bits => 4.5 effective bits/weight), a different quantizer from bitsandbytes NF4. Verified on the downloaded weights: 951,910,400 U32 packed values + 238,310,912 F16 scales/biases = exactly 2 per 64-weight group.",
+    "bnb_4bit_use_double_quant: true -> dropped": "MLX has no double quantization.",
+    "bnb_4bit_compute_dtype: bfloat16 -> dropped": "Not exposed; MLX computes in the model dtype.",
+    "load_in_4bit: true -> implicit": "Not a flag. Pointing `model` at a pre-quantized repo makes it QLoRA.",
+    "optim: paged_adamw_8bit -> optimizer: adamw": "MLX has no paged and no 8-bit optimizers. Standard AdamW with fp32 state is used. Harmless: optimizer state here is ~23 MB (MLX_FEASIBILITY \u00a73.2).",
+    "bf16: true -> dropped": "Not a flag in MLX.",
+    "lora.bias / lora.task_type -> dropped": "PEFT-only concepts.",
+    "save_total_limit: 3 -> dropped": "mlx-lm keeps every checkpoint; they are ~6 MB each here.",
+    "eval_strategy / report_to -> dropped": "No equivalent.",
+    "num_train_epochs: 3 -> iters: 5736": "mlx-lm has no epoch concept and `iters` counts MICRO-BATCHES. At batch_size 1, 5736 iters == exactly one pass over the 5736 training examples == 1434 optimizer updates at grad_accumulation_steps 4. ONE epoch is the owner-ratified scope; config.yaml's 3 epochs was never approved for this path.",
+    "per_device_train_batch_size: 4 -> batch_size: 1": "config.yaml's batch 4 does not fit 16 GB: the 152,064-vocab logits tensor alone is ~4.6 GiB at batch 4 / seq 2048 (~7.0 GiB with an fp32 CE copy). grad_accumulation_steps: 4 recovers the effective batch of 4.",
+    "lr_scheduler_type: cosine + warmup_ratio: 0.03 -> lr_schedule in OPTIMIZER UPDATES": "MLX's LR schedule is a function of the optimizer's step counter, which advances once per optimizer.update() -- once per 4 micro-batch iters here. Verified on-box. So warmup is 0.03 * 1434 = 43 updates (not 172), and cosine decay_steps is 1434-43 = 1391 (not 5736). MLX_FEASIBILITY \u00a78's figures were in micro-batch units and are corrected here.",
+    "clear_cache_threshold -> accepted but inert in mlx-lm 0.31.3": "lora.py::train_model never passes it into TrainingArgs, so the effective value is 0, which means the allocator cache is cleared after EVERY step. That is strictly more conservative than MLX_FEASIBILITY \u00a77's suggested 10 and is the behaviour upstream issue #828 recommends on memory-tight machines.",
+    "gpu_rental_placeholder -> N/A": "This path is local and costs $0. Nothing is rented."
+  },
+  "command": [
+    "/Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/bin/mlx_lm.lora",
+    "-c",
+    "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/mlx_lora_config.yaml"
+  ],
+  "log_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/train.log"
+}

@@ -47,6 +47,54 @@ Modes
     to data/relabel_batch_meta.json / data/labels_relabel.parquet, never
     touching data/labels.parquet or any other artifact.
 
+G1 REPAIR — rubric v1.2 re-label (2026-08-26)
+---------------------------------------------
+The §5 spend freeze is lifted for exactly ONE run: a single Batch API
+re-label of all 6,747 E1 chunks under rubric v1.2 (owner ratification:
+HANDOFF §3, 2026-08-26). Prepared by data/hardening/build_v12_requests.py
+(build + guards + cost, zero API calls); the report is
+data/hardening/status/G1_repair_prep.md.
+
+    python3 submit_labeling_batch.py --full --confirm-full --variant v12_relabel
+    python3 submit_labeling_batch.py --poll <BATCH_ID> --variant v12_relabel \
+        --out data/labels_v12.parquet --max-wait-s 86400
+
+Single-axis discipline: v12_relabel's max_tokens/thinking/model are
+byte-identical to E1's final pass ("disabled-4000"); the ONLY difference
+is SYSTEM_PROMPT. Because the variant guard cannot see the prompt, a
+second guard (assert_requests_use_current_system_prompt) runs for every
+variant in RUBRIC_PINNED_VARIANTS. Outputs land at NEW paths only —
+data/labels_v12.parquet and data/v12_relabel_batch_meta.json. E1's
+data/labels.parquet and data/full_batch_meta.json stay frozen.
+
+--complete-missing --against <labels.parquet> --variant <name>
+---------------------------------------------------------------
+Finishes the rows an existing labels parquet never got answers for. The
+v1.2 re-label ended 6,746/6,747: its last request errored with "credit
+balance too low", leaving CHK-1c1812ed45219a3a with a row in
+data/labels_v12.parquet carrying no labels and no stop_reason. The owner
+authorized completing exactly that row (in chat, 2026-08-26).
+
+    # 1. preview — prints the count and the estimated cost, submits NOTHING
+    python3 submit_labeling_batch.py --complete-missing \
+        --against data/labels_v12.parquet --variant v12_relabel
+    # 2. submit (add --confirm-complete once the preview looks right)
+    python3 submit_labeling_batch.py --complete-missing \
+        --against data/labels_v12.parquet --variant v12_relabel \
+        --confirm-complete
+    # 3. poll + merge in place (backup taken first)
+    python3 submit_labeling_batch.py --poll <BATCH_ID> --variant v12_relabel \
+        --merge-into data/labels_v12.parquet --max-wait-s 1800
+
+Scope is guarded, not merely documented: --max-missing (default 3)
+refuses the run outright above that many unanswered rows, so this mode
+can never quietly become a campaign re-run; "unanswered" means no
+stop_reason AND no labels, so genuine refusals and truncations are
+answers and are left alone; the merge refuses to overwrite any row that
+already carries a label, refuses to clobber an existing
+<target>.pre_completion backup, and stamps every filled row with
+`completion_batch_id`.
+
 Security
 --------
 ANTHROPIC_API_KEY is loaded from the project .env via python-dotenv and
@@ -69,8 +117,10 @@ reconstructing them.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -82,8 +132,11 @@ from build_batch_requests import (
     CACHE_READ_MULTIPLIER,
     MODEL,
     PRICING,
+    RUBRIC_VERSION,
     VARIANTS,
     _SCHEMA_CACHE,
+    count_tokens,
+    system_prompt_sha256,
 )
 
 CORPUS_PATH = "data/labeling_corpus.parquet"
@@ -117,7 +170,26 @@ VARIANT_PATHS = {
         "canary_meta": "data/corrective_batch_meta.json",  # reused as the --full-corrective meta path too
         "canary_labels": "data/labels_corrective.parquet",
     },
+    # G1 repair re-label under rubric v1.2 (owner ratification: HANDOFF §3,
+    # 2026-08-26). Same model id and same max_tokens/thinking config as
+    # E1's final passes — only the rubric (SYSTEM_PROMPT) changes. Every
+    # output path here is NEW: E1's data/labels.parquet and
+    # data/full_batch_meta.json are frozen and must not be touched.
+    "v12_relabel": {
+        "requests_file": "data/batch_requests_v12.jsonl",
+        "canary_meta": "data/v12_relabel_batch_meta.json",
+        "canary_labels": "data/labels_v12.parquet",
+        "full_meta": "data/v12_relabel_batch_meta.json",
+    },
 }
+
+# Variants whose request file must carry the CURRENT SYSTEM_PROMPT (i.e.
+# the current labeling_rubric.md revision) byte-for-byte. The v1.2
+# re-label's whole point is the rubric change, and the variant guard
+# below deliberately checks only max_tokens/thinking/effort — so without
+# this second guard, submitting a stale v1.1 request file would sail
+# straight through and produce a very expensive no-op.
+RUBRIC_PINNED_VARIANTS = {"v12_relabel"}
 
 CORRECTIVE_META_PATH = "data/corrective_batch_meta.json"
 CORRECTIVE_REQUESTS_PATH = "data/batch_requests_corrective.jsonl"
@@ -139,6 +211,62 @@ RELABEL_LABELS_PATH = "data/labels_relabel.parquet"
 
 DEFAULT_CANARY_N = 50
 DEFAULT_SEED = 42
+
+# --- --complete-missing (2026-08-26) -------------------------------------
+# Completing bounced SINGLETONS, never re-running a campaign. The v1.2
+# re-label batch ended 6,746/6,747: its last request errored with
+# "credit balance too low" and left CHK-1c1812ed45219a3a with a row in
+# data/labels_v12.parquet that has no labels and no stop_reason. The owner
+# authorized completing exactly that row (2026-08-26, in chat). The
+# --max-missing guard is what keeps this mode from ever quietly becoming a
+# re-run of the whole corpus: 3 is a hard, low default and the operator has
+# to raise it on purpose, in the command line, where it is visible.
+DEFAULT_MAX_MISSING = 3
+V12_COMPLETION_META_PATH = "data/v12_completion_batch_meta.json"
+V12_COMPLETION_LABELS_PATH = "data/labels_v12_completion.parquet"
+COMPLETION_META_MODE = "complete-missing"
+COMPLETION_BACKUP_SUFFIX = ".pre_completion"
+
+# The label columns a completed row must fill. A row counts as MISSING only
+# when its stop_reason is null AND every one of these is null — i.e. the API
+# returned nothing at all. A refusal (stop_reason="refusal") and a
+# truncation (stop_reason="max_tokens") are ANSWERS, not bounces; they are
+# deliberately NOT swept in here.
+COMPLETION_LABEL_COLUMNS = (
+    "sentiment",
+    "guidance_direction",
+    "red_flags",
+    "distress_tier",
+)
+
+# Exactly the columns a merge writes back into the target parquet. Written
+# out longhand rather than derived, so a schema change to either side is a
+# loud KeyError-free no-op instead of a silent corpus-column overwrite: the
+# frozen corpus columns (chunk_id, text, section_type, home_*, source_*)
+# are not in this list and are never touched by a merge.
+COMPLETION_RESULT_COLUMNS = (
+    "parse_ok",
+    "schema_valid",
+    "api_result_type",
+    "parse_error",
+    "raw_label_json",
+    "sentiment",
+    "guidance_direction",
+    "red_flags",
+    "distress_tier",
+    "stop_reason",
+    "output_tokens",
+    "batch_id",
+    "max_tokens_used",
+    "labeling_config",
+    "rubric_version",
+    "system_prompt_sha256",
+    "labeled_at",
+)
+
+# Planning fallback when the target parquet carries no measured output
+# tokens to average (build_batch_requests.estimate_cost's own constant).
+FALLBACK_OUTPUT_TOKENS_PER_REQUEST = 90
 
 # Cache-write premium for the 1h TTL requested in build_batch_requests.py.
 CACHE_WRITE_1H_MULTIPLIER = 2.0
@@ -315,6 +443,84 @@ def assert_requests_match_variant(
     )
 
 
+def _extract_system_text(params: dict) -> str | None:
+    """The system prompt as actually serialized into a request body.
+
+    build_batch_requests.build_request() writes it as a one-element list
+    of content blocks; a bare string is accepted too so the guard reads
+    whatever shape is really on disk rather than assuming one.
+    """
+    system = params.get("system")
+    if isinstance(system, str):
+        return system
+    if isinstance(system, list) and len(system) == 1 and isinstance(system[0], dict):
+        return system[0].get("text")
+    return None
+
+
+def assert_requests_use_current_system_prompt(
+    requests: list[dict], requests_file: str
+) -> None:
+    """Every request body must carry the CURRENT SYSTEM_PROMPT verbatim.
+
+    `assert_requests_match_variant` checks max_tokens/thinking/effort and
+    nothing else — by design, because that was the axis of the 2026-08-11
+    incident. The 2026-08-26 v1.2 re-label moves a DIFFERENT axis: the
+    rubric, which lives entirely inside the system prompt. Submitting a
+    request file built against the old rubric would pass the variant
+    guard, cost the full run, and return E1's labels again. So the rubric
+    gets its own guard, on the same "inspect the artifact, never trust the
+    filename" principle.
+
+    Also checks the model id, since single-axis discipline (HANDOFF §3,
+    2026-08-26 ruling 1) requires that the model NOT change alongside the
+    rubric.
+    """
+    expected_sha = system_prompt_sha256()
+    bad_prompt: list[tuple[str, str]] = []
+    bad_model: list[tuple[str, object]] = []
+
+    for req in requests:
+        params = req.get("params", {})
+        text = _extract_system_text(params)
+        if text is None:
+            bad_prompt.append((req.get("custom_id"), "<no system prompt in request>"))
+        else:
+            actual = hashlib.sha256(text.encode("utf-8")).hexdigest()
+            if actual != expected_sha:
+                bad_prompt.append((req.get("custom_id"), actual))
+        if params.get("model") != MODEL:
+            bad_model.append((req.get("custom_id"), params.get("model")))
+
+    if bad_prompt or bad_model:
+        lines = []
+        if bad_prompt:
+            lines.append(
+                f"{len(bad_prompt)}/{len(requests)} requests carry a system "
+                f"prompt that is NOT the current rubric {RUBRIC_VERSION} "
+                f"(sha256 {expected_sha[:16]}...). First few: "
+                + ", ".join(f"{cid}={sha[:16]}" for cid, sha in bad_prompt[:3])
+            )
+        if bad_model:
+            lines.append(
+                f"{len(bad_model)}/{len(requests)} requests name a model other "
+                f"than {MODEL!r}. First few: "
+                + ", ".join(f"{cid}={m!r}" for cid, m in bad_model[:3])
+            )
+        raise VariantMismatchError(
+            "\n\nREFUSING TO SUBMIT — rubric/model mismatch.\n"
+            f"requests_file={requests_file!r}\n  " + "\n  ".join(lines) + "\n\n"
+            "Nothing was submitted. Rebuild the request file from the current "
+            "build_batch_requests.py before retrying."
+        )
+
+    print(
+        f"Rubric guard OK: all {len(requests)} requests in {requests_file!r} "
+        f"carry rubric {RUBRIC_VERSION} (system-prompt sha256 "
+        f"{expected_sha[:16]}...) and model={MODEL!r}."
+    )
+
+
 # ---------------------------------------------------------------------
 # Canary submission
 # ---------------------------------------------------------------------
@@ -480,7 +686,33 @@ def compute_real_cost(usage_rows: list[dict], tier: str = "intro") -> dict:
     }
 
 
-def run_poll(batch_id: str, out_path: str, max_wait_s: int) -> None:
+def run_poll(
+    batch_id: str,
+    out_path: str,
+    max_wait_s: int,
+    variant: str | None = None,
+    merge_into: str | None = None,
+) -> None:
+    """Polls, parses, joins, and writes the labeled parquet.
+
+    `merge_into` is the --complete-missing return path (2026-08-26): the
+    poll still writes its own standalone parquet at `out_path` (the audit
+    trail of what the completion batch returned), and THEN merges those
+    rows into the named target in place via merge_completion_into(), which
+    takes a backup first and refuses to overwrite any row that already
+    carries an answer.
+
+    Every output row carries its own provenance (2026-08-26): batch_id,
+    stop_reason, output_tokens, labeled_at, and — when `variant` is given
+    — max_tokens_used / labeling_config / rubric_version. E1's
+    data/labels.parquet grew those columns in an ad-hoc merge step after
+    the fact; recording them here means the v1.2 artifact is a complete,
+    self-describing labels file straight out of the poll, and the refusal
+    chunk is identifiable exactly the way E1 identified it
+    (stop_reason == "refusal", excluded by predicate, never deleted).
+    """
+    cfg = VARIANTS[variant] if variant else None
+
     client = get_client()
 
     print(f"Polling batch {batch_id} (ceiling {max_wait_s}s)...")
@@ -494,6 +726,16 @@ def run_poll(batch_id: str, out_path: str, max_wait_s: int) -> None:
 
     corpus_df = pd.read_parquet(CORPUS_PATH)
     section_type_by_id = dict(zip(corpus_df["chunk_id"], corpus_df["section_type"]))
+
+    provenance = {"batch_id": batch_id}
+    if cfg is not None:
+        provenance["max_tokens_used"] = cfg["max_tokens"]
+        thinking_mode = (cfg["thinking"] or {}).get("type", "adaptive-default")
+        provenance["labeling_config"] = (
+            f"thinking={thinking_mode},max_tokens={cfg['max_tokens']}"
+        )
+        provenance["rubric_version"] = RUBRIC_VERSION
+        provenance["system_prompt_sha256"] = system_prompt_sha256()
 
     rows = []
     usage_rows = []
@@ -518,11 +760,19 @@ def run_poll(batch_id: str, out_path: str, max_wait_s: int) -> None:
                 "api_result_type": result_type,
                 "parse_error": f"batch result type={result_type}, not 'succeeded'",
                 "raw_label_json": None,
+                "stop_reason": None,
+                "output_tokens": None,
+                **provenance,
             })
             continue
 
         message = item.result.message
         usage = message.usage
+        msg_provenance = {
+            "stop_reason": getattr(message, "stop_reason", None),
+            "output_tokens": usage.output_tokens,
+            **provenance,
+        }
         usage_rows.append({
             "input_tokens": usage.input_tokens,
             "output_tokens": usage.output_tokens,
@@ -545,6 +795,7 @@ def run_poll(batch_id: str, out_path: str, max_wait_s: int) -> None:
                 "api_result_type": result_type,
                 "parse_error": f"JSON parse error: {e}",
                 "raw_label_json": raw_text,
+                **msg_provenance,
             })
             continue
 
@@ -564,12 +815,29 @@ def run_poll(batch_id: str, out_path: str, max_wait_s: int) -> None:
             "guidance_direction": parsed.get("guidance_direction"),
             "red_flags": parsed.get("red_flags"),
             "distress_tier": parsed.get("distress_tier"),
+            **msg_provenance,
         })
 
     labels_df = pd.DataFrame(rows)
+    labels_df["labeled_at"] = pd.Timestamp.now(tz="UTC").isoformat()
     joined = corpus_df.merge(labels_df, on="chunk_id", how="right")
     joined.to_parquet(out_path)
     print(f"Wrote {len(joined)} labeled rows to {out_path}")
+
+    if merge_into:
+        print(f"\n--- MERGE INTO {merge_into} ---")
+        summary = merge_completion_into(merge_into, joined, batch_id)
+        print(json.dumps(summary, indent=2, default=str))
+
+    n_refusals = int((labels_df.get("stop_reason") == "refusal").sum()) if "stop_reason" in labels_df else 0
+    if n_refusals:
+        refused = labels_df.loc[labels_df["stop_reason"] == "refusal", "chunk_id"].tolist()
+        print(
+            f"\nSAFETY REFUSALS: {n_refusals} chunk(s) returned "
+            f"stop_reason='refusal' — {refused}. E1 handled its single "
+            f"refusal (CHK-8e69547e0900a8dd) by EXCLUDING it by predicate "
+            f"(parse_ok=False), never deleting the row. Do the same."
+        )
 
     # --- Report ---
     print("\n=== CANARY REPORT ===" if "canary" in out_path else "\n=== LABELING REPORT ===")
@@ -759,10 +1027,14 @@ def run_verify_config(batch_id: str, variant: str) -> None:
     synthetic records only; the owner runs it explicitly when ready."""
     client = get_client()
     result_records = []
+    resolved_models: dict[str, int] = {}
     for item in client.messages.batches.results(batch_id):
         out_tokens = _output_tokens_from_result(item)
         if out_tokens is not None:
             msg = getattr(item.result, "message", None)
+            resolved = getattr(msg, "model", None)
+            if resolved:
+                resolved_models[resolved] = resolved_models.get(resolved, 0) + 1
             result_records.append(
                 {
                     "output_tokens": out_tokens,
@@ -771,6 +1043,14 @@ def run_verify_config(batch_id: str, variant: str) -> None:
             )
 
     report = verify_batch_config(result_records, variant)
+    # Single-axis discipline (2026-08-26): MODEL is an ALIAS
+    # ('claude-sonnet-5'), not a dated snapshot, and an alias can be
+    # repointed between runs. The batch results are the only place the
+    # RESOLVED model id is recoverable. Run this against E1's final batch
+    # (msgbatch_01KrfTWXeVN79Us9wthnGLaG) and against the v1.2 batch and
+    # compare — if they differ, the model moved alongside the rubric and
+    # the run is no longer single-axis.
+    report["resolved_model_ids"] = resolved_models
     print(json.dumps(report, indent=2))
     if report["verdict"] == "SUSPECT_WRONG_CONFIG":
         print(
@@ -779,6 +1059,485 @@ def run_verify_config(batch_id: str, variant: str) -> None:
             "labels without further investigation.",
             file=sys.stderr,
         )
+
+
+# ---------------------------------------------------------------------
+# --complete-missing (2026-08-26) — finish bounced singletons.
+#
+# Scope discipline, stated once and enforced by the --max-missing guard
+# below: this mode exists to complete a handful of rows the API never
+# answered (the v1.2 batch's credit-balance bounce), NOT to re-run a
+# campaign. Everything here is a pure function over already-read data
+# except run_complete_missing(), which is the only part that can submit,
+# and it cannot submit without --confirm-complete.
+# ---------------------------------------------------------------------
+def _is_missing_cell(value) -> bool:
+    """True when a labels-parquet cell carries no answer at all.
+
+    An EMPTY list is an answer ("no red flags here"), so any sized,
+    non-string value is treated as present. Only None/NaN counts as
+    missing.
+    """
+    if value is None:
+        return True
+    if isinstance(value, (str, bytes)):
+        return False
+    if hasattr(value, "__len__"):  # list / ndarray — [] is a real answer
+        return False
+    try:
+        return bool(pd.isna(value))
+    except (TypeError, ValueError):
+        return False
+
+
+def _as_optional_bool(value) -> bool | None:
+    """numpy.bool_/None/NaN -> a real Python bool or None."""
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+    except (TypeError, ValueError):
+        pass
+    return bool(value)
+
+
+def find_missing_label_rows(labels_df: pd.DataFrame) -> dict:
+    """Rows the API never answered, plus an honest account of what was
+    deliberately left out.
+
+    MISSING == stop_reason is null AND all of COMPLETION_LABEL_COLUMNS are
+    null. That is the signature of a request that bounced before the model
+    ever ran (batch result type=errored/expired/canceled).
+
+    NOT missing, and never completed by this mode:
+      - refusals (stop_reason="refusal") — E1's CHK-8e69547e0900a8dd is a
+        genuine safety refusal, excluded by predicate, never re-asked;
+      - truncations (stop_reason="max_tokens") — an answer that ran out of
+        room is a config problem for a variant re-run, not a bounce;
+      - parse/schema failures that DID get a response.
+    Those land in `excluded_answered_failures` so the operator sees exactly
+    what this mode chose not to touch, rather than having to infer it.
+    """
+    required = ("chunk_id", "stop_reason") + COMPLETION_LABEL_COLUMNS
+    absent = [c for c in required if c not in labels_df.columns]
+    if absent:
+        raise ValueError(
+            f"Labels frame is missing required column(s) {absent}; cannot "
+            f"identify unanswered rows. Present columns: "
+            f"{sorted(labels_df.columns)}"
+        )
+
+    missing_ids: list[str] = []
+    excluded: list[dict] = []
+    for _, row in labels_df.iterrows():
+        no_stop = _is_missing_cell(row["stop_reason"])
+        no_labels = all(_is_missing_cell(row[c]) for c in COMPLETION_LABEL_COLUMNS)
+        if no_stop and no_labels:
+            missing_ids.append(row["chunk_id"])
+            continue
+        # Anything the run itself flagged as not-clean but that DID come
+        # back with a response — reported, not completed. Note `is False`
+        # would not work here: a pandas bool column yields numpy.bool_,
+        # which is never identical to the Python singleton.
+        parse_ok = _as_optional_bool(row.get("parse_ok"))
+        schema_valid = _as_optional_bool(row.get("schema_valid"))
+        if parse_ok is False or schema_valid is False:
+            excluded.append(
+                {
+                    "chunk_id": row["chunk_id"],
+                    "stop_reason": row["stop_reason"],
+                    "api_result_type": row.get("api_result_type"),
+                    "parse_ok": parse_ok,
+                    "schema_valid": schema_valid,
+                }
+            )
+
+    return {
+        "n_rows": len(labels_df),
+        "missing_ids": missing_ids,
+        "n_missing": len(missing_ids),
+        "excluded_answered_failures": excluded,
+        "n_excluded_answered_failures": len(excluded),
+    }
+
+
+def select_completion_requests(
+    missing_ids: list[str], requests_by_id: dict[str, dict], requests_file: str
+) -> list[dict]:
+    """EXACTLY the named custom_ids' request bodies, in the given order.
+
+    Refuses on any id the requests file doesn't carry: submitting a
+    partial set would leave a row unlabeled while the meta file claimed
+    the completion was done.
+    """
+    absent = [cid for cid in missing_ids if cid not in requests_by_id]
+    if absent:
+        raise VariantMismatchError(
+            f"\n\nREFUSING TO SUBMIT — {len(absent)} unanswered chunk_id(s) "
+            f"have no request in {requests_file!r}: {absent[:5]}\n"
+            f"The labels parquet and the requests file are out of sync. "
+            f"Nothing was submitted."
+        )
+    return [requests_by_id[cid] for cid in missing_ids]
+
+
+def _request_user_text(params: dict) -> str:
+    messages = params.get("messages") or []
+    if not messages:
+        return ""
+    content = messages[0].get("content")
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        return "".join(
+            b.get("text", "") for b in content if isinstance(b, dict)
+        )
+    return ""
+
+
+def measure_output_tokens_estimate(
+    labels_df: pd.DataFrame, section_types: list[str]
+) -> tuple[float, int]:
+    """Mean measured output_tokens over already-answered rows of the same
+    section_type(s). Returns (mean, n_observations).
+
+    Measured beats guessed: this reuses the very batch that bounced, so
+    the printed estimate is anchored on that run's own completions rather
+    than a planning constant. Falls back to
+    FALLBACK_OUTPUT_TOKENS_PER_REQUEST when there is nothing to average.
+    """
+    if "output_tokens" not in labels_df.columns or not section_types:
+        return float(FALLBACK_OUTPUT_TOKENS_PER_REQUEST), 0
+    sub = labels_df
+    if "section_type" in labels_df.columns:
+        sub = labels_df[labels_df["section_type"].isin(section_types)]
+    observed = pd.to_numeric(sub["output_tokens"], errors="coerce").dropna()
+    if observed.empty:
+        return float(FALLBACK_OUTPUT_TOKENS_PER_REQUEST), 0
+    return float(observed.mean()), int(len(observed))
+
+
+def estimate_completion_cost(
+    requests: list[dict], output_tokens_per_request: float
+) -> dict:
+    """Planning cost for a small completion batch, per pricing tier.
+
+    Counted off the REQUEST BODIES actually about to be submitted (system
+    text, passage, JSON schema), not off a corpus average — the point of
+    printing this before --confirm-complete is that it describes this
+    submission and no other.
+
+    Conservative on caching: a batch this small has no warm cache to read
+    from, so every request is charged a full 1h cache WRITE on its system
+    prefix (the most expensive assumption available). Real billed usage is
+    reported by --poll afterwards; this is an estimate, not a quote.
+    """
+    cache_write_tokens = 0
+    plain_input_tokens = 0
+    for req in requests:
+        params = req.get("params", {})
+        cache_write_tokens += count_tokens(_extract_system_text(params) or "")
+        plain_input_tokens += count_tokens(_request_user_text(params))
+        schema = (params.get("output_config") or {}).get("format", {}).get("schema")
+        if schema is not None:
+            plain_input_tokens += count_tokens(json.dumps(schema))
+
+    total_output_tokens = output_tokens_per_request * len(requests)
+
+    by_tier = {}
+    for tier, price in PRICING.items():
+        cost = (
+            cache_write_tokens * price["input"] * CACHE_WRITE_1H_MULTIPLIER
+            + plain_input_tokens * price["input"]
+            + total_output_tokens * price["output"]
+        ) / 1e6 * BATCH_DISCOUNT
+        by_tier[tier] = round(cost, 6)
+
+    return {
+        "n_requests": len(requests),
+        "cache_write_input_tokens_est": cache_write_tokens,
+        "plain_input_tokens_est": plain_input_tokens,
+        "output_tokens_per_request_est": round(output_tokens_per_request, 2),
+        "total_output_tokens_est": round(total_output_tokens, 2),
+        "cost_usd_by_tier": by_tier,
+        "assumptions": (
+            "Batch discount applied; every request charged a full 1h cache "
+            "WRITE on its system prefix (no warm cache at this batch size); "
+            "token counts are the cl100k_base proxy, not Claude's tokenizer."
+        ),
+    }
+
+
+def _assert_completion_meta_path_is_safe(meta_path: str) -> None:
+    """Never clobber another run's provenance record.
+
+    Same failure class as the 2026-08-11 variant-wiring bug and the
+    2026-08-26 full_batch_meta.json fix: a meta file is the only record of
+    what a batch actually was, so writing this mode's meta over a
+    different mode's meta destroys evidence.
+    """
+    p = Path(meta_path)
+    if not p.exists():
+        return
+    try:
+        existing = json.loads(p.read_text())
+    except (json.JSONDecodeError, OSError):
+        raise VariantMismatchError(
+            f"\n\nREFUSING TO SUBMIT — {meta_path!r} exists but is not readable "
+            f"JSON, so it cannot be confirmed to be a completion-batch meta "
+            f"file. Move it aside or point --complete-meta somewhere new."
+        )
+    if existing.get("mode") != COMPLETION_META_MODE:
+        raise VariantMismatchError(
+            f"\n\nREFUSING TO SUBMIT — {meta_path!r} already holds a "
+            f"mode={existing.get('mode')!r} batch's provenance "
+            f"(batch_id={existing.get('batch_id')!r}). Writing this "
+            f"completion's meta there would erase it. Nothing was submitted."
+        )
+    print(
+        f"NOTE: overwriting a previous completion meta at {meta_path!r} "
+        f"(batch_id={existing.get('batch_id')!r})."
+    )
+
+
+def run_complete_missing(
+    against: str,
+    variant: str,
+    requests_file: str,
+    meta_path: str = V12_COMPLETION_META_PATH,
+    max_missing: int = DEFAULT_MAX_MISSING,
+    confirm: bool = False,
+) -> int:
+    """Submit ONLY the rows an existing labels parquet never got answers
+    for. Returns a process exit code.
+
+    Order is deliberate: identify → count-guard → extract → variant guard
+    → rubric guard → PRINT count + cost → confirm gate → submit. Every
+    refusal happens before a client is ever constructed.
+    """
+    labels_df = pd.read_parquet(against)
+    found = find_missing_label_rows(labels_df)
+    missing_ids = found["missing_ids"]
+
+    print(f"--complete-missing against {against!r}: {found['n_rows']} rows")
+    print(f"  unanswered (no stop_reason, no labels): {found['n_missing']}")
+    print(
+        f"  answered-but-flagged rows NOT completed by this mode: "
+        f"{found['n_excluded_answered_failures']}"
+    )
+    for row in found["excluded_answered_failures"][:5]:
+        print(f"    - {row['chunk_id']} stop_reason={row['stop_reason']!r} "
+              f"api_result_type={row['api_result_type']!r} (left as-is)")
+
+    if not missing_ids:
+        print("\nNothing to complete — every row carries an answer. Exiting 0.")
+        return 0
+
+    if len(missing_ids) > max_missing:
+        print(
+            f"\nREFUSING TO SUBMIT — {len(missing_ids)} unanswered rows exceeds "
+            f"--max-missing={max_missing}.\nThis mode completes bounced "
+            f"singletons; it is not a campaign re-runner. If a re-run is "
+            f"genuinely intended, that is a --full run with its own owner "
+            f"ratification and its own cost gate. Nothing was submitted.",
+            file=sys.stderr,
+        )
+        return 1
+
+    print(f"\nUnanswered chunk_ids to complete: {missing_ids}")
+
+    requests_by_id = load_requests_by_custom_id(path=requests_file)
+    batch_requests = select_completion_requests(
+        missing_ids, requests_by_id, requests_file
+    )
+
+    # Same two choke points every other submit path passes through — the
+    # completion batch is a real submission and gets no discount on guards.
+    assert_requests_match_variant(batch_requests, variant, requests_file)
+    if variant in RUBRIC_PINNED_VARIANTS:
+        assert_requests_use_current_system_prompt(batch_requests, requests_file)
+    else:
+        print(
+            f"Rubric guard NOT APPLICABLE for variant={variant!r} (not in "
+            f"RUBRIC_PINNED_VARIANTS)."
+        )
+
+    section_types = []
+    if "section_type" in labels_df.columns:
+        section_types = sorted(
+            set(
+                labels_df.loc[
+                    labels_df["chunk_id"].isin(missing_ids), "section_type"
+                ].tolist()
+            )
+        )
+    out_tokens_est, n_observed = measure_output_tokens_estimate(
+        labels_df, section_types
+    )
+    cost = estimate_completion_cost(batch_requests, out_tokens_est)
+    cost["output_tokens_basis"] = (
+        f"mean measured output_tokens over {n_observed} answered "
+        f"section_type={section_types} row(s) in {against}"
+        if n_observed
+        else f"planning fallback ({FALLBACK_OUTPUT_TOKENS_PER_REQUEST} tokens/request)"
+    )
+
+    print("\n--- ABOUT TO SUBMIT ---")
+    print(f"  requests: {len(batch_requests)}")
+    print(f"  variant: {variant!r}  requests_file: {requests_file!r}")
+    print(f"  estimated cost: {json.dumps(cost, indent=2)}")
+    print(
+        "  (intro-tier pricing runs through 2026-08-31; the standard-tier "
+        "figure is what this costs after that.)"
+    )
+
+    if not confirm:
+        print(
+            "\nNOT SUBMITTED — --complete-missing requires --confirm-complete. "
+            "Re-run with it once the count and the cost above are what you "
+            "expect.",
+            file=sys.stderr,
+        )
+        return 1
+
+    _assert_completion_meta_path_is_safe(meta_path)
+
+    client = get_client()
+    batch = client.messages.batches.create(requests=batch_requests)
+
+    meta = {
+        "batch_id": batch.id,
+        "mode": COMPLETION_META_MODE,
+        "variant": variant,
+        "requests_file": requests_file,
+        "against": against,
+        "n_submitted": len(batch_requests),
+        "custom_ids": missing_ids,
+        "max_missing_guard": max_missing,
+        "n_rows_in_target": found["n_rows"],
+        "n_excluded_answered_failures": found["n_excluded_answered_failures"],
+        "model": MODEL,
+        "asserted_max_tokens": VARIANTS[variant]["max_tokens"],
+        "asserted_thinking": (VARIANTS[variant]["thinking"] or {}).get(
+            "type", "adaptive-default"
+        ),
+        "rubric_version": RUBRIC_VERSION,
+        "system_prompt_sha256": system_prompt_sha256(),
+        "estimated_cost": cost,
+        "submitted_at": batch.created_at.isoformat()
+        if hasattr(batch.created_at, "isoformat")
+        else str(batch.created_at),
+        "processing_status": batch.processing_status,
+    }
+    with open(meta_path, "w") as f:
+        json.dump(meta, f, indent=2, default=str)
+
+    print(
+        f"\nSubmitted COMPLETION batch: {batch.id} "
+        f"({len(batch_requests)} request(s), variant={variant})"
+    )
+    print(f"Wrote {meta_path}")
+    return 0
+
+
+def merge_completion_into(
+    target_path: str,
+    completion_df: pd.DataFrame,
+    batch_id: str,
+    backup_suffix: str = COMPLETION_BACKUP_SUFFIX,
+) -> dict:
+    """Merge completed rows INTO an existing labels parquet, in place.
+
+    Invariants, all checked BEFORE anything is written:
+      - every completed chunk_id must exist in the target;
+      - every one of them must still be UNANSWERED in the target — a merge
+        may never overwrite a label the target already has;
+      - a completion row that itself came back unanswered is skipped, not
+        merged (retrying a bounce can bounce again).
+    Then a backup copy is made (refusing if one already exists, since that
+    backup is the only surviving pre-merge state), then the label columns
+    are written and each merged row is stamped with `completion_batch_id`.
+    """
+    target = pd.read_parquet(target_path)
+    if "chunk_id" not in target.columns:
+        raise ValueError(f"{target_path!r} has no chunk_id column.")
+
+    target_missing = set(find_missing_label_rows(target)["missing_ids"])
+    index_by_id = {cid: idx for idx, cid in zip(target.index, target["chunk_id"])}
+
+    incoming = find_missing_label_rows(completion_df)
+    still_unanswered = set(incoming["missing_ids"])
+
+    to_merge, skipped = [], []
+    for _, row in completion_df.iterrows():
+        cid = row["chunk_id"]
+        if cid not in index_by_id:
+            raise ValueError(
+                f"REFUSING TO MERGE — completed chunk_id {cid!r} is not in "
+                f"{target_path!r}. Nothing was written."
+            )
+        if cid in still_unanswered:
+            skipped.append(cid)
+            continue
+        if cid not in target_missing:
+            raise ValueError(
+                f"REFUSING TO MERGE — {cid!r} already carries an answer in "
+                f"{target_path!r}. This mode completes unanswered rows only; "
+                f"overwriting existing labels would be a re-label, which needs "
+                f"its own ratification. Nothing was written."
+            )
+        to_merge.append(row)
+
+    backup_path = target_path + backup_suffix
+    if to_merge:
+        if Path(backup_path).exists():
+            raise FileExistsError(
+                f"REFUSING TO MERGE — backup {backup_path!r} already exists, so "
+                f"a merge has already run against this target. Overwriting it "
+                f"would destroy the only pre-merge copy. Move it aside first. "
+                f"Nothing was written."
+            )
+        shutil.copy2(target_path, backup_path)
+        print(f"Backed up {target_path} -> {backup_path}")
+
+        if "completion_batch_id" not in target.columns:
+            target["completion_batch_id"] = None
+        target["completion_batch_id"] = target["completion_batch_id"].astype(object)
+
+        for row in to_merge:
+            idx = index_by_id[row["chunk_id"]]
+            for col in COMPLETION_RESULT_COLUMNS:
+                if col in target.columns and col in completion_df.columns:
+                    target.at[idx, col] = row[col]
+            target.at[idx, "completion_batch_id"] = batch_id
+
+        target.to_parquet(target_path)
+        print(
+            f"Merged {len(to_merge)} completed row(s) into {target_path} "
+            f"(completion_batch_id={batch_id})"
+        )
+
+    remaining = find_missing_label_rows(pd.read_parquet(target_path))
+    summary = {
+        "target_path": target_path,
+        "backup_path": backup_path if to_merge else None,
+        "batch_id": batch_id,
+        "n_merged": len(to_merge),
+        "merged_ids": [r["chunk_id"] for r in to_merge],
+        "n_skipped_still_unanswered": len(skipped),
+        "skipped_ids": skipped,
+        "n_missing_after": remaining["n_missing"],
+        "missing_after_ids": remaining["missing_ids"],
+    }
+    if skipped:
+        print(
+            f"NOT merged — {len(skipped)} completion row(s) came back "
+            f"unanswered again: {skipped}. Target unchanged for those.",
+            file=sys.stderr,
+        )
+    print(f"Rows still unanswered in {target_path}: {remaining['n_missing']}")
+    return summary
 
 
 def main():
@@ -800,6 +1559,16 @@ def main():
         help="Submit all 2,528 requests in data/batch_requests_corrective.jsonl "
              "(the 'disabled-4000' corrective re-run for the truncated chunks "
              "from the original full run). Requires --confirm-full.",
+    )
+    mode.add_argument(
+        "--complete-missing", action="store_true",
+        help="Complete the rows an existing labels parquet (--against) never "
+             "got answers for: extract exactly those custom_ids from the "
+             "--variant's request file and submit them as a small batch. "
+             "Refuses above --max-missing (default 3) — this completes "
+             "bounced singletons, never re-runs a campaign. Prints the "
+             "request count and estimated cost, then requires "
+             "--confirm-complete to submit anything.",
     )
     mode.add_argument(
         "--full-relabel", action="store_true",
@@ -828,12 +1597,75 @@ def main():
         default=None,
         help="Explicit path to a requests .jsonl (overrides the default/variant path).",
     )
+    parser.add_argument(
+        "--against",
+        default=None,
+        help="Existing labels parquet to scan for unanswered rows "
+             "(--complete-missing). Required for that mode.",
+    )
+    parser.add_argument(
+        "--max-missing", type=int, default=DEFAULT_MAX_MISSING,
+        help=f"--complete-missing refuses to run if more than this many rows "
+             f"are unanswered (default {DEFAULT_MAX_MISSING}).",
+    )
+    parser.add_argument(
+        "--confirm-complete", action="store_true",
+        help="Required alongside --complete-missing to actually submit.",
+    )
+    parser.add_argument(
+        "--complete-meta", default=V12_COMPLETION_META_PATH,
+        help=f"Where --complete-missing writes its batch meta "
+             f"(default {V12_COMPLETION_META_PATH}).",
+    )
+    parser.add_argument(
+        "--merge-into",
+        default=None,
+        help="With --poll: merge the polled results INTO this labels parquet "
+             "in place, after copying it to <path>.pre_completion. Only "
+             "unanswered rows may be filled; existing labels are never "
+             "overwritten.",
+    )
 
     args = parser.parse_args()
 
     if args.variant and args.requests_file:
         print("Pass either --variant or --requests-file, not both.", file=sys.stderr)
         sys.exit(1)
+
+    if args.merge_into and not args.poll:
+        print(
+            "--merge-into is only meaningful with --poll (it merges a polled "
+            "completion batch's results into an existing labels parquet).",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    if args.complete_missing:
+        if not args.against:
+            print(
+                "--complete-missing requires --against <labels.parquet> (the "
+                "artifact whose unanswered rows are being completed).",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        if not args.variant:
+            print(
+                "--complete-missing requires --variant, so the requests are "
+                "pulled from the right file and both submit guards (variant + "
+                "rubric) have a named config to check against.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        sys.exit(
+            run_complete_missing(
+                against=args.against,
+                variant=args.variant,
+                requests_file=VARIANT_PATHS[args.variant]["requests_file"],
+                meta_path=args.complete_meta,
+                max_missing=args.max_missing,
+                confirm=args.confirm_complete,
+            )
+        )
 
     if args.full:
         if not args.confirm_full:
@@ -845,7 +1677,17 @@ def main():
             sys.exit(1)
         if args.variant:
             vp = VARIANT_PATHS[args.variant]
-            run_full(variant=args.variant, requests_file=vp["requests_file"])
+            # A variant may declare its own full-run meta path. Without
+            # that, run_full's default is data/full_batch_meta.json — E1's
+            # frozen provenance record, which must never be overwritten.
+            if "full_meta" in vp:
+                run_full(
+                    variant=args.variant,
+                    requests_file=vp["requests_file"],
+                    meta_path=vp["full_meta"],
+                )
+            else:
+                run_full(variant=args.variant, requests_file=vp["requests_file"])
         elif args.requests_file:
             print(
                 "--full --requests-file requires --variant too, so the guard "
@@ -918,11 +1760,29 @@ def main():
         # picks the variant-specific default labels path.
         if args.out:
             out = args.out
+        elif args.merge_into:
+            # A completion poll's standalone parquet is an audit artifact,
+            # never the merge target itself.
+            out = V12_COMPLETION_LABELS_PATH
         elif args.variant:
             out = VARIANT_PATHS[args.variant]["canary_labels"]
         else:
             out = CANARY_LABELS_PATH
-        run_poll(args.poll, out_path=out, max_wait_s=args.max_wait_s)
+        if args.merge_into and out == args.merge_into:
+            print(
+                "--out and --merge-into must differ: --out is the completion "
+                "batch's own result file, --merge-into is the artifact it is "
+                "merged into.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        run_poll(
+            args.poll,
+            out_path=out,
+            max_wait_s=args.max_wait_s,
+            variant=args.variant,
+            merge_into=args.merge_into,
+        )
         return
 
 
@@ -948,6 +1808,19 @@ def run_full(
     all_requests = list(load_requests_by_custom_id(path=requests_file).values())
     assert_requests_match_variant(all_requests, variant, requests_file)
 
+    # Second choke point (2026-08-26): for rubric-pinned variants the
+    # system prompt IS the thing under test, and the variant guard above
+    # does not look at it. Never silent — say which branch was taken.
+    if variant in RUBRIC_PINNED_VARIANTS:
+        assert_requests_use_current_system_prompt(all_requests, requests_file)
+    else:
+        print(
+            f"Rubric guard NOT APPLICABLE for variant={variant!r} (not in "
+            f"RUBRIC_PINNED_VARIANTS). Its request file is E1-era audit "
+            f"trail built against an earlier rubric revision; the current "
+            f"revision is {RUBRIC_VERSION}."
+        )
+
     client = get_client()
     batch = client.messages.batches.create(requests=all_requests)
     meta = {
@@ -957,11 +1830,16 @@ def run_full(
         "requests_file": requests_file,
         "n_submitted": len(all_requests),
         "model": MODEL,
+        "asserted_max_tokens": VARIANTS[variant]["max_tokens"],
+        "asserted_thinking": (VARIANTS[variant]["thinking"] or {}).get("type", "adaptive-default"),
+        "rubric_version": RUBRIC_VERSION,
+        "system_prompt_sha256": system_prompt_sha256(),
         "processing_status": batch.processing_status,
     }
     with open(meta_path, "w") as f:
         json.dump(meta, f, indent=2, default=str)
     print(f"Submitted FULL batch: {batch.id} ({len(all_requests)} requests, variant={variant})")
+    print(f"Wrote {meta_path}")
 
 
 def run_full_corrective():

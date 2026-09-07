@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": "CHK-94449cc2e2406616",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "Borderline but flagged: \"The liability related to repurchase demands associated with private label securitizations is separately evaluated by the Firm in establishing its litigation reserves\" asserts that litigation reserves and repurchase-demand liabilities exist (existence claim = REALIZED); the rest of the passage is off-balance-sheet commitment accounting and a bare note cross-reference."
+  },
+  {
+    "chunk_id": "CHK-90f40730f8c06857",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"increased medical costs in 2025, which are expected to continue in future periods, have added to the compounding impact of the previous multi-year rate shortfalls creating sustained pressure\" is realized cost pressure with no supply/tariff cause; the Medicare Advantage \"rate notices\" and risk-adjustment revisions are reimbursement rate-setting, not litigation, enforcement, fines or a compliance burden, so no LEGAL_REGULATORY_ACTION."
+  },
+  {
+    "chunk_id": "CHK-345a9b27b337fad9",
+    "red_flags": [],
+    "reason": "The only margin decline — \"total risk-adjusted margin decreased 188 bps ... primarily driven by higher net credit losses, lower net fee income and lower interest margin\" — is credit- and revenue-driven rather than input/operating-cost driven, and the passage states \"The operating margin was 24 percent compared to 23 percent a year ago,\" so the passing \"partially offset by higher noninterest expense\" does not amount to cost compression."
+  },
+  {
+    "chunk_id": "CHK-ab18a41358ea7b90",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"a number of new laws and regulations have been adopted, there has been expanded enforcement of certain existing laws and regulations\" is an occurrence claim (REALIZED even inside could/may framing), and \"These changing rules, regulations and stakeholder expectations have resulted in ... increased general and administrative expenses\" states realized cost impact; the enumerated nouns \"international trade\" and \"supply chain transparency\" fail the mining-depth rule."
+  },
+  {
+    "chunk_id": "CHK-26cb4453026e531d",
+    "red_flags": [],
+    "reason": "Only cost-side items are financing and tax (\"Interest expense was $225 million ... due primarily to higher interest rates\"; \"increase in the effective tax rate\"), while the operating narrative is \"Operating income increased $828 million, or 17% ... due to the increase in net sales and the increase in operating margin\" — no demand, supply, trade, impairment, cost-compression or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-bb31ef3b9a6f9b9f",
+    "red_flags": [],
+    "reason": "The deposit decline is attributed to \"an increase in customer spending and debt payments, customers' movement of balances to higher yielding investment alternatives and seasonal outflows\" within a funding/liquidity narrative that calls the deposit base \"stable, low-cost and consistent,\" which matches none of the six categories."
+  },
+  {
+    "chunk_id": "CHK-e27237d716eaa7ec",
+    "red_flags": [["SUPPLY_INPUT_CONSTRAINT", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "HYPOTHETICAL"], ["IMPAIRMENT_WRITEDOWN", "HYPOTHETICAL"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"], ["LEGAL_REGULATORY_ACTION", "HYPOTHETICAL"]],
+    "reason": "Realized production constraint in \"Organic growth from Lower 48 was more than offset by downtime, which includes the impact of the Middle East conflict on Qatar\"; the safe-harbor list contains clauses that stand alone about this company — \"the imposition of trade restrictions or tariffs relating to commodities and material or products (such as aluminum and steel) used in the operation of our business,\" \"could result in recognition of impairment charges on our long-lived assets,\" \"unexpected changes in costs, inflationary pressures\" (causeless cost inflation), and \"regulations concerning hydraulic fracturing, methane emissions, flaring or water disposal.\""
+  },
+  {
+    "chunk_id": "CHK-a577c2ef70bba5da",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"Compliance with these evolving regulatory regimes and legal requirements depends on our ability to improve and/or evolve our processes, controls, surveillance, detection and reporting\" presupposes regimes already in force imposing compliance obligations (REALIZED per the existence-claim rule); \"labor shortages, wage pressures, supply chain disruptions and higher inflation, could increase our compliance costs\" is a noun list of the type the mining-depth rule excludes."
+  },
+  {
+    "chunk_id": "CHK-8bc68653c9266e17",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"As of December 31, 2025, there were 20 sites around the U.S. in which we were identified as a potentially responsible party under CERCLA\" and \"we also have been made a party to cost recovery litigation\" are realized regulatory/legal actions; the named regulatory cause carries an explicit prospective cost impact — \"potential new laws, regulations and permitting requirements ... could result in increased costs,\" with environmental costs \"expected to be approximately $1.0 billion\" versus $834 million in 2025."
+  },
+  {
+    "chunk_id": "CHK-17ffb0e42e7c1b91",
+    "red_flags": [],
+    "reason": "The passage is allowance-for-credit-loss and TDR accounting-methodology narrative — \"extended maturity dates and covenant waivers\" describe modifications granted to borrowers, and \"the impact of these modifications were not material to the Firm\" — with no assertion in any of the six categories about the filer itself."
+  },
+  {
+    "chunk_id": "CHK-300e403e3dfc3d18",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"Decreases to earnings included ... higher production and operating expenses of $431 million, driven by higher transportation related costs of $132 million ... and higher lease operating expenses of $100 million\" (and $215 million in Canada) is realized cost increase reducing earnings with no supply-shortage or tariff cause; \"planned turnaround activity at Surmont\" is scheduled maintenance, not a supply/production constraint."
+  },
+  {
+    "chunk_id": "CHK-0263cb5348c47abd",
+    "red_flags": [],
+    "reason": "Purely governance-procedural description of board and committee oversight (\"The Audit and Enterprise Risk Committees ... have the principal responsibility for enterprise-wide oversight of our risk management activities\"); \"compliance with legal and regulatory requirements\" appears only as a committee remit, not as an asserted action or burden."
+  },
+  {
+    "chunk_id": "CHK-2f21fddd69d4561e",
+    "red_flags": [],
+    "reason": "Executive quotes and logistics only — \"record bookings and Microsoft Cloud quarterly revenue of $36.8 billion, up 21%\" and a conference-call announcement — with no demand, supply, trade, impairment, cost or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-77f0a241744fa48c",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"the Company has determined that the liabilities associated with certain litigation matters are probable and can be reasonably estimated. The Company has accrued for these matters\" asserts existing litigation and recorded accruals; the conflict reference is explicitly immaterial (\"the financial impact of the conflict ... was not material\") and asserts no supply constraint."
+  },
+  {
+    "chunk_id": "CHK-12cd46e7623c59cb",
+    "red_flags": [["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"Our retail pharmacy operations are subject to numerous risks, including ... increases in the prices we pay for brand name and generic prescription drugs we sell\" is a causeless input-cost clause specific enough to stand alone about this company, framed as a risk; the reimbursement-rate, payer-mix and \"changes in laws or regulations\" items are enumerated change-risks without an asserted enforcement action or compliance burden."
+  },
+  {
+    "chunk_id": "CHK-5950f900a344f5aa",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"SG&A was 18.5% ... compared to 17.9% ... primarily reflecting the impact of higher payroll and related costs\" is realized labor-cost deleverage, and \"The decrease in diluted earnings per share was primarily driven by lower net earnings\"; comparable sales are described as positive, so no demand flag."
+  },
+  {
+    "chunk_id": "CHK-0b054cbbb29a61a9",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"]],
+    "reason": "\"a 1% decrease in unit volume. The volume decrease was due to declines in Europe (due to increased pricing) and Greater China (due to market decline)\" plus \"a 3% decrease in unit volume\" in Health Care are realized unfavorable volume trends; margins are described as improving (\"Net earnings margin increased due to an increase in gross margin\"), so no cost-pressure flag."
+  },
+  {
+    "chunk_id": "CHK-06e3a009bf4dbd33",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"the Company incurred incremental restructuring charges of $903 million after tax under the program,\" of which only \"[a]pproximately 67% ... either have been or will be settled with cash,\" i.e. a realized restructuring charge with a substantial non-cash (asset-reduction) component."
+  },
+  {
+    "chunk_id": "CHK-eacf8153709cee7f",
+    "red_flags": [["DEMAND_WEAKNESS", "HYPOTHETICAL"], ["IMPAIRMENT_WRITEDOWN", "HYPOTHETICAL"]],
+    "reason": "\"Extended periods of low prices or demand ... have had, and in the future can have, a material adverse impact\" and \"Upstream assets may also become impaired\" are substantive risk assertions, but the section's own preamble — \"References to past events are provided by way of example only and are not intended to be ... a representation as to whether or not such factors have occurred in the past\" — keeps both HYPOTHETICAL."
+  },
+  {
+    "chunk_id": "CHK-8e3b16bcc5140b99",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"the French Competition Authority collected information from us ... as part of an ongoing inquiry\" and \"We have also received, and continue to receive, broad requests for information from competition regulators\" are existing regulatory actions, and \"Such requests have been and are likely to be expensive and burdensome\" states a realized cost impact; the opening list (\"taxes; import and export requirements and tariffs\") is boilerplate enumeration failing mining depth."
+  },
+  {
+    "chunk_id": "CHK-2d6b130dae96d639",
+    "red_flags": [["SUPPLY_INPUT_CONSTRAINT", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"], ["MARGIN_COST_PRESSURE", "HYPOTHETICAL"]],
+    "reason": "\"Actions impacting commercial shipping through the Strait of Hormuz and regional energy infrastructure have resulted in the suspension of substantial supply\" is a realized supply disruption; \"Recent U.S. trade policy actions, including the introduction of tariff replacement measures\" is an existence claim (REALIZED) whose consequence remains projected — \"tariffs or tariff replacement measures imposed on the Company's suppliers could increase costs over time\" — giving a named-cause cost flag at HYPOTHETICAL."
+  },
+  {
+    "chunk_id": "CHK-91f8865d5d329ba0",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"]],
+    "reason": "\"we have certain financial protections pursuant to the respective retrospective responsibility plans\" that exist to \"insulate us from the impact of such settlements, judgments, losses, or liabilities\" presupposes existing litigation exposure; the remainder is competitive risk, which is not a taxonomy category."
+  },
+  {
+    "chunk_id": "CHK-b582444aeeddcc59",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"The volume decrease was driven by a decline in Greater China (due to ... market contraction of skin care and personal care)\" and \"Organic sales decreased mid-single digits due to more than 20% declines in Greater China and Asia Pacific\" are realized demand weakness; \"a 130 basis-point decline in net earnings margin ... SG&A as a percentage of net sales increased due primarily to an increase in marketing and overhead spending\" is realized cost-driven margin compression."
+  },
+  {
+    "chunk_id": "CHK-19cafa44a097bad7",
+    "red_flags": [],
+    "reason": "The adverse facts — \"the 1% year-over-year decline reflecting the business disruption effects of the cyberattack, which were $867 million\" and membership that \"moderated as expected ... due to the now concluded Medicaid eligibility redeterminations process\" — are cyber-incident and eligibility-process effects, none of which map to the six categories (no demand-softening, cost-compression or legal-action assertion)."
+  },
+  {
+    "chunk_id": "CHK-67de3fd478fa7d03",
+    "red_flags": [],
+    "reason": "All stated trends are favorable — \"Revenue of $6.2 billion increased 10%,\" \"Net charge-offs of $231 million decreased $72 million,\" and although \"Noninterest expense of $3.2 billion increased 4%, driven by investments in the business,\" the passage states \"Efficiency ratio improved to 51%,\" so no cost-driven margin compression is asserted."
+  },
+  {
+    "chunk_id": "CHK-1cab8165170dd4f9",
+    "red_flags": [["IMPAIRMENT_WRITEDOWN", "REALIZED"]],
+    "reason": "\"exit charges recorded during the three and nine months ended September 30, 2023 were $16 million and $649 million\" plus \"$207 million in accelerated rent and accelerated depreciation\" from office-space optimization are realized asset-value-reduction charges (alongside $2.1 billion of severance)."
+  },
+  {
+    "chunk_id": "CHK-9b3e336a83e95d61",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"Earnings from operations decreased primarily due to the business disruption impacts and direct response costs related to the Change Healthcare cyberattack\" is a realized operating-cost increase compressing segment earnings, with a cause that is neither supply nor trade policy; liquidity is affirmed (\"We believe our capital resources are sufficient\")."
+  },
+  {
+    "chunk_id": "CHK-c9c880cd26c93351",
+    "red_flags": [],
+    "reason": "Routine capital-management narrative; the one regulatory item, \"a one percent non-deductible federal excise tax (buyback tax) applies,\" is expressly stated to have \"did not have a material impact on our financial condition, results of operations or cash flows,\" and the CCAR/SCB discussion reports a reduced buffer rather than any enforcement action, fine or new compliance burden."
+  },
+  {
+    "chunk_id": "CHK-692aa4234b30f0c7",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"a decrease in concentrate sales volume of 5%\" and \"a decrease in unit case volume of 2%\" are realized unfavorable volume trends, and operating income was \"partially offset by ... higher commodity costs\" in both the quarter and six-month discussion — causeless input-cost pressure."
+  },
+  {
+    "chunk_id": "CHK-07d9a6e1debba8a1",
+    "red_flags": [],
+    "reason": "Descriptive methodology for Markets revenue and loss days (\"Principal transactions reflects revenue on financial instruments and commodities transactions that arise from client-driven market-making activity\"); market volatility and bid-offer mechanics are explanatory, not an assertion in any category."
+  },
+  {
+    "chunk_id": "CHK-6a886686cf3ff7a8",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "reason": "\"The gross margin decline of 210 basis points was driven by unfavorable product mix, higher commodity costs and higher cost of tariffs\" states a realized margin compression and names tariffs as one cause, so both the causal category and the margin category apply; regional volume declines are attributed to \"competitive activity,\" not demand softening."
+  },
+  {
+    "chunk_id": "CHK-e4299d1773883e04",
+    "red_flags": [],
+    "reason": "Purely mechanical non-GAAP definition and reconciliation tables (\"Tangible equity represents shareholders' equity ... reduced by goodwill and intangible assets\"); goodwill appears only as a balance-sheet deduction in the reconciliation, not as any write-down."
+  },
+  {
+    "chunk_id": "CHK-adf178eb4eb823aa",
+    "red_flags": [],
+    "reason": "Descriptive derivatives and counterparty-credit-risk disclosure (\"the Firm seeks to mitigate its credit risk exposures ... through the use of legally enforceable master netting arrangements\"), with the only change explained as \"The decrease was primarily driven by market movements\" — no category asserted."
+  },
+  {
+    "chunk_id": "CHK-1cbdf24f6c1615ad",
+    "red_flags": [["LEGAL_REGULATORY_ACTION", "REALIZED"], ["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "\"a $572.5 million charge in 2023 related to settlements with certain plaintiffs in the Zetia antitrust litigation\" is a realized legal action (reinforced by the adopted OECD Pillar 2 minimum tax \"effective for tax years beginning in January 2024\"), and \"Animal Health segment profits declined 2% ... reflecting higher production costs, increased administrative and promotional costs\" is realized cost-driven profit compression."
+  },
+  {
+    "chunk_id": "CHK-79134e5e4b0fdcf6",
+    "red_flags": [],
+    "reason": "Results are described favorably or neutrally — \"higher crude margins,\" \"lower crude marketing transportation costs,\" a \"$3.1 billion gain recognized upon closing the OxyChem Transaction,\" and \"$4.2 billion of cash and cash equivalents and $4.2 billion of borrowing capacity\" — with no demand, supply, trade, impairment, cost-pressure or legal assertion."
+  },
+  {
+    "chunk_id": "CHK-01b4b83aef6d859e",
+    "red_flags": [["DEMAND_WEAKNESS", "REALIZED"], ["TRADE_POLICY_EXPOSURE", "REALIZED"]],
+    "reason": "\"clients have become more cautious amid an increase in market volatility driven by geopolitical and trade-related tensions\" is a present-tense assertion of softened client activity and of a realized trade-policy-driven impact on the business environment; the CEO's macro list (\"the potential negatives of tariffs and 'trade wars,' ongoing sticky inflation\") is itself a noun enumeration that would not qualify on its own."
+  },
+  {
+    "chunk_id": "CHK-afcb6a1c9c5fe757",
+    "red_flags": [],
+    "reason": "Production growth of \"12 percent\" is only \"partly offset by planned downtime in Nigeria\" (scheduled maintenance, not a supply constraint), earnings variances turn on \"lower natural gas realizations\" (price, not demand), the margin sentence is generic industry description (\"Industry margins are sometimes volatile\"), and the risk mention is a bare cross-reference to \"'Risk Factors' on pages 20 through 26.\""
+  },
+  {
+    "chunk_id": "CHK-1c1812ed45219a3a",
+    "red_flags": [],
+    "reason": "Entirely methodological reserves-estimation disclosure (\"Production rate forecasts are derived by a number of methods, including estimates from decline curve analysis\"); \"Operating and capital costs are forecast using the current cost environment\" asserts no cost increase or any other category."
+  },
+  {
+    "chunk_id": "CHK-ba781c31ceccd1f9",
+    "red_flags": [["MARGIN_COST_PRESSURE", "REALIZED"]],
+    "reason": "The passage opens hypothetically (\"We may experience downward pressure on our operating margin\") but then asserts a concrete realized impact — \"margins on our devices have had, and may continue to have, an adverse effect on our consolidated margins due to pricing pressures and higher cost of sales\" — and the realized statement controls; \"increasing regulations\" is a bare noun in a factor list."
+  },
+  {
+    "chunk_id": "CHK-cacb9e0c97a248e7",
+    "red_flags": [],
+    "reason": "Routine prudential-capital narrative — \"the FRB reduced our SCB from 6.3% to 5.5%\" and a contingency plan that \"provides a framework for analyzing and responding to a perceived or actual capital deficiency\" — describes the supervisory framework and planning, not an enforcement action, fine, or newly imposed compliance burden."
+  }
+]

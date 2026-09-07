@@ -1,0 +1,46 @@
+{
+  "purpose": "Operational runbook for restarting the 2026-08-20-epoch1 run after a crash, sleep, or reboot. Not a results file.",
+  "scope_reminder": "The owner authorized ONE EPOCH (5736 micro-batch iters at batch_size 1). A resume must finish that epoch and stop, not extend it.",
+  "checkpoints": {
+    "dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1",
+    "cadence_iters": 250,
+    "file_pattern": "<7-digit iter>_adapters.safetensors, plus a rolling adapters.safetensors",
+    "size_each_bytes": 11541328
+  },
+  "how_to_find_the_last_checkpoint": "ls -1 /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1/*_adapters.safetensors | sort | tail -1",
+  "resume_command_template": [
+    "cd /Users/vihanpatil/personal/projects/FinScreen/finetune && \\",
+    "nohup caffeinate -dims /Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/bin/python \\",
+    "  /Users/vihanpatil/personal/projects/FinScreen/finetune/train_qlora.py --backend mlx \\",
+    "  --model /Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed \\",
+    "  --weights-sha256 86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071 \\",
+    "  --tag epoch1-resume-from-<N> \\",
+    "  --iters $((5736 - <N>)) \\",
+    "  --resume-adapter-file /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1/<N zero-padded to 7>_adapters.safetensors \\",
+    "  --adapter-path /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-resume-from-<N> \\",
+    "  > /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-epoch1-resume-from-<N>/launcher.log 2>&1 &"
+  ],
+  "worked_example_if_it_died_after_iter_2500": {
+    "iters": 3236,
+    "resume_adapter_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1/0002500_adapters.safetensors",
+    "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-resume-from-2500",
+    "mkdir_first": "mkdir -p /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-epoch1-resume-from-2500"
+  },
+  "HONEST_LIMITATION_OF_RESUME": {
+    "what_is_restored": "LoRA adapter weights only. Verified on-box 2026-08-20: resuming from the smoke checkpoint reloaded a trained adapter (val loss 0.268 at first eval vs ~0.87 from scratch).",
+    "what_is_NOT_restored": [
+      "AdamW first/second moment estimates — mlx-lm 0.31.3 saves only model.trainable_parameters(), never optimizer state (tuner/trainer.py).",
+      "The LR-schedule position — the optimizer's step counter restarts at 0, so the cosine schedule replays from warmup_init (verified: LR read 1.000e-07 on the first resumed iteration).",
+      "The data-order permutation — a resumed run re-permutes, so some examples may be seen twice and others not at all within the nominal 'one epoch'."
+    ],
+    "so_a_crashed_night_loses": "up to 250 iters of progress (~23 minutes), plus the optimizer momentum warm-up and exact LR continuity. It does NOT lose the trained adapter.",
+    "optional_lr_continuity_fix": "To approximate schedule continuity when resuming at iter N, edit the resumed run's mlx_lora_config.yaml to set lr_schedule.warmup: 0 and lr_schedule.arguments: [<lr at optimizer update N/4>, <1391 - N/4>]. Not done automatically because it is a modelling judgement, not a mechanical one."
+  },
+  "monitoring": {
+    "log": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-epoch1/train.log",
+    "progress": "grep '^Iter ' <log> | tail -5",
+    "watch_for_memory_creep": "the 'Peak mem' field on each Iter line; ceiling on this box is 12.713 GB (mx.device_info()['max_recommended_working_set_size']). Upstream issue ml-explore/mlx-lm#828 reports per-iteration creep on long LoRA runs.",
+    "watch_for_silent_truncation": "grep 'longer than' <log> — MUST stay empty. convert_to_mlx.py pre-truncates over-length passages so mlx-lm's tail-truncation path (which would amputate the JSON answer) is never reached. Any hit here invalidates the affected examples."
+  },
+  "after_it_finishes": "Do NOT start a second epoch. The next step is eval.py's real path on the frozen 1,010-row held-out split, then the owner's gate-G1 review."
+}

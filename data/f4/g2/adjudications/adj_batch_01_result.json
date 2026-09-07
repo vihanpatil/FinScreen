@@ -1,0 +1,402 @@
+[
+ {
+  "chunk_id": "E2CHK-d362e4ca7a577757",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is nothing but condensed statements — \"Net income (loss) $ 866,656 $ 828,263 $ (235,053)\", \"TOTAL ASSETS $ 31,565.5\", cash-flow lines. No word anywhere characterizes these figures as good or bad. Rubric section 2's judging rule is explicit that magnitude of a number alone isn't sentiment — \"the text has to characterize it\" — so a bare table is NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-de71dbbf03a6cb3b",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "high",
+  "brief": "Every outlook reference is retrospective: EPS of $0.61 was \"within the previously provided outlook of $0.58 to $0.68 per share\" for the quarter just reported. Nothing forward is reaffirmed, raised, lowered or withdrawn; the only forward language is the CEO's \"well positioned to drive profitable growth\". Section 3 places passages that \"only describe historical/current-period results\" and vague optimism in NONE.",
+  "pattern": "results-within-prior-outlook-not-reaffirmation",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-7cf166c90d16c427",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "This is an items-affecting-comparability bridge — \"Reported, GAAP Measure $ 27,156 ... Core, Non-GAAP Measure $ 26,999\" — listing mark-to-market, restructuring and transaction charges as reconciling lines. No sentence characterizes results in either direction. Section 2 treats purely mechanical disclosure and bare numbers as NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-0ce0f271a0db498d",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is a segment sales table with change columns (\"Net Sales $ 2,105 $ 1,888 11 %\") plus flat prose (\"net income for the third quarter of 2016 was $228 million\"); the only directional prose is a footnote, \"Urology and Pelvic Health grew 13% on an organic basis\". Section 2 says magnitude alone isn't sentiment and \"the text has to characterize it\" — there are no evaluative words such as \"strong\" or \"record\" — so NEUTRAL stands. The owner must weigh whether uniformly positive percent-change columns are themselves \"growth\" under the POSITIVE definition, since the same question decides several chunks carrying this slug.",
+  "pattern": "directional-percent-table-no-evaluative-words",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-0ce0f271a0db498d",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "high",
+  "brief": "The guidance sentence is cut off mid-clause: \"The company now estimates revenue for the full year 2016 to be in a range of\" — no figure, no prior figure, and no direction word survives in the chunk. Section 3 requires \"a specific quantified target\" before any RAISED or LOWERED call, so LOWERED cannot be supported from this text.",
+  "pattern": "truncated-guidance-sentence-no-figure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9ed330a5a63136c9",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a non-GAAP bridge (\"2019 adjusted earnings per share 4.00\") and footnotes describing merger, severance and integration costs, including \"a non-cash impairment charge of $48 million\". Nothing characterizes results favorably; the \"outlook ≥ $4.33\" line is a forward number, not a characterization of current performance. Section 2's bare-number and mechanical-disclosure clauses give NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9ed330a5a63136c9",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "\"2020 adjusted earnings per share outlook ≥ $4.33\" is a specific forward figure, but the passage never says it was increased versus any prior figure. Section 3's RAISED requires a target \"increased versus a prior figure\"; with no prior figure and no reaffirmation, the only available value is NONE. The owner must close a real rubric gap here: section 3's preamble names passages that \"issue new guidance\" as a case, but the label set offers no value for it — this one ruling decides six guidance rows in this batch.",
+  "pattern": "quantified-outlook-without-revision-language",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-195c4f302b0636bf",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "MAINTAINED",
+  "confidence": "high",
+  "brief": "The CFO says \"we are holding our outlook for the year yet currently anticipate results to be closer to the low end of our range\" — an explicit reaffirmation with no figure changed. Section 3's LOWERED requires a target \"decreased versus a prior figure\", while MAINTAINED is \"explicitly reaffirms previously-issued guidance without changing it\". The owner must weigh whether steering to the low end of an unchanged range should ever count as LOWERED, since this phrasing recurs in earnings releases.",
+  "pattern": "hold-outlook-steer-to-low-end",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-dfb41597a10fbecc",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a GAAP-to-non-GAAP table with percent-change columns (\"TOTAL REVENUES $ 12,453 ... 9% 9%\", \"NET INCOME $ 2,420 ... 56%\") followed by a constant-currency methodology paragraph. No sentence characterizes the results as strong, improved, or anything else. Section 2's rule that magnitude of a number alone isn't sentiment points to NEUTRAL; the owner must resolve the shared percent-change-table question, since POSITIVE's \"growth\" wording could be read to cover uniformly positive change columns.",
+  "pattern": "directional-percent-table-no-evaluative-words",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-53c7e256395f4d8f",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The one substantive paragraph is technical and two-sided — the reserve increase \"primarily reflected the impacts of (i) catastrophe losses ... partially offset by ... (v) net favorable prior year reserve development\" — and the rest is a forward-looking-statements bullet list (\"the Company's financial results could be materially and adversely affected\"). Section 2 treats mechanical disclosure and hypothetical risk enumeration as NEUTRAL, and section 1 warns that scoring risk registers negative teaches the shortcut \"risk-factor register implies negative\". The owner must confirm that a safe-harbor bullet list sitting inside a non-risk-factors chunk does not by itself drive sentiment NEGATIVE.",
+  "pattern": "safe-harbor-enumeration-not-negative-sentiment",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-00117e52ac2439f5",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "These are reconciliation footnotes itemizing \"restructuring charges of $1.6 million, $14.6 million...\", \"Venezuelan charges\", \"a fixed asset impairment\", and discrete tax expenses and benefits. The passage never characterizes the company's results; it explains what sits inside a non-GAAP adjustment column. Section 2 lists \"purely mechanical disclosure\" as NEUTRAL, and a list of charge amounts is bare numbers, not characterization.",
+  "pattern": "charge-itemization-footnote-not-negative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-c139014881563565",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a procedural capital-return announcement (\"declared a regular quarterly dividend of $1.10 per share\", \"authorized an additional $5.0 billion of share repurchases\") followed by a segment table with change columns. Section 2 names procedural narrative as NEUTRAL, and the improving figures carry no characterizing words. The owner must weigh the same percent-change-table question flagged under this slug elsewhere in the batch.",
+  "pattern": "directional-percent-table-no-evaluative-words",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-abb5c701902a9312",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "Alongside mixed financials (\"Net income of $2.5 billion decreased 5%\", \"Total investment banking fees (excl. self-led) of $1.1 billion decreased $1.3 billion, or 54%\"), roughly half the chunk is explicit self-characterization: \"Continued Business Leadership\", \"World's Best Bank\", \"Strong Digital Usage Continued\", \"Record quarterly CashPro App Active Users increased 25%\", \"reflecting strong client demand\". Section 2's POSITIVE covers \"achievement\" and \"explicitly favorable characterization by the filer\", judged by predominance across the passage as a whole. The owner must weigh whether an awards-and-records block outweighs declining headline earnings.",
+  "pattern": "promotional-award-block-vs-mixed-financials",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-14fd6824e0d8dca2",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "The filer's own characterizations are favorable throughout: \"the positive impact from expansion\", \"the benefit from solid comparable sales performance\", \"strong comparable sales performance, primarily in Australia, the U.K., and Canada\", \"sales recovery\". Reported declines are framed as currency and refranchising effects (\"decreased 9% (increased 2% in constant currencies)\"). Under section 2's predominant-tone rule that is POSITIVE rather than a balanced passage.",
+  "pattern": "filer-evaluative-language-dominant",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-54bfd57dab0bd838",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "This is a tax-rate reconciliation whose prose only explains column contents: \"the tax expense in the 'Other Items' column included a $2.5 billion charge for the write-off of a deferred tax asset ... partially offset by a $21 million benefit\". Listing charges inside a reconciliation is not a characterization of the business's results or condition. Section 2's \"purely mechanical disclosure\" clause makes this NEUTRAL.",
+  "pattern": "charge-itemization-footnote-not-negative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-179659419a317bb8",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The passage issues figures — \"Lilly expects 2022 revenue to be between $27.8 billion and $28.3 billion\", \"now expects 2021 revenue to be between $28.0 billion and $28.3 billion\" — but never states a prior figure or a direction; \"updated 2021 guidance\" says only that a revision occurred. Section 3's RAISED requires an increase \"versus a prior figure\", which the text does not supply, and calling it RAISED would be inference rather than reading. This turns on the same new-guidance gap the owner must close under this slug.",
+  "pattern": "quantified-outlook-without-revision-language",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-0138602f200d6bcb",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "\"Capital investment ... for the full-year 2025 is now expected to be approximately $2.4 billion\" is compared only with actual prior-year spend (\"Capital investment for the full-year 2024 was $2.6 billion\"), not with a previously issued 2025 target. Section 3's LOWERED requires a forward target \"decreased versus a prior figure\", and a prior-year actual is not that figure. The owner ruling on the quantified-outlook gap covers this row.",
+  "pattern": "quantified-outlook-without-revision-language",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-3f14cf282cf504e8",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The chunk restates a full-year outlook (\"Revenue growth of 6% to 7%\", \"Adjusted diluted EPS growth of 8% to 9%\") with no revision or reaffirmation language anywhere — no \"reiterates\", no \"unchanged\", no prior figures. Section 3's MAINTAINED requires that the passage \"explicitly reaffirms previously-issued guidance\", which this does not do. The owner must decide whether a mid-year outlook restated without any comparison counts as MAINTAINED or NONE.",
+  "pattern": "quantified-outlook-without-revision-language",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-ce81df3c1d189fa0",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is a net-income and EPS reconciliation with mixed change columns (GAAP net income \"9 %\" for 2019 against \"(5) %\" for 2018) plus tax-rate methodology prose. The only evaluative word runs the other way: \"Currency translation had an unfavorable $0.13 impact\". With no favorable characterization of results, section 2's bare-number rule gives NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-b5938d5890004829",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The segment commentary runs both ways: propylene \"reported a $99 million decrease in gross operating margin\" and the PDH 1 facility \"was down for approximately 44 days\", while octane enhancement reported \"a $58 million net increase\", refined products \"a $23 million net increase\", and marine transportation \"increased $10 million\". Section 2 says a balanced mix of favorable and unfavorable statements with no clear lean is NEUTRAL.",
+  "pattern": "balanced-mixed-segment-narrative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-5dd027bd6846ceea",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a balance sheet and a GAAP-to-non-GAAP table only — \"GAAP gross margin 60.0 % 59.0 % 56.5 %\", \"GAAP net income* $ 655 $ 542 $ 207\" — with no prose beyond line-item labels and no percent-change columns. Section 2's judging rule is explicit that magnitude alone isn't sentiment and \"the text has to characterize it\".",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-49aba42cc836f768",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "Two substantive items pull opposite ways: a cost plan framed as focusing investments \"to areas of growth\" with \"gross savings ... of at least $1.0 billion\", and \"HPE filed an 8K to withdraw fiscal year 2020 guidance due to increased level of uncertainty\". The remainder of the chunk is non-GAAP-measures boilerplate. Section 2's balanced-mix clause and its \"purely mechanical disclosure\" clause both point to NEUTRAL.",
+  "pattern": "balanced-mixed-segment-narrative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-06c24ba30f05e054",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a reconciliation table whose numbers cut both ways — \"Operating income (loss) $ 25 $ 241\" and \"Operating margin 2.6 % 32.2 %\" against \"Net income (loss) $ 149 $ 69\" and \"Net income (loss) (Non-GAAP) $ 303 $ 269\". No sentence characterizes any of it. Section 2's bare-number rule makes this NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-6696be4c00546807",
+  "field": "guidance_direction",
+  "verdict": "agree",
+  "correct_label": "MAINTAINED",
+  "confidence": "medium",
+  "brief": "The passage reprints the prior guidance ranges and then says the company \"estimates that it will exceed its previously issued guidance ranges for earnings on a GAAP basis\" while \"adjusted earnings ... will be within its previously issued guidance ranges\". No target is restated at a higher number, so section 3's RAISED (\"increased versus a prior figure\") is not met, while the adjusted-earnings sentence is an explicit reaffirmation of a previously-stated range. The owner must weigh a third reading the rubric leaves open — that a pre-announcement about expected actual results is not a guidance action at all, hence NONE.",
+  "pattern": "preannouncement-versus-prior-guidance-range",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-bc8f68735967cd5a",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The prose is two-sided inside a single sentence: net income \"decreased $20 million from the prior period, primarily driven by unfavorable changes in net investment gains (losses) ... partially offset by favorable changes in adjusted earnings and net derivative gains (losses)\", while the tables show total revenues of 21,185 against 15,333. Section 2 says a balanced mix with no clear lean is NEUTRAL, and the $20 million move is not a predominant unfavorable characterization.",
+  "pattern": "balanced-mixed-segment-narrative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-0d980c1e7832cb26",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "\"Vertex today provided full year 2026 financial guidance\" with \"total revenue guidance of $12.95 billion to $13.1 billion\" is an initial figure; no prior figure and no reaffirmation appears anywhere in the passage. Section 3's RAISED requires an increase \"versus a prior figure\", so RAISED cannot stand on this text. The owner ruling on the new-guidance gap under this slug governs the outcome here.",
+  "pattern": "quantified-outlook-without-revision-language",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-040942506845bb80",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "After the results header the chunk is a \"Notice regarding forward-looking statements\" bullet list — \"A loss suffered by one of our customers or distributors\", \"Losses or curtailments of purchases from key customers\", \"Impairments of our non-financial assets\". These are hypothetical risk items, not statements about current results, and section 1 explains that scoring risk enumerations negative teaches \"risk-factor register implies negative\". The owner should confirm this treatment for safe-harbor lists appearing inside press-release chunks.",
+  "pattern": "safe-harbor-enumeration-not-negative-sentiment",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-3908a11bb590546a",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The prose states levels without direction words: \"Net income attributable to McKesson Corporation was $617 million and $469 million, and diluted earnings per common share ... were $2.63 and $1.99\"; the rest is a noncontrolling-interest explanation and foreign-currency methodology. Nothing characterizes results favorably or unfavorably. Section 2's bare-number rule makes this NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-19cbfdfda539b797",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is volume and segment-reconciliation tables (\"Total natural gas processed 6,132 5,636 9 %\", \"Income from operations $ 265 $ 50\") with no prose beyond table footnotes. Section 2 requires that the text characterize the numbers before sentiment attaches. The owner must weigh the shared percent-change-table question flagged under this slug.",
+  "pattern": "directional-percent-table-no-evaluative-words",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-bc038b02a2c83033",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is two quarters of segment tables plus a long non-GAAP methodology block (\"These non-GAAP measures should not be considered in isolation or as a substitute for measures of performance prepared in accordance with U.S. GAAP\"). Nowhere does the filer characterize the figures. Section 2 lists purely mechanical disclosure as NEUTRAL and says magnitude alone isn't sentiment.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d97abfc5a21f6bad",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The commentary is symmetric: three-month net sales \"increased slightly\" and operating margin \"increased ... due to favorable changes in customer and product mix\", while six-month net sales \"decreased\" and operating income \"decreased ..., reflecting lower net sales and unfavorable changes in customer and product mix\". Two favorable and two unfavorable statements with no lean is exactly section 2's balanced-mix case, which is NEUTRAL.",
+  "pattern": "balanced-mixed-segment-narrative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-35b96df4fe0b07b7",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "RAISED",
+  "confidence": "high",
+  "brief": "Every consolidated figure is revised upward — revenue \"$29.1 billion to $29.3 billion (previously $28.5 billion to $29.3 billion)\", GAAP operating margin \"approximately 17% (previously 15% to 16%)\", GAAP EPS \"$2.97 to $3.02 (previously $2.65 to $2.75)\" — while the cuts are segment comps such as International \"15% to 17% (previously 25% to 30%)\". Section 3's mixed-metric rule says to \"prefer the label matching the passage's overall framing\", which here is a raise of the consolidated top and bottom line.",
+  "pattern": "mixed-raise-lower-overall-framing",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-f307072f2f01f95c",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a chronology of regulatory events that cuts both ways: \"the FDA approved the supplemental Biologics License Application (sBLA) for Panzyga\" and \"Both doses of abrocitinib met the co-primary study endpoints\", against \"the FDA has extended the review period for the sNDAs for Xeljanz ... by three months\" and the same three-month extension for abrocitinib. The register is factual announcement prose with no predominant favorable characterization, which is section 2's balanced-mix NEUTRAL.",
+  "pattern": "regulatory-milestone-chronicle",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-5349d923bae4dbc4",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "The filer characterizes its own performance favorably throughout: \"The operational growth in hips reflects the market recovery combined with continued strength of the portfolio\", \"The Vision franchise achieved sales of $4.8 billion ... representing an increase of 3.4%\", \"Operational growth was driven by market recovery and success of new products\". Declines appear only as offsets (\"partially offset by ... impacts of volume-based procurement in China\"). Section 2's POSITIVE covers \"growth, strength, achievement ... or explicitly favorable characterization by the filer\", judged by predominance.",
+  "pattern": "filer-evaluative-language-dominant",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-2683c59700eec6d3",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "Every characterization of the company in this transition announcement is favorable: \"Intel has made significant progress on its strategy\", \"instrumental in reenergizing the company's culture to drive better execution\", \"He leaves Intel in a strong strategic and financial position\". Section 2's POSITIVE includes \"explicitly favorable characterization by the filer\", and there is no unfavorable content to balance it. The owner must weigh whether ceremonial praise in a leadership-change release counts as tone \"regarding the business's current results and condition\" or is procedural boilerplate that should stay NEUTRAL.",
+  "pattern": "leadership-transition-ceremonial-praise",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-edde638aa45bde93",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is contracted-capacity facts, an EBITDA reconciliation, and routine liquidity narrative: \"We expect our sources of cash inflow to provide sufficient resources to finance our operations, capital expenditures and quarterly cash dividends\". Affirmed adequacy of liquidity is standard procedural disclosure, not a favorable characterization of results. Section 2 lists procedural narrative as NEUTRAL and the reconciliation numbers carry no characterizing words.",
+  "pattern": "liquidity-adequacy-procedural-narrative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-8b4adcb77ee14fc7",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a year-over-year growth-rate table with mixed signs — \"Frito-Lay North America 9\", \"Asia, Middle East & North Africa (13)\", \"Net Income Attributable to PepsiCo (18) 11\" — plus reconciliation column headings. No sentence characterizes the results. Section 2's bare-number rule and its balanced-mix rule both yield NEUTRAL.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-af98d865cf1fcf87",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The outlook is new quarterly guidance — \"Applied expects net sales to be in the range of $4.00 billion to $4.20 billion\" — and the only comparison offered is to prior-year actuals (\"the midpoint of the range would be an increase of approximately 25 percent, year over year\"), not to a previously issued target. Section 3's RAISED requires an increase versus a prior guidance figure. The owner ruling on the new-guidance gap under this slug governs this row.",
+  "pattern": "quantified-outlook-without-revision-language",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-a8a44197eba3d453",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage cuts both ways: \"Total New Product Portfolio 724 138 862 80 %\" against \"Total Recent LOE Products 1,426 300 1,726 (38) %\" and \"Total Revenues $ 7,891 $ 3,335 $ 11,226 (5) %\", with prose noting \"higher demand as a result of launches for additional indications\" alongside \"generic erosion in Canada and the U.K. as well as government pricing measures\". Section 2 says a balanced mix of favorable and unfavorable statements with no clear lean is NEUTRAL.",
+  "pattern": "balanced-mixed-segment-narrative",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-93b76cc89e748627",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is credit-facility and buyback narrative: \"$8.1 billion in 364-day committed credit facilities\", \"No borrowings were outstanding under these facilities\", \"terms reflecting the company's strong credit rating\", plus guarantor-group summarized financials. Affirmed adequacy and procedural capital-return disclosure are not an unfavorable characterization, and the negative net-equity line is a bare guarantor-group figure. Section 2 makes procedural narrative and bare numbers NEUTRAL.",
+  "pattern": "liquidity-adequacy-procedural-narrative",
+  "needs_human": false
+ }
+]

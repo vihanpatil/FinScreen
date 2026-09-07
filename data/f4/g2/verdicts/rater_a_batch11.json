@@ -1,0 +1,372 @@
+[
+ {
+  "chunk_id": "E2CHK-7d248b7a0ff69243",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is purely mechanical safe-harbor disclosure with no characterization of results; flags empty because 'changes in political, business and economic conditions... regulatory, tax, data security and litigation risks' is a noun-list enumeration that fails mining depth; guidance NONE because 'expected financial results for the first quarter and full year 2017' carries no figure."
+ },
+ {
+  "chunk_id": "E2CHK-054997137de82f7b",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Modality REALIZED because 'We are currently, and expect to be in the future, party to patent lawsuits and other intellectual property rights claims' is an existence claim that controls over the surrounding could/may framing; sentiment NEGATIVE on the predominant 'could have a material adverse impact on our business and financial condition' register."
+ },
+ {
+  "chunk_id": "E2CHK-f250711cbe52f65d",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment POSITIVE on 'a vaccine efficacy rate of 95%' and 'No serious safety concerns related to the vaccine were observed'; the caveat 'further data are needed' does not shift the predominant tone."
+ },
+ {
+  "chunk_id": "E2CHK-eb0ee62af8e53b67",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because increases are reported in flat mechanical terms ('primarily reflecting increases in customer and other receivables of $46.32 billion') with no favorable or unfavorable characterization."
+ },
+ {
+  "chunk_id": "E2CHK-3d5311484beff83b",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED on 'we are raising revenue, earnings per share, and free cash flow guidance'; no DEMAND_WEAKNESS despite 'Total billings decreased 11 percent' because the passage affirmatively states 'Overall market conditions and the underlying momentum of the business remained similar' and attributes outperformance to larger-than-expected expansions."
+ },
+ {
+  "chunk_id": "E2CHK-b6465997d25b9ad1",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No LEGAL_REGULATORY_ACTION because 'we are also subject to certain Delaware anti-takeover provisions' is standing corporate law the filer merely operates under, not an affirmative government action; sentiment NEGATIVE on 'we may incur the costs of a holding company structure without realizing the anticipated benefits, which could adversely affect our reputation, financial condition, and operating results'."
+ },
+ {
+  "chunk_id": "E2CHK-b95d1a1455ae1d9c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No IMPAIRMENT_WRITEDOWN because the only loss reference affirmatively negates a write-down: 'for any securities with unrealized losses recorded in AOCI, we do not intend to sell, nor believe that we will be required to sell, these securities prior to recovery of their amortized cost'."
+ },
+ {
+  "chunk_id": "E2CHK-8a0a66af1210f721",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance NONE because 'Zoetis is providing full year 2024 guidance' issues an initial quantified outlook without any reaffirmed, raised, lowered or withdrawn figure; no LEGAL_REGULATORY_ACTION because the agency decisions cited ('received approval in the U.S. for claims related to the treatment and control of lone star tick infestations') are favorable approvals, not adverse ones."
+ },
+ {
+  "chunk_id": "E2CHK-abd2f287f4fb05a2",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the passage is genuinely balanced — 'Net income of $3.1 billion... compared to $7.1 billion', 'Revenue... decreased $2.6 billion, or 10%' set against 'solid fourth quarter and full-year results', 'Record full-year sales and trading revenue'; MARGIN_COST_PRESSURE from 'higher deposit costs and lower deposit balances more than offset higher asset yields', LEGAL_REGULATORY_ACTION plus that cost from the already-incurred 'FDIC special assessment of $2.1 billion', and IMPAIRMENT_WRITEDOWN from 'Net charge-offs of $1.2 billion increased' as receivable write-offs."
+ },
+ {
+  "chunk_id": "E2CHK-513c52760f4b57ab",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No IMPAIRMENT_WRITEDOWN because 'net unrealized gains of $39.4 billion' and 'net unrealized losses of $18.4 billion' are mark-to-market movements on equity securities and realized sale losses, not asset impairments or write-downs; tone is flat tabular reporting."
+ },
+ {
+  "chunk_id": "E2CHK-91128403425f3226",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is a pure non-GAAP reconciliation ('Reconciliation from Net Cash Provided by Operating Activities to Free Cash Flow') with no characterization of the movements."
+ },
+ {
+  "chunk_id": "E2CHK-47cc76dfb9a3c32a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN REALIZED because 'provision for transaction and credit losses of $1.1 billion' and 'actual cash transaction losses incurred during the period of $1.2 billion' are receivable carrying-value reductions already incurred; sentiment NEUTRAL as the cash-flow narrative characterizes nothing."
+ },
+ {
+  "chunk_id": "E2CHK-467320dd59f87847",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "Guidance MAINTAINED on the explicit 'The Company reaffirms that the acquisition of C.R. Bard is expected to be accretive to adjusted dilutive earnings per share on a high-single digit basis in fiscal year 2019'; sentiment POSITIVE because the filer's own characterization is 'we continued to deliver solid, consistent results' despite the flatly stated '$(0.76) decreased 129.5 percent'."
+ },
+ {
+  "chunk_id": "E2CHK-c7d6eab1006311ed",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the segment narrative offsets evenly ('Overall sales... increased from the prior period despite lower sales in certain of our businesses') and the rest is a table; DEMAND_WEAKNESS REALIZED on 'declines in sales in our Group Benefits and Property & Casualty businesses' and 'Sales in our Asia segment decreased as a result of lower sales'."
+ },
+ {
+  "chunk_id": "E2CHK-ec221a30668ec7eb",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN REALIZED because 'the lapping of impairment of certain assets in the region' affirmatively states an impairment occurred; no MARGIN_COST_PRESSURE because the operating-expense rise is attributed to discretionary 'increased investments in store partners and digital platforms' while 'lower commodity costs' and 'an overall increase in operating margin of 110 basis points' control the passage."
+ },
+ {
+  "chunk_id": "E2CHK-7e99ae13aba40039",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment POSITIVE on 'adjusted EBITDA increased $44 million', 'favorable contracting and lower operating costs'; DEMAND_WEAKNESS REALIZED on the affirmative unfavorable volume statement 'lower Regional Oil Sands System volume throughput'."
+ },
+ {
+  "chunk_id": "E2CHK-8b3bac8422ef1b11",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because favorable and unfavorable drivers are quantified against each other with no lean — 'We benefited from higher sales and business growth' and '$293 million increase' against 'investment yields decreased' and '$18 million decrease'; no MARGIN_COST_PRESSURE because 'catastrophe-related losses increased due to severe winter weather' is claims experience whose combined effect 'increased operating earnings by $41 million'."
+ },
+ {
+  "chunk_id": "E2CHK-8a96bf6a3dd6c8af",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is an unnarrated yield table ('Investment income 4.57% 4,630') with footnotes and no characterization."
+ },
+ {
+  "chunk_id": "E2CHK-f473fa26a849163c",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED on 'Raises 2022 Revenue Guidance for Comirnaty to Approximately $32 Billion'; no DEMAND_WEAKNESS despite 'Revenues Declined 2% Operationally' because the text attributes it to 'the Impact of Fewer Selling Days Compared to the Prior-Year Quarter', not to demand."
+ },
+ {
+  "chunk_id": "E2CHK-8e725fe3f8f457ac",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage defines ratios mechanically ('Current assets divided by current liabilities, which indicates the company's ability to repay its short-term liabilities') and reports them without characterization; 'the book value of inventory was lower than replacement costs' is a LIFO note, not a write-down."
+ },
+ {
+  "chunk_id": "E2CHK-572b9bcdc6974b67",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED on 'Raises Full Year Revenue Guidance' together with the quantified 'For Q3 2024, we expect: Revenue of between $697 - $701 million'."
+ },
+ {
+  "chunk_id": "E2CHK-6e273e7fca87de2c",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "DEMAND_WEAKNESS REALIZED because 'The number of U.S. da Vinci bariatric procedures continued to decline in the high-single digits' is a standalone assertion of an unfavorable realized volume trend, even though the predominant tone is POSITIVE ('driven primarily by strong growth in general surgery procedures')."
+ },
+ {
+  "chunk_id": "E2CHK-9df306a8ee4ef6a4",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance NONE because the 'Year Ended December 31, 2022 (after-tax guidance)' figures appear only as reconciliation-table columns with no statement raising, lowering, reaffirming or withdrawing them; sentiment NEUTRAL as the prose is a conference-call notice."
+ },
+ {
+  "chunk_id": "E2CHK-77ae5a3574840b81",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is an unnarrated platform revenue table ('Total consolidated net revenues 1,570 100 1,044 100 526 50') — magnitude alone is not sentiment."
+ },
+ {
+  "chunk_id": "E2CHK-15db6e305205f638",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Flags empty because the whole passage is a safe-harbor enumeration ('changes in tax and other laws, regulations, rates and policies; future business combinations or disposals; uncertainties regarding the commercial success') that ordinarily fails mining depth; sentiment NEUTRAL as mechanical forward-looking-statement disclosure."
+ },
+ {
+  "chunk_id": "E2CHK-089c290420f4276a",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN REALIZED on the affirmative 'Net income was further impacted by non-cash impairments taken during 2018'; guidance NONE because the 2020 figures are an initial budget ('KMI's budget contemplates... DCF of approximately $5.1 billion') rather than a revision of prior guidance; no LEGAL_REGULATORY_ACTION because 'the slower than anticipated pace of regulatory approvals' reports process timing, not an agency decision, enforcement or new requirement."
+ },
+ {
+  "chunk_id": "E2CHK-06aa17d41bd8951e",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN REALIZED on 'The provision for credit losses increased $11 million to $100 million', applying the loan carrying-value-reduction treatment consistently; sentiment POSITIVE on 'Net income for Deposits increased $524 million' and 'strong client flows', with the branch decline framed as 'we continue to optimize our consumer banking network and improve our cost-to-serve'."
+ },
+ {
+  "chunk_id": "E2CHK-76020604051d6b67",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "LEGAL_REGULATORY_ACTION is REALIZED because 'there have been and continue to be actions and proposals by several governments, regulators and third-party payers' that 'limit the prices we are able to charge... or the amounts of reimbursement available' is an existence claim about government payment-policy action, with only its consequences projected; DEMAND_WEAKNESS HYPOTHETICAL on 'could result in diminished market acceptance and demand for all products within that brand'."
+ },
+ {
+  "chunk_id": "E2CHK-01a091dac41c8ca4",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "DEMAND_WEAKNESS HYPOTHETICAL because 'our existing customers may experience slowdowns in their businesses, which in turn may result in reduced demand for our platform, lengthening of sales cycles, loss of customers' stands alone as an assertion, unlike the bare bullet list ('fluctuations in demand for or pricing of our platform') which fails mining depth."
+ },
+ {
+  "chunk_id": "E2CHK-453d033a0c30650c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No SUPPLY_INPUT_CONSTRAINT because 'certain supply contracts contain penalty provisions for early terminations' and 'purchase obligations for materials, supplies' describe contracting complexity, not shortage or inability to procure; sentiment NEUTRAL as a contractual-obligations table."
+ },
+ {
+  "chunk_id": "E2CHK-c463b8e0e81caed9",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED on 'Intuit raised guidance for full fiscal year 2019. The company now expects: Revenue of $6.738 billion to $6.758 billion'; the Q4 'GAAP loss per share of $0.35 to $0.33' is a seasonal figure within the raised outlook and does not offset the framing."
+ },
+ {
+  "chunk_id": "E2CHK-26745b5e49168f8f",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN REALIZED because 'Asset impairments 162 23 - 139 0.09' is a recorded charge for the period; sentiment NEUTRAL because the passage is a charges-and-credits reconciliation with no characterization."
+ },
+ {
+  "chunk_id": "E2CHK-22ecc8db74085e3c",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No SUPPLY_INPUT_CONSTRAINT because 'Initial dependence on unfamiliar supply chains or relatively small supply partners' is a bullet asserting dependence, not shortage or disruption, and sits inside an enumeration; sentiment NEGATIVE on 'our business, operating results, and financial condition may be materially adversely affected'."
+ },
+ {
+  "chunk_id": "E2CHK-d50bea6ae29510b8",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No DEMAND_WEAKNESS despite entries such as 'Enbrel (Outside Canada) 1,410 1,852 (24%)' because the passage is an unnarrated product-revenue table with no assertion about demand; sentiment NEUTRAL for the same reason."
+ },
+ {
+  "chunk_id": "E2CHK-35cde1d3b4a84a48",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance NONE because 'Provides Full Year 2019 Revenue Guidance of $6.175 - $6.300 Billion' is an initial issuance with no reaffirmed, raised, lowered or withdrawn figure; sentiment POSITIVE on 'Growing 7%' and 'Delivers 11% Operational Growth in Revenue'."
+ },
+ {
+  "chunk_id": "E2CHK-904fd36b7c6cda4a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage describes repurchase authority and credit-facility mechanics factually ('the Credit Facility provided for secured financing comprised of (i) a $1.5 billion revolving credit facility') with no favorable or unfavorable characterization."
+ },
+ {
+  "chunk_id": "E2CHK-fdb7717f3a7c4df3",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is pro forma acquisition accounting disclosure expressly disclaimed as 'not necessarily indicative of the consolidated results of operations'; the 'transaction-related costs of approximately $0.5 billion' are one-time deal costs, not cost inflation compressing margin."
+ },
+ {
+  "chunk_id": "E2CHK-2e0ce7c958667fd1",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "MARGIN_COST_PRESSURE REALIZED on 'higher marketing, administration and research costs... and higher manufacturing costs' driving 'Operating income decreased by 10.5%'; DEMAND_WEAKNESS REALIZED on 'Australia, down by 5.1%, mainly reflecting a lower total market' and 'South Korea, down by 1.6%, primarily reflecting a lower market share'; sentiment NEUTRAL because those sit against 'Our Regional market share... increased by 1.1 points' and volume 'increased by 5.3%'; no regulatory flag because 'excise tax-driven price increases' does not affirmatively state a government policy change."
+ },
+ {
+  "chunk_id": "E2CHK-3bbad561a9feafeb",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No IMPAIRMENT_WRITEDOWN because the table lists '2012-2014 Restructuring Program costs' and 'Remeasurement of net monetary assets in Venezuela' without tying either to an asset value reduction; sentiment NEUTRAL as an unnarrated GAAP-to-non-GAAP reconciliation."
+ },
+ {
+  "chunk_id": "E2CHK-836ba628a6896314",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "WITHDRAWN",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "Guidance WITHDRAWN on the explicit 'its original 2020 guidance items should not be relied upon and that further guidance has been temporarily suspended'; DEMAND_WEAKNESS REALIZED because 'it expects to voluntarily curtail production due to weak prices' with quantified May and June curtailments is an unfavorable volume outcome already decided; SUPPLY_INPUT_CONSTRAINT HYPOTHETICAL on 'expects some level of additional curtailments from infrastructure constraints', which constrains production but has not yet occurred."
+ }
+]

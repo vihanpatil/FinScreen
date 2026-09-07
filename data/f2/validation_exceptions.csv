@@ -1,0 +1,56 @@
+# validation_exceptions.csv -- evidenced, per-(cik, check) downgrades of a
+# validate_universe() FATAL to WARN. Consumed by ingest_metadata.py
+# (load_validation_exceptions / apply_validation_exceptions); every row is
+# printed in the run report whether it fires or not. Nothing here is ever
+# applied silently.
+#
+# THIS FILE REPLACES `--allow-incomplete-universe`, which is DELETED.
+# That flag downgraded a named check for the WHOLE run. At 25 companies that
+# was already a compromise; at 244 it is exactly the bug it was built to
+# avoid, one level up -- accepting one known-OK finding for one delisted
+# member would have disarmed that check for the other 243. F2_SPEC §3.2 /
+# EXPANSION_PLAN §3.6: "the per-check-only override design flaw gets fixed,
+# not worked around."
+#
+# COLUMNS
+#   cik             EDGAR CIK (integer, no leading zeros). Must be a member.
+#   check_name      exactly one FATAL-capable check. Known names:
+#                   entity_resolves, history_reaches_cutoff,
+#                   plausible_filing_counts, no_large_filing_gap,
+#                   recent_activity_10k_10q, earnings_doc_unresolved.
+#                   Anything else is REFUSED at load time.
+#   reason          short machine-ish tag for the finding class. MANDATORY.
+#   effective_from  first corpus vintage (CORPUS_WINDOW_END) the exception
+#                   applies to, inclusive; blank = unbounded. If set, the
+#                   loader REQUIRES evidence_filed < effective_from.
+#   effective_to    last corpus vintage it applies to, inclusive; blank =
+#                   unbounded.
+#   evidence_filed  EDGAR filing date on which the evidence became public.
+#   evidence        the primary-source facts that justify the downgrade.
+#                   MANDATORY -- an exception without written evidence is not
+#                   auditable and is refused.
+#   added           ISO date the row was added, for humans.
+#
+# RULES OF THE FILE
+#   * one row per (cik, check_name); duplicates are refused;
+#   * an exception can only downgrade FATAL -> WARN. It can never widen a
+#     severity, never apply to a different CIK, and never apply to a check it
+#     does not name;
+#   * POINT-IN-TIME GUARD: a dated row (effective_from set) is refused unless
+#     evidence_filed is strictly earlier than effective_from -- the same
+#     guard manual_exclusions.csv puts on dated exclusions, so nobody can
+#     quietly encode hindsight;
+#   * a row that never fires is reported as DEAD in the run report. That is a
+#     bug in this file (the finding it was written for no longer exists), not
+#     a harmless leftover;
+#   * there is no blanket switch and no CLI escape hatch. A new FATAL means
+#     either the data is wrong or the check is wrong; both get fixed.
+#
+# EXPECTED CONTENTS: EMPTY (header only). MEASURED 2026-08-24 by running the
+# redesigned validate_universe() over all 244 members against the cached
+# submissions (cache-only client, zero network): 34 findings total --
+# 0 FATAL, 5 WARN (no_large_filing_gap, 4 members), 29 INFO
+# (member_stopped_filing, matching F1's independently derived 29
+# delisting-censored members). If S6 produces a FATAL, that is NEW
+# INFORMATION and must be read, not overridden.
+cik,check_name,reason,effective_from,effective_to,evidence_filed,evidence,added

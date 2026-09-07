@@ -18,10 +18,24 @@ Key rules (see PROMPT_TEMPLATE.md for full rationale):
   - Deterministic key order and deterministic red_flags entry order.
 
 Run: `python3 prepare_dataset.py` (writes finetune/prepared/{train,eval}.jsonl)
+
+For the rubric-v1.2 retrain, point it at the v1.2 splits and a new output dir
+so E1's prepared data is never overwritten:
+
+    python3 prepare_dataset.py --splits-dir finetune/splits_v12 \
+                               --out-dir    finetune/prepared_v12
+
+`INSTRUCTION` is deliberately NOT parameterised. It is the *training*
+instruction and it is frozen across E1 and the v1.2 retrain, so that the two
+students differ on exactly one axis: the label values. It is a leaner
+restatement of the labeling prompt, not the labeling prompt itself — see
+`PROMPT_TEMPLATE.md` and HANDOFF §3's 2026-08-10 sync-rule entry.
 """
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -122,16 +136,20 @@ def prepare_split(df: pd.DataFrame) -> list[dict]:
     return [build_example(row) for _, row in df.iterrows()]
 
 
-def run():
-    OUTPUT_DIR.mkdir(exist_ok=True)
+def run(splits_dir: Path = SPLITS_DIR, output_dir: Path = OUTPUT_DIR):
+    output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"instruction sha256: {hashlib.sha256(INSTRUCTION.encode()).hexdigest()} "
+          f"({len(INSTRUCTION)} chars) — frozen across E1 and the v1.2 retrain")
     for side in ("train", "eval"):
-        src = SPLITS_DIR / f"{side}.parquet"
+        src = splits_dir / f"{side}.parquet"
         if not src.exists():
-            raise FileNotFoundError(f"{src} not found — run split.py first")
+            raise FileNotFoundError(
+                f"{src} not found — run split.py (E1) or build_splits_v12.py (v1.2) first"
+            )
         df = pd.read_parquet(src)
         examples = prepare_split(df)
 
-        out_path = OUTPUT_DIR / f"{side}.jsonl"
+        out_path = output_dir / f"{side}.jsonl"
         with open(out_path, "w") as f:
             for ex in examples:
                 f.write(json.dumps(ex, ensure_ascii=False) + "\n")
@@ -147,5 +165,13 @@ def run():
         print(f"  field presence: {field_counts}")
 
 
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--splits-dir", default=str(SPLITS_DIR))
+    ap.add_argument("--out-dir", default=str(OUTPUT_DIR))
+    args = ap.parse_args()
+    run(Path(args.splits_dir), Path(args.out_dir))
+
+
 if __name__ == "__main__":
-    run()
+    main()

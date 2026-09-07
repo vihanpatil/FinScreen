@@ -1,5 +1,10 @@
 # FinScreen — Handoff
 
+> **2026-08-26: a deliberate stopping point is set — read `RESUME_HERE.md`
+> FIRST.** It holds the staged v1.2-retrain and F3-extraction campaigns
+> (both awaiting the owner's explicit go) and the current-state map.
+> This file remains the charter, decision log, and depth reference.
+
 **Read this file first, before any other doc in this repo.** It is the
 single current source of truth for where the project stands and what to do
 next. Five docs — `DISCOVERY.md`, `data/full_run_report.md`,
@@ -17,6 +22,18 @@ complete**. **Steps 1-2 are done.** If you are the next session, start at
 §2a ("Spot-check + Phase C state") and its "IMMEDIATE NEXT STEPS" list —
 the first step is the Phase C fix+verify workflow and the owner's own
 go/no-go read.
+
+> **2026-08-20 UPDATE — read `EXPANSION_PLAN.md` second (right after this
+> file).** The owner read the Phase D diagnosis (verdict: no fold-robust
+> text signal) and ratified the **E2 expanded experiment**: 100 companies
+> × 10 years, sector-stratified `EntityPublicFloat` top-K with annual
+> point-in-time reconstitution, no mid-cap arm, and an **explicit "launch,
+> 1 epoch first" go for the MLX fine-tune** (launched same day). Three new
+> §3 decision-log entries (2026-08-20) hold the ratifications;
+> `EXPANSION_PLAN.md` holds the design, gates (G1–G4), and the coupling
+> workplan; `data/expansion_recon_2026-08-20.json` holds the four-agent
+> recon behind it. §2a's status table below is E1-era history — the Step 5
+> and Phase D rows carry dated corrections.
 
 ---
 
@@ -101,8 +118,8 @@ appear in the eventual model card, not just internal docs.
 | Phase C — price ingestion | ✅ **DONE + independently verified.** `data/prices.parquet`. ⚠️ carries one owner-attention item (source provenance, below). |
 | Phase C — `features.py` / `backtest.py` | ✅ **COMPLETE AND FIT FOR THE GO/NO-GO READ** (red-team re-verified 2026-08-18). BLOCKER + 3 MAJORs + 4 minors fixed and empirically re-verified; the re-verifier's one residual defect (same-day dedup tie-break kept SLB's 8-K over its 10-Q, 1/66 pairs) was then fixed form-aware, re-run, and test-pinned. 55/55 leakage-suite tests. Final reports: `data/backtest_report.md`, `data/features_report.md`. |
 | Step 4 — owner go/no-go | ✅ **DECIDED: "GO, diagnosis-scoped"** (owner, in chat, 2026-08-18 — §3 decision log). ROADMAP outcome (2). |
-| Phase D — signal diagnosis | ✅ **COMPLETE + RED-TEAM-VERIFIED** (2026-08-18, late). `data/diagnosis_report.md` — every number independently re-derived exactly; the verifier's six precision-of-language items were fixed in the generator and the report regenerated (numbers unchanged, 21/21 tests). Verdict in one line: **no family, category, or company shows a fold-robust contribution** — guidance is the only family positive on the full-sample grid (+0.0345 dedup, 5/6 folds) but flips negative under form control (−0.0125, 2/6); section-mix is strongly negative once form-confounding is controlled (−0.0841); all deltas sit within one std of zero; 2025Q1 (not 2025Q4) is the sign-driving fold; no red-flag category is stable. Awaiting the owner's read. |
-| Step 5 — local MLX QLoRA | 🟡 **UNLOCKED, awaiting the owner's explicit "run the fine-tune"** — it occupies their Mac ~15-39 h (`finetune/MLX_FEASIBILITY.md`). Not launched on the GO alone. |
+| Phase D — signal diagnosis | ✅ **COMPLETE + RED-TEAM-VERIFIED** (2026-08-18, late). `data/diagnosis_report.md` — every number independently re-derived exactly; the verifier's six precision-of-language items were fixed in the generator and the report regenerated (numbers unchanged, 21/21 tests). Verdict in one line: **no family, category, or company shows a fold-robust contribution** — guidance is the only family positive on the full-sample grid (+0.0345 dedup, 5/6 folds) but flips negative under form control (−0.0125, 2/6); section-mix is strongly negative once form-confounding is controlled (−0.0841); all deltas sit within one std of zero; 2025Q1 (not 2025Q4) is the sign-driving fold; no red-flag category is stable. **Owner read it 2026-08-20 and ratified the E2 expansion in response (§3, `EXPANSION_PLAN.md`).** |
+| Step 5 — local MLX QLoRA | ✅ **RATIFIED AND LAUNCHED 2026-08-20** — owner's explicit "Yes — launch, 1 epoch first" in chat (§3). Implement → probe → smoke → 1 epoch → held-out eval → owner review (gate G1, `EXPANSION_PLAN.md` §4) before any further epochs. |
 | Step 6 — model card | ⚠️ **PARTIALLY FILLABLE.** `MODEL_CARD.md`'s Phase C + go/no-go TODOs can now be filled; diagnosis and (optional) fine-tune TODOs stay gated. |
 
 **IMMEDIATE NEXT STEPS (in order):**
@@ -662,6 +679,516 @@ trading, no recommendations, every number reported with its measurement.
 `INGESTION_NOTES.md` as-is, as an audit trail of decisions made in the
 moment.
 
+**2026-08-20 — diagnosis read + E2 direction (owner, in chat, verbatim).**
+After reading `data/diagnosis_report.md` and a plain-language walkthrough
+(including an explicit recommendation AGAINST fine-tuning absent a bigger
+experiment), the owner ruled: *"I want to do a bigger experiment. Please
+help me expand, so that fine-tuning may be an option in the future."* This
+closes the Phase D diagnosis read and re-purposes the fine-tune from an
+optional appendix into E2's labeling enabler. Recon behind the subsequent
+scope decision: four-agent workflow (coupling audit, universe design,
+labeling feasibility, statistical power), archived at
+`data/expansion_recon_2026-08-20.json`.
+
+**2026-08-20 — E2 scope ratified (owner, in chat, via explicit option
+selection).** (a) **100 companies × 10 years** — chosen over 60×7yr and
+25co-time-only; MDE bracket 0.019–0.037 vs E1's 0.077, ~26 test folds,
+~70k new chunks (~8–9 labeling overnights). (b) **Universe rule:
+sector-stratified top-K by `dei:EntityPublicFloat` with annual
+point-in-time reconstitution** — membership at each reconstitution date
+decided from pre-date filings only; `universe.csv` becomes a dated
+membership table. (c) **No mid-cap arm this round** — large-cap only, a
+clean higher-power rerun of E1's question. Design, gates (G1–G4), standing
+build rulings, and the outcome-side delisted-price censoring residual are
+specified in `EXPANSION_PLAN.md`; E1 artifacts stay frozen per that plan's
+§3.1 (full rebuild + relabel-all-with-the-fine-tuned-model).
+
+**2026-08-21 — E2 universe amended to a two-stratum hybrid (owner, in
+chat).** Presented with continuity5 (deep 5×20) vs broad8 (whole-market
+8-sector) and told continuity5 was safer for the labeler, the owner ruled:
+*"is it possible to do both, i do not want to exclude a third of US
+economy, but i love targeting deeply into the 5 sectors. if not both, do
+continuity5."* Both IS possible and is enacted as **hybrid136**: core
+stratum = continuity5 exactly (tech/financials/healthcare/energy/consumer,
+K=20); extension stratum = industrials, utilities (incl. telecom),
+materials_realestate at K=12 — 136 members per reconstitution date, every
+row stratum-tagged. Analysis rule bound to the amendment: the PRIMARY
+confirmatory analysis runs on the core stratum (labeler in-distribution);
+the extension is a labeled secondary arm (pooled + stratified), promoted
+only if gate G2's sector-stratified spot-check shows label quality holds
+in the unseen sectors. SIC sub-decisions at the report defaults. Labeling
+cost grows ~36% (~98k new chunks; ~11–16 overnights worst case, still $0).
+The MedEquities float mis-scaling gets a verified manual-exclusion
+mechanism as part of the hybrid build.
+
+**2026-08-21 — gate G1 ruled (owner, in chat, verbatim): "Yes, please
+train a second epoch first. I want to accept the student as E2's labeler,
+but let's keep it conditional on the epoch-2 re-eval."** Context: the
+epoch-1 held-out eval (`finetune/runs/2026-08-21-eval-epoch1/
+eval_report.md`, 1,010 rows) showed 0.00% parse/schema failures, red_flags
+at the teacher's own noise ceiling (exact-set 62.8% vs teacher
+reproducibility 63.4%; per-category 91.6% vs 92.5%), measured throughput
+1,068 chunks/h — but sentiment 81.7% vs teacher 94.6% with NEGATIVE recall
+0.425, and guidance 47.7% raw driven almost entirely by field-omission
+where the teacher wrote NONE (proposed missing→NONE post-rule takes it to
+~98%; post-rule pending formal adoption at the re-eval read). Enacted:
+epoch 2 launched same day (fresh cosine at HALF peak LR [1.0e-4, 1414
+decay, warmup 20] resuming the epoch-1 final adapter — documented
+modelling choice; same auto-resume-chain ops). Acceptance as E2 labeler is
+CONDITIONAL on the epoch-2 re-eval; the re-eval must report guidance both
+raw and post-ruled, and watch for overfit regression on red_flags.
+
+**2026-08-20 — fine-tune LAUNCH ratified (owner, in chat, explicit).**
+"Yes — launch, 1 epoch first." This is the explicit go the Step 5 gate
+required. Discipline bound to the go: real MLX path implemented → on-box
+timed probe → smoke test → ONE epoch (checkpointed, resumable, detached)
+→ `eval.py` real path on the frozen 1,010-row eval split → owner reviews
+eval at gate G1 before any further epochs and before the student is
+accepted as E2's labeler. Launched same day (finetune-engineer;
+run manifest under `finetune/runs/`).
+
+**2026-08-25 — F2 report read + four rulings (owner, in chat).** After
+reading `data/F2_INGESTION_REPORT.md` §0 the owner ruled: **(a)**
+verbatim *"SPDR Gold Trust is a member"* — GLD (CIK 1222333) is
+deliberately RETAINED in the core financials stratum; the entity-type
+anomaly stands as a documented, owner-accepted fact (any analysis-side
+sensitivity treatment is a G3/F5 question, not membership). **(b)** the
+epoch-2 eval-report patch (the missing post-ruled guidance line) is
+executed now, before the owner's G1 read — G1 acceptance of the student
+as E2's labeler remains PENDING the owner's explicit ruling. **(c)** the
+two read-items (membership-time censoring profile 14–16% early cohorts;
+SIC→membership look-ahead) acknowledged — no action required. **(d)**
+verbatim *"Convert to USD as standard in future for all companies in
+case not USD"* — non-USD fundamentals are converted to USD as standard
+at the feature/analysis layer (Enbridge today; any future member);
+membership and frozen F1 artifacts unchanged; the implementation (FX
+source — Yahoo FX pairs are the natural zero-new-provider default — and
+PIT conversion semantics) is specified and ratified as part of the
+F5/G3 pre-registration. Same message: the owner commissioned a
+brutally-honest foundations re-evaluation + full decision audit + a
+standing tech-council advisory agent, all to complete BEFORE F3 starts.
+
+**2026-08-25 — re-evaluation rulings (owner, in chat, via explicit
+option selection after reading `REEVALUATION_2026-08-25.md`).** Four
+rulings: **(1) IDENTITY: "Research + pipeline-as-asset"** — charter
+kept; E2 completes as a finite bounded experiment; the PIT corpus
+builder, local labeler, and methods trail are the durable asset; the
+failure-taxonomy write-up ships whatever the result. The owner added,
+verbatim: *"I want this to be usable by me, though. I want the end
+product to be some trained model or app that when I feed it a company
+name, it would be able to extract up-to-date company data and give me
+financial analysis, so that I can use that to help with my personal
+investments. This could be used by companies too as well or anybody
+else who wants."* Recorded as the owner's product vision with its
+charter boundary stated plainly: an app that extracts and ANALYZES
+(data, labels, flags, language change) is inside the charter; anything
+that recommends buy/hold/sell or executes is not and stays prohibited;
+distribution to others ("anybody else") additionally triggers the
+Yahoo-ToS data-source problem and the "not a product with users" clause
+— both must be re-ratified before any distribution. The app is a
+post-E2 deliverable direction, not current scope. **(2) PRE-F3
+HARDENING PACKAGE: full, ratified** — six items (positive controls;
+specification pre-registration + honest MDE restatement; labeler
+attenuation check; document-selection error sample; stopping rule;
+prior-work section), ledger `HARDENING_PROGRESS.md`. F3 starts only
+after it completes. **(3) GATE G1: HELD for the attenuation check** —
+the student is neither accepted nor rejected until the one-overnight
+E1-relabel measurement lands; the sentiment floor (83.5% vs ~0.90) is
+acknowledged failed as stated. **(4) E2 SCOPE AMENDMENTS, all three
+ratified:** extension-stratum labeling DEFERRED until after gate G2;
+zero-labeling text families (year-over-year filing-change + document
+embeddings) and the missing numeric factors (momentum, volatility,
+valuation) ADDED before F5; THREE heads at F5 (pre-registered return
+target + volatility/informativeness event study + exit prediction).
+Recorded also in `EXPANSION_PLAN.md` §8. Provenance: the re-evaluation's
+four lens verdicts are model judgments; these four rulings are the
+owner's own, made by explicit option selection.
+
+**2026-08-26 — F2.5 closure rulings (owner, in chat, via explicit
+option selection after the measured H3 attenuation evidence).** Three
+rulings: **(1) G1 → REPAIR PATH. The §5 spend freeze is LIFTED for
+exactly ONE ratified purpose:** a single Batch API re-label of the E1
+corpus's 6,747 chunks under **rubric v1.2, which is hereby RATIFIED**
+(the proposed revision recorded in `RED_FLAGS_LIMITATION.md`, built on
+the P1/P2/P3 principles the owner ratified 2026-08-18; the 2026-08-10
+sync rule applies — `labeling_rubric.md` edit with a matching hand-synced
+`SYSTEM_PROMPT` edit). Estimated cost ~$16.09 at the measured $2.38/1k
+rows; **hard cap: if the pre-submission estimate exceeds $25, stop and
+re-confirm with the owner.** Single-axis discipline: same model id and
+config as E1's final pass (thinking disabled / max_tokens 4000) — only
+the rubric changes. E1's `data/labels.parquet` stays FROZEN (v1.2
+labels land in a NEW artifact); the train/eval SPLIT stays frozen
+(membership is label-value-independent); `prepare_dataset.py`
+regenerates; retrain ~2 nights (same recipe: epoch 1 → eval → epoch 2 →
+full re-eval); **then the owner rules G1 on the repaired instrument.**
+Per §4/§7: the API submission and all post-batch processing run in the
+MAIN SESSION only, no background watchers; the submitted artifact is
+verified against the tested artifact before any `batches.create()`.
+The freeze remains in force for everything else. **(2) STOPPING RULE
+RATIFIED: council Option 1 + the margin-setting procedure** — all three
+E2 outcomes close the alpha question (null and ambiguous identically,
+publishing the CI as the answer; an above-MDE positive earns only the
+pre-registered robustness suite + the G2-promoted extension replication,
+then stops); no E3 without a new owner ratification that names what
+changed, states its own MDE/cost/stopping rule, and explicitly
+supersedes this entry; EXPANSION_PLAN §7's mid-cap ramp is CLOSED as an
+alpha vehicle (reopenable only attached to a question structurally
+requiring mid-caps, via the E3 policy); the bounded-null equivalence
+margin is set by a PRE-REGISTERED PROCEDURE from E2's own measured
+folds (floor + autocorrelation measured before any delta is read), not
+fixed at ±0.03 today; the CFO price annex attaches as information; CFO
+and CRO-research dissents recorded in
+`data/hardening/status/H5_stopping_rule.md`, now marked RATIFIED-AS-
+AMENDED. Kill-criteria 1–6 carry as ratified pre-commitments.
+**(3) F3 BEGINS NOW** (extraction is labeler-independent), in parallel
+with the repair; ledger `F3_PROGRESS.md`; the F2.5/H4 measured
+conditions are binding F3 inputs.
+
+**2026-08-27 — v1.2 epoch-2 GO + F3 P2 GO (owner, in chat).** After
+reading the epoch-1 v1.2 eval (`runs/2026-08-27-v12-eval-epoch1/`),
+the owner ruled: **(1) epoch 2 is GO** — launched 00:18 as a
+main-session background task per RUN_COMMANDS §4 (resolved config sha
+matched `plan-epoch2` exactly). **(2) F3 P2 extraction runs are GO**
+("I want to run this — it would make the product more complete"),
+sequenced by the main session per the never-concurrent-with-training
+rule: epoch 2 overnight → eval e2 (~57 min) → F3 P2 (4 commands,
+~2–3.5 h) → P3 QA. **(3) G1 remains to be ruled by the owner on the
+repaired instrument after the epoch-2 re-eval** (per the 2026-08-26
+entry above); the G1 read is independent of F3 P2 and can happen
+while extraction runs. **(4) H3v2 RATIFIED (same owner message):**
+re-run H3's attenuation measurement on the repaired v1.2 student —
+the v1.2-epoch-2 student relabels E1's 6,746 chunks locally (~4.6–5.6
+h, $0, zero API calls, `relabel_e1.py` machinery) and quant-modeler
+re-derives retention so the G1 ruling can compare v1.2 retention
+against H3's v1.1 numbers (red-flag family 0.669 vs kill-criterion
+2's ρ≈0.81 band). Slotted LAST in the sequence (after F3 P2, may
+overlap the file-read-only P3 QA agent); H3's v1.1 artifacts are a
+ruled record and are never overwritten — v1.2 outputs land in new
+paths. Ledger section: `data/hardening/status/H3v2_attenuation.md`.
+**(5) OVERNIGHT AUTONOMY (owner, in chat, before sleeping):** the
+main session is authorized to carry the ratified chain to completion
+unattended — epoch 2 → eval e2 → F3 P2 → P3 QA + H3v2 relabel →
+finalize → quant-modeler retention comparison → **convene
+tech-council (fable) for a G1 advisory brief** — and to run F3 P4
+(red-team) after P3 if the night allows, invoking any agents needed
+to move forward. Explicit non-delegations that survive this grant:
+the G1 RULING itself (owner-only), any Anthropic API call (freeze
+sealed), any live fetch (incl. the D2 bounded-fetch decision — P3
+censuses, never fetches), F4, an epoch 3, anything outside the
+charter. Failures: resume per each artifact's recipe; a hard stop in
+one lane is documented and does not silently block the others.
+
+**2026-08-27 (evening) — GATE G1 RULED (owner, in chat, verbatim): "I
+accept the council's ruling, but I want to do B1 (spot-check
+first)."** Recorded as: **G1 = ACCEPT-WITH-CONDITIONS** per
+`data/hardening/status/G1_council_advisory.md` §6 (all five
+conditions) with **B1 sequencing — the v1.2 spot-check completes
+BEFORE F4's first overnight**; the advisory's §7 pre-commitments are
+ratified with the ruling (incl. the Wilson-lower-bound >~35% demotion
+trigger, the no-epoch-3/no-v1.3-without-ratification rule, and the
+carried H5 criteria). The advisory remains model counsel; this
+acceptance is the owner's own judgment by explicit option selection.
+Same message, further owner orders: **(a)** census ALL 779
+EXPECTED_ABSENT rows (P4 blocking item 2) — launched; **(b)** the
+extraction-fix ordering question answered per P4: F1-first + F2
+scoped to R3 with span guards, never F2-as-ranked; **(c)** F4
+confirmed to proceed after B1 clears — owner confirmed understanding
+that F4 is LOCAL ONLY: the fine-tuned student labels on local MLX,
+$0, zero API calls, zero network; the spot-check itself is agent-based
+on the subscription ($0 API) plus owner adjudication attention.
+F4-config decisions (window rule / reflow / missing→NONE) put to the
+owner separately; F4 does not launch before those + B1.
+
+**2026-08-27 (evening, same session) — F4 CONFIG RULED (owner, by
+explicit option selection):** window rule **W1 core** (146,571 as-is
+chunks); **FULL reflow_v1** (owner chose it over skip and over
+size-first); guidance **missing→NONE ADOPTED at the labeling writer
+with an audit flag** (A.7-compliant form; omission regression 321→385
+disclosed at selection time). Combined scope: **W1-core × reflow_v1 =
+314,211 chunks ≈ 213 h at the measured 1,477.7 chunks/h (~21
+overnights; ~29 at the conservative 1,068/h)** — stated to the owner
+in-chat immediately after selection with an explicit invitation to
+revise; stands unless revised. F4 still launches only after: the B1
+spot-check completes and is ruled on, and the pre-F4 corpus fix
+package (P4's F1-first + R3-scoped-guarded-F2 ordering, N1 garble
+screen re-designed per P4's counter-example, EA-779 census
+disposition) is implemented and tested.
+
+**2026-08-27 (night) — SPOT-CHECK RULED BY THE OWNER; THE RATIFIED
+DEMOTE PRE-COMMITMENT FIRES.** The owner ruled all 42 packet rows in
+chat (A1–A22 + B1–B20; per-row record
+`data/hardening/spotcheck_v12/owner_rulings.json` /
+`probe_rulings.json`; **eight binding annotation-policy rules + the
+A4 reimbursement-subtype policy recorded verbatim at
+`data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md`** — these are
+the owner's own judgments). Probe: 0/20 overturns, no escalation;
+campaign complete per the design's stopping rule. **OWNER-RATIFIED
+P1: v1.2 teacher red-flag exact-set error 84/200 = 42.00%
+[35.37, 48.93] — k = 84, exactly the pre-pinned boundary → DEMOTE =
+TRUE.** Per §7 pre-commitment 1 (ratified with G1 this evening),
+**the E2 red-flag feature family is DEMOTED to
+exploratory/disclosure-only in G3, regardless of sunk cost.**
+Sentiment and composition features unaffected. Supporting reads:
+v1.2−v1.1 TierC error difference Newcombe 95% [+1.1pp, +31.7pp]
+(excludes 0; cross-rubric caveat); changed-rows err 69.1% vs 31.7%
+unchanged; dominant mode = spurious flags. All estimates are
+model-consensus with owner rulings on the escalated subset — not
+human ground truth of the full 200; plausibly biased LOW (shared
+model family). **B1 is SATISFIED** (spot-check complete and ruled).
+F4 remains gated on: P5 fix package completion + owner confirmation
+of F4 scope in light of the demotion (the W1-core+reflow ≈314k-chunk
+scope was chosen before this result). **Scope RE-CONFIRMED by the
+owner post-demotion, same night, by explicit option selection: KEEP
+W1-core + full reflow_v1 (~314k chunks, 21–29 overnights)** — the
+app/product-completeness rationale carries it; red-flag labels are
+produced under exploratory status. F4's sole remaining gate: P5
+completion + its verification, then the F4 implementation prep
+(reflow productionization, W1-core chunking, labeling writer with
+missing→NONE + audit flag) and the first labeling night.
+
+**2026-08-28 — F4 CAMPAIGN RUNNING; owner ruled CONTINUOUS
+CHAINING (in chat: "I would rather have this done sooner than
+later, please continue running and chaining everything").** Prep
+verified (105 tests, repro canary 10/10 byte-identical to the G1
+eval), smoke passed all checklist items, seg-001 DONE (13,227/13,227,
+0 parse fails, 1,621.6 ch/h — 15% above projection), segments chain
+back-to-back around the clock; ETA ≈ 8 days at the measured rate.
+Runner `finetune/label_e2.py`; commands + resume recipe
+`data/f4/RUN_COMMANDS.md`; per-segment manifests under
+`data/f4/segments/`.
+
+**2026-09-06 — F4 CAMPAIGN COMPLETE (status, not a ruling).** No owner
+ruling is recorded in this entry. Close-out record:
+`data/f4/status/F4_campaign.md` (written 2026-09-06, main session) —
+all 24 segments finalized; campaign chain log shows completion at
+02:32:07; campaign parquet `data/f4/labels_e2_v1.parquet` (317,081 rows
+× 43 cols, sha256 `f236f421096c665b…`), chunk_id set identical to
+`data/f4/chunks_v1.parquet`; 0 parse failures; `finish_reason=stop` on
+all 317,081 rows; 23 rows `schema_valid=false` (enum-sweep disposition:
+no remap, see the close-out record §3); guidance imputed 48,790/95,335
+(51.2%); 98 offline tests passed. Red-team pass over the close-out
+record: verdict DISCREPANCIES — every row-level integrity claim in the
+record independently re-derived and held (no data corruption), but the
+record's own reporting is incomplete: the throughput figure omits two
+killed seg-013 processes (9,487 rows of uncounted time); the seg-013
+triple-restart and five concurrent chain-wrapper instances are not
+mentioned in §4; the §7 item-3 "not measurable" conclusion does not
+address an in-repo same-adapter student-on-E1 baseline; "H3v2 retention
+0.81" is presented as a bare red-flag family mean; and 2,826 rows
+carrying `guidance_direction` on non-guidance-applicable sections are
+in the segment manifests but dropped from the campaign aggregation and
+unmentioned in the record. G2 spot-check **parameters were ratified and
+the measurement HAS BEEN RUN** on 2026-09-07 (see the "G2 MEASUREMENT
+EXECUTED" entry below for the verified counts): 580 chunks rated, 314
+contested pairs adjudicated; the overnight pass produced the
+model-consensus stage with both primaries locked — `sentiment`
+INDETERMINATE, `guidance_direction` PASS with its two mandatory escorts. **Owner row rulings RECORDED 2026-09-07 (all 39 Part A + all 20 Part B;
+stage now `owner_ratified`, sentiment 293/337 = 86.94% INDETERMINATE,
+guidance 115/119 PASS unchanged, 0/20 probe overturns) — see the
+"G2 OWNER ROW RULINGS" entry in §3 and `data/f4/g2/G2_FINAL_REPORT.md`.
+**GATE G2 RULED 2026-09-07 (evening): "proceed under the ladder" —
+sentiment INDETERMINATE proceeds with its error as a first-class F5 input,
+guidance PASS on the NONE mass with escorts + `G2_FINAL_REPORT.md` §0
+mandatory. Ruling 2(b) RULED the same message: EXTEND — label the extension
+stratum; promotion into F5 waits on its own spot-check. Next phase = F5
+(`F5_PLAN.md`).**
+
+**2026-09-07 — G2 PARAMETERS RULED (owner, in chat, on
+`data/f4/g2/G2_OWNER_BRIEF.md`).**
+- (i) Sample size: OPTION C — P = 400 (two-way section×sector Hamilton), G-A = 80, G-N = 80.
+- (ii) Bar b = 0.85 for BOTH gate-bearing fields (sentiment, guidance_direction). One bar each. Rule shape §6.1 as proposed.
+- (iii) Consequence ladder §6.5 ratified as proposed (λ row withdrawn).
+- (iv) No floor on G-A / G-N.
+- (v) Two-rater ceiling: buy the larger ceiling arm, n = 120 (3 replicate batches; option (b) of §5.4).
+- (vi) Guidance directions: BUY the quota — Option C's +30-row direction floor (≥15 LOWERED, ≥20 MAINTAINED) AND extend it with a WITHDRAWN quota of 15 rows (a pre-registered amendment, since the design priced only LOWERED/MAINTAINED). NO pass/fail floor on any direction (consistent with iv). The measured per-direction precision ships as a DISCLOSURE beside the guidance feature. Owner's own note: they said "unpowered" believing it meant they would not have to rule on those rows; the intent is: measure it, no bar, disclose.
+- (vii) Guidance primary framing: OPTION 1 — single base-rate primary with the binding caveat enforced in `analyze_g2.py` (guidance verdict never printed without G-A active precision and G-N false-NONE rate on the same line); S-OMIT stays a secondary with no bar.
+- 2(a) Council §7 item 3 (`G1_council_advisory.md`): ruled "noted, does not fire as agreement drift; G2 is the mandated measurement; drift disclosed" (drift record: `data/f4/status/F4_campaign.md` §2).
+- 2(b) Extension stratum: DEFERRED — decide whether to label/extend the corpus only after G2 passes on core ("decide after you know whether the core labels are worth extending").
+- 3.1 Build `.claude/agents/label-rater-blind.md` — APPROVED.
+- 3.2 Build `data/f4/g2/build_adjudicator_batches_g2.py` — APPROVED.
+- Also standing from earlier: red_flags are rated (Option C, not B-lite).
+
+Implemented realization (design §14.3 — model arithmetic, not an owner
+ruling): G-A = 100 (46/24/15/15), n_total = 580, 15 batches, 18 rater
+runs; the brief priced Option C at 590 assuming the full +30 floor was
+spent, only 6 of those rows were needed.
+
+Red-team fix pass, 2026-09-07, **model amendments, NOT owner rulings**
+(design §14.9; made while `verdicts/` is still absent, so no selection
+channel opens). Nine changes, none of which moves a bar, an n, the seed,
+an estimand or a drawn chunk: (1) §6.6's prose paragraph now carries
+G-A active precision + the G-N false-NONE rate and assertion A8 became a
+field scan — ruling (vii) was enforced only on the machine-formatted
+line; (2) the unmeasured `0.94` interval endpoint deleted; (3) §6.6's
+pre-registered opening clause restored and verdict-gated; (4) **`arm`
+moved out of `draw_g2.csv` into `data/f4/g2_draw_arms.csv`, outside the
+rater-pointed tree** — it disclosed stored guidance status for 180 of
+580 rows; the draw itself is byte-identical (same seed, same ids, same
+order, identical `batches/*.json`, verified by diff); (5) realized
+counts replace planning approximations (§6.3 caveat 60/9; ceiling arm
+110/65; fourth-batch option 142/86); (6) the non-decisional-bar appendix
+prints only what actually differs at that bar; (7) §11.3's failed-batch
+record gets a writable home, `failed_batches.json`, with enumerated
+causes; (8) two upward biases disclosed — identically-ordered ceiling
+replicates and adjudicator anchoring on `stored_label`; (9) the unused
+cik-coverage Monte Carlo and the dead `--provisional` flag deleted.
+Suite green; analyzer `--selftest` 88 checks.
+
+Gate G2 itself remains HELD — it is ruled on the measured result.
+Rulings are implemented in `data/f4/g2/G2_SPOTCHECK_design.md` §14 and
+`build_draw_g2.py`.
+
+**2026-09-07 (evening) — OVERNIGHT G2 CHAIN AUTHORIZED (owner, in chat).**
+The owner, leaving for 10–12 h, instructed the main session: "begin all work
+you deem necessary and in a logical order. Do not go in endless loops, burning
+usage and springing bugs everywhere. Be methodical, calculated, orderly and
+ensure accuracy and no errors. Begin work on what is needed most, be frugal
+with token usage." Read by the main session as authorization to run the G2
+measurement chain unattended — rate → adjudicate → analyze → owner ruling
+packet → ledgers — under the ratified parameters above and the stop rules in
+`data/f4/g2/OVERNIGHT_PLAN_2026-09-07.md` (one retry per failed batch; any
+stage failing twice → stop and record). NOT delegated: the Gate G2 ruling
+itself, API calls, any `label_e2.py` run, epoch 3, extension labeling.
+
+**2026-09-07 (overnight) — G2 MEASURED: MODEL-CONSENSUS RESULT ON DISK
+(status, not a ruling).**
+- Chain ran ~03:05–05:15 under the authorization above. Build
+  (`wf_a63bc7cc-243`): package verified, 140 tests green. Rating
+  (`wf_6f592371-49a`): 18/18 batches (15 rater-A + 3 rater-B ceiling)
+  accepted first attempt, 0 failed, `failed_batches.json` absent.
+  Adjudication (`wf_fb3c61aa-cf9`): 9/9 batches first attempt, 314 rows
+  merged (sentiment 89, guidance_direction 32, red_flags 193; 271 disagree
+  / 43 agree / 0 unsure). `analyze_g2.py` exit 0, 19 assertions, stage
+  `model_consensus`.
+- MODEL-CONSENSUS (not a ruling): `sentiment` 292/337 = 86.65% [82.60,
+  89.87] → INDETERMINATE at bar 0.85 (kstar PASS 300 / FAIL 273);
+  `guidance_direction` 115/119 = 96.64% [91.68, 98.69] → PASS at bar 0.85
+  (kstar PASS 109), never quotable without `guidance_active_precision`
+  68.67% [58.17, 77.55] (n_eff 84.8) and `guidance_false_none_rate` 0/80
+  [0.00, 4.58]. `red_flags` S-RF1 112/400 = 28.0% [23.8, 32.6],
+  disclosure-only.
+- Owner packet `data/f4/g2/OWNER_RULING_PACKET.md`: 39 Part A
+  `needs_human` rows (11 sentiment, 28 guidance; 14 pattern slugs; 25 of
+  the 39 are G-A rows carrying 24 of G-A's 27 errors) + 20 Part B probe
+  rows (12 P / 4 G-A / 4 G-N). Both verdicts are locked against Part A
+  rulings (sentiment cannot reach PASS or DECISIVE FAIL; guidance stays
+  PASS); only Part B (≥2/20 overturned) can move a verdict, and only
+  downward, triggering a 402-chunk / 619-row / 16-batch sweep.
+
+Gate G2 remains HELD. Owner: read `data/f4/g2/OWNER_RULING_PACKET.md`,
+rule Part A + Part B into `owner_rulings.json` / `probe_rulings.json`
+(design §10.2.3), re-run `analyze_g2.py`, then rule G2 under the ratified
+§6.5 ladder.
+
+**2026-09-07 — G2 MEASUREMENT EXECUTED (model chain; NOT an owner ruling).**
+*(Companion to the "G2 MEASURED: MODEL-CONSENSUS RESULT ON DISK" status entry above, written minutes apart by two agents of the same chain; this one carries the per-artifact counts, the presentation-fix record and the adjudicator-card precedence note. Neither is a ruling.)*
+This entry records what was *run*, not what was decided; Gate G2 itself is
+still HELD and no owner ruling on it exists. Verified counts, each re-derived
+from the artifacts rather than from any prior note:
+
+- **580 chunks drawn and rated** (`data/f4/g2/draw_g2.csv`, 580 rows; arms
+  P 400 / G-A 100 / G-N 80). One draw, one n — no re-draw at any point.
+- **18 blind-rater agent runs**: 15 primary batches
+  (`verdicts/rater_a_batch01..15.json`, 580 rows) + 3 ceiling replicates
+  (`verdicts/rater_b_batch01..03.json`, 120 rows, S-NOISE arm).
+- **9 adjudicator batches** (`adjudicator_batches/adj_batch_01..09.json`) →
+  **314 contested (chunk, field) pairs adjudicated**
+  (`adjudications/adjudications.json`): 193 `red_flags` / 89 `sentiment` /
+  32 `guidance_direction`. 271 disagree, 43 agree; **0 `unsure`**.
+- **39 `needs_human`** rows escalated to the owner (28 guidance / 11
+  sentiment; 0 red_flags, per §5.3) + **20 S-PROBE ids**
+  (`probe_ids.json`, seeded 20260906, realized P 12 / G-A 4 / G-N 4).
+- `results_g2.json` `stage = model_consensus`. Both primaries locked at the
+  ratified bar 0.85: `sentiment` 292/337 = 86.65% [82.60, 89.87] →
+  **INDETERMINATE**; `guidance_direction` 115/119 = 96.64% [91.68, 98.69] →
+  **PASS**, which per ruling (vii) is never quotable without
+  `guidance_active_precision` 68.67% [58.17, 77.55] (corpus-re-weighted,
+  n_eff 84.8) and `guidance_false_none_rate` 0/80 = 0.00% [0.00, 4.58].
+- Everything above is **model consensus** (Claude-family blind rater +
+  Claude-family adjudicator vs a Qwen student), NOT human validation of
+  ground truth (§3 model-rater epistemics). The adjudicator sided with the
+  blind rater against the stored label on 271/314 = 86.3% of contested rows
+  (guidance 96.9%, red_flags 87.6%, sentiment 79.8%) — disclosed because it
+  bears on whether the third rater arbitrates or confirms. `red_flags`
+  remains exploratory / disclosure-only (2026-08-27 demotion); this pass
+  cannot and does not change it.
+- **Standing precedence note (recorded here because nothing else records
+  it):** design §5.3's "red_flags never escalates" **overrides** rule 5 of
+  `.claude/agents/label-adjudicator.md` ("set needs_human=true when your
+  confidence is low"). All 10 low-confidence adjudications in this run are
+  `red_flags` rows and correctly carry `needs_human=false`. On any field
+  that *does* escalate, low adjudicator confidence must still set
+  `needs_human=true`; the card's rule 5 is not weakened outside `red_flags`.
+- Owner-facing artifact: `data/f4/g2/OWNER_RULING_PACKET.md` (Part A = the
+  39 escalations, Part B = the 20-row probe). Deliverable state: awaiting
+  the owner's Part A / Part B rulings, then one re-run of `analyze_g2.py`.
+
+**2026-09-07 — G2 OWNER ROW RULINGS RECORDED + ANNOTATION-POLICY RULE 9
+(owner, in chat; applied by the main session).**
+- Owner ruled all **39 Part A** rows: 33 ADJUDICATOR-RIGHT, 4 STORED-RIGHT on
+  adjudicator-upheld rows (A23, A25, A30, A35), **2 STORED-RIGHT overriding
+  the adjudicator — A39 → NEGATIVE (P arm), A36 → NEUTRAL (G-N arm)**. All
+  22 fresh-guidance rows (A1–A22) → NONE. All **20 Part B** probe rows →
+  AGREE (0 overturns; §5.5 sweep does NOT fire). Files
+  `data/f4/g2/owner_rulings.json` (sha `d0ae8a9f…`) / `probe_rulings.json`
+  (sha `8bd26918…`); transcription cross-checked row-by-row against the
+  packet's stored/adjudicator labels before writing.
+- `python3 data/f4/g2/analyze_g2.py` re-run once → **stage `owner_ratified`**
+  (generated 2026-09-07T19:03:27Z; 19 assertions; 0 API calls):
+  `sentiment` **293/337 = 86.94% [82.93, 90.13] → INDETERMINATE** at 0.85
+  (was 292; A39 moved it; k* PASS 300 / FAIL 273 unchanged); stored-NEGATIVE
+  precision 25/49 = 51.0%. `guidance_direction` **115/119 = 96.64% PASS**
+  unchanged, `guidance_active_precision` 68.67% [58.17, 77.55] unchanged,
+  `guidance_false_none_rate` 0/80 unchanged. S-PROBE 0/20, Wilson on hidden
+  shared error [0, 16.1%]. `red_flags` 28.0% unchanged (never escalates).
+- **Binding annotation-policy Rule 9 (owner):** `guidance_direction = NONE`
+  when quantified guidance is issued but the passage does not establish a
+  raise / cut / hold / withdrawal **relative to prior guidance**; NONE = "no
+  directional action established", not "no guidance exists"; comparison to a
+  prior-period ACTUAL is not a revision. Owner explicitly REJECTED ratifying
+  the student's RAISED/MAINTAINED/LOWERED calls on new guidance (owner,
+  verbatim: "Ratifying that would corrupt the meaning of direction."). Record + corollaries:
+  `data/f4/g2/G2_FINAL_REPORT.md` §3 (companion to the eight v1.2 rules).
+- **Binding interpretation, travels with the number (owner):** the 68.67%
+  active precision is partly directional-label precision and must not be
+  read as the student hallucinating the existence of guidance; a v1.3 rubric
+  should add ISSUED/INITIATED or a `guidance_present` field rather than call
+  new guidance RAISED. Printed first in `G2_FINAL_REPORT.md` §0.
+- **Gate G2: still HELD — the owner ruled every row and stated the expected
+  outcome but has not pronounced on the gate.** Ladder consequence (§6.5,
+  mechanical): sentiment proceeds with measured error as a first-class F5
+  input; guidance gate-bearing with escorts + §0 mandatory; no DECISIVE FAIL
+  so no (a)/(b) choice. Ruling 2(b) (extension "only if G2 passes on core")
+  is open under a mixed result; main-session recommendation: stays DEFERRED.
+- Nothing re-rated, re-adjudicated or re-drawn (design §11). Nothing running.
+
+**2026-09-07 (evening) — GATE G2 RULED + RULING 2(b) RULED (owner, in chat).**
+- Owner asked "What do I need to rule for G2? It passed, no?" — answered:
+  half-passed (guidance 115/119 PASS; sentiment 293/337 INDETERMINATE, PASS
+  needed 300); under the ratified §6.5 ladder INDETERMINATE proceeds with
+  its measured error as a first-class F5 input; the design forbids a model
+  result standing as a gate ruling, so the owner's one-line pronouncement
+  was required. **Owner ruled: "G2: proceed under the ladder."** No
+  override; sentiment is NOT demoted. Guidance PASS is NONE-mass only and
+  is never quoted without `guidance_active_precision` 68.67%,
+  `guidance_false_none_rate` 0/80 and `G2_FINAL_REPORT.md` §0.
+- **Owner ruled 2(b): "Extend. Label the extension stratum; promotion into
+  F5 waits on its own spot-check."** Owner's reasoning: guidance PASS alone
+  suffices; the ladder already lets core sentiment proceed. Stated to the
+  owner before ruling and accepted: the extension (industrials,
+  utilities/telecom, materials_realestate; 36 members; 8,115 F3-extracted
+  sections ≈ 35% of core by words; est. ~110k chunks, 3–4 GPU overnights,
+  $0 API) needs the wrapper lock fix first (`F4_campaign.md` §4); the
+  2026-08-21 promotion clause stays UNSATISFIED until an extension
+  spot-check on the unseen sectors (core per-sector sentiment ranged
+  83–95%); nothing in G2 speaks to those sectors. Sequencing accepted: F5
+  section masks + core features first, extension labeling on nights in the
+  background.
+- Main session withdrew its earlier "stays DEFERRED" recommendation as
+  inconsistent with the ladder. Record: `data/f4/g2/G2_FINAL_REPORT.md` §1.
+- Next: `F5_PLAN.md` (written 2026-09-07 evening, owner asked "lay out F5
+  plan").
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual
@@ -686,6 +1213,8 @@ for the next session — the incident itself is closed.
 | Background subagent watchers, used twice to monitor post-batch processing, stalled both times and had to be manually cleaned up. | Post-batch processing runs **synchronously** in the main session. No background watcher for batch-API polling or post-processing. |
 | Subagents correctly refused to authorize spend when a spend-approval instruction was relayed to them through another agent rather than coming directly from the owner in chat. | Money-gated and API-calling actions execute **only in the main session**, driven directly by the owner's own chat message — never relayed through a subagent or another session as if it were the owner's approval. |
 | 50-chunk canary runs measured per-request correctness but not distributional stability — the 22.2% red-flag config-sensitivity was completely invisible at canary scale and only showed up comparing two full-corpus passes. | Canaries validate mechanics (does the request format work, does parsing succeed), not full-corpus label distributions. A canary passing is not evidence a labeling config produces the same *labels* as another config would — only a full comparison run (or an explicit spot-check) can show that. |
+| The 2026-08-20 epoch-1 MLX run was SIGTERMed TWICE by process-lifecycle machinery, not by any fault of its own: (1) launched detached (`nohup … &`) from *inside a finetune-engineer subagent's shell*, killed at iter ~520, ~34 min after that subagent completed — the orphaned tree was reaped with the finished subagent's session (`nohup` shields SIGHUP, not SIGTERM); (2) relaunched as a main-session background task, killed again (exit 143) at 2h58m of task runtime — consistent with a ~3-hour cap on harness background tasks. Both times checkpoint-every-250 bounded the loss (~50 min, ~4 min); both resumes used the runbook's LR-continuation fix. | **Long-running local compute runs as an AUTO-RESUME CHAIN of main-session background tasks: assume any task can be SIGTERMed at any time, checkpoint aggressively (`save_every` ≈ 10 min of work), and treat every kill notification as the trigger to resume from the latest checkpoint.** A third kill (6.5 min in) disproved the ~3h-cap theory — kill timing is unpredictable, so robustness comes from cheap resumability, not from segment sizing. Full daemonization (setsid double-fork) is classifier-blocked in this environment — do not attempt workarounds; the chain converges anyway (worst observed cycle still nets ~80% training throughput). Never spawn long compute from inside a subagent. The F4 labeling campaign must use the same pattern: per-row append-checkpointed output, resume-on-notification. Recipe: `finetune/runs/2026-08-21-epoch1-final-from-2250/RESUME_RECIPE.md`. |
+| 2026-09-07 — Appending the owner's G2 Rule 9 to `data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md` broke `finetune/test_g2_spotcheck.py::test_draw_reproduces_byte_for_byte`: that file is a sha-pinned pre-registration INPUT of the G2 draw (`build_draw_g2.py` INPUT_SHA256). Reverted byte-exact within minutes; draw artifacts were never touched. | **Every path in a builder's INPUT_SHA256 block is frozen for the life of that draw — record later owner rulings in a NEW dated file (here `data/f4/g2/G2_FINAL_REPORT.md` §3), never by editing a pinned input.** Run the full suite after any doc edit under `data/hardening/` or `data/f4/`. |
 
 ---
 
@@ -990,6 +1519,10 @@ day — re-check them once those settle.*
 | `canary_comparison.md` | 2026-08-11 canary comparison. **Measurements sound; its §5 recommendation (`max_tokens=800`) and cost projections are superseded** — carries a 2026-08-18 READER NOTE. Audit trail. |
 | `batch_requests*.jsonl`, `labels_canary*.parquet`, `labels_corrective.parquet`, `labels_relabel.parquet`, `*_batch_meta.json` | Intermediate/variant artifacts from the labeling run and its correction. Historical, not inputs to anything downstream — `data/labels.parquet` is the only one Phase C should read. |
 | `raw/` | Cached raw source data: `company_tickers.json` plus five directories — `documents/`, `filing_index/`, `submissions/` (SEC EDGAR), `companyfacts/` (XBRL), `prices/` (daily OHLCV). |
+| `f4/labels_e2_v1.parquet` | F4 campaign output: E2 student labels, 317,081 rows × 43 cols, sha256 `f236f421096c665b…`. Chunk_id set/order-identical to `f4/chunks_v1.parquet`. Read-only. |
+| `f4/campaign_manifest.json` | F4 campaign-level manifest: `COMPLETE: true`, 0 API calls, $0. |
+| `f4/status/F4_campaign.md` | F4 close-out record (written 2026-09-06) — facts table, council §7 item-3 check, enum-sweep disposition (23 rows), what-did-not-happen note. Red-teamed 2026-09-06: row-level integrity claims hold; the record's own §4 narrative has disclosed gaps (throughput/seg-013 restarts, retention-mean framing, dropped guidance rows) — see `HANDOFF.md` §3 2026-09-06 entry. |
+| `f4/g2/` | G2 spot-check package: `G2_SPOTCHECK_design.md`, `build_draw_g2.py`, `analyze_g2.py`, `build_owner_packet_g2.py`, draw + batch + `verdicts/` + `adjudications/` files. **Parameters ratified 2026-09-07, measurement RUN, owner rows RULED**: `results_g2.json` / `report_g2.md` at `stage = owner_ratified` (generated 2026-09-07T19:03:27Z; 580 rated, 314 adjudicated, 39 `needs_human` + 20 probe rows all ruled in `owner_rulings.json` / `probe_rulings.json`; analyzer already re-run once — **do not re-run it**, design §11). Final owner-facing record: `G2_FINAL_REPORT.md` (§0 owner's binding interpretation, §1 the two gate rulings, §3 Rule 9). **Gate G2 RULED: proceed under the ladder; 2(b) RULED: extend.** |
 
 ### `finetune/`
 

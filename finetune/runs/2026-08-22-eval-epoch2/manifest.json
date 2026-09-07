@@ -1,0 +1,202 @@
+{
+  "run_id": "2026-08-22-eval-epoch2",
+  "generated_utc": "2026-08-22T11:33:24.379566+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "model": {
+    "path": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071"
+  },
+  "adapter": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2",
+    "adapters_sha256": "9c08e3cb3f1f917c3c6903cc0154f9d175d928f0116edc60e2dd1b2e0f9e7fa8",
+    "adapters_bytes": 11541328,
+    "adapters_mtime_utc": "2026-08-22T11:32:55.639161+00:00",
+    "adapter_config_sha256": "539983655bef0692ac512ed757b5724a818bb638a948eab72a0214ebe551fd65",
+    "checkpoint_shas": {
+      "0000100_adapters.safetensors": "53431c46e85ca9ed66ee0597ada8632095e64b244489a76db1af1af248d8dc69",
+      "0000200_adapters.safetensors": "2dd7d7ab47d14a5765e0a717fd1a7359e5fc00dca2de3fb27acd62e7dc6a827f",
+      "0000300_adapters.safetensors": "d12534372252a9895fbc0c830ba40ec89113d13635b2ea6057305c15f8e400ae",
+      "0000400_adapters.safetensors": "a385e11308bf60dbc64fc95ac710f2ecb6d395f84c869ef61a470394f73b7561",
+      "0000500_adapters.safetensors": "4195f807b179dc1e25c55aff79b5917e48a882775561210c604d5eaaada910f6",
+      "0000600_adapters.safetensors": "04668c299345791e223d8cb1435ce12e17b7c9486177d00b56d4b4f40e418fe5",
+      "0000700_adapters.safetensors": "55a2aab9e6f82e602ea124fdd7b66c7ba8ab35fadd75c442785032ee661064a0",
+      "0000800_adapters.safetensors": "ccf4ca5ce76eaed8b895dcb67b39f2020bb312011c0035de54e3c8c3825df276",
+      "0000900_adapters.safetensors": "b212837cb0a7aad28c47e44856781df65b6f4bca4b1dd20484d256bace3768a2",
+      "0001000_adapters.safetensors": "f5ec5d89b3eae65ea74cc73e33449e3db600983595f144264966ef355ef3264d",
+      "0001100_adapters.safetensors": "ff2536333a2e35a6bcbebd86ed69283225e63874085f0810a07cbf61fcc4217e",
+      "0001200_adapters.safetensors": "f73245fc089a0b37422288dced773c5d23bcb518d35ff8b041ad63577cd5d9b2",
+      "0001300_adapters.safetensors": "8a6e38254f3f5c1bcb3928e734a07873449b8291d6755f17c6f3e2e56aa55c73",
+      "0001400_adapters.safetensors": "4d683d7888cedfb7667423859248495acef19680f2267a617f1699741dff2b3d",
+      "0001500_adapters.safetensors": "98981e8a36a2d86bea856b794a5a5c2314617677b9c6f140de4a68aea4c580ad",
+      "0001600_adapters.safetensors": "6c83be214669c291b562a4514094d6d9b243980aff4b15aa5cd47a0e9a37ae33",
+      "0001700_adapters.safetensors": "4df00dd95e077d907a8aa7170f19ac3851c66c1137e21e236d5a2a99cc2006ea",
+      "0001800_adapters.safetensors": "cedf368ddff7fb0f90883f7baac2e1ab22cdf9ae325dd482e2c2ec2242f83dea",
+      "0001900_adapters.safetensors": "37c4ae07bc12f13d2c6b52c60af14be6989aef218a5b83d3dc2aae8ed252ca5e",
+      "0002000_adapters.safetensors": "654a4eb761f7acac81fc6cfbd7ae032ffd57efd1f37f799f6c52fd715d4d0ecc",
+      "0002100_adapters.safetensors": "8dacb41c6aabd7050335f0db5ef1f9c64335f7f5277c101bed3fd529b1df1b3d",
+      "0002200_adapters.safetensors": "640b763b41768bc98657f2185d5c8d15a9ae7ba6f782aef9a58bb15247097217",
+      "0002300_adapters.safetensors": "e56353c29fdbb28445344214a78528845606241bb8d09e58efb55c56a4989ebe",
+      "0002400_adapters.safetensors": "68989f31e0e777e323f0071c104bc98528442c1657636050ff3749f1a4045898",
+      "0002500_adapters.safetensors": "7b6ef90e77967655c636729aea0b7011c8c5a6a3979549a60d12f8bd4ed4b303",
+      "0002600_adapters.safetensors": "f3e48e2fe1eb5483ce0c227a5a794f6387b8516b59ace2a9040ad6dc7ca35736",
+      "0002700_adapters.safetensors": "da1208a54791bb052aa746c62aab6d58ddf9de06560c458a7ef40d122922503c",
+      "0002800_adapters.safetensors": "3665a48ffca689832e4fdd40ebf07d82a36ffbf2602bad3879b13034701cecd1",
+      "0002900_adapters.safetensors": "5cde0efc0133f6d3a3a2656b81d1da0dce68c2a5a7ff94f09b14d8d2e3dd1b53",
+      "0003000_adapters.safetensors": "b3431fa9cc04eb97eff804e6fcab4045d281587c581796f3f342c8a56493443b",
+      "0003100_adapters.safetensors": "5d507144d8abd00dd48d59e2ee78f215448aaea6807037990f6b62627a41cba6",
+      "0003200_adapters.safetensors": "a5d8a0465420504145db859dcc2d34c1d5762cbc943bfed1e0580ad476a359ee",
+      "0003300_adapters.safetensors": "af7a5e5f1240460a997379cca3e0cb7dd7bbb693b4925e97ffd87910d5487e88",
+      "0003400_adapters.safetensors": "fb422efa2952ffa3af936ef259d5724f666b9443cf44105d2a0fa8e738234e87",
+      "0003500_adapters.safetensors": "eb55c9d28693fef28d6bcb09e355a14b44660b8c0fd042852192c02cad67ff30",
+      "0003600_adapters.safetensors": "1e5c95047814a4118252517aecef6e2242c9322a882f055da5bb5a0f35202cb3",
+      "0003700_adapters.safetensors": "c645d36e68be361b3407577ee05605d3ba12bed6a38c2bff2628e89b4e235d81",
+      "0003800_adapters.safetensors": "d7ffb9b037930a133e8850e3b3763a64b328d59525725534cb487b729e7eb980",
+      "0003900_adapters.safetensors": "b777d0784cc99ba9928e0b570fc94d2974b1808cb70c89f4b3fd3e23947d1127",
+      "0004000_adapters.safetensors": "4fe40f96f050db81ce776ea59bff82e67cbe7df912474224ebe4de6592e4a5c0",
+      "0004100_adapters.safetensors": "128ae72573254db5773705e1cf687b80b012520b6892a7edc6d326d17c09b5ea",
+      "0004200_adapters.safetensors": "54b580024623c529c53b2526245aea6de203c4c431b95b5773cc020fa893e175",
+      "0004300_adapters.safetensors": "c61c3fd97cdac1a15727a73f1947c7f77e52d49266b98714e07938e4e6888c4a",
+      "0004400_adapters.safetensors": "d2c7d2d06d36d8ba7920b015e65751db19cdb2e3e8fbe55bfa6c989d1782ab07",
+      "0004500_adapters.safetensors": "759ad97c9fab27369a9228d3100bc7a90bdd7e135f72e2bcb8862428ff2ceb4e",
+      "0004600_adapters.safetensors": "72bfdcfef8a4ed463a584814763261d7eeecb130eed404d367071b3be382f02f",
+      "0004700_adapters.safetensors": "15fa2c3f38fa56cf208431b8fe41e17e772cc504842327b4ef83a0e916dd23f5",
+      "0004800_adapters.safetensors": "6478d85af506b0b1a85c5c0e0972ae8c9add0a8b2f1d7a21ff2bf3118a2e1463",
+      "0004900_adapters.safetensors": "8a7bc631b6aaf5a193b2572de0c9e372246ec43de1210ac2d88a2ad0d06c9c24",
+      "0005000_adapters.safetensors": "5394ba8999e3d5f9f81c71244d386658d38a50912eaee42bb5b1090eb180bc61",
+      "0005100_adapters.safetensors": "8ff289f483eb379304683509e6e83a194bb97f85a510f9a1f43b240fe16a797c",
+      "0005200_adapters.safetensors": "c640fc95ee0cc554b35d43a6eff06ef5cfa09bc611e44aeff7e10f5e4522a220",
+      "0005300_adapters.safetensors": "4710bbaeebfb9c890e904d68f07627e96227cea5b49ae26b2283a7e1db2ab6c9",
+      "0005400_adapters.safetensors": "4bcd2f74496865c14b4ba5fea28a56b17805fdf466f399ee7f38ba490aa31dae",
+      "0005500_adapters.safetensors": "b923e97e5ec0035eac0854aabea9ca9977e405a1d270d5826e26d0f18879f92f",
+      "0005600_adapters.safetensors": "cd140e0eb8c6866b02b792432341fc90f8ad80e75fe83c565f7908d8d73bcffe",
+      "0005700_adapters.safetensors": "eeeaae08f91fae0dab33a564018a9ea73c6d81ba5eb166941f1ed4e70d23217c"
+    },
+    "matches_checkpoint": "no numbered twin \u2014 expected for a COMPLETED run whose iters is not a multiple of save_every (mlx_lm writes the final weights to adapters.safetensors only). If training is still running, this may instead be an in-flight write: check the process has exited.",
+    "lora_parameters": {
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05,
+      "keys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj"
+      ]
+    },
+    "num_layers": 16,
+    "iters_configured": 5736,
+    "resume_adapter_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-final-from-2250/adapters.safetensors"
+  },
+  "train_manifest": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-21-epoch2/manifest.json",
+    "sha256": "42fd21bac4f2684daea140e8b26c6acfeb7b7b0bb82a58ba36a1b978589ca422",
+    "run_id": "2026-08-21-epoch2"
+  },
+  "data": {
+    "eval_rows_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/valid.jsonl",
+    "eval_rows_sha256": "deb63b76992404ecaf4fdc4c3a3acbea9b0c3bb7f655064aec7191ebc9ab0736",
+    "prepared_eval_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared/eval.jsonl",
+    "prepared_eval_sha256": "b441716b8f73cae678d38b2b3f19f7d70126d8db0613aeadab98437ef4f26dd9",
+    "n_rows": 1010,
+    "n_passages_head_truncated_to_fit_2048": 49,
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_chars": 1825,
+    "instruction_byte_identical_across_eval": true,
+    "instruction_byte_identical_to_train": true,
+    "sha_matches_train_manifest": true
+  },
+  "section_types_sidecar": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/eval_section_types.json",
+    "sha256": "620feff2bdf8d419ae7b03d134ba0ac2cdd51c0a0ec0295cce08b7554add11a9"
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.render(); the inference prompt is a token-exact prefix of the training sequence for the same row"
+  },
+  "n_eval_rows": 1010,
+  "n_eval_rows_in_split": 1010,
+  "limit": null,
+  "throughput": {
+    "n_rows_generated_this_process": 1010,
+    "wall_seconds": 2718.8,
+    "chunks_per_hour": 1337.4,
+    "latency_seconds_per_row": {
+      "mean": 2.691,
+      "p50": 2.421,
+      "p90": 3.908,
+      "p95": 4.896,
+      "p99": 6.286,
+      "max": 7.163
+    },
+    "prompt_tokens": {
+      "mean": 1105.6,
+      "total": 1116622,
+      "p50": 985.5,
+      "p90": 1706.1,
+      "p95": 1968.75,
+      "p99": 2024.0
+    },
+    "generation_tokens": {
+      "mean": 36.3,
+      "total": 36675,
+      "max": 151,
+      "p50": 27.0,
+      "p90": 67.2,
+      "p95": 88.0,
+      "p99": 109.0
+    },
+    "prefill_tokens_per_second": {
+      "mean": 841.5,
+      "p50": 843.0,
+      "p90": 861.1,
+      "p95": 864.6,
+      "p99": 872.1
+    },
+    "decode_tokens_per_second": {
+      "mean": 28.1,
+      "p50": 27.9,
+      "p90": 28.9,
+      "p95": 29.1,
+      "p99": 31.7
+    },
+    "finish_reasons": {
+      "stop": 1010
+    },
+    "f4_note": "These figures are EXPANSION_PLAN.md F4's labeling-throughput probe, measured at n=1,010 on this machine with this adapter.",
+    "projections": {
+      "E1 re-label (6,746 chunks)": {
+        "hours": 5.0,
+        "overnights_at_10h": 0.5
+      },
+      "E2 low estimate (~70k new + 6,746 E1 = 76,746)": {
+        "hours": 57.4,
+        "overnights_at_10h": 5.7
+      },
+      "E2 high estimate (~98k new + 6,746 E1 = 104,746)": {
+        "hours": 78.3,
+        "overnights_at_10h": 7.8
+      }
+    }
+  },
+  "versions": {
+    "mlx": "0.32.1",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.15.1",
+    "numpy": "2.4.6",
+    "python": "3.11.10"
+  },
+  "n_scored": 1010,
+  "partial": false,
+  "notes": [
+    {
+      "date": "2026-08-25",
+      "title": "guidance_direction post-rule addendum (missing->NONE)",
+      "body": "The gate-G1 ruling required this re-eval to report guidance_direction both raw and under the proposed missing->NONE post-rule; the report as generated 2026-08-22 carried only the raw figure. APPENDIX A of eval_report.md (appended 2026-08-25, original untouched) and the `post_rule_missing_guidance_as_none` block in metrics.json supply the post-ruled half, recomputed from this run's stored predictions.jsonl with no model invocation, no network and $0. Headline: guidance raw 335/570 = 58.8%, post-ruled 561/570 = 98.4% (the main session's 561/570 derivation was exactly right). All 226 rewritten rows had teacher label NONE, so the rule laundered no real miss. 9 errors survive: 5 missed real guidance, 3 spurious, 1 wrong direction. On the 17 rows with real teacher guidance the student is 11/17. Epoch-1 post-ruled is also 561/570, so epoch 2 bought no guidance-semantics gain. The post-rule remains PROPOSED, NOT ADOPTED \u2014 adoption is the owner's call at the G1 read.",
+      "touches_run_artifacts": "none \u2014 eval_report.md appended to, metrics.json key added; no existing key or number changed, predictions.jsonl untouched",
+      "cost_usd": 0.0,
+      "anthropic_api_calls": 0
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+stage=documents -> data/filings_metadata_e2.db (cache TTL 24.0 h)
+
+--stage documents: 20522 document(s) to have on disk ({'earnings_doc': 10568, '10-Q': 7509, '10-K': 2445}). Nothing is parsed here; this fills the cache-forever data/raw/documents/ cache so extract.py runs at 0 GETs.
+  500/20522 documents (0 fetched / 500 already cached / 0 failed)
+  1000/20522 documents (0 fetched / 1000 already cached / 0 failed)
+  1500/20522 documents (0 fetched / 1500 already cached / 0 failed)
+  2000/20522 documents (0 fetched / 2000 already cached / 0 failed)
+  2500/20522 documents (0 fetched / 2500 already cached / 0 failed)
+  3000/20522 documents (0 fetched / 3000 already cached / 0 failed)
+  3500/20522 documents (0 fetched / 3500 already cached / 0 failed)
+  4000/20522 documents (0 fetched / 4000 already cached / 0 failed)
+  4500/20522 documents (0 fetched / 4500 already cached / 0 failed)
+  5000/20522 documents (0 fetched / 5000 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/97476/000009747620000006/q42019txnex99-8xker.htm
+  5500/20522 documents (1 fetched / 5499 already cached / 0 failed)
+  6000/20522 documents (1 fetched / 5999 already cached / 0 failed)
+  6500/20522 documents (1 fetched / 6499 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315293/000162828015005672/ex991pressreleaseq22015.htm
+  7000/20522 documents (2 fetched / 6998 already cached / 0 failed)
+  7500/20522 documents (2 fetched / 7498 already cached / 0 failed)
+  8000/20522 documents (2 fetched / 7998 already cached / 0 failed)
+  8500/20522 documents (2 fetched / 8498 already cached / 0 failed)
+  9000/20522 documents (2 fetched / 8998 already cached / 0 failed)
+  9500/20522 documents (2 fetched / 9498 already cached / 0 failed)
+  10000/20522 documents (2 fetched / 9998 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/875045/000087504517000014/q12017pressrelease.htm
+  10500/20522 documents (3 fetched / 10497 already cached / 0 failed)
+  11000/20522 documents (3 fetched / 10997 already cached / 0 failed)
+  11500/20522 documents (3 fetched / 11497 already cached / 0 failed)
+  12000/20522 documents (3 fetched / 11997 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000103835717000063/pxdq22017earningsreleaseex.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000119312518111008/d564737dex991a.htm
+  12500/20522 documents (5 fetched / 12495 already cached / 0 failed)
+  13000/20522 documents (5 fetched / 12995 already cached / 0 failed)
+  13500/20522 documents (5 fetched / 13495 already cached / 0 failed)
+  14000/20522 documents (5 fetched / 13995 already cached / 0 failed)
+  14500/20522 documents (5 fetched / 14495 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080316000185/a1q16earningsrelease.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080316000194/a2q16earningsrelease.htm
+  15000/20522 documents (7 fetched / 14993 already cached / 0 failed)
+  15500/20522 documents (7 fetched / 15493 already cached / 0 failed)
+  16000/20522 documents (7 fetched / 15993 already cached / 0 failed)
+  16500/20522 documents (7 fetched / 16493 already cached / 0 failed)
+  17000/20522 documents (7 fetched / 16993 already cached / 0 failed)
+  17500/20522 documents (7 fetched / 17493 already cached / 0 failed)
+  18000/20522 documents (7 fetched / 17993 already cached / 0 failed)
+  18500/20522 documents (7 fetched / 18493 already cached / 0 failed)
+  19000/20522 documents (7 fetched / 18993 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1585521/000158552119000057/zm-20191205ex991.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1596532/000162828020006442/ex991q120-earningsrelease.htm
+  19500/20522 documents (9 fetched / 19491 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1637459/000163745919000050/a6719exhibit991.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1645590/000164559017000006/ex-991x10312017x8k.htm
+  20000/20522 documents (11 fetched / 19989 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312517174537/d382227dex99a.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312517248214/d418076dex99a.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312518057237/d536429dex99a.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1707925/000165495422005503/lin_ex991.htm
+  20500/20522 documents (15 fetched / 20485 already cached / 0 failed)
+
+--stage documents done: 20522 target(s), 15 fetched, 20507 already cached, 0 FAILED.
+Total EDGAR network GETs this run: 15

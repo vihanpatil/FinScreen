@@ -1,0 +1,228 @@
+[
+ {
+  "chunk_id": "CHK-7ac2fc7a617e9668",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A1): MARGIN_COST_PRESSURE over SUPPLY_INPUT_CONSTRAINT; complex supply chain != supply constraint (policy rule 1)"
+ },
+ {
+  "chunk_id": "CHK-8b0f62bfc6175763",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A2): written down -> flag must be used (loan carrying-value reductions count; policy rule 6)"
+ },
+ {
+  "chunk_id": "CHK-91cd090467f7fa4b",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A3): TRADE_POLICY_EXPOSURE REALIZED"
+ },
+ {
+  "chunk_id": "CHK-90f40730f8c06857",
+  "verdict": "agree",
+  "correct_label": null,
+  "note": "owner ruling 2026-08-27 (A4): adverse government payment-rate actions count as regulatory action (subtype policy recorded in OWNER_POLICY_RULINGS.md)"
+ },
+ {
+  "chunk_id": "CHK-a577c2ef70bba5da",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A5): keep MARGIN_COST_PRESSURE HYPOTHETICAL"
+ },
+ {
+  "chunk_id": "CHK-2d6b130dae96d639",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A6): market-wide commodity supply disruption != producer SUPPLY_INPUT_CONSTRAINT (policy rule 2)"
+ },
+ {
+  "chunk_id": "CHK-91f8865d5d329ba0",
+  "verdict": "agree",
+  "correct_label": null,
+  "note": "owner ruling 2026-08-27 (A7): do not infer existing legal event from anaphora (policy rule 4)"
+ },
+ {
+  "chunk_id": "CHK-4da9940a27679b8d",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A8): safe-harbor enumeration fails mining depth; must match A22 (policy rule 5)"
+ },
+ {
+  "chunk_id": "CHK-fd959732ed4e547c",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A9): refers to customers not company"
+ },
+ {
+  "chunk_id": "CHK-87d7f6be8a95c376",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A10): regulation-driven costs can double-label (policy rule 7)"
+ },
+ {
+  "chunk_id": "CHK-6e267dc8121bfffd",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A11): routine expense-variance narrative is not MARGIN_COST_PRESSURE"
+ },
+ {
+  "chunk_id": "CHK-f09548e1be417f33",
+  "verdict": "agree",
+  "correct_label": null,
+  "note": "owner ruling 2026-08-27 (A12): adverse product approval/labeling decisions are regulatory action, modality HYPOTHETICAL here (policy rule 8, consistency with A4)"
+ },
+ {
+  "chunk_id": "CHK-72fe97f6760077fe",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A13): transaction volume is the relevant demand measure for this business"
+ },
+ {
+  "chunk_id": "CHK-b74c6da3ee7bf9cc",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A14): safe-harbor boilerplate fails mining depth"
+ },
+ {
+  "chunk_id": "CHK-bed93e2ff380364c",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A15): CTA recycling is not an impairment"
+ },
+ {
+  "chunk_id": "CHK-709fca1998a1ccc7",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A16): legal + cost double-label allowed"
+ },
+ {
+  "chunk_id": "CHK-e922e4f7a10dad00",
+  "verdict": "agree",
+  "correct_label": null,
+  "note": "owner ruling 2026-08-27 (A17): stored/adjudicator agree; has incurred = realized"
+ },
+ {
+  "chunk_id": "CHK-10fa0f637d2af709",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A18): receivable write-off counts, consistency with A2/A3 (policy rule 6)"
+ },
+ {
+  "chunk_id": "CHK-7edd7aedaa803873",
+  "verdict": "agree",
+  "correct_label": null,
+  "note": "owner ruling 2026-08-27 (A19): stored/adjudicator agree; ambient trade dynamics stay HYPOTHETICAL"
+ },
+ {
+  "chunk_id": "CHK-e7d89e372a854602",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A20): strict mining depth on safe-harbor enumerations"
+ },
+ {
+  "chunk_id": "CHK-d8f2f91c7bbfa2cc",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "note": "owner ruling 2026-08-27 (A21): presence-based volume decline counts"
+ },
+ {
+  "chunk_id": "CHK-a1853548628ae483",
+  "verdict": "disagree",
+  "correct_label": [],
+  "note": "owner ruling 2026-08-27 (A22): no flags; same treatment as A8"
+ }
+]

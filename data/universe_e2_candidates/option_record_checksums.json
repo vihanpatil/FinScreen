@@ -1,0 +1,15 @@
+{
+ "_what": "sha256 of the continuity5 / broad8 artifacts as they stood in the F1 build the owner's 2026-08-21 universe decision cites, captured BEFORE the two float-integrity rules were adopted on 2026-08-21.",
+ "_why": "The option record must keep reproducing byte-identically. These hashes are the regression guard: test_build_universe_e2.py asserts the shipped files still match them. If a change to the builder moves one of these, that change has leaked into the audit trail behind a ratified decision and must be scoped out of it, not re-baselined here.",
+ "_captured": "2026-08-21, from the pre-rules build",
+ "sha256": {
+  "continuity5.csv": "c4aec6898910c5f7302737df7ba02654fcb5e126f500990511a219ba1e394178",
+  "continuity5.parquet": "67b3f2b1bec696f1643e1a59972ab88b7b4e42388f5b047f52b054518475ee81",
+  "continuity5_panel.csv": "47090734461f77ab8d70977c9b39f200b2e305b0f01193614004455f03054de9",
+  "continuity5_panel.parquet": "98287af23e8be326b350d39aa7067c1f927da3bb21c85b59f32ac4e6192941ea",
+  "broad8.csv": "82bb6848fc973e03b55ec32606cbac81ed195b9ae7b45ce2069dacde243ddb25",
+  "broad8.parquet": "bdedbb34ccbadfee771aeea6ad1f8438650922082e3627c4555041399ba16dcd",
+  "broad8_panel.csv": "070b6b181d85ac8d138ec4c0c6589ffbd3f13254b4fe6d2b6acef0cb1a36e2da",
+  "broad8_panel.parquet": "2ae0505f3950ec56b22441d9811d30209dd5115756ce7c7a18fa45ff477d6465"
+ }
+}

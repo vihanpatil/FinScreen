@@ -1,0 +1,13 @@
+periodic FAIL rows: 784 distinct accessions: 595
+  50/595 docs 263s
+  100/595 docs 340s
+  150/595 docs 375s
+  200/595 docs 458s
+  250/595 docs 537s
+  300/595 docs 637s
+  350/595 docs 1105s
+  400/595 docs 1281s
+  450/595 docs 1385s
+  500/595 docs 1584s
+  550/595 docs 1672s
+wrote /Users/vihanpatil/personal/projects/FinScreen/data/f3/p3_qa/fail_recovery.csv 784 1740s

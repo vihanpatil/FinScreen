@@ -1,0 +1,587 @@
+[
+ {
+  "chunk_id": "E2CHK-424ab90579241b5c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "DEMAND_WEAKNESS is right: \"Freight Revenue declined 30% YoY ... driven by lower revenue per load and volume, both a consequence of the challenging freight market cycle\" is a realized volume/demand statement. MARGIN_COST_PRESSURE is not: every cost sentence in the passage runs the other way — \"decreased marketing costs,\" cost of revenue \"decreased due to improved cost leverage,\" G&A \"decreased 10 bps ... due to cost control and improved fixed cost leverage.\" Section 4 requires rising costs compressing margins; nothing here asserts that.",
+  "pattern": "cost-leverage-improvement-not-margin-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-09366f1650ed94d3",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Only the MARGIN_COST_PRESSURE modality is contested. The governing clause is \"These and other ... factors have and could continue to have an adverse effect ... in many ways, including ... (v) disruption to our business operations in countries experiencing geopolitical tensions as well as increased costs associated with meeting customer needs in such regions\" — item (v) carries no internal hedge, unlike (ii) and (iii) which say \"could,\" so the \"have\" in the lead-in controls. Under the section 6 realized-controls rule (an occurrence claim is REALIZED even inside forward-looking framing), REALIZED is correct; this is the same construction the raters both scored REALIZED for demand in item (i).",
+  "pattern": "have-and-could-continue-frame-realized",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-501409621e5ca4b5",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The charges here are \"primarily comprised of employee termination benefits\" plus \"salaries for employees supporting the program and consulting expenses\" — section 4 admits restructuring charges only when \"tied to asset value reduction,\" and no asset write-down is asserted. The litigation content is a header plus a policy definition (\"We classify litigation charges and gains related to significant legal matters as certain litigation charges\") and a cross-reference to Note 16, which section 4's \"what does not count\" clause excludes as a category name with no substantive discussion. \"Puerto Rico excise taxes\" is ordinary compliance with a standing tax regime, excluded by the addendum's reimbursement-hierarchy boundary.",
+  "pattern": "severance-only-restructuring-not-impairment",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-7995f75857a3c8b9",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The category holds — \"a valuation allowance against our deferred tax assets\" is a carrying-value reduction, consistent with the addendum's rule 6 instruction to apply carrying-value reductions as write-downs. But the framing is future: \"we expect to take a GAAP charge of approximately $100 million in the second quarter of 2016.\" Section 6 defines REALIZED as something that \"has already occurred or is currently occurring\"; an expected future charge has not occurred, so HYPOTHETICAL.",
+  "pattern": "expected-future-charge-is-hypothetical",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-b01df19d7e3fd960",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Gains from antitrust legal settlements —Net cash proceeds representing the Company's share of antitrust lawsuit settlements\" asserts that such settlements exist and produce proceeds for this company; under section 6's realized-controls rule an existence claim is REALIZED, and settled litigation is an explicit section 4 trigger. The impairment reference fails: \"Such charges may include employee severance ... asset impairments, accelerated depreciation\" is an explicitly hedged definitional noun list of what restructuring charges may contain, which the mining-depth rule excludes. So neither rater's set is right — one flag, not zero and not two.",
+  "pattern": "named-litigation-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-e6c82266dc0dba90",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The cash-flow reconciliation carries a quantified line \"Impairments 44 143 1,573\" among items not requiring cash. That is a specific dollar disclosure that the company recorded impairments in the reported periods — past tense fact, so REALIZED. Section 4 excludes only \"a category name appearing in a section header or table of contents with no substantive discussion\"; a quantified financial-statement line item is substantive disclosure, not a header.",
+  "pattern": "quantified-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-bbe514f22fde6389",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Demand and write-down are clear: \"deteriorating macroeconomic conditions ... impacted consumer demand\" and \"$120 million in charges for excess DRAM and other components.\" MARGIN_COST_PRESSURE does not add anything: the only margin sentence is the write-down itself (\"gross margin to be impacted by approximately $120 million in charges\"), and section 4 defines this category as rising input/labor/operating costs compressing margins, with the double-labeling instruction written for supply-shortage and tariff causes. Flagging it here would double-count the same inventory charge already captured by IMPAIRMENT_WRITEDOWN.",
+  "pattern": "writedown-margin-impact-not-separate-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d747af0ef8e212a3",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The charges are acquisition and severance costs — \"$23 million of costs ... financial advisory fees, legal fees and travel and lodging\" and \"$38 million of severance expense as a result of our acquisition of WildHorse.\" Section 4 admits restructuring charges only when \"tied to asset value reduction,\" and nothing here reduces an asset's carrying value. The remaining content is interest expense detail and a $139 million investment gain.",
+  "pattern": "severance-only-restructuring-not-impairment",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-778fbd4e20e7cb7d",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The demand-adjacent language is \"Any factor adversely affecting sales of these subscriptions, including the product release cycle, market acceptance, product competition ... economic and market conditions\" — a noun list of generic sensitivities inside a revenue-concentration risk, which addendum rule 5 and the section 4 mining-depth rule say fails to stand alone as an assertion about this company. No softening demand, declining orders, or unfavorable volume trend is asserted. The rest of the passage is debt-service risk, which is not one of the six categories.",
+  "pattern": "concentration-risk-noun-list-fails-mining-depth",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4679986c2d35061f",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"The FERC-approved indexing method to be used for the five-year period beginning in July 2016 is the annual change in the producer price index for finished goods ... plus 1.23%\" is an affirmative agency rate decision already made, and the filer states its consequence: \"we anticipate decreasing our tariff rates by approximately 2%.\" The addendum's reimbursement hierarchy makes adverse government rate/payment decisions count as regulatory action, and its boundary excludes only a filer \"merely owing under standing law\" — here an agency set the rate ceiling. Under section 6 the approved methodology exists, so REALIZED; only the tariff outcome is anticipated.",
+  "pattern": "agency-rate-setting-decision-is-regulatory-action",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-3281c060608b17e3",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The cash-flow table reports \"Asset impairments and other non-cash charges 1,406 8,124 3,678 1,163 14,371\" — a quantified, past-period disclosure that impairments were recorded, so REALIZED. Section 4 excludes only bare header or table-of-contents mentions \"with no substantive discussion\"; a dollar-quantified statement line is substantive.",
+  "pattern": "quantified-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-c365ce339b2d0636",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The passage states an explicit realized margin-ratio decline and names cost items as its cause: \"GAAP operating margin was 16.7% in the first quarter of 2020 compared to 24.8% in the first quarter of 2019 ... included the operating margin impacts from integration costs and acquired intangible asset amortization.\" That is section 4's \"rising ... operating costs compressing margins,\" stated in the past tense for a completed quarter. No other category is asserted here; the outlook withdrawal is a guidance matter, not a red flag.",
+  "pattern": "explicit-margin-ratio-compression-from-named-costs",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-b69e1ac3d92b9287",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "low",
+  "brief": "IMPAIRMENT_WRITEDOWN is certain (\"Restructuring and impairment charges (219)\"). DEMAND_WEAKNESS belongs: \"a decrease of 2% from Lucasfilm's special effects business due to fewer projects\" and \"lower home entertainment results\" are realized declining-bookings and volume statements. I drop MARGIN_COST_PRESSURE because every cost increase is attributed to scope, not cost pressure — expenses rose \"due to the consolidation of TFCF's operations,\" i.e. a larger consolidated business, and the passage even notes \"decreases in film impairments and write-offs.\" This is the closest call in the batch; a rater who reads \"segment operating income decreased 11% ... due to the consolidation\" as cost-driven compression would keep the stored flag.",
+  "pattern": "scope-driven-cost-increase-not-margin-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-c96a9eb9f18a5219",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The non-GAAP reconciliation carries a quantified add-back line \"Litigation settlements, net — — (4,226) 66,916,\" which asserts that litigation settlements were recorded in the reported periods — a realized legal event under section 4's \"settled litigation for $X million\" trigger. The rest is a bare cash-flow and reconciliation table; the operating-margin swing is presented as unlabeled arithmetic with no characterization of cost pressure, so no MARGIN_COST_PRESSURE.",
+  "pattern": "named-litigation-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-5e24420cdc959210",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "high",
+  "brief": "The only legal content is one bullet in a list of factors that can influence quarterly results: \"adverse litigation judgments, settlements, or other litigation-related costs.\" That is a noun phrase inside a boilerplate enumeration, which addendum rule 5 (\"safe-harbor noun lists and enumerations should ordinarily fail mining depth ... no flags\") and the section 4 mining-depth rule both exclude. Nothing in the passage affirmatively states that any litigation exists, so addendum rule 4 also bars inferring one.",
+  "pattern": "enumerated-factor-list-fails-mining-depth",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-31a4acb370e5d5fa",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"We expect that the direct and indirect economic effects of the COVID-19 pandemic will likely continue to affect demand for our products in ways that may be difficult to predict\" is a standalone forward-looking demand-risk sentence about this company, so it clears mining depth and takes HYPOTHETICAL modality per section 6. MARGIN_COST_PRESSURE does not hold: the only margin sentence is \"acquisitions are often dilutive to margins initially,\" which is purchase-accounting and mix dilution, not the rising input/labor/operating costs section 4 requires. Supplier language (\"working closely with our suppliers\") asserts no shortage, so addendum rule 1 bars a supply flag.",
+  "pattern": "acquisition-margin-dilution-not-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-64964ba526f30c04",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "high",
+  "brief": "\"Increasingly stringent environmental regulations have resulted and will likely continue to result in higher capital expenditures and operating expenses for us\" is exactly addendum rule 7 — an existing regulation plus an already-incurred cost — so LEGAL_REGULATORY_ACTION and MARGIN_COST_PRESSURE are both REALIZED, not hypothetical. The legal flag is independently realized: \"beginning in 2017, certain states, municipalities and private associations ... filed lawsuits against oil, gas and coal producers, including us.\" DEMAND_WEAKNESS is also owed: \"demand for crude oil and other hydrocarbons may be reduced, which may have an adverse effect on our sales volumes\" is a standalone hedged assertion, HYPOTHETICAL.",
+  "pattern": "regulation-driven-realized-cost-double-label",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-1520659824342413",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The impairment reference is a bare cross-reference to a note title — \"Employee Termination, Asset Impairment, and Other Charges, of the Notes to Consolidated Financial Statements\" — which section 4 excludes as a category name in a header with no substantive discussion. No cost pressure is asserted either: \"total interest and other income, net in 2023 was relatively flat,\" and interest expense is a financing item, not the input/labor/operating cost the category requires. The Inflation Reduction Act and 2017 Act passages describe taxes the filer will owe under standing law, which the addendum's boundary expressly excludes from regulatory action.",
+  "pattern": "note-title-cross-reference-not-impairment",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-57a2c3f396b8daae",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "confidence": "high",
+  "brief": "The impairment clause stands alone and is properly hypothetical: \"we could experience impairment losses and other charges if either the actual results of our operating stores are not consistent with the assumptions ... or we are required to reduce the carrying amount of our investment.\" The regulatory content is only item (viii) of a safe-harbor enumeration — \"changes in existing or new laws or regulations that affect consumer credit, employment/labor, trade, product safety ... tax, environmental issues or privacy\" — a pure noun list that addendum rule 5 and the mining-depth rule exclude.",
+  "pattern": "enumerated-factor-list-fails-mining-depth",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-3b2368436e1dabeb",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Other specified items are primarily associated with an additional year of the Branded Prescription Drug Fee as required by new IRS regulations\" is an existing regulatory requirement that has already produced a recognized charge in the reported quarter. Addendum rule 7 makes that pair a realized legal/regulatory action and a realized margin/cost pressure. The addendum's tax boundary does not save it: the text names \"new IRS regulations\" imposing an extra year of fee, not a filer merely owing under standing law.",
+  "pattern": "regulation-driven-realized-cost-double-label",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9e41e323b3bd3d74",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Regulatory agencies continue to establish increasingly high hurdles for the efficacy and safety of new products\" asserts an existing, ongoing regulatory tightening that burdens this filer's development process — section 4 covers \"new regulatory requirements creating compliance burden/cost,\" and addendum rules 3 and 8 make the agency action itself realized even where its consequence (\"can result in delays in product launches\") is hypothetical. Section 4 also states that generic industry risk language which meaningfully asserts the risk still gets the flag. The Elanco IPO and Form S-4 filing are routine securities steps, not adverse actions.",
+  "pattern": "ongoing-regulatory-stringency-is-realized",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-85ceccd2f54e7cb5",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "This is a bare segment table with no characterizing prose: gross margin is shown as \"63.4 % 64.0 %\" and costs actually fall — \"Cost of Sales 873 964 (9)%\" and \"Operating Expenses 570 685 (17)%.\" Section 4 requires the passage to \"contain language matching that category,\" and no rising-cost or margin-compression assertion appears; the only footnote text describes a segment-reporting change and what overhead line (g) includes.",
+  "pattern": "bare-table-numbers-no-flag",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4225b0ead4a72be3",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "SUPPLY_INPUT_CONSTRAINT is owed and realized: section 4 expressly covers \"labor availability,\" and the filer says \"we have faced and may continue to face additional challenges in recruiting or retaining sufficient talent\" and \"challenges relating to Associates' willingness or ability to staff our stores.\" The same sentence names \"wage pressures\" as an existing cause of those realized challenges, so under section 6's realized-controls rule the cost-pressure flag is REALIZED rather than hypothetical. Neither rater's set is complete: stored missed the labor-availability flag, the rater downgraded a modality that an existence claim controls.",
+  "pattern": "labor-availability-is-supply-constraint",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-639095b4598bbd6c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Volume declines are realized (\"lower transportation volumes of 69 MBPD,\" \"lower handling and throughput fee revenues\"), so DEMAND_WEAKNESS stands. The supply flag is also owed: \"the effects of Hurricane Laura, which caused shut-ins of Gulf of Mexico production as well as power outages at certain pump stations\" is constrained production and disruption at the filer's own facilities, which satisfies addendum rule 1 and goes beyond the market-wide-disruption exclusion in rule 2.",
+  "pattern": "hurricane-shutins-own-throughput-constraint",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-254e479a0e14017c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The regulatory and cost language sits entirely inside the safe-harbor factor enumeration — \"regulation or taxation of health benefits and managed care operations, including ... the Patient Protection and Affordable Care Act ...; trends in health care costs and utilization rates; our ability to secure sufficient premium rates\" — which addendum rule 5 says must fail mining depth, with materially identical enumerations treated identically. The rest is a guidance table of unlabeled forward figures; section 4 needs language matching a category, not a ratio moving in a table.",
+  "pattern": "safe-harbor-enumeration-plus-bare-guidance-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-de8e4ed70e020195",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "Nothing in the passage reduces an asset's carrying value. The charges are transaction and financing costs — \"$59 million of expense ... associated with such bridge term loan facility\" and \"expenses of $0.16 per share related to the previously announced merger agreement\" — and the \"Loss from investments in unconsolidated affiliates\" of $2 million is an equity-method pickup, not a write-down. Section 4's impairment category needs an impairment, write-down, or restructuring charge tied to asset value reduction.",
+  "pattern": "transaction-expense-not-impairment",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-da9c2b450fde9ce1",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Demand is correctly flagged hypothetical (\"consumers and businesses may postpone spending\"). The supply flag is missing: \"the insolvency or financial instability of outsourcing partners or suppliers or their inability to obtain credit to finance development and/or manufacture products resulting in product delays\" is a specific supplier-disruption mechanism, not the mere \"complex supply chain\" that addendum rule 1 excludes, and it clears mining depth. Framed with \"could,\" so HYPOTHETICAL.",
+  "pattern": "supplier-insolvency-product-delay-is-supply-constraint",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9e6ceeacf4043d91",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "\"Asset Impairments\" appears only in the table caption \"DD&A and Asset Impairments\"; the discussion beneath it is entirely depreciation — \"DD&A increased in the second quarter of 2021 primarily due to higher volumes\" — with no impairment amount broken out. Section 4 expressly excludes a category name in a header with no substantive discussion. The restructuring line is severance (\"workforce reductions in conjunction with the Merger\"), which is not tied to asset value reduction.",
+  "pattern": "section-header-mention-only",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-72b036a1e637890c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The passage is a growth narrative (\"revenues increased 22% operationally,\" \"increased demand during the flu season\"), and its only declines are attributed to competition, not demand: \"the loss of exclusivity and associated generic competition for Celebrex ... Lyrica ... and Zyvox.\" Section 4 counts market-share loss only when \"attributed to demand.\" The single unexplained offset — \"declines in certain Middle East markets\" inside a sentence saying revenues \"were flat\" — is too thin to stand alone under the mining-depth rule, and no cost or margin language appears at all.",
+  "pattern": "loss-of-exclusivity-is-competition-not-demand-weakness",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-27e176de32394955",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "high",
+  "brief": "The impairment is clear and realized: \"the company recognized asset impairment, restructuring and other special charges of $406.5 million ... partially associated with asset impairments related to lower projected revenue for Posilac.\" There is no litigation, investigation, enforcement action, fine, or new regulatory requirement anywhere in the passage — the remaining content is R&D collaborations, severance, an early-retirement program, and tax-rate discussion — so LEGAL_REGULATORY_ACTION has nothing to attach to.",
+  "pattern": "no-legal-content-spurious-lra",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-52cc2d0dab5c20e7",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "Costs did rise (\"SG&A in the quarter increased 21.1 percent ... reflects higher costs associated with the company's wholesale joint venture in Germany\"), but section 4 defines this category as rising costs compressing margins, and the passage reports the opposite: \"Operating income grew 39.8 percent\" and \"Adjusted operating income grew strongly ... an increase of 88.6 percent.\" The cost cause is a named joint venture and a prior-year government-support comparison, not causeless cost inflation, so the disambiguation note's \"always MARGIN_COST_PRESSURE\" corollary does not apply.",
+  "pattern": "cost-increase-with-margin-expansion",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-fb8de7ad4aede6ec",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Opioid litigation charge 100 0.08\" is a quantified charge for litigation that exists, so the legal flag is right and REALIZED under section 6's realized-controls rule even though the table is a projection. The impairment flag is not supported: \"Net realized capital losses 108\" are losses on disposition, \"Amortization of intangible assets 2,020\" is amortization, and \"losses on assets held for sale\" appears only in a definitional list of items that may be excluded — none is an asserted asset impairment or write-down.",
+  "pattern": "realized-capital-losses-not-impairment",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a1d346c0cdecfb7b",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The margin decline is expressly price- and mix-driven, not cost-driven: \"The decrease in the product gross margin ... was primarily due to pricing, a supplier component remediation adjustment in the third quarter of fiscal 2016, and product mix, partially offset by continued productivity improvements,\" while operating expenses were \"down 8%\" and operating income \"up 6%.\" Section 4 requires rising input/labor/operating costs. The revenue declines are reported as bare figures with no demand, order, or volume attribution, so DEMAND_WEAKNESS has no matching language either.",
+  "pattern": "revenue-decline-without-demand-attribution",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-8ef2e0a0b47ecef2",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Demand is realized (\"earned premiums were negatively impacted by reduced exposures\"). The rater is right that a write-down is owed — \"an increased allowance for expected credit losses on premiums receivable in all segments\" is a receivable carrying-value reduction, which addendum rule 6 directs be labeled impairment/write-down, realized. But the stored cost flag also survives: the passage's own frame is \"the Company's underwriting margins were impacted as follows,\" and it then states \"Claims and claim adjustment expenses in Bond & Specialty Insurance were negatively impacted by higher loss estimates,\" i.e. rising costs compressing margin. All three, so neither rater's set is complete.",
+  "pattern": "receivable-allowance-is-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-085bd17662548c01",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The table names a charge category and an amount — \"RESTRUCTURING AND RELATED CHARGES Restructuring — 111 1 2 —\" followed by the truncated caption \"Office space reductions\" — but never asserts an asset impairment or write-down. Section 4 admits restructuring charges only when \"tied to asset value reduction,\" and this is the same treatment I gave the severance-only restructuring passages elsewhere in this batch. Everything else is cash-flow, balance-sheet, and stock-compensation data.",
+  "pattern": "restructuring-line-without-asset-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-6447928264fe436e",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"We have been and may in the future be subject to claims that the foreclosure was not permitted under the legal documents, was conducted in an improper manner, including in violation of law\" is an existence claim about past claims, so LEGAL_REGULATORY_ACTION is REALIZED under section 6's realized-controls rule. \"Sudden declines in the value or liquidity of the collateral have in the past resulted in ... significant losses to us\" is a realized carrying-value reduction, which addendum rule 6 says to treat as impairment/write-down. I drop the stored cost flag: \"funding costs\" appears only as one item in a list of things valuation difficulty has affected, with no rising input/labor/operating cost asserted.",
+  "pattern": "have-been-subject-to-claims-realized-lra",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-c2dd3adcde295e94",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "\"Rising global energy shortages and high commodity prices are highlighting the importance of secure, affordable, and reliable energy supply\" is market context invoked to argue the filer's strategy is well positioned — it asserts no cost or margin pressure on this company, and addendum rule 2 says a market-wide commodity disruption is not automatically the filer's own constraint. The filer's own statements run the other way: \"Operational performance remained strong,\" \"on target to achieve our full-year EBITDA and DCF per share guidance.\"",
+  "pattern": "market-wide-commodity-context-not-filer-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-51046704d4d63683",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Demand is realized: \"a 10.3% decrease in unit volume\" and \"lower intermodal shipments resulting from lower west coast imports and the loss of an intermodal customer.\" Cost pressure also holds: the passage names \"higher fuel prices\" and the table quantifies rising inputs (Fuel 964 vs 861, Compensation and benefits 1,313 vs 1,224, Total 4,026 vs 3,734) against \"Railroad operating earnings 1,862\" versus 2,043 on revenue that rose 1.9% — rising costs with falling operating earnings is section 4's margin compression.",
+  "pattern": "table-shows-cost-up-earnings-down",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-f6a580a23f5c73c2",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "high",
+  "brief": "Both stored flags come from the safe-harbor factor list — \"the demand for our products and services; ... impact of tariffs; ... international trade disputes, natural disasters, climate change, public health issues\" — which is the rubric's own paradigm case: \"a list of nouns, not a set of assertions — flag none of them.\" Addendum rule 5 says materially identical enumerations get identical treatment: no flags. The guidance body asserts continuing demand rather than weakness (\"assumes the run-rate of dollar demand it has observed over the last two quarters continues\").",
+  "pattern": "enumerated-factor-list-fails-mining-depth",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-77a86170e1ee1f63",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Many North America customers interested in buying EVs are unwilling to pay premiums for them over gas or hybrid vehicles\" plus \"challenging market dynamics\" is realized softening demand. \"Given effects of the UAW strike\" is a realized labor disruption to production, which section 4 covers under labor availability and production capacity. The stored cost flag does not fit: the passage attributes the loss to \"continued investment in next-generation EVs\" and to prices \"sharply compressing EV prices and profitability\" — price compression, not rising input/labor/operating costs.",
+  "pattern": "strike-is-labor-supply-constraint",
+  "needs_human": false
+ }
+]

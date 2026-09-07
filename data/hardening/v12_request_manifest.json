@@ -1,0 +1,103 @@
+{
+  "generated_for": "G1 repair \u2014 rubric v1.2 re-label (HANDOFF \u00a73, 2026-08-26)",
+  "requests_file": "data/batch_requests_v12.jsonl",
+  "requests_file_sha256": "312f585d64c2409e44ae2ef595d85f15ef4dd6434789764878ec389fac276027",
+  "variant": "v12_relabel",
+  "rubric_version": "v1.2",
+  "system_prompt_sha256": "30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+  "corpus_file": "data/labeling_corpus.parquet",
+  "corpus_sha256": "5067494c870f82e5326d067e7846f9ede848b8f2aa19b0e988d49ecee45bc294",
+  "rubric_file_sha256": "46dea3c886846849c82ae2b65d8e29ef95016dece706cd19a2e00b8d99c30b25",
+  "builder_sha256": "ca60479b38561b807e43d696f125a1bdab629a27b70089a29446aa3db7904322",
+  "submitter_sha256": "9423e3e51d1e38649d1ff4131e32d08d6ed482ad760c7c3a0d5b32a096dd2842",
+  "prep_script_sha256": "a60b0cf1cf93f6779a813a8244e0a2967da72205adffb89f449ea905c0ac8b45",
+  "n_requests": 6747,
+  "section_type_distribution": {
+    "MDA": 3962,
+    "RISK_FACTORS": 1606,
+    "EX99_PRESS_RELEASE": 1171,
+    "8K_BODY": 8
+  },
+  "single_axis": {
+    "e1_final_requests_file": "data/batch_requests_relabel.jsonl",
+    "n_chunks_compared": 4219,
+    "model": "claude-sonnet-5",
+    "max_tokens": 4000,
+    "thinking": {
+      "type": "disabled"
+    },
+    "effort": null,
+    "e1_system_prompt_sha256": "d717d76e9b591e5623b0a91fa6543cba6414292b9aeac85427f9af8b74146032",
+    "v12_system_prompt_sha256": "30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+    "e1_system_prompt_chars": 7748,
+    "v12_system_prompt_chars": 9521
+  },
+  "cost": {
+    "method": "measured-anchor + cross-validation + cache-fan-out scenarios",
+    "anchor": {
+      "e1_corrective_replay_intro_usd": 4.491,
+      "e1_corrective_reported_intro_usd": 4.491,
+      "e1_corrective_cache_writes_inferred": 4,
+      "claude_system_tokens_v11_measured": 3340.1,
+      "claude_system_tokens_v12_projected": 4089.8,
+      "proxy_system_tokens_v11": 1546,
+      "proxy_system_tokens_v12": 1893,
+      "system_prompt_growth_pct": 22.4,
+      "body_tokenizer_ratio_claude_over_proxy": 1.0822,
+      "e1_measured_output_tokens_6747": 505487,
+      "output_headroom_factor": 1.25
+    },
+    "cross_validation_on_independent_relabel_run": {
+      "predicted_intro_usd": 6.2848,
+      "reported_intro_usd": 10.06,
+      "underprediction_pct": 37.5,
+      "verdict": "FAILS \u2014 do not use the fitted cache assumption",
+      "root_cause": "cache-write fan-out, not tokenization: the re-label's bodies (799 proxy tokens/req) and outputs (57 tokens/req) are both SMALLER than the corrective run's (839 / 105). Solving the residual implies ~599 of 4219 requests (14.2%) paid a 1h-TTL cache WRITE at 2x input price, vs 4/2528 (0.16%) in the corrective run."
+    },
+    "scenarios_v12_6747_requests": {
+      "best_observed_cache (corrective run, 0.16% writes)": {
+        "cache_write_rate": 0.0016,
+        "intro_usd": 11.9455,
+        "standard_usd": 17.9183
+      },
+      "worst_observed_cache (re-label run, 14.2% writes)": {
+        "cache_write_rate": 0.1419,
+        "intro_usd": 19.3047,
+        "standard_usd": 28.9571
+      },
+      "cold_cache_bound (every request writes)": {
+        "cache_write_rate": 1.0,
+        "intro_usd": 64.2913,
+        "standard_usd": 96.4369
+      }
+    },
+    "e1_rate_scaled_to_6747": {
+      "from_relabel_run_intro_usd": 16.09,
+      "from_corrective_run_intro_usd": 11.99,
+      "from_relabel_run_standard_usd": 24.13
+    },
+    "proxy_model_cost_usd": {
+      "standard": {
+        "uncached_usd": 31.95,
+        "cached_best_case_usd": 14.71,
+        "cached_realistic_usd": 15.25
+      },
+      "intro": {
+        "uncached_usd": 21.3,
+        "cached_best_case_usd": 9.81,
+        "cached_realistic_usd": 10.17
+      }
+    },
+    "headline_usd": 28.9571,
+    "headline_basis": "worst cache-write rate E1 actually observed (14.2%), STANDARD pricing, +25% output headroom, full 6,747 requests",
+    "cap_usd": 25.0,
+    "notes": [
+      "PRICING TIER IS UNRESOLVED OFFLINE. build_batch_requests.PRICING records intro ($2/$10 per Mtok) as running 'through 2026-08-31' and standard at $3/$15, both flagged in-repo as unverified for Sonnet 5. Confirm current Batch pricing (a free, read-only check) before submitting \u2014 it moves the estimate by 50%.",
+      "The ratified $16.09 estimate (HANDOFF \u00a73, 2026-08-26) came from scaling the re-label run's $2.385/1k-request rate to 6,747. That UNDERSTATES: the re-label subset averaged 57.0 output tokens per request, while the full 6,747-chunk corpus measured 74.9 (+31%) \u2014 the expensive long chunks were in the OTHER batch. It also predates the v1.2 prompt, which is 22.3% longer.",
+      "Cache-write fan-out is the dominant uncertainty and is not under our control: it varied ~90x between E1's two runs at identical config. There is no engineering fix; the only lever is a shorter system prompt, which the sync rule constrains.",
+      "The estimate is conservative in one further respect: the system-prompt uplift is applied to the whole measured cached block (3,340 tokens/request). If part of that block is fixed API framing rather than prompt text, the true uplift is smaller."
+    ]
+  },
+  "headline_cost_usd": 28.96,
+  "within_cap": false
+}

@@ -1,0 +1,103 @@
+cik,company_name,form,section_type,reason_code,n,yr_min,yr_max
+21665,COLGATE PALMOLIVE CO,10-Q,MDA,no_toc_and_no_heading_match,34,2015,2026
+831001,CITIGROUP INC,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,34,2015,2026
+831001,CITIGROUP INC,10-Q,MDA,no_toc_and_no_heading_match,34,2015,2026
+827052,EDISON INTERNATIONAL,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,34,2015,2026
+827052,EDISON INTERNATIONAL,10-Q,MDA,no_toc_and_no_heading_match,34,2015,2026
+1390777,Bank of New York Mellon Corp,10-Q,MDA,item_absent_from_toc,34,2015,2026
+4904,AMERICAN ELECTRIC POWER CO INC,10-Q,MDA,item_absent_from_toc,34,2015,2026
+32604,EMERSON ELECTRIC CO,10-Q,MDA,no_toc_and_no_heading_match,34,2015,2026
+895421,MORGAN STANLEY,10-Q,MDA,item_absent_from_toc,29,2017,2026
+32604,EMERSON ELECTRIC CO,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,29,2015,2026
+36104,US BANCORP \DE\,10-Q,MDA,no_toc_and_no_heading_match,27,2015,2024
+310764,STRYKER CORP,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,17,2015,2021
+8670,AUTOMATIC DATA PROCESSING INC,10-Q,MDA,item_absent_from_toc,14,2015,2020
+34088,EXXON MOBIL CORP,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,14,2015,2019
+310158,"Merck & Co., Inc.",10-Q,RISK_FACTORS,no_toc_and_no_heading_match,13,2015,2019
+4281,Howmet Aerospace Inc.,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,13,2015,2019
+6769,APACHE CORP,10-Q,MDA,item_absent_from_toc,12,2021,2024
+831001,CITIGROUP INC,10-K,RISK_FACTORS,no_toc_and_no_heading_match,11,2016,2026
+831259,FREEPORT-MCMORAN INC,10-K,MDA,item_absent_from_toc,11,2016,2026
+32604,EMERSON ELECTRIC CO,10-K,MDA,no_toc_and_no_heading_match,11,2015,2025
+32604,EMERSON ELECTRIC CO,10-K,RISK_FACTORS,no_toc_and_no_heading_match,11,2015,2025
+87347,SLB LIMITED/NV,10-Q,RISK_FACTORS,anchor_span_below_min_chars,11,2016,2019
+827052,EDISON INTERNATIONAL,10-K,RISK_FACTORS,no_toc_and_no_heading_match,11,2016,2026
+831001,CITIGROUP INC,10-K,MDA,no_toc_and_no_heading_match,11,2016,2026
+1571949,"Intercontinental Exchange, Inc.",10-K,RISK_FACTORS,item_absent_from_toc,11,2016,2026
+100885,UNION PACIFIC CORP,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,10,2016,2019
+1099590,MERCADOLIBRE INC,10-Q,MDA,item_absent_from_toc,10,2016,2019
+24741,CORNING INC /NY,10-K,RISK_FACTORS,item_absent_from_toc,9,2016,2026
+895421,MORGAN STANLEY,10-K,MDA,item_absent_from_toc,9,2018,2026
+895421,MORGAN STANLEY,10-K,RISK_FACTORS,item_absent_from_toc,9,2018,2026
+1105705,"WARNER MEDIA, LLC",10-Q,MDA,item_absent_from_toc,9,2015,2018
+766704,WELLTOWER INC.,10-Q,MDA,item_absent_from_toc,9,2015,2018
+24741,CORNING INC /NY,10-K,MDA,item_absent_from_toc,9,2016,2026
+1108524,"Salesforce, Inc.",10-Q,MDA,item_absent_from_toc,8,2015,2019
+731766,UNITEDHEALTH GROUP INC,10-Q,MDA,item_absent_from_toc,8,2015,2017
+6769,APACHE CORP,10-K,MDA,item_absent_from_toc,7,2017,2024
+773840,HONEYWELL INTERNATIONAL INC,10-K,RISK_FACTORS,item_absent_from_toc,7,2016,2026
+773840,HONEYWELL INTERNATIONAL INC,10-K,MDA,item_absent_from_toc,7,2016,2026
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",8-K,EX99_PRESS_RELEASE,empty_after_extraction,7,2016,2019
+36104,US BANCORP \DE\,10-Q,MDA,item_absent_from_toc,7,2024,2026
+1136893,"Fidelity National Information Services, Inc.",10-K,MDA,item_absent_from_toc,5,2016,2020
+1413329,Philip Morris International Inc.,10-K,MDA,item_absent_from_toc,5,2016,2020
+1136893,"Fidelity National Information Services, Inc.",10-K,RISK_FACTORS,item_absent_from_toc,5,2016,2020
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",10-Q,MDA,item_absent_from_toc,5,2015,2016
+49071,HUMANA INC,10-K,MDA,item_absent_from_toc,5,2016,2020
+1413329,Philip Morris International Inc.,10-K,RISK_FACTORS,item_absent_from_toc,5,2016,2020
+49071,HUMANA INC,10-K,RISK_FACTORS,item_absent_from_toc,5,2016,2020
+78003,PFIZER INC,10-Q,MDA,item_absent_from_toc,5,2019,2020
+21344,COCA COLA CO,10-K,RISK_FACTORS,item_absent_from_toc,4,2017,2020
+21344,COCA COLA CO,10-K,MDA,item_absent_from_toc,4,2017,2020
+6769,APACHE CORP,10-K,RISK_FACTORS,item_absent_from_toc,4,2017,2020
+827052,EDISON INTERNATIONAL,10-K,MDA,no_toc_and_no_heading_match,4,2016,2019
+313616,DANAHER CORP /DE/,10-K,MDA,item_absent_from_toc,4,2016,2019
+313616,DANAHER CORP /DE/,10-K,RISK_FACTORS,item_absent_from_toc,4,2016,2019
+1489393,LyondellBasell Industries N.V.,10-K,MDA,item_absent_from_toc,3,2016,2018
+766704,WELLTOWER INC.,10-K,MDA,item_absent_from_toc,3,2016,2018
+766704,WELLTOWER INC.,10-K,RISK_FACTORS,item_absent_from_toc,3,2016,2018
+86312,"TRAVELERS COMPANIES, INC.",10-K,MDA,item_absent_from_toc,3,2016,2018
+18230,CATERPILLAR INC,10-K,RISK_FACTORS,item_absent_from_toc,3,2016,2018
+1034054,SBA COMMUNICATIONS CORP,10-Q,MDA,item_absent_from_toc,3,2015,2016
+1163165,CONOCOPHILLIPS,10-K,MDA,item_absent_from_toc,3,2017,2019
+51143,INTERNATIONAL BUSINESS MACHINES CORP,10-Q,MDA,item_absent_from_toc,3,2015,2016
+18230,CATERPILLAR INC,10-K,MDA,item_absent_from_toc,3,2016,2018
+753308,NEXTERA ENERGY INC,10-K,MDA,item_absent_from_toc,3,2016,2018
+1358071,CONCHO RESOURCES INC,10-K,RISK_FACTORS,item_absent_from_toc,2,2018,2019
+1358071,CONCHO RESOURCES INC,10-K,MDA,item_absent_from_toc,2,2018,2019
+1707925,LINDE PLC,8-K,EX99_PRESS_RELEASE,empty_after_extraction,2,2019,2024
+315189,DEERE & CO,10-K,MDA,item_absent_from_toc,2,2015,2016
+315189,DEERE & CO,10-K,RISK_FACTORS,item_absent_from_toc,2,2015,2016
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",10-Q,MDA,item_absent_from_toc,2,2015,2017
+63908,MCDONALDS CORP,10-K,RISK_FACTORS,no_toc_and_no_heading_match,2,2022,2023
+1555280,Zoetis Inc.,10-K,RISK_FACTORS,item_absent_from_toc,2,2016,2017
+6769,APACHE CORP,10-Q,MDA,no_toc_and_no_heading_match,2,2015,2015
+1555280,Zoetis Inc.,10-K,MDA,item_absent_from_toc,2,2016,2017
+97476,TEXAS INSTRUMENTS INC,10-K,MDA,no_toc_and_no_heading_match,2,2018,2019
+1618921,"Walgreens Boots Alliance, Inc.",10-K,RISK_FACTORS,item_absent_from_toc,1,2016,2016
+1483096,WILLIAMS PARTNERS L.P.,10-K,RISK_FACTORS,item_absent_from_toc,1,2016,2016
+1539838,"Diamondback Energy, Inc.",10-Q,MDA,item_absent_from_toc,1,2015,2015
+1283699,"T-Mobile US, Inc.",10-Q,MDA,item_absent_from_toc,1,2017,2017
+1652044,Alphabet Inc.,10-K,RISK_FACTORS,item_absent_from_toc,1,2018,2018
+1137789,Seagate Technology Holdings plc,10-K,MDA,item_absent_from_toc,1,2017,2017
+1682852,"Moderna, Inc.",10-Q,MDA,item_absent_from_toc,1,2019,2019
+732717,AT&T INC.,10-K,MDA,item_absent_from_toc,1,2019,2019
+1099219,METLIFE INC,8-K,EX99_PRESS_RELEASE,empty_after_extraction,1,2023,2023
+106535,WEYERHAEUSER CO,10-K,MDA,item_absent_from_toc,1,2020,2020
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",10-K,RISK_FACTORS,item_absent_from_toc,1,2016,2016
+14272,BRISTOL MYERS SQUIBB CO,10-K,MDA,item_absent_from_toc,1,2016,2016
+14272,BRISTOL MYERS SQUIBB CO,10-K,RISK_FACTORS,item_absent_from_toc,1,2016,2016
+37996,FORD MOTOR CO,8-K,EX99_PRESS_RELEASE,empty_after_extraction,1,2019,2019
+50863,INTEL CORP,10-K,RISK_FACTORS,no_toc_and_no_heading_match,1,2018,2018
+72741,EVERSOURCE ENERGY,10-Q,MDA,no_toc_and_no_heading_match,1,2015,2015
+97476,TEXAS INSTRUMENTS INC,10-Q,MDA,no_toc_and_no_heading_match,1,2019,2019
+107263,"WILLIAMS COMPANIES, INC.",10-K,RISK_FACTORS,item_absent_from_toc,1,2016,2016
+936402,Shire plc,10-Q,MDA,item_absent_from_toc,1,2018,2018
+318154,AMGEN INC,10-K,MDA,item_absent_from_toc,1,2017,2017
+318154,AMGEN INC,10-K,RISK_FACTORS,item_absent_from_toc,1,2017,2017
+732717,AT&T INC.,10-Q,RISK_FACTORS,no_toc_and_no_heading_match,1,2018,2018
+773840,HONEYWELL INTERNATIONAL INC,10-K,RISK_FACTORS,no_toc_and_no_heading_match,1,2022,2022
+885725,BOSTON SCIENTIFIC CORP,10-Q,MDA,item_absent_from_toc,1,2026,2026
+922224,PPL Corp,10-K,MDA,item_absent_from_toc,1,2016,2016
+927628,CAPITAL ONE FINANCIAL CORP,10-K,RISK_FACTORS,item_absent_from_toc,1,2016,2016
+1739940,Cigna Group,8-K,EX99_PRESS_RELEASE,empty_after_extraction,1,2022,2022

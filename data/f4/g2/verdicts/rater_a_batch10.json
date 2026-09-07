@@ -1,0 +1,396 @@
+[
+ {
+  "chunk_id": "E2CHK-3ee0bbef93ae4dcb",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the passage is a bare asset-quality ratio table and NPA rollforward with no characterizing language — the NPA rise from $684 to $1,177 is presented flatly, and magnitude alone is not sentiment; the flag rests on the stated 'Charge-offs and losses (124) (71)' and 'charge-offs and losses recorded upon sale of $53 million,' which are realized loan carrying-value reductions."
+ },
+ {
+  "chunk_id": "E2CHK-c930635e1e19d252",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "WITHDRAWN",
+  "red_flags": [],
+  "reason": "Sentiment POSITIVE on 'CORE TOBACCO SEGMENTS DELIVER STRONG OCI AND CASH FLOW,' 'excellent start to the year, growing our first-quarter adjusted diluted EPS by 18.5%'; guidance WITHDRAWN on the explicit 'we're withdrawing our full-year 2020 adjusted diluted EPS guidance'; no red-flag category is affirmatively asserted despite the pandemic reference."
+ },
+ {
+  "chunk_id": "E2CHK-0a42120714b1207d",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the passage is a factual regulatory-development narrative ('the FDIC issued a final rule,' 'The final rule was effective October 1, 2024') with no characterization of results or condition; the double flag follows the existing-regulation-plus-incurred-cost rule from 'The special assessment for Truist is $579 million, with $507 million recognized in the fourth quarter of 2023.'"
+ },
+ {
+  "chunk_id": "E2CHK-ed298eb2315250f3",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL is the closest call: 'primarily due to higher net losses and income taxes paid' is unfavorable but sits inside a mechanical cash-flow variance walk that also cites 'higher premiums collected and higher net investment income,' with no predominant lean."
+ },
+ {
+  "chunk_id": "E2CHK-df0f98a67031f9fb",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance NONE because '2018 EPS guidance of $13.50 to $14.00' is an initial issuance under 'Provides 2018 Financial Guidance' with no prior figure raised, reaffirmed, lowered or withdrawn; the 'Guaranty fund assessment expense' and 'workforce reduction programs' charges are a mechanical statutory assessment and a non-asset restructuring cost, so neither earns a flag."
+ },
+ {
+  "chunk_id": "E2CHK-66f7347c3bf8bd02",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is entirely tabular — income statement lines, 'Quarterly Average Daily Volume (ADV)' and 'Average Rate Per Contract (RPC)' — with no qualitative characterization of any figure."
+ },
+ {
+  "chunk_id": "E2CHK-1bbcab2078925a26",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No MARGIN_COST_PRESSURE despite 'increase in content amortization' and 'increase in compensation for existing employees,' because the passage reports 'Contribution margin 14 % 10 %' — margins expanded, so the rubric's compressing-margins element is absent."
+ },
+ {
+  "chunk_id": "E2CHK-231e11ce2174bd10",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "Guidance MAINTAINED on the explicit 'Company reiterates full year 2022 product revenue guidance of $8.4 to $8.6 billion'; the declines in SYMDEKO, ORKAMBI and KALYDECO are unexplained table lines and are not characterized as demand weakness."
+ },
+ {
+  "chunk_id": "E2CHK-174467ecd1d78cba",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because this is a GAAP-to-non-GAAP reconciliation with explanatory notes; EPS of '$1.71 $3.79' is presented flatly and the notes mix an unfavorable item with the favorable Samsung Bioepis sale, so no predominant lean — the flag comes from 'we recognized an impairment charge of approximately $119.6 million related to vixotrigine.'"
+ },
+ {
+  "chunk_id": "E2CHK-c98142910010a2cd",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance NONE because 'Reconciliation for Guidance: ... anticipated full year fiscal 2016 GAAP operating margin (2)% (1)%' is a reconciliation of a margin figure with no statement that any target was raised, reaffirmed, lowered or withdrawn."
+ },
+ {
+  "chunk_id": "E2CHK-01c92684480b5513",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN is HYPOTHETICAL on 'Factors which could result in future impairment charges include ... changes in worldwide economic conditions' and 'If future non-cash asset impairment charges are taken,' since the passage affirmatively states 'determined that no impairment existed'; the TCJA tax expense is treated as owing under a tax regime rather than a regulatory action."
+ },
+ {
+  "chunk_id": "E2CHK-a731d11ca2a8e719",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment POSITIVE on 'demonstrating a strong recovery from challenging market conditions' and 'continued investor confidence ... led to positive Net Inflows'; 'challenging market conditions for hedge funds' is a market backdrop the passage says was overcome, not an asserted demand weakness for this filer."
+ },
+ {
+  "chunk_id": "E2CHK-1ab6da7f9ff3ff0e",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED on 'Increasing full year 2018 production guidance range to 118.5 – 119.5 Mboe/d, up 2% from prior guidance midpoint,' a specific quantified target explicitly increased versus a prior figure."
+ },
+ {
+  "chunk_id": "E2CHK-eaafdb3612d9cb6f",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is purely a book-value and tangible-equity reconciliation table ('Less: Goodwill, net of income tax') with no characterization of results."
+ },
+ {
+  "chunk_id": "E2CHK-abebf082e8e3654c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL on purely procedural disclosure — 'we had no off-balance sheet arrangements' and 'there have been no significant changes ... to the items that we disclosed as our critical accounting estimates.'"
+ },
+ {
+  "chunk_id": "E2CHK-fcf19eb28f8f76b5",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance RAISED because the passage states 'a large upward revision to the Cloud Infrastructure portion of Oracle's overall financial plan' and attaches specific figures — 'we expect Oracle Cloud Infrastructure revenue to grow 77% to $18 billion this fiscal year—and then increase to $32 billion, $73 billion, $114 billion, and $144 billion.'"
+ },
+ {
+  "chunk_id": "E2CHK-a758cd53755b26ef",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL is the tie-break call: the passage runs both ways within one segment walk — 'Earnings for Canada increased by $119 million' and 'Total average production increased 28 MBOED' against 'Normal field decline,' 'Higher DD&A expenses' and an EMEA line of '$ 153 201'; the flag rests on 'Higher unplanned downtime, primarily due to Winter Storm Uri which impacted production by approximately 50 MBOED,' a realized production constraint."
+ },
+ {
+  "chunk_id": "E2CHK-cffe17671c703cd6",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "No MARGIN_COST_PRESSURE despite 'reduced lower margins in Australia and Malaysia' because the stated causes are 'pricing pressure,' 'pricing concessions' and 'lower activity' — falling price and volume, not rising input or labor costs."
+ },
+ {
+  "chunk_id": "E2CHK-3f4eec59d8b29abc",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL because the passage is a contractual-obligations and off-balance-sheet commitment maturity table ('Payments due by Period') with no characterizing prose."
+ },
+ {
+  "chunk_id": "E2CHK-3e4b1e775f6dfa7c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL is the least certain call: the table shows 'Net income (loss) $ (70) $ 1,360 NM' but presents it flatly, while the only characterizing prose is favorable — 'net premiums written increased $329 million and $986 million ... reflecting growth across most segments' — so the passage is balanced; 'Losses and loss expenses 6,247 4,269 46.3 %' is an unexplained table line and does not earn a cost-pressure flag."
+ },
+ {
+  "chunk_id": "E2CHK-bfc8d598b0f65dcf",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because every improvement ('Operating margin 20 % 17 %') appears only as an unadorned reconciliation table alongside tax-technical prose, with no characterization; the flag is REALIZED on 'due to the settlement of a German tax audit for tax years 2014-2016,' a completed audit that had consequences."
+ },
+ {
+  "chunk_id": "E2CHK-3148c5ccd6f61f0c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the segment table mixes 'Total revenues 105 142 ... (26.1) %' against 'Operating loss (474) (5,621) 5,147 91.6 %' with no characterizing language; the flag rests on the affirmative 'Opioid litigation charges — 5,220 — 5,704' line, while the bare 'Restructuring charges' line is not tied to any asset value reduction."
+ },
+ {
+  "chunk_id": "E2CHK-5f2b734c483093f8",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL is the closest call: the promotional 'Palo Alto Networks is the global cybersecurity leader' paragraph is outweighed by the definitional and cautionary bulk — 'there are a number of limitations associated with the use of non-GAAP financial measures' — and none of it characterizes current results."
+ },
+ {
+  "chunk_id": "E2CHK-dcd193aceddd69bd",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "REALIZED on the existence claim 'regulatory authorities in certain jurisdictions have investigated our business practices and instituted proceedings against us' and 'certain of our direct and indirect customers and licensees have pursued ... litigation'; the 'multi-year capacity purchase commitments' are procurement arrangements, not a shortage or constrained production, so no supply flag."
+ },
+ {
+  "chunk_id": "E2CHK-eb22b11c66fc5e22",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL on a mechanical market-risk sensitivity disclosure — 'assuming a 100 basis point increase in interest rates, the effect of hypothetical changes in market rates' — and interest-rate sensitivity matches none of the six flag categories."
+ },
+ {
+  "chunk_id": "E2CHK-994a0a58a10f6601",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "MARGIN_COST_PRESSURE is the least certain: 'higher manufacturing costs' sits in an enumeration, but it is causeless cost language tied specifically to 'our development, manufacture, and uptake of potential treatments,' which the rubric says is always MARGIN_COST_PRESSURE once it clears mining depth; DEMAND_WEAKNESS is REALIZED on 'We have experienced negative impacts to our underlying business, including demand for our products,' and LEGAL_REGULATORY_ACTION is REALIZED because 'our EUAs ... have allowed restricted distribution' is an existing agency decision already imposing restrictions."
+ },
+ {
+  "chunk_id": "E2CHK-c1af67064fd14a76",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the consolidated statements report '% Change 1.0 %' and '3.6 %' with no characterizing prose; the flag is the least certain call, resting on the footnote 'Cost of sales includes charges for resolution expenses related to state settlement and other tobacco agreements, and FDA user fees,' which affirms existing settlement obligations rather than merely naming a category."
+ },
+ {
+  "chunk_id": "E2CHK-24b6855a3e22af3c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL is the closest call: 'Total revenue increased 12% YoY to $28.1B' and 'Free cash flow ... 46%' sit against 'Our operating income decreased 40% YoY' and 'Operating margin ... -501 bp,' all in a flat plus/minus bullet register with no lean; both flags come from 'higher average cost per vehicle due to lower fixed cost absorption for certain models, an increase in tariffs, and sales mix.'"
+ },
+ {
+  "chunk_id": "E2CHK-fccdba6e4a09e1b0",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL on a pure reconciliation fragment — 'Adjusted EBITDA', 'Non-GAAP LTM EBITDA reconciliation', 'Net debt $ 8,373,448' — with no characterization of any figure."
+ },
+ {
+  "chunk_id": "E2CHK-3ba2e0555aa64516",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEGATIVE because the passage's subject is an adverse realized event — 'an unauthorized third party gained access to a number of our systems' and 'resulted in some disruptions to our business operations' — though partly offset by 'did not have a material impact on the financial results'; the flag rests on that same disruption 'including manufacturing, sales, fulfillment,' a realized production constraint, while the remediation costs are called 'nominal' and no enforcement action against the filer is asserted."
+ },
+ {
+  "chunk_id": "E2CHK-f600161c99dac606",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "LOWERED",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "DEMAND_WEAKNESS is the least certain field: 'Due to continued weakness in the energy sector in 2016' and 'the continued weak commodity price environment' are asserted as currently occurring and as reducing results, which fits unfavorable market/volume conditions more closely than any other category; guidance is LOWERED on 'now expects EBITDA to be about 3 percent below its plan' and a growth capital forecast that is 'a reduction of $1.3 billion from its preliminary 2016 guidance of approximately $4.2 billion.'"
+ },
+ {
+  "chunk_id": "E2CHK-7990de57e2f57c69",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "REALIZED on the existence claim 'We are subject to comprehensive government legislation and regulations and certain settlements, orders and agreements with government authorities'; 'increasing and complex economic sanctions regimes' is a passing appositive inside a regulation enumeration and fails mining depth, so no trade-policy flag."
+ },
+ {
+  "chunk_id": "E2CHK-0ddee806369bb5ea",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "Guidance is the least certain field: 'Full-year guidance for depreciation, depletion and amortization has been decreased to $6.1 billion' is a lowered line item, but the passage's overall framing is reaffirmation — 'The company's other full-year guidance is unchanged' — and the DD&A change is explicitly mechanical, 'reflecting the held-for-sale impact of the U.K. divestiture agreement.'"
+ },
+ {
+  "chunk_id": "E2CHK-0cfaf880f0c45565",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEUTRAL because the passage is a line-item MD&A walk running both directions ('Cost of goods sold increased' versus 'Cost of collaboration and contract manufacturing decreased') with no characterization; the flag is REALIZED on 'Cost of goods sold increased ... primarily due to higher start-up costs for our Rensselaer, New York fill/finish facility,' and the Pillar Two discussion is tax-regime compliance that 'did not have a material impact.'"
+ },
+ {
+  "chunk_id": "E2CHK-2e00f9f208eb07d1",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL on a bare fund-by-fund performance table (commitments, contributions, IRR and multiple columns) with no characterizing language, even where entries read '(6.9) %'."
+ },
+ {
+  "chunk_id": "E2CHK-b35504e20027252b",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL is the closest call: the walk is flat and two-directional — 'total revenue of $726 million increased 4.0 percent' and 'The increase in the gross profit margin' against 'External revenue decreased 9.0 percent' and 'used equipment sales (down 41.5 percent)' — with no evaluative characterization either way."
+ },
+ {
+  "chunk_id": "E2CHK-222e63615cde8b9e",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEGATIVE on the accumulation of 'decreased 412,900 members, or 79.0%,' 'Specialty membership decreased 461,500 members' and 'benefit ratio increased 320 basis points ... primarily due to higher Medicare Advantage medical cost trends,' which also carries the realized margin/cost flag; LEGAL_REGULATORY_ACTION is REALIZED on the existing government payment-policy actions — 'the net impact of the final rate notice' and 'the end of the suspension of state eligibility redetermination efforts' — while no demand flag is added because every membership decline is attributed to the filer's own 'planned exit' or to policy."
+ },
+ {
+  "chunk_id": "E2CHK-b28810fa52b98867",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment NEGATIVE is the least certain field — the register is a mechanical certain-items footnote, but nearly every enumerated item is unfavorable ('a decrease in earnings of $1,150 million relates to goodwill impairments,' '$106 million of project write-offs,' '$47 million of losses related to other impairments'), which is also what makes the impairment flag REALIZED."
+ },
+ {
+  "chunk_id": "E2CHK-3536f1859d0b9ace",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "LOWERED",
+  "red_flags": [],
+  "reason": "Guidance is the least certain field: the same bullet both lowers and reaffirms — '2020 EPS guidance lowered to be in the range of $6.20 to $6.40 on a reported basis and reaffirmed to be in the range of $7.20 to $7.40 on a non-GAAP basis' — and the active revision the passage announces ('Updates Guidance') is the lowering, so LOWERED; sentiment is NEUTRAL because 'Revenue ... increased 5 percent driven by volume growth of 9 percent' is balanced by 'EPS decreased to $1.33 on a reported basis' and 'operating expenses increased 9 percent.'"
+ },
+ {
+  "chunk_id": "E2CHK-96587e26aae50670",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment NEUTRAL is the closest call: 'The Company believes it has a strong capital position' is one favorable clause inside predominantly procedural outlook and safe-harbor prose ('Many of the statements in this \"Outlook\" section are forward-looking statements'), and the cautionary items — 'regulatory constraints, legal requirements' — are a bare noun list that fails mining depth."
+ }
+]

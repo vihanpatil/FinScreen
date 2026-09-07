@@ -1,0 +1,411 @@
+[
+ {
+  "chunk_id": "E2CHK-2330859487453986",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "LOWERED",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Guidance is LOWERED because capital expenditures 'has been reduced by $50 million, as compared to the guidance provided in our third quarter 2019 earnings release' is a specific quantified target decreased versus a prior figure; the impairment is REALIZED because it is a charge 'During the fourth quarter of 2019' prepared 'based upon our internal reporting and accruals as of and for the three months ended December 31, 2019', a closed period, with only 'additional impairment charges in future periods' being prospective."
+ },
+ {
+  "chunk_id": "E2CHK-d2925dad3092fd9d",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEUTRAL because the passage is a pure cash-flow statement with no qualitative characterization; the flag rests on the recorded line items 'Impairment and other 147' and 'Exploration lease and other impairment 10 10', which are substantive recorded charges rather than a header mention."
+ },
+ {
+  "chunk_id": "E2CHK-9b0e481826b4b02a",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance is NONE because the passage only says the company 'will discuss its Q2 2026 outlook during its Q1 2026 Earnings Call' without any quantified figure, and the closing paragraph is generic forward-looking-statement definitional boilerplate that supplies no category assertions."
+ },
+ {
+  "chunk_id": "E2CHK-9c96d5f4645c6f17",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEUTRAL despite the '(0.04)' loss and '(58)' changes because the passage is a bare statement of operations with notes and no characterization, and magnitude alone is not sentiment; the flag comes from 'Includes charges/(credits) for employee terminations, asset impairments and other exit costs'."
+ },
+ {
+  "chunk_id": "E2CHK-5ae45af46e4a0558",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags are empty because the segment declines ('Security down 3 percent', 'Infrastructure Support down 8 percent') are bare revenue percentages with no attribution to demand, orders, or volume; the filer's own words 'growing revenue, expanding operating margins, improving profit performance' set the positive tone."
+ },
+ {
+  "chunk_id": "E2CHK-a45c7eb727c18fd4",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEGATIVE on balance because three product/segment revenue declines and rising charges dominate ('decreased 8 percent', 'decreased demand due to competitive pressure', 'lower worldwide volume due to continued economic pressure') despite the favorable 'gross margin as a percent of revenue increased 1.8 percentage points'; impairment is REALIZED from 'asset impairment, restructuring, and other special charges of $213.9 million ... asset impairments and exit fees due to site closures'."
+ },
+ {
+  "chunk_id": "E2CHK-f8154d76409080a3",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance is NONE because the 'Adjusted Earnings Per Share Guidance' table presents figures with no reaffirming, raising, lowering, or withdrawing language relative to a prior figure; sentiment is NEUTRAL because the table mixes 'Pharmacy sales 4.6%' against 'Front store sales (5.8)%' with no characterization by the filer."
+ },
+ {
+  "chunk_id": "E2CHK-375cc9f65b5f4ca2",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Most of this safe-harbor enumeration is a noun list that fails mining depth, but 'Cigna's litigation to terminate the pending Acquisition and claim damages against us, together with our own litigation against Cigna' and 'the cyber attack we reported in February 2015' are affirmative existence claims, so LEGAL_REGULATORY_ACTION is REALIZED with only the projected costs hypothetical; cost items such as 'trends in health care costs' remain bare nouns and get no flag."
+ },
+ {
+  "chunk_id": "E2CHK-34ae3ecc75458c4c",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "WITHDRAWN",
+  "red_flags": [],
+  "reason": "Sentiment is POSITIVE because the filer characterizes results as 'delivered solid financial results' and every reported metric rises ('Adjusted earnings per share increased 16%', 'Adjusted operating margin increased 10 basis points'), while the withdrawal is captured by guidance; 'the company is withdrawing its previously communicated financial outlook for the year' is explicit WITHDRAWN, and 'significant impact from the COVID-19 pandemic' names no demand, supply, cost, or legal channel."
+ },
+ {
+  "chunk_id": "E2CHK-b9cbe918d3cead0a",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance is NONE because the passage 'PROVIDES FISCAL 2020 GUIDANCE' with fresh figures ('between $12.50 and $12.65') but never states any figure was raised, lowered, reaffirmed, or withdrawn versus a prior figure, and the rubric's five labels only describe revisions."
+ },
+ {
+  "chunk_id": "E2CHK-df17fa866f5ea2bc",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "The flag is my least certain call: 'premium rate increases to cover medical cost trends' is causeless cost-inflation language stated in realized terms, which the v1.2 disambiguation note says is always MARGIN_COST_PRESSURE, even though the passage's own framing is favorable ('Operating revenue increased', 'operating gain increased')."
+ },
+ {
+  "chunk_id": "E2CHK-48a62fd38118e54c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "The roman-numeral safe-harbor enumeration ordinarily fails mining depth, so 'export controls, tariffs, other trade restrictions' and 'inflation rates' get no flags, but 'the settlements with the DOJ (which is subject to court approval) and BIS, Cadence's ongoing compliance, cooperation, audit and other obligations under the settlement agreements' affirmatively states the legal events exist, making it REALIZED."
+ },
+ {
+  "chunk_id": "E2CHK-42398c6fe1c40f77",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "MAINTAINED rests on 'Consistent with its previous guidance for 2019, the Company continues to expect' followed by specific figures (21 percent tax rate, ~1 percent EPS decline); 'now expects to meet or exceed its full-year organic revenue growth target of 4 percent' does not increase any target number, so it is not RAISED, and the mixed table plus an expected EPS decline leaves sentiment NEUTRAL."
+ },
+ {
+  "chunk_id": "E2CHK-de44426d67da502b",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags are empty because the risks asserted are operational ('human error, misconduct, malfeasance'), catastrophic-weather, and accounting-estimate risks, none of which map to the six categories, and the sentiment register is a purely hypothetical risk enumeration with no characterization of actual results."
+ },
+ {
+  "chunk_id": "E2CHK-397f693db996a0a5",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEUTRAL because 'Revenue increased in 2021' and 'Total revenue 22,780 ... 20.3%' sit against 'Adjusted EBITDA $4,569 ... (18.0)%' and 'Revenue decreased in 2020', a genuinely balanced mix; DEMAND_WEAKNESS is REALIZED from 'continued audience ratings declines at our networks' and 'reduced spending from advertisers'."
+ },
+ {
+  "chunk_id": "E2CHK-e7fae80d08d9ad65",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "REALIZED modality follows from the affirmative existence statements 'WSOU Investments LLC ... filed a lawsuit against us in the Western District of Texas' and 'The court has set a trial date for August 8, 2022', with only 'Any adverse litigation ruling could result in a significant damages award' being the projected consequence."
+ },
+ {
+  "chunk_id": "E2CHK-f1710be27660c442",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "The flag is my least certain call: 'we saw customers adjust their instrument buying patterns to reduce their inventory levels' and 'has reduced our revenue per procedure' are realized unfavorable volume/order statements even though the passage attributes them to the company's own Extended Use Program rather than to softening demand."
+ },
+ {
+  "chunk_id": "E2CHK-82b2492a67f3a838",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "MARGIN_COST_PRESSURE is HYPOTHETICAL because the margin claim is framed as 'funding costs may rise faster than the yield the Company earns on assets, causing net interest margin to contract', a projected consequence, even though 'The FRB raised interest rates significantly ... during 2022' is realized; LEGAL_REGULATORY_ACTION rests on the standalone bullet 'Enhanced regulatory and other standards for the oversight of vendors and other service providers can result in higher costs', whose existence claim is realized while the cost is projected."
+ },
+ {
+  "chunk_id": "E2CHK-424ab90579241b5c",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is POSITIVE because favorable statements predominate ('Adjusted EBITDA grew $230 million YoY', 'decreased due to cost control and improved fixed cost leverage') against a single negative segment; DEMAND_WEAKNESS is REALIZED from 'Freight Revenue declined 30% YoY ... driven by lower revenue per load and volume, both a consequence of the challenging freight market cycle'."
+ },
+ {
+  "chunk_id": "E2CHK-5ce0422c899cd47f",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "REALIZED because agency actions are stated as having occurred — 'many manufacturers ... have received MDOs', 'the FDA issued an ANPRM', and 'the FDA ... issued a proposed rule setting forth requirements for tobacco product manufacturers' — with only the future product standard prospective; the register is descriptive regulatory narrative, hence NEUTRAL."
+ },
+ {
+  "chunk_id": "E2CHK-afda557ca8fa0a00",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEUTRAL because the '$466 million' pretax disposal loss is offset by a '$991 million' tax benefit and the remainder is segment/non-GAAP definitional text; the flag follows the addendum's carrying-value rule from 'the excess of the carrying value of the disposal group to the estimated fair value less cost to sell', a realized write-down."
+ },
+ {
+  "chunk_id": "E2CHK-07343153f4da0cd4",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is POSITIVE because growth language predominates ('Revenues grew 4%', 'footwear revenues increased 7%', 'digital sales growth of 81%'); DEMAND_WEAKNESS is REALIZED from '13% decline in comparable store sales driven by reduced physical retail traffic'."
+ },
+ {
+  "chunk_id": "E2CHK-9992a913245c70dc",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance is NONE because the '2022 Guidance' table states figures without any statement that a target was raised, lowered, reaffirmed, or withdrawn versus a prior figure; sentiment is POSITIVE on 'improves the durability of EQT's free cash flow generation' and 'drive average pro forma free cash flow breakeven down approximately $0.15 per MMBtu'."
+ },
+ {
+  "chunk_id": "E2CHK-bd6d40bfa743d7e9",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "The passage is nothing but a sales-volumes-per-day schedule of raw figures with no characterization, no forward figure, and no category language, so all three fields take their default reading."
+ },
+ {
+  "chunk_id": "E2CHK-b1dcfad4cf301fae",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment is NEUTRAL because the segment tables report rises ('Net revenues 4,597 3,831', 'Return on average common equity 13.8%') in an entirely flat tone, and the rubric holds that magnitude of a number alone is not sentiment absent characterization."
+ },
+ {
+  "chunk_id": "E2CHK-cf40c42e13ffd313",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags are empty because this is a contractual definition of 'Tax Event' turning on hypothetical future amendments to the Internal Revenue Code, and the addendum's boundary that 'ordinary compliance with an existing tax regime is NOT a regulatory action' plus the absence of any asserted agency action leaves nothing to flag."
+ },
+ {
+  "chunk_id": "E2CHK-24ffe2cf322f5174",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance is NONE because the excerpt reports only completed-period results ('Record quarterly revenue of $68.1 billion', 'Record full-year revenue of $215.9 billion') and contains no forward figure at all; the repeated 'Record' and 'demand is growing exponentially' set the positive tone."
+ },
+ {
+  "chunk_id": "E2CHK-072cdc9ef91088cf",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "DEMAND_WEAKNESS is HYPOTHETICAL and my least certain call, resting on the standalone assertion 'there is a risk that our orders will not be sufficient to allow us to recapture the costs of our investment'; I withheld MARGIN_COST_PRESSURE because 'could reduce our profit margin' is driven by 'aggressive competitive pricing' and commoditization rather than by rising input, labor, or operating costs."
+ },
+ {
+  "chunk_id": "E2CHK-356ea310dacb3870",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment is NEUTRAL because the passage mechanically reconciles investment balances ('primarily attributable to the reinvestment of net investment income, net business inflows and the translation impact'), which is descriptive attribution rather than favorable characterization of results."
+ },
+ {
+  "chunk_id": "E2CHK-5498fdccc84f4d31",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "The passage is a multi-period revenue and expense schedule with a single procedural footnote about excluding 'the gain on sale of discontinued operations of $9 million', with no characterization, no forward figure, and no category assertion."
+ },
+ {
+  "chunk_id": "E2CHK-92bc555031d929d0",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "LEGAL_REGULATORY_ACTION is REALIZED because the events are asserted to exist — 'continue to be challenged by the DOJ, the OIG and CMS itself', 'RADV Audit Rule') issued in January 2023', 'subject to ongoing litigation' — with only the outcomes uncertain; the double-label follows the addendum's regulation-plus-cost rule from 'Medicare Part D has resulted in increased utilization ... and puts pressure on our pharmacy gross margin rates', stated in the present tense."
+ },
+ {
+  "chunk_id": "E2CHK-bab88b607789ab2e",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "This is a financial-and-operating-statistics table with definitional footnotes ('Return on average common stockholders' equity is calculated using net income available to common stockholders'), so there is no characterization, no forward figure, and no flag language."
+ },
+ {
+  "chunk_id": "E2CHK-43c99ed059e45bf9",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "WITHDRAWN",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEGATIVE because 'experienced a significant decline in procedure volume and postponements of system placements' and 'significant negative impact on our operations and financial results' outweigh the opening 'procedures increased approximately 10%'; I withheld a legal/regulatory flag because the government measures are described as pandemic response affecting operations, not as compliance obligations on the filer."
+ },
+ {
+  "chunk_id": "E2CHK-46e76944be24ceac",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment is NEUTRAL because the statement of operations reports both 'Income from operations 50 39' and 'Limited partners' interest in net (loss) income ... $ (20)' in a flat tabular register with no characterization by the filer."
+ },
+ {
+  "chunk_id": "E2CHK-3065eb4a544bc898",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "LEGAL_REGULATORY_ACTION is REALIZED and not mere tax compliance because 'The IRS has asserted penalties' and 'The Corporation has filed a refund suit for tax years 2006-2009 in a U.S. federal district court' are an existing enforcement dispute; TRADE_POLICY_EXPOSURE is REALIZED from 'the European Union and United States imposed sanctions relating to the Russian energy sector' with the filer stating it 'continues to comply with all sanctions'."
+ },
+ {
+  "chunk_id": "E2CHK-aa6791cdc8cd9d42",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "The passage is purely mechanical non-GAAP methodology disclosure ('We evaluate the performance of our international operations based on fixed currency rates of foreign exchange'), which the rubric treats as NEUTRAL, and it contains no forward figure and no category language."
+ },
+ {
+  "chunk_id": "E2CHK-cac60fcf29f3459e",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags are empty because 'we lowered our ultimate projected yields on invested assets' and the loss-recognition 'lock-in' discussion are actuarial assumption-setting mechanics, not an asset impairment, cost-inflation, demand, supply, trade, or legal assertion."
+ },
+ {
+  "chunk_id": "E2CHK-09366f1650ed94d3",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "Sentiment is NEGATIVE because the passage asserts realized harm — 'have and could continue to have an adverse effect on our businesses', 'have negatively affected the performance of our investments', 'negatively impacted the profitability of our existing business'; DEMAND_WEAKNESS is REALIZED from 'lower levels of consumer and commercial business activities that have decreased ... revenues', while 'thus impair goodwill, deferred tax assets or other long-term assets' and 'inflation trends, which would impact our loss trends' are projected consequences and therefore HYPOTHETICAL."
+ },
+ {
+  "chunk_id": "E2CHK-501409621e5ca4b5",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "I withheld IMPAIRMENT_WRITEDOWN because the charges are described as 'primarily comprised of employee termination benefits' and consulting/salary costs, with no asset value reduction, and the rubric limits restructuring to charges 'tied to asset value reduction'; guidance is NONE because 'approximately $400 million to $450 million of exit and disposal costs' is a program cost estimate, not a raised, lowered, reaffirmed, or withdrawn target."
+ },
+ {
+  "chunk_id": "E2CHK-7995f75857a3c8b9",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "RAISED is explicit in 'For the full year, we've increased our outlook and now expect' followed by specific ranges; the flag is my least certain call — 'a valuation allowance against our deferred tax assets' is a carrying-value reduction under the addendum's consistency rule, but 'we expect to take a GAAP charge ... in the second quarter of 2016' is future-framed for a quarter not yet closed, so the modality is HYPOTHETICAL."
+ }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "chunk_id": "E2CHK-cf5aa0cd9c95e4ee",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is a flat 2022 guidance table (\"Marketing, Selling & Administrative $6.4 to $6.6 billion ... Earnings per share (reported) $8.00 to $8.15\") plus webcast logistics and an \"About\" boilerplate that praises the company's mission, not its results. Section 2 says magnitude of a number alone isn't sentiment -- \"the text has to characterize it\" -- and mechanical disclosure is NEUTRAL. Stored POSITIVE reads favorability into outlook figures and promotional company-description boilerplate.",
+  "pattern": "guidance-table-plus-corporate-boilerplate",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-cf5aa0cd9c95e4ee",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The passage lays out a complete \"2022 Guidance\" table but never says these figures reaffirm, raise, or cut any prior number; the only backward reference is \"a presentation of the company's 2022 and updated 2021 guidance,\" which states no direction. Section 3 defines MAINTAINED as a passage that \"explicitly reaffirms previously-issued guidance without changing it,\" so stored MAINTAINED is unsupported and NONE is the only remaining label in the closed set. Owner must weigh whether a fresh, fully quantified guidance issuance with no comparison to a prior guidance figure should fall to NONE, as the label set forces, or get its own convention -- this same question decides 10 rows in this batch.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-9c96d5f4645c6f17",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "This is an unannotated income-statement extract -- \"$ (0.04) $ 0.51 * $ 0.43 $ 1.03\" and a restructuring-charge footnote -- with no evaluative wording anywhere. Section 2's rule that a passage reporting numbers \"in a flat tone, with no qualitative characterization either way\" is NEUTRAL applies symmetrically to losses as to gains. Stored NEGATIVE infers tone from the sign of the numbers, which the rubric forbids.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-f8154d76409080a3",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The chunk contains an \"Adjusted Earnings Per Share Guidance (Unaudited)\" schedule with a low/high pair (\"Adjusted earnings per share $ 5.02 $ 5.06\") but no words reaffirming, raising, or cutting anything. Section 3 requires MAINTAINED to \"explicitly reaffirm previously-issued guidance,\" and no such statement exists, so stored MAINTAINED is unsupported. Owner must weigh the same residual question as the other guidance rows: does a quantified outlook schedule with no directional language fall to NONE?",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-b9cbe918d3cead0a",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The headline says the company \"PROVIDES FISCAL 2020 GUIDANCE\" and the text expects \"full fiscal year 2020 revenues to increase 4.0 to 4.5 percent\" -- growth measured against prior-year actual results, not an increase of a previously issued target. Section 3's RAISED requires a target \"increased versus a prior figure\" in the sense of revising previously-issued guidance, so stored RAISED is unsupported. Owner must weigh whether \"a prior figure\" in RAISED can mean prior-year actuals; on my reading it cannot, which makes this fresh guidance and therefore NONE.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-424ab90579241b5c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "Most of the passage characterizes performance favorably: Delivery EBITDA \"grew $230 million YoY,\" margin \"reached 2.1%, compared to 0.7%,\" and three separate expense lines fell \"due to cost control and improved fixed cost leverage.\" Only the Freight paragraph is unfavorable (\"declined 30% YoY ... a consequence of the challenging freight market cycle\"). Section 2 says to label by predominant tone across the passage as a whole, and the lean is clearly favorable, so stored NEGATIVE elevates one segment above the whole.",
+  "pattern": "segment-mix-predominantly-favorable",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9992a913245c70dc",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The chunk prints a \"2022 Guidance\" production and cost table with no statement that any figure was reaffirmed, raised, or reduced; the only forward comparison is an acquisition \"expected to drive average pro forma free cash flow breakeven down approximately $0.15 per MMBtu,\" which is a deal effect, not a revision of issued guidance. Section 3's MAINTAINED requires an explicit reaffirmation, which is absent, so stored MAINTAINED is unsupported. Owner must weigh the shared residual question of where undirected quantified guidance tables land.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-b1dcfad4cf301fae",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is entirely segment tables and cross-reference sentences (\"The table below presents our Asset & Wealth Management operating results\"), with no adjective characterizing performance. Under section 2, rising figures such as \"Return on average common equity 13.8 % 10.5 %\" reported in a flat tone are NEUTRAL -- magnitude alone isn't sentiment. Stored POSITIVE derives tone from the direction of the numbers.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-46e76944be24ceac",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The passage is a statement of operations and a \"Select Financial Statistics\" table -- \"Net (loss) income attributable to MPLX LP per limited partner unit: Common - basic $ (0.14 ) $ 0.38\" -- with no interpretive language at all. Section 2 makes flat numeric reporting with no qualitative characterization NEUTRAL, in either direction. Stored NEGATIVE labels the sign of the per-unit figure rather than the text's tone.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-e9012e252ae60012",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a non-GAAP reconciliation plus \"Quarterly Operating Statistics\" volume tables, with the only prose being mechanical footnotes (\"Preferred shares of 4,584,000 were all converted on March 5, 2026\"). Section 2 classifies purely mechanical disclosure and uncharacterized numbers as NEUTRAL. Stored POSITIVE reads the rising ADV and EPS figures as tone.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a55a42eef205eb7f",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "MAINTAINED",
+  "confidence": "medium",
+  "brief": "The CEO states the company \"remain[s] on track to achieve our previously announced goal of $750 million of savings by the end of 2023\" -- an explicit reaffirmation of a previously-stated number, which is precisely what section 3's MAINTAINED and its judging rule (\"an explicit reaffirmation of a previously-stated number\") describe. Stored NONE treats the release as historical results only and misses that sentence. Owner must weigh whether a multi-year cost-savings objective counts as \"previously-issued forward guidance\" or whether only revenue/EPS-style targets qualify.",
+  "pattern": "reaffirmed-multiyear-cost-savings-target",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-c01cab2aeaa56f31",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The forward statements are immediately offset within the passage: \"an 8 percent increase in core constant currency EPS\" is followed by \"the Company now expects a 2-percentage-point foreign exchange translation headwind,\" and the rest is an unannotated income statement whose only prose note explains \"higher selling and distribution costs.\" Section 2 assigns NEUTRAL to a balanced mix with no clear lean and to bare numbers with no characterization. Stored POSITIVE treats the large reported figures as favorable tone.",
+  "pattern": "results-growth-plus-offsetting-caution",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-c365ce339b2d0636",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The headline itself pairs \"GAAP revenue growth of 151%\" with \"Company withdraws full year financial outlook due to economic uncertainties,\" and the body adds an unfavorable fact stated flatly (\"GAAP operating margin was 16.7% ... compared to 24.8%\"). The growth percentages carry no favorable characterization, so section 2's bare-number rule and its balanced-mix rule both point to NEUTRAL. Stored POSITIVE rests on the size of the growth figures alone.",
+  "pattern": "results-plus-guidance-withdrawal",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-41ec729cfa18210a",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "One favorable clause opens the chunk (\"We continued to expand our other offerings ... resulting in a combined revenue growth of 128%\"), but the bulk is procedural corporate-event narrative -- an IPO that \"was declared effective by the SEC,\" a PayPal private placement, an ATG investment, and a senior-notes issuance. Section 2 labels by predominant tone, and procedural narrative is expressly NEUTRAL. Stored POSITIVE generalizes from the single growth sentence.",
+  "pattern": "results-growth-plus-offsetting-caution",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-31a4acb370e5d5fa",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is cautionary and procedural: economic effects \"will likely continue to affect demand for our products in ways that may be difficult to predict,\" \"acquisitions are often dilutive to margins initially,\" a small acquisition described mechanically, and then a bare variance table (\"Net sales $ 1,355,586 ... 15.0 %\"). There is no favorable characterization of results anywhere, and section 2 says the number's magnitude alone is not sentiment. Stored POSITIVE labels the sales-growth line rather than the passage's tone.",
+  "pattern": "results-growth-plus-offsetting-caution",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-28641af1dd53a56c",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "Under \"Financial outlook and guidance\" the company \"is projecting 10% to 12% revenue growth, GAAP earnings per diluted share ... of $5.26 to $5.36\" -- specific figures, but with no word reaffirming, raising, or lowering a previously issued number. Section 3 requires MAINTAINED to be an explicit reaffirmation, so stored MAINTAINED is unsupported. Owner must weigh whether restating full-year guidance in a later quarterly release should count as an implicit reaffirmation or, as I read the rubric, fall to NONE.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-9e41e323b3bd3d74",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The unfavorable prose here is about the drug-development process in general -- \"There is a high rate of failure inherent in new drug discovery and development\" and \"most funds invested in research programs will not generate financial returns\" -- not about this filer's own results or condition, and the remainder is procedural narrative of a subsidiary IPO and exchange offer. Section 2's first judging rule directs the rater to the passage's characterization of \"the company's results/operations/condition,\" and section 1's rationale warns against learning \"risk register implies negative.\" On that basis NEUTRAL is right and the rater's NEGATIVE reads generic industry risk prose as company tone.",
+  "pattern": "generic-industry-risk-prose-in-mda",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-85ceccd2f54e7cb5",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is a segment earnings table with percentage columns (\"Total Earnings (h) $ 545 $ 820 (34 )%\") and footnotes explaining a segment-reporting change; no sentence characterizes the results. Section 2 makes uncharacterized numbers NEUTRAL regardless of whether they fall or rise. Stored NEGATIVE reads the declines in the table as tone.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-639095b4598bbd6c",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "This is a mechanical variance walk containing both directions in the same register: \"Gross operating margin from LPG-related activities at EHT increased $4.5 million\" alongside \"our Mont Belvieu storage facility decreased a net $7.7 million\" and a Dixie Pipeline decrease \"due to lower transportation volumes.\" Section 2 assigns NEUTRAL to a balanced mix of favorable and unfavorable statements with no clear lean, and no clause evaluates performance. The rater's POSITIVE weighs the larger nine-month increases, but magnitude alone is not sentiment.",
+  "pattern": "mechanical-variance-narrative-mixed-drivers",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-254e479a0e14017c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a \"Financial Guidance Summary (Unaudited)\" table followed by safe-harbor boilerplate, and the table itself runs both ways -- \"GAAP EPS $9.21 Greater than $11.11 20.6% or better\" but \"Operating Gain $4.8 billion Greater than $4.5 billion Greater than ($300) million or (6.3%).\" Section 2 makes uncharacterized figures and mechanical disclosure NEUTRAL, and a mixed table has no lean. Stored POSITIVE picks the favorable rows out of a table that also projects a lower operating gain.",
+  "pattern": "guidance-table-plus-corporate-boilerplate",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-254e479a0e14017c",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The table's \"Approximate Change\" column compares the \"Full Year 2017 Outlook\" against \"Full Year 2016 Actual,\" not against any previously issued 2017 target, and nothing in the passage says guidance was increased. Section 3's RAISED covers a target \"increased versus a prior figure\" in the sense of revising previously-issued guidance, so stored RAISED is unsupported. Owner must weigh the same residual convention question that governs the other undirected guidance tables in this batch.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-de8e4ed70e020195",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage walks line items in a flat register -- \"Income tax provision as a percentage of income ... was 11.9% and 24.9%,\" \"Net income per share-diluted was $0.56 and $1.00\" -- and attributes the difference mechanically to merger expenses of \"$0.16 per share,\" closing with \"favorably impacted.\" Section 2 makes this kind of uncharacterized, procedural MD&A narrative NEUTRAL. Stored NEGATIVE reads the lower EPS and the line-item name \"Loss from Investments in Unconsolidated Affiliates\" as tone.",
+  "pattern": "mechanical-variance-narrative-mixed-drivers",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-ccefc92c68b96565",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The chunk is an income statement and production-data table -- \"Net income (loss) attributable to Hess Corporation $ (1,607)\" and \"Barrels of oil equivalent 321 338 321\" -- whose only prose is hedging footnotes. Section 2's rule that a number in a flat tone with no qualitative characterization is NEUTRAL applies to losses as well as gains. Stored NEGATIVE labels the sign of the reported figures.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d31e86fcdacacb90",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The passage is a revenue line, an outlook bullet list, dividend declarations, conference-call dial-in details, and a \"Basis of Presentation\" and non-GAAP explanation -- textbook mechanical disclosure with no characterization of performance. Section 2 lists purely mechanical disclosure as NEUTRAL and warns that a number's magnitude alone isn't sentiment. Stored POSITIVE appears driven by the \"+28 %\" revenue line and the outlook figures.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d31e86fcdacacb90",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The outlook is issued fresh -- \"First quarter revenue guidance of approximately $6.6 billion; and First quarter Adjusted EBITDA of approximately $3.9 billion\" -- with no statement that any figure was increased versus a prior target. Section 3's RAISED requires an increase versus a prior figure, so stored RAISED is unsupported. Owner must weigh the shared residual question: quantified new-period guidance with no directional comparison falls to NONE on my reading of the closed label set.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-9e6ceeacf4043d91",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "This is a quarter-over-quarter driver table with both directions explained mechanically: \"DD&A increased in the second quarter of 2021 primarily due to higher volumes,\" \"G&A decreased primarily as a result of lower employee costs,\" plus hedge valuation changes of \"$(336)\" and restructuring costs from workforce reductions. Section 2 assigns NEUTRAL to balanced, uncharacterized variance narrative. Stored POSITIVE reads the higher field-level cash margins as favorable tone.",
+  "pattern": "mechanical-variance-narrative-mixed-drivers",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-f6a580a23f5c73c2",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The \"Fiscal 2022 Guidance\" bullets are issued fresh (\"Net interest expense of approximately $1.5 billion,\" \"Tax rate of approximately 24.6 percent\") with no language reaffirming or revising any earlier figure; several items are qualitative (\"slightly positive,\" \"low single digits\"). Section 3's MAINTAINED requires an explicit reaffirmation, which is absent, so stored MAINTAINED is unsupported. Owner must weigh the shared question of where undirected new-year guidance lands.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-ffe43fc41893b067",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The passage states \"For fiscal year 2022, the company expects total revenue in the range of $3.395 billion to $3.435 billion\" and gives GAAP/non-GAAP margin and EPS ranges, but never says any of these were raised relative to a prior target. Section 3's RAISED requires the passage to state that a target \"has been increased versus a prior figure,\" so stored RAISED is unsupported. Owner must weigh the shared residual convention for quantified guidance carrying no directional claim.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-27545805b9fd3ad2",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is an outlook table, currency assumptions, a debt-prepayment and dividend note, and an \"About\" boilerplate (\"the world's most successful standalone interactive entertainment company\"); the only favorable characterizations are self-description, not characterization of results. Section 2 makes mechanical disclosure NEUTRAL and says the text must characterize its results for sentiment to attach. Stored POSITIVE rests on the outlook figures and the promotional boilerplate.",
+  "pattern": "guidance-table-plus-corporate-boilerplate",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-580b26993a6e7c27",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is an earnings-driver bridge that names both directions in the filer's own words: \"Volume Growth - Increased adjusted earnings by $23 million\" and \"Favorable underwriting\" sit beside \"Unfavorable underwriting - corporate solutions business in the Gulf, Egypt\" and \"Expenses - Decreased adjusted earnings by $25 million.\" Section 2 assigns NEUTRAL to a balanced mix with no clear lean, and this register is mechanical attribution rather than evaluation. The rater's POSITIVE takes the net \"Increased $33 million\" as the tone, which the predominant-tone rule does not support.",
+  "pattern": "mechanical-variance-narrative-mixed-drivers",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-77a86170e1ee1f63",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is genuinely two-sided: \"hugely popular with customers and generate superior revenue and margins,\" wholesales \"increased 44%,\" and \"strong demand for Ford's products\" sit against \"an EBIT loss of $1.3 billion,\" \"sharply compressing EV prices and profitability,\" Ford Credit earnings \"down from a year ago,\" and \"Ford is withdrawing its guidance for full-year 2023.\" Section 2 directs NEUTRAL where a mixed passage has no clear lean, and neither side dominates here. The rater's NEGATIVE weights the withdrawal headline over the passage as a whole.",
+  "pattern": "results-plus-guidance-withdrawal",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-3a78c49f50c4a56c",
+  "field": "sentiment",
+  "verdict": "agree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "Almost the entire chunk is an equity-in-earnings table, and the single prose footnote is a mechanical explanation -- non-cash impairments \"reduced the Partnership's equity in earnings by $277 million\" -- with no evaluative wording. Section 2 makes purely mechanical disclosure and uncharacterized numbers NEUTRAL. The rater's NEGATIVE treats the loss figure and the impairment fact as tone, which the bare-number rule excludes (the impairment is a red-flag question, a separate field).",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a2fa6335f209b802",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage is an outlook table plus mechanical explanations that run both ways: \"expected operating cost synergy savings ... at least $700 million\" against an outlook \"updated to reflect an increase in integration costs ... and reorganization costs associated with the planned closure of a facility,\" followed by a senior-notes issuance narrative. Section 2 makes a balanced, uncharacterized mix NEUTRAL. Stored NEGATIVE reads the negative GAAP EPS range and the cost items as predominant tone.",
+  "pattern": "guidance-table-plus-corporate-boilerplate",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-c930635e1e19d252",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "POSITIVE",
+  "confidence": "medium",
+  "brief": "Every characterization of current results in this passage is explicitly favorable -- \"CORE TOBACCO SEGMENTS DELIVER STRONG OCI AND CASH FLOW,\" \"We had an excellent start to the year, growing our first-quarter adjusted diluted EPS by 18.5%,\" \"strong cash generation and the strength of our balance sheet\" -- while the guidance withdrawal is attributed to external \"uncertainties related to the impact of the COVID-19 pandemic,\" not to performance. Section 2 asks for the tone regarding \"the business's current results and condition,\" which here is unambiguously favorable. Owner must weigh whether a headline guidance withdrawal should pull an otherwise strongly favorable results passage down to NEUTRAL or NEGATIVE, since this pattern recurs across pandemic-era releases.",
+  "pattern": "results-plus-guidance-withdrawal",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-0a42120714b1207d",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage recites regulatory mechanics -- \"The special assessment for Truist is $579 million,\" \"the collection period will be extended an additional two quarters,\" \"The final rule was effective October 1, 2024\" -- and states consequences in hedged terms (\"could result in additional expense,\" \"may cause the FDIC to require\"). There is no unfavorable characterization of the company's results or condition, and section 2 lists purely mechanical disclosure as NEUTRAL. Stored NEGATIVE treats the size of the assessment and the regulatory subject matter as tone; the regulatory content belongs to the red-flag field, not sentiment.",
+  "pattern": "regulatory-disclosure-mechanical",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-ed298eb2315250f3",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "This is a cash-flow discussion in flat attribution language with offsetting drivers on every line: operating cash flow fell \"primarily due to higher net losses and income taxes paid, partially offset by higher premiums collected and higher net investment income,\" and financing changes are explained by repurchases and deposits. Section 2 makes balanced, uncharacterized variance narrative NEUTRAL. Stored NEGATIVE keys off \"higher net losses\" and the lower cash-flow figure rather than the passage's predominant tone.",
+  "pattern": "mechanical-variance-narrative-mixed-drivers",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-df0f98a67031f9fb",
+  "field": "guidance_direction",
+  "verdict": "disagree",
+  "correct_label": "NONE",
+  "confidence": "medium",
+  "brief": "The release \"Provides 2018 Financial Guidance\" with \"2018 EPS guidance of $13.50 to $14.00 on an Adjusted basis\" -- an initial issuance, with no statement that a previously issued 2018 figure was increased. The dividend increase to \"$0.50 per share, an increase of 25 percent\" is a declared corporate action, not a forward financial target, so it does not trigger section 3's RAISED either; stored RAISED is unsupported. Owner must weigh the shared residual question of where first-issuance quantified guidance lands.",
+  "pattern": "fresh-quantified-guidance-no-prior-comparison",
+  "needs_human": true
+ },
+ {
+  "chunk_id": "E2CHK-174467ecd1d78cba",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The chunk is a GAAP-to-non-GAAP reconciliation and its footnotes, stating events flatly -- \"we discontinued further development of vixotrigine,\" \"recognized an impairment charge of approximately $119.6 million,\" \"we completed the sale of our 49.9% equity interest ... for total consideration of approximately $2.3 billion.\" Section 2 makes mechanical accounting disclosure NEUTRAL; no clause characterizes results favorably or unfavorably. Stored NEGATIVE reads the impairment and the lower EPS as tone, but the impairment is a red-flag question, a separate field.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a758cd53755b26ef",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The passage sets out both sides in the filer's own headings: \"Earnings were positively impacted by: Higher realized commodity prices ... Increased liquids and natural gas volumes\" followed immediately by \"Earnings were negatively impacted by: Higher DD&A expenses ... Higher production and operating expenses,\" plus \"Higher unplanned downtime, primarily due to Winter Storm Uri.\" Section 2 assigns NEUTRAL to a balanced mix with no clear lean in an uncharacterized variance narrative. Stored POSITIVE follows the net earnings increase rather than the passage's tone.",
+  "pattern": "mechanical-variance-narrative-mixed-drivers",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-3e4b1e775f6dfa7c",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "medium",
+  "brief": "The table is uncharacterized (\"Net income (loss) $ (70 ) $ 1,360 NM\") and the only prose leans the other way: \"net premiums written increased $329 million and $986 million ... reflecting growth across most segments,\" with merger-related actions that \"partially offset this growth.\" Section 2 makes bare numbers NEUTRAL and a mixed passage with no lean NEUTRAL. Stored NEGATIVE labels the quarterly loss line rather than the predominant tone of the text.",
+  "pattern": "bare-financial-table-no-characterization",
+  "needs_human": false
+ }
+]

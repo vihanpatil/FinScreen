@@ -1,0 +1,231 @@
+{
+  "run_id": "F4-e2-label-v1",
+  "created_utc": "2026-08-28T05:40:03.072948+00:00",
+  "segments": [
+    {
+      "started_utc": "2026-08-28T05:40:04.103121+00:00",
+      "ended_utc": "2026-08-28T05:40:28.544541+00:00",
+      "n_generated": 10,
+      "torn_final_line_repaired_before_append": false,
+      "model_load_seconds": 0.9,
+      "wall_seconds": 24.4,
+      "chunks_per_hour": 1472.9,
+      "finish_reasons": {
+        "stop": 10
+      },
+      "n_passages_head_truncated": 0,
+      "n_passages_not_a_head_prefix": 0,
+      "versions": {
+        "mlx": "0.32.1",
+        "mlx-lm": "0.31.3",
+        "transformers": "5.15.1",
+        "numpy": "2.4.6",
+        "python": "3.11.10"
+      }
+    }
+  ],
+  "purpose": "F4 E2 labeling (F4-e2-label-v1), segment seg-001: the v1.2 epoch-2 student labels rows 0-13227 of chunks_v1.parquet. Local MLX, $0, zero Anthropic API calls.",
+  "segment": {
+    "segment_id": "seg-001",
+    "row_start": 0,
+    "row_end": 13227,
+    "n_rows": 13227,
+    "first_chunk_id": "E2CHK-ae05821151f7ecf7",
+    "last_chunk_id": "E2CHK-7598f2c394867d55"
+  },
+  "model": {
+    "path": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071"
+  },
+  "adapter": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "adapters_sha256": "cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3",
+    "adapters_bytes": 11541328,
+    "adapters_mtime_utc": "2026-08-27T14:21:55.107686+00:00",
+    "adapter_config_sha256": "2d62913a6044ec8ebb4d351cd023c8b3b517263462b9f3501eeb39fe8687810a",
+    "checkpoint_shas": {
+      "0000100_adapters.safetensors": "4ff19a3283774b99672c18f7e5a5b0362d724e45c1d43f2262fecd0a007ca01a",
+      "0000200_adapters.safetensors": "5c1aefa6cc44f3e7286f1cf9587bd9aee087072d021964b2dc8cd6a375ade17b",
+      "0000300_adapters.safetensors": "1753f8d4d36aa68009b88e9b7b5f7ff1276cf7e3146d7d950ada11e90262a162",
+      "0000400_adapters.safetensors": "9f6ec0558425a01d7a1a46ac49834fb9e467d991057c4cee84502aa1b4e36348",
+      "0000500_adapters.safetensors": "8c0f7716f19be0f04e14bc98547985ad03767674a152f190ce6852c73e204df4",
+      "0000600_adapters.safetensors": "7ae09e644a0ef8486393d68b9f51804a33dd02362b3358b2e470d14fb8831547",
+      "0000700_adapters.safetensors": "7eacaac3fc407ec914d4f0c816458110c7dd5d2ed86ebfd3ec28d50e62ea8761",
+      "0000800_adapters.safetensors": "943cee4219afbe5b393e3045d3242eda0899ae3d0631244dfbd13c49dc2c28f1",
+      "0000900_adapters.safetensors": "e46b6bf32c582da7859538f9e99ad55fa2d19783b073b013d866eb862233f024",
+      "0001000_adapters.safetensors": "9f403a3d5df290fffc093c8b677f63aaa65f17fa9dd4063250f3c17ba209e25c",
+      "0001100_adapters.safetensors": "a137f54212ab4b01d799d8f28c433c8268875ddc353dde2f39be3d7d68788f2c",
+      "0001200_adapters.safetensors": "5dff38288b9ec80aa7851c419fac8bf2f6695203f9b864cfb53e1599373f79f8",
+      "0001300_adapters.safetensors": "c11f63b954bc4af4d4651294e3b991f1321cd5263974aae012d82f64e174facb",
+      "0001400_adapters.safetensors": "7e0deb2bbc534aa4909d7cba51c2b7ef5cf26edeec6681013ab499728bc09679",
+      "0001500_adapters.safetensors": "ac4f801787cb52abc0e9593cc091da9a21bfc3d060f9d9e4a231d5f29cb06326",
+      "0001600_adapters.safetensors": "baa972dd46f1368c85229e0b34717ec2f6ebb4c269e7f1f335325f24b36b4468",
+      "0001700_adapters.safetensors": "e3ff9c7fe8892dd1ab5b491a83d0a2c277df00e74e37a7c33b62e81d4d463ef2",
+      "0001800_adapters.safetensors": "24aacdcd23c81a685534b2b38cb1f56884e2deb2b41e72fd7e567635d05acc13",
+      "0001900_adapters.safetensors": "4157b9b3e2ca58916f739971c76d2fbafc4ef7654b7ee53f8e64ee39f02176db",
+      "0002000_adapters.safetensors": "e2347930b00dc0afc2ffbe37597b6e2c48fcc1018a13bce8b871b0a1ef3feee3",
+      "0002100_adapters.safetensors": "42d966b9c9263131eb0e4c40d28de5d84cf390191a6beb6bcc5d9c0912d94a6c",
+      "0002200_adapters.safetensors": "bfee98b2432a844f1a796e814539373937223e5e887a9ee28a6bcdb0993763e5",
+      "0002300_adapters.safetensors": "d43944ef20e56f7d64d6aebf14f42f379f2b0a1136dce2f75bdc395da488b7f5",
+      "0002400_adapters.safetensors": "44a7f217cc48053cb67a4e21e190cf917417f8466f3dfebe6ff590549c3751ac",
+      "0002500_adapters.safetensors": "c7ed8feb5343622bec2fc443aa81fd9c72ebddc333e7d0d1f7ef08f3739c7e5a",
+      "0002600_adapters.safetensors": "705bf6d8fa6d2d68453d960b293f675b8b391a01ce796417dc92e86a8a2d4b41",
+      "0002700_adapters.safetensors": "7f22faa8bfd7bc59c126ac0e764a29668f81d6d94edb0c86e12ac43a12a11efb",
+      "0002800_adapters.safetensors": "2c515ad6d182cd4f0979a67c439fab972bc2f00301814c02a13290f421640ca8",
+      "0002900_adapters.safetensors": "eeb39f1f887cb729c28b36ca5072b1062e33c8279c24a2384e210487fa707ab5",
+      "0003000_adapters.safetensors": "0d9be55f7fadd9f33bc7b369de4e656eda114196d1a50c184c81fc688ebc6296",
+      "0003100_adapters.safetensors": "657d3256dc21bbd8e6b682625594b0ec009b556c3784a78345b95dfcd2bf797f",
+      "0003200_adapters.safetensors": "3483b2c8b62df6876a4d07f62287b260c3767634d5adcdf9975556d2951f6a8c",
+      "0003300_adapters.safetensors": "70fd26444613d336039425ea1968dc6a809af12ed54606b1e462cde649754679",
+      "0003400_adapters.safetensors": "20b8a941e5cce120c9ac8b2283731887e8ede9e400ed861b6d698f63f64beba9",
+      "0003500_adapters.safetensors": "6f18825620f124ea6b685b7cefcba09761e222d90dd630a22855324c26679e15",
+      "0003600_adapters.safetensors": "6e46d8263bc7974a7da1494a4255c1e1077cc5b0367f6824519790da46bf72a8",
+      "0003700_adapters.safetensors": "5ffa4358a324934ef7931845783aae72f5125733928fa85b1aafc64862d2db8a",
+      "0003800_adapters.safetensors": "d968a70e110a57a670af21988399e2ec60c8ca9ad5b54bdcd65d1e90d5021f24",
+      "0003900_adapters.safetensors": "b6c0ef76ed8afa4bc9c73c9ffd0b6a0087537b230b7a70ccd9dc61fda3461816",
+      "0004000_adapters.safetensors": "d3901fde5a76f6e55fc1ff2308dd93444e6cbc321f0ec8717bab818b4f9c64e9",
+      "0004100_adapters.safetensors": "c3a238b96211d84d0d9300c90674494a07bb58cd3f196b922d9dd84510e501bc",
+      "0004200_adapters.safetensors": "3bceb2a6da00ec7364d763d7a2b3b8c0f6f23d2d60f92ff578690e65ff77e7fe",
+      "0004300_adapters.safetensors": "ada97279ba2671a67fcbb49cf1f4d9fe7b1edb4a459dbac3a76e680a1adf33ed",
+      "0004400_adapters.safetensors": "c224223968ed5f9e74341a726d00820d8b61b63bc5d1b4f2797cfe73880c720c",
+      "0004500_adapters.safetensors": "2553d44f2ad6e2e54ff310345a5aa18fa9a096a0c50e4ced61a0edaa993cf017",
+      "0004600_adapters.safetensors": "5f7a37e2b7b01b779e4b60effd470d08c002a4b524aabf06915d675df086143d",
+      "0004700_adapters.safetensors": "c758c9dad077470470ae7161f91cdb9c52f0fc90f8ccf930966e33483cd3ab9b",
+      "0004800_adapters.safetensors": "74c7dddb37cbe3399f3437c20d9b4f8b73056f886d68e31eb6b19d887fb1bb93",
+      "0004900_adapters.safetensors": "36c2228867ab51c9fd4bc614a36e24c23479653996772b57b752798fa5ccc8fe",
+      "0005000_adapters.safetensors": "e48c5629fc4032398b05c57393ed4579a7a4bdea1b1692f9d5af18b321590b29",
+      "0005100_adapters.safetensors": "93b1d2f74b1388aacb01fd93ff25b2f174d663af86ff48f78b1b283fe97ffb7b",
+      "0005200_adapters.safetensors": "014bf326d627ca72712c0d5c1154febb1502522351ca18ac1d9128756a60371b",
+      "0005300_adapters.safetensors": "bc9eab86d79fd2d526fc41f730c5a36fd6d783b3306b16e670233099139187f2",
+      "0005400_adapters.safetensors": "d315d154dc5873cbfb5697b70eafb8a0014df7611f6c9660650a79239177af21",
+      "0005500_adapters.safetensors": "3ab25e80d0af211b0a7a5b3d95e358f2d19d8534e476410c14fdcdfb0445c411",
+      "0005600_adapters.safetensors": "5454213349e2c670e22f62f55f06d23ff8d06cb907704356584fca8b32219dd0",
+      "0005700_adapters.safetensors": "a69c93db4df042ae4c23742b984a24c59e8a29cb75d5a0552437cde3f21c9411"
+    },
+    "matches_checkpoint": "no numbered twin \u2014 expected for a COMPLETED run whose iters is not a multiple of save_every (mlx_lm writes the final weights to adapters.safetensors only). If training is still running, this may instead be an in-flight write: check the process has exited.",
+    "lora_parameters": {
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05,
+      "keys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj"
+      ]
+    },
+    "num_layers": 16,
+    "iters_configured": 5736,
+    "resume_adapter_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch1/adapters.safetensors"
+  },
+  "train_manifest": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/manifest.json",
+    "sha256": "10c9432529779368b27355884b4e51af26652d142515134c63cf088afefee875",
+    "run_id": "2026-08-27-v12-epoch2"
+  },
+  "data": {
+    "chunks_parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/chunks_v1.parquet",
+      "sha256": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+      "n_rows": 317081
+    },
+    "corpus_parquet_sha256": "15853e9f54902a933f0372869209a353ab3f052cb5c7dc1f897297f75b53f417",
+    "rows_jsonl": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/smoke/rows.jsonl",
+    "rows_jsonl_sha256": "235fc0e05d5bc50f6ef77600f6b5989f736231d45648da7e2cff030973c5989d",
+    "chunk_id_list_sha256": "32ec5c0ceb7d53a4067911bc0d1df9fc0b294c800c9ef809ad1c80687b71efeb",
+    "mlx_data_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12",
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_sha256_matches_reference_eval": true,
+    "adapter_sha256_matches_reference_eval": true,
+    "adapter_sha256_matches_pinned_G1_adapter": true,
+    "reference_eval_manifest": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/manifest.json",
+    "n_rows_targeted": 10
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "max_seq_length": 2048,
+    "answer_token_reserve": 256,
+    "prompt_token_budget": 1792,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.to_messages()/render() via label_e2.render_prompt_ids(); token-exact prefix of the training sequence rendering",
+    "limit": 10
+  },
+  "owner_rulings": {
+    "window_rule": "W1_core (HANDOFF \u00a73 2026-08-27, re-confirmed post-demotion)",
+    "line_rule": "reflow_v1 (full)",
+    "guidance_missing_to_none": "ADOPTED AT THE LABELING WRITER, with the guidance_imputed_none audit flag (eval A.7)",
+    "red_flags_status": "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3."
+  },
+  "journal": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/smoke/labels.jsonl",
+    "n_rows": 10,
+    "n_target": 10,
+    "complete": true,
+    "pct": 100.0,
+    "sha256": "9020df2cba178c96117f7924945b3990c6331318832ba9364e77f67bfeacdcef"
+  },
+  "updated_utc": "2026-08-28T05:40:29.301035+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "caveats": [
+    "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3.",
+    "These labels are the STUDENT's, produced locally on MLX. They are not Claude labels and they were never validated against human ground truth. The student's held-out agreement with its own v1.2 teacher (n=1,010) is: sentiment 0.836, red_flags exact-set 0.631 / micro F1 0.795, guidance 0.521 raw. Agreement is not accuracy.",
+    "guidance_direction: missing->NONE is APPLIED AT THIS WRITER (owner-ruled 2026-08-27), scoped to guidance-APPLICABLE section types only (EX99_PRESS_RELEASE, 8K_BODY \u2014 the section types the teacher's own JSON schema asked for the field). Every imputed row carries guidance_imputed_none=true. An explicitly emitted NONE carries false. The underlying omission rate WORSENED between epochs (321 -> 385 of 6,746 on E1), which is the disclosed cost of adopting the rule.",
+    "distress_tier was never a training target (HANDOFF \u00a77). The column is uniformly empty for schema compatibility and carries no information.",
+    "8K_BODY (n=790 chunks here) is not evaluable as a class \u2014 E1 had 8 such chunks from 2 tickers and the student has effectively no supervision for it (HANDOFF \u00a77). Do not report a per-class metric on it.",
+    "Window rule W1-core: the corpus was restricted to stratum=='core' BEFORE dedup, so a chunk's source_* back-references cover core-stratum sections only. The extension stratum is unlabeled this round.",
+    "The four population-gate columns in the F3 corpus are NOT point-in-time (P4 \u00a75.1 / P5 \u00a78.2): they may be set by a LATER-dated filing. Use them for triage, never for conditioning in a walk-forward.",
+    "Passages are head-truncated to fit 2048 tokens including a fixed 256-token answer reserve. Truncated rows carry passage_was_head_truncated=true; only the passage TAIL is ever dropped.",
+    "E1's data/labels.parquet and data/labels_v12.parquet are frozen and were opened READ-ONLY (the latter only as an arrow SCHEMA TEMPLATE, never as a teacher for these rows)."
+  ],
+  "totals": {
+    "n_rows": 10,
+    "sum_of_row_latencies_seconds": 24.4,
+    "sum_of_row_latencies_hours": 0.01,
+    "chunks_per_hour_excluding_load_and_gaps": 1473.2,
+    "prompt_tokens_total": 9504,
+    "generation_tokens_total": 370,
+    "finish_reasons": {
+      "stop": 10
+    },
+    "note": "row-latency sum, not a fresh wall-clock: it excludes per-segment model load and idle gaps between segments, so it is an upper bound on sustained throughput."
+  },
+  "parquet": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/smoke/labels_seg-001.parquet",
+    "sha256": "6488dd10eae395dc534e0a587e716b8b1ccb99fdaf4df93c3b837a0f52bab662",
+    "n_rows": 10,
+    "n_columns": 43,
+    "schema_source": "columns 1-34 copied verbatim from labels_v12.parquet's arrow schema (SCHEMA ONLY \u2014 not a teacher for these rows); 9 F4 columns appended",
+    "null_typed_columns_widened_to_string": [
+      "parse_error"
+    ],
+    "e1_only_columns_filled": {
+      "home_ticker": null,
+      "source_tickers": []
+    },
+    "parse_failures": 0,
+    "schema_violations": 0,
+    "guidance": {
+      "n_applicable": 10,
+      "n_imputed_none": 6,
+      "imputed_rate_of_applicable": 0.6,
+      "n_explicitly_emitted": 4,
+      "n_emitted_on_non_applicable_section": 0,
+      "rule": "missing->NONE at the writer, audit flag guidance_imputed_none"
+    },
+    "sentiment": {
+      "n_emitted": 9,
+      "n_emitted_on_risk_factors": 0
+    },
+    "head_truncation": {
+      "n_truncated": 0,
+      "rate": 0.0,
+      "answer_token_reserve": 256,
+      "prompt_token_budget": 1792
+    },
+    "distress_tier": "uniformly empty by construction (HANDOFF \u00a77)",
+    "red_flags_status": "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3.",
+    "partial": false
+  },
+  "finalized_utc": "2026-08-28T05:40:29.300943+00:00"
+}

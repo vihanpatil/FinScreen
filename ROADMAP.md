@@ -1,8 +1,11 @@
 # ROADMAP — Financial Text-Signal Research Tool
 
-**Last updated: 2026-08-18.** Phase status at a glance: **A ✅ DONE
-(2026-08-18) · B ✅ DONE (2026-08-18) · C ✅ BUILT+RED-TEAMED, GATE READ PENDING · D ⬜ NOT STARTED
-· E ⬜ NOT STARTED.**
+**Last updated: 2026-08-20.** Phase status at a glance: **A ✅ DONE
+(2026-08-18) · B ✅ DONE (2026-08-18) · C ✅ DONE — gate ruled "GO,
+diagnosis-scoped" and the diagnosis is complete + owner-read (2026-08-20)
+· D 🟢 ACTIVE — fine-tune launch ratified 2026-08-20, 1-epoch-first
+· E ⬜ NOT STARTED · F (E2 expansion) 🟢 RATIFIED 2026-08-20 — see
+`EXPANSION_PLAN.md`.**
 
 Phase 2 of the FinScreen operating brief: a solo-owner research/screening
 tool, not a trading bot — no investment advice, no live capital, no return
@@ -207,7 +210,17 @@ makes the go/no-go call.
 
 ---
 
-## Phase D — Optional local MLX fine-tune + held-out eval — ⬜ NOT STARTED
+## Phase D — Local MLX fine-tune + held-out eval — 🟢 ACTIVE (launch ratified 2026-08-20)
+
+> **Status 2026-08-20:** the owner gave the explicit "launch, 1 epoch
+> first" go in chat (HANDOFF §3). The fine-tune is no longer optional
+> polish — it is **E2's labeling enabler** (`EXPANSION_PLAN.md` phase F0):
+> the trained student becomes the only permitted labeler for the expanded
+> corpus under the API-spend freeze. Sequence: implement real MLX path →
+> on-box timed probe → smoke test → ONE epoch → real `eval.py` on the
+> frozen 1,010-row eval split → owner review at gate G1 before further
+> epochs. The deliverable text below predates E2 and still describes the
+> mechanics correctly.
 
 **Goal:** Only if Phase C is a GO and the owner wants to pursue it — fine-
 tune Qwen2.5-7B-Instruct (Apache-2.0) via 4-bit QLoRA, run entirely locally,
@@ -277,6 +290,40 @@ nothing silently dropped.
 
 **Subagent:** `red-team-reviewer` leads; `docs-writer` writes; others fix
 findings in their own area.
+
+> **2026-08-20 note:** Phase E now covers BOTH experiments — E1's write-up
+> (whose diagnosis verdict is final: no fold-robust text signal at E1's
+> power, MDE ~0.077) and, later, E2's. E1 doc TODOs in `MODEL_CARD.md` /
+> `LIMITATIONS.md` can be filled now; the E2 sections land at
+> `EXPANSION_PLAN.md` gate G4.
+
+---
+
+## Phase F — E2 expanded experiment — 🟢 RATIFIED 2026-08-20, F0 ACTIVE
+
+**Owner-ratified scope (HANDOFF §3, 2026-08-20):** 100 companies ×
+10 years (~26 test folds; MDE bracket 0.019–0.037 vs E1's 0.077);
+universe = sector-stratified top-K by `dei:EntityPublicFloat` with
+**annual point-in-time reconstitution** (membership decided per date from
+pre-date filings only; `universe.csv` becomes a dated membership table);
+**no mid-cap arm** this round; all new/rebuilt chunks labeled by the
+Phase D fine-tuned student (relabel-everything for labeler consistency).
+
+**The plan of record is `EXPANSION_PLAN.md`** — phases F0–F6 with owner
+gates: G1 (student quality after 1-epoch eval), G2 (Qwen-label spot-check
+bar), G3 (pre-registered benchmark + fold structure BEFORE the first E2
+backtest run), G4 (final read). Recon provenance:
+`data/expansion_recon_2026-08-20.json`.
+
+**Honest framing carried forward:** E2's selection side is
+survivorship-safe by construction; its outcome side retains a documented
+delisted-price censoring residual (free sources carry no delisted-ticker
+prices) mitigated by EDGAR-native distress-event flags and mandatory
+excluded-count reporting. A null at E2's power is a meaningful,
+pre-committed acceptable result.
+
+**Cost:** $0 cash; owner-machine compute (fine-tune ~1 epoch overnight;
+labeling ≤ ~8–9 checkpointed overnights worst-case; all resumable).
 
 ---
 

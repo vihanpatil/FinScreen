@@ -1,0 +1,27 @@
+=== segment earnings 2026-08-28T00:52:08Z ===
+[earnings] 10567 filings -> 8 shards of 1500
+  shard earnings_0000: 1500 filings -> 1500 attempts / 1499 sections  {'OK': 1287, 'FLAGGED': 212, 'FAIL': 1}  cache_miss=0  181.4s  network_gets=0
+  shard earnings_0001: 1500 filings -> 1500 attempts / 1498 sections  {'OK': 1174, 'FLAGGED': 324, 'FAIL': 2}  cache_miss=0  217.8s  network_gets=0
+  shard earnings_0002: 1500 filings -> 1500 attempts / 1499 sections  {'OK': 1289, 'FLAGGED': 210, 'FAIL': 1}  cache_miss=0  259.1s  network_gets=0
+  shard earnings_0003: 1500 filings -> 1500 attempts / 1499 sections  {'OK': 1224, 'FLAGGED': 275, 'FAIL': 1}  cache_miss=0  287.4s  network_gets=0
+  shard earnings_0004: 1500 filings -> 1500 attempts / 1495 sections  {'OK': 1238, 'FLAGGED': 257, 'FAIL': 5}  cache_miss=0  239.6s  network_gets=0
+  shard earnings_0005: 1500 filings -> 1500 attempts / 1500 sections  {'OK': 1260, 'FLAGGED': 240}  cache_miss=0  256.7s  network_gets=0
+  shard earnings_0006: 1500 filings -> 1500 attempts / 1498 sections  {'OK': 1143, 'FLAGGED': 355, 'FAIL': 2}  cache_miss=0  244.7s  network_gets=0
+  shard earnings_0007: 67 filings -> 67 attempts / 67 sections  {'OK': 58, 'FLAGGED': 9}  cache_miss=0  6.2s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+=== segment 10-K 2026-08-28T01:20:22Z ===
+[10-K] 2445 filings -> 10 shards of 250
+  shard 10-K_0000: 250 filings -> 500 attempts / 463 sections  {'OK': 420, 'FLAGGED': 43, 'FAIL': 37}  cache_miss=0  454.3s  network_gets=0
+  shard 10-K_0001: 250 filings -> 500 attempts / 497 sections  {'OK': 403, 'FLAGGED': 94, 'FAIL': 3}  cache_miss=0  478.8s  network_gets=0
+  shard 10-K_0002: 250 filings -> 500 attempts / 500 sections  {'OK': 438, 'FLAGGED': 62}  cache_miss=0  354.6s  network_gets=0
+  shard 10-K_0003: 250 filings -> 500 attempts / 440 sections  {'OK': 415, 'FAIL': 60, 'FLAGGED': 25}  cache_miss=0  407.1s  network_gets=0
+  shard 10-K_0004: 250 filings -> 500 attempts / 482 sections  {'OK': 472, 'FAIL': 18, 'FLAGGED': 10}  cache_miss=0  366.6s  network_gets=0
+  shard 10-K_0005: 250 filings -> 500 attempts / 493 sections  {'OK': 448, 'FLAGGED': 45, 'FAIL': 7}  cache_miss=0  296.4s  network_gets=0
+  shard 10-K_0006: 250 filings -> 500 attempts / 488 sections  {'OK': 437, 'FLAGGED': 51, 'FAIL': 12}  cache_miss=0  337.2s  network_gets=0
+  shard 10-K_0007: 250 filings -> 500 attempts / 488 sections  {'OK': 431, 'FLAGGED': 57, 'FAIL': 12}  cache_miss=0  274.3s  network_gets=0
+  shard 10-K_0008: 250 filings -> 500 attempts / 484 sections  {'OK': 405, 'FLAGGED': 79, 'FAIL': 16}  cache_miss=0  359.1s  network_gets=0
+  shard 10-K_0009: 195 filings -> 390 attempts / 385 sections  {'OK': 370, 'FLAGGED': 15, 'FAIL': 5}  cache_miss=0  161.4s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)
+Edge handlers fired: {}; DEAD: ['nike_10q_mda_shared_toc_anchor']
+=== segment 10-Q 2026-08-28T02:18:32Z ===

@@ -1,0 +1,91 @@
+stage=documents -> data/filings_metadata_e2.db (cache TTL 24.0 h)
+
+--stage documents: 20522 document(s) to have on disk ({'earnings_doc': 10568, '10-Q': 7509, '10-K': 2445}). Nothing is parsed here; this fills the cache-forever data/raw/documents/ cache so extract.py runs at 0 GETs.
+  500/20522 documents (0 fetched / 500 already cached / 0 failed)
+  1000/20522 documents (0 fetched / 1000 already cached / 0 failed)
+  1500/20522 documents (0 fetched / 1500 already cached / 0 failed)
+  2000/20522 documents (0 fetched / 2000 already cached / 0 failed)
+  2500/20522 documents (0 fetched / 2500 already cached / 0 failed)
+  3000/20522 documents (0 fetched / 3000 already cached / 0 failed)
+  3500/20522 documents (0 fetched / 3500 already cached / 0 failed)
+  4000/20522 documents (0 fetched / 4000 already cached / 0 failed)
+  4500/20522 documents (0 fetched / 4500 already cached / 0 failed)
+  5000/20522 documents (0 fetched / 5000 already cached / 0 failed)
+  5500/20522 documents (0 fetched / 5500 already cached / 0 failed)
+  6000/20522 documents (0 fetched / 6000 already cached / 0 failed)
+  6500/20522 documents (0 fetched / 6500 already cached / 0 failed)
+  7000/20522 documents (0 fetched / 7000 already cached / 0 failed)
+  7500/20522 documents (0 fetched / 7500 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/723125/000072312519000172/a2020q1exhibit991-pres.htm
+  8000/20522 documents (1 fetched / 7999 already cached / 0 failed)
+  8500/20522 documents (1 fetched / 8499 already cached / 0 failed)
+  9000/20522 documents (1 fetched / 8999 already cached / 0 failed)
+  9500/20522 documents (1 fetched / 9499 already cached / 0 failed)
+  10000/20522 documents (1 fetched / 9999 already cached / 0 failed)
+  10500/20522 documents (1 fetched / 10499 already cached / 0 failed)
+  11000/20522 documents (1 fetched / 10999 already cached / 0 failed)
+  11500/20522 documents (1 fetched / 11499 already cached / 0 failed)
+  12000/20522 documents (1 fetched / 11999 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1039684/000103968415000073/okeq32015earningsreleasenr.htm
+  12500/20522 documents (2 fetched / 12498 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459016021246/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459016025917/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459017000523/pld-ex992_131.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459017006654/pld-ex992_9.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459017013565/pld-ex992_126.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459017019539/pld-ex992_200.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459018000772/pld-ex992_59.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459018008291/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095012318006811/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459018024299/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459019000828/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459019011671/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459019024994/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459019036903/pld-ex992_68.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459020001560/pld-ex992_247.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459020017571/pld-ex992_67.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459020032839/pld-ex992_124.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459020046844/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459021002199/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459021019253/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459021036956/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459021050894/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459022001502/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459022014685/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459022025889/pld-ex992_6.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459022034581/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459023000494/pld-ex992_7.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017023013170/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017023033263/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017023053655/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017024004825/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017024044928/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017024084067/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017024114848/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017025006999/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017025054485/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000095017025096077/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000119312525239551/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000119312526017256/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000119312526157977/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000119312526305416/pld-ex99_2.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045810/000104581019000168/q3fy20pr.htm
+  13000/20522 documents (44 fetched / 12956 already cached / 0 failed)
+  13500/20522 documents (44 fetched / 13456 already cached / 0 failed)
+  14000/20522 documents (44 fetched / 13956 already cached / 0 failed)
+  14500/20522 documents (44 fetched / 14456 already cached / 0 failed)
+  15000/20522 documents (44 fetched / 14956 already cached / 0 failed)
+  15500/20522 documents (44 fetched / 15456 already cached / 0 failed)
+  16000/20522 documents (44 fetched / 15956 already cached / 0 failed)
+  16500/20522 documents (44 fetched / 16456 already cached / 0 failed)
+  17000/20522 documents (44 fetched / 16956 already cached / 0 failed)
+  17500/20522 documents (44 fetched / 17456 already cached / 0 failed)
+  18000/20522 documents (44 fetched / 17956 already cached / 0 failed)
+  18500/20522 documents (44 fetched / 18456 already cached / 0 failed)
+  19000/20522 documents (44 fetched / 18956 already cached / 0 failed)
+  19500/20522 documents (44 fetched / 19456 already cached / 0 failed)
+  20000/20522 documents (44 fetched / 19956 already cached / 0 failed)
+  20500/20522 documents (44 fetched / 20456 already cached / 0 failed)
+
+--stage documents done: 20522 target(s), 44 fetched, 20478 already cached, 0 FAILED.
+Total EDGAR network GETs this run: 44

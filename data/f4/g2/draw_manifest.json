@@ -1,0 +1,391 @@
+{
+ "generated_utc": "2026-09-07T08:45:22Z",
+ "generated_by": "data/f4/g2/build_draw_g2.py",
+ "design_doc": "data/f4/g2/G2_SPOTCHECK_design.md",
+ "design_doc_sha256": "3dad21fdf41a9d2adb24e7e2f5f52ffe41fb45cb12c8a15e8e9917ecbf028df9",
+ "seed": 20260906,
+ "option": "C",
+ "parameters_status": "OWNER_RATIFIED",
+ "parameters_note": "OPTION C, b = 0.85 on both gate-bearing fields, the G-A direction quota, three ceiling batches and RATE_RED_FLAGS are the OWNER'S rulings of 2026-09-07, recorded in design section 14.1. The arithmetic implementing them (section 14.2-14.8) is model work, not owner judgement. This draw SUPERSEDES the provisional Option-B draw of 2026-09-06 (420 chunks, 11 batches, ratified_bars null); nothing had been rated when it was replaced, so no selection channel opens.",
+ "n_primary": 400,
+ "n_ga": 80,
+ "n_ga_total": 100,
+ "n_ga_floor": {
+  "LOWERED": 15,
+  "MAINTAINED": 20,
+  "WITHDRAWN": 15
+ },
+ "n_ga_withdrawn": 15,
+ "n_gn": 80,
+ "n_total": 580,
+ "batch_size": 40,
+ "n_batches": 15,
+ "draw_schema": "rank,batch,chunk_id;arms_sidecar",
+ "ceiling_batches": [
+  "batch_01",
+  "batch_02",
+  "batch_03"
+ ],
+ "ceiling_rows": 120,
+ "rate_red_flags": true,
+ "red_flags_status": "EXPLORATORY / DISCLOSURE-ONLY per the owner's 2026-08-27 demotion ruling. Rated here only to regenerate the caveat constants; no gate branch, no kill rule, no re-promotion.",
+ "ratified_bars": {
+  "sentiment": 0.85,
+  "guidance_direction": 0.85
+ },
+ "ga_corpus_counts": {
+  "RAISED": 3716,
+  "MAINTAINED": 1940,
+  "LOWERED": 757,
+  "WITHDRAWN": 66
+ },
+ "ga_weights": {
+  "RAISED": 0.573545,
+  "MAINTAINED": 0.299429,
+  "LOWERED": 0.116839,
+  "WITHDRAWN": 0.010187
+ },
+ "ga_target_rule": "target_d = max(hamilton_d(N_GA), N_GA_FLOOR.get(d, 0)) over the 6,479-row active EX99 frame (design 14.3). No direction is reduced below its proportional count and the unspent remainder of the +30-row floor budget is NOT reallocated. The draw is two-stage and seeded: the proportional base is drawn first from each direction's pool on stream 'G-A|<d>', then the quota top-up is drawn without replacement from that same pool minus the already-drawn ids on stream 'G-A-quota|<d>'.",
+ "subarm_disposition": "The G-A sub-arm (G-A = proportional base, G-A-floor = LOWERED floor purchase, G-A-withdrawn = the WITHDRAWN quota amendment) is reported here as counts only, never per row: a file tagging a row 'G-A-withdrawn' would disclose the stored guidance_direction for exactly the 15 rows the quota was bought to measure. Section 14.9 applies the same argument to `arm` itself, which discloses stored guidance status for all 180 G-A + G-N rows: draw_g2.csv is now rank,batch,chunk_id and the arm map is the sidecar data/f4/g2_draw_arms.csv, outside the rater-pointed tree. Per-row sub-arm membership is deterministic from the seed and no estimator in section 10.2.4 or 14.4 reads it: the re-weighting is by direction, not by sub-arm.",
+ "probe_strata": {
+  "P": 12,
+  "G-A": 4,
+  "G-N": 4
+ },
+ "inputs": {
+  "data/f4/labels_e2_v1.parquet": {
+   "sha256": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
+   "rows": 317081
+  },
+  "data/f4/chunks_v1.parquet": {
+   "sha256": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+   "rows": 317081
+  },
+  "labeling_rubric.md": {
+   "sha256": "46dea3c886846849c82ae2b65d8e29ef95016dece706cd19a2e00b8d99c30b25",
+   "rows": null
+  },
+  "data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md": {
+   "sha256": "eb59c6d3418c28539de1f7f0e39b0a9645dc2bbe00845ca3b2fca0b74a415cef",
+   "rows": null
+  },
+  "finetune/splits_v12/train.parquet": {
+   "sha256": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10",
+   "rows": 5736
+  }
+ },
+ "outputs": {
+  "data/f4/g2/draw_g2.csv": "affc27d3159cc6488bf079210d6fd9d29452bb97f9ff1b7bad825b95e6243337",
+  "data/f4/g2_draw_arms.csv": "5335fbadd31e7f505156d4254d3090b7b7be2c44c8ec3971c6418e943d6a1be9",
+  "data/f4/g2/rater_policy_addendum.md": "b4159f6b1e5cb37373e3170381b1da1799ee4a3e82a44460754edc0d3865825d",
+  "data/f4/g2/batches/batch_01.json": "a3d7caf545fe9c8ab288f0cf35e3bfd2cb86c088f736c3565073ff6f7f86651c",
+  "data/f4/g2/batches/batch_01_replicate.json": "a3d7caf545fe9c8ab288f0cf35e3bfd2cb86c088f736c3565073ff6f7f86651c",
+  "data/f4/g2/batches/batch_02.json": "c44d3f579d837dc53e63e6a1cdb475752bf78559b0dfc5d8d24feb67b53b4b44",
+  "data/f4/g2/batches/batch_02_replicate.json": "c44d3f579d837dc53e63e6a1cdb475752bf78559b0dfc5d8d24feb67b53b4b44",
+  "data/f4/g2/batches/batch_03.json": "5c22fc7a7a0e64038cfd3b2d6e59eab1eb62c512d9718c48571e50752d8a4ac3",
+  "data/f4/g2/batches/batch_03_replicate.json": "5c22fc7a7a0e64038cfd3b2d6e59eab1eb62c512d9718c48571e50752d8a4ac3",
+  "data/f4/g2/batches/batch_04.json": "d0a953b9e7d62d53c76ca04c2be0d5025a3ac5847c7605162c454169b7a31bed",
+  "data/f4/g2/batches/batch_05.json": "905b90a5475ae10eda9752726043138e6f6ad6f5ef5d5a3c4b229e0f668187f7",
+  "data/f4/g2/batches/batch_06.json": "b385b326bb31dd31eb4ac6bb790ce26c752f6b82828450afb0e8ee8599b19c89",
+  "data/f4/g2/batches/batch_07.json": "43ed056b015879213791540639657c5791a9416a0335b28d1a8c8fc5d5924bcd",
+  "data/f4/g2/batches/batch_08.json": "c96d94ab1a816b159fdfc1b1e3cad5e3a1ff6c15dc363b575f61be6ca6d84f53",
+  "data/f4/g2/batches/batch_09.json": "3c50ea719fe1beaf18009bc09a705d70bd34ba6f05e8ab8eef56d3c79eff8eb0",
+  "data/f4/g2/batches/batch_10.json": "eee6a100b8b76598536655b386fead2b728ec8f2dca18ef5f2c156e9487db8ac",
+  "data/f4/g2/batches/batch_11.json": "179a30a99c492918bad2b407e05d5d501a893d55c3ef7c73cae2976253bf8f0d",
+  "data/f4/g2/batches/batch_12.json": "6f32f8c2b10aa1326fd23f6db0c1c37cf713d1d4ec795148bd2314d1c2e335ca",
+  "data/f4/g2/batches/batch_13.json": "e0be7cc25fa1605de2bd0eed40fce168b60914bca63975a5871ef9ad5722c7fb",
+  "data/f4/g2/batches/batch_14.json": "b347e6c2caef6fca64184c72c73b06986d1d8fe5cbaef7fe3d1adb3ea3b146e7",
+  "data/f4/g2/batches/batch_15.json": "2f0a809a259770afe750d2aa1999ba6978c789b28faaeb9a09291b147e4da3d1"
+ },
+ "frame": {
+  "n_corpus": 317081,
+  "n_frame": 316291,
+  "excluded_8k_body": 790,
+  "section_counts": {
+   "MDA": 172098,
+   "EX99_PRESS_RELEASE": 94545,
+   "RISK_FACTORS": 49648
+  },
+  "sector_counts": {
+   "financials": 98381,
+   "tech": 63124,
+   "consumer": 54450,
+   "healthcare": 52355,
+   "energy": 47981
+  },
+  "era_counts": {
+   "2019+": 208944,
+   "pre-2019": 107347
+  },
+  "distinct_home_ciks": 176,
+  "distinct_home_accessions": 14315,
+  "train_overlap": 14342,
+  "selfid": 146958
+ },
+ "allocation_p": {
+  "EX99_PRESS_RELEASE|consumer": 25,
+  "EX99_PRESS_RELEASE|energy": 21,
+  "EX99_PRESS_RELEASE|financials": 30,
+  "EX99_PRESS_RELEASE|healthcare": 22,
+  "EX99_PRESS_RELEASE|tech": 21,
+  "MDA|consumer": 37,
+  "MDA|energy": 32,
+  "MDA|financials": 81,
+  "MDA|healthcare": 33,
+  "MDA|tech": 35,
+  "RISK_FACTORS|consumer": 8,
+  "RISK_FACTORS|energy": 8,
+  "RISK_FACTORS|financials": 13,
+  "RISK_FACTORS|healthcare": 11,
+  "RISK_FACTORS|tech": 23
+ },
+ "allocation_ga": {
+  "RAISED": 46,
+  "MAINTAINED": 24,
+  "LOWERED": 15,
+  "WITHDRAWN": 15
+ },
+ "allocation_ga_proportional": {
+  "RAISED": 46,
+  "MAINTAINED": 24,
+  "LOWERED": 9,
+  "WITHDRAWN": 1
+ },
+ "allocation_ga_quota_added": {
+  "RAISED": 0,
+  "MAINTAINED": 0,
+  "LOWERED": 6,
+  "WITHDRAWN": 14
+ },
+ "arm_frames": {
+  "P": 316291,
+  "G-A": 6479,
+  "G-N": 48293
+ },
+ "realized": {
+  "arm_counts": {
+   "P": 400,
+   "G-A": 100,
+   "G-N": 80
+  },
+  "subarm_counts": {
+   "P": 400,
+   "G-A": 80,
+   "G-N": 80,
+   "G-A-withdrawn": 14,
+   "G-A-floor": 6
+  },
+  "section_counts": {
+   "EX99_PRESS_RELEASE": 299,
+   "MDA": 218,
+   "RISK_FACTORS": 63
+  },
+  "sector_counts": {
+   "financials": 153,
+   "healthcare": 114,
+   "tech": 114,
+   "consumer": 108,
+   "energy": 91
+  },
+  "era_counts": {
+   "2019+": 402,
+   "pre-2019": 178
+  },
+  "distinct_home_ciks": 164,
+  "distinct_home_accessions": 566,
+  "train_overlap": {
+   "overlap": 37,
+   "novel": 543
+  },
+  "selfid": {
+   "selfid": 305,
+   "not_selfid": 275
+  },
+  "in_member_spell": {
+   "true": 333,
+   "false": 247
+  },
+  "extraction_confidence": {
+   "high": 479,
+   "medium": 82,
+   "low": 19
+  },
+  "extraction_status": {
+   "OK": 483,
+   "FLAGGED": 97
+  },
+  "head_truncated": 6,
+  "guidance_active_directions": {
+   "RAISED": 46,
+   "MAINTAINED": 24,
+   "LOWERED": 15,
+   "WITHDRAWN": 15
+  },
+  "guidance_active_directions_by_subarm": {
+   "RAISED": {
+    "G-A": 46
+   },
+   "MAINTAINED": {
+    "G-A": 24
+   },
+   "LOWERED": {
+    "G-A": 9,
+    "G-A-floor": 6
+   },
+   "WITHDRAWN": {
+    "G-A-withdrawn": 14,
+    "G-A": 1
+   }
+  },
+  "by_arm": {
+   "P": {
+    "n": 400,
+    "section_counts": {
+     "MDA": 218,
+     "EX99_PRESS_RELEASE": 119,
+     "RISK_FACTORS": 63
+    },
+    "sector_counts": {
+     "financials": 124,
+     "tech": 79,
+     "consumer": 70,
+     "healthcare": 66,
+     "energy": 61
+    },
+    "era_counts": {
+     "2019+": 278,
+     "pre-2019": 122
+    },
+    "train_overlap": 34,
+    "selfid": 185
+   },
+   "G-A": {
+    "n": 100,
+    "section_counts": {
+     "EX99_PRESS_RELEASE": 100
+    },
+    "sector_counts": {
+     "healthcare": 31,
+     "consumer": 22,
+     "tech": 22,
+     "energy": 18,
+     "financials": 7
+    },
+    "era_counts": {
+     "2019+": 73,
+     "pre-2019": 27
+    },
+    "train_overlap": 0,
+    "selfid": 75
+   },
+   "G-N": {
+    "n": 80,
+    "section_counts": {
+     "EX99_PRESS_RELEASE": 80
+    },
+    "sector_counts": {
+     "financials": 22,
+     "healthcare": 17,
+     "consumer": 16,
+     "tech": 13,
+     "energy": 12
+    },
+    "era_counts": {
+     "2019+": 51,
+     "pre-2019": 29
+    },
+    "train_overlap": 3,
+    "selfid": 45
+   }
+  }
+ },
+ "batches": {
+  "batch_01": 40,
+  "batch_02": 40,
+  "batch_03": 40,
+  "batch_04": 40,
+  "batch_05": 40,
+  "batch_06": 40,
+  "batch_07": 40,
+  "batch_08": 40,
+  "batch_09": 40,
+  "batch_10": 40,
+  "batch_11": 40,
+  "batch_12": 40,
+  "batch_13": 40,
+  "batch_14": 40,
+  "batch_15": 20
+ },
+ "train_overlap_definition": "overlap(row) = row.home_accession_number in train_acc or any(a in train_acc for a in row.source_accession_numbers) or sha1(normalize(row.text)) in train_txt, where train_acc = set of finetune/splits_v12/train.parquet home_accession_number, train_txt = {sha1(normalize(t)) for t in train.text}, and normalize = collapse whitespace, strip, lower. Paragraph-id joins are FORBIDDEN: the E1 and E2 namespaces differ (P-... vs E2P-...) so such a join returns a structurally meaningless 0%.",
+ "selfid_definition": "selfid(row) is true iff the first token of the row's company name that is longer than 2 characters (after stripping surrounding punctuation) and not in the generic-suffix stop list, lowercased, occurs in lower(text). Stop list: &, /de/, and, co, co., com, company, corp, corp., corporation, group, holding, holdings, inc, inc., industries, international, llc, ltd, of, plc, systems, technologies, the.",
+ "assertion_scope_note": "Design 10.1.2 item 13 is implemented per file: batch files are checked on KEYS (a passage may legitimately contain the word 'sentiment'), draw_g2.csv on its header, the addendum on strings. draw_manifest.json is not rater-visible (design 5.1) and carries the pre-registered aggregate keys rate_red_flags / allocation_ga by name; it is asserted to contain no drawn chunk_id and no per-row label.",
+ "reproducibility_check": "byte_identical_to_prior_run",
+ "assertions_passed": [
+  "A0_parameters_owner_ratified",
+  "A0_ga_targets_sum",
+  "A1_sha256:data/f4/labels_e2_v1.parquet",
+  "A1_sha256:data/f4/chunks_v1.parquet",
+  "A1_sha256:labeling_rubric.md",
+  "A1_sha256:data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md",
+  "A1_sha256:finetune/splits_v12/train.parquet",
+  "A2_corpus_rows",
+  "A2_chunk_id_unique",
+  "A2_chunk_id_set_and_order_equal",
+  "A2_parse_ok_all",
+  "A2_train_rows",
+  "A3_frame_excludes_8k_body",
+  "A11_train_overlap_count",
+  "A11_selfid_count",
+  "A4_allocation_p_sums",
+  "A5_ga_frame",
+  "A5_gn_frame",
+  "A15_ga_corpus_counts",
+  "A15_ga_weights_6dp",
+  "A4_allocation_ga_sums",
+  "A15_allocation_ga_targets",
+  "A15_ga_proportional_base",
+  "A6_arms_disjoint",
+  "A6_union_size",
+  "A3_no_8k_body_in_draw",
+  "A4_realized_cells_equal_allocation",
+  "A4_realized_ga_equal_allocation",
+  "A15_realized_subarm",
+  "A9_no_homogeneous_batch",
+  "A9_ceiling_batches_exist",
+  "A8_draw_csv_columns",
+  "A8_arm_not_in_rater_pointed_tree",
+  "A8_arms_sidecar_columns",
+  "A8_draw_csv_arm_domain",
+  "A9_batch_count",
+  "A7_batch_keys:batch_01.json",
+  "A7_batch_keys:batch_01_replicate.json",
+  "A7_batch_keys:batch_02.json",
+  "A7_batch_keys:batch_02_replicate.json",
+  "A7_batch_keys:batch_03.json",
+  "A7_batch_keys:batch_03_replicate.json",
+  "A7_batch_keys:batch_04.json",
+  "A7_batch_keys:batch_05.json",
+  "A7_batch_keys:batch_06.json",
+  "A7_batch_keys:batch_07.json",
+  "A7_batch_keys:batch_08.json",
+  "A7_batch_keys:batch_09.json",
+  "A7_batch_keys:batch_10.json",
+  "A7_batch_keys:batch_11.json",
+  "A7_batch_keys:batch_12.json",
+  "A7_batch_keys:batch_13.json",
+  "A7_batch_keys:batch_14.json",
+  "A7_batch_keys:batch_15.json",
+  "A13_no_forbidden_key_in_batches",
+  "A10_replicate_byte_identical:batch_01",
+  "A10_replicate_byte_identical:batch_02",
+  "A10_replicate_byte_identical:batch_03",
+  "A12_addendum_no_company_token",
+  "A12_addendum_no_exemplar_id",
+  "A13_no_metadata_column_in_addendum",
+  "A13_no_label_column_in_draw_csv",
+  "A14_reproducible_byte_for_byte"
+ ],
+ "api_calls": 0,
+ "gpu_seconds": 0,
+ "network_calls": 0
+}

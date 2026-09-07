@@ -1,0 +1,326 @@
+{
+ "batch": 3,
+ "protocol": "spotcheck-v12-adjudication (red_flags only)",
+ "rubric": "labeling_rubric.md (v1.2)",
+ "n": 11,
+ "chunks": [
+  {
+   "chunk_id": "CHK-ad27e454857187ed",
+   "section_type": "RISK_FACTORS",
+   "text": "U.K. regulators have designated Vocalink, our real-time account-based payments network platform, to be a “specified service provider” and regulators in other countries may in the future expand their regulatory oversight of real-time account-based payments systems in similar ways. Any prolonged service outage on this network could result in quickly escalating impacts, including potential intervention by the Bank of England and significant reputational risk to Vocalink and us. For a discussion of related regulatory risks, see our risk factor in “Risk Factors - Payments Industry Regulation” in this Part I, Item 1A. Furthermore, the complexity of this payment technology requires careful management to address information security vulnerabilities that are different from those faced on our payment network. Operational difficulties, such as the temporary unavailability of our services or products, or information security breaches on our real-time account-based payments network could cause a loss of business for these products and services, result in potential liability for us and adversely affect our reputation.\n\nWorking with new customers and end users as we continue to expand our products and services can present operational and onboarding challenges, be costly and result in reputational damage if the new products or services do not perform as intended.\n\nThe payments markets in which we compete are characterized by rapid technological change, new product introductions, evolving industry standards and changing customer and consumer needs. In order to remain competitive and meet the needs of the payments markets, we are continually involved in developing and implementing complex multi-rail solutions and diversifying our products and services. These efforts carry the risks associated with any diversification initiative, including cost overruns, delays in delivery and performance problems. These projects also carry risks associated with working with different types of customers (such as corporations that are not financial institutions, non-governmental organizations (NGOs) and new end users). These differences may present new operational challenges, such as enhanced infrastructure and monitoring for less regulated customers.\n\nOur failure to effectively design and deliver these products and services could make our other offerings less desirable to these customers, or put us at a competitive disadvantage. In addition, if there is a delay in the implementation of our products or services (which could include compliance obligations, such as AML and CFT, and licensing requirements for applicable products and services), if our products or services do not perform as anticipated, or we are unable to otherwise adequately anticipate risks related to new types of customers, we could face additional regulatory scrutiny, fines, sanctions or other penalties, which could materially and adversely affect our overall business and results of operations, as well as negatively impact our brand and reputation.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'U.K. regulators have designated Vocalink ... to be a \"specified service provider\"' is a completed regulatory action already imposing oversight, with only the further consequences ('could face additional regulatory scrutiny, fines, sanctions or other penalties') projected; 'cost overruns' appears only as a noun in a diversification-risk list."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-ee8fcb128ed03507",
+   "section_type": "RISK_FACTORS",
+   "text": "AbbVie continues to evaluate the impact that the IRA may have on the company. The potential for continuing changes to the health care system in the United States and the increased purchasing power of entities that negotiate on behalf of Medicare, Medicaid and private sector beneficiaries may result in additional pricing pressures. Additionally, changes to U.S. tax laws now require (i) a 15% alternative minimum tax generally applied to U.S. corporations on adjusted financial statement income beginning in 2023 and (ii) a non-deductible 1% excise tax provision on net stock repurchases.\n\nIn major markets worldwide, governments play a significant role in funding health care services and determining the pricing and reimbursement of pharmaceutical products. Consequently, in those markets, AbbVie is subject to government decision-making and budgetary actions with respect to its products. In particular, many European countries have ongoing government-mandated price reductions for many pharmaceutical products, and AbbVie anticipates continuing pricing pressures in Europe. Differences between countries' pricing regulations could lead to third-party cross-border trading in AbbVie's products that results in a reduction in revenues and operating earnings.\n\ncosts or other factors could lead to new or modified regulatory requirements that include higher or incremental rebates or discounts. Other rebate and discount programs arise from contractual agreements with private payers. Various factors, including market factors and the ability of private payers to control patient access to products, may provide payers the leverage to negotiate higher or additional rebates or discounts that could have a material adverse effect on AbbVie's operations.\n\nAbbVie depends on alliances and joint ventures with pharmaceutical and biotechnology companies for a portion of the products in its near-term pharmaceutical pipeline. Failures by these parties to meet their contractual, regulatory, or other obligations to AbbVie, or any disruption in the relationships between AbbVie and these third parties, could have an adverse effect on AbbVie's pharmaceutical pipeline and business. In addition, AbbVie's collaborative relationships for research and development extend for many years and may give rise to disputes regarding the relative rights, obligations and revenues of AbbVie and its collaboration partners, including the ownership of intellectual property and associated rights and obligations. This could result in the loss of intellectual property rights or protection, delay the development and sale of potential pharmaceutical products, affect the effective sale and delivery of AbbVie's commercialized products and lead to lengthy and expensive litigation, administrative proceedings or arbitration.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'[C]hanges to U.S. tax laws now require (i) a 15% alternative minimum tax ... beginning in 2023 and (ii) a non-deductible 1% excise tax' and 'many European countries have ongoing government-mandated price reductions' are regulations already in effect; payer rebate/pricing pressure is revenue-side, not input-cost, so MARGIN_COST_PRESSURE is not asserted."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-5a868ca64fd69324",
+   "section_type": "MDA",
+   "text": "The change was primarily driven by a decrease in net income adjusted for non-cash items and the timing of receipts and payments in the ordinary course of business, including a decrease in advance payments for Comirnaty and Paxlovid and net changes in inventory greater than one year (see\n\nThe change was driven mainly by $12.7 billion greater net purchases of short-term investments in 2023 and a $4.0 billion dividend received from the Consumer Healthcare JV in 2022 that was allocated to investing activities, partially offset by $6.2 billion cash used to acquire Arena, net of cash acquired, in 2022 and a $1.5 billion decrease in purchases of long-term investments.\n\nOur historically robust operating cash flows, which we expect to continue, is a key strength of our liquidity and capital resources and our primary funding source. We believe as a result of this, together with our financial assets, access to capital markets, revolving credit agreements, and available lines of credit, we have and will maintain the ability to meet our liquidity needs to support ongoing operations, our capital allocation objectives, and our contractual and other obligations for the foreseeable future. For information about the sources and uses of our funds and capital resources, as well as our operating cash flows, see our\n\n––In May 2023, we completed a public offering of $31 billion aggregate principal amount of senior unsecured notes as part of the financing for our proposed acquisition of Seagen. The net proceeds have been invested in short-term investments in a combination of money market funds and available-for-sale debt securities until the completion of the proposed acquisition. See\n\n––The cost and availability of financing are influenced by credit ratings, and an increase or decrease in our credit rating could have a beneficial or adverse effect on financing. Our long-term debt is rated high-quality by both S&P and Moody’s. In March 2023, following the announcement of the proposed acquisition of Seagen, Moody’s changed its outlook on our long-term debt to Negative; S&P downgraded our short-term rating from A-1+ to A-1. In October 2023, following the announcement of the amended Paxlovid supply agreement with the U.S. government and updated 2023 guidance, S&P changed its outlook on our long-term debt to Negative.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "Liquidity and rating narrative ('Moody's changed its outlook on our long-term debt to Negative; S&P downgraded our short-term rating from A-1+ to A-1', 'a decrease in advance payments for Comirnaty and Paxlovid') describes financing and cash-flow timing items that fall outside the six red-flag categories."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-96872e14a41afc81",
+   "section_type": "EX99_PRESS_RELEASE",
+   "text": "13 You should not place undue reliance on any forward-looking statement and should consider the following uncertainties and risks, as well as the risks and uncertainties more fully discussed under Item 1A. Risk Factors of the Corporation's 2024 Annual Report on Form 10-K and in any of the Corporation’s subsequent U.S. Securities and Exchange Commission filings: the Corporation’s potential judgments, orders, settlements, penalties, fines and reputational damage, which are inherently difficult to predict, resulting from pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to in the ordinary course of business, including matters related to our processing of unemployment benefits for California and certain other states, the features of our automatic credit card payment service, the adequacy of the Corporation’s anti-money laundering and economic sanctions programs and the processing of electronic payments, including through the Zelle network, and related fraud, which are in various stages; in connection with ongoing litigation, the impact of certain changes to Visa’s and Mastercard’s respective card payment network rules and reductions in interchange fees for U.S.-based merchants; the possibility that the Corporation's future liabilities may be in excess of its recorded liability and estimated range of possible loss for litigation, and regulatory and government actions; the Corporation’s ability to resolve representations and warranties repurchase and related claims; the impact of U.S. and global interest rates (including the potential for ongoing fluctuations in interest rates), inflation, currency exchange rates, economic conditions, trade policies and tensions, including changes in, or the imposition of, tariffs and / or trade barriers and the economic impacts, volatility and uncertainty resulting therefrom, which may have varying effects across industries and geographies and geopolitical instability; the risks related to the discontinuation of reference rates, including increased expenses and litigation and the effectiveness of hedging strategies; uncertainties about the financial stability and growth rates of non-U.S. jurisdictions, the risk that those jurisdictions may face difficulties servicing their sovereign debt, and related stresses on financial markets, currencies and trade, and the Corporation’s exposures to such risks, including direct, indirect and operational; the impact of the interest rate, inflationary, macroeconomic, banking and regulatory environment on the Corporation’s assets, business, financial condition and results of operations; the impact of adverse developments affecting the U.S. or global banking industry, including bank failures and liquidity concerns, resulting in worsening economic and market volatility, and regulatory responses thereto; the possibility that future credit losses may be higher than currently expected due to changes in economic assumptions, which may include unemployment rates, real estate prices, gross domestic product levels and corporate bond spreads, customer behavior, adverse developments with respect to U.S. or global economic conditions and other uncertainties, including the impact of trade policies, supply chain disruptions, inflationary pressures and labor shortages on economic conditions and our business; potential losses related to the Corporation’s concentration of credit risk; the Corporation's ability to achieve its expense targets and expectations regarding revenue, net interest income, provision for credit losses, net charge-offs, effective tax rate, loan growth or other projections; variances to the underlying assumptions and judgments used in estimating banking book net interest income sensitivity; adverse changes to the Corporation’s credit ratings from the major credit rating agencies; an inability to access capital markets or maintain deposits or borrowing costs; estimates of the fair value and other accounting values, subject to impairment assessments, of certain of the Corporation’s assets and liabilities; the estimated or actual impact of changes in accounting standards or assumptions in applying those standards; uncertainty regarding the content, timing and impact of regulatory capital and liquidity requirements; the impact of adverse changes to total loss-absorbing capacity requirements, stress capital buffer requirements and / or global systemically important bank surcharges; the potential impact of actions of the Board of Governors of the Federal Reserve System on the Corporation’s capital plans; the effect of changes in or interpretations of income tax laws and regulations, including impacts from the 2025 budget reconciliation legislation; the impact of implementation and compliance with U.S. and international laws, regulations and regulatory interpretations, including recovery and resolution planning requirements, Federal Deposit Insurance Corporation assessments, the Volcker Rule, fiduciary standards, derivatives regulations and potential changes to loss allocations between financial institutions and customers, including for losses incurred from the use of our products and services, including electronic payments and payment of checks, that were authorized by the customer but induced by fraud; the impact of failures or disruptions in or breaches of the Corporation’s operations or information systems, or those of various third parties, including regulators and federal and state governments, such as from cybersecurity incidents; the risks related to the development, implementation, use and management of emerging technologies, including artificial intelligence and machine learning; the risks related to the transition and physical impacts of climate change; our ability to achieve environmental goals or the impact of any changes in the Corporation's sustainability or human capital management strategy or goals; the impact of uncertain or changing political conditions, federal government shutdowns and uncertainty regarding the federal government’s debt limit or changes in fiscal, monetary, trade or regulatory policy; the emergence of widespread health emergencies or pandemics; the impact of natural disasters, extreme weather events, military conflicts (including the Russia / Ukraine conflict, the conflicts in the Middle East, the possible expansion of such conflicts and potential geopolitical consequences), civil unrest, terrorism or other geopolitical events; and other matters. Forward-looking statements speak only as of the date they are made, and the Corporation undertakes no obligation to update any forward-looking statement to reflect the impact of circumstances or events that arise after the date the forward-looking statement was made. “Bank of America” and “BofA Securities” are the marketing names used by the Global Banking and Global Markets divisions of Bank of America Corporation. Lending, other commercial banking activities, and trading in certain financial instruments are performed globally by banking affiliates of Bank of America Corporation, including Bank of America, N.A., Member FDIC. Trading in securities and financial instruments, and strategic advisory, and other investment banking activities, are performed globally by investment banking affiliates of Bank of America Corporation (“Investment Banking Affiliates”) or other affiliates, including, in the United States, BofA Securities, Inc. and Merrill Lynch, Pierce, Fenner & Smith Incorporated, each of which are registered broker-dealers and Members of SIPC, and, in other jurisdictions, by locally registered entities. BofA Securities, Inc. is registered as a futures commission merchant with the CFTC and is a member of the NFA. Investment products offered by Investment Banking Affiliates: Are Not FDIC Insured · May Lose Value · Are Not Bank Guaranteed. Bank of America Corporation’s broker-dealers are not banks and are separate legal entities from their bank affiliates. The obligations of the broker-dealers are not obligations of their bank affiliates (unless explicitly stated otherwise), and these bank affiliates are not responsible for securities sold, offered, or recommended by the broker-dealers. The foregoing also applies to other non-bank affiliates. For more Bank of America news, including dividend announcements and other important information, visit the Bank of America newsroom at https:// newsroom.bankofamerica.com.* www.bankofamerica.com* * Website content is not incorporated by reference into this press release.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "The list names actual proceedings in progress — 'pending, threatened or future litigation and regulatory investigations, proceedings and enforcement actions, which the Corporation is subject to ... including matters related to our processing of unemployment benefits for California and certain other states ... which are in various stages' — while the tariff, supply-chain and inflation items appear only as nouns inside the enumeration and fail the mining-depth bar."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-2d46eae9a8604ce0",
+   "section_type": "RISK_FACTORS",
+   "text": "and to maintain an effective risk management framework is highly dependent on its ability to staff its operations appropriately and on the competence, trustworthiness, health and safety of its employees. JPMorganChase’s businesses and operations similarly rely on the workforces of third parties, including employees of vendors, custodians and financial markets infrastructures, and of businesses that it may seek to acquire.\n\nto have failed to comply with applicable law, or if JPMorganChase or its third-party vendors fail to protect personal information appropriately. These actions could require JPMorganChase to modify or cease operations or could result in other penalties. Furthermore, concerns regarding the effectiveness of JPMorganChase’s measures to safeguard personal information, or the perception that those measures are inadequate, could cause JPMorganChase to lose clients, customers or employees, and thereby reduce JPMorganChase’s revenues. Any of these factors could cause reputational harm and otherwise adversely affect JPMorganChase’s businesses.\n\nThe growing sophistication of technology poses a heightened risk of identity fraud, as malicious actors may exploit technology to create convincing false identities or manipulate verification processes. Failure to manage these risks or to implement effective countermeasures could lead to unauthorized transactions, financial losses, increased regulatory scrutiny and reputational harm. In addition, greater government scrutiny of practices related to the handling of personal information has in some cases resulted in, and could in the future lead to, the adoption of applicable law in the U.S. and elsewhere that is stricter and could result in JPMorganChase incurring higher compliance costs or constraining its ability to offer certain products and services to customers.\n\nThere can be no assurance that JPMorganChase’s Firmwide resiliency framework will mitigate all potential resiliency risks to JPMorganChase, its clients and customers, and the third parties, including service providers with which it does business, or that the resiliency framework will be able to anticipate or defend against every form of disruption or adequately address the effects of simultaneous or prolonged disruptions. In addition, JPMorganChase’s ability to respond effectively to a disruption event could be hampered to the extent that the members of its workforce, physical assets, systems and other support infrastructure, or those of its third-party service providers, that are needed to address the event are geographically dispersed, or conversely, if such an event were to occur in an area in which they are concentrated. Further, should extraordinary events or the factors that cause or contribute to those events become more chronic, the disruptive effects of those events on JPMorganChase’s business and operations, and on its clients, customers, counterparties and employees, could become more significant and persistent.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'[G]reater government scrutiny of practices related to the handling of personal information has in some cases resulted in, and could in the future lead to, the adoption of applicable law ... that is stricter' asserts that stricter law has already been adopted, so the existence claim controls over the surrounding could-framing."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-e7d89e372a854602",
+   "section_type": "MDA",
+   "text": "Statements related to future events; projections; descriptions of strategic, operating, and financial plans and objectives; statements of future ambitions and plans; and other statements of future events or conditions are forward-looking statements. Similarly, discussion of roadmaps or future plans related to carbon capture, transportation and storage, biofuel, hydrogen, lithium and other future plans to reduce emissions and emission intensity of ExxonMobil, its affiliates, companies it is seeking to acquire and third parties are dependent on future market factors, such as continued technological progress, policy support and timely rule-making and permitting, and represent forward-looking statements.\n\nActual future results, including financial and operating performance; potential earnings, cash flow, dividends or shareholder returns, including the timing and amounts of share repurchases; total capital expenditures and mix, including allocations of capital to low carbon investments; realization and maintenance of structural cost reductions and efficiency gains, including the ability to offset inflationary pressure; plans to reduce future emissions and emissions intensity, including ambitions to reach Scope 1 and Scope 2 net zero from operated assets by 2050, to reach Scope 1 and 2 net zero in Upstream Permian Basin unconventional operated assets by 2030 and in Pioneer Permian assets by 2035, to eliminate routine flaring in-line with World Bank Zero Routine Flaring, and to reach near-zero methane emissions from operated assets and other methane initiatives; meeting ExxonMobil’s divestment and start-up plans, and associated project plans as well as technology advances, including the timing and outcome of projects to capture, transport and store CO2, produce hydrogen, produce biofuels, produce lithium, and use plastic waste as feedstock for advanced recycling; timely granting of governmental permits and certifications; future debt levels and credit ratings; business and project plans, timing, costs, capacities and profitability; resource recoveries and production rates; and planned Denbury and Pioneer integrated benefits, could differ materially due to a number of factors.\n\nThese include global or regional changes in the supply and demand for oil, natural gas, petrochemicals, and feedstocks and other market factors, economic conditions and seasonal fluctuations that impact prices and differentials for our products; changes in law, regulations, taxes, trade sanctions, or policies, such as government policies supporting lower carbon investment opportunities such as the U.S. Inflation Reduction Act and the ability for projects to qualify for the financial incentives available thereunder, the punitive European taxes on the oil and gas sector and unequal support for different technological methods of emissions reduction or evolving, ambiguous and unharmonized standards imposed by various jurisdictions related to sustainability and GHG reporting; variable impacts of trading activities on our margins and results each quarter; actions of competitors and commercial counterparties; the outcome of commercial negotiations, including final agreed terms and conditions; the ability to access debt markets on favorable terms or at all; the occurrence, pace, rate of recovery and effects of public health crises, including the responses from governments; reservoir performance, including variability and timing factors applicable to unconventional resources; the level and outcome of exploration projects and decisions to invest in future reserves; timely completion of development and other construction projects; final management approval of future projects and any changes in the scope, terms, costs or assumptions of such projects as approved; the actions of government or other actors against our core business activities and acquisitions, divestitures or financing opportunities; war, civil unrest, attacks against the company or industry, and other geopolitical or security disturbances, including disruption of land or sea transportation routes; expropriations, seizure, or capacity, insurance, shipping or export limitations imposed by governments or laws; opportunities for potential acquisitions, investments or divestments and satisfaction of applicable conditions to closing, including timely regulatory approvals; the capture of efficiencies within and between business lines and the ability to maintain near-term cost reductions as ongoing efficiencies; unforeseen technical or operating difficulties and unplanned maintenance; the development and competitiveness of alternative energy and emission reduction technologies; the results of research programs and the ability to bring new technologies to commercial scale on a cost-competitive basis; and other factors discussed under \"Item 1A. Risk Factors.\"",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "Pure safe-harbor factor enumeration ('These include global or regional changes in the supply and demand for oil ...; changes in law, regulations, taxes, trade sanctions, or policies ...; supply, transportation ...'), a list of nouns rather than standalone assertions about the company, so no category clears the mining-depth bar."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-d8f2f91c7bbfa2cc",
+   "section_type": "MDA",
+   "text": "We specialize in markets where our computing platforms can provide tremendous acceleration for applications. These platforms incorporate processors, interconnects, software, algorithms, systems, and services to deliver unique value. Our platforms address four large markets where our expertise is critical: Data Center, Gaming, Professional Visualization, and Automotive.\n\nData Center revenue was up 171% from a year ago and up 141% sequentially, led by CSPs and large consumer internet companies. Strong demand for the NVIDIA HGX platform based on our Hopper and Ampere GPU architectures was primarily driven by the development of large language models and generative AI. Data Center Compute grew 195% from a year ago and 157% sequentially, largely reflecting the strong ramp of our Hopper-based HGX platform. Networking was up 94% from a year ago and up 85% sequentially, primarily on strong growth in InfiniBand infrastructure to support our HGX platform. In the second quarter of fiscal year 2024, CSPs represented slightly more than half of our estimated Data Center end demand, with large consumer internet companies being the next largest end demand, followed by enterprise and high performance computing.\n\nProfessional Visualization revenue was down 24% from a year ago and up 28% sequentially. The year-on-year decrease primarily reflects lower sell-in to partners following normalization of channel inventory levels. The sequential increase was primarily due to stronger enterprise workstation demand and the ramp of NVIDIA RTX products based on the Ada Lovelace Architecture.\n\nData Center revenue for the second quarter of fiscal year 2024 was $10.32 billion, up 171% from a year ago. We announced that the NVIDIA GH200 Grace Hopper Superchip is available in the third quarter of fiscal year 2024; announced the NVIDIA L40S GPU - a universal data center processor for compute-intensive applications, including AI training and inference, is available now; unveiled the NVIDIA MGX server reference design; announced NVIDIA Spectrum-X, an accelerated networking platform for AI; and partnered with a\n\nGaming revenue for the second quarter of fiscal year 2024 was $2.49 billion, up 22% from a year ago. We began shipping the GeForce RTX 4060 family of GPUs; and announced NVIDIA Avatar Cloud Engine for Games, a custom AI model foundry service using AI-powered natural language interactions to transform games.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'Professional Visualization revenue was down 24% from a year ago. The year-on-year decrease primarily reflects lower sell-in to partners following normalization of channel inventory levels' asserts a realized decline in shipments/volume, notwithstanding the strong Data Center demand described elsewhere."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-79cc15cb7d850a44",
+   "section_type": "RISK_FACTORS",
+   "text": "Our operations and financial results are subject to various risks and uncertainties, including but not limited to those described in Part I, Item 1A, \"Risk Factors\" in our Annual Report on Form 10-K for the year ended December 31, 2025, which could harm our business, reputation, financial condition, and operating results, and may affect the trading price and price volatility of our Class A and Class C stock.\n\nWe have invested and expect to expand our investment in new businesses, products, services, and technologies in a wide range of industries beyond online advertising. The investments that we are making across our businesses — such as building AI-optimized infrastructure, including our custom TPUs, and integrating AI capabilities into new and existing products and services — reflect our ongoing efforts to innovate and provide products and services that are helpful to users, advertisers, publishers, customers, content providers, and distribution partners. Our investments ultimately may not be commercially viable or may not result in an adequate return of capital and, in pursuing new strategies, we may incur unanticipated liabilities, including those arising from the implementation of new regulatory requirements.\n\nWithin Google Services, we continue to invest in devices, including our smartphones, home devices, and wearables, which is a highly competitive market with frequent introduction of new products and services, rapid adoption of technological advancements by competitors, increased market saturation in developed countries, short product life cycles, evolving industry standards, continual improvement in performance characteristics, and price and feature sensitivity on the part of consumers and businesses. There can be no assurance we will be able to provide devices that compete effectively.\n\nWithin Google Cloud, we devote significant resources to develop and deploy our enterprise-ready cloud services, including Google Cloud Platform and Google Workspace, and we are advancing our AI platforms and models to support these tools and technologies, including the development of our custom TPUs and how we deliver them to our customers. We are incurring significant and increasing costs and liabilities to build and maintain infrastructure to support cloud computing services, invest in cybersecurity, and hire talent. Meanwhile, our competitors are rapidly developing and deploying cloud-based services and capacity. Pricing and delivery models, which are subject to increasing regulatory scrutiny and requirements, are competitive and constantly evolving, and we may therefore not achieve our business objectives. Further, our business with financial services, healthcare, and public sector customers may present additional risks, including regulatory compliance risks. For instance, we may be subject to government audits and cost reviews, and any failure to comply or any deficiencies found may expose us to legal, financial, and reputational risks. Evolving laws and regulations may require us to make new capital investments, build new products, and seek partners to deliver localized services in other countries, and we may not be able to meet sovereign operating requirements.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'We are incurring significant and increasing costs and liabilities to build and maintain infrastructure ..., invest in cybersecurity, and hire talent' is present-tense causeless cost-increase language, and 'Pricing and delivery models, which are subject to increasing regulatory scrutiny and requirements' asserts scrutiny that already exists; device-market 'increased market saturation' appears only as a noun in a competitive-characteristics list."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-3677d9e79dc81bb4",
+   "section_type": "RISK_FACTORS",
+   "text": "current and potential future geopolitical conflicts, as well as expansion into regional or global conflicts, and the resulting impacts to our business (this includes Russia’s invasion of Ukraine and the actions taken by the U.S., the EU, other governments and Mastercard in response)\n\nThe impact of and uncertainty that could result from any of these events or factors could ultimately decrease cross-border activity. Additionally, any regulation of interregional interchange fees could also negatively impact our cross-border activity (for example, the targets announced by the G20 Financial Stability Board related to cross-border payments). In each case, decreased cross-border activity could decrease the revenue we receive.\n\nIn addition to the cross-border impacts described above, our compliance with sanctions and our decision to suspend our business operations in Russia has led, and could further lead, to other legal ramifications and operational challenges, including fines, the nationalization of our subsidiary and any resulting impacts, and/or lawsuits.\n\nOur operations as a global payments network rely in part on global interoperable standards to help facilitate safe and simple payments. To the extent geopolitical events result in jurisdictions no longer participating in the creation or adoption of these standards, or the creation of competing standards, the products and services we offer could be negatively impacted.\n\nDuring 2023, approximately 70% of our revenue was generated from activities outside the U.S. This revenue (and the related expense) could be transacted in a non-functional currency or valued based on a currency other than the functional currency of the entity generating the revenues. Resulting exchange gains and losses are included in our net income. Our risk management activities provide protection with respect to adverse changes in the value of only a limited number of currencies and are based on estimates of exposures to these currencies.\n\nIn addition, some of the revenue we generate outside the U.S. is subject to unpredictable currency fluctuations including devaluation of currencies where the values of other currencies change relative to the U.S. dollar. If the U.S. dollar strengthens compared to currencies in which we generate revenue, this revenue may be translated at a materially lower amount than expected. Furthermore, we may become subject to exchange control regulations that might restrict or prohibit the conversion into U.S. dollars of our other revenue currencies and financial assets.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "REALIZED"
+      ],
+      [
+       "TRADE_POLICY_EXPOSURE",
+       "REALIZED"
+      ]
+     ],
+     "auditor_reason": "'[O]ur compliance with sanctions and our decision to suspend our business operations in Russia has led, and could further lead, to other legal ramifications ... including fines ... and/or lawsuits' asserts both sanctions exposure and legal consequences that have already occurred, while 'decreased cross-border activity could decrease the revenue we receive' is a standalone but conditional volume-decline assertion."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-a1853548628ae483",
+   "section_type": "EX99_PRESS_RELEASE",
+   "text": "emissions reduction targets or net-zero goals; potential liability resulting from pending or future litigation, government investigations and other proceedings; disruption or interruption of production or manufacturing or facility damage due to accidents, chemical releases, labor unrest, weather, power outages, natural disasters, cyber-attacks, terrorist acts or insurgent activity; the scope and duration of global or regional health pandemics or epidemics and actions taken by government authorities and other third parties in connection therewith; the creditworthiness and performance of Occidental's counterparties, including financial institutions, operating partners and other parties; failure of risk management; Occidental’s ability to retain and hire key personnel; supply, transportation and labor constraints; reorganization or restructuring of Occidental’s operations; changes in state, federal or international tax rates; and actions by third parties that are beyond Occidental's control.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "A bare cautionary noun list ('potential liability resulting from pending or future litigation, government investigations and other proceedings; ... supply, transportation and labor constraints; ... changes in state, federal or international tax rates') — the rubric's paradigm of nouns rather than standalone assertions, so no category clears the mining-depth bar."
+    }
+   ]
+  },
+  {
+   "chunk_id": "CHK-1da899d1c99d94e7",
+   "section_type": "MDA",
+   "text": "This third-quarter 2023 Form 10-Q, as well as other statements we make, contains “forward-looking statements” within the meaning of the federal securities laws, which include any statements that are not historical facts. Such statements often contain words such as “expect,” “may,” “can,” “believe,” “predict,” “plan,” “potential,” “projected,” “projections,” “precursor,” “forecast,” “outlook,” “expectations,” “estimate,” “intend,” “anticipate,” “ambition,” “goal,” “target,” “scheduled,” “think,” “should,” “could,” “would,” “will,” “see,” “likely,” and other similar words. Forward-looking statements address matters that are, to varying degrees, uncertain, such as statements about SLB’s financial and performance targets and other forecasts or expectations regarding, or dependent on, its business outlook; growth for SLB as a whole and for each of its Divisions (and for specified business lines, geographic areas or technologies within each Division); oil and natural gas demand and production growth; oil and natural gas prices; forecasts or expectations regarding energy transition and global climate change; improvements in operating procedures and technology; capital expenditures by SLB and the oil and gas industry; the business strategies of SLB, including digital and “fit for basin,” as well as the strategies of SLB’s customers; SLB’s capital allocation plans, including dividend plans and share repurchase programs; SLB’s APS projects, joint ventures, and other alliances; the impact of the ongoing conflict in Ukraine on global energy supply; access to raw materials; future global economic and geopolitical conditions; future liquidity, including free cash flow; and future results of operations, such as margin levels. These statements are subject to risks and uncertainties, including, but not limited to, changing global economic and geopolitical conditions; changes in exploration and production spending by SLB’s customers and changes in the level of oil and natural gas exploration and development; the results of operations and financial condition of SLB’s customers and suppliers; SLB’s inability to achieve its financial and performance targets and other forecasts and expectations; SLB’s inability to achieve net-zero carbon emissions goals or interim emissions reduction goals; general economic, geopolitical and business conditions in key regions of the world; the ongoing conflict in Ukraine; foreign currency risk; inflation; changes in monetary policy by governments; pricing pressure; weather and seasonal factors; unfavorable effects of health pandemics; availability and cost of raw materials; operational modifications, delays or cancellations; challenges in SLB’s supply chain; production declines; the extent of future charges; SLB’s inability to recognize efficiencies and other intended benefits from its business strategies and initiatives, such as digital or new energy, as well as its cost reduction strategies; changes in government regulations and regulatory requirements, including those related to offshore oil and gas exploration, radioactive sources, explosives, chemicals and climate-related initiatives; the inability of technology to meet new challenges in exploration; the competitiveness of alternative energy sources or product substitutes; and other risks and uncertainties detailed in this Form 10-Q and our most recent Form 10-K and Forms 8-K filed with or furnished to the SEC. If one or more of these or other risks or uncertainties materialize (or the consequences of any such development changes), or should our underlying assumptions prove incorrect, actual results or outcomes may vary materially from those reflected in our forward-looking statements. Forward-looking and other statements in this Form 10-Q regarding our environmental, social, and other sustainability plans and goals are not an indication that these statements are necessarily material to investors or required to be disclosed in our filings with the SEC. In addition, historical, current, and forward-looking environmental, social, and sustainability-related statements may be based on standards for measuring progress that are still developing, internal controls and processes that continue to evolve, and assumptions that are subject to change in the future. Statements in this Form 10-Q are made as of October 25, 2023, and SLB disclaims any intention or obligation to update publicly or revise such statements, whether as a result of new information, future events or otherwise.",
+   "high_stakes": false,
+   "contested_fields": [
+    {
+     "field": "red_flags",
+     "stored_label": [
+      [
+       "DEMAND_WEAKNESS",
+       "HYPOTHETICAL"
+      ],
+      [
+       "LEGAL_REGULATORY_ACTION",
+       "HYPOTHETICAL"
+      ],
+      [
+       "MARGIN_COST_PRESSURE",
+       "HYPOTHETICAL"
+      ],
+      [
+       "SUPPLY_INPUT_CONSTRAINT",
+       "HYPOTHETICAL"
+      ]
+     ],
+     "auditor_verdict": "disagree",
+     "auditor_label": [],
+     "auditor_reason": "Forward-looking-statement boilerplate enumerating single-noun risk items ('inflation; changes in monetary policy by governments; pricing pressure; ... availability and cost of raw materials; ... challenges in SLB's supply chain'), none of which asserts the risk specifically enough to stand alone as a sentence about the company."
+    }
+   ]
+  }
+ ]
+}

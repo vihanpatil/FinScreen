@@ -44,7 +44,9 @@ Design notes (read alongside `labeling_rubric.md` §7-8):
 
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 
 import pandas as pd
 
@@ -93,9 +95,29 @@ VARIANTS = {
         "effort": None,
         "output_path": "data/batch_requests_corrective.jsonl",
     },
+    # G1 repair re-label (2026-08-26). SINGLE-AXIS DISCIPLINE: this is
+    # byte-for-byte the same config as "disabled-4000" — the config E1's
+    # final corrective + relabel passes actually ran (data/
+    # corrective_batch_meta.json, data/relabel_batch_meta.json: model
+    # claude-sonnet-5, max_tokens 4000, thinking disabled, no effort) —
+    # and the same model id. The ONLY thing that changes between E1's
+    # labels and this run is SYSTEM_PROMPT, i.e. the rubric revision
+    # (v1.1 -> v1.2). It exists as a separate named variant purely so the
+    # request file, the batch metadata, and the labels artifact all carry
+    # their own paths and can never overwrite E1's frozen ones.
+    "v12_relabel": {
+        "max_tokens": 4000,
+        "thinking": {"type": "disabled"},
+        "effort": None,
+        "output_path": "data/batch_requests_v12.jsonl",
+    },
 }
 
 MODEL = "claude-sonnet-5"
+
+# Rubric revision this module's SYSTEM_PROMPT restates. Bump on every
+# rubric edit, per the 2026-08-10 sync rule (HANDOFF §3/§7).
+RUBRIC_VERSION = "v1.2"
 
 # Sonnet 5 pricing (per DISCOVERY.md §2), USD per million tokens.
 PRICING = {
@@ -148,6 +170,18 @@ def count_tokens(text: str) -> int:
 # the run). Keep this in sync with labeling_rubric.md by hand; the .md is
 # the authoritative human-readable spec, this is the model-facing
 # restatement of the same rules.
+#
+# CURRENT REVISION: rubric v1.2 (ratified 2026-08-26, HANDOFF §3). The
+# three v1.2 changes are all in the red-flag / modality half and are
+# marked in-line below:
+#   1. MARGIN_COST_PRESSURE bullet — causeless cost inflation is ALWAYS
+#      and ONLY this category.
+#   2. "MINING DEPTH" sentence after the red-flag bullets — enumerated
+#      risk-list clauses must stand alone as an assertion to earn a flag.
+#   3. "REALIZED CONTROLS" sentence in the MODALITY paragraph — an
+#      existence/occurrence claim is REALIZED inside safe-harbor framing.
+# SENTIMENT and GUIDANCE DIRECTION are byte-identical to v1.1.
+# `test_rubric_v12_sync.py` pins all of this against labeling_rubric.md.
 # ---------------------------------------------------------------------
 SYSTEM_PROMPT = """You are labeling short passages of text extracted from public SEC filings (10-K/10-Q Management's Discussion & Analysis, Item 1A Risk Factors, and 8-K earnings press releases / bodies) for a research/screening dataset.
 
@@ -175,9 +209,10 @@ RED FLAGS (when asked, multi-label — zero, one, or multiple may apply): for ea
 - SUPPLY_INPUT_CONSTRAINT: supply chain, raw material, component, labor availability, or production capacity constraints. Trigger language example: "component shortages and supply chain disruptions limited our ability to meet production targets this quarter."
 - TRADE_POLICY_EXPOSURE: tariffs, export controls, sanctions, or other cross-border trade-policy impacts. Trigger language example: "newly imposed tariffs increased our cost of goods sold, and export control restrictions limit our ability to sell certain products in some regions."
 - IMPAIRMENT_WRITEDOWN: asset impairments, goodwill write-downs, inventory write-downs, restructuring charges tied to asset value reduction. Trigger language example: "we recorded a $250 million goodwill impairment charge related to our industrial segment."
-- MARGIN_COST_PRESSURE: rising input/labor/operating costs compressing margins. If the passage names a specific cause (supply shortage, tariffs) AND states a margin/cost impact, label both the causal category and this one; if cost pressure is described with no named cause, label only this one. Trigger language example: "gross margin contracted due to higher input costs and increased freight expenses."
+- MARGIN_COST_PRESSURE: rising input/labor/operating costs compressing margins. If the passage names a specific cause (supply shortage, tariffs) AND states a margin/cost impact, label both the causal category and this one. Cost-inflation language with NO named cause is ALWAYS this category, and only this category — including generic phrasings like "input cost inflation" or "unexpected changes in costs, inflationary pressures", and including inside an enumerated risk list when the clause clears the mining-depth rule below. Trigger language example: "gross margin contracted due to higher input costs and increased freight expenses."
 - LEGAL_REGULATORY_ACTION: litigation, investigations, enforcement actions, regulatory fines, consent decrees, new regulatory compliance burdens. Trigger language example: "the Company is subject to an ongoing antitrust investigation by regulators in multiple jurisdictions."
 Do not label a category from a bare section header or table-of-contents mention with no substantive discussion — the passage has to actually discuss the matter, not just name it in a heading.
+MINING DEPTH: in an enumerated risk list, flag a category only if the clause asserts the risk specifically enough to stand alone as a sentence about this company. A single-word or passing category mention inside a boilerplate enumeration does not qualify — "our results may be affected by supply, demand, tariffs, litigation, and other factors" is a list of nouns, not a set of assertions, so flag none of them; "our results may be affected by component shortages that constrain production at our contract manufacturers" is a standalone assertion, so flag SUPPLY_INPUT_CONSTRAINT. Boilerplate that DOES clear this bar is still flagged — modality, not omission, is what separates generic risk language from a realized event.
 
 DISTRESS TIER (when asked, multi-label, same mechanics as red flags, separate list — do not merge with red flags):
 - GOING_CONCERN: explicit going-concern doubt language (filer's or auditor's) — e.g. "substantial doubt exists about the Company's ability to continue as a going concern."
@@ -186,6 +221,7 @@ DISTRESS TIER (when asked, multi-label, same mechanics as red flags, separate li
 These are expected to be rare or absent in most passages — do not force a match; leave the list empty when nothing genuinely matches.
 
 MODALITY (required on every red-flag and distress-tier match): HYPOTHETICAL if the passage frames it as something that may occur / a risk (hedging language: "may," "could," "if," generic risk-factor-style enumeration with no assertion it has happened). REALIZED if the passage states it has already occurred or is currently occurring (past/present tense, no hedging). If a passage opens hypothetically but then asserts a concrete realized impact, label REALIZED for that category — a concrete realized statement controls over preceding hypothetical framing in the same passage.
+REALIZED CONTROLS: a statement that an event EXISTS or HAS OCCURRED — pending litigation, completed audits that had consequences, regulation already in effect and already imposing obligations — is REALIZED even when it sits inside a forward-looking or safe-harbor sentence. Only the projected consequences of that event are HYPOTHETICAL; the surrounding could/may/if framing does not downgrade an existence claim. "We are subject to pending investigations in various stages" is REALIZED. "Audits have in the past resulted in fines, and could result in additional fines" is REALIZED. "New regulations effective this year impose additional compliance obligations, which may increase our costs" is REALIZED. "Such investigations could result in fines", with no statement that any investigation exists, is HYPOTHETICAL.
 
 Respond only via the structured output fields provided — do not add commentary outside them."""
 
@@ -421,7 +457,39 @@ def estimate_cost(corpus_df: pd.DataFrame) -> dict:
     }
 
 
-def write_requests_jsonl(requests: list[dict], path: str = OUTPUT_REQUESTS_PATH) -> None:
+def system_prompt_sha256() -> str:
+    """sha256 of the exact SYSTEM_PROMPT bytes sent in every request.
+
+    This is the fingerprint of the rubric revision as the model actually
+    sees it. `submit_labeling_batch.assert_requests_use_current_system_prompt`
+    checks every request body against it before submission, because the
+    variant guard (max_tokens/thinking/effort) deliberately does NOT look
+    at the prompt — and for the v1.2 re-label the prompt is the ONLY thing
+    that changed.
+    """
+    return hashlib.sha256(SYSTEM_PROMPT.encode("utf-8")).hexdigest()
+
+
+def write_requests_jsonl(
+    requests: list[dict], path: str = OUTPUT_REQUESTS_PATH, overwrite: bool = False
+) -> None:
+    """Writes request lines to `path`.
+
+    Refuses to clobber an existing file unless `overwrite=True`. Every
+    request file already on disk is E1 audit trail built against rubric
+    v1.1; silently rewriting one with the current (v1.2) SYSTEM_PROMPT
+    would destroy the record of what was actually submitted and would
+    break the "verify the submitted artifact is the tested artifact" rule
+    (HANDOFF §7) from the other direction.
+    """
+    if not overwrite and os.path.exists(path):
+        raise FileExistsError(
+            f"{path!r} already exists. Refusing to overwrite a built request "
+            f"file: the files on disk are the audit trail of what was really "
+            f"submitted, under whatever rubric revision was current then, and "
+            f"SYSTEM_PROMPT is now {RUBRIC_VERSION}. Pass overwrite=True only "
+            f"if you genuinely mean to rebuild this file."
+        )
     with open(path, "w") as f:
         for r in requests:
             f.write(json.dumps(r) + "\n")
@@ -462,17 +530,33 @@ def run():
     return requests, estimate
 
 
-def build_variant_files(corpus_df: pd.DataFrame | None = None) -> dict[str, int]:
-    """Builds the full (6,747-row) request file for every entry in
-    VARIANTS, writing each to its own path. Local prep only — no API
-    calls. Returns {variant_name: n_requests_written}."""
+def build_variant_files(
+    corpus_df: pd.DataFrame | None = None,
+    only: list[str] | None = None,
+    overwrite: bool = False,
+) -> dict[str, int]:
+    """Builds the full (6,747-row) request file for each named variant,
+    writing each to its own path. Local prep only — no API calls. Returns
+    {variant_name: n_requests_written}.
+
+    `only` restricts the build to a subset of VARIANTS (e.g.
+    ["v12_relabel"]); the default of every variant is kept for backwards
+    compatibility but will now raise FileExistsError on the legacy files
+    that are already on disk — see write_requests_jsonl().
+    """
     if corpus_df is None:
         corpus_df = pd.read_parquet(CORPUS_PATH)
 
+    names = list(VARIANTS) if only is None else list(only)
+    unknown = [n for n in names if n not in VARIANTS]
+    if unknown:
+        raise KeyError(f"Unknown variant(s): {unknown}. Known: {sorted(VARIANTS)}")
+
     counts = {}
-    for variant_name, cfg in VARIANTS.items():
+    for variant_name in names:
+        cfg = VARIANTS[variant_name]
         requests = build_all_requests(corpus_df, variant=variant_name)
-        write_requests_jsonl(requests, path=cfg["output_path"])
+        write_requests_jsonl(requests, path=cfg["output_path"], overwrite=overwrite)
         counts[variant_name] = len(requests)
         print(f"[{variant_name}] wrote {len(requests)} request lines to {cfg['output_path']}")
     return counts

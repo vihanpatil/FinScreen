@@ -1,0 +1,406 @@
+[
+ {
+  "chunk_id": "E2CHK-d829f55ca8f37d7b",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance is RAISED on the explicit words \"we are raising our revenue and EPS guidance for the remainder of fiscal year 2019\" and \"Company increases Enterprise Security revenue guidance\"; no clause in the passage names demand, supply, tariff, impairment, cost or legal exposure."
+ },
+ {
+  "chunk_id": "E2CHK-80517001894518ed",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment is NEUTRAL because the passage is a bare tabulation (\"Catastrophe Loss Charge by Event\", \"Net losses ... Total $ 3,273\") with no favorable or unfavorable characterization, and magnitude of a number alone is not sentiment; the catastrophe loss charges are underwriting losses, not asset-value reductions, so no IMPAIRMENT_WRITEDOWN."
+ },
+ {
+  "chunk_id": "E2CHK-77d05055cdf09936",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "I withheld DEMAND_WEAKNESS despite \"lower sales of OLYSIO ... and lower sales of SOVRIAD ... due to competitive entrants\" because the passage attributes the declines to currency (\"a negative impact from currency of 9.3%\") and to competitors rather than to softening demand, and asserts \"on an operational basis, worldwide sales increased 3.1%\"."
+ },
+ {
+  "chunk_id": "E2CHK-cc5d2223bb5c7434",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "HYPOTHETICAL"
+   ],
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "TRADE_POLICY_EXPOSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "DEMAND_WEAKNESS is REALIZED on \"has caused contractors to experience a shortage of skilled workers, resulting in project backlogs and an adverse effect on the growth rate of demand for our products\", while SUPPLY_INPUT_CONSTRAINT stays HYPOTHETICAL because the filer's own inputs are framed as \"unexpected shortages ... may have an adverse effect\" and the labor shortage reaches it through demand, not its own procurement; TRADE_POLICY_EXPOSURE is flagged because \"higher tariffs ... can disrupt raw material and fuel supplies and increase our costs\" carries a mechanism and so clears mining depth."
+ },
+ {
+  "chunk_id": "E2CHK-13ac74e3f24918cf",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is the closest call: operating income fell \"(0.2) %\" and \"(1.7) %\", but every characterization the filer makes is favorable (\"strong sales\", \"continued strength in member engagement\", \"disciplined inventory management\"), so the lean is positive; I did not add LEGAL_REGULATORY_ACTION for \"higher self-insured general liability claims expense\" because no action, investigation or proceeding is named."
+ },
+ {
+  "chunk_id": "E2CHK-051f807ab7340029",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Purely mechanical equity-compensation disclosure (\"Stock options granted and assumptions used in the Black-Scholes option valuation model\") with no characterization, no forward figure, and no taxonomy language."
+ },
+ {
+  "chunk_id": "E2CHK-2b7216aa44bdef4a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Membership and health-care-cost-payable rollforward tables are mechanical disclosure with no tone; the \"premium deficiency reserve\" of $10 million is a reserve accrual, not an asset write-down, so no IMPAIRMENT_WRITEDOWN."
+ },
+ {
+  "chunk_id": "E2CHK-ce249c623371ab45",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN rests on the recorded carrying-value reductions \"Venezuela remeasurement charges 34 327 172\" and \"Venezuela accounting change 1,084\", read consistently with the carrying-value-reduction rule; I withheld MARGIN_COST_PRESSURE because the decline is attributed only to \"lower Gross profit\" with no cost or inflation cause named."
+ },
+ {
+  "chunk_id": "E2CHK-5d92515d9b56cd6f",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "SUPPLY_INPUT_CONSTRAINT is the least certain flag: the qualifying language is \"could damage critical production, distribution or storage assets, delay or prevent delivery to markets\", which is constrained production rather than a supply-chain description; MARGIN_COST_PRESSURE is HYPOTHETICAL on \"may result in increased costs\", and I withheld LEGAL_REGULATORY_ACTION because \"regulatory fines, penalties or intervention\" appears only as a consequence noun list with no existing action asserted."
+ },
+ {
+  "chunk_id": "E2CHK-f8c72ef20e9f47e5",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "Sentiment is POSITIVE despite EPS falling to \"$0.55 ... compared to $1.00\", because the filer's characterization controls: \"maintained strong momentum\", \"business fundamentals are robust\", \"record total orders\"; guidance is MAINTAINED on \"Reiterating full year revenue guidance of 14-16% growth\" and \"Reiterating non-GAAP diluted EPS guidance of $4.00 to $4.20\"."
+ },
+ {
+  "chunk_id": "E2CHK-3a5f0a4b59768397",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "A GAAP-to-segment reconciliation (\"This analysis reconciles the summarized components of Total Segments ... to their equivalent GAAP measures\") is mechanical disclosure with no characterization and no taxonomy language."
+ },
+ {
+  "chunk_id": "E2CHK-d36b7ebe315b5249",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Guidance is MAINTAINED because the only explicit reaffirmation of a quantified figure is \"Maintaining U.S. Healthcare adjusted EBITDA ... range of ($50) million to $50 million\", while \"Narrowing fiscal 2024 adjusted EPS guidance to $3.20 to $3.35\" states no prior figure and so does not establish a decrease; sentiment is NEGATIVE on \"loss per share* was $6.85 compared to earnings per share of $0.81\", the \"$5.8 billion after-tax non-cash impairment charge\" and \"challenging retail environment\"."
+ },
+ {
+  "chunk_id": "E2CHK-62aed2d9df1dab81",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "The passage is a GAAP-to-non-GAAP column table (\"Operating income (loss) $ (152,029) (40 %)\", \"Year-over-year growth 117 %\") with no qualitative characterization in either direction, and the adjustments are stock compensation and intangible amortization rather than write-downs."
+ },
+ {
+  "chunk_id": "E2CHK-ce124a805a8a90ac",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "The double label follows the regulation-driven-cost rule: \"incremental costs of complying with the new European Union medical device regulations\" is an existing regulation plus an already-incurred cost, and \"Certain litigation charges ... 168\" independently supports the legal flag; IMPAIRMENT_WRITEDOWN rests on \"The net charge relates to the exit of businesses and is primarily comprised of intangible asset impairments.\""
+ },
+ {
+  "chunk_id": "E2CHK-0e3ff17a9876d1b2",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment is the uncertain field: much of the passage is neutral product architecture description, but the filer's own characterizations lean favorable — \"continued demand for our software products\", \"the high percentage of customers that renew\", \"differentiates us from many of our competitors\"."
+ },
+ {
+  "chunk_id": "E2CHK-ca351fee70f42ff4",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "I withheld MARGIN_COST_PRESSURE because the cost increase is volume-driven content amortization (\"a $362 million increase in content amortization relating to our existing and new content\") and the ratio is explicitly unchanged — \"As a percentage of revenues 58 % 58 %\" — so no margin compression or cost-inflation language is asserted."
+ },
+ {
+  "chunk_id": "E2CHK-fdc144152bb9692f",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "IMPAIRMENT_WRITEDOWN is the less certain flag, resting on the quantified line \"Asset Impairment & Exit Costs (1) (23) (20)\" rather than narrative; I did not flag SUPPLY_INPUT_CONSTRAINT because the shortage named is a competitor's — \"pandemic-related supply-chain shortages involving competitors' products\" — and a market-wide disruption is not automatically this filer's own constraint."
+ },
+ {
+  "chunk_id": "E2CHK-1f23ec86898ef77d",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No IMPAIRMENT_WRITEDOWN because the passage is impairment-testing methodology plus an explicit negation — \"We did not recognize material impairment on goodwill or intangible assets in 2015, 2014 or 2013\" — with no charge asserted and no risk asserted."
+ },
+ {
+  "chunk_id": "E2CHK-d3ed4b842ec0082c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEUTRAL because although the table shows \"Net income (loss) ... $ (2,371)\", it is an unannotated earnings schedule with no characterization, and magnitude alone is not sentiment; the flag rests on the recorded line \"Impairment 697 1,429 2,126\"."
+ },
+ {
+  "chunk_id": "E2CHK-2436649c4242e5a7",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "An appendix of non-GAAP definitions and reconciliations is mechanical disclosure; \"Acquisition, integration and severance\" and \"Global restructure\" are add-back labels with no stated tie to asset-value reduction, so no IMPAIRMENT_WRITEDOWN."
+ },
+ {
+  "chunk_id": "E2CHK-b7915473737b6825",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "LEGAL_REGULATORY_ACTION is REALIZED on \"Recall charges were $76 ... primarily due to the previously disclosed Rejuvenate and ABG II Modular-Neck hip stems\" plus the incurred \"Medical device regulations\" and \"Regulatory and legal matters\" charges; I withheld MARGIN_COST_PRESSURE because those regulation costs are bare line-item labels and the narrative asserts margin expansion \"to 25.9% of sales in 2021 from 12.5% in 2020\"."
+ },
+ {
+  "chunk_id": "E2CHK-30362d4945bdde07",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "The flag is marginal and rests on a single quantified table line, \"OTTI losses realized on securities reclassified to noninterest income (1)\", which I treat as a realized carrying-value reduction for consistency with other recorded impairment line items rather than as a header mention."
+ },
+ {
+  "chunk_id": "E2CHK-0bd15809fde55c9f",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "I withheld LEGAL_REGULATORY_ACTION because \"may be limited by ... applicable securities law and regulations\" is the filer operating under standing law rather than any affirmative government action, and I withheld DEMAND_WEAKNESS because \"some of those deployments have not resulted in the customer's adoption\" describes its own pilot go-to-market model, not declining orders or softening demand."
+ },
+ {
+  "chunk_id": "E2CHK-0b4cbf6fefa46b1e",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment rests on the filer's favorable characterizations of achievement — \"we nearly doubled the users of our GeForce Experience PC gaming platform\", \"twice the performance and double the power efficiency of its predecessor\" — with no offsetting unfavorable statement."
+ },
+ {
+  "chunk_id": "E2CHK-55f3c41cbc0c40c4",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment is NEUTRAL because the passage is flat variance narrative (\"DD&A increased in the first quarter of 2021 primarily due to the Merger closing\") with no favorable or unfavorable characterization; the flag is REALIZED on \"Asset impairments were $2.7 billion in the first quarter of 2020\" and \"unproved asset impairments of $110 million\"."
+ },
+ {
+  "chunk_id": "E2CHK-e6e052bda541c8cd",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "No flags because \"a variety of factors, including but not limited to, volatility in the selling prices ... impairment charges and exploration expenses, industry cost inflation and/or deflation ... political risk\" is a safe-harbor noun list that fails mining depth; the remainder is a liquidity and cash-flow table with one flat favorable note (\"primarily reflects higher net production volumes\")."
+ },
+ {
+  "chunk_id": "E2CHK-4f560e57c0051a11",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance is NONE even though \"2020 adjusted earnings per share outlook ≥ $4.37\" is a quantified forward figure, because the passage nowhere reaffirms, raises, lowers or withdraws it relative to a prior figure; the surrounding text is a reconciliation schedule with no tone."
+ },
+ {
+  "chunk_id": "E2CHK-658a9ac193f51aec",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Decelerating figures such as \"Revenue - YoY 66 % 116 % 57 % 42 % 38 % 13 %\" are unannotated table rows with no assertion of softening demand, so neither NEGATIVE sentiment nor DEMAND_WEAKNESS is supported by the passage's own words."
+ },
+ {
+  "chunk_id": "E2CHK-52fa7e87bf812c16",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Procedural overview and recent-developments narrative (\"The primary activities and operating subsidiaries through which we conduct those activities are as follows\", \"Sunoco Logistics formed Permian Express Partners LLC\") with no favorable or unfavorable characterization and no taxonomy language."
+ },
+ {
+  "chunk_id": "E2CHK-2d6fc9a160857d12",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "HYPOTHETICAL"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "DEMAND_WEAKNESS clears mining depth on the mechanism-bearing clause \"reducing the number of new chip designs and their overall research and development spending ... and as a result decrease demand for our products and services\", and stays HYPOTHETICAL because the only realized statements (\"have led\", \"have also had\") concern market-wide conditions rather than this filer's demand; SUPPLY_INPUT_CONSTRAINT is the weaker flag, resting on \"problems or delays with our hardware suppliers or with the supply or delivery of our hardware products\" inside an enumeration, and I gave no TRADE_POLICY_EXPOSURE because \"protectionist measures\" appears only as a bare noun in a macro list."
+ },
+ {
+  "chunk_id": "E2CHK-ce72bb5abc821df6",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "LOWERED",
+  "red_flags": [],
+  "reason": "LOWERED rests on the one explicit decrease against a stated prior figure — \"capital expenditures to be between $175 million and $225 million, a change from our previous expectation of $200 million to $250 million\" — since \"We narrow our guidance\" alone states no direction and nothing is raised; sentiment is NEUTRAL because the loss of JUUL rights (\"significantly reducing our voting power\") is offset by guided growth \"of 4.5% to 6%\", and the \"high inflation ... global supply chain disruptions\" clause is a monitoring enumeration that fails mining depth."
+ },
+ {
+  "chunk_id": "E2CHK-4fa532d3a2d17f1e",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Condensed income statement with change columns and presentation-reclassification notes; no characterization of the results, and \"Restructuring charge - 76 (76)\" is a prior-period line with no stated asset-value reduction."
+ },
+ {
+  "chunk_id": "E2CHK-cd70cef40486e00d",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "reason": "The flag is the least certain field: \"ongoing increased contraction associated with our customer commitment packages\" and the excluded \"$26.0 million from ARR ... we concluded that the transaction would not recur\" assert a realized unfavorable bookings trend, even though headline \"ARR grew to $4.0 billion\"; sentiment is NEUTRAL because that growth and that contraction are both stated flatly with no lean."
+ },
+ {
+  "chunk_id": "E2CHK-0d2fcecfba4443e1",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Critical-accounting-policy description (shrink estimation, impairment methodology, tax provision judgment) is mechanical disclosure, and the impairment discussion ends in an explicit negation — \"Impairments of long-lived assets were not material to our consolidated financial statements in fiscal 2020, fiscal 2019 or fiscal 2018\" — so no flag."
+ },
+ {
+  "chunk_id": "E2CHK-e2b50bc7b83e55e1",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Modality is REALIZED because the agency and court actions exist — \"the United States Court of Appeals for the District of Columbia Circuit issued an opinion upholding the FERC's decision denying ... recovery of an income tax allowance\" — and only the consequence (\"revenues ... may decrease in the future as a result of changes to FERC policies\") is projected."
+ },
+ {
+  "chunk_id": "E2CHK-f7fab9fd23872ef2",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "MARGIN_COST_PRESSURE is REALIZED on \"an increase in supply chain and distribution costs ... as well as a decrease in merchandise margin\" caused by \"currency exchange rates increased TJX Canada's cost of merchandise purchased in U.S. dollars\"; I withheld SUPPLY_INPUT_CONSTRAINT because higher supply-chain cost is not a shortage or inability to procure."
+ },
+ {
+  "chunk_id": "E2CHK-993aebfd867560b5",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Supplemental key-statistics tables (\"Change in pays per control - U.S.\", \"Average investment balances at cost\") are mechanical disclosure with no characterization and no taxonomy language."
+ },
+ {
+  "chunk_id": "E2CHK-95735ebb8e759307",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [],
+  "reason": "MAINTAINED rests on the explicit reaffirmation \"Reaffirms Fiscal 2026 Outlook\" and \"These results reinforce the confidence we have in our fiscal 2026 outlook\", though the passage restates no number for it; sentiment is POSITIVE on \"We had a strong start to fiscal 2026\", \"returning to organic sales growth\" and \"improving profitability\"."
+ },
+ {
+  "chunk_id": "E2CHK-2066076789fd74d5",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "An unannotated statistical table plus conference-call logistics; the mixed figures (\"Net income (loss) available to common stockholders ... 75 (740) (1,111)\") carry no characterization, and the \"$103 million paid to terminate future natural gas transportation commitments\" is a cash contract exit, not an asset write-down."
+ },
+ {
+  "chunk_id": "E2CHK-3f35dadfb12041e2",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "MARGIN_COST_PRESSURE is REALIZED on \"increase of $10 million in ethanol segment operating expenses was primarily due to an increase in energy costs driven by higher natural gas prices\", and IMPAIRMENT_WRITEDOWN on \"write-offs for assets that were idled in the first quarter of 2017\"; sentiment is POSITIVE because the passage's own words are \"favorable impact to our ethanol margin\", \"favorable impact to VLP's operating revenues\" and \"Our operations generated $988 million of cash\"."
+ }
+]

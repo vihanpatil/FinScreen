@@ -1,8 +1,8 @@
 # Labeling Rubric — FinScreen Bootstrap Labels
 
-Version 1.1 (Week 3; see §9). Governs every Batch API labeling request built by
-`build_batch_requests.py`. A model-facing restatement of this document
-(same rules, leaner wording — no file references or revision log) is
+Version 1.2 (ratified 2026-08-26; see §9). Governs every Batch API labeling
+request built by `build_batch_requests.py`. A model-facing restatement of
+this document (same rules, leaner wording — no file references or revision log) is
 embedded as the cacheable system-prompt prefix in every labeling request;
 this .md is the authoritative human-readable spec, and the two are kept in
 sync by hand — see `SYSTEM_PROMPT` in `build_batch_requests.py`.
@@ -154,16 +154,35 @@ positive match also requires a **modality** value (§6).
 TRADE_POLICY_EXPOSURE):** if the passage names a specific cause (supply
 shortage, tariff) for cost/margin pressure, label **both** the causal
 category and `MARGIN_COST_PRESSURE` if margin/cost impact is explicitly
-stated — categories are not mutually exclusive. If the passage describes
-cost pressure with no named cause (e.g., generic "input cost inflation"),
-label only `MARGIN_COST_PRESSURE`.
+stated — categories are not mutually exclusive. **Cost-inflation language
+with no named cause is *always* `MARGIN_COST_PRESSURE`** (e.g. generic
+"input cost inflation", "unexpected changes in costs, inflationary
+pressures"), and only `MARGIN_COST_PRESSURE` — including inside an
+enumerated risk list, when the clause clears the mining-depth rule below.
+
+*(v1.2 — the word that changed is "always". The bootstrap pass applied this
+note inconsistently in both directions: 20 spurious and 23 missed
+MARGIN_COST_PRESSURE corrections, the single largest error mode in
+`RED_FLAGS_LIMITATION.md`. Ratified as the P3 corollary, 2026-08-18.)*
+
+**Mining depth in enumerated risk lists (v1.2 — owner-ratified principle
+P3, 2026-08-18):** in an enumerated risk-factor list, flag a category only
+if the clause **asserts the risk specifically enough to stand alone as a
+sentence about this company**. Single-word category mentions inside a
+boilerplate enumeration do not qualify. "Our results may be affected by
+supply, demand, tariffs, litigation, and other factors" is a list of nouns,
+not a set of assertions — flag none of them. "Our results may be affected by
+component shortages that constrain production at our contract
+manufacturers" is a standalone assertion — flag
+`SUPPLY_INPUT_CONSTRAINT`.
 
 **What does *not* count:** a category name appearing in a section header or
-table of contents with no substantive discussion; a purely hypothetical
-risk-factor sentence that is boilerplate generic language shared across
-nearly all filers in an industry with no company-specific detail (still
-label it if it fits a category — see modality below — but this is exactly
-what the modality field exists to distinguish from a realized event).
+table of contents with no substantive discussion; a single-word or passing
+category mention inside a boilerplate enumeration that fails the
+mining-depth rule above. Boilerplate that *does* clear the mining-depth bar
+is still labeled: generic industry risk language that meaningfully asserts
+the risk gets the flag, and `HYPOTHETICAL` modality (§6) — not omission —
+is what distinguishes it from a realized event.
 
 ---
 
@@ -232,6 +251,29 @@ current period, tariffs already imposed increased our cost of goods sold
 by $120 million") should be labeled `REALIZED` for that category — the
 concrete realized statement controls over a preceding hypothetical framing
 in the same passage.
+
+**Realized-controls rule (v1.2 — owner-ratified principle P1,
+2026-08-18):** a statement that an event **exists or has occurred** —
+pending litigation, completed audits that had consequences, regulation
+already in effect and already imposing obligations — is `REALIZED` **even
+inside a forward-looking or safe-harbor sentence**. Only the *projected
+consequences* of that event are `HYPOTHETICAL`. The surrounding
+could/may/if framing does not downgrade an existence claim.
+
+- "We are subject to pending investigations ... in various stages" →
+  `REALIZED` (the investigations exist).
+- "Audits ... have in the past resulted in fines, and could result in
+  additional fines" → `REALIZED` (audits happened and had consequences).
+- "New regulations effective this year impose additional compliance
+  obligations, which may increase our costs" → `REALIZED` (the regulation
+  is in effect; only the cost increase is projected).
+- "Such investigations could result in fines" — with no statement that any
+  investigation exists → `HYPOTHETICAL`.
+
+*(This is the single largest correction class in `RED_FLAGS_LIMITATION.md`:
+43 wrong-modality corrections, 26 of them `LEGAL_REGULATORY_ACTION`. Labels
+produced before v1.2 systematically under-report REALIZED legal/regulatory
+exposure.)*
 
 ---
 
@@ -305,14 +347,41 @@ guarantees it:
   the §3 mixed raise/lower judging rule was added to the model-facing
   `SYSTEM_PROMPT` (it was in the rubric but missing from the prompt). No
   label-definition changes.
-- **v1.2 (proposed 2026-08-18 — NOT ratified, NOT applied, no re-label):**
-  the 400-example spot-check ran and `red_flags` failed the 0.70 agreement
-  bar (63.4% exact-set match). Three concrete §4/§6 clarifications are
-  drafted against this document — realized-controls-modality, boilerplate
-  mining depth, and the causeless-cost-inflation disambiguation — in
-  **`RED_FLAGS_LIMITATION.md`** ("Proposed rubric revision"). **Read that
-  file before editing §4 or §6.** Nothing in this document has changed on
-  account of it, and no re-label is possible regardless (API-spend freeze,
-  `HANDOFF.md` §5). If it is ever ratified, the §3 sync rule applies:
-  `SYSTEM_PROMPT` in `build_batch_requests.py` gets a matching hand-synced
-  edit.
+- ~~v1.2 (proposed 2026-08-18 — NOT ratified, NOT applied, no re-label)~~
+  **superseded by the ratified v1.2 entry below.** History: the 400-example
+  spot-check ran, `red_flags` failed the 0.70 agreement bar (63.4%
+  exact-set match), and three §4/§6 clarifications were drafted against
+  this document in `RED_FLAGS_LIMITATION.md` ("Proposed rubric revision")
+  but left unapplied under the then-absolute API-spend freeze.
+- **v1.2 (RATIFIED 2026-08-26, applied same day).** Owner ratification:
+  `HANDOFF.md` §3, 2026-08-26 entry ("F2.5 closure rulings", ruling 1) —
+  the §5 spend freeze was lifted for exactly one purpose, a single Batch
+  API re-label of the 6,747-chunk E1 corpus under this revision. The
+  revision is the one proposed in `RED_FLAGS_LIMITATION.md`, built on the
+  owner-ratified P1/P2/P3 ambiguity principles (2026-08-18). Three changes,
+  all in the red-flag/modality half of the rubric:
+  1. **§6 realized-controls rule (P1)** — an existence/occurrence claim is
+     `REALIZED` even inside safe-harbor framing; only its projected
+     consequences are `HYPOTHETICAL`.
+  2. **§4 mining-depth rule (P3)** — in enumerated risk lists, a clause
+     earns a flag only if it asserts the risk specifically enough to stand
+     alone as a sentence about this company.
+  3. **§4 disambiguation-note emphasis (P3 corollary)** — causeless
+     cost-inflation language is *always* `MARGIN_COST_PRESSURE`, including
+     inside enumerations that clear (2).
+  **Unchanged by v1.2:** §2 sentiment, §3 guidance direction, §5
+  distress-tier category definitions, §1 applicability matrix, §7 output
+  schema, §8 look-ahead-safety constraints. §6 modality is shared
+  vocabulary, so change (1) reaches `distress_tier` modality as well as
+  `red_flags` modality — `distress_tier` remains excluded from training
+  targets and headline metrics either way (`HANDOFF.md` §7).
+  **Deliberately NOT encoded:** principle **P2** (liquidity-stress
+  threshold — affirmed adequacy defeats the flag). P2 governs
+  `distress_tier`, the proposed revision in `RED_FLAGS_LIMITATION.md` did
+  not propose a §5 edit for it, and the ratification names that proposal.
+  P2 remains documented in that file's distress-tier addendum; encoding it
+  in §5 would need its own owner ruling.
+  §3 sync rule honored the same day: `SYSTEM_PROMPT` in
+  `build_batch_requests.py` received a matching hand-synced edit
+  (leaner restatement, same three rules), checked side by side and pinned
+  by `test_rubric_v12_sync.py`.

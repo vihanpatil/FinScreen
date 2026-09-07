@@ -1,0 +1,39 @@
+accession_number,section_type,form,company,shipped_words,candidate_words,verdict,note
+0001562762-21-000027,MDA,10-K,ConocoPhillips,20487,37153,CANDIDATE_WORSE,shipped head is the real Item 7 heading; candidate head is a cross-reference inside Item 1 Business
+0001562762-18-000040,MDA,10-K,MercadoLibre,28898,43894,BOTH_WRONG,both heads are cross-references; candidate over-captures 15k more words
+0001562762-16-000352,MDA,10-K,MercadoLibre,23319,50803,CANDIDATE_WORSE,shipped head is the real Item 7 heading; candidate is a cross-reference
+0000950103-16-011313,MDA,10-K,Shire,12689,13572,CANDIDATE_WORSE,shipped head is the real Item 7 heading; candidate starts inside a five-year data table
+0001562762-19-000047,MDA,10-K,MercadoLibre,24664,24681,BOTH_WRONG,both cross-references; 143 chars apart
+0001562762-17-000024,MDA,10-K,MercadoLibre,28944,44360,BOTH_WRONG,both cross-references; candidate over-captures
+0000723125-19-000094,RISK_FACTORS,10-K,Micron,23672,20132,BOTH_WRONG,both heads are cross-references; shipped runs into the signature page
+0000723125-17-000131,RISK_FACTORS,10-K,Micron,27976,15133,BOTH_WRONG,both cross-references; shipped runs into the signature page
+0000034088-18-000015,RISK_FACTORS,10-K,ExxonMobil,30394,2578,CANDIDATE_BETTER,candidate head is the real ITEM 1A. RISK FACTORS; shipped captured the whole Business section
+0000723125-15-000112,RISK_FACTORS,10-K,Micron,30782,13444,BOTH_WRONG,both cross-references
+0001035002-22-000007,RISK_FACTORS,10-K,Valero,32564,16627,BOTH_WRONG,both are sub-heading cross-references
+0001104659-21-025751,RISK_FACTORS,10-K,Abbott,85,4076,CANDIDATE_BETTER,candidate head is the real ITEM 1A; shipped is the 83-word Abbott mis-slice P3 named
+0000034088-22-000011,RISK_FACTORS,10-K,ExxonMobil,28793,273,BOTH_WRONG,neither is Risk Factors; candidate is 273 w of forward-looking prose vs 28.8k w of Business
+0000034088-19-000010,RISK_FACTORS,10-K,ExxonMobil,28950,2679,CANDIDATE_BETTER,candidate head is the real ITEM 1A. RISK FACTORS
+0001047469-18-000856,RISK_FACTORS,10-K,Abbott,83,3654,CANDIDATE_BETTER,candidate head is the real ITEM 1A
+0001047469-17-000744,RISK_FACTORS,10-K,Abbott,83,4077,CANDIDATE_BETTER,candidate head is the real ITEM 1A
+0000732717-24-000022,MDA,10-Q,AT&T,398,5169,CANDIDATE_BETTER,the named N5 defect: shipped is the last running page header; candidate is the section start
+0000732717-15-000079,MDA,10-Q,AT&T,716,10183,CANDIDATE_BETTER,same; candidate head reads RESULTS OF OPERATIONS
+0000024741-17-000060,MDA,10-Q,Corning,4416,8183,BOTH_WRONG,identical cross-reference head on both; candidate captures more
+0000024741-18-000053,MDA,10-Q,Corning,6259,6844,BOTH_WRONG,identical cross-reference head on both
+0000732717-17-000055,MDA,10-Q,AT&T,341,11376,CANDIDATE_BETTER,named N5 defect
+0000024741-15-000045,MDA,10-Q,Corning,3361,14899,CANDIDATE_BETTER,candidate head is the real ITEM 2 heading with ORGANIZATION OF INFORMATION
+0001001039-16-000418,MDA,10-Q,Walt Disney,13,12182,CANDIDATE_BETTER,shipped is a 13-word heading-only slice (P3 heading-only class)
+0001628280-18-001147,MDA,10-Q,Walt Disney,13,8638,CANDIDATE_BETTER,shipped is a 13-word heading-only slice
+0000024741-17-000026,MDA,10-Q,Corning,3873,6823,BOTH_WRONG,identical cross-reference head on both
+0000024741-16-000105,MDA,10-Q,Corning,2868,12849,CANDIDATE_BETTER,candidate head is the real ITEM 2 heading
+0001628280-15-008083,RISK_FACTORS,10-Q,Aon,77,89,CANDIDATE_BETTER,candidate opens on the real ITEM 1A. RISK FACTORS heading
+0000723125-17-000037,RISK_FACTORS,10-Q,Micron,7515,14906,CANDIDATE_WORSE,shipped is the real section; candidate starts on a cross-reference 44k chars earlier
+0001633917-16-000161,RISK_FACTORS,10-Q,PayPal,2712,14071,CANDIDATE_WORSE,shipped is the real section; candidate adds 11.4k words of wrong text
+0001558370-16-006167,RISK_FACTORS,10-Q,Deere,88,3039,CANDIDATE_WORSE,shipped is the real short no-material-change stub; candidate is a cross-reference
+0001558370-23-016700,RISK_FACTORS,10-Q,Waste Management,56,9642,CANDIDATE_WORSE,shipped is the real stub; candidate adds 9.6k words of wrong text
+0000024741-15-000058,RISK_FACTORS,10-Q,Corning,70,94,CANDIDATE_BETTER,candidate opens on the real ITEM 1A heading
+0000950103-15-005935,RISK_FACTORS,10-Q,Shire,31,390,CANDIDATE_WORSE,shipped is the real stub; candidate starts in the front matter at offset 5358
+0000723125-18-000156,RISK_FACTORS,10-Q,Micron,9801,24619,CANDIDATE_WORSE,shipped is the real section; candidate starts inside the financial statements
+0000024741-15-000045,RISK_FACTORS,10-Q,Corning,69,93,CANDIDATE_BETTER,candidate opens on the real ITEM 1A heading
+0001065088-20-000030,RISK_FACTORS,10-Q,PayPal,16030,26598,CANDIDATE_WORSE,shipped is the real section; candidate adds 10.6k words
+0001558370-17-004638,RISK_FACTORS,10-Q,Deere,88,3036,CANDIDATE_WORSE,shipped is the real stub; candidate is a cross-reference
+0001558370-18-007303,RISK_FACTORS,10-Q,Deere,88,3472,CANDIDATE_WORSE,shipped is the real stub; candidate is a cross-reference

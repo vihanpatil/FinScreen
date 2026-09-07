@@ -1,0 +1,42 @@
+[earnings] 10567 filings -> 8 shards of 1500
+  shard earnings_0000: done, skipped
+  shard earnings_0001: done, skipped
+  shard earnings_0002: done, skipped
+  shard earnings_0003: done, skipped
+  shard earnings_0004: done, skipped
+  shard earnings_0005: done, skipped
+  shard earnings_0006: done, skipped
+  shard earnings_0007: done, skipped
+[10-K] 2445 filings -> 10 shards of 250
+  shard 10-K_0000: done, skipped
+  shard 10-K_0001: done, skipped
+  shard 10-K_0002: done, skipped
+  shard 10-K_0003: done, skipped
+  shard 10-K_0004: done, skipped
+  shard 10-K_0005: done, skipped
+  shard 10-K_0006: done, skipped
+  shard 10-K_0007: done, skipped
+  shard 10-K_0008: done, skipped
+  shard 10-K_0009: done, skipped
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0000: done, skipped
+  shard 10-Q_0001: done, skipped
+  shard 10-Q_0002: done, skipped
+  shard 10-Q_0003: done, skipped
+  shard 10-Q_0004: done, skipped
+  shard 10-Q_0005: done, skipped
+  shard 10-Q_0006: done, skipped
+  shard 10-Q_0007: done, skipped
+  shard 10-Q_0008: done, skipped
+  shard 10-Q_0009: done, skipped
+  shard 10-Q_0010: done, skipped
+  shard 10-Q_0011: done, skipped
+  shard 10-Q_0012: done, skipped
+  shard 10-Q_0013: done, skipped
+  shard 10-Q_0014: done, skipped
+  shard 10-Q_0015: done, skipped
+
+Merged: 30475 attempts -> 28900 sections  {'OK': 25245, 'FLAGGED': 3655, 'FAIL': 796, 'EXPECTED_ABSENT': 779}
+Wrote /Users/vihanpatil/personal/projects/FinScreen/data/filings_e2.parquet
+Wrote /Users/vihanpatil/personal/projects/FinScreen/data/f3/extraction_audit.parquet, extraction_failures.csv, per_filer_rollup.csv, population_gate.csv, length_distribution.csv
+Total EDGAR network GETs this run: 0 (cache-only by construction)

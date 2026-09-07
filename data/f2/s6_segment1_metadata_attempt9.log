@@ -1,0 +1,363 @@
+stage=metadata -> data/filings_metadata_e2.db (cache TTL 24.0 h)
+E2 corpus window 2015-07-01 .. 2026-08-31 (fixed literals, not derived from today). 244 member CIKs / 299 membership spells -> stage=metadata
+
+validate_universe(): 34 problem(s) found (0 FATAL / 5 WARN / 29 INFO):
+subject            severity check                        message
+--------------------------------------------------------------------------------------------------------------
+77476              WARN     no_large_filing_gap          CIK 77476 (PEPSICO INC): 139-day gap between 10-K/10-Q filings 2016-09-29 -> 2017-02-15, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+77476              WARN     no_large_filing_gap          CIK 77476 (PEPSICO INC): 136-day gap between 10-K/10-Q filings 2018-10-02 -> 2019-02-15, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+849399             WARN     no_large_filing_gap          CIK 849399 (Gen Digital Inc.): 266-day gap between 10-K/10-Q filings 2018-02-02 -> 2018-10-26, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+1393612            WARN     no_large_filing_gap          CIK 1393612 (Discover Financial Services): 145-day gap between 10-K/10-Q filings 2024-07-31 -> 2024-12-23, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+1637459            WARN     no_large_filing_gap          CIK 1637459 (Kraft Heinz Co): 217-day gap between 10-K/10-Q filings 2018-11-02 -> 2019-06-07, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+4447               INFO     member_stopped_filing        CIK 4447 (HESS CORP) left the universe (coverage_end 2026-08-31) and its most recent 10-K/10-Q is 2025-05-08 (480 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+6769               INFO     member_stopped_filing        CIK 6769 (APACHE CORP) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2024-11-07 (662 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+701221             INFO     member_stopped_filing        CIK 701221 (Cigna Holding Co) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2018-11-01 (2860 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+718877             INFO     member_stopped_filing        CIK 718877 (Activision Blizzard, Inc.) left the universe (coverage_end 2025-08-05) and its most recent 10-K/10-Q is 2023-07-31 (1127 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+773910             INFO     member_stopped_filing        CIK 773910 (ANADARKO PETROLEUM CORP) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2019-07-30 (2589 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+790070             INFO     member_stopped_filing        CIK 790070 (EMC CORP) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2016-08-08 (3675 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+804753             INFO     member_stopped_filing        CIK 804753 (CERNER Corp) left the universe (coverage_end 2019-08-05) and its most recent 10-K/10-Q is 2022-05-03 (1581 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+816284             INFO     member_stopped_filing        CIK 816284 (CELGENE CORP /DE/) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2019-10-31 (2496 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+884905             INFO     member_stopped_filing        CIK 884905 (LINDE INC) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-11-09 (2852 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+936402             INFO     member_stopped_filing        CIK 936402 (Shire plc) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-11-01 (2860 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1001039            INFO     member_stopped_filing        CIK 1001039 (TWDC Enterprises 18 Corp.) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2019-02-05 (2764 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1012569            INFO     member_stopped_filing        CIK 1012569 (Energy Transfer, LP) left the universe (coverage_end 2019-08-05) and its most recent 10-K/10-Q is 2017-11-08 (3218 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1038357            INFO     member_stopped_filing        CIK 1038357 (PIONEER NATURAL RESOURCES CO) left the universe (coverage_end 2026-08-05) and its most recent 10-K/10-Q is 2024-05-02 (851 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1047122            INFO     member_stopped_filing        CIK 1047122 (RAYTHEON CO/) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2020-02-12 (2392 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1105705            INFO     member_stopped_filing        CIK 1105705 (WARNER MEDIA, LLC) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-04-26 (3049 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1122304            INFO     member_stopped_filing        CIK 1122304 (AETNA INC /PA/) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-10-30 (2862 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1126975            INFO     member_stopped_filing        CIK 1126975 (Magellan Midstream Partners, L.P.) left the universe (coverage_end 2023-08-05) and its most recent 10-K/10-Q is 2023-08-03 (1124 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1161154            INFO     member_stopped_filing        CIK 1161154 (Energy Transfer Operating, L.P.) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2021-02-19 (2019 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1271024            INFO     member_stopped_filing        CIK 1271024 (LINKEDIN CORP) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2016-10-27 (3595 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1358071            INFO     member_stopped_filing        CIK 1358071 (CONCHO RESOURCES INC) left the universe (coverage_end 2022-08-05) and its most recent 10-K/10-Q is 2020-10-27 (2134 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1364742            INFO     member_stopped_filing        CIK 1364742 (BlackRock Finance, Inc.) left the universe (coverage_end 2026-08-05) and its most recent 10-K/10-Q is 2024-08-06 (755 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1373835            INFO     member_stopped_filing        CIK 1373835 (Spectra Energy Corp.) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2017-02-24 (3475 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1393612            INFO     member_stopped_filing        CIK 1393612 (Discover Financial Services) left the universe (coverage_end 2025-08-05) and its most recent 10-K/10-Q is 2025-04-30 (488 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1418091            INFO     member_stopped_filing        CIK 1418091 (TWITTER, INC.) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2022-07-26 (1497 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1483096            INFO     member_stopped_filing        CIK 1483096 (WILLIAMS PARTNERS L.P.) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-08-02 (2951 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1532063            INFO     member_stopped_filing        CIK 1532063 (Express Scripts Holding Co.) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2018-10-31 (2861 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1578845            INFO     member_stopped_filing        CIK 1578845 (Allergan plc) left the universe (coverage_end 2022-08-05) and its most recent 10-K/10-Q is 2020-05-07 (2307 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1618921            INFO     member_stopped_filing        CIK 1618921 (Walgreens Boots Alliance, Inc.) left the universe (coverage_end 2019-08-05) and its most recent 10-K/10-Q is 2025-06-26 (431 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1782754            INFO     member_stopped_filing        CIK 1782754 (AZEK Co Inc.) left the universe (coverage_end 2026-08-05) and its most recent 10-K/10-Q is 2025-05-07 (481 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+
+validation exceptions (/Users/vihanpatil/personal/projects/FinScreen/data/f2/validation_exceptions.csv): none. Every FATAL hard-fails the run; there is no blanket override.
+  CIK 1800 (ABBOTT LABORATORIES): 174 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 2488 (ADVANCED MICRO DEVICES INC): 181 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+  CIK 2969 (Air Products & Chemicals, Inc.): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+  CIK 3570 (Cheniere Energy, Inc.): 286 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+  CIK 4281 (Howmet Aerospace Inc.): 270 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 2 distress event(s)
+  CIK 4447 (HESS CORP): 129 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 4 distress event(s)
+  CIK 4904 (AMERICAN ELECTRIC POWER CO INC): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 5272 (AMERICAN INTERNATIONAL GROUP, INC.): 267 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 5 distress event(s)
+  CIK 6769 (APACHE CORP): 99 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 5 distress event(s)
+  CIK 6951 (APPLIED MATERIALS INC /DE): 155 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 8670 (AUTOMATIC DATA PROCESSING INC): 151 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 10795 (BECTON DICKINSON & CO): 221 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31), 11 distress event(s)
+  CIK 12927 (BOEING CO): 206 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 14272 (BRISTOL MYERS SQUIBB CO): 213 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 18230 (CATERPILLAR INC): 236 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+  CIK 19617 (JPMORGAN CHASE & CO): 388 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 19 distress event(s)
+  CIK 21344 (COCA COLA CO): 195 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 9 distress event(s)
+  CIK 21665 (COLGATE PALMOLIVE CO): 147 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 24741 (CORNING INC /NY): 160 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 1 distress event(s)
+  CIK 27419 (TARGET CORP): 169 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2025-08-05)
+  CIK 29915 (DOW CHEMICAL CO /DE/): 132 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2019-08-05), 2 distress event(s)
+  CIK 30554 (EIDP, Inc.): 89 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2019-08-05), 1 distress event(s)
+  CIK 31462 (ECOLAB INC.): 192 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+  CIK 32604 (EMERSON ELECTRIC CO): 215 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 33213 (EQT Corp): 275 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+  CIK 34088 (EXXON MOBIL CORP): 203 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 36104 (US BANCORP \DE\): 247 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2025-08-05), 4 distress event(s)
+  CIK 37996 (FORD MOTOR CO): 331 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+  CIK 40533 (GENERAL DYNAMICS CORP): 142 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04)
+  CIK 45012 (HALLIBURTON CO): 165 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 47217 (HP INC): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+  CIK 49071 (HUMANA INC): 250 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05)
+  CIK 49826 (ILLINOIS TOOL WORKS INC): 134 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05), 3 distress event(s)
+  CIK 50863 (INTEL CORP): 234 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 51143 (INTERNATIONAL BUSINESS MACHINES CORP): 258 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 13 distress event(s)
+  CIK 55785 (KIMBERLY CLARK CORP): 151 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 59478 (ELI LILLY & Co): 156 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 60667 (LOWES COMPANIES INC): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 62709 (MARSH & MCLENNAN COMPANIES, INC.): 161 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31)
+  CIK 63908 (MCDONALDS CORP): 186 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 64040 (S&P Global Inc.): 227 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 1 distress event(s)
+  CIK 64803 (CVS HEALTH Corp): 231 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 66740 (3M CO): 237 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+  CIK 70858 (BANK OF AMERICA CORP /DE/): 200 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 15 distress event(s)
+  CIK 72741 (EVERSOURCE ENERGY): 176 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+  CIK 72903 (XCEL ENERGY INC): 306 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2025-08-05), 1 distress event(s)
+  CIK 72971 (WELLS FARGO & COMPANY/MN): 880 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 11 distress event(s)
+  CIK 73309 (NUCOR CORP): 146 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05)
+  CIK 77476 (PEPSICO INC): 192 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 7 distress event(s)
+  CIK 78003 (PFIZER INC): 196 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 79879 (PPG INDUSTRIES INC): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 4 distress event(s)
+  CIK 80424 (PROCTER & GAMBLE Co): 281 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 18 distress event(s)
+  CIK 80661 (PROGRESSIVE CORP/OH/): 228 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2026-08-31)
+  CIK 86312 (TRAVELERS COMPANIES, INC.): 139 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05)
+  CIK 87347 (SLB LIMITED/NV): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 89800 (SHERWIN WILLIAMS CO): 195 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+  CIK 92122 (SOUTHERN CO): 259 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 92230 (TRUIST FINANCIAL CORP): 250 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2024-08-04), 5 distress event(s)
+  CIK 93410 (CHEVRON CORP): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 97476 (TEXAS INSTRUMENTS INC): 155 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 97745 (THERMO FISHER SCIENTIFIC INC.): 204 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 11 distress event(s)
+  CIK 100885 (UNION PACIFIC CORP): 225 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 101829 (RTX Corp): 193 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 10 distress event(s)
+  CIK 104169 (Walmart Inc.): 200 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 3 distress event(s)
+  CIK 106040 (WESTERN DIGITAL CORP): 246 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 1 distress event(s)
+  CIK 106535 (WEYERHAEUSER CO): 230 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2021-08-05), 3 distress event(s)
+  CIK 107263 (WILLIAMS COMPANIES, INC.): 201 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 109198 (TJX COMPANIES INC /DE/): 149 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05)
+  CIK 200406 (JOHNSON & JOHNSON): 180 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+  CIK 310158 (Merck & Co., Inc.): 133 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 310764 (STRYKER CORP): 172 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 3 distress event(s)
+  CIK 313616 (DANAHER CORP /DE/): 191 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 9 distress event(s)
+  CIK 315189 (DEERE & CO): 216 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31), 1 distress event(s)
+  CIK 315293 (Aon plc): 187 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05), 8 distress event(s)
+  CIK 316709 (SCHWAB CHARLES CORP): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 318154 (AMGEN INC): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 320187 (NIKE, Inc.): 162 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 320193 (Apple Inc.): 149 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+  CIK 354950 (HOME DEPOT, INC.): 169 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 701221 (Cigna Holding Co): 106 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 707549 (LAM RESEARCH CORP): 176 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05)
+  CIK 712515 (ELECTRONIC ARTS INC.): 188 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2022-08-05), 2 distress event(s)
+  CIK 713676 (PNC FINANCIAL SERVICES GROUP, INC.): 257 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2025-08-05), 3 distress event(s)
+  CIK 715957 (DOMINION ENERGY, INC): 256 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 12 distress event(s)
+  CIK 718877 (Activision Blizzard, Inc.): 128 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2025-08-05), 2 distress event(s)
+  CIK 723125 (MICRON TECHNOLOGY INC): 220 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 726728 (REALTY INCOME CORP): 268 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2026-08-31), 2 distress event(s)
+  CIK 731766 (UNITEDHEALTH GROUP INC): 221 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 732712 (VERIZON COMMUNICATIONS INC): 242 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 7 distress event(s)
+  CIK 732717 (AT&T INC.): 337 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 24 distress event(s)
+  CIK 753308 (NEXTERA ENERGY INC): 270 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 8 distress event(s)
+  CIK 764180 (ALTRIA GROUP, INC.): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 766704 (WELLTOWER INC.): 209 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 5 distress event(s)
+  CIK 769397 (Autodesk, Inc.): 157 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+  CIK 773840 (HONEYWELL INTERNATIONAL INC): 243 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 7 distress event(s)
+  CIK 773910 (ANADARKO PETROLEUM CORP): 70 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 3 distress event(s)
+  CIK 788784 (PUBLIC SERVICE ENTERPRISE GROUP INC): 197 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05)
+  CIK 789019 (MICROSOFT CORP): 159 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 790070 (EMC CORP): 21 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 797468 (OCCIDENTAL PETROLEUM CORP /DE/): 206 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 798354 (FISERV INC): 186 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 5 distress event(s)
+  CIK 804328 (QUALCOMM INC/DE): 188 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 804753 (CERNER Corp): 111 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05), 2 distress event(s)
+  CIK 813672 (CADENCE DESIGN SYSTEMS INC): 141 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05)
+  CIK 816284 (CELGENE CORP /DE/): 113 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 3 distress event(s)
+  CIK 821189 (EOG RESOURCES INC): 186 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 823768 (WASTE MANAGEMENT INC): 180 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 827052 (EDISON INTERNATIONAL): 239 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04)
+  CIK 829224 (STARBUCKS CORP): 188 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 831001 (CITIGROUP INC): 338 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 29 distress event(s)
+  CIK 831259 (FREEPORT-MCMORAN INC): 202 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31)
+  CIK 849395 (CRH PUBLIC LTD CO): 61 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+  CIK 849399 (Gen Digital Inc.): 197 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05)
+  CIK 858877 (CISCO SYSTEMS, INC.): 196 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 872589 (REGENERON PHARMACEUTICALS, INC.): 162 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 875045 (BIOGEN INC.): 159 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+  CIK 875320 (VERTEX PHARMACEUTICALS INC / MA): 146 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+  CIK 882095 (GILEAD SCIENCES, INC.): 162 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 884905 (LINDE INC): 57 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 3 distress event(s)
+  CIK 885725 (BOSTON SCIENTIFIC CORP): 226 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31), 1 distress event(s)
+  CIK 886982 (GOLDMAN SACHS GROUP INC): 281 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 14 distress event(s)
+  CIK 895126 (EXPAND ENERGY Corp): 235 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 14 distress event(s)
+  CIK 895421 (MORGAN STANLEY): 167 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 11 distress event(s)
+  CIK 895728 (ENBRIDGE INC): 167 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+  CIK 896159 (Chubb Ltd): 164 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 896878 (INTUIT INC.): 148 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 906107 (VIVMARK RESIDENTIAL): 160 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05)
+  CIK 915912 (AVALONBAY COMMUNITIES INC): 164 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2022-08-05), 1 distress event(s)
+  CIK 922224 (PPL Corp): 295 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04)
+  CIK 927628 (CAPITAL ONE FINANCIAL CORP): 463 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 14 distress event(s)
+  CIK 927653 (MCKESSON CORP): 191 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 936402 (Shire plc): 250 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 5 distress event(s)
+  CIK 936468 (LOCKHEED MARTIN CORP): 180 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 1001039 (TWDC Enterprises 18 Corp.): 84 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 2 distress event(s)
+  CIK 1001250 (ESTEE LAUDER COMPANIES INC): 154 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05)
+  CIK 1012569 (Energy Transfer, LP): 59 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2019-08-05), 2 distress event(s)
+  CIK 1018724 (AMAZON COM INC): 157 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1032208 (SEMPRA): 265 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 1034054 (SBA COMMUNICATIONS CORP): 155 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05), 2 distress event(s)
+  CIK 1035002 (VALERO ENERGY CORP/TX): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1035267 (INTUITIVE SURGICAL INC): 146 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31)
+  CIK 1038357 (PIONEER NATURAL RESOURCES CO): 211 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-05), 2 distress event(s)
+  CIK 1039684 (ONEOK INC /NEW/): 421 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+  CIK 1045609 (Prologis, Inc.): 214 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 10 distress event(s)
+  CIK 1045810 (NVIDIA CORP): 153 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31)
+  CIK 1047122 (RAYTHEON CO/): 63 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2021-08-05), 2 distress event(s)
+  CIK 1047862 (CONSOLIDATED EDISON INC): 190 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2022-08-05)
+  CIK 1051470 (CROWN CASTLE INC.): 282 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 2 distress event(s)
+  CIK 1053507 (AMERICAN TOWER CORP /MA/): 317 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+  CIK 1058290 (COGNIZANT TECHNOLOGY SOLUTIONS CORP): 145 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05)
+  CIK 1060391 (REPUBLIC SERVICES, INC.): 174 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31)
+  CIK 1061219 (ENTERPRISE PRODUCTS PARTNERS L.P.): 178 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1063761 (SIMON PROPERTY GROUP INC.): 147 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1065088 (EBAY INC): 172 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 1065280 (NETFLIX INC): 157 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+  CIK 1067983 (BERKSHIRE HATHAWAY INC): 125 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 6 distress event(s)
+  CIK 1075531 (Booking Holdings Inc.): 194 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+  CIK 1090012 (DEVON ENERGY CORP/DE): 172 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 1090727 (UNITED PARCEL SERVICE INC): 159 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 3 distress event(s)
+  CIK 1091667 (CHARTER COMMUNICATIONS, INC. /MO/): 228 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2024-08-04)
+  CIK 1099219 (METLIFE INC): 299 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 4 distress event(s)
+  CIK 1099590 (MERCADOLIBRE INC): 169 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31)
+  CIK 1099800 (Edwards Lifesciences Corp): 137 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+  CIK 1101239 (EQUINIX INC): 255 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31)
+  CIK 1103982 (Mondelez International, Inc.): 236 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+  CIK 1105705 (WARNER MEDIA, LLC): 45 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 6 distress event(s)
+  CIK 1108524 (Salesforce, Inc.): 187 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1109357 (EXELON CORP): 247 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 3 distress event(s)
+  UNRESOLVED: CIK 1110803 0001110803-16-000194 has no EX-99-family exhibit, but 1 unselected candidate row(s) whose description does not confirm which is the release: [('EX-1', 'EXHIBIT 1', 'a2q16earningsrelease.htm')]. Refusing to fall back to the 8-K body at high confidence -- the body is usually the cover page, whose own Item 2.02 says the release is attached elsewhere. Counted as earnings_doc_unresolved against the 1% ceiling; resolve it with an evidenced row in earnings_doc_overrides.csv.
+  UNRESOLVED: CIK 1110803 0001110803-16-000185 has no EX-99-family exhibit, but 1 unselected candidate row(s) whose description does not confirm which is the release: [('EX-1', 'EXHIBIT 1', 'a1q16earningsrelease.htm')]. Refusing to fall back to the 8-K body at high confidence -- the body is usually the cover page, whose own Item 2.02 says the release is attached elsewhere. Counted as earnings_doc_unresolved against the 1% ceiling; resolve it with an evidenced row in earnings_doc_overrides.csv.
+  CIK 1110803 (ILLUMINA, INC.): 204 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2022-08-05)
+  CIK 1122304 (AETNA INC /PA/): 84 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 2 distress event(s)
+  CIK 1123360 (GLOBAL PAYMENTS INC): 180 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+  CIK 1126975 (Magellan Midstream Partners, L.P.): 130 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2023-08-05), 2 distress event(s)
+  CIK 1133421 (NORTHROP GRUMMAN CORP /DE/): 169 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2025-08-05)
+  CIK 1136893 (Fidelity National Information Services, Inc.): 227 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2024-08-04), 9 distress event(s)
+  CIK 1137774 (PRUDENTIAL FINANCIAL INC): 240 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 3 distress event(s)
+  CIK 1137789 (Seagate Technology Holdings plc): 203 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 1141391 (Mastercard Inc): 175 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 1156039 (Elevance Health, Inc.): 182 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 1156375 (CME GROUP INC.): 166 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+  CIK 1161154 (Energy Transfer Operating, L.P.): 156 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2021-08-05), 8 distress event(s)
+  CIK 1163165 (CONOCOPHILLIPS): 155 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1164727 (NEWMONT Corp /DE/): 198 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+  CIK 1166691 (COMCAST CORP): 215 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 1222333 (SPDR GOLD TRUST): 65 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2025-08-05)
+  CIK 1271024 (LINKEDIN CORP): 17 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 1276187 (Energy Transfer LP): 257 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 1283699 (T-Mobile US, Inc.): 277 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 3 distress event(s)
+  CIK 1297996 (DIGITAL REALTY TRUST, INC.): 291 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 6 distress event(s)
+  CIK 1318220 (Waste Connections, Inc.): 194 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-31)
+  CIK 1318605 (Tesla, Inc.): 231 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31)
+  CIK 1321655 (Palantir Technologies Inc.): 68 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+  CIK 1326801 (Meta Platforms, Inc.): 148 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1327567 (Palo Alto Networks Inc): 153 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31), 1 distress event(s)
+  CIK 1341439 (ORACLE CORP): 142 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 1358071 (CONCHO RESOURCES INC): 94 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2022-08-05), 2 distress event(s)
+  CIK 1364742 (BlackRock Finance, Inc.): 142 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 3 distress event(s)
+  CIK 1373715 (ServiceNow, Inc.): 143 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+  CIK 1373835 (Spectra Energy Corp.): 33 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 1389170 (Targa Resources Corp.): 216 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+  CIK 1390777 (Bank of New York Mellon Corp): 231 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 1 distress event(s)
+  CIK 1393612 (Discover Financial Services): 258 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05), 7 distress event(s)
+  CIK 1393818 (Blackstone Inc.): 161 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-31), 2 distress event(s)
+  CIK 1403161 (VISA INC.): 208 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 1404912 (KKR & Co. Inc.): 210 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31), 13 distress event(s)
+  CIK 1413329 (Philip Morris International Inc.): 294 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 36 distress event(s)
+  CIK 1418091 (TWITTER, INC.): 117 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2021-08-05), 2 distress event(s)
+  CIK 1467858 (General Motors Co): 192 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 3 distress event(s)
+  CIK 1483096 (WILLIAMS PARTNERS L.P.): 66 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 2 distress event(s)
+  CIK 1489393 (LyondellBasell Industries N.V.): 175 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+  CIK 1506307 (KINDER MORGAN, INC.): 257 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 1510295 (Marathon Petroleum Corp): 207 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1512673 (Block, Inc.): 175 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+  CIK 1532063 (Express Scripts Holding Co.): 82 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 1534701 (Phillips 66): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1535527 (CrowdStrike Holdings, Inc.): 92 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31)
+  CIK 1539838 (Diamondback Energy, Inc.): 217 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+  CIK 1543151 (Uber Technologies, Inc): 146 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+  CIK 1551152 (AbbVie Inc.): 205 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+  CIK 1551182 (Eaton Corp plc): 156 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+  CIK 1552000 (MPLX LP): 189 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+  CIK 1555280 (Zoetis Inc.): 187 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+  CIK 1564408 (Snap Inc): 124 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+  CIK 1571949 (Intercontinental Exchange, Inc.): 193 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+  CIK 1578845 (Allergan plc): 119 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 3 distress event(s)
+  CIK 1585521 (Zoom Communications, Inc.): 89 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2024-08-04)
+  CIK 1596532 (Arista Networks, Inc.): 127 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+  CIK 1613103 (Medtronic plc): 166 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 8 distress event(s)
+  CIK 1618921 (Walgreens Boots Alliance, Inc.): 219 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05), 4 distress event(s)
+  CIK 1633917 (PayPal Holdings, Inc.): 186 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-05)
+  UNRESOLVED: CIK 1637459 0001637459-19-000050 has no EX-99-family exhibit, but 1 unselected candidate row(s) whose description does not confirm which is the release: [('EX-1', 'EXHIBIT 1', 'a6719exhibit991.htm')]. Refusing to fall back to the 8-K body at high confidence -- the body is usually the cover page, whose own Item 2.02 says the release is attached elsewhere. Counted as earnings_doc_unresolved against the 1% ceiling; resolve it with an evidenced row in earnings_doc_overrides.csv.
+  CIK 1637459 (Kraft Heinz Co): 209 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2020-08-04), 1 distress event(s)
+  CIK 1640147 (Snowflake Inc.): 66 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05)
+  UNRESOLVED: CIK 1645590 0001645590-17-000006 has no EX-99-family exhibit, but 2 unselected candidate row(s) whose description does not confirm which is the release: [('EX-1', 'EXHIBIT 1', 'ex-991x10312017x8k.htm'), ('EX-2', 'EXHIBIT 2', 'pressrelease112117.htm')]. Refusing to fall back to the 8-K body at high confidence -- the body is usually the cover page, whose own Item 2.02 says the release is attached elsewhere. Counted as earnings_doc_unresolved against the 1% ceiling; resolve it with an evidenced row in earnings_doc_overrides.csv.
+  CIK 1645590 (Hewlett Packard Enterprise Co): 230 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2020-08-04)
+  CIK 1652044 (Alphabet Inc.): 157 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+  CIK 1666700 (DuPont de Nemours, Inc.): 160 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2023-08-05)
+  CIK 1682852 (Moderna, Inc.): 142 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+  CIK 1692819 (Vistra Corp.): 202 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 2 distress event(s)
+  CIK 1707925 (LINDE PLC): 113 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 3 distress event(s)
+  CIK 1730168 (Broadcom Inc.): 153 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+  CIK 1739940 (Cigna Group): 160 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+  CIK 1744489 (Walt Disney Co): 134 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+  CIK 1751788 (DOW INC.): 121 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2025-08-05)
+  CIK 1782754 (AZEK Co Inc.): 89 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05), 2 distress event(s)
+  CIK 1868275 (Constellation Energy Corp): 85 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+  CIK 1996810 (GE Vernova Inc.): 28 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31)
+
+EX-99 selection audit (/Users/vihanpatil/personal/projects/FinScreen/data/f2/ex99_selection_audit.csv):
+  earnings 8-Ks seen:        10569
+  unresolved (counted):      0  (0.00%)
+  excluded by override:      2   (evidenced, INFO -- not counted as unresolved)
+  release-language screen:   10548 selection(s) measured, 0 not cached (UNMEASURED, not clean)
+    selections with NO release language: 397 (the per-CIK share is in ex99_selection_audit.csv for every CIK, not just the flagged)
+    CIKs whose high/medium picks MOSTLY lack release language: 1 -> 1065280
+    WATCH LIST (>= 40% but under the 50% flag bar): 2
+      CIK 788784: 21/45 (46.7%) -- not flagged, one systematic mis-picker can sit here indefinitely
+      CIK 1038357: 37/76 (48.7%) -- not flagged, one systematic mis-picker can sit here indefinitely
+  resolved selections:       10569
+    8K_BODY              high         210
+    EX99_PRESS_RELEASE   high       10312
+    EX99_PRESS_RELEASE   low           19
+    EX99_PRESS_RELEASE   medium        26
+    EXCLUDED_BY_OVERRIDE override       2
+  of which 8K_BODY fallbacks: 210 filing(s) across 55 CIK(s) -- earnings 8-Ks that carry the release in the 8-K body with no EX-99 exhibit at all. A benign, named class, still on the §4.4 read list below.
+  CIKs needing the §4.4 manual read (any low-confidence selection or any 8K_BODY fallback): 57
+    CIK 200406: 18 low-confidence selection(s)
+    CIK 80661: 1 low-confidence selection(s)
+    CIK 32604: 0 low-confidence selection(s)
+    CIK 33213: 0 low-confidence selection(s)
+    CIK 45012: 0 low-confidence selection(s)
+    CIK 49071: 0 low-confidence selection(s)
+    CIK 51143: 0 low-confidence selection(s)
+    CIK 59478: 0 low-confidence selection(s)
+    CIK 64803: 0 low-confidence selection(s)
+    CIK 70858: 0 low-confidence selection(s)
+    CIK 72903: 0 low-confidence selection(s)
+    CIK 72971: 0 low-confidence selection(s)
+    CIK 78003: 0 low-confidence selection(s)
+    CIK 92122: 0 low-confidence selection(s)
+    CIK 93410: 0 low-confidence selection(s)
+    CIK 97476: 0 low-confidence selection(s)
+    CIK 97745: 0 low-confidence selection(s)
+    CIK 100885: 0 low-confidence selection(s)
+    CIK 106040: 0 low-confidence selection(s)
+    CIK 313616: 0 low-confidence selection(s)
+    ... capped at the 20 worst filers; 37 more CIK(s) are NOT covered by that read and stay unread -- state that in the F2 report rather than implying full coverage.
+
+earnings-document overrides (/Users/vihanpatil/personal/projects/FinScreen/data/f2/earnings_doc_overrides.csv): 9 row(s), 9 fired, 0 DEAD:
+  FIRED: 0000723125-19-000172 [select_document] -> a2020q1exhibit991-pres.htm
+      reason: Micron's Q1 FY2020 press release is typed EX-99..1 -- a DOUBLE DOT -- which falls outside the EX-99 family regex, so as with ONEOK the filing looked exhibit-less and the policy selected the 8-K COVER PAGE (3,499 characters of boilerplate) as 8K_BODY at HIGH confidence. This filing was not in the S6 manual read's 36-filing screen at all. Surfaced by the P3 press_release_typed_outside_ex99 WARN.
+  FIRED: 0000732717-19-000048 [exclude] -> (exclude: no earnings document)
+      reason: This AT&T 8-K contains no press release at all: its only exhibits are EX-99.2 'SELECTED FINANCIAL STATEMENTS AND OPERATING DATA' (pure tables, zero narrative) and EX-99.3 'DISCUSSION AND RECONCILIATION OF NON-GAAP MEASURES'. Typing the tables exhibit EX99_PRESS_RELEASE is a silent mis-label; the real Q3-2019 release is in the same-day SIBLING accession 0000732717-19-000049, already resolved at high confidence, so excluding this one loses the corpus nothing.
+  FIRED: 0001039684-15-000073 [select_document] -> okeq32015earningsreleasenr.htm
+      reason: ONEOK's Q3 2015 press release is typed EX-95.1 (the same transposition of EX-99.1 as NVIDIA's; EX-95 is the mine-safety exhibit). Because the filing then carries NO EX-99 row at all, the policy fell all the way through to the 8K_BODY fallback and selected the 8-K COVER PAGE -- 3,179 characters of SEC form boilerplate -- at HIGH confidence, invisible to the low-confidence trigger and to the section 4.4 worklist. Surfaced by the P3 press_release_typed_outside_ex99 WARN.
+  FIRED: 0001045810-19-000168 [select_document] -> q3fy20pr.htm
+      reason: NVIDIA's Q3 FY20 press release is typed EX-95.1 (a transposition of EX-99.1; EX-95 is the mine-safety exhibit), which puts it outside the EX-99 family the policy searches, so the policy took the EX-99.2 CFO commentary instead. Blast radius measured n=1 for this filer over all 10,569 earnings 8-Ks.
+  FIRED: 0001110803-16-000185 [select_document] -> a1q16earningsrelease.htm
+      reason: Illumina Q1 2016: the release row is typed EX-1 and described 'EXHIBIT 1', so it self-labels neither as exhibit 99 nor as a release and the S7-B1 candidate screen correctly leaves it UNRESOLVED rather than guessing. Resolved here by the ratified per-accession mechanism instead of a new policy route.
+  FIRED: 0001110803-16-000194 [select_document] -> a2q16earningsrelease.htm
+      reason: Illumina Q2 2016: same filer, same defect shape as 0001110803-16-000185 -- release row typed EX-1, described 'EXHIBIT 1', unconfirmable from the index, so loud-UNRESOLVED under the S7-B1 screen and resolved here by the ratified mechanism.
+  FIRED: 0001193125-18-111008 [exclude] -> (exclude: no earnings document)
+      reason: Pioneer 2018-04-09 furnishes an IPAA conference SLIDE DECK under a defensive Item 2.02 wrapper -- it reports no quarter's results. The S3 candidate screen resolved it (its sole candidate row is described 'EX-99.1(A)', which self-labels as exhibit 99.1) and thereby made this ONE filing LESS honest than its previous state: pre-fix it claimed 8K_BODY, which was true of a cover page; post-fix it claimed EX99_PRESS_RELEASE, which is false of a slide deck. Not a mis-pick -- the filing has no better candidate -- but a mis-label, same class as the AT&T exclusion.
+  FIRED: 0001637459-19-000050 [select_document] -> a6719exhibit991.htm
+      reason: Kraft Heinz 2019-06-07: release row typed EX-1, described 'EXHIBIT 1', unconfirmable from the index. The Item 2.02 press release announces the FY2018 Form 10-K filing and the restatement of FY2017/FY2016 -- a genuine results disclosure, not a routine quarterly release.
+  FIRED: 0001645590-17-000006 [select_document] -> ex-991x10312017x8k.htm
+      reason: HPE Q4 FY2017: release row typed EX-1, described 'EXHIBIT 1'. NOTE this filing has TWO unselected candidates, not one, and the earnings document is Exhibit 99.1, NOT the Exhibit 99.2 press release -- S7 finding B1's own table named pressrelease112117.htm, which is the CEO-appointment announcement filed under Item 5.02, not the earnings release. Disambiguated from the cover page's own item-to-exhibit mapping.
+
+Done. Filings by form type: {'8-K': 35648, '10-Q': 7532, '10-K': 2452}
+Co-registrant filings: 87 accession(s) were enumerated for TWO member CIKs each, across 3 pair(s). `filings` is keyed on accession_number, so the table holds 45545 rows for 45632 enumerated filings. The dropped attributions are stored in `co_registrant_filings` (87 row(s), keeper = the lowest member CIK) and summarised as `co_registrant_filing` WARNs -- never a silent drop. Absence from `filings` alone is NOT evidence a company did not file: consult filings UNION co_registrant_filings.
+
+distress_events (F2_SPEC §4.5, zero extra network requests):
+  bankruptcy_8k_item_1_03                         2 filing(s) /    1 CIK(s)
+  delisting_form_25                              37 filing(s) /   30 CIK(s)
+  delisting_form_25_nse_exchange_filed          510 filing(s) /  131 CIK(s)  [NOISY: filed by the exchange, fires for preferreds/notes too]
+  deregistration_form_15                        119 filing(s) /   67 CIK(s)
+
+Ingested filings outside EVERY membership spell of their own CIK: 20218 of 45632. This is BY DESIGN (full-window ingestion, no spell clipping -- a member at date t needs pre-t filings for trailing features). It also means `present in filings` is NOT `in the universe`: F5 must join on universe_membership.
+Corpus freeze date (constant): 2026-08-31; observed max filing_date this run: 2026-08-24
+Total EDGAR network GETs this run: 0

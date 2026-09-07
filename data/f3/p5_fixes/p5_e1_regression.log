@@ -1,0 +1,12 @@
+100/884 29s
+200/884 55s
+300/884 103s
+400/884 159s
+500/884 175s
+600/884 203s
+700/884 222s
+800/884 239s
+TOTAL 884 SAME 880 DIFF 4
+e1_method       f3_method      section
+whole_document  item202_slice  8K_BODY    4
+elapsed 259

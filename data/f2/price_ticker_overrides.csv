@@ -1,0 +1,73 @@
+# price_ticker_overrides.csv -- the ONLY way a price symbol enters the E2
+# pipeline without CIK verification. Consumed by ingest_prices.py
+# (load_ticker_overrides); every row is printed in the run report whether or
+# not it fires, and every row that fires is written to
+# data/f2/price_ticker_map.csv with status=override. Nothing here is ever
+# applied silently.
+#
+# WHY THIS FILE IS TINY BY DESIGN (F2_SPEC §6.1-6.2)
+#   A member's ticker is resolved from EDGAR's own CIK-keyed submissions.json
+#   and nowhere else, because a dead member's former symbol gets REASSIGNED:
+#   APC now maps to CIK 2080921 "ARKO Petroleum Corp.", not Anadarko's 773910,
+#   and EMC is absent from company_tickers.json entirely (both MEASURED from
+#   the cached bulk map). Mapping a dead member by its former symbol fetches a
+#   different company's price history into the backtest. An override bypasses
+#   that check for one CIK, so it takes primary-source evidence AND a
+#   deliberate edit to RATIFIED_OVERRIDE_CIKS in ingest_prices.py -- a row in
+#   this CSV alone is refused at load time.
+#
+# COLUMNS
+#   cik             EDGAR CIK of the MEMBER (integer, no leading zeros)
+#   ticker          the symbol to fetch for that member
+#   reason          short machine-ish tag for the case class
+#   evidence        the primary-source facts that justify it. MANDATORY, and
+#                   refused below 80 characters -- an unevidenced override is
+#                   not auditable.
+#   added           date the row was added (and by whom, in the git log)
+#   successor_reorg true/false. REQUIRED true for any row whose symbol
+#                   bulk-maps to a DIFFERENT cik (see below). Refused for any
+#                   cik not in RATIFIED_SUCCESSOR_REORG_CIKS.
+#
+# CORRECTION 2026-08-24 (S7 red-team finding B3, ruled by the main session).
+# An earlier version of this block claimed the 34088 row was NOT the APC trap
+# shape, and that "the symbol points at a DIFFERENT cik ... is still censored,
+# never overridden". That was FALSE about the row directly beneath it: XOM
+# bulk-maps to CIK 2115436 ("ExxonMobil Holdings Corp") while the member is
+# 34088 -- structurally identical to APC -> 2080921 while Anadarko is 773910.
+# The honest rule, now enforced in code:
+#
+#   bulk-symbol-maps-elsewhere is the trap SIGNATURE, not a disqualifier by
+#   itself. Overriding a symbol that carries it requires ALL THREE of:
+#     (a) successor_reorg=true on the row, ratified in
+#         RATIFIED_SUCCESSOR_REORG_CIKS in ingest_prices.py;
+#     (b) a series-continuity check against the FETCHED prices -- a
+#         reassigned symbol has a short/late-starting history and FAILS
+#         (`successor_series_too_short` / `_starts_late`, both FATAL);
+#     (c) a standing per-run WARN (`override_symbol_bulk_maps_elsewhere`)
+#         naming the member cik, the bulk-map cik and the evidence.
+#   Without all three, the member stays censored.
+#
+# THE TWO CASE CLASSES ON FILE
+#   successor_cik_reorganization (34088, successor_reorg=true) -- the symbol
+#     migrated to a holding registrant and the traded security is continuous.
+#     This row DOES carry the trap signature and is admitted only under (a)+(b)
+#     +(c) above; its continuity evidence is measured, not asserted.
+#   upstream_ticker_wobble (4904, successor_reorg=false) -- EDGAR's submissions
+#     for a listed, actively-filing member dropped its ticker while SEC's OWN
+#     bulk map still maps the symbol to that SAME cik. The bulk map points at
+#     OUR cik, so no trap signature is present and no marker is needed; it warns
+#     every run anyway (`submissions_ticker_missing_but_bulk_has`) so an upstream
+#     wobble is seen and hand-ruled rather than auto-adopted.
+#
+# DELIBERATELY NOT IN THIS FILE (F2_SPEC §6.2): CIK 29915, Dow Chemical Co
+# /DE/. It is the other still-filing member with no ticker in submissions, and
+# DOW bulk-maps to CIK 1751788 (Dow Inc), a 2019 SPIN-OFF whose price history
+# does NOT contain Dow Chemical's pre-2019 series -- i.e. it would fail the
+# continuity check even if someone tried, because a spin-off is not a
+# reorganisation of the same security. 29915 is censored and counted, and
+# ingest_prices.py refuses any override row naming it.
+#
+# The '#' character starts a comment line and must not appear inside any value.
+cik,ticker,reason,evidence,added,successor_reorg
+34088,XOM,successor_cik_reorganization,"THIS ROW CARRIES THE TRAP SIGNATURE AND IS ADMITTED ONLY WITH THE MARKER, THE CONTINUITY CHECK AND THE STANDING WARN (S7 B3). The signature, stated plainly: data/raw/company_tickers.json maps XOM to CIK 2115436 'ExxonMobil Holdings Corp', NOT to the member CIK 34088, which is absent from the bulk map -- the same shape as APC -> 2080921 while Anadarko is 773910. What distinguishes it is measured, not asserted. (1) SERIES CONTINUITY, re-derived 2026-08-24 read-only from data/prices_e2.parquet: the fetched XOM series is 14282 rows spanning 1970-01-02 to 2026-08-24, largest gap 7 calendar days, zero gaps over 10 days, ~2520 rows in each full decade (1970s 2526, 1980s 2528, 1990s 2528, 2000s 2515, 2010s 2516) and 252.2 rows/yr over 56.6 years. A reassigned symbol cannot look like this: it carries the NEW company's history and starts late (ARKO begins 2020) or is a stub (EA is 6 rows). This is checked in code every run, not just written here. (2) CIK 34088 (EXXON MOBIL CORP, formerName EXXON CORP) has an EMPTY submissions tickers[]/exchanges[] while still filing periodic reports (10-Q filed 2026-08-03), so the symbol moved rather than the company dying. (3) F1's census flags 34088 as one of exactly 2 no-current-ticker members still filing -- a successor-CIK reorganisation, not a delisting. (4) E1's reviewed data/universe.csv carries the same XOM->34088 mapping (a prior decision, cited as corroboration only, NOT as evidence about the reorganisation). NOT VERIFIED, and stated as a gap: there is no cached submissions document for CIK 2115436 in this repo, so the holdco relationship itself rests on the bulk map plus the continuity measurement above, not on a primary filing.",2026-08-24,true
+4904,AEP,upstream_ticker_wobble,"RULED by the main session 2026-08-24 (F2_PROGRESS.md §5) after a live 1-GET probe confirmed EDGAR has not self-healed. During S6 segment 1's TTL refresh, submissions.json for CIK 4904 (AMERICAN ELECTRIC POWER CO INC) dropped to empty tickers[] and exchanges[]; MEASURED here on the refreshed cache (file mtime 2026-08-24 12:56-15:28), tickers[] is empty. Three independent facts say the company, not the symbol, is what EDGAR lost: (1) SEC's own bulk company_tickers.json maps AEP to CIK 4904 -- agreement pointing at OUR cik, the safe direction, unlike the APC trap where APC points at CIK 2080921 instead of Anadarko's 773910; (2) this agent's own pre-refresh resolution record, data/f2/price_ticker_map.csv written 2026-08-24 12:22, resolved 4904 to AEP straight from submissions with no override; (3) AEP is a current hybrid136 member, listed and actively filing -- F1's census, captured BEFORE the wobble, records tickers=AEP, exchanges=Nasdaq, still_filing=True, last_periodic 2026-07-30. (The follow-up brief described the listing as NYSE; EDGAR's own pre-wobble exchanges[] says Nasdaq, and the measured value is what is recorded here rather than the unverified one.) Censoring a live listed mega-cap over an upstream data wobble would be a worse error than the wobble. No successor_reorg marker is needed or permitted here: AEP bulk-maps to its OWN cik, so the trap signature is absent.",2026-08-24,false

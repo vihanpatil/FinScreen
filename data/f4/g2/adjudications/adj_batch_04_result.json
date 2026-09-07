@@ -1,0 +1,12 @@
+[
+ {
+  "chunk_id": "E2CHK-e230c4d51fc42ccd",
+  "field": "sentiment",
+  "verdict": "disagree",
+  "correct_label": "NEUTRAL",
+  "confidence": "high",
+  "brief": "The narrative is pure mechanical variance prose -- 'Revenue increased by $98.8 million, or 52%, for the three months ended September 30, 2020 compared to the three months ended September 30, 2019' -- with no favorable characterization by the filer anywhere. Rubric section 2 states directly that 'a passage reporting a large positive number in a flat tone, with no qualitative characterization either way, is NEUTRAL', unlike its POSITIVE exemplar which carries the words 'strong' and 'record'. Independently, section 2's mixed-passage rule also lands on NEUTRAL: the same flat register reports 'Gross margin 48 % 66 % (18 )%', 'Cost of revenue ... increased by $84.3 million, or 129%', and 'Net loss (295 )% (73 )%'. Revenue up, margins and losses sharply worse, no lean asserted, so the stored POSITIVE reads sentiment into the sign of the numbers rather than into the text.",
+  "pattern": "bare-numeric-variance-narrative-no-characterization",
+  "needs_human": false
+ }
+]

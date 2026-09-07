@@ -1,0 +1,38 @@
+model: /Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed
+train: true
+fine_tune_type: lora
+optimizer: adamw
+optimizer_config:
+  adamw:
+    weight_decay: 0.0
+data: /Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data
+mask_prompt: true
+batch_size: 1
+grad_accumulation_steps: 4
+max_seq_length: 2048
+grad_checkpoint: true
+num_layers: 16
+lora_parameters:
+  rank: 16
+  scale: 2.0
+  dropout: 0.05
+  keys:
+  - self_attn.q_proj
+  - self_attn.v_proj
+iters: 5236
+learning_rate: 0.0002
+lr_schedule:
+  name: cosine_decay
+  arguments:
+  - 0.0001984
+  - 1266
+  warmup: 0
+  warmup_init: 1.0e-07
+steps_per_report: 10
+steps_per_eval: 500
+val_batches: 25
+save_every: 250
+seed: 42
+adapter_path: /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-resume-from-500
+clear_cache_threshold: 0
+resume_adapter_file: /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1/0000500_adapters.safetensors

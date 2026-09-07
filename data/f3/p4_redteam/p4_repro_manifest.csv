@@ -1,0 +1,41 @@
+tier,why,cik,company_name,sector,stratum,accession_number,form,filing_date,section_type,extraction_status,reason_code,extraction_method,extraction_confidence,word_count,prose_word_share,year
+T1_BASE,SRS over OK rows,2488,ADVANCED MICRO DEVICES INC,tech,core,0000002488-18-000058,8-K,2018-04-25,EX99_PRESS_RELEASE,OK,ok,whole_document,high,3696,0.4578,2018
+T1_BASE,SRS over OK rows,21344,COCA COLA CO,consumer,core,0000021344-16-000076,10-Q,2016-10-27,MDA,OK,ok,anchor,high,18966,0.5882,2016
+T1_BASE,SRS over OK rows,93410,CHEVRON CORP,energy,core,0000093410-22-000075,10-Q,2022-11-03,RISK_FACTORS,OK,ok,anchor,high,59,0.9153,2022
+T1_BASE,SRS over OK rows,313616,DANAHER CORP /DE/,industrials,extension,0000313616-21-000045,10-K,2021-02-25,RISK_FACTORS,OK,ok,anchor,high,14682,0.8656,2021
+T1_BASE,SRS over OK rows,769397,"Autodesk, Inc.",tech,core,0000769397-22-000013,8-K,2022-02-24,EX99_PRESS_RELEASE,OK,ok,whole_document,high,5186,0.4443,2022
+T1_BASE,SRS over OK rows,813672,CADENCE DESIGN SYSTEMS INC,tech,core,0000813672-21-000028,10-Q,2021-07-26,RISK_FACTORS,OK,ok,anchor,high,13297,0.8436,2021
+T1_BASE,SRS over OK rows,1047862,CONSOLIDATED EDISON INC,utilities,extension,0001047862-24-000013,8-K,2024-02-15,EX99_PRESS_RELEASE,OK,ok,whole_document,high,3945,0.5926,2024
+T1_BASE,SRS over OK rows,1065280,NETFLIX INC,consumer,core,0001065280-26-000212,10-Q,2026-07-17,MDA,OK,ok,anchor,high,5769,0.6192,2026
+T1_BASE,SRS over OK rows,1075531,Booking Holdings Inc.,industrials,extension,0001075531-16-000099,10-Q,2016-05-04,MDA,OK,ok,anchor,high,11643,0.6406,2016
+T1_BASE,SRS over OK rows,1099590,MERCADOLIBRE INC,financials,core,0001171843-15-004374,8-K,2015-08-05,EX99_PRESS_RELEASE,OK,ok,whole_document,high,4024,0.3961,2015
+T1_BASE,SRS over OK rows,49071,HUMANA INC,healthcare,core,0001193125-16-669144,8-K,2016-08-03,EX99_PRESS_RELEASE,OK,ok,whole_document,high,10826,0.0727,2016
+T1_BASE,SRS over OK rows,6769,APACHE CORP,energy,core,0001193125-17-157723,8-K,2017-05-04,EX99_PRESS_RELEASE,OK,ok,whole_document,high,4546,0.0101,2017
+T1_BASE,SRS over OK rows,1321655,Palantir Technologies Inc.,tech,core,0001321655-22-000016,10-Q,2022-08-08,RISK_FACTORS,OK,ok,anchor,high,42268,0.8687,2022
+T1_BASE,SRS over OK rows,872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,0001532176-19-000024,8-K,2019-08-06,EX99_PRESS_RELEASE,OK,ok,whole_document,high,4191,0.3999,2019
+T1_BASE,SRS over OK rows,1543151,"Uber Technologies, Inc",financials,core,0001543151-22-000008,10-K,2022-02-24,RISK_FACTORS,OK,ok,anchor,high,35206,0.9029,2022
+T1_BASE,SRS over OK rows,1389170,Targa Resources Corp.,energy,core,0001564590-19-003346,8-K,2019-02-20,EX99_PRESS_RELEASE,OK,ok,whole_document,high,9173,0.5482,2019
+T2_NEWOLD,"pre-2019 periodic, CIK not in E1's 25",27419,TARGET CORP,consumer,core,0000027419-17-000027,10-Q,2017-08-21,RISK_FACTORS,OK,ok,anchor,high,31,0.0,2017
+T2_NEWOLD,"pre-2019 periodic, CIK not in E1's 25",49071,HUMANA INC,healthcare,core,0000049071-17-000143,10-Q,2017-08-02,RISK_FACTORS,OK,ok,anchor,high,19,0.0,2017
+T2_NEWOLD,"pre-2019 periodic, CIK not in E1's 25",769397,"Autodesk, Inc.",tech,core,0000769397-17-000031,10-Q,2017-05-31,MDA,OK,ok,anchor,high,12458,0.559,2017
+T2_NEWOLD,"pre-2019 periodic, CIK not in E1's 25",895126,EXPAND ENERGY Corp,energy,core,0000895126-16-000516,10-Q,2016-08-04,MDA,OK,ok,anchor,high,14480,0.4695,2016
+T2_NEWOLD,"pre-2019 periodic, CIK not in E1's 25",927653,MCKESSON CORP,healthcare,core,0000927653-17-000003,10-Q,2017-01-26,MDA,OK,ok,anchor,high,7722,0.5411,2017
+T2_NEWOLD,"pre-2019 periodic, CIK not in E1's 25",1618921,"Walgreens Boots Alliance, Inc.",consumer,core,0001618921-17-000026,10-Q,2017-04-05,MDA,OK,ok,anchor,high,12530,0.4802,2017
+T2_NEWOLD,pre-2019 earnings,32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000031,8-K,2017-08-01,EX99_PRESS_RELEASE,OK,ok,whole_document,high,2579,0.4157,2017
+T2_NEWOLD,pre-2019 earnings,707549,LAM RESEARCH CORP,tech,core,0000707549-17-000095,8-K,2017-07-26,EX99_PRESS_RELEASE,OK,ok,whole_document,high,3537,0.2061,2017
+T2_NEWOLD,pre-2019 earnings,1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,0001133421-17-000019,8-K,2017-04-26,EX99_PRESS_RELEASE,OK,ok,whole_document,high,3622,0.2869,2017
+T2_NEWOLD,pre-2019 earnings,1276187,Energy Transfer LP,energy,core,0001276187-16-000211,8-K,2016-08-04,EX99_PRESS_RELEASE,OK,ok,whole_document,high,3025,0.4509,2016
+T2_NEWOLD,2019+ new filer,1535527,"CrowdStrike Holdings, Inc.",tech,core,0001535527-21-000026,8-K,2021-12-01,EX99_PRESS_RELEASE,OK,ok,whole_document,high,5793,0.3822,2021
+T2_NEWOLD,2019+ new filer,1543151,"Uber Technologies, Inc",financials,core,0001543151-20-000029,10-Q,2020-08-07,RISK_FACTORS,OK,ok,anchor,high,34933,0.9192,2020
+T2_NEWOLD,2019+ new filer,30554,"EIDP, Inc.",materials_realestate,extension,0001755672-26-000004,10-K,2026-02-12,RISK_FACTORS,OK,ok,anchor,high,10009,0.9103,2026
+T2_NEWOLD,"extension stratum, sector E1 never had",4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-23-000011,10-K,2023-02-23,MDA,FLAGGED,mda_stub_external_document,incorporated_by_reference_unresolved,low,149,0.8456,2023
+T2_NEWOLD,"extension stratum, sector E1 never had",726728,REALTY INCOME CORP,materials_realestate,extension,0000726728-23-000044,10-K,2023-02-22,RISK_FACTORS,OK,ok,anchor,high,11627,0.8252,2023
+T2_NEWOLD,"extension stratum, sector E1 never had",1692819,Vistra Corp.,utilities,extension,0001628280-23-028436,10-Q,2023-08-09,MDA,OK,ok,anchor,high,13250,0.5488,2023
+T3_FLAG,reason_code=earnings_population_gate,1318605,"Tesla, Inc.",consumer,core,0001628280-24-041816,8-K,2024-10-02,EX99_PRESS_RELEASE,FLAGGED,earnings_population_gate,whole_document,medium,285,0.5684,2024
+T3_FLAG,reason_code=heading_regex_fallback,823768,WASTE MANAGEMENT INC,utilities,extension,0001558370-25-005805,10-Q,2025-04-29,MDA,FLAGGED,heading_regex_fallback,heading_regex,low,8056,0.6493,2025
+T3_FLAG,reason_code=head_keyword_absent,92230,TRUIST FINANCIAL CORP,financials,core,0000092230-22-000083,10-Q,2022-08-01,MDA,FLAGGED,head_keyword_absent,anchor,medium,11889,0.6201,2022
+T3_FLAG,reason_code=no_toc_and_no_heading_match,32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000038,10-K,2021-11-15,MDA,FAIL,no_toc_and_no_heading_match,none,low,0,0.0,2021
+T3_FLAG,reason_code=item_absent_from_toc,4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-16-000102,10-Q,2016-11-02,MDA,FAIL,item_absent_from_toc,none,low,0,0.0,2016
+T3_FLAG,reason_code=earnings_supplemental_diluted,100885,UNION PACIFIC CORP,industrials,extension,0000100885-15-000186,8-K,2015-10-22,EX99_PRESS_RELEASE,FLAGGED,earnings_supplemental_diluted,whole_document,medium,2887,0.3142,2015
+T3_FLAG,reason_code=below_length_floor,100885,UNION PACIFIC CORP,industrials,extension,0000100885-16-000339,10-Q,2016-04-21,MDA,FLAGGED,below_length_floor,heading_regex,low,15,0.0,2016
+T3_FLAG,reason_code=mda_stub_external_document,73309,NUCOR CORP,materials_realestate,extension,0001193125-17-062124,10-K,2017-02-28,MDA,FLAGGED,mda_stub_external_document,incorporated_by_reference_unresolved,low,37,0.0,2017

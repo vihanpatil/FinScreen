@@ -1,0 +1,365 @@
+[
+ {
+  "chunk_id": "E2CHK-c05ee28d8225d0e1",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: pure reconciliation arithmetic (\"Adjustments to provision for income taxes\", \"Non-GAAP net income\") with GAAP net income down and non-GAAP up and no characterization either way."
+ },
+ {
+  "chunk_id": "E2CHK-13ebd9ae899dd431",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags: the \"our ability to...\" bullets are a safe-harbor enumeration that ordinarily fails mining depth, and the remainder is a descriptive segment overview (\"We are a provider of market infrastructure, data services and technology solutions\")."
+ },
+ {
+  "chunk_id": "E2CHK-3274b39619182ca1",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance: \"Accretive to Activision Blizzard's Estimated 2016 Non-GAAP Revenues and EPS by Approximately 30%\" is a deal-accretion claim, not a raised, reaffirmed, lowered or withdrawn guidance figure; red flags: \"clearances by the relevant antitrust authorities and other customary closing conditions\" asserts no agency action."
+ },
+ {
+  "chunk_id": "E2CHK-13118269fc011a43",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment: \"certain adverse verdicts currently on appeal\" and posted \"appeal bonds totaling $50 million\" are balanced against \"management expects cash flow from operations ... to provide sufficient liquidity\"; margin flag follows the double-label rule from the existing regime plus already-incurred cost (\"paid approximately $4.7 billion ... in connection with the State Settlement Agreements and FDA user fees\", \"charge to cost of sales\")."
+ },
+ {
+  "chunk_id": "E2CHK-8c2d90c779858e69",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags: \"unrealized losses\" and \"market depreciation\" are fair-value movements inside a portfolio whose \"value ... increased 7.3%\", not an asserted impairment or write-down charge."
+ },
+ {
+  "chunk_id": "E2CHK-92b5ae844ca9544a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Modality: \"the Federal Reserve issued a final rule\" and \"the Corporation is subject to a 2.5 percent SCB for the period beginning October 1, 2020\" are existence claims about regulation already in effect, so REALIZED rather than hypothetical."
+ },
+ {
+  "chunk_id": "E2CHK-81ff37be2806b9f7",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: segment tables of average loans, \"Nonperforming assets\" and \"Net charge-offs\" figures with no qualitative characterization."
+ },
+ {
+  "chunk_id": "E2CHK-8b4adcb77ee14fc7",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"Restructuring and impairment charges\" and \"Venezuela impairment charges\" are quantified reconciliation columns with percent impacts, so the charges are asserted rather than merely named in a header."
+ },
+ {
+  "chunk_id": "E2CHK-dba86b67aed203e7",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: the product table mixes \"Humira ... (33.3)\" against \"Skyrizi ... 48.5\" with no characterizing language, so magnitude alone does not set a lean."
+ },
+ {
+  "chunk_id": "E2CHK-f5aead7b295a4214",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Modality: \"the Federal Reserve issued a final rule requiring G-SIBs to calculate their G-SIB surcharge\" and \"the Firm must ... maintain a minimum 10% Total Capital requirement\" are requirements already imposed, so REALIZED despite the \"could be limited\" consequence."
+ },
+ {
+  "chunk_id": "E2CHK-acddff2c116c5a83",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Modality: \"banking regulators in the U.S. and globally have increased regulatory scrutiny and intensified supervisory focus\" plus \"New York legislation adopted in April 2021\" are occurrence claims, so REALIZED."
+ },
+ {
+  "chunk_id": "E2CHK-ce05ab29a032e87c",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: mechanical AUM roll-forward balancing \"an increase of $5.5 billion\" in one segment against \"a decrease of $1.7 billion\" in another, with no lean."
+ },
+ {
+  "chunk_id": "E2CHK-ceb9863fd10544fc",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: balance-sheet attribution (\"total assets ... an increase of $109.04 billion ... partially offset by a decrease in cash\") stated flatly with no favorable or unfavorable characterization."
+ },
+ {
+  "chunk_id": "E2CHK-6adeacfab14b3a04",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: contractual-obligation and warranty-accrual tables plus a standard adequacy statement (\"will be sufficient for it to meet its contractual and other obligations\") — procedural disclosure."
+ },
+ {
+  "chunk_id": "E2CHK-2f6acdcaa4a8e138",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"adversely impacted by the timing of shipments ... as the company manages the cancellation of planned heated tobacco unit manufacturing in Russia and disruptions in global supply chains generally\" is a realized constraint on the filer's own production, while \"war in Ukraine\" is named without any tariff, sanction or export-control language."
+ },
+ {
+  "chunk_id": "E2CHK-af98d865cf1fcf87",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance: \"Applied expects net sales to be in the range of $4.00 billion to $4.20 billion\" is newly issued with no reaffirmed, raised or lowered prior figure, so the tie-breaker gives NONE; sentiment rests on the passage describing improvement throughout (\"Net sales ... 20% 34%\", \"Net income ... 61% 100%\")."
+ },
+ {
+  "chunk_id": "E2CHK-ffa7fb0f06f1083a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"Gain (loss) on impairments and divestitures, net ... (790)\" is a quantified charge line, not a bare header; sentiment stays neutral because segment changes run both ways (\"Natural Gas Pipelines ... 7 %\" vs \"CO 2 ... (17 )%\")."
+ },
+ {
+  "chunk_id": "E2CHK-5e3b77980f37a428",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags: the passage describes the impairment *test* (\"We elected to perform the qualitative assessment ... to determine if it was more-likely-than-not that the estimated fair values ... were below their carrying values\") without asserting any impairment, realized or projected."
+ },
+ {
+  "chunk_id": "E2CHK-5f1d29616874765b",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: procedural description of the reserves estimation process (\"Production rate forecasts are derived by a number of methods\") with no characterization of results."
+ },
+ {
+  "chunk_id": "E2CHK-0e6ec714c7d46167",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"we recognized an additional allowance for doubtful accounts\" against premiums receivable is a receivable carrying-value reduction actually taken; sentiment is balanced between \"loss/LAE ratio for March was 16.3 points lower\" and \"$103 million of reserve increases\"."
+ },
+ {
+  "chunk_id": "E2CHK-a8a44197eba3d453",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Sentiment: the lean is unfavorable on \"Total Revenues $ ... (5) %\", \"Total Recent LOE Products ... (38) %\" and \"generic erosion\", despite \"Total New Product Portfolio ... 80 %\"; legal flag from \"government pricing measures\" already driving the international decrease."
+ },
+ {
+  "chunk_id": "E2CHK-0a2e1bb1a048802c",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "Modality: \"could ... expose us to whistleblower, class action and other litigation, other proceedings, ... fines, sanctions and/or penalties\" with no affirmative statement that any proceeding exists; sentiment is set by the wholly unfavorable framing \"any of which could adversely affect our businesses, operating results, cash flows and/or financial condition\"."
+ },
+ {
+  "chunk_id": "E2CHK-948020f4453dd89b",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags: \"a valuation allowance on net operating loss carryforwards of $3.318 million\" is a deferred-tax allowance rather than an impairment or write-down of an operating asset or receivable."
+ },
+ {
+  "chunk_id": "E2CHK-7afaf199e0e3971d",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "reason": "Modality: \"Violations of these laws or regulations could subject us to criminal or civil enforcement actions\" asserts no existing action, and \"import/export controls, content requirements, trade restrictions, tariffs, taxation, sanctions\" is a noun list that fails mining depth, so no trade-policy flag."
+ },
+ {
+  "chunk_id": "E2CHK-d86d1e815ab6bd10",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Guidance: \"Today, we are reaffirming our strong growth outlook for 2021\" is the passage's own framing and controls over the narrowing phrase \"toward the upper-half of our previous range\"; supply flag from \"ongoing tightness in device supplies due to the global shortage of semiconductors, which impacts our ability to fulfill consumer demand\"; impairment flag from the quantified \"Asset impairment and exit costs 0.09 0.08\" line."
+ },
+ {
+  "chunk_id": "E2CHK-9342fa8457cfb895",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"operating income for 2019 decreased from 2018 primarily due to declines in pricing and higher R&D costs\" and \"SG&A expenses ... 3% higher ... due to increases in legal costs and consulting fees\" are causeless cost increases compressing income, so MARGIN_COST_PRESSURE only; price declines are not asserted as demand softening (\"increases in sales volumes\")."
+ },
+ {
+  "chunk_id": "E2CHK-93b76cc89e748627",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance: \"Chevron expects share repurchases in the fourth quarter 2024 to be between $4.0-$4.75 billion\" is a newly stated capital-return expectation with no raised, reaffirmed or lowered prior figure."
+ },
+ {
+  "chunk_id": "E2CHK-cf5aa0cd9c95e4ee",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Guidance: \"The following table summarizes the company's 2022 financial guidance\" issues figures without stating any relation to a prior figure, so §3's ambiguity tie-breaker gives NONE; sentiment is a flat figure table plus boilerplate \"About\" text."
+ },
+ {
+  "chunk_id": "E2CHK-36601e12c6b3177a",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: bare EPS lines followed by mechanical policy narrative (\"We adopted a new accounting standard on January 1, 2018 utilizing the modified retrospective method\") with no characterization of performance."
+ },
+ {
+  "chunk_id": "E2CHK-98514b8d6cf9814e",
+  "sentiment": "NEGATIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: \"Net premiums written ... (10) %\", \"Underwriting loss (4,481)\" and \"We are actively remediating our underperforming segments\" outweigh the favorable self-description; red flags: \"increased pressure on rates\" is pricing, not a cost or demand assertion."
+ },
+ {
+  "chunk_id": "E2CHK-775fa52ea1fa1820",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: flow table mixing \"Retail $ (3,178 )\" with \"iShares ETFs 81,402\" and performance percentages, with no characterizing language."
+ },
+ {
+  "chunk_id": "E2CHK-cc4180ed654b42de",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"The value of ending inventory is reduced for estimated inventory losses\" with \"The total reserve for estimated inventory losses ... was $401 million\" is an inventory carrying-value reduction actually recorded, not merely a policy name."
+ },
+ {
+  "chunk_id": "E2CHK-69e7f9286d88e13e",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: fee and interest-income component tables with no qualitative characterization of the amounts."
+ },
+ {
+  "chunk_id": "E2CHK-62b7f78ac141c48d",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "RAISED",
+  "red_flags": [],
+  "reason": "Guidance: \"we now expect full year 2023 organic net sales growth to be in the range of 10.0% to 10.5%\" and \"we now expect adjusted net earnings per diluted share to be in the range of $10.35 to $10.45\", justified by \"our robust backlog\" and \"our strong sales momentum\", read as an upward revision; red flags: \"inflationary pressures; increased interest rates; supply chain disruptions\" is a safe-harbor noun list failing mining depth."
+ },
+ {
+  "chunk_id": "E2CHK-eb7faaec93ffd0cd",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: cross-reference and value-at-risk methodology text (\"We use a value-at-risk model to assess the market risk\") with no characterization of results."
+ },
+ {
+  "chunk_id": "E2CHK-a83e92e090af3dc2",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: \"APTI of $886 million ... down 5%\" and return on equity \"10.7% ... compared with 12.2%\" are offset by \"premiums and deposits increased 44%\", \"strong sales in Fixed Annuities\" and \"capital position ... remains healthy\", leaving no clear lean."
+ },
+ {
+  "chunk_id": "E2CHK-763089c60ee1cbfd",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Sentiment: the \"SALES GROWTH ANALYSIS\" describes growth across every line (\"Total $ 4,294 $ 2,764 55.4 %\", \"Orthopaedics ... 82.3 %\"), which the rubric counts as favorable even in a flat register."
+ },
+ {
+  "chunk_id": "E2CHK-a888d45cb28cf251",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags: \"Long-term care guaranty fund assessment\" is a bare reconciliation line reflecting an amount owed under standing law rather than an asserted regulatory action."
+ },
+ {
+  "chunk_id": "E2CHK-bbf21eef4bdca577",
+  "sentiment": "POSITIVE",
+  "guidance_direction": "MAINTAINED",
+  "red_flags": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "reason": "Red flags: \"expectations for full year raw material inflation remains unchanged at up by a low-double-digit to mid-teens percentage\" is causeless cost inflation asserted as an ongoing condition, while \"we are through the worst of the industry supply chain challenges\" is market-wide and so does not automatically become this filer's own supply constraint."
+ },
+ {
+  "chunk_id": "E2CHK-9cbbbb12bdc63272",
+  "sentiment": "NEUTRAL",
+  "guidance_direction": "NONE",
+  "red_flags": [],
+  "reason": "Red flags: \"Depreciation, amortization and impairments\" is a routine combined cash-flow caption with no separately asserted or quantified impairment charge, and \"recalls\" appears only as a driver of an accrual change with no agency action stated."
+ }
+]

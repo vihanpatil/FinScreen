@@ -1,0 +1,8 @@
+0 already in labels.jsonl · 10 to generate
+loading base model + adapter (the only GPU work) ...
+  loaded in 0.9s
+  [10/10 this process · 10/10 segment] 2.63s/row · 1473 chunks/h · ETA 0.00h for the segment · last finish=stop gen_tok=33
+
+SEGMENT seg-001 COMPLETE — 10/10 rows.
+Now finalize with the SYSTEM python3 (no GPU, seconds):
+    python3 finetune/label_e2.py --finalize-segment seg-001

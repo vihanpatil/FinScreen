@@ -1,0 +1,1781 @@
+{
+ "schema_version": "g2-1",
+ "generated_utc": "2026-09-07T19:03:27Z",
+ "stage": "owner_ratified",
+ "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73).",
+ "red_flags_status": "exploratory / disclosure-only (owner ruling 2026-08-27); this pass cannot change it.",
+ "inputs": {
+  "data/f4/labels_e2_v1.parquet": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
+  "data/f4/chunks_v1.parquet": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+  "finetune/splits_v12/train.parquet": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10",
+  "data/f4/g2/adjudications/adjudications.json": "383f90849c62a735c098f1efd21027086f80d780e26b1fc6b7015e8b93d83967",
+  "data/f4/g2/draw_manifest.json": "9b7abe19f80c12f9c0859e0be24b07b8003a5a5494e853495f0339afa4c04d63",
+  "data/f4/g2/probe_ids.json": "7b8deb100ea0afb574046c34f1cceb9e853411178aca0eaa7ee0146f3b362b4e",
+  "data/f4/g2/verdicts/rater_b_batch01.json": "f4770e15401162701e4f13e71f48c463b290c6bf8c460bf6a214baecea718a05",
+  "data/f4/g2/verdicts/rater_b_batch02.json": "81e97dc7ae06d3c8bb0949269e2f2fb0a43d7a14adf7a90f1435952a696b3a52",
+  "data/f4/g2/verdicts/rater_b_batch03.json": "fbd1de676345915dc678b9d981ca546d5261f2e75bc2642531bd45a74f8ff955"
+ },
+ "input_notes": [],
+ "option": "C",
+ "seed": 20260906,
+ "ratified_bars": {
+  "sentiment": 0.85,
+  "guidance_direction": 0.85
+ },
+ "n_drawn": 580,
+ "n_rated": 580,
+ "not_yet_available": [],
+ "primary": {
+  "sentiment": {
+   "k": 293,
+   "n": 337,
+   "p_hat": 0.8694362017804155,
+   "wilson_lo": 0.8292615059623852,
+   "wilson_hi": 0.9012831223928391,
+   "wilson_95": [
+    0.8292615059623852,
+    0.9012831223928391
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "agreement",
+   "bar": 0.85,
+   "kstar_pass": 300,
+   "kstar_fail": 273,
+   "verdict": "INDETERMINATE",
+   "verdict_rule": "PASS iff Wilson lower bound >= bar; DECISIVE_FAIL iff Wilson upper bound < bar; INDETERMINATE otherwise",
+   "sens_all_error": [
+    0.8292615059623852,
+    0.9012831223928391
+   ],
+   "sens_all_agree": [
+    0.8292615059623852,
+    0.9012831223928391
+   ],
+   "provisional": false,
+   "n_omission_pinned_errors": 3,
+   "operating_characteristics_at_realized_n": {
+    "P_DECISIVE_FAIL_if_q_0.83": 0.183054888252908,
+    "P_DECISIVE_FAIL_if_q_0.85": 0.026803705425240437,
+    "P_PASS_if_q_0.90": 0.7588915269860498,
+    "P_PASS_if_q_0.95": 0.9999967690235984
+   },
+   "caveat": "Chunk-level label accuracy under the \u00a71.2 applicability mask (MDA + EX99_PRESS_RELEASE). Omitted stored values are scored as errors (\u00a71.3); S-OMIT restates the rate with them excluded. This is NOT EXPANSION_PLAN \u00a72a's feature-level reliability lambda and must not be used as one (\u00a76.5).",
+   "n_planned": 337,
+   "n_planned_note": "\u00a714.6 pinned the boundaries at n=337 before data; kstar_pass / kstar_fail above are RECOMPUTED at the realized n (\u00a76.1). A realized n below plan widens the interval \u2014 it never moves the bar."
+  },
+  "guidance_direction": {
+   "k": 115,
+   "n": 119,
+   "p_hat": 0.9663865546218487,
+   "wilson_lo": 0.9167502285215104,
+   "wilson_hi": 0.9868524598185958,
+   "wilson_95": [
+    0.9167502285215104,
+    0.9868524598185958
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "agreement",
+   "bar": 0.85,
+   "kstar_pass": 109,
+   "kstar_fail": 93,
+   "verdict": "PASS",
+   "verdict_rule": "PASS iff Wilson lower bound >= bar; DECISIVE_FAIL iff Wilson upper bound < bar; INDETERMINATE otherwise",
+   "sens_all_error": [
+    0.9167502285215104,
+    0.9868524598185958
+   ],
+   "sens_all_agree": [
+    0.9167502285215104,
+    0.9868524598185958
+   ],
+   "provisional": false,
+   "n_omission_pinned_errors": 0,
+   "operating_characteristics_at_realized_n": {
+    "P_DECISIVE_FAIL_if_q_0.83": 0.10174479398265357,
+    "P_DECISIVE_FAIL_if_q_0.85": 0.029114783472717648,
+    "P_PASS_if_q_0.90": 0.34703544503722633,
+    "P_PASS_if_q_0.95": 0.9634885487055022
+   },
+   "caveat": "A PASS on guidance-P is a statement about the NONE mass only. Of the 119 EX99 rows in P (realized draw), 60 are guidance_imputed_none=true rows scored AS NONE by the \u00a71.3 writer rule and only 9 carry an active direction, so the bar can be cleared almost entirely by the writer rule being right about the NONE mass. It is NOT evidence about the RAISED / LOWERED / MAINTAINED / WITHDRAWN calls that drive guidance_signed_mean. G-A's active precision (pooled, corpus-re-weighted) and G-N's false-NONE rate must be quoted in every table where the guidance verdict appears, and no headline may cite the guidance verdict alone.",
+   "n_planned": 119,
+   "n_planned_note": "\u00a714.6 pinned the boundaries at n=119 before data; kstar_pass / kstar_fail above are RECOMPUTED at the realized n (\u00a76.1). A realized n below plan widens the interval \u2014 it never moves the bar."
+  }
+ },
+ "appendix_non_decisional_bars": {
+  "sentiment": {
+   "0.9": {
+    "n": 337,
+    "k_required_to_clear": 315,
+    "p_hat_required_to_clear": 0.9347181008902077,
+    "k_at_or_below_which_decisive": 292,
+    "note": "non-decisional; no verdict is defined at this bar. Only the k* boundaries move with the bar \u2014 p_hat and its Wilson interval do not, so they are NOT reprinted here"
+   }
+  },
+  "guidance_direction": {
+   "0.9": {
+    "n": 119,
+    "k_required_to_clear": 114,
+    "p_hat_required_to_clear": 0.957983193277311,
+    "k_at_or_below_which_decisive": 100,
+    "note": "non-decisional; no verdict is defined at this bar. Only the k* boundaries move with the bar \u2014 p_hat and its Wilson interval do not, so they are NOT reprinted here"
+   }
+  }
+ },
+ "guidance_active_precision": {
+  "point": 0.6866867538602978,
+  "wilson_lo": 0.5816754085471428,
+  "wilson_hi": 0.7755108487100656,
+  "n_eff": 84.7683631622867,
+  "n_nominal": 100,
+  "n_applicable": 100,
+  "n_nonevaluable": 0,
+  "weights": {
+   "RAISED": 0.5735453002006482,
+   "MAINTAINED": 0.2994289242167001,
+   "LOWERED": 0.11683901836703195,
+   "WITHDRAWN": 0.010186757215619695
+  },
+  "bar": null,
+  "estimand": "P(adjudicated reference == the stored active value | stored is that active value), re-weighted to the corpus direction shares w_d = N_d/6479 because G-A is a QUOTA arm after the owner's 2026-09-07 ruling (vi): LOWERED is 11.7% of the corpus and 15% of the arm, WITHDRAWN 1.0% and 15%. The unweighted pooled proportion would answer a different question (\u00a714.4).",
+  "interval": "stratified_wilson_via_n_eff",
+  "weights_are_never_renormalised": true,
+  "note": "the POOLED re-weighted number is what \u00a76.3's binding caveat requires on the guidance verdict's line; no per-direction number satisfies it. No bar (rulings (iv), (vi)).",
+  "p_tilde": 0.6661428695476406,
+  "design_effect": 1.1796853952287925,
+  "p_hat_unweighted_do_not_quote": 0.73,
+  "arm_is_complete": true,
+  "corpus_counts": {
+   "RAISED": 3716,
+   "MAINTAINED": 1940,
+   "LOWERED": 757,
+   "WITHDRAWN": 66
+  },
+  "corpus_frame_n": 6479,
+  "allocation": {
+   "RAISED": 46,
+   "MAINTAINED": 24,
+   "LOWERED": 15,
+   "WITHDRAWN": 15
+  },
+  "direction_counts_drawn": {
+   "RAISED": 46,
+   "MAINTAINED": 24,
+   "LOWERED": 15,
+   "WITHDRAWN": 15
+  }
+ },
+ "guidance_active_precision_by_direction": {
+  "RAISED": {
+   "k": 32,
+   "n": 46,
+   "p_hat": 0.6956521739130435,
+   "wilson_lo": 0.5519408125976183,
+   "wilson_hi": 0.8092032919255109,
+   "wilson_95": [
+    0.5519408125976183,
+    0.8092032919255109
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "agreement",
+   "corpus_weight": 0.5735453002006482,
+   "bar": null,
+   "note": "disclosure only; no bar (owner rulings 2026-09-07 items (iv) and (vi)). Per-direction Wilson half-widths at p_hat=0.80 are +-11.3 (RAISED), +-15.4 (MAINTAINED), +-19.1 (LOWERED), +-19.1 (WITHDRAWN) points \u2014 the quota buys that the value GUIDANCE_MAP sends to -1 stops being literally unmeasured, NOT that it becomes resolved (\u00a714.3). No per-direction number satisfies \u00a76.3's binding caveat; only the pooled re-weighted estimate does."
+  },
+  "MAINTAINED": {
+   "k": 16,
+   "n": 24,
+   "p_hat": 0.6666666666666666,
+   "wilson_lo": 0.4670595949408046,
+   "wilson_hi": 0.8202802131162036,
+   "wilson_95": [
+    0.4670595949408046,
+    0.8202802131162036
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "agreement",
+   "corpus_weight": 0.2994289242167001,
+   "bar": null,
+   "note": "disclosure only; no bar (owner rulings 2026-09-07 items (iv) and (vi)). Per-direction Wilson half-widths at p_hat=0.80 are +-11.3 (RAISED), +-15.4 (MAINTAINED), +-19.1 (LOWERED), +-19.1 (WITHDRAWN) points \u2014 the quota buys that the value GUIDANCE_MAP sends to -1 stops being literally unmeasured, NOT that it becomes resolved (\u00a714.3). No per-direction number satisfies \u00a76.3's binding caveat; only the pooled re-weighted estimate does."
+  },
+  "LOWERED": {
+   "k": 10,
+   "n": 15,
+   "p_hat": 0.6666666666666666,
+   "wilson_lo": 0.41713125151212976,
+   "wilson_hi": 0.8482389930530876,
+   "wilson_95": [
+    0.41713125151212976,
+    0.8482389930530876
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "agreement",
+   "corpus_weight": 0.11683901836703195,
+   "bar": null,
+   "note": "disclosure only; no bar (owner rulings 2026-09-07 items (iv) and (vi)). Per-direction Wilson half-widths at p_hat=0.80 are +-11.3 (RAISED), +-15.4 (MAINTAINED), +-19.1 (LOWERED), +-19.1 (WITHDRAWN) points \u2014 the quota buys that the value GUIDANCE_MAP sends to -1 stops being literally unmeasured, NOT that it becomes resolved (\u00a714.3). No per-direction number satisfies \u00a76.3's binding caveat; only the pooled re-weighted estimate does."
+  },
+  "WITHDRAWN": {
+   "k": 15,
+   "n": 15,
+   "p_hat": 1.0,
+   "wilson_lo": 0.7961107336956521,
+   "wilson_hi": 1.0,
+   "wilson_95": [
+    0.7961107336956521,
+    1.0
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "agreement",
+   "corpus_weight": 0.010186757215619695,
+   "bar": null,
+   "note": "disclosure only; no bar (owner rulings 2026-09-07 items (iv) and (vi)). Per-direction Wilson half-widths at p_hat=0.80 are +-11.3 (RAISED), +-15.4 (MAINTAINED), +-19.1 (LOWERED), +-19.1 (WITHDRAWN) points \u2014 the quota buys that the value GUIDANCE_MAP sends to -1 stops being literally unmeasured, NOT that it becomes resolved (\u00a714.3). No per-direction number satisfies \u00a76.3's binding caveat; only the pooled re-weighted estimate does."
+  }
+ },
+ "guidance_false_none_rate": {
+  "k": 0,
+  "n": 80,
+  "p_hat": 0.0,
+  "wilson_lo": 0.0,
+  "wilson_hi": 0.0458197362645751,
+  "wilson_95": [
+   0.0,
+   0.0458197362645751
+  ],
+  "interval": "naive_binomial",
+  "n_unsure": 0,
+  "n_unadjudicated": 0,
+  "n_nonevaluable": 0,
+  "scale": "error",
+  "estimand": "false-NONE rate r = P(adjudicated reference is an active direction | stored is an imputed NONE); an active call is missed on 0.511 * r of guidance-applicable rows",
+  "reference_active_counts": {},
+  "calibration_anchors": {
+   "e2_active_share_when_key_emitted": 0.1400804289544236,
+   "e1_same_adapter_omission_rate": {
+    "k": 390,
+    "n": 1179,
+    "point": 0.33078880407124683
+   },
+   "e2_omission_rate_frame": {
+    "k": 48790,
+    "n": 95335,
+    "point": 0.5117742696806
+   },
+   "note": "holding the labeler fixed, guidance-key omission worsens 33.08% (E1) -> 51.18% (E2), +18.1 pts \u2014 a behavioural/corpus response, which is the hypothesis G-N exists to test (\u00a73.3)"
+  }
+ },
+ "adjudication_layer": {
+  "interval": "counts_no_ci",
+  "n_rulings": 314,
+  "by_verdict": {
+   "agree": 43,
+   "disagree": 271
+  },
+  "by_confidence": {
+   "high": 53,
+   "low": 10,
+   "medium": 251
+  },
+  "n_unsure": 0,
+  "sided_with_rater_against_stored": {
+   "overall": {
+    "k": 271,
+    "n": 314,
+    "p_hat": 0.8630573248407644
+   },
+   "by_field": {
+    "guidance_direction": {
+     "k": 31,
+     "n": 32,
+     "p_hat": 0.96875
+    },
+    "red_flags": {
+     "k": 169,
+     "n": 193,
+     "p_hat": 0.8756476683937824
+    },
+    "sentiment": {
+     "k": 71,
+     "n": 89,
+     "p_hat": 0.797752808988764
+    }
+   }
+  },
+  "note": "'sided_with_rater_against_stored' = the adjudicator overturned the stored student label on a contested (chunk, field) row. Both the blind rater and the adjudicator are Claude-family; the student is Qwen. A high rate is consistent with either a correct student-error finding or with within-family agreement, and this design cannot separate the two (\u00a712.1). Disclosure only \u2014 it moves nothing."
+ },
+ "secondaries": {
+  "S-SEC": {
+   "sentiment": {
+    "EX99_PRESS_RELEASE": {
+     "k": 101,
+     "n": 119,
+     "p_hat": 0.8487394957983193,
+     "wilson_lo": 0.7735390579844186,
+     "wilson_hi": 0.9021278170807059,
+     "wilson_95": [
+      0.7735390579844186,
+      0.9021278170807059
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "MDA": {
+     "k": 192,
+     "n": 218,
+     "p_hat": 0.8807339449541285,
+     "wilson_lo": 0.8309845890671408,
+     "wilson_hi": 0.9172970677546637,
+     "wilson_95": [
+      0.8309845890671408,
+      0.9172970677546637
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "guidance_direction": {
+    "EX99_PRESS_RELEASE": {
+     "k": 115,
+     "n": 119,
+     "p_hat": 0.9663865546218487,
+     "wilson_lo": 0.9167502285215104,
+     "wilson_hi": 0.9868524598185958,
+     "wilson_95": [
+      0.9167502285215104,
+      0.9868524598185958
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   }
+  },
+  "S-SECTOR": {
+   "sentiment": {
+    "consumer": {
+     "k": 53,
+     "n": 62,
+     "p_hat": 0.8548387096774194,
+     "wilson_lo": 0.7465637464683084,
+     "wilson_hi": 0.92170676943653,
+     "wilson_95": [
+      0.7465637464683084,
+      0.92170676943653
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "energy": {
+     "k": 44,
+     "n": 53,
+     "p_hat": 0.8301886792452831,
+     "wilson_lo": 0.7077446317626587,
+     "wilson_hi": 0.9080015822777624,
+     "wilson_95": [
+      0.7077446317626587,
+      0.9080015822777624
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "financials": {
+     "k": 97,
+     "n": 111,
+     "p_hat": 0.8738738738738738,
+     "wilson_lo": 0.7993724735211747,
+     "wilson_hi": 0.9233621452929135,
+     "wilson_95": [
+      0.7993724735211747,
+      0.9233621452929135
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "healthcare": {
+     "k": 52,
+     "n": 55,
+     "p_hat": 0.9454545454545454,
+     "wilson_lo": 0.8514670569551007,
+     "wilson_hi": 0.9812771240324999,
+     "wilson_95": [
+      0.8514670569551007,
+      0.9812771240324999
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "tech": {
+     "k": 47,
+     "n": 56,
+     "p_hat": 0.8392857142857143,
+     "wilson_lo": 0.7219354555032431,
+     "wilson_hi": 0.9130743035941074,
+     "wilson_95": [
+      0.7219354555032431,
+      0.9130743035941074
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "guidance_direction": {
+    "consumer": {
+     "k": 25,
+     "n": 25,
+     "p_hat": 1.0,
+     "wilson_lo": 0.8668035060468213,
+     "wilson_hi": 1.0,
+     "wilson_95": [
+      0.8668035060468213,
+      1.0
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "energy": {
+     "k": 21,
+     "n": 21,
+     "p_hat": 1.0,
+     "wilson_lo": 0.8453561767357979,
+     "wilson_hi": 0.9999999999999999,
+     "wilson_95": [
+      0.8453561767357979,
+      0.9999999999999999
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "financials": {
+     "k": 29,
+     "n": 30,
+     "p_hat": 0.9666666666666667,
+     "wilson_lo": 0.8332924860304112,
+     "wilson_hi": 0.9940915620051425,
+     "wilson_95": [
+      0.8332924860304112,
+      0.9940915620051425
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "healthcare": {
+     "k": 20,
+     "n": 22,
+     "p_hat": 0.9090909090909091,
+     "wilson_lo": 0.7218461934161421,
+     "wilson_hi": 0.9747051037171622,
+     "wilson_95": [
+      0.7218461934161421,
+      0.9747051037171622
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "tech": {
+     "k": 20,
+     "n": 21,
+     "p_hat": 0.9523809523809523,
+     "wilson_lo": 0.7733018341376452,
+     "wilson_hi": 0.9915442305280766,
+     "wilson_95": [
+      0.7733018341376452,
+      0.9915442305280766
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   }
+  },
+  "S-ERA": {
+   "sentiment": {
+    "2019+": {
+     "k": 193,
+     "n": 226,
+     "p_hat": 0.8539823008849557,
+     "wilson_lo": 0.8020310535027003,
+     "wilson_hi": 0.8941005432143431,
+     "wilson_95": [
+      0.8020310535027003,
+      0.8941005432143431
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "pre-2019": {
+     "k": 100,
+     "n": 111,
+     "p_hat": 0.9009009009009009,
+     "wilson_lo": 0.8312201328230934,
+     "wilson_hi": 0.9437603620498446,
+     "wilson_95": [
+      0.8312201328230934,
+      0.9437603620498446
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "guidance_direction": {
+    "2019+": {
+     "k": 78,
+     "n": 79,
+     "p_hat": 0.9873417721518988,
+     "wilson_lo": 0.9317226395682229,
+     "wilson_hi": 0.9977620637692307,
+     "wilson_95": [
+      0.9317226395682229,
+      0.9977620637692307
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "pre-2019": {
+     "k": 37,
+     "n": 40,
+     "p_hat": 0.925,
+     "wilson_lo": 0.8013546984090248,
+     "wilson_hi": 0.9741644432281419,
+     "wilson_95": [
+      0.8013546984090248,
+      0.9741644432281419
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   }
+  },
+  "S-CONF": {
+   "by_extraction_confidence": {
+    "sentiment": {
+     "high": {
+      "k": 247,
+      "n": 283,
+      "p_hat": 0.872791519434629,
+      "wilson_lo": 0.8289159390755372,
+      "wilson_hi": 0.9066816869312904,
+      "wilson_95": [
+       0.8289159390755372,
+       0.9066816869312904
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "low": {
+      "k": 11,
+      "n": 14,
+      "p_hat": 0.7857142857142857,
+      "wilson_lo": 0.5241027622679172,
+      "wilson_hi": 0.9242875166308363,
+      "wilson_95": [
+       0.5241027622679172,
+       0.9242875166308363
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "medium": {
+      "k": 35,
+      "n": 40,
+      "p_hat": 0.875,
+      "wilson_lo": 0.7388757932976187,
+      "wilson_hi": 0.9454058022645873,
+      "wilson_95": [
+       0.7388757932976187,
+       0.9454058022645873
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     }
+    },
+    "guidance_direction": {
+     "high": {
+      "k": 87,
+      "n": 91,
+      "p_hat": 0.9560439560439561,
+      "wilson_lo": 0.8923674847182562,
+      "wilson_hi": 0.9827759122720942,
+      "wilson_95": [
+       0.8923674847182562,
+       0.9827759122720942
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "medium": {
+      "k": 28,
+      "n": 28,
+      "p_hat": 1.0,
+      "wilson_lo": 0.8793527963418923,
+      "wilson_hi": 1.0,
+      "wilson_95": [
+       0.8793527963418923,
+       1.0
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     }
+    }
+   },
+   "by_extraction_status": {
+    "sentiment": {
+     "FLAGGED": {
+      "k": 42,
+      "n": 50,
+      "p_hat": 0.84,
+      "wilson_lo": 0.7148551903823401,
+      "wilson_hi": 0.9166267863791231,
+      "wilson_95": [
+       0.7148551903823401,
+       0.9166267863791231
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "OK": {
+      "k": 251,
+      "n": 287,
+      "p_hat": 0.8745644599303136,
+      "wilson_lo": 0.8312311154966673,
+      "wilson_hi": 0.9080028867918638,
+      "wilson_95": [
+       0.8312311154966673,
+       0.9080028867918638
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     }
+    },
+    "guidance_direction": {
+     "FLAGGED": {
+      "k": 28,
+      "n": 28,
+      "p_hat": 1.0,
+      "wilson_lo": 0.8793527963418923,
+      "wilson_hi": 1.0,
+      "wilson_95": [
+       0.8793527963418923,
+       1.0
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "OK": {
+      "k": 87,
+      "n": 91,
+      "p_hat": 0.9560439560439561,
+      "wilson_lo": 0.8923674847182562,
+      "wilson_hi": 0.9827759122720942,
+      "wilson_95": [
+       0.8923674847182562,
+       0.9827759122720942
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     }
+    }
+   },
+   "by_in_member_spell": {
+    "sentiment": {
+     "False": {
+      "k": 109,
+      "n": 133,
+      "p_hat": 0.8195488721804511,
+      "wilson_lo": 0.745522715501838,
+      "wilson_hi": 0.8756334241516006,
+      "wilson_95": [
+       0.745522715501838,
+       0.8756334241516006
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "True": {
+      "k": 184,
+      "n": 204,
+      "p_hat": 0.9019607843137255,
+      "wilson_lo": 0.8534260921555659,
+      "wilson_hi": 0.9356363477024798,
+      "wilson_95": [
+       0.8534260921555659,
+       0.9356363477024798
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     }
+    },
+    "guidance_direction": {
+     "False": {
+      "k": 46,
+      "n": 49,
+      "p_hat": 0.9387755102040817,
+      "wilson_lo": 0.8347925657791229,
+      "wilson_hi": 0.9789602350444708,
+      "wilson_95": [
+       0.8347925657791229,
+       0.9789602350444708
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     },
+     "True": {
+      "k": 69,
+      "n": 70,
+      "p_hat": 0.9857142857142858,
+      "wilson_lo": 0.9234163029607309,
+      "wilson_hi": 0.997473818596765,
+      "wilson_95": [
+       0.9234163029607309,
+       0.997473818596765
+      ],
+      "interval": "naive_binomial",
+      "n_unsure": 0,
+      "n_unadjudicated": 0,
+      "n_nonevaluable": 0,
+      "scale": "agreement"
+     }
+    }
+   },
+   "note": "in_member_spell is NOT point-in-time (chunks_v1 caveat) \u2014 reported as a free subgroup, never used to condition (\u00a73.5)"
+  },
+  "S-OVERLAP": {
+   "sentiment": {
+    "False": {
+     "k": 269,
+     "n": 311,
+     "p_hat": 0.864951768488746,
+     "wilson_lo": 0.8224841169209182,
+     "wilson_hi": 0.8985133624464844,
+     "wilson_95": [
+      0.8224841169209182,
+      0.8985133624464844
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "True": {
+     "k": 24,
+     "n": 26,
+     "p_hat": 0.9230769230769231,
+     "wilson_lo": 0.7585805251948495,
+     "wilson_hi": 0.9786453608166245,
+     "wilson_95": [
+      0.7585805251948495,
+      0.9786453608166245
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "guidance_direction": {
+    "False": {
+     "k": 112,
+     "n": 116,
+     "p_hat": 0.9655172413793104,
+     "wilson_lo": 0.9146791795449883,
+     "wilson_hi": 0.986510390687719,
+     "wilson_95": [
+      0.9146791795449883,
+      0.986510390687719
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "True": {
+     "k": 3,
+     "n": 3,
+     "p_hat": 1.0,
+     "wilson_lo": 0.43849391955098227,
+     "wilson_hi": 1.0,
+     "wilson_95": [
+      0.43849391955098227,
+      1.0
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "powered": false,
+   "note": "discharges EXPANSION_PLAN \u00a73 item 2 ('with and without the overlap set'). NOT POWERED AT ANY n THIS PROJECT WILL BUY: ~14 overlap rows of 300 carry a +-18.2 pt Wilson half-width at p_hat=0.85, and no overlap-vs-novel difference of any plausible size is detectable. The 4.53% accession-level figure is a LOWER BOUND on memorization exposure \u2014 company-level exposure is 15.85% and boilerplate recurs near-verbatim (\u00a72.5). The headline therefore pools memorized and novel chunks."
+  },
+  "S-SELFID": {
+   "sentiment": {
+    "False": {
+     "k": 156,
+     "n": 173,
+     "p_hat": 0.9017341040462428,
+     "wilson_lo": 0.848273812573772,
+     "wilson_hi": 0.9377403379428485,
+     "wilson_95": [
+      0.848273812573772,
+      0.9377403379428485
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "True": {
+     "k": 137,
+     "n": 164,
+     "p_hat": 0.8353658536585366,
+     "wilson_lo": 0.7710618785383982,
+     "wilson_hi": 0.8843179557815797,
+     "wilson_95": [
+      0.7710618785383982,
+      0.8843179557815797
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "guidance_direction": {
+    "False": {
+     "k": 38,
+     "n": 39,
+     "p_hat": 0.9743589743589743,
+     "wilson_lo": 0.8681871352137286,
+     "wilson_hi": 0.9954594139347627,
+     "wilson_95": [
+      0.8681871352137286,
+      0.9954594139347627
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "True": {
+     "k": 77,
+     "n": 80,
+     "p_hat": 0.9625,
+     "wilson_lo": 0.8954510802560568,
+     "wilson_hi": 0.9871656636992113,
+     "wilson_95": [
+      0.8954510802560568,
+      0.9871656636992113
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    }
+   },
+   "frame_share": 0.4646290915644138,
+   "realized_share": 0.5258620689655172,
+   "note": "discharges HANDOFF \u00a77's 'watch for it in the spot-check' instruction; the passage text itself names the company on 46.46% of the frame (EX99 71.14%)"
+  },
+  "S-OMIT": {
+   "sentiment": {
+    "omission_excluded_rate": {
+     "k": 293,
+     "n": 334,
+     "p_hat": 0.8772455089820359,
+     "wilson_lo": 0.8377010919335025,
+     "wilson_hi": 0.9082106015938783,
+     "wilson_95": [
+      0.8377010919335025,
+      0.9082106015938783
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "n_applicable": 337,
+    "omission_rate": {
+     "k": 3,
+     "n": 337,
+     "p_hat": 0.008902077151335312,
+     "wilson_95": [
+      0.003031982669908794,
+      0.02584242702656018
+     ],
+     "interval": "naive_binomial"
+    },
+    "n_writer_imputed_none": 0
+   },
+   "guidance_direction": {
+    "omission_excluded_rate": {
+     "k": 115,
+     "n": 119,
+     "p_hat": 0.9663865546218487,
+     "wilson_lo": 0.9167502285215104,
+     "wilson_hi": 0.9868524598185958,
+     "wilson_95": [
+      0.9167502285215104,
+      0.9868524598185958
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "agreement"
+    },
+    "n_applicable": 119,
+    "omission_rate": {
+     "k": 0,
+     "n": 119,
+     "p_hat": 0.0,
+     "wilson_95": [
+      3.469446951953614e-18,
+      0.03127279358132749
+     ],
+     "interval": "naive_binomial"
+    },
+    "n_writer_imputed_none": 60
+   },
+   "note": "'omission' = the student did not emit a value (stored null). The guidance_imputed_none rows are NOT omissions here \u2014 the writer rule is adopted and 'NONE' IS the stored label (\u00a71.3); their count is reported separately and arm G-N tests them directly.",
+   "interval": "naive_binomial"
+  },
+  "S-ERR": {
+   "interval": "counts_no_ci",
+   "sentiment": {
+    "confusion_stored_x_reference": {
+     "NEGATIVE->NEGATIVE": 25,
+     "NEGATIVE->NEUTRAL": 24,
+     "NEUTRAL->NEUTRAL": 215,
+     "NEUTRAL->POSITIVE": 2,
+     "POSITIVE->NEUTRAL": 15,
+     "POSITIVE->POSITIVE": 53
+    },
+    "share_of_reference_NEGATIVE_rows_whose_stored_value_was_NEGATIVE": {
+     "k": 25,
+     "n": 25,
+     "p_hat": 1.0,
+     "wilson_95": [
+      0.8668035060468213,
+      1.0
+     ],
+     "interval": "naive_binomial",
+     "note": "NOT recall against an independent NEGATIVE ground truth. One-directional verification: only disagreements are ever re-checked, so the reference-NEGATIVE set is built from contested rows and this denominator is definitionally near the stored-NEGATIVE-and-upheld set \u2014 a value at or near 1.0 is near-structural, not a measurement of NEGATIVE detection."
+    },
+    "n_omitted": 3
+   },
+   "guidance_direction": {
+    "active_to_NONE": 3,
+    "NONE_to_active": 1,
+    "omitted": 0
+   },
+   "red_flags": {
+    "spurious_flags": 74,
+    "missed_flags": 59,
+    "wrong_modality": 17,
+    "note": "category-level corrections on error rows; disclosure-only"
+   }
+  },
+  "S-GNDEC": {
+   "frame_word_count_quartile_cuts": [
+    362.0,
+    373.0,
+    387.0
+   ],
+   "interval": "naive_binomial",
+   "e1_same_adapter_baseline": {
+    "k": 390,
+    "n": 1179,
+    "point": 0.33078880407124683
+   },
+   "e2_frame_omission_rate": {
+    "k": 48790,
+    "n": 95335,
+    "point": 0.5117742696806
+   },
+   "note": "'omission' here = the guidance key was not emitted (guidance_imputed_none OR stored null). The P arm is the only base-rate-representative arm, so the omission rate is computed there; the false-NONE split is computed inside G-N.",
+   "p_arm_omission_rate": {
+    "k": 60,
+    "n": 119,
+    "p_hat": 0.5042016806722689,
+    "wilson_95": [
+     0.41565273000948033,
+     0.5924878347503404
+    ],
+    "interval": "naive_binomial"
+   },
+   "p_arm_omission_by_word_count_quartile": {
+    "Q1(<= 362)": {
+     "k": 15,
+     "n": 24,
+     "p_hat": 0.625,
+     "wilson_95": [
+      0.42709619037907065,
+      0.7884086656636855
+     ],
+     "interval": "naive_binomial"
+    },
+    "Q2(<= 373)": {
+     "k": 17,
+     "n": 35,
+     "p_hat": 0.4857142857142857,
+     "wilson_95": [
+      0.32993980391252736,
+      0.6443146037328837
+     ],
+     "interval": "naive_binomial"
+    },
+    "Q3(<= 387)": {
+     "k": 16,
+     "n": 28,
+     "p_hat": 0.5714285714285714,
+     "wilson_95": [
+      0.390704789856154,
+      0.7349170381926877
+     ],
+     "interval": "naive_binomial"
+    },
+    "Q4(> 387)": {
+     "k": 12,
+     "n": 32,
+     "p_hat": 0.375,
+     "wilson_95": [
+      0.2293366846595921,
+      0.5474589941047487
+     ],
+     "interval": "naive_binomial"
+    }
+   },
+   "p_arm_omission_by_head_truncated": {
+    "False": {
+     "k": 57,
+     "n": 115,
+     "p_hat": 0.4956521739130435,
+     "interval": "naive_binomial"
+    },
+    "True": {
+     "k": 3,
+     "n": 4,
+     "p_hat": 0.75,
+     "interval": "naive_binomial"
+    }
+   },
+   "gn_false_none_by_word_count_quartile": {
+    "Q1(<= 362)": {
+     "k": 0,
+     "n": 21,
+     "p_hat": 0.0,
+     "wilson_lo": 0.0,
+     "wilson_hi": 0.15464382326420195,
+     "wilson_95": [
+      0.0,
+      0.15464382326420195
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "error"
+    },
+    "Q2(<= 373)": {
+     "k": 0,
+     "n": 19,
+     "p_hat": 0.0,
+     "wilson_lo": 0.0,
+     "wilson_hi": 0.16818436536845052,
+     "wilson_95": [
+      0.0,
+      0.16818436536845052
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "error"
+    },
+    "Q3(<= 387)": {
+     "k": 0,
+     "n": 20,
+     "p_hat": 0.0,
+     "wilson_lo": 0.0,
+     "wilson_hi": 0.16113012549493322,
+     "wilson_95": [
+      0.0,
+      0.16113012549493322
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "error"
+    },
+    "Q4(> 387)": {
+     "k": 0,
+     "n": 20,
+     "p_hat": 0.0,
+     "wilson_lo": 0.0,
+     "wilson_hi": 0.16113012549493322,
+     "wilson_95": [
+      0.0,
+      0.16113012549493322
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "error"
+    }
+   },
+   "gn_false_none_by_head_truncated": {
+    "False": {
+     "k": 0,
+     "n": 78,
+     "p_hat": 0.0,
+     "wilson_lo": 0.0,
+     "wilson_hi": 0.04693945377411976,
+     "wilson_95": [
+      0.0,
+      0.04693945377411976
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "error"
+    },
+    "True": {
+     "k": 0,
+     "n": 2,
+     "p_hat": 0.0,
+     "wilson_lo": 0.0,
+     "wilson_hi": 0.6576280471103807,
+     "wilson_95": [
+      0.0,
+      0.6576280471103807
+     ],
+     "interval": "naive_binomial",
+     "n_unsure": 0,
+     "n_unadjudicated": 0,
+     "n_nonevaluable": 0,
+     "scale": "error"
+    }
+   }
+  },
+  "S-MASK": {
+   "sentiment_on_RISK_FACTORS": {
+    "n": 4177,
+    "by_value": {
+     "NEUTRAL": 3452,
+     "NEGATIVE": 688,
+     "POSITIVE": 37
+    }
+   },
+   "guidance_on_MDA": {
+    "n": 2803,
+    "by_value": {
+     "NONE": 2575,
+     "MAINTAINED": 99,
+     "RAISED": 78,
+     "LOWERED": 47,
+     "WITHDRAWN": 4
+    }
+   },
+   "guidance_on_RISK_FACTORS": {
+    "n": 23,
+    "by_value": {
+     "NONE": 21,
+     "LOWERED": 2
+    }
+   },
+   "guidance_active_off_matrix": 230,
+   "f5_blocker": "REQUIRED F5 CHANGE, filed as a G2 finding (design \u00a73.4): features.py must null sentiment on RISK_FACTORS and guidance_direction on MDA/RISK_FACTORS BEFORE aggregation, with an assertion that the masked count matches this census. Sites: features.py:596 sentiment_mean_score, :602 sentiment_negative_share, :603 guidance_signed_mean, :604 guidance_any_present (all four aggregate with no section filter), and the now-false property statement at features.py:1159.",
+   "interval": "counts_no_ci"
+  },
+  "S-NOISE": {
+   "ceiling_batches": [
+    "batch_01",
+    "batch_02",
+    "batch_03"
+   ],
+   "ceiling_batches_rated": [
+    "batch_01",
+    "batch_02",
+    "batch_03"
+   ],
+   "ceiling_batches_missing": [],
+   "pooled_from_batches": [
+    "batch_01",
+    "batch_02",
+    "batch_03"
+   ],
+   "planned_evaluable_rows": {
+    "sentiment": 107,
+    "guidance_direction": 62
+   },
+   "planned_evaluable_rows_note": "\u00a714.5 PLANNING values, kept only so planned-vs-realized drift is visible",
+   "realized_evaluable_rows": {
+    "sentiment": 110,
+    "guidance_direction": 65
+   },
+   "replicate_row_order": "byte-identical to the originals INCLUDING row order, so raters A and B share any ordering/context effect; this ceiling is UPPER-biased and the true two-rater ceiling is at most this (\u00a714.9, magnitude unmeasured)",
+   "cannot_move_any_bar": true,
+   "interval": "naive_binomial",
+   "n_chunks": 120,
+   "note": "no student-vs-rater agreement can exceed two-rater agreement; the only prior measurement is v1.2 S7, red_flags, n=40: 0.90 [0.7695, 0.9604] \u2014 an interval that straddles both candidate bars. At the REALIZED masked n (110 / 65) a ceiling of p_hat=0.90 gives [0.8298, 0.9432] and [0.8034, 0.9520]: NEITHER lower bound clears the ratified 0.85 bar, so \u00a76.4 fact 3 is narrowed, not closed, for BOTH gate-bearing fields (\u00a714.5).",
+   "sentiment": {
+    "k": 107,
+    "n": 110,
+    "p_hat": 0.9727272727272728,
+    "n_rows_pooled": 120,
+    "n_masked_out": 10,
+    "wilson_95": [
+     0.9228678565608878,
+     0.9906821989548465
+    ],
+    "interval": "naive_binomial",
+    "n_planned": 107,
+    "n_realized_from_draw": 110,
+    "bar": 0.85,
+    "ceiling_upper_bound_below_bar": false,
+    "ceiling_lower_bound_clears_bar": true,
+    "p_hat_required_to_clear_bar": 0.9181818181818182,
+    "k_required_to_clear_bar": 101,
+    "p_hat_required_note": "the DISCRETE k/n threshold from the \u00a710.0 kstar_pass primitive at the REALIZED n; the continuous roots at the realized ceiling n (110 / 65) are 0.9167 / 0.9368 and are necessarily a shade lower (\u00a714.5 as amended by \u00a714.9)",
+    "ceiling_flag_note": "if ceiling_upper_bound_below_bar is true, \u00a76.4 fact 3 fires: a DECISIVE FAIL at this bar is a statement about the instrument, not about the student, and the \u00a76.5 consequence ladder should not be executed on it. If ceiling_lower_bound_clears_bar is true the attribution question is closed. In between \u2014 the likeliest region \u2014 the ceiling is reported, a FAIL's attribution is stated as UNRESOLVED, and no bar moves: no noise-normalised criterion was adopted and none may be adopted now (\u00a75.4, \u00a714.5). The ruling is the owner's."
+   },
+   "guidance_direction": {
+    "k": 64,
+    "n": 65,
+    "p_hat": 0.9846153846153847,
+    "n_rows_pooled": 120,
+    "n_masked_out": 55,
+    "wilson_95": [
+     0.9178652058620286,
+     0.9972791254725134
+    ],
+    "interval": "naive_binomial",
+    "n_planned": 62,
+    "n_realized_from_draw": 65,
+    "bar": 0.85,
+    "ceiling_upper_bound_below_bar": false,
+    "ceiling_lower_bound_clears_bar": true,
+    "p_hat_required_to_clear_bar": 0.9384615384615385,
+    "k_required_to_clear_bar": 61,
+    "p_hat_required_note": "the DISCRETE k/n threshold from the \u00a710.0 kstar_pass primitive at the REALIZED n; the continuous roots at the realized ceiling n (110 / 65) are 0.9167 / 0.9368 and are necessarily a shade lower (\u00a714.5 as amended by \u00a714.9)",
+    "ceiling_flag_note": "if ceiling_upper_bound_below_bar is true, \u00a76.4 fact 3 fires: a DECISIVE FAIL at this bar is a statement about the instrument, not about the student, and the \u00a76.5 consequence ladder should not be executed on it. If ceiling_lower_bound_clears_bar is true the attribution question is closed. In between \u2014 the likeliest region \u2014 the ceiling is reported, a FAIL's attribution is stated as UNRESOLVED, and no bar moves: no noise-normalised criterion was adopted and none may be adopted now (\u00a75.4, \u00a714.5). The ruling is the owner's."
+   },
+   "red_flags": {
+    "k": 106,
+    "n": 120,
+    "p_hat": 0.8833333333333333,
+    "n_rows_pooled": 120,
+    "n_masked_out": 0,
+    "wilson_95": [
+     0.8136649880680831,
+     0.9292194707890375
+    ],
+    "interval": "naive_binomial"
+   }
+  },
+  "S-RF1": {
+   "k": 112,
+   "n": 400,
+   "p_hat": 0.28,
+   "wilson_lo": 0.23825069981202085,
+   "wilson_hi": 0.32593486205183864,
+   "wilson_95": [
+    0.23825069981202085,
+    0.32593486205183864
+   ],
+   "interval": "naive_binomial",
+   "n_unsure": 0,
+   "n_unadjudicated": 0,
+   "n_nonevaluable": 0,
+   "scale": "error",
+   "construction": "v1.2 P1 construction: exact (category, modality) set mismatch",
+   "status": "exploratory / disclosure-only (owner ruling 2026-08-27); this pass cannot change it."
+  },
+  "S-RF2": {
+   "k": 150,
+   "n_decisions": 2400,
+   "n_chunks": 400,
+   "p_hat": 0.0625,
+   "cluster_bootstrap_95": [
+    0.052083333333333336,
+    0.07375
+   ],
+   "interval": "chunk_clustered_bootstrap",
+   "bootstrap": {
+    "resamples": 10000,
+    "seed": 20260906,
+    "method": "percentile 2.5/97.5"
+   },
+   "naive_binomial_95_ANTICONSERVATIVE": [
+    0.05349721294878286,
+    0.072901132100242
+   ],
+   "note": "the 6 category decisions inside a chunk are not independent; the chunk-clustered bootstrap is the honest interval. v1.1's published 7.5% [91.4, 93.5] was the naive one \u2014 that error is not repeated.",
+   "status": "exploratory / disclosure-only (owner ruling 2026-08-27); this pass cannot change it."
+  },
+  "S-PROBE": {
+   "n_probe": 20,
+   "n_ruled": 20,
+   "overturned": 0,
+   "wilson_95_on_hidden_shared_error": [
+    0.0,
+    0.16113012549493322
+   ],
+   "interval": "naive_binomial",
+   "uncontested_share_of_gate_applicable_chunks": 0.7775628626692457,
+   "max_hidden_error_share_of_gate_rows": 0.12528880164209508,
+   "escalation_triggered": false,
+   "escalation_applied_in_this_run": false,
+   "escalation_rule": "if >= 2 of 20 uncontested rows are overturned, every uncontested row WITH an applicable gate-bearing field goes to the adjudicator ONCE on those fields and the primaries are recomputed. Fires at most once. No re-draw, no n increase (\u00a75.5, \u00a711.2).",
+   "probe_rulings_do_not_enter_the_primary": true,
+   "note": "the only non-model check in the design; it bounds the hidden shared error the one-directional protocol cannot see (only disagreements are ever checked, so the pipeline can lower the error estimate but never raise it)",
+   "eligible_by_arm": {
+    "G-A": 63,
+    "G-N": 62,
+    "P": 277
+   },
+   "quotas": {
+    "P": 12,
+    "G-A": 4,
+    "G-N": 4
+   },
+   "realized": {
+    "G-A": 4,
+    "P": 12,
+    "G-N": 4
+   },
+   "n_eligible": 402,
+   "n_gate_applicable_chunks": 517
+  }
+ },
+ "frame_checks": {
+  "n_frame": {
+   "observed": 316291,
+   "design_expected": 316291,
+   "match": true
+  },
+  "section_counts": {
+   "observed": {
+    "MDA": 172098,
+    "EX99_PRESS_RELEASE": 94545,
+    "RISK_FACTORS": 49648
+   },
+   "design_expected": {
+    "MDA": 172098,
+    "EX99_PRESS_RELEASE": 94545,
+    "RISK_FACTORS": 49648
+   },
+   "match": true
+  },
+  "ga_frame": {
+   "observed": 6479,
+   "design_expected": 6479,
+   "match": true
+  },
+  "gn_frame": {
+   "observed": 48293,
+   "design_expected": 48293,
+   "match": true
+  },
+  "train_overlap_rows": {
+   "observed": 14342,
+   "design_expected": 14342,
+   "match": true
+  },
+  "selfid_share": {
+   "observed": 0.4646290915644138,
+   "design_expected": 0.4646,
+   "match": true
+  },
+  "manifest_arm_frames": {
+   "observed": {
+    "G-A": 6479,
+    "G-N": 48293,
+    "P": 316291
+   },
+   "design_expected": {
+    "P": 316291,
+    "G-A": 6479,
+    "G-N": 48293
+   },
+   "match": true
+  },
+  "vs_build_draw_g2": {
+   "train_overlap": {
+    "analyze": 14342,
+    "build_draw": 14342,
+    "match": true
+   },
+   "selfid": {
+    "analyze": 146958,
+    "build_draw": 146958,
+    "match": true
+   },
+   "note": "two independent implementations of the \u00a710.1 flag definitions; a mismatch is a reportable finding, not a silent preference"
+  },
+  "overlap_channels": {
+   "home_accession": 10442,
+   "any_source_accession": 14341,
+   "normalized_text": 487,
+   "union": 14342,
+   "note": "paragraph-id overlap is structurally ZERO and is not evidence of novelty \u2014 E1 ids are 'P-...', E2's are 'E2P-...' (\u00a72.5)"
+  },
+  "by_section": {
+   "EX99_PRESS_RELEASE": {
+    "n": 94545,
+    "selfid_share": 0.7114072663810884,
+    "overlap_share": 0.02125971759479613
+   },
+   "MDA": {
+    "n": 172098,
+    "selfid_share": 0.39025438994061523,
+    "overlap_share": 0.05800183616311636
+   },
+   "RISK_FACTORS": {
+    "n": 49648,
+    "selfid_share": 0.2524975829842088,
+    "overlap_share": 0.04733322591040928
+   }
+  }
+ },
+ "comparison_rows": [
+  {
+   "name": "epoch-2 eval, sentiment exact match (student vs TEACHER, E1 eval split)",
+   "g2_value": {
+    "p_hat": 0.8694362017804155,
+    "n": 337,
+    "scale": "agreement"
+   },
+   "other_value": {
+    "k": 725,
+    "n": 867,
+    "point": 0.8362168396770473
+   },
+   "caveat": "DESCRIPTIVE ONLY. Different reference (teacher / feature vector / different labeler), different corpus, different protocol, and in the H3v2 rows a different UNIT (filing-level correlation vs chunk-level proportion). No difference interval is computed \u2014 newcombe() is struck (design \u00a77).",
+   "interpretable": false
+  },
+  {
+   "name": "epoch-2 eval, guidance raw exact match (student vs TEACHER, E1 eval split)",
+   "g2_value": {
+    "p_hat": 0.9663865546218487,
+    "n": 119,
+    "scale": "agreement"
+   },
+   "other_value": {
+    "k": 297,
+    "n": 570,
+    "point": 0.5210526315789473
+   },
+   "caveat": "DESCRIPTIVE ONLY. Different reference (teacher / feature vector / different labeler), different corpus, different protocol, and in the H3v2 rows a different UNIT (filing-level correlation vs chunk-level proportion). No difference interval is computed \u2014 newcombe() is struck (design \u00a77).",
+   "interpretable": false
+  },
+  {
+   "name": "epoch-2 eval, red-flag exact-set agreement (student vs TEACHER, E1)",
+   "g2_value": {
+    "p_hat": 0.28,
+    "n": 400,
+    "scale": "error"
+   },
+   "other_value": {
+    "point": 0.6307
+   },
+   "caveat": "DESCRIPTIVE ONLY. Different reference (teacher / feature vector / different labeler), different corpus, different protocol, and in the H3v2 rows a different UNIT (filing-level correlation vs chunk-level proportion). No difference interval is computed \u2014 newcombe() is struck (design \u00a77).",
+   "interpretable": false
+  },
+  {
+   "name": "H3v2 retention, sentiment_mean_score (filing-level Pearson, n=630 filings)",
+   "g2_value": {
+    "p_hat": 0.8694362017804155,
+    "n": 337,
+    "scale": "agreement"
+   },
+   "other_value": {
+    "point": 0.8696,
+    "ci": [
+     0.8153,
+     0.9109
+    ]
+   },
+   "caveat": "DESCRIPTIVE ONLY. Different reference (teacher / feature vector / different labeler), different corpus, different protocol, and in the H3v2 rows a different UNIT (filing-level correlation vs chunk-level proportion). No difference interval is computed \u2014 newcombe() is struck (design \u00a77).",
+   "interpretable": false
+  },
+  {
+   "name": "H3v2 retention, guidance_any_present (filing-level Pearson, n=630 filings)",
+   "g2_value": {
+    "p_hat": 0.9663865546218487,
+    "n": 119,
+    "scale": "agreement"
+   },
+   "other_value": {
+    "point": 0.7534,
+    "ci": [
+     0.5356,
+     0.9114
+    ]
+   },
+   "caveat": "DESCRIPTIVE ONLY. Different reference (teacher / feature vector / different labeler), different corpus, different protocol, and in the H3v2 rows a different UNIT (filing-level correlation vs chunk-level proportion). No difference interval is computed \u2014 newcombe() is struck (design \u00a77).",
+   "interpretable": false
+  },
+  {
+   "name": "v1.2 TEACHER spot-check, owner-ratified exact-set ERROR (P1)",
+   "g2_value": {
+    "p_hat": 0.28,
+    "n": 400,
+    "scale": "error"
+   },
+   "other_value": {
+    "k": 84,
+    "n": 200,
+    "point": 0.42,
+    "ci": [
+     0.3537,
+     0.4893
+    ]
+   },
+   "caveat": "DESCRIPTIVE ONLY. Different reference (teacher / feature vector / different labeler), different corpus, different protocol, and in the H3v2 rows a different UNIT (filing-level correlation vs chunk-level proportion). No difference interval is computed \u2014 newcombe() is struck (design \u00a77).",
+   "interpretable": false
+  }
+ ],
+ "constants": {
+  "sentiment_agreement": {
+   "point": 0.8694362017804155,
+   "ci_lo": 0.8292615059623852,
+   "ci_hi": 0.9012831223928391,
+   "n": 337,
+   "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "guidance_agreement_base_rate": {
+   "point": 0.9663865546218487,
+   "ci_lo": 0.9167502285215104,
+   "ci_hi": 0.9868524598185958,
+   "n": 119,
+   "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73). QUOTE ONLY WITH guidance_active_precision AND guidance_false_none_rate (\u00a76.3)."
+  },
+  "guidance_active_precision": {
+   "point": 0.6866867538602978,
+   "ci_lo": 0.5816754085471428,
+   "ci_hi": 0.7755108487100656,
+   "n": 100,
+   "n_eff": 84.7683631622867,
+   "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73). POOLED over the four active directions and re-weighted to corpus shares w_d = N_d/6479 (quota arm, \u00a714.4); the interval is the \u00a710.0 Wilson formula on n_eff, which is reported beside it ALWAYS. Per-direction precision is a DISCLOSURE with no bar."
+  },
+  "guidance_false_none_rate": {
+   "point": 0.0,
+   "ci_lo": 0.0,
+   "ci_hi": 0.0458197362645751,
+   "n": 80,
+   "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_exact_set_error": {
+   "point": 0.28,
+   "ci_lo": 0.23825069981202085,
+   "ci_hi": 0.32593486205183864,
+   "n": 400,
+   "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73). DISCLOSURE-ONLY; exploratory / disclosure-only (owner ruling 2026-08-27); this pass cannot change it."
+  },
+  "redflag_per_category_error_clustered": {
+   "point": 0.0625,
+   "ci_lo": 0.052083333333333336,
+   "ci_hi": 0.07375,
+   "n": 2400,
+   "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73). chunk-clustered bootstrap; DISCLOSURE-ONLY."
+  },
+  "sentiment_omission_rate": {
+   "point": 0.008902077151335312,
+   "ci_lo": 0.003031982669908794,
+   "ci_hi": 0.02584242702656018,
+   "n": 337,
+   "provenance": "stored-label coverage on applicable drawn rows (\u00a71.3)"
+  },
+  "guidance_omission_rate": {
+   "point": 0.0,
+   "ci_lo": 3.469446951953614e-18,
+   "ci_hi": 0.03127279358132749,
+   "n": 119,
+   "provenance": "stored-label coverage on applicable drawn rows (\u00a71.3)"
+  },
+  "offmatrix_emission_census": {
+   "point": null,
+   "ci_lo": null,
+   "ci_hi": null,
+   "n": 4177,
+   "provenance": "re-derived from labels_e2_v1.parquet over the frame (\u00a73.4)"
+  },
+  "rater_noise_ceiling": {
+   "point": 0.9727272727272728,
+   "ci_lo": 0.9228678565608878,
+   "ci_hi": 0.9906821989548465,
+   "n": 110,
+   "provenance": "rater A vs rater B, sentiment, POOLED over the three replicate batches (owner ruling 2026-09-07 (v)(b); 120 rows, masked to the sentiment-applicable subset \u2014 realized 110, \u00a714.5 planned 107); replicates are identically ordered so this ceiling is upper-biased (\u00a714.9); cannot move a bar (\u00a75.4, \u00a714.5)"
+  },
+  "train_overlap_census": {
+   "point": 0.04534431899737899,
+   "ci_lo": null,
+   "ci_hi": null,
+   "n": 316291,
+   "provenance": "home/source accession OR normalized-text overlap against finetune/splits_v12/train.parquet, re-derived here; a LOWER BOUND on memorization exposure (\u00a72.5)"
+  },
+  "selfid_census": {
+   "point": 0.4646290915644138,
+   "ci_lo": null,
+   "ci_hi": null,
+   "n": 316291,
+   "provenance": "first distinctive company token present in the chunk text (\u00a75.1)"
+  },
+  "red_flags_status": {
+   "point": null,
+   "ci_lo": null,
+   "ci_hi": null,
+   "n": null,
+   "provenance": "exploratory / disclosure-only (owner ruling 2026-08-27); this pass cannot change it."
+  },
+  "RED_FLAG_CAVEAT_rewritten": {
+   "point": null,
+   "ci_lo": null,
+   "ci_hi": null,
+   "n": null,
+   "provenance": "E2 red-flag labels are exploratory / disclosure-only (owner ruling 2026-08-27); this pass cannot change it. Measured E2 student exact-set (category+modality) error on a base-rate-representative G2 draw: 112/400 = 28.0% [95% Wilson 23.8%, 32.6%], model-consensus reference, no owner ratification. The E1 constants 36.6%/63.4% were measured on Claude BOOTSTRAP labels and do not describe these labels. This number is disclosure, not evidence for re-promotion; only the owner can revisit the 2026-08-27 demotion."
+  }
+ },
+ "non_fail_wording": {
+  "sentiment": "The G2 spot-check did not trigger a decisive failure for `sentiment`. Measured agreement is 86.94% [82.93%, 90.13%] (n = 337, bar 0.85, model-consensus reference with owner rulings on the escalated subset; NOT human validation of ground truth). At this n the design would have declared a decisive failure with probability 0.18 if true agreement were 0.83 and 0.03 if it were 0.85 \u2014 those two numbers are the whole of what this result excludes on the low side, and a true value below the bar is made less likely at those rates, not ruled out. For the gate-bearing fields this estimate is plausibly optimistic (\u00a712.1): the rater's family is the teacher's family, so teacher error the student memorized is invisible to it, biasing measured error low. This is a chunk-level label-accuracy figure; it is NOT the feature-level reliability lambda of EXPANSION_PLAN \u00a72a (\u00a76.5) and must not be used as one. Every E2 feature derived from `sentiment` carries this figure as a stated caveat.",
+  "guidance_direction": "The G2 spot-check did not trigger a decisive failure for `guidance_direction`. Measured agreement is 96.64% [91.68%, 98.69%] (n = 119, bar 0.85, model-consensus reference with owner rulings on the escalated subset; NOT human validation of ground truth). At this n the design would have declared a decisive failure with probability 0.10 if true agreement were 0.83 and 0.03 if it were 0.85 \u2014 those two numbers are the whole of what this result excludes on the low side, and a true value below the bar is made less likely at those rates, not ruled out. For the gate-bearing fields this estimate is plausibly optimistic (\u00a712.1): the rater's family is the teacher's family, so teacher error the student memorized is invisible to it, biasing measured error low. This is a chunk-level label-accuracy figure; it is NOT the feature-level reliability lambda of EXPANSION_PLAN \u00a72a (\u00a76.5) and must not be used as one. Every E2 feature derived from `guidance_direction` carries this figure as a stated caveat. Binding, ruling (vii): this number is a base rate over the NONE mass and is never quoted alone \u2014 guidance_active_precision 68.67% 95% Wilson [58.17%, 77.55%] (corpus-re-weighted; n_eff 84.8 of nominal n 100); guidance_false_none_rate 0/80 = 0.00%  95% Wilson [0.00%, 4.58%]  (+-2.29%)."
+ },
+ "failed_batches": [],
+ "api_calls": 0,
+ "gpu_seconds": 0,
+ "network_calls": 0,
+ "assertions_passed": [
+  "A1_one_ratified_bar_per_field_no_bar_shopping",
+  "A2_bars_match_draw_manifest",
+  "A3_no_distress_tier_scored",
+  "A4_no_8k_body_in_any_arm",
+  "A5_no_owner_ruling_on_red_flags",
+  "A6_rater_schema_guard_passed_on_every_verdict_file",
+  "A7_probe_frame_has_gate_bearing_applicable_field",
+  "A8_guidance_verdict_never_quoted_without_its_two_arms",
+  "A9_red_flag_caveat_contains_red_flags_status",
+  "A10_no_lambda_reliability_or_attenuation_denominator",
+  "A11_every_secondary_interval_is_tagged",
+  "A12_s_overlap_present_and_labelled_not_powered",
+  "A13_verdict_word_follows_from_its_own_k_n_bar__k_itself_is_only_hash_pinned_not_recomputable_from_results_g2_json",
+  "A15_all_14_pre_registered_secondaries_present",
+  "A14_zero_api_calls_no_network_module_imported",
+  "A16_parameters_owner_ratified_and_match_analyze_g2_constants",
+  "A17_ga_pooled_is_corpus_reweighted_with_n_eff_and_no_bar",
+  "A18_every_guidance_direction_carries_bar_null_and_no_verdict",
+  "A19_s_noise_pools_only_the_three_ruled_ceiling_batches"
+ ]
+}

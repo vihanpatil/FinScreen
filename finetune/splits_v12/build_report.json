@@ -1,0 +1,53 @@
+{
+  "generated_utc": "2026-08-26T17:06:16.397141+00:00",
+  "purpose": "rubric-v1.2 retrain splits, built by JOIN onto the frozen manifest \u2014 split.py was NOT run and membership was NOT re-derived",
+  "inputs": {
+    "frozen_manifest": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits/manifest.parquet",
+      "sha256": "dff0a2d0b647cc7c7f5da2d8a9ffe5b1069302190263eb449bb48a72c56816f7",
+      "rows": 6746
+    },
+    "v12_labels": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet",
+      "sha256": "ca373b953504535b2f35ee374a6b6c1a6360000261748db365ee23c231e475e7",
+      "rows": 6747
+    },
+    "e1_labels_text_identity_verified": true
+  },
+  "frozen_membership": {
+    "train": 5736,
+    "eval": 1010
+  },
+  "e1_refusal_chunk": {
+    "chunk_id": "CHK-8e69547e0900a8dd",
+    "in_frozen_manifest": false,
+    "labels_under_v12": true,
+    "kept_out_of_both_splits": true,
+    "reason": "the split is frozen; membership is label-value-independent"
+  },
+  "v12_label_gaps": {
+    "n": 0,
+    "rows": []
+  },
+  "outputs": {
+    "train": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/train.parquet",
+      "rows": 5736,
+      "sha256": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10"
+    },
+    "eval": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/eval.parquet",
+      "rows": 1010,
+      "sha256": "0b98531b35cade544e8b80676bb8005d1570e0f9f5bcd1338b9e05a3d2df9f55"
+    },
+    "manifest": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/splits_v12/manifest.parquet",
+      "rows": 6746,
+      "sha256": "b76923b14507bbb1bc76e774e64e39d60fe3967c1bf0bb735edbf0072a2dafd8"
+    }
+  },
+  "deltas_vs_frozen": {
+    "train": 0,
+    "eval": 0
+  }
+}

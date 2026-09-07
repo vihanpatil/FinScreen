@@ -1,0 +1,775 @@
+{
+  "run_id": "H3-e1-relabel-epoch2",
+  "created_utc": "2026-08-25T20:09:31.698752+00:00",
+  "segments": [
+    {
+      "started_utc": "2026-08-25T20:09:33.109719+00:00",
+      "ended_utc": "2026-08-25T20:09:44.834497+00:00",
+      "n_generated": 4,
+      "torn_final_line_repaired_before_append": true,
+      "model_load_seconds": 1.3,
+      "wall_seconds": 11.7,
+      "chunks_per_hour": 1228.2,
+      "finish_reasons": {
+        "stop": 4
+      },
+      "versions": {
+        "mlx": "0.32.1",
+        "mlx-lm": "0.31.3",
+        "transformers": "5.15.1",
+        "numpy": "2.4.6",
+        "python": "3.11.10"
+      }
+    }
+  ],
+  "purpose": "H3 labeler-attenuation check: the epoch-2 student re-labels all 6,746 labeled E1 chunks so features can be re-derived and the E1 backtest re-run on student labels.",
+  "model": {
+    "path": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071"
+  },
+  "adapter": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2",
+    "adapters_sha256": "9c08e3cb3f1f917c3c6903cc0154f9d175d928f0116edc60e2dd1b2e0f9e7fa8",
+    "adapters_bytes": 11541328,
+    "adapters_mtime_utc": "2026-08-22T11:32:55.639161+00:00",
+    "adapter_config_sha256": "539983655bef0692ac512ed757b5724a818bb638a948eab72a0214ebe551fd65",
+    "checkpoint_shas": {
+      "0000100_adapters.safetensors": "53431c46e85ca9ed66ee0597ada8632095e64b244489a76db1af1af248d8dc69",
+      "0000200_adapters.safetensors": "2dd7d7ab47d14a5765e0a717fd1a7359e5fc00dca2de3fb27acd62e7dc6a827f",
+      "0000300_adapters.safetensors": "d12534372252a9895fbc0c830ba40ec89113d13635b2ea6057305c15f8e400ae",
+      "0000400_adapters.safetensors": "a385e11308bf60dbc64fc95ac710f2ecb6d395f84c869ef61a470394f73b7561",
+      "0000500_adapters.safetensors": "4195f807b179dc1e25c55aff79b5917e48a882775561210c604d5eaaada910f6",
+      "0000600_adapters.safetensors": "04668c299345791e223d8cb1435ce12e17b7c9486177d00b56d4b4f40e418fe5",
+      "0000700_adapters.safetensors": "55a2aab9e6f82e602ea124fdd7b66c7ba8ab35fadd75c442785032ee661064a0",
+      "0000800_adapters.safetensors": "ccf4ca5ce76eaed8b895dcb67b39f2020bb312011c0035de54e3c8c3825df276",
+      "0000900_adapters.safetensors": "b212837cb0a7aad28c47e44856781df65b6f4bca4b1dd20484d256bace3768a2",
+      "0001000_adapters.safetensors": "f5ec5d89b3eae65ea74cc73e33449e3db600983595f144264966ef355ef3264d",
+      "0001100_adapters.safetensors": "ff2536333a2e35a6bcbebd86ed69283225e63874085f0810a07cbf61fcc4217e",
+      "0001200_adapters.safetensors": "f73245fc089a0b37422288dced773c5d23bcb518d35ff8b041ad63577cd5d9b2",
+      "0001300_adapters.safetensors": "8a6e38254f3f5c1bcb3928e734a07873449b8291d6755f17c6f3e2e56aa55c73",
+      "0001400_adapters.safetensors": "4d683d7888cedfb7667423859248495acef19680f2267a617f1699741dff2b3d",
+      "0001500_adapters.safetensors": "98981e8a36a2d86bea856b794a5a5c2314617677b9c6f140de4a68aea4c580ad",
+      "0001600_adapters.safetensors": "6c83be214669c291b562a4514094d6d9b243980aff4b15aa5cd47a0e9a37ae33",
+      "0001700_adapters.safetensors": "4df00dd95e077d907a8aa7170f19ac3851c66c1137e21e236d5a2a99cc2006ea",
+      "0001800_adapters.safetensors": "cedf368ddff7fb0f90883f7baac2e1ab22cdf9ae325dd482e2c2ec2242f83dea",
+      "0001900_adapters.safetensors": "37c4ae07bc12f13d2c6b52c60af14be6989aef218a5b83d3dc2aae8ed252ca5e",
+      "0002000_adapters.safetensors": "654a4eb761f7acac81fc6cfbd7ae032ffd57efd1f37f799f6c52fd715d4d0ecc",
+      "0002100_adapters.safetensors": "8dacb41c6aabd7050335f0db5ef1f9c64335f7f5277c101bed3fd529b1df1b3d",
+      "0002200_adapters.safetensors": "640b763b41768bc98657f2185d5c8d15a9ae7ba6f782aef9a58bb15247097217",
+      "0002300_adapters.safetensors": "e56353c29fdbb28445344214a78528845606241bb8d09e58efb55c56a4989ebe",
+      "0002400_adapters.safetensors": "68989f31e0e777e323f0071c104bc98528442c1657636050ff3749f1a4045898",
+      "0002500_adapters.safetensors": "7b6ef90e77967655c636729aea0b7011c8c5a6a3979549a60d12f8bd4ed4b303",
+      "0002600_adapters.safetensors": "f3e48e2fe1eb5483ce0c227a5a794f6387b8516b59ace2a9040ad6dc7ca35736",
+      "0002700_adapters.safetensors": "da1208a54791bb052aa746c62aab6d58ddf9de06560c458a7ef40d122922503c",
+      "0002800_adapters.safetensors": "3665a48ffca689832e4fdd40ebf07d82a36ffbf2602bad3879b13034701cecd1",
+      "0002900_adapters.safetensors": "5cde0efc0133f6d3a3a2656b81d1da0dce68c2a5a7ff94f09b14d8d2e3dd1b53",
+      "0003000_adapters.safetensors": "b3431fa9cc04eb97eff804e6fcab4045d281587c581796f3f342c8a56493443b",
+      "0003100_adapters.safetensors": "5d507144d8abd00dd48d59e2ee78f215448aaea6807037990f6b62627a41cba6",
+      "0003200_adapters.safetensors": "a5d8a0465420504145db859dcc2d34c1d5762cbc943bfed1e0580ad476a359ee",
+      "0003300_adapters.safetensors": "af7a5e5f1240460a997379cca3e0cb7dd7bbb693b4925e97ffd87910d5487e88",
+      "0003400_adapters.safetensors": "fb422efa2952ffa3af936ef259d5724f666b9443cf44105d2a0fa8e738234e87",
+      "0003500_adapters.safetensors": "eb55c9d28693fef28d6bcb09e355a14b44660b8c0fd042852192c02cad67ff30",
+      "0003600_adapters.safetensors": "1e5c95047814a4118252517aecef6e2242c9322a882f055da5bb5a0f35202cb3",
+      "0003700_adapters.safetensors": "c645d36e68be361b3407577ee05605d3ba12bed6a38c2bff2628e89b4e235d81",
+      "0003800_adapters.safetensors": "d7ffb9b037930a133e8850e3b3763a64b328d59525725534cb487b729e7eb980",
+      "0003900_adapters.safetensors": "b777d0784cc99ba9928e0b570fc94d2974b1808cb70c89f4b3fd3e23947d1127",
+      "0004000_adapters.safetensors": "4fe40f96f050db81ce776ea59bff82e67cbe7df912474224ebe4de6592e4a5c0",
+      "0004100_adapters.safetensors": "128ae72573254db5773705e1cf687b80b012520b6892a7edc6d326d17c09b5ea",
+      "0004200_adapters.safetensors": "54b580024623c529c53b2526245aea6de203c4c431b95b5773cc020fa893e175",
+      "0004300_adapters.safetensors": "c61c3fd97cdac1a15727a73f1947c7f77e52d49266b98714e07938e4e6888c4a",
+      "0004400_adapters.safetensors": "d2c7d2d06d36d8ba7920b015e65751db19cdb2e3e8fbe55bfa6c989d1782ab07",
+      "0004500_adapters.safetensors": "759ad97c9fab27369a9228d3100bc7a90bdd7e135f72e2bcb8862428ff2ceb4e",
+      "0004600_adapters.safetensors": "72bfdcfef8a4ed463a584814763261d7eeecb130eed404d367071b3be382f02f",
+      "0004700_adapters.safetensors": "15fa2c3f38fa56cf208431b8fe41e17e772cc504842327b4ef83a0e916dd23f5",
+      "0004800_adapters.safetensors": "6478d85af506b0b1a85c5c0e0972ae8c9add0a8b2f1d7a21ff2bf3118a2e1463",
+      "0004900_adapters.safetensors": "8a7bc631b6aaf5a193b2572de0c9e372246ec43de1210ac2d88a2ad0d06c9c24",
+      "0005000_adapters.safetensors": "5394ba8999e3d5f9f81c71244d386658d38a50912eaee42bb5b1090eb180bc61",
+      "0005100_adapters.safetensors": "8ff289f483eb379304683509e6e83a194bb97f85a510f9a1f43b240fe16a797c",
+      "0005200_adapters.safetensors": "c640fc95ee0cc554b35d43a6eff06ef5cfa09bc611e44aeff7e10f5e4522a220",
+      "0005300_adapters.safetensors": "4710bbaeebfb9c890e904d68f07627e96227cea5b49ae26b2283a7e1db2ab6c9",
+      "0005400_adapters.safetensors": "4bcd2f74496865c14b4ba5fea28a56b17805fdf466f399ee7f38ba490aa31dae",
+      "0005500_adapters.safetensors": "b923e97e5ec0035eac0854aabea9ca9977e405a1d270d5826e26d0f18879f92f",
+      "0005600_adapters.safetensors": "cd140e0eb8c6866b02b792432341fc90f8ad80e75fe83c565f7908d8d73bcffe",
+      "0005700_adapters.safetensors": "eeeaae08f91fae0dab33a564018a9ea73c6d81ba5eb166941f1ed4e70d23217c"
+    },
+    "matches_checkpoint": "no numbered twin \u2014 expected for a COMPLETED run whose iters is not a multiple of save_every (mlx_lm writes the final weights to adapters.safetensors only). If training is still running, this may instead be an in-flight write: check the process has exited.",
+    "lora_parameters": {
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05,
+      "keys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj"
+      ]
+    },
+    "num_layers": 16,
+    "iters_configured": 5736,
+    "resume_adapter_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-final-from-2250/adapters.safetensors"
+  },
+  "train_manifest": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-21-epoch2/manifest.json",
+    "sha256": "42fd21bac4f2684daea140e8b26c6acfeb7b7b0bb82a58ba36a1b978589ca422",
+    "run_id": "2026-08-21-epoch2"
+  },
+  "data": {
+    "source": "finetune/mlx_data/{train,valid}.jsonl (the records the trainer consumed)",
+    "train_jsonl_sha256": "d4dc4ec8323b19ae90e4fe00e0eb78c70f16315d40fbd10ef996d4a30a237bbe",
+    "valid_jsonl_sha256": "deb63b76992404ecaf4fdc4c3a3acbea9b0c3bb7f655064aec7191ebc9ab0736",
+    "sha_matches_train_manifest": true,
+    "corpus_parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labeling_corpus.parquet",
+      "sha256": "5067494c870f82e5326d067e7846f9ede848b8f2aa19b0e988d49ecee45bc294",
+      "n_rows": 6747
+    },
+    "labels_parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels.parquet",
+      "sha256": "c3531f03cda602bc2ed7fb7743d5d01f78ed722f2a58bd82922f5b8ccc3daa72",
+      "n_labeled": 6746,
+      "excluded_chunk_ids": [
+        "CHK-8e69547e0900a8dd"
+      ],
+      "access": "READ-ONLY \u2014 E1's labels are frozen and are never written by this tool"
+    },
+    "corpus_verification": {
+      "n_rows": 6746,
+      "n_passages_identical_to_corpus_text": 6695,
+      "n_passages_head_truncated_to_fit_2048": 51,
+      "n_passages_not_a_head_prefix": 0
+    },
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_sha256_matches_epoch2_eval": true,
+    "n_rows_targeted": 10
+  },
+  "sidecar": {
+    "path": "data/hardening/e1_relabel_sidecar.json",
+    "sha256": "3c2b94aabc43d524a35bf51947f714a53b703ff4ff176c6ee0192764d6a668a6"
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.to_messages()/render() via eval.render_prompt_token_ids(); the inference prompt is a token-exact prefix of the training sequence for the same row",
+    "split": "eval",
+    "limit": 10
+  },
+  "journal": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/hardening/smoke_resume/e1_relabel_student.jsonl",
+    "n_rows": 10,
+    "n_target": 10,
+    "complete": true,
+    "pct": 100.0,
+    "sha256": "4c793dcbed590d015a3082488900d5a42790c6573d0815208640a42e12ada204"
+  },
+  "updated_utc": "2026-08-25T20:10:15.467692+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "caveats": [
+    "85.0% of these rows (5,736/6,746) are the student's own TRAINING rows; their teacher-agreement is inflated by memorization. Report retention/attenuation pooled AND eval-only (split=='eval', n=1,010 \u2014 the only unbiased slice).",
+    "distress_tier was never a training target (HANDOFF \u00a77). The column is uniformly empty for schema compatibility and carries no information.",
+    "Every rate here is agreement with the TEACHER (Claude bootstrap labels), not accuracy. Teacher red_flags carry ~36.6% set-level error (sample-pooled), ~25% base-rate-representative (Tier C), 7.5% per-category.",
+    "guidance_direction is stored RAW. The missing->NONE post-rule is PROPOSED, NOT ADOPTED (gate G1). It is a no-op for the feature join: features.py maps both 'NONE' and null to NaN.",
+    "8K_BODY (n=8, 2 tickers) and WITHDRAWN (n=1, in train) are not evaluable and are excluded from headline agreement tables (HANDOFF \u00a77).",
+    "E1's data/labels.parquet was opened read-only and is untouched. This artifact is a separate labeler, not a replacement for the frozen labels."
+  ],
+  "totals": {
+    "n_rows": 10,
+    "sum_of_row_latencies_seconds": 30.7,
+    "sum_of_row_latencies_hours": 0.01,
+    "chunks_per_hour_excluding_load_and_gaps": 1173.6,
+    "prompt_tokens_total": 9966,
+    "generation_tokens_total": 490,
+    "finish_reasons": {
+      "stop": 10
+    },
+    "note": "row-latency sum, not a fresh wall-clock: it excludes per-segment model load and idle gaps between segments, so it is an upper bound on sustained throughput."
+  },
+  "reproduction_check": {
+    "reference": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-22-eval-epoch2/predictions.jsonl",
+    "meaning": "greedy decoding on a token-identical prompt with the same adapter must be deterministic; a mismatch means the prompt, the adapter or the decoding moved",
+    "n_compared": 10,
+    "n_identical": 10,
+    "n_differing": 0,
+    "differing_examples": []
+  },
+  "parquet": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/hardening/smoke_resume/e1_relabel_student.parquet",
+    "sha256": "24091e7064b4d115ad6a8106f74f9bf000e44e08c048b3679672f12c85c8bfe7",
+    "n_rows": 10,
+    "n_by_split": {
+      "eval": 10
+    },
+    "schema_source": "columns 1-31 copied verbatim from data/labels.parquet's arrow schema; 6 student-only columns appended",
+    "n_columns": 37,
+    "parse_failures": 0,
+    "schema_violations": 0,
+    "join_note": "chunk_id-keyed and drop-in for features.py (which reads chunk_id, section_type, sentiment, guidance_direction, red_flags and filters parse_ok). distress_tier is uniformly empty by construction.",
+    "partial": false
+  },
+  "agreement_summary": {
+    "basis": "AGREEMENT WITH THE TEACHER (Claude bootstrap labels), NOT accuracy. A perfectly agreeing student has reproduced the teacher including its errors.",
+    "teacher_noise_floor": {
+      "red_flags_set_level_error_pooled": "36.6% (146/399 exact-set disagreements, sample-pooled)",
+      "red_flags_set_level_error_base_rate": "~25.0% (Tier C, n=36, 95% CI [13.8, 41.1] on error)",
+      "red_flags_per_category_error": "7.5% (180 category corrections / 2,394 chunk-category decisions)",
+      "sentiment_agreement": "94.6% [91.3, 96.7]",
+      "guidance_agreement": "95.2% [90.4, 97.6]",
+      "source": "HANDOFF.md \u00a72a + RED_FLAGS_LIMITATION.md (spot-check second-rater pass, 2026-08-18)"
+    },
+    "headline_excludes": {
+      "8K_BODY": "n=8 corpus-wide from only 2 tickers (BAC, CVX); all 8 landed in the eval split. No per-class estimate on 8 rows from 2 issuers is stable, so 8K_BODY rows are excluded from every headline table and reported separately below (HANDOFF.md \u00a77).",
+      "WITHDRAWN": "guidance_direction=WITHDRAWN has exactly 1 example corpus-wide and it is in the TRAIN split, so eval support is 0. A P/R/F1 row for it would be three zeros masquerading as a measurement (HANDOFF.md \u00a77)."
+    },
+    "n_scored": 10,
+    "pooled_MEMORIZATION_INFLATED": {
+      "n_rows": 10,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 10,
+        "exact_match": 0.8,
+        "n_correct": 8,
+        "per_class": {
+          "POSITIVE": {
+            "support": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NEUTRAL": {
+            "support": 6,
+            "tp": 6,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.857
+          },
+          "NEGATIVE": {
+            "support": 3,
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.333,
+            "f1": 0.5
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "POSITIVE",
+            "NEUTRAL",
+            "NEGATIVE"
+          ],
+          "precision": 0.917,
+          "recall": 0.778,
+          "f1": 0.786
+        },
+        "zero_support_classes": [],
+        "failure_attribution": {},
+        "confusion": {
+          "NEGATIVE->NEUTRAL": 2
+        }
+      },
+      "guidance_direction": {
+        "n": 10,
+        "exact_match": 0.7,
+        "n_correct": 7,
+        "per_class": {
+          "RAISED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "MAINTAINED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "LOWERED": {
+            "support": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 9,
+            "tp": 6,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.667,
+            "f1": 0.8
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "LOWERED",
+            "NONE"
+          ],
+          "precision": 1.0,
+          "recall": 0.834,
+          "f1": 0.9
+        },
+        "zero_support_classes": [
+          "RAISED",
+          "MAINTAINED",
+          "WITHDRAWN"
+        ],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 3
+        },
+        "confusion": {
+          "NONE->__MISSING_FIELD__": 3
+        }
+      },
+      "red_flags": {
+        "n": 10,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 6,
+          "n": 10,
+          "rate": 0.6
+        },
+        "exact_set_match_category_only": {
+          "n_match": 6,
+          "n": 10,
+          "rate": 0.6
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 3,
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "tn": 7,
+            "precision": 1.0,
+            "recall": 0.667,
+            "f1": 0.8
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 2,
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "tn": 7,
+            "precision": 0.667,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "tn": 9,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 1,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "tn": 8,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.667
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 2,
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "tn": 8,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.667
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 3,
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "tn": 5,
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1": 0.75
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 60,
+          "n_errors": 7,
+          "error_rate": 0.1167,
+          "agreement_rate": 0.8833
+        },
+        "micro": {
+          "precision": 0.643,
+          "recall": 0.818,
+          "f1": 0.72,
+          "tp": 9,
+          "fp": 5,
+          "fn": 2
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.753,
+          "recall": 0.833,
+          "f1": 0.737
+        },
+        "zero_support_categories": [
+          "TRADE_POLICY_EXPOSURE"
+        ],
+        "modality_given_category_agreed": {
+          "n": 9,
+          "n_agree": 9,
+          "rate": 1.0,
+          "confusion": {}
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_yes_pred_yes": 10
+          },
+          "n_determined": 10,
+          "n_agree": 10,
+          "agreement_rate": 1.0
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_yes_pred_yes": 7,
+            "gold_yes_pred_no": 3
+          },
+          "n_determined": 10,
+          "n_agree": 7,
+          "agreement_rate": 0.7
+        }
+      },
+      "guidance_post_rule_missing_as_none": {
+        "status": "PROPOSED, NOT ADOPTED (gate G1). Raw output is what the parquet stores.",
+        "n": 10,
+        "n_agree": 10,
+        "rate": 1.0,
+        "n_rows_rewritten_missing_to_NONE": 3
+      }
+    },
+    "train_MEMORIZED_NOT_A_MEASUREMENT": null,
+    "eval_ONLY_UNBIASED_SLICE": {
+      "n_rows": 10,
+      "parse": {
+        "n_missing_prediction": 0,
+        "n_unparseable": 0,
+        "parse_failure_rate": 0.0,
+        "reasons": {}
+      },
+      "schema": {
+        "n_rows_with_violations": 0,
+        "violation_rate": 0.0,
+        "issues": {}
+      },
+      "sentiment": {
+        "n": 10,
+        "exact_match": 0.8,
+        "n_correct": 8,
+        "per_class": {
+          "POSITIVE": {
+            "support": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "NEUTRAL": {
+            "support": 6,
+            "tp": 6,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.857
+          },
+          "NEGATIVE": {
+            "support": 3,
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.333,
+            "f1": 0.5
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "POSITIVE",
+            "NEUTRAL",
+            "NEGATIVE"
+          ],
+          "precision": 0.917,
+          "recall": 0.778,
+          "f1": 0.786
+        },
+        "zero_support_classes": [],
+        "failure_attribution": {},
+        "confusion": {
+          "NEGATIVE->NEUTRAL": 2
+        }
+      },
+      "guidance_direction": {
+        "n": 10,
+        "exact_match": 0.7,
+        "n_correct": 7,
+        "per_class": {
+          "RAISED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "MAINTAINED": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "LOWERED": {
+            "support": 1,
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "WITHDRAWN": {
+            "support": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "NONE": {
+            "support": 9,
+            "tp": 6,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.667,
+            "f1": 0.8
+          }
+        },
+        "macro_over_supported_classes": {
+          "classes": [
+            "LOWERED",
+            "NONE"
+          ],
+          "precision": 1.0,
+          "recall": 0.834,
+          "f1": 0.9
+        },
+        "zero_support_classes": [
+          "RAISED",
+          "MAINTAINED",
+          "WITHDRAWN"
+        ],
+        "failure_attribution": {
+          "__MISSING_FIELD__": 3
+        },
+        "confusion": {
+          "NONE->__MISSING_FIELD__": 3
+        }
+      },
+      "red_flags": {
+        "n": 10,
+        "n_parse_failed": 0,
+        "exact_set_match_category_modality": {
+          "n_match": 6,
+          "n": 10,
+          "rate": 0.6
+        },
+        "exact_set_match_category_only": {
+          "n_match": 6,
+          "n": 10,
+          "rate": 0.6
+        },
+        "per_category": {
+          "DEMAND_WEAKNESS": {
+            "support": 3,
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "tn": 7,
+            "precision": 1.0,
+            "recall": 0.667,
+            "f1": 0.8
+          },
+          "SUPPLY_INPUT_CONSTRAINT": {
+            "support": 2,
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "tn": 7,
+            "precision": 0.667,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "TRADE_POLICY_EXPOSURE": {
+            "support": 0,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "tn": 9,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "IMPAIRMENT_WRITEDOWN": {
+            "support": 1,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "tn": 8,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.667
+          },
+          "MARGIN_COST_PRESSURE": {
+            "support": 2,
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "tn": 8,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.667
+          },
+          "LEGAL_REGULATORY_ACTION": {
+            "support": 3,
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "tn": 5,
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1": 0.75
+          }
+        },
+        "per_category_decisions": {
+          "n_decisions": 60,
+          "n_errors": 7,
+          "error_rate": 0.1167,
+          "agreement_rate": 0.8833
+        },
+        "micro": {
+          "precision": 0.643,
+          "recall": 0.818,
+          "f1": 0.72,
+          "tp": 9,
+          "fp": 5,
+          "fn": 2
+        },
+        "macro_over_supported_categories": {
+          "categories": [
+            "DEMAND_WEAKNESS",
+            "SUPPLY_INPUT_CONSTRAINT",
+            "IMPAIRMENT_WRITEDOWN",
+            "MARGIN_COST_PRESSURE",
+            "LEGAL_REGULATORY_ACTION"
+          ],
+          "precision": 0.753,
+          "recall": 0.833,
+          "f1": 0.737
+        },
+        "zero_support_categories": [
+          "TRADE_POLICY_EXPOSURE"
+        ],
+        "modality_given_category_agreed": {
+          "n": 9,
+          "n_agree": 9,
+          "rate": 1.0,
+          "confusion": {}
+        }
+      },
+      "field_presence": {
+        "sentiment": {
+          "counts": {
+            "gold_yes_pred_yes": 10
+          },
+          "n_determined": 10,
+          "n_agree": 10,
+          "agreement_rate": 1.0
+        },
+        "guidance_direction": {
+          "counts": {
+            "gold_yes_pred_yes": 7,
+            "gold_yes_pred_no": 3
+          },
+          "n_determined": 10,
+          "n_agree": 7,
+          "agreement_rate": 0.7
+        }
+      },
+      "guidance_post_rule_missing_as_none": {
+        "status": "PROPOSED, NOT ADOPTED (gate G1). Raw output is what the parquet stores.",
+        "n": 10,
+        "n_agree": 10,
+        "rate": 1.0,
+        "n_rows_rewritten_missing_to_NONE": 3
+      }
+    },
+    "excluded_8K_BODY": {
+      "n": 0,
+      "not_evaluable": true
+    }
+  },
+  "finalized_utc": "2026-08-25T20:10:15.467558+00:00"
+}

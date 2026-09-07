@@ -1,0 +1,38 @@
+{
+ "seed": 20260906,
+ "n": 20,
+ "stratification": {
+  "P": 12,
+  "G-A": 4,
+  "G-N": 4
+ },
+ "realized_stratification": {
+  "G-A": 4,
+  "P": 12,
+  "G-N": 4
+ },
+ "frame_size": 402,
+ "frame_predicate": "rows with >=1 APPLICABLE gate-bearing field on which the rater matched the stored label on EVERY such field",
+ "chunk_ids": [
+  "E2CHK-3536f1859d0b9ace",
+  "E2CHK-397f693db996a0a5",
+  "E2CHK-3d8d81d5cbe61eea",
+  "E2CHK-3ea345cfc589396c",
+  "E2CHK-3ee0bbef93ae4dcb",
+  "E2CHK-48a62fd38118e54c",
+  "E2CHK-66f7347c3bf8bd02",
+  "E2CHK-6c5a45cabe9acb51",
+  "E2CHK-77f9908e5dafd434",
+  "E2CHK-7cec415877164dcc",
+  "E2CHK-83bab413ca96db72",
+  "E2CHK-929886d5e0ebd1c7",
+  "E2CHK-9b0e481826b4b02a",
+  "E2CHK-a9f86731756ad5f6",
+  "E2CHK-bfc8d598b0f65dcf",
+  "E2CHK-cecfe507af285466",
+  "E2CHK-d1fd9daf1bcbb960",
+  "E2CHK-e95cce1305be9672",
+  "E2CHK-f27bf6c2b45ee4b6",
+  "E2CHK-fccdba6e4a09e1b0"
+ ]
+}

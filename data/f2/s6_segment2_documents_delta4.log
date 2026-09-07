@@ -1,0 +1,92 @@
+stage=documents -> data/filings_metadata_e2.db (cache TTL 24.0 h)
+
+--stage documents: 20521 document(s) to have on disk ({'earnings_doc': 10567, '10-Q': 7509, '10-K': 2445}). Nothing is parsed here; this fills the cache-forever data/raw/documents/ cache so extract.py runs at 0 GETs.
+  500/20521 documents (0 fetched / 500 already cached / 0 failed)
+  1000/20521 documents (0 fetched / 1000 already cached / 0 failed)
+  1500/20521 documents (0 fetched / 1500 already cached / 0 failed)
+  2000/20521 documents (0 fetched / 2000 already cached / 0 failed)
+  2500/20521 documents (0 fetched / 2500 already cached / 0 failed)
+  3000/20521 documents (0 fetched / 3000 already cached / 0 failed)
+  3500/20521 documents (0 fetched / 3500 already cached / 0 failed)
+  4000/20521 documents (0 fetched / 4000 already cached / 0 failed)
+  4500/20521 documents (0 fetched / 4500 already cached / 0 failed)
+  5000/20521 documents (0 fetched / 5000 already cached / 0 failed)
+  5500/20521 documents (0 fetched / 5500 already cached / 0 failed)
+  6000/20521 documents (0 fetched / 6000 already cached / 0 failed)
+  6500/20521 documents (0 fetched / 6500 already cached / 0 failed)
+  7000/20521 documents (0 fetched / 7000 already cached / 0 failed)
+  7500/20521 documents (0 fetched / 7500 already cached / 0 failed)
+  8000/20521 documents (0 fetched / 8000 already cached / 0 failed)
+  8500/20521 documents (0 fetched / 8500 already cached / 0 failed)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312515272287/d17140dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312515359431/d54354dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312516469333/d143438dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312516566280/d175274dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312516663438/d233207dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312516752544/d268519dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312517055082/d332606dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312517145449/d385034dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312517239400/d429044dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312517325955/d485512dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312518054974/d532537dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312518141096/d559700dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312518234016/d587301dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312518311364/d645180dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312519052958/d710229dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312519133980/d734271dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312519206292/d763237dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312519279757/d785550dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312520049323/d894238dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312520131833/d792818dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312520205292/d22625dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312520281836/d31763dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312521058671/d72641dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312521150971/d170625dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312521234118/d171063dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312521316411/d234896dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312522051232/d310742dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312522137829/d228484dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312522209564/d367936dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312522273334/d408496dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312523043043/d296144dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312523131492/d449942dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312523200002/d505366dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312523266794/d744252dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312524045482/d749167dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312524123861/d829234dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312524188316/d818369dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312524250287/d901097dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312525034436/d928125dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312525105862/d629044dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312525173127/d206274dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312525261789/d36283dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312526073678/d57788dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312526205254/d63722dex99.htm
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/81033/000119312526331660/d101695dex99.htm
+  9000/20521 documents (45 fetched / 8955 already cached / 0 failed)
+  9500/20521 documents (45 fetched / 9455 already cached / 0 failed)
+  10000/20521 documents (45 fetched / 9955 already cached / 0 failed)
+  10500/20521 documents (45 fetched / 10455 already cached / 0 failed)
+  11000/20521 documents (45 fetched / 10955 already cached / 0 failed)
+  11500/20521 documents (45 fetched / 11455 already cached / 0 failed)
+  12000/20521 documents (45 fetched / 11955 already cached / 0 failed)
+  12500/20521 documents (45 fetched / 12455 already cached / 0 failed)
+  13000/20521 documents (45 fetched / 12955 already cached / 0 failed)
+  13500/20521 documents (45 fetched / 13455 already cached / 0 failed)
+  14000/20521 documents (45 fetched / 13955 already cached / 0 failed)
+  14500/20521 documents (45 fetched / 14455 already cached / 0 failed)
+  15000/20521 documents (45 fetched / 14955 already cached / 0 failed)
+  15500/20521 documents (45 fetched / 15455 already cached / 0 failed)
+  16000/20521 documents (45 fetched / 15955 already cached / 0 failed)
+  16500/20521 documents (45 fetched / 16455 already cached / 0 failed)
+  17000/20521 documents (45 fetched / 16955 already cached / 0 failed)
+  17500/20521 documents (45 fetched / 17455 already cached / 0 failed)
+  18000/20521 documents (45 fetched / 17955 already cached / 0 failed)
+  18500/20521 documents (45 fetched / 18455 already cached / 0 failed)
+  19000/20521 documents (45 fetched / 18955 already cached / 0 failed)
+  19500/20521 documents (45 fetched / 19455 already cached / 0 failed)
+  20000/20521 documents (45 fetched / 19955 already cached / 0 failed)
+  20500/20521 documents (45 fetched / 20455 already cached / 0 failed)
+
+--stage documents done: 20521 target(s), 45 fetched, 20476 already cached, 0 FAILED.
+Total EDGAR network GETs this run: 45

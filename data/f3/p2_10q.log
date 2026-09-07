@@ -1,0 +1,18 @@
+[10-Q] 7509 filings -> 16 shards of 500
+  shard 10-Q_0000: 500 filings -> 1000 attempts / 842 sections  {'OK': 768, 'FAIL': 89, 'FLAGGED': 74, 'EXPECTED_ABSENT': 69}  cache_miss=0  586.4s  network_gets=0
+  shard 10-Q_0001: 500 filings -> 1000 attempts / 825 sections  {'OK': 751, 'FAIL': 88, 'EXPECTED_ABSENT': 87, 'FLAGGED': 74}  cache_miss=0  197.5s  network_gets=0
+  shard 10-Q_0002: 500 filings -> 1000 attempts / 973 sections  {'OK': 750, 'FLAGGED': 223, 'EXPECTED_ABSENT': 21, 'FAIL': 6}  cache_miss=0  600.1s  network_gets=0
+  shard 10-Q_0003: 500 filings -> 1000 attempts / 919 sections  {'OK': 766, 'FLAGGED': 153, 'EXPECTED_ABSENT': 41, 'FAIL': 40}  cache_miss=0  290.9s  network_gets=0
+  shard 10-Q_0004: 500 filings -> 1000 attempts / 960 sections  {'OK': 827, 'FLAGGED': 133, 'EXPECTED_ABSENT': 22, 'FAIL': 18}  cache_miss=0  274.0s  network_gets=0
+  shard 10-Q_0005: 500 filings -> 1000 attempts / 774 sections  {'OK': 774, 'FAIL': 136, 'EXPECTED_ABSENT': 90}  cache_miss=0  532.1s  network_gets=0
+  shard 10-Q_0006: 500 filings -> 1000 attempts / 924 sections  {'OK': 882, 'EXPECTED_ABSENT': 54, 'FLAGGED': 42, 'FAIL': 22}  cache_miss=0  485.5s  network_gets=0
+  shard 10-Q_0007: 500 filings -> 1000 attempts / 947 sections  {'OK': 927, 'EXPECTED_ABSENT': 50, 'FLAGGED': 20, 'FAIL': 3}  cache_miss=0  274.0s  network_gets=0
+  shard 10-Q_0008: 500 filings -> 1000 attempts / 915 sections  {'OK': 770, 'FLAGGED': 145, 'EXPECTED_ABSENT': 77, 'FAIL': 8}  cache_miss=0  313.0s  network_gets=0
+  shard 10-Q_0009: 500 filings -> 1000 attempts / 972 sections  {'OK': 916, 'FLAGGED': 56, 'EXPECTED_ABSENT': 19, 'FAIL': 9}  cache_miss=0  334.3s  network_gets=0
+  shard 10-Q_0010: 500 filings -> 1000 attempts / 907 sections  {'OK': 830, 'FLAGGED': 77, 'FAIL': 55, 'EXPECTED_ABSENT': 38}  cache_miss=0  443.8s  network_gets=0
+  shard 10-Q_0011: 500 filings -> 1000 attempts / 923 sections  {'OK': 922, 'EXPECTED_ABSENT': 52, 'FAIL': 25, 'FLAGGED': 1}  cache_miss=0  310.7s  network_gets=0
+  shard 10-Q_0012: 500 filings -> 1000 attempts / 903 sections  {'OK': 626, 'FLAGGED': 277, 'EXPECTED_ABSENT': 77, 'FAIL': 20}  cache_miss=0  400.6s  network_gets=0
+  shard 10-Q_0013: 500 filings -> 1000 attempts / 931 sections  {'OK': 897, 'EXPECTED_ABSENT': 61, 'FLAGGED': 34, 'FAIL': 8}  cache_miss=0  335.5s  network_gets=0
+  shard 10-Q_0014: 500 filings -> 1000 attempts / 970 sections  {'OK': 911, 'FLAGGED': 59, 'EXPECTED_ABSENT': 18, 'FAIL': 12}  cache_miss=0  242.0s  network_gets=0
+  shard 10-Q_0015: 9 filings -> 18 attempts / 14 sections  {'OK': 14, 'EXPECTED_ABSENT': 3, 'FAIL': 1}  cache_miss=0  4.5s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)

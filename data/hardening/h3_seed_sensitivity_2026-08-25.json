@@ -1,0 +1,976 @@
+{
+ "generated_utc": "2026-08-26T02:23:34.915789+00:00",
+ "purpose": "H3 \u00a73 -- XGBoost seed sweep: the harness's own nuisance spread on the primary metric",
+ "metric": "cross-fold mean DEDUP Spearman IC delta (text+numeric minus numeric-only), 6 E1 folds",
+ "n_seeds": 100,
+ "seeds": "random_state = 0..99 (the shipped value is 42)",
+ "note_row_order_defect": "Measured on this run: writing the student feature table in a different on-disk row order (identical values) moved numeric-only mean dedup IC 0.0972 -> 0.1448 and the primary-spec delta +0.0195 -> +0.0694. backtest.load_modeling_frame() sorts by filing_date with a NON-STABLE sort and 630 rows carry 298 distinct dates. Fixed by preserving features.py's build order; reported to G3 as a reproducibility convention.",
+ "summary": {
+  "pit_trailing_rank": {
+   "teacher": {
+    "seed42_value": -0.009263278342860911,
+    "mean": 0.021138618641135084,
+    "sd_across_seeds": 0.0283480989764489,
+    "p2_5": -0.02494906822587211,
+    "p97_5": 0.07442026730976671,
+    "min": -0.03177795873800888,
+    "max": 0.10814907490043808,
+    "frac_positive": 0.71
+   },
+   "student": {
+    "seed42_value": 0.01951378862748683,
+    "mean": 0.016728365716588214,
+    "sd_across_seeds": 0.028943982673207767,
+    "p2_5": -0.03646160509493195,
+    "p97_5": 0.07349350423598308,
+    "min": -0.04747846363403722,
+    "max": 0.09949403844922168,
+    "frac_positive": 0.72
+   },
+   "student_minus_teacher": {
+    "seed42_value": 0.028777066970347744,
+    "mean": -0.004410252924546864,
+    "sd_across_seeds": 0.027480165916522897,
+    "p2_5": -0.05426288943794062,
+    "p97_5": 0.04545416079061846,
+    "min": -0.07428073734980023,
+    "max": 0.05620991590904116,
+    "frac_positive": 0.44
+   }
+  },
+  "raw_levels": {
+   "teacher": {
+    "seed42_value": -0.009693240281788681,
+    "mean": -0.0026301724409365608,
+    "sd_across_seeds": 0.028695555687231807,
+    "p2_5": -0.055536419578349795,
+    "p97_5": 0.049637329800389804,
+    "min": -0.05888823580397642,
+    "max": 0.06784870962191751,
+    "frac_positive": 0.43
+   },
+   "student": {
+    "seed42_value": 0.008658504492964852,
+    "mean": 0.011008958847548904,
+    "sd_across_seeds": 0.02626684073008988,
+    "p2_5": -0.04611106449588112,
+    "p97_5": 0.06187601048741962,
+    "min": -0.07112580450179361,
+    "max": 0.06690454049426578,
+    "frac_positive": 0.71
+   },
+   "student_minus_teacher": {
+    "seed42_value": 0.018351744774753535,
+    "mean": 0.013639131288485463,
+    "sd_across_seeds": 0.0273600556158777,
+    "p2_5": -0.043267995644579206,
+    "p97_5": 0.061441889903659876,
+    "min": -0.08275173977613812,
+    "max": 0.07121454859354844,
+    "frac_positive": 0.75
+   }
+  }
+ },
+ "per_seed": [
+  {
+   "seed": 0,
+   "pit_trailing_rank__teacher": 0.026055761118811305,
+   "pit_trailing_rank__student": 0.0013888166914618194,
+   "pit_trailing_rank__student_minus_teacher": -0.024666944427349485,
+   "raw_levels__teacher": 0.011588348314529763,
+   "raw_levels__student": 0.01868156575199915,
+   "raw_levels__student_minus_teacher": 0.007093217437469388
+  },
+  {
+   "seed": 1,
+   "pit_trailing_rank__teacher": -0.014856276280831221,
+   "pit_trailing_rank__student": 0.01955428120488492,
+   "pit_trailing_rank__student_minus_teacher": 0.03441055748571614,
+   "raw_levels__teacher": 0.03872685301994223,
+   "raw_levels__student": 0.03916187606473997,
+   "raw_levels__student_minus_teacher": 0.00043502304479774156
+  },
+  {
+   "seed": 2,
+   "pit_trailing_rank__teacher": -0.013372792971334488,
+   "pit_trailing_rank__student": 0.02102594016851235,
+   "pit_trailing_rank__student_minus_teacher": 0.034398733139846836,
+   "raw_levels__teacher": -0.048758960348694626,
+   "raw_levels__student": -0.06261721701055668,
+   "raw_levels__student_minus_teacher": -0.013858256661862058
+  },
+  {
+   "seed": 3,
+   "pit_trailing_rank__teacher": -0.005847454804161792,
+   "pit_trailing_rank__student": -0.016592848609100663,
+   "pit_trailing_rank__student_minus_teacher": -0.010745393804938871,
+   "raw_levels__teacher": 0.010302511558813865,
+   "raw_levels__student": 0.0013114244145311603,
+   "raw_levels__student_minus_teacher": -0.008991087144282706
+  },
+  {
+   "seed": 4,
+   "pit_trailing_rank__teacher": 0.04645448161380181,
+   "pit_trailing_rank__student": -0.014952418614787036,
+   "pit_trailing_rank__student_minus_teacher": -0.06140690022858884,
+   "raw_levels__teacher": -0.026034695551749587,
+   "raw_levels__student": 0.03234514745432115,
+   "raw_levels__student_minus_teacher": 0.058379843006070735
+  },
+  {
+   "seed": 5,
+   "pit_trailing_rank__teacher": -0.00680368143309034,
+   "pit_trailing_rank__student": 0.0404787771933264,
+   "pit_trailing_rank__student_minus_teacher": 0.04728245862641674,
+   "raw_levels__teacher": -0.009459454002514097,
+   "raw_levels__student": 0.03994626932690098,
+   "raw_levels__student_minus_teacher": 0.04940572332941508
+  },
+  {
+   "seed": 6,
+   "pit_trailing_rank__teacher": 0.0639570817490396,
+   "pit_trailing_rank__student": 0.008673014013216221,
+   "pit_trailing_rank__student_minus_teacher": -0.055284067735823374,
+   "raw_levels__teacher": 0.002263799802390327,
+   "raw_levels__student": 0.02590959163353736,
+   "raw_levels__student_minus_teacher": 0.023645791831147032
+  },
+  {
+   "seed": 7,
+   "pit_trailing_rank__teacher": 0.06908965898412635,
+   "pit_trailing_rank__student": 0.060886760952372165,
+   "pit_trailing_rank__student_minus_teacher": -0.008202898031754183,
+   "raw_levels__teacher": -0.00329963132762671,
+   "raw_levels__student": 0.017985109116316438,
+   "raw_levels__student_minus_teacher": 0.02128474044394315
+  },
+  {
+   "seed": 8,
+   "pit_trailing_rank__teacher": 0.03359847720137396,
+   "pit_trailing_rank__student": 0.0004810161885845145,
+   "pit_trailing_rank__student_minus_teacher": -0.033117461012789444,
+   "raw_levels__teacher": 0.003698167306267051,
+   "raw_levels__student": 0.06029060778170797,
+   "raw_levels__student_minus_teacher": 0.056592440475440924
+  },
+  {
+   "seed": 9,
+   "pit_trailing_rank__teacher": 0.03939606346240102,
+   "pit_trailing_rank__student": 0.021754173623916864,
+   "pit_trailing_rank__student_minus_teacher": -0.017641889838484158,
+   "raw_levels__teacher": -0.002531911106557365,
+   "raw_levels__student": -0.003775825675308898,
+   "raw_levels__student_minus_teacher": -0.001243914568751533
+  },
+  {
+   "seed": 10,
+   "pit_trailing_rank__teacher": -0.007601951153654918,
+   "pit_trailing_rank__student": -0.012546628704925641,
+   "pit_trailing_rank__student_minus_teacher": -0.004944677551270723,
+   "raw_levels__teacher": -0.011161143684348,
+   "raw_levels__student": -0.01021813508043821,
+   "raw_levels__student_minus_teacher": 0.0009430086039097906
+  },
+  {
+   "seed": 11,
+   "pit_trailing_rank__teacher": -0.00441772995614335,
+   "pit_trailing_rank__student": 0.018370562817540032,
+   "pit_trailing_rank__student_minus_teacher": 0.022788292773683383,
+   "raw_levels__teacher": -0.003225553420565586,
+   "raw_levels__student": -0.0031624246728017224,
+   "raw_levels__student_minus_teacher": 6.312874776386382e-05
+  },
+  {
+   "seed": 12,
+   "pit_trailing_rank__teacher": 0.018438145192970348,
+   "pit_trailing_rank__student": 0.025337914215549633,
+   "pit_trailing_rank__student_minus_teacher": 0.006899769022579286,
+   "raw_levels__teacher": 0.0059009523143222125,
+   "raw_levels__student": 0.03184430689701446,
+   "raw_levels__student_minus_teacher": 0.025943354582692247
+  },
+  {
+   "seed": 13,
+   "pit_trailing_rank__teacher": -0.01905036097117758,
+   "pit_trailing_rank__student": -0.01839855682437118,
+   "pit_trailing_rank__student_minus_teacher": 0.0006518041468064027,
+   "raw_levels__teacher": 0.015482957596608471,
+   "raw_levels__student": 0.0007504986173702729,
+   "raw_levels__student_minus_teacher": -0.014732458979238198
+  },
+  {
+   "seed": 14,
+   "pit_trailing_rank__teacher": 0.023765317852566577,
+   "pit_trailing_rank__student": 0.017764227500455126,
+   "pit_trailing_rank__student_minus_teacher": -0.006001090352111452,
+   "raw_levels__teacher": -0.0068189021368997476,
+   "raw_levels__student": 0.023156413840740447,
+   "raw_levels__student_minus_teacher": 0.029975315977640193
+  },
+  {
+   "seed": 15,
+   "pit_trailing_rank__teacher": -0.017387016995767657,
+   "pit_trailing_rank__student": 0.00599694117396563,
+   "pit_trailing_rank__student_minus_teacher": 0.023383958169733286,
+   "raw_levels__teacher": 0.05037381646265546,
+   "raw_levels__student": 0.01666166033044437,
+   "raw_levels__student_minus_teacher": -0.03371215613221108
+  },
+  {
+   "seed": 16,
+   "pit_trailing_rank__teacher": 0.02440365947747036,
+   "pit_trailing_rank__student": 0.0036186673543992707,
+   "pit_trailing_rank__student_minus_teacher": -0.02078499212307109,
+   "raw_levels__teacher": 0.0010132041129157915,
+   "raw_levels__student": 0.01148477585374203,
+   "raw_levels__student_minus_teacher": 0.010471571740826238
+  },
+  {
+   "seed": 17,
+   "pit_trailing_rank__teacher": 0.033527178378740474,
+   "pit_trailing_rank__student": 0.0745721460692926,
+   "pit_trailing_rank__student_minus_teacher": 0.04104496769055213,
+   "raw_levels__teacher": -0.016941928312304042,
+   "raw_levels__student": 0.03550492704946942,
+   "raw_levels__student_minus_teacher": 0.05244685536177346
+  },
+  {
+   "seed": 18,
+   "pit_trailing_rank__teacher": 0.02094107385219809,
+   "pit_trailing_rank__student": 0.009570121503217658,
+   "pit_trailing_rank__student_minus_teacher": -0.011370952348980433,
+   "raw_levels__teacher": -0.017384791467912608,
+   "raw_levels__student": -0.010095609232171556,
+   "raw_levels__student_minus_teacher": 0.007289182235741052
+  },
+  {
+   "seed": 19,
+   "pit_trailing_rank__teacher": 0.10814907490043808,
+   "pit_trailing_rank__student": 0.06319128732237717,
+   "pit_trailing_rank__student_minus_teacher": -0.04495778757806092,
+   "raw_levels__teacher": -0.057267993654530745,
+   "raw_levels__student": -0.02633458503312915,
+   "raw_levels__student_minus_teacher": 0.030933408621401596
+  },
+  {
+   "seed": 20,
+   "pit_trailing_rank__teacher": 0.013751773726536595,
+   "pit_trailing_rank__student": -0.012386411481725645,
+   "pit_trailing_rank__student_minus_teacher": -0.026138185208262242,
+   "raw_levels__teacher": 0.011951425817527887,
+   "raw_levels__student": 0.0566474462693996,
+   "raw_levels__student_minus_teacher": 0.04469602045187171
+  },
+  {
+   "seed": 21,
+   "pit_trailing_rank__teacher": -0.013173903059767178,
+   "pit_trailing_rank__student": -0.01139569723282477,
+   "pit_trailing_rank__student_minus_teacher": 0.0017782058269424084,
+   "raw_levels__teacher": 0.035457364464499035,
+   "raw_levels__student": 0.019301393010519207,
+   "raw_levels__student_minus_teacher": -0.016155971453979828
+  },
+  {
+   "seed": 22,
+   "pit_trailing_rank__teacher": 0.0036769514245130566,
+   "pit_trailing_rank__student": -0.015431233589634594,
+   "pit_trailing_rank__student_minus_teacher": -0.01910818501414765,
+   "raw_levels__teacher": -0.05888823580397642,
+   "raw_levels__student": -0.0438424520533068,
+   "raw_levels__student_minus_teacher": 0.015045783750669617
+  },
+  {
+   "seed": 23,
+   "pit_trailing_rank__teacher": -0.01564641476807942,
+   "pit_trailing_rank__student": -0.0197723832165714,
+   "pit_trailing_rank__student_minus_teacher": -0.00412596844849198,
+   "raw_levels__teacher": 0.044966930166161156,
+   "raw_levels__student": 0.06331042245925401,
+   "raw_levels__student_minus_teacher": 0.01834349229309286
+  },
+  {
+   "seed": 24,
+   "pit_trailing_rank__teacher": 0.06997015188071824,
+   "pit_trailing_rank__student": 0.016835933193069082,
+   "pit_trailing_rank__student_minus_teacher": -0.05313421868764916,
+   "raw_levels__teacher": 2.7420039463386486e-05,
+   "raw_levels__student": 0.022941868391480612,
+   "raw_levels__student_minus_teacher": 0.022914448352017225
+  },
+  {
+   "seed": 25,
+   "pit_trailing_rank__teacher": 0.049399819968041055,
+   "pit_trailing_rank__student": 0.025319857081450337,
+   "pit_trailing_rank__student_minus_teacher": -0.024079962886590717,
+   "raw_levels__teacher": 0.048823318226306735,
+   "raw_levels__student": -0.03392842154983138,
+   "raw_levels__student_minus_teacher": -0.08275173977613812
+  },
+  {
+   "seed": 26,
+   "pit_trailing_rank__teacher": 0.04026350221849872,
+   "pit_trailing_rank__student": 0.0032613229074636755,
+   "pit_trailing_rank__student_minus_teacher": -0.03700217931103504,
+   "raw_levels__teacher": -0.028823430448150073,
+   "raw_levels__student": -0.001759422252429745,
+   "raw_levels__student_minus_teacher": 0.02706400819572033
+  },
+  {
+   "seed": 27,
+   "pit_trailing_rank__teacher": 0.01646692699264811,
+   "pit_trailing_rank__student": -0.020868915978129888,
+   "pit_trailing_rank__student_minus_teacher": -0.037335842970777994,
+   "raw_levels__teacher": -0.040622735988072374,
+   "raw_levels__student": 0.010982547493947788,
+   "raw_levels__student_minus_teacher": 0.05160528348202016
+  },
+  {
+   "seed": 28,
+   "pit_trailing_rank__teacher": 0.03365437108969843,
+   "pit_trailing_rank__student": 0.07700104983412386,
+   "pit_trailing_rank__student_minus_teacher": 0.043346678744425424,
+   "raw_levels__teacher": -0.002650923482007591,
+   "raw_levels__student": 0.03073229260770526,
+   "raw_levels__student_minus_teacher": 0.03338321608971285
+  },
+  {
+   "seed": 29,
+   "pit_trailing_rank__teacher": 0.019505262515638718,
+   "pit_trailing_rank__student": 0.026943241027066533,
+   "pit_trailing_rank__student_minus_teacher": 0.007437978511427815,
+   "raw_levels__teacher": 0.03623143977141916,
+   "raw_levels__student": 0.04285618170623808,
+   "raw_levels__student_minus_teacher": 0.00662474193481892
+  },
+  {
+   "seed": 30,
+   "pit_trailing_rank__teacher": -0.014630551305364066,
+   "pit_trailing_rank__student": 0.021581645703793628,
+   "pit_trailing_rank__student_minus_teacher": 0.03621219700915769,
+   "raw_levels__teacher": -0.035612112391084146,
+   "raw_levels__student": -0.01753504086589157,
+   "raw_levels__student_minus_teacher": 0.018077071525192577
+  },
+  {
+   "seed": 31,
+   "pit_trailing_rank__teacher": 0.010517883386779095,
+   "pit_trailing_rank__student": -0.01923933114816485,
+   "pit_trailing_rank__student_minus_teacher": -0.029757214534943947,
+   "raw_levels__teacher": -0.0286218634640782,
+   "raw_levels__student": -0.012630797032235264,
+   "raw_levels__student_minus_teacher": 0.015991066431842935
+  },
+  {
+   "seed": 32,
+   "pit_trailing_rank__teacher": 0.010006331579434433,
+   "pit_trailing_rank__student": 0.015473703106440381,
+   "pit_trailing_rank__student_minus_teacher": 0.005467371527005948,
+   "raw_levels__teacher": -0.016723906154495354,
+   "raw_levels__student": -0.024799817482841147,
+   "raw_levels__student_minus_teacher": -0.008075911328345793
+  },
+  {
+   "seed": 33,
+   "pit_trailing_rank__teacher": -0.023484923944215697,
+   "pit_trailing_rank__student": -0.0381666085829538,
+   "pit_trailing_rank__student_minus_teacher": -0.014681684638738104,
+   "raw_levels__teacher": -0.051045220664728254,
+   "raw_levels__student": -0.048163618610591215,
+   "raw_levels__student_minus_teacher": 0.002881602054137039
+  },
+  {
+   "seed": 34,
+   "pit_trailing_rank__teacher": 0.013998377221470085,
+   "pit_trailing_rank__student": 0.03615190310452635,
+   "pit_trailing_rank__student_minus_teacher": 0.022153525883056267,
+   "raw_levels__teacher": 0.037215249178829395,
+   "raw_levels__student": 0.029769486785780744,
+   "raw_levels__student_minus_teacher": -0.007445762393048651
+  },
+  {
+   "seed": 35,
+   "pit_trailing_rank__teacher": 0.04653813653461145,
+   "pit_trailing_rank__student": 0.07230132115706207,
+   "pit_trailing_rank__student_minus_teacher": 0.02576318462245062,
+   "raw_levels__teacher": 0.03660957973825496,
+   "raw_levels__student": 0.042371524268286574,
+   "raw_levels__student_minus_teacher": 0.005761944530031614
+  },
+  {
+   "seed": 36,
+   "pit_trailing_rank__teacher": 0.03567580921409005,
+   "pit_trailing_rank__student": 0.03954635545784122,
+   "pit_trailing_rank__student_minus_teacher": 0.0038705462437511745,
+   "raw_levels__teacher": -0.009744065148966705,
+   "raw_levels__student": 0.004856871812929935,
+   "raw_levels__student_minus_teacher": 0.01460093696189664
+  },
+  {
+   "seed": 37,
+   "pit_trailing_rank__teacher": 0.059629550553766786,
+   "pit_trailing_rank__student": 0.04186411657348545,
+   "pit_trailing_rank__student_minus_teacher": -0.017765433980281332,
+   "raw_levels__teacher": -0.00302856964645763,
+   "raw_levels__student": 0.04385058761149683,
+   "raw_levels__student_minus_teacher": 0.04687915725795446
+  },
+  {
+   "seed": 38,
+   "pit_trailing_rank__teacher": 0.07656159386745374,
+   "pit_trailing_rank__student": 0.03598799376689995,
+   "pit_trailing_rank__student_minus_teacher": -0.040573600100553796,
+   "raw_levels__teacher": -0.0046337525590316635,
+   "raw_levels__student": 0.0009313005660995707,
+   "raw_levels__student_minus_teacher": 0.005565053125131234
+  },
+  {
+   "seed": 39,
+   "pit_trailing_rank__teacher": 0.05303593315718602,
+   "pit_trailing_rank__student": 0.026791372494283053,
+   "pit_trailing_rank__student_minus_teacher": -0.02624456066290297,
+   "raw_levels__teacher": 0.003638373188800869,
+   "raw_levels__student": 0.00583114407428514,
+   "raw_levels__student_minus_teacher": 0.0021927708854842707
+  },
+  {
+   "seed": 40,
+   "pit_trailing_rank__teacher": 0.056164174883843954,
+   "pit_trailing_rank__student": 0.037710879803966035,
+   "pit_trailing_rank__student_minus_teacher": -0.01845329507987792,
+   "raw_levels__teacher": -0.03927325288184988,
+   "raw_levels__student": -0.01873889849072557,
+   "raw_levels__student_minus_teacher": 0.020534354391124308
+  },
+  {
+   "seed": 41,
+   "pit_trailing_rank__teacher": -0.015058818672722083,
+   "pit_trailing_rank__student": 0.006260151329210752,
+   "pit_trailing_rank__student_minus_teacher": 0.021318970001932835,
+   "raw_levels__teacher": -0.01787069777282489,
+   "raw_levels__student": 0.003591295899208339,
+   "raw_levels__student_minus_teacher": 0.021461993672033226
+  },
+  {
+   "seed": 42,
+   "pit_trailing_rank__teacher": -0.009263278342860911,
+   "pit_trailing_rank__student": 0.01951378862748683,
+   "pit_trailing_rank__student_minus_teacher": 0.028777066970347744,
+   "raw_levels__teacher": -0.009693240281788681,
+   "raw_levels__student": 0.008658504492964852,
+   "raw_levels__student_minus_teacher": 0.018351744774753535
+  },
+  {
+   "seed": 43,
+   "pit_trailing_rank__teacher": 0.028125253730446265,
+   "pit_trailing_rank__student": -0.01229486063117124,
+   "pit_trailing_rank__student_minus_teacher": -0.04042011436161751,
+   "raw_levels__teacher": 0.03132114168298529,
+   "raw_levels__student": 0.0401857319548019,
+   "raw_levels__student_minus_teacher": 0.00886459027181661
+  },
+  {
+   "seed": 44,
+   "pit_trailing_rank__teacher": 0.0023819397002894185,
+   "pit_trailing_rank__student": -0.00443787020753079,
+   "pit_trailing_rank__student_minus_teacher": -0.006819809907820209,
+   "raw_levels__teacher": -0.0008772202777965754,
+   "raw_levels__student": 0.01705344262727227,
+   "raw_levels__student_minus_teacher": 0.017930662905068846
+  },
+  {
+   "seed": 45,
+   "pit_trailing_rank__teacher": 0.021649225991286356,
+   "pit_trailing_rank__student": 0.025276319735789133,
+   "pit_trailing_rank__student_minus_teacher": 0.0036270937445027768,
+   "raw_levels__teacher": 0.01328817668557538,
+   "raw_levels__student": 0.029847709091788677,
+   "raw_levels__student_minus_teacher": 0.016559532406213297
+  },
+  {
+   "seed": 46,
+   "pit_trailing_rank__teacher": 0.052543835889517033,
+   "pit_trailing_rank__student": 0.02419012077091724,
+   "pit_trailing_rank__student_minus_teacher": -0.028353715118599795,
+   "raw_levels__teacher": 0.02246438930563519,
+   "raw_levels__student": 0.0287026563447669,
+   "raw_levels__student_minus_teacher": 0.0062382670391317105
+  },
+  {
+   "seed": 47,
+   "pit_trailing_rank__teacher": 0.05390177095448723,
+   "pit_trailing_rank__student": 0.09949403844922168,
+   "pit_trailing_rank__student_minus_teacher": 0.045592267494734454,
+   "raw_levels__teacher": 0.03399604596529385,
+   "raw_levels__student": 0.020100888554129975,
+   "raw_levels__student_minus_teacher": -0.013895157411163872
+  },
+  {
+   "seed": 48,
+   "pit_trailing_rank__teacher": 0.059860012670443226,
+   "pit_trailing_rank__student": 0.06474586782176774,
+   "pit_trailing_rank__student_minus_teacher": 0.00488585515132451,
+   "raw_levels__teacher": 0.026373193646226256,
+   "raw_levels__student": 0.011656757583637135,
+   "raw_levels__student_minus_teacher": -0.01471643606258912
+  },
+  {
+   "seed": 49,
+   "pit_trailing_rank__teacher": -0.008004658460442765,
+   "pit_trailing_rank__student": -0.026018630156691425,
+   "pit_trailing_rank__student_minus_teacher": -0.01801397169624866,
+   "raw_levels__teacher": -0.003653638955500601,
+   "raw_levels__student": 0.009356113124085777,
+   "raw_levels__student_minus_teacher": 0.013009752079586379
+  },
+  {
+   "seed": 50,
+   "pit_trailing_rank__teacher": 0.05909518760141202,
+   "pit_trailing_rank__student": 0.02235126223426534,
+   "pit_trailing_rank__student_minus_teacher": -0.03674392536714668,
+   "raw_levels__teacher": -0.02603563516864713,
+   "raw_levels__student": 0.007913200575306497,
+   "raw_levels__student_minus_teacher": 0.033948835743953625
+  },
+  {
+   "seed": 51,
+   "pit_trailing_rank__teacher": 0.03899923321499512,
+   "pit_trailing_rank__student": 0.0036470478710945997,
+   "pit_trailing_rank__student_minus_teacher": -0.03535218534390052,
+   "raw_levels__teacher": -0.0016538101303934748,
+   "raw_levels__student": 0.06690454049426578,
+   "raw_levels__student_minus_teacher": 0.06855835062465926
+  },
+  {
+   "seed": 52,
+   "pit_trailing_rank__teacher": -0.007428473731006723,
+   "pit_trailing_rank__student": 0.007429547796330825,
+   "pit_trailing_rank__student_minus_teacher": 0.014858021527337548,
+   "raw_levels__teacher": -0.005802144110590726,
+   "raw_levels__student": 0.008504386760022057,
+   "raw_levels__student_minus_teacher": 0.014306530870612783
+  },
+  {
+   "seed": 53,
+   "pit_trailing_rank__teacher": 0.0034646245576606207,
+   "pit_trailing_rank__student": 0.04388808207331079,
+   "pit_trailing_rank__student_minus_teacher": 0.04042345751565017,
+   "raw_levels__teacher": -0.04216324387619524,
+   "raw_levels__student": 0.0006207466137861892,
+   "raw_levels__student_minus_teacher": 0.042783990489981424
+  },
+  {
+   "seed": 54,
+   "pit_trailing_rank__teacher": 0.025678193224595997,
+   "pit_trailing_rank__student": -0.01574921882183319,
+   "pit_trailing_rank__student_minus_teacher": -0.04142741204642919,
+   "raw_levels__teacher": -0.0048438902590561645,
+   "raw_levels__student": 0.05638243554198852,
+   "raw_levels__student_minus_teacher": 0.06122632580104468
+  },
+  {
+   "seed": 55,
+   "pit_trailing_rank__teacher": -0.028819504417225816,
+   "pit_trailing_rank__student": -0.04747846363403722,
+   "pit_trailing_rank__student_minus_teacher": -0.0186589592168114,
+   "raw_levels__teacher": -0.006095501275806284,
+   "raw_levels__student": -0.006478580867022299,
+   "raw_levels__student_minus_teacher": -0.0003830795912160151
+  },
+  {
+   "seed": 56,
+   "pit_trailing_rank__teacher": 0.03743753123911756,
+   "pit_trailing_rank__student": 0.019076402988571425,
+   "pit_trailing_rank__student_minus_teacher": -0.018361128250546137,
+   "raw_levels__teacher": 0.0504295465729856,
+   "raw_levels__student": 0.0641878557932909,
+   "raw_levels__student_minus_teacher": 0.013758309220305291
+  },
+  {
+   "seed": 57,
+   "pit_trailing_rank__teacher": 0.03128443487071332,
+   "pit_trailing_rank__student": -0.0429963024790869,
+   "pit_trailing_rank__student_minus_teacher": -0.07428073734980023,
+   "raw_levels__teacher": -0.01873263900596184,
+   "raw_levels__student": 0.02760562362438333,
+   "raw_levels__student_minus_teacher": 0.04633826263034517
+  },
+  {
+   "seed": 58,
+   "pit_trailing_rank__teacher": 0.04413689160911254,
+   "pit_trailing_rank__student": 0.013571668226091104,
+   "pit_trailing_rank__student_minus_teacher": -0.030565223383021436,
+   "raw_levels__teacher": 0.027447915662383925,
+   "raw_levels__student": 0.010186424640265758,
+   "raw_levels__student_minus_teacher": -0.017261491022118165
+  },
+  {
+   "seed": 59,
+   "pit_trailing_rank__teacher": 0.04557394379203953,
+   "pit_trailing_rank__student": 0.046881188356771686,
+   "pit_trailing_rank__student_minus_teacher": 0.001307244564732156,
+   "raw_levels__teacher": 0.003599001527663006,
+   "raw_levels__student": 0.05564041309369907,
+   "raw_levels__student_minus_teacher": 0.05204141156603606
+  },
+  {
+   "seed": 60,
+   "pit_trailing_rank__teacher": 0.03828662764160436,
+   "pit_trailing_rank__student": 0.024526296229232174,
+   "pit_trailing_rank__student_minus_teacher": -0.013760331412372182,
+   "raw_levels__teacher": -0.03847501097012971,
+   "raw_levels__student": -0.0014521090766616562,
+   "raw_levels__student_minus_teacher": 0.03702290189346805
+  },
+  {
+   "seed": 61,
+   "pit_trailing_rank__teacher": 0.006127727361295886,
+   "pit_trailing_rank__student": 0.01139875792109285,
+   "pit_trailing_rank__student_minus_teacher": 0.005271030559796964,
+   "raw_levels__teacher": 0.005737364518467107,
+   "raw_levels__student": -0.006686709143511975,
+   "raw_levels__student_minus_teacher": -0.012424073661979082
+  },
+  {
+   "seed": 62,
+   "pit_trailing_rank__teacher": -0.007789772304914652,
+   "pit_trailing_rank__student": 0.019338553365199507,
+   "pit_trailing_rank__student_minus_teacher": 0.02712832567011416,
+   "raw_levels__teacher": -0.00794923884915894,
+   "raw_levels__student": 0.007527354433894194,
+   "raw_levels__student_minus_teacher": 0.015476593283053133
+  },
+  {
+   "seed": 63,
+   "pit_trailing_rank__teacher": 0.01182617824706273,
+   "pit_trailing_rank__student": 0.057127694785763516,
+   "pit_trailing_rank__student_minus_teacher": 0.045301516538700785,
+   "raw_levels__teacher": 0.029029665507550786,
+   "raw_levels__student": 0.05461277690708505,
+   "raw_levels__student_minus_teacher": 0.025583111399534262
+  },
+  {
+   "seed": 64,
+   "pit_trailing_rank__teacher": 0.01806738803351329,
+   "pit_trailing_rank__student": 0.026205458996280507,
+   "pit_trailing_rank__student_minus_teacher": 0.008138070962767217,
+   "raw_levels__teacher": -0.03151291530554968,
+   "raw_levels__student": 0.007737693662920704,
+   "raw_levels__student_minus_teacher": 0.03925060896847038
+  },
+  {
+   "seed": 65,
+   "pit_trailing_rank__teacher": 0.07627174946213461,
+   "pit_trailing_rank__student": 0.03827301946783655,
+   "pit_trailing_rank__student_minus_teacher": -0.037998729994298056,
+   "raw_levels__teacher": -0.01684743766927499,
+   "raw_levels__student": 0.006197176350661161,
+   "raw_levels__student_minus_teacher": 0.02304461401993615
+  },
+  {
+   "seed": 66,
+   "pit_trailing_rank__teacher": -0.02627377019498982,
+   "pit_trailing_rank__student": -0.0225249041181939,
+   "pit_trailing_rank__student_minus_teacher": 0.0037488660767959203,
+   "raw_levels__teacher": -0.054575702771698674,
+   "raw_levels__student": -0.03905875269396077,
+   "raw_levels__student_minus_teacher": 0.015516950077737901
+  },
+  {
+   "seed": 67,
+   "pit_trailing_rank__teacher": 0.07237389229925488,
+   "pit_trailing_rank__student": 0.0600663156587953,
+   "pit_trailing_rank__student_minus_teacher": -0.012307576640459582,
+   "raw_levels__teacher": 0.000197336992482533,
+   "raw_levels__student": 0.008699553112040506,
+   "raw_levels__student_minus_teacher": 0.008502216119557973
+  },
+  {
+   "seed": 68,
+   "pit_trailing_rank__teacher": 0.01789037328780595,
+   "pit_trailing_rank__student": -1.9615333109304633e-05,
+   "pit_trailing_rank__student_minus_teacher": -0.017909988620915255,
+   "raw_levels__teacher": 0.02337243312482215,
+   "raw_levels__student": -0.0008721307587032795,
+   "raw_levels__student_minus_teacher": -0.02424456388352543
+  },
+  {
+   "seed": 69,
+   "pit_trailing_rank__teacher": 0.005075714905322303,
+   "pit_trailing_rank__student": 0.015077901936560112,
+   "pit_trailing_rank__student_minus_teacher": 0.01000218703123781,
+   "raw_levels__teacher": -0.024982974189161358,
+   "raw_levels__student": 0.00603209867237835,
+   "raw_levels__student_minus_teacher": 0.03101507286153971
+  },
+  {
+   "seed": 70,
+   "pit_trailing_rank__teacher": 0.04381638877265584,
+   "pit_trailing_rank__student": 0.03295140568006854,
+   "pit_trailing_rank__student_minus_teacher": -0.0108649830925873,
+   "raw_levels__teacher": -0.0017820845256423291,
+   "raw_levels__student": 0.020016261509808262,
+   "raw_levels__student_minus_teacher": 0.02179834603545059
+  },
+  {
+   "seed": 71,
+   "pit_trailing_rank__teacher": 0.016092921447787758,
+   "pit_trailing_rank__student": 0.010969003893426416,
+   "pit_trailing_rank__student_minus_teacher": -0.005123917554361342,
+   "raw_levels__teacher": 0.01501115218215962,
+   "raw_levels__student": 0.034784038560367554,
+   "raw_levels__student_minus_teacher": 0.019772886378207934
+  },
+  {
+   "seed": 72,
+   "pit_trailing_rank__teacher": -0.006521504519864986,
+   "pit_trailing_rank__student": -0.015477203921129659,
+   "pit_trailing_rank__student_minus_teacher": -0.008955699401264672,
+   "raw_levels__teacher": 0.0417533273772191,
+   "raw_levels__student": 0.056181832914050954,
+   "raw_levels__student_minus_teacher": 0.014428505536831851
+  },
+  {
+   "seed": 73,
+   "pit_trailing_rank__teacher": -0.00562961975744659,
+   "pit_trailing_rank__student": -0.0039422258390089575,
+   "pit_trailing_rank__student_minus_teacher": 0.001687393918437632,
+   "raw_levels__teacher": -0.013013653673121012,
+   "raw_levels__student": 0.0019968160825855085,
+   "raw_levels__student_minus_teacher": 0.01501046975570652
+  },
+  {
+   "seed": 74,
+   "pit_trailing_rank__teacher": 0.0003488807446117431,
+   "pit_trailing_rank__student": 0.01097535026682469,
+   "pit_trailing_rank__student_minus_teacher": 0.010626469522212948,
+   "raw_levels__teacher": -0.04428522533699647,
+   "raw_levels__student": -0.0178248004386326,
+   "raw_levels__student_minus_teacher": 0.02646042489836387
+  },
+  {
+   "seed": 75,
+   "pit_trailing_rank__teacher": 0.023729634238815703,
+   "pit_trailing_rank__student": 0.04796077964396608,
+   "pit_trailing_rank__student_minus_teacher": 0.024231145405150374,
+   "raw_levels__teacher": 0.0380048931728108,
+   "raw_levels__student": 0.016407552098551884,
+   "raw_levels__student_minus_teacher": -0.021597341074258914
+  },
+  {
+   "seed": 76,
+   "pit_trailing_rank__teacher": -0.008401227629298088,
+   "pit_trailing_rank__student": 0.01743005723437076,
+   "pit_trailing_rank__student_minus_teacher": 0.025831284863668848,
+   "raw_levels__teacher": 0.013263587290202992,
+   "raw_levels__student": 0.014532751400742047,
+   "raw_levels__student_minus_teacher": 0.001269164110539055
+  },
+  {
+   "seed": 77,
+   "pit_trailing_rank__teacher": -0.007557950381858978,
+   "pit_trailing_rank__student": -0.007905185893574038,
+   "pit_trailing_rank__student_minus_teacher": -0.00034723551171505964,
+   "raw_levels__teacher": 0.025061795728168856,
+   "raw_levels__student": 0.02018394681373011,
+   "raw_levels__student_minus_teacher": -0.0048778489144387475
+  },
+  {
+   "seed": 78,
+   "pit_trailing_rank__teacher": 0.03824084500993759,
+   "pit_trailing_rank__student": 0.018632098024187443,
+   "pit_trailing_rank__student_minus_teacher": -0.019608746985750145,
+   "raw_levels__teacher": -0.011378443402435509,
+   "raw_levels__student": 0.00442521417312153,
+   "raw_levels__student_minus_teacher": 0.015803657575557038
+  },
+  {
+   "seed": 79,
+   "pit_trailing_rank__teacher": 0.027957860917759498,
+   "pit_trailing_rank__student": -0.006529304550964644,
+   "pit_trailing_rank__student_minus_teacher": -0.03448716546872414,
+   "raw_levels__teacher": 0.036622610341432736,
+   "raw_levels__student": -0.0063563348953301554,
+   "raw_levels__student_minus_teacher": -0.04297894523676289
+  },
+  {
+   "seed": 80,
+   "pit_trailing_rank__teacher": 0.013643069146806084,
+   "pit_trailing_rank__student": -0.000685584758235445,
+   "pit_trailing_rank__student_minus_teacher": -0.014328653905041528,
+   "raw_levels__teacher": 0.028312023839806025,
+   "raw_levels__student": 0.0010294549967269917,
+   "raw_levels__student_minus_teacher": -0.027282568843079034
+  },
+  {
+   "seed": 81,
+   "pit_trailing_rank__teacher": -0.001963434620263845,
+   "pit_trailing_rank__student": -0.03457712755553938,
+   "pit_trailing_rank__student_minus_teacher": -0.03261369293527553,
+   "raw_levels__teacher": -0.029241086550032658,
+   "raw_levels__student": 0.01836159964622013,
+   "raw_levels__student_minus_teacher": 0.04760268619625278
+  },
+  {
+   "seed": 82,
+   "pit_trailing_rank__teacher": 0.023083060651694815,
+   "pit_trailing_rank__student": -0.0020552417516782376,
+   "pit_trailing_rank__student_minus_teacher": -0.02513830240337305,
+   "raw_levels__teacher": -0.05053369529986621,
+   "raw_levels__student": 0.007680221216707447,
+   "raw_levels__student_minus_teacher": 0.058213916516573656
+  },
+  {
+   "seed": 83,
+   "pit_trailing_rank__teacher": 0.0165744213875074,
+   "pit_trailing_rank__student": -0.009027905592928076,
+   "pit_trailing_rank__student_minus_teacher": -0.025602326980435477,
+   "raw_levels__teacher": -0.027596287059666314,
+   "raw_levels__student": -0.07112580450179361,
+   "raw_levels__student_minus_teacher": -0.0435295174421273
+  },
+  {
+   "seed": 84,
+   "pit_trailing_rank__teacher": -0.003467100953947038,
+   "pit_trailing_rank__student": 0.0073686310892778955,
+   "pit_trailing_rank__student_minus_teacher": 0.010835732043224933,
+   "raw_levels__teacher": 0.014618191504710061,
+   "raw_levels__student": 0.018469975934316044,
+   "raw_levels__student_minus_teacher": 0.003851784429605983
+  },
+  {
+   "seed": 85,
+   "pit_trailing_rank__teacher": 0.04373581703064126,
+   "pit_trailing_rank__student": 0.04964172335299705,
+   "pit_trailing_rank__student_minus_teacher": 0.00590590632235579,
+   "raw_levels__teacher": 0.03841044826448385,
+   "raw_levels__student": 0.020659603412656876,
+   "raw_levels__student_minus_teacher": -0.017750844851826975
+  },
+  {
+   "seed": 86,
+   "pit_trailing_rank__teacher": 0.06307532162035452,
+   "pit_trailing_rank__student": 0.06051938079703053,
+   "pit_trailing_rank__student_minus_teacher": -0.002555940823323992,
+   "raw_levels__teacher": -0.022719195610696685,
+   "raw_levels__student": -0.016948960156331613,
+   "raw_levels__student_minus_teacher": 0.005770235454365072
+  },
+  {
+   "seed": 87,
+   "pit_trailing_rank__teacher": 0.031022304314236488,
+   "pit_trailing_rank__student": 0.02905988696484953,
+   "pit_trailing_rank__student_minus_teacher": -0.001962417349386958,
+   "raw_levels__teacher": -0.0365882521797386,
+   "raw_levels__student": 0.02504867191200169,
+   "raw_levels__student_minus_teacher": 0.06163692409174029
+  },
+  {
+   "seed": 88,
+   "pit_trailing_rank__teacher": 0.05315044186726201,
+   "pit_trailing_rank__student": 0.02445153680581212,
+   "pit_trailing_rank__student_minus_teacher": -0.02869890506144989,
+   "raw_levels__teacher": 0.027189314674270607,
+   "raw_levels__student": -0.007039949630486754,
+   "raw_levels__student_minus_teacher": -0.03422926430475736
+  },
+  {
+   "seed": 89,
+   "pit_trailing_rank__teacher": 0.03673335041326597,
+   "pit_trailing_rank__student": 0.0028808090120011017,
+   "pit_trailing_rank__student_minus_teacher": -0.03385254140126487,
+   "raw_levels__teacher": -0.04353346143205856,
+   "raw_levels__student": -0.022457274449702993,
+   "raw_levels__student_minus_teacher": 0.021076186982355565
+  },
+  {
+   "seed": 90,
+   "pit_trailing_rank__teacher": 0.041757760000483035,
+   "pit_trailing_rank__student": 0.06304264233140335,
+   "pit_trailing_rank__student_minus_teacher": 0.02128488233092031,
+   "raw_levels__teacher": 0.00585728554333854,
+   "raw_levels__student": -0.004662755400194081,
+   "raw_levels__student_minus_teacher": -0.010520040943532621
+  },
+  {
+   "seed": 91,
+   "pit_trailing_rank__teacher": 0.04633841561453537,
+   "pit_trailing_rank__student": 0.05954856058133587,
+   "pit_trailing_rank__student_minus_teacher": 0.0132101449668005,
+   "raw_levels__teacher": -0.03158763585860697,
+   "raw_levels__student": 0.022761722770950857,
+   "raw_levels__student_minus_teacher": 0.05434935862955783
+  },
+  {
+   "seed": 92,
+   "pit_trailing_rank__teacher": 0.017815387031409988,
+   "pit_trailing_rank__student": 0.06118473607142028,
+   "pit_trailing_rank__student_minus_teacher": 0.043369349040010295,
+   "raw_levels__teacher": -0.010777200340179033,
+   "raw_levels__student": 0.004744307966857586,
+   "raw_levels__student_minus_teacher": 0.015521508307036618
+  },
+  {
+   "seed": 93,
+   "pit_trailing_rank__teacher": 0.037538773469646326,
+   "pit_trailing_rank__student": 0.00782964388717553,
+   "pit_trailing_rank__student_minus_teacher": -0.029709129582470795,
+   "raw_levels__teacher": -0.01238873291544436,
+   "raw_levels__student": -0.0012295852382374535,
+   "raw_levels__student_minus_teacher": 0.011159147677206906
+  },
+  {
+   "seed": 94,
+   "pit_trailing_rank__teacher": -0.004345018576962914,
+   "pit_trailing_rank__student": 0.040276571675601204,
+   "pit_trailing_rank__student_minus_teacher": 0.04462159025256412,
+   "raw_levels__teacher": 0.016857773405870646,
+   "raw_levels__student": 0.003193614578940962,
+   "raw_levels__student_minus_teacher": -0.013664158826929684
+  },
+  {
+   "seed": 95,
+   "pit_trailing_rank__teacher": 0.011894811651963003,
+   "pit_trailing_rank__student": 0.040090194174216894,
+   "pit_trailing_rank__student_minus_teacher": 0.02819538252225389,
+   "raw_levels__teacher": -0.056405639546272236,
+   "raw_levels__student": 0.014808909047276197,
+   "raw_levels__student_minus_teacher": 0.07121454859354844
+  },
+  {
+   "seed": 96,
+   "pit_trailing_rank__teacher": -0.019121595097444235,
+   "pit_trailing_rank__student": 0.03708832081159692,
+   "pit_trailing_rank__student_minus_teacher": 0.05620991590904116,
+   "raw_levels__teacher": -0.02894784447398957,
+   "raw_levels__student": -0.005730540505734859,
+   "raw_levels__student_minus_teacher": 0.02321730396825471
+  },
+  {
+   "seed": 97,
+   "pit_trailing_rank__teacher": -0.003487793008525919,
+   "pit_trailing_rank__student": 0.0027387922906284465,
+   "pit_trailing_rank__student_minus_teacher": 0.006226585299154366,
+   "raw_levels__teacher": -0.013545100276078683,
+   "raw_levels__student": -0.009882290409563246,
+   "raw_levels__student_minus_teacher": 0.003662809866515437
+  },
+  {
+   "seed": 98,
+   "pit_trailing_rank__teacher": 0.01185268155052889,
+   "pit_trailing_rank__student": 0.010557563267330492,
+   "pit_trailing_rank__student_minus_teacher": -0.0012951182831983984,
+   "raw_levels__teacher": 0.06784870962191751,
+   "raw_levels__student": 0.0243092750274773,
+   "raw_levels__student_minus_teacher": -0.04353943459444021
+  },
+  {
+   "seed": 99,
+   "pit_trailing_rank__teacher": -0.03177795873800888,
+   "pit_trailing_rank__student": -0.028665264814931323,
+   "pit_trailing_rank__student_minus_teacher": 0.003112693923077555,
+   "raw_levels__teacher": -0.024714766314864623,
+   "raw_levels__student": 0.019386336761024397,
+   "raw_levels__student_minus_teacher": 0.04410110307588902
+  }
+ ]
+}

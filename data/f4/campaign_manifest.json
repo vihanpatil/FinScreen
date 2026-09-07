@@ -1,0 +1,324 @@
+{
+  "run_id": "F4-e2-label-v1",
+  "updated_utc": "2026-09-06T18:01:36.824466+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "COMPLETE": true,
+  "n_segments_planned": 24,
+  "n_segments_finalized": 24,
+  "segments_missing": [],
+  "n_rows_written": 317081,
+  "n_rows_planned": 317081,
+  "parquet": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/labels_e2_v1.parquet",
+    "sha256": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
+    "n_rows": 317081
+  },
+  "totals": {
+    "parse_failures": 0,
+    "schema_violations": 23,
+    "n_imputed_none": 48790,
+    "n_applicable": 95335,
+    "n_truncated": 2487,
+    "generated_seconds": 757715.4999999999
+  },
+  "throughput": {
+    "chunks_per_hour_overall": 1506.5,
+    "generated_hours": 210.48
+  },
+  "inputs": {
+    "chunks_parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/chunks_v1.parquet",
+      "sha256": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+      "n_rows": 317081
+    },
+    "corpus_parquet_sha256": "15853e9f54902a933f0372869209a353ab3f052cb5c7dc1f897297f75b53f417",
+    "chunks_manifest": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f4/chunks_v1_manifest.json",
+      "sha256": "b90d81b516b5db59ddd4a639d96b4f3e074940bee34c305cbd2b0c34e8db346d"
+    },
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_chars": 1825,
+    "mlx_data_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12",
+    "train_jsonl_sha256": "396aef131bec0e5cffc22df94fe310e07a8e440d9d5a020b09772699a2931a43",
+    "valid_jsonl_sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+    "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "adapter_sha256_expected": "cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3",
+    "train_manifest": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/manifest.json",
+    "reference_eval_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2",
+    "schema_template": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet",
+      "sha256": "ca373b953504535b2f35ee374a6b6c1a6360000261748db365ee23c231e475e7",
+      "role": "ARROW SCHEMA ONLY \u2014 never a teacher for these rows"
+    }
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "max_seq_length": 2048,
+    "answer_token_reserve": 256,
+    "prompt_token_budget": 1792,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.to_messages()/render() via label_e2.render_prompt_ids(); token-exact prefix of the training sequence rendering"
+  },
+  "owner_rulings": {
+    "window_rule": "W1_core (HANDOFF \u00a73 2026-08-27, re-confirmed post-demotion)",
+    "line_rule": "reflow_v1 (full)",
+    "guidance_missing_to_none": "ADOPTED AT THE LABELING WRITER, with the guidance_imputed_none audit flag (eval A.7)",
+    "red_flags_status": "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3."
+  },
+  "per_segment": [
+    {
+      "segment_id": "seg-001",
+      "n_rows": 13227,
+      "parquet_sha256": "f3e92bea00aad94a68176385b10a7cb6c1cf4ffc38ad0b56a0d043c935bd7f5d",
+      "journal_sha256": "7744ce960d8e3487f1e30d5bae03ed7a883bb0eadd9236beb6c014682bdcdbf1",
+      "n_processes": 1,
+      "wall_seconds": 29363.7,
+      "chunks_per_hour": 1621.9,
+      "finalized_utc": "2026-08-28T13:50:50.885269+00:00"
+    },
+    {
+      "segment_id": "seg-002",
+      "n_rows": 13329,
+      "parquet_sha256": "3d8630bd7dd3c8fab61ec29ce515b85a091978cdbb2089223abccc517c608a06",
+      "journal_sha256": "4f9808b9a3d6aaefc3af5336c1c74f3ea7f384c2a707f93d407640fc73de14fc",
+      "n_processes": 1,
+      "wall_seconds": 28520.2,
+      "chunks_per_hour": 1682.8,
+      "finalized_utc": "2026-08-28T21:47:05.637066+00:00"
+    },
+    {
+      "segment_id": "seg-003",
+      "n_rows": 13219,
+      "parquet_sha256": "0387d3e02b5fd295dcf8b3c0f343f54c00480a3de67abeaba8c5b2185dd65bf9",
+      "journal_sha256": "48f7bc380780b0cfc7b8fa6faabfc8f32daa48c72ce020e03c79371825a60b7d",
+      "n_processes": 1,
+      "wall_seconds": 30586.7,
+      "chunks_per_hour": 1556.2,
+      "finalized_utc": "2026-08-29T06:17:20.876057+00:00"
+    },
+    {
+      "segment_id": "seg-004",
+      "n_rows": 13349,
+      "parquet_sha256": "817e91a23ce51ee7392bc8b59b921bb27223778ab4f691d921df9fedc1802ec5",
+      "journal_sha256": "14e1dfb1edb60192bf11a69c730e060ee99a540431611d4d8ee44fe9ab97f917",
+      "n_processes": 1,
+      "wall_seconds": 34226.7,
+      "chunks_per_hour": 1404.3,
+      "finalized_utc": "2026-08-29T15:48:12.623015+00:00"
+    },
+    {
+      "segment_id": "seg-005",
+      "n_rows": 13214,
+      "parquet_sha256": "f4f045dee758147fb03f9f3802c34737c52929d399e0a74b265b3696e92abe32",
+      "journal_sha256": "cd57ccb73e0ae28a891ec789725c288d2386fd561a97ee9494523f5d2f73382e",
+      "n_processes": 1,
+      "wall_seconds": 30946.2,
+      "chunks_per_hour": 1537.5,
+      "finalized_utc": "2026-08-30T00:57:14.366179+00:00"
+    },
+    {
+      "segment_id": "seg-006",
+      "n_rows": 13212,
+      "parquet_sha256": "7bc8afe6d4cad0224223b7ce7c4b9407dde78bfc8bc4acdde593c71643833097",
+      "journal_sha256": "dffdad7b8ac7c2efdefa850c604edabe0db1d2541725c694a916ff0124b2406d",
+      "n_processes": 1,
+      "wall_seconds": 34437.2,
+      "chunks_per_hour": 1381.4,
+      "finalized_utc": "2026-08-30T10:31:36.115511+00:00"
+    },
+    {
+      "segment_id": "seg-007",
+      "n_rows": 13231,
+      "parquet_sha256": "c1d2b1573ed5c4e77ce40863c18814ed25b950c7b47936e2f555a09ad712f4d0",
+      "journal_sha256": "32f116b41fa36d7dc2a5542e2ece3016eae0af8a1e147d70d9acd9802917cbf9",
+      "n_processes": 1,
+      "wall_seconds": 31383.6,
+      "chunks_per_hour": 1518.0,
+      "finalized_utc": "2026-08-30T19:15:08.784908+00:00"
+    },
+    {
+      "segment_id": "seg-008",
+      "n_rows": 13214,
+      "parquet_sha256": "df0f97c65b5fa607a21de1e4f462632d1166be77e3789ff8d5bd5c044358ac85",
+      "journal_sha256": "cf435d0725429942cc5138773244f3efc05ca9bf81da4212082ed3fab0327dd5",
+      "n_processes": 1,
+      "wall_seconds": 31898.0,
+      "chunks_per_hour": 1491.6,
+      "finalized_utc": "2026-08-31T04:07:11.199448+00:00"
+    },
+    {
+      "segment_id": "seg-009",
+      "n_rows": 13217,
+      "parquet_sha256": "98a92a7195ba1067b19028221ad4e07dbcd40f44ee4861818723c4b8f24ad92b",
+      "journal_sha256": "90af2a71a7b02c1c9e39fff0fb9a43d26b53a6861f7cf3324e7c60e5a185d329",
+      "n_processes": 1,
+      "wall_seconds": 29726.6,
+      "chunks_per_hour": 1601.0,
+      "finalized_utc": "2026-08-31T12:23:02.965616+00:00"
+    },
+    {
+      "segment_id": "seg-010",
+      "n_rows": 13248,
+      "parquet_sha256": "18dc325328e82b2d34d96a7fd7f29d16616c91542b252257dbcf07d1a56386fd",
+      "journal_sha256": "39d0c3d4876a44c58d45b53269febc2512f6e63b48f544b4099c837b04e39e40",
+      "n_processes": 1,
+      "wall_seconds": 29903.5,
+      "chunks_per_hour": 1595.2,
+      "finalized_utc": "2026-08-31T20:41:51.545256+00:00"
+    },
+    {
+      "segment_id": "seg-011",
+      "n_rows": 13241,
+      "parquet_sha256": "5299c686b42e23b447175591da3ff8670b0d8799896761b56b73d87c4e33adf3",
+      "journal_sha256": "87891c6585a5f0bfbff5d7f34e931c438679ad7a64ab58d1ca6089708d736b98",
+      "n_processes": 1,
+      "wall_seconds": 30789.6,
+      "chunks_per_hour": 1548.5,
+      "finalized_utc": "2026-09-01T05:16:07.925323+00:00"
+    },
+    {
+      "segment_id": "seg-012",
+      "n_rows": 13244,
+      "parquet_sha256": "8963e4113eb3f932fd502046b4cfce2a40afaaf283ec16643af71da3e84217fd",
+      "journal_sha256": "de90c36fb100ae33dd84cd7ce3be28ac0e11f1a824401aec338df0b411586eb0",
+      "n_processes": 1,
+      "wall_seconds": 35386.8,
+      "chunks_per_hour": 1347.6,
+      "finalized_utc": "2026-09-01T15:05:59.607092+00:00"
+    },
+    {
+      "segment_id": "seg-013",
+      "n_rows": 13241,
+      "parquet_sha256": "b6d8a4cf4c81ee16b96789ede267ba36a8783b8818318cbe8d66395b74b5d1ed",
+      "journal_sha256": "4b2591c926cd151b00ed870f77d97a80ca3efb06fda809af672642193dbdacb4",
+      "n_processes": 1,
+      "wall_seconds": 8940.4,
+      "chunks_per_hour": 1469.0,
+      "finalized_utc": "2026-09-02T00:07:58.434530+00:00"
+    },
+    {
+      "segment_id": "seg-014",
+      "n_rows": 13249,
+      "parquet_sha256": "cadf8c68f25552defd52f0190621aa114275e7ce39c587e1a8c7269ae0c60a15",
+      "journal_sha256": "df282b6c90848c80fa0c5fbb0231301e90a91fad085ad86bc1a011543072f4c7",
+      "n_processes": 1,
+      "wall_seconds": 31144.2,
+      "chunks_per_hour": 1531.8,
+      "finalized_utc": "2026-09-02T08:47:07.961620+00:00"
+    },
+    {
+      "segment_id": "seg-015",
+      "n_rows": 13229,
+      "parquet_sha256": "b1c2b1942ac5a3a374d4cfb4a8763b57a6940318b3b4f078de8c0cfe0f452a79",
+      "journal_sha256": "1dc0e82c01d0f1b291031d0433c2827071547cf682f889c32337145b55b53418",
+      "n_processes": 1,
+      "wall_seconds": 31029.6,
+      "chunks_per_hour": 1535.1,
+      "finalized_utc": "2026-09-02T17:24:23.123388+00:00"
+    },
+    {
+      "segment_id": "seg-016",
+      "n_rows": 13228,
+      "parquet_sha256": "5ec103f56f59308d15f502b052f36a5f4a38e397dd94275022129431f82e5233",
+      "journal_sha256": "cb2c48f67450989d93250859b12cbbf09ae677139b51b90c275c98c7dc0f9884",
+      "n_processes": 1,
+      "wall_seconds": 30207.9,
+      "chunks_per_hour": 1576.8,
+      "finalized_utc": "2026-09-03T01:47:56.709050+00:00"
+    },
+    {
+      "segment_id": "seg-017",
+      "n_rows": 13228,
+      "parquet_sha256": "c9a5125edd40ab78e430d8edb205d415bf1853aaff732e282492822efa417e8d",
+      "journal_sha256": "048d341786df821e30ee1fcecebf31cc63e79f52e2926f11faca072bdc61781b",
+      "n_processes": 1,
+      "wall_seconds": 33743.6,
+      "chunks_per_hour": 1411.5,
+      "finalized_utc": "2026-09-03T11:10:25.261928+00:00"
+    },
+    {
+      "segment_id": "seg-018",
+      "n_rows": 13228,
+      "parquet_sha256": "df3dd149feb387dde8dc5cdb6a94c90e00c20ef53bea2d30527031da351f6ba0",
+      "journal_sha256": "6b317221d3cf942f6deeb05483d03850ae9be38040fcfe41357d2711fc10472a",
+      "n_processes": 1,
+      "wall_seconds": 31119.5,
+      "chunks_per_hour": 1530.5,
+      "finalized_utc": "2026-09-03T19:49:09.640584+00:00"
+    },
+    {
+      "segment_id": "seg-019",
+      "n_rows": 13229,
+      "parquet_sha256": "7062a2bc8434fce06453ad45dea7a1b8467f34e2b02b2ed516c1811c6a0f333a",
+      "journal_sha256": "1c91fed1a6b7c5b54e6def09c5b6c5fb38ef902e48dfe67ea8d1e26964b90dce",
+      "n_processes": 1,
+      "wall_seconds": 32055.7,
+      "chunks_per_hour": 1486.0,
+      "finalized_utc": "2026-09-04T04:43:31.421307+00:00"
+    },
+    {
+      "segment_id": "seg-020",
+      "n_rows": 13227,
+      "parquet_sha256": "e5974eb3446aea6cbfe2cf954e92bcd9dc853d114652bd01051980f9f62fa344",
+      "journal_sha256": "cdfd69391078a8be2ad7db17e93213fbf6678228297b03cdca5c336b9b068b72",
+      "n_processes": 1,
+      "wall_seconds": 52934.9,
+      "chunks_per_hour": 899.7,
+      "finalized_utc": "2026-09-04T19:35:34.615534+00:00"
+    },
+    {
+      "segment_id": "seg-021",
+      "n_rows": 13226,
+      "parquet_sha256": "dfad4f53d854b951a38f92d78653d89296a33b13c8ed9c381f36ba8ff471421f",
+      "journal_sha256": "a920227cc609d89e94aec5b6529d02cb46047dc3213bbf2aff6dda78214ae0d1",
+      "n_processes": 1,
+      "wall_seconds": 31867.0,
+      "chunks_per_hour": 1494.5,
+      "finalized_utc": "2026-09-05T04:26:46.734835+00:00"
+    },
+    {
+      "segment_id": "seg-022",
+      "n_rows": 13269,
+      "parquet_sha256": "ce916f564648b52ee62c6d69c49aa996e28497890ce70faa8122d65341754d14",
+      "journal_sha256": "dc1c070e1cf484f57b5e67c685f7da27741557ced6e1266a896b07676a8eea3e",
+      "n_processes": 1,
+      "wall_seconds": 35345.1,
+      "chunks_per_hour": 1351.7,
+      "finalized_utc": "2026-09-05T14:15:57.292854+00:00"
+    },
+    {
+      "segment_id": "seg-023",
+      "n_rows": 13290,
+      "parquet_sha256": "8d75d3671c4828fa41eda4de86da39f2f7f5f28d01f479d9c8be6e87e8ddbcf9",
+      "journal_sha256": "cdd843eac5e711be3202ddc7e3c7acf06c906e236a3fa1dc4d3837817d8e3be9",
+      "n_processes": 1,
+      "wall_seconds": 32480.6,
+      "chunks_per_hour": 1473.3,
+      "finalized_utc": "2026-09-05T23:17:23.643902+00:00"
+    },
+    {
+      "segment_id": "seg-024",
+      "n_rows": 12492,
+      "parquet_sha256": "c871931cc179c3c6d98088a7634bde74d404aa76a4e93a96f91558aa55aed401",
+      "journal_sha256": "2a0267ca3c7b49aecb9e66b312162438c3cdce54db4786ff987e65f1db89d5c7",
+      "n_processes": 1,
+      "wall_seconds": 29678.2,
+      "chunks_per_hour": 1515.7,
+      "finalized_utc": "2026-09-06T07:32:07.303341+00:00"
+    }
+  ],
+  "caveats": [
+    "EXPLORATORY / DISCLOSURE-ONLY. The owner-ratified DEMOTE pre-commitment fired on the v1.2 spot-check (2026-08-27, HANDOFF \u00a73): the v1.2 TEACHER's red-flag exact-set error is 84/200 = 42.00% [35.37, 48.93]. These student red_flags reproduce a teacher measured at that error rate. They are not a confirmatory feature family in G3.",
+    "These labels are the STUDENT's, produced locally on MLX. They are not Claude labels and they were never validated against human ground truth. The student's held-out agreement with its own v1.2 teacher (n=1,010) is: sentiment 0.836, red_flags exact-set 0.631 / micro F1 0.795, guidance 0.521 raw. Agreement is not accuracy.",
+    "guidance_direction: missing->NONE is APPLIED AT THIS WRITER (owner-ruled 2026-08-27), scoped to guidance-APPLICABLE section types only (EX99_PRESS_RELEASE, 8K_BODY \u2014 the section types the teacher's own JSON schema asked for the field). Every imputed row carries guidance_imputed_none=true. An explicitly emitted NONE carries false. The underlying omission rate WORSENED between epochs (321 -> 385 of 6,746 on E1), which is the disclosed cost of adopting the rule.",
+    "distress_tier was never a training target (HANDOFF \u00a77). The column is uniformly empty for schema compatibility and carries no information.",
+    "8K_BODY (n=790 chunks here) is not evaluable as a class \u2014 E1 had 8 such chunks from 2 tickers and the student has effectively no supervision for it (HANDOFF \u00a77). Do not report a per-class metric on it.",
+    "Window rule W1-core: the corpus was restricted to stratum=='core' BEFORE dedup, so a chunk's source_* back-references cover core-stratum sections only. The extension stratum is unlabeled this round.",
+    "The four population-gate columns in the F3 corpus are NOT point-in-time (P4 \u00a75.1 / P5 \u00a78.2): they may be set by a LATER-dated filing. Use them for triage, never for conditioning in a walk-forward.",
+    "Passages are head-truncated to fit 2048 tokens including a fixed 256-token answer reserve. Truncated rows carry passage_was_head_truncated=true; only the passage TAIL is ever dropped.",
+    "E1's data/labels.parquet and data/labels_v12.parquet are frozen and were opened READ-ONLY (the latter only as an arrow SCHEMA TEMPLATE, never as a teacher for these rows)."
+  ]
+}

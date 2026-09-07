@@ -1,0 +1,785 @@
+cik,company_name,sector,stratum,accession_number,form,filing_date,section_type,extraction_status,reason_code,n_toc,n_matching,n_resolvable,cause,c_cur,c_dash,c_wide,bare_title,doc_words
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0000004281-18-000060,10-Q,2018-05-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,15443
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0000004281-18-000109,10-Q,2018-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,19058
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0000004281-18-000127,10-Q,2018-11-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,20440
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0000004281-19-000059,10-Q,2019-05-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,14417
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0000004281-19-000096,10-Q,2019-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,19291
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0000004281-19-000121,10-Q,2019-11-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,20504
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-15-000031,10-Q,2015-07-23,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,101888
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-15-000048,10-Q,2015-10-22,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,105651
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-16-000071,10-Q,2016-04-28,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,63788
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-16-000086,10-Q,2016-07-28,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,77428
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-16-000102,10-Q,2016-11-02,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,82074
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-17-000030,10-Q,2017-04-28,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,58265
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-17-000045,10-Q,2017-07-27,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,74398
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-17-000060,10-Q,2017-10-27,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,79992
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-18-000019,10-Q,2018-04-26,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,2,77160
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-18-000039,10-Q,2018-07-26,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,89443
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-18-000055,10-Q,2018-10-25,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,95943
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-19-000020,10-Q,2019-04-26,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,65921
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-19-000040,10-Q,2019-07-25,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,84610
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-19-000050,10-Q,2019-10-24,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,87337
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-20-000046,10-Q,2020-05-06,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,2,66885
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-20-000062,10-Q,2020-08-06,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,85915
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-20-000084,10-Q,2020-10-22,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,91276
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-21-000033,10-Q,2021-04-22,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,71077
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-21-000052,10-Q,2021-07-22,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,89500
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-21-000069,10-Q,2021-10-28,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,94134
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-22-000053,10-Q,2022-04-28,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,76409
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-22-000074,10-Q,2022-07-27,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,93561
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-22-000093,10-Q,2022-10-27,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,98810
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-23-000072,10-Q,2023-05-04,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,72944
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-23-000104,10-Q,2023-07-27,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,83295
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-23-000121,10-Q,2023-11-02,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,84279
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-24-000046,10-Q,2024-04-30,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,69052
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-24-000081,10-Q,2024-07-30,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,84160
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-24-000100,10-Q,2024-11-06,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,86031
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-25-000061,10-Q,2025-05-06,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,66561
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-25-000141,10-Q,2025-07-30,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,84539
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-25-000171,10-Q,2025-10-29,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,87882
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-26-000034,10-Q,2026-05-05,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,67868
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,0000004904-26-000059,10-Q,2026-07-30,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,1,1,1,2,84831
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,0000005272-15-000009,10-Q,2015-08-03,MDA,FAIL,item_absent_from_toc,33,4,0,R3_all_anchors_dangling,2,2,3,3,84098
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,0000005272-15-000018,10-Q,2015-11-02,MDA,FAIL,item_absent_from_toc,33,4,0,R3_all_anchors_dangling,2,2,3,3,87331
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,0000005272-16-000035,10-K,2016-02-19,RISK_FACTORS,FAIL,item_absent_from_toc,67,3,0,R3_all_anchors_dangling,11,13,27,15,175942
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,0000005272-16-000041,10-Q,2016-05-02,MDA,FAIL,item_absent_from_toc,33,4,0,R3_all_anchors_dangling,2,2,3,3,75487
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,0000005272-16-000046,10-Q,2016-08-02,MDA,FAIL,item_absent_from_toc,33,4,0,R3_all_anchors_dangling,2,2,3,3,90675
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,0000005272-16-000052,10-Q,2016-11-03,MDA,FAIL,item_absent_from_toc,33,4,0,R3_all_anchors_dangling,2,2,3,3,97071
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-15-000026,10-Q,2015-11-05,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,17951
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-16-000030,10-Q,2016-02-03,MDA,FAIL,item_absent_from_toc,24,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,21881
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-16-000034,10-Q,2016-05-05,MDA,FAIL,item_absent_from_toc,24,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,20852
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-16-000059,10-Q,2016-11-03,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,16527
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-17-000003,10-Q,2017-02-01,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,19834
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-17-000005,10-Q,2017-05-04,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,20543
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-17-000012,10-Q,2017-11-02,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,16196
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-18-000003,10-Q,2018-02-01,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,19982
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-18-000007,10-Q,2018-05-04,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,20904
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-18-000017,10-Q,2018-11-01,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,19923
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-19-000005,10-Q,2019-01-31,MDA,FAIL,item_absent_from_toc,23,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,22624
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-19-000013,10-Q,2019-05-03,MDA,FAIL,item_absent_from_toc,24,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,22967
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-19-000027,10-Q,2019-11-04,MDA,FAIL,item_absent_from_toc,21,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,17748
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,0000008670-20-000007,10-Q,2020-01-31,MDA,FAIL,item_absent_from_toc,21,3,2,R2_first_anchor_dangling_later_resolvable,2,3,3,1,19145
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,0000014272-16-000288,10-K,2016-02-12,MDA,FAIL,item_absent_from_toc,2,0,0,R1_no_matching_toc_entry,4,4,4,0,72986
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,0000014272-16-000288,10-K,2016-02-12,RISK_FACTORS,FAIL,item_absent_from_toc,2,0,0,R1_no_matching_toc_entry,2,2,2,1,72986
+18230,CATERPILLAR INC,industrials,extension,0000018230-16-000410,10-K,2016-02-16,MDA,FAIL,item_absent_from_toc,51,3,1,R2_first_anchor_dangling_later_resolvable,2,2,8,2,79945
+18230,CATERPILLAR INC,industrials,extension,0000018230-16-000410,10-K,2016-02-16,RISK_FACTORS,FAIL,item_absent_from_toc,51,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,79945
+18230,CATERPILLAR INC,industrials,extension,0000018230-17-000041,10-K,2017-02-15,MDA,FAIL,item_absent_from_toc,54,3,1,R2_first_anchor_dangling_later_resolvable,2,2,8,2,83767
+18230,CATERPILLAR INC,industrials,extension,0000018230-17-000041,10-K,2017-02-15,RISK_FACTORS,FAIL,item_absent_from_toc,54,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,83767
+18230,CATERPILLAR INC,industrials,extension,0000018230-18-000042,10-K,2018-02-15,MDA,FAIL,item_absent_from_toc,54,3,1,R2_first_anchor_dangling_later_resolvable,2,2,8,2,81873
+18230,CATERPILLAR INC,industrials,extension,0000018230-18-000042,10-K,2018-02-15,RISK_FACTORS,FAIL,item_absent_from_toc,54,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,81873
+21344,COCA COLA CO,consumer,core,0000021344-17-000009,10-K,2017-02-24,MDA,FAIL,item_absent_from_toc,68,3,1,R2_first_anchor_dangling_later_resolvable,7,7,7,1,109478
+21344,COCA COLA CO,consumer,core,0000021344-17-000009,10-K,2017-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,68,3,1,R2_first_anchor_dangling_later_resolvable,6,6,6,1,109478
+21344,COCA COLA CO,consumer,core,0000021344-18-000008,10-K,2018-02-23,MDA,FAIL,item_absent_from_toc,68,3,1,R2_first_anchor_dangling_later_resolvable,9,9,9,1,108485
+21344,COCA COLA CO,consumer,core,0000021344-18-000008,10-K,2018-02-23,RISK_FACTORS,FAIL,item_absent_from_toc,68,3,1,R2_first_anchor_dangling_later_resolvable,6,6,6,1,108485
+21344,COCA COLA CO,consumer,core,0000021344-19-000014,10-K,2019-02-21,MDA,FAIL,item_absent_from_toc,68,3,1,R2_first_anchor_dangling_later_resolvable,8,8,8,1,110416
+21344,COCA COLA CO,consumer,core,0000021344-19-000014,10-K,2019-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,68,3,1,R2_first_anchor_dangling_later_resolvable,5,5,5,1,110416
+21344,COCA COLA CO,consumer,core,0000021344-20-000006,10-K,2020-02-24,MDA,FAIL,item_absent_from_toc,66,3,1,R2_first_anchor_dangling_later_resolvable,7,7,7,1,104968
+21344,COCA COLA CO,consumer,core,0000021344-20-000006,10-K,2020-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,66,3,1,R2_first_anchor_dangling_later_resolvable,5,5,5,1,104968
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-16-000003,10-Q,2016-10-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25868
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-17-000006,10-Q,2017-04-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,20533
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-17-000012,10-Q,2017-07-21,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25053
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-17-000014,10-Q,2017-10-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25791
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-18-000008,10-Q,2018-04-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,21590
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-18-000015,10-Q,2018-07-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25534
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-18-000018,10-Q,2018-10-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,26285
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-19-000007,10-Q,2019-04-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,19538
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-19-000020,10-Q,2019-07-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,24875
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-19-000022,10-Q,2019-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,26250
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-20-000007,10-Q,2020-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,19714
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-20-000023,10-Q,2020-07-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,28,24213
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-20-000026,10-Q,2020-10-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,29,24661
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-21-000010,10-Q,2021-04-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,20,17436
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-21-000025,10-Q,2021-07-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,29,21399
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-21-000027,10-Q,2021-10-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,31,22226
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-22-000010,10-Q,2022-04-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,22,19465
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-22-000025,10-Q,2022-07-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,28,22344
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-22-000027,10-Q,2022-10-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,33,23424
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-23-000016,10-Q,2023-04-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,21,19824
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-23-000031,10-Q,2023-07-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,30,24552
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-23-000037,10-Q,2023-10-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,30,25321
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-24-000015,10-Q,2024-04-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,22,19327
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-24-000031,10-Q,2024-07-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,31,24031
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-24-000044,10-Q,2024-10-25,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,32,24129
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-25-000020,10-Q,2025-04-25,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,20,18432
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-25-000041,10-Q,2025-08-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,28,23413
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-25-000053,10-Q,2025-10-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,30,23801
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-26-000023,10-Q,2026-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,21,19584
+21665,COLGATE PALMOLIVE CO,consumer,core,0000021665-26-000042,10-Q,2026-07-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,31,23723
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-16-000077,10-K,2016-02-12,MDA,FAIL,item_absent_from_toc,85,0,0,R1_no_matching_toc_entry,1,1,1,0,108916
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-16-000077,10-K,2016-02-12,RISK_FACTORS,FAIL,item_absent_from_toc,85,0,0,R1_no_matching_toc_entry,1,1,1,0,108916
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-17-000011,10-K,2017-02-06,MDA,FAIL,item_absent_from_toc,22,0,0,R1_no_matching_toc_entry,1,1,1,0,67296
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-17-000011,10-K,2017-02-06,RISK_FACTORS,FAIL,item_absent_from_toc,22,0,0,R1_no_matching_toc_entry,1,1,1,0,67296
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-20-000014,10-K,2020-02-18,MDA,FAIL,item_absent_from_toc,19,0,0,R1_no_matching_toc_entry,1,1,1,0,57689
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-20-000014,10-K,2020-02-18,RISK_FACTORS,FAIL,item_absent_from_toc,19,0,0,R1_no_matching_toc_entry,1,1,1,0,57689
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-26-000124,10-K,2026-02-12,MDA,FAIL,item_absent_from_toc,98,0,0,R1_no_matching_toc_entry,1,1,1,0,53949
+24741,CORNING INC /NY,materials_realestate,extension,0000024741-26-000124,10-K,2026-02-12,RISK_FACTORS,FAIL,item_absent_from_toc,98,0,0,R1_no_matching_toc_entry,1,1,1,0,53949
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-15-000036,10-Q,2015-08-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9300
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-15-000036,10-Q,2015-08-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9300
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-15-000051,10-K,2015-11-18,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,0,11682
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-15-000051,10-K,2015-11-18,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,2,3,0,11682
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000062,10-Q,2016-02-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,6601
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000062,10-Q,2016-02-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,6601
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000085,10-Q,2016-05-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,8991
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000085,10-Q,2016-05-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8991
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000097,10-Q,2016-08-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9275
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000097,10-Q,2016-08-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9275
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000105,10-K,2016-11-16,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,0,35733
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-16-000105,10-K,2016-11-16,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,6,0,35733
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000007,10-Q,2017-02-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,7500
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000007,10-Q,2017-02-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,7500
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000022,10-Q,2017-05-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9651
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000022,10-Q,2017-05-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9651
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000036,10-Q,2017-08-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,10380
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000036,10-Q,2017-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10380
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000046,10-K,2017-11-20,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,0,35038
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-17-000046,10-K,2017-11-20,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,6,0,35038
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000011,10-Q,2018-02-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,7641
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000011,10-Q,2018-02-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,7641
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000029,10-Q,2018-05-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9755
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000029,10-Q,2018-05-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9755
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000038,10-Q,2018-08-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,10344
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000038,10-Q,2018-08-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10344
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000044,10-K,2018-11-19,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,0,35797
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-18-000044,10-K,2018-11-19,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,4,0,35797
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000007,10-Q,2019-02-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,8307
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000007,10-Q,2019-02-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8307
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000018,10-Q,2019-05-09,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,10175
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000018,10-Q,2019-05-09,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10175
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000027,10-Q,2019-08-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,10628
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000027,10-Q,2019-08-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10628
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000048,10-K,2019-11-18,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,0,36672
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-19-000048,10-K,2019-11-18,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,4,0,36672
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-20-000007,10-Q,2020-02-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,6952
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-20-000007,10-Q,2020-02-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,6952
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-20-000021,10-Q,2020-04-24,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,10493
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-20-000033,10-Q,2020-08-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,10598
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-20-000041,10-K,2020-11-16,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,0,38119
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-20-000041,10-K,2020-11-16,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,7,0,38119
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000004,10-Q,2021-02-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,7174
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000004,10-Q,2021-02-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,7174
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000021,10-Q,2021-05-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9307
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000021,10-Q,2021-05-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,9307
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000029,10-Q,2021-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9435
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000029,10-Q,2021-08-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,9435
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000038,10-K,2021-11-15,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,3,0,37275
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-21-000038,10-K,2021-11-15,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,6,0,37275
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000009,10-Q,2022-02-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,8768
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000009,10-Q,2022-02-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,8768
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000030,10-Q,2022-05-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,11258
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000030,10-Q,2022-05-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,11258
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000035,10-Q,2022-08-09,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,13087
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000035,10-Q,2022-08-09,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,13087
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000041,10-K,2022-11-14,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,3,0,43141
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-22-000041,10-K,2022-11-14,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,6,0,43141
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000010,10-Q,2023-02-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,11277
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000010,10-Q,2023-02-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,11277
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000030,10-Q,2023-05-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,14162
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000030,10-Q,2023-05-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,14162
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000037,10-Q,2023-08-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,15290
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000037,10-Q,2023-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,15290
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000044,10-K,2023-11-13,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,3,0,42891
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-23-000044,10-K,2023-11-13,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,6,0,42891
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000008,10-Q,2024-02-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9594
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000008,10-Q,2024-02-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9594
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000024,10-Q,2024-05-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,12690
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000024,10-Q,2024-05-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,12690
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000036,10-Q,2024-08-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,13796
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000036,10-Q,2024-08-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,13796
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000041,10-K,2024-11-12,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,3,0,45437
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-24-000041,10-K,2024-11-12,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,9,0,45437
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-25-000012,10-Q,2025-02-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,9172
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-25-000064,10-Q,2025-05-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,13348
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-25-000076,10-Q,2025-08-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,13005
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-25-000087,10-K,2025-11-10,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,3,0,42067
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-25-000087,10-K,2025-11-10,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,7,0,42067
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-26-000007,10-Q,2026-02-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,8446
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-26-000007,10-Q,2026-02-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8446
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-26-000035,10-Q,2026-05-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,12015
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-26-000035,10-Q,2026-05-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,12015
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-26-000043,10-Q,2026-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,12203
+32604,EMERSON ELECTRIC CO,industrials,extension,0000032604-26-000043,10-Q,2026-08-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,12203
+34088,EXXON MOBIL CORP,energy,core,0000034088-15-000035,10-Q,2015-08-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8499
+34088,EXXON MOBIL CORP,energy,core,0000034088-15-000044,10-Q,2015-11-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8866
+34088,EXXON MOBIL CORP,energy,core,0000034088-16-000071,10-Q,2016-05-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8696
+34088,EXXON MOBIL CORP,energy,core,0000034088-16-000082,10-Q,2016-08-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9181
+34088,EXXON MOBIL CORP,energy,core,0000034088-16-000097,10-Q,2016-11-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10040
+34088,EXXON MOBIL CORP,energy,core,0000034088-17-000027,10-Q,2017-05-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,8734
+34088,EXXON MOBIL CORP,energy,core,0000034088-17-000041,10-Q,2017-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10342
+34088,EXXON MOBIL CORP,energy,core,0000034088-17-000052,10-Q,2017-11-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10768
+34088,EXXON MOBIL CORP,energy,core,0000034088-18-000024,10-Q,2018-05-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9053
+34088,EXXON MOBIL CORP,energy,core,0000034088-18-000039,10-Q,2018-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10954
+34088,EXXON MOBIL CORP,energy,core,0000034088-18-000048,10-Q,2018-11-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,10624
+34088,EXXON MOBIL CORP,energy,core,0000034088-19-000017,10-Q,2019-05-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9273
+34088,EXXON MOBIL CORP,energy,core,0000034088-19-000042,10-Q,2019-08-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,11197
+34088,EXXON MOBIL CORP,energy,core,0000034088-19-000062,10-Q,2019-11-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,11376
+36104,US BANCORP \DE\,financials,core,0000036104-24-000037,10-Q,2024-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,44675
+36104,US BANCORP \DE\,financials,core,0000036104-24-000052,10-Q,2024-08-06,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,51085
+36104,US BANCORP \DE\,financials,core,0000036104-24-000072,10-Q,2024-11-05,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,51185
+36104,US BANCORP \DE\,financials,core,0000036104-25-000028,10-Q,2025-05-06,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,44194
+36104,US BANCORP \DE\,financials,core,0000036104-25-000055,10-Q,2025-08-07,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,50281
+36104,US BANCORP \DE\,financials,core,0000036104-25-000064,10-Q,2025-11-05,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,50417
+36104,US BANCORP \DE\,financials,core,0000036104-26-000024,10-Q,2026-05-04,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,44261
+36104,US BANCORP \DE\,financials,core,0000036104-26-000044,10-Q,2026-08-06,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,1,50154
+49071,HUMANA INC,healthcare,core,0000049071-16-000117,10-K,2016-02-18,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,5,5,1,84348
+49071,HUMANA INC,healthcare,core,0000049071-16-000117,10-K,2016-02-18,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,6,6,1,84348
+49071,HUMANA INC,healthcare,core,0000049071-17-000019,10-K,2017-02-17,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,5,5,1,85062
+49071,HUMANA INC,healthcare,core,0000049071-17-000019,10-K,2017-02-17,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,6,6,1,85062
+49071,HUMANA INC,healthcare,core,0000049071-18-000014,10-K,2018-02-16,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,4,4,1,84017
+49071,HUMANA INC,healthcare,core,0000049071-18-000014,10-K,2018-02-16,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,6,6,1,84017
+49071,HUMANA INC,healthcare,core,0000049071-19-000023,10-K,2019-02-21,MDA,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,2,3,3,1,75287
+49071,HUMANA INC,healthcare,core,0000049071-19-000023,10-K,2019-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,2,8,8,1,75287
+49071,HUMANA INC,healthcare,core,0000049071-20-000032,10-K,2020-02-20,MDA,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,72735
+49071,HUMANA INC,healthcare,core,0000049071-20-000032,10-K,2020-02-20,RISK_FACTORS,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,2,8,8,1,72735
+50863,INTEL CORP,tech,core,0000050863-18-000007,10-K,2018-02-16,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,3,55210
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,0000051143-15-000005,10-Q,2015-07-28,MDA,FAIL,item_absent_from_toc,6,1,0,R3_all_anchors_dangling,2,2,2,1,44229
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,0000051143-15-000009,10-Q,2015-10-27,MDA,FAIL,item_absent_from_toc,6,1,0,R3_all_anchors_dangling,2,2,2,1,44735
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,0000051143-16-000013,10-Q,2016-04-26,MDA,FAIL,item_absent_from_toc,6,1,0,R3_all_anchors_dangling,2,2,2,1,36792
+63908,MCDONALDS CORP,consumer,core,0000063908-22-000011,10-K,2022-02-24,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,3,40496
+63908,MCDONALDS CORP,consumer,core,0000063908-23-000012,10-K,2023-02-24,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,3,40354
+72741,EVERSOURCE ENERGY,utilities,extension,0000072741-15-000043,10-Q,2015-08-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,2,8,36642
+78003,PFIZER INC,healthcare,core,0000078003-19-000026,10-Q,2019-05-09,MDA,FAIL,item_absent_from_toc,33,4,1,R2_first_anchor_dangling_later_resolvable,1,1,2,1,56852
+78003,PFIZER INC,healthcare,core,0000078003-19-000064,10-Q,2019-08-08,MDA,FAIL,item_absent_from_toc,33,4,1,R2_first_anchor_dangling_later_resolvable,1,1,2,1,67684
+78003,PFIZER INC,healthcare,core,0000078003-19-000082,10-Q,2019-11-07,MDA,FAIL,item_absent_from_toc,33,4,1,R2_first_anchor_dangling_later_resolvable,1,1,2,1,74553
+78003,PFIZER INC,healthcare,core,0000078003-20-000037,10-Q,2020-05-07,MDA,FAIL,item_absent_from_toc,33,4,1,R2_first_anchor_dangling_later_resolvable,1,1,2,1,53567
+78003,PFIZER INC,healthcare,core,0000078003-20-000060,10-Q,2020-08-06,MDA,FAIL,item_absent_from_toc,33,4,1,R2_first_anchor_dangling_later_resolvable,1,1,2,1,64813
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-16-000339,10-Q,2016-04-21,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,18419
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-16-000400,10-Q,2016-07-21,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,19877
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-16-000454,10-Q,2016-10-20,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,20860
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-17-000114,10-Q,2017-04-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,16358
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-17-000173,10-Q,2017-07-20,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,17438
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-17-000245,10-Q,2017-10-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,18832
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-18-000125,10-Q,2018-04-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,17420
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-18-000184,10-Q,2018-07-19,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,19550
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-18-000268,10-Q,2018-10-25,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,19944
+100885,UNION PACIFIC CORP,industrials,extension,0000100885-19-000129,10-Q,2019-04-18,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,1,18064
+107263,"WILLIAMS COMPANIES, INC.",energy,core,0000107263-16-000021,10-K,2016-02-26,RISK_FACTORS,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,3,116678
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-15-000053,10-Q,2015-08-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,37295
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-15-000058,10-Q,2015-11-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,38957
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-16-000066,10-Q,2016-05-09,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,29932
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-16-000094,10-Q,2016-08-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,34532
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-16-000098,10-Q,2016-11-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,36945
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-17-000016,10-Q,2017-05-09,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,26276
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-17-000037,10-Q,2017-08-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,32006
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-17-000045,10-Q,2017-11-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,33182
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-18-000011,10-Q,2018-05-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,29926
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-18-000034,10-Q,2018-08-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,33997
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-18-000039,10-Q,2018-11-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,36572
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-19-000019,10-Q,2019-05-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,26644
+310158,"Merck & Co., Inc.",healthcare,core,0000310158-19-000037,10-Q,2019-08-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,30560
+310764,STRYKER CORP,healthcare,core,0000310764-15-000109,10-Q,2015-07-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,11674
+310764,STRYKER CORP,healthcare,core,0000310764-15-000153,10-Q,2015-10-23,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,11898
+310764,STRYKER CORP,healthcare,core,0000310764-16-000320,10-Q,2016-04-22,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,10862
+310764,STRYKER CORP,healthcare,core,0000310764-16-000392,10-Q,2016-07-22,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,11862
+310764,STRYKER CORP,healthcare,core,0000310764-16-000458,10-Q,2016-10-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,12541
+310764,STRYKER CORP,healthcare,core,0000310764-17-000102,10-Q,2017-04-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,9767
+310764,STRYKER CORP,healthcare,core,0000310764-17-000136,10-Q,2017-07-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,11798
+310764,STRYKER CORP,healthcare,core,0000310764-17-000164,10-Q,2017-10-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,12364
+310764,STRYKER CORP,healthcare,core,0000310764-18-000110,10-Q,2018-04-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,11549
+310764,STRYKER CORP,healthcare,core,0000310764-18-000185,10-Q,2018-07-25,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,14349
+310764,STRYKER CORP,healthcare,core,0000310764-18-000205,10-Q,2018-10-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,15007
+310764,STRYKER CORP,healthcare,core,0000310764-19-000071,10-Q,2019-04-24,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,10089
+310764,STRYKER CORP,healthcare,core,0000310764-19-000110,10-Q,2019-07-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,12971
+310764,STRYKER CORP,healthcare,core,0000310764-19-000140,10-Q,2019-10-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,1,0,13436
+310764,STRYKER CORP,healthcare,core,0000310764-21-000065,10-Q,2021-04-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,2,0,10311
+310764,STRYKER CORP,healthcare,core,0000310764-21-000111,10-Q,2021-07-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,2,0,13595
+310764,STRYKER CORP,healthcare,core,0000310764-21-000146,10-Q,2021-10-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,2,0,13411
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-16-000145,10-K,2016-02-24,MDA,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,1,71372
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-16-000145,10-K,2016-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,17,17,17,1,71372
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-17-000066,10-K,2017-02-22,MDA,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,1,70063
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-17-000066,10-K,2017-02-22,RISK_FACTORS,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,17,17,17,1,70063
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-18-000038,10-K,2018-02-21,MDA,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,1,73493
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-18-000038,10-K,2018-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,17,17,17,1,73493
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-19-000035,10-K,2019-02-21,MDA,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,4,5,5,1,76764
+313616,DANAHER CORP /DE/,industrials,extension,0000313616-19-000035,10-K,2019-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,44,2,1,R2_first_anchor_dangling_later_resolvable,17,18,18,1,76764
+318154,AMGEN INC,healthcare,core,0000318154-17-000004,10-K,2017-02-14,MDA,FAIL,item_absent_from_toc,50,2,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,70866
+318154,AMGEN INC,healthcare,core,0000318154-17-000004,10-K,2017-02-14,RISK_FACTORS,FAIL,item_absent_from_toc,50,2,1,R2_first_anchor_dangling_later_resolvable,19,19,19,2,70866
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-15-000037,10-Q,2015-07-29,MDA,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,17022
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-15-000049,10-Q,2015-11-05,MDA,FAIL,item_absent_from_toc,71,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,18270
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-16-000068,10-Q,2016-05-04,MDA,FAIL,item_absent_from_toc,56,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,14048
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-16-000081,10-Q,2016-08-02,MDA,FAIL,item_absent_from_toc,59,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,15253
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-16-000088,10-Q,2016-11-08,MDA,FAIL,item_absent_from_toc,59,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,15074
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-17-000016,10-Q,2017-05-08,MDA,FAIL,item_absent_from_toc,53,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,13017
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-17-000028,10-Q,2017-08-04,MDA,FAIL,item_absent_from_toc,56,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,13854
+731766,UNITEDHEALTH GROUP INC,healthcare,core,0000731766-17-000045,10-Q,2017-11-07,MDA,FAIL,item_absent_from_toc,56,3,2,R2_first_anchor_dangling_later_resolvable,2,2,2,2,13658
+732717,AT&T INC.,utilities,extension,0000732717-18-000024,10-Q,2018-05-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25246
+753308,NEXTERA ENERGY INC,utilities,extension,0000753308-16-000337,10-K,2016-02-22,MDA,FAIL,item_absent_from_toc,63,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,92715
+753308,NEXTERA ENERGY INC,utilities,extension,0000753308-17-000060,10-K,2017-02-23,MDA,FAIL,item_absent_from_toc,66,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,84249
+753308,NEXTERA ENERGY INC,utilities,extension,0000753308-18-000013,10-K,2018-02-16,MDA,FAIL,item_absent_from_toc,66,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,2,81246
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-15-000031,10-Q,2015-08-04,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,30,31,31,29,27747
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-15-000043,10-Q,2015-10-30,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,31,32,32,31,28355
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-16-000055,10-K,2016-02-18,MDA,FAIL,item_absent_from_toc,5,1,0,R3_all_anchors_dangling,25,28,28,26,97371
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-16-000055,10-K,2016-02-18,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,2,8,8,2,97371
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-16-000072,10-Q,2016-05-05,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,25,26,26,25,24573
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-16-000082,10-Q,2016-08-02,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,28,29,29,28,28185
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-16-000092,10-Q,2016-11-02,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,27,28,28,27,29189
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-17-000012,10-K,2017-02-22,MDA,FAIL,item_absent_from_toc,5,1,0,R3_all_anchors_dangling,24,27,27,25,89156
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-17-000012,10-K,2017-02-22,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,2,8,8,3,89156
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-17-000024,10-Q,2017-05-05,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,23,24,24,23,23478
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-17-000035,10-Q,2017-07-28,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,25,26,26,25,25818
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-17-000050,10-Q,2017-11-07,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,25,26,26,25,26310
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-18-000012,10-K,2018-02-28,MDA,FAIL,item_absent_from_toc,5,1,0,R3_all_anchors_dangling,23,25,25,24,77912
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-18-000012,10-K,2018-02-28,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,2,8,8,2,77912
+766704,WELLTOWER INC.,materials_realestate,extension,0000766704-18-000030,10-Q,2018-05-04,MDA,FAIL,item_absent_from_toc,9,1,0,R3_all_anchors_dangling,23,24,24,24,24111
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-22-000018,10-K,2022-02-11,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,1,1,1,11,57262
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-23-000013,10-K,2023-02-10,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,10,59525
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-23-000013,10-K,2023-02-10,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,10,59525
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-24-000014,10-K,2024-02-16,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,10,62275
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-24-000014,10-K,2024-02-16,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,2,10,62275
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-25-000010,10-K,2025-02-14,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,11,63619
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-25-000010,10-K,2025-02-14,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,19,63619
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-26-000013,10-K,2026-02-17,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,13,68963
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000773840-26-000013,10-K,2026-02-17,RISK_FACTORS,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,1,1,1,20,68963
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-15-000144,10-Q,2015-07-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,28026
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-15-000144,10-Q,2015-07-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,28026
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-15-000180,10-Q,2015-10-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,31455
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-15-000180,10-Q,2015-10-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31455
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000222,10-K,2016-02-23,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,71666
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000222,10-K,2016-02-23,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,71666
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000321,10-Q,2016-05-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,23929
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000321,10-Q,2016-05-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,23929
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000363,10-Q,2016-07-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,28249
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000363,10-Q,2016-07-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,28249
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000398,10-Q,2016-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,31077
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-16-000398,10-Q,2016-11-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,31077
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000033,10-K,2017-02-21,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,70204
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000033,10-K,2017-02-21,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,70204
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000128,10-Q,2017-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,23331
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000128,10-Q,2017-05-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,23331
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000163,10-Q,2017-07-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,27733
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000163,10-Q,2017-07-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,27733
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000196,10-Q,2017-10-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,29870
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-17-000196,10-Q,2017-10-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,29870
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000046,10-K,2018-02-22,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,75715
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000046,10-K,2018-02-22,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,75715
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000115,10-Q,2018-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,31151
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000115,10-Q,2018-05-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31151
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000136,10-Q,2018-07-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,34650
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000136,10-Q,2018-07-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,34650
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000151,10-Q,2018-10-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,37595
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-18-000151,10-Q,2018-10-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,37595
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000034,10-K,2019-02-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,82398
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000034,10-K,2019-02-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,82398
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000108,10-Q,2019-04-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,32457
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000108,10-Q,2019-04-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,32457
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000135,10-Q,2019-07-25,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,39965
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000135,10-Q,2019-07-25,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,39965
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000166,10-Q,2019-10-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,43682
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-19-000166,10-Q,2019-10-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,43682
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000026,10-K,2020-02-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,90005
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000091,10-Q,2020-04-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,36324
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000091,10-Q,2020-04-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,36324
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000111,10-Q,2020-07-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,39232
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000111,10-Q,2020-07-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,39232
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000134,10-Q,2020-10-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,47209
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-20-000134,10-Q,2020-10-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,47209
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000019,10-K,2021-02-25,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,96475
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000033,10-Q,2021-04-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,35474
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000033,10-Q,2021-04-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35474
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000051,10-Q,2021-07-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,42574
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000051,10-Q,2021-07-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,42574
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000063,10-Q,2021-11-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,48837
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-21-000063,10-Q,2021-11-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,48837
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000006,10-K,2022-02-24,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,92968
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000031,10-Q,2022-05-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,31405
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000031,10-Q,2022-05-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31405
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000053,10-Q,2022-07-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,37211
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000053,10-Q,2022-07-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,37211
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000076,10-Q,2022-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,43246
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-22-000076,10-Q,2022-11-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,43246
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000010,10-K,2023-02-23,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,94889
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000037,10-Q,2023-05-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,31327
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000037,10-Q,2023-05-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31327
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000065,10-Q,2023-07-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,35366
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000065,10-Q,2023-07-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35366
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000084,10-Q,2023-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,37949
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-23-000084,10-Q,2023-11-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,37949
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000013,10-K,2024-02-22,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,94680
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000035,10-Q,2024-04-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,32405
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000035,10-Q,2024-04-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,32405
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000055,10-Q,2024-07-25,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,35745
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000055,10-Q,2024-07-25,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35745
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000075,10-Q,2024-10-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,37233
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-24-000075,10-Q,2024-10-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,37233
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000022,10-K,2025-02-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,92965
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000043,10-Q,2025-04-29,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,31908
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000043,10-Q,2025-04-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31908
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000074,10-Q,2025-07-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,35035
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000074,10-Q,2025-07-31,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35035
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000100,10-Q,2025-10-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,41342
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-25-000100,10-Q,2025-10-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,41342
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-26-000012,10-K,2026-02-18,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,94185
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-26-000042,10-Q,2026-04-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,32650
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-26-000042,10-Q,2026-04-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,32650
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-26-000059,10-Q,2026-07-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,35718
+827052,EDISON INTERNATIONAL,utilities,extension,0000827052-26-000059,10-Q,2026-07-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35718
+831001,CITIGROUP INC,financials,core,0000831001-15-000111,10-Q,2015-08-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,128266
+831001,CITIGROUP INC,financials,core,0000831001-15-000111,10-Q,2015-08-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,128266
+831001,CITIGROUP INC,financials,core,0000831001-15-000157,10-Q,2015-10-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,126670
+831001,CITIGROUP INC,financials,core,0000831001-15-000157,10-Q,2015-10-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,126670
+831001,CITIGROUP INC,financials,core,0000831001-16-000235,10-K,2016-02-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,182057
+831001,CITIGROUP INC,financials,core,0000831001-16-000235,10-K,2016-02-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,182057
+831001,CITIGROUP INC,financials,core,0000831001-16-000241,10-Q,2016-05-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,111029
+831001,CITIGROUP INC,financials,core,0000831001-16-000241,10-Q,2016-05-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,111029
+831001,CITIGROUP INC,financials,core,0000831001-16-000292,10-Q,2016-08-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,123942
+831001,CITIGROUP INC,financials,core,0000831001-16-000292,10-Q,2016-08-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,123942
+831001,CITIGROUP INC,financials,core,0000831001-16-000334,10-Q,2016-10-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,100267
+831001,CITIGROUP INC,financials,core,0000831001-16-000334,10-Q,2016-10-31,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,100267
+831001,CITIGROUP INC,financials,core,0000831001-17-000038,10-K,2017-02-24,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,178189
+831001,CITIGROUP INC,financials,core,0000831001-17-000038,10-K,2017-02-24,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,178189
+831001,CITIGROUP INC,financials,core,0000831001-17-000048,10-Q,2017-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,85197
+831001,CITIGROUP INC,financials,core,0000831001-17-000048,10-Q,2017-05-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,85197
+831001,CITIGROUP INC,financials,core,0000831001-17-000098,10-Q,2017-08-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,99651
+831001,CITIGROUP INC,financials,core,0000831001-17-000098,10-Q,2017-08-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,99651
+831001,CITIGROUP INC,financials,core,0000831001-17-000139,10-Q,2017-10-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,99499
+831001,CITIGROUP INC,financials,core,0000831001-17-000139,10-Q,2017-10-31,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,99499
+831001,CITIGROUP INC,financials,core,0000831001-18-000040,10-K,2018-02-23,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,174095
+831001,CITIGROUP INC,financials,core,0000831001-18-000040,10-K,2018-02-23,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,174095
+831001,CITIGROUP INC,financials,core,0000831001-18-000046,10-Q,2018-05-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,87502
+831001,CITIGROUP INC,financials,core,0000831001-18-000046,10-Q,2018-05-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,87502
+831001,CITIGROUP INC,financials,core,0000831001-18-000091,10-Q,2018-07-31,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,99410
+831001,CITIGROUP INC,financials,core,0000831001-18-000091,10-Q,2018-07-31,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,99410
+831001,CITIGROUP INC,financials,core,0000831001-18-000131,10-Q,2018-10-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,99743
+831001,CITIGROUP INC,financials,core,0000831001-18-000131,10-Q,2018-10-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,99743
+831001,CITIGROUP INC,financials,core,0000831001-19-000027,10-K,2019-02-22,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,168301
+831001,CITIGROUP INC,financials,core,0000831001-19-000027,10-K,2019-02-22,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,168301
+831001,CITIGROUP INC,financials,core,0000831001-19-000033,10-Q,2019-04-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,80659
+831001,CITIGROUP INC,financials,core,0000831001-19-000033,10-Q,2019-04-30,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,80659
+831001,CITIGROUP INC,financials,core,0000831001-19-000073,10-Q,2019-08-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,93511
+831001,CITIGROUP INC,financials,core,0000831001-19-000073,10-Q,2019-08-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,93511
+831001,CITIGROUP INC,financials,core,0000831001-19-000105,10-Q,2019-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,95180
+831001,CITIGROUP INC,financials,core,0000831001-19-000105,10-Q,2019-11-01,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,95180
+831001,CITIGROUP INC,financials,core,0000831001-20-000031,10-K,2020-02-21,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,169151
+831001,CITIGROUP INC,financials,core,0000831001-20-000031,10-K,2020-02-21,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,169151
+831001,CITIGROUP INC,financials,core,0000831001-20-000044,10-Q,2020-05-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,95961
+831001,CITIGROUP INC,financials,core,0000831001-20-000044,10-Q,2020-05-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,95961
+831001,CITIGROUP INC,financials,core,0000831001-20-000078,10-Q,2020-08-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,108402
+831001,CITIGROUP INC,financials,core,0000831001-20-000078,10-Q,2020-08-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,108402
+831001,CITIGROUP INC,financials,core,0000831001-20-000110,10-Q,2020-11-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,110566
+831001,CITIGROUP INC,financials,core,0000831001-20-000110,10-Q,2020-11-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,110566
+831001,CITIGROUP INC,financials,core,0000831001-21-000042,10-K,2021-02-26,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,187163
+831001,CITIGROUP INC,financials,core,0000831001-21-000042,10-K,2021-02-26,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,187163
+831001,CITIGROUP INC,financials,core,0000831001-21-000066,10-Q,2021-05-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,91887
+831001,CITIGROUP INC,financials,core,0000831001-21-000066,10-Q,2021-05-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,91887
+831001,CITIGROUP INC,financials,core,0000831001-21-000126,10-Q,2021-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,104042
+831001,CITIGROUP INC,financials,core,0000831001-21-000126,10-Q,2021-08-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,104042
+831001,CITIGROUP INC,financials,core,0000831001-21-000167,10-Q,2021-11-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,2,105744
+831001,CITIGROUP INC,financials,core,0000831001-21-000167,10-Q,2021-11-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,105744
+831001,CITIGROUP INC,financials,core,0000831001-22-000036,10-K,2022-02-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,4,189465
+831001,CITIGROUP INC,financials,core,0000831001-22-000036,10-K,2022-02-28,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,189465
+831001,CITIGROUP INC,financials,core,0000831001-22-000056,10-Q,2022-05-09,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,92479
+831001,CITIGROUP INC,financials,core,0000831001-22-000056,10-Q,2022-05-09,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,92479
+831001,CITIGROUP INC,financials,core,0000831001-22-000111,10-Q,2022-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,110032
+831001,CITIGROUP INC,financials,core,0000831001-22-000111,10-Q,2022-08-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,110032
+831001,CITIGROUP INC,financials,core,0000831001-22-000146,10-Q,2022-11-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,113517
+831001,CITIGROUP INC,financials,core,0000831001-22-000146,10-Q,2022-11-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,113517
+831001,CITIGROUP INC,financials,core,0000831001-23-000037,10-K,2023-02-27,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,4,192926
+831001,CITIGROUP INC,financials,core,0000831001-23-000037,10-K,2023-02-27,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,192926
+831001,CITIGROUP INC,financials,core,0000831001-23-000055,10-Q,2023-05-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,100594
+831001,CITIGROUP INC,financials,core,0000831001-23-000055,10-Q,2023-05-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,100594
+831001,CITIGROUP INC,financials,core,0000831001-23-000097,10-Q,2023-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,109211
+831001,CITIGROUP INC,financials,core,0000831001-23-000097,10-Q,2023-08-04,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,109211
+831001,CITIGROUP INC,financials,core,0000831001-23-000132,10-Q,2023-11-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,108708
+831001,CITIGROUP INC,financials,core,0000831001-23-000132,10-Q,2023-11-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,108708
+831001,CITIGROUP INC,financials,core,0000831001-24-000033,10-K,2024-02-23,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,4,193919
+831001,CITIGROUP INC,financials,core,0000831001-24-000033,10-K,2024-02-23,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,193919
+831001,CITIGROUP INC,financials,core,0000831001-24-000051,10-Q,2024-05-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,96726
+831001,CITIGROUP INC,financials,core,0000831001-24-000051,10-Q,2024-05-03,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,96726
+831001,CITIGROUP INC,financials,core,0000831001-24-000100,10-Q,2024-08-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,112300
+831001,CITIGROUP INC,financials,core,0000831001-24-000100,10-Q,2024-08-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,112300
+831001,CITIGROUP INC,financials,core,0000831001-24-000134,10-Q,2024-11-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,111407
+831001,CITIGROUP INC,financials,core,0000831001-24-000134,10-Q,2024-11-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,111407
+831001,CITIGROUP INC,financials,core,0000831001-25-000067,10-K,2025-02-21,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,4,194519
+831001,CITIGROUP INC,financials,core,0000831001-25-000067,10-K,2025-02-21,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,194519
+831001,CITIGROUP INC,financials,core,0000831001-25-000086,10-Q,2025-05-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,95060
+831001,CITIGROUP INC,financials,core,0000831001-25-000086,10-Q,2025-05-08,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,95060
+831001,CITIGROUP INC,financials,core,0000831001-25-000131,10-Q,2025-08-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,108488
+831001,CITIGROUP INC,financials,core,0000831001-25-000131,10-Q,2025-08-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,108488
+831001,CITIGROUP INC,financials,core,0000831001-25-000154,10-Q,2025-11-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,109951
+831001,CITIGROUP INC,financials,core,0000831001-25-000154,10-Q,2025-11-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,109951
+831001,CITIGROUP INC,financials,core,0000831001-26-000011,10-K,2026-02-20,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,4,182560
+831001,CITIGROUP INC,financials,core,0000831001-26-000011,10-K,2026-02-20,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,182560
+831001,CITIGROUP INC,financials,core,0000831001-26-000019,10-Q,2026-05-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,84729
+831001,CITIGROUP INC,financials,core,0000831001-26-000019,10-Q,2026-05-07,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,84729
+831001,CITIGROUP INC,financials,core,0000831001-26-000045,10-Q,2026-08-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,3,95983
+831001,CITIGROUP INC,financials,core,0000831001-26-000045,10-Q,2026-08-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,95983
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-16-000062,10-K,2016-02-26,MDA,FAIL,item_absent_from_toc,37,0,0,R1_no_matching_toc_entry,0,0,0,0,137345
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-17-000012,10-K,2017-02-24,MDA,FAIL,item_absent_from_toc,39,0,0,R1_no_matching_toc_entry,0,0,0,0,126510
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-18-000008,10-K,2018-02-20,MDA,FAIL,item_absent_from_toc,39,0,0,R1_no_matching_toc_entry,0,0,0,0,115258
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-19-000009,10-K,2019-02-15,MDA,FAIL,item_absent_from_toc,39,0,0,R1_no_matching_toc_entry,0,0,0,0,114124
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-20-000004,10-K,2020-02-14,MDA,FAIL,item_absent_from_toc,39,0,0,R1_no_matching_toc_entry,0,0,0,0,106212
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-21-000009,10-K,2021-02-16,MDA,FAIL,item_absent_from_toc,38,0,0,R1_no_matching_toc_entry,0,0,0,0,107672
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-22-000009,10-K,2022-02-15,MDA,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,0,108630
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-23-000013,10-K,2023-02-15,MDA,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,0,111894
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-24-000011,10-K,2024-02-16,MDA,FAIL,item_absent_from_toc,44,0,0,R1_no_matching_toc_entry,0,0,0,0,111634
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-25-000006,10-K,2025-02-14,MDA,FAIL,item_absent_from_toc,42,0,0,R1_no_matching_toc_entry,0,0,0,0,111007
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,0000831259-26-000012,10-K,2026-02-13,MDA,FAIL,item_absent_from_toc,42,0,0,R1_no_matching_toc_entry,0,0,0,0,111159
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,0000885725-26-000033,10-Q,2026-05-01,MDA,FAIL,item_absent_from_toc,24,3,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,21432
+895421,MORGAN STANLEY,financials,core,0000895421-20-000265,10-K,2020-02-27,MDA,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,1,35,120759
+895421,MORGAN STANLEY,financials,core,0000895421-20-000265,10-K,2020-02-27,RISK_FACTORS,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,0,3,120759
+895421,MORGAN STANLEY,financials,core,0000895421-20-000323,10-Q,2020-05-05,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,30,52481
+895421,MORGAN STANLEY,financials,core,0000895421-20-000429,10-Q,2020-08-04,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,33,57505
+895421,MORGAN STANLEY,financials,core,0000895421-20-000527,10-Q,2020-11-03,MDA,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,0,0,0,36,58558
+895421,MORGAN STANLEY,financials,core,0000895421-21-000286,10-K,2021-02-26,MDA,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,1,37,125877
+895421,MORGAN STANLEY,financials,core,0000895421-21-000286,10-K,2021-02-26,RISK_FACTORS,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,0,2,125877
+895421,MORGAN STANLEY,financials,core,0000895421-21-000334,10-Q,2021-05-03,MDA,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,0,0,0,23,48811
+895421,MORGAN STANLEY,financials,core,0000895421-21-000425,10-Q,2021-08-02,MDA,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,0,0,0,26,53514
+895421,MORGAN STANLEY,financials,core,0000895421-21-000532,10-Q,2021-11-03,MDA,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,0,0,0,27,54128
+895421,MORGAN STANLEY,financials,core,0000895421-22-000400,10-K,2022-02-24,MDA,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,1,32,118771
+895421,MORGAN STANLEY,financials,core,0000895421-22-000400,10-K,2022-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,0,2,118771
+895421,MORGAN STANLEY,financials,core,0000895421-22-000442,10-Q,2022-05-04,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,23,44607
+895421,MORGAN STANLEY,financials,core,0000895421-22-000515,10-Q,2022-08-05,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,27,50895
+895421,MORGAN STANLEY,financials,core,0000895421-22-000587,10-Q,2022-11-03,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,27,51077
+895421,MORGAN STANLEY,financials,core,0000895421-23-000284,10-K,2023-02-24,MDA,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,1,33,118183
+895421,MORGAN STANLEY,financials,core,0000895421-23-000284,10-K,2023-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,0,2,118183
+895421,MORGAN STANLEY,financials,core,0000895421-23-000315,10-Q,2023-05-02,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,23,47145
+895421,MORGAN STANLEY,financials,core,0000895421-23-000374,10-Q,2023-08-03,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,27,53693
+895421,MORGAN STANLEY,financials,core,0000895421-23-000441,10-Q,2023-11-03,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,27,53979
+895421,MORGAN STANLEY,financials,core,0000895421-24-000300,10-K,2024-02-22,MDA,FAIL,item_absent_from_toc,48,0,0,R1_no_matching_toc_entry,0,0,1,34,119415
+895421,MORGAN STANLEY,financials,core,0000895421-24-000300,10-K,2024-02-22,RISK_FACTORS,FAIL,item_absent_from_toc,48,0,0,R1_no_matching_toc_entry,0,0,0,2,119415
+895421,MORGAN STANLEY,financials,core,0000895421-24-000322,10-Q,2024-05-03,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,23,49423
+895421,MORGAN STANLEY,financials,core,0000895421-24-000403,10-Q,2024-08-05,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,26,56234
+895421,MORGAN STANLEY,financials,core,0000895421-24-000491,10-Q,2024-11-04,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,26,57444
+895421,MORGAN STANLEY,financials,core,0000895421-25-000304,10-K,2025-02-21,MDA,FAIL,item_absent_from_toc,48,0,0,R1_no_matching_toc_entry,0,0,1,31,119593
+895421,MORGAN STANLEY,financials,core,0000895421-25-000304,10-K,2025-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,48,0,0,R1_no_matching_toc_entry,0,0,0,2,119593
+895421,MORGAN STANLEY,financials,core,0000895421-25-000343,10-Q,2025-05-05,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,23,48686
+895421,MORGAN STANLEY,financials,core,0000895421-25-000440,10-Q,2025-08-04,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,25,54284
+895421,MORGAN STANLEY,financials,core,0000895421-25-000539,10-Q,2025-11-03,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,25,54563
+895421,MORGAN STANLEY,financials,core,0000895421-26-000086,10-K,2026-02-19,MDA,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,1,33,119156
+895421,MORGAN STANLEY,financials,core,0000895421-26-000086,10-K,2026-02-19,RISK_FACTORS,FAIL,item_absent_from_toc,50,0,0,R1_no_matching_toc_entry,0,0,0,2,119156
+895421,MORGAN STANLEY,financials,core,0000895421-26-000121,10-Q,2026-05-05,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,26,50561
+895421,MORGAN STANLEY,financials,core,0000895421-26-000212,10-Q,2026-08-04,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,26,55392
+922224,PPL Corp,utilities,extension,0000922224-16-000130,10-K,2016-02-19,MDA,FAIL,item_absent_from_toc,41,0,0,R1_no_matching_toc_entry,0,0,15,2,133367
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,0000927628-16-000140,10-K,2016-02-25,RISK_FACTORS,FAIL,item_absent_from_toc,120,2,1,R2_first_anchor_dangling_later_resolvable,6,6,6,3,130430
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000930413-16-005457,10-K,2016-02-12,MDA,FAIL,item_absent_from_toc,19,1,0,R3_all_anchors_dangling,4,4,4,2,39771
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000930413-16-005457,10-K,2016-02-12,RISK_FACTORS,FAIL,item_absent_from_toc,19,1,0,R3_all_anchors_dangling,1,1,1,2,39771
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000930413-18-000292,10-K,2018-02-09,MDA,FAIL,item_absent_from_toc,21,1,0,R3_all_anchors_dangling,4,4,4,2,46625
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000930413-18-000292,10-K,2018-02-09,RISK_FACTORS,FAIL,item_absent_from_toc,21,1,0,R3_all_anchors_dangling,2,2,2,2,46625
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000930413-19-000366,10-K,2019-02-08,MDA,FAIL,item_absent_from_toc,21,1,0,R3_all_anchors_dangling,4,4,4,2,49170
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,0000930413-19-000366,10-K,2019-02-08,RISK_FACTORS,FAIL,item_absent_from_toc,21,1,0,R3_all_anchors_dangling,2,2,2,2,49170
+936402,Shire plc,healthcare,core,0000936402-18-000013,10-Q,2018-04-26,MDA,FAIL,item_absent_from_toc,24,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,0,21911
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,0001034054-15-000012,10-Q,2015-08-06,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,1,1,1,2,20895
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,0001034054-15-000015,10-Q,2015-11-09,MDA,FAIL,item_absent_from_toc,2,0,0,R1_no_matching_toc_entry,1,1,1,2,21426
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,0001034054-16-000020,10-Q,2016-05-10,MDA,FAIL,item_absent_from_toc,2,0,0,R1_no_matching_toc_entry,1,1,1,2,17792
+315189,DEERE & CO,industrials,extension,0001047469-15-009300,10-K,2015-12-18,MDA,FAIL,item_absent_from_toc,3,0,0,R1_no_matching_toc_entry,1,1,1,2,51097
+315189,DEERE & CO,industrials,extension,0001047469-15-009300,10-K,2015-12-18,RISK_FACTORS,FAIL,item_absent_from_toc,3,0,0,R1_no_matching_toc_entry,2,2,2,2,51097
+86312,"TRAVELERS COMPANIES, INC.",financials,core,0001047469-16-010107,10-K,2016-02-11,MDA,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,1,24,24,2,132966
+315189,DEERE & CO,industrials,extension,0001047469-16-017244,10-K,2016-12-19,MDA,FAIL,item_absent_from_toc,3,0,0,R1_no_matching_toc_entry,2,2,3,3,53519
+315189,DEERE & CO,industrials,extension,0001047469-16-017244,10-K,2016-12-19,RISK_FACTORS,FAIL,item_absent_from_toc,3,0,0,R1_no_matching_toc_entry,2,2,3,2,53519
+86312,"TRAVELERS COMPANIES, INC.",financials,core,0001047469-17-000695,10-K,2017-02-16,MDA,FAIL,item_absent_from_toc,65,0,0,R1_no_matching_toc_entry,1,22,22,2,131693
+86312,"TRAVELERS COMPANIES, INC.",financials,core,0001047469-18-000812,10-K,2018-02-15,MDA,FAIL,item_absent_from_toc,65,0,0,R1_no_matching_toc_entry,1,23,23,2,133123
+1108524,"Salesforce, Inc.",tech,core,0001108524-15-000025,10-Q,2015-08-25,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,45334
+1108524,"Salesforce, Inc.",tech,core,0001108524-15-000034,10-Q,2015-11-20,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,47175
+1108524,"Salesforce, Inc.",tech,core,0001108524-16-000066,10-Q,2016-05-20,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,43004
+1108524,"Salesforce, Inc.",tech,core,0001108524-16-000085,10-Q,2016-09-01,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,49962
+1108524,"Salesforce, Inc.",tech,core,0001108524-16-000128,10-Q,2016-11-21,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,52566
+1108524,"Salesforce, Inc.",tech,core,0001108524-17-000012,10-Q,2017-05-22,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,40194
+1108524,"Salesforce, Inc.",tech,core,0001108524-17-000020,10-Q,2017-08-25,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,44059
+1108524,"Salesforce, Inc.",tech,core,0001108524-19-000025,10-Q,2019-06-05,MDA,FAIL,item_absent_from_toc,21,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,41189
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-16-000061,10-K,2016-02-26,MDA,FAIL,item_absent_from_toc,64,3,1,R2_first_anchor_dangling_later_resolvable,3,3,4,4,58506
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-16-000061,10-K,2016-02-26,RISK_FACTORS,FAIL,item_absent_from_toc,64,3,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,58506
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-17-000008,10-K,2017-02-23,MDA,FAIL,item_absent_from_toc,64,3,1,R2_first_anchor_dangling_later_resolvable,3,3,4,4,58996
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-17-000008,10-K,2017-02-23,RISK_FACTORS,FAIL,item_absent_from_toc,64,3,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,58996
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-18-000011,10-K,2018-02-22,MDA,FAIL,item_absent_from_toc,67,3,1,R2_first_anchor_dangling_later_resolvable,3,3,4,4,58449
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-18-000011,10-K,2018-02-22,RISK_FACTORS,FAIL,item_absent_from_toc,67,3,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,58449
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-19-000008,10-K,2019-02-21,MDA,FAIL,item_absent_from_toc,67,3,1,R2_first_anchor_dangling_later_resolvable,5,5,5,5,59802
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-19-000008,10-K,2019-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,67,3,1,R2_first_anchor_dangling_later_resolvable,3,3,3,3,59802
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-20-000032,10-K,2020-02-20,MDA,FAIL,item_absent_from_toc,67,3,1,R2_first_anchor_dangling_later_resolvable,5,5,5,5,70223
+1136893,"Fidelity National Information Services, Inc.",financials,core,0001136893-20-000032,10-K,2020-02-20,RISK_FACTORS,FAIL,item_absent_from_toc,67,3,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,70223
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,0001140361-16-083198,10-K,2016-10-20,RISK_FACTORS,FAIL,item_absent_from_toc,22,1,0,R3_all_anchors_dangling,2,2,3,2,70500
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-15-259994,10-Q,2015-07-22,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31253
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,0001193125-15-277885,10-Q,2015-08-05,MDA,FAIL,item_absent_from_toc,107,2,1,R2_first_anchor_dangling_later_resolvable,1,1,1,1,87894
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-15-278166,10-Q,2015-08-05,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,0,0,0,22,26076
+36104,US BANCORP \DE\,financials,core,0001193125-15-278501,10-Q,2015-08-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,54737
+6769,APACHE CORP,energy,core,0001193125-15-281508,10-Q,2015-08-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,1,1,19180
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-15-350979,10-Q,2015-10-23,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35554
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-15-365575,10-Q,2015-11-04,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,25,28691
+36104,US BANCORP \DE\,financials,core,0001193125-15-366273,10-Q,2015-11-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,55114
+6769,APACHE CORP,energy,core,0001193125-15-368662,10-Q,2015-11-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,1,1,1,19591
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,0001193125-16-465311,10-K,2016-02-16,MDA,FAIL,item_absent_from_toc,44,0,0,R1_no_matching_toc_entry,2,2,2,2,72220
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-16-576565,10-Q,2016-05-04,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,0,0,0,19,21295
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-16-580169,10-Q,2016-05-05,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,24376
+36104,US BANCORP \DE\,financials,core,0001193125-16-581459,10-Q,2016-05-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,49359
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-16-664835,10-Q,2016-07-29,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31881
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-16-669581,10-Q,2016-08-03,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,22,26350
+36104,US BANCORP \DE\,financials,core,0001193125-16-673126,10-Q,2016-08-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,54971
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-16-756548,10-Q,2016-11-02,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,24,30604
+36104,US BANCORP \DE\,financials,core,0001193125-16-759887,10-Q,2016-11-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,55426
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-16-763784,10-Q,2016-11-09,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,35293
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,0001193125-17-047661,10-K,2017-02-17,MDA,FAIL,item_absent_from_toc,44,0,0,R1_no_matching_toc_entry,2,2,2,2,67250
+1163165,CONOCOPHILLIPS,energy,core,0001193125-17-050077,10-K,2017-02-21,MDA,FAIL,item_absent_from_toc,21,0,0,R1_no_matching_toc_entry,1,1,2,3,84904
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-17-152478,10-Q,2017-05-02,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,16820
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-17-155599,10-Q,2017-05-03,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,0,0,0,20,24718
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,0001193125-17-155839,10-Q,2017-05-03,MDA,FAIL,item_absent_from_toc,74,2,1,R2_first_anchor_dangling_later_resolvable,1,1,1,1,50955
+895421,MORGAN STANLEY,financials,core,0001193125-17-158668,10-Q,2017-05-04,MDA,FAIL,item_absent_from_toc,20,0,0,R1_no_matching_toc_entry,0,0,0,29,53473
+36104,US BANCORP \DE\,financials,core,0001193125-17-160671,10-Q,2017-05-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,49141
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-17-245363,10-Q,2017-08-02,MDA,FAIL,item_absent_from_toc,4,0,0,R1_no_matching_toc_entry,0,0,0,22,27809
+895421,MORGAN STANLEY,financials,core,0001193125-17-247402,10-Q,2017-08-03,MDA,FAIL,item_absent_from_toc,19,0,0,R1_no_matching_toc_entry,0,0,0,31,59785
+36104,US BANCORP \DE\,financials,core,0001193125-17-248499,10-Q,2017-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,53984
+1137789,Seagate Technology Holdings plc,tech,core,0001193125-17-248796,10-K,2017-08-04,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,2,2,2,2,60667
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-17-320575,10-Q,2017-10-26,MDA,FAIL,item_absent_from_toc,5,0,0,R1_no_matching_toc_entry,0,0,0,22,27838
+895421,MORGAN STANLEY,financials,core,0001193125-17-331902,10-Q,2017-11-03,MDA,FAIL,item_absent_from_toc,21,0,0,R1_no_matching_toc_entry,0,0,0,32,58512
+36104,US BANCORP \DE\,financials,core,0001193125-17-332564,10-Q,2017-11-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,54118
+4281,Howmet Aerospace Inc.,materials_realestate,extension,0001193125-17-333678,10-Q,2017-11-06,RISK_FACTORS,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,22923
+1163165,CONOCOPHILLIPS,energy,core,0001193125-18-049729,10-K,2018-02-20,MDA,FAIL,item_absent_from_toc,23,0,0,R1_no_matching_toc_entry,1,1,2,3,85889
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,0001193125-18-054181,10-K,2018-02-22,MDA,FAIL,item_absent_from_toc,44,0,0,R1_no_matching_toc_entry,2,2,2,2,66451
+895421,MORGAN STANLEY,financials,core,0001193125-18-060831,10-K,2018-02-27,MDA,FAIL,item_absent_from_toc,25,0,0,R1_no_matching_toc_entry,0,0,0,40,128539
+895421,MORGAN STANLEY,financials,core,0001193125-18-060831,10-K,2018-02-27,RISK_FACTORS,FAIL,item_absent_from_toc,25,0,0,R1_no_matching_toc_entry,0,0,0,2,128539
+1105705,"WARNER MEDIA, LLC",consumer,core,0001193125-18-134094,10-Q,2018-04-26,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,20,25700
+36104,US BANCORP \DE\,financials,core,0001193125-18-150855,10-Q,2018-05-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,47555
+895421,MORGAN STANLEY,financials,core,0001193125-18-152899,10-Q,2018-05-04,MDA,FAIL,item_absent_from_toc,19,0,0,R1_no_matching_toc_entry,0,0,0,29,50804
+36104,US BANCORP \DE\,financials,core,0001193125-18-236628,10-Q,2018-08-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,51822
+895421,MORGAN STANLEY,financials,core,0001193125-18-238269,10-Q,2018-08-03,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,32,55922
+36104,US BANCORP \DE\,financials,core,0001193125-18-316582,10-Q,2018-11-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,51405
+895421,MORGAN STANLEY,financials,core,0001193125-18-318377,10-Q,2018-11-05,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,30,56280
+1163165,CONOCOPHILLIPS,energy,core,0001193125-19-043841,10-K,2019-02-19,MDA,FAIL,item_absent_from_toc,23,0,0,R1_no_matching_toc_entry,1,1,2,3,92720
+732717,AT&T INC.,utilities,extension,0001193125-19-045608,10-K,2019-02-20,MDA,FAIL,item_absent_from_toc,17,0,0,R1_no_matching_toc_entry,1,1,1,2,15224
+895421,MORGAN STANLEY,financials,core,0001193125-19-051943,10-K,2019-02-26,MDA,FAIL,item_absent_from_toc,22,0,0,R1_no_matching_toc_entry,0,0,0,40,123420
+895421,MORGAN STANLEY,financials,core,0001193125-19-051943,10-K,2019-02-26,RISK_FACTORS,FAIL,item_absent_from_toc,22,0,0,R1_no_matching_toc_entry,0,0,0,2,123420
+895421,MORGAN STANLEY,financials,core,0001193125-19-136929,10-Q,2019-05-03,MDA,FAIL,item_absent_from_toc,35,0,0,R1_no_matching_toc_entry,0,0,0,24,46107
+36104,US BANCORP \DE\,financials,core,0001193125-19-142913,10-Q,2019-05-09,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,44321
+36104,US BANCORP \DE\,financials,core,0001193125-19-210903,10-Q,2019-08-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,49719
+36104,US BANCORP \DE\,financials,core,0001193125-19-287486,10-Q,2019-11-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,50507
+36104,US BANCORP \DE\,financials,core,0001193125-20-136359,10-Q,2020-05-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,49324
+36104,US BANCORP \DE\,financials,core,0001193125-20-211979,10-Q,2020-08-06,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,55824
+36104,US BANCORP \DE\,financials,core,0001193125-20-286983,10-Q,2020-11-05,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,55877
+36104,US BANCORP \DE\,financials,core,0001193125-21-150169,10-Q,2021-05-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,47747
+36104,US BANCORP \DE\,financials,core,0001193125-21-234982,10-Q,2021-08-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,53905
+36104,US BANCORP \DE\,financials,core,0001193125-21-317037,10-Q,2021-11-02,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,54910
+36104,US BANCORP \DE\,financials,core,0001193125-22-138788,10-Q,2022-05-03,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,46776
+36104,US BANCORP \DE\,financials,core,0001193125-22-212040,10-Q,2022-08-04,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,52905
+36104,US BANCORP \DE\,financials,core,0001193125-22-275036,10-Q,2022-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,53193
+36104,US BANCORP \DE\,financials,core,0001193125-23-137980,10-Q,2023-05-08,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,48988
+36104,US BANCORP \DE\,financials,core,0001193125-23-204050,10-Q,2023-08-07,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,54908
+36104,US BANCORP \DE\,financials,core,0001193125-23-268341,10-Q,2023-11-01,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,1,54598
+1283699,"T-Mobile US, Inc.",utilities,extension,0001283699-17-000022,10-Q,2017-04-24,MDA,FAIL,item_absent_from_toc,38,3,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,21103
+1358071,CONCHO RESOURCES INC,energy,core,0001358071-18-000008,10-K,2018-02-21,MDA,FAIL,item_absent_from_toc,31,2,0,R3_all_anchors_dangling,3,3,3,1,74910
+1358071,CONCHO RESOURCES INC,energy,core,0001358071-18-000008,10-K,2018-02-21,RISK_FACTORS,FAIL,item_absent_from_toc,31,2,0,R3_all_anchors_dangling,6,6,6,1,74910
+1358071,CONCHO RESOURCES INC,energy,core,0001358071-19-000003,10-K,2019-02-20,MDA,FAIL,item_absent_from_toc,32,2,0,R3_all_anchors_dangling,3,3,3,0,78006
+1358071,CONCHO RESOURCES INC,energy,core,0001358071-19-000003,10-K,2019-02-20,RISK_FACTORS,FAIL,item_absent_from_toc,32,2,0,R3_all_anchors_dangling,6,6,6,0,78006
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-15-000107,10-Q,2015-08-07,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,72940
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-15-000132,10-Q,2015-11-06,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,69243
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-16-000226,10-Q,2016-05-10,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,60122
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-16-000246,10-Q,2016-08-08,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,66590
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-16-000255,10-Q,2016-11-08,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,65885
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-17-000076,10-Q,2017-05-08,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,58432
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-17-000095,10-Q,2017-08-03,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,64151
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-17-000106,10-Q,2017-11-07,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,61904
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-18-000083,10-Q,2018-05-08,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,51819
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-18-000113,10-Q,2018-08-03,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,56413
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-18-000129,10-Q,2018-11-06,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,56181
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-19-000063,10-Q,2019-05-08,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,51639
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-19-000080,10-Q,2019-08-07,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,57529
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-19-000104,10-Q,2019-11-07,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,57397
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-20-000062,10-Q,2020-05-07,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,59240
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-20-000072,10-Q,2020-08-06,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,64829
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-20-000090,10-Q,2020-11-05,MDA,FAIL,item_absent_from_toc,7,0,0,R1_no_matching_toc_entry,0,0,0,0,65112
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-21-000046,10-Q,2021-05-06,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,0,54193
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-21-000070,10-Q,2021-08-05,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,0,59603
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-21-000095,10-Q,2021-11-05,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,0,58871
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-22-000049,10-Q,2022-05-06,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,0,52859
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-22-000075,10-Q,2022-08-05,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,0,58307
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-22-000101,10-Q,2022-11-07,MDA,FAIL,item_absent_from_toc,6,0,0,R1_no_matching_toc_entry,0,0,0,0,60700
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-23-000046,10-Q,2023-05-05,MDA,FAIL,item_absent_from_toc,10,0,0,R1_no_matching_toc_entry,0,0,0,0,52858
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-23-000081,10-Q,2023-08-04,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,58655
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-23-000103,10-Q,2023-11-03,MDA,FAIL,item_absent_from_toc,12,0,0,R1_no_matching_toc_entry,0,0,0,0,59702
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-24-000075,10-Q,2024-05-03,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,55305
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-24-000105,10-Q,2024-08-02,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,60584
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-24-000133,10-Q,2024-11-01,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,60385
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-25-000084,10-Q,2025-05-02,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,53291
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-25-000118,10-Q,2025-08-01,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,58241
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-25-000159,10-Q,2025-10-31,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,58210
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-26-000060,10-Q,2026-05-01,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,50019
+1390777,Bank of New York Mellon Corp,financials,core,0001390777-26-000086,10-Q,2026-07-31,MDA,FAIL,item_absent_from_toc,14,0,0,R1_no_matching_toc_entry,0,0,0,0,54494
+1413329,Philip Morris International Inc.,consumer,core,0001413329-16-000076,10-K,2016-02-17,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,3,3,4,3,75645
+1413329,Philip Morris International Inc.,consumer,core,0001413329-16-000076,10-K,2016-02-17,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,6,6,6,6,75645
+1413329,Philip Morris International Inc.,consumer,core,0001413329-17-000014,10-K,2017-02-14,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,3,3,3,3,72227
+1413329,Philip Morris International Inc.,consumer,core,0001413329-17-000014,10-K,2017-02-14,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,5,5,5,5,72227
+1413329,Philip Morris International Inc.,consumer,core,0001413329-18-000007,10-K,2018-02-13,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,2,64670
+1413329,Philip Morris International Inc.,consumer,core,0001413329-18-000007,10-K,2018-02-13,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,5,5,5,5,64670
+1413329,Philip Morris International Inc.,consumer,core,0001413329-19-000007,10-K,2019-02-07,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,3,3,3,3,65271
+1413329,Philip Morris International Inc.,consumer,core,0001413329-19-000007,10-K,2019-02-07,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,4,65271
+1413329,Philip Morris International Inc.,consumer,core,0001413329-20-000007,10-K,2020-02-07,MDA,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,6,6,6,5,67342
+1413329,Philip Morris International Inc.,consumer,core,0001413329-20-000007,10-K,2020-02-07,RISK_FACTORS,FAIL,item_absent_from_toc,40,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,4,67342
+24741,CORNING INC /NY,materials_realestate,extension,0001437749-22-003247,10-K,2022-02-14,MDA,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,0,0,1,0,61787
+24741,CORNING INC /NY,materials_realestate,extension,0001437749-22-003247,10-K,2022-02-14,RISK_FACTORS,FAIL,item_absent_from_toc,62,0,0,R1_no_matching_toc_entry,1,1,1,0,61787
+24741,CORNING INC /NY,materials_realestate,extension,0001437749-23-003123,10-K,2023-02-13,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,1,1,1,0,53941
+24741,CORNING INC /NY,materials_realestate,extension,0001437749-23-003123,10-K,2023-02-13,RISK_FACTORS,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,1,1,1,0,53941
+24741,CORNING INC /NY,materials_realestate,extension,0001437749-24-003735,10-K,2024-02-12,MDA,FAIL,item_absent_from_toc,53,0,0,R1_no_matching_toc_entry,1,1,1,0,52101
+24741,CORNING INC /NY,materials_realestate,extension,0001437749-24-003735,10-K,2024-02-12,RISK_FACTORS,FAIL,item_absent_from_toc,53,0,0,R1_no_matching_toc_entry,1,1,1,0,52101
+1483096,WILLIAMS PARTNERS L.P.,energy,core,0001483096-16-000021,10-K,2016-02-26,RISK_FACTORS,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,3,94767
+1539838,"Diamondback Energy, Inc.",energy,core,0001539838-15-000037,10-Q,2015-08-10,MDA,FAIL,item_absent_from_toc,19,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,27184
+1555280,Zoetis Inc.,healthcare,core,0001555280-16-000344,10-K,2016-02-24,MDA,FAIL,item_absent_from_toc,46,2,1,R2_first_anchor_dangling_later_resolvable,7,7,7,3,95393
+1555280,Zoetis Inc.,healthcare,core,0001555280-16-000344,10-K,2016-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,46,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,1,95393
+1555280,Zoetis Inc.,healthcare,core,0001555280-17-000044,10-K,2017-02-16,MDA,FAIL,item_absent_from_toc,48,2,1,R2_first_anchor_dangling_later_resolvable,7,7,7,3,79035
+1555280,Zoetis Inc.,healthcare,core,0001555280-17-000044,10-K,2017-02-16,RISK_FACTORS,FAIL,item_absent_from_toc,48,2,1,R2_first_anchor_dangling_later_resolvable,4,4,4,1,79035
+1099590,MERCADOLIBRE INC,financials,core,0001562762-16-000383,10-Q,2016-05-06,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,34107
+1099590,MERCADOLIBRE INC,financials,core,0001562762-16-000414,10-Q,2016-08-05,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,42614
+1099590,MERCADOLIBRE INC,financials,core,0001562762-16-000445,10-Q,2016-11-04,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,41208
+1099590,MERCADOLIBRE INC,financials,core,0001562762-17-000054,10-Q,2017-05-05,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,3,0,28404
+1099590,MERCADOLIBRE INC,financials,core,0001562762-17-000120,10-Q,2017-08-04,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,3,0,34075
+1099590,MERCADOLIBRE INC,financials,core,0001562762-17-000173,10-Q,2017-11-03,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,3,0,34076
+1099590,MERCADOLIBRE INC,financials,core,0001562762-18-000158,10-Q,2018-05-10,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,30028
+1099590,MERCADOLIBRE INC,financials,core,0001562762-18-000229,10-Q,2018-08-09,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,37259
+1099590,MERCADOLIBRE INC,financials,core,0001562762-18-000323,10-Q,2018-11-02,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,37292
+1099590,MERCADOLIBRE INC,financials,core,0001562762-19-000123,10-Q,2019-05-03,MDA,FAIL,item_absent_from_toc,1,0,0,R1_no_matching_toc_entry,0,2,2,0,27442
+24741,CORNING INC /NY,materials_realestate,extension,0001562762-21-000023,10-K,2021-02-12,MDA,FAIL,item_absent_from_toc,21,0,0,R1_no_matching_toc_entry,1,1,1,0,62241
+24741,CORNING INC /NY,materials_realestate,extension,0001562762-21-000023,10-K,2021-02-12,RISK_FACTORS,FAIL,item_absent_from_toc,21,0,0,R1_no_matching_toc_entry,1,1,1,0,62241
+87347,SLB LIMITED/NV,energy,core,0001564590-16-021567,10-Q,2016-07-27,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,12824
+87347,SLB LIMITED/NV,energy,core,0001564590-16-026174,10-Q,2016-10-26,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,12168
+87347,SLB LIMITED/NV,energy,core,0001564590-17-007214,10-Q,2017-04-26,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,8973
+87347,SLB LIMITED/NV,energy,core,0001564590-17-014007,10-Q,2017-07-26,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,11583
+87347,SLB LIMITED/NV,energy,core,0001564590-17-019977,10-Q,2017-10-25,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,11681
+97476,TEXAS INSTRUMENTS INC,tech,core,0001564590-18-002832,10-K,2018-02-22,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,32453
+87347,SLB LIMITED/NV,energy,core,0001564590-18-008981,10-Q,2018-04-25,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,8192
+87347,SLB LIMITED/NV,energy,core,0001564590-18-017379,10-Q,2018-07-25,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,9947
+87347,SLB LIMITED/NV,energy,core,0001564590-18-024846,10-Q,2018-10-24,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,10000
+97476,TEXAS INSTRUMENTS INC,tech,core,0001564590-19-003839,10-K,2019-02-22,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,31804
+87347,SLB LIMITED/NV,energy,core,0001564590-19-012635,10-Q,2019-04-24,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,7647
+97476,TEXAS INSTRUMENTS INC,tech,core,0001564590-19-014051,10-Q,2019-04-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,9243
+87347,SLB LIMITED/NV,energy,core,0001564590-19-025739,10-Q,2019-07-24,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,9868
+87347,SLB LIMITED/NV,energy,core,0001564590-19-037505,10-Q,2019-10-23,RISK_FACTORS,FAIL,anchor_span_below_min_chars,11,1,1,R4_other_span_failure,2,2,2,1,11453
+106535,WEYERHAEUSER CO,materials_realestate,extension,0001564590-20-004822,10-K,2020-02-14,MDA,FAIL,item_absent_from_toc,50,4,3,R2_first_anchor_dangling_later_resolvable,1,1,1,6,57921
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-16-000020,10-K,2016-02-04,RISK_FACTORS,FAIL,item_absent_from_toc,38,0,0,R1_no_matching_toc_entry,0,0,0,2,95671
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-17-000003,10-K,2017-02-07,RISK_FACTORS,FAIL,item_absent_from_toc,38,0,0,R1_no_matching_toc_entry,0,0,0,2,93971
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-18-000003,10-K,2018-02-07,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,2,92878
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-19-000003,10-K,2019-02-07,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,86308
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-20-000003,10-K,2020-02-06,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,86804
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-21-000003,10-K,2021-02-04,RISK_FACTORS,FAIL,item_absent_from_toc,42,0,0,R1_no_matching_toc_entry,0,0,0,1,98910
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-22-000006,10-K,2022-02-03,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,91070
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-23-000006,10-K,2023-02-02,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,95050
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-24-000007,10-K,2024-02-08,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,98199
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-25-000003,10-K,2025-02-06,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,96063
+1571949,"Intercontinental Exchange, Inc.",financials,core,0001571949-26-000004,10-K,2026-02-05,RISK_FACTORS,FAIL,item_absent_from_toc,40,0,0,R1_no_matching_toc_entry,0,0,0,1,95209
+21665,COLGATE PALMOLIVE CO,consumer,core,0001628280-15-005578,10-Q,2015-07-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25838
+21665,COLGATE PALMOLIVE CO,consumer,core,0001628280-15-008062,10-Q,2015-10-30,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,28257
+21665,COLGATE PALMOLIVE CO,consumer,core,0001628280-16-014877,10-Q,2016-04-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,19955
+21665,COLGATE PALMOLIVE CO,consumer,core,0001628280-16-017856,10-Q,2016-07-28,MDA,FAIL,no_toc_and_no_heading_match,0,0,0,R1_no_matching_toc_entry,0,0,0,0,25059
+895421,MORGAN STANLEY,financials,core,0001628280-19-009973,10-Q,2019-08-05,MDA,FAIL,item_absent_from_toc,59,0,0,R1_no_matching_toc_entry,0,0,0,32,52779
+895421,MORGAN STANLEY,financials,core,0001628280-19-013331,10-Q,2019-11-05,MDA,FAIL,item_absent_from_toc,56,0,0,R1_no_matching_toc_entry,0,0,0,32,53063
+24741,CORNING INC /NY,materials_realestate,extension,0001628280-25-005347,10-K,2025-02-13,MDA,FAIL,item_absent_from_toc,68,0,0,R1_no_matching_toc_entry,1,1,1,0,51674
+24741,CORNING INC /NY,materials_realestate,extension,0001628280-25-005347,10-K,2025-02-13,RISK_FACTORS,FAIL,item_absent_from_toc,68,0,0,R1_no_matching_toc_entry,1,1,1,0,51674
+1652044,Alphabet Inc.,tech,core,0001652044-18-000007,10-K,2018-02-06,RISK_FACTORS,FAIL,item_absent_from_toc,42,2,1,R2_first_anchor_dangling_later_resolvable,2,2,3,2,51161
+6769,APACHE CORP,energy,core,0001673379-17-000004,10-K,2017-02-24,MDA,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,5,5,2,70288
+6769,APACHE CORP,energy,core,0001673379-17-000004,10-K,2017-02-24,RISK_FACTORS,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,3,3,2,70288
+6769,APACHE CORP,energy,core,0001673379-18-000008,10-K,2018-02-23,MDA,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,5,5,2,64153
+6769,APACHE CORP,energy,core,0001673379-18-000008,10-K,2018-02-23,RISK_FACTORS,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,3,3,2,64153
+6769,APACHE CORP,energy,core,0001673379-21-000027,10-Q,2021-11-05,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,23718
+1682852,"Moderna, Inc.",healthcare,core,0001682852-19-000023,10-Q,2019-05-09,MDA,FAIL,item_absent_from_toc,19,2,1,R2_first_anchor_dangling_later_resolvable,2,2,2,1,35128
+6769,APACHE CORP,energy,core,0001733037-19-000004,10-K,2019-03-01,MDA,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,5,5,2,66750
+6769,APACHE CORP,energy,core,0001733037-19-000004,10-K,2019-03-01,RISK_FACTORS,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,3,3,2,66750
+6769,APACHE CORP,energy,core,0001733037-20-000004,10-K,2020-02-28,MDA,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,6,6,2,72733
+6769,APACHE CORP,energy,core,0001733037-20-000004,10-K,2020-02-28,RISK_FACTORS,FAIL,item_absent_from_toc,62,3,2,R2_first_anchor_dangling_later_resolvable,1,3,3,2,72733
+6769,APACHE CORP,energy,core,0001733037-21-000009,10-Q,2021-05-07,MDA,FAIL,item_absent_from_toc,20,0,0,R1_no_matching_toc_entry,0,0,0,0,19559
+6769,APACHE CORP,energy,core,0001784031-22-000010,10-K,2022-02-22,MDA,FAIL,item_absent_from_toc,44,0,0,R1_no_matching_toc_entry,0,4,4,0,67981
+6769,APACHE CORP,energy,core,0001784031-22-000016,10-Q,2022-05-05,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,21650
+6769,APACHE CORP,energy,core,0001784031-22-000022,10-Q,2022-08-04,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,23886
+6769,APACHE CORP,energy,core,0001784031-22-000029,10-Q,2022-11-03,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,24903
+6769,APACHE CORP,energy,core,0001784031-23-000008,10-K,2023-02-23,MDA,FAIL,item_absent_from_toc,44,0,0,R1_no_matching_toc_entry,0,3,3,0,66948
+6769,APACHE CORP,energy,core,0001784031-23-000014,10-Q,2023-05-04,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,18177
+6769,APACHE CORP,energy,core,0001784031-23-000020,10-Q,2023-08-03,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,20937
+6769,APACHE CORP,energy,core,0001784031-23-000026,10-Q,2023-11-02,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,21129
+6769,APACHE CORP,energy,core,0001784031-24-000004,10-K,2024-02-22,MDA,FAIL,item_absent_from_toc,46,0,0,R1_no_matching_toc_entry,0,3,3,0,60205
+6769,APACHE CORP,energy,core,0001784031-24-000009,10-Q,2024-05-02,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,15783
+6769,APACHE CORP,energy,core,0001784031-24-000014,10-Q,2024-08-02,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,18443
+6769,APACHE CORP,energy,core,0001871133-21-000008,10-Q,2021-08-05,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,22276
+6769,APACHE CORP,energy,core,0002040266-24-000004,10-Q,2024-11-07,MDA,FAIL,item_absent_from_toc,16,0,0,R1_no_matching_toc_entry,0,0,0,0,20266

@@ -1,0 +1,194 @@
+{
+  "run_id": "2026-08-27-v12-eval-epoch1",
+  "generated_utc": "2026-08-27T02:39:27.894878+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "model": {
+    "path": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071"
+  },
+  "adapter": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch1",
+    "adapters_sha256": "241b3d409c8d36924af894aa3b1fc3f54b0849d8ae602b69432cc61e3a0b33e5",
+    "adapters_bytes": 11541328,
+    "adapters_mtime_utc": "2026-08-27T02:38:54.305206+00:00",
+    "adapter_config_sha256": "40c77bde438e5af70ce51338df407255db2d7f64b82bf9d2445c3f400f48a00c",
+    "checkpoint_shas": {
+      "0000100_adapters.safetensors": "459d16e43fed461920114c60e534e728a5cace37e97ef3fc0f19d1d3d54409c5",
+      "0000200_adapters.safetensors": "b0027f6eb07d2af9396d10d5c39455299e0efcff9e6d9bdcc28151cf37e59462",
+      "0000300_adapters.safetensors": "441b8e7d4b70d49a4391f93a48ec3170cd3e91fcf9e0aad523ccdbc16a0a03a4",
+      "0000400_adapters.safetensors": "0ac307138861e2b48da478764762677812574c96f869864766ee850f2bdff0d8",
+      "0000500_adapters.safetensors": "3e26d43842c3e1bf9d7df81d505f7075fa6322c86626992320a7209c682acbbd",
+      "0000600_adapters.safetensors": "befa56058605ffc01601b872a6ae83973a2d96f0805a833a4dc57fd813831c4b",
+      "0000700_adapters.safetensors": "5de391dbea093ccea279512dde9933def4a9f76a01b36fe32bad885ccc081cc3",
+      "0000800_adapters.safetensors": "90686ea707d0c1e6daa6cc56024f7414c014b80a8fb12fcec823fe444b9c499f",
+      "0000900_adapters.safetensors": "b04392b374d7c8865b184dd9621f6e762a282e3e0763288ad7899eb282af771d",
+      "0001000_adapters.safetensors": "92b73547f1b14d65783c819be6b02015505c1995aced6a4119ca12106453e0e8",
+      "0001100_adapters.safetensors": "6c7f92a3d64d643e54e24c96a7805990ec858c7fb3d0aa03dd45948947ab7a74",
+      "0001200_adapters.safetensors": "eb702d9f584e0f6cac49e72cbf777b878c3a76f916ccca25b6f3c9e79d99eae8",
+      "0001300_adapters.safetensors": "f174f30b0aefb72d8129e151ce07a353a42cf594485da78f6e753796cf8dbb68",
+      "0001400_adapters.safetensors": "b102051624be345a2c5ab149fa322d021cec72b8b48497be64ff66b296242407",
+      "0001500_adapters.safetensors": "9a5f0eb712366c81fef9d9caf9122640dea785207b7ec95996aaa8fb24285dff",
+      "0001600_adapters.safetensors": "d3020461f436c4c272b871e4c0a51b218271be31c9133b8163d430660b8aa249",
+      "0001700_adapters.safetensors": "ce491a2452dcd523dd86522ac8610157be91618edec32308061e2d0c4a336213",
+      "0001800_adapters.safetensors": "42b8ae910009853149f60578d5a02786e0e1fc9b2cafe1c7c599c3dc70188ab5",
+      "0001900_adapters.safetensors": "d59948e847a3e87feca07cd7f355f71d599bf9bd79799fca85dea9e8cce57c93",
+      "0002000_adapters.safetensors": "8ed7b3f16dd960691c8bfbc69b607dfbf71d7dbad4b26a74396c943cd9211439",
+      "0002100_adapters.safetensors": "959840631f0549ad2bdbd0da357db7fb9a200add2fbb92995c7beeb90126a32f",
+      "0002200_adapters.safetensors": "124890303d3b979383afe8946c32f8b3a546fd5c57dd00a0fd91be3ca43803b2",
+      "0002300_adapters.safetensors": "6d1d7dd2d3b7ddded1112fea1fc5ca5caa9a5686045a482268be2f85d9cdb254",
+      "0002400_adapters.safetensors": "02763120043b14aadd0eff814796ba9124c4d0d5f0d87f59bd8efcff3f805617",
+      "0002500_adapters.safetensors": "b6c45c0c19d2398121d310559829e9fbb0a49531352c8dce14e95637421efc29",
+      "0002600_adapters.safetensors": "f252a1fa70509084eeb10d50a9704b266c9090b4b19d5463dae3e69c124df11e",
+      "0002700_adapters.safetensors": "7072b7a88927f638051af54936352ad2c6e064b6f9436f82d711700d6da62c30",
+      "0002800_adapters.safetensors": "db382e302e4a7d238878f212a0b2d7d62bf67289de43fa4bf76d9b7812ad8bda",
+      "0002900_adapters.safetensors": "c43bee5751a53c6246bc349df0bc10a6ce5b23ebd908bda6597e10b412dc40f0",
+      "0003000_adapters.safetensors": "b99b21b1620be8fe2ddec69ad2059bfeca5f45888381febf45d75f4e32984e87",
+      "0003100_adapters.safetensors": "b1ff1d72422411088add57b0637bcd3a34627bb4ddace5f534f0ea30661ee971",
+      "0003200_adapters.safetensors": "11160116e05a57978d8254ba078706a0d1f0ac9e16b302a8d65e740131a87a43",
+      "0003300_adapters.safetensors": "3e099be962418afcef91be2ebdd5d67aa52dd7f1aa9aad07b24014ad321ad930",
+      "0003400_adapters.safetensors": "66200e92c5f0141a830e47015d1ee2d8f91f781afd27604fe28ea014c894bfd1",
+      "0003500_adapters.safetensors": "ba7db838464a05cdf1f800b91b3885aedb9a3513265e2d6ebd2e3b57c08faff5",
+      "0003600_adapters.safetensors": "92e1d59908a4fbd3531a35bfac77a70d8fa61a5cfa1cba06919d9d85559d17fa",
+      "0003700_adapters.safetensors": "bd84489b8a5005bc39d5f68831c01d33496bf5779435d529bf25c0109b38b8d0",
+      "0003800_adapters.safetensors": "41245d131a7c0e2b96050998390992747d6e2bffa5635f22a123e08ff9f042c2",
+      "0003900_adapters.safetensors": "7f9616b9d1a4545697280dccdee85103f72a9117388fd865b3b306ab9d964c8b",
+      "0004000_adapters.safetensors": "0ea600278290c8e89a2acfee73478faa4ea54a585448229e53b0f384dfacced4",
+      "0004100_adapters.safetensors": "c6ed837d562889f5111e4a15ae842bfd2778f6378ae1e588ffcf29219a2def80",
+      "0004200_adapters.safetensors": "807c1ed2c8e5398cddee351d7dd70b3b61092dfaea04d85b9168b5b11b8634e6",
+      "0004300_adapters.safetensors": "c04ba665d837b40ee25272b49de5197431ae279746949819efc1c6c07512b3bb",
+      "0004400_adapters.safetensors": "6da906350fa4a54b6933ec7a7c88db4bf5cac6b10813ffbfb34da04a47f94401",
+      "0004500_adapters.safetensors": "8495eb8af2d40a71911812d8c25105223e0929ceab08e95668483e5980bf0e49",
+      "0004600_adapters.safetensors": "51c6f9ebd04ea0293149b7f66431d0c72444ce707983bbc5c3c1d1ce6efda075",
+      "0004700_adapters.safetensors": "636b34d161ef6c0e36a522d7c8b06f08f6de0454a8f3d78be9b4ebbffccc38c7",
+      "0004800_adapters.safetensors": "e4d7466af4a0a04096b5c16bc60e91dc1134b5ecc1fb8d05fca32545fa6a9436",
+      "0004900_adapters.safetensors": "631ca550339f0cdcb0439d80c215d43e43e71f5dfcf0fed9ad616eefb588533a",
+      "0005000_adapters.safetensors": "bb932abe5e529eb1378c5da62aa13a1269f01d0cf86b5617944f4853f9d34882",
+      "0005100_adapters.safetensors": "798352e61e1515f583da4301f2170030ed3167a14b6945f4727aaf94933b9c94",
+      "0005200_adapters.safetensors": "d88c01b76ca749438672554fed5ba57f7a9b7c31cabfaf363c68e4cf7cf76d83",
+      "0005300_adapters.safetensors": "e85f91f32f5e2937ae44193da0ed5e9bdb93b7a8726404fe4ee64e572bd1309c",
+      "0005400_adapters.safetensors": "7ea11dbd3a3e7f8d34e2bf68a50efdc75c5d72f926f2426dd0fd0a8e3c75f905",
+      "0005500_adapters.safetensors": "eb00b2ca91acd406afa2618c2d078cf1a3e32e1dcc5e6f5bec20e447cbfb4633",
+      "0005600_adapters.safetensors": "0de1e7991f6ff0722f0df12d416ea6f679ed9a1fc1819e274926c985ac61f57e",
+      "0005700_adapters.safetensors": "ab8ec6acce810d7aff6c9762472ee154e5526983c4c101ef20b2a325216b7d13"
+    },
+    "matches_checkpoint": "no numbered twin \u2014 expected for a COMPLETED run whose iters is not a multiple of save_every (mlx_lm writes the final weights to adapters.safetensors only). If training is still running, this may instead be an in-flight write: check the process has exited.",
+    "lora_parameters": {
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05,
+      "keys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj"
+      ]
+    },
+    "num_layers": 16,
+    "iters_configured": 5736,
+    "resume_adapter_file": null
+  },
+  "train_manifest": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-26-v12-epoch1/manifest.json",
+    "sha256": "dfc8c1402365ecd4b8f6a1e34a6bf611286c78405045e443764042884636f30d",
+    "run_id": "2026-08-26-v12-epoch1"
+  },
+  "data": {
+    "eval_rows_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12/valid.jsonl",
+    "eval_rows_sha256": "b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b",
+    "prepared_eval_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared_v12/eval.jsonl",
+    "prepared_eval_sha256": "0229d0ba90d8331d0e6b6ead5d72dc1f1ccc5c085998ad5695f7f8e4e35d2ac5",
+    "n_rows": 1010,
+    "n_passages_head_truncated_to_fit_2048": 50,
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_chars": 1825,
+    "instruction_byte_identical_across_eval": true,
+    "instruction_byte_identical_to_train": true,
+    "mlx_data_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12",
+    "prepared_dir": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared_v12",
+    "sha_matches_train_manifest": true
+  },
+  "section_types_sidecar": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/eval_section_types.json",
+    "sha256": "620feff2bdf8d419ae7b03d134ba0ac2cdd51c0a0ec0295cce08b7554add11a9"
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.render(); the inference prompt is a token-exact prefix of the training sequence for the same row"
+  },
+  "n_eval_rows": 1010,
+  "n_eval_rows_in_split": 1010,
+  "limit": null,
+  "throughput": {
+    "n_rows_generated_this_process": 1010,
+    "wall_seconds": 2918.9,
+    "chunks_per_hour": 1245.7,
+    "latency_seconds_per_row": {
+      "mean": 2.89,
+      "p50": 2.643,
+      "p90": 4.215,
+      "p95": 4.903,
+      "p99": 6.615,
+      "max": 7.682
+    },
+    "prompt_tokens": {
+      "mean": 1105.4,
+      "total": 1116491,
+      "p50": 985.5,
+      "p90": 1706.1,
+      "p95": 1968.75,
+      "p99": 2024.0
+    },
+    "generation_tokens": {
+      "mean": 35.0,
+      "total": 35350,
+      "max": 143,
+      "p50": 27.0,
+      "p90": 63.0,
+      "p95": 84.55,
+      "p99": 108.0
+    },
+    "prefill_tokens_per_second": {
+      "mean": 795.5,
+      "p50": 794.9,
+      "p90": 814.2,
+      "p95": 818.4,
+      "p99": 825.4
+    },
+    "decode_tokens_per_second": {
+      "mean": 24.9,
+      "p50": 24.9,
+      "p90": 25.7,
+      "p95": 25.9,
+      "p99": 28.0
+    },
+    "finish_reasons": {
+      "stop": 1010
+    },
+    "f4_note": "These figures are EXPANSION_PLAN.md F4's labeling-throughput probe, measured at n=1,010 on this machine with this adapter.",
+    "projections": {
+      "E1 re-label (6,746 chunks)": {
+        "hours": 5.4,
+        "overnights_at_10h": 0.5
+      },
+      "E2 low estimate (~70k new + 6,746 E1 = 76,746)": {
+        "hours": 61.6,
+        "overnights_at_10h": 6.2
+      },
+      "E2 high estimate (~98k new + 6,746 E1 = 104,746)": {
+        "hours": 84.1,
+        "overnights_at_10h": 8.4
+      }
+    }
+  },
+  "versions": {
+    "mlx": "0.32.1",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.15.1",
+    "numpy": "2.4.6",
+    "python": "3.11.10"
+  },
+  "n_scored": 1010,
+  "partial": false
+}

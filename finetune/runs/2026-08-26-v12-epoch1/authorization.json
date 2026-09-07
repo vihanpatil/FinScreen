@@ -1,0 +1,14 @@
+{
+  "campaign": "G1 REPAIR — rubric v1.2 re-label + retrain",
+  "scope": "ONE EPOCH per launch; the epoch-2 continuation is PLANNED but is a separate launch",
+  "ratification": "HANDOFF.md §3, 2026-08-26 — F2.5 closure rulings, ruling 1: repair the instrument (re-label under rubric v1.2 + retrain, ~2 nights)",
+  "recorded_in": "HARDENING_PROGRESS.md, 'G1 REPAIR CAMPAIGN' section",
+  "labels": "data/labels_v12.parquet — batch msgbatch_01UdoUkZfuaTRJzokZDfbFYN, rubric v1.2, system-prompt sha256 30605197ca56c23138de34743d780c19fd62e31c80b1eb5b58115fbde8ae5924",
+  "cost": "$0 — local Apple Silicon MLX. The Anthropic spend freeze is RE-SEALED (account balance ~$0); this training run makes ZERO API calls.",
+  "note": "G1 itself is still UNRULED. This retrain produces the repaired instrument the owner will rule on; it is not itself an acceptance.",
+  "hard_rules": [
+    "The train/eval split is frozen. split.py was NOT run; membership came from finetune/splits/manifest.parquet by join.",
+    "distress_tier is never a training target and never a headline metric.",
+    "Long compute runs in the MAIN SESSION as an auto-resume chain (HANDOFF §4). No agent launches training."
+  ]
+}

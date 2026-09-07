@@ -1,0 +1,173 @@
+# config_mlx.yaml — the LOCAL MLX 4-bit QLoRA config for FinScreen's Phase D
+# fine-tune. Consumed by `train_qlora.py --backend mlx`, which resolves the
+# relative paths below to absolute ones, writes the resolved copy into
+# `finetune/runs/<date>/mlx_lora_config.yaml`, hashes it into that run's
+# manifest.json, and hands THAT file to `mlx_lm.lora -c ...`. The run manifest
+# therefore records exactly what was fed to training.
+#
+# This file does NOT replace `config.yaml`. `config.yaml` is the superseded
+# CUDA / bitsandbytes / HF-Trainer scaffolding (`finetune/README.md`'s banner);
+# it is left untouched. Several of its keys name things that do not exist in
+# MLX and cannot be renamed across — the substitutions are itemized below and
+# re-stated in every run manifest.
+#
+# Authority: `MLX_FEASIBILITY.md` §0/§5/§8. Deviations from that document,
+# found by reading the installed mlx-lm 0.31.3 source rather than the docs,
+# are marked "DEVIATION" and explained.
+
+# ---------------------------------------------------------------- model ----
+# Overridden by train_qlora.py with the pinned local snapshot directory of
+# mlx-community/Qwen2.5-7B-Instruct-4bit at the revision recorded in the run
+# manifest. Verified 2026-08-20 on-box: genuine Instruct build — chat template
+# is ChatML with <|im_start|>/<|im_end|>, eos_token is <|im_end|> (151645, the
+# Instruct EOS; the base model uses <|endoftext|>), and the repo README states
+# it was converted from Qwen/Qwen2.5-7B-Instruct. The repo's `base_model:
+# Qwen/Qwen2.5-7B` metadata tag (flagged in MLX_FEASIBILITY §6 / MODEL_CHOICE)
+# is confirmed to be an auto-populated slip, not the actual weights.
+model: "PLACEHOLDER_SET_BY_train_qlora.py"
+
+train: true
+fine_tune_type: lora
+optimizer: adamw
+optimizer_config:
+  adamw:
+    weight_decay: 0.0          # from config.yaml training.weight_decay
+    # SUBSTITUTION: config.yaml asks for optim: paged_adamw_8bit. MLX has no
+    # paged and no 8-bit optimizers -- only adam/adamw/muon/sgd/adafactor with
+    # fp32 state. Standard AdamW is used instead. Harmless: MLX_FEASIBILITY
+    # §3.2 puts the whole optimizer state at <= 323 MB even in the heaviest
+    # LoRA configuration, and at r=16/q+v/16-layers it is ~23 MB.
+
+# ----------------------------------------------------------------- data ----
+# Overridden by train_qlora.py with the absolute path to finetune/mlx_data/,
+# whose train.jsonl / valid.jsonl SHA-256s are recorded in the run manifest.
+# Produced by convert_to_mlx.py from finetune/prepared/{train,eval}.jsonl.
+# NOTE the rename eval -> valid: mlx_lm looks for train/valid/test.jsonl.
+data: "PLACEHOLDER_SET_BY_train_qlora.py"
+
+# MLX_FEASIBILITY §5.4 -- a deliberate modelling decision, not the mlx-lm
+# default. Loss is computed on the completion only (~37 tokens/example,
+# 212,117 loss-bearing tokens per epoch, measured). Without it, ~96% of the
+# gradient would train the model to reproduce the instruction and the filing
+# passage, which it never needs to generate.
+mask_prompt: true
+
+# ------------------------------------------------------- memory-critical ----
+# All four values are BINDING (MLX_FEASIBILITY §0). config.yaml's
+# per_device_train_batch_size: 4 does NOT fit in 16 GB: the 152,064-vocab
+# logits tensor alone reaches ~4.6 GiB at batch 4 / seq 2048, ~7.0 GiB if
+# cross-entropy materializes an fp32 copy (§3.3).
+batch_size: 1
+grad_accumulation_steps: 4     # recovers config.yaml's effective batch of 4
+max_seq_length: 2048           # §2.3; over-length rows are PRE-handled by
+                               # convert_to_mlx.py, so mlx-lm's tail-truncation
+                               # path is never reached. Measured: 2/5736 train
+                               # and 49/1010 eval passages were head-truncated.
+grad_checkpoint: true          # §3.4 -- mandatory, not an optimization
+
+# ----------------------------------------------------------------- lora ----
+num_layers: 16                 # adapters on the top 16 of 28 layers; the
+                               # bottom 12 run forward-only (§3.4)
+lora_parameters:
+  rank: 16                     # = config.yaml lora.r
+  # THE alpha->scale TRAP (MLX_FEASIBILITY §5.2, trap #4). MLX has no
+  # `lora_alpha`; it applies `scale` as a direct multiplier on the adapter
+  # output. PEFT's effective multiplier is alpha/r. config.yaml has
+  # lora_alpha: 32, r: 16, so the faithful port is scale = 32/16 = 2.0.
+  # Copying 32 across, or leaving mlx-lm's 20.0 default, would change the
+  # effective adapter strength by 16x / 10x respectively.
+  scale: 2.0
+  dropout: 0.05                # = config.yaml lora.lora_dropout
+  # MLX_FEASIBILITY §8's recommended STARTING configuration. This is
+  # deliberately narrower than config.yaml's 7-projection target_modules list:
+  # §8's escalation order is "q+v first, escalate to all 7 projections only if
+  # the probe shows headroom, one change at a time". Escalating mid-run would
+  # also break "the submitted artifact is the tested artifact", so this run
+  # does not do it. Capacity, not memory, is the reason to be conservative:
+  # §3.2 shows all 7 projections would cost only ~231 MB, but one epoch
+  # carries just 212 K loss-bearing tokens (§5.4), so 23.1 M trainable
+  # parameters against that signal is an overfitting risk. Whether to escalate
+  # is an owner decision after the held-out eval, not a silent default.
+  #
+  # DEVIATION from MLX_FEASIBILITY §5.2: it states mlx-lm's default `keys` is
+  # q_proj + v_proj. In the installed mlx-lm 0.31.3 the default is actually
+  # EVERY linear/embedding module in each layer
+  # (tuner/utils.py::linear_to_lora_layers, `if keys is None: ...`), so `keys`
+  # must be set explicitly to get q+v -- it is not the default.
+  keys: ["self_attn.q_proj", "self_attn.v_proj"]
+
+# ------------------------------------------------------------- schedule ----
+# ONE EPOCH. mlx-lm has no epoch concept; `iters` counts MICRO-BATCHES, one
+# per batch drawn, and an optimizer update fires every grad_accumulation_steps
+# of them (tuner/trainer.py: `it % grad_accum_steps == 0`). At batch_size 1
+# that makes 5736 iters == one pass over all 5736 training examples ==
+# 1434 optimizer updates. The owner's ratification was "1 epoch first"; do not
+# raise this without a new owner decision.
+iters: 5736
+learning_rate: 2.0e-4          # = config.yaml training.learning_rate
+
+# DEVIATION from MLX_FEASIBILITY §8, verified empirically on-box: MLX's LR
+# schedule is a function of the OPTIMIZER's step counter, which advances once
+# per optimizer.update() -- i.e. once per 4 micro-batch iters here, not once
+# per iter. §8's `arguments: [2.0e-5, 5736]` / `warmup: 172` were written in
+# micro-batch units and would have (a) started the cosine from 2e-5 rather
+# than the configured 2e-4, since build_schedule() uses arguments[0] as the
+# warmup TARGET and the cosine's init, and (b) stretched a 3%-of-training
+# warmup into 12% of it. Correct units: 1434 total updates; warmup =
+# 0.03 * 1434 ~= 43 updates; cosine decays over the remaining 1434-43 = 1391.
+# Verified: lr reaches 2.0e-4 at update 43 and ~0 at update 1434.
+lr_schedule:
+  name: cosine_decay
+  arguments: [2.0e-4, 1391]    # [init/peak lr, decay_steps] -> end lr 0.0
+  warmup: 43                   # in OPTIMIZER UPDATES, not iters, not a ratio
+  warmup_init: 1.0e-7
+  # NOTE (2026-08-21): continuation/epoch-2 runs use temporary schedules;
+  # each run's resolved copy lives in its own runs/<tag>/mlx_lora_config.yaml
+  # (resume-from-500: [1.984e-4, 1266]; final-from-2250: [1.458e-4, 829];
+  # epoch2: [1.0e-4, 1414] warmup 20 — owner-ratified G1 second epoch at
+  # half peak LR). The values above are the correct FRESH-run schedule.
+  # NOTE (2026-08-21): the epoch1-resume-from-500 run used a temporary
+  # continuation schedule (arguments [1.984e-4, 1266], warmup 0) per
+  # runs/2026-08-20-epoch1/resume_command.json; its resolved copy lives in
+  # runs/2026-08-21-epoch1-resume-from-500/mlx_lora_config.yaml. The values
+  # above are the correct FRESH-run schedule.
+
+# ------------------------------------------------------ logging / saving ----
+steps_per_report: 10
+steps_per_eval: 500            # val_batches forward passes over valid.jsonl
+val_batches: 25
+save_every: 250                # ~23 resumable adapter checkpoints per epoch
+seed: 42                       # = config.yaml training.seed
+
+# Overridden by train_qlora.py with an absolute path under finetune/checkpoints/.
+adapter_path: "PLACEHOLDER_SET_BY_train_qlora.py"
+
+# DEVIATION from MLX_FEASIBILITY §7: mlx-lm 0.31.3 accepts this key but never
+# plumbs it into TrainingArgs (lora.py::train_model builds TrainingArgs
+# without it), so the effective value is TrainingArgs' default of 0. A
+# threshold of 0 means `if mx.get_cache_memory() > 0: mx.clear_cache()` --
+# i.e. the allocator cache is cleared after EVERY step. That is strictly more
+# aggressive than the value §7 recommended, and it is the behaviour upstream
+# issue #828 asks for on memory-tight machines, so the no-op is benign here.
+# Left at 0 to describe what actually happens rather than what is requested.
+clear_cache_threshold: 0
+
+# --------------------------------------------------- NOT PORTABLE TO MLX ----
+# The following config.yaml keys have no MLX equivalent and are deliberately
+# absent (MLX_FEASIBILITY §5.1). They are listed here so their absence reads
+# as a decision, not an oversight:
+#   load_in_4bit          -> not a flag. QLoRA is implicit: pointing `model` at
+#                            a pre-quantized repo makes the run a QLoRA run.
+#   bnb_4bit_quant_type   -> MLX uses affine group-wise quantization
+#     ("nf4")                (group_size 64, 4 bits, 4.5 effective bits/weight),
+#                            NOT bitsandbytes NF4. A different quantizer, not a
+#                            rename.
+#   bnb_4bit_use_double_quant -> no double quantization in MLX.
+#   bnb_4bit_compute_dtype    -> not exposed; MLX computes in the model dtype.
+#   bf16                  -> not a flag.
+#   optim: paged_adamw_8bit -> see optimizer_config above.
+#   lora.bias / lora.task_type -> PEFT-only concepts.
+#   save_total_limit      -> mlx-lm keeps every checkpoint (~6 MB each here).
+#   eval_strategy / report_to -> no equivalent.
+#   trust_remote_code     -> not a training arg (Qwen2.5 does not need it).
+#   gpu_rental_placeholder -> irrelevant: this path is local and costs $0.

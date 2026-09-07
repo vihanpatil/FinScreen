@@ -1,0 +1,71 @@
+{
+  "corpus": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet",
+    "sha256": "15853e9f54902a933f0372869209a353ab3f052cb5c7dc1f897297f75b53f417"
+  },
+  "window_rule": "W1_core",
+  "line_rule": "reflow_v1",
+  "stratum": "core",
+  "tie_break_slot": "cik10",
+  "constants": {
+    "MIN_PROSE_WORDS": 40,
+    "TARGET_WINDOW_WORDS": 350,
+    "MIN_FLUSH_WORDS": 100,
+    "source": "chunk.py (imported, never re-declared)"
+  },
+  "n_sections": 20982,
+  "n_lines": 3007084,
+  "n_canonical_paragraphs": 2170417,
+  "dedup_rate": 0.2782,
+  "n_chunks": 317081,
+  "n_sections_with_zero_chunks": 2824,
+  "parquet": {
+    "path": "/private/tmp/claude-501/-Users-vihanpatil-personal-projects-FinScreen/d43cd988-72dd-4e39-8698-bbcfc47ee858/scratchpad/chunks_v1_run2.parquet",
+    "sha256": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+    "bytes": 400928730
+  },
+  "wall_seconds": 55.4,
+  "audit_parquet": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f3/v2/extraction_audit.parquet",
+    "sha256": "207f392aa54c5151015093ecb34e5c57319f17e1ce22a3375ec1ac7f18e81eef"
+  },
+  "verification": {
+    "n_chunks": 317081,
+    "n_duplicate_chunk_ids": 0,
+    "chunk_ids_unique": true,
+    "n_colliding_with_E1_labeling_corpus": 0,
+    "e1_collision_examples": [],
+    "by_section_type": {
+      "MDA": 172098,
+      "EX99_PRESS_RELEASE": 94545,
+      "RISK_FACTORS": 49648,
+      "8K_BODY": 790
+    },
+    "by_sector": {
+      "financials": 98418,
+      "tech": 63276,
+      "consumer": 54471,
+      "healthcare": 52404,
+      "energy": 48512
+    },
+    "by_extraction_status": {
+      "OK": 276026,
+      "FLAGGED": 41055
+    },
+    "by_era": {
+      "pre2019": 107715,
+      "2019plus": 209366
+    },
+    "word_count": {
+      "mean": 389.6,
+      "p50": 377,
+      "p95": 501,
+      "p99": 648,
+      "max": 1992
+    },
+    "n_source_filings": {
+      "mean": 2.71,
+      "max": 6220
+    }
+  }
+}

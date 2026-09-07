@@ -1,0 +1,14 @@
+{
+  "purpose": "F4 verify-artifact check: the artifact being run is the artifact the epoch-2 eval tested and gate G1 was ruled on",
+  "reference": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/predictions.jsonl",
+  "reference_sha256": "e32dc481fcca5fd3c69020ecb8caa30d5d9bb047a6d38a0589cdb1c589e39da0",
+  "adapter": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+  "prompt_renderer_matches_eval_path": true,
+  "n_compared": 10,
+  "n_identical": 10,
+  "verified": true,
+  "n_eval_rows_skipped_as_too_long_for_the_F4_budget": 0,
+  "prompt_token_budget": 1792,
+  "differing": [],
+  "checked_utc": "2026-08-28T05:39:55.188926+00:00"
+}

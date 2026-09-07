@@ -1,0 +1,10 @@
+[earnings] 10567 filings -> 8 shards of 1500
+  shard earnings_0000: 1500 filings -> 1500 attempts / 1499 sections  {'OK': 1289, 'FLAGGED': 210, 'FAIL': 1}  cache_miss=0  169.2s  network_gets=0
+  shard earnings_0001: 1500 filings -> 1500 attempts / 1498 sections  {'OK': 1174, 'FLAGGED': 324, 'FAIL': 2}  cache_miss=0  193.9s  network_gets=0
+  shard earnings_0002: 1500 filings -> 1500 attempts / 1499 sections  {'OK': 1289, 'FLAGGED': 210, 'FAIL': 1}  cache_miss=0  233.1s  network_gets=0
+  shard earnings_0003: 1500 filings -> 1500 attempts / 1499 sections  {'OK': 1224, 'FLAGGED': 275, 'FAIL': 1}  cache_miss=0  260.2s  network_gets=0
+  shard earnings_0004: 1500 filings -> 1500 attempts / 1495 sections  {'OK': 1238, 'FLAGGED': 257, 'FAIL': 5}  cache_miss=0  213.8s  network_gets=0
+  shard earnings_0005: 1500 filings -> 1500 attempts / 1500 sections  {'OK': 1260, 'FLAGGED': 240}  cache_miss=0  234.2s  network_gets=0
+  shard earnings_0006: 1500 filings -> 1500 attempts / 1498 sections  {'OK': 1143, 'FLAGGED': 355, 'FAIL': 2}  cache_miss=0  219.9s  network_gets=0
+  shard earnings_0007: 67 filings -> 67 attempts / 67 sections  {'OK': 58, 'FLAGGED': 9}  cache_miss=0  5.6s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)

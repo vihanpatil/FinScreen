@@ -56,8 +56,83 @@ data/labels.parquet
 data/labels_pre_relabel.parquet
 data/labels_relabel.parquet
 data/labels_corrective.parquet
+# The rubric-v1.2 re-label (2026-08-26, G1 repair campaign). Same warning, and
+# stronger: the account's prepaid credits were drained producing it and the
+# spend freeze is re-sealed, so it is NOT re-buyable. Keep an independent copy.
+data/labels_v12.parquet
+
+# --- E2 ingestion outputs (F2, added 2026-08-24) ---
+# All regenerable at $0 by re-running the idempotent S6 segments against the
+# cache; sized past GitHub's warning threshold (fundamentals_e2 ~25-60 MB,
+# prices_e2 ~40-80 MB, the E2 metadata DB covers ~45k filings). E1's
+# filings_metadata.db stays versioned per the note above; the E2 DB is the
+# "grows large" case that note anticipated.
+data/filings_metadata_e2.db
+data/fundamentals_e2.parquet
+data/prices_e2.parquet
+data/filings_e2.parquet
 
 # Fine-tune datasets: 41 MB, deterministically derived from labels.parquet
 # via finetune/prepare_dataset.py and finetune/split.py (seeded splits).
 finetune/prepared/
 finetune/splits/
+# Same, for the rubric-v1.2 retrain (2026-08-26). splits_v12 is derived from
+# labels_v12.parquet by JOIN onto the frozen finetune/splits/manifest.parquet
+# (finetune/build_splits_v12.py); prepared_v12 from it by prepare_dataset.py.
+# Their build_report.json / conversion_report.json ARE small enough to keep,
+# and the run directory's dataset_manifest.json carries every sha.
+finetune/splits_v12/*.parquet
+finetune/prepared_v12/
+
+# --- MLX local fine-tune (finetune/MLX_FEASIBILITY.md) ---
+# Dedicated venv for the mlx/mlx-lm stack -- kept separate from the repo's
+# main requirements.txt env by design. Not committed (like any venv).
+finetune/.mlx_venv/
+# mlx-format train.jsonl/valid.jsonl converted from finetune/prepared/ --
+# deterministically regenerable, same reasoning as finetune/prepared/ above.
+finetune/mlx_data/
+finetune/mlx_data_v12/*.jsonl
+# LoRA adapter checkpoints + optimizer state written during training.
+finetune/checkpoints/
+# Downloaded MLX-format base model weights (~4 GiB), if ever cached inside
+# the repo instead of the default huggingface_hub cache (~/.cache/huggingface).
+finetune/mlx_models/
+
+# --- E2 extraction + labeling bulk artifacts (F3/F4; added 2026-09-07 for the
+# GitHub push). Rule: nothing over GitHub's 50 MB warning line, nothing that is a
+# byte-copy of a consolidated artifact. Every excluded file's sha256 is pinned in
+# a committed manifest, so provenance survives even though the bytes do not.
+#
+# F3 extraction shards (~1.2 GB across the two shard dirs) and the consolidated
+# corpus data/filings_e2_v2.parquet (599 MB; sha 15853e9f…, pinned in F4 prep)
+# are the same data twice; regenerable at $0 from data/raw/ via extract.py.
+# Everything else under data/f3/ (status ledgers, QA reports, audits, CSVs,
+# manifests, fixtures) is kept.
+data/f3/shards/
+data/f3/v2/shards/
+data/filings_e2_v2.parquet
+# F4: the chunk table (382 MB; regenerable from filings_e2_v2 by
+# finetune/label_e2.py) and the campaign's consolidated student labels (417 MB;
+# NOT cheap to regenerate — 24 segments, ~9 GPU overnights; git is not a backup
+# for it, keep an independent copy). shas: data/f4/campaign_manifest.json and
+# data/f4/g2/build_draw_g2.py INPUT_SHA256. The per-segment outputs
+# (rows.jsonl / labels.jsonl / labels_seg-NNN.parquet, ~60 MB per segment × 24)
+# are those same labels before consolidation; each segment's manifest.json and
+# seg.log are kept, as is everything under data/f4/g2/ and data/f4/status/.
+data/f4/chunks_v1.parquet
+data/f4/labels_e2_v1.parquet
+data/f4/segments/*/rows.jsonl
+data/f4/segments/*/labels.jsonl
+data/f4/segments/*/labels_seg-*.parquet
+data/f4/smoke/rows.jsonl
+data/f4/smoke/labels*.jsonl
+data/f4/smoke/*.parquet
+# 9.6 MB pre-completion snapshot of labels_v12.parquet (itself excluded above).
+data/labels_v12.parquet.pre_completion
+# H3 / H3v2 student re-labels of the E1 corpus (two 9.4 MB parquets + two 3.3 MB
+# jsonl; regenerable in ~5 GPU hours by finetune/relabel_e1.py). Their derived
+# feature tables, sidecars, manifests and status reports are kept.
+data/hardening/e1_relabel_student.parquet
+data/hardening/e1_relabel_student.jsonl
+data/hardening/h3v2/e1_relabel_student_v12.parquet
+data/hardening/h3v2/e1_relabel_student_v12.jsonl

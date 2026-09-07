@@ -1,0 +1,81 @@
+acc,company,filing_date,n_toc,n_matching,n_resolvable,cause,fallback_words
+0000002969-24-000043,"Air Products & Chemicals, Inc.",2024-08-01,53,0,0,R1_genuinely_absent_from_toc,
+0000002969-25-000013,"Air Products & Chemicals, Inc.",2025-02-06,45,0,0,R1_genuinely_absent_from_toc,
+0000005272-16-000041,"AMERICAN INTERNATIONAL GROUP, INC.",2016-05-02,33,3,0,R3_all_dangling,1330.0
+0000005272-16-000046,"AMERICAN INTERNATIONAL GROUP, INC.",2016-08-02,33,3,0,R3_all_dangling,1246.0
+0000005272-19-000031,"AMERICAN INTERNATIONAL GROUP, INC.",2019-05-07,33,3,0,R3_all_dangling,751.0
+0000008670-18-000007,AUTOMATIC DATA PROCESSING INC,2018-05-04,23,3,2,R2_first_dangling_later_resolves,37.0
+0000018230-15-000324,CATERPILLAR INC,2015-10-30,21,0,0,R1_genuinely_absent_from_toc,268.0
+0000018230-17-000245,CATERPILLAR INC,2017-08-02,21,0,0,R1_genuinely_absent_from_toc,
+0000037996-16-000107,FORD MOTOR CO,2016-04-28,10,0,0,R1_genuinely_absent_from_toc,963.0
+0000037996-17-000036,FORD MOTOR CO,2017-04-27,8,0,0,R1_genuinely_absent_from_toc,908.0
+0000037996-22-000048,FORD MOTOR CO,2022-07-28,9,0,0,R1_genuinely_absent_from_toc,3734.0
+0000037996-25-000186,FORD MOTOR CO,2025-10-24,10,0,0,R1_genuinely_absent_from_toc,4228.0
+0000037996-26-000086,FORD MOTOR CO,2026-04-30,11,0,0,R1_genuinely_absent_from_toc,3394.0
+0000051143-24-000039,INTERNATIONAL BUSINESS MACHINES CORP,2024-07-30,12,0,0,R1_genuinely_absent_from_toc,
+0000051143-24-000049,INTERNATIONAL BUSINESS MACHINES CORP,2024-10-30,12,0,0,R1_genuinely_absent_from_toc,
+0000055785-17-000067,KIMBERLY CLARK CORP,2017-10-23,10,0,0,R1_genuinely_absent_from_toc,
+0000055785-20-000074,KIMBERLY CLARK CORP,2020-10-22,12,0,0,R1_genuinely_absent_from_toc,
+0000055785-23-000054,KIMBERLY CLARK CORP,2023-07-25,12,0,0,R1_genuinely_absent_from_toc,
+0000072741-19-000026,EVERSOURCE ENERGY,2019-05-07,24,3,1,R2_first_dangling_later_resolves,112.0
+0000092230-20-000114,TRUIST FINANCIAL CORP,2020-11-02,4,0,0,R1_genuinely_absent_from_toc,737.0
+0000200406-26-000087,JOHNSON & JOHNSON,2026-04-22,37,0,0,R1_genuinely_absent_from_toc,
+0000726728-19-000094,REALTY INCOME CORP,2019-11-05,16,0,0,R1_genuinely_absent_from_toc,
+0000731766-16-000081,UNITEDHEALTH GROUP INC,2016-08-02,59,3,2,R2_first_dangling_later_resolves,106.0
+0000766704-16-000092,WELLTOWER INC.,2016-11-02,9,0,0,R1_genuinely_absent_from_toc,34.0
+0000797468-17-000025,OCCIDENTAL PETROLEUM CORP /DE/,2017-11-01,14,0,0,R1_genuinely_absent_from_toc,
+0000797468-18-000017,OCCIDENTAL PETROLEUM CORP /DE/,2018-11-05,14,0,0,R1_genuinely_absent_from_toc,
+0000798354-17-000023,FISERV INC,2017-11-01,15,0,0,R1_genuinely_absent_from_toc,
+0000798354-26-000018,FISERV INC,2026-05-06,17,0,0,R1_genuinely_absent_from_toc,
+0000804753-15-000050,CERNER Corp,2015-11-04,10,0,0,R1_genuinely_absent_from_toc,
+0000821189-17-000038,EOG RESOURCES INC,2017-08-01,14,0,0,R1_genuinely_absent_from_toc,
+0000821189-21-000089,EOG RESOURCES INC,2021-11-04,14,0,0,R1_genuinely_absent_from_toc,
+0000821189-23-000051,EOG RESOURCES INC,2023-11-02,14,0,0,R1_genuinely_absent_from_toc,49.0
+0000821189-24-000021,EOG RESOURCES INC,2024-05-02,14,0,0,R1_genuinely_absent_from_toc,7019.0
+0000821189-24-000049,EOG RESOURCES INC,2024-11-07,13,0,0,R1_genuinely_absent_from_toc,
+0000875320-16-000107,VERTEX PHARMACEUTICALS INC / MA,2016-10-31,29,3,1,R2_first_dangling_later_resolves,1350.0
+0000875320-19-000019,VERTEX PHARMACEUTICALS INC / MA,2019-05-01,29,3,2,R2_first_dangling_later_resolves,667.0
+0000927628-26-000048,CAPITAL ONE FINANCIAL CORP,2026-05-07,102,3,2,R2_first_dangling_later_resolves,29.0
+0000930413-15-003083,HONEYWELL INTERNATIONAL INC,2015-07-17,21,0,0,R1_genuinely_absent_from_toc,
+0000930413-17-002534,HONEYWELL INTERNATIONAL INC,2017-07-21,16,0,0,R1_genuinely_absent_from_toc,
+0000930413-18-001371,HONEYWELL INTERNATIONAL INC,2018-04-20,16,0,0,R1_genuinely_absent_from_toc,
+0001001250-22-000055,ESTEE LAUDER COMPANIES INC,2022-05-03,13,0,0,R1_genuinely_absent_from_toc,
+0001001250-24-000007,ESTEE LAUDER COMPANIES INC,2024-02-05,13,0,0,R1_genuinely_absent_from_toc,
+0001104659-15-076424,Cigna Holding Co,2015-11-06,20,0,0,R1_genuinely_absent_from_toc,424.0
+0001104659-16-152187,REALTY INCOME CORP,2016-10-26,12,0,0,R1_genuinely_absent_from_toc,
+0001104659-17-064968,INTERNATIONAL BUSINESS MACHINES CORP,2017-10-31,6,0,0,R1_genuinely_absent_from_toc,
+0001104659-18-029710,ESTEE LAUDER COMPANIES INC,2018-05-02,7,0,0,R1_genuinely_absent_from_toc,
+0001104659-20-011857,ESTEE LAUDER COMPANIES INC,2020-02-06,7,0,0,R1_genuinely_absent_from_toc,
+0001108524-16-000066,"Salesforce, Inc.",2016-05-20,21,2,1,R2_first_dangling_later_resolves,11305.0
+0001193125-18-152899,MORGAN STANLEY,2018-05-04,19,0,0,R1_genuinely_absent_from_toc,
+0001193125-18-238269,MORGAN STANLEY,2018-08-03,6,0,0,R1_genuinely_absent_from_toc,
+0001390777-15-000132,Bank of New York Mellon Corp,2015-11-06,12,0,0,R1_genuinely_absent_from_toc,
+0001390777-20-000072,Bank of New York Mellon Corp,2020-08-06,14,2,1,R2_first_dangling_later_resolves,896.0
+0001390777-22-000101,Bank of New York Mellon Corp,2022-11-07,6,0,0,R1_genuinely_absent_from_toc,
+0001390777-23-000046,Bank of New York Mellon Corp,2023-05-05,10,0,0,R1_genuinely_absent_from_toc,
+0001390777-24-000133,Bank of New York Mellon Corp,2024-11-01,14,0,0,R1_genuinely_absent_from_toc,
+0001390777-25-000159,Bank of New York Mellon Corp,2025-10-31,14,0,0,R1_genuinely_absent_from_toc,
+0001483096-16-000024,WILLIAMS PARTNERS L.P.,2016-05-05,15,0,0,R1_genuinely_absent_from_toc,18213.0
+0001532063-15-000013,Express Scripts Holding Co.,2015-10-27,28,0,0,R1_genuinely_absent_from_toc,
+0001551152-26-000026,AbbVie Inc.,2026-08-03,24,0,0,R1_genuinely_absent_from_toc,
+0001558370-17-006198,CVS HEALTH Corp,2017-08-08,14,0,0,R1_genuinely_absent_from_toc,
+0001558370-18-008642,CVS HEALTH Corp,2018-11-06,14,0,0,R1_genuinely_absent_from_toc,
+0001558370-20-009797,"Waste Connections, Inc.",2020-08-07,15,0,0,R1_genuinely_absent_from_toc,
+0001558370-20-011956,"Waste Connections, Inc.",2020-10-29,15,0,0,R1_genuinely_absent_from_toc,
+0001558370-21-005162,"Waste Connections, Inc.",2021-04-29,17,0,0,R1_genuinely_absent_from_toc,
+0001558370-21-013672,"Waste Connections, Inc.",2021-10-28,15,0,0,R1_genuinely_absent_from_toc,
+0001562762-18-000229,MERCADOLIBRE INC,2018-08-09,1,0,0,R1_genuinely_absent_from_toc,1216.0
+0001562762-18-000323,MERCADOLIBRE INC,2018-11-02,1,0,0,R1_genuinely_absent_from_toc,551.0
+0001564590-15-006685,HESS CORP,2015-08-07,8,0,0,R1_genuinely_absent_from_toc,3170.0
+0001564590-17-009686,"BlackRock Finance, Inc.",2017-05-09,7,0,0,R1_genuinely_absent_from_toc,
+0001564590-17-022570,"BlackRock Finance, Inc.",2017-11-08,7,0,0,R1_genuinely_absent_from_toc,
+0001564590-19-030654,"BlackRock Finance, Inc.",2019-08-08,8,0,0,R1_genuinely_absent_from_toc,
+0001613103-15-000038,Medtronic plc,2015-09-09,17,0,0,R1_genuinely_absent_from_toc,
+0001613103-16-000071,Medtronic plc,2016-03-09,17,0,0,R1_genuinely_absent_from_toc,
+0001613103-24-000147,Medtronic plc,2024-08-27,19,0,0,R1_genuinely_absent_from_toc,902.0
+0001628280-21-009296,HESS CORP,2021-05-06,17,0,0,R1_genuinely_absent_from_toc,317.0
+0001628280-23-035957,ABBOTT LABORATORIES,2023-11-01,11,0,0,R1_genuinely_absent_from_toc,
+0001628280-26-028357,ABBOTT LABORATORIES,2026-04-29,10,0,0,R1_genuinely_absent_from_toc,
+0001628280-26-050134,ABBOTT LABORATORIES,2026-07-28,10,0,0,R1_genuinely_absent_from_toc,
+0001739940-20-000021,Cigna Group,2020-11-05,77,0,0,R1_genuinely_absent_from_toc,84.0
+0001996810-24-000067,GE Vernova Inc.,2024-07-24,9,0,0,R1_genuinely_absent_from_toc,

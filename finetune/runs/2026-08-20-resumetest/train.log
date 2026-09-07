@@ -1,0 +1,27 @@
+
+=== launch 2026-08-20T22:57:55.158165 ===
+command: /Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/bin/mlx_lm.lora -c /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-resumetest/mlx_lora_config.yaml
+Loading configuration file /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-resumetest/mlx_lora_config.yaml
+Loading pretrained model
+Loading datasets
+Training
+Loading fine-tuned weights from /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-smoke/0000050_adapters.safetensors
+Trainable parameters: 0.038% (2.884M/7615.617M)
+Starting training..., iters: 4
+
+Calculating loss...:   0%|          | 0/3 [00:00<?, ?it/s]
+Calculating loss...:  33%|███▎      | 1/3 [00:01<00:02,  1.18s/it]
+Calculating loss...:  67%|██████▋   | 2/3 [00:02<00:01,  1.12s/it]
+Calculating loss...: 100%|██████████| 3/3 [00:03<00:00,  1.17s/it]
+Calculating loss...: 100%|██████████| 3/3 [00:03<00:00,  1.16s/it]
+Iter 1: Val loss 0.268, Val took 3.492s
+
+Calculating loss...:   0%|          | 0/3 [00:00<?, ?it/s]
+Calculating loss...:  33%|███▎      | 1/3 [00:01<00:02,  1.15s/it]
+Calculating loss...:  67%|██████▋   | 2/3 [00:02<00:01,  1.15s/it]
+Calculating loss...: 100%|██████████| 3/3 [00:03<00:00,  1.19s/it]
+Calculating loss...: 100%|██████████| 3/3 [00:03<00:00,  1.18s/it]
+Iter 4: Val loss 0.229, Val took 3.529s
+Iter 4: Train loss 0.148, Learning Rate 1.000e-07, It/sec 0.187, Tokens/sec 8.730, Trained Tokens 187, Peak mem 6.123 GB
+Iter 4: Saved adapter weights to /private/tmp/claude-501/-Users-vihanpatil-personal-projects-FinScreen/f35c6c55-93a9-44a6-acd3-5158010175c7/scratchpad/resume_ck/adapters.safetensors and /private/tmp/claude-501/-Users-vihanpatil-personal-projects-FinScreen/f35c6c55-93a9-44a6-acd3-5158010175c7/scratchpad/resume_ck/0000004_adapters.safetensors.
+Saved final weights to /private/tmp/claude-501/-Users-vihanpatil-personal-projects-FinScreen/f35c6c55-93a9-44a6-acd3-5158010175c7/scratchpad/resume_ck/adapters.safetensors.

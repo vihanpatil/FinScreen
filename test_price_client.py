@@ -368,5 +368,66 @@ def test_unadjusted_split_series_is_flagged_as_outlier():
     assert cliff_day["ret"].iloc[0] < -0.85  # ~90% artificial drop
 
 
+# ---------------------------------------------------------------------
+# Source selection (F2_SPEC §6.4): Yahoo is E2's default, Stooq stays one
+# flag away, and the Yahoo `meta` block is captured for the sanity tripwire.
+# ---------------------------------------------------------------------
+
+
+def test_source_yahoo_does_not_touch_stooq_at_all(tmp_path, monkeypatch):
+    calls = []
+    payload = _make_yahoo_chart_json("NVDA", [(date(2024, 1, 2), 100.0)])
+
+    def fake_get(url, headers=None, params=None, timeout=None):
+        calls.append(url)
+        return _FakeResponse(json.dumps(payload))
+
+    monkeypatch.setattr(pc.requests, "get", fake_get)
+    client = pc.PriceClient(cache_dir=tmp_path, min_interval_seconds=0, verbose=False)
+
+    df, source = client.get_daily_bars("NVDA", source="yahoo")
+    assert source == "yahoo_finance_chart"
+    assert len(df) == 1
+    assert len(calls) == 1
+    assert all("stooq" not in url for url in calls)
+    assert not (tmp_path / "stooq" / "NVDA.csv").exists()
+
+
+def test_yahoo_meta_is_captured_for_the_tripwire(tmp_path, monkeypatch):
+    payload = _make_yahoo_chart_json("NVDA", [(date(2024, 1, 2), 100.0)])
+    payload["chart"]["result"][0]["meta"]["instrumentType"] = "EQUITY"
+
+    def fake_get(url, headers=None, params=None, timeout=None):
+        return _FakeResponse(json.dumps(payload))
+
+    monkeypatch.setattr(pc.requests, "get", fake_get)
+    client = pc.PriceClient(cache_dir=tmp_path, min_interval_seconds=0, verbose=False)
+
+    assert client.last_yahoo_meta is None
+    client.get_daily_bars("NVDA", source="yahoo")
+    assert client.last_yahoo_meta["symbol"] == "NVDA"
+    assert client.last_yahoo_meta["instrumentType"] == "EQUITY"
+
+
+def test_stooq_first_still_works_and_leaves_no_yahoo_meta(tmp_path, monkeypatch):
+    def fake_get(url, headers=None, params=None, timeout=None):
+        assert "stooq" in url
+        return _FakeResponse(STOOQ_CSV_SAMPLE)
+
+    monkeypatch.setattr(pc.requests, "get", fake_get)
+    client = pc.PriceClient(cache_dir=tmp_path, min_interval_seconds=0, verbose=False)
+
+    df, source = client.get_daily_bars("NVDA", source="stooq-first")
+    assert source == "stooq"
+    assert len(df) == 3
+    assert client.last_yahoo_meta is None
+
+
+def test_unknown_source_raises(tmp_path):
+    client = pc.PriceClient(cache_dir=tmp_path, min_interval_seconds=0, verbose=False)
+    with pytest.raises(ValueError, match="unknown price source"):
+        client.get_daily_bars("NVDA", source="bloomberg")
+
+
 if __name__ == "__main__":
     raise SystemExit(pytest.main([__file__, "-v"]))

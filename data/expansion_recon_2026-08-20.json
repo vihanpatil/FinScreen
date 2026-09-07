@@ -1,0 +1,411 @@
+{
+  "coupling": {
+    "items": [
+      {
+        "file": "data/universe.csv",
+        "coupling": "The universe file itself encodes the 5x5 hand-balanced design plus one per-ticker special case: XOM deliberately uses legacy CIK 34088 instead of company_tickers.json's mapping (documented in ingest_metadata.load_universe, lines 133-145). Every row's CIK was manually verified; sector values feed diagnose.py's aggregation and the DB's NOT NULL sector column.",
+        "change_needed": "Each added company needs the same CIK-resolution diligence (the bulk ticker map is unreliable around restructurings -- the XOM lesson), a sector assignment under a deliberately chosen taxonomy (the current 5-label scheme won't cover e.g. industrials/utilities), and acceptance that the 5x5 balance -- which several analyses' interpretations lean on -- disappears.",
+        "effort": "medium"
+      },
+      {
+        "file": "ingest_metadata.py:151-156",
+        "coupling": "load_universe() hard-fails unless 20 <= len(universe) <= 30 ('per DISCOVERY.md §3'). This is the first literal crash on any expansion. It is also imported and used by ingest_fundamentals.py, so both ingestions are gated by it.",
+        "change_needed": "Deliberately raise/remove the bound as part of a ratified scope change (the error message itself asks for exactly that).",
+        "effort": "small"
+      },
+      {
+        "file": "ingest_metadata.py:60-87,128-129",
+        "coupling": "LOOKBACK_QUARTERS=12 fixes the window, and lookback_cutoff() anchors it to date.today() (a sliding trailing window, not fixed dates). The validation floors MIN_10K_HARD_FLOOR=2 / MIN_10Q_HARD_FLOOR=7 / MIN_10K_EXPECTED=3 / MIN_10Q_EXPECTED=8 are calibrated to exactly 12 quarters -- with a longer window they silently become far too lax (a company missing years of filings would still pass the hard floors).",
+        "change_needed": "Parameterize the window (fixed start/end dates rather than trailing-from-today, so reruns are reproducible) and derive the filing-count floors from the window length instead of constants.",
+        "effort": "small"
+      },
+      {
+        "file": "ingest_metadata.py:106-112,826-849 (validate_universe FATAL gating)",
+        "coupling": "Any FATAL for ANY company blocks the entire ingestion run (sys.exit before writes) unless overridden per-CHECK. A longer window or a survivorship-corrected universe makes several FATALs *expected states*: history_reaches_cutoff fires for mid-window IPOs, recent_activity_10k_10q and no_large_filing_gap fire for delisted/acquired/merged names, plausible_filing_counts fires for short histories. The --allow-incomplete-universe override is scoped per check name, not per company -- downgrading history_reaches_cutoff for one known IPO also disarms it for every other company that run, exactly the blanket-override failure mode the current design exists to prevent.",
+        "change_needed": "Add per-(company, check) exceptions, or better, per-company valid-window bounds (listing/delisting dates) in universe.csv so the checks validate against each company's own expected coverage. This is load-bearing for the survivorship-bias goal a bigger universe implies.",
+        "effort": "medium"
+      },
+      {
+        "file": "ingest_metadata.py:65-83",
+        "coupling": "MAX_FILING_GAP_DAYS=135 (calibrated off UNH's 125-day max among the 25) and MAX_STALE_ANY_FILING_DAYS=80 (SLB's 70 + 15%) are distribution-calibrated to 25 healthy mega-cap accelerated filers. Smaller or late filers (NT 10-K extensions, non-accelerated deadlines) in an expanded universe will exceed both, producing FATAL storms (gap check) and WARN noise.",
+        "change_needed": "Recalibrate against the expanded universe's real inter-filing-gap distribution, per the same calibration discipline already documented in the file.",
+        "effort": "small"
+      },
+      {
+        "file": "ingest_metadata.py:385-473 (select_earnings_document)",
+        "coupling": "The EX-99 selection policy and its description-keyword scoring were validated against this universe's 331 earnings 8-Ks (the count is hardcoded into the canary message at line 429-431); multi-EX-99.1 was 'not expected to occur' here. New filers have different exhibit practices -- more canaries, more low-confidence picks, and possibly a systematically wrong pick for a filer whose press release is habitually EX-99.2.",
+        "change_needed": "After expansion, audit the selection_confidence distribution and canary log per new filer before trusting 8-K text; update the hardcoded canary count text.",
+        "effort": "medium"
+      },
+      {
+        "file": "extract.py (whole module)",
+        "coupling": "Every extraction fallback was discovered per-filer on this universe: JPM two-row TOCs, GS three-row TOCs, JNJ letter-spacing, UNH bare-numbered notes index, COP/CVX bare-number TOC rows, MCD duplicate 8-K rows, and the CVX/XOM/JPM incorporated-by-reference MD&A stub resolver (whose end-boundary heuristic is 'confirmed in all 9 known stub filings'). The mechanisms are general, but each new filer is a potential new HTML dialect. Failures are mostly loud (WARN not-located, low confidence, below_length_floor flags), but the stub resolver and keyword disambiguation can mis-slice silently for an unseen dialect -- 'confidently wrong output, not an error' is this module's own documented failure mode.",
+        "change_needed": "Budget a triage pass over the expanded universe's extraction report (failures, low-confidence rows, length-floor flags) with manual spot-reads per new filer, and expect to write new edge-case handlers. This is where the per-company long tail of expansion work lives.",
+        "effort": "large"
+      },
+      {
+        "file": "extract.py:131-138,454-458",
+        "coupling": "MIN_SECTION_WORDS floors and MDA_STUB_WORD_CEILING=1500 are calibrated from THIS universe's real word-count distribution (smallest genuine 10-K MD&A = 2,441 words vs 36-53-word stubs, a '>45x gap either side'). Smaller companies can file genuine MD&As under 1,500 words, which -- combined with incidental reference language -- would enter the stub-candidate path and be re-resolved to wrong content at medium confidence or downgraded to low.",
+        "change_needed": "Recalibrate the floors and ceiling from the expanded corpus's distribution before trusting the flags; verify the stub heuristic's margin still exists.",
+        "effort": "small"
+      },
+      {
+        "file": "extract.py + edgar_client.py (window depth)",
+        "coupling": "The anchor-TOC strategy assumes modern EDGAR HTML with internal anchors; extending the window back much before ~2010 increasingly hits filings without anchor TOCs (regex-fallback only, low confidence) and, before ~2001, SGML/plain-text filings the HTML path degrades on. Separately, XBRL companyfacts coverage only phases in ~2009-2011, so a deep window has text but structurally missing fundamentals -- the numeric baseline silently weakens by era, distorting the text-vs-numeric comparison asymmetrically.",
+        "change_needed": "Bound the window extension to the XBRL/modern-HTML era, or explicitly handle era-dependent extraction and era-dependent numeric missingness as a design decision, not a silent artifact.",
+        "effort": "medium"
+      },
+      {
+        "file": "chunk.py:116-146 (home selection) and 149-213 (chunk_id)",
+        "coupling": "chunk_id is content-derived from constituent paragraph_ids, and a paragraph's 'home' is its EARLIEST occurrence globally (filing_date, ticker, accession tiebreak). Expanding backward in time or adding companies steals home status from existing paragraphs (boilerplate is shared across companies -- BAC/CVX share a verbatim chunk today), which repacks windows and changes chunk_ids corpus-wide on rebuild. The 6,747 labeled chunks, labels.parquet, and the frozen finetune split are all keyed to chunk_ids that will NOT survive a corpus rebuild.",
+        "change_needed": "Decide explicitly: (a) freeze the old corpus and chunk only new filings in a separate pass (accepting cross-era dedup loss and duplicate labeling of recurring boilerplate), or (b) rebuild everything and accept old labels/split are unjoinable. There is no incremental mode today; this is the pivotal artifact-identity decision for the expansion.",
+        "effort": "large"
+      },
+      {
+        "file": "chunk.py + data/labels.parquet (every-occurrence attribution arrays)",
+        "coupling": "labels.parquet's source_accession_numbers/source_filing_dates/source_forms arrays were baked at chunk time from the CURRENT corpus. Paragraphs labeled under the old corpus recur in new filings; the old arrays won't reference those, so features.py's every-occurrence attribution silently under-attributes existing labels to expanded-corpus filings unless the occurrence map and arrays are regenerated against the full expanded corpus.",
+        "change_needed": "Regenerate paragraph_occurrence_map and re-derive per-chunk occurrence arrays over the union corpus (and re-run the no-backward-flow verification), rather than reusing frozen arrays.",
+        "effort": "medium"
+      },
+      {
+        "file": "ingest_fundamentals.py:157-158",
+        "coupling": "CORPUS_WINDOW_START = date(2023, 8, 14) and CORPUS_WINDOW_END = date(2026, 8, 7) are hardcoded to the current filings.parquet range; the whole coverage-validation pass scopes to them. A new window validates against the wrong span until changed.",
+        "change_needed": "Derive the validation window from the actual filings DB/parquet range (or a config), not literals.",
+        "effort": "small"
+      },
+      {
+        "file": "ingest_fundamentals.py:95-141 (CONCEPTS) + 314-352 (per-company taxonomy)",
+        "coupling": "The fixed 13-tag CONCEPTS list, BANK_TICKERS_MISSING_INDUSTRIAL_CONCEPTS={JPM,BAC,GS}, BANK_EXEMPT_CONCEPTS, and KNOWN_MIDWINDOW_MIGRATIONS keyed by (ticker, concept) are a hand-curated, individually-verified allowlist built by reading raw companyfacts JSON per anomaly. It does not scale: every new company needs the same investigation, new banks/insurers/REITs will hit revenue_concept_present FATAL or concept_unexplained_gap FATAL until manually classified, and ProfitLoss/alt equity/cash tags are still NOT ingested (HANDOFF §2a trap b) -- features.py works around that by reading cached raw JSON.",
+        "change_needed": "For a materially bigger universe, replace hand-curation with a systematic strategy: ingest a broader concept set (ProfitLoss, the restricted-cash and NCI-equity variants, CashAndDueFromBanks, insurer/REIT top-line tags) for every company, plus an automated migration/alias classifier -- or accept O(N-companies) manual verification passes. This is the single largest recurring effort coupling.",
+        "effort": "large"
+      },
+      {
+        "file": "ingest_fundamentals.py:329-352 (KNOWN_MIDWINDOW_MIGRATIONS window-relativity)",
+        "coupling": "'Mid-window migration' vs 'migrated-before-window' vs 'unexplained gap' classification depends on the window boundaries. Extending the window backward reclassifies existing cases (a pre-window migration becomes mid-window; MA's DEF 14A note references '0/12 not 3/12' quarters), silently flipping WARN categories and potentially creating FATALs for currently-clean pairs.",
+        "change_needed": "Re-derive the migration map and rerun the classification against the new window; treat every changed classification as needing re-verification against raw JSON.",
+        "effort": "medium"
+      },
+      {
+        "file": "ingest_fundamentals.py:290-295",
+        "coupling": "MIN_QUARTERLY_COVERAGE_CLEAN=0.75 / MIN_QUARTERLY_COVERAGE_WARN=0.40 are calibrated against the real 225-pair coverage distribution of this exact 25-company pull; a longer window also dilutes what a fixed percentage means (a 2-quarter gap is 17% of 12 quarters but 8% of 24).",
+        "change_needed": "Recalibrate thresholds (or switch to absolute missing-quarter counts) against the expanded pull before trusting WARN/FATAL classifications.",
+        "effort": "small"
+      },
+      {
+        "file": "ingest_prices.py:72,78 + price_client.py",
+        "coupling": "VALIDATION_WINDOW_START = date(2022, 12, 1) is hardcoded to the current corpus-minus-one-quarter. ENDING_EARLY_FATAL_DAYS=45 and missing_in_window FATAL assume every ticker trades through today -- delisted names (the survivorship fix a bigger universe implies) always FATAL, and Yahoo's chart endpoint (the only working free source; Stooq is bot-gated site-wide) frequently has no data at all for delisted tickers. The free-keyless-source constraint therefore materially limits how much survivorship bias the expansion can actually remove.",
+        "change_needed": "Move the validation window; add per-ticker expected-active ranges so delisting is an expected end, not a FATAL; and resolve, as a data-sourcing decision, whether delisted-name prices are obtainable at all within the free-source constraint before promising a survivorship-corrected universe.",
+        "effort": "large"
+      },
+      {
+        "file": "features.py:359-381 (ALT_TAG_FAMILIES) + 331-336 (REVENUE_FAMILY_ORDER)",
+        "coupling": "The per-ticker alt-tag map (V/UNH/PG equity, CVX/PG/SLB/JPM/BAC cash, MA/OXY/SLB ProfitLoss) is hand-verified for exactly these tickers. New companies get no alt tags: unknown migrations resolve to stale rows that the staleness guard converts to NaN -- the safe direction, but a SILENT, sector-correlated coverage loss (e.g. every new bank loses cash_to_assets; insurers with non-covered top-line tags lose all revenue-based features, margins, and YoY growth).",
+        "change_needed": "Same systematic alias resolution as the ingestion item; at minimum, audit the _*_concept_used diagnostics and per-ticker NaN rates on the expanded build and treat concentrated missingness as a blocker, not a footnote.",
+        "effort": "large"
+      },
+      {
+        "file": "features.py:387-414 (STALENESS_MAX_DAYS=200)",
+        "coupling": "The 200-day threshold is explicitly calibrated to THIS corpus's sharp 198-day (legitimate, JNJ) vs 208-day (broken, MRK) separation. An expanded universe with non-accelerated/late filers can have legitimate resolutions past 200 days (silently NaN'd) or broken ones under 200 (silently accepted); the clean gap is not a property of the method, it is a property of these 25 companies.",
+        "change_needed": "Re-run the full staleness sweep (test_no_resolved_fact_is_stale_beyond_guard's methodology) on the expanded corpus and re-justify or parameterize the threshold (possibly by filer status).",
+        "effort": "medium"
+      },
+      {
+        "file": "features.py:983-1055 (build_target) -- self-referential universe-average target",
+        "coupling": "target_excess_return = own return minus the equal-weighted average over universe.csv's CURRENT tickers, filer included at weight 1/N. Three couplings: (1) expanding the universe CHANGES every historical target value -- the frozen features.parquet targets, the old backtest, and any new run are computed against different benchmarks and are not comparable; (2) constituents without prices early in a longer window silently drop out (_asof_price returns None), so benchmark composition drifts over time within one run (target_n_universe_constituents varies) -- with mixed IPO dates this becomes systematic; (3) the mechanical -1/25 self-correlation and the equal-weight sector-balanced interpretation (documented in backtest_report limitations as '1-of-25') both change meaning with N and composition.",
+        "change_needed": "Ratify a benchmark definition for the expanded experiment (exclude self from the average, decide fixed-vs-date-varying constituent sets, equal-weight vs alternatives), regenerate all targets, and explicitly declare the old backtest numerically incomparable rather than letting the change happen silently.",
+        "effort": "medium"
+      },
+      {
+        "file": "features.py:485-495 (build_accession_to_company_map)",
+        "coupling": "Hard-asserts accession_number -> ticker is 1:1. Breaks (AssertionError) if the expanded universe includes two tickers of one issuer/CIK (GOOG+GOOGL, BRK.A+BRK.B) or any shared-CIK pair, since both tickers' rows carry the same accessions.",
+        "change_needed": "Key company resolution by CIK, or enforce one-ticker-per-CIK at universe.csv level with a validation check.",
+        "effort": "small"
+      },
+      {
+        "file": "features.py:298-304 (RED_FLAG_CAVEAT) + 317-325 (GUIDANCE_MAP)",
+        "coupling": "The 36.6%/63.4% red-flag error rates hardcoded into RED_FLAG_CAVEAT (propagated verbatim into features/backtest/diagnosis reports) were measured on the CLAUDE bootstrap labels via the spot-check; Qwen-generated labels for the expanded corpus have different, currently unmeasured error rates -- carrying the old caveat forward is silent misinformation. GUIDANCE_MAP's WITHDRAWN->-1 folding is justified by n=1 in the current corpus.",
+        "change_needed": "Design and run a label-quality measurement for the Qwen labels (a new spot-check; the existing spotcheck/ machinery is corpus-specific), then regenerate the caveat constants; revisit WITHDRAWN handling at the new n.",
+        "effort": "large"
+      },
+      {
+        "file": "features.py:479-482 (load_labels) + labels.parquet schema contract",
+        "coupling": "features.py consumes a labels.parquet schema produced by the (now-frozen) Anthropic batch pipeline joined with chunk.py outputs: parse_ok/schema_valid flags, sentiment/guidance_direction/red_flags with exact enum values, and the per-chunk source_* parallel occurrence arrays. The new local-Qwen labeling path does not exist yet and must reproduce this schema exactly (including parse-failure semantics) or every downstream stage breaks; the '1 genuine refusal row' comment is also corpus-pinned.",
+        "change_needed": "Build the Qwen inference->labels.parquet writer to the existing schema, with its own parse_ok/schema_valid derivation, and remove single-refusal assumptions.",
+        "effort": "medium"
+      },
+      {
+        "file": "features.py:1152-1178 (FEATURE_DICTIONARY caveat strings)",
+        "coupling": "Hand-written per-ticker facts are frozen into report-generating constants: 'Liabilities structurally absent for ABBV/KO/MRK/OXY/WMT/MCD (6/25)', 'V has never reported EarningsPerShareDiluted', '8K_BODY n=8, 2 tickers', 'operating_margin NaN for 10 of 25'. After expansion these render as confidently wrong documentation in features_report.md.",
+        "change_needed": "Re-derive these caveats from the build's own diagnostics (missingness by ticker) instead of hand-typed strings, or audit/rewrite them per rebuild.",
+        "effort": "small"
+      },
+      {
+        "file": "backtest.py:157 (BURN_IN_END)",
+        "coupling": "BURN_IN_END = pd.Timestamp('2025-01-01') is a fixed calendar date, not a relative 6-quarter burn-in. Extending the window BACKWARD silently inflates the training burn-in while adding ZERO test folds (test folds are still 2025Q1+) -- the extra statistical power the expansion is meant to buy would largely not materialize in the fold count unless this constant is deliberately moved, and moving it changes which quarters are 'test' (a design decision with pre-registration implications).",
+        "change_needed": "Derive burn-in from a quarter count over the actual data range, and ratify the new fold structure explicitly before running (to avoid picking the fold split after seeing data).",
+        "effort": "small"
+      },
+      {
+        "file": "backtest.py:174-192,261-314 (form ablation + dedup) and their corpus-pinned justifications",
+        "coupling": "COMPANY_QUARTER_DEDUP_GAP_DAYS=5 is justified by 'no 3+ cluster at any gap 3-14' and the form ablation by 'minimum same-ticker gap 61 days once 8-Ks are excluded' -- both empirical facts about THIS 581-row frame, asserted in comments and pinned by test_company_quarter_clusters_real_data_never_exceed_size_two. Expanded universes (amended filings, multiple same-week 8-Ks, irregular filers) can produce 3+ clusters and sub-61-day 10-Q gaps; the keep-1-per-cluster behavior still runs but its documented justification, the 'no dedup needed on form subset' claim, and the test all break.",
+        "change_needed": "Re-derive both empirical claims on the expanded frame; if 3+ clusters appear, re-examine whether keep-latest-per-cluster is still the right dedup and update the pinned test.",
+        "effort": "small"
+      },
+      {
+        "file": "backtest.py + diagnose.py (prose constants and LOCO scaling)",
+        "coupling": "Docstrings and report-generator text hardcode 581/630/274 observations, 6 folds, '25 companies x ~12 quarters', '1-of-25 benchmark weight', '25 x 6 = 150 refits'; diagnose's per-ticker multiple-comparisons framing assumes 25 tests. run_leave_one_ticker_out scales O(N_tickers x folds) full refits (150 today; 100 tickers x more folds = thousands) and per-ticker tables become large.",
+        "change_needed": "Regenerate all prose from run diagnostics; budget compute for LOCO (or sample it) at the new universe size.",
+        "effort": "medium"
+      },
+      {
+        "file": "diagnose.py:279-284,807-813 (sector aggregation)",
+        "coupling": "aggregate_loco_to_sector is generic groupby, but the '5 sectors x 5 tickers' interpretation text is baked into the report, main() asserts features.parquet tickers == universe.csv tickers exactly, and any new company without a sector value trips the notna assertion. Unbalanced sector counts after expansion change what the sector table means.",
+        "change_needed": "Assign sectors for all new rows, update interpretation text, keep the ticker-set assertion (it is a good tripwire) but expect it to fire on any half-migrated state.",
+        "effort": "small"
+      },
+      {
+        "file": "test_diagnose.py:76-79,195-200 and test_ingest_prices.py:214-218",
+        "coupling": "Deliberate corpus tripwires: exactly 6 folds with test sizes [52,52,52,52,53,46] and train sizes [274..535]; len(universe)==25; sector set == {tech, financials, healthcare, energy, consumer}; universe contains NVDA/AAPL; loco n_folds==6. All fail on any expansion.",
+        "change_needed": "Re-pin to the new corpus's verified values as part of the expansion checklist (they are working as designed -- update, don't delete).",
+        "effort": "small"
+      },
+      {
+        "file": "test_phase_c_leakage.py:266-368 (real-corpus staleness pins)",
+        "coupling": "test_jpm_bac_cash_alt_tag_resolves_fresh_not_stale_real_corpus (hardcodes CIKs 19617/70858 and as_of 2026-08-06), test_jnj_operating_income_resolves_to_none_real_corpus, and test_no_resolved_fact_is_stale_beyond_guard's assertions that the guard fired for exactly (JNJ, OperatingIncomeLoss) and (MRK, OCF) are pinned to the current corpus and window; the full-corpus sweep's runtime also scales with universe x concepts x observations.",
+        "change_needed": "Re-derive the expected guard-firing set on the expanded corpus and re-pin; consider sampling for the sweep at scale.",
+        "effort": "small"
+      },
+      {
+        "file": "finetune/split.py:329-334 + finetune/check_leakage.py:80-91",
+        "coupling": "Both hard-assert that EXACTLY 1 row fails (parse_ok & schema_valid) -- an assumption about the frozen Claude-labeled corpus. Any regenerated or expanded labels.parquet (different failure count, or a Qwen path with its own parse failures) breaks both; check_leakage would then declare the split untrustworthy by design.",
+        "change_needed": "Replace the exact-1 assertion with a derive-and-report predicate when the corpus is regenerated; keep the intent (excluded rows in neither split).",
+        "effort": "small"
+      },
+      {
+        "file": "finetune/split.py + splits/ (frozen split vs expanded corpus)",
+        "coupling": "Three structural couplings: (a) the manifest is keyed to chunk_ids that don't survive a corpus rebuild (see chunk.py item); (b) the connected-component leakage boundary was computed on the CURRENT corpus's paragraph/accession graph -- new filings add edges that can connect a train component to an eval component, so the train/eval separation does not survive corpus growth; (c) most importantly for the new experiment: eval-split and train-split text recurs verbatim across years and companies, so a Qwen fine-tuned on the train split will label many expanded-corpus chunks it effectively saw in training -- label quality becomes systematically different (memorization vs generalization) between the incumbent 25 companies/old window and new companies/new window. That heterogeneity is correlated with exactly the old-vs-new axis the bigger experiment wants to compare, i.e. a silent confound that can masquerade as (or cancel) signal.",
+        "change_needed": "Freeze the split for model evaluation only; before using Qwen labels in the expanded pipeline, run a contamination audit (paragraph_id/accession overlap between the Qwen training set and every newly labeled chunk), record a per-chunk provenance flag (train-overlap vs novel), and either exclude overlapping chunks from signal analyses or model the flag explicitly. This needs a design decision, not just code.",
+        "effort": "large"
+      },
+      {
+        "file": "finetune/prepare_dataset.py:37-42 (APPLICABILITY) + distress_tier exclusion",
+        "coupling": "APPLICABILITY is keyed to exactly the 4 current section types (KeyError on any new one), and the fine-tuned Qwen never emits distress_tier -- so a Qwen-produced labels.parquet lacks a column that split.py's label_occurrence_index (row.distress_tier) and parts of the spotcheck tooling read, breaking any re-split or agreement computation over the new labels.",
+        "change_needed": "Make distress_tier optional in downstream readers of the new-label corpus (or emit an empty column), and extend APPLICABILITY deliberately if new section types appear.",
+        "effort": "small"
+      },
+      {
+        "file": "finetune/MLX_FEASIBILITY.md (sizing scope)",
+        "coupling": "The on-box-verified throughput analysis sizes TRAINING over the fixed 5,736-example train split (~7.0M tokens/epoch, 15-39h). It does not size bulk INFERENCE, which is the step that actually scales with the expansion: labeling an expanded corpus (plausibly 15k-40k+ chunks, each with the ~470-token instruction prefix uncached) on the 16GB M5 is a multi-day local job that nothing has yet estimated.",
+        "change_needed": "Produce an inference-throughput estimate (tokens/s generation on the quantized fine-tuned model x expected chunk count) before committing to a corpus size -- corpus size may need to be chosen partly by labeling budget.",
+        "effort": "medium"
+      },
+      {
+        "file": "edgar_client.py / price_client.py (request-volume scaling)",
+        "coupling": "Full rebuild cost is O(companies) submissions+companyfacts requests, plus one filing-index fetch per earnings 8-K and one document fetch per extracted section -- thousands of polite GETs at 100+ companies over a longer window; price ingestion is one sequential Yahoo fetch per ticker. All within SEC's published limits and the caching design, but wall-clock and politeness pacing become real, and Yahoo's undocumented-ToS exposure (already an owner-attention item) grows with volume.",
+        "change_needed": "No code break -- plan rebuild runs for wall-clock, keep request counters/rate delays as-is, and restate the Yahoo provenance caveat at the new volume for owner sign-off.",
+        "effort": "small"
+      }
+    ],
+    "summary": "The pipeline is mechanically parameterized on data/universe.csv (every ingestion loop reads it), so expansion mostly won't hard-crash beyond a few deliberate tripwires (the 20-30 universe bound, corpus-pinned test constants, the exactly-1-parse-failure asserts) -- but it is deeply CALIBRATED to the current 25-company/12-quarter corpus: hand-curated per-ticker XBRL tag maps and bank exemptions, thresholds tuned to observed distributions (filing gaps, section word floors, the 200-day staleness guard, coverage bands), and report prose that hardcodes per-ticker facts, all of which silently distort rather than fail when the universe or window changes. The three riskiest couplings are: (1) the self-referential excess-return target -- expanding the universe changes every historical target value and lets benchmark composition drift over a longer window, making old and new results incomparable unless a benchmark definition is re-ratified and targets regenerated; (2) chunk identity -- chunk_ids derive from globally-deduplicated paragraph 'homes' chosen as earliest occurrence, so adding companies or earlier filings re-packs windows and invalidates the join between the 6,747 existing labels, the frozen finetune split, and any rebuilt corpus; (3) the frozen Qwen train split vs the expanded corpus -- boilerplate recurs verbatim across years and companies, so the fine-tuned labeler will effectively replay memorized labels for old-universe text while genuinely generalizing on new text, a label-quality confound aligned exactly with the old-vs-new axis the bigger experiment studies. The largest recurring effort sink is per-company fundamentals curation (fixed 13-concept list, ALT_TAG_FAMILIES, migration/bank allowlists), which needs a systematic alias-resolution redesign to scale; and the survivorship-bias motivation for expansion collides directly with FATAL validation gates that assume currently-active filers and with Yahoo's lack of delisted-ticker data under the free-source constraint. Finally, BURN_IN_END is a fixed calendar date, so a backward-extended window adds training data but zero test folds unless the fold structure is deliberately re-ratified."
+  },
+  "universe": {
+    "selection_options": [
+      {
+        "name": "A. Top-N by EntityPublicFloat at window start (EDGAR-only size rank)",
+        "description": "At window start T0, rank every SEC registrant by dei:EntityPublicFloat taken from the most recent 10-K filed BEFORE T0, and take the top N (100-150). EntityPublicFloat is the cover-page 'aggregate market value of voting shares held by non-affiliates' that every 10-K filer must state -- it is a market-price-based size measure computed by the filer itself, so NO external price source is needed for selection. Enumerate candidates via the XBRL frames API (one GET returns all filers for a quarter instant) unioned across 4 consecutive quarterly frames to cover all fiscal year-ends, with a per-CIK companyfacts patch pass for frame gaps.",
+        "survivorship_safety": "Membership is decidable at T0 using only filings public before T0, and the frames API demonstrably includes since-delisted registrants -- verified live: Bed Bath & Beyond (CIK 886158, delisted 2023) appears in the CY2022Q3I dei shares frame. So the SELECTION side is genuinely survivorship-free. The residual bias moves to the OUTCOME side and must be stated: the Yahoo chart endpoint (the repo's only working price source; Stooq is bot-walled per data/PRICES_NOTES.md) generally does not serve delisted tickers, so forward returns right-censor at delisting -- an informative censoring that reintroduces bias into the backtest even with correct membership. Mitigations: (a) report the count of selected CIKs excluded solely for missing price data instead of silently dropping them; (b) supplement with EDGAR-native outcome events (8-K Item 1.03 bankruptcy, Form 25 delisting, Form 15 deregistration, going-concern audit-opinion language), which are fully survivorship-free.",
+        "data_needed": "All free EDGAR: https://data.sec.gov/api/xbrl/frames/dei/EntityPublicFloat/USD/CY{Y}Q{q}I.json (verified working, 4,969 entities for CY2022Q2I) + per-CIK companyfacts fallback (format matches data/raw/companyfacts/, where 24/25 companies show EntityPublicFloat with 'filed' dates from 2009); SIC/sector from submissions.json if needed. Zero price data needed for selection.",
+        "risks": "Float is annual (up to ~14 months stale at T0) and measured at each filer's fiscal-Q2 end, so ranks compare slightly different dates. Float excludes insider-held shares, so it under-ranks high-insider firms relative to true market cap. Frame coverage is fiscal-year-end-ragged (AAPL absent from the CY2022Q2I float frame -- Sept FYE), requiring the 4-quarter union plus a patch pass. Multi-class filers can be missing dei facts entirely (Alphabet has NO dei:EntityCommonStockSharesOutstanding in its companyfacts; float is present though). Foreign private issuers / trusts / funds need a form-type or SIC filter."
+      },
+      {
+        "name": "B. Top-N by computed market cap at start (dei shares x Yahoo price)",
+        "description": "At T0, market cap = dei:EntityCommonStockSharesOutstanding from the frames quarter-instant nearest T0 (verified: 5,184 entities CY2022Q3I; 6,492 CY2012Q3I) multiplied by the Yahoo close at T0 (price_client.py already fetches full history keyless; AAPL cache verified back to 1980-12-12 via period1=0). Take top N.",
+        "survivorship_safety": "Conceptually point-in-time (both inputs existed at T0), but PRACTICALLY unsafe as specified: the price factor can only be obtained today from Yahoo, which serves currently-listed tickers, so every company delisted between T0 and now silently drops out of the candidate set -- this is the classic trap re-entering through the price source, on the selection side, not just outcomes. Also CIK-to-ticker mapping for dead companies is itself survivorship-biased: company_tickers.json is a today-snapshot (the repo's own Week 1 finding #4, the XOM CIK override, documents exactly this class of problem). Only defensible if the candidate set is enumerated from EDGAR frames FIRST and every CIK excluded for missing price/ticker data is counted and reported, with option A's float value used as the fallback rank for those names.",
+        "data_needed": "dei shares frames (free, verified); Yahoo v8 chart endpoint (free, keyless, but robots.txt-disallowed -- already an open compliance flag in data/PRICES_NOTES.md); historical ticker recovery for delisted CIKs from their submissions.json 'tickers'/'formerNames' fields (imperfect).",
+        "risks": "Multi-class gaps (GOOGL absent from shares frames -- needs us-gaap:CommonStockSharesOutstanding fallback, present in its companyfacts from 2014); dead-ticker mapping failures; scaling Yahoo from 25 to 150 requests enlarges the already-flagged ToS question; strictly dominated by option A for selection purposes -- use only if true market cap (not float) is deemed essential."
+      },
+      {
+        "name": "C. Sector-stratified top-K float with ANNUAL point-in-time reconstitution (recommended)",
+        "description": "Option A's float rank, but (1) stratified: map each candidate CIK to the charter's 5 sectors via SIC code from its submissions.json and take the top K per sector (e.g. 20-30 x 5), preserving the existing balanced design; and (2) reconstituted Russell-style every 12 months: membership at each reconstitution date is recomputed using only filings public before that date, entries/exits logged in a dated membership table (universe.csv becomes (ticker, cik, sector, member_from, member_to)). A company that stops filing mid-window exits at its natural exit date with truncated observations -- never retroactively removed.",
+        "survivorship_safety": "Strongest of all options: membership at every date t depends only on information public before t, by construction, and staleness of a one-shot T0 selection is eliminated (a firm that collapses in year 2 was legitimately selected in years 0-1 and its decline stays in-sample -- exactly the observations the current all-healthy universe lacks). Residuals to state: SIC codes in submissions.json are CURRENT assignments, not historical (tiny look-ahead confined to the sector LABEL, not to membership); the delisted-price outcome censoring from option A still applies.",
+        "data_needed": "Same as option A plus one submissions.json fetch per candidate (SIC + filing-history check; these get cached under data/raw/submissions/ like everything else). All free EDGAR.",
+        "risks": "Churn complicates the walk-forward: per-name burn-in for mid-backtest entrants, and features.py/backtest.py assume a static universe today. SIC-to-5-sector mapping is crude for conglomerates. More bookkeeping code, and validate_universe()'s thresholds (135-day gap FATAL etc.) were calibrated on 25 healthy mega-caps and will misfire on a churning universe -- they need recalibration, not blanket --allow-incomplete-universe overrides."
+      },
+      {
+        "name": "D. Cap-floor + backward-only continuous filing history, with explicit mid-cap stratum",
+        "description": "At each (re)constitution date: include every registrant with EntityPublicFloat >= floor AND >= 8 consecutive quarters of 10-K/10-Q filings BEFORE that date. Run it as two explicit strata: mega (float >= ~$100B) and mid (float ~$2-10B), so the mid-cap tier is a labeled arm of the experiment, not a silent composition change. Candidate enumeration without any survivorship: EDGAR full-index form.idx (verified live: /Archives/edgar/full-index/2012/QTR3/form.idx returns 200) lists every filing ever made, including by long-dead registrants; or the frames API.",
+        "survivorship_safety": "Safe ONLY because the continuity requirement is backward-looking. The tempting variant -- 'companies with continuous filing history ACROSS the window' -- is look-ahead (it conditions membership on surviving the window) and must be rejected explicitly. With backward-only continuity, membership at t uses nothing after t. On whether the mid-cap tier is worth it: it is the only rule here that can produce realized going-concern/distress examples (the current universe has ZERO), but be honest about base rates -- a $2B+ float name entering healthy hits bankruptcy/going-concern within 3 years maybe 1-3% of the time, so 50 mid-caps x 3y yields a HANDFUL of distress events, not a balanced class; and it changes the experiment's character (different disclosure style, different filer-vendor HTML, different label distribution), so report mega and mid arms separately rather than pooling.",
+        "data_needed": "EntityPublicFloat frames + form.idx (both free, both verified live this session) + submissions.json per candidate. Free.",
+        "risks": "extract.py's calibrations are all fit on 25 mega-caps' 2023-2026 filings (MIN_SECTION_WORDS floors, the MDA stub resolver, the GS/JNJ/UNH TOC edge cases) -- mid-cap filer HTML is more heterogeneous, so expect a materially higher extraction-failure/low-confidence rate and budget a manual QA sample. More no-EX-99 8-Ks and omitted Item 1As. The fine-tuned labeler's training text is mega-cap prose -- distribution shift for the mid arm. Delisted-price censoring is WORST precisely for the distress names this option exists to capture (EDGAR-native outcome events are near-mandatory here)."
+      },
+      {
+        "name": "E. Historical S&P 500 membership from public change logs (rank last)",
+        "description": "Reconstruct index membership at each date from Wikipedia's 'List of S&P 500 companies' selected-changes table (dated additions/removals) or equivalent public scrapes, and use membership-at-t as the universe rule.",
+        "survivorship_safety": "Conceptually PIT-correct -- committee decisions were public at each date, so membership-at-t was knowable at t. But the official historical constituent lists are S&P DJI licensed products (not free), and the free reconstruction's completeness cannot be verified against ground truth; the residual bias is unquantifiable data-quality error (missing/misdated changes, worse further back) rather than a stated, bounded assumption. It also imports S&P's own selection criteria (profitability screens, committee discretion) as an uncontrolled confounder.",
+        "data_needed": "Wikipedia scrape (CC BY-SA -- fine for research attribution) + ticker-to-CIK mapping including dead tickers (hard, see option B). No EDGAR data validates membership itself.",
+        "risks": "Weakest provenance of all five -- the study's red-team discipline (every claim checkable against a primary source) cannot be applied to the membership table itself. Use only as a robustness cross-check on option C's universe, not as the primary rule."
+      }
+    ],
+    "window_extension": {
+      "practical_backward_limit": "2011-01-01 (~15 years, ~5x the current 3-year window) is the practical floor for the full experiment; mid-2009 only if the universe is restricted to large accelerated filers; 2012+ is the low-risk recommendation. Text-only sub-studies could reach 2005 (Item 1A) / Aug-2004 (8-K Item 2.02), but the core text+numeric-vs-numeric-only comparison collapses without XBRL.",
+      "why": "(1) XBRL fundamentals are the binding constraint: companyfacts coverage starts with the 2009 phase-in -- verified across all 25 cached companyfacts, earliest 'filed' dates cluster 2009-05..2009-11 for 23/25 (ABBV 2013 and Alphabet 2015 are entity-creation dates, a reminder that spinoffs/IPOs enter late regardless); large accelerated filers began mid-2009, ALL filers only ~2011, so a mid-cap tier forces the 2011 floor. Frames coverage verified healthy at 2012 (6,492 entities, CY2012Q3I). (2) Item 1A Risk Factors exists only for fiscal years ending on/after 2005-12-01 -- no RISK_FACTORS section_type before that. (3) 8-K Item 2.02 numbering exists only since 2004-08-23, and ingest_metadata.py matches the items string '2.02' exactly, so earnings 8-Ks are structurally invisible before then. (4) extract.py's primary strategy requires an anchor-linked TOC in table rows (<a href=\"#...\"> inside <tr>); that is near-universal in the iXBRL era (2019+ mandate) and common in large-cap vendor HTML back to roughly 2008-2010, but degrades earlier, dumping more documents onto the heading-regex fallback whose failure modes (prose cross-reference false matches, the XOM merged-section hazard) are documented in INGESTION_NOTES.md as actively dangerous; pre-~2001 filings are plain-text/SGML where primaryDocument may not even exist. (5) Every extract.py calibration -- MIN_SECTION_WORDS floors, MDA_STUB_WORD_CEILING=1500, the stub resolver, the GS/JNJ/UNH TOC fixes -- was fit exclusively on 2023-2026 filings.",
+      "notes": "Prices do not bind: Yahoo serves full history for surviving tickers (AAPL cache verified to 1980-12-12 via period1=0). submissions.json files[] pagination (the JPM/BAC/GS fix) already handles 15-year lookbacks; heavy-filer banks just need ~1 extra chunk fetch per ~year. Two obligations if extending: (a) a mandatory extraction-QA sample (30-50 sections) drawn from pre-2015 filings before trusting any extraction at scale, since anchor-path coverage and the calibrated floors are unvalidated there; (b) note era drift -- 2011-2015 disclosure prose differs from the 2023-2026 text the labeling rubric and the planned fine-tune corpus were built on, so labeler validity earlier is an assumption, not a measurement. Dedup interacts benignly (earliest occurrence stays 'home'), but re-chunking a longer window changes chunk ids and home attributions for existing text."
+    },
+    "ingestion_costs": "GROUNDED BASELINE (du -sh data/raw/, 25 companies x 3 years = 75 company-years): total 1.3 GB = documents 1.1 GB (630 files; mean 1.88 MB, median 0.94 MB; JPM/BAC 10-Qs are 11-12 MB iXBRL monsters) + companyfacts 106 MB (25 files, ~4.2 MB each, whole-history so a per-COMPANY one-time cost, not per-year) + submissions 24 MB (63 files incl. pagination chunks) + filing_index 5.7 MB (637 files) + prices 27 MB (25 tickers, full history). Per mega-cap company-year: ~8.4 document GETs (1 10-K + ~3 10-Q + ~4.4 8-K earnings docs, ~16 MB) + ~4-8 index GETs, plus per-company one-times (1 submissions + chunks, 1 companyfacts, 1 price fetch). Request counts actually recorded in INGESTION_NOTES.md: ~640 (Week 1) + ~65 (corrective) + 630 document GETs (Week 2), ZERO 429s; no wall-clock was recorded for any run, so all times below are estimates, flagged as such. FORMULA for N new companies x Y years (mega-cap sizing): requests ~ N x (3 + 15Y); bytes ~ N x (5 MB + 16 MB x Y). The client's sliding-window limiter is 10 req/s, so pure pacing is trivial -- the realistic wall-clock is transfer + disk + politeness margin. CONCRETE: +100 companies x 3 years ~ 2,300-2,600 requests, ~5.3 GB raw -- roughly 30-60 min of network time, call it an evening with retries; +125 companies x 5 years ~ 11 GB, ~1-2 h network. Backward extension is CHEAPER per company-year than the cache suggests: pre-2019 primary docs lack iXBRL bloat (0.3-2 MB typical vs 2-12 MB now), and mid-caps should run ~6-10 MB/company-year (median doc is 0.94 MB; the mean is dragged up by mega-bank filings). Universe-selection enumeration adds only ~4-8 frames GETs (~0.7 MB each, verified) plus 1 submissions GET per candidate CIK (~150-500 candidates). Storage conclusion: even the maximal design (150 companies x 15 years) is ~25-40 GB raw -- fine on local disk. THE REAL COSTS ARE NOT EDGAR: (1) extraction compute -- BeautifulSoup html.parser (deliberately chosen over lxml for correctness, per extract.py) on multi-MB HTML, unrecorded wall-clock today, likely hours at 10x scale; (2) local labeling dominates everything -- the corpus scales at ~90 chunks/company-year (6,747/75), so +100 companies x 3y ~ +27,000 chunks (4x current corpus) at ~1,220 tokens each (MLX_FEASIBILITY §2); at unmeasured M5 inference rates of ~10-30 s/chunk that is ~3-9 DAYS of continuous local inference -- measure on-box first, per MLX_FEASIBILITY's own discipline, before committing to a universe size.",
+    "notes": "Key verifications performed this session (read-only, live EDGAR, ~4 requests with the project's registered User-Agent): (1) frames API dei/EntityCommonStockSharesOutstanding CY2022Q3I returns 5,184 registrants INCLUDING delisted BBBY -- survivorship-free enumeration is real; CY2012Q3I returns 6,492 -- coverage holds at the proposed window start. (2) frames dei/EntityPublicFloat CY2022Q2I returns 4,969 but is fiscal-year-end-ragged (AAPL absent from that quarter's frame) -- union 4 quarters + per-CIK patch. (3) Alphabet has NO dei shares fact in companyfacts at all (multi-class tagging) but has us-gaap:CommonStockSharesOutstanding from 2014 -- any shares-based rule needs an explicit fallback tag chain or it silently drops a top-5 mega-cap. (4) full-index form.idx exists (2012/QTR3 fetched, 31 MB) for dead-registrant enumeration. Design cautions for the caller: universe.csv's 'no silent scope expansion' rule means the chosen selection rule must be logged as an owner decision; validate_universe() thresholds and extract.py floors are all calibrated on the current 25 healthy mega-caps and need recalibration for mid-caps or a churning universe; the outcome-side delisted-price censoring is the one bias NO free selection rule removes -- pair any expansion with EDGAR-native distress outcomes (8-K Item 1.03, Form 25, Form 15, going-concern opinions) so the names that matter most are not exactly the ones that vanish. Recommended composite: option C (sector-stratified float rank, annual PIT reconstitution) as primary, option D's mid-cap stratum as an explicitly separate arm, option A as the degenerate one-shot fallback if reconstitution churn is deemed too much engineering. Relevant files: /Users/vihanpatil/personal/projects/FinScreen/INGESTION_NOTES.md, /Users/vihanpatil/personal/projects/FinScreen/extract.py, /Users/vihanpatil/personal/projects/FinScreen/price_client.py, /Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/, /Users/vihanpatil/personal/projects/FinScreen/finetune/MLX_FEASIBILITY.md."
+  },
+  "inference": {
+    "throughput_assumptions": "GENERATION (decode): ~25 tok/s point, 20-29 band, for Qwen2.5-7B-Instruct MLX 4-bit on the base M5 (10-core GPU, 153 GB/s). Reasoning: (a) bandwidth ceiling = 153 GB/s / 4.28 GB of 4.5-bit weights (MLX_FEASIBILITY.md 3.1: 3.99 GiB) = ~35.7 tok/s theoretical max; MLX typically sustains 60-80% of that for dense 7-8B = 21-29. (b) Community base-M4-16GB anchors put 7-8B Q4 generation at ~20-25 tok/s (llmcheck.net/benchmarks: Llama-3.1-8B on M4 16GB = 20 tok/s Ollama, MLX ~15-25% faster); Apple's official M5 study (machinelearning.apple.com/research/exploring-llms-mlx-m5, run on an M5 MacBook Pro — the SAME base-M5 chip as the owner's Mac17,2, RAM aside) measured generation only 1.19-1.27x faster than M4 -> ~24-29. Both routes converge. Confidence: MODERATE-HIGH (decode is bandwidth-bound and predictable; KV cache at ~1,250-token context is ~72 MB under GQA, negligible). PROMPT PROCESSING (prefill): ~600 tok/s point, 450-800 band. Reasoning: (a) one direct community datapoint: base M5, Qwen3-8B 4-bit, 578.7 tok/s prefill (surfaced via compute-market.com/yage.ai MLX-vs-llama.cpp 2026 roundups); Qwen2.5-7B is slightly smaller -> slightly faster. (b) Apple official: 3.97x TTFT speedup vs M4 for Qwen-8B 4-bit at 4,096-token prompts, driven by the per-core Neural Accelerators MLX exploits; base-M4 MLX prefill anchors of ~150-200 tok/s x ~4 -> 600-800. Our prompts are ~1,250 tokens, shorter than Apple's 4,096, so prefill amortizes slightly worse — lean low-mid. Confidence: MODERATE (one direct anchor plus a same-chip official speedup ratio; no published base-M5 benchmark for this exact model). PER-CHUNK ARITHMETIC (single stream, model resident, no tricks): input ~1,220 tok measured (MLX_FEASIBILITY.md 2.1, incl. the byte-identical ~470-tok instruction = ~38% of every prompt) + ~30 tok ChatML template = ~1,250 prefill tok; output measured over finetune/prepared/*.jsonl at 110 chars mean / 233 p95 / 467 max = ~35 tok mean (~70 p95) of enum-heavy JSON. Time = 1,250/600 + 35/25 + ~0.3 s overhead = ~3.8 s/chunk = ~950 chunks/h point; corner cases 715-1,215/h; planning band 600-1,250 chunks/h after ~2-5% JSON-parse retries and batching-script overhead. KV-PREFIX REUSE: the ~470-490-token shared instruction prefix is cacheable — mlx_lm supports prompt caching (make_prompt_cache / mlx_lm.cache_prompt --prompt-cache-file), and mlx_lm.server reuses the common KV prefix of consecutive requests — cutting prefill to ~760 tok -> ~3.0 s/chunk, roughly +20-25% throughput for near-zero effort. BATCHING: mlx_lm batch generation amortizes weight reads across sequences; decode gains 3-5x aggregate but decode is only ~37% of per-chunk time, and prefill (compute-bound on 10 GPU cores) gains little -> realistic aggregate 1.5-2.5x (=~1,500-2,400 chunks/h combined with prefix cache), LOW-MODERATE confidence, must be measured on-box. All numbers should be replaced by a 50-chunk timed probe on the real machine before committing (same spirit as MLX_FEASIBILITY.md 4.3); token counts carry the doc's +/-20% no-tokenizer-loaded caveat.",
+    "scenarios": [
+      {
+        "name": "S1: 50 companies x ~3.5yr",
+        "n_companies_total": 50,
+        "window_years": 3.5,
+        "est_new_chunks": 6747,
+        "est_labeling_hours_7b": "5-11 h",
+        "notes": "13,494 total chunks at 77.1 chunks/company-yr; 6,747 already labeled. Point ~7 h at ~950 chunks/h: ONE overnight run. Trivially feasible on the 7B."
+      },
+      {
+        "name": "S2: 100 companies x ~3.5yr",
+        "n_companies_total": 100,
+        "window_years": 3.5,
+        "est_new_chunks": 20242,
+        "est_labeling_hours_7b": "16-34 h",
+        "notes": "26,989 total. Point ~21 h: 2-3 overnight sessions (~9 h/night) or one long weekend run. Feasible without any speedup tricks."
+      },
+      {
+        "name": "S3: 25 companies x ~10yr",
+        "n_companies_total": 25,
+        "window_years": 10,
+        "est_new_chunks": 12530,
+        "est_labeling_hours_7b": "10-21 h",
+        "notes": "19,277 total. Point ~13 h: 1-2 overnights. Cheapest power gain per labeled chunk, but extends into 2016-2019 filing regimes (pre-2020 MD&A style, different disclosure norms) — check EDGAR 8-K exhibit availability holds at 10yr depth."
+      },
+      {
+        "name": "S4: 100 companies x ~10yr",
+        "n_companies_total": 100,
+        "window_years": 10,
+        "est_new_chunks": 70362,
+        "est_labeling_hours_7b": "56-117 h",
+        "notes": "77,109 total. Point ~74 h = ~3 days continuous or ~8-9 overnight sessions. NOT months — the biggest scenario is days of compute. With prefix-cache + batching (~1,800 chunks/h) it compresses to ~1.5-2 days. The real bottleneck for S4 is more likely EDGAR-polite fetching/parsing/QA of ~10x the corpus than inference."
+      },
+      {
+        "name": "S5: 60 companies x ~7yr",
+        "n_companies_total": 60,
+        "window_years": 7,
+        "est_new_chunks": 25639,
+        "est_labeling_hours_7b": "21-43 h",
+        "notes": "32,386 total. Point ~27 h: ~3 overnights. Good middle option: ~4.8x current corpus for about a work-week of nights."
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "Qwen2.5-3B student (fine-tune + label on 3B)",
+        "description": "Fine-tune the same QLoRA recipe on Qwen2.5-3B-Instruct 4-bit (~1.8 GB weights) and use it as the labeling model. Decode ceiling 153/1.8 = ~85 tok/s -> realistic ~55-70 tok/s; prefill ~2x the 7B -> ~1,100-1,400 tok/s. Per chunk ~1.8 s -> ~2,000 chunks/h. Training also ~2x faster with real memory headroom (batch 2-4 becomes safe on 16 GB).",
+        "est_effect": "~2x labeling speedup (S4 drops to ~30-40 h); training epoch ~3-5 h instead of 5-13 h",
+        "tradeoffs": "Quality risk moderate: fixed-schema extraction suits 3B, but HYPOTHETICAL-vs-REALIZED modality and register-dependent field omission (the PROMPT_TEMPLATE.md applicability contract) are the likely degradation points. Cheap to de-risk: score it against the 7B on the existing 1,010-row eval split before committing. LICENSE FLAG: Qwen2.5-3B is under the Qwen Research License (non-commercial), NOT Apache-2.0 like the 7B/1.5B — fine for this research study but breaks MODEL_CHOICE.md's verified-Apache posture and needs its own license check."
+      },
+      {
+        "name": "Qwen2.5-1.5B student",
+        "description": "Same idea at 1.5B 4-bit (~0.9 GB): decode ~100-130 tok/s, prefill ~2,000+ tok/s, ~1.0-1.2 s/chunk -> ~3,000-3,800 chunks/h. Apache-2.0.",
+        "est_effect": "~3-4x labeling speedup (S4 in ~20-25 h); training epoch ~1.5-2.5 h",
+        "tradeoffs": "Quality risk HIGH: 1.5B models are markedly weaker at conditional schema adherence and nuanced tone; higher parse-failure and label-noise rates would eat exactly the statistical power the expansion is meant to buy. Label noise is a silent failure here — it doesn't crash, it just attenuates the signal you're trying to detect. Only worth it if eval-split agreement vs the 7B is near-parity."
+      },
+      {
+        "name": "Short-turn GPU rental for inference only (NOT pre-approved — decision-gated)",
+        "description": "One 4090/A10-class card under vLLM with continuous batching: ~10-20k tok/s prefill, several-thousand tok/s aggregate decode. S4's 70k chunks = ~88M prefill + ~2.5M decode tokens = roughly 2-6 GPU-hours. At $0.35-0.70/h (4090 on RunPod/Vast) or ~$1.2/h (AWS g5/A10G): order of magnitude $1-10 total for 30-70k chunks.",
+        "est_effect": "~74 h -> ~2-6 h; ~$1-10 one-off",
+        "tradeoffs": "Requires explicit owner sign-off (charter: GPU rental not pre-approved). Real engineering cost hides in the adapter: MLX QLoRA adapters train against MLX affine-quantized weights — serving on CUDA means converting the adapter to PEFT format and serving bf16 base + LoRA in vLLM (15.2 GB bf16 fits a 24 GB card), accepting a small quantization-mismatch drift vs the MLX-served model, or re-quantizing. Also uploads filing text to a third-party box (public SEC data, so low sensitivity, but a posture change). Honest read: at 5-11 h for S1/S3 the rental buys nothing; it only earns its decision overhead at S4 scale."
+      },
+      {
+        "name": "KV prefix cache + mlx_lm server/batching (free, no quality change)",
+        "description": "The ~470-token byte-identical instruction (~38% of every prompt) prefills identically every time. mlx_lm supports prompt caching (make_prompt_cache; mlx_lm.cache_prompt with --prompt-cache-file) and mlx_lm.server reuses the common KV prefix across consecutive requests: prefill drops ~1,250 -> ~760 tok. Batched generation (mlx_lm batch APIs) amortizes weight reads during decode; 16 GB has ample inference headroom (weights 4 GB + ~72 MB KV/sequence).",
+        "est_effect": "+20-25% from prefix cache alone; ~1.5-2.5x combined with batching (~1,500-2,400 chunks/h)",
+        "tradeoffs": "Zero quality risk — identical model, identical text exposure, so it cannot violate the PROMPT_TEMPLATE.md training/inference-consistency contract. Batching gains need on-box measurement (prefill, not decode, dominates this workload on a 10-core GPU, and batch prefill gains are modest). This should be the FIRST lever, before any student model or rental is considered."
+      },
+      {
+        "name": "Shorter/constrained JSON output schema",
+        "description": "Compress the answer (single-letter enum codes, terse keys) to cut the ~35-token mean output to ~10-15 tokens; or grammar-constrained decoding that fast-forwards forced structural tokens (braces/quotes/key names are ~40% of output tokens).",
+        "est_effect": "~20-25% single-stream at best (decode is only ~37% of per-chunk time — prefill dominates, contrary to the intuition that the JSON answer is the bottleneck)",
+        "tradeoffs": "Changing the output schema changes the TRAINING TARGET: it requires re-running prepare_dataset.py's downstream conversion, retraining, and editing the PROMPT_TEMPLATE.md contract that deliberately mirrors the bootstrap labeling prompts — an owner-level design decision, not a serving flag. mlx_lm has no built-in grammar-constrained decoding (outlines/llguidance-style forced-token skipping is not off-the-shelf there). Poor return on invasiveness; the prefix cache dominates it for less risk."
+      },
+      {
+        "name": "Overnight-scheduling reality on this machine",
+        "description": "The owner's machine is a MacBook Pro 14\" (Mac17,2, verified on-box) — ACTIVELY COOLED, not a fanless Air, so sustained multi-hour GPU inference is thermally fine with at most minor clock droop. Inference peak memory (~5-6 GB) sits far below the ~10.7-12 GiB working-set ceiling, so the training-side memory-creep risk (mlx-lm #828) largely doesn't apply. Recipe: run on AC power with 'caffeinate -dims' (system must not sleep; display sleep is fine), lid open or clamshell-with-external-display, Low Power Mode off, heavy apps closed; note mlx #3267's GPU-watchdog kills were training-with-display-active, so an idle screen is preferable. Make the labeling loop checkpointed (append JSONL keyed by chunk_id, resume on restart) so a crashed night loses nothing.",
+        "est_effect": "~8-10 usable hours/night -> S1/S3 = 1-2 nights, S2/S5 = ~3 nights, S4 = ~8-9 nights (or ~3 days continuous)",
+        "tradeoffs": "Ties up the owner's only machine overnight for the duration; a week of nights for S4 is real but bounded. No scenario here is months of compute — the honest risk is not inference wall-clock but corpus construction: EDGAR-polite fetching, parsing, and QA of up to ~11x the current text."
+      }
+    ],
+    "notes": "HONEST BOTTOM LINE: local 7B inference is NOT the binding constraint for any scenario. Worst case (S4, 100 companies x 10 yr, ~70k new chunks) is ~2.5-5 days of continuous compute on the stock single-stream path, compressing to ~1.5-2 days with free mlx_lm tricks — days, not months. The binding constraints are more likely (1) corpus acquisition/QA at EDGAR-polite rates for up to 11x the text, (2) label-noise quality of the fine-tuned student vs the bootstrap labels, and (3) the fine-tune itself (per MLX_FEASIBILITY.md: 5-13 h/epoch, memory-tight at batch 1). KEY MEASURED INPUTS: prompt ~1,220 tok incl. byte-identical ~470-tok instruction (MLX_FEASIBILITY.md section 2, +/-20% no-tokenizer caveat); outputs measured directly from finetune/prepared/{train,eval}.jsonl at 110/128 chars mean, 233/328 p95, 422/467 max (train/eval) = ~35 tok mean; machine verified on-box as MacBook Pro 14\\\" base M5 10-core GPU 16 GB (Mac17,2 — has a fan). CONSISTENCY CAVEAT ON est_new_chunks: figures assume the existing 6,747 chunks keep their API-bootstrap labels. Mixing two labelers (API bootstrap vs fine-tuned local model) across the feature matrix introduces a labeler covariate confounded with company/period; relabeling ALL chunks with the fine-tuned model for consistency adds only ~5-11 h per scenario and is probably the right call — use the total-chunk column implied in each scenario's notes if so. DENSITY CAVEAT: 77.1 chunks/company-yr is measured on 25 mega-caps 2022-2026; smaller/older filers and pre-2020 disclosure norms may shift it +/-20-30%, and 10-yr scenarios should verify 8-K exhibit and MD&A extraction quality degrades gracefully at depth. NEXT CONCRETE STEP (free, ~10 min): once any 4-bit Qwen2.5-7B is downloaded for Phase D, time a 50-chunk labeling probe with and without a cached instruction prefix — that single measurement replaces every band above. Sources: Apple ML Research M5/MLX study (machinelearning.apple.com/research/exploring-llms-mlx-m5 — same base-M5 chip as owner's MBP; TTFT 3.97x vs M4 for Qwen-8B-4bit at 4,096-tok prompts, generation 1.19-1.27x), Apple Newsroom M5 (153 GB/s), llmcheck.net/benchmarks (base-M4 16GB 8B-Q4 ~20 tok/s; M4 Pro Mistral-7B MLX 51 tok/s), compute-market.com / yage.ai MLX-vs-llama.cpp 2026 roundups (base-M5 Qwen3-8B-4bit prefill 578.7 tok/s), ggml-org/llama.cpp discussion #4167, finetune/MLX_FEASIBILITY.md + PROMPT_TEMPLATE.md + prepared/*.jsonl (measured locally, read-only). Charter compliance: all scenarios use SEC EDGAR + free sources only, zero API spend, GPU rental explicitly flagged as decision-gated and not assumed."
+  },
+  "power": {
+    "method": "ANALYTIC + SIMULATION, all inputs from repo reports. Inputs: (a) /Users/vihanpatil/personal/projects/FinScreen/data/backtest_report.md — full-model dedup per-fold IC deltas (-0.1275, -0.0078, -0.0399, 0.0183, -0.0004, 0.0992): mean -0.0097, std 0.0677, over 6 folds with dedup n = 44/40/39/37/45/32 (mean 39.5 rows/fold from 25 companies); form-controlled delta std 0.1315 at fold n = 25/25/25/25/25/21 (mean 24.33). (b) data/diagnosis_report.md — family delta stds 0.0282-0.1075 (full sample) and 0.0613-0.1657 (form-controlled), so the 0.0677 anchor is the FULL family; per-family MDEs vary ~0.4x-2.4x around the numbers below. SIMULATION (run, not just planned): /usr/bin/python3 (numpy 1.26.4), script at /private/tmp/claude-501/.../scratchpad/ic_power_sim.py, 20,000 reps/cell, Gaussian model where target y=z and two unit-variance model scores share the target loading (true Pearson IC 0.10) plus a common noise component setting model-model corr rho. Results: empirical SE of a single Spearman IC matches analytic 1/sqrt(n-1) — n=25: 0.2038 vs 0.2041; n=50: 0.1427 vs 0.1429; n=100: 0.0994 vs 0.1005; n=150: 0.0821 vs 0.0819. Empirical SE of the IC-DELTA (same fold rows, shared target) at rho 0.80/0.90/0.95: n=25: 0.1398/0.1035/0.0770; n=50: 0.0951/0.0690/0.0501; n=100: 0.0659/0.0475/0.0343; n=150: 0.0546/0.0391/0.0280 — i.e. delta noise is ~sqrt(2(1-rho)) of sqrt(2)x single-IC noise. Calibration at n=40: rho=0.92 gives SE(delta)=0.0702, rho=0.95 gives 0.0569 — the OBSERVED 0.0677 is fully explainable as pure sampling noise at rho~0.92-0.93, so the repo data cannot separate sampling variance from a regime floor. VARIANCE DECOMPOSITION var_delta(n) = c/n + floor, fit to the two repo points (n=39.5, var=0.004583) and (n=24.33, var=0.017292): unconstrained fit gives c=0.805, floor=-0.0158 — INFEASIBLE (negative floor); forcing floor=0 gives c=0.181 from point A vs 0.421 from point B, a 2.3x disagreement. The form-controlled point is a different feature regime (form-confound features inert, 8-Ks dropped), not merely a smaller n, so identification from these two confounded points is essentially nil. Therefore each config is BRACKETED: optimistic endpoint = floor 0, std_fold(n_co) = 0.0677*sqrt(25/n_co) (pure 1/n scaling anchored at the observed full-sample point, with dedup rows assumed proportional to companies at the observed 39.5/25 = 1.58 rows/co/fold); pessimistic endpoint = all floor, std_fold = 0.0677 regardless of company count (only folds help). Then SE_mean = std_fold/sqrt(k) and MDE = 2.8 x SE_mean (two-sided 5%, 80% power, normal approx). per_fold_n_independent = n_companies per the dedup discipline (~1 independent company-quarter bet per company per fold; the raw dedup row count runs ~1.6x that).",
+    "configs": [
+      {
+        "name": "25co x 6 folds (status quo)",
+        "n_companies": 25,
+        "n_folds": 6,
+        "per_fold_n_independent": 25,
+        "se_mean_delta": "0.0276 (brackets coincide at the anchor point)",
+        "mde_approx": "0.077 — larger than every family mean delta ever observed; the current design could only have detected a near-implausible signal"
+      },
+      {
+        "name": "50co x 6 folds",
+        "n_companies": 50,
+        "n_folds": 6,
+        "per_fold_n_independent": 50,
+        "se_mean_delta": "0.0195-0.0276 (floor-free to full-floor)",
+        "mde_approx": "0.055-0.077"
+      },
+      {
+        "name": "100co x 6 folds",
+        "n_companies": 100,
+        "n_folds": 6,
+        "per_fold_n_independent": 100,
+        "se_mean_delta": "0.0138-0.0276 (floor-free to full-floor)",
+        "mde_approx": "0.039-0.077 — worst bracket spread of any config: pure company expansion buys nothing if the floor dominates"
+      },
+      {
+        "name": "25co x 26 folds (10yr)",
+        "n_companies": 25,
+        "n_folds": 26,
+        "per_fold_n_independent": 25,
+        "se_mean_delta": "0.0133 (brackets coincide; folds shrink both components)",
+        "mde_approx": "0.037 — floor-robust, but longest data build and worst survivorship/estimand drift"
+      },
+      {
+        "name": "50co x 14 folds (7yr)",
+        "n_companies": 50,
+        "n_folds": 14,
+        "per_fold_n_independent": 50,
+        "se_mean_delta": "0.0128-0.0181 (floor-free to full-floor)",
+        "mde_approx": "0.036-0.051"
+      },
+      {
+        "name": "60co x 22 folds (7yr earlier burn-in)",
+        "n_companies": 60,
+        "n_folds": 22,
+        "per_fold_n_independent": 60,
+        "se_mean_delta": "0.0093-0.0144 (floor-free to full-floor)",
+        "mde_approx": "0.026-0.040"
+      },
+      {
+        "name": "100co x 26 folds",
+        "n_companies": 100,
+        "n_folds": 26,
+        "per_fold_n_independent": 100,
+        "se_mean_delta": "0.0066-0.0133 (floor-free to full-floor)",
+        "mde_approx": "0.019-0.037 — the only config whose PESSIMISTIC endpoint reaches the status-quo 25x26 level while its optimistic endpoint approaches 0.02"
+      },
+      {
+        "name": "100co x 14 folds",
+        "n_companies": 100,
+        "n_folds": 14,
+        "per_fold_n_independent": 100,
+        "se_mean_delta": "0.0090-0.0181 (floor-free to full-floor)",
+        "mde_approx": "0.025-0.051"
+      }
+    ],
+    "honest_caveats": "(1) REGIME-VARIANCE FLOOR MAY DOMINATE AND IS UNIDENTIFIED. The observed per-fold delta std 0.0677 at n~40 is exactly what pure sampling noise produces when the two models' scores correlate ~0.92 (simulated), but if the true model-model correlation is higher, most of 0.0677 is a fold-regime floor that MORE COMPANIES CANNOT BUY DOWN — only more folds/time divides it (by sqrt(k)). The two-point c/n+floor fit is infeasible (floor = -0.016) and the floor-free constants from the two points disagree 2.3x, because the form-controlled point is a different feature regime, not just a smaller n — so the brackets above are structural endpoints, NOT confidence intervals, and the identification behind any single point inside them is close to zero. Configs that add only companies (50x6, 100x6) risk buying nothing at all under the pessimistic endpoint. (2) FOLD NON-INDEPENDENCE MAKES EVERY MDE HERE A LOWER BOUND. SE_mean = std/sqrt(k) assumes independent fold deltas; in fact the same companies appear in every fold, 63-trading-day target windows of filings near quarter boundaries leak into adjacent folds, and expanding-window training sets are nested — effective k < nominal k. Also, 2.8 uses the normal approximation; at k=6 a t-correction pushes the multiplier toward ~3.4. Per-fold n_independent = n_companies additionally assumes every company files usable XBRL+text every quarter (the status quo delivered ~25 independent bets but only 32-45 dedup rows per fold from 25 companies — attrition will hit an expanded universe harder). (3) THE OBSERVED -0.0097 MAY SIMPLY BE THE TRUE EFFECT, so the realistic outcome of the bigger experiment is confirming ~zero — the design question is what MDE makes that null MEANINGFUL. A null at MDE m bounds the true dedup delta within roughly +/- m/1.4 (95% CI half-width ~= 2 x SE_mean). At the status quo (MDE 0.077) a null only says \"not huge.\" At 60co x 22 or 100co x 26 (MDE ~0.02-0.04 across brackets, CI half-width ~0.013-0.027) a null supports the strong, publishable-to-self statement \"no text-vs-numeric IC improvement of economically relevant size (|delta| >~ 0.03) exists in this universe\" — that is the concrete power target that makes a confirmatory null worth the build. (4) ESTIMAND SHIFT: expanding past 25 mega-caps and/or back before 2022 changes the population being measured (smaller caps, different disclosure/XBRL regimes, COVID 2020 inside a 7-10yr window), so the 0.0677 anchor estimated on 2025-2026 mega-cap folds may not transfer, and survivorship bias from a today's-membership universe (already flagged in backtest_report.md) grows with lookback. (5) The anchor is the FULL feature family; per-family delta stds in the repo span 0.028-0.166, so per-family MDEs scale these numbers by ~0.4x-2.4x, and new Qwen-labeled features have no measured delta std yet — these projections assume the new labeler's noise profile resembles the bootstrap LLM's."
+  }
+}

@@ -1,0 +1,560 @@
+[
+ {
+  "chunk_id": "E2CHK-9d439514c919670f",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The passage is a past-due-loan table plus a mechanical accretable-yield rollforward for \"PURCHASED CREDIT-IMPAIRED (PCI) LOANS\" — a purchase-accounting header and defined term, not an assertion that a charge was taken. No charge-off, provision, or write-down amount is stated for any period; only balances, accretion, and reclassifications. Addendum rule 6 reaches loan carrying-value reductions and receivable write-offs, and rubric section 4 excludes \"a category name appearing in a section header ... with no substantive discussion,\" which is what \"credit-impaired\" is doing here.",
+  "pattern": "allowance-reserve-not-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-040942506845bb80",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "high",
+  "brief": "This is the bulleted \"Notice regarding forward-looking statements\" list: \"Losses or curtailments of purchases from key customers...\", \"Our ability to maintain or improve profit margins...\", \"Impairments of our non-financial assets.\" Addendum rule 5 is directly on point: \"Safe-harbor noun lists and enumerations should ordinarily fail mining depth ... no flags.\" None of these bullets asserts anything as having happened to this company, so all three stored flags come off.",
+  "pattern": "safe-harbor-noun-list-no-flags",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-1cf736b21f979401",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Higher manufacturing costs (primarily due to inflationary impacts)\" is causeless cost inflation, which the section 4 disambiguation note says is *always* MARGIN_COST_PRESSURE, realized. Separately the passage devotes several sentences to \"the estimated total market in the Middle East & Africa decreased ... Algeria, down by 37.5% ... Turkey, down by 6.8%\" — a realized unfavorable volume trend, which section 4 lists under DEMAND_WEAKNESS. I do not add SUPPLY_INPUT_CONSTRAINT for the \"industry supply chain disruptions,\" because addendum rule 2 says a market-wide disruption is not automatically the filer's own constraint.",
+  "pattern": "declining-end-market-volume-is-demand-weakness",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-19cbfdfda539b797",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The reconciliation tables carry an explicit line \"Impairment expense — (129)\" and again \"Impairment expense — 129\" for the three months ended March 31, 2016. That is a recorded charge with a dollar amount, matching section 4's IMPAIRMENT_WRITEDOWN trigger, and it is stated as having occurred, so modality is REALIZED under section 6. A quantified line item is not the \"section header ... with no substantive discussion\" that section 4 excludes.",
+  "pattern": "impairment-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a225b4072d490e6c",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The only negative-sounding words are the subordinate clause \"offset by lower royalties payable associated with lower sales of TYSABRI\" inside an explanation of royalty cost of sales. Section 4 requires the passage to contain language matching DEMAND_WEAKNESS — softening demand, declining orders, unfavorable volume trends — and an incidental comparative about one product's sales, with no demand or volume characterization, does not assert it. The rest is neutral (step-up amortization, \"no significant gross idle capacity charges,\" and cost *reductions*).",
+  "pattern": "incidental-lower-sales-clause-not-demand-weakness",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-5d8161de3b3f9c3b",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "This is a securities-holdings table; the only impairment-adjacent content is a column headed \"Allowance for Credit Losses\" showing $0/$(3)/$(4) million and a \"Gross Unrealized Losses\" column that is by its own label unrealized. No write-off, charge-off, or impairment charge is asserted. Addendum rule 6 reaches \"loan carrying-value reductions ... including receivable write-offs\"; a valuation allowance balance in a holdings table is not such an event.",
+  "pattern": "allowance-reserve-not-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-0e5a3607c3c9800c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"The continuing and evolving threat of cybersecurity attacks *has resulted in* evolving legal and compliance matters, including increased regulatory focus on prevention, which *could* require the Company to expend significant additional resources\" — section 6's realized-controls rule and addendum rule 3 make the existence claim REALIZED and leave only the cost projected. The passage also asserts, in full sentences, that a cyber attack \"could cause a loss in production\" and that damage to third-party facilities \"could adversely affect the ability of the Company to produce, gather, process\" — constrained production and supplier disruption, which addendum rule 1 expressly accepts, framed hypothetically.",
+  "pattern": "realized-existence-inside-risk-factor",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-53e99d12cc4a1b19",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "high",
+  "brief": "\"Include noncash impairment charges of approximately $20.2 million\" is a recorded charge, so IMPAIRMENT_WRITEDOWN / REALIZED stands. The stored TRADE_POLICY_EXPOSURE has no textual basis at all — there is no tariff, export control, sanction, or trade restriction anywhere in the passage; the only external event named is Hurricane Harvey. Rubric section 0 requires labeling only what the text says.",
+  "pattern": "spurious-category-no-textual-basis",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4cdb7b3bd5bdbf68",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The Credit Quality block states \"Total net charge-offs $3,240\" and \"Net charge-offs as a percentage of average loans and leases outstanding 0.44%\" — loans actually written off in the period. Addendum rule 6 requires that loan carrying-value reductions be treated as impairment/write-down, realized, \"including receivable write-offs,\" and a charge-off is exactly that. This is distinct from a mere allowance balance, which I do not flag.",
+  "pattern": "chargeoffs-are-receivable-writeoffs",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-af6972d4c50c8ae4",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"The most significant current investigations and litigation brought by government agencies are described in Note 21\" is an existence claim, so LEGAL_REGULATORY_ACTION / REALIZED is right. The heading also says regulatory scrutiny \"imposes significant compliance costs\" — present tense, already incurred. Addendum rule 7 is explicit: an existing regulation plus an already-incurred compliance cost is both a legal/regulatory action, realized, and a margin/cost pressure, realized.",
+  "pattern": "regulation-plus-incurred-cost-double-label",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a57195ed78f3ce4a",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"A decrease of $3 million due to lower gas prices and increased power costs at our compression services business\" is a realized cost increase reducing segment results — section 4 MARGIN_COST_PRESSURE, REALIZED. I do not add IMPAIRMENT_WRITEDOWN for \"an increase in the provision for expected credit losses\": a provision/allowance is a forward-looking estimate, not the write-off or carrying-value reduction addendum rule 6 speaks to. I do not add DEMAND_WEAKNESS for the one-clause \"lower sales of residue gas,\" which carries no demand or volume characterization.",
+  "pattern": "allowance-reserve-not-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-612ed6e9da9b6228",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The expense discussion is a neutral variance bridge: \"Operating expenses increased by $92.5 million in 2025 when compared with 2024,\" itemized as salaries, technology support, license and legal fees. Section 4 defines MARGIN_COST_PRESSURE as \"rising input/labor/operating costs *compressing margins*,\" and nothing here asserts compression — revenue is described as rising on \"price increases for certain products.\" Routine expense growth reported without pressure framing does not clear the category.",
+  "pattern": "neutral-expense-bridge-not-margin-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-6d6cbe1c97c42ece",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The table asserts charge-offs occurred: \"Net charge-offs as a percentage of average loans and leases HFI 0.46\" and \"Ratio of ALLL to: Net charge-offs 2.40x.\" Under addendum rule 6, loan carrying-value reductions — including receivable write-offs — are impairment/write-down, realized, applied consistently. I treat this the same as the other bank chunk in this batch that reports charge-offs, and differently from chunks that show only allowance balances.",
+  "pattern": "chargeoffs-are-receivable-writeoffs",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-449e8722b0f09e0f",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Industry-wide fluctuations in the computer marketplace *have materially adversely affected us in the past*\" and segments that \"*have in the past experienced a decline*\" are occurrence claims, so DEMAND_WEAKNESS / REALIZED is correct per section 6's realized-controls rule. The stored MARGIN_COST_PRESSURE rests on \"aggressive pricing by competitors ... leading to lower prices and margins,\" but section 4 defines that category as *rising input/labor/operating costs* compressing margins; competitive price erosion is not a cost.",
+  "pattern": "price-competition-not-margin-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-4b9157b50c939a1c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"The impact of COVID-19 primarily on Gilead's pre-exposure prophylaxis ('PrEP') franchise and chronic hepatitis C virus ('HCV') franchise\" is a realized negative volume effect on named franchises, so DEMAND_WEAKNESS / REALIZED stands. The stored MARGIN_COST_PRESSURE is not supported: R&D moving to \"~20% growth\" is described neutrally and tied to a new development agreement and trial ramp-up, while operating income guidance is raised to $11,650-$11,750 and gross margin held near 86.5% — no cost pressure on margin is asserted.",
+  "pattern": "cost-growth-without-margin-compression",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-35b96df4fe0b07b7",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "Every figure in this guidance update is positive growth — \"Global comparable store sales growth of 20% to 21%,\" \"International ... 15% to 17%.\" Some ranges are lower than previously issued, but a reduced *growth* forecast is not language asserting softening demand, declining orders, or unfavorable volume trends as section 4 requires. The closing caveat about \"shifts in customer routines, preferences and mobility\" is a hypothetical noun list that fails mining depth under addendum rule 5.",
+  "pattern": "guidance-cut-without-demand-language",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-f307072f2f01f95c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The passage reports completed agency decisions: \"the FDA approved the supplemental Biologics License Application,\" and twice \"the FDA has extended the review period ... by three months.\" Addendum rule 8 and the reimbursement-policy hierarchy put \"approval or licensing decision\" squarely inside Government/Regulatory Action, and state that \"the difference between them is modality, not whether an agency decision is regulatory.\" These decisions have already been made, so REALIZED.",
+  "pattern": "fda-decision-is-regulatory-action",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-7cb0f09c65a20a4d",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The cash flow statement carries the line \"Impairment on equity investment — 218\" for the comparative thirty-nine week period. That is a named, quantified impairment charge, matching section 4's IMPAIRMENT_WRITEDOWN trigger language, and it is stated as having been recorded, so REALIZED under section 6. Same treatment as the other quantified impairment line items in this batch.",
+  "pattern": "impairment-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-5349d923bae4dbc4",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Sales were $9.7 billion in 2022, representing a decline of 1.2%\" plus repeated \"impacts of volume-based procurement in China and the timing of tenders\" support DEMAND_WEAKNESS, REALIZED. Volume-based procurement is a government purchasing/pricing action already affecting results, which the addendum's reimbursement-policy hierarchy counts as regulatory action in a healthcare filing — so LEGAL_REGULATORY_ACTION, REALIZED. I drop the stored SUPPLY_INPUT_CONSTRAINT: \"competitive supply challenges\" names no shortage, disruption, or inability to procure, which addendum rule 1 requires.",
+  "pattern": "government-procurement-pricing-is-regulatory-action",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-75e59541bf13eef1",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The only downward movement is in reserve *quantities*: \"proved undeveloped reserves totaled 4.0 billion barrels ... a decrease of 641 million BOE,\" driven by \"revisions\" and transfers. No impairment, write-down, or charge is named anywhere; section 4's IMPAIRMENT_WRITEDOWN requires asset impairments, write-downs, or restructuring charges tied to asset value reduction. A change in an engineering reserve estimate is not a recorded reduction in asset carrying value.",
+  "pattern": "reserve-revision-not-impairment",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-13ebd9ae899dd431",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "high",
+  "brief": "The regulatory content is a bulleted safe-harbor list of \"our ability to...\" and \"our exchanges' and clearing houses' compliance with their respective regulatory and oversight responsibilities,\" followed by a cross-reference to the Risk Factors item. Addendum rule 5 disposes of this: safe-harbor enumerations ordinarily fail mining depth and get no flags. The remaining prose merely describes operating \"regulated marketplaces,\" which is status, not a regulatory action.",
+  "pattern": "safe-harbor-noun-list-no-flags",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-13118269fc011a43",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ],
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Entered into State Settlement Agreements,\" \"subject to quarterly user fees imposed by the FDA,\" and \"certain adverse verdicts currently on appeal ... appeal bonds totaling $50 million\" are all existing events — LEGAL_REGULATORY_ACTION, REALIZED. The same passage states the cost is already incurred: subsidiaries \"paid approximately $4.7 billion and $4.5 billion\" and the amounts are \"charged to cost of sales.\" Addendum rule 7 requires the double label in exactly this situation.",
+  "pattern": "regulation-plus-incurred-cost-double-label",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-92b5ae844ca9544a",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Under the heading \"Regulatory Developments\" the passage states that regulators issued rules now in force — \"an interim final rule issued by U.S. banking regulators that was finalized on August 26, 2020\" and \"On March 4, 2020, the Federal Reserve issued a final rule\" — and that \"the Corporation is subject to a 2.5 percent SCB.\" Section 4 covers new regulatory requirements creating compliance burden, and section 6's realized-controls rule makes regulation already in effect and already imposing obligations REALIZED. This is a government affirmatively changing policy, not the \"merely owing under standing law\" boundary the addendum excludes.",
+  "pattern": "new-rule-in-effect-is-realized-regulatory-action",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-dba86b67aed203e7",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "This chunk is a product-revenue table and its footnotes — figures such as \"Humira 5,896 1,415 7,311 (37.4)\" with no sentence characterizing demand, volume, or orders anywhere. Section 4 asks whether the passage \"contains language matching that category,\" and the mining-depth rule requires an assertion specific enough to stand alone as a sentence about this company. Percentage declines in a table are numbers, not demand language.",
+  "pattern": "bare-revenue-table-no-demand-language",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-0e6ec714c7d46167",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"$103 million of reserve increases\" and an \"additional allowance for doubtful accounts, which increased our underwriting expense ratio and combined ratio about 2.4 points\" is an explicitly quantified, already-recorded cost increase compressing the underwriting margin — MARGIN_COST_PRESSURE, REALIZED. I do not add IMPAIRMENT_WRITEDOWN: an allowance for doubtful accounts is an estimate, not the write-off or carrying-value reduction addendum rule 6 addresses, and I apply that same line to the other allowance chunks in this batch.",
+  "pattern": "allowance-reserve-not-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a8a44197eba3d453",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"International revenues ... representing a decrease of 17%, primarily driven by generic erosion in Canada and the U.K. as well as government pricing measures\" names an adverse government pricing action already affecting results; the addendum's reimbursement-policy hierarchy counts that as regulatory action in a healthcare filing, realized. DEMAND_WEAKNESS is not supported: the declines are attributed to loss of exclusivity, generics, and \"lower average net selling prices,\" while demand is described favorably twice (\"primarily due to higher demand\").",
+  "pattern": "government-pricing-measure-is-regulatory-action",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d86d1e815ab6bd10",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ],
+   [
+    "SUPPLY_INPUT_CONSTRAINT",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Ongoing tightness in device supplies due to the global shortage of semiconductors, which impacts our ability to fulfill consumer demand\" is a present, filer-specific shortage — SUPPLY_INPUT_CONSTRAINT, REALIZED, and it satisfies addendum rules 1 and 2 because the passage ties the market shortage to this filer's own inability to fulfill. The forecast reconciliation also carries \"Asset impairment and exit costs 0.09 0.08,\" a quantified impairment charge including a prior-year actual, so IMPAIRMENT_WRITEDOWN, REALIZED. I drop the stored MARGIN_COST_PRESSURE: the section 4 disambiguation note requires the margin or cost impact to be explicitly stated, and here margin is instead reported \"up by 3.0 points.\"",
+  "pattern": "impairment-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9342fa8457cfb895",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Higher R&D costs,\" \"underutilization charges at IMFT,\" and SG&A \"3% higher ... primarily due to increases in legal costs and consulting fees\" are realized cost increases that reduced operating income — MARGIN_COST_PRESSURE, REALIZED. The other three stored flags fail: the declines are attributed to \"declines in pricing\" while \"increases in sales volumes\" is stated twice (no demand weakness); underutilization charges are period costs, not asset-value write-downs; and \"increases in legal costs\" asserts no litigation, investigation, or enforcement action, so it fails the mining-depth bar.",
+  "pattern": "cost-increase-bridge-margin-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-98514b8d6cf9814e",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The passage's only pressure language is \"increased pressure on rates ... due to increased market capacity\" — price competition, not the \"rising input/labor/operating costs\" that section 4 requires for MARGIN_COST_PRESSURE; the expense lines in the table are all down double digits. On demand, the text affirmatively says \"the demand for multinational cross-border coverage and services increase,\" and the premium declines appear only as table figures with no demand or volume characterization.",
+  "pattern": "price-competition-not-margin-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-cc4180ed654b42de",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "This is a critical-accounting-policy description: inventories \"are valued at the lower of cost or net realizable value,\" and \"the total reserve for estimated inventory losses ... was $401 million.\" What is disclosed is a recurring estimation reserve, hedged as an estimate (\"it is possible that actual results could differ\"), not a specific inventory write-down event of the kind section 4 triggers on (\"wrote down inventory\"). I apply the same allowance-versus-write-off line used on the other reserve chunks in this batch.",
+  "pattern": "allowance-reserve-not-writedown",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-62b7f78ac141c48d",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "high",
+  "brief": "All three stored flags come from one safe-harbor sentence listing \"weakening of economic conditions ...; legislative and regulatory actions; ... inflationary pressures; increased interest rates; supply chain disruptions; ... the impact of investigative and legal proceedings.\" Addendum rule 5 is directly on point — safe-harbor noun lists fail mining depth and get no flags — and addendum rule 4 forbids inferring an existing legal event from phrases like \"recall-related matters.\" The substantive part of the release raises guidance and asserts none of these categories.",
+  "pattern": "safe-harbor-noun-list-no-flags",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a83e92e090af3dc2",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The one adverse sentence says the APTI \"decline was primarily driven by lower alternative investment returns and fee income, partially offset by higher base investment portfolio income and improved mortality experience\" — a revenue-side and investment-return effect, not the rising input, labor, or operating costs section 4 requires for MARGIN_COST_PRESSURE. Nothing else in the passage asserts any red-flag category; premiums are up 44% and the capital position \"remains healthy.\"",
+  "pattern": "revenue-side-decline-not-margin-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-d2925dad3092fd9d",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "The cash flow reconciliation lists \"Impairment and other — 147\" and \"Exploration lease and other impairment 10 10\" among the adjustments to net income. These are named, quantified impairment charges actually recorded in the periods presented, matching section 4's IMPAIRMENT_WRITEDOWN trigger, with REALIZED modality under section 6.",
+  "pattern": "impairment-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-9c96d5f4645c6f17",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Footnote (3) reports \"Restructuring charges and certain acquisition-related costs $457\" for the quarter, and footnote (a) states these \"Include[] charges/(credits) for employee terminations, asset impairments and other exit costs.\" Section 4 covers \"asset impairments ... restructuring charges tied to asset value reduction,\" and the charges are recorded, so REALIZED.",
+  "pattern": "impairment-line-item-in-financial-table",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-a45c7eb727c18fd4",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ],
+   [
+    "IMPAIRMENT_WRITEDOWN",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"Decreased demand due to competitive pressure\" and \"lower worldwide volume due to continued economic pressure in the dairy market\" give DEMAND_WEAKNESS, REALIZED; \"We recognized asset impairment, restructuring, and other special charges of $213.9 million\" gives IMPAIRMENT_WRITEDOWN, REALIZED. The stored MARGIN_COST_PRESSURE does not hold: the passage reports \"Gross margin as a percent of revenue *increased* 1.8 percentage points ... primarily due to manufacturing efficiencies,\" and the expense growth is attributed to new product launches, so no cost-driven margin compression is asserted.",
+  "pattern": "cost-growth-without-margin-compression",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-375cc9f65b5f4ca2",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "Inside the safe-harbor paragraph the filer asserts existing events: \"Cigna's litigation to terminate the pending Acquisition and claim damages against us, together with our own litigation against Cigna,\" and \"litigation related to the cyber attack we reported in February 2015.\" Addendum rule 3 and section 6's realized-controls rule keep those REALIZED despite the forward-looking framing. The stored IMPAIRMENT_WRITEDOWN rests on \"possible impairment of the value of our intangible assets if future results do not adequately support goodwill\" — a purely conditional clause inside a safe-harbor enumeration, which addendum rule 5 says should not be flagged.",
+  "pattern": "realized-litigation-inside-safe-harbor-list",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-34ae3ecc75458c4c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [],
+  "confidence": "medium",
+  "brief": "The release reports \"adjusted operating margin *increased* 10 basis points\" and adjusted EPS up 16%, so there is no cost-driven margin compression to support MARGIN_COST_PRESSURE under section 4. The only adverse statement is the unspecified \"significant impact from the COVID-19 pandemic on our business late in the quarter,\" which names no category — not demand, supply, cost, impairment, legal, or trade. Under rubric section 0 I label only what the text says, so no flag fires.",
+  "pattern": "margin-expanded-no-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-48a62fd38118e54c",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "LEGAL_REGULATORY_ACTION",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"The settlements with the DOJ (which is subject to court approval) and BIS, Cadence's ongoing compliance, cooperation, audit and other obligations under the settlement agreements\" asserts settlements that exist and obligations already running — REALIZED per addendum rule 3, notwithstanding the safe-harbor wrapper. The other two stored flags come from enumerated items (v) \"export controls, tariffs, other trade restrictions\" and (iv) \"changes in customer demands or supply constraints,\" which are exactly the safe-harbor enumerations addendum rule 5 says should get no flags.",
+  "pattern": "realized-settlement-inside-safe-harbor-list",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-f1710be27660c442",
+  "field": "red_flags",
+  "verdict": "disagree",
+  "correct_label": [
+   [
+    "DEMAND_WEAKNESS",
+    "REALIZED"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"During 2021, we saw customers adjust their instrument buying patterns to reduce their inventory levels\" is a realized reduction in customer purchasing, which section 4 lists under DEMAND_WEAKNESS (\"declining orders,\" \"customers deferred purchases\"). The stored MARGIN_COST_PRESSURE rests on \"we have lowered the price of certain instruments ... which in turn has reduced our revenue per procedure\" — a deliberate price reduction, not the rising input, labor, or operating costs the category requires.",
+  "pattern": "price-reduction-not-margin-cost-pressure",
+  "needs_human": false
+ },
+ {
+  "chunk_id": "E2CHK-82b2492a67f3a838",
+  "field": "red_flags",
+  "verdict": "agree",
+  "correct_label": [
+   [
+    "MARGIN_COST_PRESSURE",
+    "HYPOTHETICAL"
+   ]
+  ],
+  "confidence": "medium",
+  "brief": "\"When interest rates rise, funding costs *may* rise faster than the yield the Company earns on assets, causing net interest margin to contract\" is a standalone cost/margin assertion framed as possible — MARGIN_COST_PRESSURE, HYPOTHETICAL, and addendum rule 3 confirms that the realized FRB rate increases do not upgrade the modality of the projected consequence. The rater's LEGAL_REGULATORY_ACTION, REALIZED is not supported: the only regulatory line is the summary bullet \"Enhanced regulatory and other standards ... *can* result in higher costs,\" which names no regulation in effect and asserts no action against this company.",
+  "pattern": "generic-regulatory-bullet-not-realized-action",
+  "needs_human": false
+ }
+]

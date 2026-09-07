@@ -1,0 +1,9 @@
+{
+ "total_points": 67084,
+ "dropped": {
+  "zero_or_negative": 7952,
+  "below_floor": 2827,
+  "above_ceiling": 72,
+  "neighbour_jump": 948
+ }
+}

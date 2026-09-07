@@ -1,0 +1,708 @@
+stage=metadata -> data/filings_metadata_e2.db (cache TTL 24.0 h)
+E2 corpus window 2015-07-01 .. 2026-08-31 (fixed literals, not derived from today). 244 member CIKs / 299 membership spells -> stage=metadata
+
+validate_universe(): 34 problem(s) found (0 FATAL / 5 WARN / 29 INFO):
+subject            severity check                        message
+--------------------------------------------------------------------------------------------------------------
+77476              WARN     no_large_filing_gap          CIK 77476 (PEPSICO INC): 139-day gap between 10-K/10-Q filings 2016-09-29 -> 2017-02-15, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+77476              WARN     no_large_filing_gap          CIK 77476 (PEPSICO INC): 136-day gap between 10-K/10-Q filings 2018-10-02 -> 2019-02-15, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+849399             WARN     no_large_filing_gap          CIK 849399 (Gen Digital Inc.): 266-day gap between 10-K/10-Q filings 2018-02-02 -> 2018-10-26, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+1393612            WARN     no_large_filing_gap          CIK 1393612 (Discover Financial Services): 145-day gap between 10-K/10-Q filings 2024-07-31 -> 2024-12-23, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+1637459            WARN     no_large_filing_gap          CIK 1637459 (Kraft Heinz Co): 217-day gap between 10-K/10-Q filings 2018-11-02 -> 2019-06-07, inside its coverage window (fiscal-calendar quirks reach 266 days in this universe; FATAL starts at 300 days).
+4447               INFO     member_stopped_filing        CIK 4447 (HESS CORP) left the universe (coverage_end 2026-08-31) and its most recent 10-K/10-Q is 2025-05-08 (480 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+6769               INFO     member_stopped_filing        CIK 6769 (APACHE CORP) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2024-11-07 (662 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+701221             INFO     member_stopped_filing        CIK 701221 (Cigna Holding Co) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2018-11-01 (2860 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+718877             INFO     member_stopped_filing        CIK 718877 (Activision Blizzard, Inc.) left the universe (coverage_end 2025-08-05) and its most recent 10-K/10-Q is 2023-07-31 (1127 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+773910             INFO     member_stopped_filing        CIK 773910 (ANADARKO PETROLEUM CORP) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2019-07-30 (2589 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+790070             INFO     member_stopped_filing        CIK 790070 (EMC CORP) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2016-08-08 (3675 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+804753             INFO     member_stopped_filing        CIK 804753 (CERNER Corp) left the universe (coverage_end 2019-08-05) and its most recent 10-K/10-Q is 2022-05-03 (1581 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+816284             INFO     member_stopped_filing        CIK 816284 (CELGENE CORP /DE/) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2019-10-31 (2496 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+884905             INFO     member_stopped_filing        CIK 884905 (LINDE INC) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-11-09 (2852 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+936402             INFO     member_stopped_filing        CIK 936402 (Shire plc) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-11-01 (2860 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1001039            INFO     member_stopped_filing        CIK 1001039 (TWDC Enterprises 18 Corp.) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2019-02-05 (2764 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1012569            INFO     member_stopped_filing        CIK 1012569 (Energy Transfer, LP) left the universe (coverage_end 2019-08-05) and its most recent 10-K/10-Q is 2017-11-08 (3218 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1038357            INFO     member_stopped_filing        CIK 1038357 (PIONEER NATURAL RESOURCES CO) left the universe (coverage_end 2026-08-05) and its most recent 10-K/10-Q is 2024-05-02 (851 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1047122            INFO     member_stopped_filing        CIK 1047122 (RAYTHEON CO/) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2020-02-12 (2392 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1105705            INFO     member_stopped_filing        CIK 1105705 (WARNER MEDIA, LLC) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-04-26 (3049 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1122304            INFO     member_stopped_filing        CIK 1122304 (AETNA INC /PA/) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-10-30 (2862 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1126975            INFO     member_stopped_filing        CIK 1126975 (Magellan Midstream Partners, L.P.) left the universe (coverage_end 2023-08-05) and its most recent 10-K/10-Q is 2023-08-03 (1124 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1161154            INFO     member_stopped_filing        CIK 1161154 (Energy Transfer Operating, L.P.) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2021-02-19 (2019 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1271024            INFO     member_stopped_filing        CIK 1271024 (LINKEDIN CORP) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2016-10-27 (3595 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1358071            INFO     member_stopped_filing        CIK 1358071 (CONCHO RESOURCES INC) left the universe (coverage_end 2022-08-05) and its most recent 10-K/10-Q is 2020-10-27 (2134 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1364742            INFO     member_stopped_filing        CIK 1364742 (BlackRock Finance, Inc.) left the universe (coverage_end 2026-08-05) and its most recent 10-K/10-Q is 2024-08-06 (755 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1373835            INFO     member_stopped_filing        CIK 1373835 (Spectra Energy Corp.) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2017-02-24 (3475 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1393612            INFO     member_stopped_filing        CIK 1393612 (Discover Financial Services) left the universe (coverage_end 2025-08-05) and its most recent 10-K/10-Q is 2025-04-30 (488 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1418091            INFO     member_stopped_filing        CIK 1418091 (TWITTER, INC.) left the universe (coverage_end 2021-08-05) and its most recent 10-K/10-Q is 2022-07-26 (1497 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1483096            INFO     member_stopped_filing        CIK 1483096 (WILLIAMS PARTNERS L.P.) left the universe (coverage_end 2020-08-04) and its most recent 10-K/10-Q is 2018-08-02 (2951 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1532063            INFO     member_stopped_filing        CIK 1532063 (Express Scripts Holding Co.) left the universe (coverage_end 2018-08-05) and its most recent 10-K/10-Q is 2018-10-31 (2861 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1578845            INFO     member_stopped_filing        CIK 1578845 (Allergan plc) left the universe (coverage_end 2022-08-05) and its most recent 10-K/10-Q is 2020-05-07 (2307 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1618921            INFO     member_stopped_filing        CIK 1618921 (Walgreens Boots Alliance, Inc.) left the universe (coverage_end 2019-08-05) and its most recent 10-K/10-Q is 2025-06-26 (431 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+1782754            INFO     member_stopped_filing        CIK 1782754 (AZEK Co Inc.) left the universe (coverage_end 2026-08-05) and its most recent 10-K/10-Q is 2025-05-07 (481 days before the corpus freeze) -- expected delisting/acquisition exit, counted and named, not a failure.
+
+validation exceptions (/Users/vihanpatil/personal/projects/FinScreen/data/f2/validation_exceptions.csv): none. Every FATAL hard-fails the run; there is no blanket override.
+  CIK 1800 (ABBOTT LABORATORIES): 174 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 2488 (ADVANCED MICRO DEVICES INC): 181 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/2969/000000296918000032/0000002969-18-000032-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/2969/000000296917000035/0000002969-17-000035-index.html
+  CIK 2969 (Air Products & Chemicals, Inc.): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/3570/000000357016000366/0000003570-16-000366-index.html
+  CIK 3570 (Cheniere Energy, Inc.): 286 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4281/000115752321000988/0001157523-21-000988-index.html
+  CIK 4281 (Howmet Aerospace Inc.): 270 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4447/000162828025002914/0001628280-25-002914-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4447/000156459020002376/0001564590-20-002376-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4447/000156459019027209/0001564590-19-027209-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4447/000156459018008957/0001564590-18-008957-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4447/000156459016016691/0001564590-16-016691-index.html
+  CIK 4447 (HESS CORP): 129 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 4 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4904/000000490421000066/0000004904-21-000066-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4904/000000490416000067/0000004904-16-000067-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/4904/000000490415000044/0000004904-15-000044-index.html
+  CIK 4904 (AMERICAN ELECTRIC POWER CO INC): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/5272/000119312516668375/0001193125-16-668375-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/5272/000119312516437433/0001193125-16-437433-index.html
+  CIK 5272 (AMERICAN INTERNATIONAL GROUP, INC.): 267 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/6769/000119312517330477/0001193125-17-330477-index.html
+  CIK 6769 (APACHE CORP): 99 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/6951/000000695121000018/0000006951-21-000018-index.html
+  CIK 6951 (APPLIED MATERIALS INC /DE): 155 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/8670/000000867024000017/0000008670-24-000017-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/8670/000000867022000003/0000008670-22-000003-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/8670/000117184318005589/0001171843-18-005589-index.html
+  CIK 8670 (AUTOMATIC DATA PROCESSING INC): 151 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/10795/000001079520000040/0000010795-20-000040-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/10795/000001079518000005/0000010795-18-000005-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/10795/000119312515365134/0001193125-15-365134-index.html
+  CIK 10795 (BECTON DICKINSON & CO): 221 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31), 11 distress event(s)
+  CIK 12927 (BOEING CO): 206 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 14272 (BRISTOL MYERS SQUIBB CO): 213 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/18230/000110465915072042/0001104659-15-072042-index.html
+  CIK 18230 (CATERPILLAR INC): 236 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+  CIK 19617 (JPMORGAN CHASE & CO): 388 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 19 distress event(s)
+  CIK 21344 (COCA COLA CO): 195 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 9 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/21665/000115752318000849/0001157523-18-000849-index.html
+  CIK 21665 (COLGATE PALMOLIVE CO): 147 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/24741/000002474118000014/0000024741-18-000014-index.html
+  CIK 24741 (CORNING INC /NY): 160 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 1 distress event(s)
+  CIK 27419 (TARGET CORP): 169 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2025-08-05)
+  CIK 29915 (DOW CHEMICAL CO /DE/): 132 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2019-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/30554/000003055416000119/0000030554-16-000119-index.html
+  CIK 30554 (EIDP, Inc.): 89 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2019-08-05), 1 distress event(s)
+  CIK 31462 (ECOLAB INC.): 192 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+  CIK 32604 (EMERSON ELECTRIC CO): 215 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/33213/000003321326000005/0000033213-26-000005-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/33213/000003321322000011/0000033213-22-000011-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/33213/000003321321000010/0000033213-21-000010-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/33213/000003321319000011/0000033213-19-000011-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/33213/000003321319000004/0000033213-19-000004-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/33213/000115752317001229/0001157523-17-001229-index.html
+  CIK 33213 (EQT Corp): 275 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/34088/000003408817000019/0000034088-17-000019-index.html
+  CIK 34088 (EXXON MOBIL CORP): 203 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/36104/000119312516648802/0001193125-16-648802-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/36104/000119312516430404/0001193125-16-430404-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/36104/000119312515344201/0001193125-15-344201-index.html
+  CIK 36104 (US BANCORP \DE\): 247 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2025-08-05), 4 distress event(s)
+  CIK 37996 (FORD MOTOR CO): 331 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+  CIK 40533 (GENERAL DYNAMICS CORP): 142 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/45012/000004501215000101/0000045012-15-000101-index.html
+  CIK 45012 (HALLIBURTON CO): 165 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 47217 (HP INC): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/49071/000004907121000022/0000049071-21-000022-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/49071/000004907120000104/0000049071-20-000104-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/49071/000004907119000083/0000049071-19-000083-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/49071/000119312518147566/0001193125-18-147566-index.html
+  CIK 49071 (HUMANA INC): 250 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05)
+  CIK 49826 (ILLINOIS TOOL WORKS INC): 134 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/50863/000005086316000100/0000050863-16-000100-index.html
+  CIK 50863 (INTEL CORP): 234 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/51143/000110465918062295/0001104659-18-062295-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/51143/000110465915051905/0001104659-15-051905-index.html
+  CIK 51143 (INTERNATIONAL BUSINESS MACHINES CORP): 258 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 13 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/55785/000005578522000032/0000055785-22-000032-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/55785/000005578520000052/0000055785-20-000052-index.html
+  CIK 55785 (KIMBERLY CLARK CORP): 151 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 59478 (ELI LILLY & Co): 156 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/60667/000006066720000080/0000060667-20-000080-index.html
+  CIK 60667 (LOWES COMPANIES INC): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/62709/000006270920000050/0000062709-20-000050-index.html
+  CIK 62709 (MARSH & MCLENNAN COMPANIES, INC.): 161 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31)
+  CIK 63908 (MCDONALDS CORP): 186 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64040/000006404023000055/0000064040-23-000055-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64040/000006404018000179/0000064040-18-000179-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64040/000006404018000055/0000064040-18-000055-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64040/000006404017000066/0000064040-17-000066-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64040/000006404016000055/0000064040-16-000055-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64040/000114420415044191/0001144204-15-044191-index.html
+  CIK 64040 (S&P Global Inc.): 227 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64803/000006480320000029/0000064803-20-000029-index.html
+  -> ReadTimeout, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64803/000006480320000029/0000064803-20-000029-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64803/000006480320000014/0000064803-20-000014-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64803/000006480320000004/0000064803-20-000004-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/64803/000006480315000062/0000064803-15-000062-index.html
+  CIK 64803 (CVS HEALTH Corp): 231 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/66740/000110465916134253/0001104659-16-134253-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/66740/000110465915072044/0001104659-15-072044-index.html
+  CIK 66740 (3M CO): 237 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/70858/000007085815000098/0000070858-15-000098-index.html
+  CIK 70858 (BANK OF AMERICA CORP /DE/): 200 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 15 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72741/000110465922083669/0001104659-22-083669-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72741/000110465919042937/0001104659-19-042937-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72741/000007274116000104/0000072741-16-000104-index.html
+  CIK 72741 (EVERSOURCE ENERGY): 176 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72903/000007290320000064/0000072903-20-000064-index.html
+  CIK 72903 (XCEL ENERGY INC): 306 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2025-08-05), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72971/000007297123000158/0000072971-23-000158-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72971/000007297120000011/0000072971-20-000011-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/72971/000007297117000066/0000072971-17-000066-index.html
+  CIK 72971 (WELLS FARGO & COMPANY/MN): 880 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 11 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/73309/000119312525251721/0001193125-25-251721-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/73309/000119312524018332/0001193125-24-018332-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/73309/000156459021037529/0001564590-21-037529-index.html
+  CIK 73309 (NUCOR CORP): 146 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/77476/000007747625000046/0000077476-25-000046-index.html
+  CIK 77476 (PEPSICO INC): 192 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 7 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/78003/000007800320000034/0000078003-20-000034-index.html
+  CIK 78003 (PFIZER INC): 196 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 79879 (PPG INDUSTRIES INC): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 4 distress event(s)
+  CIK 80424 (PROCTER & GAMBLE Co): 281 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 18 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/80661/000008066120000030/0000080661-20-000030-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/80661/000008066115000052/0000080661-15-000052-index.html
+  CIK 80661 (PROGRESSIVE CORP/OH/): 228 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/86312/000008631219000005/0000086312-19-000005-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/86312/000110465916151038/0001104659-16-151038-index.html
+  CIK 86312 (TRAVELERS COMPANIES, INC.): 139 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05)
+  CIK 87347 (SLB LIMITED/NV): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/89800/000119312521132585/0001193125-21-132585-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/89800/000119312520019027/0001193125-20-019027-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/89800/000119312516653046/0001193125-16-653046-index.html
+  CIK 89800 (SHERWIN WILLIAMS CO): 195 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/92122/000009212217000026/0000092122-17-000026-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/92122/000009212215000100/0000092122-15-000100-index.html
+  CIK 92122 (SOUTHERN CO): 259 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/92230/000009223022000048/0000092230-22-000048-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/92230/000009223020000054/0000092230-20-000054-index.html
+  CIK 92230 (TRUIST FINANCIAL CORP): 250 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2024-08-04), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/93410/000009341015000028/0000093410-15-000028-index.html
+  CIK 93410 (CHEVRON CORP): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 97476 (TEXAS INSTRUMENTS INC): 155 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 97745 (THERMO FISHER SCIENTIFIC INC.): 204 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 11 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/100885/000010088525000150/0000100885-25-000150-index.html
+  CIK 100885 (UNION PACIFIC CORP): 225 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/101829/000010182919000045/0000101829-19-000045-index.html
+  CIK 101829 (RTX Corp): 193 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 10 distress event(s)
+  CIK 104169 (Walmart Inc.): 200 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/106040/000010604021000032/0000106040-21-000032-index.html
+  CIK 106040 (WESTERN DIGITAL CORP): 246 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 1 distress event(s)
+  CANARY: CIK 106535 0000950170-23-015328 has 2 bare EX-99 rows (['wy-ex99_1.htm', 'wy-ex99_2.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'wy-ex99_1.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/106535/000010653516000042/0000106535-16-000042-index.html
+  CIK 106535 (WEYERHAEUSER CO): 230 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2021-08-05), 3 distress event(s)
+  CIK 107263 (WILLIAMS COMPANIES, INC.): 201 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/109198/000115752316004715/0001157523-16-004715-index.html
+  CIK 109198 (TJX COMPANIES INC /DE/): 149 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05)
+  CIK 200406 (JOHNSON & JOHNSON): 180 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/310158/000110465921097239/0001104659-21-097239-index.html
+  CIK 310158 (Merck & Co., Inc.): 133 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/310764/000031076418000104/0000310764-18-000104-index.html
+  CIK 310764 (STRYKER CORP): 172 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 3 distress event(s)
+  CIK 313616 (DANAHER CORP /DE/): 191 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 9 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315189/000155837025007795/0001558370-25-007795-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315189/000155837020014042/0001558370-20-014042-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315189/000110465916158724/0001104659-16-158724-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315189/000110465916122197/0001104659-16-122197-index.html
+  CIK 315189 (DEERE & CO): 216 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315293/000162828020000845/0001628280-20-000845-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/315293/000162828016010779/0001628280-16-010779-index.html
+  CIK 315293 (Aon plc): 187 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05), 8 distress event(s)
+  CIK 316709 (SCHWAB CHARLES CORP): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/318154/000031815420000058/0000318154-20-000058-index.html
+  CIK 318154 (AMGEN INC): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 320187 (NIKE, Inc.): 162 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 320193 (Apple Inc.): 149 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+  CIK 354950 (HOME DEPOT, INC.): 169 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/701221/000095015918000039/0000950159-18-000039-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/701221/000095015915000242/0000950159-15-000242-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/701221/000095015915000242/0000950159-15-000242-index.html
+  CIK 701221 (Cigna Holding Co): 106 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/707549/000070754920000011/0000707549-20-000011-index.html
+  CIK 707549 (LAM RESEARCH CORP): 176 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/712515/000119312518312174/0001193125-18-312174-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/712515/000071251516000129/0000712515-16-000129-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/712515/000071251516000080/0000712515-16-000080-index.html
+  CIK 712515 (ELECTRONIC ARTS INC.): 188 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2022-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/713676/000071367620000096/0000713676-20-000096-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/713676/000071367618000071/0000713676-18-000071-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/713676/000119312515367608/0001193125-15-367608-index.html
+  CIK 713676 (PNC FINANCIAL SERVICES GROUP, INC.): 257 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2025-08-05), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/715957/000095017024018433/0000950170-24-018433-index.html
+  CIK 715957 (DOMINION ENERGY, INC): 256 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 12 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/718877/000110465918007634/0001104659-18-007634-index.html
+  CIK 718877 (Activision Blizzard, Inc.): 128 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2025-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/723125/000072312521000028/0000723125-21-000028-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/723125/000072312517000162/0000723125-17-000162-index.html
+  CIK 723125 (MICRON TECHNOLOGY INC): 220 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/726728/000072672820000097/0000726728-20-000097-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/726728/000072672818000105/0000726728-18-000105-index.html
+  CIK 726728 (REALTY INCOME CORP): 268 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2026-08-31), 2 distress event(s)
+  CIK 731766 (UNITEDHEALTH GROUP INC): 221 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 732712 (VERIZON COMMUNICATIONS INC): 242 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 7 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/732717/000073271717000094/0000732717-17-000094-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/732717/000073271715000116/0000732717-15-000116-index.html
+  CIK 732717 (AT&T INC.): 337 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 24 distress event(s)
+  CIK 753308 (NEXTERA ENERGY INC): 270 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 8 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/764180/000076418016000209/0000764180-16-000209-index.html
+  CIK 764180 (ALTRIA GROUP, INC.): 189 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/766704/000076670425000037/0000766704-25-000037-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/766704/000076670422000030/0000766704-22-000030-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/766704/000119312520264008/0001193125-20-264008-index.html
+  CANARY: CIK 766704 0000766704-16-000051 has 2 bare EX-99 rows (['Ex-99.1.htm', 'Ex-99.2.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'Ex-99.1.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CIK 766704 (WELLTOWER INC.): 209 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/769397/000076939717000009/0000769397-17-000009-index.html
+  CIK 769397 (Autodesk, Inc.): 157 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/773840/000077384020000047/0000773840-20-000047-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/773840/000077384020000037/0000773840-20-000037-index.html
+  CIK 773840 (HONEYWELL INTERNATIONAL INC): 243 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 7 distress event(s)
+  CIK 773910 (ANADARKO PETROLEUM CORP): 70 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 3 distress event(s)
+  CIK 788784 (PUBLIC SERVICE ENTERPRISE GROUP INC): 197 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05)
+  CIK 789019 (MICROSOFT CORP): 159 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 790070 (EMC CORP): 21 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+  CIK 797468 (OCCIDENTAL PETROLEUM CORP /DE/): 206 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/798354/000079835424000188/0000798354-24-000188-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/798354/000079835422000006/0000798354-22-000006-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/798354/000079835421000012/0000798354-21-000012-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/798354/000119312515268301/0001193125-15-268301-index.html
+  CIK 798354 (FISERV INC): 186 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 5 distress event(s)
+  CIK 804328 (QUALCOMM INC/DE): 188 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/804753/000080475320000051/0000804753-20-000051-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/804753/000080475320000051/0000804753-20-000051-index.html
+  -> 503, backing off 2.0s (attempt 2)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/804753/000080475320000051/0000804753-20-000051-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/804753/000080475316000085/0000804753-16-000085-index.html
+  CIK 804753 (CERNER Corp): 111 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/813672/000081367218000023/0000813672-18-000023-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/813672/000081367218000019/0000813672-18-000019-index.html
+  CIK 813672 (CADENCE DESIGN SYSTEMS INC): 141 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05)
+  CIK 816284 (CELGENE CORP /DE/): 113 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 3 distress event(s)
+  CIK 821189 (EOG RESOURCES INC): 186 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 823768 (WASTE MANAGEMENT INC): 180 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/827052/000155837021009596/0001558370-21-009596-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/827052/000082705217000195/0000827052-17-000195-index.html
+  CIK 827052 (EDISON INTERNATIONAL): 239 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04)
+  CIK 829224 (STARBUCKS CORP): 188 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 831001 (CITIGROUP INC): 338 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 29 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/831259/000083125916000099/0000831259-16-000099-index.html
+  CIK 831259 (FREEPORT-MCMORAN INC): 202 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31)
+  CIK 849395 (CRH PUBLIC LTD CO): 61 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/849399/000084939922000023/0000849399-22-000023-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/849399/000084939921000019/0000849399-21-000019-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/849399/000115752320000166/0001157523-20-000166-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/849399/000119312516432742/0001193125-16-432742-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/849399/000119312516432742/0001193125-16-432742-index.html
+  CIK 849399 (Gen Digital Inc.): 197 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05)
+  CIK 858877 (CISCO SYSTEMS, INC.): 196 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/872589/000110465925002826/0001104659-25-002826-index.html
+  CIK 872589 (REGENERON PHARMACEUTICALS, INC.): 162 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 875045 (BIOGEN INC.): 159 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/875320/000087532018000011/0000875320-18-000011-index.html
+  CIK 875320 (VERTEX PHARMACEUTICALS INC / MA): 146 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/882095/000088209526000003/0000882095-26-000003-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/882095/000088209521000002/0000882095-21-000002-index.html
+  CIK 882095 (GILEAD SCIENCES, INC.): 162 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/884905/000115752317001227/0001157523-17-001227-index.html
+  CIK 884905 (LINDE INC): 57 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/885725/000088572516000051/0000885725-16-000051-index.html
+  CIK 885725 (BOSTON SCIENTIFIC CORP): 226 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/886982/000119312522104958/0001193125-22-104958-index.html
+  CIK 886982 (GOLDMAN SACHS GROUP INC): 281 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 14 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/895126/000089512618000049/0000895126-18-000049-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/895126/000089512616000393/0000895126-16-000393-index.html
+  CIK 895126 (EXPAND ENERGY Corp): 235 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 14 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/895421/000115752319000085/0001157523-19-000085-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/895421/000115752318000071/0001157523-18-000071-index.html
+  CIK 895421 (MORGAN STANLEY): 167 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 11 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/895728/000089572820000022/0000895728-20-000022-index.html
+  CIK 895728 (ENBRIDGE INC): 167 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/896159/000119312520278490/0001193125-20-278490-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/896159/000119312519028326/0001193125-19-028326-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/896159/000119312516564757/0001193125-16-564757-index.html
+  CIK 896159 (Chubb Ltd): 164 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 896878 (INTUIT INC.): 148 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 906107 (VIVMARK RESIDENTIAL): 160 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/915912/000091591220000024/0000915912-20-000024-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/915912/000091591220000020/0000915912-20-000020-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/915912/000091591220000020/0000915912-20-000020-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/915912/000091591215000013/0000915912-15-000013-index.html
+  CIK 915912 (AVALONBAY COMMUNITIES INC): 164 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2022-08-05), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/922224/000092222419000017/0000922224-19-000017-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/922224/000092222419000010/0000922224-19-000010-index.html
+  CIK 922224 (PPL Corp): 295 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/927628/000092762819000016/0000927628-19-000016-index.html
+  CIK 927628 (CAPITAL ONE FINANCIAL CORP): 463 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 14 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/927653/000092765320000067/0000927653-20-000067-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/927653/000119312519278328/0001193125-19-278328-index.html
+  CIK 927653 (MCKESSON CORP): 191 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/936402/000093640218000094/0000936402-18-000094-index.html
+  CIK 936402 (Shire plc): 250 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/936468/000114420415060046/0001144204-15-060046-index.html
+  CIK 936468 (LOCKHEED MARTIN CORP): 180 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1001039/000100103918000077/0001001039-18-000077-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1001039/000100103918000077/0001001039-18-000077-index.html
+  CIK 1001039 (TWDC Enterprises 18 Corp.): 84 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 2 distress event(s)
+  CIK 1001250 (ESTEE LAUDER COMPANIES INC): 154 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05)
+  CIK 1012569 (Energy Transfer, LP): 59 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2019-08-05), 2 distress event(s)
+  CIK 1018724 (AMAZON COM INC): 157 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1032208/000103220822000050/0001032208-22-000050-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1032208/000103220822000004/0001032208-22-000004-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1032208/000103220819000013/0001032208-19-000013-index.html
+  CANARY: CIK 1032208 0000086521-16-000118 has 2 bare EX-99 rows (['exhibit991.htm', 'exhibit992.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'exhibit991.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CANARY: CIK 1032208 0000086521-16-000096 has 2 bare EX-99 rows (['exhibit991.htm', 'exhibit992.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'exhibit991.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CANARY: CIK 1032208 0000086521-16-000086 has 2 bare EX-99 rows (['ex991.htm', 'ex992.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'ex991.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1032208/000008652115000063/0000086521-15-000063-index.html
+  CANARY: CIK 1032208 0000086521-15-000063 has 2 bare EX-99 rows (['ex991.htm', 'ex992.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'ex991.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CANARY: CIK 1032208 0000086521-15-000041 has 2 bare EX-99 rows (['exhibit991.htm', 'exhibit992.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'exhibit991.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CIK 1032208 (SEMPRA): 265 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1034054/000119312524122368/0001193125-24-122368-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1034054/000119312522273903/0001193125-22-273903-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1034054/000119312519276205/0001193125-19-276205-index.html
+  CIK 1034054 (SBA COMMUNICATIONS CORP): 155 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1035002/000103500221000012/0001035002-21-000012-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1035002/000103500220000048/0001035002-20-000048-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1035002/000103500215000060/0001035002-15-000060-index.html
+  CIK 1035002 (VALERO ENERGY CORP/TX): 184 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CANARY: CIK 1035267 0001035267-25-000005 has 2 bare EX-99 rows (['q424ex-991q4prexreleaseq4o.htm', 'q424ex-992q4prereleaseq4on.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'q424ex-991q4prexreleaseq4o.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CIK 1035267 (INTUITIVE SURGICAL INC): 146 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000103835720000013/0001038357-20-000013-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000103835718000046/0001038357-18-000046-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000119312518111008/0001193125-18-111008-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000103835716000152/0001038357-16-000152-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000103835716000119/0001038357-16-000119-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1038357/000103835715000080/0001038357-15-000080-index.html
+  CIK 1038357 (PIONEER NATURAL RESOURCES CO): 211 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1039684/000103968424000339/0001039684-24-000339-index.html
+  CIK 1039684 (ONEOK INC /NEW/): 421 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+  CANARY: CIK 1045609 0000950170-23-013170 has 2 bare EX-99 rows (['pld-ex99_1.htm', 'pld-ex99_2.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'pld-ex99_1.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459021036956/0001564590-21-036956-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1045609/000156459018024299/0001564590-18-024299-index.html
+  CANARY: CIK 1045609 0000950123-18-006811 has 2 bare EX-99 rows (['pld-ex991_6.htm', 'pld-ex992_7.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'pld-ex991_6.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+  CIK 1045609 (Prologis, Inc.): 214 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 10 distress event(s)
+  CIK 1045810 (NVIDIA CORP): 153 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1047122/000104712218000010/0001047122-18-000010-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1047122/000104712216000253/0001047122-16-000253-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1047122/000104712215000194/0001047122-15-000194-index.html
+  CIK 1047122 (RAYTHEON CO/): 63 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2021-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1047862/000104786224000067/0001047862-24-000067-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1047862/000104786222000124/0001047862-22-000124-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1047862/000104786221000051/0001047862-21-000051-index.html
+  CIK 1047862 (CONSOLIDATED EDISON INC): 190 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2022-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1051470/000105147021000122/0001051470-21-000122-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1051470/000105147020000125/0001051470-20-000125-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1051470/000105147020000098/0001051470-20-000098-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1051470/000105147016000251/0001051470-16-000251-index.html
+  CIK 1051470 (CROWN CASTLE INC.): 282 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1053507/000105350716000029/0001053507-16-000029-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1053507/000105350716000014/0001053507-16-000014-index.html
+  CIK 1053507 (AMERICAN TOWER CORP /MA/): 317 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+  CIK 1058290 (COGNIZANT TECHNOLOGY SOLUTIONS CORP): 145 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05)
+  CIK 1060391 (REPUBLIC SERVICES, INC.): 174 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1061219/000114036123022246/0001140361-23-022246-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1061219/000106121919000010/0001061219-19-000010-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1061219/000106121918000023/0001061219-18-000023-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1061219/000106121918000013/0001061219-18-000013-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1061219/000106121916000053/0001061219-16-000053-index.html
+  CIK 1061219 (ENTERPRISE PRODUCTS PARTNERS L.P.): 178 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1063761/000110465922084689/0001104659-22-084689-index.html
+  CIK 1063761 (SIMON PROPERTY GROUP INC.): 147 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1065088/000106508822000019/0001065088-22-000019-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1065088/000106508821000027/0001065088-21-000027-index.html
+  CIK 1065088 (EBAY INC): 172 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1065280/000106528020000306/0001065280-20-000306-index.html
+  CIK 1065280 (NETFLIX INC): 157 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1067983/000119312520048368/0001193125-20-048368-index.html
+  CIK 1067983 (BERKSHIRE HATHAWAY INC): 125 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 6 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1075531/000107553125000050/0001075531-25-000050-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1075531/000107553122000006/0001075531-22-000006-index.html
+  CIK 1075531 (Booking Holdings Inc.): 194 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1090012/000119312518146564/0001193125-18-146564-index.html
+  CIK 1090012 (DEVON ENERGY CORP/DE): 172 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1090727/000109072716000048/0001090727-16-000048-index.html
+  CIK 1090727 (UNITED PARCEL SERVICE INC): 159 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 3 distress event(s)
+  CIK 1091667 (CHARTER COMMUNICATIONS, INC. /MO/): 228 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2024-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099219/000109921926000032/0001099219-26-000032-index.html
+  CIK 1099219 (METLIFE INC): 299 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 4 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000109959023000017/0001099590-23-000017-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000156276221000294/0001562762-21-000294-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000117184317001061/0001171843-17-001061-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000117184317001061/0001171843-17-001061-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000117184316012930/0001171843-16-012930-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000117184316009748/0001171843-16-009748-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099590/000117184315006007/0001171843-15-006007-index.html
+  CIK 1099590 (MERCADOLIBRE INC): 169 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1099800/000109980015000022/0001099800-15-000022-index.html
+  CIK 1099800 (Edwards Lifesciences Corp): 137 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1101239/000156459021053974/0001564590-21-053974-index.html
+  CIK 1101239 (EQUINIX INC): 255 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1103982/000119312522202055/0001193125-22-202055-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1103982/000119312522120254/0001193125-22-120254-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1103982/000119312522019794/0001193125-22-019794-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1103982/000119312521316945/0001193125-21-316945-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1103982/000119312520201004/0001193125-20-201004-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1103982/000119312518146589/0001193125-18-146589-index.html
+  CIK 1103982 (Mondelez International, Inc.): 236 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 4 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1105705/000119312517244977/0001193125-17-244977-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1105705/000119312516669131/0001193125-16-669131-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1105705/000119312516576190/0001193125-16-576190-index.html
+  CIK 1105705 (WARNER MEDIA, LLC): 45 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 6 distress event(s)
+  CIK 1108524 (Salesforce, Inc.): 187 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1109357/000110935720000106/0001109357-20-000106-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1109357/000119312516580963/0001193125-16-580963-index.html
+  CIK 1109357 (EXELON CORP): 247 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080322000020/0001110803-22-000020-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080322000007/0001110803-22-000007-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080322000003/0001110803-22-000003-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080317000023/0001110803-17-000023-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080317000023/0001110803-17-000023-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080316000196/0001110803-16-000196-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1110803/000111080315000136/0001110803-15-000136-index.html
+  CIK 1110803 (ILLUMINA, INC.): 204 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2022-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1122304/000112230417000042/0001122304-17-000042-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1122304/000112230416000223/0001122304-16-000223-index.html
+  CIK 1122304 (AETNA INC /PA/): 84 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1123360/000112336023000017/0001123360-23-000017-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1123360/000112336016000047/0001123360-16-000047-index.html
+  CIK 1123360 (GLOBAL PAYMENTS INC): 180 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1126975/000112697520000107/0001126975-20-000107-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1126975/000112697520000044/0001126975-20-000044-index.html
+  CIK 1126975 (Magellan Midstream Partners, L.P.): 130 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2023-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1133421/000113342117000037/0001133421-17-000037-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1133421/000113342116000102/0001133421-16-000102-index.html
+  CIK 1133421 (NORTHROP GRUMMAN CORP /DE/): 169 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2025-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1136893/000113689321000091/0001136893-21-000091-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1136893/000113689319000190/0001136893-19-000190-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1136893/000113689319000005/0001136893-19-000005-index.html
+  CIK 1136893 (Fidelity National Information Services, Inc.): 227 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2024-08-04), 9 distress event(s)
+  CIK 1137774 (PRUDENTIAL FINANCIAL INC): 240 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1137789/000113778918000009/0001137789-18-000009-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1137789/000110465916135908/0001104659-16-135908-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1137789/000110465915074350/0001104659-15-074350-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1137789/000110465915050755/0001104659-15-050755-index.html
+  CIK 1137789 (Seagate Technology Holdings plc): 203 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1141391/000114139116000078/0001141391-16-000078-index.html
+  CIK 1141391 (Mastercard Inc): 175 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+  CIK 1156039 (Elevance Health, Inc.): 182 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1156375/000115637516000145/0001156375-16-000145-index.html
+  CIK 1156375 (CME GROUP INC.): 166 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1161154/000116115418000013/0001161154-18-000013-index.html
+  CIK 1161154 (Energy Transfer Operating, L.P.): 156 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2021-08-05), 8 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1163165/000115752318001539/0001157523-18-001539-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1163165/000115752318000817/0001157523-18-000817-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1163165/000115752318000186/0001157523-18-000186-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1163165/000115752317002128/0001157523-17-002128-index.html
+  CIK 1163165 (CONOCOPHILLIPS): 155 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1164727 (NEWMONT Corp /DE/): 198 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1166691/000141057819000556/0001410578-19-000556-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1166691/000110465919023559/0001104659-19-023559-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1166691/000110465919023559/0001104659-19-023559-index.html
+  CIK 1166691 (COMCAST CORP): 215 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 1222333 (SPDR GOLD TRUST): 65 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2025-08-05)
+  CIK 1271024 (LINKEDIN CORP): 17 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1276187/000127618724000016/0001276187-24-000016-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1276187/000127618717000018/0001276187-17-000018-index.html
+  CIK 1276187 (Energy Transfer LP): 257 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+  CIK 1283699 (T-Mobile US, Inc.): 277 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1297996/000155837021005259/0001558370-21-005259-index.html
+  CIK 1297996 (DIGITAL REALTY TRUST, INC.): 291 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 6 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1318220/000114420419007150/0001144204-19-007150-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1318220/000114420417054103/0001144204-17-054103-index.html
+  CIK 1318220 (Waste Connections, Inc.): 194 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-31)
+  CIK 1318605 (Tesla, Inc.): 231 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2026-08-31)
+  CIK 1321655 (Palantir Technologies Inc.): 68 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 1 distress event(s)
+  CIK 1326801 (Meta Platforms, Inc.): 148 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+  CIK 1327567 (Palo Alto Networks Inc): 153 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1341439/000119312515404914/0001193125-15-404914-index.html
+  CIK 1341439 (ORACLE CORP): 142 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1358071/000135807120000013/0001358071-20-000013-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1358071/000135807120000008/0001358071-20-000008-index.html
+  -> ReadTimeout, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1358071/000135807120000008/0001358071-20-000008-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1358071/000115752319001646/0001157523-19-001646-index.html
+  CIK 1358071 (CONCHO RESOURCES INC): 94 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2022-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1364742/000156459023005711/0001564590-23-005711-index.html
+  CANARY: CIK 1364742 0000950123-17-006151 has 2 bare EX-99 rows (['blk-ex991_6.htm', 'blk-ex992_7.htm']) -- they are neither one exhibit in two renditions nor separable by description, so taking lowest seq 'blk-ex991_6.htm', selection_confidence=low. This did not occur across E1's 331 earnings 8-Ks -- treat as a canary, not expected behavior. (E2's window has 10,569 earnings 8-Ks across 244 members, 219 of them filers this policy has never seen, so S3's EX-99 audit counts these rather than only printing them -- F2_SPEC §4.4.)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1364742/000119312517128135/0001193125-17-128135-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1364742/000119312516540764/0001193125-16-540764-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1364742/000119312516430525/0001193125-16-430525-index.html
+  CIK 1364742 (BlackRock Finance, Inc.): 142 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-05), 3 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1373715/000115752317001198/0001157523-17-001198-index.html
+  CIK 1373715 (ServiceNow, Inc.): 143 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1373835/000119312515365931/0001193125-15-365931-index.html
+  CIK 1373835 (Spectra Energy Corp.): 33 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1389170/000156459021024441/0001564590-21-024441-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1389170/000156459018020722/0001564590-18-020722-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1389170/000119312516476903/0001193125-16-476903-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1389170/000119312516455516/0001193125-16-455516-index.html
+  CIK 1389170 (Targa Resources Corp.): 216 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1390777/000139077725000056/0001390777-25-000056-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1390777/000139077717000006/0001390777-17-000006-index.html
+  CIK 1390777 (Bank of New York Mellon Corp): 231 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393612/000139361224000077/0001393612-24-000077-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393612/000119312524180198/0001193125-24-180198-index.html
+  -> ReadTimeout, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393612/000119312524180198/0001193125-24-180198-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393612/000139361222000014/0001393612-22-000014-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393612/000139361222000002/0001393612-22-000002-index.html
+  CIK 1393612 (Discover Financial Services): 258 filings in 2015-07-01..2026-08-31 (member window 2021-07-01..2025-08-05), 7 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393818/000119312524014831/0001193125-24-014831-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393818/000119312523107336/0001193125-23-107336-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1393818/000119312517129660/0001193125-17-129660-index.html
+  CIK 1393818 (Blackstone Inc.): 161 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-31), 2 distress event(s)
+  CIK 1403161 (VISA INC.): 208 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 1 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1404912/000140491219000019/0001404912-19-000019-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1404912/000140491219000019/0001404912-19-000019-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1404912/000115752315003454/0001157523-15-003454-index.html
+  CIK 1404912 (KKR & Co. Inc.): 210 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31), 13 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1413329/000141332922000007/0001413329-22-000007-index.html
+  CIK 1413329 (Philip Morris International Inc.): 294 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 36 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1418091/000141809120000199/0001418091-20-000199-index.html
+  CIK 1418091 (TWITTER, INC.): 117 filings in 2015-07-01..2026-08-31 (member window 2017-07-01..2021-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1467858/000146785823000027/0001467858-23-000027-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1467858/000146785819000104/0001467858-19-000104-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1467858/000146785817000068/0001467858-17-000068-index.html
+  CIK 1467858 (General Motors Co): 192 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 3 distress event(s)
+  CIK 1483096 (WILLIAMS PARTNERS L.P.): 66 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2020-08-04), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1489393/000148939322000018/0001489393-22-000018-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1489393/000148939320000064/0001489393-20-000064-index.html
+  CIK 1489393 (LyondellBasell Industries N.V.): 175 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2021-08-05)
+  CIK 1506307 (KINDER MORGAN, INC.): 257 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 3 distress event(s)
+  CIK 1510295 (Marathon Petroleum Corp): 207 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1512673/000119312525030738/0001193125-25-030738-index.html
+  CIK 1512673 (Block, Inc.): 175 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1532063/000119312515266042/0001193125-15-266042-index.html
+  CIK 1532063 (Express Scripts Holding Co.): 82 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2018-08-05), 2 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1534701/000153470120000036/0001534701-20-000036-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1534701/000153470119000092/0001534701-19-000092-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1534701/000153470118000092/0001534701-18-000092-index.html
+  CIK 1534701 (Phillips 66): 171 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1535527/000155837019006148/0001558370-19-006148-index.html
+  CIK 1535527 (CrowdStrike Holdings, Inc.): 92 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1539838/000153983821000059/0001539838-21-000059-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1539838/000153983820000050/0001539838-20-000050-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1539838/000153983820000050/0001539838-20-000050-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1539838/000153983815000069/0001539838-15-000069-index.html
+  CIK 1539838 (Diamondback Energy, Inc.): 217 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1543151/000154315121000035/0001543151-21-000035-index.html
+  CIK 1543151 (Uber Technologies, Inc): 146 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1551152/000155115218000038/0001551152-18-000038-index.html
+  CIK 1551152 (AbbVie Inc.): 205 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2026-08-31), 5 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1551182/000115752322000535/0001157523-22-000535-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1551182/000115752316005334/0001157523-16-005334-index.html
+  CIK 1551182 (Eaton Corp plc): 156 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1552000/000155200022000014/0001552000-22-000014-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1552000/000155200016000164/0001552000-16-000164-index.html
+  CIK 1552000 (MPLX LP): 189 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2023-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1555280/000155528023000245/0001555280-23-000245-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1555280/000155528022000229/0001555280-22-000229-index.html
+  CIK 1555280 (Zoetis Inc.): 187 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1564408/000156459017017244/0001564590-17-017244-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1564408/000156459017010246/0001564590-17-010246-index.html
+  CIK 1564408 (Snap Inc): 124 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1571949/000110465924084630/0001104659-24-084630-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1571949/000110465924055999/0001104659-24-055999-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1571949/000110465923009568/0001104659-23-009568-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1571949/000114420418024925/0001144204-18-024925-index.html
+  CIK 1571949 (Intercontinental Exchange, Inc.): 193 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1578845/000114420418005850/0001144204-18-005850-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1578845/000119312516669118/0001193125-16-669118-index.html
+  CIK 1578845 (Allergan plc): 119 filings in 2015-07-01..2026-08-31 (member window 2015-07-01..2022-08-05), 3 distress event(s)
+  CIK 1585521 (Zoom Communications, Inc.): 89 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2024-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1596532/000159653221000048/0001596532-21-000048-index.html
+  CIK 1596532 (Arista Networks, Inc.): 127 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1613103/000161310319000053/0001613103-19-000053-index.html
+  CIK 1613103 (Medtronic plc): 166 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-31), 8 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1618921/000119312518098453/0001193125-18-098453-index.html
+  CIK 1618921 (Walgreens Boots Alliance, Inc.): 219 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2019-08-05), 4 distress event(s)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1633917/000163391721000098/0001633917-21-000098-index.html
+  CIK 1633917 (PayPal Holdings, Inc.): 186 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2026-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1637459/000163745916000144/0001637459-16-000144-index.html
+  CIK 1637459 (Kraft Heinz Co): 209 filings in 2015-07-01..2026-08-31 (member window 2015-07-02..2020-08-04), 1 distress event(s)
+  CIK 1640147 (Snowflake Inc.): 66 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1645590/000164559024000132/0001645590-24-000132-index.html
+  -> 503, backing off 1.0s (attempt 1)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1645590/000164559024000132/0001645590-24-000132-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1645590/000164559019000042/0001645590-19-000042-index.html
+  CIK 1645590 (Hewlett Packard Enterprise Co): 230 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2020-08-04)
+  CIK 1652044 (Alphabet Inc.): 157 filings in 2015-07-01..2026-08-31 (member window 2016-07-01..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1666700/000166670017000023/0001666700-17-000023-index.html
+  CIK 1666700 (DuPont de Nemours, Inc.): 160 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2023-08-05)
+  CIK 1682852 (Moderna, Inc.): 142 filings in 2015-07-01..2026-08-31 (member window 2020-07-01..2024-08-04)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312520285108/0001193125-20-285108-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312520054048/0001193125-20-054048-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312519211406/0001193125-19-211406-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1692819/000119312517174537/0001193125-17-174537-index.html
+  CIK 1692819 (Vistra Corp.): 202 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31), 2 distress event(s)
+  CIK 1707925 (LINDE PLC): 113 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31), 3 distress event(s)
+  CIK 1730168 (Broadcom Inc.): 153 filings in 2015-07-01..2026-08-31 (member window 2018-07-02..2026-08-31), 2 distress event(s)
+  CIK 1739940 (Cigna Group): 160 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+  CIK 1744489 (Walt Disney Co): 134 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2026-08-31)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1751788/000175178823000004/0001751788-23-000004-index.html
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1751788/000175178820000004/0001751788-20-000004-index.html
+  CIK 1751788 (DOW INC.): 121 filings in 2015-07-01..2026-08-31 (member window 2019-07-02..2025-08-05)
+[EDGAR GET] https://www.sec.gov/Archives/edgar/data/1782754/000119312521011622/0001193125-21-011622-index.html
+  CIK 1782754 (AZEK Co Inc.): 89 filings in 2015-07-01..2026-08-31 (member window 2022-07-02..2026-08-05), 2 distress event(s)
+  CIK 1868275 (Constellation Energy Corp): 85 filings in 2015-07-01..2026-08-31 (member window 2023-07-02..2026-08-31)
+  CIK 1996810 (GE Vernova Inc.): 28 filings in 2015-07-01..2026-08-31 (member window 2024-07-01..2026-08-31)
+
+EX-99 selection audit (/Users/vihanpatil/personal/projects/FinScreen/data/f2/ex99_selection_audit.csv):
+  earnings 8-Ks seen:        10569
+  unresolved (counted):      0  (0.00%)
+  resolved selections:       10569
+    8K_BODY              high         227
+    EX99_PRESS_RELEASE   high       10294
+    EX99_PRESS_RELEASE   low           32
+    EX99_PRESS_RELEASE   medium        16
+  of which 8K_BODY fallbacks: 227 filing(s) across 62 CIK(s) -- earnings 8-Ks that carry the release in the 8-K body with no EX-99 exhibit at all. A benign, named class, still on the §4.4 read list below.
+  CIKs needing the §4.4 manual read (any low-confidence selection or any 8K_BODY fallback): 71
+    CIK 200406: 18 low-confidence selection(s)
+    CIK 1032208: 5 low-confidence selection(s)
+    CIK 1045609: 2 low-confidence selection(s)
+    CIK 80661: 1 low-confidence selection(s)
+    CIK 106535: 1 low-confidence selection(s)
+    CIK 732717: 1 low-confidence selection(s)
+    CIK 766704: 1 low-confidence selection(s)
+    CIK 1035267: 1 low-confidence selection(s)
+    CIK 1045810: 1 low-confidence selection(s)
+    CIK 1364742: 1 low-confidence selection(s)
+    CIK 32604: 0 low-confidence selection(s)
+    CIK 33213: 0 low-confidence selection(s)
+    CIK 45012: 0 low-confidence selection(s)
+    CIK 49071: 0 low-confidence selection(s)
+    CIK 51143: 0 low-confidence selection(s)
+    CIK 59478: 0 low-confidence selection(s)
+    CIK 64803: 0 low-confidence selection(s)
+    CIK 70858: 0 low-confidence selection(s)
+    CIK 72903: 0 low-confidence selection(s)
+    CIK 72971: 0 low-confidence selection(s)
+    ... capped at the 20 worst filers; 51 more CIK(s) are NOT covered by that read and stay unread -- state that in the F2 report rather than implying full coverage.
+
+Done. Filings by form type: {'8-K': 35648, '10-Q': 7532, '10-K': 2452}
+Co-registrant filings: 87 accession(s) were enumerated for TWO member CIKs each, across 3 pair(s). `filings` is keyed on accession_number, so the table holds 45545 rows for 45632 enumerated filings. The dropped attributions are stored in `co_registrant_filings` (87 row(s), keeper = the lowest member CIK) and summarised as `co_registrant_filing` WARNs -- never a silent drop. Absence from `filings` alone is NOT evidence a company did not file: consult filings UNION co_registrant_filings.
+
+distress_events (F2_SPEC §4.5, zero extra network requests):
+  bankruptcy_8k_item_1_03                         2 filing(s) /    1 CIK(s)
+  delisting_form_25                              37 filing(s) /   30 CIK(s)
+  delisting_form_25_nse_exchange_filed          510 filing(s) /  131 CIK(s)  [NOISY: filed by the exchange, fires for preferreds/notes too]
+  deregistration_form_15                        119 filing(s) /   67 CIK(s)
+
+Ingested filings outside EVERY membership spell of their own CIK: 20218 of 45632. This is BY DESIGN (full-window ingestion, no spell clipping -- a member at date t needs pre-t filings for trailing features). It also means `present in filings` is NOT `in the universe`: F5 must join on universe_membership.
+Corpus freeze date (constant): 2026-08-31; observed max filing_date this run: 2026-08-24
+Total EDGAR network GETs this run: 351

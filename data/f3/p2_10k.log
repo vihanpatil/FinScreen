@@ -1,0 +1,12 @@
+[10-K] 2445 filings -> 10 shards of 250
+  shard 10-K_0000: 250 filings -> 500 attempts / 453 sections  {'OK': 420, 'FAIL': 47, 'FLAGGED': 33}  cache_miss=0  362.8s  network_gets=0
+  shard 10-K_0001: 250 filings -> 500 attempts / 487 sections  {'OK': 403, 'FLAGGED': 84, 'FAIL': 13}  cache_miss=0  416.9s  network_gets=0
+  shard 10-K_0002: 250 filings -> 500 attempts / 489 sections  {'OK': 438, 'FLAGGED': 51, 'FAIL': 11}  cache_miss=0  300.9s  network_gets=0
+  shard 10-K_0003: 250 filings -> 500 attempts / 434 sections  {'OK': 415, 'FAIL': 66, 'FLAGGED': 19}  cache_miss=0  346.2s  network_gets=0
+  shard 10-K_0004: 250 filings -> 500 attempts / 478 sections  {'OK': 472, 'FAIL': 22, 'FLAGGED': 6}  cache_miss=0  334.4s  network_gets=0
+  shard 10-K_0005: 250 filings -> 500 attempts / 493 sections  {'OK': 448, 'FLAGGED': 45, 'FAIL': 7}  cache_miss=0  275.0s  network_gets=0
+  shard 10-K_0006: 250 filings -> 500 attempts / 477 sections  {'OK': 437, 'FLAGGED': 40, 'FAIL': 23}  cache_miss=0  304.2s  network_gets=0
+  shard 10-K_0007: 250 filings -> 500 attempts / 475 sections  {'OK': 431, 'FLAGGED': 44, 'FAIL': 25}  cache_miss=0  240.1s  network_gets=0
+  shard 10-K_0008: 250 filings -> 500 attempts / 484 sections  {'OK': 405, 'FLAGGED': 79, 'FAIL': 16}  cache_miss=0  334.4s  network_gets=0
+  shard 10-K_0009: 195 filings -> 390 attempts / 376 sections  {'OK': 370, 'FAIL': 14, 'FLAGGED': 6}  cache_miss=0  141.1s  network_gets=0
+Total EDGAR network GETs this run: 0 (cache-only by construction)

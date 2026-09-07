@@ -24,7 +24,8 @@ scripts (see AGENTS scope doc):
     email, on every single request.
   - A hard client-side 10 requests/second rate limit (a sliding-window
     limiter, not a "best effort" sleep).
-  - Retry with exponential backoff specifically on HTTP 429.
+  - Retry with exponential backoff on HTTP 429 and on TRANSIENT failures
+    (5xx, read/connect timeouts). See _get().
   - Idempotent local caching: cached responses are reused instead of
     re-fetched unless they're stale (or the caller forces a refresh).
 
@@ -166,22 +167,58 @@ class EdgarClient:
     # -- low-level, always goes through the rate limiter + backoff ---------
 
     def _get(self, url: str, params: Optional[dict] = None) -> requests.Response:
+        """One rate-limited, User-Agent-headered GET, retried with
+        exponential backoff on the failures that are known to be transient.
+
+        Retried: HTTP 429 (documented rate limit) and, since 2026-08-24,
+        HTTP 5xx plus read/connect timeouts. MEASURED reason for the second
+        group: F2's S6 segment-1 metadata run made 10,841 GETs and took 309
+        bare `503 Service Unavailable` responses (2.9%) and 27 read timeouts
+        (0.2%) with ZERO 429s. They were spread uniformly across the whole
+        ~55-minute run and across 163 of 243 CIKs at a flat ~3% per-request
+        rate -- an EDGAR-side load-shedding background rate, not a property
+        of any URL, and not us over-driving the limiter (average 3.4 req/s
+        against a 10 req/s cap). With no retry arm each one became a
+        permanently unresolved earnings document; those 336 filings are 84%
+        of the 400 failures that tripped F2_SPEC §4.4's 1% FATAL ceiling.
+
+        NOT retried, deliberately: 403 (a User-Agent/fair-access problem --
+        retrying is both useless and rude) and every other 4xx (a bad URL
+        does not get better). After the retries are exhausted the error is
+        still raised: this makes transient failures rare, it does not make
+        them silent.
+        """
         backoff = DEFAULT_BACKOFF_BASE_SECONDS
         for attempt in range(self.max_retries + 1):
             self.rate_limiter.acquire()
             self.request_count += 1
             if self.verbose:
                 print(f"[EDGAR GET] {url}")
-            resp = requests.get(url, headers=self.headers, params=params, timeout=30)
-            if resp.status_code == 429:
+            try:
+                resp = requests.get(url, headers=self.headers, params=params, timeout=30)
+            except (requests.Timeout, requests.ConnectionError) as exc:
                 if attempt == self.max_retries:
                     raise EdgarRequestError(
-                        f"429 rate-limited after {self.max_retries} retries: {url}"
+                        f"transient network failure after {self.max_retries} "
+                        f"retries: {url} -- {type(exc).__name__}: {exc}"
+                    ) from exc
+                if self.verbose:
+                    print(f"  -> {type(exc).__name__}, backing off {backoff:.1f}s "
+                          f"(attempt {attempt + 1})")
+                time.sleep(backoff)
+                backoff *= 2
+                continue
+            if resp.status_code == 429 or resp.status_code >= 500:
+                if attempt == self.max_retries:
+                    raise EdgarRequestError(
+                        f"HTTP {resp.status_code} after {self.max_retries} "
+                        f"retries: {url}"
                     )
                 retry_after = resp.headers.get("Retry-After")
                 wait = max(backoff, float(retry_after)) if retry_after else backoff
                 if self.verbose:
-                    print(f"  -> 429, backing off {wait:.1f}s (attempt {attempt + 1})")
+                    print(f"  -> {resp.status_code}, backing off {wait:.1f}s "
+                          f"(attempt {attempt + 1})")
                 time.sleep(wait)
                 backoff *= 2
                 continue
@@ -215,19 +252,34 @@ class EdgarClient:
             path.write_text(resp.text)
         return json.loads(path.read_text())
 
-    def get_submissions(self, cik: int, force: bool = False) -> dict:
+    def get_submissions(
+        self, cik: int, force: bool = False,
+        max_age_hours: Optional[float] = DEFAULT_MAX_AGE_HOURS,
+    ) -> dict:
         """Per-company filing history (data.sec.gov/submissions). Cached;
         re-fetched if >24h stale (SEC updates this near-real-time as new
         filings post, so a day-old cache can miss the most recent filing).
+
+        `max_age_hours` overrides that TTL for one call (F2_SPEC §4.3).
+        Default unchanged at 24h -- the override exists so a deliberate
+        re-run days after a campaign can reuse the ~1.2 GB of already-cached
+        submissions/companyfacts instead of re-paying for them, e.g.
+        `ingest_metadata.py --cache-max-age-hours 168`. Passing None means
+        cache-forever for this call. Correctness note: widening the TTL means
+        accepting a corpus as of the cached fetch, not as of now -- fine for a
+        FIXED-window corpus (F2_SPEC §2), wrong if you want today's filings.
         """
         path = self.cache_dir / "submissions" / f"CIK{cik:010d}.json"
-        if force or self._is_stale(path, DEFAULT_MAX_AGE_HOURS):
+        if force or self._is_stale(path, max_age_hours):
             url = SUBMISSIONS_URL_TMPL.format(cik=cik)
             resp = self._get(url)
             path.write_text(resp.text)
         return json.loads(path.read_text())
 
-    def get_submissions_chunk(self, chunk_name: str, force: bool = False) -> dict:
+    def get_submissions_chunk(
+        self, chunk_name: str, force: bool = False,
+        max_age_hours: Optional[float] = DEFAULT_MAX_AGE_HOURS,
+    ) -> dict:
         """Fetch one paginated older-history chunk file listed under a
         company's submissions.json `filings.files[]` array (e.g.
         "CIK0000019617-submissions-001.json"). Same shape as
@@ -240,15 +292,21 @@ class EdgarClient:
         never appends/corrects an entry near a chunk boundary, so this
         treats them the same as the live submissions.json rather than
         assuming "cache forever" without confirming that with EDGAR.
+
+        `max_age_hours` overrides that TTL for one call, same semantics and
+        same default as get_submissions() (F2_SPEC §4.3).
         """
         path = self.cache_dir / "submissions" / chunk_name
-        if force or self._is_stale(path, DEFAULT_MAX_AGE_HOURS):
+        if force or self._is_stale(path, max_age_hours):
             url = SUBMISSIONS_CHUNK_URL_TMPL.format(chunk_name=chunk_name)
             resp = self._get(url)
             path.write_text(resp.text)
         return json.loads(path.read_text())
 
-    def get_effective_recent(self, cik: int, cutoff: date, force: bool = False) -> dict:
+    def get_effective_recent(
+        self, cik: int, cutoff: date, force: bool = False,
+        max_age_hours: Optional[float] = DEFAULT_MAX_AGE_HOURS,
+    ) -> dict:
         """Return a `filings.recent`-shaped dict (parallel arrays: form,
         filingDate, accessionNumber, ...) that reaches back to at least
         `cutoff`, transparently pulling in filings.files[] pagination chunks
@@ -262,8 +320,13 @@ class EdgarClient:
         a year of history, silently truncating the 10-K/10-Q/8-K history
         this pipeline actually needs. See INGESTION_NOTES.md for the
         concrete JPM/BAC/GS case this was built to fix.
+
+        `max_age_hours` is passed straight through to both underlying cache
+        reads (the submissions document and every pagination chunk it pulls),
+        so a caller can widen the TTL for a whole enumeration pass in one
+        place (F2_SPEC §4.3).
         """
-        submissions = self.get_submissions(cik, force=force)
+        submissions = self.get_submissions(cik, force=force, max_age_hours=max_age_hours)
         recent = submissions["filings"]["recent"]
         files = submissions["filings"].get("files", [])
 
@@ -287,7 +350,9 @@ class EdgarClient:
                 # This chunk (and, if ordering holds, everything after it)
                 # is entirely older than what we need -- stop fetching.
                 break
-            chunk = self.get_submissions_chunk(entry["name"], force=force)
+            chunk = self.get_submissions_chunk(
+                entry["name"], force=force, max_age_hours=max_age_hours
+            )
             for key in merged:
                 merged[key].extend(chunk.get(key, [None] * len(chunk.get("form", []))))
             chunk_from = date.fromisoformat(entry["filingFrom"])
@@ -296,7 +361,10 @@ class EdgarClient:
 
         return merged
 
-    def get_companyfacts(self, cik: int, force: bool = False) -> dict:
+    def get_companyfacts(
+        self, cik: int, force: bool = False,
+        max_age_hours: Optional[float] = DEFAULT_MAX_AGE_HOURS,
+    ) -> dict:
         """SEC XBRL "companyfacts" API: every disclosed XBRL fact (us-gaap +
         dei concepts) for one company, across its ENTIRE filing history (not
         windowed) -- data.sec.gov/api/xbrl/companyfacts/CIK##########.json.
@@ -319,10 +387,14 @@ class EdgarClient:
         filings.recent/filings.files[] is; the whole fact history comes back
         in a single JSON document. Ingesting the full 25-company universe
         therefore costs exactly 25 network requests (fewer on a warm cache),
-        trivially inside the 10 req/sec limit.
+        trivially inside the 10 req/sec limit. (E2's universe is 244
+        companies, so 244 requests -- still one document each.)
+
+        `max_age_hours` overrides the 24h TTL for one call, same semantics
+        and same default as get_submissions() (F2_SPEC §4.3).
         """
         path = self.cache_dir / "companyfacts" / f"CIK{cik:010d}.json"
-        if force or self._is_stale(path, DEFAULT_MAX_AGE_HOURS):
+        if force or self._is_stale(path, max_age_hours):
             url = COMPANYFACTS_URL_TMPL.format(cik=cik)
             resp = self._get(url)
             path.write_text(resp.text)

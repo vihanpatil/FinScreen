@@ -1,0 +1,16 @@
+{
+ "_what": "sha256 of the RATIFIED hybrid136 universe artifacts (plus the two inputs that shape them: manual_exclusions.csv and the price-censoring census) as built 2026-08-21 by build_universe_e2.py.",
+ "_why": "F2 reads hybrid136.parquet in place as the E2 pipeline's universe. ingest_metadata.verify_universe_checksums() re-hashes every file listed here on EVERY load_universe()/load_membership() call and raises on any mismatch, so no E2 stage can be built on an artifact that is not the one F2_SPEC was written against (verify-artifact rule, HANDOFF.md §7). If F1 is ever legitimately re-run, these hashes are re-pinned by a deliberate edit -- never auto-rebaselined from whatever happens to be on disk.",
+ "_scope_note": "Deliberately a SEPARATE file from option_record_checksums.json, which guards the frozen continuity5/broad8 option record behind the owner's 2026-08-21 decision. That file's scope is the pre-rules option record and it must not be disturbed by F2.",
+ "_captured": "2026-08-24, by F2 stage S2; values independently re-measured against the on-disk files and confirmed identical to the ones F2_SPEC §1.1 recorded from the S1 pass.",
+ "_invariants": "244 distinct member CIKs (176 core / 68 extension), 299 membership spells, 136 members at each of 11 reconstitution dates 2016-07-01..2026-07-01, 1,496 panel rows, 0 rows with float_filed >= recon_date. Pinned in code as ingest_metadata.EXPECTED_* and in test_ingest_metadata_universe.py.",
+ "sha256": {
+  "hybrid136.csv": "e72ea9040f79186e2ddc72fd3fc5d625ecb3c3f30f4656df2792eb61d0fc09c7",
+  "hybrid136.parquet": "8a026f250627a74835e218e25755e0e49dfd825bf6d10d76fb32d53db5a4f135",
+  "hybrid136_panel.csv": "15dd2218b44391270c6409eed56546db97c680aefd6079010681cd9b60178e3d",
+  "hybrid136_panel.parquet": "14851a0d76f07bdca7e7e6d6ca27e553c63bb07f91ff4bd68a89e2f36de53dd1",
+  "manual_exclusions.csv": "19299c262335fb4d09f10f6bed75de4d70b16aa1b42ac4299dacf560bff50bad",
+  "price_censoring_census.csv": "525d41291676d7a2bc570c130abc297feee6514ae65ba40b23615c9b7672a26e",
+  "price_censoring_census.parquet": "5a5e4a61dcf85405fc7590378e15dceb793176f8fc5b9ead2846ebf11965a8d6"
+ }
+}

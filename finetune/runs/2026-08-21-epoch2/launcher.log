@@ -1,0 +1,665 @@
+Loading configuration file /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-21-epoch2/mlx_lora_config.yaml
+Loading pretrained model
+Loading datasets
+Training
+Loading fine-tuned weights from /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-final-from-2250/adapters.safetensors
+Trainable parameters: 0.038% (2.884M/7615.617M)
+Starting training..., iters: 5736
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:30,  1.25s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:26,  1.16s/it]Calculating loss...:  12%|█▏        | 3/25 [00:03<00:26,  1.20s/it]Calculating loss...:  16%|█▌        | 4/25 [00:04<00:23,  1.10s/it]Calculating loss...:  20%|██        | 5/25 [00:06<00:31,  1.57s/it]Calculating loss...:  24%|██▍       | 6/25 [00:09<00:33,  1.74s/it]Calculating loss...:  28%|██▊       | 7/25 [00:10<00:28,  1.56s/it]Calculating loss...:  32%|███▏      | 8/25 [00:11<00:23,  1.41s/it]Calculating loss...:  36%|███▌      | 9/25 [00:13<00:24,  1.55s/it]Calculating loss...:  40%|████      | 10/25 [00:14<00:21,  1.45s/it]Calculating loss...:  44%|████▍     | 11/25 [00:15<00:19,  1.39s/it]Calculating loss...:  48%|████▊     | 12/25 [00:17<00:21,  1.65s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:18<00:17,  1.44s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:19<00:13,  1.27s/it]Calculating loss...:  60%|██████    | 15/25 [00:21<00:14,  1.45s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:22<00:12,  1.34s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:23<00:10,  1.34s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:25<00:09,  1.31s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:27<00:09,  1.65s/it]Calculating loss...:  80%|████████  | 20/25 [00:29<00:09,  1.81s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:06,  1.62s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:32<00:04,  1.48s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:32<00:02,  1.28s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:34<00:01,  1.27s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.28s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.42s/it]
+Iter 1: Val loss 0.060, Val took 35.584s
+Iter 10: Train loss 0.014, Learning Rate 5.095e-06, It/sec 0.181, Tokens/sec 5.692, Trained Tokens 314, Peak mem 6.123 GB
+Iter 20: Train loss 0.024, Learning Rate 2.008e-05, It/sec 0.182, Tokens/sec 6.034, Trained Tokens 645, Peak mem 6.247 GB
+Iter 30: Train loss 0.028, Learning Rate 3.007e-05, It/sec 0.167, Tokens/sec 5.615, Trained Tokens 981, Peak mem 6.503 GB
+Iter 40: Train loss 0.046, Learning Rate 4.505e-05, It/sec 0.175, Tokens/sec 7.903, Trained Tokens 1433, Peak mem 6.503 GB
+Iter 50: Train loss 0.021, Learning Rate 5.504e-05, It/sec 0.190, Tokens/sec 5.402, Trained Tokens 1718, Peak mem 6.503 GB
+Iter 60: Train loss 0.038, Learning Rate 7.003e-05, It/sec 0.194, Tokens/sec 7.859, Trained Tokens 2123, Peak mem 6.503 GB
+Iter 70: Train loss 0.037, Learning Rate 8.002e-05, It/sec 0.187, Tokens/sec 8.215, Trained Tokens 2563, Peak mem 6.503 GB
+Iter 80: Train loss 0.026, Learning Rate 9.501e-05, It/sec 0.175, Tokens/sec 7.636, Trained Tokens 3000, Peak mem 6.685 GB
+Iter 90: Train loss 0.042, Learning Rate 1.000e-04, It/sec 0.184, Tokens/sec 5.903, Trained Tokens 3321, Peak mem 6.685 GB
+Iter 100: Train loss 0.051, Learning Rate 1.000e-04, It/sec 0.170, Tokens/sec 6.045, Trained Tokens 3676, Peak mem 6.685 GB
+Iter 100: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000100_adapters.safetensors.
+Iter 110: Train loss 0.047, Learning Rate 1.000e-04, It/sec 0.180, Tokens/sec 8.448, Trained Tokens 4146, Peak mem 6.685 GB
+Iter 120: Train loss 0.034, Learning Rate 9.999e-05, It/sec 0.180, Tokens/sec 5.244, Trained Tokens 4437, Peak mem 6.685 GB
+Iter 130: Train loss 0.044, Learning Rate 9.999e-05, It/sec 0.165, Tokens/sec 5.886, Trained Tokens 4794, Peak mem 6.685 GB
+Iter 140: Train loss 0.038, Learning Rate 9.998e-05, It/sec 0.182, Tokens/sec 7.035, Trained Tokens 5180, Peak mem 6.685 GB
+Iter 150: Train loss 0.027, Learning Rate 9.997e-05, It/sec 0.187, Tokens/sec 6.979, Trained Tokens 5554, Peak mem 6.685 GB
+Iter 160: Train loss 0.036, Learning Rate 9.996e-05, It/sec 0.189, Tokens/sec 7.555, Trained Tokens 5953, Peak mem 6.685 GB
+Iter 170: Train loss 0.047, Learning Rate 9.995e-05, It/sec 0.194, Tokens/sec 7.984, Trained Tokens 6365, Peak mem 6.685 GB
+Iter 180: Train loss 0.022, Learning Rate 9.993e-05, It/sec 0.179, Tokens/sec 7.412, Trained Tokens 6779, Peak mem 6.685 GB
+Iter 190: Train loss 0.036, Learning Rate 9.992e-05, It/sec 0.186, Tokens/sec 5.911, Trained Tokens 7097, Peak mem 6.685 GB
+Iter 200: Train loss 0.031, Learning Rate 9.990e-05, It/sec 0.184, Tokens/sec 6.471, Trained Tokens 7448, Peak mem 6.685 GB
+Iter 200: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000200_adapters.safetensors.
+Iter 210: Train loss 0.065, Learning Rate 9.989e-05, It/sec 0.171, Tokens/sec 7.572, Trained Tokens 7891, Peak mem 6.685 GB
+Iter 220: Train loss 0.042, Learning Rate 9.987e-05, It/sec 0.186, Tokens/sec 7.584, Trained Tokens 8298, Peak mem 6.685 GB
+Iter 230: Train loss 0.042, Learning Rate 9.985e-05, It/sec 0.190, Tokens/sec 7.829, Trained Tokens 8709, Peak mem 6.685 GB
+Iter 240: Train loss 0.036, Learning Rate 9.982e-05, It/sec 0.192, Tokens/sec 7.886, Trained Tokens 9120, Peak mem 6.685 GB
+Iter 250: Train loss 0.031, Learning Rate 9.980e-05, It/sec 0.184, Tokens/sec 5.784, Trained Tokens 9434, Peak mem 6.685 GB
+Iter 260: Train loss 0.059, Learning Rate 9.977e-05, It/sec 0.185, Tokens/sec 7.518, Trained Tokens 9840, Peak mem 6.685 GB
+Iter 270: Train loss 0.030, Learning Rate 9.975e-05, It/sec 0.184, Tokens/sec 6.714, Trained Tokens 10205, Peak mem 6.751 GB
+Iter 280: Train loss 0.053, Learning Rate 9.972e-05, It/sec 0.189, Tokens/sec 7.971, Trained Tokens 10626, Peak mem 6.751 GB
+Iter 290: Train loss 0.038, Learning Rate 9.969e-05, It/sec 0.192, Tokens/sec 5.443, Trained Tokens 10910, Peak mem 6.751 GB
+Iter 300: Train loss 0.038, Learning Rate 9.965e-05, It/sec 0.181, Tokens/sec 5.244, Trained Tokens 11200, Peak mem 6.751 GB
+Iter 300: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000300_adapters.safetensors.
+Iter 310: Train loss 0.071, Learning Rate 9.963e-05, It/sec 0.186, Tokens/sec 7.793, Trained Tokens 11618, Peak mem 6.751 GB
+Iter 320: Train loss 0.031, Learning Rate 9.959e-05, It/sec 0.194, Tokens/sec 5.425, Trained Tokens 11898, Peak mem 6.751 GB
+Iter 330: Train loss 0.054, Learning Rate 9.956e-05, It/sec 0.176, Tokens/sec 7.835, Trained Tokens 12342, Peak mem 6.751 GB
+Iter 340: Train loss 0.068, Learning Rate 9.951e-05, It/sec 0.181, Tokens/sec 10.037, Trained Tokens 12898, Peak mem 6.751 GB
+Iter 350: Train loss 0.036, Learning Rate 9.948e-05, It/sec 0.175, Tokens/sec 6.146, Trained Tokens 13250, Peak mem 6.751 GB
+Iter 360: Train loss 0.047, Learning Rate 9.943e-05, It/sec 0.178, Tokens/sec 5.493, Trained Tokens 13558, Peak mem 6.751 GB
+Iter 370: Train loss 0.027, Learning Rate 9.940e-05, It/sec 0.178, Tokens/sec 5.698, Trained Tokens 13879, Peak mem 6.751 GB
+Iter 380: Train loss 0.027, Learning Rate 9.934e-05, It/sec 0.171, Tokens/sec 5.220, Trained Tokens 14185, Peak mem 6.751 GB
+Iter 390: Train loss 0.056, Learning Rate 9.931e-05, It/sec 0.192, Tokens/sec 7.585, Trained Tokens 14580, Peak mem 6.751 GB
+Iter 400: Train loss 0.022, Learning Rate 9.925e-05, It/sec 0.179, Tokens/sec 6.630, Trained Tokens 14950, Peak mem 6.751 GB
+Iter 400: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000400_adapters.safetensors.
+Iter 410: Train loss 0.028, Learning Rate 9.921e-05, It/sec 0.189, Tokens/sec 6.032, Trained Tokens 15270, Peak mem 6.751 GB
+Iter 420: Train loss 0.029, Learning Rate 9.915e-05, It/sec 0.169, Tokens/sec 6.572, Trained Tokens 15659, Peak mem 6.757 GB
+Iter 430: Train loss 0.017, Learning Rate 9.911e-05, It/sec 0.185, Tokens/sec 5.760, Trained Tokens 15971, Peak mem 6.757 GB
+Iter 440: Train loss 0.044, Learning Rate 9.905e-05, It/sec 0.176, Tokens/sec 5.707, Trained Tokens 16295, Peak mem 6.757 GB
+Iter 450: Train loss 0.025, Learning Rate 9.900e-05, It/sec 0.172, Tokens/sec 7.311, Trained Tokens 16721, Peak mem 6.757 GB
+Iter 460: Train loss 0.029, Learning Rate 9.894e-05, It/sec 0.169, Tokens/sec 6.666, Trained Tokens 17115, Peak mem 6.757 GB
+Iter 470: Train loss 0.031, Learning Rate 9.889e-05, It/sec 0.176, Tokens/sec 7.968, Trained Tokens 17567, Peak mem 6.757 GB
+Iter 480: Train loss 0.033, Learning Rate 9.882e-05, It/sec 0.170, Tokens/sec 5.686, Trained Tokens 17901, Peak mem 6.757 GB
+Iter 490: Train loss 0.036, Learning Rate 9.877e-05, It/sec 0.175, Tokens/sec 7.535, Trained Tokens 18331, Peak mem 6.757 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:28,  1.20s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:27,  1.21s/it]Calculating loss...:  12%|█▏        | 3/25 [00:03<00:27,  1.26s/it]Calculating loss...:  16%|█▌        | 4/25 [00:05<00:27,  1.33s/it]Calculating loss...:  20%|██        | 5/25 [00:06<00:23,  1.17s/it]Calculating loss...:  24%|██▍       | 6/25 [00:08<00:30,  1.62s/it]Calculating loss...:  28%|██▊       | 7/25 [00:10<00:29,  1.63s/it]Calculating loss...:  32%|███▏      | 8/25 [00:11<00:25,  1.51s/it]Calculating loss...:  36%|███▌      | 9/25 [00:12<00:22,  1.44s/it]Calculating loss...:  40%|████      | 10/25 [00:13<00:20,  1.36s/it]Calculating loss...:  44%|████▍     | 11/25 [00:16<00:23,  1.70s/it]Calculating loss...:  48%|████▊     | 12/25 [00:17<00:20,  1.55s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:18<00:17,  1.44s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:20<00:18,  1.65s/it]Calculating loss...:  60%|██████    | 15/25 [00:22<00:14,  1.50s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:23<00:12,  1.39s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:25<00:13,  1.68s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:27<00:12,  1.72s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:29<00:10,  1.69s/it]Calculating loss...:  80%|████████  | 20/25 [00:29<00:07,  1.44s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:05,  1.38s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:32<00:03,  1.28s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:33<00:02,  1.43s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:36<00:01,  1.71s/it]Calculating loss...: 100%|██████████| 25/25 [00:37<00:00,  1.57s/it]Calculating loss...: 100%|██████████| 25/25 [00:37<00:00,  1.50s/it]
+Iter 500: Val loss 0.059, Val took 37.549s
+Iter 500: Train loss 0.051, Learning Rate 9.870e-05, It/sec 0.175, Tokens/sec 7.431, Trained Tokens 18756, Peak mem 6.757 GB
+Iter 500: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000500_adapters.safetensors.
+Iter 510: Train loss 0.034, Learning Rate 9.865e-05, It/sec 0.174, Tokens/sec 6.469, Trained Tokens 19128, Peak mem 6.757 GB
+Iter 520: Train loss 0.030, Learning Rate 9.857e-05, It/sec 0.171, Tokens/sec 4.822, Trained Tokens 19410, Peak mem 6.757 GB
+Iter 530: Train loss 0.013, Learning Rate 9.851e-05, It/sec 0.184, Tokens/sec 5.109, Trained Tokens 19687, Peak mem 6.757 GB
+Iter 540: Train loss 0.042, Learning Rate 9.843e-05, It/sec 0.173, Tokens/sec 5.836, Trained Tokens 20024, Peak mem 6.757 GB
+Iter 550: Train loss 0.018, Learning Rate 9.838e-05, It/sec 0.186, Tokens/sec 5.290, Trained Tokens 20308, Peak mem 6.757 GB
+Iter 560: Train loss 0.026, Learning Rate 9.829e-05, It/sec 0.181, Tokens/sec 5.749, Trained Tokens 20626, Peak mem 6.757 GB
+Iter 570: Train loss 0.064, Learning Rate 9.823e-05, It/sec 0.177, Tokens/sec 5.233, Trained Tokens 20922, Peak mem 6.757 GB
+Iter 580: Train loss 0.027, Learning Rate 9.814e-05, It/sec 0.174, Tokens/sec 6.235, Trained Tokens 21281, Peak mem 6.757 GB
+Iter 590: Train loss 0.036, Learning Rate 9.808e-05, It/sec 0.171, Tokens/sec 7.071, Trained Tokens 21694, Peak mem 6.757 GB
+Iter 600: Train loss 0.020, Learning Rate 9.799e-05, It/sec 0.176, Tokens/sec 6.299, Trained Tokens 22052, Peak mem 6.757 GB
+Iter 600: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000600_adapters.safetensors.
+Iter 610: Train loss 0.030, Learning Rate 9.793e-05, It/sec 0.153, Tokens/sec 6.826, Trained Tokens 22497, Peak mem 6.757 GB
+Iter 620: Train loss 0.047, Learning Rate 9.783e-05, It/sec 0.161, Tokens/sec 6.319, Trained Tokens 22890, Peak mem 6.757 GB
+Iter 630: Train loss 0.015, Learning Rate 9.777e-05, It/sec 0.158, Tokens/sec 6.473, Trained Tokens 23299, Peak mem 6.757 GB
+Iter 640: Train loss 0.025, Learning Rate 9.767e-05, It/sec 0.169, Tokens/sec 6.854, Trained Tokens 23705, Peak mem 6.757 GB
+Iter 650: Train loss 0.036, Learning Rate 9.760e-05, It/sec 0.185, Tokens/sec 6.945, Trained Tokens 24080, Peak mem 6.757 GB
+Iter 660: Train loss 0.020, Learning Rate 9.750e-05, It/sec 0.182, Tokens/sec 5.941, Trained Tokens 24406, Peak mem 6.757 GB
+Iter 670: Train loss 0.019, Learning Rate 9.743e-05, It/sec 0.159, Tokens/sec 6.211, Trained Tokens 24796, Peak mem 6.757 GB
+Iter 680: Train loss 0.039, Learning Rate 9.732e-05, It/sec 0.189, Tokens/sec 5.887, Trained Tokens 25107, Peak mem 6.757 GB
+Iter 690: Train loss 0.025, Learning Rate 9.725e-05, It/sec 0.167, Tokens/sec 4.809, Trained Tokens 25395, Peak mem 6.757 GB
+Iter 700: Train loss 0.022, Learning Rate 9.714e-05, It/sec 0.166, Tokens/sec 6.342, Trained Tokens 25778, Peak mem 6.757 GB
+Iter 700: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000700_adapters.safetensors.
+Iter 710: Train loss 0.042, Learning Rate 9.706e-05, It/sec 0.175, Tokens/sec 7.058, Trained Tokens 26182, Peak mem 6.757 GB
+Iter 720: Train loss 0.057, Learning Rate 9.695e-05, It/sec 0.168, Tokens/sec 4.909, Trained Tokens 26474, Peak mem 6.757 GB
+Iter 730: Train loss 0.015, Learning Rate 9.687e-05, It/sec 0.204, Tokens/sec 6.836, Trained Tokens 26809, Peak mem 6.757 GB
+Iter 740: Train loss 0.071, Learning Rate 9.676e-05, It/sec 0.184, Tokens/sec 6.904, Trained Tokens 27185, Peak mem 6.757 GB
+Iter 750: Train loss 0.043, Learning Rate 9.668e-05, It/sec 0.156, Tokens/sec 9.024, Trained Tokens 27765, Peak mem 6.790 GB
+Iter 760: Train loss 0.038, Learning Rate 9.656e-05, It/sec 0.153, Tokens/sec 7.502, Trained Tokens 28254, Peak mem 6.790 GB
+Iter 770: Train loss 0.042, Learning Rate 9.648e-05, It/sec 0.161, Tokens/sec 5.629, Trained Tokens 28603, Peak mem 6.790 GB
+Iter 780: Train loss 0.018, Learning Rate 9.635e-05, It/sec 0.159, Tokens/sec 7.562, Trained Tokens 29078, Peak mem 6.790 GB
+Iter 790: Train loss 0.024, Learning Rate 9.627e-05, It/sec 0.171, Tokens/sec 5.435, Trained Tokens 29396, Peak mem 6.790 GB
+Iter 800: Train loss 0.039, Learning Rate 9.614e-05, It/sec 0.164, Tokens/sec 5.632, Trained Tokens 29739, Peak mem 6.790 GB
+Iter 800: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000800_adapters.safetensors.
+Iter 810: Train loss 0.020, Learning Rate 9.605e-05, It/sec 0.169, Tokens/sec 6.709, Trained Tokens 30137, Peak mem 6.790 GB
+Iter 820: Train loss 0.042, Learning Rate 9.592e-05, It/sec 0.184, Tokens/sec 7.132, Trained Tokens 30524, Peak mem 6.790 GB
+Iter 830: Train loss 0.041, Learning Rate 9.584e-05, It/sec 0.172, Tokens/sec 7.900, Trained Tokens 30984, Peak mem 6.790 GB
+Iter 840: Train loss 0.044, Learning Rate 9.570e-05, It/sec 0.175, Tokens/sec 7.457, Trained Tokens 31409, Peak mem 6.790 GB
+Iter 850: Train loss 0.035, Learning Rate 9.561e-05, It/sec 0.173, Tokens/sec 6.301, Trained Tokens 31774, Peak mem 6.790 GB
+Iter 860: Train loss 0.037, Learning Rate 9.547e-05, It/sec 0.157, Tokens/sec 7.737, Trained Tokens 32268, Peak mem 6.790 GB
+Iter 870: Train loss 0.028, Learning Rate 9.538e-05, It/sec 0.163, Tokens/sec 7.033, Trained Tokens 32699, Peak mem 6.790 GB
+Iter 880: Train loss 0.032, Learning Rate 9.524e-05, It/sec 0.180, Tokens/sec 6.810, Trained Tokens 33077, Peak mem 6.790 GB
+Iter 890: Train loss 0.030, Learning Rate 9.514e-05, It/sec 0.158, Tokens/sec 8.894, Trained Tokens 33640, Peak mem 6.790 GB
+Iter 900: Train loss 0.034, Learning Rate 9.500e-05, It/sec 0.176, Tokens/sec 8.281, Trained Tokens 34110, Peak mem 6.790 GB
+Iter 900: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0000900_adapters.safetensors.
+Iter 910: Train loss 0.044, Learning Rate 9.490e-05, It/sec 0.183, Tokens/sec 7.666, Trained Tokens 34530, Peak mem 6.790 GB
+Iter 920: Train loss 0.049, Learning Rate 9.476e-05, It/sec 0.162, Tokens/sec 7.995, Trained Tokens 35022, Peak mem 6.790 GB
+Iter 930: Train loss 0.032, Learning Rate 9.466e-05, It/sec 0.180, Tokens/sec 6.571, Trained Tokens 35387, Peak mem 6.790 GB
+Iter 940: Train loss 0.039, Learning Rate 9.450e-05, It/sec 0.171, Tokens/sec 7.315, Trained Tokens 35815, Peak mem 6.790 GB
+Iter 950: Train loss 0.030, Learning Rate 9.440e-05, It/sec 0.174, Tokens/sec 9.421, Trained Tokens 36355, Peak mem 6.790 GB
+Iter 960: Train loss 0.065, Learning Rate 9.425e-05, It/sec 0.177, Tokens/sec 6.959, Trained Tokens 36749, Peak mem 6.790 GB
+Iter 970: Train loss 0.028, Learning Rate 9.415e-05, It/sec 0.172, Tokens/sec 7.121, Trained Tokens 37163, Peak mem 6.790 GB
+Iter 980: Train loss 0.024, Learning Rate 9.399e-05, It/sec 0.180, Tokens/sec 5.468, Trained Tokens 37467, Peak mem 6.790 GB
+Iter 990: Train loss 0.036, Learning Rate 9.388e-05, It/sec 0.171, Tokens/sec 6.151, Trained Tokens 37826, Peak mem 6.790 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:02<00:55,  2.32s/it]Calculating loss...:   8%|▊         | 2/25 [00:03<00:38,  1.68s/it]Calculating loss...:  12%|█▏        | 3/25 [00:04<00:33,  1.51s/it]Calculating loss...:  16%|█▌        | 4/25 [00:06<00:29,  1.38s/it]Calculating loss...:  20%|██        | 5/25 [00:07<00:27,  1.36s/it]Calculating loss...:  24%|██▍       | 6/25 [00:09<00:29,  1.56s/it]Calculating loss...:  28%|██▊       | 7/25 [00:10<00:23,  1.31s/it]Calculating loss...:  32%|███▏      | 8/25 [00:11<00:22,  1.30s/it]Calculating loss...:  36%|███▌      | 9/25 [00:13<00:24,  1.50s/it]Calculating loss...:  40%|████      | 10/25 [00:15<00:26,  1.77s/it]Calculating loss...:  44%|████▍     | 11/25 [00:18<00:28,  2.04s/it]Calculating loss...:  48%|████▊     | 12/25 [00:19<00:23,  1.81s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:21<00:20,  1.71s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:22<00:17,  1.62s/it]Calculating loss...:  60%|██████    | 15/25 [00:23<00:14,  1.50s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:25<00:12,  1.44s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:26<00:10,  1.37s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:28<00:12,  1.77s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:30<00:10,  1.73s/it]Calculating loss...:  80%|████████  | 20/25 [00:31<00:07,  1.60s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:33<00:06,  1.71s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:35<00:04,  1.56s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:36<00:03,  1.54s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:37<00:01,  1.48s/it]Calculating loss...: 100%|██████████| 25/25 [00:39<00:00,  1.42s/it]Calculating loss...: 100%|██████████| 25/25 [00:39<00:00,  1.57s/it]
+Iter 1000: Val loss 0.103, Val took 39.171s
+Iter 1000: Train loss 0.040, Learning Rate 9.372e-05, It/sec 0.186, Tokens/sec 6.150, Trained Tokens 38157, Peak mem 6.790 GB
+Iter 1000: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001000_adapters.safetensors.
+Iter 1010: Train loss 0.021, Learning Rate 9.361e-05, It/sec 0.161, Tokens/sec 6.654, Trained Tokens 38571, Peak mem 6.790 GB
+Iter 1020: Train loss 0.037, Learning Rate 9.345e-05, It/sec 0.169, Tokens/sec 7.477, Trained Tokens 39014, Peak mem 6.790 GB
+Iter 1030: Train loss 0.035, Learning Rate 9.334e-05, It/sec 0.176, Tokens/sec 6.903, Trained Tokens 39407, Peak mem 6.790 GB
+Iter 1040: Train loss 0.035, Learning Rate 9.317e-05, It/sec 0.176, Tokens/sec 7.331, Trained Tokens 39824, Peak mem 6.790 GB
+Iter 1050: Train loss 0.031, Learning Rate 9.306e-05, It/sec 0.177, Tokens/sec 7.099, Trained Tokens 40225, Peak mem 6.790 GB
+Iter 1060: Train loss 0.035, Learning Rate 9.289e-05, It/sec 0.185, Tokens/sec 7.219, Trained Tokens 40615, Peak mem 6.790 GB
+Iter 1070: Train loss 0.012, Learning Rate 9.277e-05, It/sec 0.175, Tokens/sec 7.548, Trained Tokens 41047, Peak mem 6.790 GB
+Iter 1080: Train loss 0.041, Learning Rate 9.260e-05, It/sec 0.175, Tokens/sec 7.315, Trained Tokens 41464, Peak mem 6.790 GB
+Iter 1090: Train loss 0.016, Learning Rate 9.248e-05, It/sec 0.173, Tokens/sec 5.953, Trained Tokens 41808, Peak mem 6.790 GB
+Iter 1100: Train loss 0.022, Learning Rate 9.231e-05, It/sec 0.178, Tokens/sec 6.279, Trained Tokens 42160, Peak mem 6.790 GB
+Iter 1100: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001100_adapters.safetensors.
+Iter 1110: Train loss 0.039, Learning Rate 9.219e-05, It/sec 0.175, Tokens/sec 7.317, Trained Tokens 42579, Peak mem 6.790 GB
+Iter 1120: Train loss 0.012, Learning Rate 9.201e-05, It/sec 0.186, Tokens/sec 7.572, Trained Tokens 42986, Peak mem 6.790 GB
+Iter 1130: Train loss 0.035, Learning Rate 9.189e-05, It/sec 0.173, Tokens/sec 7.655, Trained Tokens 43429, Peak mem 6.790 GB
+Iter 1140: Train loss 0.049, Learning Rate 9.170e-05, It/sec 0.172, Tokens/sec 7.863, Trained Tokens 43887, Peak mem 6.790 GB
+Iter 1150: Train loss 0.034, Learning Rate 9.158e-05, It/sec 0.172, Tokens/sec 5.650, Trained Tokens 44216, Peak mem 6.790 GB
+Iter 1160: Train loss 0.026, Learning Rate 9.140e-05, It/sec 0.175, Tokens/sec 8.830, Trained Tokens 44721, Peak mem 6.790 GB
+Iter 1170: Train loss 0.030, Learning Rate 9.127e-05, It/sec 0.172, Tokens/sec 6.420, Trained Tokens 45094, Peak mem 6.790 GB
+Iter 1180: Train loss 0.021, Learning Rate 9.108e-05, It/sec 0.162, Tokens/sec 6.821, Trained Tokens 45515, Peak mem 6.802 GB
+Iter 1190: Train loss 0.015, Learning Rate 9.095e-05, It/sec 0.182, Tokens/sec 5.486, Trained Tokens 45816, Peak mem 6.802 GB
+Iter 1200: Train loss 0.032, Learning Rate 9.076e-05, It/sec 0.177, Tokens/sec 7.124, Trained Tokens 46219, Peak mem 6.802 GB
+Iter 1200: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001200_adapters.safetensors.
+Iter 1210: Train loss 0.045, Learning Rate 9.063e-05, It/sec 0.171, Tokens/sec 7.716, Trained Tokens 46671, Peak mem 6.802 GB
+Iter 1220: Train loss 0.057, Learning Rate 9.044e-05, It/sec 0.190, Tokens/sec 7.238, Trained Tokens 47052, Peak mem 6.802 GB
+Iter 1230: Train loss 0.022, Learning Rate 9.031e-05, It/sec 0.188, Tokens/sec 6.475, Trained Tokens 47396, Peak mem 6.802 GB
+Iter 1240: Train loss 0.045, Learning Rate 9.011e-05, It/sec 0.190, Tokens/sec 9.564, Trained Tokens 47900, Peak mem 6.802 GB
+Iter 1250: Train loss 0.024, Learning Rate 8.998e-05, It/sec 0.187, Tokens/sec 5.770, Trained Tokens 48209, Peak mem 6.802 GB
+Iter 1260: Train loss 0.034, Learning Rate 8.977e-05, It/sec 0.176, Tokens/sec 8.769, Trained Tokens 48707, Peak mem 6.802 GB
+Iter 1270: Train loss 0.026, Learning Rate 8.964e-05, It/sec 0.179, Tokens/sec 6.606, Trained Tokens 49077, Peak mem 6.802 GB
+Iter 1280: Train loss 0.039, Learning Rate 8.944e-05, It/sec 0.189, Tokens/sec 7.773, Trained Tokens 49489, Peak mem 6.802 GB
+Iter 1290: Train loss 0.040, Learning Rate 8.930e-05, It/sec 0.186, Tokens/sec 5.507, Trained Tokens 49785, Peak mem 6.802 GB
+Iter 1300: Train loss 0.052, Learning Rate 8.909e-05, It/sec 0.168, Tokens/sec 8.701, Trained Tokens 50304, Peak mem 6.802 GB
+Iter 1300: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001300_adapters.safetensors.
+Iter 1310: Train loss 0.031, Learning Rate 8.895e-05, It/sec 0.165, Tokens/sec 6.660, Trained Tokens 50707, Peak mem 6.802 GB
+Iter 1320: Train loss 0.021, Learning Rate 8.874e-05, It/sec 0.169, Tokens/sec 4.672, Trained Tokens 50984, Peak mem 6.932 GB
+Iter 1330: Train loss 0.019, Learning Rate 8.860e-05, It/sec 0.179, Tokens/sec 7.239, Trained Tokens 51389, Peak mem 6.932 GB
+Iter 1340: Train loss 0.021, Learning Rate 8.839e-05, It/sec 0.169, Tokens/sec 7.297, Trained Tokens 51820, Peak mem 6.932 GB
+Iter 1350: Train loss 0.053, Learning Rate 8.825e-05, It/sec 0.163, Tokens/sec 5.089, Trained Tokens 52133, Peak mem 6.932 GB
+Iter 1360: Train loss 0.058, Learning Rate 8.803e-05, It/sec 0.175, Tokens/sec 6.278, Trained Tokens 52491, Peak mem 6.932 GB
+Iter 1370: Train loss 0.015, Learning Rate 8.789e-05, It/sec 0.177, Tokens/sec 5.168, Trained Tokens 52783, Peak mem 6.932 GB
+Iter 1380: Train loss 0.027, Learning Rate 8.767e-05, It/sec 0.184, Tokens/sec 7.304, Trained Tokens 53181, Peak mem 6.932 GB
+Iter 1390: Train loss 0.043, Learning Rate 8.752e-05, It/sec 0.180, Tokens/sec 6.553, Trained Tokens 53546, Peak mem 6.932 GB
+Iter 1400: Train loss 0.039, Learning Rate 8.730e-05, It/sec 0.171, Tokens/sec 5.415, Trained Tokens 53863, Peak mem 6.932 GB
+Iter 1400: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001400_adapters.safetensors.
+Iter 1410: Train loss 0.014, Learning Rate 8.715e-05, It/sec 0.184, Tokens/sec 5.576, Trained Tokens 54166, Peak mem 6.932 GB
+Iter 1420: Train loss 0.046, Learning Rate 8.693e-05, It/sec 0.175, Tokens/sec 8.682, Trained Tokens 54663, Peak mem 6.932 GB
+Iter 1430: Train loss 0.035, Learning Rate 8.678e-05, It/sec 0.183, Tokens/sec 6.619, Trained Tokens 55025, Peak mem 6.932 GB
+Iter 1440: Train loss 0.021, Learning Rate 8.655e-05, It/sec 0.186, Tokens/sec 5.927, Trained Tokens 55343, Peak mem 6.932 GB
+Iter 1450: Train loss 0.050, Learning Rate 8.640e-05, It/sec 0.176, Tokens/sec 4.847, Trained Tokens 55619, Peak mem 6.932 GB
+Iter 1460: Train loss 0.017, Learning Rate 8.617e-05, It/sec 0.171, Tokens/sec 5.690, Trained Tokens 55952, Peak mem 6.932 GB
+Iter 1470: Train loss 0.016, Learning Rate 8.602e-05, It/sec 0.188, Tokens/sec 5.691, Trained Tokens 56255, Peak mem 6.932 GB
+Iter 1480: Train loss 0.012, Learning Rate 8.578e-05, It/sec 0.178, Tokens/sec 5.687, Trained Tokens 56574, Peak mem 6.932 GB
+Iter 1490: Train loss 0.045, Learning Rate 8.563e-05, It/sec 0.177, Tokens/sec 7.063, Trained Tokens 56972, Peak mem 6.932 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:02<00:52,  2.17s/it]Calculating loss...:   8%|▊         | 2/25 [00:03<00:40,  1.74s/it]Calculating loss...:  12%|█▏        | 3/25 [00:04<00:33,  1.53s/it]Calculating loss...:  16%|█▌        | 4/25 [00:05<00:27,  1.30s/it]Calculating loss...:  20%|██        | 5/25 [00:07<00:26,  1.32s/it]Calculating loss...:  24%|██▍       | 6/25 [00:08<00:24,  1.27s/it]Calculating loss...:  28%|██▊       | 7/25 [00:09<00:23,  1.30s/it]Calculating loss...:  32%|███▏      | 8/25 [00:11<00:22,  1.34s/it]Calculating loss...:  36%|███▌      | 9/25 [00:12<00:19,  1.19s/it]Calculating loss...:  40%|████      | 10/25 [00:13<00:17,  1.19s/it]Calculating loss...:  44%|████▍     | 11/25 [00:14<00:18,  1.34s/it]Calculating loss...:  48%|████▊     | 12/25 [00:16<00:19,  1.47s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:18<00:17,  1.46s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:19<00:15,  1.45s/it]Calculating loss...:  60%|██████    | 15/25 [00:20<00:14,  1.42s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:23<00:15,  1.67s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:25<00:15,  1.95s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:27<00:13,  2.00s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:29<00:10,  1.75s/it]Calculating loss...:  80%|████████  | 20/25 [00:29<00:07,  1.51s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:05,  1.46s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:32<00:03,  1.28s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:33<00:02,  1.28s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:34<00:01,  1.18s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.18s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.42s/it]
+Iter 1500: Val loss 0.054, Val took 35.577s
+Iter 1500: Train loss 0.050, Learning Rate 8.539e-05, It/sec 0.172, Tokens/sec 6.367, Trained Tokens 57342, Peak mem 6.932 GB
+Iter 1500: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001500_adapters.safetensors.
+Iter 1510: Train loss 0.029, Learning Rate 8.524e-05, It/sec 0.184, Tokens/sec 5.200, Trained Tokens 57625, Peak mem 6.932 GB
+Iter 1520: Train loss 0.048, Learning Rate 8.500e-05, It/sec 0.179, Tokens/sec 5.750, Trained Tokens 57947, Peak mem 6.932 GB
+Iter 1530: Train loss 0.062, Learning Rate 8.484e-05, It/sec 0.169, Tokens/sec 5.525, Trained Tokens 58274, Peak mem 6.932 GB
+Iter 1540: Train loss 0.036, Learning Rate 8.460e-05, It/sec 0.182, Tokens/sec 6.068, Trained Tokens 58608, Peak mem 6.932 GB
+Iter 1550: Train loss 0.033, Learning Rate 8.444e-05, It/sec 0.178, Tokens/sec 6.247, Trained Tokens 58959, Peak mem 6.932 GB
+Iter 1560: Train loss 0.047, Learning Rate 8.420e-05, It/sec 0.164, Tokens/sec 6.860, Trained Tokens 59376, Peak mem 6.932 GB
+Iter 1570: Train loss 0.021, Learning Rate 8.404e-05, It/sec 0.173, Tokens/sec 6.287, Trained Tokens 59739, Peak mem 6.932 GB
+Iter 1580: Train loss 0.069, Learning Rate 8.379e-05, It/sec 0.180, Tokens/sec 5.042, Trained Tokens 60019, Peak mem 6.932 GB
+Iter 1590: Train loss 0.036, Learning Rate 8.363e-05, It/sec 0.161, Tokens/sec 8.075, Trained Tokens 60522, Peak mem 6.932 GB
+Iter 1600: Train loss 0.025, Learning Rate 8.338e-05, It/sec 0.170, Tokens/sec 4.718, Trained Tokens 60800, Peak mem 6.932 GB
+Iter 1600: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001600_adapters.safetensors.
+Iter 1610: Train loss 0.025, Learning Rate 8.321e-05, It/sec 0.169, Tokens/sec 5.641, Trained Tokens 61134, Peak mem 6.932 GB
+Iter 1620: Train loss 0.034, Learning Rate 8.296e-05, It/sec 0.178, Tokens/sec 6.580, Trained Tokens 61504, Peak mem 6.932 GB
+Iter 1630: Train loss 0.033, Learning Rate 8.280e-05, It/sec 0.175, Tokens/sec 7.068, Trained Tokens 61908, Peak mem 6.932 GB
+Iter 1640: Train loss 0.033, Learning Rate 8.254e-05, It/sec 0.175, Tokens/sec 5.270, Trained Tokens 62209, Peak mem 6.932 GB
+Iter 1650: Train loss 0.037, Learning Rate 8.238e-05, It/sec 0.187, Tokens/sec 6.144, Trained Tokens 62537, Peak mem 6.932 GB
+Iter 1660: Train loss 0.027, Learning Rate 8.212e-05, It/sec 0.168, Tokens/sec 6.765, Trained Tokens 62939, Peak mem 6.932 GB
+Iter 1670: Train loss 0.051, Learning Rate 8.195e-05, It/sec 0.168, Tokens/sec 8.734, Trained Tokens 63459, Peak mem 6.932 GB
+Iter 1680: Train loss 0.022, Learning Rate 8.169e-05, It/sec 0.164, Tokens/sec 5.326, Trained Tokens 63784, Peak mem 6.932 GB
+Iter 1690: Train loss 0.032, Learning Rate 8.152e-05, It/sec 0.149, Tokens/sec 7.583, Trained Tokens 64293, Peak mem 7.253 GB
+Iter 1700: Train loss 0.051, Learning Rate 8.126e-05, It/sec 0.156, Tokens/sec 6.969, Trained Tokens 64740, Peak mem 7.253 GB
+Iter 1700: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001700_adapters.safetensors.
+Iter 1710: Train loss 0.038, Learning Rate 8.109e-05, It/sec 0.169, Tokens/sec 6.076, Trained Tokens 65099, Peak mem 7.253 GB
+Iter 1720: Train loss 0.035, Learning Rate 8.083e-05, It/sec 0.156, Tokens/sec 6.714, Trained Tokens 65530, Peak mem 7.253 GB
+Iter 1730: Train loss 0.034, Learning Rate 8.065e-05, It/sec 0.155, Tokens/sec 5.231, Trained Tokens 65868, Peak mem 7.253 GB
+Iter 1740: Train loss 0.033, Learning Rate 8.039e-05, It/sec 0.167, Tokens/sec 5.274, Trained Tokens 66184, Peak mem 7.253 GB
+Iter 1750: Train loss 0.037, Learning Rate 8.021e-05, It/sec 0.150, Tokens/sec 5.132, Trained Tokens 66525, Peak mem 7.253 GB
+Iter 1760: Train loss 0.043, Learning Rate 7.994e-05, It/sec 0.178, Tokens/sec 6.235, Trained Tokens 66876, Peak mem 7.253 GB
+Iter 1770: Train loss 0.038, Learning Rate 7.977e-05, It/sec 0.183, Tokens/sec 5.718, Trained Tokens 67189, Peak mem 7.253 GB
+Iter 1780: Train loss 0.031, Learning Rate 7.950e-05, It/sec 0.174, Tokens/sec 5.465, Trained Tokens 67503, Peak mem 7.253 GB
+Iter 1790: Train loss 0.021, Learning Rate 7.932e-05, It/sec 0.183, Tokens/sec 5.980, Trained Tokens 67830, Peak mem 7.253 GB
+Iter 1800: Train loss 0.014, Learning Rate 7.905e-05, It/sec 0.171, Tokens/sec 6.040, Trained Tokens 68184, Peak mem 7.253 GB
+Iter 1800: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001800_adapters.safetensors.
+Iter 1810: Train loss 0.047, Learning Rate 7.887e-05, It/sec 0.170, Tokens/sec 6.722, Trained Tokens 68580, Peak mem 7.253 GB
+Iter 1820: Train loss 0.028, Learning Rate 7.859e-05, It/sec 0.180, Tokens/sec 6.328, Trained Tokens 68931, Peak mem 7.253 GB
+Iter 1830: Train loss 0.038, Learning Rate 7.841e-05, It/sec 0.189, Tokens/sec 6.303, Trained Tokens 69264, Peak mem 7.253 GB
+Iter 1840: Train loss 0.027, Learning Rate 7.814e-05, It/sec 0.172, Tokens/sec 5.575, Trained Tokens 69589, Peak mem 7.253 GB
+Iter 1850: Train loss 0.034, Learning Rate 7.795e-05, It/sec 0.178, Tokens/sec 7.504, Trained Tokens 70010, Peak mem 7.253 GB
+Iter 1860: Train loss 0.024, Learning Rate 7.767e-05, It/sec 0.179, Tokens/sec 6.966, Trained Tokens 70400, Peak mem 7.253 GB
+Iter 1870: Train loss 0.040, Learning Rate 7.749e-05, It/sec 0.181, Tokens/sec 5.407, Trained Tokens 70699, Peak mem 7.253 GB
+Iter 1880: Train loss 0.065, Learning Rate 7.721e-05, It/sec 0.176, Tokens/sec 6.512, Trained Tokens 71070, Peak mem 7.253 GB
+Iter 1890: Train loss 0.042, Learning Rate 7.702e-05, It/sec 0.177, Tokens/sec 7.900, Trained Tokens 71516, Peak mem 7.253 GB
+Iter 1900: Train loss 0.052, Learning Rate 7.674e-05, It/sec 0.173, Tokens/sec 7.378, Trained Tokens 71942, Peak mem 7.253 GB
+Iter 1900: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0001900_adapters.safetensors.
+Iter 1910: Train loss 0.062, Learning Rate 7.655e-05, It/sec 0.170, Tokens/sec 7.173, Trained Tokens 72365, Peak mem 7.253 GB
+Iter 1920: Train loss 0.020, Learning Rate 7.627e-05, It/sec 0.177, Tokens/sec 5.687, Trained Tokens 72687, Peak mem 7.253 GB
+Iter 1930: Train loss 0.049, Learning Rate 7.608e-05, It/sec 0.178, Tokens/sec 7.235, Trained Tokens 73093, Peak mem 7.253 GB
+Iter 1940: Train loss 0.071, Learning Rate 7.580e-05, It/sec 0.171, Tokens/sec 6.583, Trained Tokens 73479, Peak mem 7.253 GB
+Iter 1950: Train loss 0.032, Learning Rate 7.561e-05, It/sec 0.178, Tokens/sec 8.491, Trained Tokens 73955, Peak mem 7.253 GB
+Iter 1960: Train loss 0.054, Learning Rate 7.532e-05, It/sec 0.177, Tokens/sec 7.202, Trained Tokens 74361, Peak mem 7.253 GB
+Iter 1970: Train loss 0.044, Learning Rate 7.513e-05, It/sec 0.178, Tokens/sec 6.677, Trained Tokens 74736, Peak mem 7.253 GB
+Iter 1980: Train loss 0.035, Learning Rate 7.484e-05, It/sec 0.174, Tokens/sec 6.868, Trained Tokens 75131, Peak mem 7.253 GB
+Iter 1990: Train loss 0.042, Learning Rate 7.465e-05, It/sec 0.179, Tokens/sec 5.257, Trained Tokens 75424, Peak mem 7.253 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:34,  1.43s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:29,  1.29s/it]Calculating loss...:  12%|█▏        | 3/25 [00:03<00:25,  1.17s/it]Calculating loss...:  16%|█▌        | 4/25 [00:04<00:22,  1.08s/it]Calculating loss...:  20%|██        | 5/25 [00:06<00:24,  1.24s/it]Calculating loss...:  24%|██▍       | 6/25 [00:07<00:24,  1.28s/it]Calculating loss...:  28%|██▊       | 7/25 [00:08<00:23,  1.30s/it]Calculating loss...:  32%|███▏      | 8/25 [00:10<00:22,  1.30s/it]Calculating loss...:  36%|███▌      | 9/25 [00:11<00:20,  1.27s/it]Calculating loss...:  40%|████      | 10/25 [00:12<00:19,  1.27s/it]Calculating loss...:  44%|████▍     | 11/25 [00:13<00:17,  1.28s/it]Calculating loss...:  48%|████▊     | 12/25 [00:16<00:21,  1.63s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:17<00:18,  1.55s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:20<00:20,  1.82s/it]Calculating loss...:  60%|██████    | 15/25 [00:21<00:16,  1.63s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:22<00:13,  1.53s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:23<00:10,  1.33s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:24<00:08,  1.27s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:26<00:07,  1.33s/it]Calculating loss...:  80%|████████  | 20/25 [00:27<00:06,  1.27s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:28<00:05,  1.42s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:29<00:03,  1.27s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:31<00:02,  1.34s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:34<00:01,  1.73s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.76s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.43s/it]
+Iter 2000: Val loss 0.057, Val took 35.849s
+Iter 2000: Train loss 0.030, Learning Rate 7.436e-05, It/sec 0.169, Tokens/sec 7.400, Trained Tokens 75863, Peak mem 7.253 GB
+Iter 2000: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002000_adapters.safetensors.
+Iter 2010: Train loss 0.055, Learning Rate 7.416e-05, It/sec 0.165, Tokens/sec 6.623, Trained Tokens 76264, Peak mem 7.475 GB
+Iter 2020: Train loss 0.039, Learning Rate 7.387e-05, It/sec 0.182, Tokens/sec 5.438, Trained Tokens 76563, Peak mem 7.475 GB
+Iter 2030: Train loss 0.041, Learning Rate 7.367e-05, It/sec 0.161, Tokens/sec 6.878, Trained Tokens 76990, Peak mem 7.475 GB
+Iter 2040: Train loss 0.052, Learning Rate 7.338e-05, It/sec 0.173, Tokens/sec 6.783, Trained Tokens 77383, Peak mem 7.475 GB
+Iter 2050: Train loss 0.027, Learning Rate 7.318e-05, It/sec 0.159, Tokens/sec 7.140, Trained Tokens 77832, Peak mem 7.475 GB
+Iter 2060: Train loss 0.033, Learning Rate 7.289e-05, It/sec 0.175, Tokens/sec 8.207, Trained Tokens 78301, Peak mem 7.475 GB
+Iter 2070: Train loss 0.055, Learning Rate 7.269e-05, It/sec 0.175, Tokens/sec 7.380, Trained Tokens 78722, Peak mem 7.475 GB
+Iter 2080: Train loss 0.032, Learning Rate 7.239e-05, It/sec 0.176, Tokens/sec 5.909, Trained Tokens 79058, Peak mem 7.475 GB
+Iter 2090: Train loss 0.024, Learning Rate 7.219e-05, It/sec 0.166, Tokens/sec 7.885, Trained Tokens 79534, Peak mem 7.475 GB
+Iter 2100: Train loss 0.023, Learning Rate 7.189e-05, It/sec 0.185, Tokens/sec 6.947, Trained Tokens 79910, Peak mem 7.475 GB
+Iter 2100: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002100_adapters.safetensors.
+Iter 2110: Train loss 0.075, Learning Rate 7.169e-05, It/sec 0.167, Tokens/sec 7.565, Trained Tokens 80363, Peak mem 7.475 GB
+Iter 2120: Train loss 0.022, Learning Rate 7.139e-05, It/sec 0.171, Tokens/sec 6.162, Trained Tokens 80723, Peak mem 7.475 GB
+Iter 2130: Train loss 0.026, Learning Rate 7.119e-05, It/sec 0.180, Tokens/sec 5.322, Trained Tokens 81019, Peak mem 7.475 GB
+Iter 2140: Train loss 0.031, Learning Rate 7.089e-05, It/sec 0.171, Tokens/sec 6.795, Trained Tokens 81416, Peak mem 7.475 GB
+Iter 2150: Train loss 0.021, Learning Rate 7.069e-05, It/sec 0.168, Tokens/sec 4.427, Trained Tokens 81680, Peak mem 7.475 GB
+Iter 2160: Train loss 0.024, Learning Rate 7.038e-05, It/sec 0.170, Tokens/sec 5.462, Trained Tokens 82002, Peak mem 7.475 GB
+Iter 2170: Train loss 0.029, Learning Rate 7.018e-05, It/sec 0.178, Tokens/sec 5.423, Trained Tokens 82307, Peak mem 7.475 GB
+Iter 2180: Train loss 0.053, Learning Rate 6.988e-05, It/sec 0.159, Tokens/sec 5.740, Trained Tokens 82669, Peak mem 7.475 GB
+Iter 2190: Train loss 0.039, Learning Rate 6.967e-05, It/sec 0.169, Tokens/sec 6.595, Trained Tokens 83060, Peak mem 7.475 GB
+Iter 2200: Train loss 0.024, Learning Rate 6.936e-05, It/sec 0.176, Tokens/sec 6.580, Trained Tokens 83434, Peak mem 7.475 GB
+Iter 2200: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002200_adapters.safetensors.
+Iter 2210: Train loss 0.018, Learning Rate 6.916e-05, It/sec 0.172, Tokens/sec 5.374, Trained Tokens 83746, Peak mem 7.475 GB
+Iter 2220: Train loss 0.010, Learning Rate 6.885e-05, It/sec 0.174, Tokens/sec 5.452, Trained Tokens 84060, Peak mem 7.475 GB
+Iter 2230: Train loss 0.015, Learning Rate 6.865e-05, It/sec 0.176, Tokens/sec 7.033, Trained Tokens 84459, Peak mem 7.475 GB
+Iter 2240: Train loss 0.034, Learning Rate 6.834e-05, It/sec 0.175, Tokens/sec 7.090, Trained Tokens 84865, Peak mem 7.475 GB
+Iter 2250: Train loss 0.036, Learning Rate 6.813e-05, It/sec 0.174, Tokens/sec 4.438, Trained Tokens 85120, Peak mem 7.475 GB
+Iter 2260: Train loss 0.054, Learning Rate 6.782e-05, It/sec 0.167, Tokens/sec 5.615, Trained Tokens 85457, Peak mem 7.475 GB
+Iter 2270: Train loss 0.036, Learning Rate 6.761e-05, It/sec 0.186, Tokens/sec 5.397, Trained Tokens 85747, Peak mem 7.475 GB
+Iter 2280: Train loss 0.058, Learning Rate 6.730e-05, It/sec 0.171, Tokens/sec 6.474, Trained Tokens 86125, Peak mem 7.475 GB
+Iter 2290: Train loss 0.016, Learning Rate 6.709e-05, It/sec 0.186, Tokens/sec 5.639, Trained Tokens 86429, Peak mem 7.475 GB
+Iter 2300: Train loss 0.039, Learning Rate 6.678e-05, It/sec 0.183, Tokens/sec 6.616, Trained Tokens 86790, Peak mem 7.475 GB
+Iter 2300: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002300_adapters.safetensors.
+Iter 2310: Train loss 0.035, Learning Rate 6.657e-05, It/sec 0.177, Tokens/sec 5.678, Trained Tokens 87111, Peak mem 7.475 GB
+Iter 2320: Train loss 0.041, Learning Rate 6.625e-05, It/sec 0.166, Tokens/sec 7.991, Trained Tokens 87591, Peak mem 7.475 GB
+Iter 2330: Train loss 0.038, Learning Rate 6.604e-05, It/sec 0.174, Tokens/sec 7.071, Trained Tokens 87997, Peak mem 7.475 GB
+Iter 2340: Train loss 0.028, Learning Rate 6.573e-05, It/sec 0.170, Tokens/sec 5.977, Trained Tokens 88348, Peak mem 7.475 GB
+Iter 2350: Train loss 0.038, Learning Rate 6.551e-05, It/sec 0.174, Tokens/sec 6.801, Trained Tokens 88738, Peak mem 7.475 GB
+Iter 2360: Train loss 0.012, Learning Rate 6.520e-05, It/sec 0.170, Tokens/sec 4.972, Trained Tokens 89030, Peak mem 7.475 GB
+Iter 2370: Train loss 0.049, Learning Rate 6.499e-05, It/sec 0.176, Tokens/sec 5.992, Trained Tokens 89371, Peak mem 7.475 GB
+Iter 2380: Train loss 0.044, Learning Rate 6.467e-05, It/sec 0.175, Tokens/sec 4.593, Trained Tokens 89633, Peak mem 7.475 GB
+Iter 2390: Train loss 0.021, Learning Rate 6.445e-05, It/sec 0.174, Tokens/sec 5.136, Trained Tokens 89928, Peak mem 7.475 GB
+Iter 2400: Train loss 0.019, Learning Rate 6.414e-05, It/sec 0.180, Tokens/sec 5.586, Trained Tokens 90239, Peak mem 7.475 GB
+Iter 2400: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002400_adapters.safetensors.
+Iter 2410: Train loss 0.024, Learning Rate 6.392e-05, It/sec 0.177, Tokens/sec 5.888, Trained Tokens 90571, Peak mem 7.475 GB
+Iter 2420: Train loss 0.052, Learning Rate 6.360e-05, It/sec 0.160, Tokens/sec 6.803, Trained Tokens 90996, Peak mem 7.475 GB
+Iter 2430: Train loss 0.053, Learning Rate 6.339e-05, It/sec 0.176, Tokens/sec 6.631, Trained Tokens 91373, Peak mem 7.475 GB
+Iter 2440: Train loss 0.050, Learning Rate 6.307e-05, It/sec 0.170, Tokens/sec 9.061, Trained Tokens 91906, Peak mem 7.475 GB
+Iter 2450: Train loss 0.057, Learning Rate 6.285e-05, It/sec 0.170, Tokens/sec 6.366, Trained Tokens 92280, Peak mem 7.475 GB
+Iter 2460: Train loss 0.028, Learning Rate 6.253e-05, It/sec 0.183, Tokens/sec 6.283, Trained Tokens 92623, Peak mem 7.475 GB
+Iter 2470: Train loss 0.031, Learning Rate 6.231e-05, It/sec 0.177, Tokens/sec 8.721, Trained Tokens 93116, Peak mem 7.475 GB
+Iter 2480: Train loss 0.039, Learning Rate 6.199e-05, It/sec 0.177, Tokens/sec 7.982, Trained Tokens 93567, Peak mem 7.475 GB
+Iter 2490: Train loss 0.044, Learning Rate 6.177e-05, It/sec 0.172, Tokens/sec 5.417, Trained Tokens 93882, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:02<01:00,  2.51s/it]Calculating loss...:   8%|▊         | 2/25 [00:03<00:37,  1.64s/it]Calculating loss...:  12%|█▏        | 3/25 [00:05<00:34,  1.58s/it]Calculating loss...:  16%|█▌        | 4/25 [00:07<00:41,  1.99s/it]Calculating loss...:  20%|██        | 5/25 [00:08<00:33,  1.70s/it]Calculating loss...:  24%|██▍       | 6/25 [00:09<00:28,  1.51s/it]Calculating loss...:  28%|██▊       | 7/25 [00:11<00:25,  1.43s/it]Calculating loss...:  32%|███▏      | 8/25 [00:12<00:23,  1.38s/it]Calculating loss...:  36%|███▌      | 9/25 [00:13<00:21,  1.33s/it]Calculating loss...:  40%|████      | 10/25 [00:16<00:24,  1.62s/it]Calculating loss...:  44%|████▍     | 11/25 [00:17<00:20,  1.49s/it]Calculating loss...:  48%|████▊     | 12/25 [00:18<00:18,  1.42s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:19<00:16,  1.40s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:21<00:14,  1.36s/it]Calculating loss...:  60%|██████    | 15/25 [00:21<00:11,  1.19s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:23<00:11,  1.29s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:25<00:11,  1.43s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:27<00:12,  1.79s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:29<00:10,  1.68s/it]Calculating loss...:  80%|████████  | 20/25 [00:30<00:07,  1.56s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:05,  1.50s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:32<00:03,  1.31s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:33<00:02,  1.27s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:36<00:01,  1.68s/it]Calculating loss...: 100%|██████████| 25/25 [00:37<00:00,  1.55s/it]Calculating loss...: 100%|██████████| 25/25 [00:37<00:00,  1.51s/it]
+Iter 2500: Val loss 0.048, Val took 37.795s
+Iter 2500: Train loss 0.052, Learning Rate 6.145e-05, It/sec 0.178, Tokens/sec 5.923, Trained Tokens 94215, Peak mem 7.475 GB
+Iter 2500: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002500_adapters.safetensors.
+Iter 2510: Train loss 0.032, Learning Rate 6.123e-05, It/sec 0.181, Tokens/sec 5.526, Trained Tokens 94521, Peak mem 7.475 GB
+Iter 2520: Train loss 0.037, Learning Rate 6.091e-05, It/sec 0.174, Tokens/sec 7.301, Trained Tokens 94941, Peak mem 7.475 GB
+Iter 2530: Train loss 0.034, Learning Rate 6.069e-05, It/sec 0.186, Tokens/sec 8.212, Trained Tokens 95383, Peak mem 7.475 GB
+Iter 2540: Train loss 0.040, Learning Rate 6.037e-05, It/sec 0.186, Tokens/sec 6.803, Trained Tokens 95749, Peak mem 7.475 GB
+Iter 2550: Train loss 0.033, Learning Rate 6.015e-05, It/sec 0.179, Tokens/sec 6.829, Trained Tokens 96130, Peak mem 7.475 GB
+Iter 2560: Train loss 0.034, Learning Rate 5.982e-05, It/sec 0.175, Tokens/sec 6.152, Trained Tokens 96481, Peak mem 7.475 GB
+Iter 2570: Train loss 0.065, Learning Rate 5.960e-05, It/sec 0.183, Tokens/sec 5.920, Trained Tokens 96805, Peak mem 7.475 GB
+Iter 2580: Train loss 0.017, Learning Rate 5.928e-05, It/sec 0.177, Tokens/sec 5.861, Trained Tokens 97136, Peak mem 7.475 GB
+Iter 2590: Train loss 0.015, Learning Rate 5.906e-05, It/sec 0.185, Tokens/sec 6.252, Trained Tokens 97474, Peak mem 7.475 GB
+Iter 2600: Train loss 0.038, Learning Rate 5.873e-05, It/sec 0.188, Tokens/sec 7.186, Trained Tokens 97857, Peak mem 7.475 GB
+Iter 2600: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002600_adapters.safetensors.
+Iter 2610: Train loss 0.048, Learning Rate 5.851e-05, It/sec 0.186, Tokens/sec 5.509, Trained Tokens 98153, Peak mem 7.475 GB
+Iter 2620: Train loss 0.061, Learning Rate 5.818e-05, It/sec 0.181, Tokens/sec 9.422, Trained Tokens 98675, Peak mem 7.475 GB
+Iter 2630: Train loss 0.035, Learning Rate 5.796e-05, It/sec 0.176, Tokens/sec 6.482, Trained Tokens 99044, Peak mem 7.475 GB
+Iter 2640: Train loss 0.027, Learning Rate 5.764e-05, It/sec 0.179, Tokens/sec 8.324, Trained Tokens 99509, Peak mem 7.475 GB
+Iter 2650: Train loss 0.025, Learning Rate 5.742e-05, It/sec 0.186, Tokens/sec 7.789, Trained Tokens 99927, Peak mem 7.475 GB
+Iter 2660: Train loss 0.044, Learning Rate 5.709e-05, It/sec 0.163, Tokens/sec 7.649, Trained Tokens 100397, Peak mem 7.475 GB
+Iter 2670: Train loss 0.057, Learning Rate 5.687e-05, It/sec 0.182, Tokens/sec 8.701, Trained Tokens 100874, Peak mem 7.475 GB
+Iter 2680: Train loss 0.040, Learning Rate 5.654e-05, It/sec 0.182, Tokens/sec 7.392, Trained Tokens 101281, Peak mem 7.475 GB
+Iter 2690: Train loss 0.026, Learning Rate 5.632e-05, It/sec 0.174, Tokens/sec 7.401, Trained Tokens 101707, Peak mem 7.475 GB
+Iter 2700: Train loss 0.032, Learning Rate 5.598e-05, It/sec 0.190, Tokens/sec 6.727, Trained Tokens 102061, Peak mem 7.475 GB
+Iter 2700: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002700_adapters.safetensors.
+Iter 2710: Train loss 0.068, Learning Rate 5.576e-05, It/sec 0.174, Tokens/sec 6.054, Trained Tokens 102409, Peak mem 7.475 GB
+Iter 2720: Train loss 0.034, Learning Rate 5.543e-05, It/sec 0.178, Tokens/sec 6.648, Trained Tokens 102783, Peak mem 7.475 GB
+Iter 2730: Train loss 0.053, Learning Rate 5.521e-05, It/sec 0.173, Tokens/sec 7.988, Trained Tokens 103244, Peak mem 7.475 GB
+Iter 2740: Train loss 0.019, Learning Rate 5.488e-05, It/sec 0.173, Tokens/sec 7.439, Trained Tokens 103674, Peak mem 7.475 GB
+Iter 2750: Train loss 0.026, Learning Rate 5.466e-05, It/sec 0.171, Tokens/sec 6.635, Trained Tokens 104061, Peak mem 7.475 GB
+Iter 2760: Train loss 0.033, Learning Rate 5.433e-05, It/sec 0.175, Tokens/sec 7.092, Trained Tokens 104467, Peak mem 7.475 GB
+Iter 2770: Train loss 0.046, Learning Rate 5.411e-05, It/sec 0.178, Tokens/sec 7.210, Trained Tokens 104872, Peak mem 7.475 GB
+Iter 2780: Train loss 0.033, Learning Rate 5.377e-05, It/sec 0.167, Tokens/sec 6.602, Trained Tokens 105268, Peak mem 7.475 GB
+Iter 2790: Train loss 0.049, Learning Rate 5.355e-05, It/sec 0.177, Tokens/sec 4.863, Trained Tokens 105542, Peak mem 7.475 GB
+Iter 2800: Train loss 0.048, Learning Rate 5.322e-05, It/sec 0.181, Tokens/sec 4.915, Trained Tokens 105813, Peak mem 7.475 GB
+Iter 2800: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002800_adapters.safetensors.
+Iter 2810: Train loss 0.014, Learning Rate 5.300e-05, It/sec 0.163, Tokens/sec 6.550, Trained Tokens 106216, Peak mem 7.475 GB
+Iter 2820: Train loss 0.019, Learning Rate 5.266e-05, It/sec 0.173, Tokens/sec 5.699, Trained Tokens 106545, Peak mem 7.475 GB
+Iter 2830: Train loss 0.025, Learning Rate 5.244e-05, It/sec 0.186, Tokens/sec 5.640, Trained Tokens 106849, Peak mem 7.475 GB
+Iter 2840: Train loss 0.024, Learning Rate 5.211e-05, It/sec 0.186, Tokens/sec 5.106, Trained Tokens 107124, Peak mem 7.475 GB
+Iter 2850: Train loss 0.051, Learning Rate 5.189e-05, It/sec 0.172, Tokens/sec 7.377, Trained Tokens 107554, Peak mem 7.475 GB
+Iter 2860: Train loss 0.037, Learning Rate 5.155e-05, It/sec 0.174, Tokens/sec 6.147, Trained Tokens 107907, Peak mem 7.475 GB
+Iter 2870: Train loss 0.039, Learning Rate 5.133e-05, It/sec 0.176, Tokens/sec 5.885, Trained Tokens 108241, Peak mem 7.475 GB
+Iter 2880: Train loss 0.037, Learning Rate 5.100e-05, It/sec 0.173, Tokens/sec 8.563, Trained Tokens 108736, Peak mem 7.475 GB
+Iter 2890: Train loss 0.017, Learning Rate 5.078e-05, It/sec 0.179, Tokens/sec 6.111, Trained Tokens 109078, Peak mem 7.475 GB
+Iter 2900: Train loss 0.035, Learning Rate 5.044e-05, It/sec 0.176, Tokens/sec 7.285, Trained Tokens 109492, Peak mem 7.475 GB
+Iter 2900: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0002900_adapters.safetensors.
+Iter 2910: Train loss 0.046, Learning Rate 5.022e-05, It/sec 0.185, Tokens/sec 8.293, Trained Tokens 109940, Peak mem 7.475 GB
+Iter 2920: Train loss 0.037, Learning Rate 4.989e-05, It/sec 0.180, Tokens/sec 7.792, Trained Tokens 110372, Peak mem 7.475 GB
+Iter 2930: Train loss 0.041, Learning Rate 4.967e-05, It/sec 0.173, Tokens/sec 6.743, Trained Tokens 110761, Peak mem 7.475 GB
+Iter 2940: Train loss 0.028, Learning Rate 4.933e-05, It/sec 0.180, Tokens/sec 8.388, Trained Tokens 111226, Peak mem 7.475 GB
+Iter 2950: Train loss 0.085, Learning Rate 4.911e-05, It/sec 0.185, Tokens/sec 7.084, Trained Tokens 111608, Peak mem 7.475 GB
+Iter 2960: Train loss 0.021, Learning Rate 4.878e-05, It/sec 0.175, Tokens/sec 5.173, Trained Tokens 111904, Peak mem 7.475 GB
+Iter 2970: Train loss 0.039, Learning Rate 4.856e-05, It/sec 0.183, Tokens/sec 7.796, Trained Tokens 112331, Peak mem 7.475 GB
+Iter 2980: Train loss 0.017, Learning Rate 4.822e-05, It/sec 0.183, Tokens/sec 6.415, Trained Tokens 112681, Peak mem 7.475 GB
+Iter 2990: Train loss 0.039, Learning Rate 4.800e-05, It/sec 0.183, Tokens/sec 7.375, Trained Tokens 113084, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:44,  1.85s/it]Calculating loss...:   8%|▊         | 2/25 [00:03<00:41,  1.80s/it]Calculating loss...:  12%|█▏        | 3/25 [00:04<00:34,  1.56s/it]Calculating loss...:  16%|█▌        | 4/25 [00:06<00:30,  1.44s/it]Calculating loss...:  20%|██        | 5/25 [00:07<00:27,  1.38s/it]Calculating loss...:  24%|██▍       | 6/25 [00:08<00:24,  1.31s/it]Calculating loss...:  28%|██▊       | 7/25 [00:09<00:22,  1.27s/it]Calculating loss...:  32%|███▏      | 8/25 [00:11<00:21,  1.27s/it]Calculating loss...:  36%|███▌      | 9/25 [00:12<00:21,  1.32s/it]Calculating loss...:  40%|████      | 10/25 [00:13<00:19,  1.33s/it]Calculating loss...:  44%|████▍     | 11/25 [00:15<00:18,  1.31s/it]Calculating loss...:  48%|████▊     | 12/25 [00:16<00:16,  1.28s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:17<00:15,  1.32s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:19<00:14,  1.33s/it]Calculating loss...:  60%|██████    | 15/25 [00:20<00:12,  1.22s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:21<00:11,  1.28s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:22<00:10,  1.25s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:23<00:08,  1.26s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:25<00:08,  1.36s/it]Calculating loss...:  80%|████████  | 20/25 [00:26<00:06,  1.36s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:28<00:05,  1.35s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:29<00:04,  1.38s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:31<00:02,  1.39s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:32<00:01,  1.35s/it]Calculating loss...: 100%|██████████| 25/25 [00:33<00:00,  1.30s/it]Calculating loss...: 100%|██████████| 25/25 [00:33<00:00,  1.34s/it]
+Iter 3000: Val loss 0.056, Val took 33.544s
+Iter 3000: Train loss 0.031, Learning Rate 4.767e-05, It/sec 0.172, Tokens/sec 8.145, Trained Tokens 113558, Peak mem 7.475 GB
+Iter 3000: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003000_adapters.safetensors.
+Iter 3010: Train loss 0.044, Learning Rate 4.745e-05, It/sec 0.178, Tokens/sec 6.262, Trained Tokens 113910, Peak mem 7.475 GB
+Iter 3020: Train loss 0.017, Learning Rate 4.711e-05, It/sec 0.184, Tokens/sec 6.116, Trained Tokens 114243, Peak mem 7.475 GB
+Iter 3030: Train loss 0.022, Learning Rate 4.689e-05, It/sec 0.181, Tokens/sec 7.158, Trained Tokens 114638, Peak mem 7.475 GB
+Iter 3040: Train loss 0.035, Learning Rate 4.656e-05, It/sec 0.145, Tokens/sec 9.769, Trained Tokens 115312, Peak mem 7.475 GB
+Iter 3050: Train loss 0.082, Learning Rate 4.634e-05, It/sec 0.183, Tokens/sec 7.025, Trained Tokens 115695, Peak mem 7.475 GB
+Iter 3060: Train loss 0.034, Learning Rate 4.601e-05, It/sec 0.182, Tokens/sec 6.480, Trained Tokens 116052, Peak mem 7.475 GB
+Iter 3070: Train loss 0.035, Learning Rate 4.578e-05, It/sec 0.178, Tokens/sec 5.633, Trained Tokens 116369, Peak mem 7.475 GB
+Iter 3080: Train loss 0.019, Learning Rate 4.545e-05, It/sec 0.175, Tokens/sec 5.621, Trained Tokens 116691, Peak mem 7.475 GB
+Iter 3090: Train loss 0.068, Learning Rate 4.523e-05, It/sec 0.184, Tokens/sec 7.330, Trained Tokens 117090, Peak mem 7.475 GB
+Iter 3100: Train loss 0.077, Learning Rate 4.490e-05, It/sec 0.176, Tokens/sec 6.206, Trained Tokens 117442, Peak mem 7.475 GB
+Iter 3100: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003100_adapters.safetensors.
+Iter 3110: Train loss 0.036, Learning Rate 4.468e-05, It/sec 0.184, Tokens/sec 7.134, Trained Tokens 117829, Peak mem 7.475 GB
+Iter 3120: Train loss 0.015, Learning Rate 4.435e-05, It/sec 0.178, Tokens/sec 6.204, Trained Tokens 118177, Peak mem 7.475 GB
+Iter 3130: Train loss 0.019, Learning Rate 4.413e-05, It/sec 0.180, Tokens/sec 7.659, Trained Tokens 118602, Peak mem 7.475 GB
+Iter 3140: Train loss 0.025, Learning Rate 4.380e-05, It/sec 0.173, Tokens/sec 6.490, Trained Tokens 118978, Peak mem 7.475 GB
+Iter 3150: Train loss 0.018, Learning Rate 4.357e-05, It/sec 0.177, Tokens/sec 5.663, Trained Tokens 119298, Peak mem 7.475 GB
+Iter 3160: Train loss 0.061, Learning Rate 4.324e-05, It/sec 0.181, Tokens/sec 7.172, Trained Tokens 119694, Peak mem 7.475 GB
+Iter 3170: Train loss 0.019, Learning Rate 4.302e-05, It/sec 0.184, Tokens/sec 4.765, Trained Tokens 119953, Peak mem 7.475 GB
+Iter 3180: Train loss 0.061, Learning Rate 4.269e-05, It/sec 0.179, Tokens/sec 5.393, Trained Tokens 120255, Peak mem 7.475 GB
+Iter 3190: Train loss 0.027, Learning Rate 4.247e-05, It/sec 0.184, Tokens/sec 4.360, Trained Tokens 120492, Peak mem 7.475 GB
+Iter 3200: Train loss 0.064, Learning Rate 4.215e-05, It/sec 0.176, Tokens/sec 6.375, Trained Tokens 120854, Peak mem 7.475 GB
+Iter 3200: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003200_adapters.safetensors.
+Iter 3210: Train loss 0.044, Learning Rate 4.193e-05, It/sec 0.178, Tokens/sec 8.028, Trained Tokens 121305, Peak mem 7.475 GB
+Iter 3220: Train loss 0.028, Learning Rate 4.160e-05, It/sec 0.183, Tokens/sec 8.544, Trained Tokens 121771, Peak mem 7.475 GB
+Iter 3230: Train loss 0.025, Learning Rate 4.138e-05, It/sec 0.181, Tokens/sec 5.786, Trained Tokens 122091, Peak mem 7.475 GB
+Iter 3240: Train loss 0.034, Learning Rate 4.105e-05, It/sec 0.186, Tokens/sec 5.921, Trained Tokens 122410, Peak mem 7.475 GB
+Iter 3250: Train loss 0.024, Learning Rate 4.083e-05, It/sec 0.179, Tokens/sec 5.950, Trained Tokens 122742, Peak mem 7.475 GB
+Iter 3260: Train loss 0.037, Learning Rate 4.050e-05, It/sec 0.180, Tokens/sec 7.212, Trained Tokens 123142, Peak mem 7.475 GB
+Iter 3270: Train loss 0.049, Learning Rate 4.029e-05, It/sec 0.170, Tokens/sec 9.053, Trained Tokens 123675, Peak mem 7.475 GB
+Iter 3280: Train loss 0.022, Learning Rate 3.996e-05, It/sec 0.171, Tokens/sec 5.887, Trained Tokens 124019, Peak mem 7.475 GB
+Iter 3290: Train loss 0.021, Learning Rate 3.974e-05, It/sec 0.181, Tokens/sec 5.968, Trained Tokens 124349, Peak mem 7.475 GB
+Iter 3300: Train loss 0.019, Learning Rate 3.942e-05, It/sec 0.191, Tokens/sec 6.604, Trained Tokens 124694, Peak mem 7.475 GB
+Iter 3300: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003300_adapters.safetensors.
+Iter 3310: Train loss 0.029, Learning Rate 3.920e-05, It/sec 0.180, Tokens/sec 7.344, Trained Tokens 125102, Peak mem 7.475 GB
+Iter 3320: Train loss 0.051, Learning Rate 3.887e-05, It/sec 0.177, Tokens/sec 7.452, Trained Tokens 125522, Peak mem 7.475 GB
+Iter 3330: Train loss 0.037, Learning Rate 3.866e-05, It/sec 0.156, Tokens/sec 7.680, Trained Tokens 126015, Peak mem 7.475 GB
+Iter 3340: Train loss 0.033, Learning Rate 3.833e-05, It/sec 0.176, Tokens/sec 7.358, Trained Tokens 126433, Peak mem 7.475 GB
+Iter 3350: Train loss 0.034, Learning Rate 3.812e-05, It/sec 0.177, Tokens/sec 7.184, Trained Tokens 126840, Peak mem 7.475 GB
+Iter 3360: Train loss 0.036, Learning Rate 3.779e-05, It/sec 0.175, Tokens/sec 6.347, Trained Tokens 127202, Peak mem 7.475 GB
+Iter 3370: Train loss 0.032, Learning Rate 3.758e-05, It/sec 0.177, Tokens/sec 7.897, Trained Tokens 127649, Peak mem 7.475 GB
+Iter 3380: Train loss 0.029, Learning Rate 3.726e-05, It/sec 0.176, Tokens/sec 5.257, Trained Tokens 127947, Peak mem 7.475 GB
+Iter 3390: Train loss 0.046, Learning Rate 3.704e-05, It/sec 0.179, Tokens/sec 6.188, Trained Tokens 128292, Peak mem 7.475 GB
+Iter 3400: Train loss 0.020, Learning Rate 3.672e-05, It/sec 0.178, Tokens/sec 6.674, Trained Tokens 128667, Peak mem 7.475 GB
+Iter 3400: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003400_adapters.safetensors.
+Iter 3410: Train loss 0.053, Learning Rate 3.651e-05, It/sec 0.176, Tokens/sec 8.420, Trained Tokens 129145, Peak mem 7.475 GB
+Iter 3420: Train loss 0.046, Learning Rate 3.618e-05, It/sec 0.185, Tokens/sec 5.970, Trained Tokens 129468, Peak mem 7.475 GB
+Iter 3430: Train loss 0.065, Learning Rate 3.597e-05, It/sec 0.176, Tokens/sec 5.820, Trained Tokens 129798, Peak mem 7.475 GB
+Iter 3440: Train loss 0.036, Learning Rate 3.565e-05, It/sec 0.168, Tokens/sec 5.368, Trained Tokens 130117, Peak mem 7.475 GB
+Iter 3450: Train loss 0.024, Learning Rate 3.544e-05, It/sec 0.167, Tokens/sec 7.168, Trained Tokens 130547, Peak mem 7.475 GB
+Iter 3460: Train loss 0.070, Learning Rate 3.512e-05, It/sec 0.183, Tokens/sec 7.165, Trained Tokens 130938, Peak mem 7.475 GB
+Iter 3470: Train loss 0.039, Learning Rate 3.491e-05, It/sec 0.187, Tokens/sec 5.745, Trained Tokens 131246, Peak mem 7.475 GB
+Iter 3480: Train loss 0.022, Learning Rate 3.459e-05, It/sec 0.179, Tokens/sec 6.523, Trained Tokens 131610, Peak mem 7.475 GB
+Iter 3490: Train loss 0.043, Learning Rate 3.438e-05, It/sec 0.176, Tokens/sec 7.539, Trained Tokens 132038, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:28,  1.19s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:29,  1.28s/it]Calculating loss...:  12%|█▏        | 3/25 [00:04<00:33,  1.54s/it]Calculating loss...:  16%|█▌        | 4/25 [00:06<00:40,  1.93s/it]Calculating loss...:  20%|██        | 5/25 [00:08<00:37,  1.87s/it]Calculating loss...:  24%|██▍       | 6/25 [00:09<00:31,  1.67s/it]Calculating loss...:  28%|██▊       | 7/25 [00:11<00:27,  1.54s/it]Calculating loss...:  32%|███▏      | 8/25 [00:12<00:24,  1.45s/it]Calculating loss...:  36%|███▌      | 9/25 [00:13<00:21,  1.37s/it]Calculating loss...:  40%|████      | 10/25 [00:14<00:18,  1.26s/it]Calculating loss...:  44%|████▍     | 11/25 [00:16<00:18,  1.29s/it]Calculating loss...:  48%|████▊     | 12/25 [00:17<00:16,  1.28s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:18<00:15,  1.30s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:19<00:13,  1.24s/it]Calculating loss...:  60%|██████    | 15/25 [00:20<00:12,  1.23s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:22<00:12,  1.39s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:23<00:10,  1.35s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:25<00:09,  1.35s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:26<00:08,  1.40s/it]Calculating loss...:  80%|████████  | 20/25 [00:28<00:07,  1.41s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:29<00:05,  1.36s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:30<00:04,  1.36s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:32<00:03,  1.51s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:34<00:01,  1.51s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.46s/it]Calculating loss...: 100%|██████████| 25/25 [00:35<00:00,  1.42s/it]
+Iter 3500: Val loss 0.050, Val took 35.586s
+Iter 3500: Train loss 0.019, Learning Rate 3.406e-05, It/sec 0.176, Tokens/sec 6.597, Trained Tokens 132412, Peak mem 7.475 GB
+Iter 3500: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003500_adapters.safetensors.
+Iter 3510: Train loss 0.032, Learning Rate 3.385e-05, It/sec 0.176, Tokens/sec 6.380, Trained Tokens 132774, Peak mem 7.475 GB
+Iter 3520: Train loss 0.035, Learning Rate 3.354e-05, It/sec 0.178, Tokens/sec 7.841, Trained Tokens 133215, Peak mem 7.475 GB
+Iter 3530: Train loss 0.024, Learning Rate 3.333e-05, It/sec 0.181, Tokens/sec 6.044, Trained Tokens 133548, Peak mem 7.475 GB
+Iter 3540: Train loss 0.030, Learning Rate 3.302e-05, It/sec 0.184, Tokens/sec 5.381, Trained Tokens 133841, Peak mem 7.475 GB
+Iter 3550: Train loss 0.045, Learning Rate 3.281e-05, It/sec 0.180, Tokens/sec 6.335, Trained Tokens 134192, Peak mem 7.475 GB
+Iter 3560: Train loss 0.057, Learning Rate 3.249e-05, It/sec 0.161, Tokens/sec 8.329, Trained Tokens 134709, Peak mem 7.475 GB
+Iter 3570: Train loss 0.045, Learning Rate 3.229e-05, It/sec 0.171, Tokens/sec 7.554, Trained Tokens 135152, Peak mem 7.475 GB
+Iter 3580: Train loss 0.032, Learning Rate 3.197e-05, It/sec 0.182, Tokens/sec 7.717, Trained Tokens 135576, Peak mem 7.475 GB
+Iter 3590: Train loss 0.032, Learning Rate 3.177e-05, It/sec 0.177, Tokens/sec 9.300, Trained Tokens 136100, Peak mem 7.475 GB
+Iter 3600: Train loss 0.052, Learning Rate 3.146e-05, It/sec 0.183, Tokens/sec 6.475, Trained Tokens 136454, Peak mem 7.475 GB
+Iter 3600: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003600_adapters.safetensors.
+Iter 3610: Train loss 0.019, Learning Rate 3.125e-05, It/sec 0.165, Tokens/sec 8.195, Trained Tokens 136952, Peak mem 7.475 GB
+Iter 3620: Train loss 0.071, Learning Rate 3.094e-05, It/sec 0.163, Tokens/sec 5.437, Trained Tokens 137285, Peak mem 7.475 GB
+Iter 3630: Train loss 0.054, Learning Rate 3.074e-05, It/sec 0.195, Tokens/sec 9.046, Trained Tokens 137748, Peak mem 7.475 GB
+Iter 3640: Train loss 0.033, Learning Rate 3.043e-05, It/sec 0.171, Tokens/sec 5.516, Trained Tokens 138070, Peak mem 7.475 GB
+Iter 3650: Train loss 0.043, Learning Rate 3.023e-05, It/sec 0.187, Tokens/sec 6.456, Trained Tokens 138415, Peak mem 7.475 GB
+Iter 3660: Train loss 0.029, Learning Rate 2.992e-05, It/sec 0.184, Tokens/sec 8.385, Trained Tokens 138870, Peak mem 7.475 GB
+Iter 3670: Train loss 0.034, Learning Rate 2.972e-05, It/sec 0.170, Tokens/sec 7.396, Trained Tokens 139306, Peak mem 7.475 GB
+Iter 3680: Train loss 0.041, Learning Rate 2.941e-05, It/sec 0.182, Tokens/sec 7.647, Trained Tokens 139727, Peak mem 7.475 GB
+Iter 3690: Train loss 0.042, Learning Rate 2.921e-05, It/sec 0.172, Tokens/sec 8.481, Trained Tokens 140220, Peak mem 7.475 GB
+Iter 3700: Train loss 0.024, Learning Rate 2.891e-05, It/sec 0.178, Tokens/sec 5.887, Trained Tokens 140550, Peak mem 7.475 GB
+Iter 3700: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003700_adapters.safetensors.
+Iter 3710: Train loss 0.035, Learning Rate 2.871e-05, It/sec 0.192, Tokens/sec 5.671, Trained Tokens 140846, Peak mem 7.475 GB
+Iter 3720: Train loss 0.036, Learning Rate 2.841e-05, It/sec 0.167, Tokens/sec 9.629, Trained Tokens 141424, Peak mem 7.475 GB
+Iter 3730: Train loss 0.025, Learning Rate 2.821e-05, It/sec 0.183, Tokens/sec 6.367, Trained Tokens 141772, Peak mem 7.475 GB
+Iter 3740: Train loss 0.033, Learning Rate 2.791e-05, It/sec 0.176, Tokens/sec 6.687, Trained Tokens 142152, Peak mem 7.475 GB
+Iter 3750: Train loss 0.041, Learning Rate 2.771e-05, It/sec 0.175, Tokens/sec 6.747, Trained Tokens 142537, Peak mem 7.475 GB
+Iter 3760: Train loss 0.032, Learning Rate 2.741e-05, It/sec 0.185, Tokens/sec 8.440, Trained Tokens 142992, Peak mem 7.475 GB
+Iter 3770: Train loss 0.068, Learning Rate 2.721e-05, It/sec 0.174, Tokens/sec 6.225, Trained Tokens 143349, Peak mem 7.475 GB
+Iter 3780: Train loss 0.027, Learning Rate 2.692e-05, It/sec 0.181, Tokens/sec 7.473, Trained Tokens 143763, Peak mem 7.475 GB
+Iter 3790: Train loss 0.029, Learning Rate 2.672e-05, It/sec 0.171, Tokens/sec 7.435, Trained Tokens 144199, Peak mem 7.475 GB
+Iter 3800: Train loss 0.042, Learning Rate 2.642e-05, It/sec 0.181, Tokens/sec 5.564, Trained Tokens 144507, Peak mem 7.475 GB
+Iter 3800: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003800_adapters.safetensors.
+Iter 3810: Train loss 0.021, Learning Rate 2.623e-05, It/sec 0.172, Tokens/sec 7.659, Trained Tokens 144953, Peak mem 7.475 GB
+Iter 3820: Train loss 0.030, Learning Rate 2.594e-05, It/sec 0.181, Tokens/sec 6.140, Trained Tokens 145293, Peak mem 7.475 GB
+Iter 3830: Train loss 0.044, Learning Rate 2.574e-05, It/sec 0.177, Tokens/sec 6.278, Trained Tokens 145647, Peak mem 7.475 GB
+Iter 3840: Train loss 0.031, Learning Rate 2.545e-05, It/sec 0.181, Tokens/sec 4.843, Trained Tokens 145915, Peak mem 7.475 GB
+Iter 3850: Train loss 0.024, Learning Rate 2.526e-05, It/sec 0.180, Tokens/sec 7.293, Trained Tokens 146321, Peak mem 7.475 GB
+Iter 3860: Train loss 0.042, Learning Rate 2.497e-05, It/sec 0.184, Tokens/sec 8.271, Trained Tokens 146770, Peak mem 7.475 GB
+Iter 3870: Train loss 0.027, Learning Rate 2.478e-05, It/sec 0.181, Tokens/sec 6.786, Trained Tokens 147144, Peak mem 7.475 GB
+Iter 3880: Train loss 0.049, Learning Rate 2.449e-05, It/sec 0.182, Tokens/sec 5.835, Trained Tokens 147465, Peak mem 7.475 GB
+Iter 3890: Train loss 0.061, Learning Rate 2.430e-05, It/sec 0.178, Tokens/sec 7.686, Trained Tokens 147898, Peak mem 7.475 GB
+Iter 3900: Train loss 0.028, Learning Rate 2.401e-05, It/sec 0.168, Tokens/sec 7.440, Trained Tokens 148341, Peak mem 7.475 GB
+Iter 3900: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0003900_adapters.safetensors.
+Iter 3910: Train loss 0.065, Learning Rate 2.382e-05, It/sec 0.178, Tokens/sec 6.746, Trained Tokens 148719, Peak mem 7.475 GB
+Iter 3920: Train loss 0.029, Learning Rate 2.354e-05, It/sec 0.190, Tokens/sec 6.283, Trained Tokens 149050, Peak mem 7.475 GB
+Iter 3930: Train loss 0.055, Learning Rate 2.335e-05, It/sec 0.188, Tokens/sec 7.779, Trained Tokens 149463, Peak mem 7.475 GB
+Iter 3940: Train loss 0.074, Learning Rate 2.307e-05, It/sec 0.188, Tokens/sec 5.200, Trained Tokens 149740, Peak mem 7.475 GB
+Iter 3950: Train loss 0.043, Learning Rate 2.288e-05, It/sec 0.175, Tokens/sec 7.054, Trained Tokens 150142, Peak mem 7.475 GB
+Iter 3960: Train loss 0.023, Learning Rate 2.260e-05, It/sec 0.174, Tokens/sec 5.061, Trained Tokens 150433, Peak mem 7.475 GB
+Iter 3970: Train loss 0.032, Learning Rate 2.242e-05, It/sec 0.189, Tokens/sec 8.270, Trained Tokens 150870, Peak mem 7.475 GB
+Iter 3980: Train loss 0.031, Learning Rate 2.214e-05, It/sec 0.179, Tokens/sec 6.250, Trained Tokens 151220, Peak mem 7.475 GB
+Iter 3990: Train loss 0.029, Learning Rate 2.196e-05, It/sec 0.182, Tokens/sec 8.062, Trained Tokens 151664, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:24,  1.03s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:26,  1.17s/it]Calculating loss...:  12%|█▏        | 3/25 [00:04<00:32,  1.48s/it]Calculating loss...:  16%|█▌        | 4/25 [00:05<00:30,  1.46s/it]Calculating loss...:  20%|██        | 5/25 [00:07<00:35,  1.75s/it]Calculating loss...:  24%|██▍       | 6/25 [00:09<00:29,  1.56s/it]Calculating loss...:  28%|██▊       | 7/25 [00:10<00:25,  1.44s/it]Calculating loss...:  32%|███▏      | 8/25 [00:11<00:23,  1.36s/it]Calculating loss...:  36%|███▌      | 9/25 [00:12<00:20,  1.25s/it]Calculating loss...:  40%|████      | 10/25 [00:14<00:23,  1.56s/it]Calculating loss...:  44%|████▍     | 11/25 [00:15<00:20,  1.45s/it]Calculating loss...:  48%|████▊     | 12/25 [00:17<00:19,  1.50s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:18<00:17,  1.43s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:19<00:14,  1.36s/it]Calculating loss...:  60%|██████    | 15/25 [00:21<00:13,  1.33s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:22<00:11,  1.29s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:24<00:12,  1.55s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:26<00:10,  1.52s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:27<00:08,  1.37s/it]Calculating loss...:  80%|████████  | 20/25 [00:28<00:07,  1.44s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:07,  1.80s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:32<00:04,  1.61s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:34<00:03,  1.63s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:35<00:01,  1.52s/it]Calculating loss...: 100%|██████████| 25/25 [00:36<00:00,  1.44s/it]Calculating loss...: 100%|██████████| 25/25 [00:36<00:00,  1.47s/it]
+Iter 4000: Val loss 0.045, Val took 36.666s
+Iter 4000: Train loss 0.013, Learning Rate 2.168e-05, It/sec 0.174, Tokens/sec 5.126, Trained Tokens 151958, Peak mem 7.475 GB
+Iter 4000: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004000_adapters.safetensors.
+Iter 4010: Train loss 0.018, Learning Rate 2.150e-05, It/sec 0.175, Tokens/sec 6.621, Trained Tokens 152337, Peak mem 7.475 GB
+Iter 4020: Train loss 0.049, Learning Rate 2.123e-05, It/sec 0.171, Tokens/sec 6.282, Trained Tokens 152705, Peak mem 7.475 GB
+Iter 4030: Train loss 0.029, Learning Rate 2.104e-05, It/sec 0.181, Tokens/sec 6.463, Trained Tokens 153063, Peak mem 7.475 GB
+Iter 4040: Train loss 0.029, Learning Rate 2.077e-05, It/sec 0.166, Tokens/sec 7.399, Trained Tokens 153509, Peak mem 7.475 GB
+Iter 4050: Train loss 0.038, Learning Rate 2.059e-05, It/sec 0.183, Tokens/sec 5.208, Trained Tokens 153793, Peak mem 7.475 GB
+Iter 4060: Train loss 0.026, Learning Rate 2.032e-05, It/sec 0.170, Tokens/sec 6.268, Trained Tokens 154161, Peak mem 7.475 GB
+Iter 4070: Train loss 0.064, Learning Rate 2.015e-05, It/sec 0.177, Tokens/sec 8.698, Trained Tokens 154653, Peak mem 7.475 GB
+Iter 4080: Train loss 0.043, Learning Rate 1.988e-05, It/sec 0.173, Tokens/sec 8.567, Trained Tokens 155147, Peak mem 7.475 GB
+Iter 4090: Train loss 0.051, Learning Rate 1.970e-05, It/sec 0.176, Tokens/sec 7.903, Trained Tokens 155596, Peak mem 7.475 GB
+Iter 4100: Train loss 0.036, Learning Rate 1.944e-05, It/sec 0.178, Tokens/sec 6.649, Trained Tokens 155970, Peak mem 7.475 GB
+Iter 4100: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004100_adapters.safetensors.
+Iter 4110: Train loss 0.043, Learning Rate 1.926e-05, It/sec 0.186, Tokens/sec 7.315, Trained Tokens 156364, Peak mem 7.475 GB
+Iter 4120: Train loss 0.033, Learning Rate 1.900e-05, It/sec 0.192, Tokens/sec 7.746, Trained Tokens 156767, Peak mem 7.475 GB
+Iter 4130: Train loss 0.053, Learning Rate 1.883e-05, It/sec 0.176, Tokens/sec 7.325, Trained Tokens 157183, Peak mem 7.475 GB
+Iter 4140: Train loss 0.034, Learning Rate 1.857e-05, It/sec 0.176, Tokens/sec 7.269, Trained Tokens 157596, Peak mem 7.475 GB
+Iter 4150: Train loss 0.038, Learning Rate 1.839e-05, It/sec 0.182, Tokens/sec 5.628, Trained Tokens 157905, Peak mem 7.475 GB
+Iter 4160: Train loss 0.020, Learning Rate 1.814e-05, It/sec 0.184, Tokens/sec 6.142, Trained Tokens 158239, Peak mem 7.475 GB
+Iter 4170: Train loss 0.033, Learning Rate 1.796e-05, It/sec 0.191, Tokens/sec 6.379, Trained Tokens 158573, Peak mem 7.475 GB
+Iter 4180: Train loss 0.035, Learning Rate 1.771e-05, It/sec 0.152, Tokens/sec 6.755, Trained Tokens 159017, Peak mem 7.475 GB
+Iter 4190: Train loss 0.025, Learning Rate 1.754e-05, It/sec 0.185, Tokens/sec 6.275, Trained Tokens 159356, Peak mem 7.475 GB
+Iter 4200: Train loss 0.032, Learning Rate 1.729e-05, It/sec 0.169, Tokens/sec 6.915, Trained Tokens 159764, Peak mem 7.475 GB
+Iter 4200: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004200_adapters.safetensors.
+Iter 4210: Train loss 0.040, Learning Rate 1.712e-05, It/sec 0.172, Tokens/sec 6.645, Trained Tokens 160151, Peak mem 7.475 GB
+Iter 4220: Train loss 0.027, Learning Rate 1.687e-05, It/sec 0.176, Tokens/sec 5.581, Trained Tokens 160468, Peak mem 7.475 GB
+Iter 4230: Train loss 0.037, Learning Rate 1.670e-05, It/sec 0.182, Tokens/sec 5.600, Trained Tokens 160776, Peak mem 7.475 GB
+Iter 4240: Train loss 0.027, Learning Rate 1.646e-05, It/sec 0.185, Tokens/sec 8.373, Trained Tokens 161228, Peak mem 7.475 GB
+Iter 4250: Train loss 0.054, Learning Rate 1.629e-05, It/sec 0.156, Tokens/sec 7.719, Trained Tokens 161724, Peak mem 7.475 GB
+Iter 4260: Train loss 0.066, Learning Rate 1.605e-05, It/sec 0.170, Tokens/sec 6.707, Trained Tokens 162118, Peak mem 7.475 GB
+Iter 4270: Train loss 0.069, Learning Rate 1.588e-05, It/sec 0.173, Tokens/sec 7.485, Trained Tokens 162550, Peak mem 7.475 GB
+Iter 4280: Train loss 0.021, Learning Rate 1.564e-05, It/sec 0.186, Tokens/sec 7.141, Trained Tokens 162933, Peak mem 7.475 GB
+Iter 4290: Train loss 0.020, Learning Rate 1.548e-05, It/sec 0.179, Tokens/sec 5.444, Trained Tokens 163237, Peak mem 7.475 GB
+Iter 4300: Train loss 0.035, Learning Rate 1.524e-05, It/sec 0.177, Tokens/sec 6.514, Trained Tokens 163605, Peak mem 7.475 GB
+Iter 4300: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004300_adapters.safetensors.
+Iter 4310: Train loss 0.054, Learning Rate 1.508e-05, It/sec 0.159, Tokens/sec 6.217, Trained Tokens 163997, Peak mem 7.475 GB
+Iter 4320: Train loss 0.063, Learning Rate 1.484e-05, It/sec 0.183, Tokens/sec 7.562, Trained Tokens 164411, Peak mem 7.475 GB
+Iter 4330: Train loss 0.027, Learning Rate 1.468e-05, It/sec 0.172, Tokens/sec 6.542, Trained Tokens 164792, Peak mem 7.475 GB
+Iter 4340: Train loss 0.034, Learning Rate 1.445e-05, It/sec 0.183, Tokens/sec 6.322, Trained Tokens 165138, Peak mem 7.475 GB
+Iter 4350: Train loss 0.025, Learning Rate 1.429e-05, It/sec 0.176, Tokens/sec 6.238, Trained Tokens 165493, Peak mem 7.475 GB
+Iter 4360: Train loss 0.024, Learning Rate 1.406e-05, It/sec 0.181, Tokens/sec 7.916, Trained Tokens 165931, Peak mem 7.475 GB
+Iter 4370: Train loss 0.046, Learning Rate 1.391e-05, It/sec 0.178, Tokens/sec 6.861, Trained Tokens 166316, Peak mem 7.475 GB
+Iter 4380: Train loss 0.030, Learning Rate 1.368e-05, It/sec 0.176, Tokens/sec 4.897, Trained Tokens 166595, Peak mem 7.475 GB
+Iter 4390: Train loss 0.026, Learning Rate 1.352e-05, It/sec 0.176, Tokens/sec 7.499, Trained Tokens 167022, Peak mem 7.475 GB
+Iter 4400: Train loss 0.036, Learning Rate 1.330e-05, It/sec 0.180, Tokens/sec 6.810, Trained Tokens 167400, Peak mem 7.475 GB
+Iter 4400: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004400_adapters.safetensors.
+Iter 4410: Train loss 0.039, Learning Rate 1.315e-05, It/sec 0.173, Tokens/sec 5.230, Trained Tokens 167703, Peak mem 7.475 GB
+Iter 4420: Train loss 0.026, Learning Rate 1.292e-05, It/sec 0.175, Tokens/sec 6.895, Trained Tokens 168097, Peak mem 7.475 GB
+Iter 4430: Train loss 0.030, Learning Rate 1.277e-05, It/sec 0.192, Tokens/sec 8.460, Trained Tokens 168537, Peak mem 7.475 GB
+Iter 4440: Train loss 0.043, Learning Rate 1.255e-05, It/sec 0.172, Tokens/sec 7.565, Trained Tokens 168977, Peak mem 7.475 GB
+Iter 4450: Train loss 0.059, Learning Rate 1.240e-05, It/sec 0.180, Tokens/sec 7.306, Trained Tokens 169383, Peak mem 7.475 GB
+Iter 4460: Train loss 0.039, Learning Rate 1.219e-05, It/sec 0.181, Tokens/sec 6.435, Trained Tokens 169739, Peak mem 7.475 GB
+Iter 4470: Train loss 0.061, Learning Rate 1.204e-05, It/sec 0.172, Tokens/sec 6.809, Trained Tokens 170136, Peak mem 7.475 GB
+Iter 4480: Train loss 0.033, Learning Rate 1.183e-05, It/sec 0.179, Tokens/sec 6.870, Trained Tokens 170519, Peak mem 7.475 GB
+Iter 4490: Train loss 0.046, Learning Rate 1.168e-05, It/sec 0.171, Tokens/sec 7.823, Trained Tokens 170976, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:02<01:02,  2.61s/it]Calculating loss...:   8%|▊         | 2/25 [00:03<00:43,  1.88s/it]Calculating loss...:  12%|█▏        | 3/25 [00:05<00:36,  1.68s/it]Calculating loss...:  16%|█▌        | 4/25 [00:06<00:31,  1.48s/it]Calculating loss...:  20%|██        | 5/25 [00:07<00:28,  1.43s/it]Calculating loss...:  24%|██▍       | 6/25 [00:10<00:33,  1.74s/it]Calculating loss...:  28%|██▊       | 7/25 [00:12<00:32,  1.83s/it]Calculating loss...:  32%|███▏      | 8/25 [00:13<00:27,  1.63s/it]Calculating loss...:  36%|███▌      | 9/25 [00:15<00:27,  1.70s/it]Calculating loss...:  40%|████      | 10/25 [00:16<00:23,  1.57s/it]Calculating loss...:  44%|████▍     | 11/25 [00:17<00:20,  1.50s/it]Calculating loss...:  48%|████▊     | 12/25 [00:19<00:18,  1.40s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:20<00:17,  1.43s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:22<00:17,  1.61s/it]Calculating loss...:  60%|██████    | 15/25 [00:23<00:13,  1.38s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:24<00:11,  1.27s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:25<00:10,  1.30s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:27<00:10,  1.49s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:29<00:08,  1.47s/it]Calculating loss...:  80%|████████  | 20/25 [00:30<00:06,  1.33s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:05,  1.39s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:33<00:04,  1.42s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:35<00:03,  1.60s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:37<00:01,  1.90s/it]Calculating loss...: 100%|██████████| 25/25 [00:39<00:00,  1.81s/it]Calculating loss...: 100%|██████████| 25/25 [00:39<00:00,  1.58s/it]
+Iter 4500: Val loss 0.070, Val took 39.496s
+Iter 4500: Train loss 0.055, Learning Rate 1.147e-05, It/sec 0.180, Tokens/sec 6.008, Trained Tokens 171309, Peak mem 7.475 GB
+Iter 4500: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004500_adapters.safetensors.
+Iter 4510: Train loss 0.015, Learning Rate 1.133e-05, It/sec 0.178, Tokens/sec 7.053, Trained Tokens 171706, Peak mem 7.475 GB
+Iter 4520: Train loss 0.029, Learning Rate 1.112e-05, It/sec 0.185, Tokens/sec 6.909, Trained Tokens 172080, Peak mem 7.475 GB
+Iter 4530: Train loss 0.033, Learning Rate 1.098e-05, It/sec 0.178, Tokens/sec 6.778, Trained Tokens 172461, Peak mem 7.475 GB
+Iter 4540: Train loss 0.037, Learning Rate 1.077e-05, It/sec 0.176, Tokens/sec 9.187, Trained Tokens 172982, Peak mem 7.475 GB
+Iter 4550: Train loss 0.028, Learning Rate 1.063e-05, It/sec 0.173, Tokens/sec 5.602, Trained Tokens 173306, Peak mem 7.475 GB
+Iter 4560: Train loss 0.028, Learning Rate 1.043e-05, It/sec 0.180, Tokens/sec 7.957, Trained Tokens 173747, Peak mem 7.475 GB
+Iter 4570: Train loss 0.061, Learning Rate 1.029e-05, It/sec 0.182, Tokens/sec 4.904, Trained Tokens 174017, Peak mem 7.475 GB
+Iter 4580: Train loss 0.101, Learning Rate 1.009e-05, It/sec 0.202, Tokens/sec 6.553, Trained Tokens 174341, Peak mem 7.475 GB
+Iter 4590: Train loss 0.051, Learning Rate 9.958e-06, It/sec 0.180, Tokens/sec 6.555, Trained Tokens 174705, Peak mem 7.475 GB
+Iter 4600: Train loss 0.042, Learning Rate 9.759e-06, It/sec 0.179, Tokens/sec 7.555, Trained Tokens 175126, Peak mem 7.475 GB
+Iter 4600: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004600_adapters.safetensors.
+Iter 4610: Train loss 0.048, Learning Rate 9.628e-06, It/sec 0.178, Tokens/sec 7.284, Trained Tokens 175536, Peak mem 7.475 GB
+Iter 4620: Train loss 0.026, Learning Rate 9.432e-06, It/sec 0.184, Tokens/sec 6.577, Trained Tokens 175894, Peak mem 7.475 GB
+Iter 4630: Train loss 0.038, Learning Rate 9.302e-06, It/sec 0.176, Tokens/sec 6.547, Trained Tokens 176266, Peak mem 7.475 GB
+Iter 4640: Train loss 0.026, Learning Rate 9.110e-06, It/sec 0.193, Tokens/sec 6.549, Trained Tokens 176605, Peak mem 7.475 GB
+Iter 4650: Train loss 0.054, Learning Rate 8.982e-06, It/sec 0.175, Tokens/sec 6.527, Trained Tokens 176977, Peak mem 7.475 GB
+Iter 4660: Train loss 0.050, Learning Rate 8.793e-06, It/sec 0.182, Tokens/sec 5.266, Trained Tokens 177266, Peak mem 7.475 GB
+Iter 4670: Train loss 0.042, Learning Rate 8.667e-06, It/sec 0.178, Tokens/sec 7.417, Trained Tokens 177682, Peak mem 7.475 GB
+Iter 4680: Train loss 0.035, Learning Rate 8.481e-06, It/sec 0.167, Tokens/sec 6.616, Trained Tokens 178078, Peak mem 7.475 GB
+Iter 4690: Train loss 0.055, Learning Rate 8.357e-06, It/sec 0.167, Tokens/sec 8.651, Trained Tokens 178595, Peak mem 7.475 GB
+Iter 4700: Train loss 0.038, Learning Rate 8.174e-06, It/sec 0.183, Tokens/sec 6.923, Trained Tokens 178974, Peak mem 7.475 GB
+Iter 4700: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004700_adapters.safetensors.
+Iter 4710: Train loss 0.020, Learning Rate 8.052e-06, It/sec 0.193, Tokens/sec 5.458, Trained Tokens 179257, Peak mem 7.475 GB
+Iter 4720: Train loss 0.033, Learning Rate 7.872e-06, It/sec 0.183, Tokens/sec 6.868, Trained Tokens 179633, Peak mem 7.475 GB
+Iter 4730: Train loss 0.056, Learning Rate 7.753e-06, It/sec 0.178, Tokens/sec 5.621, Trained Tokens 179949, Peak mem 7.475 GB
+Iter 4740: Train loss 0.066, Learning Rate 7.575e-06, It/sec 0.183, Tokens/sec 6.504, Trained Tokens 180304, Peak mem 7.475 GB
+Iter 4750: Train loss 0.036, Learning Rate 7.458e-06, It/sec 0.175, Tokens/sec 7.024, Trained Tokens 180705, Peak mem 7.475 GB
+Iter 4760: Train loss 0.040, Learning Rate 7.284e-06, It/sec 0.180, Tokens/sec 5.470, Trained Tokens 181009, Peak mem 7.475 GB
+Iter 4770: Train loss 0.045, Learning Rate 7.169e-06, It/sec 0.171, Tokens/sec 6.375, Trained Tokens 181381, Peak mem 7.475 GB
+Iter 4780: Train loss 0.029, Learning Rate 6.998e-06, It/sec 0.184, Tokens/sec 7.545, Trained Tokens 181790, Peak mem 7.475 GB
+Iter 4790: Train loss 0.034, Learning Rate 6.885e-06, It/sec 0.175, Tokens/sec 6.317, Trained Tokens 182151, Peak mem 7.475 GB
+Iter 4800: Train loss 0.048, Learning Rate 6.717e-06, It/sec 0.183, Tokens/sec 7.061, Trained Tokens 182537, Peak mem 7.475 GB
+Iter 4800: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004800_adapters.safetensors.
+Iter 4810: Train loss 0.039, Learning Rate 6.606e-06, It/sec 0.181, Tokens/sec 6.159, Trained Tokens 182878, Peak mem 7.475 GB
+Iter 4820: Train loss 0.038, Learning Rate 6.442e-06, It/sec 0.186, Tokens/sec 6.745, Trained Tokens 183240, Peak mem 7.475 GB
+Iter 4830: Train loss 0.041, Learning Rate 6.333e-06, It/sec 0.175, Tokens/sec 7.774, Trained Tokens 183683, Peak mem 7.475 GB
+Iter 4840: Train loss 0.039, Learning Rate 6.172e-06, It/sec 0.175, Tokens/sec 6.050, Trained Tokens 184029, Peak mem 7.475 GB
+Iter 4850: Train loss 0.037, Learning Rate 6.065e-06, It/sec 0.182, Tokens/sec 7.843, Trained Tokens 184461, Peak mem 7.475 GB
+Iter 4860: Train loss 0.061, Learning Rate 5.907e-06, It/sec 0.185, Tokens/sec 6.149, Trained Tokens 184793, Peak mem 7.475 GB
+Iter 4870: Train loss 0.041, Learning Rate 5.803e-06, It/sec 0.181, Tokens/sec 5.623, Trained Tokens 185103, Peak mem 7.475 GB
+Iter 4880: Train loss 0.045, Learning Rate 5.648e-06, It/sec 0.189, Tokens/sec 4.554, Trained Tokens 185344, Peak mem 7.475 GB
+Iter 4890: Train loss 0.034, Learning Rate 5.546e-06, It/sec 0.177, Tokens/sec 7.750, Trained Tokens 185783, Peak mem 7.475 GB
+Iter 4900: Train loss 0.041, Learning Rate 5.394e-06, It/sec 0.174, Tokens/sec 6.936, Trained Tokens 186182, Peak mem 7.475 GB
+Iter 4900: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0004900_adapters.safetensors.
+Iter 4910: Train loss 0.029, Learning Rate 5.294e-06, It/sec 0.176, Tokens/sec 7.003, Trained Tokens 186579, Peak mem 7.475 GB
+Iter 4920: Train loss 0.042, Learning Rate 5.146e-06, It/sec 0.168, Tokens/sec 7.417, Trained Tokens 187021, Peak mem 7.475 GB
+Iter 4930: Train loss 0.048, Learning Rate 5.048e-06, It/sec 0.178, Tokens/sec 6.545, Trained Tokens 187388, Peak mem 7.475 GB
+Iter 4940: Train loss 0.016, Learning Rate 4.903e-06, It/sec 0.179, Tokens/sec 6.592, Trained Tokens 187757, Peak mem 7.475 GB
+Iter 4950: Train loss 0.049, Learning Rate 4.808e-06, It/sec 0.183, Tokens/sec 7.252, Trained Tokens 188154, Peak mem 7.475 GB
+Iter 4960: Train loss 0.038, Learning Rate 4.666e-06, It/sec 0.189, Tokens/sec 7.894, Trained Tokens 188572, Peak mem 7.475 GB
+Iter 4970: Train loss 0.045, Learning Rate 4.573e-06, It/sec 0.171, Tokens/sec 7.094, Trained Tokens 188987, Peak mem 7.475 GB
+Iter 4980: Train loss 0.045, Learning Rate 4.435e-06, It/sec 0.173, Tokens/sec 6.861, Trained Tokens 189383, Peak mem 7.475 GB
+Iter 4990: Train loss 0.029, Learning Rate 4.344e-06, It/sec 0.179, Tokens/sec 6.381, Trained Tokens 189740, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:26,  1.10s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:26,  1.15s/it]Calculating loss...:  12%|█▏        | 3/25 [00:03<00:28,  1.28s/it]Calculating loss...:  16%|█▌        | 4/25 [00:05<00:28,  1.34s/it]Calculating loss...:  20%|██        | 5/25 [00:06<00:25,  1.28s/it]Calculating loss...:  24%|██▍       | 6/25 [00:07<00:24,  1.28s/it]Calculating loss...:  28%|██▊       | 7/25 [00:09<00:24,  1.39s/it]Calculating loss...:  32%|███▏      | 8/25 [00:10<00:22,  1.32s/it]Calculating loss...:  36%|███▌      | 9/25 [00:12<00:22,  1.44s/it]Calculating loss...:  40%|████      | 10/25 [00:13<00:21,  1.44s/it]Calculating loss...:  44%|████▍     | 11/25 [00:14<00:17,  1.26s/it]Calculating loss...:  48%|████▊     | 12/25 [00:16<00:19,  1.49s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:17<00:17,  1.44s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:19<00:18,  1.64s/it]Calculating loss...:  60%|██████    | 15/25 [00:21<00:16,  1.60s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:23<00:14,  1.62s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:25<00:14,  1.79s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:26<00:11,  1.63s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:27<00:08,  1.44s/it]Calculating loss...:  80%|████████  | 20/25 [00:29<00:07,  1.49s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:30<00:05,  1.44s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:31<00:04,  1.39s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:34<00:03,  1.77s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:35<00:01,  1.62s/it]Calculating loss...: 100%|██████████| 25/25 [00:36<00:00,  1.51s/it]Calculating loss...: 100%|██████████| 25/25 [00:36<00:00,  1.47s/it]
+Iter 5000: Val loss 0.052, Val took 36.855s
+Iter 5000: Train loss 0.055, Learning Rate 4.209e-06, It/sec 0.174, Tokens/sec 6.804, Trained Tokens 190131, Peak mem 7.475 GB
+Iter 5000: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005000_adapters.safetensors.
+Iter 5010: Train loss 0.040, Learning Rate 4.120e-06, It/sec 0.173, Tokens/sec 6.573, Trained Tokens 190511, Peak mem 7.475 GB
+Iter 5020: Train loss 0.037, Learning Rate 3.989e-06, It/sec 0.185, Tokens/sec 5.206, Trained Tokens 190793, Peak mem 7.475 GB
+Iter 5030: Train loss 0.045, Learning Rate 3.902e-06, It/sec 0.178, Tokens/sec 7.725, Trained Tokens 191228, Peak mem 7.475 GB
+Iter 5040: Train loss 0.025, Learning Rate 3.774e-06, It/sec 0.175, Tokens/sec 7.159, Trained Tokens 191637, Peak mem 7.475 GB
+Iter 5050: Train loss 0.048, Learning Rate 3.690e-06, It/sec 0.165, Tokens/sec 6.599, Trained Tokens 192036, Peak mem 7.475 GB
+Iter 5060: Train loss 0.035, Learning Rate 3.565e-06, It/sec 0.174, Tokens/sec 8.115, Trained Tokens 192502, Peak mem 7.475 GB
+Iter 5070: Train loss 0.033, Learning Rate 3.483e-06, It/sec 0.186, Tokens/sec 6.538, Trained Tokens 192853, Peak mem 7.475 GB
+Iter 5080: Train loss 0.039, Learning Rate 3.362e-06, It/sec 0.179, Tokens/sec 7.130, Trained Tokens 193252, Peak mem 7.475 GB
+Iter 5090: Train loss 0.021, Learning Rate 3.283e-06, It/sec 0.177, Tokens/sec 4.804, Trained Tokens 193524, Peak mem 7.475 GB
+Iter 5100: Train loss 0.016, Learning Rate 3.165e-06, It/sec 0.180, Tokens/sec 6.588, Trained Tokens 193889, Peak mem 7.475 GB
+Iter 5100: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005100_adapters.safetensors.
+Iter 5110: Train loss 0.041, Learning Rate 3.088e-06, It/sec 0.182, Tokens/sec 7.286, Trained Tokens 194289, Peak mem 7.475 GB
+Iter 5120: Train loss 0.034, Learning Rate 2.973e-06, It/sec 0.182, Tokens/sec 7.188, Trained Tokens 194683, Peak mem 7.475 GB
+Iter 5130: Train loss 0.023, Learning Rate 2.898e-06, It/sec 0.182, Tokens/sec 4.986, Trained Tokens 194957, Peak mem 7.475 GB
+Iter 5140: Train loss 0.046, Learning Rate 2.788e-06, It/sec 0.177, Tokens/sec 9.192, Trained Tokens 195476, Peak mem 7.475 GB
+Iter 5150: Train loss 0.015, Learning Rate 2.715e-06, It/sec 0.183, Tokens/sec 6.516, Trained Tokens 195833, Peak mem 7.475 GB
+Iter 5160: Train loss 0.050, Learning Rate 2.608e-06, It/sec 0.180, Tokens/sec 5.642, Trained Tokens 196147, Peak mem 7.475 GB
+Iter 5170: Train loss 0.027, Learning Rate 2.537e-06, It/sec 0.186, Tokens/sec 4.360, Trained Tokens 196381, Peak mem 7.475 GB
+Iter 5180: Train loss 0.034, Learning Rate 2.433e-06, It/sec 0.162, Tokens/sec 6.727, Trained Tokens 196796, Peak mem 7.475 GB
+Iter 5190: Train loss 0.039, Learning Rate 2.365e-06, It/sec 0.176, Tokens/sec 7.081, Trained Tokens 197199, Peak mem 7.475 GB
+Iter 5200: Train loss 0.033, Learning Rate 2.265e-06, It/sec 0.183, Tokens/sec 8.462, Trained Tokens 197662, Peak mem 7.475 GB
+Iter 5200: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005200_adapters.safetensors.
+Iter 5210: Train loss 0.074, Learning Rate 2.200e-06, It/sec 0.177, Tokens/sec 6.459, Trained Tokens 198027, Peak mem 7.475 GB
+Iter 5220: Train loss 0.027, Learning Rate 2.103e-06, It/sec 0.178, Tokens/sec 6.876, Trained Tokens 198413, Peak mem 7.475 GB
+Iter 5230: Train loss 0.009, Learning Rate 2.040e-06, It/sec 0.195, Tokens/sec 4.513, Trained Tokens 198644, Peak mem 7.475 GB
+Iter 5240: Train loss 0.033, Learning Rate 1.946e-06, It/sec 0.177, Tokens/sec 6.300, Trained Tokens 199000, Peak mem 7.475 GB
+Iter 5250: Train loss 0.048, Learning Rate 1.886e-06, It/sec 0.178, Tokens/sec 6.711, Trained Tokens 199376, Peak mem 7.475 GB
+Iter 5260: Train loss 0.023, Learning Rate 1.796e-06, It/sec 0.178, Tokens/sec 7.098, Trained Tokens 199774, Peak mem 7.475 GB
+Iter 5270: Train loss 0.038, Learning Rate 1.737e-06, It/sec 0.188, Tokens/sec 5.069, Trained Tokens 200044, Peak mem 7.475 GB
+Iter 5280: Train loss 0.034, Learning Rate 1.651e-06, It/sec 0.181, Tokens/sec 7.666, Trained Tokens 200468, Peak mem 7.475 GB
+Iter 5290: Train loss 0.057, Learning Rate 1.595e-06, It/sec 0.173, Tokens/sec 6.779, Trained Tokens 200860, Peak mem 7.475 GB
+Iter 5300: Train loss 0.057, Learning Rate 1.513e-06, It/sec 0.180, Tokens/sec 7.761, Trained Tokens 201292, Peak mem 7.475 GB
+Iter 5300: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005300_adapters.safetensors.
+Iter 5310: Train loss 0.029, Learning Rate 1.459e-06, It/sec 0.190, Tokens/sec 6.243, Trained Tokens 201620, Peak mem 7.475 GB
+Iter 5320: Train loss 0.053, Learning Rate 1.380e-06, It/sec 0.165, Tokens/sec 4.267, Trained Tokens 201879, Peak mem 7.475 GB
+Iter 5330: Train loss 0.048, Learning Rate 1.329e-06, It/sec 0.179, Tokens/sec 6.230, Trained Tokens 202227, Peak mem 7.475 GB
+Iter 5340: Train loss 0.045, Learning Rate 1.254e-06, It/sec 0.180, Tokens/sec 7.468, Trained Tokens 202642, Peak mem 7.475 GB
+Iter 5350: Train loss 0.085, Learning Rate 1.205e-06, It/sec 0.185, Tokens/sec 6.983, Trained Tokens 203019, Peak mem 7.475 GB
+Iter 5360: Train loss 0.039, Learning Rate 1.133e-06, It/sec 0.181, Tokens/sec 8.345, Trained Tokens 203480, Peak mem 7.475 GB
+Iter 5370: Train loss 0.045, Learning Rate 1.086e-06, It/sec 0.177, Tokens/sec 7.095, Trained Tokens 203880, Peak mem 7.475 GB
+Iter 5380: Train loss 0.031, Learning Rate 1.018e-06, It/sec 0.173, Tokens/sec 6.435, Trained Tokens 204253, Peak mem 7.475 GB
+Iter 5390: Train loss 0.048, Learning Rate 9.743e-07, It/sec 0.168, Tokens/sec 5.681, Trained Tokens 204592, Peak mem 7.475 GB
+Iter 5400: Train loss 0.020, Learning Rate 9.099e-07, It/sec 0.190, Tokens/sec 6.586, Trained Tokens 204939, Peak mem 7.475 GB
+Iter 5400: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005400_adapters.safetensors.
+Iter 5410: Train loss 0.049, Learning Rate 8.682e-07, It/sec 0.174, Tokens/sec 6.281, Trained Tokens 205300, Peak mem 7.475 GB
+Iter 5420: Train loss 0.015, Learning Rate 8.075e-07, It/sec 0.184, Tokens/sec 5.374, Trained Tokens 205592, Peak mem 7.475 GB
+Iter 5430: Train loss 0.033, Learning Rate 7.682e-07, It/sec 0.171, Tokens/sec 6.663, Trained Tokens 205982, Peak mem 7.475 GB
+Iter 5440: Train loss 0.032, Learning Rate 7.111e-07, It/sec 0.179, Tokens/sec 6.072, Trained Tokens 206321, Peak mem 7.475 GB
+Iter 5450: Train loss 0.038, Learning Rate 6.743e-07, It/sec 0.181, Tokens/sec 6.814, Trained Tokens 206697, Peak mem 7.475 GB
+Iter 5460: Train loss 0.042, Learning Rate 6.208e-07, It/sec 0.170, Tokens/sec 9.323, Trained Tokens 207247, Peak mem 7.475 GB
+Iter 5470: Train loss 0.040, Learning Rate 5.864e-07, It/sec 0.158, Tokens/sec 6.175, Trained Tokens 207638, Peak mem 7.475 GB
+Iter 5480: Train loss 0.071, Learning Rate 5.366e-07, It/sec 0.173, Tokens/sec 7.271, Trained Tokens 208059, Peak mem 7.475 GB
+Iter 5490: Train loss 0.046, Learning Rate 5.046e-07, It/sec 0.182, Tokens/sec 7.542, Trained Tokens 208474, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:28,  1.18s/it]Calculating loss...:   8%|▊         | 2/25 [00:02<00:27,  1.19s/it]Calculating loss...:  12%|█▏        | 3/25 [00:03<00:25,  1.15s/it]Calculating loss...:  16%|█▌        | 4/25 [00:04<00:25,  1.20s/it]Calculating loss...:  20%|██        | 5/25 [00:05<00:23,  1.20s/it]Calculating loss...:  24%|██▍       | 6/25 [00:07<00:23,  1.22s/it]Calculating loss...:  28%|██▊       | 7/25 [00:09<00:25,  1.42s/it]Calculating loss...:  32%|███▏      | 8/25 [00:10<00:23,  1.38s/it]Calculating loss...:  36%|███▌      | 9/25 [00:11<00:21,  1.35s/it]Calculating loss...:  40%|████      | 10/25 [00:13<00:20,  1.40s/it]Calculating loss...:  44%|████▍     | 11/25 [00:14<00:18,  1.36s/it]Calculating loss...:  48%|████▊     | 12/25 [00:15<00:16,  1.30s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:17<00:16,  1.35s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:18<00:14,  1.34s/it]Calculating loss...:  60%|██████    | 15/25 [00:19<00:12,  1.30s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:22<00:15,  1.69s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:24<00:14,  1.79s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:24<00:10,  1.49s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:26<00:08,  1.45s/it]Calculating loss...:  80%|████████  | 20/25 [00:28<00:07,  1.59s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:29<00:06,  1.57s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:31<00:04,  1.65s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:33<00:03,  1.66s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:35<00:01,  1.84s/it]Calculating loss...: 100%|██████████| 25/25 [00:36<00:00,  1.67s/it]Calculating loss...: 100%|██████████| 25/25 [00:36<00:00,  1.47s/it]
+Iter 5500: Val loss 0.045, Val took 36.812s
+Iter 5500: Train loss 0.043, Learning Rate 4.585e-07, It/sec 0.177, Tokens/sec 6.867, Trained Tokens 208863, Peak mem 7.475 GB
+Iter 5500: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005500_adapters.safetensors.
+Iter 5510: Train loss 0.032, Learning Rate 4.290e-07, It/sec 0.194, Tokens/sec 5.653, Trained Tokens 209155, Peak mem 7.475 GB
+Iter 5520: Train loss 0.051, Learning Rate 3.865e-07, It/sec 0.193, Tokens/sec 6.416, Trained Tokens 209488, Peak mem 7.475 GB
+Iter 5530: Train loss 0.044, Learning Rate 3.594e-07, It/sec 0.177, Tokens/sec 7.900, Trained Tokens 209934, Peak mem 7.475 GB
+Iter 5540: Train loss 0.022, Learning Rate 3.206e-07, It/sec 0.167, Tokens/sec 8.943, Trained Tokens 210470, Peak mem 7.475 GB
+Iter 5550: Train loss 0.048, Learning Rate 2.960e-07, It/sec 0.173, Tokens/sec 5.730, Trained Tokens 210801, Peak mem 7.475 GB
+Iter 5560: Train loss 0.021, Learning Rate 2.609e-07, It/sec 0.178, Tokens/sec 7.567, Trained Tokens 211227, Peak mem 7.475 GB
+Iter 5570: Train loss 0.061, Learning Rate 2.387e-07, It/sec 0.161, Tokens/sec 7.802, Trained Tokens 211713, Peak mem 7.475 GB
+Iter 5580: Train loss 0.057, Learning Rate 2.073e-07, It/sec 0.175, Tokens/sec 7.797, Trained Tokens 212159, Peak mem 7.475 GB
+Iter 5590: Train loss 0.042, Learning Rate 1.876e-07, It/sec 0.176, Tokens/sec 7.780, Trained Tokens 212602, Peak mem 7.475 GB
+Iter 5600: Train loss 0.062, Learning Rate 1.599e-07, It/sec 0.171, Tokens/sec 5.795, Trained Tokens 212941, Peak mem 7.475 GB
+Iter 5600: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005600_adapters.safetensors.
+Iter 5610: Train loss 0.026, Learning Rate 1.426e-07, It/sec 0.188, Tokens/sec 6.927, Trained Tokens 213310, Peak mem 7.475 GB
+Iter 5620: Train loss 0.037, Learning Rate 1.186e-07, It/sec 0.185, Tokens/sec 5.285, Trained Tokens 213595, Peak mem 7.475 GB
+Iter 5630: Train loss 0.015, Learning Rate 1.037e-07, It/sec 0.161, Tokens/sec 7.662, Trained Tokens 214071, Peak mem 7.475 GB
+Iter 5640: Train loss 0.040, Learning Rate 8.340e-08, It/sec 0.179, Tokens/sec 6.338, Trained Tokens 214426, Peak mem 7.475 GB
+Iter 5650: Train loss 0.034, Learning Rate 7.107e-08, It/sec 0.171, Tokens/sec 6.425, Trained Tokens 214801, Peak mem 7.475 GB
+Iter 5660: Train loss 0.044, Learning Rate 5.441e-08, It/sec 0.187, Tokens/sec 7.412, Trained Tokens 215197, Peak mem 7.475 GB
+Iter 5670: Train loss 0.035, Learning Rate 4.454e-08, It/sec 0.181, Tokens/sec 6.777, Trained Tokens 215572, Peak mem 7.475 GB
+Iter 5680: Train loss 0.015, Learning Rate 3.159e-08, It/sec 0.182, Tokens/sec 5.765, Trained Tokens 215888, Peak mem 7.475 GB
+Iter 5690: Train loss 0.037, Learning Rate 2.419e-08, It/sec 0.186, Tokens/sec 6.748, Trained Tokens 216250, Peak mem 7.475 GB
+Iter 5700: Train loss 0.027, Learning Rate 1.493e-08, It/sec 0.179, Tokens/sec 6.330, Trained Tokens 216604, Peak mem 7.475 GB
+Iter 5700: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/0005700_adapters.safetensors.
+Iter 5710: Train loss 0.018, Learning Rate 9.996e-09, It/sec 0.174, Tokens/sec 4.567, Trained Tokens 216866, Peak mem 7.475 GB
+Iter 5720: Train loss 0.063, Learning Rate 4.447e-09, It/sec 0.174, Tokens/sec 8.439, Trained Tokens 217352, Peak mem 7.475 GB
+Iter 5730: Train loss 0.040, Learning Rate 1.970e-09, It/sec 0.179, Tokens/sec 5.097, Trained Tokens 217636, Peak mem 7.475 GB
+Calculating loss...:   0%|          | 0/25 [00:00<?, ?it/s]Calculating loss...:   4%|▍         | 1/25 [00:01<00:40,  1.68s/it]Calculating loss...:   8%|▊         | 2/25 [00:03<00:41,  1.78s/it]Calculating loss...:  12%|█▏        | 3/25 [00:04<00:30,  1.40s/it]Calculating loss...:  16%|█▌        | 4/25 [00:07<00:39,  1.88s/it]Calculating loss...:  20%|██        | 5/25 [00:08<00:30,  1.55s/it]Calculating loss...:  24%|██▍       | 6/25 [00:09<00:27,  1.42s/it]Calculating loss...:  28%|██▊       | 7/25 [00:10<00:24,  1.34s/it]Calculating loss...:  32%|███▏      | 8/25 [00:12<00:25,  1.48s/it]Calculating loss...:  36%|███▌      | 9/25 [00:14<00:29,  1.84s/it]Calculating loss...:  40%|████      | 10/25 [00:15<00:24,  1.62s/it]Calculating loss...:  44%|████▍     | 11/25 [00:16<00:19,  1.41s/it]Calculating loss...:  48%|████▊     | 12/25 [00:18<00:20,  1.59s/it]Calculating loss...:  52%|█████▏    | 13/25 [00:20<00:17,  1.45s/it]Calculating loss...:  56%|█████▌    | 14/25 [00:21<00:15,  1.37s/it]Calculating loss...:  60%|██████    | 15/25 [00:22<00:13,  1.33s/it]Calculating loss...:  64%|██████▍   | 16/25 [00:23<00:12,  1.34s/it]Calculating loss...:  68%|██████▊   | 17/25 [00:25<00:10,  1.37s/it]Calculating loss...:  72%|███████▏  | 18/25 [00:26<00:09,  1.31s/it]Calculating loss...:  76%|███████▌  | 19/25 [00:27<00:07,  1.33s/it]Calculating loss...:  80%|████████  | 20/25 [00:29<00:07,  1.58s/it]Calculating loss...:  84%|████████▍ | 21/25 [00:31<00:06,  1.68s/it]Calculating loss...:  88%|████████▊ | 22/25 [00:33<00:04,  1.58s/it]Calculating loss...:  92%|█████████▏| 23/25 [00:35<00:03,  1.73s/it]Calculating loss...:  96%|█████████▌| 24/25 [00:36<00:01,  1.57s/it]Calculating loss...: 100%|██████████| 25/25 [00:37<00:00,  1.38s/it]Calculating loss...: 100%|██████████| 25/25 [00:37<00:00,  1.50s/it]
+Iter 5736: Val loss 0.041, Val took 37.433s
+Iter 5736: Train loss 0.020, Learning Rate 4.947e-10, It/sec 0.287, Tokens/sec 6.165, Trained Tokens 217851, Peak mem 7.475 GB
+Saved final weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch2/adapters.safetensors.

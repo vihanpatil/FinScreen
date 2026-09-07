@@ -1,0 +1,34 @@
+
+=== launch 2026-08-20T22:45:39.504093 ===
+command: /Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/bin/mlx_lm.lora -c /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-probe/mlx_lora_config.yaml
+Loading configuration file /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-20-probe/mlx_lora_config.yaml
+Loading pretrained model
+Loading datasets
+Training
+Trainable parameters: 0.038% (2.884M/7615.617M)
+Starting training..., iters: 20
+
+Calculating loss...:   0%|          | 0/5 [00:00<?, ?it/s]
+Calculating loss...:  20%|██        | 1/5 [00:02<00:08,  2.06s/it]
+Calculating loss...:  40%|████      | 2/5 [00:03<00:04,  1.56s/it]
+Calculating loss...:  60%|██████    | 3/5 [00:04<00:03,  1.56s/it]
+Calculating loss...:  80%|████████  | 4/5 [00:05<00:01,  1.35s/it]
+Calculating loss...: 100%|██████████| 5/5 [00:08<00:00,  1.86s/it]
+Calculating loss...: 100%|██████████| 5/5 [00:08<00:00,  1.72s/it]
+Iter 1: Val loss 0.948, Val took 9.013s
+Iter 5: Train loss 1.573, Learning Rate 1.000e-07, It/sec 0.142, Tokens/sec 5.835, Trained Tokens 205, Peak mem 6.075 GB
+Iter 10: Train loss 1.717, Learning Rate 4.749e-06, It/sec 0.162, Tokens/sec 3.532, Trained Tokens 314, Peak mem 6.123 GB
+Iter 10: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-probe/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-probe/0000010_adapters.safetensors.
+Iter 15: Train loss 2.198, Learning Rate 9.398e-06, It/sec 0.163, Tokens/sec 4.918, Trained Tokens 465, Peak mem 6.247 GB
+
+Calculating loss...:   0%|          | 0/5 [00:00<?, ?it/s]
+Calculating loss...:  20%|██        | 1/5 [00:01<00:05,  1.40s/it]
+Calculating loss...:  40%|████      | 2/5 [00:02<00:04,  1.39s/it]
+Calculating loss...:  60%|██████    | 3/5 [00:04<00:02,  1.43s/it]
+Calculating loss...:  80%|████████  | 4/5 [00:05<00:01,  1.51s/it]
+Calculating loss...: 100%|██████████| 5/5 [00:06<00:00,  1.34s/it]
+Calculating loss...: 100%|██████████| 5/5 [00:06<00:00,  1.39s/it]
+Iter 20: Val loss 0.820, Val took 6.932s
+Iter 20: Train loss 1.184, Learning Rate 1.870e-05, It/sec 0.168, Tokens/sec 6.038, Trained Tokens 645, Peak mem 6.247 GB
+Iter 20: Saved adapter weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-probe/adapters.safetensors and /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-probe/0000020_adapters.safetensors.
+Saved final weights to /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-probe/adapters.safetensors.

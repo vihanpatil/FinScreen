@@ -1,0 +1,295 @@
+0 already in labels.jsonl · 13241 to generate
+loading base model + adapter (the only GPU work) ...
+  loaded in 1.2s
+  [50/13241 this process · 50/13241 segment] 3.04s/row · 1405 chunks/h · ETA 9.39h for the segment · last finish=stop gen_tok=47
+  [100/13241 this process · 100/13241 segment] 1.77s/row · 1440 chunks/h · ETA 9.13h for the segment · last finish=stop gen_tok=16
+  [150/13241 this process · 150/13241 segment] 1.94s/row · 1379 chunks/h · ETA 9.49h for the segment · last finish=stop gen_tok=24
+  [200/13241 this process · 200/13241 segment] 2.47s/row · 1390 chunks/h · ETA 9.38h for the segment · last finish=stop gen_tok=24
+  [250/13241 this process · 250/13241 segment] 1.79s/row · 1405 chunks/h · ETA 9.25h for the segment · last finish=stop gen_tok=16
+  [300/13241 this process · 300/13241 segment] 2.48s/row · 1393 chunks/h · ETA 9.29h for the segment · last finish=stop gen_tok=32
+  [350/13241 this process · 350/13241 segment] 2.13s/row · 1410 chunks/h · ETA 9.15h for the segment · last finish=stop gen_tok=27
+  [400/13241 this process · 400/13241 segment] 2.65s/row · 1428 chunks/h · ETA 8.99h for the segment · last finish=stop gen_tok=15
+  [450/13241 this process · 450/13241 segment] 2.24s/row · 1440 chunks/h · ETA 8.88h for the segment · last finish=stop gen_tok=16
+  [500/13241 this process · 500/13241 segment] 2.08s/row · 1443 chunks/h · ETA 8.83h for the segment · last finish=stop gen_tok=16
+  [550/13241 this process · 550/13241 segment] 3.44s/row · 1462 chunks/h · ETA 8.68h for the segment · last finish=stop gen_tok=60
+  [600/13241 this process · 600/13241 segment] 3.23s/row · 1453 chunks/h · ETA 8.70h for the segment · last finish=stop gen_tok=50
+  [650/13241 this process · 650/13241 segment] 1.82s/row · 1444 chunks/h · ETA 8.72h for the segment · last finish=stop gen_tok=15
+  [700/13241 this process · 700/13241 segment] 3.24s/row · 1450 chunks/h · ETA 8.65h for the segment · last finish=stop gen_tok=54
+  [750/13241 this process · 750/13241 segment] 1.78s/row · 1452 chunks/h · ETA 8.60h for the segment · last finish=stop gen_tok=16
+  [800/13241 this process · 800/13241 segment] 2.50s/row · 1444 chunks/h · ETA 8.62h for the segment · last finish=stop gen_tok=43
+  [850/13241 this process · 850/13241 segment] 3.10s/row · 1437 chunks/h · ETA 8.62h for the segment · last finish=stop gen_tok=40
+  [900/13241 this process · 900/13241 segment] 2.79s/row · 1429 chunks/h · ETA 8.64h for the segment · last finish=stop gen_tok=33
+  [950/13241 this process · 950/13241 segment] 2.84s/row · 1418 chunks/h · ETA 8.67h for the segment · last finish=stop gen_tok=32
+  [1000/13241 this process · 1000/13241 segment] 2.42s/row · 1420 chunks/h · ETA 8.62h for the segment · last finish=stop gen_tok=24
+  [1050/13241 this process · 1050/13241 segment] 1.64s/row · 1420 chunks/h · ETA 8.58h for the segment · last finish=stop gen_tok=24
+  [1100/13241 this process · 1100/13241 segment] 2.80s/row · 1423 chunks/h · ETA 8.53h for the segment · last finish=stop gen_tok=33
+  [1150/13241 this process · 1150/13241 segment] 2.03s/row · 1413 chunks/h · ETA 8.56h for the segment · last finish=stop gen_tok=16
+  [1200/13241 this process · 1200/13241 segment] 1.76s/row · 1413 chunks/h · ETA 8.52h for the segment · last finish=stop gen_tok=15
+  [1250/13241 this process · 1250/13241 segment] 2.69s/row · 1406 chunks/h · ETA 8.53h for the segment · last finish=stop gen_tok=24
+  [1300/13241 this process · 1300/13241 segment] 3.20s/row · 1405 chunks/h · ETA 8.50h for the segment · last finish=stop gen_tok=51
+  [1350/13241 this process · 1350/13241 segment] 2.17s/row · 1408 chunks/h · ETA 8.45h for the segment · last finish=stop gen_tok=24
+  [1400/13241 this process · 1400/13241 segment] 2.63s/row · 1409 chunks/h · ETA 8.41h for the segment · last finish=stop gen_tok=32
+  [1450/13241 this process · 1450/13241 segment] 1.68s/row · 1409 chunks/h · ETA 8.37h for the segment · last finish=stop gen_tok=15
+  [1500/13241 this process · 1500/13241 segment] 3.65s/row · 1400 chunks/h · ETA 8.39h for the segment · last finish=stop gen_tok=52
+  [1550/13241 this process · 1550/13241 segment] 2.07s/row · 1398 chunks/h · ETA 8.36h for the segment · last finish=stop gen_tok=15
+  [1600/13241 this process · 1600/13241 segment] 2.89s/row · 1397 chunks/h · ETA 8.33h for the segment · last finish=stop gen_tok=45
+  [1650/13241 this process · 1650/13241 segment] 2.39s/row · 1399 chunks/h · ETA 8.29h for the segment · last finish=stop gen_tok=24
+  [1700/13241 this process · 1700/13241 segment] 2.54s/row · 1400 chunks/h · ETA 8.25h for the segment · last finish=stop gen_tok=32
+  [1750/13241 this process · 1750/13241 segment] 2.08s/row · 1399 chunks/h · ETA 8.21h for the segment · last finish=stop gen_tok=16
+  [1800/13241 this process · 1800/13241 segment] 2.01s/row · 1400 chunks/h · ETA 8.17h for the segment · last finish=stop gen_tok=16
+  [1850/13241 this process · 1850/13241 segment] 2.60s/row · 1400 chunks/h · ETA 8.14h for the segment · last finish=stop gen_tok=33
+  [1900/13241 this process · 1900/13241 segment] 2.07s/row · 1399 chunks/h · ETA 8.11h for the segment · last finish=stop gen_tok=15
+  [1950/13241 this process · 1950/13241 segment] 2.58s/row · 1398 chunks/h · ETA 8.08h for the segment · last finish=stop gen_tok=33
+  [2000/13241 this process · 2000/13241 segment] 2.67s/row · 1400 chunks/h · ETA 8.03h for the segment · last finish=stop gen_tok=33
+  [2050/13241 this process · 2050/13241 segment] 2.64s/row · 1398 chunks/h · ETA 8.01h for the segment · last finish=stop gen_tok=32
+  [2100/13241 this process · 2100/13241 segment] 3.54s/row · 1398 chunks/h · ETA 7.97h for the segment · last finish=stop gen_tok=60
+  [2150/13241 this process · 2150/13241 segment] 1.95s/row · 1394 chunks/h · ETA 7.96h for the segment · last finish=stop gen_tok=16
+  [2200/13241 this process · 2200/13241 segment] 2.40s/row · 1393 chunks/h · ETA 7.92h for the segment · last finish=stop gen_tok=16
+  [2250/13241 this process · 2250/13241 segment] 2.93s/row · 1392 chunks/h · ETA 7.89h for the segment · last finish=stop gen_tok=42
+  [2300/13241 this process · 2300/13241 segment] 3.08s/row · 1392 chunks/h · ETA 7.86h for the segment · last finish=stop gen_tok=42
+  [2350/13241 this process · 2350/13241 segment] 2.83s/row · 1389 chunks/h · ETA 7.84h for the segment · last finish=stop gen_tok=33
+  [2400/13241 this process · 2400/13241 segment] 2.55s/row · 1389 chunks/h · ETA 7.80h for the segment · last finish=stop gen_tok=32
+  [2450/13241 this process · 2450/13241 segment] 2.17s/row · 1391 chunks/h · ETA 7.76h for the segment · last finish=stop gen_tok=24
+  [2500/13241 this process · 2500/13241 segment] 3.04s/row · 1386 chunks/h · ETA 7.75h for the segment · last finish=stop gen_tok=41
+  [2550/13241 this process · 2550/13241 segment] 3.17s/row · 1387 chunks/h · ETA 7.71h for the segment · last finish=stop gen_tok=51
+  [2600/13241 this process · 2600/13241 segment] 2.46s/row · 1386 chunks/h · ETA 7.68h for the segment · last finish=stop gen_tok=32
+  [2650/13241 this process · 2650/13241 segment] 3.09s/row · 1385 chunks/h · ETA 7.65h for the segment · last finish=stop gen_tok=50
+  [2700/13241 this process · 2700/13241 segment] 2.53s/row · 1386 chunks/h · ETA 7.60h for the segment · last finish=stop gen_tok=32
+  [2750/13241 this process · 2750/13241 segment] 2.40s/row · 1385 chunks/h · ETA 7.58h for the segment · last finish=stop gen_tok=24
+  [2800/13241 this process · 2800/13241 segment] 2.77s/row · 1384 chunks/h · ETA 7.54h for the segment · last finish=stop gen_tok=16
+  [2850/13241 this process · 2850/13241 segment] 2.42s/row · 1384 chunks/h · ETA 7.51h for the segment · last finish=stop gen_tok=15
+  [2900/13241 this process · 2900/13241 segment] 2.04s/row · 1383 chunks/h · ETA 7.48h for the segment · last finish=stop gen_tok=16
+  [2950/13241 this process · 2950/13241 segment] 1.85s/row · 1387 chunks/h · ETA 7.42h for the segment · last finish=stop gen_tok=16
+  [3000/13241 this process · 3000/13241 segment] 2.51s/row · 1387 chunks/h · ETA 7.38h for the segment · last finish=stop gen_tok=23
+  [3050/13241 this process · 3050/13241 segment] 1.59s/row · 1388 chunks/h · ETA 7.34h for the segment · last finish=stop gen_tok=7
+  [3100/13241 this process · 3100/13241 segment] 2.74s/row · 1389 chunks/h · ETA 7.30h for the segment · last finish=stop gen_tok=41
+  [3150/13241 this process · 3150/13241 segment] 3.72s/row · 1390 chunks/h · ETA 7.26h for the segment · last finish=stop gen_tok=50
+  [3200/13241 this process · 3200/13241 segment] 1.89s/row · 1389 chunks/h · ETA 7.23h for the segment · last finish=stop gen_tok=15
+  [3250/13241 this process · 3250/13241 segment] 2.43s/row · 1392 chunks/h · ETA 7.18h for the segment · last finish=stop gen_tok=33
+  [3300/13241 this process · 3300/13241 segment] 1.94s/row · 1393 chunks/h · ETA 7.14h for the segment · last finish=stop gen_tok=16
+  [3350/13241 this process · 3350/13241 segment] 3.09s/row · 1395 chunks/h · ETA 7.09h for the segment · last finish=stop gen_tok=32
+  [3400/13241 this process · 3400/13241 segment] 1.80s/row · 1394 chunks/h · ETA 7.06h for the segment · last finish=stop gen_tok=16
+  [3450/13241 this process · 3450/13241 segment] 1.85s/row · 1396 chunks/h · ETA 7.02h for the segment · last finish=stop gen_tok=16
+  [3500/13241 this process · 3500/13241 segment] 3.20s/row · 1397 chunks/h · ETA 6.97h for the segment · last finish=stop gen_tok=50
+  [3550/13241 this process · 3550/13241 segment] 1.86s/row · 1398 chunks/h · ETA 6.93h for the segment · last finish=stop gen_tok=16
+  [3600/13241 this process · 3600/13241 segment] 4.09s/row · 1395 chunks/h · ETA 6.91h for the segment · last finish=stop gen_tok=70
+  [3650/13241 this process · 3650/13241 segment] 2.30s/row · 1393 chunks/h · ETA 6.88h for the segment · last finish=stop gen_tok=15
+  [3700/13241 this process · 3700/13241 segment] 2.59s/row · 1394 chunks/h · ETA 6.84h for the segment · last finish=stop gen_tok=33
+  [3750/13241 this process · 3750/13241 segment] 3.18s/row · 1394 chunks/h · ETA 6.81h for the segment · last finish=stop gen_tok=32
+  [3800/13241 this process · 3800/13241 segment] 3.90s/row · 1395 chunks/h · ETA 6.77h for the segment · last finish=stop gen_tok=72
+  [3850/13241 this process · 3850/13241 segment] 2.48s/row · 1396 chunks/h · ETA 6.73h for the segment · last finish=stop gen_tok=32
+  [3900/13241 this process · 3900/13241 segment] 3.87s/row · 1396 chunks/h · ETA 6.69h for the segment · last finish=stop gen_tok=72
+  [3950/13241 this process · 3950/13241 segment] 2.56s/row · 1395 chunks/h · ETA 6.66h for the segment · last finish=stop gen_tok=33
+  [4000/13241 this process · 4000/13241 segment] 1.44s/row · 1398 chunks/h · ETA 6.61h for the segment · last finish=stop gen_tok=16
+  [4050/13241 this process · 4050/13241 segment] 2.19s/row · 1400 chunks/h · ETA 6.56h for the segment · last finish=stop gen_tok=16
+  [4100/13241 this process · 4100/13241 segment] 1.98s/row · 1401 chunks/h · ETA 6.52h for the segment · last finish=stop gen_tok=16
+  [4150/13241 this process · 4150/13241 segment] 1.78s/row · 1404 chunks/h · ETA 6.47h for the segment · last finish=stop gen_tok=16
+  [4200/13241 this process · 4200/13241 segment] 2.00s/row · 1408 chunks/h · ETA 6.42h for the segment · last finish=stop gen_tok=16
+  [4250/13241 this process · 4250/13241 segment] 2.05s/row · 1411 chunks/h · ETA 6.37h for the segment · last finish=stop gen_tok=16
+  [4300/13241 this process · 4300/13241 segment] 2.24s/row · 1412 chunks/h · ETA 6.33h for the segment · last finish=stop gen_tok=15
+  [4350/13241 this process · 4350/13241 segment] 2.68s/row · 1413 chunks/h · ETA 6.29h for the segment · last finish=stop gen_tok=33
+  [4400/13241 this process · 4400/13241 segment] 3.48s/row · 1412 chunks/h · ETA 6.26h for the segment · last finish=stop gen_tok=51
+  [4450/13241 this process · 4450/13241 segment] 1.90s/row · 1411 chunks/h · ETA 6.23h for the segment · last finish=stop gen_tok=16
+  [4500/13241 this process · 4500/13241 segment] 2.12s/row · 1413 chunks/h · ETA 6.18h for the segment · last finish=stop gen_tok=16
+  [4550/13241 this process · 4550/13241 segment] 2.19s/row · 1416 chunks/h · ETA 6.14h for the segment · last finish=stop gen_tok=16
+  [4600/13241 this process · 4600/13241 segment] 2.25s/row · 1419 chunks/h · ETA 6.09h for the segment · last finish=stop gen_tok=16
+  [4650/13241 this process · 4650/13241 segment] 2.42s/row · 1420 chunks/h · ETA 6.05h for the segment · last finish=stop gen_tok=33
+  [4700/13241 this process · 4700/13241 segment] 2.00s/row · 1419 chunks/h · ETA 6.02h for the segment · last finish=stop gen_tok=16
+  [4750/13241 this process · 4750/13241 segment] 2.68s/row · 1418 chunks/h · ETA 5.99h for the segment · last finish=stop gen_tok=36
+  [4800/13241 this process · 4800/13241 segment] 1.79s/row · 1419 chunks/h · ETA 5.95h for the segment · last finish=stop gen_tok=16
+  [4850/13241 this process · 4850/13241 segment] 2.61s/row · 1422 chunks/h · ETA 5.90h for the segment · last finish=stop gen_tok=33
+  [4900/13241 this process · 4900/13241 segment] 1.73s/row · 1421 chunks/h · ETA 5.87h for the segment · last finish=stop gen_tok=16
+  [4950/13241 this process · 4950/13241 segment] 2.35s/row · 1420 chunks/h · ETA 5.84h for the segment · last finish=stop gen_tok=32
+  [5000/13241 this process · 5000/13241 segment] 2.77s/row · 1420 chunks/h · ETA 5.80h for the segment · last finish=stop gen_tok=48
+  [5050/13241 this process · 5050/13241 segment] 2.06s/row · 1421 chunks/h · ETA 5.76h for the segment · last finish=stop gen_tok=24
+  [5100/13241 this process · 5100/13241 segment] 1.83s/row · 1420 chunks/h · ETA 5.73h for the segment · last finish=stop gen_tok=16
+  [5150/13241 this process · 5150/13241 segment] 2.59s/row · 1422 chunks/h · ETA 5.69h for the segment · last finish=stop gen_tok=32
+  [5200/13241 this process · 5200/13241 segment] 2.75s/row · 1422 chunks/h · ETA 5.66h for the segment · last finish=stop gen_tok=33
+  [5250/13241 this process · 5250/13241 segment] 1.79s/row · 1423 chunks/h · ETA 5.62h for the segment · last finish=stop gen_tok=16
+  [5300/13241 this process · 5300/13241 segment] 2.66s/row · 1422 chunks/h · ETA 5.58h for the segment · last finish=stop gen_tok=15
+  [5350/13241 this process · 5350/13241 segment] 2.32s/row · 1422 chunks/h · ETA 5.55h for the segment · last finish=stop gen_tok=16
+  [5400/13241 this process · 5400/13241 segment] 2.87s/row · 1423 chunks/h · ETA 5.51h for the segment · last finish=stop gen_tok=42
+  [5450/13241 this process · 5450/13241 segment] 3.36s/row · 1421 chunks/h · ETA 5.48h for the segment · last finish=stop gen_tok=51
+  [5500/13241 this process · 5500/13241 segment] 2.11s/row · 1421 chunks/h · ETA 5.45h for the segment · last finish=stop gen_tok=24
+  [5550/13241 this process · 5550/13241 segment] 2.42s/row · 1421 chunks/h · ETA 5.41h for the segment · last finish=stop gen_tok=33
+  [5600/13241 this process · 5600/13241 segment] 1.93s/row · 1422 chunks/h · ETA 5.37h for the segment · last finish=stop gen_tok=15
+  [5650/13241 this process · 5650/13241 segment] 1.74s/row · 1422 chunks/h · ETA 5.34h for the segment · last finish=stop gen_tok=16
+  [5700/13241 this process · 5700/13241 segment] 2.59s/row · 1423 chunks/h · ETA 5.30h for the segment · last finish=stop gen_tok=32
+  [5750/13241 this process · 5750/13241 segment] 2.31s/row · 1424 chunks/h · ETA 5.26h for the segment · last finish=stop gen_tok=16
+  [5800/13241 this process · 5800/13241 segment] 1.76s/row · 1424 chunks/h · ETA 5.22h for the segment · last finish=stop gen_tok=16
+  [5850/13241 this process · 5850/13241 segment] 2.13s/row · 1425 chunks/h · ETA 5.18h for the segment · last finish=stop gen_tok=24
+  [5900/13241 this process · 5900/13241 segment] 2.77s/row · 1426 chunks/h · ETA 5.15h for the segment · last finish=stop gen_tok=32
+  [5950/13241 this process · 5950/13241 segment] 1.71s/row · 1427 chunks/h · ETA 5.11h for the segment · last finish=stop gen_tok=15
+  [6000/13241 this process · 6000/13241 segment] 2.35s/row · 1428 chunks/h · ETA 5.07h for the segment · last finish=stop gen_tok=32
+  [6050/13241 this process · 6050/13241 segment] 2.97s/row · 1429 chunks/h · ETA 5.03h for the segment · last finish=stop gen_tok=51
+  [6100/13241 this process · 6100/13241 segment] 3.32s/row · 1430 chunks/h · ETA 4.99h for the segment · last finish=stop gen_tok=58
+  [6150/13241 this process · 6150/13241 segment] 1.75s/row · 1431 chunks/h · ETA 4.96h for the segment · last finish=stop gen_tok=16
+  [6200/13241 this process · 6200/13241 segment] 4.10s/row · 1432 chunks/h · ETA 4.92h for the segment · last finish=stop gen_tok=71
+  [6250/13241 this process · 6250/13241 segment] 2.43s/row · 1432 chunks/h · ETA 4.88h for the segment · last finish=stop gen_tok=34
+  [6300/13241 this process · 6300/13241 segment] 3.61s/row · 1433 chunks/h · ETA 4.84h for the segment · last finish=stop gen_tok=61
+  [6350/13241 this process · 6350/13241 segment] 2.17s/row · 1432 chunks/h · ETA 4.81h for the segment · last finish=stop gen_tok=24
+  [6400/13241 this process · 6400/13241 segment] 3.02s/row · 1433 chunks/h · ETA 4.78h for the segment · last finish=stop gen_tok=50
+  [6450/13241 this process · 6450/13241 segment] 3.39s/row · 1434 chunks/h · ETA 4.74h for the segment · last finish=stop gen_tok=32
+  [6500/13241 this process · 6500/13241 segment] 3.23s/row · 1435 chunks/h · ETA 4.70h for the segment · last finish=stop gen_tok=57
+  [6550/13241 this process · 6550/13241 segment] 3.37s/row · 1436 chunks/h · ETA 4.66h for the segment · last finish=stop gen_tok=58
+  [6600/13241 this process · 6600/13241 segment] 3.07s/row · 1436 chunks/h · ETA 4.62h for the segment · last finish=stop gen_tok=51
+  [6650/13241 this process · 6650/13241 segment] 3.98s/row · 1437 chunks/h · ETA 4.59h for the segment · last finish=stop gen_tok=78
+  [6700/13241 this process · 6700/13241 segment] 3.57s/row · 1436 chunks/h · ETA 4.55h for the segment · last finish=stop gen_tok=69
+  [6750/13241 this process · 6750/13241 segment] 2.68s/row · 1437 chunks/h · ETA 4.52h for the segment · last finish=stop gen_tok=16
+  [6800/13241 this process · 6800/13241 segment] 2.41s/row · 1436 chunks/h · ETA 4.48h for the segment · last finish=stop gen_tok=33
+  [6850/13241 this process · 6850/13241 segment] 2.98s/row · 1436 chunks/h · ETA 4.45h for the segment · last finish=stop gen_tok=51
+  [6900/13241 this process · 6900/13241 segment] 1.71s/row · 1436 chunks/h · ETA 4.41h for the segment · last finish=stop gen_tok=16
+  [6950/13241 this process · 6950/13241 segment] 2.30s/row · 1438 chunks/h · ETA 4.37h for the segment · last finish=stop gen_tok=24
+  [7000/13241 this process · 7000/13241 segment] 3.69s/row · 1438 chunks/h · ETA 4.34h for the segment · last finish=stop gen_tok=60
+  [7050/13241 this process · 7050/13241 segment] 1.83s/row · 1439 chunks/h · ETA 4.30h for the segment · last finish=stop gen_tok=15
+  [7100/13241 this process · 7100/13241 segment] 2.79s/row · 1441 chunks/h · ETA 4.26h for the segment · last finish=stop gen_tok=48
+  [7150/13241 this process · 7150/13241 segment] 1.62s/row · 1442 chunks/h · ETA 4.22h for the segment · last finish=stop gen_tok=16
+  [7200/13241 this process · 7200/13241 segment] 2.44s/row · 1444 chunks/h · ETA 4.18h for the segment · last finish=stop gen_tok=32
+  [7250/13241 this process · 7250/13241 segment] 2.66s/row · 1444 chunks/h · ETA 4.15h for the segment · last finish=stop gen_tok=40
+  [7300/13241 this process · 7300/13241 segment] 1.73s/row · 1444 chunks/h · ETA 4.11h for the segment · last finish=stop gen_tok=15
+  [7350/13241 this process · 7350/13241 segment] 2.46s/row · 1445 chunks/h · ETA 4.08h for the segment · last finish=stop gen_tok=33
+  [7400/13241 this process · 7400/13241 segment] 1.90s/row · 1446 chunks/h · ETA 4.04h for the segment · last finish=stop gen_tok=16
+  [7450/13241 this process · 7450/13241 segment] 3.06s/row · 1444 chunks/h · ETA 4.01h for the segment · last finish=stop gen_tok=51
+  [7500/13241 this process · 7500/13241 segment] 2.35s/row · 1444 chunks/h · ETA 3.97h for the segment · last finish=stop gen_tok=34
+  [7550/13241 this process · 7550/13241 segment] 3.01s/row · 1444 chunks/h · ETA 3.94h for the segment · last finish=stop gen_tok=52
+  [7600/13241 this process · 7600/13241 segment] 2.84s/row · 1445 chunks/h · ETA 3.90h for the segment · last finish=stop gen_tok=33
+  [7650/13241 this process · 7650/13241 segment] 2.05s/row · 1446 chunks/h · ETA 3.87h for the segment · last finish=stop gen_tok=15
+  [7700/13241 this process · 7700/13241 segment] 2.55s/row · 1447 chunks/h · ETA 3.83h for the segment · last finish=stop gen_tok=32
+  [7750/13241 this process · 7750/13241 segment] 4.50s/row · 1447 chunks/h · ETA 3.79h for the segment · last finish=stop gen_tok=91
+  [7800/13241 this process · 7800/13241 segment] 1.57s/row · 1449 chunks/h · ETA 3.76h for the segment · last finish=stop gen_tok=16
+  [7850/13241 this process · 7850/13241 segment] 1.75s/row · 1450 chunks/h · ETA 3.72h for the segment · last finish=stop gen_tok=16
+  [7900/13241 this process · 7900/13241 segment] 3.21s/row · 1450 chunks/h · ETA 3.68h for the segment · last finish=stop gen_tok=45
+7926 already in labels.jsonl · 5315 to generate
+loading base model + adapter (the only GPU work) ...
+  loaded in 1.2s
+  [50/5315 this process · 7976/13241 segment] 1.20s/row · 1802 chunks/h · ETA 2.92h for the segment · last finish=stop gen_tok=7
+  [100/5315 this process · 8026/13241 segment] 3.03s/row · 1799 chunks/h · ETA 2.90h for the segment · last finish=stop gen_tok=52
+  [150/5315 this process · 8076/13241 segment] 3.36s/row · 1671 chunks/h · ETA 3.09h for the segment · last finish=stop gen_tok=24
+  [200/5315 this process · 8126/13241 segment] 3.12s/row · 1560 chunks/h · ETA 3.28h for the segment · last finish=stop gen_tok=48
+  [250/5315 this process · 8176/13241 segment] 1.71s/row · 1521 chunks/h · ETA 3.33h for the segment · last finish=stop gen_tok=16
+  [300/5315 this process · 8226/13241 segment] 2.47s/row · 1521 chunks/h · ETA 3.30h for the segment · last finish=stop gen_tok=32
+  [350/5315 this process · 8276/13241 segment] 2.05s/row · 1485 chunks/h · ETA 3.34h for the segment · last finish=stop gen_tok=16
+  [400/5315 this process · 8326/13241 segment] 3.25s/row · 1467 chunks/h · ETA 3.35h for the segment · last finish=stop gen_tok=48
+  [450/5315 this process · 8376/13241 segment] 2.17s/row · 1452 chunks/h · ETA 3.35h for the segment · last finish=stop gen_tok=24
+  [500/5315 this process · 8426/13241 segment] 2.78s/row · 1447 chunks/h · ETA 3.33h for the segment · last finish=stop gen_tok=34
+  [550/5315 this process · 8476/13241 segment] 2.83s/row · 1444 chunks/h · ETA 3.30h for the segment · last finish=stop gen_tok=41
+  [600/5315 this process · 8526/13241 segment] 2.12s/row · 1437 chunks/h · ETA 3.28h for the segment · last finish=stop gen_tok=16
+  [650/5315 this process · 8576/13241 segment] 2.27s/row · 1439 chunks/h · ETA 3.24h for the segment · last finish=stop gen_tok=16
+  [700/5315 this process · 8626/13241 segment] 3.18s/row · 1435 chunks/h · ETA 3.22h for the segment · last finish=stop gen_tok=51
+  [750/5315 this process · 8676/13241 segment] 2.53s/row · 1426 chunks/h · ETA 3.20h for the segment · last finish=stop gen_tok=32
+  [800/5315 this process · 8726/13241 segment] 2.60s/row · 1425 chunks/h · ETA 3.17h for the segment · last finish=stop gen_tok=40
+  [850/5315 this process · 8776/13241 segment] 1.58s/row · 1434 chunks/h · ETA 3.11h for the segment · last finish=stop gen_tok=16
+  [900/5315 this process · 8826/13241 segment] 2.77s/row · 1435 chunks/h · ETA 3.08h for the segment · last finish=stop gen_tok=42
+  [950/5315 this process · 8876/13241 segment] 2.55s/row · 1442 chunks/h · ETA 3.03h for the segment · last finish=stop gen_tok=34
+  [1000/5315 this process · 8926/13241 segment] 4.36s/row · 1452 chunks/h · ETA 2.97h for the segment · last finish=stop gen_tok=97
+  [1050/5315 this process · 8976/13241 segment] 2.05s/row · 1458 chunks/h · ETA 2.93h for the segment · last finish=stop gen_tok=15
+  [1100/5315 this process · 9026/13241 segment] 3.86s/row · 1458 chunks/h · ETA 2.89h for the segment · last finish=stop gen_tok=69
+  [1150/5315 this process · 9076/13241 segment] 2.05s/row · 1458 chunks/h · ETA 2.86h for the segment · last finish=stop gen_tok=16
+  [1200/5315 this process · 9126/13241 segment] 2.23s/row · 1456 chunks/h · ETA 2.83h for the segment · last finish=stop gen_tok=23
+  [1250/5315 this process · 9176/13241 segment] 2.43s/row · 1457 chunks/h · ETA 2.79h for the segment · last finish=stop gen_tok=36
+  [1300/5315 this process · 9226/13241 segment] 1.99s/row · 1461 chunks/h · ETA 2.75h for the segment · last finish=stop gen_tok=16
+  [1350/5315 this process · 9276/13241 segment] 3.37s/row · 1455 chunks/h · ETA 2.72h for the segment · last finish=stop gen_tok=51
+  [1400/5315 this process · 9326/13241 segment] 2.85s/row · 1454 chunks/h · ETA 2.69h for the segment · last finish=stop gen_tok=48
+  [1450/5315 this process · 9376/13241 segment] 1.67s/row · 1457 chunks/h · ETA 2.65h for the segment · last finish=stop gen_tok=16
+  [1500/5315 this process · 9426/13241 segment] 2.25s/row · 1460 chunks/h · ETA 2.61h for the segment · last finish=stop gen_tok=33
+  [1550/5315 this process · 9476/13241 segment] 1.96s/row · 1461 chunks/h · ETA 2.58h for the segment · last finish=stop gen_tok=16
+Traceback (most recent call last):
+  File "/Users/vihanpatil/personal/projects/FinScreen/finetune/label_e2.py", line 1339, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/vihanpatil/personal/projects/FinScreen/finetune/label_e2.py", line 1318, in main
+    segment_rec = generate(rows, args, journal_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihanpatil/personal/projects/FinScreen/finetune/label_e2.py", line 738, in generate
+    for resp in stream_generate(
+  File "/Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/lib/python3.11/site-packages/mlx_lm/generate.py", line 716, in stream_generate
+    for n, (token, logprobs, from_draft) in enumerate(token_generator):
+  File "/Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/lib/python3.11/site-packages/mlx_lm/generate.py", line 705, in <genexpr>
+    token_generator = (
+                      ^
+  File "/Users/vihanpatil/personal/projects/FinScreen/finetune/.mlx_venv/lib/python3.11/site-packages/mlx_lm/generate.py", line 460, in generate_step
+    mx.async_eval(next_y, next_logprobs)
+KeyboardInterrupt
+9487 already in labels.jsonl · 3754 to generate
+loading base model + adapter (the only GPU work) ...
+  loaded in 1.0s
+  [50/3754 this process · 9537/13241 segment] 2.30s/row · 1536 chunks/h · ETA 2.41h for the segment · last finish=stop gen_tok=32
+  [100/3754 this process · 9587/13241 segment] 2.25s/row · 1522 chunks/h · ETA 2.40h for the segment · last finish=stop gen_tok=33
+  [150/3754 this process · 9637/13241 segment] 2.21s/row · 1549 chunks/h · ETA 2.33h for the segment · last finish=stop gen_tok=34
+  [200/3754 this process · 9687/13241 segment] 3.39s/row · 1543 chunks/h · ETA 2.30h for the segment · last finish=stop gen_tok=52
+  [250/3754 this process · 9737/13241 segment] 1.86s/row · 1503 chunks/h · ETA 2.33h for the segment · last finish=stop gen_tok=15
+  [300/3754 this process · 9787/13241 segment] 2.16s/row · 1504 chunks/h · ETA 2.30h for the segment · last finish=stop gen_tok=24
+  [350/3754 this process · 9837/13241 segment] 2.46s/row · 1503 chunks/h · ETA 2.26h for the segment · last finish=stop gen_tok=16
+  [400/3754 this process · 9887/13241 segment] 2.32s/row · 1487 chunks/h · ETA 2.25h for the segment · last finish=stop gen_tok=24
+  [450/3754 this process · 9937/13241 segment] 2.49s/row · 1479 chunks/h · ETA 2.23h for the segment · last finish=stop gen_tok=32
+  [500/3754 this process · 9987/13241 segment] 3.10s/row · 1471 chunks/h · ETA 2.21h for the segment · last finish=stop gen_tok=51
+  [550/3754 this process · 10037/13241 segment] 2.64s/row · 1473 chunks/h · ETA 2.18h for the segment · last finish=stop gen_tok=42
+  [600/3754 this process · 10087/13241 segment] 2.31s/row · 1453 chunks/h · ETA 2.17h for the segment · last finish=stop gen_tok=16
+  [650/3754 this process · 10137/13241 segment] 4.45s/row · 1453 chunks/h · ETA 2.14h for the segment · last finish=stop gen_tok=60
+  [700/3754 this process · 10187/13241 segment] 1.89s/row · 1452 chunks/h · ETA 2.10h for the segment · last finish=stop gen_tok=27
+  [750/3754 this process · 10237/13241 segment] 3.17s/row · 1439 chunks/h · ETA 2.09h for the segment · last finish=stop gen_tok=41
+  [800/3754 this process · 10287/13241 segment] 1.55s/row · 1432 chunks/h · ETA 2.06h for the segment · last finish=stop gen_tok=16
+  [850/3754 this process · 10337/13241 segment] 2.12s/row · 1426 chunks/h · ETA 2.04h for the segment · last finish=stop gen_tok=16
+  [900/3754 this process · 10387/13241 segment] 1.85s/row · 1427 chunks/h · ETA 2.00h for the segment · last finish=stop gen_tok=16
+  [950/3754 this process · 10437/13241 segment] 2.36s/row · 1430 chunks/h · ETA 1.96h for the segment · last finish=stop gen_tok=32
+  [1000/3754 this process · 10487/13241 segment] 2.35s/row · 1432 chunks/h · ETA 1.92h for the segment · last finish=stop gen_tok=32
+  [1050/3754 this process · 10537/13241 segment] 1.55s/row · 1430 chunks/h · ETA 1.89h for the segment · last finish=stop gen_tok=16
+  [1100/3754 this process · 10587/13241 segment] 1.88s/row · 1437 chunks/h · ETA 1.85h for the segment · last finish=stop gen_tok=16
+  [1150/3754 this process · 10637/13241 segment] 2.01s/row · 1433 chunks/h · ETA 1.82h for the segment · last finish=stop gen_tok=16
+  [1200/3754 this process · 10687/13241 segment] 2.99s/row · 1435 chunks/h · ETA 1.78h for the segment · last finish=stop gen_tok=48
+  [1250/3754 this process · 10737/13241 segment] 2.26s/row · 1442 chunks/h · ETA 1.74h for the segment · last finish=stop gen_tok=23
+  [1300/3754 this process · 10787/13241 segment] 2.51s/row · 1441 chunks/h · ETA 1.70h for the segment · last finish=stop gen_tok=33
+  [1350/3754 this process · 10837/13241 segment] 2.69s/row · 1440 chunks/h · ETA 1.67h for the segment · last finish=stop gen_tok=34
+  [1400/3754 this process · 10887/13241 segment] 1.78s/row · 1438 chunks/h · ETA 1.64h for the segment · last finish=stop gen_tok=16
+  [1450/3754 this process · 10937/13241 segment] 2.21s/row · 1443 chunks/h · ETA 1.60h for the segment · last finish=stop gen_tok=27
+  [1500/3754 this process · 10987/13241 segment] 2.39s/row · 1448 chunks/h · ETA 1.56h for the segment · last finish=stop gen_tok=27
+  [1550/3754 this process · 11037/13241 segment] 1.78s/row · 1456 chunks/h · ETA 1.51h for the segment · last finish=stop gen_tok=16
+  [1600/3754 this process · 11087/13241 segment] 2.04s/row · 1462 chunks/h · ETA 1.47h for the segment · last finish=stop gen_tok=24
+  [1650/3754 this process · 11137/13241 segment] 1.96s/row · 1468 chunks/h · ETA 1.43h for the segment · last finish=stop gen_tok=28
+  [1700/3754 this process · 11187/13241 segment] 2.17s/row · 1468 chunks/h · ETA 1.40h for the segment · last finish=stop gen_tok=16
+  [1750/3754 this process · 11237/13241 segment] 4.20s/row · 1468 chunks/h · ETA 1.36h for the segment · last finish=stop gen_tok=87
+  [1800/3754 this process · 11287/13241 segment] 3.17s/row · 1467 chunks/h · ETA 1.33h for the segment · last finish=stop gen_tok=51
+  [1850/3754 this process · 11337/13241 segment] 2.94s/row · 1463 chunks/h · ETA 1.30h for the segment · last finish=stop gen_tok=48
+  [1900/3754 this process · 11387/13241 segment] 2.38s/row · 1466 chunks/h · ETA 1.26h for the segment · last finish=stop gen_tok=32
+  [1950/3754 this process · 11437/13241 segment] 3.01s/row · 1466 chunks/h · ETA 1.23h for the segment · last finish=stop gen_tok=41
+  [2000/3754 this process · 11487/13241 segment] 1.69s/row · 1463 chunks/h · ETA 1.20h for the segment · last finish=stop gen_tok=16
+  [2050/3754 this process · 11537/13241 segment] 2.93s/row · 1460 chunks/h · ETA 1.17h for the segment · last finish=stop gen_tok=52
+  [2100/3754 this process · 11587/13241 segment] 2.97s/row · 1461 chunks/h · ETA 1.13h for the segment · last finish=stop gen_tok=57
+  [2150/3754 this process · 11637/13241 segment] 2.36s/row · 1463 chunks/h · ETA 1.10h for the segment · last finish=stop gen_tok=33
+  [2200/3754 this process · 11687/13241 segment] 1.99s/row · 1469 chunks/h · ETA 1.06h for the segment · last finish=stop gen_tok=27
+  [2250/3754 this process · 11737/13241 segment] 1.75s/row · 1471 chunks/h · ETA 1.02h for the segment · last finish=stop gen_tok=16
+  [2300/3754 this process · 11787/13241 segment] 1.91s/row · 1476 chunks/h · ETA 0.99h for the segment · last finish=stop gen_tok=27
+  [2350/3754 this process · 11837/13241 segment] 2.26s/row · 1479 chunks/h · ETA 0.95h for the segment · last finish=stop gen_tok=34
+  [2400/3754 this process · 11887/13241 segment] 2.47s/row · 1483 chunks/h · ETA 0.91h for the segment · last finish=stop gen_tok=40
+  [2450/3754 this process · 11937/13241 segment] 4.99s/row · 1481 chunks/h · ETA 0.88h for the segment · last finish=stop gen_tok=108
+  [2500/3754 this process · 11987/13241 segment] 1.72s/row · 1481 chunks/h · ETA 0.85h for the segment · last finish=stop gen_tok=16
+  [2550/3754 this process · 12037/13241 segment] 3.04s/row · 1482 chunks/h · ETA 0.81h for the segment · last finish=stop gen_tok=54
+  [2600/3754 this process · 12087/13241 segment] 3.54s/row · 1483 chunks/h · ETA 0.78h for the segment · last finish=stop gen_tok=70
+  [2650/3754 this process · 12137/13241 segment] 1.82s/row · 1486 chunks/h · ETA 0.74h for the segment · last finish=stop gen_tok=16
+  [2700/3754 this process · 12187/13241 segment] 1.70s/row · 1490 chunks/h · ETA 0.71h for the segment · last finish=stop gen_tok=15
+  [2750/3754 this process · 12237/13241 segment] 2.51s/row · 1490 chunks/h · ETA 0.67h for the segment · last finish=stop gen_tok=32
+  [2800/3754 this process · 12287/13241 segment] 1.57s/row · 1493 chunks/h · ETA 0.64h for the segment · last finish=stop gen_tok=16
+  [2850/3754 this process · 12337/13241 segment] 2.27s/row · 1493 chunks/h · ETA 0.61h for the segment · last finish=stop gen_tok=33
+  [2900/3754 this process · 12387/13241 segment] 2.26s/row · 1491 chunks/h · ETA 0.57h for the segment · last finish=stop gen_tok=33
+  [2950/3754 this process · 12437/13241 segment] 2.23s/row · 1492 chunks/h · ETA 0.54h for the segment · last finish=stop gen_tok=24
+  [3000/3754 this process · 12487/13241 segment] 2.03s/row · 1491 chunks/h · ETA 0.51h for the segment · last finish=stop gen_tok=27
+  [3050/3754 this process · 12537/13241 segment] 1.35s/row · 1494 chunks/h · ETA 0.47h for the segment · last finish=stop gen_tok=7
+  [3100/3754 this process · 12587/13241 segment] 1.88s/row · 1495 chunks/h · ETA 0.44h for the segment · last finish=stop gen_tok=24
+  [3150/3754 this process · 12637/13241 segment] 1.98s/row · 1497 chunks/h · ETA 0.40h for the segment · last finish=stop gen_tok=27
+  [3200/3754 this process · 12687/13241 segment] 1.66s/row · 1498 chunks/h · ETA 0.37h for the segment · last finish=stop gen_tok=16
+  [3250/3754 this process · 12737/13241 segment] 1.88s/row · 1503 chunks/h · ETA 0.34h for the segment · last finish=stop gen_tok=16
+  [3300/3754 this process · 12787/13241 segment] 2.09s/row · 1504 chunks/h · ETA 0.30h for the segment · last finish=stop gen_tok=16
+  [3350/3754 this process · 12837/13241 segment] 1.93s/row · 1506 chunks/h · ETA 0.27h for the segment · last finish=stop gen_tok=24
+  [3400/3754 this process · 12887/13241 segment] 3.13s/row · 1507 chunks/h · ETA 0.23h for the segment · last finish=stop gen_tok=51
+  [3450/3754 this process · 12937/13241 segment] 2.43s/row · 1507 chunks/h · ETA 0.20h for the segment · last finish=stop gen_tok=32
+  [3500/3754 this process · 12987/13241 segment] 3.29s/row · 1507 chunks/h · ETA 0.17h for the segment · last finish=stop gen_tok=50
+  [3550/3754 this process · 13037/13241 segment] 2.26s/row · 1508 chunks/h · ETA 0.14h for the segment · last finish=stop gen_tok=33
+  [3600/3754 this process · 13087/13241 segment] 2.29s/row · 1509 chunks/h · ETA 0.10h for the segment · last finish=stop gen_tok=32
+  [3650/3754 this process · 13137/13241 segment] 1.74s/row · 1510 chunks/h · ETA 0.07h for the segment · last finish=stop gen_tok=16
+  [3700/3754 this process · 13187/13241 segment] 2.45s/row · 1510 chunks/h · ETA 0.04h for the segment · last finish=stop gen_tok=32
+  [3750/3754 this process · 13237/13241 segment] 2.88s/row · 1511 chunks/h · ETA 0.00h for the segment · last finish=stop gen_tok=45
+  [3754/3754 this process · 13241/13241 segment] 1.84s/row · 1512 chunks/h · ETA 0.00h for the segment · last finish=stop gen_tok=27
+
+SEGMENT seg-013 COMPLETE — 13241/13241 rows.
+Now finalize with the SYSTEM python3 (no GPU, seconds):
+    python3 finetune/label_e2.py --finalize-segment seg-013

@@ -1,0 +1,485 @@
+
+
+########## CARD 41 [T3_EXT] reason=no_toc_and_no_heading_match
+### NOT IN CORPUS (FAIL): EMERSON ELECTRIC CO 10-Q MDA 2016-08-03 0000032604-16-000097 reason=no_toc_and_no_heading_match
+
+
+########## CARD 42 [T3_EXT] reason=head_foreign_item
+### NIKE, Inc. | CIK 320187 | 10-Q | MDA | 2025-12-30 | 0000320187-25-000151
+    method=anchor conf=medium status=FLAGGED flags=['below_length_floor', 'head_foreign_item', 'head_keyword_absent']
+    words=666 chars=4188 prose_paras=1 prose_share=0.1201 below_floor=True
+--- HEAD ---
+ITEM 1A. RISK FACTORS
+There have been no material changes in our risk factors from those disclosed in Part I, Item 1A of our Annual Report on Form 10-K for the fiscal year ended May 31, 2025.
+44
+Table of Contents
+ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS
+In June 2022, the Board of Directors approved a four-year, $18 billion share repurchase program. As of November 30, 2025, the Company had repurchased 124.4 million shares at an average price of $97.57 per share for a total approximate cost of $12.1 billion under the program. No shares were repurchased during the quarter ended November 30, 2025. We paused repurchases under this program during the first quarter of fiscal 2026, due to lower operating cash flows in the current year.
+All share repurchases were made under NIKE's publicly announced program, and there are no other programs under which the Compan
+y repurchases shares.
+45
+Table of Contents
+ITEM 5. OTHER INFORMATION
+Rule 10b5-1 Trading Plans
+During the fiscal quarter ended November 30, 2025, none of our directors or officers (as defined in Rule 16a-1 under the Exchange Act)
+adopted
+or
+terminated
+a "Rule 10b5-1 trading arrangement" or "non-Rule 10b5-1
+--- MID ---
+ certain conditions. The arrangement's expiration date is
+September 30, 2026
+.
+46
+Table of Contents
+ITEM 6. EXHIBITS
+Exhibits:
+3.1
+Restated Articles of Incorporation, as amended (incorporated by reference to Exhibit 3.1 to the Company's Quarterly Report on Form 10-Q for the fiscal quarter ended November 30, 2015).
+3.2
+Sixth Amended and Restated Bylaws (incorporated by reference to Exhibit 3.1 to the Company's Current Report on Form 8-K filed September 20, 2024).
+4.1
+Restated Articles of Incorporation, as amended (see Exhibit 3.1).
+4.2
+Sixth Amended and Restated Bylaws (see Exhibit 3.2).
+10.1
+N
+--- TAIL ---
+base
+101.PRE
+Inline XBRL Taxonomy Extension Presentation Linkbase
+104
+Cover Page Interactive Data File - formatted in Inline XBRL and included in Exhibit 101
+* Management contract or compensatory plan or arrangement.
+†
+Furnished herewith
+47
+Table of Contents
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized.
+NIKE, INC.
+an Oregon Corporation
+By:
+/s/ Matthew Friend
+Matthew Friend
+Chief Financial Officer and Authorized Officer
+Date:
+December 30, 2025
+48
+
+
+########## CARD 43 [T3_EXT] reason=earnings_item202_prefix_large
+### EMERSON ELECTRIC CO | CIK 32604 | 8-K | 8K_BODY | 2021-10-12 | 0000950103-21-015731
+    method=item202_slice conf=medium status=FLAGGED flags=['earnings_population_gate', 'earnings_item202_prefix_large']
+    words=2062 chars=14010 prose_paras=0 prose_share=0.0 below_floor=False
+--- HEAD ---
+Item 2.02 Results of Operations and Financial Conditions.
+In connection with the announcement of the Transactions, Emerson reaffirmed
+previously announced fiscal year 2021 underlying sales guidance and adjusted EPS guidance.
+The following tables summarize the reaffirmed guidance and reconcile
+these non-GAAP financial measures to the most directly comparable U.S. GAAP measure.
+Reconciliations of Non-GAAP Financial Measures – Emerson:
+Underlying Sales Change:
+FY 2021
+Reported (GAAP)
+9% - 10%
+(Favorable) / Unfavorable FX
+(3)%
+Acquisitions / Divestitures
+(1)%
+Underlying (non-GAAP)
+5% - 6%
+Adjusted Earnings Per Share:
+FY 2021
+Reported (GAAP)
+$3.78 - $3.80
+Restructuring
+.24
+OSI purchase accounting items and fees
+.07
+Equity investment gain
+(.03)
+Adjusted Earnings Per Share
+$4.06 - $4.08
+These are Emerson’s preliminary estimates based on currently
+available information, and are subject to change as Emerson completes its financial close process. They also do not present all necessary
+information for an understanding of Emerson’s financial condition as of September 30, 2021 or its results of operations for the
+year ended September 30, 2021.
+The information in this Item 2.02 shall not be deem
+--- MID ---
+ements, including: statements
+regarding the expected timing and structure of the proposed transaction; the ability of the parties to complete the proposed transaction
+considering the various closing conditions; the expected benefits of the proposed transaction, such as improved operations, enhanced revenues
+and cash flow, synergies, growth potential, market profile, business plans, expanded portfolio and financial strength; the competitive
+ability and position of Newco following completion of the proposed transaction; legal, economic and regulatory conditions; and any assumptions
+underlying an
+--- TAIL ---
+ndertakes any obligation to update any forward-looking statements, whether as a result of new information
+or development, future events or otherwise, except as required by law. Readers are cautioned not to place undue reliance on any of these
+forward-looking statements.
+SIGNATURE
+Pursuant to the requirements of the Securities
+Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+EMERSON
+ELECTRIC CO.
+(Registrant)
+Date:
+October 12, 2021
+By:
+/s/
+John A. Sperino
+John
+A. Sperino
+Vice
+President and
+Assistant
+Secretary
+
+
+########## CARD 44 [T3_EXT] reason=earnings_population_gate
+### INTUITIVE SURGICAL INC | CIK 1035267 | 8-K | EX99_PRESS_RELEASE | 2020-04-08 | 0001035267-20-000071
+    method=whole_document conf=medium status=FLAGGED flags=['earnings_population_gate']
+    words=1122 chars=7676 prose_paras=7 prose_share=0.8128 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+Intuitive Announces Preliminary First Quarter Results; Provides Update on COVID-19 Impact
+SUNNYVALE, Calif., April 08, 2020
+– Intuitive (the “Company”) (Nasdaq: ISRG), a global technology leader in minimally invasive care and the pioneer of robotic-assisted surgery, today announced certain unaudited preliminary first quarter 2020 operational results. Full financial results for the Company’s first quarter of 2020 will be provided on the Company’s earnings call scheduled for April 16, 2020.
+•
+First quarter 2020 estimated worldwide da Vinci procedures increased approximately 10% compared with the first quarter of 2019.
+•
+The Company shipped 237 da Vinci Surgical Systems in the first quarter of 2020 compared with 235 in the first quarter of 2019.
+As previously disclosed in an 8-K filed on March 16, 2020, the Company experienced disruption of procedures in countries with healthcare systems impacted early by the COVID-19 outbreak. The Company indicated that procedure volume and system placement disruption would expand as the COVID-19 pandemic intensified, and the total impact of these disruptions could have a material impact on our financial results. In the latter half of Ma
+--- MID ---
+tatements, including statements regarding the Company’s unaudited preliminary financial and operational results for the first quarter of 2020 and the expected impact of the COVID-19.
+These forward-looking statements are necessarily estimates reflecting the best judgment of the Company’s management and involve a number of risks and uncertainties that could cause actual results to differ materially from those suggested by the forward-looking statements.
+These forward-looking statements should, therefore, be considered in light of various important factors, including, but not limited to, the foll
+--- TAIL ---
+Exchange Commission. Statements using words such as “estimates,” “projects,” “believes,” “anticipates,” “plans,” “expects,” “intends,” “may,” “will,” “could,” “should,” “would,” “targeted,” and similar words and expressions are intended to identify forward-looking statements. You are cautioned not to place undue reliance on these forward-looking statements, which speak only as of the date of this press release. The Company undertakes no obligation to publicly update or release any revisions to these forward-looking statements, except as required by law.
+Contact:
+Investor Relations
+408-523-2161
+
+
+########## CARD 45 [T3_EXT] reason=earnings_item202_block_thin
+### PIONEER NATURAL RESOURCES CO | CIK 1038357 | 8-K | 8K_BODY | 2016-04-18 | 0001038357-16-000119
+    method=item202_slice conf=medium status=FLAGGED flags=['earnings_population_gate', 'earnings_item202_block_thin']
+    words=1129 chars=6993 prose_paras=3 prose_share=0.3915 below_floor=False
+--- HEAD ---
+Item 2.02. Results of Operations and Financial Condition
+Explanatory note: Pioneer Natural Resources Company and its subsidiaries ("Pioneer" or the "Company") presents in this Item 2.02 information regarding the impact of changes in the fair values of derivative instruments on its results of operations for the
+three
+months ended
+March 31, 2016
+and certain other information regarding its derivative instruments.
+The following table summarizes the net derivative
+gains
+that the Company expects to report in its earnings for the
+three
+months ended
+March 31, 2016
+:
+DERIVATIVE GAINS, NET
+(in millions)
+Three Months Ended March 31, 2016
+Noncash changes in fair value:
+Oil derivative losses
+$
+(155
+)
+NGL derivative losses
+(9
+)
+Gas derivative losses
+(9
+)
+Interest rate derivative losses
+(2
+)
+Total noncash derivative losses, net
+(175
+)
+Net cash receipts on settled derivative instruments:
+Oil derivative receipts
+194
+NGL derivative receipts
+4
+Gas derivative receipts
+20
+Total cash derivative receipts, net
+218
+Total derivative gains, net
+$
+43
+Item 7.01 Regulation FD Disclosure
+Oil, NGL and gas price derivatives.
+The following table presents the Company’s open commodity oil, NGL and gas derivative posi
+--- MID ---
+
+, the Company was party to interest rate derivative contracts whereby the Company will receive the three-month LIBOR rate for the 10-year period from December 2017 through December 2027 in exchange for paying a fixed interest rate of 1.98 percent on a notional amount of $200 million on December 15, 2017.
+Marketing derivatives
+. Periodically, the Company enters into buy and sell marketing arrangements to fulfill firm pipeline transportation commitments. Associated with these marketing arrangements, the Company may enter into index swaps to mitigate price risk. As of
+April 15, 2016
+, the Compan
+--- TAIL ---
+s can be given that the actual events and results will not be materially different than the anticipated results described in the forward-looking statements. The Company undertakes no duty to publicly update these statements except as required by law.
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+PIONEER NATURAL RESOURCES COMPANY
+By:
+/s/ Margaret M. Montemayor
+Margaret M. Montemayor,
+Vice President and Chief Accounting Officer
+Dated: April 18, 2016
+
+
+########## CARD 46 [T3_EXT] reason=mda_stub_unresolved_same_doc
+### INTERNATIONAL BUSINESS MACHINES CORP | CIK 51143 | 10-K | MDA | 2018-02-27 | 0001047469-18-001117
+    method=incorporated_by_reference_unresolved conf=low status=FLAGGED flags=['mda_stub_unresolved_same_doc', 'heading_regex_fallback', 'below_length_floor']
+    words=13 chars=93 prose_paras=0 prose_share=0.0 below_floor=True
+--- HEAD ---
+Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations
+
+
+########## CARD 47 [T3_EXT] reason=empty_after_extraction
+### NOT IN CORPUS (FAIL): METLIFE INC 8-K EX99_PRESS_RELEASE 2023-02-07 0001099219-23-000041 reason=empty_after_extraction
+
+
+########## CARD 48 [T3_EXT] reason=mda_stub_resolved
+### WARNER MEDIA, LLC | CIK 1105705 | 10-K | MDA | 2018-02-22 | 0001193125-18-053619
+    method=incorporated_by_reference_resolved conf=medium status=FLAGGED flags=['mda_stub_resolved', 'heading_regex_fallback']
+    words=47927 chars=310675 prose_paras=117 prose_share=0.1008 below_floor=False
+--- HEAD ---
+MANAGEMENT’S DISCUSSION AND ANALYSIS
+OF RESULTS OF OPERATIONS AND FINANCIAL CONDITION - (Continued)
+provide for annual fee increases and marketing support. The relationship between subscriber totals and the amount of revenues earned under Home Box Office affiliate agreements depends on the
+specific terms of the applicable agreement, which may include basic and/or pay television subscriber thresholds, volume discounts and other performance-based discounts. Marketing and promotional activities intended to retain existing subscribers and
+acquire new subscribers may also impact revenue earned. Internationally, Home Box Office generates subscription revenues by licensing programming to international affiliates that have contracted to receive and distribute such programming to their
+customers. In some countries, Home Box Office also generates subscription revenues from OTT services that are distributed to consumers either directly or through third parties. Additional sources of revenues for Home Box Office are the licensing of
+its original programming, including
+Game of Thrones
+,
+The Deuce
+and
+Big Little Lies
+, and the home entertainment sales of its original programming via physical and
+--- MID ---
+ts
+TIME WARNER INC.
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS - (Continued)
+qualitative assessment, then it is required to perform the first step of a
+two-step
+impairment review process. The first step of the
+two-step
+process involves a comparison of the estimated fair value of a reporting unit to its carrying amount. In performing the first step, the Company generally determines the fair value of a reporting unit using
+a discounted cash flow (“DCF”) analysis and, in certain cases, a combination of a DCF analysis and a market-based approach. Determining fair value requires the exercise of sig
+--- TAIL ---
+the framework set forth in “Internal Control — Integrated Framework” issued by the Committee of Sponsoring Organizations of the Treadway Commission (2013 Framework). Based on its
+evaluation, management concluded that, as of December 31, 2017, the Company’s internal control over financial reporting is effective based on the specified criteria.
+The effectiveness of the Company’s internal control over financial reporting has been audited by the Company’s
+independent auditor, Ernst & Young LLP, a registered public accounting firm, as stated in their report at page 143 herein.
+141
+Table of Contents
+
+
+########## CARD 49 [T3_EXT] reason=earnings_supplemental_diluted
+### BlackRock Finance, Inc. | CIK 1364742 | 8-K | EX99_PRESS_RELEASE | 2017-10-11 | 0001564590-17-019389
+    method=whole_document conf=medium status=FLAGGED flags=['earnings_supplemental_diluted']
+    words=8451 chars=52869 prose_paras=30 prose_share=0.2861 below_floor=False
+--- HEAD ---
+Exhibit 99.1
+Tom Wojcik, Investor Relations
+Brian Beades, Media Relations
+212.810.8127
+212.810.5596
+BlackRock Reports Third Quarter 2017 Diluted EPS of $5.78, or $5.92 as adjusted
+▪
+$96 billion of total net inflows in the third quarter reflects continued strength of diversified business model
+▪
+$76 billion of long-term net inflows, positive across client type, investment style and region
+▪
+14% increase in revenue year-over-year driven by growth in base fees, performance fees and technology and risk management revenue
+▪
+15% increase in operating income year-over-year reflects operating margin expansion
+▪
+10% increase in diluted EPS (15% as adjusted) year-over-year
+▪
+Consistent capital management with $275 million of quarterly share repurchases
+FINANCIAL RESULTS
+Q3
+Q3
+Q2
+Nine Months Ended September 30,
+(in millions, except per share data)
+2017
+2016
+Change
+2017
+Change
+2017
+2016
+Change
+AUM
+$
+5,976,892
+$
+5,117,421
+17
+%
+$
+5,689,273
+5
+%
+$
+5,976,892
+$
+5,117,421
+17
+%
+Total net flows
+$
+96,112
+$
+69,809
+$
+103,616
+$
+264,326
+$
+104,140
+GAAP basis:
+Revenue
+$
+3,233
+$
+2,837
+14
+%
+$
+2,965
+9
+%
+$
+9,022
+$
+8,265
+9
+%
+Operating income
+$
+1,394
+$
+1,209
+15
+%
+$
+1,242
+12
+%
+$
+3,783
+$
+3,345
+13
+%
+Operating margin
+4
+--- MID ---
+
+693
+128
+16,443
+16,435
+Retail subtotal
+554,778
+16,055
+-
+33,205
+4,483
+608,521
+570,278
+iShares
+ETFs:
+Equity
+891,010
+180,138
+-
+150,283
+6,964
+1,228,395
+1,049,435
+Fixed income
+329,462
+58,453
+-
+(5,239
+)
+3,591
+386,267
+345,114
+Multi-asset
+2,506
+755
+-
+223
+7
+3,491
+2,999
+Alternatives
+23,188
+495
+-
+(1,448
+)
+49
+22,284
+20,724
+iShares
+ETFs subtotal
+1,246,166
+239,841
+-
+143,819
+10,611
+1,640,437
+1,418,272
+Institutional:
+Active:
+Equity
+123,770
+(15,161
+)
+-
+20,675
+1,082
+130,366
+124,915
+Fixed income
+560,799
+(1,700
+)
+-
+3,168
+(240
+)
+562,027
+550,908
+Multi-asset
+280,406
+22,351
+-
+19,126
+5,850
+327,733
+295,524
+Alternatives
+--- TAIL ---
+mance and includes all institutional accounts and all
+iShares
+funds globally using an index strategy. AUM information is based on AUM available as of September 30, 2017 for each account or fund in the asset class shown without adjustment for overlapping management of the same account or fund. Fund performance reflects the reinvestment of dividends and distributions.
+Performance shown is derived from applicable benchmarks or peer median information, as selected by BlackRock, Inc. Peer medians are based in part on data either from Lipper, Inc. or Morningstar, Inc. for each included product.
+-15-
+
+
+########## CARD 50 [T3_EXT] reason=anchor_span_below_min_chars
+### NOT IN CORPUS (FAIL): SLB LIMITED/NV 10-Q RISK_FACTORS 2018-10-24 0001564590-18-024846 reason=anchor_span_below_min_chars

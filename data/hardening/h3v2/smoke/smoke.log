@@ -1,0 +1,17 @@
+relabel_e1 — resolved paths
+  mlx_data_dir           /Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12
+  labels_parquet         /Users/vihanpatil/personal/projects/FinScreen/data/labels_v12.parquet
+  adapter_path           /Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2
+  train_manifest         /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/manifest.json
+  reference_predictions  /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/predictions.jsonl
+  out_dir                /Users/vihanpatil/personal/projects/FinScreen/data/hardening/h3v2/smoke
+  name_suffix            _v12
+  run_id                 H3v2-e1-relabel-v12-epoch2
+rendered 10 prompts in 0.0s · 0 already in e1_relabel_student_v12.jsonl · 10 to generate
+loading base model + adapter (the only GPU work) ...
+  loaded in 0.9s
+  [10/10 this segment · 10/10 overall] 1.64s/row · 1191 chunks/h · ETA 0.00h to finish the corpus · last finish=stop gen_tok=16
+
+GENERATION COMPLETE — 10/10 rows.
+Now run the finalize step with the SYSTEM python3 (no GPU, seconds):
+    python3 finetune/relabel_e1.py --v12 --finalize-only

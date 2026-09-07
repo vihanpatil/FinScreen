@@ -1,0 +1,1304 @@
+{
+ "no_float_concept": [],
+ "suspect_float_facts": [
+  {
+   "cik": 5272,
+   "name": "AMERICAN INTERNATIONAL GROUP, INC.",
+   "n": 2
+  },
+  {
+   "cik": 6769,
+   "name": "APACHE CORP",
+   "n": 3
+  },
+  {
+   "cik": 29915,
+   "name": "DOW CHEMICAL CO /DE/",
+   "n": 2
+  },
+  {
+   "cik": 30554,
+   "name": "EIDP, Inc.",
+   "n": 1
+  },
+  {
+   "cik": 55785,
+   "name": "KIMBERLY CLARK CORP",
+   "n": 1
+  },
+  {
+   "cik": 72971,
+   "name": "WELLS FARGO & COMPANY/MN",
+   "n": 1
+  },
+  {
+   "cik": 89800,
+   "name": "SHERWIN WILLIAMS CO",
+   "n": 2
+  },
+  {
+   "cik": 712515,
+   "name": "ELECTRONIC ARTS INC.",
+   "n": 3
+  },
+  {
+   "cik": 718877,
+   "name": "Activision Blizzard, Inc.",
+   "n": 2
+  },
+  {
+   "cik": 732717,
+   "name": "AT&T INC.",
+   "n": 1
+  },
+  {
+   "cik": 753308,
+   "name": "NEXTERA ENERGY INC",
+   "n": 1
+  },
+  {
+   "cik": 773840,
+   "name": "HONEYWELL INTERNATIONAL INC",
+   "n": 2
+  },
+  {
+   "cik": 797468,
+   "name": "OCCIDENTAL PETROLEUM CORP /DE/",
+   "n": 1
+  },
+  {
+   "cik": 804328,
+   "name": "QUALCOMM INC/DE",
+   "n": 1
+  },
+  {
+   "cik": 821189,
+   "name": "EOG RESOURCES INC",
+   "n": 2
+  },
+  {
+   "cik": 831259,
+   "name": "FREEPORT-MCMORAN INC",
+   "n": 1
+  },
+  {
+   "cik": 1039684,
+   "name": "ONEOK INC /NEW/",
+   "n": 2
+  },
+  {
+   "cik": 1065088,
+   "name": "EBAY INC",
+   "n": 1
+  },
+  {
+   "cik": 1122304,
+   "name": "AETNA INC /PA/",
+   "n": 2
+  },
+  {
+   "cik": 1161154,
+   "name": "Energy Transfer Operating, L.P.",
+   "n": 2
+  },
+  {
+   "cik": 1164727,
+   "name": "NEWMONT Corp /DE/",
+   "n": 1
+  },
+  {
+   "cik": 1389170,
+   "name": "Targa Resources Corp.",
+   "n": 1
+  },
+  {
+   "cik": 1506307,
+   "name": "KINDER MORGAN, INC.",
+   "n": 2
+  },
+  {
+   "cik": 1551182,
+   "name": "Eaton Corp plc",
+   "n": 1
+  },
+  {
+   "cik": 1552000,
+   "name": "MPLX LP",
+   "n": 1
+  },
+  {
+   "cik": 1585521,
+   "name": "Zoom Communications, Inc.",
+   "n": 1
+  },
+  {
+   "cik": 1616314,
+   "name": "MedEquities Realty Trust, Inc.",
+   "n": 1
+  },
+  {
+   "cik": 1633917,
+   "name": "PayPal Holdings, Inc.",
+   "n": 1
+  },
+  {
+   "cik": 1637459,
+   "name": "Kraft Heinz Co",
+   "n": 1
+  },
+  {
+   "cik": 1645590,
+   "name": "Hewlett Packard Enterprise Co",
+   "n": 1
+  },
+  {
+   "cik": 1652044,
+   "name": "Alphabet Inc.",
+   "n": 2
+  },
+  {
+   "cik": 1666700,
+   "name": "DuPont de Nemours, Inc.",
+   "n": 1
+  },
+  {
+   "cik": 1782754,
+   "name": "AZEK Co Inc.",
+   "n": 5
+  },
+  {
+   "cik": 1868275,
+   "name": "Constellation Energy Corp",
+   "n": 1
+  }
+ ],
+ "multi_ticker_share_classes": [
+  {
+   "cik": 12927,
+   "name": "BOEING CO",
+   "tickers": [
+    "BA",
+    "BA-PA"
+   ]
+  },
+  {
+   "cik": 14272,
+   "name": "BRISTOL MYERS SQUIBB CO",
+   "tickers": [
+    "BMY",
+    "CELG-RI"
+   ]
+  },
+  {
+   "cik": 19617,
+   "name": "JPMORGAN CHASE & CO",
+   "tickers": [
+    "JPM",
+    "JPM-PC",
+    "AMJB",
+    "JPM-PD",
+    "JPM-PJ",
+    "JPM-PK",
+    "JPM-PL",
+    "JPM-PM",
+    "VYLD"
+   ]
+  },
+  {
+   "cik": 30554,
+   "name": "EIDP, Inc.",
+   "tickers": [
+    "CTA-PB",
+    "CTA-PA"
+   ]
+  },
+  {
+   "cik": 36104,
+   "name": "US BANCORP \\DE\\",
+   "tickers": [
+    "USB",
+    "USB-PA",
+    "USB-PH",
+    "USB-PP",
+    "USB-PQ",
+    "USB-PR",
+    "USB-PS"
+   ]
+  },
+  {
+   "cik": 37996,
+   "name": "FORD MOTOR CO",
+   "tickers": [
+    "F",
+    "F-PB",
+    "F-PC",
+    "F-PD"
+   ]
+  },
+  {
+   "cik": 70858,
+   "name": "BANK OF AMERICA CORP /DE/",
+   "tickers": [
+    "BAC",
+    "BML-PG",
+    "BML-PL",
+    "BAC-PB",
+    "BAC-PK",
+    "BAC-PE",
+    "BAC-PL",
+    "BAC-PM",
+    "BAC-PN",
+    "BAC-PO",
+    "BAC-PP",
+    "BAC-PQ",
+    "BAC-PS",
+    "BACRP",
+    "BML-PH",
+    "BML-PJ",
+    "MER-PK"
+   ]
+  },
+  {
+   "cik": 72903,
+   "name": "XCEL ENERGY INC",
+   "tickers": [
+    "XEL",
+    "XELLL"
+   ]
+  },
+  {
+   "cik": 72971,
+   "name": "WELLS FARGO & COMPANY/MN",
+   "tickers": [
+    "WFC",
+    "WFC-PY",
+    "WFC-PL",
+    "WFC-PC",
+    "WFCNP",
+    "WFC-PA",
+    "WFC-PD",
+    "WFC-PZ"
+   ]
+  },
+  {
+   "cik": 92122,
+   "name": "SOUTHERN CO",
+   "tickers": [
+    "SO",
+    "SOJC",
+    "SOJD",
+    "SOJE",
+    "SOJF",
+    "SOMN"
+   ]
+  },
+  {
+   "cik": 92230,
+   "name": "TRUIST FINANCIAL CORP",
+   "tickers": [
+    "TFC",
+    "TFC-PI",
+    "TFC-PO",
+    "TFC-PR"
+   ]
+  },
+  {
+   "cik": 316709,
+   "name": "SCHWAB CHARLES CORP",
+   "tickers": [
+    "SCHW",
+    "SCHW-PD",
+    "SCHW-PJ"
+   ]
+  },
+  {
+   "cik": 732717,
+   "name": "AT&T INC.",
+   "tickers": [
+    "T",
+    "TBB",
+    "T-PA",
+    "T-PC"
+   ]
+  },
+  {
+   "cik": 753308,
+   "name": "NEXTERA ENERGY INC",
+   "tickers": [
+    "NEE",
+    "NEE-PN",
+    "NEE-PS",
+    "NEE-PT",
+    "NEE-PU",
+    "NEE-PV",
+    "NEE-PW"
+   ]
+  },
+  {
+   "cik": 797468,
+   "name": "OCCIDENTAL PETROLEUM CORP /DE/",
+   "tickers": [
+    "OXY",
+    "OXY-WT"
+   ]
+  },
+  {
+   "cik": 831001,
+   "name": "CITIGROUP INC",
+   "tickers": [
+    "C",
+    "C-PN",
+    "C-PR"
+   ]
+  },
+  {
+   "cik": 849399,
+   "name": "Gen Digital Inc.",
+   "tickers": [
+    "GEN",
+    "GENVR"
+   ]
+  },
+  {
+   "cik": 886982,
+   "name": "GOLDMAN SACHS GROUP INC",
+   "tickers": [
+    "GS",
+    "GSCE",
+    "GS-PA",
+    "GS-PC",
+    "GS-PD"
+   ]
+  },
+  {
+   "cik": 895421,
+   "name": "MORGAN STANLEY",
+   "tickers": [
+    "MS",
+    "MS-PK",
+    "MS-PE",
+    "MS-PA",
+    "MS-PF",
+    "MS-PI",
+    "MS-PL",
+    "MS-PO",
+    "MS-PP",
+    "MS-PQ"
+   ]
+  },
+  {
+   "cik": 895728,
+   "name": "ENBRIDGE INC",
+   "tickers": [
+    "ENB",
+    "EBBNF",
+    "EBBGF",
+    "EBGEF",
+    "EBRGF",
+    "EBRZF",
+    "ENBFF",
+    "ENBGF",
+    "ENBHF",
+    "ENBMF",
+    "ENBNF",
+    "ENBOF",
+    "ENBRF",
+    "ENBSF",
+    "ENFFF",
+    "ENNPF"
+   ]
+  },
+  {
+   "cik": 922224,
+   "name": "PPL Corp",
+   "tickers": [
+    "PPL",
+    "PPLC"
+   ]
+  },
+  {
+   "cik": 927628,
+   "name": "CAPITAL ONE FINANCIAL CORP",
+   "tickers": [
+    "COF",
+    "COF-PI",
+    "COF-PJ",
+    "COF-PK",
+    "COF-PL",
+    "COF-PN"
+   ]
+  },
+  {
+   "cik": 1032208,
+   "name": "SEMPRA",
+   "tickers": [
+    "SRE",
+    "SREA"
+   ]
+  },
+  {
+   "cik": 1045609,
+   "name": "Prologis, Inc.",
+   "tickers": [
+    "PLD",
+    "PLDGP"
+   ]
+  },
+  {
+   "cik": 1061219,
+   "name": "ENTERPRISE PRODUCTS PARTNERS L.P.",
+   "tickers": [
+    "EPD",
+    "EPDU"
+   ]
+  },
+  {
+   "cik": 1063761,
+   "name": "SIMON PROPERTY GROUP INC.",
+   "tickers": [
+    "SPG",
+    "SPG-PJ"
+   ]
+  },
+  {
+   "cik": 1067983,
+   "name": "BERKSHIRE HATHAWAY INC",
+   "tickers": [
+    "BRK-B",
+    "BRK-A"
+   ]
+  },
+  {
+   "cik": 1099219,
+   "name": "METLIFE INC",
+   "tickers": [
+    "MET",
+    "MET-PA",
+    "MET-PE",
+    "MET-PF"
+   ]
+  },
+  {
+   "cik": 1137774,
+   "name": "PRUDENTIAL FINANCIAL INC",
+   "tickers": [
+    "PRU",
+    "PFH",
+    "PRH",
+    "PRS"
+   ]
+  },
+  {
+   "cik": 1164727,
+   "name": "NEWMONT Corp /DE/",
+   "tickers": [
+    "NEM",
+    "NEMCL"
+   ]
+  },
+  {
+   "cik": 1166691,
+   "name": "COMCAST CORP",
+   "tickers": [
+    "CMCSA",
+    "CCZ"
+   ]
+  },
+  {
+   "cik": 1276187,
+   "name": "Energy Transfer LP",
+   "tickers": [
+    "ET",
+    "ET-PI"
+   ]
+  },
+  {
+   "cik": 1283699,
+   "name": "T-Mobile US, Inc.",
+   "tickers": [
+    "TMUS",
+    "TMUSI",
+    "TMUSL",
+    "TMUSZ"
+   ]
+  },
+  {
+   "cik": 1297996,
+   "name": "DIGITAL REALTY TRUST, INC.",
+   "tickers": [
+    "DLR",
+    "DLR-PK",
+    "DLR-PJ",
+    "DLR-PL"
+   ]
+  },
+  {
+   "cik": 1341439,
+   "name": "ORACLE CORP",
+   "tickers": [
+    "ORCL",
+    "ORCL-PD"
+   ]
+  },
+  {
+   "cik": 1390777,
+   "name": "Bank of New York Mellon Corp",
+   "tickers": [
+    "BNY",
+    "BNY-PK"
+   ]
+  },
+  {
+   "cik": 1404912,
+   "name": "KKR & Co. Inc.",
+   "tickers": [
+    "KKR",
+    "KKR-PD",
+    "KKRS",
+    "KKRT"
+   ]
+  },
+  {
+   "cik": 1506307,
+   "name": "KINDER MORGAN, INC.",
+   "tickers": [
+    "KMI",
+    "EP-PC"
+   ]
+  },
+  {
+   "cik": 1512673,
+   "name": "Block, Inc.",
+   "tickers": [
+    "XYZ",
+    "BSQKZ"
+   ]
+  },
+  {
+   "cik": 1552000,
+   "name": "MPLX LP",
+   "tickers": [
+    "MPLX",
+    "MPLXP"
+   ]
+  },
+  {
+   "cik": 1645590,
+   "name": "Hewlett Packard Enterprise Co",
+   "tickers": [
+    "HPE",
+    "HPE-PC"
+   ]
+  },
+  {
+   "cik": 1652044,
+   "name": "Alphabet Inc.",
+   "tickers": [
+    "GOOGL",
+    "GOOG",
+    "GOOGM",
+    "GOOGN"
+   ]
+  }
+ ],
+ "no_ticker_but_active": [
+  {
+   "cik": 29915,
+   "name": "DOW CHEMICAL CO /DE/",
+   "last_periodic": "2026-07-24",
+   "former_names": []
+  },
+  {
+   "cik": 34088,
+   "name": "EXXON MOBIL CORP",
+   "last_periodic": "2026-08-03",
+   "former_names": [
+    "EXXON CORP"
+   ]
+  }
+ ],
+ "renamed_entities": [
+  {
+   "cik": 4447,
+   "name": "HESS CORP",
+   "former_names": [
+    "AMERADA HESS CORP"
+   ]
+  },
+  {
+   "cik": 34088,
+   "name": "EXXON MOBIL CORP",
+   "former_names": [
+    "EXXON CORP"
+   ]
+  },
+  {
+   "cik": 701221,
+   "name": "Cigna Holding Co",
+   "former_names": [
+    "CIGNA CORP"
+   ]
+  },
+  {
+   "cik": 718877,
+   "name": "Activision Blizzard, Inc.",
+   "former_names": [
+    "ACTIVISION INC /NY"
+   ]
+  },
+  {
+   "cik": 804753,
+   "name": "CERNER Corp",
+   "former_names": [
+    "CERNER CORP /MO/"
+   ]
+  },
+  {
+   "cik": 884905,
+   "name": "LINDE INC",
+   "former_names": [
+    "PRAXAIR INC"
+   ]
+  },
+  {
+   "cik": 936402,
+   "name": "Shire plc",
+   "former_names": [
+    "Shire Ltd.",
+    "SHIRE PHARMACEUTICALS GROUP PLC"
+   ]
+  },
+  {
+   "cik": 1001039,
+   "name": "TWDC Enterprises 18 Corp.",
+   "former_names": [
+    "WALT DISNEY CO/",
+    "DC HOLDCO INC"
+   ]
+  },
+  {
+   "cik": 1012569,
+   "name": "Energy Transfer, LP",
+   "former_names": [
+    "Energy Transfer Partners, L.P.",
+    "ENERGY TRANSFER PARTNERS LP",
+    "HERITAGE PROPANE PARTNERS L P"
+   ]
+  },
+  {
+   "cik": 1047122,
+   "name": "RAYTHEON CO/",
+   "former_names": [
+    "HE HOLDINGS INC"
+   ]
+  },
+  {
+   "cik": 1105705,
+   "name": "WARNER MEDIA, LLC",
+   "former_names": [
+    "TIME WARNER LLC",
+    "TIME WARNER INC.",
+    "TIME WARNER INC"
+   ]
+  },
+  {
+   "cik": 1122304,
+   "name": "AETNA INC /PA/",
+   "former_names": [
+    "AETNA U S HEALTHCARE INC"
+   ]
+  },
+  {
+   "cik": 1126975,
+   "name": "Magellan Midstream Partners, L.P.",
+   "former_names": [
+    "MAGELLAN MIDSTREAM PARTNERS LP",
+    "WILLIAMS ENERGY PARTNERS L P"
+   ]
+  },
+  {
+   "cik": 1161154,
+   "name": "Energy Transfer Operating, L.P.",
+   "former_names": [
+    "Energy Transfer Partners, L.P.",
+    "SUNOCO LOGISTICS PARTNERS L.P.",
+    "SUNOCO LOGISTICS PARTNERS LP"
+   ]
+  },
+  {
+   "cik": 1271024,
+   "name": "LINKEDIN CORP",
+   "former_names": [
+    "LINKEDIN LTD"
+   ]
+  },
+  {
+   "cik": 1358071,
+   "name": "CONCHO RESOURCES INC",
+   "former_names": [
+    "CONCO RESOURCES INC"
+   ]
+  },
+  {
+   "cik": 1364742,
+   "name": "BlackRock Finance, Inc.",
+   "former_names": [
+    "BlackRock Inc.",
+    "BlackRock, Inc.",
+    "New BlackRock, Inc."
+   ]
+  },
+  {
+   "cik": 1373835,
+   "name": "Spectra Energy Corp.",
+   "former_names": [
+    "Gas SpinCo, Inc."
+   ]
+  },
+  {
+   "cik": 1418091,
+   "name": "TWITTER, INC.",
+   "former_names": [
+    "Twitter Inc"
+   ]
+  },
+  {
+   "cik": 1483096,
+   "name": "WILLIAMS PARTNERS L.P.",
+   "former_names": [
+    "ACCESS MIDSTREAM PARTNERS LP",
+    "CHESAPEAKE MIDSTREAM PARTNERS LP",
+    "Chesapeake Midstream Partners, L.P."
+   ]
+  },
+  {
+   "cik": 1532063,
+   "name": "Express Scripts Holding Co.",
+   "former_names": [
+    "Aristotle Holding, Inc."
+   ]
+  },
+  {
+   "cik": 1578845,
+   "name": "Allergan plc",
+   "former_names": [
+    "Actavis plc",
+    "Actavis Ltd"
+   ]
+  },
+  {
+   "cik": 1690881,
+   "name": "ASV HOLDINGS, INC.",
+   "former_names": [
+    "A.S.V., LLC"
+   ]
+  },
+  {
+   "cik": 1782754,
+   "name": "AZEK Co Inc.",
+   "former_names": [
+    "AZEK Co Inc.",
+    "CPG Newco LLC"
+   ]
+  }
+ ],
+ "ticker_map_disagreement": [],
+ "successor_cik_candidates": [
+  {
+   "cik": 4447,
+   "name": "HESS CORP",
+   "map_cik": 1789832,
+   "map_title": "Hess Midstream LP",
+   "map_ticker": "HESM"
+  },
+  {
+   "cik": 34088,
+   "name": "EXXON MOBIL CORP",
+   "map_cik": 2115436,
+   "map_title": "ExxonMobil Holdings Corp",
+   "map_ticker": "XOM"
+  },
+  {
+   "cik": 701221,
+   "name": "Cigna Holding Co",
+   "map_cik": 1739940,
+   "map_title": "Cigna Group",
+   "map_ticker": "CI"
+  },
+  {
+   "cik": 884905,
+   "name": "LINDE INC",
+   "map_cik": 1707925,
+   "map_title": "LINDE PLC",
+   "map_ticker": "LIN"
+  },
+  {
+   "cik": 1012569,
+   "name": "Energy Transfer, LP",
+   "map_cik": 1276187,
+   "map_title": "Energy Transfer LP",
+   "map_ticker": "ET"
+  },
+  {
+   "cik": 1038357,
+   "name": "PIONEER NATURAL RESOURCES CO",
+   "map_cik": 1769663,
+   "map_title": "Pioneer Bancorp, Inc./MD",
+   "map_ticker": "PBFS"
+  },
+  {
+   "cik": 1105705,
+   "name": "WARNER MEDIA, LLC",
+   "map_cik": 1437107,
+   "map_title": "Warner Bros. Discovery, Inc.",
+   "map_ticker": "WBD"
+  },
+  {
+   "cik": 1126975,
+   "name": "Magellan Midstream Partners, L.P.",
+   "map_cik": 1515317,
+   "map_title": "MAGELLAN COPPER & GOLD Corp",
+   "map_ticker": "MAGE"
+  },
+  {
+   "cik": 1161154,
+   "name": "Energy Transfer Operating, L.P.",
+   "map_cik": 1276187,
+   "map_title": "Energy Transfer LP",
+   "map_ticker": "ET"
+  },
+  {
+   "cik": 1364742,
+   "name": "BlackRock Finance, Inc.",
+   "map_cik": 2012383,
+   "map_title": "BlackRock, Inc.",
+   "map_ticker": "BLK"
+  },
+  {
+   "cik": 1373835,
+   "name": "Spectra Energy Corp.",
+   "map_cik": 1131903,
+   "map_title": "SPECTRAL CAPITAL Corp",
+   "map_ticker": "FCCN"
+  },
+  {
+   "cik": 1483096,
+   "name": "WILLIAMS PARTNERS L.P.",
+   "map_cik": 107263,
+   "map_title": "WILLIAMS COMPANIES, INC.",
+   "map_ticker": "WMB"
+  }
+ ],
+ "variant_overlap_continuity5_vs_broad8": {
+  "both": 112,
+  "continuity5_only": [
+   4447,
+   6769,
+   10795,
+   21665,
+   27419,
+   31462,
+   33213,
+   37996,
+   49071,
+   86312,
+   89800,
+   92230,
+   106040,
+   109198,
+   315293,
+   701221,
+   707549,
+   712515,
+   723125,
+   769397,
+   804753,
+   813672,
+   849399,
+   872589,
+   895126,
+   927653,
+   936402,
+   1001250,
+   1012569,
+   1090012,
+   1091667,
+   1099590,
+   1099800,
+   1110803,
+   1122304,
+   1123360,
+   1126975,
+   1137774,
+   1137789,
+   1161154,
+   1222333,
+   1271024,
+   1327567,
+   1358071,
+   1373715,
+   1373835,
+   1389170,
+   1390777,
+   1393818,
+   1404912,
+   1418091,
+   1467858,
+   1512673,
+   1532063,
+   1535527,
+   1539838,
+   1552000,
+   1564408,
+   1571949,
+   1585521,
+   1596532,
+   1618921,
+   1640147,
+   1645590,
+   1682852
+  ],
+  "broad8_only": [
+   2969,
+   3570,
+   4281,
+   4904,
+   12927,
+   18230,
+   24741,
+   29915,
+   30554,
+   32604,
+   40533,
+   49826,
+   55785,
+   64040,
+   72741,
+   72903,
+   73309,
+   79879,
+   92122,
+   97745,
+   100885,
+   101829,
+   106535,
+   313616,
+   315189,
+   715957,
+   726728,
+   732712,
+   732717,
+   753308,
+   766704,
+   773840,
+   788784,
+   823768,
+   827052,
+   831259,
+   849395,
+   884905,
+   906107,
+   915912,
+   922224,
+   936468,
+   1032208,
+   1034054,
+   1045609,
+   1047122,
+   1047862,
+   1051470,
+   1053507,
+   1060391,
+   1063761,
+   1075531,
+   1090727,
+   1101239,
+   1109357,
+   1133421,
+   1164727,
+   1283699,
+   1297996,
+   1318220,
+   1489393,
+   1551182,
+   1616314,
+   1666700,
+   1690881,
+   1692819,
+   1707925,
+   1751788,
+   1868275,
+   1996810
+  ]
+ },
+ "variant_overlap_hybrid136_vs_continuity5": {
+  "both": 176,
+  "hybrid136_only": [
+   2969,
+   3570,
+   4281,
+   4904,
+   12927,
+   18230,
+   24741,
+   29915,
+   30554,
+   32604,
+   40533,
+   49826,
+   55785,
+   64040,
+   72741,
+   72903,
+   73309,
+   79879,
+   92122,
+   97745,
+   100885,
+   101829,
+   106535,
+   313616,
+   315189,
+   715957,
+   726728,
+   732712,
+   732717,
+   753308,
+   766704,
+   773840,
+   788784,
+   823768,
+   827052,
+   831259,
+   849395,
+   884905,
+   906107,
+   915912,
+   922224,
+   936468,
+   1032208,
+   1034054,
+   1045609,
+   1047122,
+   1047862,
+   1051470,
+   1053507,
+   1060391,
+   1063761,
+   1075531,
+   1090727,
+   1101239,
+   1109357,
+   1133421,
+   1164727,
+   1283699,
+   1297996,
+   1318220,
+   1489393,
+   1551182,
+   1666700,
+   1692819,
+   1707925,
+   1751788,
+   1868275,
+   1996810
+  ],
+  "continuity5_only": [
+   1853513
+  ]
+ },
+ "e1_coverage": {
+  "continuity5": {
+   "present": [
+    19617,
+    21344,
+    34088,
+    63908,
+    70858,
+    78003,
+    80424,
+    87347,
+    93410,
+    104169,
+    200406,
+    310158,
+    320193,
+    354950,
+    731766,
+    789019,
+    797468,
+    858877,
+    886982,
+    1045810,
+    1141391,
+    1163165,
+    1403161,
+    1551152,
+    1652044
+   ],
+   "missing": []
+  },
+  "broad8": {
+   "present": [
+    19617,
+    21344,
+    34088,
+    63908,
+    70858,
+    78003,
+    80424,
+    87347,
+    93410,
+    104169,
+    200406,
+    310158,
+    320193,
+    354950,
+    731766,
+    789019,
+    797468,
+    858877,
+    886982,
+    1045810,
+    1141391,
+    1163165,
+    1403161,
+    1551152,
+    1652044
+   ],
+   "missing": []
+  },
+  "hybrid136": {
+   "present": [
+    19617,
+    21344,
+    34088,
+    63908,
+    70858,
+    78003,
+    80424,
+    87347,
+    93410,
+    104169,
+    200406,
+    310158,
+    320193,
+    354950,
+    731766,
+    789019,
+    797468,
+    858877,
+    886982,
+    1045810,
+    1141391,
+    1163165,
+    1403161,
+    1551152,
+    1652044
+   ],
+   "missing": []
+  }
+ },
+ "e1_names": {
+  "320193": [
+   "AAPL",
+   "tech"
+  ],
+  "789019": [
+   "MSFT",
+   "tech"
+  ],
+  "1652044": [
+   "GOOGL",
+   "tech"
+  ],
+  "1045810": [
+   "NVDA",
+   "tech"
+  ],
+  "858877": [
+   "CSCO",
+   "tech"
+  ],
+  "19617": [
+   "JPM",
+   "financials"
+  ],
+  "70858": [
+   "BAC",
+   "financials"
+  ],
+  "886982": [
+   "GS",
+   "financials"
+  ],
+  "1141391": [
+   "MA",
+   "financials"
+  ],
+  "1403161": [
+   "V",
+   "financials"
+  ],
+  "200406": [
+   "JNJ",
+   "healthcare"
+  ],
+  "731766": [
+   "UNH",
+   "healthcare"
+  ],
+  "78003": [
+   "PFE",
+   "healthcare"
+  ],
+  "1551152": [
+   "ABBV",
+   "healthcare"
+  ],
+  "310158": [
+   "MRK",
+   "healthcare"
+  ],
+  "34088": [
+   "XOM",
+   "energy"
+  ],
+  "93410": [
+   "CVX",
+   "energy"
+  ],
+  "1163165": [
+   "COP",
+   "energy"
+  ],
+  "87347": [
+   "SLB",
+   "energy"
+  ],
+  "797468": [
+   "OXY",
+   "energy"
+  ],
+  "80424": [
+   "PG",
+   "consumer"
+  ],
+  "21344": [
+   "KO",
+   "consumer"
+  ],
+  "104169": [
+   "WMT",
+   "consumer"
+  ],
+  "354950": [
+   "HD",
+   "consumer"
+  ],
+  "63908": [
+   "MCD",
+   "consumer"
+  ]
+ }
+}

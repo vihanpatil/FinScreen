@@ -1,0 +1,19 @@
+{
+ "rows": 1506,
+ "registrants": 247,
+ "rows_with_shares": 1283,
+ "registrants_without_shares_concept": 26,
+ "flag_counts": {
+  "implied_price_out_of_band": 24,
+  "superseded_by_public_zero_float": 3,
+  "no_public_common_equity": 2,
+  "shares_scale_error_on_same_cover": 3
+ },
+ "flagged_rows": 27,
+ "flagged_registrants": 9,
+ "confirmed_scale_errors": [
+  1616314,
+  1690881,
+  1853513
+ ]
+}

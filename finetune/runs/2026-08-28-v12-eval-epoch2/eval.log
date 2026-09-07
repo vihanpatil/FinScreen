@@ -1,0 +1,239 @@
+Loading base model + adapter (this is the only GPU work) ...
+  loaded in 0.9s
+1010 eval rows · 0 already in predictions.jsonl · 1010 to generate
+  [25/1010] 2.50s/row · running 1722 chunks/h · ETA 0.57h · last finish=stop gen_tok=42
+  [50/1010] 2.27s/row · running 1765 chunks/h · ETA 0.54h · last finish=stop gen_tok=32
+  [75/1010] 3.78s/row · running 1615 chunks/h · ETA 0.58h · last finish=stop gen_tok=67
+  [100/1010] 2.63s/row · running 1497 chunks/h · ETA 0.61h · last finish=stop gen_tok=48
+  [125/1010] 1.67s/row · running 1549 chunks/h · ETA 0.57h · last finish=stop gen_tok=16
+  [150/1010] 2.27s/row · running 1583 chunks/h · ETA 0.54h · last finish=stop gen_tok=32
+  [175/1010] 1.72s/row · running 1599 chunks/h · ETA 0.52h · last finish=stop gen_tok=16
+  [200/1010] 3.60s/row · running 1568 chunks/h · ETA 0.52h · last finish=stop gen_tok=69
+  [225/1010] 2.63s/row · running 1535 chunks/h · ETA 0.51h · last finish=stop gen_tok=42
+  [250/1010] 2.25s/row · running 1515 chunks/h · ETA 0.50h · last finish=stop gen_tok=33
+  [275/1010] 1.80s/row · running 1529 chunks/h · ETA 0.48h · last finish=stop gen_tok=16
+  [300/1010] 1.66s/row · running 1542 chunks/h · ETA 0.46h · last finish=stop gen_tok=16
+  [325/1010] 2.28s/row · running 1498 chunks/h · ETA 0.46h · last finish=stop gen_tok=34
+  [350/1010] 3.04s/row · running 1468 chunks/h · ETA 0.45h · last finish=stop gen_tok=52
+  [375/1010] 3.72s/row · running 1452 chunks/h · ETA 0.44h · last finish=stop gen_tok=41
+  [400/1010] 3.21s/row · running 1426 chunks/h · ETA 0.43h · last finish=stop gen_tok=60
+  [425/1010] 1.83s/row · running 1422 chunks/h · ETA 0.41h · last finish=stop gen_tok=23
+  [450/1010] 6.35s/row · running 1418 chunks/h · ETA 0.39h · last finish=stop gen_tok=130
+  [475/1010] 2.97s/row · running 1418 chunks/h · ETA 0.38h · last finish=stop gen_tok=57
+  [500/1010] 1.24s/row · running 1395 chunks/h · ETA 0.37h · last finish=stop gen_tok=16
+  [525/1010] 1.36s/row · running 1401 chunks/h · ETA 0.35h · last finish=stop gen_tok=16
+  [550/1010] 2.23s/row · running 1399 chunks/h · ETA 0.33h · last finish=stop gen_tok=41
+  [575/1010] 2.85s/row · running 1396 chunks/h · ETA 0.31h · last finish=stop gen_tok=16
+  [600/1010] 1.63s/row · running 1397 chunks/h · ETA 0.29h · last finish=stop gen_tok=16
+  [625/1010] 1.27s/row · running 1412 chunks/h · ETA 0.27h · last finish=stop gen_tok=7
+  [650/1010] 2.25s/row · running 1420 chunks/h · ETA 0.25h · last finish=stop gen_tok=32
+  [675/1010] 1.61s/row · running 1417 chunks/h · ETA 0.24h · last finish=stop gen_tok=15
+  [700/1010] 1.64s/row · running 1432 chunks/h · ETA 0.22h · last finish=stop gen_tok=16
+  [725/1010] 1.58s/row · running 1439 chunks/h · ETA 0.20h · last finish=stop gen_tok=16
+  [750/1010] 1.66s/row · running 1451 chunks/h · ETA 0.18h · last finish=stop gen_tok=24
+  [775/1010] 3.55s/row · running 1447 chunks/h · ETA 0.16h · last finish=stop gen_tok=67
+  [800/1010] 3.09s/row · running 1442 chunks/h · ETA 0.15h · last finish=stop gen_tok=23
+  [825/1010] 2.07s/row · running 1444 chunks/h · ETA 0.13h · last finish=stop gen_tok=23
+  [850/1010] 2.61s/row · running 1441 chunks/h · ETA 0.11h · last finish=stop gen_tok=16
+  [875/1010] 4.40s/row · running 1438 chunks/h · ETA 0.09h · last finish=stop gen_tok=63
+  [900/1010] 3.17s/row · running 1434 chunks/h · ETA 0.08h · last finish=stop gen_tok=23
+  [925/1010] 1.90s/row · running 1427 chunks/h · ETA 0.06h · last finish=stop gen_tok=24
+  [950/1010] 2.59s/row · running 1425 chunks/h · ETA 0.04h · last finish=stop gen_tok=32
+  [975/1010] 2.85s/row · running 1420 chunks/h · ETA 0.02h · last finish=stop gen_tok=16
+  [1000/1010] 3.02s/row · running 1411 chunks/h · ETA 0.01h · last finish=stop gen_tok=41
+  [1010/1010] 2.16s/row · running 1411 chunks/h · ETA 0.00h · last finish=stop gen_tok=41
+
+Wrote:
+  /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/eval_report.md
+  /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/metrics.json
+  /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/manifest.json
+  /Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/predictions.jsonl
+# FinScreen held-out evaluation — 2026-08-28-v12-eval-epoch2
+
+Generated 2026-08-27T14:22:19.443383+00:00 · adapter `/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2` · base `/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed`
+
+## Read this before quoting any number
+
+1. **This measures AGREEMENT WITH THE TEACHER, not accuracy.** The eval-split
+   labels are Claude's bootstrap labels, not human ground truth. A student that
+   agrees perfectly has reproduced the teacher *including the teacher's errors*.
+2. **The teacher's red-flag labels are documented as noisy.** Set-level error
+   36.6% (146/399 exact-set disagreements, sample-pooled); base-rate-representative
+   estimate ~25.0% (Tier C, n=36, 95% CI [13.8, 41.1] on error); per-category
+   error 7.5% (180 category corrections / 2,394 chunk-category decisions).
+   Source: HANDOFF.md §2a + RED_FLAGS_LIMITATION.md (spot-check second-rater pass, 2026-08-18). A red-flag agreement number materially
+   below the teacher's own reproducibility is not separable from teacher noise
+   with this eval alone.
+3. **`red_flags` is reported on two bases and both are shown, always.** The
+   exact-set rate and the per-category rate answer different questions and differ
+   by tens of points; quoting only the exact-set figure beside sentiment's
+   single-value rate is the specific error HANDOFF.md §2a calls out.
+4. **`distress_tier` is not reported.** It was excluded from the training targets
+   entirely (PROMPT_TEMPLATE.md / DISCOVERY.md §3), so the student never predicts
+   it and any number here would be meaningless.
+5. **This is a research/screening classifier.** It extracts signals from text. It
+   does not predict prices, recommend trades, or connect to any brokerage.
+
+## Not evaluable — excluded from every headline table
+
+- **8K_BODY** — n=8 corpus-wide from only 2 tickers (BAC, CVX); all 8 landed in the eval split. No per-class estimate on 8 rows from 2 issuers is stable, so 8K_BODY rows are excluded from every headline table and reported separately below (HANDOFF.md §7).
+- **WITHDRAWN** — guidance_direction=WITHDRAWN has exactly 1 example corpus-wide and it is in the TRAIN split, so eval support is 0. A P/R/F1 row for it would be three zeros masquerading as a measurement (HANDOFF.md §7).
+
+Headline row count: **1002** of 1010 eval rows (8 excluded as 8K_BODY).
+Section-type mix of the full eval split: `{'RISK_FACTORS': 135, 'MDA': 297, 'EX99_PRESS_RELEASE': 570, '8K_BODY': 8}`
+
+## Provenance (verify-artifact rule)
+
+| item | value |
+|---|---|
+| base model | `/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed` |
+| base weights sha256 | `86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071` |
+| adapter dir | `/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2` |
+| adapters.safetensors sha256 | `cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3` |
+| adapters.safetensors matches checkpoint | `no numbered twin — expected for a COMPLETED run whose iters is not a multiple of save_every (mlx_lm writes the final weights to adapters.safetensors only). If training is still running, this may instead be an in-flight write: check the process has exited.` |
+| adapter_config.json sha256 | `2d62913a6044ec8ebb4d351cd023c8b3b517263462b9f3501eeb39fe8687810a` |
+| training run manifest | `/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-27-v12-epoch2/manifest.json` |
+| eval rows | `/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data_v12/valid.jsonl` |
+| eval rows sha256 | `b74efdb326e9b862820453eecfa64307f460499cac0fd92562fdf91eb0b1126b` |
+| eval rows sha matches training manifest | `True` |
+| instruction sha256 | `ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2` |
+| instruction byte-identical across eval | `True` |
+| instruction byte-identical to train | `True` |
+| decoding | `{'backend': 'mlx', 'decoding': 'greedy (temperature 0.0 -> argmax sampler)', 'max_tokens': 520, 'prompt': 'apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)', 'prompt_source': 'convert_to_mlx.render(); the inference prompt is a token-exact prefix of the training sequence for the same row'}` |
+| mlx / mlx_lm / transformers | `{'mlx': '0.32.1', 'mlx-lm': '0.31.3', 'transformers': '5.15.1', 'numpy': '2.4.6', 'python': '3.11.10'}` |
+
+## 1. Parse and schema integrity (first-class metrics)
+
+- **Parse-failure rate: 0.00%** (0/1002 rows). Reasons: `{}`.
+- Rows with no prediction at all: 0.
+- **Schema-violation rate: 0.00%** (0/1002 rows that parsed as JSON but broke the target schema). Issues: `{}`.
+
+An unparseable row is counted as an error against every field the teacher labelled
+for that row, and as a set-level mismatch for `red_flags` even when the teacher's
+set is empty — scoring "no output" as a correct empty set would inflate the
+red-flag headline substantially, since most rows have no flags.
+
+## 2. sentiment
+
+### sentiment (3-class)
+
+n = 867 rows where the teacher's label includes this field. **Exact-match agreement with the teacher: 83.6%** (725/867). Teacher's own second-rater agreement on this field: 94.6% [91.3, 96.7].
+
+| class | support | TP | FP | FN | P | R | F1 | note |
+|---|---|---|---|---|---|---|---|---|
+| POSITIVE | 246 | 218 | 33 | 28 | 0.869 | 0.886 | 0.877 |  |
+| NEUTRAL | 500 | 443 | 66 | 57 | 0.870 | 0.886 | 0.878 |  |
+| NEGATIVE | 121 | 64 | 16 | 57 | 0.800 | 0.529 | 0.637 |  |
+
+Macro over classes **with support in this split** (POSITIVE, NEUTRAL, NEGATIVE): P=0.846 R=0.767 F1=0.797. Zero-support classes are excluded from this average and listed as not evaluable rather than averaged in as structural zeros.
+
+Failure attribution (counted as errors, never dropped): `{'__MISSING_FIELD__': 27}`
+
+Top confusions (gold -> predicted): `NEGATIVE->NEUTRAL` × 38, `NEUTRAL->POSITIVE` × 30, `POSITIVE->NEUTRAL` × 28, `NEGATIVE->__MISSING_FIELD__` × 16, `NEUTRAL->NEGATIVE` × 16, `NEUTRAL->__MISSING_FIELD__` × 11, `NEGATIVE->POSITIVE` × 3
+
+## 3. guidance_direction
+
+### guidance_direction (5-class)
+
+n = 570 rows where the teacher's label includes this field. **Exact-match agreement with the teacher: 52.1%** (297/570). Teacher's own second-rater agreement on this field: 95.2% [90.4, 97.6].
+
+| class | support | TP | FP | FN | P | R | F1 | note |
+|---|---|---|---|---|---|---|---|---|
+| RAISED | 8 | 6 | 3 | 2 | 0.667 | 0.750 | 0.706 | **very low support (n=8) — not a stable estimate** |
+| MAINTAINED | 5 | 2 | 5 | 3 | 0.286 | 0.400 | 0.333 | **very low support (n=5) — not a stable estimate** |
+| LOWERED | 3 | 3 | 0 | 0 | 1.000 | 1.000 | 1.000 | **very low support (n=3) — not a stable estimate** |
+| WITHDRAWN | 0 | 0 | 0 | 0 | 0.000 | 0.000 | 0.000 | **NOT EVALUABLE — zero support in eval** |
+| NONE | 554 | 286 | 4 | 268 | 0.986 | 0.516 | 0.678 |  |
+
+Macro over classes **with support in this split** (RAISED, MAINTAINED, LOWERED, NONE): P=0.735 R=0.666 F1=0.679. Zero-support classes are excluded from this average and listed as not evaluable rather than averaged in as structural zeros.
+- `WITHDRAWN`: NOT EVALUABLE — guidance_direction=WITHDRAWN has exactly 1 example corpus-wide and it is in the TRAIN split, so eval support is 0. A P/R/F1 row for it would be three zeros masquerading as a measurement (HANDOFF.md §7).
+
+Failure attribution (counted as errors, never dropped): `{'__MISSING_FIELD__': 261}`
+
+Top confusions (gold -> predicted): `NONE->__MISSING_FIELD__` × 261, `NONE->MAINTAINED` × 4, `MAINTAINED->NONE` × 3, `NONE->RAISED` × 3, `RAISED->MAINTAINED` × 1, `RAISED->NONE` × 1
+
+## 4. red_flags — exact-set basis
+
+- **Exact set match on (category, modality): 63.07%** (632/1002 rows)
+- Exact set match on categories only (modality ignored): 65.97% (661/1002 rows)
+- 0 of these rows were unparseable and are counted as mismatches.
+
+This basis is strict by construction: one added, dropped or re-modalized category
+on a multi-flag chunk fails the whole row. It is the same basis as the spot-check's
+63.4% teacher-vs-auditor figure, so it is the comparable one — but it is NOT
+comparable to the single-value sentiment/guidance rates above.
+
+## 5. red_flags — per-category decomposition
+
+- **Per-category agreement: 92.42%** (456 wrong decisions over 6012 chunk-category decisions = 1002 rows × 6 categories). Teacher's own per-category error on the spot-check sample: 7.5% (180 category corrections / 2,394 chunk-category decisions).
+
+Note this rate is dominated by true negatives (most chunk-category cells are
+correctly empty), which is exactly why the P/R/F1 table below is the honest read
+of it and the headline percentage is not.
+
+| category | support | TP | FP | FN | P | R | F1 | note |
+|---|---|---|---|---|---|---|---|---|
+| DEMAND_WEAKNESS | 206 | 146 | 12 | 60 | 0.924 | 0.709 | 0.802 |  |
+| SUPPLY_INPUT_CONSTRAINT | 132 | 95 | 17 | 37 | 0.848 | 0.720 | 0.779 |  |
+| TRADE_POLICY_EXPOSURE | 107 | 87 | 14 | 20 | 0.861 | 0.813 | 0.837 |  |
+| IMPAIRMENT_WRITEDOWN | 152 | 135 | 27 | 17 | 0.833 | 0.888 | 0.860 |  |
+| MARGIN_COST_PRESSURE | 287 | 199 | 48 | 88 | 0.806 | 0.693 | 0.745 |  |
+| LEGAL_REGULATORY_ACTION | 299 | 220 | 37 | 79 | 0.856 | 0.736 | 0.791 |  |
+
+- Micro (all categories pooled): P=0.851 R=0.746 F1=0.795 (TP=882 FP=155 FN=301)
+- Macro over categories with support (DEMAND_WEAKNESS, SUPPLY_INPUT_CONSTRAINT, TRADE_POLICY_EXPOSURE, IMPAIRMENT_WRITEDOWN, MARGIN_COST_PRESSURE, LEGAL_REGULATORY_ACTION): P=0.855 R=0.760 F1=0.802
+- Modality agreement, restricted to (row, category) cells where both sides say the category is present: 95.24% (840/882), confusion `{'REALIZED->HYPOTHETICAL': 23, 'HYPOTHETICAL->REALIZED': 19}`
+
+## 6. Field-presence (applicability) agreement
+
+`section_type` is never in the prompt (PROMPT_TEMPLATE.md), so *which* fields to
+emit is itself learned from the passage's register. This measures that directly.
+
+| field | n determined | n agree | agreement | breakdown |
+|---|---|---|---|---|
+| sentiment | 1002 | 973 | 97.11% | `{'gold_no_pred_no': 133, 'gold_yes_pred_yes': 840, 'gold_yes_pred_no': 27, 'gold_no_pred_yes': 2}` |
+| guidance_direction | 1002 | 735 | 73.35% | `{'gold_no_pred_no': 426, 'gold_no_pred_yes': 6, 'gold_yes_pred_yes': 309, 'gold_yes_pred_no': 261}` |
+
+## 7. Throughput (doubles as EXPANSION_PLAN F4's labeling-throughput probe)
+
+- Rows generated this process: 1010 in 2577.0s → **1410.9 chunks/hour**
+- Per-row latency (s): mean 2.551, p50 2.327, p95 4.555, p99 5.636, max 6.719
+- Prompt tokens: mean 1105.4, total 1116491
+- Generated tokens: mean 36.7, max 151, total 37065
+- Prefill: mean 879.1 tok/s · Decode: mean 30.2 tok/s
+- Finish reasons: `{'stop': 1010}` (`length` means the row hit --max-tokens and its JSON is probably truncated)
+
+These figures are EXPANSION_PLAN.md F4's labeling-throughput probe, measured at n=1,010 on this machine with this adapter.
+
+| E2 labeling workload | hours @ measured rate | ≈ 10h overnights |
+|---|---|---|
+| E1 re-label (6,746 chunks) | 4.8 | 0.5 |
+| E2 low estimate (~70k new + 6,746 E1 = 76,746) | 54.4 | 5.4 |
+| E2 high estimate (~98k new + 6,746 E1 = 104,746) | 74.2 | 7.4 |
+
+Single-stream, no prefix cache, no batching. EXPANSION_PLAN §2b lists both
+as free levers that were not used here.
+
+## 8. Excluded slices, reported separately (never headline)
+
+**8K_BODY, n=8 — NOT EVALUABLE.** n=8 corpus-wide from only 2 tickers (BAC, CVX); all 8 landed in the eval split. No per-class estimate on 8 rows from 2 issuers is stable, so 8K_BODY rows are excluded from every headline table and reported separately below (HANDOFF.md §7).
+
+Shown for completeness only: sentiment exact-match 100.0% (n=8), guidance exact-match 37.5% (n=8), red_flags exact-set 75.0% (n=8), parse failures 0.
+
+Do not average these into anything.
+
+## 9. Per-section-type breakdown (headline rows only)
+
+| section_type | n | parse-fail | sentiment exact | guidance exact | red_flags exact-set | red_flags per-category |
+|---|---|---|---|---|---|---|
+| EX99_PRESS_RELEASE | 570 | 0.00% | 85.6% (n=570) | 52.1% (n=570) | 68.2% | 93.36% |
+| MDA | 297 | 0.00% | 79.8% (n=297) | n/a | 60.6% | 91.19% |
+| RISK_FACTORS | 135 | 0.00% | n/a | n/a | 46.7% | 91.11% |
+
+The spot-check found red_flags weakest in RISK_FACTORS (59.2% teacher-vs-auditor);
+compare that row specifically rather than the pooled figure.
+
+---
+
+Full machine-readable results: `metrics.json` · raw generations: `predictions.jsonl` · run provenance: `manifest.json` (same directory).
+

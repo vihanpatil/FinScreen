@@ -370,6 +370,9 @@ def test_diagnosis_report_written(tmp_path, monkeypatch):
     perm_df = D.run_redflag_permutation_importance(df_form, folds_form)
     perm_summary = D.redflag_permutation_summary(perm_df)
 
+    keep_mask = B.company_quarter_dedup_keep_mask(df)
+    standing = B.compute_standing_diagnostics(df, B.build_spec_frames(df), folds, keep_mask)
+
     out_path = tmp_path / "diagnosis_report_test.md"
     monkeypatch.setattr(D, "DIAGNOSIS_REPORT_OUTPUT", out_path)
     D.write_diagnosis_report(
@@ -377,6 +380,7 @@ def test_diagnosis_report_written(tmp_path, monkeypatch):
         df_form, results_form, long_form, summary_form,
         loco_df, loco_baseline, sector_agg, per_ticker_df,
         fold_sens, perm_df, perm_summary,
+        standing=standing, output_path=out_path,
     )
     text = out_path.read_text()
     assert "# FinScreen Phase D -- signal diagnosis report" in text
@@ -386,5 +390,46 @@ def test_diagnosis_report_written(tmp_path, monkeypatch):
     assert "## 4. Red-flag category contribution" in text
     assert "## 5. What this diagnosis can and cannot conclude" in text
     assert F.RED_FLAG_CAVEAT in text
+    # H2 standing sections must be present in EVERY generated report
+    assert "## Feature specification (pre-registered" in text
+    assert "## Zero-information benchmarks (STANDING" in text
+    assert "## Within-fold bootstrap noise anchor (STANDING" in text
+    assert "## Label-embargo census" in text
     for banned_phrase in ("should buy", "should sell", "beats the market", "guaranteed return", "buy recommendation", "sell recommendation"):
         assert banned_phrase not in text.lower()
+
+
+def test_diagnosis_report_without_standing_inputs_says_not_computed(tmp_path):
+    """H2: a report generated without the standing diagnostics must SAY so,
+    not silently omit the sections -- an un-benchmarked IC that looks
+    benchmarked is the failure mode being prevented."""
+    df, n_dropped = B.load_modeling_frame()
+    folds = B.build_walk_forward_folds(df, B.BURN_IN_END)[:1]
+    families = {"numeric_only": [], "full": D.FEATURE_FAMILIES["full"]}
+    results_full = D.run_family_ablation(df, folds, families=families)
+    long_full = D.family_delta_long(results_full, ["numeric_only", "full"])
+    summary_full = D.family_delta_summary(long_full, ["numeric_only", "full"])
+    df_form, folds_form = D.build_form_controlled_frame(df)
+    folds_form = folds_form[:1]
+    results_form = D.run_family_ablation(df_form, folds_form, families=families)
+    long_form = D.family_delta_long(results_form, ["numeric_only", "full"])
+    summary_form = D.family_delta_summary(long_form, ["numeric_only", "full"])
+    loco_df, loco_baseline = D.run_leave_one_ticker_out(df, ["AAPL"])
+    universe_df = pd.read_csv(D.UNIVERSE_PATH)
+    sector_agg = D.aggregate_loco_to_sector(loco_df, universe_df)
+    per_ticker_df = D.per_ticker_predicted_vs_realized(df, folds)
+    fold_sens = D.fold_sensitivity(long_full[long_full["family"] == "full"].reset_index(drop=True))
+    perm_df = D.run_redflag_permutation_importance(df_form, folds_form)
+    perm_summary = D.redflag_permutation_summary(perm_df)
+
+    out_path = tmp_path / "diagnosis_no_standing.md"
+    D.write_diagnosis_report(
+        df, n_dropped, ["numeric_only", "full"], results_full, long_full, summary_full,
+        df_form, results_form, long_form, summary_form,
+        loco_df, loco_baseline, sector_agg, per_ticker_df,
+        fold_sens, perm_df, perm_summary,
+        output_path=out_path,
+    )
+    text = out_path.read_text()
+    assert text.count("NOT COMPUTED") >= 3
+    assert "un-benchmarked" in text

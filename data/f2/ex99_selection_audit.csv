@@ -1,0 +1,312 @@
+cik,name,sector,stratum,new_filer,section_type,selection_confidence,n_filings,first_seen_year,n_release_language_measured,n_release_language_missing,release_language_missing_share,release_language_flag,n_deck_shaped,deck_shaped_flag
+1800,ABBOTT LABORATORIES,healthcare,core,True,EX99_PRESS_RELEASE,high,48,2015,48,3,0.0625,False,0,False
+2488,ADVANCED MICRO DEVICES INC,tech,core,True,EX99_PRESS_RELEASE,high,48,2015,48,1,0.0208,False,0,False
+2969,"Air Products & Chemicals, Inc.",materials_realestate,extension,True,EX99_PRESS_RELEASE,high,47,2015,47,1,0.0213,False,0,False
+3570,"Cheniere Energy, Inc.",utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+4281,Howmet Aerospace Inc.,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,53,2015,53,2,0.0377,False,0,False
+4447,HESS CORP,energy,core,True,EX99_PRESS_RELEASE,high,40,2015,40,0,0.0,False,0,False
+4904,AMERICAN ELECTRIC POWER CO INC,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+5272,"AMERICAN INTERNATIONAL GROUP, INC.",financials,core,True,EX99_PRESS_RELEASE,high,53,2015,53,1,0.0189,False,0,False
+6769,APACHE CORP,energy,core,True,EX99_PRESS_RELEASE,high,23,2015,23,0,0.0,False,0,False
+6951,APPLIED MATERIALS INC /DE,tech,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+8670,AUTOMATIC DATA PROCESSING INC,tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+10795,BECTON DICKINSON & CO,healthcare,core,True,EX99_PRESS_RELEASE,high,52,2015,52,4,0.0769,False,0,False
+12927,BOEING CO,industrials,extension,True,EX99_PRESS_RELEASE,high,50,2015,50,0,0.0,False,0,False
+14272,BRISTOL MYERS SQUIBB CO,healthcare,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+18230,CATERPILLAR INC,industrials,extension,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+19617,JPMORGAN CHASE & CO,financials,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+21344,COCA COLA CO,consumer,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+21665,COLGATE PALMOLIVE CO,consumer,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+24741,CORNING INC /NY,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+27419,TARGET CORP,consumer,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+29915,DOW CHEMICAL CO /DE/,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,9,2015,9,0,0.0,False,0,False
+30554,"EIDP, Inc.",materials_realestate,extension,True,EX99_PRESS_RELEASE,high,10,2015,10,0,0.0,False,0,False
+31462,ECOLAB INC.,consumer,core,True,EX99_PRESS_RELEASE,high,62,2015,62,11,0.1774,False,0,False
+32604,EMERSON ELECTRIC CO,industrials,extension,True,8K_BODY,high,3,2019,54,4,0.0741,False,0,False
+32604,EMERSON ELECTRIC CO,industrials,extension,True,EX99_PRESS_RELEASE,high,51,2015,54,4,0.0741,False,0,False
+33213,EQT Corp,energy,core,True,8K_BODY,high,16,2022,65,6,0.0923,False,0,False
+33213,EQT Corp,energy,core,True,EX99_PRESS_RELEASE,high,49,2015,65,6,0.0923,False,0,False
+34088,EXXON MOBIL CORP,energy,core,False,EX99_PRESS_RELEASE,high,49,2015,49,0,0.0,False,0,False
+36104,US BANCORP \DE\,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+37996,FORD MOTOR CO,consumer,core,True,EX99_PRESS_RELEASE,high,48,2015,48,6,0.125,False,0,False
+40533,GENERAL DYNAMICS CORP,industrials,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+45012,HALLIBURTON CO,energy,core,True,8K_BODY,high,32,2015,46,0,0.0,False,0,False
+45012,HALLIBURTON CO,energy,core,True,EX99_PRESS_RELEASE,high,14,2023,46,0,0.0,False,0,False
+47217,HP INC,tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+49071,HUMANA INC,healthcare,core,True,8K_BODY,high,3,2015,48,1,0.0208,False,0,False
+49071,HUMANA INC,healthcare,core,True,EX99_PRESS_RELEASE,high,45,2015,48,1,0.0208,False,0,False
+49826,ILLINOIS TOOL WORKS INC,industrials,extension,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+50863,INTEL CORP,tech,core,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,True,8K_BODY,high,9,2015,53,1,0.0189,False,0,False
+51143,INTERNATIONAL BUSINESS MACHINES CORP,tech,core,True,EX99_PRESS_RELEASE,high,44,2016,53,1,0.0189,False,0,False
+55785,KIMBERLY CLARK CORP,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+59478,ELI LILLY & Co,healthcare,core,True,8K_BODY,high,1,2022,51,0,0.0,False,0,False
+59478,ELI LILLY & Co,healthcare,core,True,EX99_PRESS_RELEASE,high,50,2015,51,0,0.0,False,0,False
+60667,LOWES COMPANIES INC,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+62709,"MARSH & MCLENNAN COMPANIES, INC.",financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+63908,MCDONALDS CORP,consumer,core,False,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+64040,S&P Global Inc.,industrials,extension,True,EX99_PRESS_RELEASE,high,46,2015,46,2,0.0435,False,0,False
+64803,CVS HEALTH Corp,consumer,core,True,8K_BODY,high,2,2022,51,0,0.0,False,0,False
+64803,CVS HEALTH Corp,consumer,core,True,EX99_PRESS_RELEASE,high,49,2015,51,0,0.0,False,0,False
+66740,3M CO,healthcare,core,True,EX99_PRESS_RELEASE,high,54,2015,54,8,0.1481,False,0,False
+70858,BANK OF AMERICA CORP /DE/,financials,core,False,8K_BODY,high,1,2024,46,1,0.0217,False,0,False
+70858,BANK OF AMERICA CORP /DE/,financials,core,False,EX99_PRESS_RELEASE,high,45,2015,46,1,0.0217,False,0,False
+72741,EVERSOURCE ENERGY,utilities,extension,True,EX99_PRESS_RELEASE,high,34,2019,50,2,0.04,False,0,False
+72741,EVERSOURCE ENERGY,utilities,extension,True,EX99_PRESS_RELEASE,medium,16,2015,50,2,0.04,False,0,False
+72903,XCEL ENERGY INC,utilities,extension,True,8K_BODY,high,1,2018,45,1,0.0222,False,0,False
+72903,XCEL ENERGY INC,utilities,extension,True,EX99_PRESS_RELEASE,high,44,2015,45,1,0.0222,False,0,False
+72971,WELLS FARGO & COMPANY/MN,financials,core,True,8K_BODY,high,1,2016,48,2,0.0417,False,0,False
+72971,WELLS FARGO & COMPANY/MN,financials,core,True,EX99_PRESS_RELEASE,high,47,2015,48,2,0.0417,False,0,False
+73309,NUCOR CORP,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+77476,PEPSICO INC,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+78003,PFIZER INC,healthcare,core,False,8K_BODY,high,1,2022,49,0,0.0,False,0,False
+78003,PFIZER INC,healthcare,core,False,EX99_PRESS_RELEASE,high,48,2015,49,0,0.0,False,0,False
+79879,PPG INDUSTRIES INC,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,54,2015,54,2,0.037,False,0,False
+80424,PROCTER & GAMBLE Co,consumer,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+80661,PROGRESSIVE CORP/OH/,financials,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+80661,PROGRESSIVE CORP/OH/,financials,core,True,EX99_PRESS_RELEASE,low,1,2017,44,0,0.0,False,0,False
+86312,"TRAVELERS COMPANIES, INC.",financials,core,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+87347,SLB LIMITED/NV,energy,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+89800,SHERWIN WILLIAMS CO,consumer,core,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+92122,SOUTHERN CO,utilities,extension,True,8K_BODY,high,1,2023,53,8,0.1509,False,0,False
+92122,SOUTHERN CO,utilities,extension,True,EX99_PRESS_RELEASE,high,52,2015,53,8,0.1509,False,0,False
+92230,TRUIST FINANCIAL CORP,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+93410,CHEVRON CORP,energy,core,False,8K_BODY,high,2,2024,48,2,0.0417,False,0,False
+93410,CHEVRON CORP,energy,core,False,EX99_PRESS_RELEASE,high,46,2015,48,2,0.0417,False,0,False
+97476,TEXAS INSTRUMENTS INC,tech,core,True,8K_BODY,high,1,2018,46,2,0.0435,False,0,False
+97476,TEXAS INSTRUMENTS INC,tech,core,True,EX99_PRESS_RELEASE,high,44,2015,46,2,0.0435,False,0,False
+97476,TEXAS INSTRUMENTS INC,tech,core,True,EX99_PRESS_RELEASE,medium,1,2020,46,2,0.0435,False,0,False
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,True,8K_BODY,high,1,2021,48,0,0.0,False,0,False
+97745,THERMO FISHER SCIENTIFIC INC.,industrials,extension,True,EX99_PRESS_RELEASE,high,47,2015,48,0,0.0,False,0,False
+100885,UNION PACIFIC CORP,industrials,extension,True,8K_BODY,high,1,2019,47,1,0.0213,False,0,False
+100885,UNION PACIFIC CORP,industrials,extension,True,EX99_PRESS_RELEASE,high,46,2015,47,1,0.0213,False,0,False
+101829,RTX Corp,industrials,extension,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+104169,Walmart Inc.,consumer,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+106040,WESTERN DIGITAL CORP,tech,core,True,8K_BODY,high,1,2025,47,1,0.0213,False,0,False
+106040,WESTERN DIGITAL CORP,tech,core,True,EX99_PRESS_RELEASE,high,46,2015,47,1,0.0213,False,0,False
+106535,WEYERHAEUSER CO,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+107263,"WILLIAMS COMPANIES, INC.",energy,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+109198,TJX COMPANIES INC /DE/,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+200406,JOHNSON & JOHNSON,healthcare,core,False,EX99_PRESS_RELEASE,high,30,2019,30,1,0.0333,False,0,False
+200406,JOHNSON & JOHNSON,healthcare,core,False,EX99_PRESS_RELEASE,low,18,2015,30,1,0.0333,False,0,False
+310158,"Merck & Co., Inc.",healthcare,core,False,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+310764,STRYKER CORP,healthcare,core,True,EX99_PRESS_RELEASE,high,48,2015,48,0,0.0,False,0,False
+313616,DANAHER CORP /DE/,industrials,extension,True,8K_BODY,high,1,2023,58,2,0.0345,False,0,False
+313616,DANAHER CORP /DE/,industrials,extension,True,EX99_PRESS_RELEASE,high,57,2015,58,2,0.0345,False,0,False
+315189,DEERE & CO,industrials,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+315293,Aon plc,financials,core,True,EX99_PRESS_RELEASE,high,44,2015,45,0,0.0,False,0,False
+315293,Aon plc,financials,core,True,EX99_PRESS_RELEASE,medium,1,2015,45,0,0.0,False,0,False
+316709,SCHWAB CHARLES CORP,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+318154,AMGEN INC,healthcare,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+320187,"NIKE, Inc.",consumer,core,True,EX99_PRESS_RELEASE,high,57,2015,57,0,0.0,False,0,False
+320193,Apple Inc.,tech,core,False,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+354950,"HOME DEPOT, INC.",consumer,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+701221,Cigna Holding Co,healthcare,core,True,8K_BODY,high,2,2017,17,0,0.0,False,0,False
+701221,Cigna Holding Co,healthcare,core,True,EX99_PRESS_RELEASE,high,15,2015,17,0,0.0,False,0,False
+707549,LAM RESEARCH CORP,tech,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+712515,ELECTRONIC ARTS INC.,tech,core,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+713676,"PNC FINANCIAL SERVICES GROUP, INC.",financials,core,True,EX99_PRESS_RELEASE,high,91,2015,91,36,0.3956,False,0,False
+715957,"DOMINION ENERGY, INC",utilities,extension,True,8K_BODY,high,1,2020,45,1,0.0222,False,0,False
+715957,"DOMINION ENERGY, INC",utilities,extension,True,EX99_PRESS_RELEASE,high,44,2015,45,1,0.0222,False,0,False
+718877,"Activision Blizzard, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,33,2015,33,0,0.0,False,0,False
+723125,MICRON TECHNOLOGY INC,tech,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+726728,REALTY INCOME CORP,materials_realestate,extension,True,8K_BODY,high,1,2021,47,1,0.0213,False,0,False
+726728,REALTY INCOME CORP,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,46,2015,47,1,0.0213,False,0,False
+731766,UNITEDHEALTH GROUP INC,healthcare,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+732712,VERIZON COMMUNICATIONS INC,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+732717,AT&T INC.,utilities,extension,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+732717,AT&T INC.,utilities,extension,True,EXCLUDED_BY_OVERRIDE,override,1,2019,47,0,0.0,False,0,False
+753308,NEXTERA ENERGY INC,utilities,extension,True,8K_BODY,high,1,2026,46,1,0.0217,False,0,False
+753308,NEXTERA ENERGY INC,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,46,1,0.0217,False,0,False
+764180,"ALTRIA GROUP, INC.",consumer,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+766704,WELLTOWER INC.,materials_realestate,extension,True,8K_BODY,high,1,2019,59,2,0.0339,False,0,False
+766704,WELLTOWER INC.,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,58,2015,59,2,0.0339,False,0,False
+769397,"Autodesk, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,48,2015,48,0,0.0,False,0,False
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,True,8K_BODY,high,1,2020,56,5,0.0893,False,0,False
+773840,HONEYWELL INTERNATIONAL INC,industrials,extension,True,EX99_PRESS_RELEASE,high,55,2015,56,5,0.0893,False,0,False
+773910,ANADARKO PETROLEUM CORP,energy,core,True,EX99_PRESS_RELEASE,high,17,2015,17,0,0.0,False,0,False
+788784,PUBLIC SERVICE ENTERPRISE GROUP INC,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,3,0.0667,False,0,False
+789019,MICROSOFT CORP,tech,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+790070,EMC CORP,tech,core,True,EX99_PRESS_RELEASE,high,6,2015,6,0,0.0,False,0,False
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,False,8K_BODY,high,3,2019,61,15,0.2459,False,0,False
+797468,OCCIDENTAL PETROLEUM CORP /DE/,energy,core,False,EX99_PRESS_RELEASE,high,58,2015,61,15,0.2459,False,0,False
+798354,FISERV INC,financials,core,True,EX99_PRESS_RELEASE,high,50,2015,50,4,0.08,False,0,False
+804328,QUALCOMM INC/DE,tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+804753,CERNER Corp,tech,core,True,EX99_PRESS_RELEASE,high,28,2015,28,0,0.0,False,0,False
+813672,CADENCE DESIGN SYSTEMS INC,tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+816284,CELGENE CORP /DE/,healthcare,core,True,EX99_PRESS_RELEASE,high,22,2015,22,0,0.0,False,0,False
+821189,EOG RESOURCES INC,energy,core,True,8K_BODY,high,7,2018,52,6,0.1154,False,0,False
+821189,EOG RESOURCES INC,energy,core,True,EX99_PRESS_RELEASE,high,45,2015,52,6,0.1154,False,0,False
+823768,WASTE MANAGEMENT INC,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+827052,EDISON INTERNATIONAL,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+829224,STARBUCKS CORP,consumer,core,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+831001,CITIGROUP INC,financials,core,True,EX99_PRESS_RELEASE,high,48,2015,48,5,0.1042,False,0,False
+831259,FREEPORT-MCMORAN INC,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,49,2015,49,1,0.0204,False,0,False
+849395,CRH PUBLIC LTD CO,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,11,2024,11,0,0.0,False,0,False
+849399,Gen Digital Inc.,tech,core,True,8K_BODY,high,1,2018,48,1,0.0208,False,0,False
+849399,Gen Digital Inc.,tech,core,True,EX99_PRESS_RELEASE,high,47,2015,48,1,0.0208,False,0,False
+858877,"CISCO SYSTEMS, INC.",tech,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,True,8K_BODY,high,7,2023,63,14,0.2222,False,0,False
+872589,"REGENERON PHARMACEUTICALS, INC.",healthcare,core,True,EX99_PRESS_RELEASE,high,56,2015,63,14,0.2222,False,0,False
+875045,BIOGEN INC.,healthcare,core,True,8K_BODY,high,5,2025,49,5,0.102,False,0,False
+875045,BIOGEN INC.,healthcare,core,True,EX99_PRESS_RELEASE,high,43,2015,49,5,0.102,False,0,False
+875045,BIOGEN INC.,healthcare,core,True,EX99_PRESS_RELEASE,medium,1,2017,49,5,0.102,False,0,False
+875320,VERTEX PHARMACEUTICALS INC / MA,healthcare,core,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+882095,"GILEAD SCIENCES, INC.",healthcare,core,True,8K_BODY,high,1,2022,47,1,0.0213,False,0,False
+882095,"GILEAD SCIENCES, INC.",healthcare,core,True,EX99_PRESS_RELEASE,high,46,2015,47,1,0.0213,False,0,False
+884905,LINDE INC,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,14,2015,14,1,0.0714,False,0,False
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,True,8K_BODY,high,1,2020,51,1,0.0196,False,0,False
+885725,BOSTON SCIENTIFIC CORP,healthcare,core,True,EX99_PRESS_RELEASE,high,50,2015,51,1,0.0196,False,0,False
+886982,GOLDMAN SACHS GROUP INC,financials,core,False,8K_BODY,high,1,2026,48,2,0.0417,False,0,False
+886982,GOLDMAN SACHS GROUP INC,financials,core,False,EX99_PRESS_RELEASE,high,47,2015,48,2,0.0417,False,0,False
+895126,EXPAND ENERGY Corp,energy,core,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+895421,MORGAN STANLEY,financials,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+895728,ENBRIDGE INC,energy,core,True,EX99_PRESS_RELEASE,high,35,2018,35,0,0.0,False,0,False
+896159,Chubb Ltd,financials,core,True,EX99_PRESS_RELEASE,high,53,2015,53,1,0.0189,False,0,False
+896878,INTUIT INC.,tech,core,True,EX99_PRESS_RELEASE,high,53,2015,53,0,0.0,False,0,False
+906107,VIVMARK RESIDENTIAL,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+915912,AVALONBAY COMMUNITIES INC,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+922224,PPL Corp,utilities,extension,True,EX99_PRESS_RELEASE,high,50,2015,50,6,0.12,False,0,False
+927628,CAPITAL ONE FINANCIAL CORP,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+927653,MCKESSON CORP,healthcare,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+936402,Shire plc,healthcare,core,True,EX99_PRESS_RELEASE,high,14,2015,14,0,0.0,False,0,False
+936468,LOCKHEED MARTIN CORP,industrials,extension,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+1001039,TWDC Enterprises 18 Corp.,consumer,core,True,EX99_PRESS_RELEASE,high,15,2015,15,0,0.0,False,0,False
+1001250,ESTEE LAUDER COMPANIES INC,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1012569,"Energy Transfer, LP",energy,core,True,EX99_PRESS_RELEASE,high,8,2015,8,0,0.0,False,0,False
+1018724,AMAZON COM INC,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1032208,SEMPRA,utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1034054,SBA COMMUNICATIONS CORP,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1035002,VALERO ENERGY CORP/TX,energy,core,True,8K_BODY,high,2,2020,48,2,0.0417,False,0,False
+1035002,VALERO ENERGY CORP/TX,energy,core,True,EX99_PRESS_RELEASE,high,46,2015,48,2,0.0417,False,0,False
+1035267,INTUITIVE SURGICAL INC,healthcare,core,True,EX99_PRESS_RELEASE,high,57,2015,57,0,0.0,False,0,False
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,True,8K_BODY,high,38,2015,76,37,0.4868,False,0,False
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,True,EX99_PRESS_RELEASE,high,37,2015,76,37,0.4868,False,0,False
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,True,EX99_PRESS_RELEASE,medium,1,2017,76,37,0.4868,False,0,False
+1038357,PIONEER NATURAL RESOURCES CO,energy,core,True,EXCLUDED_BY_OVERRIDE,override,1,2018,76,37,0.4868,False,0,False
+1039684,ONEOK INC /NEW/,energy,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1045609,"Prologis, Inc.",materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1045810,NVIDIA CORP,tech,core,False,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+1047122,RAYTHEON CO/,industrials,extension,True,EX99_PRESS_RELEASE,high,19,2015,19,0,0.0,False,0,False
+1047862,CONSOLIDATED EDISON INC,utilities,extension,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+1051470,CROWN CASTLE INC.,materials_realestate,extension,True,8K_BODY,high,1,2021,48,1,0.0208,False,0,False
+1051470,CROWN CASTLE INC.,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,47,2015,48,1,0.0208,False,0,False
+1053507,AMERICAN TOWER CORP /MA/,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,tech,core,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+1060391,"REPUBLIC SERVICES, INC.",utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,energy,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1063761,SIMON PROPERTY GROUP INC.,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+1065088,EBAY INC,financials,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+1065280,NETFLIX INC,consumer,core,True,EX99_PRESS_RELEASE,high,47,2015,47,25,0.5319,True,0,False
+1067983,BERKSHIRE HATHAWAY INC,financials,core,True,EX99_PRESS_RELEASE,high,37,2016,37,0,0.0,False,0,False
+1075531,Booking Holdings Inc.,industrials,extension,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+1090012,DEVON ENERGY CORP/DE,energy,core,True,EX99_PRESS_RELEASE,high,47,2015,47,0,0.0,False,0,False
+1090727,UNITED PARCEL SERVICE INC,industrials,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1091667,"CHARTER COMMUNICATIONS, INC. /MO/",consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1099219,METLIFE INC,financials,core,True,8K_BODY,high,1,2017,73,5,0.0685,False,0,False
+1099219,METLIFE INC,financials,core,True,EX99_PRESS_RELEASE,high,72,2015,73,5,0.0685,False,0,False
+1099590,MERCADOLIBRE INC,financials,core,True,EX99_PRESS_RELEASE,high,47,2015,47,1,0.0213,False,0,False
+1099800,Edwards Lifesciences Corp,healthcare,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1101239,EQUINIX INC,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1103982,"Mondelez International, Inc.",consumer,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+1105705,"WARNER MEDIA, LLC",consumer,core,True,EX99_PRESS_RELEASE,high,13,2015,13,0,0.0,False,0,False
+1108524,"Salesforce, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1109357,EXELON CORP,utilities,extension,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+1110803,"ILLUMINA, INC.",healthcare,core,True,8K_BODY,high,2,2015,64,1,0.0156,False,0,False
+1110803,"ILLUMINA, INC.",healthcare,core,True,EX99_PRESS_RELEASE,high,62,2015,64,1,0.0156,False,0,False
+1122304,AETNA INC /PA/,healthcare,core,True,EX99_PRESS_RELEASE,high,15,2015,15,1,0.0667,False,0,False
+1123360,GLOBAL PAYMENTS INC,financials,core,True,EX99_PRESS_RELEASE,high,49,2015,49,2,0.0408,False,0,False
+1126975,"Magellan Midstream Partners, L.P.",energy,core,True,EX99_PRESS_RELEASE,high,33,2015,33,0,0.0,False,0,False
+1133421,NORTHROP GRUMMAN CORP /DE/,industrials,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1136893,"Fidelity National Information Services, Inc.",financials,core,True,EX99_PRESS_RELEASE,high,52,2015,52,1,0.0192,False,0,False
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,True,8K_BODY,high,4,2025,52,2,0.0385,False,0,False
+1137774,PRUDENTIAL FINANCIAL INC,financials,core,True,EX99_PRESS_RELEASE,high,48,2015,52,2,0.0385,False,0,False
+1137789,Seagate Technology Holdings plc,tech,core,True,EX99_PRESS_RELEASE,high,54,2015,54,0,0.0,False,0,False
+1141391,Mastercard Inc,financials,core,False,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+1156039,"Elevance Health, Inc.",healthcare,core,True,8K_BODY,high,3,2016,48,2,0.0417,False,0,False
+1156039,"Elevance Health, Inc.",healthcare,core,True,EX99_PRESS_RELEASE,high,45,2015,48,2,0.0417,False,0,False
+1156375,CME GROUP INC.,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1161154,"Energy Transfer Operating, L.P.",energy,core,True,EX99_PRESS_RELEASE,high,14,2015,14,0,0.0,False,0,False
+1163165,CONOCOPHILLIPS,energy,core,False,8K_BODY,high,1,2018,46,1,0.0217,False,0,False
+1163165,CONOCOPHILLIPS,energy,core,False,EX99_PRESS_RELEASE,high,45,2015,46,1,0.0217,False,0,False
+1164727,NEWMONT Corp /DE/,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1166691,COMCAST CORP,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1271024,LINKEDIN CORP,tech,core,True,EX99_PRESS_RELEASE,high,6,2015,6,0,0.0,False,0,False
+1276187,Energy Transfer LP,energy,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1283699,"T-Mobile US, Inc.",utilities,extension,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1297996,"DIGITAL REALTY TRUST, INC.",materials_realestate,extension,True,EX99_PRESS_RELEASE,high,53,2015,53,7,0.1321,False,0,False
+1318220,"Waste Connections, Inc.",utilities,extension,True,EX99_PRESS_RELEASE,high,42,2016,42,0,0.0,False,0,False
+1318605,"Tesla, Inc.",consumer,core,True,EX99_PRESS_RELEASE,high,93,2015,93,20,0.2151,False,0,False
+1321655,Palantir Technologies Inc.,tech,core,True,EX99_PRESS_RELEASE,high,24,2020,24,0,0.0,False,0,False
+1326801,"Meta Platforms, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1327567,Palo Alto Networks Inc,tech,core,True,EX99_PRESS_RELEASE,high,44,2015,44,0,0.0,False,0,False
+1341439,ORACLE CORP,tech,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1358071,CONCHO RESOURCES INC,energy,core,True,8K_BODY,high,7,2019,29,6,0.2069,False,0,False
+1358071,CONCHO RESOURCES INC,energy,core,True,EX99_PRESS_RELEASE,high,22,2015,29,6,0.2069,False,0,False
+1364742,"BlackRock Finance, Inc.",financials,core,True,EX99_PRESS_RELEASE,high,37,2015,37,0,0.0,False,0,False
+1373715,"ServiceNow, Inc.",tech,core,True,8K_BODY,high,1,2016,47,1,0.0213,False,0,False
+1373715,"ServiceNow, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,46,2015,47,1,0.0213,False,0,False
+1373835,Spectra Energy Corp.,energy,core,True,EX99_PRESS_RELEASE,high,7,2015,7,0,0.0,False,0,False
+1389170,Targa Resources Corp.,energy,core,True,EX99_PRESS_RELEASE,high,48,2015,48,0,0.0,False,0,False
+1390777,Bank of New York Mellon Corp,financials,core,True,8K_BODY,high,1,2016,46,1,0.0217,False,0,False
+1390777,Bank of New York Mellon Corp,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,46,1,0.0217,False,0,False
+1393612,Discover Financial Services,financials,core,True,EX99_PRESS_RELEASE,high,42,2015,42,0,0.0,False,0,False
+1393818,Blackstone Inc.,financials,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1403161,VISA INC.,financials,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1404912,KKR & Co. Inc.,financials,core,True,8K_BODY,high,1,2020,47,1,0.0213,False,0,False
+1404912,KKR & Co. Inc.,financials,core,True,EX99_PRESS_RELEASE,high,46,2015,47,1,0.0213,False,0,False
+1413329,Philip Morris International Inc.,consumer,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1418091,"TWITTER, INC.",tech,core,True,EX99_PRESS_RELEASE,high,30,2015,30,1,0.0333,False,0,False
+1467858,General Motors Co,consumer,core,True,8K_BODY,high,2,2019,48,1,0.0208,False,0,False
+1467858,General Motors Co,consumer,core,True,EX99_PRESS_RELEASE,high,46,2015,48,1,0.0208,False,0,False
+1483096,WILLIAMS PARTNERS L.P.,energy,core,True,EX99_PRESS_RELEASE,high,13,2015,13,0,0.0,False,0,False
+1489393,LyondellBasell Industries N.V.,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,46,2015,46,0,0.0,False,0,False
+1506307,"KINDER MORGAN, INC.",energy,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1510295,Marathon Petroleum Corp,energy,core,True,8K_BODY,high,4,2020,52,2,0.0385,False,0,False
+1510295,Marathon Petroleum Corp,energy,core,True,EX99_PRESS_RELEASE,high,48,2015,52,2,0.0385,False,0,False
+1512673,"Block, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,43,2016,43,0,0.0,False,0,False
+1532063,Express Scripts Holding Co.,consumer,core,True,EX99_PRESS_RELEASE,high,14,2015,14,0,0.0,False,0,False
+1534701,Phillips 66,energy,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+1535527,"CrowdStrike Holdings, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,30,2019,30,1,0.0333,False,0,False
+1539838,"Diamondback Energy, Inc.",energy,core,True,8K_BODY,high,14,2022,64,9,0.1406,False,0,False
+1539838,"Diamondback Energy, Inc.",energy,core,True,EX99_PRESS_RELEASE,high,50,2015,64,9,0.1406,False,0,False
+1543151,"Uber Technologies, Inc",financials,core,True,8K_BODY,high,3,2020,36,3,0.0833,False,0,False
+1543151,"Uber Technologies, Inc",financials,core,True,EX99_PRESS_RELEASE,high,33,2019,36,3,0.0833,False,0,False
+1551152,AbbVie Inc.,healthcare,core,False,EX99_PRESS_RELEASE,high,65,2015,65,19,0.2923,False,0,False
+1551182,Eaton Corp plc,industrials,extension,True,EX99_PRESS_RELEASE,high,48,2015,48,0,0.0,False,0,False
+1552000,MPLX LP,energy,core,True,8K_BODY,high,1,2026,48,3,0.0625,False,0,False
+1552000,MPLX LP,energy,core,True,EX99_PRESS_RELEASE,high,47,2015,48,3,0.0625,False,0,False
+1555280,Zoetis Inc.,healthcare,core,True,EX99_PRESS_RELEASE,high,46,2015,46,1,0.0217,False,0,False
+1564408,Snap Inc,tech,core,True,8K_BODY,high,1,2019,41,3,0.0732,False,0,False
+1564408,Snap Inc,tech,core,True,EX99_PRESS_RELEASE,high,40,2017,41,3,0.0732,False,0,False
+1571949,"Intercontinental Exchange, Inc.",financials,core,True,8K_BODY,high,1,2022,46,0,0.0,False,0,False
+1571949,"Intercontinental Exchange, Inc.",financials,core,True,EX99_PRESS_RELEASE,high,45,2015,46,0,0.0,False,0,False
+1578845,Allergan plc,healthcare,core,True,8K_BODY,high,2,2018,27,3,0.1111,False,0,False
+1578845,Allergan plc,healthcare,core,True,EX99_PRESS_RELEASE,high,25,2015,27,3,0.1111,False,0,False
+1585521,"Zoom Communications, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,28,2019,29,0,0.0,False,0,False
+1585521,"Zoom Communications, Inc.",tech,core,True,EX99_PRESS_RELEASE,medium,1,2019,29,0,0.0,False,0,False
+1596532,"Arista Networks, Inc.",tech,core,True,8K_BODY,high,2,2018,47,1,0.0213,False,0,False
+1596532,"Arista Networks, Inc.",tech,core,True,EX99_PRESS_RELEASE,high,44,2015,47,1,0.0213,False,0,False
+1596532,"Arista Networks, Inc.",tech,core,True,EX99_PRESS_RELEASE,medium,1,2020,47,1,0.0213,False,0,False
+1613103,Medtronic plc,healthcare,core,True,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1618921,"Walgreens Boots Alliance, Inc.",consumer,core,True,EX99_PRESS_RELEASE,high,42,2015,42,0,0.0,False,0,False
+1633917,"PayPal Holdings, Inc.",financials,core,True,8K_BODY,high,6,2016,50,3,0.06,False,0,False
+1633917,"PayPal Holdings, Inc.",financials,core,True,EX99_PRESS_RELEASE,high,44,2015,50,3,0.06,False,0,False
+1637459,Kraft Heinz Co,consumer,core,True,8K_BODY,high,1,2019,49,2,0.0408,False,0,False
+1637459,Kraft Heinz Co,consumer,core,True,EX99_PRESS_RELEASE,high,48,2015,49,2,0.0408,False,0,False
+1640147,Snowflake Inc.,tech,core,True,EX99_PRESS_RELEASE,high,23,2020,23,0,0.0,False,0,False
+1645590,Hewlett Packard Enterprise Co,tech,core,True,EX99_PRESS_RELEASE,high,53,2015,53,9,0.1698,False,0,False
+1652044,Alphabet Inc.,tech,core,False,EX99_PRESS_RELEASE,high,45,2015,45,0,0.0,False,0,False
+1666700,"DuPont de Nemours, Inc.",materials_realestate,extension,True,EX99_PRESS_RELEASE,high,42,2017,42,0,0.0,False,0,False
+1682852,"Moderna, Inc.",healthcare,core,True,EX99_PRESS_RELEASE,high,39,2019,39,2,0.0513,False,0,False
+1692819,Vistra Corp.,utilities,extension,True,EX99_PRESS_RELEASE,high,34,2018,37,0,0.0,False,0,False
+1692819,Vistra Corp.,utilities,extension,True,EX99_PRESS_RELEASE,medium,3,2017,37,0,0.0,False,0,False
+1707925,LINDE PLC,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,30,2019,31,2,0.0645,False,0,False
+1707925,LINDE PLC,materials_realestate,extension,True,EX99_PRESS_RELEASE,medium,1,2022,31,2,0.0645,False,0,False
+1730168,Broadcom Inc.,tech,core,True,EX99_PRESS_RELEASE,high,33,2018,33,0,0.0,False,0,False
+1739940,Cigna Group,healthcare,core,True,EX99_PRESS_RELEASE,high,30,2019,30,1,0.0333,False,0,False
+1744489,Walt Disney Co,consumer,core,True,EX99_PRESS_RELEASE,high,30,2019,30,0,0.0,False,0,False
+1751788,DOW INC.,materials_realestate,extension,True,EX99_PRESS_RELEASE,high,29,2019,29,0,0.0,False,0,False
+1782754,AZEK Co Inc.,consumer,core,True,EX99_PRESS_RELEASE,high,21,2020,21,0,0.0,False,0,False
+1868275,Constellation Energy Corp,utilities,extension,True,EX99_PRESS_RELEASE,high,18,2022,18,0,0.0,False,0,False
+1996810,GE Vernova Inc.,industrials,extension,True,EX99_PRESS_RELEASE,high,9,2024,9,0,0.0,False,0,False

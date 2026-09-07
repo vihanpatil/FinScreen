@@ -1,0 +1,36 @@
+{
+ "generated_by": "data/hardening/spotcheck_v12/build_draw_v12.py",
+ "design": "data/hardening/spotcheck_v12/SPOTCHECK_v12_design.md",
+ "seed": 20260827,
+ "n": 200,
+ "frame": "all 6747 rows of data/labels_v12.parquet (rubric v1.2)",
+ "source_sha256": "ca373b953504535b2f35ee374a6b6c1a6360000261748db365ee23c231e475e7",
+ "rubric_sha256": "46dea3c886846849c82ae2b65d8e29ef95016dece706cd19a2e00b8d99c30b25",
+ "stratification": "proportional (Hamilton) by section_type",
+ "corpus_counts": {
+  "MDA": 3962,
+  "RISK_FACTORS": 1606,
+  "EX99_PRESS_RELEASE": 1171,
+  "8K_BODY": 8
+ },
+ "allocation": {
+  "MDA": 117,
+  "RISK_FACTORS": 48,
+  "EX99_PRESS_RELEASE": 35,
+  "8K_BODY": 0
+ },
+ "batches": {
+  "1": 40,
+  "2": 40,
+  "3": 40,
+  "4": 40,
+  "5": 40
+ },
+ "drawn_section_mix": {
+  "MDA": 117,
+  "RISK_FACTORS": 48,
+  "EX99_PRESS_RELEASE": 35
+ },
+ "distinct_tickers_in_draw": 25,
+ "api_calls": 0
+}

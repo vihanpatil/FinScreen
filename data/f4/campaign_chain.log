@@ -1,0 +1,211 @@
+[2026-08-31 18:30:58] chain wrapper started (pid 36697)
+[2026-09-01 00:16:06] no live segment process; wrapper owns the chain from here
+
+FINALIZED seg-011
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-011/labels_seg-011.parquet
+            13241 rows · 43 cols · sha 5299c686b42e23b4
+  parse     0 failures · 2 schema violations
+  guidance  1737/3263 applicable rows imputed NONE (flagged)
+  truncated 72 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-011/manifest.json
+[2026-09-01 00:16:07] seg-011 finalized from existing journal
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-012/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-012
+  seg-012  13244 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-012/rows.jsonl (sha 4db6403e506a1b54)
+[2026-09-01 00:16:08] seg-012 generate attempt 1
+[2026-09-01 10:05:58] seg-012 generate exit 0
+
+FINALIZED seg-012
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-012/labels_seg-012.parquet
+            13244 rows · 43 cols · sha 8963e4113eb3f932
+  parse     0 failures · 0 schema violations
+  guidance  2241/4106 applicable rows imputed NONE (flagged)
+  truncated 117 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-012/manifest.json
+[2026-09-01 10:05:59] seg-012 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-013
+  seg-013  13241 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013/rows.jsonl (sha d436194209c8776a)
+[2026-09-01 10:06:00] seg-013 generate attempt 1
+[2026-09-01 15:34:44] chain wrapper started (pid 56469)
+[2026-09-01 15:34:44] no live segment process; wrapper owns the chain from here
+[2026-09-01 15:34:44] seg-011 already finalized; skipping
+[2026-09-01 15:34:44] seg-012 already finalized; skipping
+journal has 7926/13241 rows. The parquet is written on COMPLETION only — resume the generation step, or pass --allow-partial if this is a smoke run.
+  seg-013  13241 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013/rows.jsonl (sha d436194209c8776a)
+[2026-09-01 15:34:45] seg-013 generate attempt 1
+[2026-09-01 15:35:07] chain wrapper started (pid 56570)
+[2026-09-01 15:35:25] chain wrapper started (pid 56664)
+[2026-09-01 15:38:16] chain wrapper started (pid 57219)
+[2026-09-01 16:38:52] chain wrapper started (pid 68027)
+[2026-09-01 16:38:52] no live segment process; wrapper owns the chain from here
+[2026-09-01 16:38:52] seg-011 already finalized; skipping
+[2026-09-01 16:38:52] seg-012 already finalized; skipping
+journal has 9487/13241 rows. The parquet is written on COMPLETION only — resume the generation step, or pass --allow-partial if this is a smoke run.
+  seg-013  13241 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013/rows.jsonl (sha d436194209c8776a)
+[2026-09-01 16:38:53] seg-013 generate attempt 1
+[2026-09-01 19:07:57] seg-013 generate exit 0
+
+FINALIZED seg-013
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013/labels_seg-013.parquet
+            13241 rows · 43 cols · sha b6d8a4cf4c81ee16
+  parse     0 failures · 0 schema violations
+  guidance  2287/4361 applicable rows imputed NONE (flagged)
+  truncated 128 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-013/manifest.json
+[2026-09-01 19:07:58] seg-013 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-014/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-014
+  seg-014  13249 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-014/rows.jsonl (sha 7ef4da0bd945334a)
+[2026-09-01 19:07:59] seg-014 generate attempt 1
+[2026-09-02 03:47:06] seg-014 generate exit 0
+
+FINALIZED seg-014
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-014/labels_seg-014.parquet
+            13249 rows · 43 cols · sha cadf8c68f25552de
+  parse     0 failures · 0 schema violations
+  guidance  1682/3408 applicable rows imputed NONE (flagged)
+  truncated 96 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-014/manifest.json
+[2026-09-02 03:47:07] seg-014 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-015/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-015
+  seg-015  13229 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-015/rows.jsonl (sha 30e3d015d2ff7b50)
+[2026-09-02 03:47:08] seg-015 generate attempt 1
+[2026-09-02 12:24:21] seg-015 generate exit 0
+
+FINALIZED seg-015
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-015/labels_seg-015.parquet
+            13229 rows · 43 cols · sha b1c2b1942ac5a3a3
+  parse     0 failures · 1 schema violations
+  guidance  2191/4357 applicable rows imputed NONE (flagged)
+  truncated 129 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-015/manifest.json
+[2026-09-02 12:24:23] seg-015 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-016/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-016
+  seg-016  13228 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-016/rows.jsonl (sha 2b44b629bfe85110)
+[2026-09-02 12:24:23] seg-016 generate attempt 1
+[2026-09-02 20:47:55] seg-016 generate exit 0
+
+FINALIZED seg-016
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-016/labels_seg-016.parquet
+            13228 rows · 43 cols · sha 5ec103f56f59308d
+  parse     0 failures · 0 schema violations
+  guidance  1703/3321 applicable rows imputed NONE (flagged)
+  truncated 89 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-016/manifest.json
+[2026-09-02 20:47:56] seg-016 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-017/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-017
+  seg-017  13228 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-017/rows.jsonl (sha d48658b89136f08f)
+[2026-09-02 20:47:57] seg-017 generate attempt 1
+[2026-09-03 06:10:23] seg-017 generate exit 0
+
+FINALIZED seg-017
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-017/labels_seg-017.parquet
+            13228 rows · 43 cols · sha c9a5125edd40ab78
+  parse     0 failures · 2 schema violations
+  guidance  2278/4657 applicable rows imputed NONE (flagged)
+  truncated 132 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-017/manifest.json
+[2026-09-03 06:10:25] seg-017 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-018/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-018
+  seg-018  13228 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-018/rows.jsonl (sha a725591716019a92)
+[2026-09-03 06:10:25] seg-018 generate attempt 1
+[2026-09-03 14:49:08] seg-018 generate exit 0
+
+FINALIZED seg-018
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-018/labels_seg-018.parquet
+            13228 rows · 43 cols · sha df3dd149feb387dd
+  parse     0 failures · 0 schema violations
+  guidance  1561/3181 applicable rows imputed NONE (flagged)
+  truncated 88 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-018/manifest.json
+[2026-09-03 14:49:09] seg-018 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-019/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-019
+  seg-019  13229 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-019/rows.jsonl (sha 5aa0db7799c238d7)
+[2026-09-03 14:49:10] seg-019 generate attempt 1
+[2026-09-03 23:43:30] seg-019 generate exit 0
+
+FINALIZED seg-019
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-019/labels_seg-019.parquet
+            13229 rows · 43 cols · sha 7062a2bc8434fce0
+  parse     0 failures · 4 schema violations
+  guidance  2285/4634 applicable rows imputed NONE (flagged)
+  truncated 153 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-019/manifest.json
+[2026-09-03 23:43:31] seg-019 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-020/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-020
+  seg-020  13227 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-020/rows.jsonl (sha cd670434fa8ad3d9)
+[2026-09-03 23:43:32] seg-020 generate attempt 1
+[2026-09-04 14:35:33] seg-020 generate exit 0
+
+FINALIZED seg-020
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-020/labels_seg-020.parquet
+            13227 rows · 43 cols · sha e5974eb3446aea6c
+  parse     0 failures · 1 schema violations
+  guidance  1677/3486 applicable rows imputed NONE (flagged)
+  truncated 122 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-020/manifest.json
+[2026-09-04 14:35:34] seg-020 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-021/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-021
+  seg-021  13226 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-021/rows.jsonl (sha fb7faa81d04e3960)
+[2026-09-04 14:35:35] seg-021 generate attempt 1
+[2026-09-04 23:26:45] seg-021 generate exit 0
+
+FINALIZED seg-021
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-021/labels_seg-021.parquet
+            13226 rows · 43 cols · sha dfad4f53d854b951
+  parse     0 failures · 0 schema violations
+  guidance  2211/4664 applicable rows imputed NONE (flagged)
+  truncated 135 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-021/manifest.json
+[2026-09-04 23:26:46] seg-021 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-022/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-022
+  seg-022  13269 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-022/rows.jsonl (sha a7ad2d16a8e9c9a7)
+[2026-09-04 23:26:47] seg-022 generate attempt 1
+[2026-09-05 09:15:55] seg-022 generate exit 0
+
+FINALIZED seg-022
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-022/labels_seg-022.parquet
+            13269 rows · 43 cols · sha ce916f564648b52e
+  parse     0 failures · 2 schema violations
+  guidance  1564/3354 applicable rows imputed NONE (flagged)
+  truncated 102 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-022/manifest.json
+[2026-09-05 09:15:57] seg-022 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-023/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-023
+  seg-023  13290 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-023/rows.jsonl (sha 8d564ed94cbb6443)
+[2026-09-05 09:15:58] seg-023 generate attempt 1
+[2026-09-05 18:17:22] seg-023 generate exit 0
+
+FINALIZED seg-023
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-023/labels_seg-023.parquet
+            13290 rows · 43 cols · sha 8d75d3671c4828fa
+  parse     0 failures · 0 schema violations
+  guidance  2040/4227 applicable rows imputed NONE (flagged)
+  truncated 135 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-023/manifest.json
+[2026-09-05 18:17:23] seg-023 finalized
+/Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-024/rows.jsonl not found. Run, with the system python3:
+    python3 finetune/label_e2.py --prepare-segment seg-024
+  seg-024  12492 rows -> /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-024/rows.jsonl (sha ca00098ae6942b1b)
+[2026-09-05 18:17:24] seg-024 generate attempt 1
+[2026-09-06 02:32:05] seg-024 generate exit 0
+
+FINALIZED seg-024
+  parquet   /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-024/labels_seg-024.parquet
+            12492 rows · 43 cols · sha c871931cc179c3c6
+  parse     0 failures · 1 schema violations
+  guidance  1691/3602 applicable rows imputed NONE (flagged)
+  truncated 134 passages (reserve 256)
+  manifest  /Users/vihanpatil/personal/projects/FinScreen/data/f4/segments/seg-024/manifest.json
+[2026-09-06 02:32:07] seg-024 finalized
+[2026-09-06 02:32:07] CAMPAIGN CHAIN COMPLETE (seg-011..seg-024 all finalized)

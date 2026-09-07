@@ -1,0 +1,41 @@
+Loading base model + adapter (this is the only GPU work) ...
+  loaded in 0.7s
+1010 eval rows · 0 already in predictions.jsonl · 1010 to generate
+  [25/1010] 1.85s/row · running 1598 chunks/h · ETA 0.62h · last finish=stop gen_tok=24
+  [50/1010] 1.44s/row · running 1584 chunks/h · ETA 0.61h · last finish=stop gen_tok=16
+  [75/1010] 2.84s/row · running 1525 chunks/h · ETA 0.61h · last finish=stop gen_tok=49
+  [100/1010] 2.25s/row · running 1528 chunks/h · ETA 0.60h · last finish=stop gen_tok=23
+  [125/1010] 1.66s/row · running 1541 chunks/h · ETA 0.57h · last finish=stop gen_tok=15
+  [150/1010] 2.39s/row · running 1560 chunks/h · ETA 0.55h · last finish=stop gen_tok=33
+  [175/1010] 1.77s/row · running 1563 chunks/h · ETA 0.53h · last finish=stop gen_tok=16
+  [200/1010] 2.35s/row · running 1575 chunks/h · ETA 0.51h · last finish=stop gen_tok=15
+  [225/1010] 2.43s/row · running 1578 chunks/h · ETA 0.50h · last finish=stop gen_tok=40
+  [250/1010] 1.50s/row · running 1581 chunks/h · ETA 0.48h · last finish=stop gen_tok=16
+  [275/1010] 1.57s/row · running 1592 chunks/h · ETA 0.46h · last finish=stop gen_tok=16
+  [300/1010] 1.62s/row · running 1600 chunks/h · ETA 0.44h · last finish=stop gen_tok=16
+  [325/1010] 3.99s/row · running 1593 chunks/h · ETA 0.43h · last finish=stop gen_tok=44
+  [350/1010] 2.34s/row · running 1591 chunks/h · ETA 0.41h · last finish=stop gen_tok=32
+  [375/1010] 1.94s/row · running 1584 chunks/h · ETA 0.40h · last finish=stop gen_tok=16
+  [400/1010] 2.02s/row · running 1578 chunks/h · ETA 0.39h · last finish=stop gen_tok=16
+  [425/1010] 1.93s/row · running 1585 chunks/h · ETA 0.37h · last finish=stop gen_tok=16
+  [450/1010] 1.81s/row · running 1581 chunks/h · ETA 0.35h · last finish=stop gen_tok=23
+  [475/1010] 2.11s/row · running 1568 chunks/h · ETA 0.34h · last finish=stop gen_tok=27
+  [500/1010] 3.01s/row · running 1566 chunks/h · ETA 0.33h · last finish=stop gen_tok=49
+  [525/1010] 2.50s/row · running 1566 chunks/h · ETA 0.31h · last finish=stop gen_tok=15
+  [550/1010] 2.46s/row · running 1564 chunks/h · ETA 0.29h · last finish=stop gen_tok=24
+  [575/1010] 3.00s/row · running 1558 chunks/h · ETA 0.28h · last finish=stop gen_tok=24
+  [600/1010] 2.50s/row · running 1554 chunks/h · ETA 0.26h · last finish=stop gen_tok=33
+  [625/1010] 2.90s/row · running 1552 chunks/h · ETA 0.25h · last finish=stop gen_tok=48
+  [650/1010] 3.02s/row · running 1534 chunks/h · ETA 0.23h · last finish=stop gen_tok=57
+  [675/1010] 5.11s/row · running 1515 chunks/h · ETA 0.22h · last finish=stop gen_tok=81
+  [700/1010] 2.96s/row · running 1497 chunks/h · ETA 0.21h · last finish=stop gen_tok=33
+  [725/1010] 2.55s/row · running 1477 chunks/h · ETA 0.19h · last finish=stop gen_tok=16
+  [750/1010] 5.11s/row · running 1468 chunks/h · ETA 0.18h · last finish=stop gen_tok=81
+  [775/1010] 2.96s/row · running 1449 chunks/h · ETA 0.16h · last finish=stop gen_tok=45
+  [800/1010] 3.73s/row · running 1428 chunks/h · ETA 0.15h · last finish=stop gen_tok=70
+  [825/1010] 3.39s/row · running 1418 chunks/h · ETA 0.13h · last finish=stop gen_tok=59
+  [850/1010] 1.95s/row · running 1401 chunks/h · ETA 0.11h · last finish=stop gen_tok=16
+  [875/1010] 2.16s/row · running 1392 chunks/h · ETA 0.10h · last finish=stop gen_tok=24
+  [900/1010] 3.18s/row · running 1383 chunks/h · ETA 0.08h · last finish=stop gen_tok=51
+  [925/1010] 3.17s/row · running 1374 chunks/h · ETA 0.06h · last finish=stop gen_tok=50
+  [950/1010] 3.24s/row · running 1370 chunks/h · ETA 0.04h · last finish=stop gen_tok=52

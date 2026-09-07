@@ -1,0 +1,8 @@
+{
+ "sentiment_negative_share": 0.3512558358308332,
+ "sentiment_mean_score": 0.7870416166109082,
+ "guidance_signed_mean": 0.9327313756057063,
+ "guidance_any_present": 0.5882310789023727,
+ "redflag_any_rate_press": 0.380563345081012,
+ "redflag_12_mean": 0.7165648861881252
+}

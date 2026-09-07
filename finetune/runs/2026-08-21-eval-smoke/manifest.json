@@ -1,0 +1,169 @@
+{
+  "run_id": "2026-08-21-eval-smoke",
+  "generated_utc": "2026-08-21T14:22:37.577397+00:00",
+  "cost_usd": 0.0,
+  "anthropic_api_calls": 0,
+  "model": {
+    "path": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "weights_sha256": "86110f368236b53cf4c2336f991a85703b17bcc60bb75f292b4002ec0219f071"
+  },
+  "adapter": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-final-from-2250",
+    "adapters_sha256": "3c6adc9eedaec2adc7f7b4bd3c4c2b3e8b2e970ac63f6679570562be948f25e8",
+    "adapters_bytes": 11541328,
+    "adapters_mtime_utc": "2026-08-21T14:22:00.079067+00:00",
+    "adapter_config_sha256": "cb0815ffc2bace85269b88fb816f26a84de83121ffcaf5c01d28a25696fad4d8",
+    "checkpoint_shas": {
+      "0000100_adapters.safetensors": "295d97cb19eacf1ae15a4f0f9221d2fe95076bc2152bb7b3e3c5a5a546a94ac4",
+      "0000200_adapters.safetensors": "d7be2580d0c1b8f0dad4168b927518fe5c2aa833baf4cfcf24f712d47c8ca6df",
+      "0000300_adapters.safetensors": "786f686b059646a530cf2f26f82b9a864dbe4ee27581917f9a6923fc027710d0",
+      "0000400_adapters.safetensors": "89b1f0a508bc867c445f7af93ef192558bb4fa5bfd5b8069ebfa62489dfc609e",
+      "0000500_adapters.safetensors": "2923ca07b26328299ef8bd3bf63e564f479ace993db698323666380f80630fc4",
+      "0000600_adapters.safetensors": "ee3f5d8b8712be6c2a0ca9ccad5f7a255324c474c54b3baf0bc0ddfeccb53f2d",
+      "0000700_adapters.safetensors": "0033392fdf8a60fa56e03cb09bc9f20eceddceebe1680ce9b4a821b15e3a7880",
+      "0000800_adapters.safetensors": "0efd179b622871c180e781a901e57c1dc40426d5d76c9326317af6bb4edbcb2f",
+      "0000900_adapters.safetensors": "028692f686a80689c52f5dc6b02b7f8c22ecf5991c2d0b75e61041286d70c70f",
+      "0001000_adapters.safetensors": "3544eeac4ac5fcb2cf004c607f77541c7a3fab35229122ceb8bfe89c9a936a3d",
+      "0001100_adapters.safetensors": "ec550ddb4c707cea825ce082cfe6a609503978bd603dae0b3b0fca92a0f8e34d",
+      "0001200_adapters.safetensors": "bf645c8f7eb1eb7257a249735ad6af3cb97cf87b6f3024534d18da97dafeaed8",
+      "0001300_adapters.safetensors": "d8ada787a68d2f13cc4663f7923a2a0b6a5c166296fc3e3c9432d80249e73130",
+      "0001400_adapters.safetensors": "d64b89392961c07a05aa8f99e8ae8f7ef8f4a5cbf5017a9394a559a83d923b3f",
+      "0001500_adapters.safetensors": "d42c20abbeb8b84331cbbda6f2aa813c4cb3973a3130281011a0d719a254df23",
+      "0001600_adapters.safetensors": "3626efe529ea32a16123149c78d8b5d646590242584fc7e8a761f12a4b51f2d2",
+      "0001700_adapters.safetensors": "4e6f22d602dd827ef3d45e4f17deb09bd3a32e5b0f85a3716df4a071807431bc",
+      "0001800_adapters.safetensors": "5d19cf180af27387c534078070d246c5a8d8bc32b089348c88420fb4259820b9",
+      "0001900_adapters.safetensors": "702fbcd3c3f0676f6bb2f02882df107173521a29e86f5924ea2457c1fd5811d9",
+      "0002000_adapters.safetensors": "ab4e125fe759273e039559f078607fe91b5b810c16b4522004f42734c82336de",
+      "0002100_adapters.safetensors": "49e6d0bd80fbb781495a573f3a095887bd19d6c224b9a0c62d34f21fd398b8a6",
+      "0002200_adapters.safetensors": "64465ad1541ddd6d4209877796562c41caadf2d07fab5c1149cd53db49843b97",
+      "0002300_adapters.safetensors": "95538d418c3fe9f7cafa6b9db64839b1e69cf999714eba25a19d76375f7664b8",
+      "0002400_adapters.safetensors": "363f77b256524e1a0a5021429b3bd5cc130a5c397c3f9a405932ee4241ef73d9",
+      "0002500_adapters.safetensors": "aad6b5f7aec294613d8b07e723ad577b09aa5b91e4dcdb175948f67329dbc69f",
+      "0002600_adapters.safetensors": "0f02ea62d09f6c240c80ee743bf7c16c9915ee1ae758435c6792bc0fbb8a1325",
+      "0002700_adapters.safetensors": "24cd1f0374b010e46c388987428ff35782c28e1bc2c880a5969fb03417e99c71",
+      "0002800_adapters.safetensors": "877e2aa337a500fb8f7d1ebcc2edf59b93b8afef316d2654ee6d8573b5ae1836",
+      "0002900_adapters.safetensors": "d8782137f0db0f3fcaec18e3166f0cbbaf533ef5ed83286e2afc07ac4f4e687b",
+      "0003000_adapters.safetensors": "a3414eeecf91e3686656e5447584e0315503842f36eefd9b655457c3379008f7",
+      "0003100_adapters.safetensors": "98c924a13383630c8fad21c7f659c9dbcd532b6ba72951286c6f4a7d5bf8d619",
+      "0003200_adapters.safetensors": "14fdb8813238aa341635075a8f1b93dfb242b5073ffe55b36ddcfbae159965d7",
+      "0003300_adapters.safetensors": "7c6427b510b993ed8de8d7d2297a84e48fec43835722b4954a71bfea8eee96d6",
+      "0003400_adapters.safetensors": "3c6adc9eedaec2adc7f7b4bd3c4c2b3e8b2e970ac63f6679570562be948f25e8"
+    },
+    "matches_checkpoint": "0003400_adapters.safetensors",
+    "lora_parameters": {
+      "rank": 16,
+      "scale": 2.0,
+      "dropout": 0.05,
+      "keys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj"
+      ]
+    },
+    "num_layers": 16,
+    "iters_configured": 3486,
+    "resume_adapter_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-epoch1-resume-from-500/0001750_adapters.safetensors"
+  },
+  "train_manifest": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-21-epoch1-final-from-2250/manifest.json",
+    "sha256": "b06d2ee8f08c99a3483c937c6267329cfbe68841e44325f7354260e0ddb92140",
+    "run_id": "2026-08-21-epoch1-final-from-2250"
+  },
+  "data": {
+    "eval_rows_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/mlx_data/valid.jsonl",
+    "eval_rows_sha256": "deb63b76992404ecaf4fdc4c3a3acbea9b0c3bb7f655064aec7191ebc9ab0736",
+    "prepared_eval_file": "/Users/vihanpatil/personal/projects/FinScreen/finetune/prepared/eval.jsonl",
+    "prepared_eval_sha256": "b441716b8f73cae678d38b2b3f19f7d70126d8db0613aeadab98437ef4f26dd9",
+    "n_rows": 1010,
+    "n_passages_head_truncated_to_fit_2048": 49,
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "instruction_chars": 1825,
+    "instruction_byte_identical_across_eval": true,
+    "instruction_byte_identical_to_train": true,
+    "sha_matches_train_manifest": true
+  },
+  "section_types_sidecar": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/eval_section_types.json",
+    "sha256": "620feff2bdf8d419ae7b03d134ba0ac2cdd51c0a0ec0295cce08b7554add11a9"
+  },
+  "generation": {
+    "backend": "mlx",
+    "decoding": "greedy (temperature 0.0 -> argmax sampler)",
+    "max_tokens": 520,
+    "prompt": "apply_chat_template([system=instruction, user=passage], add_generation_prompt=True)",
+    "prompt_source": "convert_to_mlx.render(); the inference prompt is a token-exact prefix of the training sequence for the same row"
+  },
+  "n_eval_rows": 20,
+  "n_eval_rows_in_split": 1010,
+  "limit": 20,
+  "throughput": {
+    "n_rows_generated_this_process": 20,
+    "wall_seconds": 43.7,
+    "chunks_per_hour": 1649.4,
+    "latency_seconds_per_row": {
+      "mean": 2.182,
+      "p50": 2.22,
+      "p90": 2.909,
+      "p95": 2.974,
+      "p99": 3.201,
+      "max": 3.258
+    },
+    "prompt_tokens": {
+      "mean": 982.1,
+      "total": 19643,
+      "p50": 956.5,
+      "p90": 1182.4,
+      "p95": 1281.55,
+      "p99": 1502.71
+    },
+    "generation_tokens": {
+      "mean": 28.5,
+      "total": 570,
+      "max": 59,
+      "p50": 23.0,
+      "p90": 48.2,
+      "p95": 50.45,
+      "p99": 57.29
+    },
+    "prefill_tokens_per_second": {
+      "mean": 880.8,
+      "p50": 888.4,
+      "p90": 912.6,
+      "p95": 915.4,
+      "p99": 916.9
+    },
+    "decode_tokens_per_second": {
+      "mean": 28.8,
+      "p50": 28.8,
+      "p90": 29.4,
+      "p95": 29.5,
+      "p99": 29.6
+    },
+    "finish_reasons": {
+      "stop": 20
+    },
+    "f4_note": "These figures are EXPANSION_PLAN.md F4's labeling-throughput probe, measured at n=1,010 on this machine with this adapter.",
+    "projections": {
+      "E1 re-label (6,746 chunks)": {
+        "hours": 4.1,
+        "overnights_at_10h": 0.4
+      },
+      "E2 low estimate (~70k new + 6,746 E1 = 76,746)": {
+        "hours": 46.5,
+        "overnights_at_10h": 4.7
+      },
+      "E2 high estimate (~98k new + 6,746 E1 = 104,746)": {
+        "hours": 63.5,
+        "overnights_at_10h": 6.4
+      }
+    }
+  },
+  "versions": {
+    "mlx": "0.32.1",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.15.1",
+    "numpy": "2.4.6",
+    "python": "3.11.10"
+  },
+  "n_scored": 20,
+  "partial": false
+}
