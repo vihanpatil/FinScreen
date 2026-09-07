@@ -5,7 +5,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-ROOT = Path("/Users/vihanpatil/personal/projects/FinScreen")
+ROOT = Path(__file__).resolve().parents[2]   # data/hardening/<this file> -> repo root
 sys.path.insert(0, str(ROOT))
 from extract import html_fragment_to_text, strip_sgml_document_wrapper  # noqa: E402
 

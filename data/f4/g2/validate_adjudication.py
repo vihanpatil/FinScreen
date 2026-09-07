@@ -26,7 +26,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-G2 = Path("/Users/vihanpatil/personal/projects/FinScreen/data/f4/g2")
+G2 = Path(__file__).resolve().parent
 ADJ_DIR = G2 / "adjudications"
 BATCH_DIR = G2 / "adjudicator_batches"
 KEYS = {"chunk_id", "field", "verdict", "correct_label", "confidence", "brief",

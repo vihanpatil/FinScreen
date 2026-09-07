@@ -82,7 +82,7 @@ from pathlib import Path
 import pandas as pd
 
 # ----------------------------------------------------------------- paths
-ROOT = Path("/Users/vihanpatil/personal/projects/FinScreen")
+ROOT = Path(__file__).resolve().parents[3]   # data/f4/g2/<this file> -> repo root
 G2 = ROOT / "data" / "f4" / "g2"
 LABELS = ROOT / "data" / "f4" / "labels_e2_v1.parquet"   # READ-ONLY
 CHUNKS = ROOT / "data" / "f4" / "chunks_v1.parquet"      # READ-ONLY

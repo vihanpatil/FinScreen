@@ -1249,6 +1249,8 @@ for the next session — the incident itself is closed.
 
 ## 6. Ratified next-phase plan, in execution order
 
+> **HISTORICAL (E1-era, Weeks 4–5). Steps 1–6 below were the plan as of 2026-08-18; Steps 1–2 completed, Step 3 ran on E1 (Phase C), Step 5 became the MLX fine-tune, Step 6 is folded into F6. The CURRENT plan is `EXPANSION_PLAN.md` §4 (phases F0–F6, gates G1–G4) and, for the next phase, `F5_PLAN.md` (written 2026-09-07). Kept verbatim as the record.**
+
 ### Step 1 — Spot-check second-rater pass
 
 **What:** Spawn `.claude/agents/label-auditor.md` in ~40-chunk batches over

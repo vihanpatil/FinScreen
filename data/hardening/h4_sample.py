@@ -7,7 +7,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-ROOT = Path("/Users/vihanpatil/personal/projects/FinScreen")
+ROOT = Path(__file__).resolve().parents[2]   # data/hardening/<this file> -> repo root
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(".")
 
 SEED_PRIMARY = 20260825

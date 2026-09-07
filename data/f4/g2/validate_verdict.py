@@ -28,7 +28,7 @@ import re
 import sys
 from pathlib import Path
 
-ANALYZE = Path("/Users/vihanpatil/personal/projects/FinScreen/data/f4/g2/analyze_g2.py")
+ANALYZE = Path(__file__).resolve().parent / "analyze_g2.py"
 
 
 def load_analyze():

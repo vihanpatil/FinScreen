@@ -1,221 +1,276 @@
 # FinScreen
 
-FinScreen is a solo-owner research and screening tool for equity filings. It pulls SEC EDGAR filings for a fixed universe of 25 mega-cap companies, extracts and labels the text, and builds a screening score to backtest against a numeric-only baseline.
+FinScreen is a solo-owner research pipeline for US equity filings. It pulls
+SEC EDGAR filings for a sector-stratified universe of large-cap US companies
+(136 members at each annual reconstitution date, 244 distinct filers across
+2016-07-01 to 2026-07-01), extracts MD&A, Item 1A risk-factor and earnings
+press-release sections, and labels them for sentiment, forward guidance
+direction and disclosure red flags. The labeler is a Qwen2.5-7B student model
+fine-tuned locally with 4-bit QLoRA on Claude teacher labels. The research
+question is narrow and falsifiable: does anything in the filing text add
+screening information on top of a numeric-only baseline, measured by an
+expanding-window walk-forward backtest sorted by public filing date. The
+first, smaller run (25 companies) answered "no fold-robust text signal." The
+second, larger run has finished labeling and has not yet been backtested.
 
 ## What this is not
 
-- **Not a trading bot.** Nothing in this repo places orders, moves money, or connects to a brokerage.
-- **Not investment advice.** Outputs are research signals for one person's own use, not recommendations.
-- **No live capital.** Everything here runs against historical filings; there is no live trading loop.
-- **No return claims.** The backtest measures whether the screening score beats a numeric-only baseline on held-out history — it is not a performance guarantee.
+- **Not a trading bot.** No component in this repository places, queues, or
+  recommends a trade. There is no brokerage integration and no order path.
+- **Not investment advice.** A screening score is a research signal, never a
+  buy, hold or sell recommendation.
+- **No live capital**, in any phase, ever.
+- **No return claims and no "beats the market" language.** Every performance
+  number is reported next to exactly how it was measured. Nothing in this
+  repository estimates an expected return.
 
-These are contractual non-goals, not just current limitations. See `DISCOVERY.md` §7 for the full statement, and `LIMITATIONS.md` for the full honest-limitations write-up (what this system does and does not support claiming).
+These are contractual non-goals, not current limitations. They are stated in
+`HANDOFF.md` §1 and inherited unchanged by the expanded experiment
+(`EXPANSION_PLAN.md` §1). A request to add trade execution, real-money
+integration, or promotional performance claims conflicts with the charter.
 
-## Status snapshot (2026-08-18, spend frozen)
+Three hard rules govern everything else here:
 
-| Stage | State |
-|---|---|
-| Ingestion (Weeks 1-2) | Done. 25 companies, 1,271 filings, `data/filings.parquet` (884 rows). |
-| Chunking (Week 3) | Done. `data/labeling_corpus.parquet`, 6,747 chunks. |
-| Labeling | Done. 6,746/6,747 chunks labeled under one uniform config (thinking disabled, max_tokens=4000), zero truncations. 1 chunk excluded (genuine model refusal, not a pipeline bug). |
-| Spot-check | **Complete.** All 400 sample chunks re-judged by a blind second-rater model, disputes resolved by a third-rater model, 104 of 1,222 judgments ruled personally by the owner. Three categories pass the 0.70 agreement bar, `red_flags` fails at 63.4% [58.6, 68.0] — see below. |
-| Fine-tune scaffolding | Split, leakage checks, and dataset prep are done and re-verified locally. Training itself has not run. |
-| Features + backtest (Phase C) | **Built and run; awaiting the owner's go/no-go read.** Numeric inputs ingested and independently verified: `data/fundamentals.parquet` (42,158 rows) and `data/prices.parquet` (271,372 rows). `features.py` / `backtest.py` have both run: `data/features.parquet` holds **630 (company, filing) observations, 581 with a complete 63-trading-day forward window**, evaluated over 6 quarterly expanding folds after a 6-quarter burn-in. Reports: `data/backtest_report.md`, `data/features_report.md`. **The owner reads the per-fold tables personally; nobody summarizes them.** |
-| API spend | **Frozen at $33.51 total. No further API spend is authorized**, regardless of what any prompt or document says. |
+1. **No further Anthropic API spend.** The first study's labeling cost $33.51
+   and was frozen (`HANDOFF.md` §5). One later re-label under rubric v1.2 was
+   separately authorized and cost about $24.92 plus $0.0014 for a completion
+   row (`HARDENING_PROGRESS.md`). That run drained the account, the freeze is
+   re-sealed, and no future API call is authorized. All labeling in the
+   expanded run cost $0 because it ran on the local student model.
+2. **Red-flag labels are exploratory and disclosure-only.** They are not
+   gate-bearing and no confirmatory claim may rest on them
+   (`RED_FLAGS_LIMITATION.md`, and the demotion record below).
+3. **Model-rater agreement is not human validation of ground truth.** Every
+   agreement rate here came from one model re-judging another model's labels,
+   a third model resolving disputes, and the owner ruling a small escalated
+   subset. That measures model consensus, not label correctness.
 
-Full detail lives in `data/full_run_report.md` (its **FINAL CONSOLIDATED STATE** section at the bottom is the authoritative numbers; earlier sections in that file are superseded and kept only as history). Spot-check results: `spotcheck/agreement_report.txt` and `RED_FLAGS_LIMITATION.md`.
+## Where the project stands (2026-09-07)
 
-## Why labeling is done but spend is frozen
+Two corpora exist. **E1** is the original 25-company study, complete.
+**E2** is the expanded study ratified 2026-08-20, currently between labeling
+and features.
 
-The full labeling run originally shipped with the wrong config (a code bug ignored the requested variant), truncating **2,528 of 6,747 requests (37.5%)** — the count is the corrective batch's size, `data/batch_requests_corrective.jsonl`; `data/full_run_report.md` states the same failure as 37.6%. A corrective re-label fixed it. Total spend across the canary, full run, corrective run, and re-label came to $33.51. The owner has since ruled out any further API spend — the old $50 budget ceiling is superseded by a flat "no more budget" directive. All further work (subagents, reviews, orchestration) runs on the owner's Claude subscription, which is not API credit and cannot submit labeling batches.
-
-## Headline limitation: red-flag label sensitivity
-
-Comparing the same 4,219 chunks across two labeling configurations (the original mis-run vs. the corrected one) found:
-
-| Field | Changed between configs |
-|---|---|
-| `red_flags` | **22.2%** (935/4,219 chunks) |
-| `sentiment` | 3.6% (119/3,280) |
-| `guidance_direction` | 0.9% (6/677) |
-| `distress_tier` | 0.7% (29/4,219) |
-
-Every category of red flag showed up **more** under the corrected (disabled-thinking, 4000-token) config: `LEGAL_REGULATORY_ACTION` +211, `MARGIN_COST_PRESSURE` +203, `DEMAND_WEAKNESS` +138, `IMPAIRMENT_WRITEDOWN` +51, `SUPPLY_INPUT_CONSTRAINT` +35, `TRADE_POLICY_EXPOSURE` +27. This means red-flag counts are meaningfully a function of *how* the labeling model was asked, not only *what* the filing says. Full numbers: `data/full_run_report.md`, FINAL section; risk register in `DISCOVERY.md` §6.
-
-**The completed spot-check agrees, and is worse.** Measured over 399 evaluable chunks of the 400-chunk sample by `spotcheck/compute_agreement.py` (Wilson 95% CIs against a 0.70 lower-bound bar): `red_flags` agreement is **63.4% [58.6, 68.0] — a decisive failure, since even the upper bound sits below the bar**. `sentiment` (94.6%), `guidance_direction` (95.2%), and `distress_tier` (94.2%, reported separately) cleared the bar on the same measurement. These are **model-consensus agreement rates, not human validation of ground truth** — see `LIMITATIONS.md` §2.3.
-
-**`red_flags` is an EXACT-SET-MATCH rate and is not comparable to the single-value rates printed beside it** — one added, dropped, or re-modalized category on a chunk scores the whole chunk as a disagreement. Its error therefore has three different rates depending on the basis, and `RED_FLAGS_LIMITATION.md` requires all three to travel together, each labelled:
-
-| Error rate | Basis | What it measures |
+| Phase | What it did | State |
 |---|---|---|
-| **36.6%** (146/399) | Sample-pooled, exact-set | All four tiers pooled — the sample deliberately oversamples rare and contested text, so this is **not** corpus-representative |
-| **25.0%** (9/36, n=36, agreement 75.0% [58.9, 86.2]) | Tier C, exact-set | The only base-rate-representative slice; **this is the corpus-wide figure to carry forward**, wide CI and all |
-| **7.5%** (180/2,394) | Per-category | 180 category-level corrections over 399 chunks × 6 categories — the per-decision error, not the per-chunk one |
+| E1 (whole study) | 25 companies, 884 extracted sections, 6,747 chunks, 6,746 labeled by Claude; features and walk-forward backtest built and run | **Complete.** Reports: `data/full_run_report.md`, `data/backtest_report.md`, `data/features_report.md`, `data/diagnosis_report.md` |
+| F1 universe | `hybrid136`: sector-stratified top-K by `dei:EntityPublicFloat` with annual point-in-time reconstitution; 136 members per date, 244 distinct CIKs, 8 sectors, two strata (core / extension) | **Complete.** `data/E2_UNIVERSE_REPORT.md`, table at `data/universe_e2_candidates/hybrid136.csv` |
+| F2 ingestion | Corpus window 2015-07-01 to 2026-08-31. 45,632 filings enumerated (45,545 accession rows plus 87 co-registrant rows), 20,521 documents cached (42 GB), 622,661 fundamentals rows, 1,960,738 price rows across 213 CIKs | **Complete.** `data/F2_INGESTION_REPORT.md`, ledger `F2_PROGRESS.md` |
+| F2.5 hardening | Six items H1 to H6: positive controls, pre-registered specification and honest minimum detectable effect, labeler-attenuation measurement, document-selection audit, stopping rule, prior-work write-up | **Complete.** `HARDENING_PROGRESS.md`, reports under `data/hardening/status/` |
+| F3 extraction | 30,475 extraction attempts produced 28,900 sections, then a fix package rebuilt the corpus to 29,097 rows | **Complete.** `F3_PROGRESS.md`; corpus `data/filings_e2_v2.parquet` (sha256 `15853e9f…`) |
+| F4 labeling | The fine-tuned student labeled every chunk: 317,081 chunks across 24 chronological segments, 0 parse failures, 0 finish-reason truncations, 0 API calls, $0 | **Complete.** `data/f4/labels_e2_v1.parquet` (sha256 `f236f421…`), close-out `data/f4/status/F4_campaign.md` |
+| G2 spot-check | Blind model rater plus adjudicator over a pre-registered stratified draw, with the owner personally ruling 39 escalated rows and 20 probe rows | **Ruled 2026-09-07.** `data/f4/g2/G2_FINAL_REPORT.md` |
+| F5 features and backtest | Build E2 features, run the pre-registered walk-forward in three heads | **NEXT. Not started.** Plan: `F5_PLAN.md`. Rule: no E2 information coefficient is computed before gate G3 ratifies the pre-registration (benchmark, folds, primary metric, stopping rule) |
+| F6 diagnosis and docs | E2 diagnosis, independent red-team pass, model card and limitations updated for E1 plus E2 | Not started. Gate G4 is the owner's final read |
 
-Where it fails hardest, **on a red-flags-only basis** (recomputed from `spotcheck/combined_judgments.csv`): `RISK_FACTORS` **59.2%** (71/120 — red-flags-only by construction, since that section is never asked sentiment or guidance), and by tier **Tier D 53.3%** (32/60) and **Tier A 59.3%** (96/162), then B 69.5% (98/141) and C 75.0% (27/36). Do **not** read `agreement_report.txt` Section 3's per-tier figures as red-flag rates — those pool sentiment + guidance + red_flags (Tier D pooled is 71.2%), which dilutes the failure by roughly 18 points and **inverts the tier ordering**. Canonical tier table: `RED_FLAGS_LIMITATION.md`.
+### What G2 actually measured
 
-Treat `red_flags` as directional, not as a precise count, and report the error rate **with its basis attached** next to any red-flag-derived feature claim. Canonical disposition: `RED_FLAGS_LIMITATION.md`. No re-label is possible (spend freeze), so this is documented, not fixed.
+Gate G2 asked whether the student's labels are good enough to build features
+on. The 0.85 agreement bar was pinned before any rating. Results, from
+`data/f4/g2/G2_FINAL_REPORT.md` §1:
 
-## Repo map
+- `sentiment`: 293/337 = 86.94% [82.93, 90.13]. **INDETERMINATE** at the 0.85
+  bar. It proceeds, but the measured chunk-level error is a first-class input
+  to every F5 number derived from it.
+- `guidance_direction`: 115/119 = 96.64% [91.68, 98.69]. **PASS** at the 0.85
+  bar, on the NONE mass. It may never be quoted without two escorts,
+  `guidance_active_precision` 68.67% [58.17, 77.55] (n_eff 84.8) and
+  `guidance_false_none_rate` 0/80 [0, 4.58], plus §0 of that report. The
+  owner's reading is that much of the 68.67% reflects a rubric with no label
+  for newly issued, directionless guidance, not hallucinated guidance.
+- `red_flags`: 112/400 = 28.0% exact-set error [23.8, 32.6]. No bar applies,
+  because the family had already been demoted on 2026-08-27.
 
-### Root — ingestion pipeline (Weeks 1-2, stable)
+The owner ruled the gate "proceed under the ladder," and separately ruled
+"extend": the three unseen extension sectors get labeled, but those labels
+enter F5 only after their own spot-check, and nothing in G2 speaks to them.
+All of the above is model consensus with an owner-ruled escalation layer, not
+human validation of ground truth.
+
+### Standing limitations that travel with every number
+
+Pulled from the risk registers, not invented. Each carries its measurement and
+its source, and each must travel with any number derived from it.
+
+| Limitation | What was measured | Source |
+|---|---|---|
+| Red-flag config sensitivity | Across two labeling configurations on the same 4,219 E1 chunks, `red_flags` changed on 935 of them (**22.2%**), against `sentiment` 3.6%, `guidance_direction` 0.9%, `distress_tier` 0.7%. Flag counts are partly a function of how the model was asked. | `HANDOFF.md` §2, `data/full_run_report.md` |
+| The E1 red-flag spot-check failed its bar | Exact-set agreement **63.4% [58.6, 68.0]** against a 0.70 lower-bound bar, pooled over a sample that deliberately oversamples rare and contested text. The only base-rate-representative slice is Tier C at **75.0% [58.9, 86.2]**, which is 25.0% error on 9 of 36 chunks. Always report the basis next to the rate. | `RED_FLAGS_LIMITATION.md` (canonical) |
+| The rubric v1.2 teacher was itself wrong on red flags | 84 of 200 chunks, **42.00% [35.37, 48.93]**. That fired a pre-registered demotion, so the E2 red-flag family is exploratory and disclosure-only. | `data/hardening/spotcheck_v12/`, ruled 2026-08-27 |
+| Self-identification channel | Filing text names its own company in **26.8%** of chunks by a strict measurement and **46.0%** by a loose one. Both are cited so neither is mistaken for the other. A look-ahead risk mitigated only by prompt instruction. | `REDTEAM_WEEK3.md` finding #2, `HANDOFF.md` §7 |
+| Price provenance | Prices come from Yahoo's keyless chart endpoint, after Stooq turned out to be bot-gated. Split-adjusted, **not** dividend-adjusted. | `data/PRICES_NOTES.md` §1 |
+| E2 censoring residual | Selection is survivorship-free: membership uses only filings public before the reconstitution date, and declining companies stay in-sample until they stop filing. Outcomes are not. Yahoo generally has no data for delisted tickers, so forward returns right-censor at delisting, which is informative censoring. 32 of 244 members have no usable prices, which in membership-time is 95 of 1,496 member-date cells (**6.35%**), concentrated in the earliest cohorts (14.0% in 2016, 0% in 2026) and in energy (16.4%). | `EXPANSION_PLAN.md` §2c, `data/F2_INGESTION_REPORT.md` §0(c) and §2 |
+| Labeler contamination | The student was fine-tuned on E1 text, and with the same adapter it behaves measurably differently on E2: flag incidence drops 9, 14 and 7 points by section type, and the guidance key is omitted 33% of the time on E1 versus 51% on E2. Every E2 result must be reported with and without the train-overlap set. | `data/f4/status/F4_campaign.md` §2, `EXPANSION_PLAN.md` §3 |
+| E1 and E2 backtest numbers are numerically incomparable | E2 redefines the excess-return benchmark for a churning 136-name universe. State this wherever both appear. | `EXPANSION_PLAN.md` §3.3 |
+| The E1 result was mixed, and that is the honest summary | Over six expanding-window folds against the numeric-only baseline, the raw cross-fold mean information-coefficient delta was **+0.0177** and the deduplicated version was **-0.0097**. The sign is not stable across folds, so the text signal did not clearly help. | `data/backtest_report.md`, `data/diagnosis_report.md` |
+| A consumer trap in the E2 labels | 2,826 rows carry a guidance value on a section where guidance is not applicable, so any consumer must filter on `guidance_applicable`. | `data/f4/status/F4_campaign.md` |
+
+## How to read this repository
+
+Read in this order. Files on disk beat any summary, including this one.
+
+1. **`README.md`** (this file) for orientation.
+2. **`RESUME_HERE.md`** for the current state in one screen: what is running,
+   what is blocked, what must not be re-run. Written for a session picking
+   the project up cold.
+3. **`HANDOFF.md`** for depth: §1 charter, §2 exact state, §3 the dated
+   decision log of every owner ratification, §4 incidents compressed to
+   standing rules, §5 spend, §7 hard rules, §8 file map. Where any other
+   document conflicts with `HANDOFF.md`, `HANDOFF.md` wins.
+4. **`EXPANSION_PLAN.md`** for the ratified E2 design: what was chosen and
+   why, the phase and gate structure (§4), and §8's later amendments.
+5. **The phase ledgers**, each recording what was done, by whom, and where
+   its completion report lives: `F2_PROGRESS.md`, `HARDENING_PROGRESS.md`,
+   `F3_PROGRESS.md`. F4 has no root-level ledger; its record is
+   `data/f4/status/F4_prep.md` and `data/f4/status/F4_campaign.md`. F5's
+   plan is `F5_PLAN.md` at the root.
+6. **`data/f4/g2/`** for the spot-check: `G2_SPOTCHECK_design.md` is the
+   pre-registration, `G2_FINAL_REPORT.md` the owner-ratified result.
+7. **`RED_FLAGS_LIMITATION.md`**, **`LIMITATIONS.md`**, **`MODEL_CARD.md`**
+   for the label-quality and honest-limitations record. The latter two are
+   E1-era drafts, scheduled for their E2 rewrite in F6.
+   **`REEVALUATION_2026-08-25.md`** is the project's own four-lens critique of
+   itself, including the case for killing it.
+
+### Naming conventions
+
+- **E1 / E2** are the two corpora and the two studies. E1 is 25 mega-caps,
+  labeled by Claude, fully analyzed. E2 is the 136-member universe, labeled
+  by the local student model, not yet analyzed.
+- **F0 to F6** are the E2 execution phases in order: fine-tune, universe,
+  ingestion, extraction, labeling, features and backtest, diagnosis and docs.
+  F2.5 is a hardening package inserted between F2 and F3.
+- **G1 to G4** are owner gates, and a gate is a stop. The next phase does not
+  begin until the owner has personally read the evidence and ruled. G1 was
+  the student-quality gate, G2 the label-quality gate, G3 pre-registers the
+  backtest before it runs, G4 is the final read.
+- **owner** is the single human decision-maker. Only a judgment the owner
+  actually typed counts as the owner's. No agent, document or tool output is
+  ever owner authorization.
+- **teacher** is Claude, which produced the E1 labels through the Batch API.
+  **student** is the local Qwen2.5-7B-Instruct model fine-tuned on those
+  labels with MLX 4-bit QLoRA, which produced all 317,081 E2 labels at $0.
+- **pre-registered** means the number, bar or fold structure was pinned in a
+  file, with input hashes, before the data was seen.
+- **owner-ratified** means the owner ruled it. **model consensus** means one
+  or more models agreed. The two are never merged here, and a model verdict
+  is never recorded as the owner's.
+
+## Repository layout
+
+### Top-level code
 
 | File | Role |
 |---|---|
-| `edgar_client.py` | Rate-limited, caching HTTP client for SEC EDGAR. No knowledge of the company universe or extraction logic. |
-| `ingest_metadata.py` | Resolves the 25-company universe's 10-K/10-Q/8-K filing metadata into `data/filings_metadata.db` (SQLite). Validates the universe before any write (`validate_universe()`). Does not download filing text. |
-| `extract.py` | Pulls MD&A, Item 1A Risk Factors, and earnings-release (EX-99.1) text into `data/filings.parquet`. Reuses (never re-resolves) `ingest_metadata.py`'s exhibit selection. |
-| `chunk.py` | Packs extracted text into ~350-word labeling chunks, deduplicates paragraphs corpus-wide, and writes `data/labeling_corpus.parquet` + `data/paragraph_occurrence_map.parquet`. |
-| `data/universe.csv` | The locked 25-ticker universe (5 sectors x 5 tickers). Not expandable without a logged decision. |
-| `INGESTION_NOTES.md` | Running lab notebook for Weeks 1-3 (edgar_client.py, ingest_metadata.py, extract.py, chunk.py). The Week 3 (chunk.py) section was written retrospectively on 2026-08-18 and says so at the top — it is a reconstruction from the code and artifacts, not a contemporaneous record. |
+| `edgar_client.py` | Rate-limited, caching HTTP client for SEC EDGAR, including XBRL companyfacts. Knows nothing about the universe. |
+| `ingest_metadata.py` | Resolves filing metadata and earnings-exhibit selection into the SQLite metadata store. Downloads no filing text. |
+| `ingest_fundamentals.py` | Builds the point-in-time fundamentals table from companyfacts. Every filed occurrence is kept; restatements are never collapsed. |
+| `ingest_prices.py` | Builds the daily OHLCV price table for the universe. |
+| `price_client.py` | Polite, cached daily-price client. Documents the Stooq-to-Yahoo fallback. |
+| `extract.py` | Pulls MD&A, Item 1A risk factors, 8-K item 2.02 bodies and EX-99.1 earnings-release text out of cached documents into a sections table. |
+| `chunk.py` | Packs extracted sections into roughly 350-word labeling chunks, deduplicates paragraphs corpus-wide, and writes the occurrence map used for label attribution. The E2 equivalent is `finetune/build_f4_chunks.py`. |
+| `build_universe_e2.py` | Builds the E2 dated membership table: sector-stratified float ranks with annual point-in-time reconstitution. |
+| `pit.py` | `value_as_of()`, the single tested point-in-time fact lookup. Latest-filed-as-of semantics. Never "latest value". |
+| `features.py` | Joins text-derived signals with point-in-time fundamentals and a forward excess-return target into a feature matrix, plus a feature-by-feature report. |
+| `backtest.py` | Expanding-window walk-forward comparison of a text-plus-numeric model against a numeric-only baseline on identical folds. Not a trading simulator: no sizing, execution, costs or portfolio construction. |
+| `controls.py` | Positive controls (H1): does a known effect show up at this backtest's exact configuration, and where is the noise floor. |
+| `diagnose.py` | Post-backtest diagnosis: which categories and companies drive the signal, feature-family ablations. |
+| `e2_report.py` | Renders `data/E2_UNIVERSE_REPORT.md` from what `build_universe_e2.py` measured, so the prose is generated rather than hand-typed and drifting. |
+| `spec.py` | The pre-registered feature specification, the two standing zero-information benchmarks and the bootstrap noise anchor, shared by `backtest.py` and `diagnose.py`. |
+| `build_batch_requests.py` | Builds Batch API request files from the rubric. Its `SYSTEM_PROMPT` is a hand-synced restatement of `labeling_rubric.md`. Retired: no further labeling runs. |
+| `submit_labeling_batch.py` | The only file that ever called the paid Batch API. Kept for its safety guards and as an audit trail. Do not run its `--full*` modes. |
+| `labeling_rubric.md` | The authoritative labeling spec, v1.2. Defines sentiment, guidance direction, the red-flag taxonomy, distress tier, modality, the applicability matrix, and the rule that labels describe only what the text says. |
 
-### Root — labeling tooling (retired from active use — no further API spend)
+### `finetune/`
 
-| File | Role |
-|---|---|
-| `labeling_rubric.md` | The authoritative labeling spec (v1.1): sentiment, guidance direction, red-flag taxonomy, distress tier, modality, output schema, and the look-ahead-bias-safe prompt rules. |
-| `build_batch_requests.py` | Builds Batch API request files from the rubric. Its `SYSTEM_PROMPT` is a hand-synced restatement of `labeling_rubric.md` — rubric edits require re-syncing this constant (see sync rule below). `submit_batch()` is a deliberate stub; it never calls the API itself. |
-| `submit_labeling_batch.py` | The only file in this repo that calls the Anthropic Batch API. Every real submission path requires `--confirm-full`; `--full` additionally requires an explicit `--variant` (a prior bug let it silently default to the wrong request file). Kept as audit trail — **do not run any `--full*` mode; no further labeling runs are authorized.** |
-| `test_submit_variant_wiring.py` | Regression tests for the variant/file consistency guard described above. Rewritten 2026-08-18 against the v2 `--verify-config` heuristic; 25 tests, all passing. |
+The local fine-tune and the labeling campaign. `split.py` and
+`build_splits_v12.py` build leakage-safe train and eval splits by connected
+component over shared paragraphs and filings, and `check_leakage.py` proves no
+chunk, paragraph or accession straddles the split. `prepare_dataset.py` and
+`convert_to_mlx.py` produce the training data. `train_qlora.py` with
+`config_mlx.yaml` runs the 4-bit QLoRA fine-tune on a 16 GB Apple M5, which
+`MLX_FEASIBILITY.md` showed fits only narrowly. `eval.py` scores a checkpoint
+against the frozen eval split, `relabel_e1.py` re-labels E1 with the student
+for the attenuation measurement, and `label_e2.py` is the campaign runner that
+produced all 317,081 E2 labels as resumable, per-row-checkpointed segments.
+`runs/` holds the dated training and evaluation run directories.
 
-### Root — Phase C: numeric inputs, features, backtest
+### `data/`
 
-| File | Role |
-|---|---|
-| `ingest_fundamentals.py` | Builds `data/fundamentals.parquet` from cached EDGAR companyfacts for a fixed 13-concept list. Writes the `fundamentals_validation_problems` table (40 WARN / 0 FATAL across five check categories). No API spend — EDGAR only. |
-| `price_client.py` | Rate-limited, caching client for the free keyless price endpoint. Source caveat in `data/PRICES_NOTES.md` §1. |
-| `ingest_prices.py` | Builds `data/prices.parquet` (daily OHLCV, 25 tickers). |
-| `pit.py` | `value_as_of()` — point-in-time fact lookup with latest-filed-as-of semantics. Restatements are never collapsed; "latest value" is never used. |
-| `features.py` | Builds `data/features.parquet` (630 observations) + `data/features_report.md`. Every-occurrence label attribution, section-normalized red-flag rates, PIT numeric fundamentals with a 200-day staleness guard, forward-excess-return target. |
-| `backtest.py` | Expanding-window walk-forward comparison of a text+numeric model against a numeric-only baseline on identical folds; writes `data/backtest_report.md`. Not a trading simulator — no sizing, execution, costs, or portfolio construction. |
-| `test_phase_c_leakage.py` | Four leakage-critical properties (target window, PIT restatement ordering, no backward attribution flow, no fold leakage), covered by 35 tests. Slow (~90s) — it re-reads the full corpus. |
-| `test_pit.py`, `test_ingest_fundamentals.py`, `test_ingest_prices.py`, `test_price_client.py`, `test_edgar_client_companyfacts.py` | Unit/regression tests for the Phase C ingestion surface. |
-| `requirements-quant.txt` | Phase C-only deps (`xgboost`, `scipy`) on top of `requirements.txt`, plus the `libomp` system prerequisite. |
+Generated artifacts, per-phase status reports, and the raw cache. **Most large
+artifacts are not in git.** `.gitignore` has the exact list with a reason per
+entry: `data/raw/`, the batch request payloads, the derived text and price
+corpora, the label parquets, the E2 ingestion outputs, the F3 extraction shards
+and the 599 MB E2 corpus, the F4 chunk table (382 MB) and label table (417 MB)
+with their per-segment outputs, and the fine-tune datasets and checkpoints.
+Every excluded artifact's sha256 is pinned in a committed manifest
+(`data/f4/campaign_manifest.json`, `data/f4/g2/draw_manifest.json`,
+`data/f3/v2/run_manifest.json`), so provenance survives even though the bytes
+do not. `data/raw/` is a cached EDGAR mirror whose documents subtree alone is
+42 GB, regenerable by re-running the idempotent ingestion scripts at the cost
+of a lot of polite HTTP. The label parquets are the exception: they are not
+free to regenerate (E1's cost API spend, E2's cost nine GPU nights), so git is
+not a backup for them. The status directories the ledgers point at are `f2/status/`,
+`f3/status/`, `f4/status/`, `f4/g2/`, `hardening/status/` and
+`reevaluation_2026-08-25/`.
 
-### `data/` — pipeline outputs
+### `.claude/agents/` and `TEAM.md`
 
-| File | Role |
-|---|---|
-| `labels.parquet` | Current, authoritative label set. 6,747 rows, 6,746 labeled under one uniform config. |
-| `labels_pre_relabel.parquet` | Snapshot of labels before the corrective re-label — the comparison set behind the config-sensitivity numbers above. |
-| `labeling_corpus.parquet` | The 6,747 chunks that were labeled (text + section metadata, no labels). |
-| `filings.parquet` | 884 extracted filing sections (MD&A, Risk Factors, earnings releases) — chunk.py's input. |
-| `paragraph_occurrence_map.parquet` | **One row per deduplicated (canonical) paragraph — 28,504 rows.** The **42,577 total occurrences** live inside the list columns (`sum(n_occurrences)`); **explode before joining**, or attributions under-count 42,577 → 28,504. Backbone of the every-occurrence label attribution decision (`DISCOVERY.md` §5). |
-| `fundamentals.parquet` | Point-in-time numeric fundamentals from EDGAR companyfacts (42,158 rows, 25 companies, 13 concepts, filed dates 2009→2026-08-10). Restatements are preserved as separate rows — read via `pit.value_as_of()`, never "latest value." |
-| `prices.parquet` | Daily OHLCV for all 25 tickers (271,372 rows, full available history). **Split-adjusted, NOT dividend-adjusted**; source is Yahoo's keyless chart endpoint after Stooq turned out to be bot-gated — both caveats in `data/PRICES_NOTES.md`. |
-| `PRICES_NOTES.md` | Price-ingestion lab notes: source decision and its open caveat, adjustment semantics verified against NVDA's 10:1 split, coverage table. |
-| `features.parquet` | Phase C feature matrix: 630 (company, filing) observations, 581 with a complete forward target window. Built by `features.py`; documented feature-by-feature in `features_report.md`. |
-| `features_report.md` | Full feature dictionary (source + caveat per feature) plus build-time join diagnostics. **Owner gate-file — read alongside `backtest_report.md`.** |
-| `backtest_report.md` | Per-fold walk-forward results, raw and deduplicated, plus the form-controlled ablation. **Owner gate-file for the Phase C go/no-go read.** |
-| `filings_metadata.db` | SQLite metadata store (companies, filings, filing_documents, universe_validation_problems) plus `fundamentals_validation_problems` from `ingest_fundamentals.py`. |
-| `full_run_report.md` | The labeling run's report. Read the **FINAL CONSOLIDATED STATE** section at the bottom; earlier sections are superseded. |
-| `raw/` | Cached upstream responses that `edgar_client.py` / `price_client.py` read and write: SEC submissions, filing index, documents, `companyfacts/`, plus `prices/` (not SEC — see `PRICES_NOTES.md` §1). |
-| Other `batch_requests*.jsonl`, `labels_canary*.parquet`, `*_batch_meta.json` | Intermediate artifacts from the labeling run and its corrective/re-label passes. Audit trail, not inputs to anything downstream. |
+This project was built by a roster of specialist Claude agents, each with a job
+description in `.claude/agents/`: `data-engineer`, `extraction-qa-engineer`,
+`finetune-engineer`, `quant-modeler`, `research-statistician`,
+`test-engineer`, `red-team-reviewer`, `compliance-officer`, `docs-writer`,
+`ops-scribe`, `tech-council`, `label-auditor`, `label-adjudicator`,
+`label-rater-blind`. `TEAM.md` is the org chart, the model-tiering policy and
+the operating protocol every agent follows. It also lists the roles
+deliberately not created, including marketing and trading operations, because
+they would fight the charter.
 
-### `spotcheck/` — human + second-rater review of the labels
+## Running the tests
 
-| File | Role |
-|---|---|
-| `build_sample.py` | Builds the 400-example review sample: Tier A (162, all distress positives), Tier B (142, thin categories), Tier D (60, config-disagreement chunks for blind adjudication), Tier C (36, stratified fill). |
-| `sample_400.parquet` / `sample_400.json` | The built sample, in both formats. |
-| `review_tool.html` | Self-contained browser review tool — open directly via `file://`, no server needed. |
-| `compute_agreement.py` | Scores review judgments against stored labels; reports Wilson confidence intervals per field and per tier against a 0.70 lower-bound bar. Its Section 3 per-tier breakdown covers A/B/C/D (a bug that silently dropped Tier D was fixed 2026-08-18; 15/15 tests pass). |
-| `auditor_verdicts.json`, `adjudicator_verdicts.json`, `combined_judgments.csv` | The completed pass: 400 blind second-rater verdicts, 199 third-rater adjudications, and all 1,222 provenance-tagged judgments (`source` = model-auditor / model-adjudicator / owner). Model verdicts are never recorded as the owner's. |
-| `agreement_report.txt` | Final agreement rates with Wilson CIs, per tier and per section type, plus the provenance appendix stating what the rates do and do not measure. |
-| `README.md` | Detailed spot-check protocol, corrected 2026-08-18. The one passage still stale is the **sampling-rules narrative under the tier legend**, which describes the original pre-relabel, pre-Tier-D draw (A=143/B=142/C=115); the rules did not change, only the counts. Trust the banner (A=162/B=142/D=60/C=36) and `build_sample.py` over that paragraph. |
+The suite is offline: no network calls, no API calls. Dependencies are split
+across `requirements.txt` (ingestion, labeling, spot-check),
+`requirements-quant.txt` (features and backtest) and
+`finetune/requirements-mlx.txt` (the local MLX fine-tune, in its own venv).
 
-### `finetune/` — QLoRA scaffolding (not yet run)
-
-| File | Role |
-|---|---|
-| `README.md`, `SPLIT_DESIGN.md`, `MODEL_CHOICE.md`, `PROMPT_TEMPLATE.md` | Design docs: leakage rule, model choice (Qwen2.5-7B-Instruct, Apache-2.0 — license verified live 2026-08-18), and prompt/applicability format. |
-| `MLX_FEASIBILITY.md` | **Read this before any Phase D work.** Paper study (2026-08-18, nothing installed or downloaded) measuring whether 4-bit QLoRA fits the owner's 16 GB M5: feasible only at `batch_size: 1` / `max_seq_length: 2048` / `grad_checkpoint: true`, ≈5–13 h per epoch. Overturns `config.yaml`'s `batch_size: 4` and the "overnight run" framing. |
-| `split.py` | Builds the train/eval split (5,736 train / 1,010 eval, 15.0% eval) via a leakage-safe connected-component graph over shared paragraphs and filings. |
-| `check_leakage.py` | Verifies no chunk, paragraph, or accession straddles the split. Five assertions, all passing. |
-| `prepare_dataset.py` | Converts the split into instruction-format JSONL (`prepared/train.jsonl`, `prepared/eval.jsonl`). |
-| `train_qlora.py` | Training script. `--dry-run` validates config and data with no GPU or heavy deps; the real training path is gated on explicit owner sign-off and runs locally via MLX, not this HF/peft path (see note below). |
-| `eval.py` | Evaluation script. `--dry-run` runs the eval pipeline against synthetic predictions to prove the scoring logic works; real evaluation needs a trained checkpoint that does not exist yet. |
-| `config.yaml` | QLoRA hyperparameters. `gpu_rental_placeholder.status` is `NOT APPROVED` — that path is a fallback only, see below. |
-
-**Fine-tuning method note:** the docs and code in `finetune/` were written assuming a rented GPU and the HuggingFace `transformers`/`peft`/`bitsandbytes` stack. The owner has since ratified a different, cheaper path: if fine-tuning happens at all, it runs **locally** on the owner's Mac (Apple M5, 16GB RAM) via **MLX 4-bit QLoRA**, at $0. GPU rental is a fallback only if local MLX proves infeasible. Treat `train_qlora.py`'s non-dry-run path and `config.yaml`'s GPU section as superseded scaffolding, not the plan.
-
-### `.claude/agents/` — subagent roles
-
-`data-engineer.md`, `finetune-engineer.md`, `quant-modeler.md`, `red-team-reviewer.md`, `docs-writer.md` define the roles used to build and audit this pipeline. Two were added for the spot-check: `label-auditor.md` (blind second-rater that re-judges each chunk before seeing the stored label) and `label-adjudicator.md` (third rater that resolves second-rater-vs-stored-label disputes on rubric merits, sees both prior positions, and escalates to the owner). Both produce model verdicts, recorded as such with explicit provenance — never as the owner's own judgment.
-
-### Docs not covered above
-
-| File | Role |
-|---|---|
-| `LIMITATIONS.md` | The honest-limitations write-up (2026-08-18): non-goals, label-quality failures with how each was measured, survivorship bias, the frozen snapshot, the self-identification channel, price/fundamentals caveats, and an explicit TODO placeholder for the Phase D fine-tune that has not happened. Start here before quoting any number from this project. |
-| `RED_FLAGS_LIMITATION.md` | Canonical Phase B disposition record for the `red_flags` agreement failure: per-category verdicts, the 36.6% error decomposition, the owner-ratified ambiguity principles, a proposed (unratified, unapplied) rubric revision, and four binding constraints on Phase C feature engineering. |
-| `DISCOVERY.md` | Phase 1 planning doc (MVP scope, non-goals, taxonomy, evaluation design), carrying a 2026-08-18 READER NOTE banner and **two amendment layers**: 2026-08-11 (§5 label-attribution decision, §6 config-sensitivity risk) and 2026-08-18 (a dated amendment inside §6's risk register reporting the completed spot-check). Preserved as an audit trail — parts of it (spend tally, fine-tune tech stack) predate later decisions and are superseded by this README and `HANDOFF.md`. |
-| `ROADMAP.md` | Rewritten 2026-08-11 into a Phase A-E structure; a current forward plan alongside HANDOFF.md, not an audit-trail doc. Phase C (features + backtest, GO/NO-GO gate) already precedes Phase D (optional local MLX fine-tune) — the old Week 4/Week 5 fine-tune-before-backtest ordering no longer appears in the file; its History section records why it changed. |
-| `REDTEAM_WEEK3.md` | Independent red-team review of Weeks 1-3. 8 findings; **#1, #5 and #8 carry owner-verified RESOLUTION/CORRECTION blocks inline, so 5 remain open/forward-looking** (#2, #3, #4, #6, #7 — #6 is a confirmed "no issue" finding). Finding #4's counts are pre-relabel; the corrected modality×section table is in `data/features_report.md`. (Accounting matches `HANDOFF.md` §2.) |
-| `HANDOFF.md` | Written 2026-08-18. The authoritative session-to-session handoff — read it before this README for owner decisions, incident lessons, and standing rules; it explicitly supersedes every other doc where they conflict. |
-
-## How to run things
-
-All commands assume the repo root as the working directory and a Python environment with `requirements.txt` (ingestion/labeling/spotcheck), `requirements-quant.txt` (Phase C features + backtest — also needs `brew install libomp` on macOS, see that file), or `requirements-finetune.txt` (finetune scaffolding, not for local install) installed.
-
-**Ingestion** (safe to re-run; idempotent, reads from local cache when fresh):
 ```
-python3 ingest_metadata.py            # resolve filing metadata into data/filings_metadata.db
-python3 extract.py                    # pull MD&A / Risk Factors / earnings text into data/filings.parquet
-python3 extract.py --limit 5          # debug: only the first 5 filings
-python3 chunk.py                      # build data/labeling_corpus.parquet + paragraph_occurrence_map.parquet
+python3 -m pytest -q
 ```
 
-**Numeric ingestion for Phase C** (also idempotent and cached; no API spend — EDGAR companyfacts and a free keyless price endpoint):
+Last full run, 2026-09-07 on the owner's machine with every artifact present:
+**1,328 passed, 11 skipped, 0 failed** in about four minutes.
+`test_phase_c_leakage.py` is slow because it re-reads the full corpus, and
+several suites read generated parquet files that `.gitignore` excludes, so a
+fresh clone will skip or fail those until the ingestion scripts have run.
+
+The G2 analyzer carries an in-memory self-test of every estimator against
+hand-computed values, touching no data files:
+
 ```
-python3 ingest_fundamentals.py        # build data/fundamentals.parquet from EDGAR companyfacts
-python3 ingest_prices.py              # build data/prices.parquet (see data/PRICES_NOTES.md for the source caveat)
+python3 data/f4/g2/analyze_g2.py --selftest
 ```
 
-**Phase C features + backtest** (deterministic, offline, no API spend; needs `requirements-quant.txt`). **Both scripts overwrite the owner's gate-file reports — do not re-run them while a go/no-go read is open:**
-```
-python3 features.py                   # build data/features.parquet + data/features_report.md
-python3 backtest.py                   # walk-forward comparison -> data/backtest_report.md
-python3 -m pytest test_phase_c_leakage.py -q   # 35 leakage tests; slow (~90s), re-reads the full corpus
-```
+Scripts under `data/f4/g2/` and `data/hardening/` locate the repository root
+from their own file location, so they run from any clone.
 
-**Labeling — do not run.** `submit_labeling_batch.py`'s `--full`, `--full-corrective`, and `--full-relabel` modes call the paid Batch API and are retired; no further API spend is authorized. `submit_labeling_batch.py --verify-config` (read-only, checks a completed batch's real stop reasons) is safe if ever needed again.
+## Provenance and honesty rules
 
-**Spot-check:**
-```
-open spotcheck/review_tool.html                              # or file:///.../spotcheck/review_tool.html
-python3 spotcheck/compute_agreement.py --input spotcheck/combined_judgments.csv --format auto
-```
-`review_tool.html` is self-contained (no server, no external hosts). `combined_judgments.csv` is the completed pass's 1,222 provenance-tagged judgments and is what reproduces the headline rates; a fresh CSV exported from the review tool scores the same way.
-
-**Fine-tune scaffolding (all local, no GPU, no API calls):**
-```
-python3 finetune/split.py                 # rebuild the train/eval split from data/labels.parquet
-python3 finetune/check_leakage.py         # verify no chunk/paragraph/accession straddles the split
-python3 finetune/prepare_dataset.py       # write prepared/train.jsonl and prepared/eval.jsonl
-python3 finetune/train_qlora.py --dry-run # validate config + data pipeline, no GPU needed
-python3 finetune/eval.py --dry-run        # validate the eval pipeline against synthetic predictions
-```
-None of these touch the network or spend money. Real training/eval are both gated on further owner decisions (see fine-tuning method note above).
-
-## Next steps
-
-Per the owner-ratified execution order:
-
-1. ~~**Spot-check second-rater pass**~~ — **done 2026-08-18.** All 400 chunks re-judged blind, 174 contested chunks resolved by a third-rater model, owner ruled 104 of 1,222 judgments. Results: `spotcheck/agreement_report.txt`.
-2. ~~**Rubric revision**~~ — **dispositioned 2026-08-18.** `red_flags` failed the bar, so it is documented as a limitation (`RED_FLAGS_LIMITATION.md`, `LIMITATIONS.md` §2.1), not re-labeled. A rubric fix is drafted there but is **pending owner ratification and not applied**; no re-label happens either way, under the no-API-spend rule.
-3. ~~**Features + backtest**~~ (`DISCOVERY.md` §5) — **built and run 2026-08-18.** Every-occurrence label attribution via `data/paragraph_occurrence_map.parquet`; red-flag features normalized by section composition to avoid the modality confound flagged in `REDTEAM_WEEK3.md` finding #4; plus the four binding constraints in `RED_FLAGS_LIMITATION.md` and the fundamentals tag-migration traps in `HANDOFF.md` §2a. Outputs: `data/features.parquet` (630 observations, 581 with a complete forward window), `data/features_report.md`, `data/backtest_report.md`.
-4. **Go/no-go — THE LIVE GATE.** The owner reads `data/backtest_report.md`'s per-fold tables personally (raw *and* deduplicated columns, plus the ablation section) before any fine-tuning work starts. Nobody summarizes it. If the text-augmented model doesn't beat the numeric-only baseline by more than fold-to-fold noise, the honest conclusion is "the text signal didn't help here," and that is a legitimate outcome, not a failure to spin.
-5. **If GO: local MLX QLoRA fine-tune** — convert `finetune/prepared/*.jsonl` to MLX format and train on the owner's Mac; evaluate on the held-out 1,010-row eval split. **Read `finetune/MLX_FEASIBILITY.md` first**: it measures one epoch at ≈5–13 h on the M5 at `batch_size: 1`, so `config.yaml`'s 3 epochs is ≈15–39 h — not an overnight run — and `config.yaml`'s `batch_size: 4` will not fit in 16 GB.
-6. **Red-team pass + model card** — carrying forward the config-sensitivity headline limitation and honest spot-check epistemics (a model second-rater is not human validation; human judgment is concentrated on disagreements and the highest-stakes chunks, not a random sample). `LIMITATIONS.md` is the current draft of that carry-forward.
-
-## Standing rules (apply to all future work on this repo)
-
-- **No further Anthropic API spend**, for any reason, under any framing. The `.env` key stays unused.
-- Money-gated or API-calling actions run in the main session only — never delegate consent or execution to a subagent.
-- Never fabricate or simulate a human judgment. Model-rater verdicts (e.g. from `label-auditor`) are recorded as model verdicts, never attributed to the owner.
-- The distress tier (`GOING_CONCERN`/`ACCOUNTING_RESTATEMENT`/`LIQUIDITY_STRESS`) stays excluded from fine-tuning targets and headline eval metrics (n=162 corpus-wide; `GOING_CONCERN` has zero instances). **Every REALIZED distress class is now empty**: the corpus's 9 `LIQUIDITY_STRESS`/REALIZED labels were all ruled incorrect by the owner (`LIMITATIONS.md` §2.5, `RED_FLAGS_LIMITATION.md`), so realized-distress features are known-empty, not merely thin.
-- `guidance_direction=WITHDRAWN` (n=1) and `section_type=8K_BODY` (n=8, only 2 of 25 tickers) are statistically meaningless categories — exclude both from any headline eval metric, same treatment as the distress tier (REDTEAM_WEEK3.md Finding #7).
-- The filing text self-identifies its own company in 26.8% of chunks by a strict measurement and 46.0% by a loose one (REDTEAM_WEEK3.md Finding #2; DISCOVERY.md §5 now carries both figures as an amendment to its original ~19%/48% estimate — cite both, so neither is mistaken for the discredited one) — a look-ahead-bias risk mitigated only by prompt instruction, and watched but not resolved by the spot-check.
-- The walk-forward backtest must sort by public filing-availability date with an expanding window — never a random shuffle — and numeric fundamentals must be point-in-time. Report per-fold spreads, never a single point estimate.
-- `labeling_rubric.md` is the authoritative labeling spec; `SYSTEM_PROMPT` in `build_batch_requests.py` is a hand-synced restatement. Any rubric edit must be re-synced into that constant (moot for now, since no further labeling runs are permitted, but binding if that ever changes).
+- **Every number in a report traces to a script and an artifact.** Reports are
+  generated from run diagnostics rather than typed by hand, and the important
+  ones carry sha256 digests of their inputs. Builders that pre-register a
+  measurement freeze their input hashes, so editing a pinned input breaks the
+  build on purpose. That is how a documentation edit was caught in September
+  2026 (`HANDOFF.md` §4).
+- **Model verdicts are labelled as model verdicts.** Every spot-check judgment
+  carries a provenance tag naming its source as model-rater, model-adjudicator
+  or owner. Agreement rates over model-adjudicated fields measure model
+  consensus, not ground truth, and this repository never says otherwise.
+- **Spot-check bars are pinned before rating.** The bar, the draw, the seed and
+  the stopping rule go to disk first, with hashes. The G2 analyzer exits
+  "BLOCKED" until its ratified bars exist, so no one can shop for a bar after
+  seeing the numbers. A pre-registered demotion rule fired against the
+  project's own interests in August 2026 and was honored.
+- **Nothing here is a performance claim.** The one backtest that has been run
+  and read produced a mixed, sign-unstable result over six expanding-window
+  folds against a numeric-only baseline, and that is how it is reported. The
+  E2 backtest has not been run at all.

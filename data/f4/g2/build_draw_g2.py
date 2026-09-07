@@ -92,7 +92,7 @@ import pandas as pd
 # below is a default and none may be inferred; they are copied verbatim into
 # draw_manifest.json and analyze_g2.py re-asserts them against its own copy.
 # --------------------------------------------------------------------------
-ROOT = Path("/Users/vihanpatil/personal/projects/FinScreen")
+ROOT = Path(__file__).resolve().parents[3]   # data/f4/g2/<this file> -> repo root
 OUT = ROOT / "data" / "f4" / "g2"
 BATCH_DIR = OUT / "batches"
 ARMS_NAME = "g2_draw_arms.csv"   # written to OUT.parent — see §14.9
