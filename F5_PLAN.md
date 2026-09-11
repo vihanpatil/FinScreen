@@ -1,6 +1,6 @@
 # F5 PLAN — features + walk-forward backtest, pre-registered (written 2026-09-07 evening; red-team fix pass applied the same night)
 
-**Status: Step 1a and 1b DONE 2026-09-10/11 (data layer, guarded runners for all three heads, and the two text families built and red-teamed; see HANDOFF §3). Step 2 (census) next. Gate G2 was ruled "proceed under the
+**Status: Step 1a and 1b DONE 2026-09-10/11; Step 2 (census) in progress. Owner ruled 2026-09-11 (HANDOFF §3): the personal filing-reading aid is built NOW in parallel (app lane, ledger `data/app/status/`), E2 closes as ratified, and the G3 ruling is due within 14 days of the packet. Gate G2 was ruled "proceed under the
 ladder" and ruling 2(b) "extend" on 2026-09-07 (HANDOFF §3). This file is the
 execution order for F5 and the list of decisions the owner rules at G3, as far
 as the record names them; `EXPANSION_PLAN.md` §4 governs any residue.**

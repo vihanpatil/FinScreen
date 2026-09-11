@@ -144,3 +144,8 @@ data/hardening/h3v2/e1_relabel_student_v12.jsonl
 # as are the status reports, census, and the G3 pre-registration.
 data/f5/*.parquet
 data/f5/**/*.parquet
+
+# --- App lane (personal filing-reading aid, ruled 2026-09-11) ---
+# Rendered per-filing HTML reports are regenerable from the labeled corpus.
+data/app/reports/
+data/app/**/*.parquet

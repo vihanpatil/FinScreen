@@ -17,10 +17,14 @@ new G3 decisions (20–22 + benchmark member set) in `F5_PLAN.md` §3. NEXT =
 runners refuse (exit 2) until `data/f5/G3_RATIFIED.json` matches
 sha256(`data/f5/G3_PREREGISTRATION.md`) — neither exists; no E2 IC exists.
 Suite 1,555 green. **NEXT = Step 2 census (`data/f5/census_e2.json`) then the
-G3 packet (23 decisions in `F5_PLAN.md` §3).** **OWNER-PENDING:** the three
-personal-use rulings in `data/f5/status/COUNCIL_ADVISORY_personal_use_2026-09-10.md`
-Q5 (sequence B / scope+disclosure block / 14-day G3 deadline) — nothing
-starts on the app lane until the owner types them. Gate G2 was RULED 2026-09-07
+G3 packet (23 decisions in `F5_PLAN.md` §3).** **RULED 2026-09-11 (owner: "Adopt all three
+defaults, record it, start the app lane" — HANDOFF §3):** sequence B
+(interleave), scope + refusal list + disclosure block BINDING, 14-day G3
+deadline from packet receipt. **APP LANE STARTED 2026-09-11:** L2.1 =
+`report_filing.py` (per-filing HTML report over already-labeled E2
+companies; ledger `data/app/status/`; outputs `data/app/reports/`,
+git-excluded). Step 2 census relaunched the same day (first attempt died
+on the owner's usage limit). Gate G2 was RULED 2026-09-07
 (proceed under the ladder; 2(b) extend). Repo committed on main; owner
 pushes. LICENSE = MIT (owner-confirmed 2026-09-10).**
 

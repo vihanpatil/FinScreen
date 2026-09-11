@@ -63,6 +63,12 @@ the project's own charter — flag it to the owner rather than building it.
 
 ---
 
+**Identity, as ruled 2026-09-11 (HANDOFF §3 of that date), replacing "research +
+pipeline-as-asset (+app vision)":** *"A personal filing-reading aid for one
+user, backed by a bounded, closed research study — analysis with disclosed
+error, never a score or a recommendation."* Distribution is not pursued and
+would require re-ratification.
+
 ## 2. Exact current state
 
 ### Corpus (frozen, final)
@@ -1291,6 +1297,59 @@ CORRECTION (owner, in chat).**
   MVP; refusal list; disclosure block; identity line; 14-day G3 deadline;
   one dissent on ordering). **Nothing in it is ruled; the owner has been
   asked to rule three items.**
+
+**2026-09-11 — PERSONAL-USE DIRECTION RULED (owner, in chat).** Owner's words,
+verbatim: *"Adopt all three defaults, record it, start the app lane."* The
+three defaults are the council's Q5 items in
+`data/f5/status/COUNCIL_ADVISORY_personal_use_2026-09-10.md`, now RULED:
+1. **Sequence B — interleave.** The personal filing-reading aid is built now
+   on the existing pipeline while E2 closes on agent time. This AMENDS the
+   timing clause of the 2026-08-25 identity ruling ("post-E2 deliverable
+   direction, not current scope") — the app lane is current scope. The E2
+   close (F5 → F6, stopping rule Option 1) stays ratified and unchanged.
+   KC5 is not touched: distribution is not pursued (owner, 2026-09-10: "It
+   would be hard to sell to investment banks"); any future distribution
+   still requires re-ratification.
+2. **Scope, refusals and disclosures are BINDING** (advisory Q2 + Q4, as
+   drafted): six features (ticker → latest 10-K / 10-Q / earnings 8-K from
+   EDGAR, cached; full section text with extraction confidence; per-chunk
+   student labels beside the passage; what changed vs the prior same-form
+   filing at paragraph level, newly-appearing red-flag categories marked
+   exploratory; PIT fundamentals as-of filing date with UNRESOLVED shown;
+   a non-collapsible disclosure header). REFUSED: any score / composite /
+   rank or cross-company table sorted by a label-derived quantity; prices,
+   returns, "since the filing the stock…"; buy / hold / sell or synonyms;
+   alerts; generative summaries; `distress_tier`; portfolio import.
+   Boundary sentence: *"The tool may show the owner what a filing says, how
+   a labeler with disclosed error read it, and what changed since last time
+   — it may never rank, score, compare, or suggest what to do, even when the
+   only reader is the owner."* Mandatory disclosure block on every report
+   (numbers verbatim from `results_g2.json` / `results_v12.json` /
+   `G2_FINAL_REPORT.md` §0; E1 null; train-overlap banner; self-id 26.8% /
+   46.0%; extraction confidence; "no price data used"; footer: not advice,
+   no recommendation, no live capital, personal use only, not for
+   distribution). Never render: scores, ranks, action colours, prices /
+   returns, any E2 IC before `data/f5/G3_RATIFIED.json` exists,
+   `distress_tier`. Enforcement: source-scan tests that the report layer
+   imports nothing from the target / backtest / price modules. Identity
+   line (replaces "research + pipeline-as-asset (+app vision)"): *"A
+   personal filing-reading aid for one user, backed by a bounded, closed
+   research study — analysis with disclosed error, never a score or a
+   recommendation."*
+3. **G3 deadline: 14 days from receipt of the G3 packet.** If missed, the
+   council re-convenes to close E2 on the record as "not run, documented" —
+   never drift.
+Kill criteria carried from the advisory: report layer found reading an
+outcome table or IC → app lane halts until re-red-teamed; owner requests a
+score / rank / price overlay → that is the product pivot, re-convene under
+KC5 before code; new-company labeling never collides with a Track X night
+(wrapper lock first); on-demand path exceeding 2 sessions on one filer →
+scope to the 244-CIK universe until F6.
+App lane plan (council Q3): L2.1 renderer over already-labeled E2 companies
+(2–3 sessions, first report ~09-17); L2.2 on-demand ingest + label for any
+ticker (3–4 sessions, ~09-30); L2.3 one-line disclosure patch after F6.
+Ledger for the lane: `data/app/status/`. HTML reports under
+`data/app/reports/` (git-excluded).
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
