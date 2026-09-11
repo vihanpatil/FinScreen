@@ -1,0 +1,15 @@
+cik,family,state,tags,switch_quarter,coverage,severity,alternates,unit,units_mixed,duration_mix
+1577445,assets,SINGLE,Assets,,0.9815,resolved,,USD,0,instant:108
+1577445,cash,SINGLE,CashAndCashEquivalentsAtCarryingValue,,1.0,resolved,,USD,0,instant:147
+1577445,eps_diluted,MIGRATION,EarningsPerShareBasicAndDiluted|EarningsPerShareDiluted,2022Q2,0.9815,resolved,,USD/shares,0,Q:67|FY:26|H1:24|9M:21
+1577445,equity,SINGLE,StockholdersEquity,,1.0,resolved,,USD,0,instant:194
+1577445,liabilities,PARTIAL,Liabilities,,0.5,UNRESOLVED,,USD,0,instant:56
+1577445,liabilities_and_equity,SINGLE,LiabilitiesAndStockholdersEquity,,0.9815,resolved,,USD,0,instant:108
+1577445,minority_interest,ABSENT,,,0.0,UNRESOLVED,,,0,
+1577445,net_income,SINGLE,NetIncomeLoss,,1.0,resolved,,USD,0,Q:81|FY:28|H1:28|9M:24
+1577445,net_income_to_common,ABSENT,,,0.0,UNRESOLVED,,,0,
+1577445,operating_cash_flow,SINGLE,NetCashProvidedByUsedInOperatingActivities,,0.9815,resolved,,USD,0,Q:54|FY:28|H1:28|9M:24
+1577445,operating_income,PARTIAL,OperatingIncomeLoss,,0.5741,UNRESOLVED,,USD,0,Q:40|FY:17|H1:14|9M:12
+1577445,pretax_income,PARTIAL,IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,,0.2037,UNRESOLVED,,USD,0,FY:17|9M:4|Q:4
+1577445,revenue,PARTIAL,RevenueFromContractWithCustomerExcludingAssessedTax|Revenues,,0.5741,UNRESOLVED,,USD,0,Q:40|FY:17|H1:15|9M:13
+1577445,shares_outstanding,SINGLE,EntityCommonStockSharesOutstanding,,0.9074,resolved,,shares,0,instant:55

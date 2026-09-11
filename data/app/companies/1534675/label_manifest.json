@@ -1,6 +1,6 @@
 {
   "run_id": "L2.2-label-filing",
-  "store": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675",
+  "store": "data/app/companies/1534675",
   "labeler": {
     "student": "qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
     "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
@@ -28,36 +28,36 @@
     "seconds": 0.0
   },
   "generation": {
-    "started_utc": "2026-09-11T14:06:45.766277+00:00",
-    "ended_utc": "2026-09-11T14:09:24.471251+00:00",
-    "n_generated": 69,
-    "n_already_done": 0,
+    "started_utc": "2026-09-11T14:49:38.794184+00:00",
+    "ended_utc": "2026-09-11T14:53:30.789358+00:00",
+    "n_generated": 98,
+    "n_already_done": 8,
     "torn_final_line_repaired_before_append": false,
-    "model_load_seconds": 0.5,
-    "wall_seconds": 158.7,
-    "seconds_per_chunk": 2.3,
+    "model_load_seconds": 0.8,
+    "wall_seconds": 232.0,
+    "seconds_per_chunk": 2.37,
     "finish_reasons": {
-      "stop": 69
+      "stop": 98
     },
     "n_passages_head_truncated": 0,
-    "generate_seconds": 160.1
+    "generate_seconds": 233.9
   },
   "labels": {
-    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/labels.parquet",
-    "sha256": "a3d0154fb1c74f1b0d11bf91d2a4e32e132a1692efab19e38e2525ef9cf5204a",
-    "n_rows": 69,
+    "path": "data/app/companies/1534675/labels.parquet",
+    "sha256": "d815a23dc3e0d8c925cbb1678d9e1a949955cb631f64b84a84dc7a984693c27f",
+    "n_rows": 106,
     "n_columns": 43,
     "schema_source": "label_e2.output_schema() -- columns 1-34 are data/labels_v12.parquet's arrow schema (SCHEMA ONLY, never a teacher), then the 9 F4 columns",
     "parse_failures": 0,
     "schema_violations": 0,
     "guidance": {
-      "n_applicable": 10,
-      "n_imputed_none": 6,
-      "n_explicitly_emitted": 4,
+      "n_applicable": 20,
+      "n_imputed_none": 13,
+      "n_explicitly_emitted": 7,
       "rule": "missing->NONE at the writer, flagged by guidance_imputed_none"
     },
     "sentiment": {
-      "n_emitted": 34
+      "n_emitted": 58
     },
     "head_truncation": {
       "n_truncated": 0,
@@ -81,13 +81,13 @@
     "This company is outside the 244-company research universe. Its labels have no spot-check of their own; the model-consensus error measured at G2 on the research corpus is the best case, not a measurement of this company."
   ],
   "prepare": {
-    "rows_jsonl": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/rows.jsonl",
-    "n_rows": 69,
-    "rows_jsonl_sha256": "c7d4f9ac82420d6fc260a6e2719a2ad4b65965c5e9418f3494af17174ac1bc49",
-    "chunks_parquet_sha256": "5a8891840d928fcd0d2bc164f88c09a9a6e5c1ca5d1b28a7e1760539b9d6b13d"
+    "rows_jsonl": "data/app/companies/1534675/rows.jsonl",
+    "n_rows": 106,
+    "rows_jsonl_sha256": "e107d3ab261a34b9de6d472b2c858933a86fb50ebc7583822e57022edd30201a",
+    "chunks_parquet_sha256": "38f3e72a6d0ae8865cc92e542d29779636f57b8a00c4725d7a7c16a06f6160a7"
   },
   "timings_seconds": {
-    "generate_s": 160.5,
-    "total_s": 160.8
+    "generate_s": 234.8,
+    "total_s": 235.2
   }
 }

@@ -7,7 +7,7 @@
   "in_research_universe": false,
   "window": {
     "lookback_days": 1100,
-    "per_form": 1,
+    "per_form": 2,
     "forms": [
       "10-K",
       "10-Q",
@@ -38,9 +38,42 @@
       "earnings_doc_unresolved_reason": null
     },
     {
+      "accession_number": "0001493152-26-021974",
+      "form": "10-Q",
+      "filing_date": "2026-05-08",
+      "items": null,
+      "primary_document": "form10-q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-021602",
+      "form": "8-K",
+      "filing_date": "2026-05-07",
+      "items": "2.02,9.01",
+      "primary_document": "form8-k.htm",
+      "earnings_doc_filename": "ex99-1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
       "accession_number": "0001493152-26-008465",
       "form": "10-K",
       "filing_date": "2026-03-02",
+      "items": null,
+      "primary_document": "form10-k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-25-008697",
+      "form": "10-K",
+      "filing_date": "2025-02-28",
       "items": null,
       "primary_document": "form10-k.htm",
       "earnings_doc_filename": null,
@@ -51,17 +84,17 @@
   ],
   "n_filings_in_history": 50,
   "documents": {
-    "n_fetched": 3,
+    "n_fetched": 6,
     "failures": []
   },
   "sections": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/sections.parquet",
-    "sha256": "6a848f25b5bc3ba733bca0f950b3117a56a4ab1271459123e385e174f8c6182d",
-    "n_rows": 4,
+    "sha256": "5f6665989892821f70ed3fb14d96be4ddc6b433c4248d81a49d9c730d511b3f4",
+    "n_rows": 8,
     "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
   },
   "sections_by_status": {
-    "OK": 4
+    "OK": 8
   },
   "extraction_audit": [
     {
@@ -135,6 +168,72 @@
       "company_name": "Tecnoglass Holdings Inc.",
       "sector": "UNCLASSIFIED",
       "stratum": "external",
+      "accession_number": "0001493152-26-021974",
+      "form": "10-Q",
+      "filing_date": "2026-05-08",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 2904,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51662,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-021974",
+      "form": "10-Q",
+      "filing_date": "2026-05-08",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc",
+        "item_body_heading_present"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "form10-q.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-021602",
+      "form": "8-K",
+      "filing_date": "2026-05-07",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3650,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48358,
+      "source_document": "ex99-1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
       "accession_number": "0001493152-26-008465",
       "form": "10-K",
       "filing_date": "2026-03-02",
@@ -171,20 +270,73 @@
       "source_document": "form10-k.htm",
       "reason_code": "ok",
       "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-25-008697",
+      "form": "10-K",
+      "filing_date": "2025-02-28",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4448,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52047,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-25-008697",
+      "form": "10-K",
+      "filing_date": "2025-02-28",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 13721,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4825,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
     }
   ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
   "chunks": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/chunks.parquet",
-    "sha256": "5a8891840d928fcd0d2bc164f88c09a9a6e5c1ca5d1b28a7e1760539b9d6b13d",
-    "n_chunks": 69,
-    "n_sections": 4,
+    "sha256": "38f3e72a6d0ae8865cc92e542d29779636f57b8a00c4725d7a7c16a06f6160a7",
+    "n_chunks": 106,
+    "n_sections": 8,
     "window_rule": "APP_single_company",
     "line_rule": "reflow_v1",
     "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
   },
   "metadata_db": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/metadata.db",
-    "sha256": "4204dd5dfecec3a4a9f88e68b23ae384cdf8f76c997499bb8f068c26df810b1b",
+    "sha256": "aeb5d475f040c8fb3515ac46780be0c85d3b5d9db1cecb6f5cfd76a666947f5e",
     "schema_source": "ingest_metadata.init_db"
   },
   "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
@@ -195,10 +347,300 @@
   },
   "timings_seconds": {
     "resolve_s": 0.01,
-    "metadata_s": 0.25,
+    "metadata_s": 0.11,
     "documents_s": 0.21,
-    "extract_s": 0.79,
+    "extract_s": 2.04,
     "chunk_s": 0.03,
-    "total_s": 1.29
+    "total_s": 2.41
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001534675.json",
+      "sha256": "d0dc9a1cedf42298c4efa93637cddd0e6bd16aa229046ce2fbbfd5a3f256db7b"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2011-09-20",
+      "end": "2026-09-11",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/fundamentals.parquet",
+      "sha256": "7f89141957e0985ed65759e22bf09c57a12c03a4f21181dcad8cc645a7139cbe",
+      "n_rows": 2537,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/concept_resolution.csv",
+      "sha256": "559c764a81843e250593ab6b5dc93fc318b32aaeb378fcc3b787f7427c407f33",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.9667,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:133",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "Assets 58/60 (97%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 1.0,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:203",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 60/60 (100%, last 2026Q2), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 34/60 (57%, last 2026Q2), Cash 6/60 (10%, last 2013Q4)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9833,
+        "n_target_quarters": 60,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:106|FY:34|H1:32|9M:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "EarningsPerShareDiluted 55/60 (92%, last 2026Q2), EarningsPerShareBasicAndDiluted 9/60 (15%, last 2013Q4)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 1.0,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:148",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "StockholdersEquity 58/60 (97%, last 2026Q2), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 38/60 (63%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.9667,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:133",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "Liabilities 58/60 (97%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9667,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:133",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 58/60 (97%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.45,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:51",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "MinorityInterest 27/60 (45%, last 2023Q3)",
+        "reason": "minority_interest: PARTIAL over 60 reportable quarters -- MinorityInterest 27/60 (45%, last 2023Q3); union 45%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9833,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:123|H1:42|FY:39|9M:34|other:5",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetIncomeLoss 59/60 (98%, last 2026Q2), ProfitLoss 42/60 (70%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.0333,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:2",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 2/60 (3%, last 2021Q4)",
+        "reason": "net_income_to_common: PARTIAL over 60 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 2/60 (3%, last 2021Q4); union 3%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9833,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:23|H1:23|9M:20|Q:20|other:5",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 47/60 (78%, last 2026Q2), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 22/60 (37%, last 2018Q1)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9833,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:100|FY:36|H1:36|9M:34|other:5",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "OperatingIncomeLoss 59/60 (98%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9167,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:84|FY:31|H1:30|9M:28",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 55/60 (92%, last 2026Q2), IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 9/60 (15%, last 2024Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "Revenues",
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.9167,
+        "n_target_quarters": 60,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:107|FY:37|H1:32|9M:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 38/60 (63%, last 2026Q2), Revenues 26/60 (43%, last 2025Q2) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.9167,
+        "n_target_quarters": 60,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:67",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 55/60 (92%, last 2026Q2)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.02,
+      "classify_s": 0.01,
+      "total_s": 0.03
+    }
   }
 }

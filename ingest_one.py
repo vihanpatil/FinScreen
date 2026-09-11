@@ -11,8 +11,10 @@ research corpus, in exactly the same schemas:
         chunks.parquet   the labeling windows, schema of data/f4/chunks_v1.parquet
         manifest.json    every input and output sha256, the draw, the timings
         (labels.parquet is written later, by label_filing.py)
+        fundamentals.parquet      --fundamentals only; schema of data/fundamentals_e2.parquet
+        concept_resolution.csv    --fundamentals only; schema of data/f2/concept_resolution.csv
 
-NOTHING HERE IS REIMPLEMENTED. The five steps are the project's own modules,
+NOTHING HERE IS REIMPLEMENTED. The six steps are the project's own modules,
 called in order:
 
   1. ticker -> CIK          `edgar_client.EdgarClient.get_company_tickers`
@@ -31,6 +33,13 @@ called in order:
                             filter and no membership DB (an external company has
                             no membership spell -- the columns are written False,
                             which is the truth).
+  7. fundamentals           `EdgarClient.get_companyfacts` (rate-limited, cached
+     (--fundamentals)       under data/raw/companyfacts/ -- the SAME cache F2
+                            fills) + `ingest_fundamentals.build_fundamentals`
+                            (its parsing and its CONCEPT_FAMILIES) +
+                            `ingest_fundamentals.classify_universe` (its
+                            six-state alias/migration classifier) +
+                            `ingest_fundamentals.write_concept_resolution`.
 
 WHAT IS DIFFERENT FROM THE RESEARCH CORPUS, AND SAID OUT LOUD
 -------------------------------------------------------------
@@ -45,10 +54,20 @@ WHAT IS DIFFERENT FROM THE RESEARCH CORPUS, AND SAID OUT LOUD
    disclosure line saying so.
 *  `window_rule` is `APP_single_company`. The LINE rule is F4's `reflow_v1`
    unchanged -- the labeler must see the same shaped passages it was measured on.
-*  No fundamentals are ingested. `report_filing` resolves them out of F2's
-   committed concept resolution, which covers the 244 companies only, so an
-   external company's five families render UNRESOLVED. That is honest and is
-   left honest.
+*  Fundamentals are classified against THIS COMPANY'S OWN window, not against
+   a membership spell -- an external company has none. The window is its own
+   XBRL life (see `fundamentals_window`), and the coverage DENOMINATOR inside
+   it is F2's own ruling (§5.7 A5.1: the company's filed span), so the
+   classifier scores this company exactly as it scores a research member.
+   `data/f2/concept_resolution.csv` is NOT consulted and NOT written: the
+   store carries its own `concept_resolution.csv`, and F2's committed record
+   is untouched (the same discipline that keeps `data/fundamentals_e2.parquet`
+   frozen).
+*  An UNRESOLVED (cik, family) pair stays UNRESOLVED. There is no store-side
+   fallback tag, no "most rows wins", no per-company override -- the pair is
+   written to the store's concept_resolution.csv with severity UNRESOLVED and
+   `report_filing --store` renders it as unresolved with the classifier's own
+   reason. That is E1's failure mode and it stays fixed here.
 
 Cost: $0. EDGAR only, through the existing rate-limited client with the
 project's real-contact User-Agent. No API, no GPU, no price data.
@@ -59,6 +78,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sqlite3
 import sys
 import time
@@ -71,6 +91,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 import extract as EX
+import ingest_fundamentals as IF
 import ingest_metadata as IM
 from edgar_client import EdgarClient
 
@@ -82,7 +103,13 @@ DATA_DIR = REPO_ROOT / "data"
 COMPANIES_DIR = DATA_DIR / "app" / "companies"
 E2_METADATA_DB = DATA_DIR / "filings_metadata_e2.db"
 E2_SECTIONS_PARQUET = DATA_DIR / "filings_e2_v2.parquet"
+E2_FUNDAMENTALS_PARQUET = DATA_DIR / "fundamentals_e2.parquet"
 F4_CHUNKS_PARQUET = DATA_DIR / "f4" / "chunks_v1.parquet"
+
+# The two files step 7 writes into the store. The names are the ones
+# `report_filing --store` looks for.
+FUNDAMENTALS_NAME = "fundamentals.parquet"
+CONCEPT_RESOLUTION_NAME = "concept_resolution.csv"
 
 STORE_VERSION = "app-store-v1"
 RUN_ID = "L2.2-ingest-one"
@@ -325,6 +352,131 @@ def write_metadata_db(path: Path, cik: int, name: str, ticker: Optional[str],
 
 
 # ---------------------------------------------------------------------------
+# step 5a -- the APP-LANE filer-dialect normalizer (L2.4)
+# ---------------------------------------------------------------------------
+# `extract.py` IS FROZEN AND IS NOT TOUCHED HERE. The sealed E2 corpus
+# (`data/filings_e2_v2.parquet`, sha 15853e9f...) was produced by it, and
+# every F4 label, the G1 eval and the G2 spot-check sit on top of that corpus,
+# so a change inside the extractor would move the research record. What this
+# does instead is normalize the HTML a filing is READ from -- the `read`
+# callable `extract.extract_filing` already takes as its first argument -- and
+# it is applied ONLY on the retry of an attempt the frozen extractor has
+# already FAILED. Nothing that extracts today changes.
+#
+# The dialect it was written for is CBKM (Consumers Bancorp Inc /OH/, CIK
+# 1006830, 10-K `0001437749-26-030039`), the first un-curated community bank
+# the L2.2 draw handed us. Two things in its filing agent's markup defeat both
+# of `extract.py`'s locators:
+#
+#   1. every item label uses an EM DASH and no period. The TOC row is
+#      `Item&#160;7&#8212;Management&#8217;s Discussion and Analysis...`, and
+#      `extract._heading_pattern` allows only `[\s\xa0.:]` between "Item 7"
+#      and the title keyword -- the dash stops the match.
+#   2. the body heading bolds each token separately:
+#      `<b>Item</b>&#160;<b>7</b>&#8212;<b>Management</b>&#8217;<b>s ...</b>`.
+#      `extract.html_fragment_to_text` joins tags with "\n", so the possessive
+#      arrives as `Management\n’\ns` and `management.?s\s+discussion` cannot
+#      match that either.
+#
+#   (The anchor-TOC path never had a chance on this document: it contains no
+#   `<a href="#...">` at all, so `find_toc_item_anchors` returns [].)
+#
+# The normalizer undoes exactly those two things and nothing else: inline
+# formatting tags, which a browser does not break a line on, and the em/en
+# dash used as an ITEM SEPARATOR, which is rewritten to the "Item 7." spelling
+# the extractor's own patterns were calibrated on.
+_INLINE_TAG_RE = re.compile(
+    r"</?(?:b|strong|i|em|u|span|font|sup|sub|small|ins|mark)\b[^>]*>",
+    re.IGNORECASE)
+
+# Character references decoded before the dash rewrite, so the rewrite sees
+# one dash character rather than four spellings of it. Only references whose
+# character CANNOT open markup are listed; `html.unescape` is deliberately not
+# used, because it would turn a literal `&lt;` in the filing's own prose into
+# a `<` and invent a tag. bs4 decodes all of these identically anyway, so this
+# step cannot change the text the extractor ends up reading.
+_SAFE_ENTITIES = (
+    ("&nbsp;", "\xa0"), ("&#160;", "\xa0"), ("&#xa0;", "\xa0"),
+    ("&mdash;", "—"), ("&#8212;", "—"),
+    ("&ndash;", "–"), ("&#8211;", "–"),
+    ("&rsquo;", "’"), ("&#8217;", "’"),
+    ("&apos;", "'"), ("&#39;", "'"),
+)
+
+# "Item 7—", "Item&nbsp;1A —", "ITEM 7A–" -> "Item 7. ". Anchored on the word
+# "Item" and a 1-2 digit item number, so an em dash anywhere else in the
+# filing's prose is left alone.
+_ITEM_DASH_RE = re.compile(
+    r"(?i)\bitem[ \t\xa0]{0,4}(\d{1,2}[ \t\xa0]{0,2}[A-C]?)[ \t\xa0]{0,4}"
+    r"[—–][ \t\xa0]{0,4}")
+
+# The FAIL codes that mean "the locator never found the item". A dialect
+# normalization can only help these. A cache miss or an unreadable document is
+# not a dialect problem and is never retried.
+DIALECT_RETRY_REASON_CODES = frozenset({
+    "no_toc_and_no_heading_match",
+    "anchor_span_below_min_chars",
+    "empty_after_extraction",
+    "toc_recovery_declined",
+    "item_absent_from_toc",
+})
+
+DIALECT_NOTE = (
+    "APP-LANE RETRY: the frozen extractor failed this attempt on the document "
+    "as filed; it was re-run on HTML normalized by "
+    "ingest_one.normalize_filer_dialect (inline formatting tags dropped, "
+    "em/en-dash item separators rewritten as 'Item N.'). extract.py is "
+    "unchanged and the research corpus is untouched."
+)
+
+
+def normalize_filer_dialect(html_text: str) -> str:
+    """The two-rule app-lane normalization described above. Pure text in, text
+    out; no HTML is parsed, nothing is reordered, no tag structure changes."""
+    out = _INLINE_TAG_RE.sub("", html_text)
+    for ref, char in _SAFE_ENTITIES:
+        out = out.replace(ref, char)
+    return _ITEM_DASH_RE.sub(
+        lambda m: "Item " + re.sub(r"[ \t\xa0]+", "", m.group(1)) + ". ", out)
+
+
+def normalizing_reader(relative_path: str, **kwargs) -> str:
+    """`extract.read_cached_document` with the normalizer on top. This is the
+    ONLY thing the retry changes -- the extractor itself is the same code on
+    the same call."""
+    return normalize_filer_dialect(EX.read_cached_document(relative_path, **kwargs))
+
+
+def retry_failed_on_normalized_html(attempts: list, f: dict, quarter_cells: dict,
+                                    fired: Optional[dict] = None) -> list:
+    """Re-run ONLY the attempts the frozen extractor failed, on normalized HTML.
+
+    An attempt is replaced only if the retry LOCATED a section the shipped
+    read did not. A retry that fails too leaves the original row exactly as
+    the frozen extractor wrote it, so no failure is hidden and nothing that
+    works today moves. Every replaced row carries `DIALECT_NOTE` in its audit
+    note, which is what the manifest counts.
+    """
+    needs = {section for section, result, _ in attempts
+             if not result.located
+             and result.reason_code in DIALECT_RETRY_REASON_CODES}
+    if not needs:
+        return attempts
+    retried = {section: (result, source) for section, result, source
+               in EX.extract_filing(normalizing_reader, f, quarter_cells,
+                                    fired=fired)}
+    out = []
+    for section, result, source in attempts:
+        alt = retried.get(section)
+        if section in needs and alt is not None and alt[0].located:
+            alt[0].note = (alt[0].note + " | " if alt[0].note else "") + DIALECT_NOTE
+            out.append((section, alt[0], alt[1]))
+        else:
+            out.append((section, result, source))
+    return out
+
+
+# ---------------------------------------------------------------------------
 # step 5 -- sections
 # ---------------------------------------------------------------------------
 def sections_schema() -> Optional[pa.Schema]:
@@ -382,8 +534,10 @@ def extract_sections(rows: list[dict], run_id: str = RUN_ID) -> tuple[pd.DataFra
                 "note": row.get("earnings_doc_unresolved_reason", ""),
             })
             continue
-        for section_type, result, source in EX.extract_filing(
-                EX.read_cached_document, f, quarter_cells, fired=fired):
+        attempts = EX.extract_filing(EX.read_cached_document, f, quarter_cells,
+                                     fired=fired)
+        for section_type, result, source in retry_failed_on_normalized_html(
+                attempts, f, quarter_cells, fired=fired):
             corpus_row, audit = EX.build_rows(f, section_type, result, source, run_id)
             audit_rows.append(audit)
             if corpus_row is not None:
@@ -431,6 +585,283 @@ def build_chunks(sections_path: Path, out_path: Path, verbose: bool = False) -> 
         raise IngestError("no_sections", "extraction produced no section table")
     info = BFC.build(chunk_config(sections_path, out_path), verbose=verbose)
     return info
+
+
+# ---------------------------------------------------------------------------
+# step 7 -- point-in-time XBRL fundamentals (PRODUCT_PLAN P1a.2)
+# ---------------------------------------------------------------------------
+# NOTHING HERE IS REIMPLEMENTED EITHER. The parsing, the concept families and
+# the alias/migration classifier are `ingest_fundamentals`'s, imported and
+# CALLED -- this file contributes a one-row universe and two output paths and
+# nothing else:
+#
+#   facts        `IF.build_fundamentals` -> `IF.extract_concept_facts` over
+#                `IF.CONCEPTS` (every tag of every family in `IF.CONCEPT_-
+#                FAMILIES`, stored under its own real tag name, EVERY filed
+#                occurrence kept -- never deduplicated, so a restatement is a
+#                new row and `pit.value_as_of` can answer "what was knowable
+#                on date X" without hindsight)
+#   resolution   `IF.classify_universe` -> `IF.classify_family`, the six-state
+#                SINGLE / MIGRATION / DOMINANT / OVERLAP / PARTIAL / ABSENT
+#                classifier, with its own coverage bar, staleness rule and
+#                preference-order dominance
+#   the record   `IF.write_concept_resolution` (F2's exact CSV columns)
+#   the reasons  `IF.resolution_problems` -- one FATAL per UNRESOLVED pair in
+#                the classifier's own words, copied verbatim into the manifest
+#                so the store carries why, not just that
+#
+# WHAT IS NOT WRITTEN: `data/fundamentals_e2.parquet` and
+# `data/f2/concept_resolution.csv` are F2's committed records and are opened
+# READ-ONLY here (only for the arrow schema pin). `IF.run()` -- which writes
+# them, and writes validation rows into the E2 database -- is never called.
+def fundamentals_schema() -> Optional[pa.Schema]:
+    """The research fundamentals table's OWN arrow schema, read off the file.
+
+    Copied rather than re-declared, exactly like `sections_schema()`, so "same
+    schema as data/fundamentals_e2.parquet" is a comparison and not a claim.
+    None on a fresh clone; the manifest records that the pin was unavailable.
+    """
+    if not E2_FUNDAMENTALS_PARQUET.exists():
+        return None
+    return pq.read_schema(E2_FUNDAMENTALS_PARQUET)
+
+
+def empty_fundamentals_frame() -> pd.DataFrame:
+    """The fact table's columns with no rows -- a filer that tags nothing.
+
+    The names are read off the research table where it exists, so they are not
+    restated; the fallback is `IF.extract_concept_facts`'s own dict keys in its
+    own order.
+    """
+    schema = fundamentals_schema()
+    names = list(schema.names) if schema is not None else [
+        "ticker", "cik", "taxonomy", "concept", "unit", "value", "fy", "fp",
+        "period_start", "period_end", "form", "accession_number", "filed"]
+    return pd.DataFrame(columns=names)
+
+
+def fundamentals_window(df: pd.DataFrame,
+                        today: Optional[date] = None) -> tuple[date, date]:
+    """The coverage window this company's families are classified over.
+
+    A research member's window is its membership spell (F2_SPEC §3.4). An
+    external company has no spell, so its window is its own XBRL life: the
+    earliest date that appears anywhere in its facts (filed date or period
+    end, whichever is earlier) to today.
+
+    The window is deliberately NON-CLIPPING -- it contains every fact the
+    company ever filed. That is not laziness: `IF.classify_universe` already
+    trims the coverage DENOMINATOR to the company's own filed span inside the
+    window (F2_SPEC §5.7 A5.1), so any window that clips nothing produces the
+    same denominator, and the one this function returns is the widest such
+    window. What it avoids is the two ways a window CAN change a verdict:
+    `IF.CORPUS_WINDOW_END` is 2026-08-31 and would make the facts of a filing
+    made this month invisible -- precisely the filings a store exists to read
+    -- and a short trailing window would hide the tag history that tells a
+    MIGRATION from an OVERLAP.
+    """
+    today = today or date.today()
+    if df.empty:
+        return IF.CORPUS_WINDOW_START, today
+    stamps = pd.concat([
+        pd.to_datetime(df["filed"], errors="coerce"),
+        pd.to_datetime(df["period_end"], errors="coerce"),
+    ]).dropna()
+    if stamps.empty:
+        return IF.CORPUS_WINDOW_START, today
+    return min(stamps.min().date(), today), today
+
+
+def fundamentals_universe(cik: int, ticker: Optional[str], name: str,
+                          window: Optional[tuple[date, date]] = None) -> pd.DataFrame:
+    """The one-row `universe` frame `IF`'s two entry points iterate.
+
+    `IF.build_fundamentals` and `IF.classify_universe` both take the universe
+    frame `ingest_metadata.load_universe()` returns, so the store hands them
+    one row in that shape rather than forking either function. `sector` is the
+    store's `UNCLASSIFIED`: it is read only by the sector-concentration
+    aggregation, which is a statement about a sector and is not run for one
+    company.
+    """
+    row = {"cik": int(cik), "ticker": ticker, "company_name": name,
+           "sector": EXTERNAL_SECTOR, "stratum": EXTERNAL_STRATUM}
+    if window is not None:
+        row["coverage_start"], row["coverage_end"] = window
+    return pd.DataFrame([row])
+
+
+def write_fundamentals(frame: pd.DataFrame, path: Path) -> dict:
+    """The facts, in the research table's arrow schema where it is available.
+
+    A cast failure is RECORDED and the table is still written on pandas'
+    inferred schema -- a store that says which schema it got is worth more
+    than one that refuses to exist.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    schema = fundamentals_schema()
+    pin_error = None
+    if schema is not None:
+        try:
+            pq.write_table(
+                pa.Table.from_pandas(frame, schema=schema, preserve_index=False),
+                path)
+        except Exception as exc:  # noqa: BLE001
+            pin_error = f"{type(exc).__name__}: {exc}"
+            schema = None
+    if schema is None:
+        pq.write_table(pa.Table.from_pandas(frame, preserve_index=False), path)
+    return {"path": str(path), "sha256": sha256_file(path), "n_rows": len(frame),
+            "schema_pinned_to": (str(E2_FUNDAMENTALS_PARQUET)
+                                 if schema is not None else None),
+            "schema_pin_error": pin_error}
+
+
+def ingest_fundamentals_for(cik: int, ticker: Optional[str], name: str,
+                            out: Path, client: Optional[EdgarClient] = None,
+                            force_refresh: bool = False,
+                            verbose: bool = True) -> dict:
+    """Fetch, parse, classify and write one company's fundamentals.
+
+    Returns the manifest's `fundamentals` block. Every failure is a named,
+    recorded row in it; nothing is swallowed and nothing is filtered out.
+    """
+    t_all = time.perf_counter()
+    client = client or EdgarClient(verbose=False)
+    requests_before = client.request_count
+    timings: dict[str, float] = {}
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=True)
+
+    cache_path = client.cache_dir / "companyfacts" / f"CIK{int(cik):010d}.json"
+    universe = fundamentals_universe(cik, ticker, name)
+
+    t = time.perf_counter()
+    failure: Optional[dict] = None
+    try:
+        frame = IF.build_fundamentals(client, universe, force_refresh=force_refresh)
+    except RuntimeError as exc:
+        # `build_fundamentals` refuses to return an empty table. For one
+        # company that is not "something is badly wrong", it is a filer with
+        # no fact under any of the tags -- recorded, then classified as
+        # ABSENT everywhere, which is the truth.
+        failure = {"cause": "no_facts_under_any_family_tag", "detail": str(exc)}
+        frame = empty_fundamentals_frame()
+    except Exception as exc:  # noqa: BLE001
+        raise IngestError("companyfacts_fetch_failed",
+                          f"{type(exc).__name__}: {exc}") from exc
+    timings["fetch_parse_s"] = time.perf_counter() - t
+
+    t = time.perf_counter()
+    window = fundamentals_window(frame)
+    resolutions = IF.classify_universe(
+        frame, fundamentals_universe(cik, ticker, name, window), *window)
+    problems = IF.resolution_problems(resolutions)
+    reason_of = {p.message.split(":", 1)[0]: p.message for p in problems
+                 if p.check == "fundamentals_alias_unresolved"}
+    timings["classify_s"] = time.perf_counter() - t
+
+    parquet_info = write_fundamentals(frame, out / FUNDAMENTALS_NAME)
+    csv_path = IF.write_concept_resolution(resolutions, out / CONCEPT_RESOLUTION_NAME)
+    timings["total_s"] = time.perf_counter() - t_all
+
+    resolved = [r for r in resolutions if r.severity == IF.SEVERITY_RESOLVED]
+    block = {
+        "source": ("SEC XBRL companyfacts via edgar_client.get_companyfacts -- "
+                   "the same rate-limited client and the same data/raw/ cache "
+                   "F2 filled for the 244 research CIKs"),
+        "companyfacts_cache": {
+            "path": str(cache_path),
+            "sha256": sha256_file(cache_path) if cache_path.exists() else None},
+        "reused_modules": [
+            "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+            "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+            "ingest_fundamentals.classify_universe / classify_family",
+            "ingest_fundamentals.resolution_problems",
+            "ingest_fundamentals.write_concept_resolution",
+        ],
+        "n_tags_pulled": len(IF.CONCEPTS),
+        "n_families": len(IF.CONCEPT_FAMILIES),
+        "window": {"start": window[0].isoformat(), "end": window[1].isoformat(),
+                   "rule": "the company's own XBRL life; see "
+                           "ingest_one.fundamentals_window"},
+        "coverage_bar": IF.RESOLUTION_COVERAGE_BAR,
+        "stale_tail_max_quarters": IF.STALE_TAIL_MAX_QUARTERS,
+        "parquet": parquet_info,
+        "concept_resolution": {
+            "path": str(csv_path), "sha256": sha256_file(csv_path),
+            "n_rows": len(resolutions), "n_resolved": len(resolved),
+            "n_unresolved": len(resolutions) - len(resolved),
+            "schema_source": "ingest_fundamentals.concept_resolution_frame "
+                             "(the columns data/f2/concept_resolution.csv has)"},
+        "families": [
+            {"family": r.family, "state": r.state, "severity": r.severity,
+             "tags": list(r.tags), "alternates": list(r.alternates),
+             "coverage": round(r.coverage, 4), "n_target_quarters": r.n_target,
+             "unit": r.unit, "units_mixed": bool(r.units_mixed),
+             "duration_mix": r.duration_mix,
+             "last_data_quarter": r.last_data_quarter,
+             "tag_coverage": r.coverage_detail(),
+             "reason": reason_of.get(r.family)}
+            for r in sorted(resolutions, key=lambda r: r.family)],
+        "warnings": [{"check": p.check, "severity": p.severity,
+                      "message": p.message}
+                     for p in problems if p.check != "fundamentals_alias_unresolved"],
+        "failure": failure,
+        "network": {"edgar_requests": client.request_count - requests_before,
+                    "cost_usd": 0.0},
+        "timings_seconds": {k: round(v, 2) for k, v in timings.items()},
+    }
+    if verbose:
+        print(f"{name} (CIK {cik}) fundamentals -> {out}\n"
+              f"  {len(frame):,} facts · {len(resolved)}/{len(resolutions)} "
+              f"families resolved · window {window[0]}..{window[1]} · "
+              f"{timings['total_s']:.1f}s")
+    return block
+
+
+def add_fundamentals(ticker: Optional[str] = None, cik: Optional[int] = None,
+                     root: Path = COMPANIES_DIR,
+                     client: Optional[EdgarClient] = None,
+                     force_refresh: bool = False,
+                     verbose: bool = True) -> dict:
+    """`--fundamentals`: step 7 on an existing store, merged into its manifest.
+
+    Documents, sections, chunks and labels are NOT touched -- the store this
+    writes into is the one `ingest()` already built, and re-running it on a
+    labeled store costs nothing but a companyfacts fetch. If the store does
+    not exist yet, `ingest()` runs first so a brand-new company is still one
+    command.
+    """
+    client = client or EdgarClient(verbose=False)
+    if cik is None:
+        if not ticker:
+            raise IngestError("no_company", "give a ticker or a CIK")
+        cik, name = resolve_ticker(client, ticker)
+    else:
+        cik = int(cik)
+        table = ticker_table(client)
+        hit = table[table.cik == cik]
+        name = str(hit.iloc[0].title) if not hit.empty else f"CIK {cik}"
+        ticker = ticker or (str(hit.iloc[0].ticker) if not hit.empty else None)
+
+    out = store_dir(cik, root)
+    manifest_path = out / "manifest.json"
+    if not manifest_path.exists():
+        ingest(ticker=ticker, cik=cik, root=root, client=client, verbose=verbose)
+    manifest = json.loads(manifest_path.read_text())
+    name = manifest.get("company_name") or name
+    ticker = manifest.get("ticker") or ticker
+
+    block = ingest_fundamentals_for(
+        cik, ticker, name, out, client=client, force_refresh=force_refresh,
+        verbose=verbose)
+    # Re-read immediately before the write rather than reusing the copy above:
+    # the fetch is a network round trip, and this key is the only one step 7
+    # owns. Anything else that touched the manifest meanwhile survives.
+    manifest = json.loads(manifest_path.read_text())
+    manifest["fundamentals"] = block
+    manifest_path.write_text(json.dumps(manifest, indent=2, default=str) + "\n")
+    return manifest
 
 
 # ---------------------------------------------------------------------------
@@ -523,6 +954,20 @@ def ingest(ticker: Optional[str] = None, cik: Optional[int] = None,
         "sections_by_status": (
             frame.extraction_status.value_counts().to_dict() if not frame.empty else {}),
         "extraction_audit": audit,
+        # Every section the frozen extractor failed on the document as filed
+        # and the app-lane normalizer then located. Empty on a company whose
+        # markup the extractor already handles -- which is nine of the ten
+        # drawn companies.
+        "dialect_retry": {
+            "rescued": [{"accession_number": a["accession_number"],
+                         "form": a["form"], "section_type": a["section_type"],
+                         "extraction_status": a["extraction_status"],
+                         "reason_code": a["reason_code"],
+                         "word_count": a["word_count"]}
+                        for a in audit if DIALECT_NOTE in (a.get("note") or "")],
+            "rule": DIALECT_NOTE,
+            "retry_reason_codes": sorted(DIALECT_RETRY_REASON_CODES),
+        },
         "chunks": ({"path": str(out / "chunks.parquet"),
                     "sha256": chunks_info["parquet"]["sha256"],
                     "n_chunks": chunks_info["n_chunks"],
@@ -542,7 +987,17 @@ def ingest(ticker: Optional[str] = None, cik: Optional[int] = None,
                     "user_agent": client.headers["User-Agent"], "cost_usd": 0.0},
         "timings_seconds": {k: round(v, 2) for k, v in timings.items()},
     }
-    (out / "manifest.json").write_text(json.dumps(manifest, indent=2, default=str) + "\n")
+    # Step 7 is about the company's XBRL history, not about which documents
+    # this run fetched, so a re-ingest carries a previous `--fundamentals`
+    # block forward rather than silently dropping it -- the two files it
+    # describes are still on disk and their shas are still the ones recorded.
+    # `--fundamentals` overwrites the key when it next runs.
+    previous = out / "manifest.json"
+    if previous.exists():
+        carried = json.loads(previous.read_text()).get("fundamentals")
+        if carried is not None:
+            manifest["fundamentals"] = carried
+    previous.write_text(json.dumps(manifest, indent=2, default=str) + "\n")
     if verbose:
         n_chunks = manifest["chunks"].get("n_chunks", 0)
         print(f"{name} (CIK {cik}) -> {out}\n"
@@ -644,6 +1099,17 @@ def main(argv: Optional[list[str]] = None) -> int:
                          "to compare against")
     ap.add_argument("--lookback-days", type=int, default=DEFAULT_LOOKBACK_DAYS)
     ap.add_argument("--root", type=Path, default=COMPANIES_DIR)
+    ap.add_argument("--fundamentals", action="store_true",
+                    help="instead of ingesting documents: fetch this company's "
+                         "XBRL companyfacts, classify its concept families with "
+                         "F2's own alias/migration classifier, and write "
+                         "fundamentals.parquet + concept_resolution.csv into "
+                         "its store (ingesting the documents first if the store "
+                         "does not exist yet). Re-runnable on a labeled store: "
+                         "it touches no section, chunk or label.")
+    ap.add_argument("--force-refresh", action="store_true",
+                    help="with --fundamentals: ignore the 24h companyfacts "
+                         "cache staleness and re-fetch from EDGAR")
     ap.add_argument("--draw", type=int, default=0, metavar="N",
                     help="instead of ingesting: draw N external companies with "
                          "the seeded generator and write the draw to --draw-out")
@@ -663,8 +1129,12 @@ def main(argv: Optional[list[str]] = None) -> int:
     if not (args.ticker or args.cik):
         raise SystemExit("give --ticker, --cik, or --draw N")
     try:
-        ingest(ticker=args.ticker, cik=args.cik, per_form=args.per_form,
-               lookback_days=args.lookback_days, root=args.root)
+        if args.fundamentals:
+            add_fundamentals(ticker=args.ticker, cik=args.cik, root=args.root,
+                             force_refresh=args.force_refresh)
+        else:
+            ingest(ticker=args.ticker, cik=args.cik, per_form=args.per_form,
+                   lookback_days=args.lookback_days, root=args.root)
     except IngestError as exc:
         print(f"FAILED [{exc.cause}] {exc.detail}", file=sys.stderr)
         return 1

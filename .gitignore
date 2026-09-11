@@ -149,3 +149,8 @@ data/f5/**/*.parquet
 # Rendered per-filing HTML reports are regenerable from the labeled corpus.
 data/app/reports/
 data/app/**/*.parquet
+# Per-company app stores: only manifests and concept_resolution.csv are versioned;
+# chunk/label rows, prompts and the per-company metadata DB are regenerable from EDGAR + the adapter.
+data/app/companies/**/*.jsonl
+data/app/companies/**/*.db
+data/app/companies/**/*.log

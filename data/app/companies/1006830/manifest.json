@@ -7,7 +7,7 @@
   "in_research_universe": false,
   "window": {
     "lookback_days": 1100,
-    "per_form": 1,
+    "per_form": 2,
     "forms": [
       "10-K",
       "10-Q",
@@ -47,21 +47,55 @@
       "earnings_doc_section_type": null,
       "earnings_doc_selection_confidence": null,
       "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001437749-26-012779",
+      "form": "8-K",
+      "filing_date": "2026-04-20",
+      "items": "2.02,9.01",
+      "primary_document": "cbkm20260417_8k.htm",
+      "earnings_doc_filename": "ex_947249.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001437749-26-003344",
+      "form": "10-Q",
+      "filing_date": "2026-02-06",
+      "items": null,
+      "primary_document": "cbkm20251231_10q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001437749-25-028445",
+      "form": "10-K",
+      "filing_date": "2025-09-05",
+      "items": null,
+      "primary_document": "cbkm20250630_10k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
     }
   ],
   "n_filings_in_history": 32,
   "documents": {
-    "n_fetched": 3,
+    "n_fetched": 6,
     "failures": []
   },
   "sections": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/sections.parquet",
-    "sha256": "ecf12e2578b67dfb26e94afd95541b424e020c998ef29a7072e1c5514f9a04cd",
-    "n_rows": 1,
+    "sha256": "19ead94ca6607f8946c6bbe3fe05bbfd245bc522099436e83435d848dcc78b2e",
+    "n_rows": 8,
     "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
   },
   "sections_by_status": {
-    "OK": 1
+    "FLAGGED": 6,
+    "OK": 2
   },
   "extraction_audit": [
     {
@@ -73,19 +107,19 @@
       "form": "10-K",
       "filing_date": "2026-09-10",
       "section_type": "MDA",
-      "extraction_status": "FAIL",
+      "extraction_status": "FLAGGED",
       "flags": [
-        "no_toc_and_no_heading_match"
+        "heading_regex_fallback"
       ],
-      "extraction_method": "none",
+      "extraction_method": "heading_regex",
       "extraction_confidence": "low",
-      "word_count": 0,
-      "prose_word_share": 0.0,
-      "ctrl_ratio": null,
-      "eng_word_share": null,
+      "word_count": 8157,
+      "prose_word_share": 0.6897,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4683,
       "source_document": "cbkm20260630_10k.htm",
-      "reason_code": "no_toc_and_no_heading_match",
-      "note": ""
+      "reason_code": "heading_regex_fallback",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
     },
     {
       "cik": 1006830,
@@ -96,19 +130,20 @@
       "form": "10-K",
       "filing_date": "2026-09-10",
       "section_type": "RISK_FACTORS",
-      "extraction_status": "FAIL",
+      "extraction_status": "FLAGGED",
       "flags": [
-        "no_toc_and_no_heading_match"
+        "heading_regex_fallback",
+        "below_length_floor"
       ],
-      "extraction_method": "none",
+      "extraction_method": "heading_regex",
       "extraction_confidence": "low",
-      "word_count": 0,
+      "word_count": 10,
       "prose_word_share": 0.0,
-      "ctrl_ratio": null,
+      "ctrl_ratio": 0.0,
       "eng_word_share": null,
       "source_document": "cbkm20260630_10k.htm",
-      "reason_code": "no_toc_and_no_heading_match",
-      "note": ""
+      "reason_code": "below_length_floor",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
     },
     {
       "cik": 1006830,
@@ -140,19 +175,19 @@
       "form": "10-Q",
       "filing_date": "2026-05-08",
       "section_type": "MDA",
-      "extraction_status": "FAIL",
+      "extraction_status": "FLAGGED",
       "flags": [
-        "no_toc_and_no_heading_match"
+        "heading_regex_fallback"
       ],
-      "extraction_method": "none",
+      "extraction_method": "heading_regex",
       "extraction_confidence": "low",
-      "word_count": 0,
-      "prose_word_share": 0.0,
-      "ctrl_ratio": null,
-      "eng_word_share": null,
+      "word_count": 5869,
+      "prose_word_share": 0.8001,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54804,
       "source_document": "cbkm20260331_10q.htm",
-      "reason_code": "no_toc_and_no_heading_match",
-      "note": ""
+      "reason_code": "heading_regex_fallback",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
     },
     {
       "cik": 1006830,
@@ -176,20 +211,194 @@
       "source_document": "cbkm20260331_10q.htm",
       "reason_code": "no_toc_and_no_heading_match",
       "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-012779",
+      "form": "8-K",
+      "filing_date": "2026-04-20",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 2383,
+      "prose_word_share": 0.7654,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.59412,
+      "source_document": "ex_947249.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-003344",
+      "form": "10-Q",
+      "filing_date": "2026-02-06",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 5844,
+      "prose_word_share": 0.793,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55176,
+      "source_document": "cbkm20251231_10q.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-003344",
+      "form": "10-Q",
+      "filing_date": "2026-02-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FAIL",
+      "flags": [
+        "no_toc_and_no_heading_match"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "cbkm20251231_10q.htm",
+      "reason_code": "no_toc_and_no_heading_match",
+      "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-25-028445",
+      "form": "10-K",
+      "filing_date": "2025-09-05",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 8381,
+      "prose_word_share": 0.699,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46986,
+      "source_document": "cbkm20250630_10k.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-25-028445",
+      "form": "10-K",
+      "filing_date": "2025-09-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback",
+        "below_length_floor"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 10,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "cbkm20250630_10k.htm",
+      "reason_code": "below_length_floor",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
     }
   ],
+  "dialect_retry": {
+    "rescued": [
+      {
+        "accession_number": "0001437749-26-030039",
+        "form": "10-K",
+        "section_type": "MDA",
+        "extraction_status": "FLAGGED",
+        "reason_code": "heading_regex_fallback",
+        "word_count": 8157
+      },
+      {
+        "accession_number": "0001437749-26-030039",
+        "form": "10-K",
+        "section_type": "RISK_FACTORS",
+        "extraction_status": "FLAGGED",
+        "reason_code": "below_length_floor",
+        "word_count": 10
+      },
+      {
+        "accession_number": "0001437749-26-015787",
+        "form": "10-Q",
+        "section_type": "MDA",
+        "extraction_status": "FLAGGED",
+        "reason_code": "heading_regex_fallback",
+        "word_count": 5869
+      },
+      {
+        "accession_number": "0001437749-26-003344",
+        "form": "10-Q",
+        "section_type": "MDA",
+        "extraction_status": "FLAGGED",
+        "reason_code": "heading_regex_fallback",
+        "word_count": 5844
+      },
+      {
+        "accession_number": "0001437749-25-028445",
+        "form": "10-K",
+        "section_type": "MDA",
+        "extraction_status": "FLAGGED",
+        "reason_code": "heading_regex_fallback",
+        "word_count": 8381
+      },
+      {
+        "accession_number": "0001437749-25-028445",
+        "form": "10-K",
+        "section_type": "RISK_FACTORS",
+        "extraction_status": "FLAGGED",
+        "reason_code": "below_length_floor",
+        "word_count": 10
+      }
+    ],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
   "chunks": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/chunks.parquet",
-    "sha256": "1b71bf081cdc2ff2f06059cc7c96a7b5781a119adad8ff9beb66e59e5c96ade7",
-    "n_chunks": 5,
-    "n_sections": 1,
+    "sha256": "748301109618c8c43a759c508244209f79c4f299536dd3f118ad72e3b0a517e4",
+    "n_chunks": 71,
+    "n_sections": 8,
     "window_rule": "APP_single_company",
     "line_rule": "reflow_v1",
     "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
   },
   "metadata_db": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/metadata.db",
-    "sha256": "b7ed3a9a51974b4b73765703863e93a27921d25d4961d2fc2d9158c4475da23e",
+    "sha256": "282f0b9a67601f913e1bc4fb593778d1656fa83e8f90d6f962f0bbe6a106394b",
     "schema_source": "ingest_metadata.init_db"
   },
   "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
@@ -200,10 +409,296 @@
   },
   "timings_seconds": {
     "resolve_s": 0.01,
-    "metadata_s": 4.24,
-    "documents_s": 0.26,
-    "extract_s": 1.75,
-    "chunk_s": 0.0,
-    "total_s": 6.28
+    "metadata_s": 0.12,
+    "documents_s": 0.24,
+    "extract_s": 6.81,
+    "chunk_s": 0.03,
+    "total_s": 7.22
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001006830.json",
+      "sha256": "d6909375fba3c4eb1a92aa6d04e5b987b7cb1c3b11ea48e1b4b6becbf3ef1202"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2009-06-30",
+      "end": "2026-09-11",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/fundamentals.parquet",
+      "sha256": "bcaa58e09fe5d29c9c1f9613119fbc18cadcb249b145f98b9b984828e86b324c",
+      "n_rows": 2213,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/concept_resolution.csv",
+      "sha256": "be47c07052992c077bc27b41d7e306ccc4d8e5bac2055904ebd60e4b7e163816",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8841,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:120",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "Assets 61/69 (88%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndDueFromBanks"
+        ],
+        "alternates": [],
+        "coverage": 0.9565,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:120",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "CashAndDueFromBanks 61/69 (88%, last 2026Q2), CashAndCashEquivalentsAtCarryingValue 41/69 (59%, last 2020Q1), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 30/69 (43%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9275,
+        "n_target_quarters": 69,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:84|FY:30|9M:28|H1:28",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "EarningsPerShareDiluted 61/69 (88%, last 2026Q2), EarningsPerShareBasicAndDiluted 45/69 (65%, last 2021Q4)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9565,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:286",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "StockholdersEquity 66/69 (96%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8841,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:120",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "Liabilities 61/69 (88%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8841,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:120",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 61/69 (88%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 69,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 69 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9275,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:90|9M:30|FY:30|H1:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetIncomeLoss 64/69 (93%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.8841,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:84|FY:30|9M:28|H1:28",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 61/69 (88%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9275,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:30|Q:30|H1:24|9M:22",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 62/69 (90%, last 2026Q2), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 12/69 (17%, last 2017Q1)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 69,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "operating_income: ABSENT over 69 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9275,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:90|9M:30|FY:30|H1:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 44/69 (64%, last 2021Q2) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 24/69 (35%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "InterestAndDividendIncomeOperating"
+        ],
+        "alternates": [],
+        "coverage": 0.9275,
+        "n_target_quarters": 69,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:90|9M:30|FY:30|H1:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "InterestAndDividendIncomeOperating 64/69 (93%, last 2026Q2), RevenueFromContractWithCustomerIncludingAssessedTax 18/69 (26%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8551,
+        "n_target_quarters": 69,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:60",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 59/69 (86%, last 2026Q2)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 1,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.15,
+      "classify_s": 0.01,
+      "total_s": 0.17
+    }
   }
 }

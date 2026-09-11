@@ -1,6 +1,6 @@
 {
   "run_id": "L2.2-label-filing",
-  "store": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/764630",
+  "store": "data/app/companies/764630",
   "labeler": {
     "student": "qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
     "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
@@ -28,24 +28,24 @@
     "seconds": 0.0
   },
   "generation": {
-    "started_utc": "2026-09-11T14:14:47.237534+00:00",
-    "ended_utc": "2026-09-11T14:14:59.237064+00:00",
+    "started_utc": "2026-09-11T15:02:02.966834+00:00",
+    "ended_utc": "2026-09-11T15:02:15.356844+00:00",
     "n_generated": 7,
-    "n_already_done": 0,
+    "n_already_done": 4,
     "torn_final_line_repaired_before_append": false,
-    "model_load_seconds": 0.5,
-    "wall_seconds": 12.0,
-    "seconds_per_chunk": 1.71,
+    "model_load_seconds": 0.4,
+    "wall_seconds": 12.4,
+    "seconds_per_chunk": 1.77,
     "finish_reasons": {
       "stop": 7
     },
     "n_passages_head_truncated": 0,
-    "generate_seconds": 13.4
+    "generate_seconds": 13.7
   },
   "labels": {
-    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/764630/labels.parquet",
-    "sha256": "6c654162dc23b90cb0ff16267bdcc2ef378c55e8aaa4d966fabaee0b3c29b172",
-    "n_rows": 7,
+    "path": "data/app/companies/764630/labels.parquet",
+    "sha256": "21eae721915d49f7a80365d3d9c1226f6e9203921db5d990a237414dd95170d9",
+    "n_rows": 11,
     "n_columns": 43,
     "schema_source": "label_e2.output_schema() -- columns 1-34 are data/labels_v12.parquet's arrow schema (SCHEMA ONLY, never a teacher), then the 9 F4 columns",
     "parse_failures": 0,
@@ -57,7 +57,7 @@
       "rule": "missing->NONE at the writer, flagged by guidance_imputed_none"
     },
     "sentiment": {
-      "n_emitted": 7
+      "n_emitted": 11
     },
     "head_truncation": {
       "n_truncated": 0,
@@ -81,13 +81,13 @@
     "This company is outside the 244-company research universe. Its labels have no spot-check of their own; the model-consensus error measured at G2 on the research corpus is the best case, not a measurement of this company."
   ],
   "prepare": {
-    "rows_jsonl": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/764630/rows.jsonl",
-    "n_rows": 7,
-    "rows_jsonl_sha256": "4546783103fee21bffed98bb36e8bf356d9b57a85aefa0dd4c195adb85219c7b",
-    "chunks_parquet_sha256": "3aeb14ffedb6ec921ff4b11f3a165b2c451c54b41fc6dd8ad2135d4d647baf92"
+    "rows_jsonl": "data/app/companies/764630/rows.jsonl",
+    "n_rows": 11,
+    "rows_jsonl_sha256": "b8cdf58afaa931a89ca95985d087cf5b7e262836f4bd59d12ed760847f497d80",
+    "chunks_parquet_sha256": "2eb5d897c140ed49e50a8f628ccade8112e75ae4c76dddc43a2ab35e07e5e7e8"
   },
   "timings_seconds": {
-    "generate_s": 13.8,
-    "total_s": 14.1
+    "generate_s": 14.1,
+    "total_s": 14.4
   }
 }

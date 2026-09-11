@@ -197,5 +197,293 @@
     "extract_s": 0.77,
     "chunk_s": 0.06,
     "total_s": 1.63
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001334036.json",
+      "sha256": "a1df742d55b2bf3f619f2e2a96a6183fd1d05d10eac013f70f23c82c20444337"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2008-12-31",
+      "end": "2026-09-11",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1334036/fundamentals.parquet",
+      "sha256": "0661418d994e0388ea623f21142e0a0910518f1bacd5d557304fad33459557d3",
+      "n_rows": 2595,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1334036/concept_resolution.csv",
+      "sha256": "082e00a99a3d60b5e8617843e26c4fe5d23bcacb64596c6d84999c39a9eeb950",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8732,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:124",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "Assets 62/71 (87%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9437,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:180",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 67/71 (94%, last 2026Q2), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 40/71 (56%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9296,
+        "n_target_quarters": 71,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:181|FY:48|H1:32|9M:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "EarningsPerShareDiluted 66/71 (93%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9014,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:230",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "StockholdersEquity 63/71 (89%, last 2026Q2), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 4/71 (6%, last 2011Q4)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8732,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:124",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "Liabilities 62/71 (87%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8732,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:124",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 62/71 (87%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 71,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 71 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9296,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:180|FY:48|H1:32|9M:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetIncomeLoss 66/71 (93%, last 2026Q2), ProfitLoss 6/71 (8%, last 2012Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.7746,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:128|FY:39|H1:26|9M:24",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 55/71 (77%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9296,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:39|H1:26|9M:24|Q:24",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 59/71 (83%, last 2026Q2), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 16/71 (23%, last 2017Q1)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9296,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:183|FY:51|H1:33|9M:31",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "OperatingIncomeLoss 66/71 (93%, last 2026Q2)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9296,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:92|FY:48|H1:32|9M:30",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 49/71 (69%, last 2026Q2), IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 22/71 (31%, last 2015Q2) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.5493,
+        "n_target_quarters": 71,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:92|FY:27|H1:21|9M:19",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 39/71 (55%, last 2026Q2)",
+        "reason": "revenue: PARTIAL over 71 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 39/71 (55%, last 2026Q2); union 55%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.831,
+        "n_target_quarters": 71,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:62",
+        "last_data_quarter": "2026Q2",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 59/71 (83%, last 2026Q2)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 1,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.14,
+      "classify_s": 0.01,
+      "total_s": 0.16
+    }
   }
 }

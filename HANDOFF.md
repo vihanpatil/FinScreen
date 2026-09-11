@@ -1510,6 +1510,25 @@ file §7: the ratified 75%-coverage window bar applied outside its measured
 regime for long-history externals (103/140 vs 98/140 families under the
 alternative window).
 
+**2026-09-11 — P1a.3 DONE: diffs on external companies, the CBKM dialect fix
+(app lane only), imputed-guidance disclosure (status).** `ingest_one.py
+--per-form 2` re-ran the ten drawn companies (923 new passages labeled in 34
+min at 1.6–2.4 s/chunk, $0); 27 of 28 rendered pages now carry a real
+paragraph diff (only YSGL's first-ever 10-K has no prior); 8-K diffs are
+honest but near-useless (74% NEW). CBKM's failure (em-dash item separators +
+per-token bold wrapping) is fixed by an HTML normalizer applied ONLY on retry
+of an already-failed app-lane attempt — `extract.py` and the sealed E2 corpus
+untouched (sha unchanged; an AST test proves `ingest_one` never writes into
+`extract`); MD&A now extracts 8,157 words, flagged low-confidence. Stated and
+NOT acted on: 796 research-corpus FAIL attempts of the same reason classes
+could be rescued by the same normalizer — that would move the sealed corpus
+and needs a ruling. Every page now prints "N of M guidance-applicable
+passages carry an imputed NONE" with the G2 §0 sentence: 72 of 137 (52.6%)
+across the ten externals; 48,790 of 95,335 (51.2%) on the research corpus.
+Record: `data/app/status/L2_4_diff_and_extraction.md`. App suites 195 green.
+Housekeeping: per-company `*.jsonl` / `*.db` store files are now
+git-excluded (regenerable); manifests and concept_resolution.csv stay.
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual

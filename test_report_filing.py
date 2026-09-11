@@ -838,6 +838,66 @@ def test_disclosure_header_is_not_collapsible():
 
 
 # ---------------------------------------------------------------------------
+# 5a-bis. the guidance-imputation share (L2.4)
+# ---------------------------------------------------------------------------
+# L2.2 §3 measured 41 of 74 guidance-applicable passages (55%) carrying a NONE
+# the model never emitted, and asked for the share to be on the page. These
+# pin that it IS on every page, that it is COUNTED off the labels being
+# rendered rather than quoted as a constant, and that the G2 §0 sentence
+# travels beside it.
+def test_the_imputation_share_is_counted_off_the_rendered_labels(index):
+    imp = RF.guidance_imputation(index)
+    assert imp["n_applicable"] == int(index.guidance_applicable.sum()) == 11
+    assert imp["n_imputed"] == int((index.guidance_applicable
+                                    & index.guidance_imputed_none).sum()) == 1
+    assert imp["n_labels"] == len(index)
+    assert imp["pct"] == pytest.approx(100.0 / 11)
+
+
+def test_an_imputed_flag_outside_the_applicable_set_is_not_counted():
+    """`guidance_imputed_none` is only meaningful where guidance was asked;
+    a flag anywhere else must not inflate the share."""
+    frame = pd.DataFrame({"guidance_applicable": [True, True, False, None],
+                          "guidance_imputed_none": [True, False, True, True]})
+    imp = RF.guidance_imputation(frame)
+    assert (imp["n_imputed"], imp["n_applicable"]) == (1, 2)
+
+
+def test_the_disclosure_block_prints_the_guidance_imputation_share(index):
+    imp = RF.guidance_imputation(index)
+    html = unescape(RF.disclosure_html(RF.load_disclosure(), None, imp))
+    assert "Imputed guidance" in html
+    assert ("1 of 11 guidance-applicable passages carry an imputed NONE "
+            "(the model emitted no guidance key)") in html
+    assert RF.GUIDANCE_IMPUTATION_SENTENCE.format(**imp) in html
+    # the G2 §0 sentence the ruling puts beside every imputed NONE
+    block = html.split("Imputed guidance")[1].split("</li>")[0]
+    assert RF.first_sentence(RF.read_g2_section_zero()) in block
+    assert "9.1%" in block  # 1 of 11, computed, not quoted
+
+
+def test_the_imputation_line_says_when_nothing_is_guidance_applicable():
+    """AETN and YSGL in the L2.2 draw: no earnings 8-K, so no passage is
+    guidance-applicable and the field is empty BY CONSTRUCTION. The line must
+    say that rather than print a bare 0 that reads like a clean bill."""
+    frame = pd.DataFrame({"guidance_applicable": [False, False],
+                          "guidance_imputed_none": [False, False]})
+    imp = RF.guidance_imputation(frame)
+    assert (imp["n_imputed"], imp["n_applicable"]) == (0, 0)
+    html = unescape(RF.disclosure_html(RF.load_disclosure(), None, imp))
+    assert "0 of 0 guidance-applicable passages carry an imputed NONE" in html
+    assert RF.GUIDANCE_NONE_APPLICABLE in html
+
+
+def test_the_imputation_share_is_never_a_module_constant():
+    """The numbers must come from the labels. A hard-coded pair would survive
+    a corpus change silently, which is exactly the failure L2.2 §3 found."""
+    assert "{n_imputed" in RF.GUIDANCE_IMPUTATION_SENTENCE
+    assert "{n_applicable" in RF.GUIDANCE_IMPUTATION_SENTENCE
+    assert not re.search(r"\d{2,3}\s+of\s+\d{2,3}", RF.GUIDANCE_IMPUTATION_SENTENCE)
+
+
+# ---------------------------------------------------------------------------
 # 5b. the E1 null sentence -- CONSTANTS in the module, verified here
 # ---------------------------------------------------------------------------
 E1_NULL_REPORT = REPO_ROOT / "data" / "backtest_report.md"
@@ -1206,6 +1266,7 @@ def _synthetic_page(index, occ, texts, sections, prior_sections) -> str:
               "state": "unresolved", "detail": "UNRESOLVED for this company"},
              {"family": "revenue", "label": "Revenue", "state": "resolved",
               "value": 1.0e9, "unit": "USD", "concept": "Revenues",
+              "period": "12 months ending 2024-09-28",
               "period_end": "2024-09-28", "filed": "2024-11-01",
               "form": "10-K", "accession": HERE, "days_stale": 3}],
             "2024-11-01"),
@@ -1394,6 +1455,7 @@ def test_restatement_provenance_is_visible():
     html = RF.fundamentals_html(
         [{"family": "assets", "label": "Total assets", "state": "resolved",
           "value": 1.0e9, "unit": "USD", "concept": "Assets",
+          "period": "as at 2023-12-31",
           "period_end": "2023-12-31", "filed": "2024-05-01", "form": "10-Q",
           "accession": "X", "days_stale": 10}], "2024-11-01")
     assert "latest filed as of 2024-11-01: 2024-05-01" in html

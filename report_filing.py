@@ -40,13 +40,21 @@ What this module does (the six ruled features, nothing more)
     no similarity score, no threshold, no ranking.
  5. Point-in-time fundamentals as of the filing date (five families), resolved
     through `numeric_features_e2.resolve_family_value` -> `pit.value_as_of`.
-    UNRESOLVED is shown as unresolved; the filed date of the chosen fact is
-    printed so a restatement is visible.
+    UNRESOLVED is shown as unresolved, with the classifier's own reason; the
+    filed date of the chosen fact is printed so a restatement is visible. The
+    per-company concept resolution is F2's committed one for a research
+    company and the store's own for a `--store` company (P1a.2) -- which FILE
+    is read is the only difference between the two.
  6. The mandatory, NON-COLLAPSIBLE disclosure header. Every number in it is
     READ from a committed artifact at render time, EXCEPT the two E1 IC
     deltas and the three prose percentages, which are module constants pinned
     to their source documents by tests -- no outcome artifact is opened on any
-    render path (`test_render_opens_no_outcome_artifact`).
+    render path (`test_render_opens_no_outcome_artifact`). One of those
+    numbers is COUNTED rather than read: the share of guidance-applicable
+    passages whose NONE the model never emitted (`guidance_imputation`),
+    tallied off the very labels the page renders, because on the ten external
+    companies of L2.2 that share was 55% and a reader not told so reads the
+    writer's default as the labeler's judgment.
 
 -----------------------------------------------------------------------------
 Refusals (ruled; enforced by tests in test_report_filing.py, not by prose)
@@ -71,11 +79,15 @@ outcome artifact is opened at render time (a file-open guard).
 -----------------------------------------------------------------------------
 `ingest_one.py` and `label_filing.py` write one company's chunks, labels,
 sections and filing metadata into data/app/companies/<cik>/ in the SAME four
-schemas this module reads. `--store` points the five readers at that directory
-(`chunks_path`, `labels_path`, `sections_path`, `metadata_db_path`,
-`cache_path`) and changes nothing else -- the containment filter, the section
-mask, the diff, the fundamentals resolution and every refusal are the same
-code on the same shapes. One sentence is ADDED to the disclosure header,
+schemas this module reads, and `ingest_one.py --fundamentals` adds two more in
+the schemas of data/fundamentals_e2.parquet and data/f2/concept_resolution.csv.
+`--store` points the seven readers at that directory (`chunks_path`,
+`labels_path`, `sections_path`, `metadata_db_path`, `cache_path`,
+`fundamentals_path`, `concept_resolution_path`) and changes nothing else --
+the containment filter, the section mask, the diff, the fundamentals
+resolution and every refusal are the same code on the same shapes. A store
+ingested before P1a.2 carries neither fundamentals file; its five families say
+so rather than printing a blank. One sentence is ADDED to the disclosure header,
 `OUTSIDE_UNIVERSE_LINE`, because one thing genuinely is different: the labels
 are from a company the 244-company universe never covered and the G2
 spot-check never looked at. With no `--store`, every accessor returns the F4
@@ -93,6 +105,7 @@ Cost: $0. No network, no API, no GPU. Standard library + pandas/pyarrow.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import hashlib
 import html
 import json
@@ -109,6 +122,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 import features_e2 as FE
+import ingest_fundamentals as IF
 import numeric_features_e2 as NF
 
 REPO_ROOT = Path(__file__).resolve().parent
@@ -151,10 +165,16 @@ OUTSIDE_UNIVERSE_LINE = (
 
 STORE_TABLES = ("chunks.parquet", "labels.parquet", "sections.parquet",
                 "metadata.db")
+# The two files `ingest_one.py --fundamentals` writes. They are OPTIONAL, not
+# part of STORE_TABLES: a store ingested before P1a.2 still renders, and its
+# five families print "no fundamentals have been ingested" instead of a number.
+# Absence is a stated state, never a silent blank.
+STORE_FUNDAMENTALS = ("fundamentals.parquet", "concept_resolution.csv")
 
 
 class CompanyStore:
-    """The four store tables, located and checked for existence."""
+    """The four store tables, located and checked for existence, plus the two
+    optional fundamentals files."""
 
     def __init__(self, root):
         self.root = Path(root)
@@ -164,6 +184,8 @@ class CompanyStore:
         self.metadata_db = self.root / "metadata.db"
         self.cache = self.root / "chunk_index.parquet"
         self.manifest = self.root / "manifest.json"
+        self.fundamentals = self.root / "fundamentals.parquet"
+        self.concept_resolution = self.root / "concept_resolution.csv"
         missing = [name for name in STORE_TABLES if not (self.root / name).exists()]
         if missing:
             raise SystemExit(
@@ -174,6 +196,22 @@ class CompanyStore:
         if not self.manifest.exists():
             return {}
         return json.loads(self.manifest.read_text())
+
+    def has_fundamentals(self) -> bool:
+        return self.fundamentals.exists() and self.concept_resolution.exists()
+
+    def unresolved_reasons(self) -> dict:
+        """{family: the classifier's own FATAL sentence}, from the manifest.
+
+        The VERDICT is read from concept_resolution.csv, exactly as the
+        research path reads F2's; this is only the prose that goes with it, so
+        a page can say WHY a family is unresolved instead of only that it is.
+        Missing (an older manifest) means the page falls back to the state and
+        coverage the CSV itself carries.
+        """
+        block = self.identity().get("fundamentals") or {}
+        return {row["family"]: row["reason"]
+                for row in block.get("families", []) if row.get("reason")}
 
 
 # The one piece of module state `--store` introduces. None = the F4 corpus, and
@@ -206,6 +244,45 @@ def metadata_db_path() -> Path:
 
 def cache_path() -> Path:
     return ACTIVE_STORE.cache if ACTIVE_STORE else CHUNK_INDEX_CACHE
+
+
+def fundamentals_path() -> Path:
+    return ACTIVE_STORE.fundamentals if ACTIVE_STORE else NF.FUNDAMENTALS_PATH
+
+
+def concept_resolution_path() -> Path:
+    return (ACTIVE_STORE.concept_resolution if ACTIVE_STORE
+            else NF.CONCEPT_RESOLUTION_CSV)
+
+
+@contextlib.contextmanager
+def fundamentals_source():
+    """Point `numeric_features_e2`'s two fundamentals inputs at the active
+    store for the duration of a load, then put them back.
+
+    WHY THIS RATHER THAN A SECOND READER. `NF.load_fundamentals` and
+    `NF.load_resolution` are the research path's loaders: the operating-form
+    filter, the `filed`/`period_*` datetime coercion and the `tags` ->
+    `tag_list` split are theirs. Writing store-shaped copies of them here
+    would be two more places for a company outside the universe to be read
+    differently from one inside it -- which is the whole thing P1a.2 exists to
+    remove. Both functions look their input path up as a module global at call
+    time, so rebinding the global for the length of one call runs the SAME
+    code over the store's files. `numeric_features_e2.py` is not edited (it is
+    an F5 module and is frozen); nothing is left rebound (`finally`), and with
+    no store loaded this is a no-op and the research path reads exactly what
+    it always read.
+    """
+    if ACTIVE_STORE is None:
+        yield
+        return
+    saved = (NF.FUNDAMENTALS_PATH, NF.CONCEPT_RESOLUTION_CSV)
+    NF.FUNDAMENTALS_PATH = fundamentals_path()
+    NF.CONCEPT_RESOLUTION_CSV = concept_resolution_path()
+    try:
+        yield
+    finally:
+        NF.FUNDAMENTALS_PATH, NF.CONCEPT_RESOLUTION_CSV = saved
 
 # ---------------------------------------------------------------------------
 # Disclosure sources. Every number in the mandatory header is read from one of
@@ -466,6 +543,56 @@ def load_disclosure() -> dict:
         "selfid_strict": SELFID_STRICT_TEXT,
         "selfid_loose": SELFID_LOOSE_TEXT,
         "selfid_subject": SELFID_SUBJECT,
+    }
+
+
+# The disclosure sentence L2.2 §3 asked for, in the owner's own terms: on the
+# ten drawn companies 41 of 74 guidance-applicable passages (55%) carried a
+# NONE the model never emitted. A reader who is not told that reads the
+# writer's default as the labeler's judgment. The number is COMPUTED from the
+# labels being rendered, never quoted as a constant.
+GUIDANCE_IMPUTATION_SENTENCE = (
+    "{n_imputed:,} of {n_applicable:,} guidance-applicable passages carry an "
+    "imputed NONE (the model emitted no guidance key)")
+GUIDANCE_IMPUTATION_RULE = (
+    "The owner-ruled missing→NONE rule (F4, `label_e2.f4_label_row`) wrote "
+    "those values and flagged every one of them `guidance_imputed_none`; the "
+    "model did not emit them, and each is marked where it renders."
+)
+GUIDANCE_NONE_APPLICABLE = (
+    "No passage here is guidance-applicable at all — guidance is asked only "
+    "on the earnings press release — so the guidance field is empty by "
+    "construction, not because the model saw no guidance."
+)
+
+
+def guidance_imputation(index: Optional[pd.DataFrame] = None) -> dict:
+    """How much of the guidance field is the writer's default, not a judgment.
+
+    Read off the SAME label table the page renders from -- the store's
+    `labels.parquet` under `--store`, the F4 corpus otherwise -- so the number
+    describes the labels the reader is actually looking at rather than a
+    corpus constant quoted at them. `index` is the already-loaded chunk index
+    when a render path has one (it carries both columns); the parquet is read
+    directly, two boolean columns only, when it does not.
+    """
+    if index is None:
+        index = pd.read_parquet(
+            labels_path(), columns=["guidance_applicable", "guidance_imputed_none"])
+    # `== True` rather than `.fillna(False).astype(bool)`: both columns arrive
+    # as nullable object arrays out of arrow, and a null is neither applicable
+    # nor imputed, which is exactly what the comparison yields.
+    applicable = index.guidance_applicable == True   # noqa: E712
+    imputed = index.guidance_imputed_none == True    # noqa: E712
+    n_applicable = int(applicable.sum())
+    n_imputed = int((applicable & imputed).sum())
+    return {
+        "n_imputed": n_imputed,
+        "n_applicable": n_applicable,
+        "pct": (100.0 * n_imputed / n_applicable) if n_applicable else 0.0,
+        "n_labels": int(len(index)),
+        "scope": ("this company's store" if ACTIVE_STORE is not None
+                  else "the labeled research corpus"),
     }
 
 
@@ -781,29 +908,109 @@ def fundamentals_slices(cik: int) -> dict:
     the numeric module: with facts present this returns NF's own frame
     unchanged, so no F5 number can move.
     """
-    facts = NF.load_fundamentals({int(cik)})
+    if not fundamentals_path().exists():
+        return {}
+    with fundamentals_source():
+        facts = NF.load_fundamentals({int(cik)})
     if facts.shape[1] == 0:          # no facts at all for this company
         return {}
     return NF.slice_by_cik_tag(facts)
 
 
+def store_has_no_fundamentals() -> bool:
+    return ACTIVE_STORE is not None and not ACTIVE_STORE.has_fundamentals()
+
+
+# How long the chosen fact's own period is, spelled out. This is NOT cosmetic.
+# `pit.value_as_of` groups candidate facts by `period_end` ALONE -- its own
+# docstring names the consequence as the "period-identity caveat": a filer that
+# tags BOTH the full year and Q4 with the same end date has two facts the
+# selection rule cannot tell apart, and which of them is returned falls through
+# every tiebreak (same filed date, same accession) to row order. MEASURED on
+# the ten external companies of L2.3: 2 of 43 resolved panel cells land on the
+# quarter -- CIK 1494259's revenue (241.09 m, not the year's 906.98 m) and CIK
+# 1438943's net income (15.91 m, not 19.17 m) -- while CIK 1534675 and 94344
+# tag only the year and show it. So the same column is a year for one company
+# and a quarter for another. Disambiguating that is `pit`'s / `numeric_features_e2`'s
+# call and both are frozen here, so this module does the one thing it can do
+# honestly: SAY which period the number covers, so a reader is never shown a
+# quarter under a heading that implies a year.
+DURATION_LABELS = {"Q": "3 months ending", "H1": "6 months ending",
+                   "9M": "9 months ending", "FY": "12 months ending",
+                   "other": "period ending"}
+
+
+def period_label(row: dict) -> str:
+    """"12 months ending 2025-12-31", "3 months ending 2025-12-31", or "as at
+    2025-12-31" for a balance-sheet instant. The day thresholds are
+    `ingest_fundamentals.DURATION_BUCKET_DAYS`, imported rather than retyped --
+    the same buckets the concept resolution reports its `duration_mix` in."""
+    end = pd.Timestamp(row["period_end"])
+    start = row.get("period_start")
+    if start is None or pd.isna(start):
+        return f"as at {end.date()}"
+    days = (end - pd.Timestamp(start)).days
+    bucket = "other"
+    previous = 0
+    for limit, name in IF.DURATION_BUCKET_DAYS:
+        if previous < days <= limit:
+            bucket = name
+            break
+        previous = limit
+    return f"{DURATION_LABELS[bucket]} {end.date()}"
+
+
+NO_STORE_FUNDAMENTALS_DETAIL = (
+    "no fundamentals have been ingested into this store — run "
+    "`ingest_one.py --cik <cik> --fundamentals`")
+
+
+def unresolved_detail(row, reasons: dict) -> str:
+    """Why one family is unresolved, in the classifier's own words where the
+    store recorded them, and in its own state/coverage vocabulary where it did
+    not. Never a blank, and never a guessed-at number."""
+    reason = reasons.get(row.family)
+    if reason:
+        return str(reason)
+    seen = ", ".join(row.tag_list) if row.tag_list else "no tag in this family"
+    return (f"UNRESOLVED in the per-company concept resolution: {row.state}, "
+            f"union coverage {float(row.coverage):.0%} ({seen})")
+
+
 def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
     """Five point-in-time families, resolved exactly as the F5 numeric feature
     table resolves them: `numeric_features_e2.resolve_family_value` over
-    `pit.value_as_of`, with F2's committed per-company concept resolution."""
-    resolution = NF.load_resolution({int(cik)})
-    # Loaded lazily: an external company resolves no family, so the 622k-row
-    # fundamentals table is never read for one.
+    `pit.value_as_of`.
+
+    The per-company concept resolution is F2's committed one on the research
+    path and the STORE'S OWN on a `--store` path (`ingest_one.py
+    --fundamentals` writes it with F2's own classifier). Which file is read is
+    the only difference; the resolver, the point-in-time rule, the staleness
+    guard and the refusal are one code path for both.
+    """
+    if store_has_no_fundamentals():
+        return [{"family": family, "label": label, "state": "unresolved",
+                 "detail": NO_STORE_FUNDAMENTALS_DETAIL}
+                for family, label in FUNDAMENTAL_FAMILIES]
+    with fundamentals_source():
+        resolution = NF.load_resolution({int(cik)})
+    reasons = ACTIVE_STORE.unresolved_reasons() if ACTIVE_STORE else {}
+    # Loaded lazily: a company that resolves no family never opens the fact
+    # table at all (622k rows on the research path).
     slices: Optional[dict] = None
     staleness: list[dict] = []
 
     panel: list[dict] = []
     for family, label in FUNDAMENTAL_FAMILIES:
         hit = resolution[resolution.family == family]
-        if hit.empty or not bool(hit.iloc[0].resolved):
+        if hit.empty:
             panel.append({"family": family, "label": label, "state": "unresolved",
-                          "detail": "UNRESOLVED for this company in F2's "
-                                    "concept resolution"})
+                          "detail": ("this company has no row for this family "
+                                     "in the concept resolution that was read")})
+            continue
+        if not bool(hit.iloc[0].resolved):
+            panel.append({"family": family, "label": label, "state": "unresolved",
+                          "detail": unresolved_detail(hit.iloc[0], reasons)})
             continue
         tags = list(hit.iloc[0].tag_list)
         if slices is None:
@@ -824,6 +1031,7 @@ def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
         panel.append({
             "family": family, "label": label, "state": "resolved",
             "value": row["value"], "unit": row["unit"], "concept": tag,
+            "period": period_label(row),
             "period_end": str(pd.Timestamp(row["period_end"]).date()),
             "filed": str(pd.Timestamp(row["filed"]).date()),
             "form": row.get("form"), "accession": row.get("accession_number"),
@@ -1263,8 +1471,14 @@ def label_html(row, disclosure_note: str) -> str:
     return "".join(parts)
 
 
-def disclosure_html(d: dict, overlap: Optional[dict]) -> str:
+def disclosure_html(d: dict, overlap: Optional[dict],
+                    imputed: Optional[dict] = None) -> str:
     s, g, r = d["sentiment"], d["guidance"], d["red_flags"]
+    # L2.4: how much of the guidance field is the writer's default rather than
+    # the model's judgment, computed from the labels this page renders. A
+    # render path hands in the figure it already holds; anyone calling this
+    # directly gets it read off the active label table.
+    imp = imputed if imputed is not None else guidance_imputation()
     banner = ""
     if overlap and overlap["fires"]:
         reasons = []
@@ -1301,6 +1515,16 @@ def disclosure_html(d: dict, overlap: Optional[dict]) -> str:
     outside = (f"<li><b>{esc(OUTSIDE_UNIVERSE_LINE)}.</b></li>"
                if ACTIVE_STORE is not None else "")
 
+    imputed_line = (
+        '<li><b>Imputed guidance.</b> '
+        + esc(GUIDANCE_IMPUTATION_SENTENCE.format(**imp))
+        + (f" — {imp['pct']:.1f}% of the guidance-applicable passages in "
+           f"{esc(imp['scope'])} ({imp['n_labels']:,} labeled passages). "
+           + esc(GUIDANCE_IMPUTATION_RULE)
+           if imp["n_applicable"] else
+           f" — {esc(GUIDANCE_NONE_APPLICABLE)}")
+        + f"<blockquote>{esc(g['section_zero_sentence'])}</blockquote></li>")
+
     return f"""
 <section class="disclosure">
   <h1>Disclosure — read this before the report</h1>
@@ -1330,6 +1554,7 @@ def disclosure_html(d: dict, overlap: Optional[dict]) -> str:
       [{g['active_precision_lo']:.1f}, {g['active_precision_hi']:.1f}];
       false-NONE rate {g['false_none_k']}/{g['false_none_n']}.
       <blockquote>{esc(g['section_zero'])}</blockquote></li>
+    {imputed_line}
     <li><b>Red flags are EXPLORATORY / disclosure-only.</b> Teacher exact-set
       error {r['teacher_k']}/{r['teacher_n']} = {r['teacher_pct']:.1f}%
       [{r['teacher_lo']:.1f}, {r['teacher_hi']:.1f}]; student exact-set error
@@ -1426,7 +1651,7 @@ def fundamentals_html(panel: list[dict], as_of: str) -> str:
             f'<tr><td>{esc(item["label"])}</td>'
             f'<td>{esc(format_amount(item["value"], item["unit"]))}</td>'
             f'<td>{esc(item["concept"])}</td>'
-            f'<td>period ending {esc(item["period_end"])}</td>'
+            f'<td>{esc(item["period"])}</td>'
             f'<td class="small">latest filed as of {esc(as_of)}: '
             f'{esc(item["filed"])} ({esc(item["form"])} '
             f'{esc(item["accession"])})</td></tr>')
@@ -1434,7 +1659,10 @@ def fundamentals_html(panel: list[dict], as_of: str) -> str:
         f'<p class="small">Point-in-time as of the filing date {esc(as_of)}: '
         "only facts already filed by that date are visible. Where a "
         "restatement had itself been filed by then, the restated value is the "
-        "one shown — the filed date beside each row is how you tell.</p>"
+        "one shown — the filed date beside each row is how you tell. The "
+        "period column says how long each fact's own period is: a filer that "
+        "tags both a full year and its fourth quarter under the same end date "
+        "may be showing you either, and this is where you see which.</p>"
         "<table><thead><tr><th>Family</th><th>Value</th><th>XBRL concept</th>"
         "<th>Period</th><th>Provenance</th></tr></thead><tbody>"
         + "".join(rows) + "</tbody></table>")
@@ -1521,7 +1749,7 @@ def render_filing(index: pd.DataFrame, occ: dict[str, list[int]], cik: int,
     overlap = train_overlap(frame, raw_texts, cik, accession)
     imputed_note = disclosure["guidance"]["section_zero_sentence"]
 
-    body = [disclosure_html(disclosure, overlap)]
+    body = [disclosure_html(disclosure, overlap, guidance_imputation(index))]
     body.append(
         f"<h1>{esc(name)} — {esc(meta.form)} filed {esc(meta.filing_date)}</h1>"
         f'<p class="small">CIK {int(cik)} · accession {esc(accession)} · '
@@ -1603,7 +1831,8 @@ def render_index(index: pd.DataFrame, occ: dict[str, list[int]], cik: int,
             f"<td>{esc(sections)}</td>"
             f"<td>{row.n_chunks} ({homed} homed here)</td></tr>")
 
-    body = [disclosure_html(disclosure, train_cik_overlap(cik))]
+    body = [disclosure_html(disclosure, train_cik_overlap(cik),
+                            guidance_imputation(index))]
     body.append(f"<h1>{esc(name)} — labeled filings</h1>"
                 f'<p class="small">CIK {int(cik)} · {len(rows)} filings in '
                 "the E2 labeled corpus. Listed by form and date only: this page "

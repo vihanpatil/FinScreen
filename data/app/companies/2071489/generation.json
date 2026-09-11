@@ -26,18 +26,18 @@
     "seconds": 0.0
   },
   "generation": {
-    "started_utc": "2026-09-11T14:17:29.823289+00:00",
-    "ended_utc": "2026-09-11T14:17:36.963053+00:00",
-    "n_generated": 4,
-    "n_already_done": 0,
+    "started_utc": "2026-09-11T15:06:32.328984+00:00",
+    "ended_utc": "2026-09-11T15:06:37.226964+00:00",
+    "n_generated": 3,
+    "n_already_done": 2,
     "torn_final_line_repaired_before_append": false,
-    "model_load_seconds": 0.5,
-    "wall_seconds": 7.1,
-    "seconds_per_chunk": 1.78,
+    "model_load_seconds": 0.8,
+    "wall_seconds": 4.9,
+    "seconds_per_chunk": 1.63,
     "finish_reasons": {
-      "stop": 4
+      "stop": 3
     },
     "n_passages_head_truncated": 0,
-    "generate_seconds": 8.5
+    "generate_seconds": 6.6
   }
 }

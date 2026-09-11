@@ -202,6 +202,10 @@ was ruled on.
    "what changed" section. The year-over-year diff — the part of the reading
    aid most likely to matter — is **untested on external companies**.
    `--per-form 2` would test it at roughly double the labeling time.
+   *(Done 2026-09-11 — see `L2_4_diff_and_extraction.md`. The ten stores on
+   disk now hold two filings per form and 1,021 labeled passages; the
+   per-company chunk and label counts in §1–2 above describe the per-form-1
+   run they superseded, and are left as measured.)*
 4. **Success rate, counted honestly:** 10 of 10 companies ingested and
    labeled; **9 of 10 rendered a 10-K** (CBKM's extraction produced nothing to
    render); **8 of 10 rendered an earnings 8-K**, and for two of those the
@@ -215,10 +219,12 @@ was ruled on.
   string, and markup-split possessive apostrophes defeat both the TOC and the
   heading-anchor paths (CBKM). Any fix must be made without disturbing the
   sealed E2 corpus — a store-side override, or a re-extraction that is scoped
-  to `data/app/` only.
+  to `data/app/` only. *(Done 2026-09-11, app-lane only, `extract.py`
+  untouched — `L2_4_diff_and_extraction.md` §3.)*
 - Per-company XBRL concept resolution at ingest time, so the fundamentals
   panel is not blank outside the research universe.
 - `--per-form 2` on at least one external company, to exercise the diff.
+  *(Done 2026-09-11 on all ten — `L2_4_diff_and_extraction.md` §2.)*
 - `report_filing`'s refusal message says "in the corpus" when reading a store;
   "in this store" would be the accurate wording.
 
