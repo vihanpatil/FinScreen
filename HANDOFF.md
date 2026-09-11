@@ -1623,6 +1623,22 @@ all rebuilds run BEFORE the sha is pinned, censuses re-run, measured cells refre
 tie rule = average rank with straddling groups → no call, chance line 0.50 by construction, full
 disclosure block; the exact two header lines that change at the pin are shown to the owner first.
 Round 2 launched (RESUME_HERE IN FLIGHT). Commit 3be52ca holds the round-1 code (suite 1,787).
+**Round 2 DONE the same evening (commits 2019acc, 1387113, ed457e2; suite 1,811 green; three censuses
+re-run; exit 2 holds; no G3_RATIFIED.json).** Rebuilt under the rulings: target (GLD out of the peer
+average — 5,050 rows lost one member, largest move 12.9 bp), text features (same-CIK attribution —
+occurrence rows 854,933 → 755,297, 61 filings whose every chunk was another company's dropped), numeric
+(duration-matched OCF/revenue — 7,603 rows to NaN, coverage 0.84 → 0.42; net_margin / operating_margin
+LEFT ported, ⚠ for the owner), text families (year-over-year same-form prior in [300, 430] days, 50-shingle
+floor, 8K_BODY out of the embedding, exploratory `novelty_*_seq`; re-embed 27.4 min, $0). Runner: GLD
+rows excluded from every arm + `per_fold_delta__gld_included` sensitivity; scorecard rows-only below 6
+calls, tie rule average-rank/straddle→no call, chance line 0.50 by construction, outcome mix label, full
+disclosure block, margin required before any write. Frame now 7,618 joined / 7,389 modeling / 144 CIKs,
+run-time 7,381 / 143 after GLD; scorecard scores 4,481 rows over the 33 folds (139 CIKs); filing-level
+train-overlap disclosure 80.19% → 34.24% (decision 20 removed the foreign chunks that carried it);
+`n_emb_missing` 45 (filings whose only embeddable section was an 8K_BODY). Pre-registration: 31 ⚠ marks,
+every column header "RULED rule … ratification pending", §0 defines the exact two lines that change at
+the pin, measured cells refreshed with "(was X)" notes. Rulings §4 now lists 15 readings for the owner's
+one word. Second red-team pass launched on the diffs before the owner is asked.
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target

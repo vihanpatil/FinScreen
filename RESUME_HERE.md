@@ -64,9 +64,10 @@ feature tables; scorecard page defects). **Round 2 IN FLIGHT (launched 2026-09-1
 `python3 backtest_e2.py` exits 2; no G3_RATIFIED.json). Rebuild facts: frame 7,618 joined / 7,389 modeling / 144 CIKs
 (was 7,634 / 7,405); GLD 8 modeling rows excluded at run time (sensitivity arm adds them back); `n_emb_missing` 45;
 OCF/revenue coverage 0.84 → 0.42 under duration matching; novelty prior gap median 91 → 364 d.
-**IN FLIGHT:** measured-cell refresh of `G3_PREREGISTRATION.md` + rulings file (general-purpose Opus; expected: every
-stale count replaced with "(was X)" audit notes; if missing on resume, relaunch "diff the document's numbers against
-census_e2.json / census_head1.json / the four manifests").
+**Measured-cell refresh DONE 2026-09-11 evening** (commit ed457e2; 31 cells moved, each with its "(was X)" note;
+scorecard scores 4,481 rows over 33 folds / 139 CIKs ex-GLD; run-time frame 7,381 / 143). **IN FLIGHT:** second
+red-team pass on `git diff 3be52ca` (red-team-reviewer Opus; expected: per-item RESOLVED table + verdict; if missing on
+resume, relaunch it — it is read-only).
 **Then (main session):** second red-team pass on the diffs → commit → ask the owner for "ratify" (showing the exact two
 lines that change at the pin) → pin sha → run heads → scorecard. Never pin or run on a model reading.
 
