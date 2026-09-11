@@ -72,9 +72,9 @@ threshold. **Measured fact that matters:** the *reason* ranks were made primary
 did not survive re-measurement. On E2, `log_total_assets` has an identity-ICC of
 **0.9453 [0.933, 0.957]** raw vs **0.9420** ranked, and ranking *raises* the ICC
 of **nine of thirteen** features, sharply for six. All nine, raw → ranked:
-`operating_margin` 0.355 → 0.723, `net_margin` 0.314 → 0.649, `realized_vol_63`
+`operating_margin` 0.383 → 0.761, `net_margin` 0.329 → 0.661, `realized_vol_63`
 0.265 → 0.483, `cash_to_assets` 0.625 → 0.801,
-`operating_cashflow_to_revenue` 0.342 → 0.509, `book_to_market` 0.683 → 0.835
+`operating_cashflow_to_revenue` 0.355 → 0.528, `book_to_market` 0.683 → 0.835
 (those six rise by ≥ 0.15), then `revenue_yoy_growth` 0.128 → 0.217,
 `eps_diluted_yoy_growth` −0.012 → 0.060, `net_income_yoy_growth` 0.001 → 0.059.
 Four fall, all slightly. Ranks do not strip company identity. The draft keeps the
@@ -336,8 +336,8 @@ then stops; no E3 without a new ratification naming what changed. **Your
 signature on §13 is the freeze.** *RULE: sign / amend*
 
 **21 A cash-flow ratio's period mismatch.** `operating_cashflow_to_revenue`
-divides year-to-date cash flow by *quarterly* revenue on **8,433 of 18,300 rows
-(46.1%)**. Default: duration-match both sides and disclose (a numeric rebuild).
+divides year-to-date cash flow by *quarterly* revenue on **7,603 of 18,300 rows
+(41.5%, after the period-end fix; 8,433 = 46.1% before)**. Default: duration-match both sides and disclose (a numeric rebuild).
 *RULE: default / keep ported / drop the feature*
 
 **22 Fundamentals staleness guard.** Keep the 200-day cap and disclose. It no

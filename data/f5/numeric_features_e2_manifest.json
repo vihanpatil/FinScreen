@@ -1,6 +1,6 @@
 {
-  "run_utc": "2026-09-11T03:37:12.027760+00:00",
-  "module_sha256": "816b308c1ff4e08374bc89e4d093a410e00c418a2ef1cf76e9cb0919c7b5efd5",
+  "run_utc": "2026-09-11T16:04:05.511287+00:00",
+  "module_sha256": "cf29212c5956a882633ea2f9514276cbeaf725226672a3b0b1cf4f450fa73a29",
   "stratum": "core",
   "network_calls": 0,
   "computed_associations_with_returns": 0,
@@ -38,7 +38,7 @@
     "operating_cashflow_to_revenue": 0.8358,
     "revenue_yoy_growth": 0.8916,
     "net_income_yoy_growth": 0.991,
-    "eps_diluted_yoy_growth": 0.9643,
+    "eps_diluted_yoy_growth": 0.9649,
     "momentum_126": 0.9172,
     "realized_vol_63": 0.9172,
     "book_to_market": 0.7775
@@ -79,49 +79,49 @@
     "net_margin": {
       "n_nonnull": 16207,
       "min": -10.061822,
-      "p01": -0.643838,
-      "median": 0.156768,
-      "p99": 0.642256,
+      "p01": -0.574363,
+      "median": 0.158147,
+      "p99": 0.594896,
       "max": 4.201866
     },
     "operating_margin": {
       "n_nonnull": 10322,
       "min": -11.504338,
-      "p01": -0.398651,
-      "median": 0.190131,
-      "p99": 1.054488,
-      "max": 1.918285
+      "p01": -0.369473,
+      "median": 0.184599,
+      "p99": 0.663363,
+      "max": 1.458955
     },
     "operating_cashflow_to_revenue": {
       "n_nonnull": 15296,
       "min": -6.065538,
       "p01": -2.871471,
-      "median": 0.341049,
-      "p99": 2.278994,
-      "max": 4.666916
+      "median": 0.315743,
+      "p99": 1.919895,
+      "max": 4.077851
     },
     "revenue_yoy_growth": {
       "n_nonnull": 16316,
       "min": -0.765121,
       "p01": -0.377585,
-      "median": 0.065471,
-      "p99": 1.073791,
+      "median": 0.064174,
+      "p99": 1.053842,
       "max": 3.075089
     },
     "net_income_yoy_growth": {
       "n_nonnull": 18136,
       "min": -2310.0,
-      "p01": -6.453788,
-      "median": 0.075185,
-      "p99": 14.246914,
+      "p01": -6.265694,
+      "median": 0.074747,
+      "p99": 13.294118,
       "max": 944.777778
     },
     "eps_diluted_yoy_growth": {
-      "n_nonnull": 17646,
+      "n_nonnull": 17658,
       "min": -1424.0,
-      "p01": -6.732357,
-      "median": 0.090909,
-      "p99": 14.6,
+      "p01": -6.504673,
+      "median": 0.089744,
+      "p99": 12.142857,
       "max": 1299.0
     },
     "momentum_126": {
@@ -193,7 +193,7 @@
       "operating_cashflow_to_revenue": 0.5946,
       "revenue_yoy_growth": 0.703,
       "net_income_yoy_growth": 0.9939,
-      "eps_diluted_yoy_growth": 0.9451,
+      "eps_diluted_yoy_growth": 0.9466,
       "momentum_126": 0.8149,
       "realized_vol_63": 0.8149,
       "book_to_market": 0.7024
@@ -209,7 +209,7 @@
       "operating_cashflow_to_revenue": 0.8872,
       "revenue_yoy_growth": 0.9629,
       "net_income_yoy_growth": 0.9963,
-      "eps_diluted_yoy_growth": 0.942,
+      "eps_diluted_yoy_growth": 0.9452,
       "momentum_126": 0.8935,
       "realized_vol_63": 0.8935,
       "book_to_market": 0.7697
@@ -225,7 +225,7 @@
       "operating_cashflow_to_revenue": 0.9738,
       "revenue_yoy_growth": 0.9834,
       "net_income_yoy_growth": 0.995,
-      "eps_diluted_yoy_growth": 0.9536,
+      "eps_diluted_yoy_growth": 0.9551,
       "momentum_126": 0.9304,
       "realized_vol_63": 0.9304,
       "book_to_market": 0.7908
@@ -339,7 +339,7 @@
       "operating_cashflow_to_revenue": 0.8525,
       "revenue_yoy_growth": 0.8588,
       "net_income_yoy_growth": 0.9925,
-      "eps_diluted_yoy_growth": 0.9743,
+      "eps_diluted_yoy_growth": 0.9759,
       "momentum_126": 0.9571,
       "realized_vol_63": 0.9571,
       "book_to_market": 0.8043
@@ -355,7 +355,7 @@
       "operating_cashflow_to_revenue": 0.9109,
       "revenue_yoy_growth": 0.9104,
       "net_income_yoy_growth": 0.9833,
-      "eps_diluted_yoy_growth": 0.9435,
+      "eps_diluted_yoy_growth": 0.9443,
       "momentum_126": 0.8439,
       "realized_vol_63": 0.8439,
       "book_to_market": 0.7495
@@ -387,7 +387,7 @@
       "operating_cashflow_to_revenue": 0.8365,
       "revenue_yoy_growth": 0.8937,
       "net_income_yoy_growth": 0.9952,
-      "eps_diluted_yoy_growth": 0.9991,
+      "eps_diluted_yoy_growth": 1.0,
       "momentum_126": 0.8731,
       "realized_vol_63": 0.8731,
       "book_to_market": 0.7914
@@ -457,10 +457,93 @@
   },
   "counters": {
     "yoy_cross_tag": 46,
+    "period_identity_by_family": {
+      "assets": {
+        "rows_multi_duration": 0,
+        "rows_annual_preferred": 0,
+        "buckets": {
+          "instant": 18293
+        }
+      },
+      "cash": {
+        "rows_multi_duration": 0,
+        "rows_annual_preferred": 0,
+        "buckets": {
+          "instant": 17314
+        }
+      },
+      "eps_diluted": {
+        "rows_multi_duration": 10412,
+        "rows_annual_preferred": 1263,
+        "buckets": {
+          "Q": 13834,
+          "FY": 3843,
+          "H1": 1
+        }
+      },
+      "equity": {
+        "rows_multi_duration": 0,
+        "rows_annual_preferred": 0,
+        "buckets": {
+          "instant": 18186
+        }
+      },
+      "liabilities": {
+        "rows_multi_duration": 0,
+        "rows_annual_preferred": 0,
+        "buckets": {
+          "instant": 13072
+        }
+      },
+      "net_income": {
+        "rows_multi_duration": 10710,
+        "rows_annual_preferred": 1380,
+        "buckets": {
+          "Q": 14092,
+          "FY": 4043,
+          "H1": 1
+        }
+      },
+      "operating_cash_flow": {
+        "rows_multi_duration": 484,
+        "rows_annual_preferred": 105,
+        "buckets": {
+          "Q": 4833,
+          "H1": 3767,
+          "9M": 4564,
+          "FY": 3793
+        }
+      },
+      "operating_income": {
+        "rows_multi_duration": 6686,
+        "rows_annual_preferred": 543,
+        "buckets": {
+          "Q": 9357,
+          "FY": 2571
+        }
+      },
+      "revenue": {
+        "rows_multi_duration": 9446,
+        "rows_annual_preferred": 951,
+        "buckets": {
+          "Q": 12858,
+          "FY": 3484,
+          "H1": 1
+        }
+      },
+      "shares_outstanding": {
+        "rows_multi_duration": 0,
+        "rows_annual_preferred": 0,
+        "buckets": {
+          "instant": 15918
+        }
+      }
+    },
+    "prefer_duration": "annual",
     "flow_duration_mismatch_vs_revenue": {
-      "net_income": 198,
-      "operating_income": 402,
-      "operating_cash_flow": 8433
+      "net_income": 135,
+      "operating_income": 20,
+      "operating_cash_flow": 7603
     },
     "fx_blocked_rows": 108,
     "unit_mismatch_ratios": 0,
@@ -476,12 +559,32 @@
     "vol_ddof": 1,
     "yoy_end_tolerance_days": 45,
     "yoy_duration_tolerance_days": 20,
-    "yoy_tolerances_source": "features.value_for_target_period defaults (E1, frozen)"
+    "yoy_tolerances_source": "features.value_for_target_period defaults (E1, frozen)",
+    "period_identity_prefer_duration": "annual",
+    "period_identity_buckets": [
+      [
+        115,
+        "Q"
+      ],
+      [
+        210,
+        "H1"
+      ],
+      [
+        300,
+        "9M"
+      ],
+      [
+        400,
+        "FY"
+      ]
+    ],
+    "period_identity_buckets_source": "ingest_fundamentals.DURATION_BUCKET_DAYS, imported; the classifier reports its duration_mix in the same buckets"
   },
-  "runtime_seconds": 250.4,
+  "runtime_seconds": 475.3,
   "output": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f5/numeric_features_e2.parquet",
-    "sha256": "23f2ef2ec4056898018eb170ca42e3b34489d558cc06368dd38f64061a3c950d",
+    "sha256": "079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb",
     "n_rows": 18300,
     "key": [
       "cik",

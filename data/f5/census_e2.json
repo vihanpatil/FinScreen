@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T08:00:16+00:00",
+  "generated_utc": "2026-09-11T16:08:46+00:00",
   "module": "data/f5/census_e2.py",
   "step": "F5_PLAN.md \u00a72 Step 2 -- pre-run census",
   "network_calls": 0,
@@ -15,12 +15,12 @@
     "EXPANSION_PLAN \u00a72a's published 0.019-0.037 bracket was SUPERSEDED on 2026-08-25 by the H2 honest restatement; quote the amendment, never the old bracket."
   ],
   "input_sha256": {
-    "data/f5/census_head1.json": "6304497e5a01ce6f33aaf5a9b2d639d63c6985573bfa13f8727e6b0ccabac932",
-    "data/f5/census_heads.json": "b98896165d681beeb6a8a20ee25ae5a6786202e05bef2adc67d3db90465e76c7",
+    "data/f5/census_head1.json": "85e4298ffa74f0a6ced2e5e9f852284fe7fe71436cbb60df52ff6c512db00bfb",
+    "data/f5/census_heads.json": "cb222ec6d2adadb3282ec89239c5d851b82767d706c6f1631ca06009db0689f4",
     "data/f5/text_families_e2_manifest.json": "892708afb5625a01f7ca9a5efd3163af0c1f0aa47b623719b4b2c91d16fa290a",
     "data/f5/target_e2.parquet": "c35956b784b9f0985796ed9dbb772360c043d2d77f1f300905c90b4d4757ece8",
     "data/f5/text_features_e2.parquet": "f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c",
-    "data/f5/numeric_features_e2.parquet": "23f2ef2ec4056898018eb170ca42e3b34489d558cc06368dd38f64061a3c950d",
+    "data/f5/numeric_features_e2.parquet": "079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb",
     "data/f5/text_families_e2.parquet": "acc2712e358fb0fa650e69392bce435799cfc9520179409e31d53bbde0a2346b",
     "data/hardening/controls_results.json": "5497ff3c2bdf11a6e2c02a0449f089619312edf76feb199ff32e7ac9595a92f6",
     "data/filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
@@ -5381,217 +5381,217 @@
       {
         "feature": "net_margin",
         "icc_raw_levels": {
-          "icc": 0.3140686999922236,
+          "icc": 0.32909635643510177,
           "ci95": [
-            0.2645792675351185,
-            0.3745472939679946
+            0.27835762805987313,
+            0.3906578798553787
           ],
           "n": 6459,
           "n_companies": 134,
           "n0": 48.103409941481665,
-          "F": 23.025201977724123
+          "F": 24.59602171740826
         },
         "icc_pit_trailing_rank": {
-          "icc": 0.6491742923770757,
+          "icc": 0.6609019057382588,
           "ci95": [
-            0.5946321218013719,
-            0.7060127298804646
+            0.6071144957387514,
+            0.7166433863271645
           ],
           "n": 6458,
           "n_companies": 134,
           "n0": 48.09600495509446,
-          "F": 89.9977253789128
+          "F": 94.73907394679513
         },
         "icc_raw_levels_dedup_base": {
-          "icc": 0.35869182068996575,
+          "icc": 0.37649597147025554,
           "ci95": [
-            0.3047249124202965,
-            0.4230132857277987
+            0.32140864717256223,
+            0.4416000199442456
           ],
           "n": 4680,
           "n_companies": 134,
           "n0": 34.83152111046847,
-          "F": 20.481712735921487
+          "F": 22.032626540033554
         }
       },
       {
         "feature": "operating_margin",
         "icc_raw_levels": {
-          "icc": 0.3554371791993236,
+          "icc": 0.3833993315071502,
           "ci95": [
-            0.2937059629177698,
-            0.43191301258981435
+            0.3195170376711299,
+            0.4612935938514145
           ],
           "n": 4441,
           "n_companies": 95,
           "n0": 46.600813502805096,
-          "F": 26.697513361467863
+          "F": 29.976161813668288
         },
         "icc_pit_trailing_rank": {
-          "icc": 0.7227546345968913,
+          "icc": 0.7614501153588242,
           "ci95": [
-            0.6649698183173509,
-            0.7809473099429614
+            0.708574211091842,
+            0.8135542553045361
           ],
           "n": 4440,
           "n_companies": 95,
           "n0": 46.59041115583669,
-          "F": 122.45716319439727
+          "F": 149.7163743658478
         },
         "icc_raw_levels_dedup_base": {
-          "icc": 0.3868756490796416,
+          "icc": 0.4294267353863259,
           "ci95": [
-            0.3213081970104774,
-            0.4662427202964281
+            0.3614771123731586,
+            0.5097289736678454
           ],
           "n": 3054,
           "n_companies": 95,
           "n0": 32.01910992211121,
-          "F": 21.203754614336347
+          "F": 25.098328289422994
         }
       },
       {
         "feature": "operating_cashflow_to_revenue",
         "icc_raw_levels": {
-          "icc": 0.3423168752392975,
+          "icc": 0.354736358955759,
           "ci95": [
-            0.2904687330476176,
-            0.404809828048495
+            0.30199088249647366,
+            0.417935197330352
           ],
           "n": 6268,
           "n_companies": 134,
           "n0": 46.67718594507967,
-          "F": 25.294964909578688
+          "F": 26.66097628197716
         },
         "icc_pit_trailing_rank": {
-          "icc": 0.509220502200503,
+          "icc": 0.528039785695012,
           "ci95": [
-            0.45068474797035,
-            0.5743874691907127
+            0.46950666641605204,
+            0.5926245568944121
           ],
           "n": 6267,
           "n_companies": 134,
           "n0": 46.66978600162446,
-          "F": 49.4233998606157
+          "F": 53.21521444348875
         },
         "icc_raw_levels_dedup_base": {
-          "icc": 0.3293201805521789,
+          "icc": 0.33945531159064424,
           "ci95": [
-            0.2773414538659025,
-            0.3921126729761297
+            0.28670553905183704,
+            0.40287302372076006
           ],
           "n": 4520,
           "n_companies": 134,
           "n0": 33.64106726994478,
-          "F": 17.518586106299463
+          "F": 18.288215578359022
         }
       },
       {
         "feature": "revenue_yoy_growth",
         "icc_raw_levels": {
-          "icc": 0.12793036729160767,
+          "icc": 0.12952043039157027,
           "ci95": [
-            0.10111371053993798,
-            0.1637304682918791
+            0.10245835572249168,
+            0.16562051327816535
           ],
           "n": 6522,
           "n_companies": 135,
           "n0": 48.21074709250436,
-          "F": 8.072392331552788
+          "F": 8.17337537942354
         },
         "icc_pit_trailing_rank": {
-          "icc": 0.2170974149232972,
+          "icc": 0.22046396309059368,
           "ci95": [
-            0.1779051436583458,
-            0.26722612125794853
+            0.1808608688019257,
+            0.27103655507358304
           ],
           "n": 6521,
           "n_companies": 135,
           "n0": 48.20339568832726,
-          "F": 14.366710998195765
+          "F": 14.632611123413264
         },
         "icc_raw_levels_dedup_base": {
-          "icc": 0.11723072143991804,
+          "icc": 0.11895211432571445,
           "ci95": [
-            0.09064007748697499,
-            0.1527632321227767
+            0.09209246173581462,
+            0.15481447509477125
           ],
           "n": 4726,
           "n_companies": 135,
           "n0": 34.91135414758623,
-          "F": 5.636186750678204
+          "F": 5.713454804617082
         }
       },
       {
         "feature": "net_income_yoy_growth",
         "icc_raw_levels": {
-          "icc": 0.0006282834298195496,
+          "icc": -0.0018172532958268494,
           "ci95": [
-            -0.0034101823599093357,
-            0.006308145546297315
+            -0.005383346610098982,
+            0.0032040383250771555
           ],
           "n": 7319,
           "n_companies": 143,
           "n0": 51.06470136572956,
-          "F": 1.0321032756729198
+          "F": 0.9073708338002803
         },
         "icc_pit_trailing_rank": {
-          "icc": 0.059303378125297124,
+          "icc": 0.06393709581007222,
           "ci95": [
-            0.0445050571929776,
-            0.07954907712083097
+            0.04833666409386202,
+            0.08523375586641124
           ],
           "n": 7318,
           "n_companies": 143,
           "n0": 51.057762260911744,
-          "F": 4.218782454598501
+          "F": 4.4874633135354305
         },
         "icc_raw_levels_dedup_base": {
-          "icc": -0.008510429369377799,
+          "icc": -0.015855645028267976,
           "ci95": [
-            -0.012292621600779872,
-            -0.003189614727579063
+            -0.018204165198077518,
+            -0.01254029554169264
           ],
           "n": 5320,
           "n_companies": 143,
           "n0": 37.09404850153553,
-          "F": 0.6869776745948067
+          "F": 0.42102987901855216
         }
       },
       {
         "feature": "eps_diluted_yoy_growth",
         "icc_raw_levels": {
-          "icc": -0.0115131282812919,
+          "icc": -0.0126602069687299,
           "ci95": [
-            -0.013186171592029228,
-            -0.009134487475543702
+            -0.014101912239122601,
+            -0.01060932611615278
           ],
-          "n": 7153,
+          "n": 7158,
           "n_companies": 139,
-          "n0": 51.3418814848133,
-          "F": 0.4156223471445046
+          "n0": 51.37789075565598,
+          "F": 0.35767720889275073
         },
         "icc_pit_trailing_rank": {
-          "icc": 0.059755541258724065,
+          "icc": 0.06357795218551367,
           "ci95": [
-            0.04471563757409501,
-            0.08042184680440798
+            0.04787065927928731,
+            0.08512216704494559
           ],
-          "n": 7152,
+          "n": 7157,
           "n_companies": 139,
-          "n0": 51.33474370197451,
-          "F": 4.262487076388553
+          "n0": 51.370752865847365,
+          "F": 4.487794074329309
         },
         "icc_raw_levels_dedup_base": {
-          "icc": -0.023181783152071884,
+          "icc": -0.02438829101423949,
           "ci95": [
-            -0.024029238810195464,
-            -0.02197502908579812
+            -0.02498852690590181,
+            -0.02353306829630247
           ],
-          "n": 5231,
+          "n": 5235,
           "n_companies": 139,
-          "n0": 37.52057826945827,
-          "F": 0.14991263184594084
+          "n0": 37.549332115222235,
+          "F": 0.10603816243381943
         }
       },
       {
@@ -5984,15 +5984,15 @@
   },
   "section_9_what_the_census_cannot_say": "This census contains no information coefficient, no IC delta, no per-fold delta, no fold-delta autocorrelation, no block-bootstrap SE, and therefore no selected equivalence margin. Every SE and MDE in \u00a72 and \u00a73 is an EX-ANTE PROJECTION built from E1's within-fold bootstrap SD and E1's implied regime floor, rescaled to E2's measured per-fold n_dd; the real SE is a block bootstrap over E2's own fold deltas and is measured for the first time at Step 4, inside the runner, before any delta is printed. The ladder rows in \u00a73 say what the design could plausibly deliver, not what Delta will be -- selecting Delta from these projections, or from any realized SE, would be the post-hoc design choice decision 15 exists to forbid. The census also cannot say whether the rank-spec variance floor is real (unresolved at 6 folds, chi-square p = 0.16/0.13 in both directions), cannot say whether fold non-independence exceeds rho_f = 0.3, and says nothing about whether any text feature carries information about returns.",
   "runtimes_seconds": {
-    "read_existing_census_artifacts": 0.0002219676971435547,
-    "load_analysis_frame": 0.0822148323059082,
-    "price_censoring_census": 0.22175216674804688,
-    "fold_options": 0.0025479793548583984,
-    "mde_and_ladder": 0.0007770061492919922,
-    "frame_decomposition": 0.042588233947753906,
-    "instrument_census": 0.02381730079650879,
-    "icc_census": 0.4200119972229004,
-    "heads_and_families_restatement": 2.6941299438476562e-05,
-    "total": 0.9686310291290283
+    "read_existing_census_artifacts": 0.0002048015594482422,
+    "load_analysis_frame": 0.08516693115234375,
+    "price_censoring_census": 0.20883393287658691,
+    "fold_options": 0.0025229454040527344,
+    "mde_and_ladder": 0.0007810592651367188,
+    "frame_decomposition": 0.04073691368103027,
+    "instrument_census": 0.02261972427368164,
+    "icc_census": 0.42011594772338867,
+    "heads_and_families_restatement": 2.6226043701171875e-05,
+    "total": 0.9576547145843506
   }
 }

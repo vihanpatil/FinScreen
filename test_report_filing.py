@@ -1211,7 +1211,7 @@ def test_no_outcome_layer_function_is_reachable_from_a_render():
     reachable = _call_graph_reachable([("report_filing", "render_filing"),
                                        ("report_filing", "render_index")])
     modules = {module for module, _ in reachable}
-    assert modules == {"report_filing", "features_e2", "numeric_features_e2",
+    assert modules == {"report_filing", "features_e2", "numeric_features_e2", "ingest_fundamentals",
                        "features", "pit"}, sorted(modules)
     assert not (modules & OUTCOME_MODULES), sorted(modules & OUTCOME_MODULES)
     assert ("report_filing", "apply_containment") in reachable   # graph is live

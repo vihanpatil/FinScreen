@@ -182,7 +182,7 @@ synthetic frames. All passed on the run reported here.
 | # | assertion | where | measured |
 |---|---|---|---|
 | A1 | `text_features_e2.parquet` sha equals its manifest record | `assert_input_shas` | `f9084e95c5fa…` MATCH |
-| A2 | `numeric_features_e2.parquet` sha equals its manifest record | `assert_input_shas` | `23f2ef2ec405…` MATCH |
+| A2 | `numeric_features_e2.parquet` sha equals its manifest record | `assert_input_shas` | `07971505c405…` MATCH |
 | A3 | `filings_metadata_e2.db` sha equals the committed H1 record | `assert_input_shas` | `61dcefaae43c…` MATCH |
 | A4 | `prices_e2.parquet` sha equals the committed H1 record | `assert_input_shas` | `744e1cc5ccc2…` MATCH (snapshot last session 2026-08-24) |
 | A5 | no ratified document → both heads refuse, write nothing, exit 2 | code + test | exit code 2 on `--head2`, `--head3`, `--all`; no results file, no run-log line |

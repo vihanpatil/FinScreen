@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T05:42:31+00:00",
+  "generated_utc": "2026-09-11T16:04:30+00:00",
   "mode": "census",
   "freeze_statement": "No IC, correlation, model fit or feature-versus-outcome association was computed. Census mode is allowed before G3 ratification (F5_PLAN \u00a71).",
   "scope_sentence": "No text-vs-numeric IC improvement of economically relevant size is detectable in this universe through this labeling schema, these features, this labeler, and this feature specification.",
@@ -21,7 +21,7 @@
     "input_sha256": {
       "target_e2.parquet": "c35956b784b9f0985796ed9dbb772360c043d2d77f1f300905c90b4d4757ece8",
       "text_features_e2.parquet": "f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c",
-      "numeric_features_e2.parquet": "23f2ef2ec4056898018eb170ca42e3b34489d558cc06368dd38f64061a3c950d",
+      "numeric_features_e2.parquet": "079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb",
       "text_families_e2.parquet": "acc2712e358fb0fa650e69392bce435799cfc9520179409e31d53bbde0a2346b"
     },
     "families_present": true

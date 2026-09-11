@@ -186,6 +186,165 @@ def test_yoy_crosses_a_migration_tag():
 
 
 # ---------------------------------------------------------------------------
+# 3b. Period identity: FY vs Q4 on the same period_end (decision 22 DEFECT,
+#     fixed 2026-09-11). The fixture is the shape the app lane measured on
+#     CIK 1494259 (revenue) and 1438943 (net income): both facts in the same
+#     filing, same accession, same filed date, same period_end -- so every
+#     tiebreak in pit.value_as_of ties and row order used to decide.
+# ---------------------------------------------------------------------------
+
+
+def _fy_and_q4(cik=1494259, concept="Revenues", year=906980000.0, quarter=241094000.0,
+               accn="0001-26-000001"):
+    return [
+        _fact(cik, concept, year, "2025-12-31", "2026-02-19",
+              period_start="2025-01-01", form="10-K", accn=accn),
+        _fact(cik, concept, quarter, "2025-12-31", "2026-02-19",
+              period_start="2025-10-01", form="10-K", accn=accn),
+    ]
+
+
+def test_annual_and_quarterly_are_both_reachable_on_one_colliding_period_end():
+    """The fix, in one test: the annual preference returns the YEAR, the
+    quarterly preference returns the QUARTER, from the same two facts."""
+    rows = _fy_and_q4()
+    slices = M.slice_by_cik_tag(_frame(rows))
+
+    annual, tag = M.resolve_family_value(slices, ["Revenues"], 1494259, "2026-02-19")
+    assert annual["value"] == 906980000.0
+    assert annual["_duration_bucket"] == "FY"
+    assert annual["_duration_alternatives"] == ("Q", "FY")
+    assert tag == "Revenues"
+
+    quarterly, _ = M.resolve_family_value(slices, ["Revenues"], 1494259, "2026-02-19",
+                                          prefer_duration="quarterly")
+    assert quarterly["value"] == 241094000.0
+    assert quarterly["_duration_bucket"] == "Q"
+
+
+def test_row_order_no_longer_decides():
+    """The defect was that the choice fell through to row order. Reversing the
+    frame must not move the value under either preference."""
+    rows = _fy_and_q4()
+    for frame in (_frame(rows), _frame(rows[::-1])):
+        slices = M.slice_by_cik_tag(frame)
+        assert M.resolve_family_value(
+            slices, ["Revenues"], 1494259, "2026-02-19")[0]["value"] == 906980000.0
+        assert M.resolve_family_value(
+            slices, ["Revenues"], 1494259, "2026-02-19",
+            prefer_duration="quarterly")[0]["value"] == 241094000.0
+
+
+def test_midyear_quarter_versus_year_to_date_is_left_exactly_where_it_was():
+    """No FY fact at the winning period_end (every mid-year 10-Q: a quarter
+    against a year-to-date figure), so BOTH preferences fall through to the
+    shortest bucket -- what row order already returned on all 18,300 rows.
+    Whether the ratios should duration-match instead is G3 decision 21, and
+    this fix must not pre-empt it."""
+    cik = 77
+    rows = [
+        _fact(cik, "Revenues", 300, "2025-09-30", "2025-10-20", period_start="2025-01-01",
+              accn="0002-25-000001"),                                    # 9M
+        _fact(cik, "Revenues", 100, "2025-09-30", "2025-10-20", period_start="2025-07-01",
+              accn="0002-25-000001"),                                    # Q3
+    ]
+    slices = M.slice_by_cik_tag(_frame(rows))
+    for prefer in ("annual", "quarterly"):
+        row, _ = M.resolve_family_value(slices, ["Revenues"], cik, "2025-11-01",
+                                        prefer_duration=prefer)
+        assert row["value"] == 100.0 and row["_duration_bucket"] == "Q"
+
+
+def test_instant_facts_are_untouched():
+    """Balance-sheet facts have no duration; the disambiguation returns before
+    a bucket is computed and records no alternatives."""
+    cik = 78
+    slices = M.slice_by_cik_tag(_frame([_fact(cik, "Assets", 50, "2025-12-31", "2026-02-01")]))
+    row, _ = M.resolve_family_value(slices, ["Assets"], cik, "2026-03-01")
+    assert row["value"] == 50.0
+    assert row["_duration_bucket"] == "instant"
+    assert row["_duration_alternatives"] == ()
+
+
+def test_the_preference_never_moves_the_period():
+    """The pre-filter runs only at the period `pit.value_as_of` already chose.
+    An older FY fact must never win over the newest quarter."""
+    cik = 79
+    rows = [
+        _fact(cik, "Revenues", 4000, "2024-12-31", "2025-02-15", period_start="2024-01-01"),
+        _fact(cik, "Revenues", 1100, "2025-03-31", "2025-04-20", period_start="2025-01-01"),
+    ]
+    slices = M.slice_by_cik_tag(_frame(rows))
+    row, _ = M.resolve_family_value(slices, ["Revenues"], cik, "2025-05-01")
+    assert row["value"] == 1100.0
+    assert pd.Timestamp(row["period_end"]) == pd.Timestamp("2025-03-31")
+    assert row["_duration_alternatives"] == ()
+
+
+def test_as_of_still_governs_inside_the_preferred_bucket():
+    """A restatement of the ANNUAL fact filed after as_of stays invisible; the
+    duration pre-filter hands pit.value_as_of a smaller frame, not a different
+    as-of rule."""
+    cik = 80
+    rows = _fy_and_q4(cik=cik) + [
+        _fact(cik, "Revenues", 999.0, "2025-12-31", "2026-05-01",
+              period_start="2025-01-01", accn="0001-26-000002"),          # restated FY
+    ]
+    slices = M.slice_by_cik_tag(_frame(rows))
+    assert M.resolve_family_value(slices, ["Revenues"], cik,
+                                  "2026-02-19")[0]["value"] == 906980000.0
+    assert M.resolve_family_value(slices, ["Revenues"], cik,
+                                  "2026-05-15")[0]["value"] == 999.0
+
+
+def test_yoy_follows_the_annual_current_fact_to_the_annual_prior_fact():
+    """End to end: with the current fact now the YEAR, E1's duration-matched
+    prior lookup finds the prior YEAR, never the prior Q4 that shares its
+    period_end. 1100/1000 - 1 = 0.1, not 300/250 - 1 = 0.2."""
+    cik = 81
+    rows = [
+        _fact(cik, "Revenues", 1100, "2025-12-31", "2026-02-19", period_start="2025-01-01",
+              form="10-K", accn="0003-26-000001"),
+        _fact(cik, "Revenues", 300, "2025-12-31", "2026-02-19", period_start="2025-10-01",
+              form="10-K", accn="0003-26-000001"),
+        _fact(cik, "Revenues", 1000, "2024-12-31", "2025-02-19", period_start="2024-01-01",
+              form="10-K", accn="0003-25-000001"),
+        _fact(cik, "Revenues", 250, "2024-12-31", "2025-02-19", period_start="2024-10-01",
+              form="10-K", accn="0003-25-000001"),
+    ]
+    slices = M.slice_by_cik_tag(_frame(rows))
+    cur, tag = M.resolve_family_value(slices, ["Revenues"], cik, "2026-02-19")
+    assert cur["value"] == 1100.0
+    g, _ = M.yoy_growth_family(slices, ["Revenues"], cik, "2026-02-19", cur, tag)
+    assert g == pytest.approx(0.1)
+
+    cur_q, tag_q = M.resolve_family_value(slices, ["Revenues"], cik, "2026-02-19",
+                                          prefer_duration="quarterly")
+    g_q, _ = M.yoy_growth_family(slices, ["Revenues"], cik, "2026-02-19", cur_q, tag_q)
+    assert g_q == pytest.approx(0.2)
+
+
+def test_duration_buckets_are_f2s_own_and_not_retyped():
+    """`DURATION_BUCKET_DAYS` and the classifier come from
+    `ingest_fundamentals`; this pins the labels the fix branches on."""
+    import ingest_fundamentals as IF
+
+    assert M.DURATION_BUCKET_DAYS is IF.DURATION_BUCKET_DAYS
+    assert M.BUCKET_ORDER == ("Q", "H1", "9M", "FY", "other")
+    assert M.ANNUAL_BUCKET == "FY"
+    starts = pd.Series([pd.NaT, "2025-10-01", "2025-07-01", "2025-04-01", "2025-01-01"])
+    ends = pd.Series(["2025-12-31"] * 5)
+    assert list(M.duration_buckets(starts, ends)) == ["instant", "Q", "H1", "9M", "FY"]
+
+
+def test_unknown_preference_is_refused():
+    slices = M.slice_by_cik_tag(_frame(_fy_and_q4()))
+    with pytest.raises(ValueError):
+        M.resolve_family_value(slices, ["Revenues"], 1494259, "2026-02-19",
+                               prefer_duration="trailing_twelve_months")
+
+
+# ---------------------------------------------------------------------------
 # 4. Price windows end STRICTLY before the news session
 # ---------------------------------------------------------------------------
 

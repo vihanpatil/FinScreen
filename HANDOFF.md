@@ -1225,7 +1225,7 @@ CORRECTION (owner, in chat).**
   complete 63-session windows; sha `c35956b7…`), `text_features_e2.parquet`
   14,446 filings / 176 core CIKs from 854,933 every-occurrence rows (sha in
   manifest), `numeric_features_e2.parquet` 18,300 rows / 175 CIKs (sha
-  `23f2ef2e…`). Status reports `data/f5/status/STEP1A_*.md`.
+  `07971505…`). Status reports `data/f5/status/STEP1A_*.md`.
 - **Freeze held and independently verified:** no IC, correlation or
   feature-versus-outcome association exists in any module, test or artifact
   (red-team grep + source-scan tests). PIT re-derived from raw data by the
@@ -1241,7 +1241,7 @@ CORRECTION (owner, in chat).**
   company, one chunk reaches 6,220 filings / 169 CIKs (default proposal:
   same-CIK attribution, E1 rule as a named sensitivity); (21)
   `operating_cashflow_to_revenue` pairs YTD cash flow with quarterly revenue
-  on 46.1% of rows; (22) the 200-day staleness guard no longer sits in an
+  on 41.5% of rows (46.1% before the period-end fix); (22) the 200-day staleness guard no longer sits in an
   empty band; benchmark member set (both strata, default keep); row scope =
   in-membership three-way join, **7,634 rows today, 161–202 per quarter over
   82–99 CIKs** (9,225 in-membership target rows have no text — F3/F4
@@ -1528,6 +1528,25 @@ across the ten externals; 48,790 of 95,335 (51.2%) on the research corpus.
 Record: `data/app/status/L2_4_diff_and_extraction.md`. App suites 195 green.
 Housekeeping: per-company `*.jsonl` / `*.db` store files are now
 git-excluded (regenerable); manifests and concept_resolution.csv stay.
+
+**2026-09-11 — F5 PRE-RATIFICATION FIX APPLIED: duration-aware fundamentals
+resolution (status).** `numeric_features_e2.py` now pre-filters same-period-end
+candidates to one duration bucket (F2's `DURATION_BUCKET_DAYS`, by import)
+before `pit.value_as_of` (pit.py untouched; E1 known-answers hold); annual
+preferred for every feature; mid-year 10-Q rows fall through unchanged, so G3
+decision 21 is not pre-empted. Rebuilt table sha `07971505…` (was
+`23f2ef2e…`), byte-identical across three builds: 1,485 rows (8.1%) / 95 CIKs
+changed across the six flow features (net_income_yoy 1,380 cells, eps_yoy
+1,251, net_margin 1,133, ocf_to_revenue 992, revenue_yoy 950,
+operating_margin 733); instant-fact and price features unchanged; unresolved
+and staleness CSVs byte-identical. Censuses re-run with identical counts;
+`census_e2.json` refreshed (six flow-feature ICCs moved by ≤ 0.04; the
+"nine of thirteen rise, six sharply" finding holds); decision-21 mismatch is
+now 7,603 of 18,300 (41.5%). Numbers propagated to F5_PLAN, the G3 draft and
+packet, STEP1B/STEP2 status files. `test_report_filing.py`'s reachable-module
+set gained `ingest_fundamentals` (a call the renderer already made). 152 F5
+tests + 196 adjacent green; both runners exit 2. Record:
+`data/f5/status/STEP1A_numeric_features_e2.md` §6.
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target

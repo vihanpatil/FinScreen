@@ -2,7 +2,7 @@
  "computed_associations_with_outcomes": 0,
  "controls_py_sha256": "b44358c389134dd9f5fc80b9a0d00be624d829b67d3d7f10d7e5e636c71dc32c",
  "freeze_statement": "F5_PLAN.md \u00a71: this census fits nothing and computes no information coefficient, correlation, slope or any other feature-versus-outcome association. G3_RATIFIED.json exists=False.",
- "generated_utc": "2026-09-11T08:55:08Z",
+ "generated_utc": "2026-09-11T16:04:31Z",
  "head2": {
   "candidate_post_window": [
    1,
@@ -343,7 +343,7 @@
  },
  "inputs": {
   "filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
-  "numeric_features_e2.parquet": "23f2ef2ec4056898018eb170ca42e3b34489d558cc06368dd38f64061a3c950d",
+  "numeric_features_e2.parquet": "079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb",
   "prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
   "text_features_e2.parquet": "f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c"
  },
@@ -359,5 +359,5 @@
   "path": "data/prices_e2.parquet",
   "sha256": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343"
  },
- "runtime_seconds": 0.55
+ "runtime_seconds": 0.34
 }

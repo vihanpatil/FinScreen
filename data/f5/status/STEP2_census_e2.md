@@ -480,8 +480,8 @@ change of sample.
 2. **The PIT-rank transform does not decorrelate features from company
    identity.** For the three levels-like features it leaves the ICC essentially
    where it was (0.945 → 0.942, 0.910 → 0.901, 0.900 → 0.889); for nine of the
-   thirteen it **raises** it, six of them sharply (`net_margin` 0.314 → 0.649,
-   `operating_margin` 0.355 → 0.723, `cash_to_assets` 0.625 → 0.801,
+   thirteen it **raises** it, six of them sharply (`net_margin` 0.329 → 0.661,
+   `operating_margin` 0.383 → 0.761, `cash_to_assets` 0.625 → 0.801,
    `book_to_market` 0.683 → 0.835, `realized_vol_63` 0.265 → 0.483). The
    transform re-expresses a feature on a common trailing cross-sectional scale
    and thereby strips the *time-varying common* component; what remains is

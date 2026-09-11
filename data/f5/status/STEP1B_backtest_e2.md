@@ -93,7 +93,7 @@ on every build.
 
 | # | assertion | where | measured |
 |---|---|---|---|
-| A1 | input sha256s equal the `data/f5/*_manifest.json` records before a byte is used (`controls.py` `_sha256_file` pattern) | `assert_input_shas`, every real/census load | 4/4 match on the re-run census: target `c35956b7…`, text `f9084e95…`, numeric `23f2ef2e…`, families `acc2712e…`. **`text_families_e2.parquet` now exists, so the families arm has been exercised on real data**: 7,723 family rows join LEFT onto the 7,634-row frame and `n_emb_missing = 0` — every modeling row carries a 384-d pooled embedding |
+| A1 | input sha256s equal the `data/f5/*_manifest.json` records before a byte is used (`controls.py` `_sha256_file` pattern) | `assert_input_shas`, every real/census load | 4/4 match on the re-run census: target `c35956b7…`, text `f9084e95…`, numeric `07971505…`, families `acc2712e…`. **`text_families_e2.parquet` now exists, so the families arm has been exercised on real data**: 7,723 family rows join LEFT onto the 7,634-row frame and `n_emb_missing = 0` — every modeling row carries a 384-d pooled embedding |
 | A2 | the real run refuses without `G3_RATIFIED.json` | `require_g3`, `main` | measured today: exit code **2**, nothing fitted (§7) |
 | A3 | the real run refuses when the document's sha ≠ the ratified `doc_sha256` | `require_g3` | test: a one-line edit after ratification raises `G3Refusal` |
 | A4 | exactly one ```` ```json g3-params ```` block; 0 or 2 is a refusal | `extract_params_block` | tests for 0, 1, 2 blocks |

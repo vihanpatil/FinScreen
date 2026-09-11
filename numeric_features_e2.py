@@ -30,6 +30,61 @@ Point-in-time discipline (the whole point of the file)
    not re-implemented): post-close acceptance (>= 16:00 ET) pushes the news
    session forward one, `pre_session = news_session - 1`, and every window
    ends at `pre_session`.
+4. The period-identity collision is resolved by DURATION, not by row order
+   (see the next section). `pit.value_as_of` is unchanged and still does all
+   the as-of work.
+
+-----------------------------------------------------------------------
+Period identity -- the 2026-09-11 fix (F5_PLAN §3 decision 22 DEFECT)
+-----------------------------------------------------------------------
+`pit.value_as_of` groups candidate facts by `period_end` ALONE and says so in
+its own docstring ("period-identity caveat"), explicitly leaving the
+annual-vs-quarterly disambiguation to the caller as a feature-engineering
+decision. A filer that tags BOTH the fiscal year and the fourth quarter with
+the same end date, in the same filing, on the same day therefore presents two
+facts that every tiebreak in that rule ties on -- so which one comes back
+falls through to ROW ORDER. The app lane measured the consequence on ten
+un-curated external companies (`data/app/status/L2_3_external_fundamentals.md`
+§5.3): 2 of 43 resolved panel cells were the quarter, not the year. The
+research path took the same resolver, so it had the same defect.
+
+The fix, entirely inside this module (`pit.py` is frozen -- E1's known-answer
+tests depend on it):
+
+  * the winning `period_end` is still chosen by `pit.value_as_of`, unchanged,
+    from the unfiltered candidate set -- as-of semantics stay exactly pit's;
+  * if more than one duration bucket
+    (`ingest_fundamentals.DURATION_BUCKET_DAYS`, imported not retyped) is
+    present AT that period_end among the facts knowable by `as_of`, the
+    candidates are PRE-FILTERED to one bucket and `pit.value_as_of` is called
+    again on that frame, so the fact it returns is chosen by duration rather
+    than by row order;
+  * which bucket is `prefer_duration`:
+      - `"annual"` (the default, and what every feature in this module uses):
+        the FY fact wins when one exists at that period_end. At a fiscal year
+        end the annual figure is the only fact 73% of the year-end rows here
+        have at all (MEASURED: revenue resolves FY-only on 2,533 rows and
+        FY-or-Q4 on 951), so preferring it makes the column mean the same
+        thing for every filer on the same date instead of depending on which
+        of the two a filer happened to tag;
+      - `"quarterly"`: the shortest bucket wins, i.e. the single most recent
+        incremental period. This is what a caller wanting a quarterly flow
+        asks for, and it is how the prior-period side of
+        `yoy_growth_family()` already behaves (E1's
+        `features.value_for_target_period` matches the CURRENT fact's
+        duration to +/- 20 days) -- this fix makes the current-period side as
+        duration-aware as the prior-period side already was.
+      - when no FY fact is present at the winning period_end (every
+        mid-year 10-Q: the collision there is a quarter against a
+        year-to-date figure) BOTH settings fall through to the shortest
+        bucket, which is what row order already returned on every one of the
+        18,300 rows (MEASURED, all five flow families, zero exceptions). The
+        year-to-date-versus-quarter question is G3 decision 21 / open
+        question Q1 and this fix deliberately does not touch it.
+  * Instant (balance-sheet) facts have no duration and are untouched: the
+    function returns before any bucket is computed.
+  * Never moves the period: if the pre-filtered call returns nothing, or a
+    row at a different `period_end`, the unfiltered row stands.
 
 -----------------------------------------------------------------------
 Concept resolution -- no hand-typed per-company tags, ever
@@ -100,7 +155,12 @@ import pandas as pd
 
 import controls as C
 import features as F1
-from ingest_fundamentals import CONCEPT_FAMILIES, is_operating_form
+from ingest_fundamentals import (
+    CONCEPT_FAMILIES,
+    DURATION_BUCKET_DAYS,
+    is_operating_form,
+)
+from ingest_fundamentals import _duration_buckets as duration_buckets
 from pit import value_as_of
 
 REPO_ROOT = Path(__file__).resolve().parent
@@ -125,6 +185,13 @@ OUTPUT_UNRESOLVED = F5_DIR / "numeric_unresolved_e2.csv"
 MOMENTUM_LOOKBACK_SESSIONS = 126
 VOL_WINDOW_SESSIONS = 63
 VOL_DDOF = 1  # sample std; H2's ddof item -- stated, not defaulted
+
+# Period identity (the 2026-09-11 fix). F2's own duration buckets, imported
+# rather than retyped; `BUCKET_ORDER` is DURATION_BUCKET_DAYS' own ordering,
+# shortest first, with the >400-day "other" bucket last.
+ANNUAL_BUCKET = "FY"
+BUCKET_ORDER: tuple[str, ...] = tuple(label for _, label in DURATION_BUCKET_DAYS) + ("other",)
+PREFER_DURATIONS = ("annual", "quarterly")
 
 TAXONOMY_OF_TAG: dict[str, str] = {
     tag: taxonomy
@@ -276,6 +343,55 @@ def slice_by_cik_tag(fund: pd.DataFrame) -> dict[tuple[int, str], pd.DataFrame]:
 # ---------------------------------------------------------------------------
 
 
+def _bucket_rank(bucket: str) -> int:
+    return BUCKET_ORDER.index(bucket) if bucket in BUCKET_ORDER else len(BUCKET_ORDER)
+
+
+def value_as_of_duration_aware(
+    sub: pd.DataFrame,
+    tag: str,
+    as_of,
+    cik: int,
+    taxonomy: Optional[str],
+    prefer_duration: str = "annual",
+) -> tuple[Optional[dict], tuple[str, ...]]:
+    """`pit.value_as_of`, with the period-identity collision resolved by the
+    fact's own DURATION instead of by row order (module docstring, "Period
+    identity"). Returns `(row, buckets_present_at_that_period_end)`; the tuple
+    is empty when there was nothing to disambiguate.
+
+    `pit.value_as_of` does every as-of decision here, twice: once on the
+    unfiltered candidates to fix the period, once on the candidates
+    pre-filtered to the preferred duration bucket. This function chooses no
+    period and no filed date of its own.
+    """
+    if prefer_duration not in PREFER_DURATIONS:
+        raise ValueError(f"prefer_duration must be one of {PREFER_DURATIONS}")
+    row = value_as_of(sub, tag, as_of, cik=cik, taxonomy=taxonomy)
+    if row is None:
+        return None, ()
+    period_start = row.get("period_start")
+    if period_start is None or pd.isna(period_start):
+        return row, ()                       # instant fact: no duration, untouched
+
+    period_end = pd.Timestamp(row["period_end"])
+    buckets = duration_buckets(sub["period_start"], sub["period_end"])
+    at_period_end = ((pd.to_datetime(sub["period_end"]).values == period_end.to_datetime64())
+                     & (pd.to_datetime(sub["filed"]).values
+                        <= pd.Timestamp(as_of).to_datetime64()))
+    present = sorted(set(buckets.to_numpy()[at_period_end]) - {"instant"}, key=_bucket_rank)
+    if len(present) < 2:
+        return row, ()
+
+    want = (ANNUAL_BUCKET if prefer_duration == "annual" and ANNUAL_BUCKET in present
+            else present[0])
+    picked = value_as_of(sub[(buckets == want).to_numpy()], tag, as_of,
+                         cik=cik, taxonomy=taxonomy)
+    if picked is None or pd.Timestamp(picked["period_end"]) != period_end:
+        return row, tuple(present)           # never move the period; defensive
+    return picked, tuple(present)
+
+
 def resolve_family_value(
     slices: dict[tuple[int, str], pd.DataFrame],
     tags: list[str],
@@ -283,6 +399,7 @@ def resolve_family_value(
     as_of,
     staleness_log: Optional[list[dict]] = None,
     family: str = "",
+    prefer_duration: str = "annual",
 ) -> tuple[Optional[dict], Optional[str]]:
     """The freshest knowable fact across a family's resolved tags, or
     (None, None). Same rule as `features.resolve_concept_family()`: every tag
@@ -291,20 +408,31 @@ def resolve_family_value(
     more than `STALENESS_MAX_DAYS` stale relative to `as_of` is DISCARDED
     rather than returned -- a resolved-but-ancient fact is not a usable
     current feature, and silently returning one is the E1 red-team BLOCKER.
+
+    Each tag's lookup goes through `value_as_of_duration_aware`, so a fiscal
+    year tagged alongside its own fourth quarter resolves by duration and not
+    by row order (module docstring, "Period identity"). The returned row
+    carries `_duration_bucket` and `_duration_alternatives` for the manifest.
+    The duration preference applies WITHIN a tag; the cross-tag rule (freshest
+    period_end, ties by `filed`) is E1's and is untouched, so in principle two
+    alias tags could tie on `period_end` carrying different durations. MEASURED
+    on the whole corpus over the 27 multi-tag (cik, family) pairs in scope:
+    that happens ZERO times, so no cross-tag rule is invented for it.
     """
-    candidates: list[tuple[dict, str]] = []
+    candidates: list[tuple[dict, str, tuple[str, ...]]] = []
     for tag in tags:
         sub = slices.get((int(cik), tag))
         if sub is None or sub.empty:
             continue
-        row = value_as_of(sub, tag, as_of, cik=cik, taxonomy=TAXONOMY_OF_TAG.get(tag))
+        row, present = value_as_of_duration_aware(
+            sub, tag, as_of, cik, TAXONOMY_OF_TAG.get(tag), prefer_duration)
         if row is not None:
-            candidates.append((row, tag))
+            candidates.append((row, tag, present))
     if not candidates:
         return None, None
     candidates.sort(key=lambda item: (pd.Timestamp(item[0]["period_end"]),
                                       pd.Timestamp(item[0]["filed"])))
-    row, tag = candidates[-1]
+    row, tag, present = candidates[-1]
     days_stale = (pd.Timestamp(as_of) - pd.Timestamp(row["period_end"])).days
     if F1._is_stale(row, as_of):
         if staleness_log is not None:
@@ -315,6 +443,10 @@ def resolve_family_value(
         return None, None
     row = dict(row)
     row["_days_stale"] = days_stale
+    row["_duration_bucket"] = (
+        duration_buckets(pd.Series([row.get("period_start")]),
+                         pd.Series([row.get("period_end")])).iloc[0])
+    row["_duration_alternatives"] = present
     return row, tag
 
 
@@ -479,6 +611,13 @@ def build(limit: Optional[int] = None,
     unit_mismatch = 0
     price_gap_rows = 0
     price_gap_ciks: set[int] = set()
+    # Period-identity census (the 2026-09-11 fix): per family, how many BUILT
+    # ROWS resolved a fact at a period_end where more than one duration bucket
+    # was knowable, and on how many of those the annual preference actually
+    # selected a longer fact than the shortest one present (i.e. the rows this
+    # fix moved). Counted per row, not per cached lookup.
+    period_identity = {fam: {"rows_multi_duration": 0, "rows_annual_preferred": 0,
+                             "buckets": {}} for fam in NEEDED_FAMILIES}
 
     for i, r in enumerate(rows.itertuples(index=False)):
         cik = int(r.cik)
@@ -497,6 +636,14 @@ def build(limit: Optional[int] = None,
             vals[family], tags_used[family] = cache[key]
             if vals[family] is not None:
                 accepted_days_stale.append(float(vals[family]["_days_stale"]))
+                pi = period_identity[family]
+                bucket = vals[family]["_duration_bucket"]
+                pi["buckets"][bucket] = pi["buckets"].get(bucket, 0) + 1
+                present = vals[family]["_duration_alternatives"]
+                if present:
+                    pi["rows_multi_duration"] += 1
+                    if bucket != present[0]:
+                        pi["rows_annual_preferred"] += 1
 
         def v(family: str) -> float:
             row = vals.get(family)
@@ -629,6 +776,8 @@ def build(limit: Optional[int] = None,
     diag = _diagnostics(df, accepted_days_stale, unresolved, staleness_log, shas, calendar,
                         n_rows_universe, stratum,
                         {"yoy_cross_tag": yoy_cross_tag,
+                         "period_identity_by_family": period_identity,
+                         "prefer_duration": "annual",
                          "flow_duration_mismatch_vs_revenue": duration_mismatch,
                          "fx_blocked_rows": fx_blocked,
                          "unit_mismatch_ratios": unit_mismatch,
@@ -739,6 +888,11 @@ def _diagnostics(df, accepted_days_stale, unresolved, staleness_log, shas, calen
             "yoy_end_tolerance_days": 45,
             "yoy_duration_tolerance_days": 20,
             "yoy_tolerances_source": "features.value_for_target_period defaults (E1, frozen)",
+            "period_identity_prefer_duration": "annual",
+            "period_identity_buckets": [list(b) for b in DURATION_BUCKET_DAYS],
+            "period_identity_buckets_source": (
+                "ingest_fundamentals.DURATION_BUCKET_DAYS, imported; the classifier "
+                "reports its duration_mix in the same buckets"),
         },
         "runtime_seconds": round(runtime_s, 1),
     }
