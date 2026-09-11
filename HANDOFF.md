@@ -1204,6 +1204,47 @@ CORRECTION (owner, in chat).**
   manifests versioned. Step 1b = `backtest_e2.py` with the G3 guard, heads
   2/3, embeddings + novelty families.
 
+**2026-09-10 — F5 STEP 1a DONE (data layer built, red-teamed, fix pass applied; status, not a ruling).**
+- Workflow `wf_582a40db-2e2` (3 Opus builders + red-team) then fix agent.
+  New modules, all CIK-keyed, E1 modules byte-unchanged (git diff empty):
+  `target_e2.py` (+18 tests), `features_e2.py` (+31), `numeric_features_e2.py`
+  (+24). Tables under `data/f5/` (git-excluded, shas in the versioned
+  manifests): `target_e2.parquet` 29,271 rows (16,859 in-membership; 28,684
+  complete 63-session windows; sha `c35956b7…`), `text_features_e2.parquet`
+  14,446 filings / 176 core CIKs from 854,933 every-occurrence rows (sha in
+  manifest), `numeric_features_e2.parquet` 18,300 rows / 175 CIKs (sha
+  `23f2ef2e…`). Status reports `data/f5/status/STEP1A_*.md`.
+- **Freeze held and independently verified:** no IC, correlation or
+  feature-versus-outcome association exists in any module, test or artifact
+  (red-team grep + source-scan tests). PIT re-derived from raw data by the
+  red-team: 0 violations on window dating (post-close rule), fundamentals
+  as-of joins, momentum/vol windows, backward flow over 854,933 occurrences.
+- Census assertions reproduced exactly: 790 8K_BODY excluded; masks 4,177
+  sentiment / 2,826 guidance (2,803 + 23; 230 active); 48,790 imputed NONEs;
+  train_overlap 14,342 (channels 10,442 / 14,341 / 487); selfid 146,958.
+  Full suite 1,401 passed / 11 skipped (1,328 + 73 new).
+- **Surfaced for G3 (added to `F5_PLAN.md` §3 as decisions 20–22 and notes;
+  nothing decided):** (20) cross-company every-occurrence attribution at
+  E2 scale — 11.65% of occurrence rows attach a chunk to a different
+  company, one chunk reaches 6,220 filings / 169 CIKs (default proposal:
+  same-CIK attribution, E1 rule as a named sensitivity); (21)
+  `operating_cashflow_to_revenue` pairs YTD cash flow with quarterly revenue
+  on 46.1% of rows; (22) the 200-day staleness guard no longer sits in an
+  empty band; benchmark member set (both strata, default keep); row scope =
+  in-membership three-way join, **7,634 rows today, 161–202 per quarter over
+  82–99 CIKs** (9,225 in-membership target rows have no text — F3/F4
+  extracted only earnings-bearing 8-Ks; 145 periodic filings from 10 CIKs
+  never extracted) — Step 2 re-derives n_dd and the MDE on this frame.
+- Also recorded: price-censoring survivorship direction for G3 §11 (27/176
+  core CIKs without prices; 31 members absent from the benchmark matrix; 324
+  subjects delist mid-window); `train_overlap` is a lower bound (4.53% vs
+  15.85% CIK-level); F2 note: 98 fundamentals facts carry `filed` 1–3 days
+  after the DB filing_date (conservative, no leak).
+- Next: Step 1b = `backtest_e2.py` (G3 guard, folds from the ratified quarter
+  list, margin ladder inside the runner), heads 2/3 runners, and the two
+  zero-labeling families (`text_families_e2.py`: YoY novelty + pooled
+  embeddings, one small local model, $0).
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual

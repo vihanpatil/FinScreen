@@ -1,0 +1,523 @@
+{
+  "artifact": "data/f5/target_e2.parquet",
+  "module": "target_e2.py",
+  "module_sha256": "233fb1c2d7da81c95e8334436fe21f46dba9dbd26bf877179b66cd0f602cfc10",
+  "controls_py_sha256": "b44358c389134dd9f5fc80b9a0d00be624d829b67d3d7f10d7e5e636c71dc32c",
+  "generated_at": "2026-09-11T03:34:10.562421+00:00",
+  "network_calls": 0,
+  "estimand": {
+    "horizon_trading_sessions": 63,
+    "window_open": "next trading session after news_session; news_session = first session >= info_date (pre-close) / > info_date (post-close)",
+    "benchmark": "equal-weighted mean 63-session return over the universe members on the window-open session, EXCLUDING self, membership-dated (EXPANSION_PLAN \u00a73.3 proposal, pending G3 ratification)",
+    "benchmark_member_floor_applied": null,
+    "e1_e2_comparability": "E1 and E2 backtest numbers are numerically incomparable (different benchmark).",
+    "no_ic_computed": true
+  },
+  "inputs": {
+    "measured": {
+      "filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
+      "prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
+      "fundamentals_e2.parquet": "f6064adfdf30dd21330fb13df40eca67f8a88256885be051c887a6e85abe517e"
+    },
+    "expected_source": "data/hardening/controls_results.json",
+    "matches_committed": true
+  },
+  "price_snapshot": {
+    "path": "data/prices_e2.parquet",
+    "sha256": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
+    "last_session": "2026-08-24",
+    "first_session": "2014-01-02",
+    "n_sessions": 3179,
+    "n_priced_ciks": 213
+  },
+  "row_counts": {
+    "n_core_ciks": 176,
+    "n_core_spells": 218,
+    "n_universe_member_ciks_all_strata": 244,
+    "n_filings_by_core_ciks": 32287,
+    "n_filings_excluded_solely_missing_subject_prices": 3016,
+    "n_core_ciks_excluded_solely_missing_subject_prices": 27,
+    "n_core_ciks_with_price_coverage": 149,
+    "n_rows_written": 29271,
+    "n_in_membership": 16859,
+    "n_out_of_membership": 12412,
+    "n_rows_treated_post_close_under_ported_rule": 17623,
+    "share_rows_treated_post_close_under_ported_rule": 0.6020634757951556,
+    "n_rows_acceptance_et_date_before_filing_date": 1751,
+    "n_rows_acceptance_et_date_before_filing_date_treated_post_close": 1717,
+    "n_info_date_after_filing_date": 4,
+    "n_no_news_session": 0,
+    "n_no_window_open": 6,
+    "n_complete_window_missing_subject_price": 324,
+    "n_complete_window_missing_benchmark": 2744,
+    "n_gld_rows": 65,
+    "n_membership_boundary_rows_excluded_by_half_open_rule": 3,
+    "benchmark_members_used": {
+      "median": 128.0,
+      "min": 0,
+      "max": 135
+    },
+    "benchmark_member_cells_counted_unpriced": 10926,
+    "n_universe_member_ciks_absent_from_price_matrix": 31,
+    "member_cells_absent_from_price_matrix_per_session": {
+      "median": 5.0,
+      "max": 21
+    },
+    "forms": {
+      "8-K": 22747,
+      "10-Q": 4916,
+      "10-K": 1608
+    }
+  },
+  "target_completeness": {
+    "n_complete_all": 28684,
+    "n_incomplete_all": 587,
+    "n_complete_in_membership": 16471,
+    "n_incomplete_in_membership": 388,
+    "n_excess_non_null_in_membership": 16397
+  },
+  "quarter_census": {
+    "key": "calendar quarter of info_date = max(filing_date, acceptance_date_ET)",
+    "in_membership_rows": {
+      "2016Q3": {
+        "n_rows": 405,
+        "n_complete": 405,
+        "n_incomplete": 0
+      },
+      "2016Q4": {
+        "n_rows": 413,
+        "n_complete": 413,
+        "n_incomplete": 0
+      },
+      "2017Q1": {
+        "n_rows": 468,
+        "n_complete": 468,
+        "n_incomplete": 0
+      },
+      "2017Q2": {
+        "n_rows": 443,
+        "n_complete": 443,
+        "n_incomplete": 0
+      },
+      "2017Q3": {
+        "n_rows": 346,
+        "n_complete": 346,
+        "n_incomplete": 0
+      },
+      "2017Q4": {
+        "n_rows": 388,
+        "n_complete": 388,
+        "n_incomplete": 0
+      },
+      "2018Q1": {
+        "n_rows": 404,
+        "n_complete": 404,
+        "n_incomplete": 0
+      },
+      "2018Q2": {
+        "n_rows": 439,
+        "n_complete": 439,
+        "n_incomplete": 0
+      },
+      "2018Q3": {
+        "n_rows": 383,
+        "n_complete": 383,
+        "n_incomplete": 0
+      },
+      "2018Q4": {
+        "n_rows": 392,
+        "n_complete": 392,
+        "n_incomplete": 0
+      },
+      "2019Q1": {
+        "n_rows": 417,
+        "n_complete": 417,
+        "n_incomplete": 0
+      },
+      "2019Q2": {
+        "n_rows": 451,
+        "n_complete": 451,
+        "n_incomplete": 0
+      },
+      "2019Q3": {
+        "n_rows": 417,
+        "n_complete": 417,
+        "n_incomplete": 0
+      },
+      "2019Q4": {
+        "n_rows": 443,
+        "n_complete": 443,
+        "n_incomplete": 0
+      },
+      "2020Q1": {
+        "n_rows": 520,
+        "n_complete": 520,
+        "n_incomplete": 0
+      },
+      "2020Q2": {
+        "n_rows": 521,
+        "n_complete": 521,
+        "n_incomplete": 0
+      },
+      "2020Q3": {
+        "n_rows": 389,
+        "n_complete": 389,
+        "n_incomplete": 0
+      },
+      "2020Q4": {
+        "n_rows": 428,
+        "n_complete": 428,
+        "n_incomplete": 0
+      },
+      "2021Q1": {
+        "n_rows": 467,
+        "n_complete": 467,
+        "n_incomplete": 0
+      },
+      "2021Q2": {
+        "n_rows": 445,
+        "n_complete": 445,
+        "n_incomplete": 0
+      },
+      "2021Q3": {
+        "n_rows": 381,
+        "n_complete": 381,
+        "n_incomplete": 0
+      },
+      "2021Q4": {
+        "n_rows": 392,
+        "n_complete": 392,
+        "n_incomplete": 0
+      },
+      "2022Q1": {
+        "n_rows": 426,
+        "n_complete": 426,
+        "n_incomplete": 0
+      },
+      "2022Q2": {
+        "n_rows": 435,
+        "n_complete": 435,
+        "n_incomplete": 0
+      },
+      "2022Q3": {
+        "n_rows": 374,
+        "n_complete": 374,
+        "n_incomplete": 0
+      },
+      "2022Q4": {
+        "n_rows": 400,
+        "n_complete": 400,
+        "n_incomplete": 0
+      },
+      "2023Q1": {
+        "n_rows": 417,
+        "n_complete": 417,
+        "n_incomplete": 0
+      },
+      "2023Q2": {
+        "n_rows": 441,
+        "n_complete": 441,
+        "n_incomplete": 0
+      },
+      "2023Q3": {
+        "n_rows": 347,
+        "n_complete": 347,
+        "n_incomplete": 0
+      },
+      "2023Q4": {
+        "n_rows": 369,
+        "n_complete": 369,
+        "n_incomplete": 0
+      },
+      "2024Q1": {
+        "n_rows": 399,
+        "n_complete": 399,
+        "n_incomplete": 0
+      },
+      "2024Q2": {
+        "n_rows": 438,
+        "n_complete": 438,
+        "n_incomplete": 0
+      },
+      "2024Q3": {
+        "n_rows": 368,
+        "n_complete": 368,
+        "n_incomplete": 0
+      },
+      "2024Q4": {
+        "n_rows": 346,
+        "n_complete": 346,
+        "n_incomplete": 0
+      },
+      "2025Q1": {
+        "n_rows": 405,
+        "n_complete": 405,
+        "n_incomplete": 0
+      },
+      "2025Q2": {
+        "n_rows": 436,
+        "n_complete": 436,
+        "n_incomplete": 0
+      },
+      "2025Q3": {
+        "n_rows": 387,
+        "n_complete": 387,
+        "n_incomplete": 0
+      },
+      "2025Q4": {
+        "n_rows": 398,
+        "n_complete": 398,
+        "n_incomplete": 0
+      },
+      "2026Q1": {
+        "n_rows": 406,
+        "n_complete": 406,
+        "n_incomplete": 0
+      },
+      "2026Q2": {
+        "n_rows": 451,
+        "n_complete": 327,
+        "n_incomplete": 124
+      },
+      "2026Q3": {
+        "n_rows": 264,
+        "n_complete": 0,
+        "n_incomplete": 264
+      }
+    },
+    "all_scoped_rows": {
+      "2015Q3": {
+        "n_rows": 600,
+        "n_complete": 600,
+        "n_incomplete": 0
+      },
+      "2015Q4": {
+        "n_rows": 671,
+        "n_complete": 671,
+        "n_incomplete": 0
+      },
+      "2016Q1": {
+        "n_rows": 739,
+        "n_complete": 739,
+        "n_incomplete": 0
+      },
+      "2016Q2": {
+        "n_rows": 747,
+        "n_complete": 747,
+        "n_incomplete": 0
+      },
+      "2016Q3": {
+        "n_rows": 611,
+        "n_complete": 611,
+        "n_incomplete": 0
+      },
+      "2016Q4": {
+        "n_rows": 646,
+        "n_complete": 646,
+        "n_incomplete": 0
+      },
+      "2017Q1": {
+        "n_rows": 713,
+        "n_complete": 713,
+        "n_incomplete": 0
+      },
+      "2017Q2": {
+        "n_rows": 712,
+        "n_complete": 712,
+        "n_incomplete": 0
+      },
+      "2017Q3": {
+        "n_rows": 586,
+        "n_complete": 586,
+        "n_incomplete": 0
+      },
+      "2017Q4": {
+        "n_rows": 657,
+        "n_complete": 657,
+        "n_incomplete": 0
+      },
+      "2018Q1": {
+        "n_rows": 671,
+        "n_complete": 671,
+        "n_incomplete": 0
+      },
+      "2018Q2": {
+        "n_rows": 727,
+        "n_complete": 727,
+        "n_incomplete": 0
+      },
+      "2018Q3": {
+        "n_rows": 636,
+        "n_complete": 636,
+        "n_incomplete": 0
+      },
+      "2018Q4": {
+        "n_rows": 631,
+        "n_complete": 631,
+        "n_incomplete": 0
+      },
+      "2019Q1": {
+        "n_rows": 677,
+        "n_complete": 677,
+        "n_incomplete": 0
+      },
+      "2019Q2": {
+        "n_rows": 747,
+        "n_complete": 747,
+        "n_incomplete": 0
+      },
+      "2019Q3": {
+        "n_rows": 660,
+        "n_complete": 660,
+        "n_incomplete": 0
+      },
+      "2019Q4": {
+        "n_rows": 674,
+        "n_complete": 674,
+        "n_incomplete": 0
+      },
+      "2020Q1": {
+        "n_rows": 793,
+        "n_complete": 793,
+        "n_incomplete": 0
+      },
+      "2020Q2": {
+        "n_rows": 831,
+        "n_complete": 831,
+        "n_incomplete": 0
+      },
+      "2020Q3": {
+        "n_rows": 613,
+        "n_complete": 613,
+        "n_incomplete": 0
+      },
+      "2020Q4": {
+        "n_rows": 658,
+        "n_complete": 658,
+        "n_incomplete": 0
+      },
+      "2021Q1": {
+        "n_rows": 727,
+        "n_complete": 727,
+        "n_incomplete": 0
+      },
+      "2021Q2": {
+        "n_rows": 714,
+        "n_complete": 714,
+        "n_incomplete": 0
+      },
+      "2021Q3": {
+        "n_rows": 602,
+        "n_complete": 602,
+        "n_incomplete": 0
+      },
+      "2021Q4": {
+        "n_rows": 635,
+        "n_complete": 635,
+        "n_incomplete": 0
+      },
+      "2022Q1": {
+        "n_rows": 667,
+        "n_complete": 667,
+        "n_incomplete": 0
+      },
+      "2022Q2": {
+        "n_rows": 695,
+        "n_complete": 695,
+        "n_incomplete": 0
+      },
+      "2022Q3": {
+        "n_rows": 603,
+        "n_complete": 603,
+        "n_incomplete": 0
+      },
+      "2022Q4": {
+        "n_rows": 608,
+        "n_complete": 608,
+        "n_incomplete": 0
+      },
+      "2023Q1": {
+        "n_rows": 631,
+        "n_complete": 631,
+        "n_incomplete": 0
+      },
+      "2023Q2": {
+        "n_rows": 680,
+        "n_complete": 680,
+        "n_incomplete": 0
+      },
+      "2023Q3": {
+        "n_rows": 544,
+        "n_complete": 544,
+        "n_incomplete": 0
+      },
+      "2023Q4": {
+        "n_rows": 568,
+        "n_complete": 568,
+        "n_incomplete": 0
+      },
+      "2024Q1": {
+        "n_rows": 623,
+        "n_complete": 623,
+        "n_incomplete": 0
+      },
+      "2024Q2": {
+        "n_rows": 691,
+        "n_complete": 691,
+        "n_incomplete": 0
+      },
+      "2024Q3": {
+        "n_rows": 567,
+        "n_complete": 567,
+        "n_incomplete": 0
+      },
+      "2024Q4": {
+        "n_rows": 541,
+        "n_complete": 541,
+        "n_incomplete": 0
+      },
+      "2025Q1": {
+        "n_rows": 626,
+        "n_complete": 626,
+        "n_incomplete": 0
+      },
+      "2025Q2": {
+        "n_rows": 682,
+        "n_complete": 682,
+        "n_incomplete": 0
+      },
+      "2025Q3": {
+        "n_rows": 585,
+        "n_complete": 585,
+        "n_incomplete": 0
+      },
+      "2025Q4": {
+        "n_rows": 585,
+        "n_complete": 585,
+        "n_incomplete": 0
+      },
+      "2026Q1": {
+        "n_rows": 624,
+        "n_complete": 624,
+        "n_incomplete": 0
+      },
+      "2026Q2": {
+        "n_rows": 679,
+        "n_complete": 486,
+        "n_incomplete": 193
+      },
+      "2026Q3": {
+        "n_rows": 394,
+        "n_complete": 0,
+        "n_incomplete": 394
+      }
+    }
+  },
+  "runtimes_seconds": {
+    "sha_assert": 0.04,
+    "load": 0.26,
+    "build_targets": 0.66,
+    "total": 1.03
+  },
+  "output_sha256": "c35956b784b9f0985796ed9dbb772360c043d2d77f1f300905c90b4d4757ece8"
+}

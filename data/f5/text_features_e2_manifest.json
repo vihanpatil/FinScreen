@@ -1,0 +1,612 @@
+{
+ "artifact": "data/f5/text_features_e2.parquet",
+ "artifact_sha256": "f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c",
+ "module": "features_e2.py",
+ "module_sha256": "877dea17a9f3136cbf5ab6745a09ac23dfd7283e65dfdaf4e167b37babaa6507",
+ "feature_dictionary": "data/f5/feature_dictionary_e2.json",
+ "feature_dictionary_sha256": "a72dc0ed66d3127a912cc9fcb6f31186fee8d0584f80b04253018b8a4ebc5b4b",
+ "generated_utc": "2026-09-11T03:45:50.650476+00:00",
+ "runtime_seconds": 19.951544,
+ "network_calls": 0,
+ "api_calls": 0,
+ "no_ic_computed": true,
+ "freeze_statement": "No information coefficient, correlation or feature-versus-outcome association is computed anywhere in this module or its tests (F5_PLAN \u00a71).",
+ "inputs_asserted": {
+  "data/f4/labels_e2_v1.parquet": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
+  "data/f4/chunks_v1.parquet": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+  "finetune/splits_v12/train.parquet": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10",
+  "data/f4/campaign_manifest.json": "76f6bd609948a57ed9abab3d31c90ab4e2313d66502de6fa0e85ae780ffb0557"
+ },
+ "inputs_recorded_not_read": {
+  "data/prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
+  "data/fundamentals_e2.parquet": "f6064adfdf30dd21330fb13df40eca67f8a88256885be051c887a6e85abe517e",
+  "data/filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7"
+ },
+ "definitions": {
+  "train_overlap": "overlap(row) = row.home_accession_number in train_acc or any(a in train_acc for a in row.source_accession_numbers) or sha1(normalize(row.text)) in train_txt, where train_acc / train_txt come from finetune/splits_v12/train.parquet and normalize = collapse whitespace, strip, lower (G2 \u00a72.5 / build_draw_g2.py). Paragraph-id joins are FORBIDDEN: E1 ids are 'P-...' and E2's are 'E2P-...', so an id-join returns a structurally meaningless 0.",
+  "selfid": "selfid(row) is true iff the first token of the row's home company name that is longer than 2 characters (after stripping surrounding punctuation) and not in the generic-suffix stop list, lowercased, occurs in lower(text).",
+  "every_occurrence_primitive": "The baked parallel arrays source_accession_numbers / source_filing_dates / source_forms / source_ciks ARE the primitive: there is no E2 occurrence map to re-derive them from."
+ },
+ "partitions": {
+  "confirmatory": [
+   "n_text_chunks_attributed",
+   "share_chunks_risk_factors",
+   "share_chunks_mda",
+   "share_chunks_ex99_press_release",
+   "sentiment_mean_score",
+   "sentiment_negative_share",
+   "guidance_signed_mean",
+   "guidance_any_present"
+  ],
+  "exploratory": [
+   "redflag_DEMAND_WEAKNESS_rate_risk_factors",
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors",
+   "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors",
+   "redflag_MARGIN_COST_PRESSURE_rate_risk_factors",
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors",
+   "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors",
+   "redflag_DEMAND_WEAKNESS_rate_mda",
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_mda",
+   "redflag_LEGAL_REGULATORY_ACTION_rate_mda",
+   "redflag_MARGIN_COST_PRESSURE_rate_mda",
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda",
+   "redflag_TRADE_POLICY_EXPOSURE_rate_mda",
+   "redflag_any_rate_press"
+  ],
+  "dropped": [
+   "share_chunks_8k_body"
+  ],
+  "diagnostic": [
+   "n_chunks_risk_factors",
+   "n_chunks_mda",
+   "n_chunks_ex99_press_release",
+   "train_overlap_share",
+   "selfid_share",
+   "cross_cik_share"
+  ]
+ },
+ "census": {
+  "sentiment_masked_risk_factors": 4177,
+  "sentiment_masked_values": {
+   "NEUTRAL": 3452,
+   "NEGATIVE": 688,
+   "POSITIVE": 37
+  },
+  "guidance_masked_total": 2826,
+  "guidance_masked_by_section": {
+   "MDA": 2803,
+   "RISK_FACTORS": 23
+  },
+  "guidance_masked_active": 230,
+  "guidance_applicable_frame": 94545,
+  "guidance_imputed_none_frame": 48293,
+  "guidance_imputed_none_share_of_applicable_frame": 0.5107938018932784,
+  "guidance_enum_nulls_applicable": 17,
+  "schema_issue_counts": {
+   "bad_enum:guidance_direction": 17,
+   "bad_enum:red_flag_category": 4,
+   "bad_enum:red_flag_modality": 2
+  },
+  "n_schema_invalid": 23,
+  "scored_sentiment_rows": 263808,
+  "scored_active_guidance_rows": 6479,
+  "corpus_rows": 317081,
+  "frame_rows": 316291,
+  "chunks_8k_body_excluded": 790,
+  "occurrence_rows": 854933,
+  "filings": 14446,
+  "distinct_ciks": 176,
+  "filing_date_min": "2015-07-02",
+  "filing_date_max": "2026-08-20",
+  "forms": {
+   "10-Q": 439376,
+   "10-K": 234464,
+   "8-K": 181093
+  },
+  "train_overlap_frame_chunks": 14342,
+  "train_overlap_channels": {
+   "frame": {
+    "home_accession": 10442,
+    "any_source_accession": 14341,
+    "normalized_text": 487,
+    "union": 14342
+   },
+   "corpus": {
+    "home_accession": 10442,
+    "any_source_accession": 14346,
+    "normalized_text": 487,
+    "union": 14347
+   }
+  },
+  "selfid_frame_chunks": 146958,
+  "selfid_frame_share": 0.4646290915644138,
+  "cross_cik_occurrence_rows": 99636,
+  "cross_cik_occurrence_share": 0.11654246590083667,
+  "chunks_with_multiple_source_ciks": 5706,
+  "max_occurrences_for_one_chunk": 6220
+ },
+ "caveat_constants": {
+  "teacher_v12_exact_set_error": {
+   "k": 84,
+   "n": 200,
+   "point": 0.42,
+   "wilson_95": [
+    0.3537348235017175,
+    0.48928053744521394
+   ],
+   "kstar_for_demotion": 84,
+   "phat_star": 0.42,
+   "demote": true,
+   "rule": "demote iff Wilson lower bound STRICTLY > 0.35 (boundary equality does NOT demote)"
+  },
+  "g2_sentiment": {
+   "k": 293,
+   "n": 337,
+   "p_hat": 0.8694362017804155,
+   "wilson_lo": 0.8292615059623852,
+   "wilson_hi": 0.9012831223928391,
+   "verdict": "INDETERMINATE"
+  },
+  "g2_guidance": {
+   "k": 115,
+   "n": 119,
+   "p_hat": 0.9663865546218487,
+   "wilson_lo": 0.9167502285215104,
+   "wilson_hi": 0.9868524598185958,
+   "verdict": "PASS"
+  },
+  "g2_guidance_active_precision": {
+   "point": 0.6866867538602978,
+   "wilson_lo": 0.5816754085471428,
+   "wilson_hi": 0.7755108487100656,
+   "n_nominal": 100,
+   "n_eff": 84.7683631622867
+  },
+  "g2_guidance_false_none_rate": {
+   "k": 0,
+   "n": 80,
+   "p_hat": 0.0,
+   "wilson_lo": 0.0,
+   "wilson_hi": 0.0458197362645751
+  }
+ },
+ "assertions": [
+  {
+   "name": "sha256:labels_e2_v1.parquet",
+   "passed": true,
+   "measured": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
+   "expected": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df"
+  },
+  {
+   "name": "sha256:chunks_v1.parquet",
+   "passed": true,
+   "measured": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+   "expected": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857"
+  },
+  {
+   "name": "sha256:finetune/splits_v12/train.parquet",
+   "passed": true,
+   "measured": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10",
+   "expected": "5e56076e3948cf9598b6cf61ad7307961735c19af2a0932f981ea6ee3dd4cb10"
+  },
+  {
+   "name": "campaign_manifest_COMPLETE",
+   "passed": true,
+   "measured": true,
+   "expected": true
+  },
+  {
+   "name": "campaign_manifest_rows",
+   "passed": true,
+   "measured": 317081,
+   "expected": 317081
+  },
+  {
+   "name": "corpus_rows",
+   "passed": true,
+   "measured": [
+    317081,
+    317081
+   ],
+   "expected": [
+    317081,
+    317081
+   ]
+  },
+  {
+   "name": "chunk_id_unique",
+   "passed": true,
+   "measured": true,
+   "expected": true
+  },
+  {
+   "name": "chunk_id_set_and_order_equal",
+   "passed": true,
+   "measured": true,
+   "expected": true
+  },
+  {
+   "name": "section_type_agrees_across_parquets",
+   "passed": true,
+   "measured": true,
+   "expected": true
+  },
+  {
+   "name": "parse_ok_all",
+   "passed": true,
+   "measured": true,
+   "expected": true
+  },
+  {
+   "name": "home_stratum_all_core",
+   "passed": true,
+   "measured": [
+    "core"
+   ],
+   "expected": [
+    "core"
+   ]
+  },
+  {
+   "name": "source_arrays_identical:source_accession_numbers",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "source_arrays_identical:source_filing_dates",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "source_arrays_identical:source_forms",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "train_split_rows",
+   "passed": true,
+   "measured": 5736,
+   "expected": 5736
+  },
+  {
+   "name": "text_stream_covers_corpus",
+   "passed": true,
+   "measured": 317081,
+   "expected": 317081
+  },
+  {
+   "name": "train_overlap_channels_frame",
+   "passed": true,
+   "measured": {
+    "home_accession": 10442,
+    "any_source_accession": 14341,
+    "normalized_text": 487,
+    "union": 14342
+   },
+   "expected": {
+    "home_accession": 10442,
+    "any_source_accession": 14341,
+    "normalized_text": 487,
+    "union": 14342
+   }
+  },
+  {
+   "name": "frame_8k_body_excluded",
+   "passed": true,
+   "measured": 790,
+   "expected": 790
+  },
+  {
+   "name": "frame_rows",
+   "passed": true,
+   "measured": 316291,
+   "expected": 316291
+  },
+  {
+   "name": "frame_section_counts",
+   "passed": true,
+   "measured": {
+    "MDA": 172098,
+    "EX99_PRESS_RELEASE": 94545,
+    "RISK_FACTORS": 49648
+   },
+   "expected": {
+    "MDA": 172098,
+    "EX99_PRESS_RELEASE": 94545,
+    "RISK_FACTORS": 49648
+   }
+  },
+  {
+   "name": "train_overlap_frame_count",
+   "passed": true,
+   "measured": 14342,
+   "expected": 14342
+  },
+  {
+   "name": "selfid_frame_count",
+   "passed": true,
+   "measured": 146958,
+   "expected": 146958
+  },
+  {
+   "name": "mask_sentiment_on_risk_factors",
+   "passed": true,
+   "measured": 4177,
+   "expected": 4177
+  },
+  {
+   "name": "mask_guidance_on_mda_and_risk_factors",
+   "passed": true,
+   "measured": 2826,
+   "expected": 2826
+  },
+  {
+   "name": "mask_guidance_by_section",
+   "passed": true,
+   "measured": {
+    "MDA": 2803,
+    "RISK_FACTORS": 23
+   },
+   "expected": {
+    "MDA": 2803,
+    "RISK_FACTORS": 23
+   }
+  },
+  {
+   "name": "mask_guidance_active_values",
+   "passed": true,
+   "measured": 230,
+   "expected": 230
+  },
+  {
+   "name": "guidance_applicable_frame",
+   "passed": true,
+   "measured": 94545,
+   "expected": 94545
+  },
+  {
+   "name": "guidance_outside_applicable_after_mask",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "guidance_enum_nulls_left_null",
+   "passed": true,
+   "measured": 17,
+   "expected": 17
+  },
+  {
+   "name": "imputed_nones_stored_as_NONE",
+   "passed": true,
+   "measured": 48293,
+   "expected": 48293
+  },
+  {
+   "name": "schema_invalid_red_flag_drops",
+   "passed": true,
+   "measured": {
+    "bad_enum:guidance_direction": 17,
+    "bad_enum:red_flag_category": 4,
+    "bad_enum:red_flag_modality": 2
+   },
+   "expected": {
+    "bad_enum:red_flag_category": 4,
+    "bad_enum:red_flag_modality": 2
+   }
+  },
+  {
+   "name": "n_source_filings_matches_array_lengths",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "occurrence_rows",
+   "passed": true,
+   "measured": 854933,
+   "expected": 854933
+  },
+  {
+   "name": "no_backward_flow",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "every_occurrence_has_a_cik",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "no_accession_maps_to_multiple_ciks",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "filing_date_and_form_unique_per_key",
+   "passed": true,
+   "measured": {
+    "multi_date": 0,
+    "multi_form": 0
+   },
+   "expected": 0
+  },
+  {
+   "name": "section_shares_sum_to_one",
+   "passed": true,
+   "measured": 0.9999999999999999,
+   "expected": 1.0
+  },
+  {
+   "name": "share_chunks_8k_body_identically_zero",
+   "passed": true,
+   "measured": 0.0,
+   "expected": 0.0
+  },
+  {
+   "name": "output_key_unique",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "in_unit_interval:redflag_DEMAND_WEAKNESS_rate_risk_factors",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_MARGIN_COST_PRESSURE_rate_risk_factors",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_DEMAND_WEAKNESS_rate_mda",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_IMPAIRMENT_WRITEDOWN_rate_mda",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_LEGAL_REGULATORY_ACTION_rate_mda",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_MARGIN_COST_PRESSURE_rate_mda",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_TRADE_POLICY_EXPOSURE_rate_mda",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:redflag_any_rate_press",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:train_overlap_share",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:selfid_share",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:cross_cik_share",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  },
+  {
+   "name": "in_unit_interval:sentiment_negative_share",
+   "passed": true,
+   "measured": [
+    0.0,
+    1.0
+   ],
+   "expected": "[0, 1]"
+  }
+ ]
+}

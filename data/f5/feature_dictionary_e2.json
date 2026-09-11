@@ -1,0 +1,266 @@
+{
+ "generated_utc": "2026-09-11T03:46:10.590750+00:00",
+ "unit_of_observation": "one row per (cik, accession_number)",
+ "company_key": "cik (E2 labels carry no ticker)",
+ "partitions": {
+  "confirmatory": [
+   "n_text_chunks_attributed",
+   "share_chunks_risk_factors",
+   "share_chunks_mda",
+   "share_chunks_ex99_press_release",
+   "sentiment_mean_score",
+   "sentiment_negative_share",
+   "guidance_signed_mean",
+   "guidance_any_present"
+  ],
+  "exploratory": [
+   "redflag_DEMAND_WEAKNESS_rate_risk_factors",
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors",
+   "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors",
+   "redflag_MARGIN_COST_PRESSURE_rate_risk_factors",
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors",
+   "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors",
+   "redflag_DEMAND_WEAKNESS_rate_mda",
+   "redflag_IMPAIRMENT_WRITEDOWN_rate_mda",
+   "redflag_LEGAL_REGULATORY_ACTION_rate_mda",
+   "redflag_MARGIN_COST_PRESSURE_rate_mda",
+   "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda",
+   "redflag_TRADE_POLICY_EXPOSURE_rate_mda",
+   "redflag_any_rate_press"
+  ],
+  "dropped": [
+   "share_chunks_8k_body"
+  ],
+  "diagnostic": [
+   "n_chunks_risk_factors",
+   "n_chunks_mda",
+   "n_chunks_ex99_press_release",
+   "train_overlap_share",
+   "selfid_share",
+   "cross_cik_share"
+  ]
+ },
+ "partition_basis": "F5_PLAN \u00a73 decision 3: of the 22 E1 text features the 13 red-flag columns are exploratory (demoted 2026-08-27), leaving 9; share_chunks_8k_body is dropped (identically zero under decision 9), so the confirmatory text block is these 8 legacy features. The two zero-labeling families (YoY novelty, pooled embeddings) are NOT built here and are not part of this artifact.",
+ "caveats": {
+  "teacher_red_flag_error": "v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate.",
+  "student_sentiment": "G2 student spot-check: sentiment agreement 293/337 = 86.9% [82.9, 90.1]; verdict INDETERMINATE at the owner-ratified 0.85 bar.",
+  "student_guidance": "G2 student spot-check: guidance_direction agreement 115/119 = 96.6% [91.7, 98.7]; verdict PASS at the 0.85 bar. MANDATORY escorts (G2 \u00a70 / \u00a76.3): the PASS is a statement about the NONE mass -- active-value precision is 68.67% [58.17, 77.55] (n=100, n_eff=84.77), and the false-NONE rate is 0/80 = 0.0% [0.0, 4.58].",
+  "provenance": "model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73).",
+  "e1_constants_not_applicable": "E1's red-flag agreement constants describe E1's Claude teacher on E1's corpus and are NEVER carried onto these Qwen student labels (current-era rule); the two measurements above replace them.",
+  "raw": {
+   "teacher_v12_exact_set_error": {
+    "k": 84,
+    "n": 200,
+    "point": 0.42,
+    "wilson_95": [
+     0.3537348235017175,
+     0.48928053744521394
+    ],
+    "kstar_for_demotion": 84,
+    "phat_star": 0.42,
+    "demote": true,
+    "rule": "demote iff Wilson lower bound STRICTLY > 0.35 (boundary equality does NOT demote)"
+   },
+   "g2_sentiment": {
+    "k": 293,
+    "n": 337,
+    "p_hat": 0.8694362017804155,
+    "wilson_lo": 0.8292615059623852,
+    "wilson_hi": 0.9012831223928391,
+    "verdict": "INDETERMINATE"
+   },
+   "g2_guidance": {
+    "k": 115,
+    "n": 119,
+    "p_hat": 0.9663865546218487,
+    "wilson_lo": 0.9167502285215104,
+    "wilson_hi": 0.9868524598185958,
+    "verdict": "PASS"
+   },
+   "g2_guidance_active_precision": {
+    "point": 0.6866867538602978,
+    "wilson_lo": 0.5816754085471428,
+    "wilson_hi": 0.7755108487100656,
+    "n_nominal": 100,
+    "n_eff": 84.7683631622867
+   },
+   "g2_guidance_false_none_rate": {
+    "k": 0,
+    "n": 80,
+    "p_hat": 0.0,
+    "wilson_lo": 0.0,
+    "wilson_hi": 0.0458197362645751
+   }
+  }
+ },
+ "features": {
+  "n_text_chunks_attributed": {
+   "partition": "confirmatory",
+   "definition": "Count of labeled chunks attributed to this filing under every-occurrence attribution (one per (chunk, occurrence) row).",
+   "source": "labels_e2_v1 + chunks_v1 baked source_* arrays",
+   "caveat": "Attribution is the union over a chunk's paragraphs; see cross_cik_share."
+  },
+  "share_chunks_risk_factors": {
+   "partition": "confirmatory",
+   "definition": "Share of this filing's attributed chunks whose section_type is RISK_FACTORS (features.py build_text_features definition).",
+   "source": "chunks_v1.section_type",
+   "caveat": "Section mix is confounded with SEC form type (E1 diagnosis: section-mix delta is strongly negative once form is controlled)."
+  },
+  "share_chunks_mda": {
+   "partition": "confirmatory",
+   "definition": "Share of this filing's attributed chunks whose section_type is MDA (features.py build_text_features definition).",
+   "source": "chunks_v1.section_type",
+   "caveat": "Section mix is confounded with SEC form type (E1 diagnosis: section-mix delta is strongly negative once form is controlled)."
+  },
+  "share_chunks_ex99_press_release": {
+   "partition": "confirmatory",
+   "definition": "Share of this filing's attributed chunks whose section_type is EX99_PRESS_RELEASE (features.py build_text_features definition).",
+   "source": "chunks_v1.section_type",
+   "caveat": "Section mix is confounded with SEC form type (E1 diagnosis: section-mix delta is strongly negative once form is controlled)."
+  },
+  "share_chunks_8k_body": {
+   "partition": "dropped",
+   "definition": "Share of this filing's attributed chunks whose section_type is 8K_BODY (features.py build_text_features definition).",
+   "source": "chunks_v1.section_type",
+   "caveat": "Identically 0.0: 8K_BODY chunks are excluded from the frame (F5_PLAN \u00a73 decision 9 default, 790 chunks). Dropped from both analysis blocks."
+  },
+  "sentiment_mean_score": {
+   "partition": "confirmatory",
+   "definition": "Mean of SENTIMENT_MAP(sentiment) over attributed chunks, NaN-skipping (POSITIVE +1 / NEUTRAL 0 / NEGATIVE -1).",
+   "source": "labels_e2_v1.sentiment",
+   "caveat": "Section mask applied before aggregation (G2 \u00a73.4): 4177 RISK_FACTORS sentiment values and 2826 MDA/RISK_FACTORS guidance values (230 of them active) are nulled, not scored. G2 student spot-check: sentiment agreement 293/337 = 86.9% [82.9, 90.1]; verdict INDETERMINATE at the owner-ratified 0.85 bar. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "sentiment_negative_share": {
+   "partition": "confirmatory",
+   "definition": "Share of attributed chunks with a non-null sentiment that are NEGATIVE; NaN when the filing has no scored sentiment chunk.",
+   "source": "labels_e2_v1.sentiment",
+   "caveat": "Section mask applied before aggregation (G2 \u00a73.4): 4177 RISK_FACTORS sentiment values and 2826 MDA/RISK_FACTORS guidance values (230 of them active) are nulled, not scored. G2 student spot-check: sentiment agreement 293/337 = 86.9% [82.9, 90.1]; verdict INDETERMINATE at the owner-ratified 0.85 bar. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "guidance_signed_mean": {
+   "partition": "confirmatory",
+   "definition": "Mean of GUIDANCE_MAP(guidance_direction) over guidance-applicable attributed chunks (RAISED +1 / MAINTAINED 0 / LOWERED -1 / WITHDRAWN -1); NONE and null are excluded, not zero-filled.",
+   "source": "labels_e2_v1.guidance_direction + guidance_applicable",
+   "caveat": "Section mask applied before aggregation (G2 \u00a73.4): 4177 RISK_FACTORS sentiment values and 2826 MDA/RISK_FACTORS guidance values (230 of them active) are nulled, not scored. 48293 frame rows carry guidance_imputed_none = true (51.08% of the 94545 guidance-applicable frame rows; 48790 = 51.18% corpus-wide). They count as NONE by the F4 writer rule, i.e. GUIDANCE_MAP gives them no score: they neither enter guidance_signed_mean nor set guidance_any_present. WITHDRAWN is kept at -1 per E1's GUIDANCE_MAP; F5_PLAN \u00a73 decision 11 (n = 66 on E2) is an owner ruling at G3. G2 student spot-check: guidance_direction agreement 115/119 = 96.6% [91.7, 98.7]; verdict PASS at the 0.85 bar. MANDATORY escorts (G2 \u00a70 / \u00a76.3): the PASS is a statement about the NONE mass -- active-value precision is 68.67% [58.17, 77.55] (n=100, n_eff=84.77), and the false-NONE rate is 0/80 = 0.0% [0.0, 4.58]. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "guidance_any_present": {
+   "partition": "confirmatory",
+   "definition": "1.0 if the filing has at least one attributed chunk with an ACTIVE guidance direction, else 0.0.",
+   "source": "labels_e2_v1.guidance_direction + guidance_applicable",
+   "caveat": "Section mask applied before aggregation (G2 \u00a73.4): 4177 RISK_FACTORS sentiment values and 2826 MDA/RISK_FACTORS guidance values (230 of them active) are nulled, not scored. 48293 frame rows carry guidance_imputed_none = true (51.08% of the 94545 guidance-applicable frame rows; 48790 = 51.18% corpus-wide). They count as NONE by the F4 writer rule, i.e. GUIDANCE_MAP gives them no score: they neither enter guidance_signed_mean nor set guidance_any_present. G2 student spot-check: guidance_direction agreement 115/119 = 96.6% [91.7, 98.7]; verdict PASS at the 0.85 bar. MANDATORY escorts (G2 \u00a70 / \u00a76.3): the PASS is a statement about the NONE mass -- active-value precision is 68.67% [58.17, 77.55] (n=100, n_eff=84.77), and the false-NONE rate is 0/80 = 0.0% [0.0, 4.58]. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_DEMAND_WEAKNESS_rate_risk_factors": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed RISK_FACTORS chunks carrying a DEMAND_WEAKNESS red flag (any modality); NaN when the filing has no attributed RISK_FACTORS chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_IMPAIRMENT_WRITEDOWN_rate_risk_factors": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed RISK_FACTORS chunks carrying a IMPAIRMENT_WRITEDOWN red flag (any modality); NaN when the filing has no attributed RISK_FACTORS chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_LEGAL_REGULATORY_ACTION_rate_risk_factors": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed RISK_FACTORS chunks carrying a LEGAL_REGULATORY_ACTION red flag (any modality); NaN when the filing has no attributed RISK_FACTORS chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_MARGIN_COST_PRESSURE_rate_risk_factors": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed RISK_FACTORS chunks carrying a MARGIN_COST_PRESSURE red flag (any modality); NaN when the filing has no attributed RISK_FACTORS chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_SUPPLY_INPUT_CONSTRAINT_rate_risk_factors": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed RISK_FACTORS chunks carrying a SUPPLY_INPUT_CONSTRAINT red flag (any modality); NaN when the filing has no attributed RISK_FACTORS chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_TRADE_POLICY_EXPOSURE_rate_risk_factors": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed RISK_FACTORS chunks carrying a TRADE_POLICY_EXPOSURE red flag (any modality); NaN when the filing has no attributed RISK_FACTORS chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_DEMAND_WEAKNESS_rate_mda": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed MDA chunks carrying a DEMAND_WEAKNESS red flag (any modality); NaN when the filing has no attributed MDA chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_IMPAIRMENT_WRITEDOWN_rate_mda": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed MDA chunks carrying a IMPAIRMENT_WRITEDOWN red flag (any modality); NaN when the filing has no attributed MDA chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_LEGAL_REGULATORY_ACTION_rate_mda": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed MDA chunks carrying a LEGAL_REGULATORY_ACTION red flag (any modality); NaN when the filing has no attributed MDA chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_MARGIN_COST_PRESSURE_rate_mda": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed MDA chunks carrying a MARGIN_COST_PRESSURE red flag (any modality); NaN when the filing has no attributed MDA chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_SUPPLY_INPUT_CONSTRAINT_rate_mda": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed MDA chunks carrying a SUPPLY_INPUT_CONSTRAINT red flag (any modality); NaN when the filing has no attributed MDA chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_TRADE_POLICY_EXPOSURE_rate_mda": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed MDA chunks carrying a TRADE_POLICY_EXPOSURE red flag (any modality); NaN when the filing has no attributed MDA chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "Category-presence only -- no REALIZED/HYPOTHETICAL split feature is built (E1 binding constraint 2, carried forward). v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "redflag_any_rate_press": {
+   "partition": "exploratory",
+   "definition": "Share of this filing's attributed EX99_PRESS_RELEASE chunks carrying at least one red flag; NaN when the filing has no attributed EX99 chunk.",
+   "source": "labels_e2_v1.red_flags",
+   "caveat": "v1.2 TEACHER red-flag exact-set error 84/200 = 42.00% [35.37, 48.93] (data/hardening/spotcheck_v12/results_v12.json). The owner-ratified DEMOTE pre-commitment fired (2026-08-27): E2 red flags are EXPLORATORY / disclosure-only in G3. These student labels reproduce a teacher measured at that error rate. model-consensus agreement (blind rater + adjudicator, both Claude-family) with owner rulings superseding on the escalated subset; NOT human validation of ground truth (HANDOFF \u00a73)."
+  },
+  "train_overlap_share": {
+   "partition": "diagnostic",
+   "definition": "Share of this filing's attributed chunks flagged train_overlap. overlap(row) = row.home_accession_number in train_acc or any(a in train_acc for a in row.source_accession_numbers) or sha1(normalize(row.text)) in train_txt, where train_acc / train_txt come from finetune/splits_v12/train.parquet and normalize = collapse whitespace, strip, lower (G2 \u00a72.5 / build_draw_g2.py). Paragraph-id joins are FORBIDDEN: E1 ids are 'P-...' and E2's are 'E2P-...', so an id-join returns a structurally meaningless 0.",
+   "source": "finetune/splits_v12/train.parquet vs chunks_v1",
+   "caveat": "Key results are reported with and without the overlap set (EXPANSION_PLAN \u00a73 item 2). Accession-level overlap is a LOWER BOUND on memorization exposure: home-CIK exposure is 15.85% (G2 \u00a72.5)."
+  },
+  "selfid_share": {
+   "partition": "diagnostic",
+   "definition": "Share of this filing's attributed chunks where the company self-identifies in the passage text. selfid(row) is true iff the first token of the row's home company name that is longer than 2 characters (after stripping surrounding punctuation) and not in the generic-suffix stop list, lowercased, occurs in lower(text).",
+   "source": "chunks_v1.home_company_name vs chunks_v1.text",
+   "caveat": "Disclosure of how often the labeler could see whose filing it was reading."
+  },
+  "cross_cik_share": {
+   "partition": "diagnostic",
+   "definition": "Share of this filing's attributed chunks whose HOME filing belongs to a different CIK.",
+   "source": "chunks_v1.source_ciks vs chunks_v1.home_cik",
+   "caveat": "Measures the union-over-paragraphs attribution property described in the module docstring. Disposition is an open G3 question, not a default."
+  },
+  "n_chunks_risk_factors": {
+   "partition": "diagnostic",
+   "definition": "Count of attributed RISK_FACTORS chunks -- the denominator of that section's red-flag rates.",
+   "source": "chunks_v1.section_type",
+   "caveat": "Diagnostic denominator, not a feature."
+  },
+  "n_chunks_mda": {
+   "partition": "diagnostic",
+   "definition": "Count of attributed MDA chunks -- the denominator of that section's red-flag rates.",
+   "source": "chunks_v1.section_type",
+   "caveat": "Diagnostic denominator, not a feature."
+  },
+  "n_chunks_ex99_press_release": {
+   "partition": "diagnostic",
+   "definition": "Count of attributed EX99_PRESS_RELEASE chunks -- the denominator of that section's red-flag rates.",
+   "source": "chunks_v1.section_type",
+   "caveat": "Diagnostic denominator, not a feature."
+  }
+ }
+}
