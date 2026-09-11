@@ -1639,6 +1639,22 @@ train-overlap disclosure 80.19% → 34.24% (decision 20 removed the foreign chun
 every column header "RULED rule … ratification pending", §0 defines the exact two lines that change at
 the pin, measured cells refreshed with "(was X)" notes. Rulings §4 now lists 15 readings for the owner's
 one word. Second red-team pass launched on the diffs before the owner is asked.
+**Second pass verdict (same evening): still NOT safe** — 22 of 24 first-pass items resolved, rebuilds and the
+two-line pin independently verified, but six new MUST-FIX: NEGATIVE recall quoted as 0.487 (the v1.1 adapter)
+where the pinned v1.2 adapter's own eval says 0.529 (64/121); the overlap arm scores ~2,694 rows inside the
+folds, not the 4,859 frame arithmetic; CIK-level overlap on this frame is 108/144 = 75.0%, not G2's 15.85%
+fine-tuning-corpus figure; a "delisted names" sentence §11 forbids was on the scorecard page; the OCF coverage
+cell (42%) unrefreshed; four ⚠ with no §4 row. **Round 3 (commit 1f625ad):** the census now carries the
+ratified-fold census GLD-in / ex-GLD (Σ n_test_dedup 4,487 / 4,481; overlap-arm rows 2,700 / 2,694; purge
+6,180 / 6,173; 25 dedup in-fold rows without a vector), the run-time overlap and coverage block, both-direction
+set differences (65 / 45), the v1.2 recall read from the eval; the scorecard's chance line is computed from
+the call counts with n_outperform / n_underperform printed; the false-NONE rate 0/80 and the G2 §0 citation
+travel with the guidance line; the price-censoring sentence is §11's; `loco.max_ciks_per_fold` is required;
+`data/f5/pin_g3.py` applies the FULL pin substitution set (header, draft_status, 13 headers, the two
+"unratified" sentences, the signature lines) with `--show` printing the exact diff and `--pin --owner-word
+ratify` writing `G3_RATIFIED.json` only when no residue remains (7 tests); the stale families checkpoint was
+removed (bit-identical to the artifact; removed because resume=True is the module default). Document refresh
+for NF-1…NF-21 and a third, verification-only red-team pass follow before the owner is asked.
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
