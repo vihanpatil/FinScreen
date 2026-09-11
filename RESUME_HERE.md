@@ -74,7 +74,17 @@ four ⚠ with no §4 row; details + disposition appended to `data/f5/status/REDT
 |---|---|---|---|
 | A3: census additions (ex-GLD fold census, overlap-arm rows in folds, CIK-level overlap, set differences, per-column coverage, v1.2 NEGATIVE recall read not typed), disclosure wording, chance line from counts, false-NONE + §0 citation, `loco.max_ciks_per_fold` required, `data/f5/pin_g3.py` (full pin substitution set; `--show` diff; `--pin --owner-word ratify`), stale partial parquet removed; censuses re-run | quant-modeler Opus | `data/f5/pin_g3.py` + `test_pin_g3.py` exist; census JSONs carry `section_1b_ratified_folds_ex_gld`; suites green; exit 2 | relaunch "check what landed first; spec = REDTEAM file second-pass Disposition" |
 | C3 (after A3): document refresh for NF-1..NF-21 from the new census keys; §0 names `pin_g3.py` and the full substitution set | general-purpose Opus | no "0.487", "4,859", "15.85%" (unqualified) left in the pre-registration; §4 has the 23a-window and decision-21-scope rows | relaunch with the same brief |
-**Then:** third (verification-only) red-team pass → commit → ask the owner for "ratify" showing `python3 data/f5/pin_g3.py --show` → pin → run heads → scorecard.
+**Round 3 DONE (commits 1f625ad, ed2b100; suite 1,819 green). Third red-team pass DONE: NO BLOCKER, 24 of 24 refreshed numbers
+re-derived exactly, pin audited line by line; six small MUST-FIX (two stale census strings, chance line leaking the withheld
+rate below 6 calls, 25/25 vs the mandated 25/49 stored-NEGATIVE precision on the page, three ⚠ without §4 rows, §4 omitting
+the coverage consequences of 23a/23b and 20, pin command without an explicit --date). Record + disposition appended to
+`data/f5/status/REDTEAM_g3_package_2026-09-11.md`.**
+**Round 4 IN FLIGHT:** one general-purpose Opus agent applying MF-1…MF-6, SH-1…SH-8, N-a/e/f/g (census strings, scorecard
+withholding, disclosure label, pin --date required, docstring/letters, §4 rows + consequences paragraph, thin-columns list,
+packet banner, `test_census_e2.py` AST tripwire). Expected: those tests green; census JSON free of "4859" / unqualified
+"15.85"; if missing on resume, relaunch with the third-pass Disposition as the spec.
+**Then (main session):** verify each item by test + grep → full suite → commit → ask the owner for "ratify" showing
+`python3 data/f5/pin_g3.py --show --date <day>` → pin with that date → run heads → scorecard. Never pin on a model reading.
 **Then (main session):** second red-team pass on the diffs → commit → ask the owner for "ratify" (showing the exact two
 lines that change at the pin) → pin sha → run heads → scorecard. Never pin or run on a model reading.
 
