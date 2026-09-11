@@ -1611,6 +1611,18 @@ licence-scope line; stale "no money attached" lines marked superseded; position-
 / blackout / trade-log rule added to P5 and the "never automated" source-scan to P4; the
 "no licensed price series leaves the machine" rule made PRODUCT_PLAN execution condition 6.
 Owner action added: ask EODHD in writing about derived numbers before any public scorecard.
+**Red-team of the ratification package (same evening, `data/f5/status/REDTEAM_g3_package_2026-09-11.md`):**
+verdict NOT SAFE TO ASK FOR RATIFICATION yet — the freeze and the fold code are sound (no look-ahead
+found; exit 2 holds; data/f5 untouched by tests), but (B1) §14 and 23(b)–(h) were written as owner
+rulings without owner words, (B2) six ruled rules (2, 20, 21, 23a, 23b, 23d) were not yet built
+into the tables the run reads, and the scorecard page had presentation defects (per-company rates
+below the 6-call threshold, an unregistered tie rule that fires on the size-only comparator, the
+base rate printed as if it were chance, missing disclosures). Disposition: rebuild-then-ratify —
+all rebuilds run BEFORE the sha is pinned, censuses re-run, measured cells refreshed, ⚠ marks and
+§4 rows added (incl. "extend the corpus backwards or run 33 folds now" as the owner's choice),
+tie rule = average rank with straddling groups → no call, chance line 0.50 by construction, full
+disclosure block; the exact two header lines that change at the pin are shown to the owner first.
+Round 2 launched (RESUME_HERE IN FLIGHT). Commit 3be52ca holds the round-1 code (suite 1,787).
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
