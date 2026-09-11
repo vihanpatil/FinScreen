@@ -33,6 +33,30 @@ biggest US companies; the product's real advantages are discipline, point-in-tim
 correctness, and transparency, and any edge found will be modest. If the evidence says a
 signal does not work, the product says so and does not use it.
 
+## 0.5 The real-data-first rule (owner's lesson, 2026-09-11)
+
+The owner lost days and millions of tokens on another project (a resume matcher)
+whose evaluation was built on synthetic jobs and CVs; on real CVs nothing worked and
+everything was scrapped. **Rule for FinScreen, binding on every phase below:**
+
+1. **Synthetic data is for unit tests only.** It never stands in for evaluation,
+   never produces a number anyone reads, never appears in a demo.
+2. **Every feature is proven on real, un-curated inputs before it is called done.**
+   "Un-curated" means companies the builder did not choose: the owner names them,
+   or a seeded random draw from the SEC ticker list picks them, and the failures are
+   reported, not filtered out. The first such test is P1a below.
+3. **Where this project already carries the same risk, it is named, not hidden:**
+   the labeler was trained on model-generated (Claude) labels of 25 large companies
+   and every accuracy number is model-consensus, not human truth (G2 §0); its behaviour
+   shifted measurably on the larger corpus (F4 §2). Mitigation: the reading aid puts
+   every label beside its passage so the owner sees errors directly; the owner's own
+   reading of real reports is the human check; any new universe (mid-caps, arbitrary
+   tickers) gets its own label spot-check before its labels count.
+4. **The demo is a live run on a company the viewer names**, not a curated example.
+5. **No marketing claim precedes its evidence.** The site may explain what the tool
+   does today and what it is testing; it may not state or imply returns until P5 has
+   a record.
+
 ## 1. Execution conditions (main session; owner may strike in writing)
 
 1. **Paper before live.** Any signal is paper-traded forward, pre-registered, for a
@@ -68,6 +92,29 @@ instead of "write up and stop"; a **null or unpowered** result means the text fa
 not used as a signal (it stays in the reading aid as information) and the product
 continues on the numeric signal families. The rest of the F5 plan (freeze, guard,
 margin procedure, disclosures) is unchanged — it is what makes the result believable.
+
+### P1a — Any-ticker on demand, proven on un-curated companies. 3–4 sessions. **First milestone.**
+`ingest_one.py` (ticker → CIK → EDGAR metadata → documents → extract → chunk) and
+`label_filing.py` (the same v1.2 adapter, same prompt, a 10-row repro canary against the
+G1 eval before the first real label), feeding `report_filing.py`. Acceptance test, the
+real-data-first rule made concrete: **10 companies outside the 244-company universe,
+chosen by a seeded random draw from the SEC ticker list (the owner may add or replace
+any), each rendered end to end; every failure recorded in
+`data/app/status/L2_2_external_companies.md` with its cause.** Nothing is called done
+until that table is honest. This is also the demo's backbone (§P-S).
+
+### P-S — Show: demo, video, website. In parallel from P1a; owner directs.
+- **Demo:** a live run — the viewer names a ticker, the tool fetches, labels and
+  renders the report in minutes. No curated examples.
+- **Video:** a screen-captured narrative of the live run plus the pipeline story
+  (storyboard in `site/STORYBOARD.md`; the owner records or approves narration).
+- **Website:** a scroll-driven explainer in `site/` (static, deployable to GitHub
+  Pages): the filing's journey — EDGAR → extraction → the local labeler → point-in-time
+  joins → the walk-forward test → the evidence panel — told as a 3D/animated flow the
+  viewer scrolls through, in the spirit of the supply-chain site the owner described.
+  The owner leads direction. Content rule: §0.5 item 5 (no return claims); the site
+  invites interest, it does not give advice; a waitlist is fine, a recommendation is
+  not (P6).
 
 ### P2 — Build the missing half of the validation: a portfolio simulator. 3–4 sessions.
 The harness measures rank correlation. The owner's question is about money. New module
@@ -147,6 +194,8 @@ and a re-ratification. Not scheduled.
 
 | phase | agent sessions | owner touchpoints | wall clock |
 |---|---|---|---|
+| P1a any-ticker + 10 external companies | 3–4 | name companies (optional) | 1–2 weeks |
+| P-S demo / video / site | 3–6 (owner directs) | direction, review | 2–4 weeks, parallel |
 | P1 E2 close | 5–8 | G3 ruling (14-day clock), per-fold read | 3–5 weeks |
 | P2 simulator | 3–4 | decision A | overlaps P1 |
 | P3 signals + mid-caps | 4–6 + GPU nights | decision C, one read per signal family | 4–8 weeks after P2 |

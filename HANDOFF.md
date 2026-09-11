@@ -1436,6 +1436,34 @@ transition and move to this goal?"*
   source + budget; B charter sentence; C mid-cap expansion; D paper period).
 - Not built until ruled: anything requiring new spend (A) or distribution.
 
+**2026-09-11 — OWNER'S REAL-DATA-FIRST LESSON; DEMO / VIDEO / WEBSITE PRIORITIZED
+(owner, in chat).** Owner, verbatim: *"I ran into a problem with another project, a
+resume matcher, where days and days were spent creating synthetic data for jobs,
+CVs to test, ensuring accurate evaluation of job matching with CVs. However,
+when testing real CVs, nothing worked and everything done so far for that
+project was wasted. We had to scrap all synthetic data and wasted millions and
+millions of tokens and days of effort. I was extremely disappointed. I do not
+want this to happen again. Reflect and refactor as needed. I want to prioritize
+creating a demo and enticing video for anybody who is interested. A part of the
+phase should be creating an interactive website where FinScreen is marketed and
+explained to anybody interested. I saw this insane website with 3D map/model of
+this supply chain, and as one scrolled, it flowed through the 3D model of how
+the product is made and other details through it. I can help a ton with the
+direction of the website."*
+- Recorded as `PRODUCT_PLAN.md` §0.5 (real-data-first rule: synthetic data for
+  unit tests only; every feature proven on un-curated real companies before
+  "done"; the labeler's model-consensus provenance named, not hidden; the demo
+  is a live run on a viewer-named ticker; no marketing claim before its
+  evidence) and as the new first milestone P1a (any-ticker on demand + 10
+  external companies from a seeded random draw, failures recorded) and phase
+  P-S (demo, video, scroll-driven website in `site/`, owner directs).
+- Where FinScreen already carries the resume-matcher risk: the labeler was
+  trained on Claude labels of 25 large caps and validated by model consensus;
+  its behaviour shifted on E2 (F4 §2). The reading aid's label-beside-passage
+  design and the owner's own reading are the human check; new universes get
+  their own spot-check.
+- The site markets and explains; it does not give advice (P6 unchanged).
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual
