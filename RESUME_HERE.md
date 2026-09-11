@@ -15,10 +15,23 @@ after any action, update this block, HANDOFF §3 and memory BEFORE the next
 agent launch; (5) commit ledgers after each milestone (the owner pushes). Be
 frugal: if nothing is missing, do nothing.
 
-**IN FLIGHT as of 2026-09-11 (evening, Pacific):**
-| item | launched as | expected output | if missing on resume |
-|---|---|---|---|
-| P1a any-ticker ingest + label, 10 random external companies (draw in `data/app/status/external_draw.json`). **First agent died on the usage limit 2026-09-11 ~00:xx PT with company 1 (CIK 1334036) fully labeled; RELAUNCHED by the auto-resume check 2026-09-11 06:53 PT with "resume from existing stores, append rows as you go"** | general-purpose Opus agent (brief = PRODUCT_PLAN §3 P1a; deliverables `ingest_one.py`, `label_filing.py`, `report_filing.py --store`, `data/app/status/L2_2_external_companies.md`) | `data/app/status/L2_2_external_companies.md` with the 10-row results table | if `data/app/companies/<cik>/` stores exist, relaunch with "resume from the existing stores; do not redraw"; the draw is sealed |
+**IN FLIGHT:** nothing (as of 2026-09-11 ~07:45 PT). No agent running, no
+labeling process alive. The auto-resume cron (every ~2 h, session-only) has
+nothing to relaunch unless a new item is added to this table.
+
+**P1a DONE 2026-09-11 (auto-resume relaunch finished it):** `ingest_one.py`,
+`label_filing.py`, `report_filing.py --store`, `test_app_store.py`; sealed
+seed-20260911 draw of 10 companies outside the universe, all attempted:
+9 of 10 rendered a 10-K, 7 of 10 an earnings 8-K; **1 real extraction
+failure** (CBKM: em-dash TOC "Item 7—" and a split possessive in the heading
+defeat both extractor paths; `extract.py` is frozen for the E2 corpus, so it
+is recorded, not patched); 2 companies had no earnings 8-K to render. 21.6
+min total, 129 s per company (labeling 1.7–2.4 s/chunk), $0. Independent
+containment check on SIRI: 0 of 481 rendered paragraphs outside the store's
+own text. Record: `data/app/status/L2_2_external_companies.md`. Findings for
+the owner: fundamentals are blank on every external company (F2 concept
+resolution covers only the 244 CIKs); 55% of guidance labels on externals are
+the missing→NONE imputation; no diff on externals at `--per-form 1`.
 
 **DONE 2026-09-11 (all committed on main; owner pushes):** G3 packet delivered
 (clock due 2026-09-25; decision-18 evidence corrected and re-sent); PRODUCT_PLAN.md

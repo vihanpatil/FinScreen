@@ -1,0 +1,175 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 764630,
+  "ticker": "AETN",
+  "company_name": "AETERNUM HEALTH, INC.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001493152-26-039164",
+      "form": "10-Q",
+      "filing_date": "2026-08-19",
+      "items": null,
+      "primary_document": "form10-q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-014008",
+      "form": "10-K",
+      "filing_date": "2026-03-31",
+      "items": null,
+      "primary_document": "form10-k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 16,
+  "documents": {
+    "n_fetched": 2,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/764630/sections.parquet",
+    "sha256": "e33210400f1bfc2afed4a9b3c9f7f9dea7c5dcf6a962ca8be3bb430e0d266e90",
+    "n_rows": 4,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 2,
+    "FLAGGED": 2
+  },
+  "extraction_audit": [
+    {
+      "cik": 764630,
+      "company_name": "AETERNUM HEALTH, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-039164",
+      "form": "10-Q",
+      "filing_date": "2026-08-19",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 1670,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.58789,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 764630,
+      "company_name": "AETERNUM HEALTH, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-039164",
+      "form": "10-Q",
+      "filing_date": "2026-08-19",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 32,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 764630,
+      "company_name": "AETERNUM HEALTH, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-014008",
+      "form": "10-K",
+      "filing_date": "2026-03-31",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "mda_stub_unresolved_same_doc",
+        "below_length_floor"
+      ],
+      "extraction_method": "incorporated_by_reference_unresolved",
+      "extraction_confidence": "low",
+      "word_count": 517,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.68171,
+      "source_document": "form10-k.htm",
+      "reason_code": "mda_stub_unresolved_same_doc",
+      "note": ""
+    },
+    {
+      "cik": 764630,
+      "company_name": "AETERNUM HEALTH, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-014008",
+      "form": "10-K",
+      "filing_date": "2026-03-31",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "below_length_floor"
+      ],
+      "extraction_method": "anchor",
+      "extraction_confidence": "medium",
+      "word_count": 35,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "form10-k.htm",
+      "reason_code": "below_length_floor",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/764630/chunks.parquet",
+    "sha256": "3aeb14ffedb6ec921ff4b11f3a165b2c451c54b41fc6dd8ad2135d4d647baf92",
+    "n_chunks": 7,
+    "n_sections": 4,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/764630/metadata.db",
+    "sha256": "3c326c70f17c928cfed1c81a77f183e7da48c29121890ae5bf753a12d5d96667",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 2,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.0,
+    "documents_s": 0.26,
+    "extract_s": 0.35,
+    "chunk_s": 0.02,
+    "total_s": 0.65
+  }
+}

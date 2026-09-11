@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1494259,
+  "ticker": "CARG",
+  "company_name": "CarGurus, Inc.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001193125-26-338067",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "items": null,
+      "primary_document": "carg-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001193125-26-338014",
+      "form": "8-K",
+      "filing_date": "2026-08-06",
+      "items": "1.01,2.02,9.01",
+      "primary_document": "carg-20260806.htm",
+      "earnings_doc_filename": "carg-ex99_1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001193125-26-059435",
+      "form": "10-K",
+      "filing_date": "2026-02-19",
+      "items": null,
+      "primary_document": "carg-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 32,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1494259/sections.parquet",
+    "sha256": "9c7c7800d7827ed5194db7f0902e1597ac48b42cd4c9d9e27c114ed048e2ddd3",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 1494259,
+      "company_name": "CarGurus, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001193125-26-338067",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9054,
+      "prose_word_share": 0.7093,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5547,
+      "source_document": "carg-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1494259,
+      "company_name": "CarGurus, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001193125-26-338067",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 50,
+      "prose_word_share": 0.84,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "carg-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1494259,
+      "company_name": "CarGurus, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001193125-26-338014",
+      "form": "8-K",
+      "filing_date": "2026-08-06",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 5393,
+      "prose_word_share": 0.4795,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50166,
+      "source_document": "carg-ex99_1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1494259,
+      "company_name": "CarGurus, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001193125-26-059435",
+      "form": "10-K",
+      "filing_date": "2026-02-19",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 10582,
+      "prose_word_share": 0.7641,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54364,
+      "source_document": "carg-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1494259,
+      "company_name": "CarGurus, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001193125-26-059435",
+      "form": "10-K",
+      "filing_date": "2026-02-19",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 16858,
+      "prose_word_share": 0.8391,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48375,
+      "source_document": "carg-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1494259/chunks.parquet",
+    "sha256": "6e12886e88c3bbb93721e16805484341ed7937fff1e65066f52791d496f74eda",
+    "n_chunks": 100,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1494259/metadata.db",
+    "sha256": "f844b5d976317b8b1491b2cdea1502bdcbc6a12c854055ef5664e7c1647cfb93",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.09,
+    "documents_s": 0.3,
+    "extract_s": 1.43,
+    "chunk_s": 0.03,
+    "total_s": 1.87
+  }
+}

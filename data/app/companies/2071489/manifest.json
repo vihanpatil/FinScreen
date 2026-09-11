@@ -1,0 +1,178 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 2071489,
+  "ticker": "YSGL",
+  "company_name": "Yellowstone Group Ltd.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001493152-26-036784",
+      "form": "10-Q",
+      "filing_date": "2026-08-10",
+      "items": null,
+      "primary_document": "form10-q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-030051",
+      "form": "10-K",
+      "filing_date": "2026-06-25",
+      "items": null,
+      "primary_document": "form10-k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 5,
+  "documents": {
+    "n_fetched": 2,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2071489/sections.parquet",
+    "sha256": "99999105523dc442f35a880ab45c3086aa08b74f4a8964b1ba2da3a142052a70",
+    "n_rows": 3,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "FLAGGED": 3
+  },
+  "extraction_audit": [
+    {
+      "cik": 2071489,
+      "company_name": "Yellowstone Group Ltd.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-036784",
+      "form": "10-Q",
+      "filing_date": "2026-08-10",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "below_length_floor"
+      ],
+      "extraction_method": "anchor",
+      "extraction_confidence": "medium",
+      "word_count": 630,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.60622,
+      "source_document": "form10-q.htm",
+      "reason_code": "below_length_floor",
+      "note": ""
+    },
+    {
+      "cik": 2071489,
+      "company_name": "Yellowstone Group Ltd.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-036784",
+      "form": "10-Q",
+      "filing_date": "2026-08-10",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "form10-q.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 2071489,
+      "company_name": "Yellowstone Group Ltd.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-030051",
+      "form": "10-K",
+      "filing_date": "2026-06-25",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "mda_stub_unresolved_same_doc",
+        "below_length_floor"
+      ],
+      "extraction_method": "incorporated_by_reference_unresolved",
+      "extraction_confidence": "low",
+      "word_count": 775,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.6392,
+      "source_document": "form10-k.htm",
+      "reason_code": "mda_stub_unresolved_same_doc",
+      "note": ""
+    },
+    {
+      "cik": 2071489,
+      "company_name": "Yellowstone Group Ltd.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-030051",
+      "form": "10-K",
+      "filing_date": "2026-06-25",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "below_length_floor"
+      ],
+      "extraction_method": "anchor",
+      "extraction_confidence": "medium",
+      "word_count": 33,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "form10-k.htm",
+      "reason_code": "below_length_floor",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2071489/chunks.parquet",
+    "sha256": "3d4fb605433b7d0781e34363dedb75b42e70db1695ee81975722dcbb94b7a3cb",
+    "n_chunks": 4,
+    "n_sections": 3,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2071489/metadata.db",
+    "sha256": "fa26b0c6bde1799ea545624ad5ce9b81fa617d58b629eee4975f0e5c756073e3",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 2,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.0,
+    "documents_s": 0.13,
+    "extract_s": 0.38,
+    "chunk_s": 0.02,
+    "total_s": 0.55
+  }
+}

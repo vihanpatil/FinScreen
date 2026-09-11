@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 94344,
+  "ticker": "STC",
+  "company_name": "STEWART INFORMATION SERVICES CORP",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000094344-26-000016",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "items": null,
+      "primary_document": "stc-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001104659-26-085825",
+      "form": "8-K",
+      "filing_date": "2026-07-22",
+      "items": "2.02,9.01",
+      "primary_document": "tm2620702d2_8k.htm",
+      "earnings_doc_filename": "tm2620702d2_ex99-1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000094344-26-000007",
+      "form": "10-K",
+      "filing_date": "2026-02-27",
+      "items": null,
+      "primary_document": "stc-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 46,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/94344/sections.parquet",
+    "sha256": "b771300df88f6c4c662807b95914408ae398e8facd425d44b249d50e4bc1786e",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 94344,
+      "company_name": "STEWART INFORMATION SERVICES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000094344-26-000016",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6428,
+      "prose_word_share": 0.7833,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54808,
+      "source_document": "stc-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 94344,
+      "company_name": "STEWART INFORMATION SERVICES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000094344-26-000016",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 46,
+      "prose_word_share": 0.913,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "stc-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 94344,
+      "company_name": "STEWART INFORMATION SERVICES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001104659-26-085825",
+      "form": "8-K",
+      "filing_date": "2026-07-22",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3512,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5107,
+      "source_document": "tm2620702d2_ex99-1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 94344,
+      "company_name": "STEWART INFORMATION SERVICES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000094344-26-000007",
+      "form": "10-K",
+      "filing_date": "2026-02-27",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8553,
+      "prose_word_share": 0.7597,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50943,
+      "source_document": "stc-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 94344,
+      "company_name": "STEWART INFORMATION SERVICES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000094344-26-000007",
+      "form": "10-K",
+      "filing_date": "2026-02-27",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5097,
+      "prose_word_share": 0.8144,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48116,
+      "source_document": "stc-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/94344/chunks.parquet",
+    "sha256": "61dbfc91761fff89ab5ca7aeb0dc900f8b2891207da3b124a970eb6ad9bbc233",
+    "n_chunks": 59,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/94344/metadata.db",
+    "sha256": "2d15f2aae784389abf182e33ca9d2c234ecb59baa881baec6c4b1c318f424573",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 10.45,
+    "documents_s": 0.24,
+    "extract_s": 0.6,
+    "chunk_s": 0.02,
+    "total_s": 11.33
+  }
+}

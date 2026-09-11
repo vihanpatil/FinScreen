@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1577445,
+  "ticker": "ODYS",
+  "company_name": "Odysight.ai Inc.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001493152-26-037619",
+      "form": "8-K",
+      "filing_date": "2026-08-13",
+      "items": "2.02,9.01",
+      "primary_document": "form8-k.htm",
+      "earnings_doc_filename": "ex99-1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-037618",
+      "form": "10-Q",
+      "filing_date": "2026-08-13",
+      "items": null,
+      "primary_document": "form10-q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-011691",
+      "form": "10-K",
+      "filing_date": "2026-03-19",
+      "items": null,
+      "primary_document": "form10-k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 60,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1577445/sections.parquet",
+    "sha256": "ab03f70ca107604e0b0112464b8f3d9dd465c29d4d813d6480a994e3552485c0",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 1577445,
+      "company_name": "Odysight.ai Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-037619",
+      "form": "8-K",
+      "filing_date": "2026-08-13",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 2514,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46995,
+      "source_document": "ex99-1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1577445,
+      "company_name": "Odysight.ai Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-037618",
+      "form": "10-Q",
+      "filing_date": "2026-08-13",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4680,
+      "prose_word_share": 0.0256,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.53883,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1577445,
+      "company_name": "Odysight.ai Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-037618",
+      "form": "10-Q",
+      "filing_date": "2026-08-13",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 67,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.72222,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1577445,
+      "company_name": "Odysight.ai Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-011691",
+      "form": "10-K",
+      "filing_date": "2026-03-19",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4236,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51314,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1577445,
+      "company_name": "Odysight.ai Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-011691",
+      "form": "10-K",
+      "filing_date": "2026-03-19",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 20103,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49709,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1577445/chunks.parquet",
+    "sha256": "e12282d6c2ee663cc22d413a17c5e86f9ab720d2f20d48048eda879379e78f06",
+    "n_chunks": 85,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1577445/metadata.db",
+    "sha256": "be078e8fe936c24f8ad4053cfe296677552945b3628bec65c4bbb4d20206bf96",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.22,
+    "documents_s": 0.22,
+    "extract_s": 0.54,
+    "chunk_s": 0.03,
+    "total_s": 1.03
+  }
+}

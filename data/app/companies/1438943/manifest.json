@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1438943,
+  "ticker": "RNGE",
+  "company_name": "RANGE IMPACT, INC.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001493152-26-037346",
+      "form": "10-Q",
+      "filing_date": "2026-08-12",
+      "items": null,
+      "primary_document": "form10-q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-013691",
+      "form": "8-K",
+      "filing_date": "2026-03-31",
+      "items": "2.02,8.01,9.01",
+      "primary_document": "form8-k.htm",
+      "earnings_doc_filename": "ex99-1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-013689",
+      "form": "10-K",
+      "filing_date": "2026-03-31",
+      "items": null,
+      "primary_document": "form10-k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 40,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1438943/sections.parquet",
+    "sha256": "721576970e07f8ccf4abdee43c212ebe65731e751498606bcdd7deb31a6b9725",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 1438943,
+      "company_name": "RANGE IMPACT, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-037346",
+      "form": "10-Q",
+      "filing_date": "2026-08-12",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4241,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51999,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1438943,
+      "company_name": "RANGE IMPACT, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-037346",
+      "form": "10-Q",
+      "filing_date": "2026-08-12",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 30,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1438943,
+      "company_name": "RANGE IMPACT, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-013691",
+      "form": "8-K",
+      "filing_date": "2026-03-31",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 834,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.44201,
+      "source_document": "ex99-1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1438943,
+      "company_name": "RANGE IMPACT, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-013689",
+      "form": "10-K",
+      "filing_date": "2026-03-31",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4058,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55469,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1438943,
+      "company_name": "RANGE IMPACT, INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-013689",
+      "form": "10-K",
+      "filing_date": "2026-03-31",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7852,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49606,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1438943/chunks.parquet",
+    "sha256": "ad1975fb2474dd37763aa69927b6bbfe3bd29e79158557d4b9bd8b38c6268707",
+    "n_chunks": 45,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1438943/metadata.db",
+    "sha256": "54154bedf30c845cd175a21cf7158e70d43394428093f36e3cdd2a842a2bd5da",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.14,
+    "documents_s": 0.5,
+    "extract_s": 0.45,
+    "chunk_s": 0.03,
+    "total_s": 1.14
+  }
+}

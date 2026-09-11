@@ -1,0 +1,204 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1534675,
+  "ticker": "TGLS",
+  "company_name": "Tecnoglass Holdings Inc.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001493152-26-036362",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "items": null,
+      "primary_document": "form10-q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-036252",
+      "form": "8-K",
+      "filing_date": "2026-08-06",
+      "items": "2.02,9.01",
+      "primary_document": "form8-k.htm",
+      "earnings_doc_filename": "ex99-1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001493152-26-008465",
+      "form": "10-K",
+      "filing_date": "2026-03-02",
+      "items": null,
+      "primary_document": "form10-k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 50,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/sections.parquet",
+    "sha256": "6a848f25b5bc3ba733bca0f950b3117a56a4ab1271459123e385e174f8c6182d",
+    "n_rows": 4,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 4
+  },
+  "extraction_audit": [
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-036362",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 3408,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54899,
+      "source_document": "form10-q.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-036362",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc",
+        "item_body_heading_present"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "form10-q.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-036252",
+      "form": "8-K",
+      "filing_date": "2026-08-06",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3767,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48964,
+      "source_document": "ex99-1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-008465",
+      "form": "10-K",
+      "filing_date": "2026-03-02",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4910,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.509,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1534675,
+      "company_name": "Tecnoglass Holdings Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001493152-26-008465",
+      "form": "10-K",
+      "filing_date": "2026-03-02",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 13822,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47977,
+      "source_document": "form10-k.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/chunks.parquet",
+    "sha256": "5a8891840d928fcd0d2bc164f88c09a9a6e5c1ca5d1b28a7e1760539b9d6b13d",
+    "n_chunks": 69,
+    "n_sections": 4,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1534675/metadata.db",
+    "sha256": "4204dd5dfecec3a4a9f88e68b23ae384cdf8f76c997499bb8f068c26df810b1b",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.25,
+    "documents_s": 0.21,
+    "extract_s": 0.79,
+    "chunk_s": 0.03,
+    "total_s": 1.29
+  }
+}

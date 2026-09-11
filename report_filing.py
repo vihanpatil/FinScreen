@@ -767,13 +767,34 @@ def section_records(sections: pd.DataFrame) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 # fundamentals as-of the filing date
 # ---------------------------------------------------------------------------
+def fundamentals_slices(cik: int) -> dict:
+    """`NF.slice_by_cik_tag(NF.load_fundamentals({cik}))`, made safe for a
+    company F2 never ingested.
+
+    `load_fundamentals` filters by cik and then masks with
+    `f["form"].map(is_operating_form)`. For a cik with no facts that mask is an
+    EMPTY OBJECT-dtype Series, and pandas reads an empty object indexer as a
+    list of column labels -- so the frame comes back with zero columns and the
+    next line (`f["filed"] = ...`) raises KeyError: 'filed'. Every company in
+    the 244-company research universe has facts, so the research path never
+    reached it; every external company does. The fix stays here rather than in
+    the numeric module: with facts present this returns NF's own frame
+    unchanged, so no F5 number can move.
+    """
+    facts = NF.load_fundamentals({int(cik)})
+    if facts.shape[1] == 0:          # no facts at all for this company
+        return {}
+    return NF.slice_by_cik_tag(facts)
+
+
 def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
     """Five point-in-time families, resolved exactly as the F5 numeric feature
     table resolves them: `numeric_features_e2.resolve_family_value` over
     `pit.value_as_of`, with F2's committed per-company concept resolution."""
     resolution = NF.load_resolution({int(cik)})
-    facts = NF.load_fundamentals({int(cik)})
-    slices = NF.slice_by_cik_tag(facts)
+    # Loaded lazily: an external company resolves no family, so the 622k-row
+    # fundamentals table is never read for one.
+    slices: Optional[dict] = None
     staleness: list[dict] = []
 
     panel: list[dict] = []
@@ -785,6 +806,8 @@ def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
                                     "concept resolution"})
             continue
         tags = list(hit.iloc[0].tag_list)
+        if slices is None:
+            slices = fundamentals_slices(int(cik))
         row, tag = NF.resolve_family_value(slices, tags, int(cik), as_of,
                                            staleness_log=staleness, family=family)
         if row is None:

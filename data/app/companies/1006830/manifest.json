@@ -1,0 +1,209 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1006830,
+  "ticker": "CBKM",
+  "company_name": "CONSUMERS BANCORP INC /OH/",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001437749-26-030039",
+      "form": "10-K",
+      "filing_date": "2026-09-10",
+      "items": null,
+      "primary_document": "cbkm20260630_10k.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001437749-26-024757",
+      "form": "8-K",
+      "filing_date": "2026-07-29",
+      "items": "2.02,9.01",
+      "primary_document": "cbkm20260728_8k.htm",
+      "earnings_doc_filename": "ex_994723.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001437749-26-015787",
+      "form": "10-Q",
+      "filing_date": "2026-05-08",
+      "items": null,
+      "primary_document": "cbkm20260331_10q.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 32,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/sections.parquet",
+    "sha256": "ecf12e2578b67dfb26e94afd95541b424e020c998ef29a7072e1c5514f9a04cd",
+    "n_rows": 1,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 1
+  },
+  "extraction_audit": [
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-030039",
+      "form": "10-K",
+      "filing_date": "2026-09-10",
+      "section_type": "MDA",
+      "extraction_status": "FAIL",
+      "flags": [
+        "no_toc_and_no_heading_match"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "cbkm20260630_10k.htm",
+      "reason_code": "no_toc_and_no_heading_match",
+      "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-030039",
+      "form": "10-K",
+      "filing_date": "2026-09-10",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FAIL",
+      "flags": [
+        "no_toc_and_no_heading_match"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "cbkm20260630_10k.htm",
+      "reason_code": "no_toc_and_no_heading_match",
+      "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-024757",
+      "form": "8-K",
+      "filing_date": "2026-07-29",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 2403,
+      "prose_word_share": 0.779,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.59102,
+      "source_document": "ex_994723.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-015787",
+      "form": "10-Q",
+      "filing_date": "2026-05-08",
+      "section_type": "MDA",
+      "extraction_status": "FAIL",
+      "flags": [
+        "no_toc_and_no_heading_match"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "cbkm20260331_10q.htm",
+      "reason_code": "no_toc_and_no_heading_match",
+      "note": ""
+    },
+    {
+      "cik": 1006830,
+      "company_name": "CONSUMERS BANCORP INC /OH/",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001437749-26-015787",
+      "form": "10-Q",
+      "filing_date": "2026-05-08",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FAIL",
+      "flags": [
+        "no_toc_and_no_heading_match"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "cbkm20260331_10q.htm",
+      "reason_code": "no_toc_and_no_heading_match",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/chunks.parquet",
+    "sha256": "1b71bf081cdc2ff2f06059cc7c96a7b5781a119adad8ff9beb66e59e5c96ade7",
+    "n_chunks": 5,
+    "n_sections": 1,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1006830/metadata.db",
+    "sha256": "b7ed3a9a51974b4b73765703863e93a27921d25d4961d2fc2d9158c4475da23e",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 4.24,
+    "documents_s": 0.26,
+    "extract_s": 1.75,
+    "chunk_s": 0.0,
+    "total_s": 6.28
+  }
+}

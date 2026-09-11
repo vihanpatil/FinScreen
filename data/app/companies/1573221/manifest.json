@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1573221,
+  "ticker": "REAL",
+  "company_name": "TheRealReal, Inc.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001573221-26-000053",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "items": null,
+      "primary_document": "real-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001573221-26-000052",
+      "form": "8-K",
+      "filing_date": "2026-08-06",
+      "items": "2.02,9.01",
+      "primary_document": "real-20260806.htm",
+      "earnings_doc_filename": "real-20260807xex991pressre.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001573221-26-000010",
+      "form": "10-K",
+      "filing_date": "2026-02-26",
+      "items": null,
+      "primary_document": "real-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 36,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1573221/sections.parquet",
+    "sha256": "e2d8bb143845190b6feab5b3eacdbbdc49b5db99bf75f0b72341065260010c22",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 1573221,
+      "company_name": "TheRealReal, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001573221-26-000053",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9011,
+      "prose_word_share": 0.6897,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55567,
+      "source_document": "real-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1573221,
+      "company_name": "TheRealReal, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001573221-26-000053",
+      "form": "10-Q",
+      "filing_date": "2026-08-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 16294,
+      "prose_word_share": 0.8221,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48098,
+      "source_document": "real-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1573221,
+      "company_name": "TheRealReal, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001573221-26-000052",
+      "form": "8-K",
+      "filing_date": "2026-08-06",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3441,
+      "prose_word_share": 0.4548,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52082,
+      "source_document": "real-20260807xex991pressre.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1573221,
+      "company_name": "TheRealReal, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001573221-26-000010",
+      "form": "10-K",
+      "filing_date": "2026-02-26",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8589,
+      "prose_word_share": 0.7467,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51819,
+      "source_document": "real-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1573221,
+      "company_name": "TheRealReal, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001573221-26-000010",
+      "form": "10-K",
+      "filing_date": "2026-02-26",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 16210,
+      "prose_word_share": 0.813,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48072,
+      "source_document": "real-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1573221/chunks.parquet",
+    "sha256": "6144aa91106075584d0acffa024ac47d54deb0b033dea26c68b8c8ee97a33883",
+    "n_chunks": 105,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1573221/metadata.db",
+    "sha256": "42c0e81caabc887904cf6d332a49194997a956acaeb8dcc0a21ed939fb05c4f2",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.11,
+    "documents_s": 0.54,
+    "extract_s": 0.67,
+    "chunk_s": 0.04,
+    "total_s": 1.36
+  }
+}

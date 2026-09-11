@@ -1474,6 +1474,25 @@ swept the agent's in-progress `ingest_one.py` / `label_filing.py` /
 `external_draw.json` into git via `git add -A`; harmless, superseded by the
 next commit. Nothing else changed.
 
+**2026-09-11 — P1a DONE: any-ticker on demand, proven on 10 un-curated
+companies (status, not a ruling).** Sealed draw seed 20260911 from the SEC
+ticker list minus the 244 research CIKs (`data/app/status/external_draw.json`).
+All 10 attempted, nothing redrawn or filtered: 9/10 rendered a 10-K, 7/10 an
+earnings 8-K. Failures recorded with cause in
+`data/app/status/L2_2_external_companies.md`: CBKM 10-K extracted 0 words for
+MD&A/Risk Factors (em-dash TOC + split possessive heading; `extract.py` frozen
+for E2, not patched — 1 extraction failure in 10 filers); AETN and YSGL have
+no Item 2.02 8-K. 579 chunks labeled by the v1.2 adapter (repro canary
+10/10), 0 schema issues, 21.6 min, $0. One real renderer bug fixed
+(`fundamentals_panel` crashed on companies with no F2 facts). 155 app tests
+green; main-session containment check on SIRI 0/481 outside the filing.
+Demo feasibility measured: 2–4 min for a large filer, < 1 min for a small
+one. Follow-ups (not started): concept resolution for arbitrary CIKs so
+fundamentals render on externals; `--per-form 2` so the diff works on
+externals; the em-dash heading pattern as an extractor case for the app lane
+(never the frozen research extractor); guidance imputation share disclosed on
+the page.
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual

@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 908937,
+  "ticker": "SIRI",
+  "company_name": "SIRIUS XM HOLDINGS INC.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000908937-26-000022",
+      "form": "10-Q",
+      "filing_date": "2026-07-30",
+      "items": null,
+      "primary_document": "siri-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000908937-26-000020",
+      "form": "8-K",
+      "filing_date": "2026-07-30",
+      "items": "2.02,7.01,9.01",
+      "primary_document": "siri-20260730.htm",
+      "earnings_doc_filename": "siriq22026earningsrelease.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000908937-26-000006",
+      "form": "10-K",
+      "filing_date": "2026-02-05",
+      "items": null,
+      "primary_document": "siri-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 59,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/908937/sections.parquet",
+    "sha256": "f1ccdd20eafcedd9aaf7b6e939b7c3f451d0edd5cbbf70f45fa251a782450173",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 908937,
+      "company_name": "SIRIUS XM HOLDINGS INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000908937-26-000022",
+      "form": "10-Q",
+      "filing_date": "2026-07-30",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 11663,
+      "prose_word_share": 0.6346,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5252,
+      "source_document": "siri-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 908937,
+      "company_name": "SIRIUS XM HOLDINGS INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000908937-26-000022",
+      "form": "10-Q",
+      "filing_date": "2026-07-30",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 214,
+      "prose_word_share": 0.6168,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47343,
+      "source_document": "siri-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 908937,
+      "company_name": "SIRIUS XM HOLDINGS INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000908937-26-000020",
+      "form": "8-K",
+      "filing_date": "2026-07-30",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 5997,
+      "prose_word_share": 0.4582,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48231,
+      "source_document": "siriq22026earningsrelease.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 908937,
+      "company_name": "SIRIUS XM HOLDINGS INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000908937-26-000006",
+      "form": "10-K",
+      "filing_date": "2026-02-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 10800,
+      "prose_word_share": 0.7126,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49727,
+      "source_document": "siri-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 908937,
+      "company_name": "SIRIUS XM HOLDINGS INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000908937-26-000006",
+      "form": "10-K",
+      "filing_date": "2026-02-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 13007,
+      "prose_word_share": 0.8064,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47385,
+      "source_document": "siri-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/908937/chunks.parquet",
+    "sha256": "a1bc94f945da5e5378ff5a1af55e730692788bc2ff16f75986814d2c563db96f",
+    "n_chunks": 100,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/908937/metadata.db",
+    "sha256": "3050d0e75f2e860109111344d2db076b0c3d6ff2e127db890a91fb4efe0753b7",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.08,
+    "documents_s": 0.25,
+    "extract_s": 0.81,
+    "chunk_s": 0.03,
+    "total_s": 1.2
+  }
+}
