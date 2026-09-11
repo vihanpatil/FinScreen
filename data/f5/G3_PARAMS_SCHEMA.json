@@ -57,6 +57,10 @@
       "type": "list"
     },
     {
+      "path": "columns.exploratory_novelty_seq",
+      "type": "list"
+    },
+    {
       "path": "columns.size_col",
       "type": "str"
     },
@@ -193,12 +197,24 @@
       "type": "str"
     },
     {
+      "path": "scorecard.tie_rule",
+      "type": "str"
+    },
+    {
       "path": "scorecard.min_calls_for_company_hit_rate",
       "type": "int"
     },
     {
       "path": "scorecard.ci",
       "type": "str"
+    },
+    {
+      "path": "gld.exclude_from_analysis",
+      "type": "bool"
+    },
+    {
+      "path": "gld.included_sensitivity_arm",
+      "type": "bool"
     },
     {
       "path": "families.novelty_sequential_exploratory",
@@ -247,6 +263,9 @@
     "scorecard.call_rule": [
       "tercile_within_test_quarter"
     ],
+    "scorecard.tie_rule": [
+      "average_rank_straddle_no_call"
+    ],
     "scorecard.correct_rule": [
       "sign_match_nonzero"
     ],
@@ -269,6 +288,10 @@
     "embedding.pca_k > 0 with no usable `emb` column in the analysis frame is a REFUSAL, as is any fold realizing fewer than pca_k components.",
     "fold_sensitivity.train_window_quarters lists ROLLING training-window arms (decision 4, owner 2026-09-11). They are reported beside the expanding-window primary and are never selected in place of it; [] runs none.",
     "scorecard.* pins the per-company historical scorecard (decision 3, pre-registration \u00a714): the primary arm's deduplicated test rows, a within-test-quarter tercile call, a sign-match outcome, two zero-text comparators, and Wilson 95% intervals. Hit rates are DESCRIPTIVE; the inference is the margin ladder.",
+    "scorecard.tie_rule = average_rank_straddle_no_call: percentiles come from average ranks, and a tie group whose members would fall on both sides of a tercile boundary is 'no call' in full, counted as n_tied_no_call. Ties are common in size_only (a one-feature fit is a step function), so a tie-break by filing order would be a measurement artifact in the headline comparator.",
+    "scorecard pages below scorecard.min_calls_for_company_hit_rate show ROWS ONLY: no hit rate, no numerator and no interval (\u00a714).",
+    "gld.exclude_from_analysis removes every `is_gld` row from the analysis frame before folds, dedup and every fit, in every arm (decision 2, owner 2026-09-11); a frame with no is_gld column is a REFUSAL. gld.included_sensitivity_arm re-runs the primary spec once WITH those rows, beside the primary, never in place of it.",
+    "columns.exploratory_novelty_seq joins the exploratory block only -- never the confirmatory block and never the scorecard. Columns absent from the frame are skipped and counted (exploratory_novelty_seq_missing); that is a diagnostic, not a refusal, because the family-A rebuild lands separately.",
     "families.novelty_sequential_exploratory turns the sequential-prior novelty feature on as an EXPLORATORY row (decision 23); it never enters the headline."
   ]
 }

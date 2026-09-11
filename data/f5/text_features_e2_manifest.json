@@ -1,12 +1,14 @@
 {
  "artifact": "data/f5/text_features_e2.parquet",
- "artifact_sha256": "f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c",
+ "artifact_sha256": "143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88",
  "module": "features_e2.py",
- "module_sha256": "877dea17a9f3136cbf5ab6745a09ac23dfd7283e65dfdaf4e167b37babaa6507",
+ "module_sha256": "8e8b749a063d3d9986c3777d9e9307319d573375e191fee386c2570908888d63",
  "feature_dictionary": "data/f5/feature_dictionary_e2.json",
- "feature_dictionary_sha256": "b538a7c23cb1295ba240ed32eba325f0e0297bb2cbf41494d2e2bbcf1032729a",
- "generated_utc": "2026-09-11T05:48:32.652124+00:00",
- "runtime_seconds": 19.800946,
+ "feature_dictionary_sha256": "590b0358738b986126461da629c9d4dd57e6798a6dd91753050cfece07b37578",
+ "rebuild_note": "rebuilt 2026-09-11 under G3 decision 20 (owner ruling): same-CIK attribution; cross_cik_share materialized",
+ "attribution_rule": "same_cik",
+ "generated_utc": "2026-09-11T21:36:10.321320+00:00",
+ "runtime_seconds": 28.14161,
  "network_calls": 0,
  "api_calls": 0,
  "no_ic_computed": true,
@@ -25,7 +27,9 @@
  "definitions": {
   "train_overlap": "overlap(row) = row.home_accession_number in train_acc or any(a in train_acc for a in row.source_accession_numbers) or sha1(normalize(row.text)) in train_txt, where train_acc / train_txt come from finetune/splits_v12/train.parquet and normalize = collapse whitespace, strip, lower (G2 \u00a72.5 / build_draw_g2.py). Paragraph-id joins are FORBIDDEN: E1 ids are 'P-...' and E2's are 'E2P-...', so an id-join returns a structurally meaningless 0.",
   "selfid": "selfid(row) is true iff the first token of the row's home company name that is longer than 2 characters (after stripping surrounding punctuation) and not in the generic-suffix stop list, lowercased, occurs in lower(text).",
-  "every_occurrence_primitive": "The baked parallel arrays source_accession_numbers / source_filing_dates / source_forms / source_ciks ARE the primitive: there is no E2 occurrence map to re-derive them from."
+  "every_occurrence_primitive": "The baked parallel arrays source_accession_numbers / source_filing_dates / source_forms / source_ciks ARE the primitive: there is no E2 occurrence map to re-derive them from.",
+  "attribution": "same_cik: a label attaches to every filing of ITS OWN company in which its paragraph(s) occur (G3 decision 20, owner ruling 2026-09-11). e1_all_ciks -- E1's 2026-08-11 rule, every occurrence regardless of company -- is a named sensitivity reachable with --attribution, never the shipped artifact.",
+  "cross_cik_share": "Measured on the UNRESTRICTED (E1-rule) occurrence set: the share of the occurrence rows the E1 rule would have attached to this filing whose chunk is homed at another CIK. Under the shipped same-CIK rule those rows are NOT in the features; the column reports what was dropped."
  },
  "partitions": {
   "confirmatory": [
@@ -93,15 +97,22 @@
   "corpus_rows": 317081,
   "frame_rows": 316291,
   "chunks_8k_body_excluded": 790,
-  "occurrence_rows": 854933,
-  "filings": 14446,
+  "attribution_rule": "same_cik",
+  "attribution_rule_source": "G3 decision 20 (owner ruling 2026-09-11)",
+  "occurrence_rows": 755297,
+  "occurrence_rows_e1_rule": 854933,
+  "occurrence_rows_dropped_by_same_cik_rule": 99636,
+  "filings": 14385,
+  "filings_e1_rule": 14446,
+  "filings_lost_to_same_cik_rule": 61,
   "distinct_ciks": 176,
+  "distinct_ciks_e1_rule": 176,
   "filing_date_min": "2015-07-02",
   "filing_date_max": "2026-08-20",
   "forms": {
-   "10-Q": 439376,
-   "10-K": 234464,
-   "8-K": 181093
+   "10-Q": 387803,
+   "10-K": 202586,
+   "8-K": 164908
   },
   "train_overlap_frame_chunks": 14342,
   "train_overlap_channels": {
@@ -122,6 +133,12 @@
   "selfid_frame_share": 0.4646290915644138,
   "cross_cik_occurrence_rows": 99636,
   "cross_cik_occurrence_share": 0.11654246590083667,
+  "cross_cik_share_stats": {
+   "n_filings_with_any": 11608,
+   "n_filings_all_cross_cik": 0,
+   "mean": 0.10682020107112052,
+   "max": 0.8
+  },
   "chunks_with_multiple_source_ciks": 5706,
   "max_occurrences_for_one_chunk": 6220
  },
@@ -429,12 +446,36 @@
    "expected": 0
   },
   {
+   "name": "attribution_rule",
+   "passed": true,
+   "measured": "same_cik",
+   "expected": "same_cik"
+  },
+  {
+   "name": "attribution_same_cik_only",
+   "passed": true,
+   "measured": 0,
+   "expected": 0
+  },
+  {
+   "name": "attribution_dropped_exactly_the_cross_cik_rows",
+   "passed": true,
+   "measured": 99636,
+   "expected": 99636
+  },
+  {
    "name": "filing_date_and_form_unique_per_key",
    "passed": true,
    "measured": {
     "multi_date": 0,
     "multi_form": 0
    },
+   "expected": 0
+  },
+  {
+   "name": "cross_cik_share_defined_on_every_row",
+   "passed": true,
+   "measured": 0,
    "expected": 0
   },
   {
@@ -595,7 +636,7 @@
    "passed": true,
    "measured": [
     0.0,
-    1.0
+    0.8
    ],
    "expected": "[0, 1]"
   },

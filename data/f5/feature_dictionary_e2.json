@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-11T05:48:52.441154+00:00",
+ "generated_utc": "2026-09-11T21:36:38.449481+00:00",
  "unit_of_observation": "one row per (cik, accession_number)",
  "company_key": "cik (E2 labels carry no ticker)",
  "partitions": {
@@ -96,9 +96,9 @@
  "features": {
   "n_text_chunks_attributed": {
    "partition": "confirmatory",
-   "definition": "Count of labeled chunks attributed to this filing under every-occurrence attribution (one per (chunk, occurrence) row).",
+   "definition": "Count of labeled chunks attributed to this filing under SAME-CIK every-occurrence attribution (one per (chunk, occurrence) row, occurrences under other companies excluded -- G3 decision 20).",
    "source": "labels_e2_v1 + chunks_v1 baked source_* arrays",
-   "caveat": "Attribution is the union over a chunk's paragraphs; see cross_cik_share."
+   "caveat": "Attribution is the union over a chunk's paragraphs, restricted to the chunk's own company; see cross_cik_share for what that dropped."
   },
   "share_chunks_risk_factors": {
    "partition": "confirmatory",
@@ -240,9 +240,9 @@
   },
   "cross_cik_share": {
    "partition": "diagnostic",
-   "definition": "Share of this filing's attributed chunks whose HOME filing belongs to a different CIK.",
+   "definition": "Share of the occurrence rows E1's every-occurrence rule WOULD have attached to this filing whose chunk is homed at a different CIK. Measured on the unrestricted occurrence set; the features themselves use same-CIK attribution, so these rows are what was dropped.",
    "source": "chunks_v1.source_ciks vs chunks_v1.home_cik",
-   "caveat": "Measures the union-over-paragraphs attribution property described in the module docstring. Disposition is an open G3 question, not a default."
+   "caveat": "G3 decision 20 (owner ruling 2026-09-11): attribution is same-CIK; 99636 of 854933 occurrence rows (11.65%) were dropped by that rule. E1's rule remains buildable as a named sensitivity."
   },
   "n_chunks_risk_factors": {
    "partition": "diagnostic",

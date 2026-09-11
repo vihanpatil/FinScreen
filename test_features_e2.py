@@ -241,6 +241,67 @@ def test_explosion_rejects_a_desynchronised_length_column():
 
 
 # ---------------------------------------------------------------------------
+# same-CIK attribution -- G3 decision 20 (owner ruling 2026-09-11)
+# ---------------------------------------------------------------------------
+def test_shared_chunk_attaches_only_to_its_own_ciks_filings():
+    """A chunk homed at CIK 11 also occurs in CIK 22's filing (the shared
+    boilerplate case). Under the ruling it reaches only 11's filings, and the
+    diagnostic still reports what the E1 rule would have attached."""
+    occ_e1 = fe.explode_occurrences(fe.score_labels(frame_of(
+        make_chunk("c1", "MDA", sentiment="NEGATIVE", home_cik=11,
+                   sources=((11, "a1", "2020-01-01", "10-K"),
+                            (11, "a2", "2020-05-01", "10-Q"),
+                            (22, "b1", "2020-06-01", "10-Q"))),
+        make_chunk("c2", "MDA", sentiment="POSITIVE", home_cik=22,
+                   sources=((22, "b1", "2020-06-01", "10-Q"),)),
+    )), [])
+    assert len(occ_e1) == 4
+
+    occ = fe.restrict_attribution(occ_e1, "same_cik", [])
+    assert len(occ) == 3
+    assert (occ.cik == occ.home_cik).all()
+    assert not ((occ.cik == 22) & (occ.home_cik == 11)).any()
+
+    feats = fe.build_text_features(occ, [], occ_for_cross_cik=occ_e1).set_index(
+        ["cik", "accession_number"])
+    # CIK 22's filing keeps only its OWN chunk: POSITIVE, not the NEGATIVE one.
+    b1 = feats.loc[(22, "b1")]
+    assert b1.n_text_chunks_attributed == 1
+    assert b1.sentiment_mean_score == 1.0
+    # ... and the diagnostic still says half of what E1 would have attached
+    # to that filing came from another company.
+    assert b1.cross_cik_share == 0.5
+    # CIK 11's own filings are untouched by the rule.
+    assert feats.loc[(11, "a1")].n_text_chunks_attributed == 1
+    assert feats.loc[(11, "a2")].sentiment_mean_score == -1.0
+    assert feats.loc[(11, "a1")].cross_cik_share == 0.0
+
+    # The E1 rule stays reachable, unchanged, as the named sensitivity.
+    assert fe.restrict_attribution(occ_e1, "e1_all_ciks", []) is occ_e1
+    with pytest.raises(ValueError):
+        fe.restrict_attribution(occ_e1, "whatever", [])
+
+
+def test_a_filing_with_only_foreign_chunks_leaves_the_table():
+    """If every chunk reaching a filing is another company's, the ruling leaves
+    that filing with no text features at all -- it is dropped, not zero-filled."""
+    occ_e1 = fe.explode_occurrences(fe.score_labels(frame_of(
+        make_chunk("c1", "MDA", home_cik=11,
+                   sources=((11, "a1", "2020-01-01", "10-K"),
+                            (22, "b1", "2020-06-01", "10-Q"))),
+    )), [])
+    occ = fe.restrict_attribution(occ_e1, "same_cik", [])
+    feats = fe.build_text_features(occ, [], occ_for_cross_cik=occ_e1)
+    assert set(feats.cik) == {11}
+    assert "b1" not in set(feats.accession_number)
+
+
+def test_the_shipped_build_refuses_to_write_a_sensitivity_over_it():
+    with pytest.raises(ValueError, match="same-CIK"):
+        fe.build(attribution="e1_all_ciks")
+
+
+# ---------------------------------------------------------------------------
 # no backward flow -- E1's property, restated for E2
 # ---------------------------------------------------------------------------
 def test_no_backward_flow_passes_when_every_occurrence_is_at_or_after_home():
@@ -444,8 +505,15 @@ def test_real_build_reproduces_every_pinned_census_number(tmp_path, monkeypatch)
 
     census = manifest["census"]
     assert census["frame_rows"] == fe.N_FRAME
-    assert census["occurrence_rows"] == 854933
-    assert census["filings"] == len(feats) == 14446
+    # G3 decision 20: the E1 rule's 854,933 occurrence rows minus the 99,636
+    # (11.65%) that attach a chunk to another company's filing.
+    assert census["attribution_rule"] == "same_cik"
+    assert census["occurrence_rows_e1_rule"] == 854933
+    assert census["cross_cik_occurrence_rows"] == 99636
+    assert census["occurrence_rows"] == 755297
+    assert census["filings_e1_rule"] == 14446
+    assert census["filings_lost_to_same_cik_rule"] == 61
+    assert census["filings"] == len(feats) == 14385
     assert census["distinct_ciks"] == 176
     assert census["train_overlap_frame_chunks"] == fe.N_TRAIN_OVERLAP
     assert census["selfid_frame_chunks"] == fe.N_SELFID

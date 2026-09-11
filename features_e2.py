@@ -24,8 +24,10 @@ Unit of observation and the company key
 One row per (cik, accession_number); `filing_date` and `form` ride along.
 **CIK is the company key end to end.** E2 labels carry no ticker by design,
 and E1's accession->ticker 1:1 map (`features.build_accession_to_company_map`)
-has no E2 analogue. Measured on this corpus: 14,446 filings, 176 core CIKs,
-and no accession number maps to more than one CIK (0 violations).
+has no E2 analogue. Measured on this corpus: 14,446 filings receive at least
+one occurrence under E1's rule and 14,385 under the ruled same-CIK rule (see
+below), over 176 core CIKs, and no accession number maps to more than one CIK
+(0 violations).
 
 -----------------------------------------------------------------------
 Every-occurrence attribution -- the baked arrays ARE the primitive
@@ -56,16 +58,27 @@ the text of an attributed chunk is physically present in the filing it is
 attributed to, so no information dated after a filing's own filing_date can
 enter that filing's text features.
 
-A measured attribution property that G3 must see (NOT a defect this module
-decides): a chunk's occurrence set is the UNION over its paragraphs, so a
+SAME-CIK ATTRIBUTION (G3 decision 20, owner ruling 2026-09-11)
+--------------------------------------------------------------
+A chunk's occurrence set is the UNION over its paragraphs, so a
 company-specific passage that also contains one widely-shared boilerplate
-paragraph inherits that paragraph's whole occurrence set. 5,706 frame chunks
-(1.80%) have occurrences under >1 CIK, and 99,636 of 854,933 occurrence rows
-(11.65%) attach a chunk to a filing of a DIFFERENT company than its home.
-The extreme case is a Wells Fargo press-release chunk carrying a generic
-forward-looking-statements sentence: 6,220 filings across 169 CIKs. E1 saw
-one such case; E2 sees this. The per-filing diagnostic `cross_cik_share` is
-written so the disposition is an owner ruling at G3, not a silent default.
+paragraph inherits that paragraph's whole occurrence set. Measured on this
+corpus: 5,706 frame chunks (1.80%) have occurrences under >1 CIK, and 99,636
+of 854,933 occurrence rows (11.65%) attach a chunk to a filing of a DIFFERENT
+company than its home. The extreme case is a Wells Fargo press-release chunk
+carrying a generic forward-looking-statements sentence: 6,220 filings across
+169 CIKs.
+
+The owner ruled the default: **attribution is restricted to occurrences under
+the SAME CIK** (same-company every-occurrence). E1's 2026-08-11 every-occurrence
+ruling is kept reachable as a NAMED SENSITIVITY -- `ATTRIBUTION_RULE` /
+`--attribution e1_all_ciks` -- and is never what the shipped artifact carries.
+`cross_cik_share` stays materialized per filing row and keeps its published
+meaning: the share of the occurrence rows **the E1 rule would have attached to
+that filing** whose chunk is homed at another CIK. It is therefore computed on
+the unrestricted occurrence set even though the features are not; under the
+shipped rule it is a pure diagnostic of what was dropped, and 0.0 means nothing
+was.
 
 -----------------------------------------------------------------------
 Section masks (G2 §3.4) -- applied BEFORE aggregation
@@ -131,12 +144,14 @@ Cost: $0. No network, no API, no GPU.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
 import string
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 import numpy as np
 import pandas as pd
@@ -224,6 +239,11 @@ SELFID_DEFINITION = (
     "is longer than 2 characters (after stripping surrounding punctuation) and "
     "not in the generic-suffix stop list, lowercased, occurs in lower(text)."
 )
+
+# G3 decision 20 (owner, 2026-09-11). `same_cik` ships; `e1_all_ciks` is E1's
+# 2026-08-11 every-occurrence rule, kept only so the sensitivity is buildable.
+ATTRIBUTION_RULES = ("same_cik", "e1_all_ciks")
+ATTRIBUTION_RULE = "same_cik"
 
 CONFIRMATORY_FEATURES = [f for f in TEXT_FEATURE_NAMES_NON_REDFLAG if f != "share_chunks_8k_body"]
 EXPLORATORY_FEATURES = list(RED_FLAG_FEATURE_NAMES)
@@ -539,6 +559,30 @@ def explode_occurrences(frame: pd.DataFrame, assertions: list[dict]) -> pd.DataF
     return occ
 
 
+def restrict_attribution(occ: pd.DataFrame, rule: str,
+                         assertions: list[dict]) -> pd.DataFrame:
+    """Apply G3 decision 20 to the exploded occurrence table.
+
+    `same_cik` (the ruling, and what ships) keeps only the occurrences whose
+    filing belongs to the chunk's own company. `e1_all_ciks` returns the table
+    unchanged -- E1's rule, available for the sensitivity build only.
+    """
+    if rule not in ATTRIBUTION_RULES:
+        raise ValueError(f"attribution rule must be one of {ATTRIBUTION_RULES}")
+    if rule == "e1_all_ciks":
+        _check(assertions, "attribution_rule", True, rule, rule)
+        return occ
+    kept = occ[occ.cik == occ.home_cik].reset_index(drop=True)
+    _check(assertions, "attribution_rule", True, rule, rule)
+    _check(assertions, "attribution_same_cik_only",
+           bool((kept.cik == kept.home_cik).all()),
+           int((kept.cik != kept.home_cik).sum()), 0)
+    _check(assertions, "attribution_dropped_exactly_the_cross_cik_rows",
+           len(occ) - len(kept) == int((occ.cik != occ.home_cik).sum()),
+           len(occ) - len(kept), int((occ.cik != occ.home_cik).sum()))
+    return kept
+
+
 def verify_no_backward_flow(occ: pd.DataFrame, assertions: list[dict]) -> None:
     """E2 restatement of E1's `attach_company_and_verify_no_backward_flow`:
     no occurrence may attach to a filing dated BEFORE its own chunk's home
@@ -552,8 +596,15 @@ def verify_no_backward_flow(occ: pd.DataFrame, assertions: list[dict]) -> None:
 # ---------------------------------------------------------------------------
 # aggregation to one row per (cik, accession_number)
 # ---------------------------------------------------------------------------
-def build_text_features(occ: pd.DataFrame, assertions: list[dict]) -> pd.DataFrame:
+def build_text_features(occ: pd.DataFrame, assertions: list[dict],
+                        occ_for_cross_cik: Optional[pd.DataFrame] = None
+                        ) -> pd.DataFrame:
     """The 22 E1 feature definitions, CIK-keyed.
+
+    `occ` is the ATTRIBUTED occurrence table (same-CIK under G3 decision 20).
+    `occ_for_cross_cik`, when given, is the unrestricted E1-rule table that
+    `cross_cik_share` is measured on, so the diagnostic keeps saying what the
+    E1 rule would have attached rather than collapsing to 0.0 by construction.
 
     Every definition below is E1's, restated vectorially:
       share_chunks_<sec>   mean of (section_type == sec)          features.py:590
@@ -572,7 +623,6 @@ def build_text_features(occ: pd.DataFrame, assertions: list[dict]) -> pd.DataFra
     df["sent_notna"] = df.sentiment_num.notna()
     df["sent_is_neg"] = df.sentiment_num == -1.0
     df["guid_notna"] = df.guidance_num.notna()
-    df["is_cross_cik"] = df.cik != df.home_cik
 
     grouped = df.groupby(key, sort=True)
     nunique = grouped.agg(nd=("filing_date", "nunique"), nf=("form", "nunique"))
@@ -592,9 +642,16 @@ def build_text_features(occ: pd.DataFrame, assertions: list[dict]) -> pd.DataFra
         n_guid_notna=("guid_notna", "sum"),
         train_overlap_share=("train_overlap", "mean"),
         selfid_share=("selfid", "mean"),
-        cross_cik_share=("is_cross_cik", "mean"),
         **{f"share_chunks_{sec.lower()}": (f"is_{sec}", "mean") for sec in TEXT_SECTION_TYPES},
     ).reset_index()
+
+    ref = occ if occ_for_cross_cik is None else occ_for_cross_cik
+    cross = (ref.assign(_x=(ref.cik != ref.home_cik).astype(float))
+                .groupby(key, sort=True)["_x"].mean())
+    out["cross_cik_share"] = pd.MultiIndex.from_frame(out[key]).map(cross)
+    _check(assertions, "cross_cik_share_defined_on_every_row",
+           bool(out.cross_cik_share.notna().all()),
+           int(out.cross_cik_share.isna().sum()), 0)
 
     out["sentiment_negative_share"] = np.where(
         out.n_sent_notna > 0, out.n_sent_neg / out.n_sent_notna.replace(0, np.nan), np.nan)
@@ -724,10 +781,12 @@ def build_feature_dictionary(census: dict, caveats: dict) -> dict:
                           "source": source, "caveat": caveat}
 
     add("n_text_chunks_attributed", "confirmatory",
-        "Count of labeled chunks attributed to this filing under every-occurrence "
-        "attribution (one per (chunk, occurrence) row).",
+        "Count of labeled chunks attributed to this filing under SAME-CIK "
+        "every-occurrence attribution (one per (chunk, occurrence) row, "
+        "occurrences under other companies excluded -- G3 decision 20).",
         "labels_e2_v1 + chunks_v1 baked source_* arrays",
-        "Attribution is the union over a chunk's paragraphs; see cross_cik_share.")
+        "Attribution is the union over a chunk's paragraphs, restricted to the "
+        "chunk's own company; see cross_cik_share for what that dropped.")
     for sec in TEXT_SECTION_TYPES:
         name = f"share_chunks_{sec.lower()}"
         add(name,
@@ -786,11 +845,16 @@ def build_feature_dictionary(census: dict, caveats: dict) -> dict:
         "chunks_v1.home_company_name vs chunks_v1.text",
         "Disclosure of how often the labeler could see whose filing it was reading.")
     add("cross_cik_share", "diagnostic",
-        "Share of this filing's attributed chunks whose HOME filing belongs to a "
-        "different CIK.",
+        "Share of the occurrence rows E1's every-occurrence rule WOULD have "
+        "attached to this filing whose chunk is homed at a different CIK. "
+        "Measured on the unrestricted occurrence set; the features themselves "
+        "use same-CIK attribution, so these rows are what was dropped.",
         "chunks_v1.source_ciks vs chunks_v1.home_cik",
-        "Measures the union-over-paragraphs attribution property described in the "
-        "module docstring. Disposition is an open G3 question, not a default.")
+        "G3 decision 20 (owner ruling 2026-09-11): attribution is same-CIK; "
+        f"{census['cross_cik_occurrence_rows']} of "
+        f"{census['occurrence_rows_e1_rule']} occurrence rows "
+        f"({census['cross_cik_occurrence_share'] * 100:.2f}%) were dropped by "
+        "that rule. E1's rule remains buildable as a named sensitivity.")
     for sec in ("risk_factors", "mda", "ex99_press_release"):
         add(f"n_chunks_{sec}", "diagnostic",
             f"Count of attributed {sec.upper()} chunks -- the denominator of that "
@@ -823,7 +887,18 @@ def build_feature_dictionary(census: dict, caveats: dict) -> dict:
 # ---------------------------------------------------------------------------
 # build
 # ---------------------------------------------------------------------------
-def build() -> tuple[pd.DataFrame, dict, dict]:
+def build(attribution: str = ATTRIBUTION_RULE,
+          outdir: Optional[Path] = None) -> tuple[pd.DataFrame, dict, dict]:
+    if attribution not in ATTRIBUTION_RULES:
+        raise ValueError(f"attribution must be one of {ATTRIBUTION_RULES}")
+    out_parquet = OUT_PARQUET if outdir is None else Path(outdir) / OUT_PARQUET.name
+    out_manifest = OUT_MANIFEST if outdir is None else Path(outdir) / OUT_MANIFEST.name
+    out_dict = OUT_DICTIONARY if outdir is None else Path(outdir) / OUT_DICTIONARY.name
+    if attribution != ATTRIBUTION_RULE and out_parquet == OUT_PARQUET:
+        raise ValueError(
+            "the shipped artifact carries the same-CIK rule (G3 decision 20); "
+            "build a sensitivity with --outdir pointing somewhere else")
+
     assertions: list[dict] = []
     t0 = datetime.now(timezone.utc)
 
@@ -856,22 +931,33 @@ def build() -> tuple[pd.DataFrame, dict, dict]:
            int(frame.selfid.sum()) == N_SELFID, int(frame.selfid.sum()), N_SELFID)
 
     frame, census = apply_masks(frame, assertions)
-    occ = explode_occurrences(frame, assertions)
-    verify_no_backward_flow(occ, assertions)
+    occ_e1 = explode_occurrences(frame, assertions)
+    verify_no_backward_flow(occ_e1, assertions)
 
-    multi_cik_acc = int((occ.groupby("accession_number").cik.nunique() > 1).sum())
+    multi_cik_acc = int((occ_e1.groupby("accession_number").cik.nunique() > 1).sum())
     _check(assertions, "no_accession_maps_to_multiple_ciks",
            multi_cik_acc == 0, multi_cik_acc, 0)
 
-    features = build_text_features(occ, assertions)
+    # G3 decision 20: the features are built on the attributed set; the
+    # cross-CIK diagnostic is measured on what the E1 rule would have attached.
+    occ = restrict_attribution(occ_e1, attribution, assertions)
+    features = build_text_features(occ, assertions, occ_for_cross_cik=occ_e1)
 
+    e1_keys = occ_e1.groupby(["cik", "accession_number"]).ngroups
     census.update({
         "corpus_rows": N_CORPUS,
         "frame_rows": int(len(frame)),
         "chunks_8k_body_excluded": N_8K_BODY,
+        "attribution_rule": attribution,
+        "attribution_rule_source": "G3 decision 20 (owner ruling 2026-09-11)",
         "occurrence_rows": int(len(occ)),
+        "occurrence_rows_e1_rule": int(len(occ_e1)),
+        "occurrence_rows_dropped_by_same_cik_rule": int(len(occ_e1) - len(occ)),
         "filings": int(len(features)),
+        "filings_e1_rule": int(e1_keys),
+        "filings_lost_to_same_cik_rule": int(e1_keys - len(features)),
         "distinct_ciks": int(features.cik.nunique()),
+        "distinct_ciks_e1_rule": int(occ_e1.cik.nunique()),
         "filing_date_min": str(features.filing_date.min().date()),
         "filing_date_max": str(features.filing_date.max().date()),
         "forms": occ.form.value_counts().to_dict(),
@@ -879,8 +965,14 @@ def build() -> tuple[pd.DataFrame, dict, dict]:
         "train_overlap_channels": channel_counts,
         "selfid_frame_chunks": int(frame.selfid.sum()),
         "selfid_frame_share": float(frame.selfid.mean()),
-        "cross_cik_occurrence_rows": int((occ.cik != occ.home_cik).sum()),
-        "cross_cik_occurrence_share": float((occ.cik != occ.home_cik).mean()),
+        "cross_cik_occurrence_rows": int((occ_e1.cik != occ_e1.home_cik).sum()),
+        "cross_cik_occurrence_share": float((occ_e1.cik != occ_e1.home_cik).mean()),
+        "cross_cik_share_stats": {
+            "n_filings_with_any": int((features.cross_cik_share > 0).sum()),
+            "n_filings_all_cross_cik": int((features.cross_cik_share == 1.0).sum()),
+            "mean": float(features.cross_cik_share.mean()),
+            "max": float(features.cross_cik_share.max()),
+        },
         "chunks_with_multiple_source_ciks": int(
             frame.source_ciks.map(lambda a: len(set(a)) > 1).sum()),
         "max_occurrences_for_one_chunk": int(frame.n_source_filings.max()),
@@ -889,18 +981,22 @@ def build() -> tuple[pd.DataFrame, dict, dict]:
     caveats = load_caveat_constants()
     dictionary = build_feature_dictionary(census, caveats)
 
-    F5_DIR.mkdir(parents=True, exist_ok=True)
-    features.to_parquet(OUT_PARQUET, index=False)
-    OUT_DICTIONARY.write_text(json.dumps(dictionary, indent=1) + "\n")
+    out_parquet.parent.mkdir(parents=True, exist_ok=True)
+    features.to_parquet(out_parquet, index=False)
+    out_dict.write_text(json.dumps(dictionary, indent=1) + "\n")
 
     runtime_s = (datetime.now(timezone.utc) - t0).total_seconds()
     manifest = {
         "artifact": "data/f5/text_features_e2.parquet",
-        "artifact_sha256": _sha256_file(OUT_PARQUET),
+        "artifact_sha256": _sha256_file(out_parquet),
         "module": "features_e2.py",
         "module_sha256": _sha256_file(Path(__file__)),
         "feature_dictionary": "data/f5/feature_dictionary_e2.json",
-        "feature_dictionary_sha256": _sha256_file(OUT_DICTIONARY),
+        "feature_dictionary_sha256": _sha256_file(out_dict),
+        "rebuild_note": (
+            "rebuilt 2026-09-11 under G3 decision 20 (owner ruling): same-CIK "
+            "attribution; cross_cik_share materialized"),
+        "attribution_rule": attribution,
         "generated_utc": t0.isoformat(),
         "runtime_seconds": runtime_s,
         "network_calls": 0,
@@ -925,21 +1021,49 @@ def build() -> tuple[pd.DataFrame, dict, dict]:
                 "source_filing_dates / source_forms / source_ciks ARE the primitive: "
                 "there is no E2 occurrence map to re-derive them from."
             ),
+            "attribution": (
+                "same_cik: a label attaches to every filing of ITS OWN company "
+                "in which its paragraph(s) occur (G3 decision 20, owner ruling "
+                "2026-09-11). e1_all_ciks -- E1's 2026-08-11 rule, every "
+                "occurrence regardless of company -- is a named sensitivity "
+                "reachable with --attribution, never the shipped artifact."
+            ),
+            "cross_cik_share": (
+                "Measured on the UNRESTRICTED (E1-rule) occurrence set: the "
+                "share of the occurrence rows the E1 rule would have attached "
+                "to this filing whose chunk is homed at another CIK. Under the "
+                "shipped same-CIK rule those rows are NOT in the features; the "
+                "column reports what was dropped."
+            ),
         },
         "partitions": dictionary["partitions"],
         "census": census,
         "caveat_constants": caveats["raw"],
         "assertions": assertions,
     }
-    OUT_MANIFEST.write_text(json.dumps(manifest, indent=1) + "\n")
+    out_manifest.write_text(json.dumps(manifest, indent=1) + "\n")
     return features, manifest, dictionary
 
 
 def main() -> None:
-    features, manifest, _ = build()
-    print(f"wrote {OUT_PARQUET} -- {len(features)} filings, "
+    ap = argparse.ArgumentParser(
+        description="Build the E2 text feature table (no ICs, no associations).")
+    ap.add_argument("--attribution", choices=ATTRIBUTION_RULES,
+                    default=ATTRIBUTION_RULE,
+                    help="occurrence attribution rule (G3 decision 20); "
+                         "'e1_all_ciks' is the sensitivity and needs --outdir")
+    ap.add_argument("--outdir", default=None,
+                    help="write the three artifacts here instead of data/f5/")
+    args = ap.parse_args()
+
+    features, manifest, _ = build(attribution=args.attribution,
+                                  outdir=Path(args.outdir) if args.outdir else None)
+    print(f"attribution rule: {manifest['attribution_rule']}")
+    print(f"wrote {manifest['artifact']} -- {len(features)} filings, "
           f"{manifest['census']['distinct_ciks']} CIKs, "
-          f"{manifest['census']['occurrence_rows']} occurrence rows")
+          f"{manifest['census']['occurrence_rows']} occurrence rows "
+          f"({manifest['census']['occurrence_rows_dropped_by_same_cik_rule']} "
+          f"cross-CIK rows dropped)")
     print(f"assertions passed: {sum(a['passed'] for a in manifest['assertions'])}"
           f"/{len(manifest['assertions'])}")
     print(f"runtime: {manifest['runtime_seconds']:.1f}s")

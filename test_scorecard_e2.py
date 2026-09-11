@@ -13,13 +13,20 @@ cover every test row, the scorecard is written after the margin block, and a
 missing scorecard key refuses.
 
 What is pinned here:
-  * the tercile call rule, including its stable tie-break;
+  * the tercile call rule, and the pre-registered tie rule: a tie group that
+    straddles a tercile boundary is "no call" in FULL (red-team M3);
   * "correct" = a sign match, with an exactly-zero excess NOT correct, and
-    "no call" rows shown but never scored;
+    "no call" (declined) kept apart from "unresolved outcome" (red-team S5);
+  * chance under this call rule is 0.50 BY CONSTRUCTION -- measured against a
+    random-call simulation whose outcome mix is 0.30 (red-team M4);
   * the Wilson interval against a hand-computed value;
-  * the per-company interval is withheld below the pre-registered minimum
-    number of calls;
-  * every scorecard page carries the three mandatory sentences verbatim.
+  * below the pre-registered minimum number of calls a company gets ROWS ONLY
+    -- no rate, no numerator, no interval (red-team M1);
+  * every scorecard page carries the mandatory sentences verbatim AND the
+    fixed disclosure block, with "G2 caveats unavailable" rather than a
+    missing line when the artifact cannot be read (red-team M5);
+  * `build_scorecard` refuses without the margin block, so the page cannot
+    reach disk before the equivalence margin (red-team N2).
 """
 
 from __future__ import annotations
@@ -51,10 +58,24 @@ def _params(min_calls: int = 6) -> dict:
             "call_rule": "tercile_within_test_quarter",
             "outcome_col": "target_excess_63",
             "correct_rule": "sign_match_nonzero",
+            "tie_rule": "average_rank_straddle_no_call",
             "min_calls_for_company_hit_rate": min_calls,
             "ci": "wilson_95",
         }
     }
+
+
+def _margin(status: str = "UNPOWERED") -> dict:
+    """The shape `build_scorecard` needs: enough of a margin block to prove one
+    was computed first (red-team N2)."""
+    return {"status": status, "delta_selected": None, "k_folds": 6}
+
+
+def _disclosures(**over) -> dict:
+    """A disclosure block shaped like `backtest_e2.build_disclosures`'s."""
+    block = {key: f"{label} disclosure for a test." for key, label in SC.DISCLOSURE_ORDER}
+    block.update(over)
+    return block
 
 
 def _records(
@@ -96,12 +117,15 @@ def _records(
 
 def test_tercile_call_rule():
     """Within a (test_quarter, block): top third -> outperform, bottom third
-    -> underperform, middle third -> no call. Ties break by stable rank order
-    (`rank(method="first")` over the record frame's own row order)."""
+    -> underperform, middle third -> no call. Ties go through the pinned tie
+    rule (see `test_tie_group_straddling_a_boundary_is_no_call`), never through
+    the record frame's row order."""
     records = _records(predictions=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0])
     called = SC.make_calls(records, _params())
     assert list(called["call"]) == [SC.CALL_UNDER] * 3 + [SC.CALL_NONE] * 3 + [SC.CALL_OUT] * 3
     assert called["percentile"].is_monotonic_increasing
+    assert not called["tied_no_call"].any()
+    assert set(called["tie_rule"]) == {"average_rank_straddle_no_call"}
 
     # ... and the tercile is per quarter AND per block, not pooled
     other = _records(predictions=[10.0, 11.0, 12.0], quarter="2020Q2", start_cik=200)
@@ -110,11 +134,66 @@ def test_tercile_call_rule():
     q2 = calls[calls["test_quarter"] == "2020Q2"]
     assert list(q2["call"]) == [SC.CALL_UNDER, SC.CALL_NONE, SC.CALL_OUT]
 
-    # ties: three identical predictions are ordered by the frame's row order
-    tied = _records(predictions=[5.0, 5.0, 5.0], start_cik=300)
-    tied_calls = SC.make_calls(tied, _params())
-    assert list(tied_calls["call"]) == [SC.CALL_UNDER, SC.CALL_NONE, SC.CALL_OUT]
-    assert list(tied_calls["accession_number"]) == list(tied["accession_number"])
+
+def test_tie_group_straddling_a_boundary_is_no_call():
+    """Tie rule `average_rank_straddle_no_call` (red-team M3).
+
+    A tie group whose ordinal positions span a tercile boundary is "no call" in
+    FULL -- no member of it may be called by an accident of filing order. A tie
+    group that sits entirely inside one third keeps that third's call."""
+    # 9 rows; three tied predictions occupy ordinal positions 6-8, which span
+    # the top-third boundary (0.611 is the middle third, 0.833 is the top).
+    preds = [0.0, 1.0, 2.0, 3.0, 4.0, 9.0, 9.0, 9.0, 20.0]
+    called = SC.make_calls(_records(predictions=preds), _params())
+    straddling = called.iloc[5:8]
+    assert list(straddling["call"]) == [SC.CALL_NONE] * 3, "the whole tie group is 'no call'"
+    assert straddling["tied_no_call"].all()
+    # ... every member shares one percentile, so no ordering could split them
+    assert straddling["percentile"].nunique() == 1
+    # ... and the untied rows are unaffected, above and below
+    assert list(called.iloc[:5]["call"]) == [SC.CALL_UNDER] * 3 + [SC.CALL_NONE] * 2
+    assert called.iloc[8]["call"] == SC.CALL_OUT
+    assert not called.iloc[[0, 1, 2, 3, 4, 8]]["tied_no_call"].any()
+
+    # a tie group entirely inside one third KEEPS its call: positions 1 and 2
+    # of 9 are both in the bottom third.
+    inside = SC.make_calls(
+        _records(predictions=[0.0, 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]), _params()
+    )
+    assert list(inside.iloc[:2]["call"]) == [SC.CALL_UNDER, SC.CALL_UNDER]
+    assert not inside["tied_no_call"].any()
+
+    # and the tie rule is pre-registered like every other named rule
+    bad = _params()
+    bad["scorecard"]["tie_rule"] = "break_by_filing_date"
+    with pytest.raises(ValueError) as exc:
+        SC.make_calls(_records(predictions=[0.0, 1.0, 2.0]), bad)
+    assert "no implementation" in str(exc.value)
+
+
+def test_chance_line_is_half_by_construction():
+    """Red-team M4: the comparison is 0.50 under this call rule, NOT the
+    outcome mix. A random call rule on a fixture whose outcome mix is 0.30
+    scores ~0.50, which is exactly why the base rate is not the yardstick."""
+    assert "0.50 by construction" in SC.CHANCE_SENTENCE
+    rng = np.random.default_rng(11)
+    n = 3000
+    excess = np.where(rng.random(n) < 0.30, 0.05, -0.05)   # outcome mix 0.30
+    records = _records(
+        predictions=list(rng.normal(size=n)),               # calls at random
+        excess=list(excess),
+        ciks=list(rng.integers(100, 140, size=n)),
+    )
+    scored = SC.score_calls(SC.make_calls(records, _params()))
+    summary = SC.universe_summary(scored)
+    model = summary["blocks"]["text_and_numeric"]
+    assert summary["outcome_mix_positive_excess"] == pytest.approx(0.30, abs=0.03)
+    assert model["hit_rate"] == pytest.approx(0.50, abs=0.04), "random calls score chance"
+    assert model["chance_under_call_rule"] == 0.5
+    assert summary["chance_sentence"] == SC.CHANCE_SENTENCE
+    # the calls really are balanced by construction -- that is where 0.50 comes from
+    counts = scored["call"].value_counts()
+    assert counts[SC.CALL_OUT] == pytest.approx(counts[SC.CALL_UNDER], rel=0.02)
 
 
 def test_only_the_primary_arms_deduplicated_rows_are_scored():
@@ -174,6 +253,25 @@ def test_correct_rule_zero_excess_is_not_correct():
     assert len(no_call) == 3 and no_call["correct"].isna().all()
     assert set(scored["correct_rule"]) == {"sign_match_nonzero"}
 
+    # red-team S5: "no call" (the model declined) and "unresolved outcome"
+    # (the model called, the outcome is missing) are DIFFERENT things and are
+    # counted apart; neither is in the hit-rate denominator.
+    with_gap = _records(
+        predictions=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0],
+        excess=[np.nan, -0.02, 0.03, 0.05, -0.05, 0.0, 0.0, 0.04, -0.01],
+    )
+    gapped = SC.score_calls(SC.make_calls(with_gap, _params()))
+    assert list(gapped["is_unresolved"]) == [True] + [False] * 8
+    assert list(gapped["is_no_call"]) == [False] * 3 + [True] * 3 + [False] * 3
+    assert gapped.loc[0, "correct"] != gapped.loc[0, "correct"]  # NaN, not "wrong"
+    summary = SC.universe_summary(gapped)["blocks"]["text_and_numeric"]
+    assert summary["n_calls"] == 5
+    assert summary["n_no_call"] == 3 and summary["n_unresolved"] == 1
+    assert summary["n_tied_no_call"] == 0
+    assert summary["n_calls"] + summary["n_no_call"] + summary["n_unresolved"] == 9
+    for piece in ("5 scored calls", "3 'no call'", "1 with an unresolved outcome"):
+        assert piece in summary["denominator"]
+
 
 # ---------------------------------------------------------------------------
 # 3. Intervals
@@ -225,7 +323,11 @@ def _scored_for_two_companies(n_a: int, n_b: int) -> pd.DataFrame:
     return SC.score_calls(pd.DataFrame(rows))
 
 
-def test_company_hit_rate_needs_min_calls():
+def test_company_below_min_calls_has_no_rate(tmp_path):
+    """§14, red-team M1: below `min_calls_for_company_hit_rate` a company gets
+    ROWS ONLY -- no hit rate, no numerator and no interval, in the JSON and on
+    the page. (This test used to assert the opposite: that the rate was still
+    shown while only the interval was withheld.)"""
     scored = _scored_for_two_companies(n_a=6, n_b=3)
     tables = SC.company_tables(scored, names={}, min_calls=6)
     by_cik = {e["cik"]: e for e in tables}
@@ -234,17 +336,28 @@ def test_company_hit_rate_needs_min_calls():
     assert a["n_calls"] == 6 and a["hit_rate"] == pytest.approx(3 / 6)
     assert a["wilson_lo"] is not None and a["wilson_hi"] is not None
     assert (a["wilson_lo"], a["wilson_hi"]) == SC.wilson_interval(3, 6)
+    assert "rate_withheld" not in a
 
     b = by_cik[222]["summary"]
-    assert b["n_calls"] == 3
-    assert b["hit_rate"] == pytest.approx(2 / 3), "the rate is still shown"
-    assert b["wilson_lo"] is None and b["wilson_hi"] is None, "the interval is withheld"
-    assert "fewer than 6 calls" in b["interval_withheld"]
-    # the base rate is that company's own share of positive excess returns
-    assert b["base_rate"] == pytest.approx(2 / 3)
+    assert b["n_calls"] == 3, "the call COUNT is still shown"
+    assert b["hit_rate"] is None and b["n_correct"] is None, "no rate, no numerator"
+    assert b["wilson_lo"] is None and b["wilson_hi"] is None, "no interval"
+    assert b["rate_withheld"] == "rows only (fewer than 6 calls, §14)"
+    # the outcome mix is that company's own share of positive excess returns
+    assert b["outcome_mix"] == pytest.approx(2 / 3)
+
+    # ... and the rendered page prints no rate for that company either
+    text = SC.write_scorecard(
+        scored, SC.universe_summary(scored), tables,
+        tmp_path / "s.md", tmp_path / "s.json", tmp_path / "s.parquet",
+    )
+    section = text.split("### CIK 222")[1]
+    assert "rows only (fewer than 6 calls, §14)" in section
+    assert "hit rate" not in section.split("| quarter |")[0]
 
     # the threshold is the pre-registered parameter, not a constant here
     relaxed = {e["cik"]: e for e in SC.company_tables(scored, names={}, min_calls=3)}
+    assert relaxed[222]["summary"]["hit_rate"] == pytest.approx(2 / 3)
     assert relaxed[222]["summary"]["wilson_lo"] is not None
 
 
@@ -296,7 +409,7 @@ def test_universe_summary_covers_every_block_and_the_mandatory_sentences():
     assert model["n_calls"] == 2 and model["n_correct"] == 2
     assert (model["wilson_lo"], model["wilson_hi"]) == SC.wilson_interval(2, 2)
     assert summary["n_filings_scored"] == 3 and summary["n_companies"] == 3
-    assert summary["base_rate_positive_excess"] == pytest.approx(1 / 3)
+    assert summary["outcome_mix_positive_excess"] == pytest.approx(1 / 3)
     assert summary["inference_sentence"] == SC.INFERENCE_SENTENCE
     assert summary["prices_sentence"] == SC.prices_sentence()
     from backtest_e2 import SCOPE_SENTENCE
@@ -322,6 +435,8 @@ def test_write_scorecard_page_carries_the_three_sentences(tmp_path):
     summary, scored = SC.build_scorecard(
         records,
         _params(min_calls=2),
+        _margin(),
+        _disclosures(),
         tmp_path / "head1_scorecard.md",
         tmp_path / "head1_scorecard.json",
         tmp_path / "head1_oof_predictions.parquet",
@@ -349,6 +464,81 @@ def test_write_scorecard_page_carries_the_three_sentences(tmp_path):
     assert len(rows) == len(scored) == 9
     assert set(rows["block"]) == {"text_and_numeric", "numeric_only", "size_only"}
     assert "correct" in rows.columns and "call" in rows.columns
+
+
+def test_scorecard_page_carries_the_disclosure_block(tmp_path, synth):
+    """Red-team M5: the page the owner reads STANDALONE carries the fixed
+    disclosure block -- label quality, train overlap at both grains, the
+    extraction hole, the unconverted CAD reporter, price censoring, what the
+    returns are and what the peers are. The sentences are built by the runner
+    from its own artifacts; this module types none of them."""
+    frame, _diag = synth
+    disclosures = E.build_disclosures(
+        frame, {"gld_exclude_from_analysis": True, "n_gld_rows_excluded": 28}
+    )
+    assert set(disclosures) == {key for key, _ in SC.DISCLOSURE_ORDER}
+
+    records = _records(predictions=[0.0, 1.0, 2.0], excess=[-0.01, 0.0, 0.02])
+    SC.build_scorecard(
+        records, _params(min_calls=1), _margin(), disclosures,
+        tmp_path / "card.md", tmp_path / "card.json", tmp_path / "card.parquet",
+    )
+    text = (tmp_path / "card.md").read_text()
+
+    for _key, label in SC.DISCLOSURE_ORDER:
+        assert f"**{label}.**" in text
+    for phrase in (
+        "model-produced, not human ground truth",
+        "NEGATIVE recall",
+        "TEACHER spot-check",
+        "Two different questions, both stated",
+        "chunk level",
+        "filing level",
+        "never_extracted_periodic",
+        "Enbridge (CIK 895728)",
+        "decision 7",
+        "absence is outcome-correlated",
+        "Price return only -- dividends not included",
+        "no transaction costs, taxes, slippage or position sizing",
+        "out-of-fold, backtested, no money invested",
+        "equal-weighted average of all universe members, both strata, GLD excluded, "
+        "excluding the company itself",
+        "28 GLD rows were removed",
+    ):
+        assert phrase in text, phrase
+    # the measured numbers come from the artifacts, when those exist
+    if E.G2_RESULTS_PATH.exists():
+        for number in ("86.94%", "INDETERMINATE", "96.64%", "68.67%", "28.00%", "42.00%"):
+            assert number in text, number
+    if E.CENSUS_E2_PATH.exists():
+        assert "universe CIKs have no extracted periodic sections" in text
+    if SC.TARGET_MANIFEST_PATH.exists():
+        # the counts come from the manifest, so this asserts the shape, never a
+        # number a parallel rebuild is free to move
+        assert "universe members are without usable prices" in text
+        assert "n/a of n/a" not in text
+
+    # an unreadable G2 file SAYS SO on the page -- it never drops the line
+    blind = E.build_disclosures(
+        frame, {}, g2_path=tmp_path / "no_such_results_g2.json"
+    )
+    assert blind["labels"].startswith("G2 caveats unavailable")
+    SC.build_scorecard(
+        records, _params(min_calls=1), _margin(), blind,
+        tmp_path / "blind.md", tmp_path / "blind.json", tmp_path / "blind.parquet",
+    )
+    blind_text = (tmp_path / "blind.md").read_text()
+    assert "**Label quality.** G2 caveats unavailable" in blind_text
+    assert "**Peer benchmark.**" in blind_text
+
+    # an EMPTY disclosure block refuses rather than printing a bare page
+    with pytest.raises(ValueError) as exc:
+        SC.build_scorecard(
+            records, _params(min_calls=1), _margin(), {},
+            tmp_path / "never.md", tmp_path / "never.json", tmp_path / "never.parquet",
+        )
+    assert "disclosure block is empty" in str(exc.value)
+    assert not (tmp_path / "never.md").exists()
 
 
 def test_company_sections_are_sorted_by_display_name(tmp_path):
@@ -462,11 +652,30 @@ def test_oof_records_cover_every_test_row(synth, synth_params):
     }
 
 
-def test_scorecard_is_written_after_the_margin_block(head1_run):
+def test_scorecard_is_written_after_the_margin_block(head1_run, tmp_path):
     doc, out, params = head1_run
     keys = list(doc.keys())
     assert keys[0] == "margin"
     assert keys.index("scorecard_summary") > keys.index("per_fold_primary_delta_dedup")
+
+    # red-team N2: the ordering guarantee now covers the DISK WRITE, not only
+    # the results payload -- `build_scorecard` takes the margin block itself and
+    # refuses without one, so no page can precede the margin through any door.
+    for absent in (None, {}):
+        with pytest.raises((E.OrderingViolation, ValueError)) as exc:
+            SC.build_scorecard(
+                _records(predictions=[0.0, 1.0, 2.0]),
+                _params(min_calls=1),
+                absent,
+                _disclosures(),
+                tmp_path / "early.md",
+                tmp_path / "early.json",
+                tmp_path / "early.parquet",
+            )
+        assert "margin" in str(exc.value)
+        assert not (tmp_path / "early.md").exists()
+    # the margin block travels onto the page's own JSON summary
+    assert doc["scorecard_summary"]["margin"]["status"] == doc["margin"]["status"]
 
     card = doc["scorecard_summary"]
     assert card["arm"] == S.PRIMARY_SPEC and card["eval_set"] == "dedup"
@@ -503,10 +712,14 @@ def test_missing_scorecard_key_is_a_refusal(tmp_path, synth_params):
 
     for group, key in (
         ("scorecard", "call_rule"),
+        ("scorecard", "tie_rule"),
         ("scorecard", "min_calls_for_company_hit_rate"),
         ("scorecard", "comparators"),
         ("fold_sensitivity", "train_window_quarters"),
         ("families", "novelty_sequential_exploratory"),
+        ("gld", "exclude_from_analysis"),
+        ("gld", "included_sensitivity_arm"),
+        ("columns", "exploratory_novelty_seq"),
     ):
         bad = json.loads(json.dumps(synth_params))
         del bad[group][key]
@@ -523,7 +736,8 @@ def test_missing_scorecard_key_is_a_refusal(tmp_path, synth_params):
     assert "scorecard.arm" in str(exc.value)
 
     for key, value in (("ci", "plus_minus_two_sigma"), ("arm", "raw_levels"),
-                       ("correct_rule", "any_direction"), ("eval_set", "raw")):
+                       ("correct_rule", "any_direction"), ("eval_set", "raw"),
+                       ("tie_rule", "break_by_filing_date")):
         bad = json.loads(json.dumps(synth_params))
         bad["scorecard"][key] = value
         doc, rat = _doc(f"bad_{key}", bad)

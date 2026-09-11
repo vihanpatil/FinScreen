@@ -243,6 +243,62 @@ def test_benchmark_uses_membership_on_the_window_open_session(
     assert t["n_benchmark_unpriced"] == 1  # PEER_UNPRICED still a member
 
 
+def test_gld_is_excluded_from_the_peer_average(calendar):
+    """G3 decision 2 (owner 2026-09-11): a case where GLD's return WOULD move
+    the peer average, and does not -- while GLD keeps its own subject row."""
+    ciks = [SUBJECT, PEER_UP, T.GLD_CIK]
+    px = pd.DataFrame(100.0, index=calendar, columns=ciks)
+    sp = pd.DataFrame({"cik": ciks, "sector": "test", "stratum": "core",
+                       "member_from": pd.Timestamp("2019-01-01"),
+                       "member_to": pd.Timestamp("2200-01-01")})
+    mm = C.build_membership_matrix(sp, calendar)
+    o = calendar.get_loc(pd.Timestamp("2020-01-08")) + 1   # the window opens here
+    c = o + T.HOLDING_SESSIONS
+    px.iloc[c, px.columns.get_loc(SUBJECT)] = 110.0        # +10%
+    px.iloc[c, px.columns.get_loc(PEER_UP)] = 120.0        # +20%
+    px.iloc[c, px.columns.get_loc(T.GLD_CIK)] = 200.0      # +100%: dominates
+
+    row = filing(SUBJECT, "2020-01-08", "2020-01-08T14:30:00.000Z")
+    t = build(row, px, mm, sp).iloc[0]
+    assert t["benchmark_return_63"] == pytest.approx(0.20)  # PEER_UP alone
+    assert t["n_benchmark_members"] == 1
+    assert t["target_excess_63"] == pytest.approx(-0.10)
+
+    # The same rows with the sensitivity flag: GLD back in, average moves.
+    incl = T.build_targets(row, px, mm, sp, exclude_gld=False).iloc[0]
+    assert incl["benchmark_return_63"] == pytest.approx(0.60)
+    assert incl["n_benchmark_members"] == 2
+
+    # GLD stays a SUBJECT row with its own target (the analysis-side exclusion
+    # is backtest_e2's, not this table's).
+    g = build(filing(T.GLD_CIK, "2020-01-08", "2020-01-08T14:30:00.000Z"),
+              px, mm, sp).iloc[0]
+    assert bool(g["is_gld"]) is True
+    assert g["subject_return_63"] == pytest.approx(1.00)
+    assert g["benchmark_return_63"] == pytest.approx(0.15)  # mean(+0.10, +0.20)
+    assert g["n_benchmark_members"] == 2
+
+
+def test_benchmark_member_array_bounds_the_census_change(calendar):
+    """The member count may fall by at most one per session, and GLD's column
+    is genuinely off."""
+    ciks = [SUBJECT, PEER_UP, T.GLD_CIK]
+    sp = pd.DataFrame({"cik": ciks, "sector": "test", "stratum": "core",
+                       "member_from": pd.Timestamp("2019-01-01"),
+                       "member_to": pd.Timestamp("2200-01-01")})
+    mm = C.build_membership_matrix(sp, calendar)
+    cols = pd.Index(ciks)
+    arr, census = T.benchmark_member_array(mm, cols)
+    full, no_census = T.benchmark_member_array(mm, cols, exclude_gld=False)
+    assert census["gld_excluded"] is True
+    assert census["n_sessions_gld_was_a_member"] == len(calendar)
+    assert census["max_member_count_change_per_session"] == 1
+    assert not arr[:, list(cols).index(T.GLD_CIK)].any()
+    assert set((full.sum(axis=1) - arr.sum(axis=1)).tolist()) == {1}
+    assert no_census["gld_excluded"] is False
+    assert full.all()
+
+
 # ---------------------------------------------------------------------------
 # 3. Incompleteness
 # ---------------------------------------------------------------------------
@@ -359,13 +415,19 @@ def test_real_smoke_target_invariants(real_stack):
 
 
 def test_real_smoke_benchmark_is_ex_self(real_stack):
-    """Re-derive the benchmark by hand for real rows and compare."""
+    """Re-derive the benchmark by hand for real rows and compare.
+
+    The hand derivation drops self AND GLD (G3 decision 2), which is the rule
+    the table now implements -- restated here arithmetically rather than by
+    calling the module's own helper.
+    """
     prices, mm, spells, sample = real_stack
     t = T.build_targets(sample, prices, mm, spells)
     live = t[t["target_complete"] & t["in_membership"]
              & t["benchmark_return_63"].notna()].head(5)
     assert len(live) == 5
     member_arr = C.align_membership(mm, prices.columns)
+    gld_col = list(prices.columns).index(T.GLD_CIK)
     for r in live.itertuples(index=False):
         o = prices.index.get_loc(r.window_open_session)
         c = prices.index.get_loc(r.window_close_session)
@@ -378,6 +440,7 @@ def test_real_smoke_benchmark_is_ex_self(real_stack):
         col = list(prices.columns).index(r.cik)
         assert peers[col], "the subject must itself be a member on that session"
         peers[col] = False                       # ex-self, by hand
+        peers[gld_col] = False                   # G3 decision 2, by hand
         peer_rets = rets[peers]
         valid = np.isfinite(peer_rets)
         assert r.benchmark_return_63 == pytest.approx(float(peer_rets[valid].mean()))
@@ -400,10 +463,13 @@ def test_real_smoke_unpriced_members_are_counted_never_imputed(real_stack):
     # Never imputed: a member cell without price coverage never enters the mean,
     # so members-used + unpriced equals the membership count on that session.
     member_arr = C.align_membership(mm, prices.columns)
+    gld_col = list(prices.columns).index(T.GLD_CIK)
     for r in live.head(20).itertuples(index=False):
         o = prices.index.get_loc(r.window_open_session)
-        n_members_ex_self = int(member_arr[o].sum()) - int(
-            member_arr[o][list(prices.columns).index(r.cik)])
+        # ex-self and ex-GLD (G3 decision 2), both subtracted by hand
+        n_members_ex_self = (int(member_arr[o].sum())
+                             - int(member_arr[o][list(prices.columns).index(r.cik)])
+                             - int(member_arr[o][gld_col] and r.cik != T.GLD_CIK))
         assert r.n_benchmark_members + r.n_benchmark_unpriced == n_members_ex_self
 
 

@@ -47,7 +47,7 @@ argument:
 `window_open_session > info_date` always; that invariant is asserted on
 every run and is a test.
 
-BENCHMARK (E2's §3.3 proposal, still awaiting the owner's G3 ratification)
+BENCHMARK (E2's §3.3 proposal, ratified at G3; GLD excluded per decision 2)
 -------------------------------------------------------------------------
 Equal-weighted mean of the SAME 63-session window return over the universe
 members on the WINDOW-OPEN session, EXCLUDING self, membership-dated. The
@@ -57,6 +57,17 @@ stratum governs which FILINGS are scored, not who is in the average. Members
 without real price coverage at BOTH endpoints are COUNTED
 (`n_benchmark_unpriced`) and excluded from the mean -- never imputed, never
 forward-filled past a CIK's last observation.
+
+**GLD (CIK 1222333, SPDR GOLD TRUST) is EXCLUDED from the peer average on
+every session** -- G3 decision 2, owner ruling 2026-09-11 ("Default" =
+excluded from the benchmark average and from IC rows; one sensitivity row
+including it). A gold trust is not a peer of an operating company, so it is
+removed from the PEER SET here, at the benchmark half of the decision. It
+REMAINS a subject row with its own target (`is_gld` flags it), so the
+analysis-side exclusion belongs to `backtest_e2.py` and the sensitivity arm
+can put it back by rebuilding with `EXCLUDE_GLD_FROM_BENCHMARK = False`.
+Removing one CIK from the member set changes each session's benchmark member
+count by AT MOST ONE; that bound is asserted on every run, not assumed.
 
 E1 and E2 backtest numbers are NUMERICALLY INCOMPARABLE (different
 benchmark); any document quoting both must say so.
@@ -103,7 +114,11 @@ OUT_PARQUET = OUT_DIR / "target_e2.parquet"
 OUT_MANIFEST = OUT_DIR / "target_e2_manifest.json"
 
 HOLDING_SESSIONS = C.HOLDING_DAYS  # 63, from controls.SPEC -- never re-typed
-GLD_CIK = 1222333  # SPDR GOLD TRUST: kept and flagged; exclusion is a G3 call
+GLD_CIK = 1222333  # SPDR GOLD TRUST: kept as a subject row, flagged `is_gld`
+#: G3 decision 2 (owner, 2026-09-11): GLD is not a peer, so it is dropped from
+#: the equal-weighted peer average on every session. Flip to False and rebuild
+#: to produce the sensitivity arm that includes it.
+EXCLUDE_GLD_FROM_BENCHMARK = True
 
 OUTPUT_COLUMNS = [
     "cik", "accession_number", "form", "filing_date", "acceptance_datetime",
@@ -206,9 +221,45 @@ def count_boundary_rows(rows: pd.DataFrame, spells: pd.DataFrame) -> int:
 # ---------------------------------------------------------------------------
 
 
+def benchmark_member_array(member_mat: pd.DataFrame, price_columns: pd.Index,
+                           exclude_gld: bool = EXCLUDE_GLD_FROM_BENCHMARK
+                           ) -> tuple[np.ndarray, dict]:
+    """The PEER membership array `excess_return` averages over, plus its census.
+
+    `controls.align_membership` gives the full membership array; G3 decision 2
+    removes GLD's column from it. Nothing else about membership changes, so a
+    session's benchmark member count can fall by at most one -- asserted here
+    rather than asserted downstream on the counts it produces.
+    """
+    full = C.align_membership(member_mat, price_columns)
+    census = {
+        "gld_excluded": bool(exclude_gld),
+        "gld_cik": GLD_CIK,
+        "gld_has_a_price_column": bool(GLD_CIK in set(price_columns)),
+        "n_sessions_gld_was_a_member": 0,
+        "max_member_count_change_per_session": 0,
+    }
+    if not exclude_gld or GLD_CIK not in set(price_columns):
+        return full, census
+
+    col = list(price_columns).index(GLD_CIK)
+    arr = full.copy()
+    arr[:, col] = False
+    delta = full.sum(axis=1) - arr.sum(axis=1)
+    if int(delta.min()) < 0 or int(delta.max()) > 1:
+        raise AssertionError(
+            "excluding GLD changed a session's benchmark member count by "
+            f"{int(delta.min())}..{int(delta.max())}; the only admissible "
+            "change is 0 or 1 (G3 decision 2).")
+    census["n_sessions_gld_was_a_member"] = int(delta.sum())
+    census["max_member_count_change_per_session"] = int(delta.max())
+    return arr, census
+
+
 def build_targets(filings: pd.DataFrame, prices: pd.DataFrame,
                   member_mat: pd.DataFrame, spells: pd.DataFrame,
-                  holding_sessions: int = HOLDING_SESSIONS) -> pd.DataFrame:
+                  holding_sessions: int = HOLDING_SESSIONS,
+                  exclude_gld: bool = EXCLUDE_GLD_FROM_BENCHMARK) -> pd.DataFrame:
     """One row per filing with the forward excess-return target attached.
 
     Rows whose window cannot be completed against the price snapshot keep
@@ -219,7 +270,7 @@ def build_targets(filings: pd.DataFrame, prices: pd.DataFrame,
     cal = prices.index
     n_sessions = len(cal)
     price_arr = prices.to_numpy(dtype=float)
-    member_arr = C.align_membership(member_mat, prices.columns)
+    member_arr, _ = benchmark_member_array(member_mat, prices.columns, exclude_gld)
     cik_positions = {c: i for i, c in enumerate(prices.columns)}
 
     ev = C.resolve_sessions(filings, cal)
@@ -349,7 +400,7 @@ def quarter_census(t: pd.DataFrame) -> dict:
 
 
 def build_manifest(t: pd.DataFrame, prices: pd.DataFrame, shas: dict,
-                   counts: dict, runtimes: dict) -> dict:
+                   counts: dict, runtimes: dict, benchmark: dict) -> dict:
     inmem = t[t["in_membership"]]
     return {
         "artifact": "data/f5/target_e2.parquet",
@@ -365,8 +416,9 @@ def build_manifest(t: pd.DataFrame, prices: pd.DataFrame, shas: dict,
                            "(pre-close) / > info_date (post-close)",
             "benchmark": "equal-weighted mean 63-session return over the "
                          "universe members on the window-open session, "
-                         "EXCLUDING self, membership-dated (EXPANSION_PLAN "
-                         "§3.3 proposal, pending G3 ratification)",
+                         "EXCLUDING self and EXCLUDING GLD (CIK 1222333), "
+                         "membership-dated (EXPANSION_PLAN §3.3, G3 "
+                         "decision 2)",
             "benchmark_member_floor_applied": None,
             "e1_e2_comparability": "E1 and E2 backtest numbers are "
                                    "numerically incomparable (different "
@@ -374,6 +426,7 @@ def build_manifest(t: pd.DataFrame, prices: pd.DataFrame, shas: dict,
             "no_ic_computed": True,
         },
         "inputs": shas,
+        "benchmark": benchmark,
         "price_snapshot": {
             "path": "data/prices_e2.parquet",
             "sha256": shas["measured"]["prices_e2.parquet"],
@@ -462,6 +515,7 @@ def main() -> None:
     counts["n_complete_window_missing_benchmark"] = int(
         (t["target_complete"] & t["benchmark_return_63"].isna()).sum())
     counts["n_gld_rows"] = int(t["is_gld"].sum())
+    counts["n_gld_rows_in_membership"] = int((t["is_gld"] & t["in_membership"]).sum())
     counts["n_membership_boundary_rows_excluded_by_half_open_rule"] = \
         count_boundary_rows(t, spells)
     counts["benchmark_members_used"] = {
@@ -486,10 +540,21 @@ def main() -> None:
     STATUS_DIR.mkdir(parents=True, exist_ok=True)
     t.to_parquet(OUT_PARQUET, index=False)
 
+    _, bench_census = benchmark_member_array(member_mat, prices.columns)
+    bench_census["rule"] = (
+        "equal-weighted mean over that session's universe members, excluding "
+        "self and excluding GLD (CIK 1222333)")
+    bench_census["note"] = (
+        "rebuilt 2026-09-11 under G3 decision 2 (owner ruling)")
+    bench_census["gld_rows_kept_as_subjects"] = counts["n_gld_rows"]
+    bench_census["member_count_change_bound_asserted"] = (
+        "<= 1 member per session; a violation raises in "
+        "benchmark_member_array()")
+
     runtimes = {"sha_assert": round(t_sha, 2), "load": round(t_load, 2),
                 "build_targets": round(t_build, 2),
                 "total": round(time.time() - t0, 2)}
-    man = build_manifest(t, prices, shas, counts, runtimes)
+    man = build_manifest(t, prices, shas, counts, runtimes, bench_census)
     man["output_sha256"] = C._sha256_file(OUT_PARQUET)
     OUT_MANIFEST.write_text(json.dumps(man, indent=2, default=str))
 

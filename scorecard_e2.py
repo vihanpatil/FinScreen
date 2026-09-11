@@ -15,18 +15,37 @@ Hard boundaries, all of them load-bearing:
     rows the primary estimand uses. No forward-looking row, no company
     outside the run, no separate fit.
   * The call is a within-test-quarter tercile of the out-of-fold prediction,
-    fixed before any result was seen (`tercile_within_test_quarter`).
+    fixed before any result was seen (`tercile_within_test_quarter`), with
+    the pre-registered tie rule `average_rank_straddle_no_call`: percentiles
+    come from average ranks, and a tie group whose members would land on both
+    sides of a tercile boundary is "no call" in full (red-team M3, 2026-09-11
+    -- an arbitrary date-ordered tie-break inside `size_only`'s step-function
+    predictions would be a measurement artifact in the load-bearing
+    comparator). `n_tied_no_call` is printed per block and per company.
   * "Correct" is a sign match against the realized 63-session excess return
     versus the membership-dated peer benchmark; an excess of exactly zero is
-    NOT correct (`sign_match_nonzero`). "No call" rows are shown, never
-    scored.
+    NOT correct (`sign_match_nonzero`). "No call" rows (middle third or tie
+    rule) and "unresolved outcome" rows (no realized excess) are counted
+    SEPARATELY and neither is in the hit-rate denominator.
+  * CHANCE under this call rule is 0.50 BY CONSTRUCTION -- the terciles force
+    equal outperform/underperform counts, so a random assignment scores 0.50
+    whatever the outcome mix. That is the comparison line beside every hit
+    rate; the share of scored filings with a positive excess return is the
+    OUTCOME MIX, never a benchmark (red-team M4).
+  * Every page carries the fixed disclosure block the caller hands in
+    (label quality, train overlap, extraction coverage, currency, price
+    censoring, what the returns are, what the peers are -- red-team M5).
   * Hit rates are DESCRIPTIVE. The inference is the pre-registered IC margin
     ladder. Every page says so, verbatim, beside the numbers.
   * Nothing here is a trading signal, an expected return, or advice.
 
-Pure functions over pandas/numpy; no scipy, no framework, no state. The
-caller (`backtest_e2.run_head1`) owns the freeze guard, the fitting and the
-ordering rule -- this module is only reached after the margin block exists.
+Pure functions over pandas/numpy; no scipy, no framework, no state. It reads
+no feature table, no price and no filing of its own, and it never imports the
+app (`report_filing`): every disclosure number arrives as a string the caller
+already read from an artifact. The caller (`backtest_e2.run_head1`) owns the
+freeze guard, the fitting and the ordering rule -- and hands in the MARGIN
+BLOCK, without which `build_scorecard` refuses, so no scorecard can reach
+disk before the equivalence margin exists (red-team N2).
 """
 
 from __future__ import annotations
@@ -56,6 +75,7 @@ COMPANY_DB_PATHS = (
 #: The implemented named rules. A pre-registered name with no implementation
 #: here is a refusal, never a silent fallback (same rule as backtest_e2.py).
 IMPLEMENTED_CALL_RULES = ("tercile_within_test_quarter",)
+IMPLEMENTED_TIE_RULES = ("average_rank_straddle_no_call",)
 IMPLEMENTED_CORRECT_RULES = ("sign_match_nonzero",)
 IMPLEMENTED_CI_RULES = ("wilson_95",)
 IMPLEMENTED_EVAL_SETS = ("dedup",)
@@ -82,11 +102,38 @@ BLOCK_LABELS = {
     "size_only": "size only",
 }
 
-#: Printed verbatim at the top of every scorecard page (decision 3 + §11).
+#: Printed verbatim at the top of every scorecard page (decision 3 + §11), in
+#: the scorecard JSON, and in head 1's own report -- ONE constant, imported by
+#: `backtest_e2` rather than restated, so the three cannot drift (red-team S4).
 INFERENCE_SENTENCE = (
     "Hit rates are descriptive. The inference is the pre-registered IC margin ladder "
     "(§1, decision 15); a per-company hit rate over at most 33 quarters has a wide "
     "interval and proves nothing on its own."
+)
+
+#: The comparison line beside EVERY hit rate (red-team M4). Under the tercile
+#: rule the calls are balanced by construction, so the yardstick is 0.50 and
+#: NOT the outcome mix: a page that prints "hit rate 0.50 ... base rate 0.30"
+#: with no such line reads as a 20-point win over a benchmark when the model in
+#: fact matched chance.
+CHANCE_SENTENCE = (
+    "Chance under this call rule: 0.50 by construction (calls are balanced across "
+    "outperform/underperform; a random assignment scores 0.50 whatever the outcome mix)."
+)
+CHANCE_UNDER_CALL_RULE = 0.5
+
+#: The fixed disclosure block (red-team M5): (key, printed label), in print
+#: order. `build_scorecard` REQUIRES a non-empty dict; a key the caller did not
+#: supply prints as "not stated by this run" rather than vanishing, because a
+#: silently missing disclosure is indistinguishable from a clean one.
+DISCLOSURE_ORDER: tuple[tuple[str, str], ...] = (
+    ("labels", "Label quality"),
+    ("train_overlap", "Train overlap"),
+    ("extraction", "Extraction coverage"),
+    ("fx", "Currency"),
+    ("price_censoring", "Price censoring"),
+    ("returns", "What these returns are"),
+    ("peer_benchmark", "Peer benchmark"),
 )
 #: The no-price counts are READ from the target manifest at write time (measured
 #: `n_universe_member_ciks_absent_from_price_matrix` = 31 of 244 on 2026-09-11; an
@@ -122,6 +169,17 @@ def _dig(obj, key):
     return "n/a"
 
 
+def repo_relative(path) -> str:
+    """`path` as a repo-relative string when it is inside the repo, else
+    unchanged. The rendered report is committed, so an absolute
+    `/Users/...` path in it is a local artifact, not a reference (red-team
+    S6). A path outside the repo (a test's tmp dir) is left alone."""
+    try:
+        return str(Path(path).resolve().relative_to(REPO_ROOT))
+    except (ValueError, OSError):
+        return str(path)
+
+
 def scope_sentence() -> str:
     """The one fixed scope sentence, READ from `backtest_e2` so it can never
     drift from the runner's copy. Imported inside the function because
@@ -137,6 +195,15 @@ def scope_sentence() -> str:
 # ---------------------------------------------------------------------------
 
 
+def _call_from_percentile(pct) -> np.ndarray:
+    """Tercile of a percentile vector: >= 2/3 outperform, < 1/3 underperform,
+    the middle third "no call"."""
+    pct = np.asarray(pct, dtype=float)
+    return np.where(
+        pct >= 2.0 / 3.0, CALL_OUT, np.where(pct < 1.0 / 3.0, CALL_UNDER, CALL_NONE)
+    )
+
+
 def make_calls(records_df: pd.DataFrame, params: dict) -> pd.DataFrame:
     """Turn head 1's out-of-fold records into per-filing calls.
 
@@ -146,17 +213,30 @@ def make_calls(records_df: pd.DataFrame, params: dict) -> pd.DataFrame:
 
     Rule `tercile_within_test_quarter`: inside each (test_quarter, block), the
     prediction's percentile among that quarter's scored rows is
-    `(rank - 0.5) / n`, with TIES BROKEN BY STABLE RANK ORDER -- pandas
-    `rank(method="first")` over the frame's existing row order, which head 1
-    fixes as (filing_date, cik, accession_number). Top third
-    (percentile >= 2/3) -> "outperform peers"; bottom third (< 1/3) ->
-    "underperform peers"; the middle third -> "no call" (shown, never scored).
+    `(rank - 0.5) / n`. Top third (percentile >= 2/3) -> "outperform peers";
+    bottom third (< 1/3) -> "underperform peers"; the middle third -> "no call"
+    (shown, never scored).
+
+    Tie rule `average_rank_straddle_no_call` (pre-registered; red-team M3):
+    the rank is `method="average"`, so every member of a tie group gets the
+    SAME percentile and therefore the same call -- never a call decided by
+    filing order. When a tie group's ordinal positions span a tercile boundary
+    (`method="min"` and `method="max"` land on different sides), the WHOLE
+    group is "no call" and is flagged `tied_no_call`, because no ordering of
+    equal predictions could justify calling one member and not another.
+    `size_only` is a one-feature fit and therefore a step function, so this
+    fires on the load-bearing comparator, not on a corner case.
     """
     sc = params["scorecard"]
     if sc["call_rule"] not in IMPLEMENTED_CALL_RULES:
         raise ValueError(
             f"scorecard.call_rule {sc['call_rule']!r} has no implementation here "
             f"(implemented: {list(IMPLEMENTED_CALL_RULES)})."
+        )
+    if sc["tie_rule"] not in IMPLEMENTED_TIE_RULES:
+        raise ValueError(
+            f"scorecard.tie_rule {sc['tie_rule']!r} has no implementation here "
+            f"(implemented: {list(IMPLEMENTED_TIE_RULES)})."
         )
     if sc["eval_set"] not in IMPLEMENTED_EVAL_SETS:
         raise ValueError(
@@ -183,18 +263,23 @@ def make_calls(records_df: pd.DataFrame, params: dict) -> pd.DataFrame:
         & records_df["block"].isin(blocks)
     ].copy()
     if df.empty:
-        return df.assign(percentile=[], call=[])
+        return df.assign(percentile=[], call=[], tied_no_call=[], call_rule=[], tie_rule=[])
 
     df = df.reset_index(drop=True)
-    rank = df.groupby(["test_quarter", "block"])["prediction"].rank(method="first")
-    n = df.groupby(["test_quarter", "block"])["prediction"].transform("size")
-    df["percentile"] = (rank - 0.5) / n
-    df["call"] = np.where(
-        df["percentile"] >= 2.0 / 3.0,
-        CALL_OUT,
-        np.where(df["percentile"] < 1.0 / 3.0, CALL_UNDER, CALL_NONE),
-    )
+    grouped = df.groupby(["test_quarter", "block"])["prediction"]
+    n = grouped.transform("size")
+    rank_avg = grouped.rank(method="average")
+    rank_min = grouped.rank(method="min")
+    rank_max = grouped.rank(method="max")
+    df["percentile"] = (rank_avg - 0.5) / n
+    call = _call_from_percentile(df["percentile"].values)
+    lowest = _call_from_percentile(((rank_min - 0.5) / n).values)
+    highest = _call_from_percentile(((rank_max - 0.5) / n).values)
+    straddles = (rank_max.values > rank_min.values) & (lowest != highest)
+    df["tied_no_call"] = straddles
+    df["call"] = np.where(straddles, CALL_NONE, call)
     df["call_rule"] = sc["call_rule"]
+    df["tie_rule"] = sc["tie_rule"]
     return df
 
 
@@ -202,18 +287,33 @@ def score_calls(df: pd.DataFrame) -> pd.DataFrame:
     """Mark each call right or wrong (`sign_match_nonzero`).
 
     correct = ("outperform peers" and excess > 0) or ("underperform peers" and
-    excess < 0). An excess of EXACTLY zero is not correct. "No call" rows carry
-    `correct = NaN` -- they are shown and never scored."""
+    excess < 0). An excess of EXACTLY zero is not correct.
+
+    TWO different unscored kinds, kept apart (red-team S5) -- both used to
+    collapse into the same NaN, so the artifact could not tell them apart:
+
+      `is_no_call`    the model declined: the middle third, or a tie group
+                      straddling a tercile boundary (`tied_no_call`).
+      `is_unresolved` the model called, but the OUTCOME is missing (no
+                      realized excess return) -- a data gap, not a decision.
+
+    The three counts partition the rows: n_calls + n_no_call + n_unresolved.
+    Only n_calls is the hit-rate denominator, and every page says so."""
     out = df.copy()
+    if "tied_no_call" not in out.columns:
+        out["tied_no_call"] = False
     excess = out[OUTCOME_COL].astype(float)
+    is_no_call = out["call"] == CALL_NONE
+    is_unresolved = excess.isna() & ~is_no_call
     correct = (
         ((out["call"] == CALL_OUT) & (excess > 0))
         | ((out["call"] == CALL_UNDER) & (excess < 0))
     ).astype(float)
-    correct = correct.where(out["call"] != CALL_NONE, np.nan)
-    # An unresolved outcome is not a wrong call; it is not a call at all.
-    correct = correct.where(excess.notna(), np.nan)
+    correct = correct.where(~is_no_call, np.nan).where(~is_unresolved, np.nan)
     out["correct"] = correct
+    out["is_no_call"] = is_no_call.values
+    out["is_unresolved"] = is_unresolved.values
+    out["tied_no_call"] = out["tied_no_call"].fillna(False).astype(bool)
     out["correct_rule"] = "sign_match_nonzero"
     return out
 
@@ -239,18 +339,53 @@ def wilson_interval(k: int, n: int, z: float = 1.959964) -> tuple[float, float]:
     return (float(centre - half), float(centre + half))
 
 
+def _count(sub: pd.DataFrame, col: str) -> int:
+    if col not in sub.columns:
+        return 0
+    return int(sub[col].fillna(False).astype(bool).sum())
+
+
 def _hit_rate(sub: pd.DataFrame) -> dict:
+    """n_calls / n_correct / hit rate / Wilson interval, plus the two unscored
+    counts the denominator sentence names (red-team S5) and the chance line
+    that is the actual comparison (red-team M4)."""
     scored = sub[sub["correct"].notna()]
     n_calls = int(len(scored))
     n_correct = int(scored["correct"].sum())
     lo, hi = wilson_interval(n_correct, n_calls)
+    n_no_call = _count(sub, "is_no_call") or int((sub["call"] == CALL_NONE).sum())
+    n_tied = _count(sub, "tied_no_call")
+    n_unresolved = _count(sub, "is_unresolved")
     return {
+        "n_rows": int(len(sub)),
         "n_calls": n_calls,
         "n_correct": n_correct,
         "hit_rate": float(n_correct / n_calls) if n_calls else None,
         "wilson_lo": lo if n_calls else None,
         "wilson_hi": hi if n_calls else None,
+        "n_no_call": n_no_call,
+        "n_tied_no_call": n_tied,
+        "n_unresolved": n_unresolved,
+        "chance_under_call_rule": CHANCE_UNDER_CALL_RULE,
+        "denominator": (
+            f"Denominator = {n_calls} scored calls out of {len(sub)} rows: {n_no_call} 'no call' "
+            f"({n_tied} of them a tie group straddling a tercile boundary) and {n_unresolved} with "
+            "an unresolved outcome are excluded, and the two are different things."
+        ),
     }
+
+
+def _withhold_rate_below_min_calls(summary: dict, min_calls: int) -> dict:
+    """§14, red-team M1: below `min_calls` a company gets ROWS ONLY -- no hit
+    rate, no numerator, no interval, in the markdown AND in the JSON. Nulling
+    only the interval (as this module first did) still published the rate."""
+    if summary["n_calls"] < int(min_calls):
+        summary["hit_rate"] = None
+        summary["n_correct"] = None
+        summary["wilson_lo"] = None
+        summary["wilson_hi"] = None
+        summary["rate_withheld"] = f"rows only (fewer than {int(min_calls)} calls, §14)"
+    return summary
 
 
 # ---------------------------------------------------------------------------
@@ -306,10 +441,12 @@ def company_tables(
     the quarter, form, public filing date, the realized excess return AS A
     PERCENTAGE, and the call + right/wrong for the model and both comparators.
 
-    `summary`: the MODEL block's n_calls / n_correct / hit_rate, with a Wilson
-    95% interval ONLY when n_calls >= `min_calls` (otherwise None -- rows only,
-    per §14), plus that company's base rate: the share of its scored filings
-    whose excess return was positive."""
+    `summary`: the MODEL block's counts, with a hit rate, a numerator and a
+    Wilson 95% interval ONLY when n_calls >= `min_calls` -- otherwise all four
+    are None and the page prints "rows only" (§14, red-team M1), plus that
+    company's OUTCOME MIX (the share of its scored filings whose excess return
+    was positive), which is a description of the period and NOT the yardstick:
+    the yardstick is 0.50 by construction (`CHANCE_SENTENCE`)."""
     entries = []
     if scored.empty:
         return entries
@@ -346,17 +483,12 @@ def company_tables(
             rows.append(row)
 
         model_rows = sub[sub["block"] == model_block]
-        summary = _hit_rate(model_rows)
-        if summary["n_calls"] < int(min_calls):
-            summary["wilson_lo"] = None
-            summary["wilson_hi"] = None
-            summary["interval_withheld"] = (
-                f"fewer than {int(min_calls)} calls (§14): rows only, no interval"
-            )
+        summary = _withhold_rate_below_min_calls(_hit_rate(model_rows), min_calls)
         excess = model_rows[OUTCOME_COL].astype(float).dropna()
-        summary["base_rate"] = float((excess > 0).mean()) if len(excess) else None
+        summary["outcome_mix"] = float((excess > 0).mean()) if len(excess) else None
         summary["n_filings"] = int(len(excess))
         summary["min_calls_for_hit_rate"] = int(min_calls)
+        summary["chance_sentence"] = CHANCE_SENTENCE
         summary["block"] = model_block
         entries.append(
             {
@@ -370,9 +502,12 @@ def company_tables(
     return sorted(entries, key=lambda e: (e["name"].lower(), e["cik"]))
 
 
-def universe_summary(scored: pd.DataFrame) -> dict:
+def universe_summary(
+    scored: pd.DataFrame, tie_rule: str = IMPLEMENTED_TIE_RULES[0]
+) -> dict:
     """Hit rate + Wilson 95% interval per block over the whole run, the
-    universe base rate, and the three sentences every page carries."""
+    universe OUTCOME MIX, the chance line, and the sentences every page
+    carries."""
     blocks = {}
     present = set(scored["block"]) if "block" in scored.columns else set()
     order = [b for b in BLOCK_LABELS if b in present]
@@ -392,8 +527,12 @@ def universe_summary(scored: pd.DataFrame) -> dict:
         "n_filings_scored": int(len(excess)),
         "n_companies": int(scored["cik"].nunique()) if not scored.empty else 0,
         "n_test_quarters": int(scored["test_quarter"].nunique()) if not scored.empty else 0,
-        "base_rate_positive_excess": float((excess > 0).mean()) if len(excess) else None,
+        "outcome_mix_positive_excess": float((excess > 0).mean()) if len(excess) else None,
+        "outcome_mix_label": "outcome mix (share of scored filings with positive excess)",
+        "chance_under_call_rule": CHANCE_UNDER_CALL_RULE,
+        "chance_sentence": CHANCE_SENTENCE,
         "call_rule": "tercile_within_test_quarter",
+        "tie_rule": tie_rule,
         "correct_rule": "sign_match_nonzero",
         "ci": "wilson_95",
         "scope_sentence": scope_sentence(),
@@ -417,8 +556,9 @@ def _fmt(value, digits: int = 4) -> str:
 
 def _universe_table(summary: dict) -> list[str]:
     lines = [
-        "| block | n calls | n correct | hit rate | 95% Wilson interval |",
-        "|---|---|---|---|---|",
+        "| block | n calls | n correct | hit rate | 95% Wilson interval | chance | no call "
+        "(of which tied) | unresolved |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for block, entry in summary["blocks"].items():
         interval = (
@@ -428,8 +568,26 @@ def _universe_table(summary: dict) -> list[str]:
         )
         lines.append(
             f"| {entry['label']} (`{block}`) | {entry['n_calls']} | {entry['n_correct']} | "
-            f"{_fmt(entry['hit_rate'])} | {interval} |"
+            f"{_fmt(entry['hit_rate'])} | {interval} | "
+            f"{_fmt(entry.get('chance_under_call_rule'), 2)} | "
+            f"{entry.get('n_no_call')} ({entry.get('n_tied_no_call')}) | "
+            f"{entry.get('n_unresolved')} |"
         )
+    return lines
+
+
+def disclosure_lines(disclosures: dict) -> list[str]:
+    """The fixed disclosure block (red-team M5), in `DISCLOSURE_ORDER`.
+
+    Each value is a sentence the CALLER read out of an artifact -- this module
+    types no label-quality, coverage or price number of its own and imports no
+    app module. A key the caller did not supply is printed as missing rather
+    than dropped."""
+    lines = ["## Disclosures -- these travel with every number on this page", ""]
+    for key, label in DISCLOSURE_ORDER:
+        value = (disclosures or {}).get(key)
+        lines.append(f"- **{label}.** {value if value else 'not stated by this run.'}")
+    lines.append("")
     return lines
 
 
@@ -440,18 +598,25 @@ def _company_section(entry: dict) -> list[str]:
         title += f" ({entry['ticker']})"
     if entry["name"] != f"CIK {entry['cik']}":   # no "CIK x -- CIK x" fallback line
         title += f" -- CIK {entry['cik']}"
-    interval = (
-        f", 95% Wilson [{_fmt(s['wilson_lo'])}, {_fmt(s['wilson_hi'])}]"
-        if s.get("wilson_lo") is not None
-        else f" ({s.get('interval_withheld', 'no interval')})"
-    )
+    if s.get("hit_rate") is None:
+        # §14 / red-team M1: below the pre-registered minimum this company gets
+        # ROWS ONLY -- no rate, no numerator, no interval.
+        headline = (
+            f"The model: {s['n_calls']} calls -- "
+            f"{s.get('rate_withheld', 'rows only (§14)')}."
+        )
+    else:
+        headline = (
+            f"The model: {s['n_correct']}/{s['n_calls']} calls right, hit rate "
+            f"{_fmt(s['hit_rate'])}, 95% Wilson "
+            f"[{_fmt(s['wilson_lo'])}, {_fmt(s['wilson_hi'])}]."
+        )
     lines = [
         title,
         "",
-        f"The model: {s['n_correct']}/{s['n_calls']} calls right, hit rate "
-        f"{_fmt(s['hit_rate'])}{interval}. Base rate (share of this company's scored "
-        f"filings with a positive excess return): {_fmt(s['base_rate'])} over "
-        f"{s['n_filings']} filings.",
+        f"{headline} {s.get('chance_sentence', CHANCE_SENTENCE)} Outcome mix (share of "
+        f"this company's scored filings with positive excess): {_fmt(s['outcome_mix'])} over "
+        f"{s['n_filings']} filings. {s.get('denominator', '')}",
         "",
         "| quarter | form | filing date | excess return | the model | numeric only | size only |",
         "|---|---|---|---|---|---|---|",
@@ -499,20 +664,26 @@ def write_scorecard(
         f"Generated {summary['generated_utc']} UTC from the run's own out-of-fold "
         f"predictions: {summary['n_filings_scored']} deduplicated test filings, "
         f"{summary['n_companies']} companies, {summary['n_test_quarters']} test quarters. "
-        f"Call rule `{summary['call_rule']}`; correct rule `{summary['correct_rule']}`; "
-        f"intervals `{summary['ci']}`. A filing whose excess return was exactly zero is "
-        "not scored correct. The tercile boundaries are drawn across that quarter's scored "
-        "filings, so every call is a within-quarter relative statement about peers, not a "
-        "real-time one.",
+        f"Call rule `{summary['call_rule']}`; tie rule `{summary.get('tie_rule')}`; correct "
+        f"rule `{summary['correct_rule']}`; intervals `{summary['ci']}`. A filing whose excess "
+        "return was exactly zero is not scored correct. The tercile boundaries are drawn across "
+        "that quarter's scored filings, so every call is a within-quarter relative statement "
+        "about peers, not a real-time one.",
         "",
+    ]
+    lines += disclosure_lines(summary.get("disclosures") or {})
+    lines += [
         "## Universe",
         "",
     ]
     lines += _universe_table(summary)
     lines += [
         "",
-        f"Base rate (share of scored filings with a positive excess return): "
-        f"{_fmt(summary['base_rate_positive_excess'])}.",
+        summary.get("chance_sentence", CHANCE_SENTENCE),
+        "",
+        f"Outcome mix (share of scored filings with positive excess): "
+        f"{_fmt(summary['outcome_mix_positive_excess'])}. This is what the period did, not a "
+        "benchmark the hit rate is measured against.",
         "",
         "## Companies",
         "",
@@ -531,18 +702,54 @@ def write_scorecard(
     return text
 
 
+def _ordering_error() -> type:
+    """`backtest_e2.OrderingViolation` when it can be imported without a cycle,
+    else `ValueError`. Imported inside the function because `backtest_e2`
+    imports this module at module level."""
+    try:
+        from backtest_e2 import OrderingViolation
+
+        return OrderingViolation
+    except (ImportError, AttributeError):  # pragma: no cover - defensive
+        return ValueError
+
+
 def build_scorecard(
     records_df: pd.DataFrame,
     params: dict,
+    margin: Optional[dict],
+    disclosures: dict,
     md_path: Path,
     json_path: Path,
     parquet_path: Path,
 ) -> tuple[dict, pd.DataFrame]:
     """The whole §14 pipeline in one call: calls -> scoring -> tables -> files.
 
+    `margin` is the MARGIN BLOCK the run already computed (decision 15). It is
+    required, and an absent or empty one refuses BEFORE anything is written, so
+    a future edit that moved the scorecard above `set_margin` could not put a
+    page on disk ahead of the equivalence margin -- the results-payload
+    ordering guard alone did not cover the disk write (red-team N2).
+
+    `disclosures` is the fixed disclosure block (red-team M5), built by the
+    caller from its own artifacts; an empty one refuses, because a scorecard
+    page without its caveats is the one artifact the owner reads standalone.
+
     Returns (summary, scored). The summary is what `run_head1` adds to the
     results document as `scorecard_summary` (after the margin block, like every
     other delta-bearing payload)."""
+    if not margin:
+        raise _ordering_error()(
+            "refusing to build the scorecard: the equivalence margin block has not been "
+            "written yet. Decision 15 requires Delta and its inputs BEFORE any per-fold "
+            "delta -- and a scorecard page is a table of per-filing outcomes."
+        )
+    if not disclosures:
+        raise ValueError(
+            "refusing to build the scorecard: the disclosure block is empty. §11 requires the "
+            "label-quality, train-overlap, coverage, currency, price-censoring, return-basis "
+            "and peer-benchmark disclosures on every page, and this page is read standalone."
+        )
     called = make_calls(records_df, params)
     scored = score_calls(called)
     names = load_company_names(scored["cik"].unique() if not scored.empty else [])
@@ -552,16 +759,23 @@ def build_scorecard(
         int(params["scorecard"]["min_calls_for_company_hit_rate"]),
         params["scorecard"]["model_block"],
     )
-    summary = universe_summary(scored)
+    summary = universe_summary(scored, params["scorecard"]["tie_rule"])
     summary["arm"] = params["scorecard"]["arm"]
     summary["eval_set"] = params["scorecard"]["eval_set"]
     summary["min_calls_for_company_hit_rate"] = int(
         params["scorecard"]["min_calls_for_company_hit_rate"]
     )
+    summary["disclosures"] = dict(disclosures)
+    summary["margin"] = {
+        "status": margin.get("status"),
+        "delta_selected": margin.get("delta_selected"),
+        "note": "the inference is this margin ladder; the hit rates below describe it, "
+        "they do not test it.",
+    }
     summary["files"] = {
-        "markdown": str(md_path),
-        "json": str(json_path),
-        "per_row_parquet": str(parquet_path),
+        "markdown": repo_relative(md_path),
+        "json": repo_relative(json_path),
+        "per_row_parquet": repo_relative(parquet_path),
     }
     write_scorecard(scored, summary, tables, md_path, json_path, parquet_path)
     return summary, scored

@@ -1,5 +1,12 @@
 # STEP 1A — `numeric_features_e2.py` (the NUMERIC side of the E2 feature table)
 
+> **SUPERSEDED IN PART — 2026-09-11.** Everything below describes the
+> earlier build. The table was REBUILT on 2026-09-11 under G3 decision 21
+> (duration-matched `operating_cashflow_to_revenue`). Read the section
+> **"G3 rulings rebuild 2026-09-11"** at the end of this file: that
+> feature's coverage, distribution and the artifact sha below are
+> pre-rebuild figures. Every other feature is unchanged.
+
 > **2026-09-11: §6 supersedes the shas and the flow-feature numbers in §1–§5.**
 > The period-identity defect (F5_PLAN §3 decision 22) was fixed and the table
 > rebuilt. Sections 1–5 are the 2026-09-10 build as written; every number in
@@ -489,3 +496,124 @@ dependency). The property the test exists to protect — that no `controls` or
 `"ingest_fundamentals"` to that expected set is a one-word change in a file
 this session does not own, and is left to the app lane to rule on rather than
 made here. 102 of its 103 tests pass.
+
+---
+
+## G3 rulings rebuild 2026-09-11 — decision 21 (duration-matched OCF/revenue)
+
+**Ruling.** `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §2 decision 21: owner wrote
+"Default" → *duration-matched, disclosed*. Rebuild-then-ratify per
+`data/f5/status/REDTEAM_g3_package_2026-09-11.md` item **B2** and its
+Disposition. `F5_PLAN.md` §3 row 21's measured population — 7,603 of 18,300
+rows (41.5%) dividing a year-to-date cash flow by a single-quarter revenue —
+is reproduced **exactly** by this rebuild.
+
+**What changed in code.**
+
+- `duration_bucket_of_days(days)` — the scalar form of F2's own
+  `ingest_fundamentals._duration_buckets`, reading the SAME imported
+  `DURATION_BUCKET_DAYS` (Q ≤ 115, H1 ≤ 210, 9M ≤ 300, FY ≤ 400, else
+  "other"). A test pins that it returns what F2's vectorised classifier
+  returns; it is not a second definition.
+- `duration_matched_ratio(value, num_days, den_days) -> (value, reason)` —
+  keeps the ratio only when the two flows fall in the same bucket, otherwise
+  NaN. The reason is returned on **every** row, matched or not, so a NaN in
+  the feature column always has a stated cause on its own row.
+- The build loop applies it to `operating_cashflow_to_revenue` only, after the
+  `period_days_*` columns exist, and writes the new column
+  **`operating_cashflow_to_revenue_reason`** (object, 0 nulls).
+- Manifest gains `rebuild_note` = *"rebuilt 2026-09-11 under G3 decision 21
+  (owner ruling): duration-matched OCF/revenue"*, the constants
+  `ocf_to_revenue_duration_matched: true` /
+  `ocf_to_revenue_reason_column`, and the full census under
+  `counters.ocf_to_revenue_duration_match`.
+
+**Manifest sha256, before → after.**
+
+| field | before | after |
+|---|---|---|
+| `output.sha256` (`numeric_features_e2.parquet`) | `079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb` | `01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b` |
+| `module_sha256` (`numeric_features_e2.py`) | `cf29212c5956a882633ea2f9514276cbeaf725226672a3b0b1cf4f450fa73a29` | `0334c23cdcf1018b197145d77bcd9e5877e914453da549d9e5b9c03ea0326731` |
+
+**Counts that CHANGED — the disclosure decision 21 asks for.**
+
+| quantity | value |
+|---|---|
+| rows changed by the rule | **7,603** of 18,300 (41.55%) |
+| rows that became NaN | **7,603** — equal by construction: the rule only ever removes a value, never creates one |
+| non-null `operating_cashflow_to_revenue` | 15,296 → **7,693** |
+| coverage | 0.8358 → **0.4204** |
+| feature distribution (non-null) | median 0.3157 → **0.2136**; p01 −2.871 → −2.718; p99 1.920 → **1.142**; min/max −6.066 / 4.078 → −6.066 / 3.866 |
+
+Per-row reasons (all 18,300 rows carry one; the counts sum to 18,300):
+
+| reason | rows |
+|---|---|
+| `duration_matched:Q` | 4,413 |
+| `duration_matched:FY` | 3,279 |
+| `duration_matched:H1` | 1 |
+| `duration_mismatch:9M_over_Q` | 4,077 |
+| `duration_mismatch:H1_over_Q` | 3,382 |
+| `duration_mismatch:FY_over_Q` | 130 |
+| `duration_mismatch:9M_over_FY` | 11 |
+| `duration_mismatch:Q_over_FY` | 3 |
+| `no_period_for_denominator` (revenue) | 1,661 |
+| `no_period_for_numerator` (cash flow) | 1,047 |
+| `no_period_for_either_flow` | 296 |
+
+The 4,088 `no_period_*` rows were **already** NaN under the ported definition —
+they are labelled, not newly lost. `value_unavailable:*` never fired: every
+duration-matched pair also had a finite value.
+
+**The criterion choice is empirically immaterial, and measured rather than
+argued.** The ruling names bucket equality. The alternative reading — E1's
+`duration_tolerance_days = 20` — is reported beside it:
+`n_rows_bucket_rule_differs_from_20d_tolerance = **0**`. On all 18,300 rows the
+two criteria dispositioned every row identically, so nothing in this rebuild
+turns on which of the two was chosen. On the surviving rows the largest
+cash-flow-versus-revenue period difference is **1 day**, and **0** rows pair a
+>115-day cash flow with a ≤115-day revenue.
+
+**Counts that did NOT change** (re-read from the new manifest):
+
+- rows built **18,300**; CIKs **175**; form mix; filing-date span; the row
+  universe and the in-spell filter
+- all nine other features: coverage `net_margin` 0.8856, `operating_margin`
+  0.5640, `log_total_assets`, `leverage_liabilities_to_assets`,
+  `equity_to_assets`, `cash_to_assets`, the three YoY growth columns,
+  `momentum_126`, `realized_vol_63`, `book_to_market` — every one byte-for-byte
+  the same definition and the same values
+- the `period_days_*` columns themselves (materialized before this rule, used
+  by it, unchanged)
+- the period-identity fix of earlier the same day (decision 22), its per-family
+  bucket census, and `prefer_duration = "annual"`
+- the staleness guard (`STALENESS_MAX_DAYS = 200`, imported from frozen
+  `features.py`), its accepted/discarded distributions, and the 146 unresolved
+  (CIK, family) pairs
+- `flow_duration_mismatch_vs_revenue`: net_income 135, operating_income 20,
+  operating_cash_flow 7,603 — the last is now also the count the rule acted on
+
+**Scope boundary, stated not assumed.** Decision 21 names ONE feature.
+`net_margin` (135 mismatched rows) and `operating_margin` (20) divide by the
+same revenue and are **left on the ported definition** — changing an unruled
+pre-registered feature is not this module's call. `test_only_the_ruled_ratio_is_duration_matched`
+pins that boundary, and the manifest lists them under
+`unruled_ratios_left_as_ported`. Their mismatch rates (0.74% and 0.11% of rows)
+are two orders of magnitude below the cash-flow ratio's 41.55%, which is why
+decision 21 was raised about this ratio and not those.
+
+**Tests.** 33 → **37** (`test_numeric_features_e2.py`), all green in 16 s. New:
+`test_duration_bucket_of_days_agrees_with_f2s_vectorised_classifier`,
+`test_a_ytd_cash_flow_is_never_divided_by_a_quarterly_revenue` (the ruling's own
+case: 273-day cash flow over 92-day revenue → NaN, reason
+`duration_mismatch:9M_over_Q`), `test_every_nan_ocf_ratio_carries_a_reason`,
+`test_only_the_ruled_ratio_is_duration_matched`. Every pre-existing test is
+unchanged and green, including
+`test_midyear_quarter_versus_year_to_date_is_left_exactly_where_it_was`, which
+pins that the decision-22 **resolver** still returns the quarter — the ratio
+rule sits above it and does not move which fact is fetched.
+
+**Still true after the rebuild.** No IC, correlation or feature-versus-outcome
+association (`computed_associations_with_returns: 0`); no target or return
+column read; `pit.py`, `features.py`, `ingest_fundamentals.py` untouched;
+`data/f5/G3_RATIFIED.json` does not exist. Runtime 925.7 s, $0, no network.

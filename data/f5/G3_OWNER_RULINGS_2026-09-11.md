@@ -90,9 +90,17 @@ the owner's priority attaches to the first:
 1. **The historical test** is head 1's walk-forward under G3: 33 scored quarters
    (2018Q1–2026Q1), 144 companies, real filings and real prices, every model fitted only
    on data public before the quarter it is scored on. **Nothing in it is synthetic.**
-   It is the largest historical test the corpus allows: the corpus begins in 2016Q3 and
-   the owner declined more ingestion (decision C), so it cannot be lengthened backwards;
-   forwards it is bounded by today. It is *the* real-world test the owner describes, and
+   One escorting clause, so the word carries its true weight: **the filings and the
+   prices are real; the text features are model-produced labels with disclosed error**
+   (red flags 42.00% teacher / 28.0% student exact-set error, ruled exploratory;
+   sentiment 86.94% INDETERMINATE) — **real data, imperfect labels**, never a synthetic
+   corpus.
+   It is the largest historical test the corpus allows **as the corpus stands**: it
+   begins in 2016Q3, and forwards it is bounded by today. **It can be lengthened
+   backwards** — that means re-ingesting, re-extracting and re-labeling earlier filings
+   for the same 144 companies (days of machine time, $0 API spend, plus a spot-check of
+   the new labels), and it is **the owner's choice**, listed in §4. Decision C was the
+   **mid-cap expansion**, a different question, and is not the reason. It is *the* real-world test the owner describes, and
    it is what the scorecard (decision 3 / §14 of the pre-registration) reports company
    by company. It is ratified as the primary evidence.
 2. **The paper period** (P5) is a *forward* test: the frozen model makes dated calls
@@ -203,9 +211,14 @@ reports a **per-company, per-quarter historical scorecard**, pre-registered in a
   two comparators are printed beside it on the same rows: `numeric_only` (numbers,
   no text) and `size_only` (a model fitted on `log_total_assets` alone — the
   zero-text comparator that beat both fitted models on E1);
-- the call: within each test quarter, the prediction's percentile among that quarter's
-  scored rows; top third → **"outperform peers"**, bottom third → **"underperform
-  peers"**, middle third → **"no call"** (shown, not scored);
+- the call: within each test quarter, the prediction's **percentile by average rank**
+  among that quarter's scored rows; top third → **"outperform peers"**, bottom third →
+  **"underperform peers"**, middle third → **"no call"** (shown, not scored);
+- the **tie rule** (`scorecard.tie_rule = "average_rank_straddle_no_call"`): percentiles
+  are computed **by average rank**, and **a tie group that straddles a tercile boundary
+  is "no call" in full** — every row in the group, never split by filing order;
+  **`n_tied_no_call` is printed per block**. `size_only` is a one-feature fit, i.e. a
+  step function with mass ties, and it is the yardstick the headline is read against;
 - the outcome: the sign of `target_excess_63` — the filing's 63-session forward return
   minus the peer benchmark, window opening at the next session after the filing was
   public (post-close filings open the next morning);
@@ -213,14 +226,35 @@ reports a **per-company, per-quarter historical scorecard**, pre-registered in a
   excess of exactly zero is not correct;
 - per company: every scored filing (quarter, form, public date, call, realized excess
   return, right/wrong, for the model and both comparators); a hit rate with a Wilson
-  95% interval when the company has at least 6 calls, otherwise rows only; that
-  company's base rate (share of its scored rows with positive excess);
+  95% interval when the company has at least 6 calls; **below 6 calls, rows only — no
+  rate, no count of correct, no interval** (the JSON carries null for all three);
+- the **comparison line is "chance under this call rule = 0.50 by construction"** — the
+  tercile rule forces ≈ equal "outperform" and "underperform" counts, so a
+  call-count-matched random rule scores exactly 0.50 whatever the outcome mix. That
+  company's share of scored rows with positive excess is printed as the **outcome mix**,
+  **never** as a base rate the model beat and never as a benchmark;
 - across the universe: the model's hit rate with its interval, the two comparators'
-  hit rates, and the sentence that **hit rates are descriptive — the inference is the
-  pre-registered IC margin ladder**, printed on every scorecard page;
+  hit rates, the same chance line, and the inference sentence printed **verbatim** on
+  every scorecard page from the `scorecard_e2.INFERENCE_SENTENCE` constant — *"Hit rates
+  are descriptive. The inference is the pre-registered IC margin ladder (§1, decision
+  15); a per-company hit rate over at most 33 quarters has a wide interval and proves
+  nothing on its own."*; **`n_no_call`, `n_tied_no_call` and `n_unresolved` printed per
+  block and per company, each naming its denominator**;
+- a **disclosure block on every scorecard page**, read from the same constants and
+  artifacts the report reads: the G2 caveats from `results_g2.json` and the teacher
+  red-flag error; the train-overlap chunk-level **and** filing-level shares as different
+  questions; the never-extracted-CIK hole; the unconverted CAD reporter; the direction
+  of price censoring with its count from the target manifest; *"price return only —
+  dividends not included; no transaction costs, taxes, slippage or position sizing;
+  out-of-fold, backtested, no money invested"*; and the peer benchmark = all universe
+  members, both strata, GLD excluded, self excluded;
 - written only inside the same guarded run (no separate fit, no forward-looking row,
   never for a company outside the run), after the margin block, to
   `data/f5/head1_scorecard.md` + `.json` and a per-row parquet (git-excluded).
+
+**The scorecard cannot change the §13 outcome: if the IC margin comes back bounded-null
+or UNPOWERED, the text arm is closed regardless of how the hit rates read.** It is
+reported in every branch because it describes what happened; it is never the inference.
 
 **4 — Fold structure.**
 > "Default. However, if you need to increase the quarterly range, you may. I have the
@@ -230,8 +264,15 @@ reports a **per-company, per-quarter historical scorecard**, pre-registered in a
 
 Reading — **⚠ INTERPRETED**: primary = default (6-quarter burn-in, 33 folds 2018Q1–2026Q1,
 expanding training window — "feeds everything", which is the owner's stated
-preference). The data range cannot be increased: the corpus starts 2016Q3, and earlier
-data is the ingestion the owner declined under C. "Play with the range … with REAL DATA
+preference). **The data range *can* be extended, and the real cost is stated instead of asserted
+away:** the corpus starts 2016Q3, so extending it backwards means **re-ingesting,
+re-extracting and re-labeling earlier filings for the same 144 companies** — days of
+machine time, **$0 in API spend** — plus a **spot-check of the new labels**. That is
+**the owner's choice**, listed again in §4 as *"extend the corpus backwards, or run the
+33 folds now"*; the reading adopted is **run the 33 folds now**. Decision C was the
+**mid-cap expansion**, a different question, and is not the reason this was closed.
+The training-window family below is a **different knob** — it varies how much *training*
+history each fold sees, not the range of quarters scored. "Play with the range … with REAL DATA
 TESTING" is honoured by a **pre-registered sensitivity family on the training
 window**, run on the real data in the same guarded run and reported beside the primary:
 rolling windows of **8 and 16 quarters** (`fold_sensitivity.train_window_quarters =
@@ -328,8 +369,24 @@ write-up, which is what "if not accurate then no" asks for.
 
 ## 3. What the rulings change in code and documents (the build spec)
 
-1. **`data/f5/G3_PREREGISTRATION.md`** — every "DRAFT rule" becomes "RATIFIED rule
-   (owner 2026-09-11)"; header status RATIFICATION-READY; new **§14 Scorecard** with
+**0. Pre-run rebuilds (rebuild-then-ratify) — these run BEFORE the sha is pinned.**
+Six ruled rules were not in the artifacts the runner reads, so ratifying first and
+running second would have run a study that violates six of its own ratified rules
+(red-team B2, 2026-09-11). The build list: decision **2** both halves (GLD out of the
+peer average in the target table **and** out of the analysis frame in every arm),
+**20** (same-CIK attribution), **21** (duration-matched cash-flow ratio), **23a**
+(year-over-year same-form novelty prior), **23b** (min-shingle 50), **23d** (8K_BODY
+out of the embeddings), plus the **exploratory sequential-novelty feature** of the
+decision-23 reading. The censuses are re-run afterwards and every measured-population
+cell of `G3_PREREGISTRATION.md` is refreshed from the rebuilt artifacts. **The sha is
+pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
+text, and is shown the exact two lines that change at the pin** (the header STATUS line
+and the parameter block's `draft_status` — nothing else differs between the text the
+owner reads and the text whose sha256 is pinned).
+
+1. **`data/f5/G3_PREREGISTRATION.md`** — every "DRAFT rule" becomes **"RULED rule
+   (dec.; owner 2026-09-11; ratification pending)"** — a ruling is not a ratification,
+   and the header said so, so the column header now says so too (red-team N7); header status RATIFICATION-READY; new **§14 Scorecard** with
    the decision-3 rule verbatim; §1 gains the training-window sensitivity family
    (decision 4); §5 records the ETF comparator as a P2 item; §13 carries the owner's
    signature sentence (decision 17) and the UNPOWERED mapping; §12 ratifies the stored
@@ -346,10 +403,15 @@ write-up, which is what "if not accurate then no" asks for.
      "outcome_col": "target_excess_63",
      "correct_rule": "sign_match_nonzero",
      "min_calls_for_company_hit_rate": 6,
-     "ci": "wilson_95"
+     "ci": "wilson_95",
+     "tie_rule": "average_rank_straddle_no_call"
    },
+   "gld": {"exclude_from_analysis": true, "included_sensitivity_arm": true},
+   "columns": { ..., "exploratory_novelty_seq": ["novelty_risk_factors_seq", "novelty_mda_seq"] },
    "families": { ..., "novelty_sequential_exploratory": true }
    ```
+   (the last three key groups are the round-2 additions: the tie rule, decision 2's two
+   GLD switches, and the exploratory sequential-novelty columns.)
 2. **`backtest_e2.py`** — (i) `evaluate_arm` also returns per-row out-of-fold records
    (cik, filing id, form, public date, test quarter, block, prediction, realized
    `target_excess_63`, dedup flag); (ii) a `size_only` block = `[columns.size_col]`,
@@ -369,6 +431,26 @@ write-up, which is what "if not accurate then no" asks for.
 
 ## 4. The owner's confirmation list (one word ratifies all of them)
 
+**Pre-run rebuilds (rebuild-then-ratify) — these run BEFORE the sha is pinned.**
+Six ruled rules were not in the artifacts the runner reads, so ratifying first and
+running second would have run a study that violates six of its own ratified rules
+(red-team B2, 2026-09-11). The build list: decision **2** both halves (GLD out of the
+peer average in the target table **and** out of the analysis frame in every arm),
+**20** (same-CIK attribution), **21** (duration-matched cash-flow ratio), **23a**
+(year-over-year same-form novelty prior), **23b** (min-shingle 50), **23d** (8K_BODY
+out of the embeddings), plus the **exploratory sequential-novelty feature** of the
+decision-23 reading. The censuses are re-run afterwards and every measured-population
+cell of `G3_PREREGISTRATION.md` is refreshed from the rebuilt artifacts. **The sha is
+pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
+text, and is shown the exact two lines that change at the pin** (the header STATUS line
+and the parameter block's `draft_status` — nothing else differs between the text the
+owner reads and the text whose sha256 is pinned).
+
+**The scorecard cannot change the §13 outcome: if the IC margin comes back bounded-null
+or UNPOWERED, the text arm is closed regardless of how the hit rates read.** The
+scorecard is reported in every branch because it describes what happened; the alpha
+question is settled by the §1 margin ladder and the §13 branch, never by a hit rate.
+
 Reply **"ratify"** and the main session pins sha256(`G3_PREREGISTRATION.md`) into
 `G3_RATIFIED.json` and runs the three heads. Or correct any line first.
 
@@ -379,10 +461,16 @@ Reply **"ratify"** and the main session pins sha256(`G3_PREREGISTRATION.md`) int
 | F | the live-capital wording | "the owner's own capital only, after the paper period, never automated, never anyone else's money" |
 | 1 | "compare to other companies and ETFs" | peers = the default universe benchmark, in G3; an ETF comparator under P2 once the decision-A feed exists |
 | 3 | the scorecard's "correct" rule | terciles within the quarter; sign of the 63-session excess return; two comparators beside the model; descriptive only |
-| 4 | "play with the range" | training-window sensitivity family {8, 16} quarters beside the expanding primary; the data range itself cannot grow |
+| 4 | "play with the range" | training-window sensitivity family {8, 16} quarters beside the expanding primary — a knob on the *training window*, not on the range of quarters scored (the range itself is the next row, and it is the owner's choice) |
 | 7 | FX mechanism | the one CAD reporter enters unconverted as a disclosed exception in G3; the FX build is queued for P2 |
 | 8 | "Free version of Yahoo" | ratify the stored 2026-08-24 snapshot; no new Yahoo fetch |
 | 23 | "quarterly filings … accumulate progressively" | 10-Qs already judged year-over-year; a sequential-prior novelty feature added as exploratory |
+| 3 / §14 | **the §14 scorecard mechanism in full** — terciles, the tie rule, the sign rule, the 6-call threshold, the Wilson intervals, the two comparators, the chance line, the outcome mix, the disclosure block | main-session design under the owner's core value statement. The owner's decision-3 word was **"Default"**, on a packet that **contained no scorecard at all** and whose superseded line said "nothing REPORTS a per-company score". **No part of §14's mechanism is the owner's own wording** — confirm it or correct it |
+| 23(b)–(h) | **defaults adopted with no owner words**: min-shingle 50 (b), the corpus-wide prior pool (c), 8K_BODY out of the embeddings (d), unweighted filing pooling (e), PCA k = 16 fit on training rows only and rank-transformed on the ranked arms (f–g), and **the embedding model itself ratified as a third-party artifact (h)** | the owner's decision-23 text was a **question** about quarterly filings. It is answered by (a) and by the exploratory sequential feature; it says **nothing** about (b)–(h), which are main-session defaults adopted pending this confirmation |
+| 13 | "What this mean? I want to say default, but do not drop companies still filing a year later if they are still public." — a **question** | **companies are never dropped**: the screen removes mislabelled stored "exit" **rows** from the set of positives; the company stays in the panel and stays scored as a non-exit |
+| 17 | the owner's sentence **began** *"I am unsure of what this means."* | the following **"I agree with this" is taken as the signature on §13**, and **the UNPOWERED row of the outcome map is the main session's mapping** — the owner never used that word. This is the single line most likely to be repudiated later, so it is put plainly |
+| 22 | *"Idk what default is, but I believe you know best. If it is fixed, then good."* — **"it" was undefined** | **"it" is read as the period-end defect, which is fixed** (2026-09-11, duration-aware resolver in `numeric_features_e2.py`), **and the 200-day staleness rule is kept** as the default |
+| 4 (the range itself) | *"if you need to increase the quarterly range, you may. I have the luxury of having a lot of historical data"* | **extend the corpus backwards, or run the 33 folds now — the owner's choice, not the main session's.** Extending means **re-ingesting, re-extracting and re-labeling earlier filings for the same 144 companies** (days of machine time, **$0 API spend**, plus a **spot-check of the new labels**); the corpus starts 2016Q3. **The reading adopted is "run the 33 folds now."** The earlier justification ("the ingestion the owner declined under decision C") was a misattribution — decision C was the **mid-cap expansion** — and is withdrawn |
 
 **Owner's own action items (not the main session's to do):** subscribe to EODHD
 "EOD Historical Data — All World" ($19.99/mo or $199/yr) and set `EODHD_API_TOKEN`;

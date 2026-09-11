@@ -1,5 +1,12 @@
 # F5 Step 1A — `target_e2.py`: the 63-session forward excess-return target
 
+> **SUPERSEDED IN PART — 2026-09-11.** Everything below describes the
+> 2026-09-10 build. The table was REBUILT on 2026-09-11 under G3 decision 2
+> (GLD excluded from the peer benchmark). Read the section **"G3 rulings
+> rebuild 2026-09-11"** at the end of this file for the current shas and
+> for which counts moved; the shas and benchmark description in §1 are the
+> pre-rebuild ones.
+
 Status: BUILT and on disk. Session of 2026-09-10. Scope: the target table only.
 **Zero information coefficients, correlations or feature-versus-outcome
 associations were computed, in code, in tests, or interactively** (`F5_PLAN.md`
@@ -169,3 +176,84 @@ equal to the pre-edit sha quoted in §1 and to the manifest's own
 9. **Yahoo split-adjusted-only prices** (decision 8, unratified) propagate
    directly into this target: dividends are not in the return. Every number
    above inherits that caveat.
+
+---
+
+## G3 rulings rebuild 2026-09-11 — decision 2 (benchmark half)
+
+**Ruling.** `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §2 decision 2: owner wrote
+"Default", i.e. GLD is **excluded from the benchmark average and from IC rows**
+in all heads, with one sensitivity row including it. This rebuild implements
+the **benchmark half** only. The analysis-side (IC-row) exclusion stays in
+`backtest_e2.py` and is another agent's edit; the table deliberately keeps GLD
+as a subject row with its own target so both the exclusion and the sensitivity
+remain possible without another rebuild. Rebuild-then-ratify per
+`data/f5/status/REDTEAM_g3_package_2026-09-11.md` item **B2** and its
+Disposition.
+
+**What changed in code.**
+
+- New constant `EXCLUDE_GLD_FROM_BENCHMARK = True` (flip + rebuild = the
+  sensitivity arm).
+- New `benchmark_member_array(member_mat, price_columns, exclude_gld)` →
+  `(array, census)`. It takes `controls.align_membership`'s full array and
+  turns GLD's column off, then **asserts** that the per-session member-count
+  change lies in `{0, 1}` and raises otherwise. `controls.py` is untouched.
+- `build_targets(..., exclude_gld=EXCLUDE_GLD_FROM_BENCHMARK)` uses it.
+- Manifest gains a top-level `benchmark` block with `gld_excluded: true` and
+  the note `"rebuilt 2026-09-11 under G3 decision 2 (owner ruling)"`.
+- `row_counts` gains `n_gld_rows_in_membership`.
+
+**Manifest sha256, before → after.**
+
+| field | before | after |
+|---|---|---|
+| `output_sha256` (`target_e2.parquet`) | `c35956b784b9f0985796ed9dbb772360c043d2d77f1f300905c90b4d4757ece8` | `ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac` |
+| `module_sha256` (`target_e2.py`) | `233fb1c2d7da81c95e8334436fe21f46dba9dbd26bf877179b66cd0f602cfc10` | `0675ae34cb015718d16ba017c744b33b295e678e824f686a49205a4a5cba7cd5` |
+
+**Counts that CHANGED** (measured by rebuilding both arms in memory and
+differencing row by row on `(cik, accession_number)`):
+
+| quantity | value |
+|---|---|
+| rows whose `n_benchmark_members` fell | 5,050 (of 29,271) |
+| the fall, per row | exactly 1 on all 5,050; never 2, never negative |
+| rows whose `benchmark_return_63` moved | 5,050 — 3,112 of them in-membership |
+| largest absolute benchmark move | 0.001291 (12.9 bp) |
+| rows whose `target_excess_63` moved | 4,995 (the other 55 have no subject price) |
+| sessions on which GLD was a universe member | 501 of 3,179 |
+| max member-count change per session | 1 (asserted, `benchmark_member_array`) |
+
+**Counts that did NOT change** (re-read from the new manifest):
+
+- rows written 29,271; in-membership 16,859; out-of-membership 12,412
+- core CIKs 176; core spells 218; universe member CIKs (both strata) 244
+- complete targets 28,684 / incomplete 587; in-membership complete 16,471 /
+  incomplete 388; non-null in-membership excess 16,397
+- `benchmark_members_used` median 128.0, min 0, max 135 — **unchanged**: GLD is
+  a member on only 501 sessions and those sessions' counts are not the
+  distribution's median or extremes
+- `n_benchmark_unpriced` on every row (GLD is priced, so it never moved a cell
+  from "used" to "unpriced"); total unpriced member cells 10,926
+- GLD's own 65 rows (14 in-membership): benchmark unchanged on all of them —
+  it was already excluded from its own peer average by the ex-self rule
+- 31 universe member CIKs absent from the price matrix; 3 half-open membership
+  boundary rows; the whole per-quarter census's row counts
+- every PIT column (`info_date`, `news_session`, `window_open_session`,
+  `window_close_session`, `post_close`) and `subject_return_63`
+
+**Tests.** 18 → **20** (`test_target_e2.py`), all green in 1.7 s. Two new:
+`test_gld_is_excluded_from_the_peer_average` (a synthetic market where GLD
+returns +100% and would lift the peer average from 0.20 to 0.60, and does not;
+the same fixture under `exclude_gld=False` shows the 0.60 it would have been;
+GLD's own filing still gets a subject return and a peer average) and
+`test_benchmark_member_array_bounds_the_census_change`. Two pre-existing
+real-data smokes (`test_real_smoke_benchmark_is_ex_self`,
+`test_real_smoke_unpriced_members_are_counted_never_imputed`) now subtract GLD
+by hand in their arithmetic re-derivation — the derivation still re-computes
+the answer from prices and membership, it does not call the module's helper.
+
+**Still true after the rebuild.** No IC, correlation or feature-versus-outcome
+association is computed here (`test_module_computes_no_association_statistic`
+still green); no feature table is read; `data/f5/G3_RATIFIED.json` does not
+exist; `controls.py` / `pit.py` / `spec.py` / `backtest.py` untouched.

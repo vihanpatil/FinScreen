@@ -1,6 +1,6 @@
 {
-  "run_utc": "2026-09-11T16:04:05.511287+00:00",
-  "module_sha256": "cf29212c5956a882633ea2f9514276cbeaf725226672a3b0b1cf4f450fa73a29",
+  "run_utc": "2026-09-11T21:32:39.843240+00:00",
+  "module_sha256": "0334c23cdcf1018b197145d77bcd9e5877e914453da549d9e5b9c03ea0326731",
   "stratum": "core",
   "network_calls": 0,
   "computed_associations_with_returns": 0,
@@ -35,7 +35,7 @@
     "cash_to_assets": 0.9461,
     "net_margin": 0.8856,
     "operating_margin": 0.564,
-    "operating_cashflow_to_revenue": 0.8358,
+    "operating_cashflow_to_revenue": 0.4204,
     "revenue_yoy_growth": 0.8916,
     "net_income_yoy_growth": 0.991,
     "eps_diluted_yoy_growth": 0.9649,
@@ -93,12 +93,12 @@
       "max": 1.458955
     },
     "operating_cashflow_to_revenue": {
-      "n_nonnull": 15296,
+      "n_nonnull": 7693,
       "min": -6.065538,
-      "p01": -2.871471,
-      "median": 0.315743,
-      "p99": 1.919895,
-      "max": 4.077851
+      "p01": -2.718466,
+      "median": 0.213631,
+      "p99": 1.141825,
+      "max": 3.866259
     },
     "revenue_yoy_growth": {
       "n_nonnull": 16316,
@@ -158,7 +158,7 @@
       "cash_to_assets": 0.9107,
       "net_margin": 0.5787,
       "operating_margin": 0.2741,
-      "operating_cashflow_to_revenue": 0.4406,
+      "operating_cashflow_to_revenue": 0.1137,
       "revenue_yoy_growth": 0.6061,
       "net_income_yoy_growth": 0.9675,
       "eps_diluted_yoy_growth": 0.9736,
@@ -174,7 +174,7 @@
       "cash_to_assets": 0.9034,
       "net_margin": 0.5754,
       "operating_margin": 0.2489,
-      "operating_cashflow_to_revenue": 0.4093,
+      "operating_cashflow_to_revenue": 0.1916,
       "revenue_yoy_growth": 0.5846,
       "net_income_yoy_growth": 0.9852,
       "eps_diluted_yoy_growth": 0.9653,
@@ -190,7 +190,7 @@
       "cash_to_assets": 0.9369,
       "net_margin": 0.7065,
       "operating_margin": 0.4013,
-      "operating_cashflow_to_revenue": 0.5946,
+      "operating_cashflow_to_revenue": 0.2604,
       "revenue_yoy_growth": 0.703,
       "net_income_yoy_growth": 0.9939,
       "eps_diluted_yoy_growth": 0.9466,
@@ -206,7 +206,7 @@
       "cash_to_assets": 0.9483,
       "net_margin": 0.9692,
       "operating_margin": 0.5833,
-      "operating_cashflow_to_revenue": 0.8872,
+      "operating_cashflow_to_revenue": 0.4292,
       "revenue_yoy_growth": 0.9629,
       "net_income_yoy_growth": 0.9963,
       "eps_diluted_yoy_growth": 0.9452,
@@ -222,7 +222,7 @@
       "cash_to_assets": 0.9556,
       "net_margin": 0.9783,
       "operating_margin": 0.6144,
-      "operating_cashflow_to_revenue": 0.9738,
+      "operating_cashflow_to_revenue": 0.498,
       "revenue_yoy_growth": 0.9834,
       "net_income_yoy_growth": 0.995,
       "eps_diluted_yoy_growth": 0.9551,
@@ -238,7 +238,7 @@
       "cash_to_assets": 0.9541,
       "net_margin": 0.9938,
       "operating_margin": 0.6618,
-      "operating_cashflow_to_revenue": 0.9779,
+      "operating_cashflow_to_revenue": 0.4867,
       "revenue_yoy_growth": 0.9938,
       "net_income_yoy_growth": 1.0,
       "eps_diluted_yoy_growth": 0.9671,
@@ -254,7 +254,7 @@
       "cash_to_assets": 0.9429,
       "net_margin": 0.9829,
       "operating_margin": 0.6969,
-      "operating_cashflow_to_revenue": 0.9682,
+      "operating_cashflow_to_revenue": 0.4985,
       "revenue_yoy_growth": 0.9882,
       "net_income_yoy_growth": 0.9947,
       "eps_diluted_yoy_growth": 0.9729,
@@ -270,7 +270,7 @@
       "cash_to_assets": 0.9617,
       "net_margin": 0.9708,
       "operating_margin": 0.6829,
-      "operating_cashflow_to_revenue": 0.9757,
+      "operating_cashflow_to_revenue": 0.4994,
       "revenue_yoy_growth": 0.9891,
       "net_income_yoy_growth": 0.9818,
       "eps_diluted_yoy_growth": 0.9763,
@@ -286,7 +286,7 @@
       "cash_to_assets": 0.9585,
       "net_margin": 0.9777,
       "operating_margin": 0.6566,
-      "operating_cashflow_to_revenue": 0.9814,
+      "operating_cashflow_to_revenue": 0.5068,
       "revenue_yoy_growth": 0.9926,
       "net_income_yoy_growth": 0.9851,
       "eps_diluted_yoy_growth": 0.9808,
@@ -302,7 +302,7 @@
       "cash_to_assets": 0.9642,
       "net_margin": 0.9836,
       "operating_margin": 0.6889,
-      "operating_cashflow_to_revenue": 0.9769,
+      "operating_cashflow_to_revenue": 0.4903,
       "revenue_yoy_growth": 0.9878,
       "net_income_yoy_growth": 0.9957,
       "eps_diluted_yoy_growth": 0.9751,
@@ -318,7 +318,7 @@
       "cash_to_assets": 0.9723,
       "net_margin": 0.9848,
       "operating_margin": 0.686,
-      "operating_cashflow_to_revenue": 0.9723,
+      "operating_cashflow_to_revenue": 0.6512,
       "revenue_yoy_growth": 0.9875,
       "net_income_yoy_growth": 0.9964,
       "eps_diluted_yoy_growth": 0.9697,
@@ -336,7 +336,7 @@
       "cash_to_assets": 0.9142,
       "net_margin": 0.853,
       "operating_margin": 0.7974,
-      "operating_cashflow_to_revenue": 0.8525,
+      "operating_cashflow_to_revenue": 0.4476,
       "revenue_yoy_growth": 0.8588,
       "net_income_yoy_growth": 0.9925,
       "eps_diluted_yoy_growth": 0.9759,
@@ -352,7 +352,7 @@
       "cash_to_assets": 0.9396,
       "net_margin": 0.9051,
       "operating_margin": 0.56,
-      "operating_cashflow_to_revenue": 0.9109,
+      "operating_cashflow_to_revenue": 0.45,
       "revenue_yoy_growth": 0.9104,
       "net_income_yoy_growth": 0.9833,
       "eps_diluted_yoy_growth": 0.9443,
@@ -368,7 +368,7 @@
       "cash_to_assets": 0.9765,
       "net_margin": 0.9433,
       "operating_margin": 0.2038,
-      "operating_cashflow_to_revenue": 0.7816,
+      "operating_cashflow_to_revenue": 0.3776,
       "revenue_yoy_growth": 0.951,
       "net_income_yoy_growth": 0.9906,
       "eps_diluted_yoy_growth": 0.9245,
@@ -384,7 +384,7 @@
       "cash_to_assets": 0.9586,
       "net_margin": 0.8889,
       "operating_margin": 0.6512,
-      "operating_cashflow_to_revenue": 0.8365,
+      "operating_cashflow_to_revenue": 0.3987,
       "revenue_yoy_growth": 0.8937,
       "net_income_yoy_growth": 0.9952,
       "eps_diluted_yoy_growth": 1.0,
@@ -400,7 +400,7 @@
       "cash_to_assets": 0.9329,
       "net_margin": 0.8142,
       "operating_margin": 0.7165,
-      "operating_cashflow_to_revenue": 0.8068,
+      "operating_cashflow_to_revenue": 0.4406,
       "revenue_yoy_growth": 0.82,
       "net_income_yoy_growth": 0.9942,
       "eps_diluted_yoy_growth": 0.9942,
@@ -545,6 +545,49 @@
       "operating_income": 20,
       "operating_cash_flow": 7603
     },
+    "ocf_to_revenue_duration_match": {
+      "rule": "G3 decision 21 (owner 2026-09-11): kept only when the cash-flow and revenue duration buckets are equal, else NaN with a per-row reason in `operating_cashflow_to_revenue_reason`",
+      "buckets": [
+        [
+          115,
+          "Q"
+        ],
+        [
+          210,
+          "H1"
+        ],
+        [
+          300,
+          "9M"
+        ],
+        [
+          400,
+          "FY"
+        ]
+      ],
+      "n_rows_changed": 7603,
+      "n_rows_became_nan": 7603,
+      "n_rows_nonnull_before": 15296,
+      "n_rows_nonnull_after": 7693,
+      "reasons": {
+        "duration_matched:FY": 3279,
+        "duration_matched:H1": 1,
+        "duration_matched:Q": 4413,
+        "duration_mismatch:9M_over_FY": 11,
+        "duration_mismatch:9M_over_Q": 4077,
+        "duration_mismatch:FY_over_Q": 130,
+        "duration_mismatch:H1_over_Q": 3382,
+        "duration_mismatch:Q_over_FY": 3,
+        "no_period_for_denominator": 1661,
+        "no_period_for_either_flow": 296,
+        "no_period_for_numerator": 1047
+      },
+      "n_rows_bucket_rule_differs_from_20d_tolerance": 0,
+      "unruled_ratios_left_as_ported": [
+        "net_margin",
+        "operating_margin"
+      ]
+    },
     "fx_blocked_rows": 108,
     "unit_mismatch_ratios": 0,
     "ciks_without_price_coverage": 27,
@@ -579,12 +622,15 @@
         "FY"
       ]
     ],
-    "period_identity_buckets_source": "ingest_fundamentals.DURATION_BUCKET_DAYS, imported; the classifier reports its duration_mix in the same buckets"
+    "period_identity_buckets_source": "ingest_fundamentals.DURATION_BUCKET_DAYS, imported; the classifier reports its duration_mix in the same buckets",
+    "ocf_to_revenue_duration_matched": true,
+    "ocf_to_revenue_reason_column": "operating_cashflow_to_revenue_reason"
   },
-  "runtime_seconds": 475.3,
+  "rebuild_note": "rebuilt 2026-09-11 under G3 decision 21 (owner ruling): duration-matched OCF/revenue",
+  "runtime_seconds": 925.7,
   "output": {
     "path": "/Users/vihanpatil/personal/projects/FinScreen/data/f5/numeric_features_e2.parquet",
-    "sha256": "079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb",
+    "sha256": "01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b",
     "n_rows": 18300,
     "key": [
       "cik",

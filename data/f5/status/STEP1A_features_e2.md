@@ -1,5 +1,13 @@
 # STEP1A — `features_e2.py` (E2 TEXT feature table)
 
+> **SUPERSEDED IN PART — 2026-09-11.** Everything below describes the
+> 2026-09-10 build under E1's cross-company attribution. The table was
+> REBUILT on 2026-09-11 under G3 decision 20 (same-CIK attribution). Read
+> the section **"G3 rulings rebuild 2026-09-11"** at the end of this file:
+> the artifact sha, the occurrence-row count (854,933 → 755,297), the
+> filing count (14,446 → 14,385) and the per-form occurrence mix in §1–§2
+> are all pre-rebuild figures.
+
 Generated from run diagnostics (`data/f5/text_features_e2_manifest.json`,
 sha of this run's artifact `f9084e95c5fa030c…`); no number below is
 hand-carried from a previous session or document.
@@ -250,3 +258,112 @@ test_pit.py`) → **142 passed** (56.3 s). `features.py`, `controls.py`,
    in `target_e2.py`; the join key `(cik, accession_number)` is identical in
    both tables.
 7. **Nothing here has been red-teamed yet**, and no IC exists for any of it.
+
+---
+
+## G3 rulings rebuild 2026-09-11 — decision 20 (same-CIK attribution)
+
+**Ruling.** `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §2 decision 20: owner wrote
+"Default" → *same-company occurrences only; `cross_cik_share` reported; E1 rule
+as a named sensitivity*. Rebuild-then-ratify per
+`data/f5/status/REDTEAM_g3_package_2026-09-11.md` item **B2** and its
+Disposition. E1's 2026-08-11 every-occurrence ruling (HANDOFF §3) is not
+deleted — it is demoted to a sensitivity that must be built somewhere else.
+
+**What changed in code.**
+
+- Constants `ATTRIBUTION_RULES = ("same_cik", "e1_all_ciks")` and
+  `ATTRIBUTION_RULE = "same_cik"` (the shipped rule).
+- New `restrict_attribution(occ, rule, assertions)` between the explosion and
+  the aggregation. Under `same_cik` it keeps `occ.cik == occ.home_cik` and
+  asserts both that nothing cross-CIK survives and that exactly the cross-CIK
+  rows were dropped.
+- `build_text_features(occ, assertions, occ_for_cross_cik=None)` —
+  `cross_cik_share` is no longer an aggregate of the attributed set (which
+  would now be 0.0 everywhere by construction). It is measured on the
+  **unrestricted E1-rule occurrence table** and keeps its published meaning:
+  the share of the occurrence rows the E1 rule *would* have attached to that
+  filing whose chunk is homed at another CIK. A new assertion requires it to be
+  non-null on every written row.
+- `build(attribution=..., outdir=None)` plus a `--attribution` / `--outdir`
+  CLI. Asking for `e1_all_ciks` without redirecting the output **raises**, so
+  the sensitivity can never overwrite the shipped artifact.
+- Manifest gains `attribution_rule` and `rebuild_note`: *"rebuilt 2026-09-11
+  under G3 decision 20 (owner ruling): same-CIK attribution; cross_cik_share
+  materialized"*; `definitions` gains an `attribution` and a `cross_cik_share`
+  entry; the feature dictionary's `cross_cik_share` and
+  `n_text_chunks_attributed` entries are rewritten from this run's census.
+
+**Manifest sha256, before → after.**
+
+| field | before | after |
+|---|---|---|
+| `artifact_sha256` (`text_features_e2.parquet`) | `f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c` | `143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88` |
+| `module_sha256` (`features_e2.py`) | `877dea17a9f3136cbf5ab6745a09ac23dfd7283e65dfdaf4e167b37babaa6507` | `8e8b749a063d3d9986c3777d9e9307319d573375e191fee386c2570908888d63` |
+| `feature_dictionary_sha256` | `b538a7c23cb1295ba240ed32eba325f0e0297bb2cbf41494d2e2bbcf1032729a` (the committed file at `HEAD`) | `590b0358738b986126461da629c9d4dd57e6798a6dd91753050cfece07b37578` |
+
+The parquet was written twice (a docstring correction between runs) and both
+runs produced the **identical** `artifact_sha256` — the table is deterministic.
+Only `module_sha256` and the dictionary's `generated_utc` differ between them.
+
+**Counts that CHANGED.**
+
+| quantity | before (E1 rule) | after (same-CIK) |
+|---|---|---|
+| occurrence rows feeding the features | 854,933 | **755,297** (−99,636 = −11.65%) |
+| filing rows written | 14,446 | **14,385** (−61) |
+| occurrence rows by form | 10-Q 439,376 / 10-K 234,464 / 8-K 181,093 | 10-Q 387,803 / 10-K 202,586 / 8-K 164,908 |
+
+The 61 lost filings are filings whose every attributed chunk belonged to
+another company; under the ruling they have no text features at all and are
+dropped rather than zero-filled (pinned by
+`test_a_filing_with_only_foreign_chunks_leaves_the_table`). They will fall out
+of the analysis frame at the join.
+
+**`cross_cik_share`, on the shipped artifact** (measured on the E1-rule set,
+per the ruling): mean 0.1068, max 0.80, 11,608 of 14,385 filings carry a
+non-zero value, and **0 filings carry 1.0** — a filing whose attributions were
+*entirely* foreign is exactly one of the 61 that left the table.
+
+**Counts that did NOT change** (re-read from the new manifest; every one of
+these is a frame/corpus-level quantity that the attribution rule cannot move):
+
+- corpus rows 317,081; frame rows 316,291; 8K_BODY chunks excluded 790
+- section counts MDA 172,098 / EX99_PRESS_RELEASE 94,545 / RISK_FACTORS 49,648
+- distinct CIKs **176** (unchanged — no company lost all of its filings)
+- filing-date span 2015-07-02 → 2026-08-20
+- masks: 4,177 RISK_FACTORS sentiment values, 2,826 guidance values (230
+  active); scored sentiment rows 263,808; scored active guidance rows 6,479
+- train-overlap frame chunks 14,342 and all three channels (10,442 /
+  14,341 / 487); selfid 146,958 = 46.46%
+- imputed-NONE frame rows 48,293; 23 schema violations
+- `cross_cik_occurrence_rows` 99,636 = **11.65%** and
+  `chunks_with_multiple_source_ciks` 5,706 and
+  `max_occurrences_for_one_chunk` 6,220 — these describe the E1 rule and are
+  kept as the disclosure of what the ruling dropped
+- the 22 feature names, the 8/13/1 confirmatory/exploratory/dropped partition,
+  and every G2/v1.2 caveat constant
+
+**Tests.** 31 → **34** (`test_features_e2.py`), all green in 23 s. New:
+`test_shared_chunk_attaches_only_to_its_own_ciks_filings` (one chunk homed at
+CIK 11 also occurring in CIK 22's filing: 22's filing keeps only its own
+POSITIVE chunk, never 11's NEGATIVE one, and still reports
+`cross_cik_share = 0.5`), `test_a_filing_with_only_foreign_chunks_leaves_the_table`,
+`test_the_shipped_build_refuses_to_write_a_sensitivity_over_it`. The pinned
+census assertions in `test_real_build_reproduces_every_pinned_census_number`
+were updated to the rebuilt numbers and now pin the E1-rule counts beside them,
+so a silent reversion to the E1 rule fails the suite.
+
+**Still true after the rebuild.** No IC, correlation or feature-versus-outcome
+association anywhere in the module or its tests
+(`test_module_computes_no_association_statistic` green); no price or
+fundamental row read; `data/f5/G3_RATIFIED.json` does not exist; `features.py`
+and every other frozen E1 module untouched. $0 — no network, no API.
+
+**Downstream effect on the analysis frame** (read-only check, no fit, no IC):
+`backtest_e2.load_analysis_frame()` goes from 7,634 joined / 7,405 modeling
+rows to **7,618 joined / 7,389 modeling rows** — **16** of the 61 dropped
+filings were inside the frame. `n_ciks` stays **144**; `n_target_null` stays
+229; `n_emb_missing` stays 0. `data/f5/census_head1.json` still carries the old
+7,634 / 7,405 and must be regenerated by the main session (red-team M2 /
+B2 disposition).

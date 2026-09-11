@@ -345,6 +345,64 @@ def test_unknown_preference_is_refused():
 
 
 # ---------------------------------------------------------------------------
+# 3c. `operating_cashflow_to_revenue` is duration-matched (G3 decision 21,
+#     owner ruling 2026-09-11).
+# ---------------------------------------------------------------------------
+
+
+def test_duration_bucket_of_days_agrees_with_f2s_vectorised_classifier():
+    """The scalar helper must be F2's classifier, not a second definition."""
+    ends = pd.Series([pd.Timestamp("2025-12-31")] * 8)
+    days = [None, 1, 90, 115, 116, 210, 300, 400]
+    starts = pd.Series([pd.NaT if d is None else ends[0] - pd.Timedelta(days=d)
+                        for d in days])
+    expected = list(M.duration_buckets(starts, ends))
+    assert [M.duration_bucket_of_days(d) for d in days] == expected
+    assert M.duration_bucket_of_days(401) == "other"
+
+
+def test_a_ytd_cash_flow_is_never_divided_by_a_quarterly_revenue():
+    """The defect decision 21 rules on: 273-day (9M) operating cash flow over
+    a 92-day (Q) revenue. The ported definition emitted a number; the ruled
+    definition emits NaN and says why."""
+    value, reason = M.duration_matched_ratio(3.0, 273, 92)
+    assert pd.isna(value)
+    assert reason == "duration_mismatch:9M_over_Q"
+
+    # H1 over Q is the same defect one quarter earlier.
+    assert pd.isna(M.duration_matched_ratio(2.0, 181, 91)[0])
+    assert M.duration_matched_ratio(2.0, 181, 91)[1] == "duration_mismatch:H1_over_Q"
+
+    # Matched periods survive, with the bucket named on the row.
+    assert M.duration_matched_ratio(0.25, 92, 90) == (0.25, "duration_matched:Q")
+    assert M.duration_matched_ratio(0.30, 365, 366) == (0.30, "duration_matched:FY")
+    assert M.duration_matched_ratio(0.30, 273, 275) == (0.30, "duration_matched:9M")
+
+
+def test_every_nan_ocf_ratio_carries_a_reason():
+    """No row is ever silently blank -- missing periods and an unavailable
+    value each get their own named reason."""
+    assert M.duration_matched_ratio(1.0, None, 90)[1] == "no_period_for_numerator"
+    assert M.duration_matched_ratio(1.0, 90, None)[1] == "no_period_for_denominator"
+    assert M.duration_matched_ratio(1.0, None, None)[1] == "no_period_for_either_flow"
+    assert M.duration_matched_ratio(np.nan, 90, 92)[1] == "value_unavailable:Q"
+    for args in [(1.0, None, 90), (1.0, 90, None), (1.0, None, None),
+                 (np.nan, 90, 92), (3.0, 273, 92)]:
+        v, r = M.duration_matched_ratio(*args)
+        assert pd.isna(v) and r
+
+
+def test_only_the_ruled_ratio_is_duration_matched():
+    """Decision 21 names one feature. `net_margin` / `operating_margin` keep
+    the ported definition -- changing an unruled feature is not this module's
+    call -- and the module says so."""
+    src = (M.REPO_ROOT / "numeric_features_e2.py").read_text()
+    assert src.count("duration_matched_ratio(") == 2      # the def + one call
+    assert 'rec["operating_cashflow_to_revenue"] = matched' in src
+    assert "unruled_ratios_left_as_ported" in src
+
+
+# ---------------------------------------------------------------------------
 # 4. Price windows end STRICTLY before the news session
 # ---------------------------------------------------------------------------
 

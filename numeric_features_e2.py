@@ -87,6 +87,32 @@ tests depend on it):
     row at a different `period_end`, the unfiltered row stands.
 
 -----------------------------------------------------------------------
+`operating_cashflow_to_revenue` is DURATION-MATCHED (G3 decision 21)
+-----------------------------------------------------------------------
+Owner ruling 2026-09-11, decision 21: "Default" = duration-matched and
+disclosed. Under E1's ported definition a 10-Q's YEAR-TO-DATE operating cash
+flow was divided by that quarter's SINGLE-QUARTER revenue on 7,603 of 18,300
+rows (41.5%) -- a ratio whose numerator covers two or three times the
+denominator's period, which is not a cash-conversion rate.
+
+The rule, as built: the two flows must fall in the SAME duration bucket
+(`ingest_fundamentals.DURATION_BUCKET_DAYS`, imported not retyped:
+Q <= 115 days, H1 <= 210, 9M <= 300, FY <= 400, else "other"), measured from
+the `period_days_operating_cash_flow` / `period_days_revenue` columns this
+module already materializes. Otherwise the feature is NaN and the row carries
+a REASON in `operating_cashflow_to_revenue_reason`, so no row is ever silently
+blank. The reason is written on EVERY row, matched or not.
+
+Two boundaries stated rather than assumed:
+  * the ruling names ONE feature. `net_margin` and `operating_margin` divide by
+    the same revenue and are NOT changed here -- changing an unruled
+    pre-registered feature is not this module's call. Their mismatch counts are
+    in the manifest beside this one (`flow_duration_mismatch_vs_revenue`).
+  * bucket equality, not a day tolerance, is the match test the ruling names.
+    The manifest also reports how many rows the two criteria disagree on
+    (`n_rows_bucket_rule_differs_from_20d_tolerance`), so the choice is visible.
+
+-----------------------------------------------------------------------
 Concept resolution -- no hand-typed per-company tags, ever
 -----------------------------------------------------------------------
 Which XBRL tag carries a company's revenue / equity / cash / ... is decided
@@ -229,6 +255,13 @@ YOY_FAMILIES = {"revenue": "revenue_yoy_growth",
 # Currency-sensitive columns: a level, and a mixed-currency ratio.
 FX_SENSITIVE_FEATURES = ("log_total_assets", "book_to_market")
 
+# G3 decision 21 (owner, 2026-09-11): `operating_cashflow_to_revenue` is kept
+# only when both flows cover the same duration bucket. The reason column is
+# written on every row so a NaN is never unexplained.
+OCF_RATIO_REASON_COL = "operating_cashflow_to_revenue_reason"
+#: Legacy E1 tolerance, reported (never applied) beside the bucket rule.
+DURATION_TOLERANCE_DAYS = 20
+
 
 # ---------------------------------------------------------------------------
 # Provenance (the controls.py pattern, copied deliberately)
@@ -345,6 +378,48 @@ def slice_by_cik_tag(fund: pd.DataFrame) -> dict[tuple[int, str], pd.DataFrame]:
 
 def _bucket_rank(bucket: str) -> int:
     return BUCKET_ORDER.index(bucket) if bucket in BUCKET_ORDER else len(BUCKET_ORDER)
+
+
+def duration_bucket_of_days(days: Optional[float]) -> str:
+    """Scalar form of `ingest_fundamentals._duration_buckets`, same thresholds.
+
+    The vectorised original needs a (period_start, period_end) pair; the build
+    loop already holds the day count, so this reads the SAME imported
+    `DURATION_BUCKET_DAYS` constant rather than re-deriving the dates.
+    `test_duration_bucket_of_days_agrees_with_f2s_vectorised_classifier` pins
+    the agreement.
+    """
+    if days is None or pd.isna(days):
+        return "instant"
+    previous = 0
+    for limit, label in DURATION_BUCKET_DAYS:
+        if previous < days <= limit:
+            return label
+        previous = limit
+    return "other"
+
+
+def duration_matched_ratio(value: float, num_days: Optional[float],
+                           den_days: Optional[float]) -> tuple[float, str]:
+    """G3 decision 21: keep a flow-over-flow ratio only when both flows cover
+    the same duration bucket; otherwise NaN WITH A REASON.
+
+    Returns `(value_or_nan, reason)`. The reason is always non-empty, so a NaN
+    in the feature column always has a stated cause on its own row.
+    """
+    if num_days is None and den_days is None:
+        return np.nan, "no_period_for_either_flow"
+    if num_days is None:
+        return np.nan, "no_period_for_numerator"
+    if den_days is None:
+        return np.nan, "no_period_for_denominator"
+    nb = duration_bucket_of_days(num_days)
+    db = duration_bucket_of_days(den_days)
+    if nb != db:
+        return np.nan, f"duration_mismatch:{nb}_over_{db}"
+    if value is None or pd.isna(value):
+        return np.nan, f"value_unavailable:{nb}"
+    return float(value), f"duration_matched:{nb}"
 
 
 def value_as_of_duration_aware(
@@ -607,6 +682,11 @@ def build(limit: Optional[int] = None,
     yoy_cross_tag = 0
     duration_mismatch: dict[str, int] = {"net_income": 0, "operating_income": 0,
                                          "operating_cash_flow": 0}
+    # G3 decision 21 census: how the duration-match rule dispositioned every
+    # row of `operating_cashflow_to_revenue`, and what it changed.
+    ocf_reasons: dict[str, int] = {}
+    ocf_changed_to_nan = 0
+    ocf_bucket_vs_tolerance_disagree = 0
     fx_blocked = 0
     unit_mismatch = 0
     price_gap_rows = 0
@@ -716,6 +796,23 @@ def build(limit: Optional[int] = None,
             if rev_dur is not None and fd is not None and abs(fd - rev_dur) > 20:
                 duration_mismatch[flow] += 1
 
+        # G3 decision 21 (owner 2026-09-11): duration-match this ONE ratio.
+        # Applied after the durations exist, and only to the ruled feature.
+        ocf_dur = rec["period_days_operating_cash_flow"]
+        ported = rec["operating_cashflow_to_revenue"]
+        matched, reason = duration_matched_ratio(ported, ocf_dur, rev_dur)
+        rec["operating_cashflow_to_revenue"] = matched
+        rec[OCF_RATIO_REASON_COL] = reason
+        ocf_reasons[reason] = ocf_reasons.get(reason, 0) + 1
+        if pd.notna(ported) and pd.isna(matched):
+            ocf_changed_to_nan += 1
+        if ocf_dur is not None and rev_dur is not None:
+            same_bucket = (duration_bucket_of_days(ocf_dur)
+                           == duration_bucket_of_days(rev_dur))
+            within_tol = abs(ocf_dur - rev_dur) <= DURATION_TOLERANCE_DAYS
+            if same_bucket != within_tol:
+                ocf_bucket_vs_tolerance_disagree += 1
+
         for family, feature in YOY_FAMILIES.items():
             tags = resolved[(cik, family)] or []
             g, prior_tag = yoy_growth_family(slices, tags, cik, as_of,
@@ -779,6 +876,28 @@ def build(limit: Optional[int] = None,
                          "period_identity_by_family": period_identity,
                          "prefer_duration": "annual",
                          "flow_duration_mismatch_vs_revenue": duration_mismatch,
+                         "ocf_to_revenue_duration_match": {
+                             "rule": ("G3 decision 21 (owner 2026-09-11): kept "
+                                      "only when the cash-flow and revenue "
+                                      "duration buckets are equal, else NaN "
+                                      "with a per-row reason in "
+                                      f"`{OCF_RATIO_REASON_COL}`"),
+                             "buckets": [list(b) for b in DURATION_BUCKET_DAYS],
+                             # equal by construction: the rule only ever
+                             # removes a value, it never creates one
+                             "n_rows_changed": ocf_changed_to_nan,
+                             "n_rows_became_nan": ocf_changed_to_nan,
+                             "n_rows_nonnull_before": int(
+                                 df["operating_cashflow_to_revenue"].notna().sum()
+                                 + ocf_changed_to_nan),
+                             "n_rows_nonnull_after": int(
+                                 df["operating_cashflow_to_revenue"].notna().sum()),
+                             "reasons": dict(sorted(ocf_reasons.items())),
+                             "n_rows_bucket_rule_differs_from_20d_tolerance":
+                                 ocf_bucket_vs_tolerance_disagree,
+                             "unruled_ratios_left_as_ported": [
+                                 "net_margin", "operating_margin"],
+                         },
                          "fx_blocked_rows": fx_blocked,
                          "unit_mismatch_ratios": unit_mismatch,
                          "ciks_without_price_coverage": len(unpriced),
@@ -893,7 +1012,12 @@ def _diagnostics(df, accepted_days_stale, unresolved, staleness_log, shas, calen
             "period_identity_buckets_source": (
                 "ingest_fundamentals.DURATION_BUCKET_DAYS, imported; the classifier "
                 "reports its duration_mix in the same buckets"),
+            "ocf_to_revenue_duration_matched": True,
+            "ocf_to_revenue_reason_column": OCF_RATIO_REASON_COL,
         },
+        "rebuild_note": (
+            "rebuilt 2026-09-11 under G3 decision 21 (owner ruling): "
+            "duration-matched OCF/revenue"),
         "runtime_seconds": round(runtime_s, 1),
     }
 

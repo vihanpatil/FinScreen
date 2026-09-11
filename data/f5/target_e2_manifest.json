@@ -1,14 +1,14 @@
 {
   "artifact": "data/f5/target_e2.parquet",
   "module": "target_e2.py",
-  "module_sha256": "233fb1c2d7da81c95e8334436fe21f46dba9dbd26bf877179b66cd0f602cfc10",
+  "module_sha256": "0675ae34cb015718d16ba017c744b33b295e678e824f686a49205a4a5cba7cd5",
   "controls_py_sha256": "b44358c389134dd9f5fc80b9a0d00be624d829b67d3d7f10d7e5e636c71dc32c",
-  "generated_at": "2026-09-11T03:34:10.562421+00:00",
+  "generated_at": "2026-09-11T21:10:26.151464+00:00",
   "network_calls": 0,
   "estimand": {
     "horizon_trading_sessions": 63,
     "window_open": "next trading session after news_session; news_session = first session >= info_date (pre-close) / > info_date (post-close)",
-    "benchmark": "equal-weighted mean 63-session return over the universe members on the window-open session, EXCLUDING self, membership-dated (EXPANSION_PLAN \u00a73.3 proposal, pending G3 ratification)",
+    "benchmark": "equal-weighted mean 63-session return over the universe members on the window-open session, EXCLUDING self and EXCLUDING GLD (CIK 1222333), membership-dated (EXPANSION_PLAN \u00a73.3, G3 decision 2)",
     "benchmark_member_floor_applied": null,
     "e1_e2_comparability": "E1 and E2 backtest numbers are numerically incomparable (different benchmark).",
     "no_ic_computed": true
@@ -21,6 +21,17 @@
     },
     "expected_source": "data/hardening/controls_results.json",
     "matches_committed": true
+  },
+  "benchmark": {
+    "gld_excluded": true,
+    "gld_cik": 1222333,
+    "gld_has_a_price_column": true,
+    "n_sessions_gld_was_a_member": 501,
+    "max_member_count_change_per_session": 1,
+    "rule": "equal-weighted mean over that session's universe members, excluding self and excluding GLD (CIK 1222333)",
+    "note": "rebuilt 2026-09-11 under G3 decision 2 (owner ruling)",
+    "gld_rows_kept_as_subjects": 65,
+    "member_count_change_bound_asserted": "<= 1 member per session; a violation raises in benchmark_member_array()"
   },
   "price_snapshot": {
     "path": "data/prices_e2.parquet",
@@ -51,6 +62,7 @@
     "n_complete_window_missing_subject_price": 324,
     "n_complete_window_missing_benchmark": 2744,
     "n_gld_rows": 65,
+    "n_gld_rows_in_membership": 14,
     "n_membership_boundary_rows_excluded_by_half_open_rule": 3,
     "benchmark_members_used": {
       "median": 128.0,
@@ -514,10 +526,10 @@
     }
   },
   "runtimes_seconds": {
-    "sha_assert": 0.04,
-    "load": 0.26,
-    "build_targets": 0.66,
-    "total": 1.03
+    "sha_assert": 0.03,
+    "load": 0.27,
+    "build_targets": 0.72,
+    "total": 1.11
   },
-  "output_sha256": "c35956b784b9f0985796ed9dbb772360c043d2d77f1f300905c90b4d4757ece8"
+  "output_sha256": "ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac"
 }

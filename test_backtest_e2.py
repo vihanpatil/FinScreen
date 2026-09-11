@@ -16,6 +16,10 @@ What is pinned here:
   * the margin block is written before any per-fold delta -- structurally;
   * the ladder, including the UNPOWERED branch, and TOST;
   * company-quarter dedup on the CIK key, and the train-overlap split;
+  * decision 2: `is_gld` rows leave the frame before folds, dedup and every
+    fit, in every arm, and the GLD-included run is a reported sensitivity;
+  * decision 23: the sequential-novelty columns reach the exploratory block
+    only, and their absence is a counted diagnostic rather than a refusal;
   * an end-to-end `--selftest` run.
 """
 
@@ -679,6 +683,13 @@ def test_selftest_runs_end_to_end_on_synthetic_data(tmp_path):
     evals = {r["eval_set"] for r in results["per_fold_ic__pit_trailing_rank"]}
     assert evals == {"raw", "dedup", "dedup_no_overlap"}
     assert results["loco"]["status"].startswith("DESCRIPTIVE ONLY")
+    # the frame diagnostics carry decision 2's count and the disclosure inputs
+    frame_diag = results["frame"]
+    assert frame_diag["gld_exclude_from_analysis"] is True
+    assert frame_diag["n_gld_rows_excluded"] > 0
+    assert frame_diag["exploratory_novelty_seq_missing"] == 0
+    assert 0.0 <= frame_diag["share_filings_with_train_overlap"] <= 1.0
+    assert frame_diag["n_filings_with_train_overlap"] >= 0
     assert (tmp_path / "report_head1.md").exists()
     assert (tmp_path / "census_head1.json").exists()
     assert (tmp_path / E.SCORECARD_MD_NAME).exists()
@@ -792,7 +803,10 @@ def test_the_raw_levels_arm_keeps_the_untransformed_pca_projection(tmp_path, syn
 
     # arms are evaluated in insertion order: primary, raw_levels, primary-no-same-day
     primary_frames, secondary_frames = seen[0], seen[1]
-    emb = E.embedding_matrix(frame)
+    # the run scores the GLD-excluded frame (decision 2), so the reference
+    # projection is computed on exactly those rows
+    scored_frame, _gld = E.exclude_gld_rows(frame, params)
+    emb = E.embedding_matrix(scored_frame)
     k = int(params["embedding"]["pca_k"])
     assert len(secondary_frames) == len(primary_frames) > 0
     for prim, sec in zip(primary_frames, secondary_frames):
@@ -1088,3 +1102,108 @@ def test_the_scorecard_is_reachable_only_from_run_head1():
                 ):
                     builders.add(node.name)
     assert builders == {"run_head1"}, f"scorecard built from {sorted(builders)}"
+
+
+# ---------------------------------------------------------------------------
+# 15. Red-team round 2 (2026-09-11): decision 2's GLD exclusion + its
+#     sensitivity arm, and the exploratory-only sequential-novelty columns
+# ---------------------------------------------------------------------------
+
+
+def test_gld_rows_are_excluded_from_every_arm_and_reported_in_a_sensitivity_arm(
+    tmp_path, synth, synth_params
+):
+    """Decision 2 (owner 2026-09-11), analysis side.
+
+    `is_gld` rows leave the frame ONCE, before folds, dedup and every fit, so
+    no arm disagrees with another about whether the gold ETF was in the sample;
+    the removed count is in the frame diagnostics; and the GLD-included run is
+    published beside the primary as a sensitivity, never in its place."""
+    frame, diag = synth
+    params = json.loads(json.dumps(synth_params))
+    assert params["gld"] == {"exclude_from_analysis": True, "included_sensitivity_arm": True}
+    gld_ciks = set(frame.loc[frame["is_gld"].astype(bool), "cik"])
+    assert gld_ciks, "the synthetic fixture must carry a GLD company or this test is vacuous"
+
+    doc, _ = _run_head1(tmp_path, frame, diag, params)
+
+    # (a) the count is reported in the frame diagnostics
+    assert doc["frame"]["gld_exclude_from_analysis"] is True
+    n_gld = int(frame["is_gld"].astype(bool).sum())
+    assert doc["frame"]["n_gld_rows_excluded"] == n_gld > 0
+
+    # (b) no GLD row is scored in ANY arm: the per-fold test counts are the
+    #     non-GLD counts, and the scorecard's own rows carry no GLD CIK
+    kept = frame[~frame["is_gld"].astype(bool)]
+    by_quarter = kept["filing_date"].dt.to_period("Q").astype(str).value_counts()
+    for fold in doc["folds"]:
+        assert fold["n_test"] == int(by_quarter[fold["test_quarter"]])
+    oof = pd.read_parquet(tmp_path / E.OOF_PREDICTIONS_NAME)
+    assert not (set(oof["cik"]) & gld_ciks)
+    for key in [k for k in doc if k.startswith("per_fold_ic__")]:
+        assert all(r["n_test_ciks"] <= kept["cik"].nunique() for r in doc[key])
+    # the form ablation and the rolling arm ran on the same reduced frame
+    assert doc["form_controlled_ablation"]["n_rows"] == int(
+        kept["form"].isin(params["form_ablation_forms"]).sum()
+    )
+
+    # (c) the sensitivity arm exists, carries its own records, and says so
+    arm = doc["per_fold_delta__gld_included"]
+    keys = list(doc.keys())
+    assert keys.index("per_fold_delta__gld_included") > keys.index("margin") == 0
+    assert arm["n_gld_rows"] == n_gld
+    assert arm["note"].startswith("sensitivity arm, decision 2 (owner 2026-09-11)")
+    assert "never selected" in arm["note"]
+    assert len(arm["records"]) == len(doc["per_fold_primary_delta_dedup"])
+    assert np.isfinite(arm["mean_fold_delta_dedup"])
+    # ... and it really did score MORE rows than the primary
+    primary_n = [r["n_test"] for r in doc["per_fold_primary_delta_dedup"]]
+    included_n = [r["n_test"] for r in arm["records"]]
+    assert all(a <= b for a, b in zip(primary_n, included_n))
+    assert sum(included_n) > sum(primary_n)
+
+    # (d) switching the exclusion off scores the GLD rows like any other filing
+    off = json.loads(json.dumps(params))
+    off["gld"] = {"exclude_from_analysis": False, "included_sensitivity_arm": False}
+    kept_all, kept_diag = E.exclude_gld_rows(frame, off)
+    assert len(kept_all) == len(frame) and kept_diag["n_gld_rows_excluded"] == 0
+
+    # (e) a frame with no is_gld column is a REFUSAL, never a guess
+    with pytest.raises(E.G3Refusal) as exc:
+        E.exclude_gld_rows(frame.drop(columns=["is_gld"]), params)
+    assert "is_gld" in str(exc.value) and "target_e2.py" in str(exc.value)
+
+
+def test_exploratory_novelty_seq_never_enters_the_confirmatory_block(synth, synth_params):
+    """Decision 23: `columns.exploratory_novelty_seq` joins the EXPLORATORY
+    block only -- never the confirmatory block, never the scorecard -- and a
+    frame that lacks those columns is a counted diagnostic, not a refusal."""
+    frame, _ = synth
+    params = json.loads(json.dumps(synth_params))
+    seq = params["columns"]["exploratory_novelty_seq"]
+    assert seq == ["novelty_risk_factors_seq", "novelty_mda_seq"]
+    assert all(c in frame.columns for c in seq)
+
+    blocks = E._blocks_from_params(params, frame)
+    assert set(seq) <= set(blocks["text_and_numeric_exploratory"])
+    for name in ("numeric_only", "text_and_numeric", "size_only"):
+        assert not (set(seq) & set(blocks[name])), f"{name} must carry no exploratory column"
+    # the scorecard reads the model block and its two zero-text comparators only
+    assert E.SC.BLOCK_LABELS.keys() == {"text_and_numeric", "numeric_only", "size_only"}
+
+    diagnostics = E.novelty_seq_diagnostics(params, frame)
+    assert diagnostics["exploratory_novelty_seq_missing"] == 0
+    assert diagnostics["exploratory_novelty_seq_present"] == seq
+
+    # absent columns: skipped and COUNTED, never a refusal
+    thin = frame.drop(columns=seq)
+    thin_blocks = E._blocks_from_params(params, thin)
+    assert thin_blocks["text_and_numeric_exploratory"] == [
+        c for c in blocks["text_and_numeric_exploratory"] if c not in seq
+    ]
+    thin_diag = E.novelty_seq_diagnostics(params, thin)
+    assert thin_diag["exploratory_novelty_seq_missing"] == 2
+    assert thin_diag["exploratory_novelty_seq_missing_columns"] == seq
+    # ... while a missing CONFIRMATORY column still refuses
+    with pytest.raises(E.G3Refusal):
+        E._blocks_from_params(params, frame.drop(columns=["sentiment_mean_score"]))

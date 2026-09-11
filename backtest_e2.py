@@ -72,6 +72,13 @@ but never consulted):
     columns.confirmatory_text [...]    the confirmatory text block
     columns.exploratory_red_flags [...] exploratory row only, never confirmatory
     columns.family_novelty    [...]    YoY novelty columns (may be [])
+    columns.exploratory_novelty_seq [...] SEQUENTIAL-prior novelty columns
+                              (decision 23). They join the EXPLORATORY block
+                              only -- never the confirmatory block, never the
+                              scorecard -- and columns absent from the frame
+                              are skipped with a diagnostic count
+                              (`exploratory_novelty_seq_missing`), never a
+                              refusal: the family-A rebuild lands separately.
     columns.size_col          "log_total_assets"  (zero-information row)
     embedding.pca_k           int, 0 disables the embedding block
     embedding.rank_transform_components  bool  -- PRIMARY (PIT-ranked) spec
@@ -111,8 +118,16 @@ but never consulted):
     scorecard.call_rule       "tercile_within_test_quarter"
     scorecard.outcome_col     "target_excess_63"
     scorecard.correct_rule    "sign_match_nonzero"
+    scorecard.tie_rule        "average_rank_straddle_no_call"  (red-team M3)
     scorecard.min_calls_for_company_hit_rate int
     scorecard.ci              "wilson_95"
+    gld.exclude_from_analysis bool   decision 2 (owner 2026-09-11): drop
+                              `is_gld` rows from the analysis frame BEFORE
+                              folds, dedup and every fit, in every arm
+    gld.included_sensitivity_arm bool  re-run the primary spec once WITH the
+                              GLD rows and publish it beside the primary
+                              (`per_fold_delta__gld_included`), never in its
+                              place
     families.novelty_sequential_exploratory bool   (decision 23, exploratory)
     head2.*, head3.*          pinned for the other heads; head 1 validates
                               their presence and echoes them, uses neither.
@@ -120,8 +135,8 @@ but never consulted):
 Any unimplemented named rule (`purge_rule`, `se.block_length_rule`,
 `tost.reference_distribution`, `se.method`, `se.alternative`,
 `scorecard.arm`, `scorecard.eval_set`, `scorecard.call_rule`,
-`scorecard.correct_rule`, `scorecard.ci`) is a REFUSAL, not a silent
-fallback.
+`scorecard.tie_rule`, `scorecard.correct_rule`, `scorecard.ci`) is a
+REFUSAL, not a silent fallback.
 
 -----------------------------------------------------------------------
 3. What the real run does (F5_PLAN Step 1 / §3 decisions 3-6, 14, 15)
@@ -131,6 +146,18 @@ on (cik, accession_number), `in_membership` only, plus the optional
 text_families_e2 (novelty + pooled embeddings) when present. CIK is the
 company key end to end. Input sha256s are asserted against the
 data/f5/*_manifest.json records before a byte is used.
+
+DECISION 2 (owner 2026-09-11), analysis side: when `gld.exclude_from_analysis`
+is true, every row flagged `is_gld` (SPDR Gold Trust, a filer that is an ETF)
+is removed from that frame BEFORE the folds, the dedup mask, the spec
+transforms and every fit -- primary, secondary, no-same-day, rolling, form
+ablation and the scorecard alike -- and the removed count is written into the
+frame diagnostics. A frame with no `is_gld` column is a REFUSAL: `target_e2.py`
+writes that column, and guessing which rows are the ETF is exactly the kind of
+silent inference this runner exists to prevent. When
+`gld.included_sensitivity_arm` is true the primary spec is run ONCE MORE on the
+frame WITH those rows, after the margin block, as
+`per_fold_delta__gld_included` -- reported beside the primary, never selected.
 
 Folds: `backtest.build_walk_forward_folds` (frozen, imported) restricted to
 the ratified quarter list; expanding window, time-ordered by filing date,
@@ -196,10 +223,18 @@ training members, DESCRIPTIVE ONLY -- no per-CIK inference at k = 6.
 THE SCORECARD (decision 3 / pre-registration §14) is built inside the same
 guarded run, after the margin block, by `scorecard_e2.py`, from this run's
 own out-of-fold records: the primary arm's deduplicated test rows, a
-within-test-quarter tercile call, the sign of the realized 63-session excess
+within-test-quarter tercile call under the pre-registered tie rule
+(`average_rank_straddle_no_call`), the sign of the realized 63-session excess
 return, and two zero-text comparators beside the model. It is DESCRIPTIVE --
-the inference is the margin ladder, and every page says so. It writes
-`data/f5/head1_scorecard.md`, `.json`, and a git-excluded per-row parquet.
+the inference is the margin ladder, and every page says so. The MARGIN BLOCK
+itself is handed to `build_scorecard`, which refuses without it, so no page can
+reach disk before the margin exists. Beside every hit rate the page prints the
+chance line (0.50 by construction under a tercile rule) and the fixed
+disclosure block `build_disclosures` assembles from this repo's own artifacts
+(G2 label quality, train overlap at both the chunk and filing level, the
+never-extracted CIKs, the unconverted CAD reporter, price censoring, the
+return basis, the peer definition). It writes `data/f5/head1_scorecard.md`,
+`.json`, and a git-excluded per-row parquet.
 
 Every run appends {utc, doc_sha256, params_sha256, results_sha256,
 scorecard_md_sha256, scorecard_json_sha256, oof_predictions_sha256} to
@@ -304,12 +339,23 @@ OOF_PREDICTIONS_PATH = F5_DIR / OOF_PREDICTIONS_NAME
 
 G2_RESULTS_PATH = REPO_ROOT / "data" / "f4" / "g2" / "results_g2.json"
 H1_CONTROLS_PATH = REPO_ROOT / "data" / "hardening" / "controls_results.json"
+#: Read by `build_disclosures` only, and only for numbers the scorecard page
+#: must carry: the F5 census (never-extracted CIKs) and the labeler's own
+#: held-out eval (sentiment NEGATIVE recall). Absent file -> the disclosure
+#: says so; nothing is ever typed in.
+CENSUS_E2_PATH = F5_DIR / "census_e2.json"
+LABELER_EVAL_PATH = (
+    REPO_ROOT / "finetune" / "runs" / "2026-08-28-v12-eval-epoch2" / "metrics.json"
+)
 
 KEY = ["cik", "accession_number"]
 E2_TARGET_COL = "target_excess_63"
 FILING_DATE_COL = B.FILING_DATE_COL  # "filing_date"
 CIK_COL = "cik"
 WINDOW_CLOSE_COL = "window_close_session"
+#: `target_e2.py` writes this flag (SPDR Gold Trust is a filer AND an ETF).
+#: Decision 2's analysis-side exclusion keys off it and refuses without it.
+GLD_COL = "is_gld"
 
 FENCE_INFO = "json g3-params"
 PARAMS_VERSION = "g3-params-1"
@@ -334,8 +380,14 @@ IMPLEMENTED_LOCO_RULES = ("round(j*(K-1)/5)", "round(j*(K-1)/(n_folds-1))")
 IMPLEMENTED_SCORECARD_ARMS = (S.PRIMARY_SPEC,)
 IMPLEMENTED_SCORECARD_EVAL_SETS = SC.IMPLEMENTED_EVAL_SETS
 IMPLEMENTED_CALL_RULES = SC.IMPLEMENTED_CALL_RULES
+IMPLEMENTED_TIE_RULES = SC.IMPLEMENTED_TIE_RULES
 IMPLEMENTED_CORRECT_RULES = SC.IMPLEMENTED_CORRECT_RULES
 IMPLEMENTED_SCORECARD_CI = SC.IMPLEMENTED_CI_RULES
+
+#: ONE inference sentence, imported from the scorecard module rather than
+#: restated here, so the page, the JSON and this runner's report cannot drift
+#: (red-team S4).
+INFERENCE_SENTENCE = SC.INFERENCE_SENTENCE
 
 #: Blocks that carry NO text: the pooled-embedding components join the text
 #: blocks only, never these (`size_only` is the zero-text comparator -- a fit
@@ -375,6 +427,7 @@ REQUIRED_PARAMS: tuple[tuple[str, object], ...] = (
     ("columns.confirmatory_text", list),
     ("columns.exploratory_red_flags", list),
     ("columns.family_novelty", list),
+    ("columns.exploratory_novelty_seq", list),
     ("columns.size_col", str),
     ("embedding.pca_k", int),
     ("embedding.rank_transform_components", bool),
@@ -409,8 +462,11 @@ REQUIRED_PARAMS: tuple[tuple[str, object], ...] = (
     ("scorecard.call_rule", str),
     ("scorecard.outcome_col", str),
     ("scorecard.correct_rule", str),
+    ("scorecard.tie_rule", str),
     ("scorecard.min_calls_for_company_hit_rate", int),
     ("scorecard.ci", str),
+    ("gld.exclude_from_analysis", bool),
+    ("gld.included_sensitivity_arm", bool),
     ("families.novelty_sequential_exploratory", bool),
     ("head2.event_window_sessions", list),
     ("head2.trailing_sessions", int),
@@ -437,6 +493,7 @@ SELFTEST_PARAMS: dict = {
         "confirmatory_text": [],
         "exploratory_red_flags": [],
         "family_novelty": [],
+        "exploratory_novelty_seq": [],
         "size_col": "log_total_assets",
     },
     "embedding": {"pca_k": 3, "rank_transform_components": False},
@@ -474,9 +531,11 @@ SELFTEST_PARAMS: dict = {
         "call_rule": "tercile_within_test_quarter",
         "outcome_col": E2_TARGET_COL,
         "correct_rule": "sign_match_nonzero",
+        "tie_rule": SC.IMPLEMENTED_TIE_RULES[0],
         "min_calls_for_company_hit_rate": 3,
         "ci": "wilson_95",
     },
+    "gld": {"exclude_from_analysis": True, "included_sensitivity_arm": True},
     "families": {"novelty_sequential_exploratory": False},
     "head2": {"event_window_sessions": [1, 5], "trailing_sessions": 60},
     "head3": {"horizon_quarters": 4, "metric": "auc"},
@@ -654,6 +713,7 @@ def validate_params(params: dict) -> dict:
         ("scorecard.arm", params["scorecard"]["arm"], IMPLEMENTED_SCORECARD_ARMS),
         ("scorecard.eval_set", params["scorecard"]["eval_set"], IMPLEMENTED_SCORECARD_EVAL_SETS),
         ("scorecard.call_rule", params["scorecard"]["call_rule"], IMPLEMENTED_CALL_RULES),
+        ("scorecard.tie_rule", params["scorecard"]["tie_rule"], IMPLEMENTED_TIE_RULES),
         ("scorecard.correct_rule", params["scorecard"]["correct_rule"], IMPLEMENTED_CORRECT_RULES),
         ("scorecard.ci", params["scorecard"]["ci"], IMPLEMENTED_SCORECARD_CI),
     )
@@ -707,6 +767,7 @@ def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
             "scorecard.arm": list(IMPLEMENTED_SCORECARD_ARMS),
             "scorecard.eval_set": list(IMPLEMENTED_SCORECARD_EVAL_SETS),
             "scorecard.call_rule": list(IMPLEMENTED_CALL_RULES),
+            "scorecard.tie_rule": list(IMPLEMENTED_TIE_RULES),
             "scorecard.correct_rule": list(IMPLEMENTED_CORRECT_RULES),
             "scorecard.ci": list(IMPLEMENTED_SCORECARD_CI),
         },
@@ -730,6 +791,22 @@ def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
             "within-test-quarter tercile call, a sign-match outcome, two zero-text "
             "comparators, and Wilson 95% intervals. Hit rates are DESCRIPTIVE; the "
             "inference is the margin ladder.",
+            "scorecard.tie_rule = average_rank_straddle_no_call: percentiles come from "
+            "average ranks, and a tie group whose members would fall on both sides of a "
+            "tercile boundary is 'no call' in full, counted as n_tied_no_call. Ties are "
+            "common in size_only (a one-feature fit is a step function), so a tie-break by "
+            "filing order would be a measurement artifact in the headline comparator.",
+            "scorecard pages below scorecard.min_calls_for_company_hit_rate show ROWS ONLY: "
+            "no hit rate, no numerator and no interval (§14).",
+            "gld.exclude_from_analysis removes every `is_gld` row from the analysis frame "
+            "before folds, dedup and every fit, in every arm (decision 2, owner 2026-09-11); "
+            "a frame with no is_gld column is a REFUSAL. gld.included_sensitivity_arm "
+            "re-runs the primary spec once WITH those rows, beside the primary, never in "
+            "place of it.",
+            "columns.exploratory_novelty_seq joins the exploratory block only -- never the "
+            "confirmatory block and never the scorecard. Columns absent from the frame are "
+            "skipped and counted (exploratory_novelty_seq_missing); that is a diagnostic, "
+            "not a refusal, because the family-A rebuild lands separately.",
             "families.novelty_sequential_exploratory turns the sequential-prior novelty "
             "feature on as an EXPLORATORY row (decision 23); it never enters the headline.",
         ],
@@ -832,6 +909,54 @@ def load_analysis_frame(
     diag["input_sha256"] = shas
     diag["families_present"] = families is not None
     return df, diag
+
+
+def exclude_gld_rows(frame: pd.DataFrame, params: dict) -> tuple[pd.DataFrame, dict]:
+    """Decision 2 (owner 2026-09-11), analysis side.
+
+    With `gld.exclude_from_analysis` true, every `is_gld` row leaves the frame
+    HERE -- once, before folds, dedup, the spec transforms and every fit -- so
+    no arm can disagree with another about whether the gold ETF was in the
+    sample. Returns (frame, diagnostics); the diagnostics go into the frame
+    block of the results document.
+
+    A missing `is_gld` column REFUSES: `target_e2.py` writes it, so its absence
+    means the frame is not the artifact this pre-registration describes, and
+    inferring which CIK is the ETF here would be a guess."""
+    exclude = bool(params["gld"]["exclude_from_analysis"])
+    if GLD_COL not in frame.columns:
+        if not exclude:
+            return frame, {
+                "gld_exclude_from_analysis": False,
+                "n_gld_rows_excluded": 0,
+                "gld_note": f"the frame carries no {GLD_COL!r} column and decision 2's "
+                "exclusion is switched off in this parameter block.",
+            }
+        raise G3Refusal(
+            f"BLOCKED: gld.exclude_from_analysis is ratified but the analysis frame carries no "
+            f"{GLD_COL!r} column. target_e2.py writes that column; a frame without it is not the "
+            "artifact this pre-registration describes, and which rows are the gold ETF is not "
+            "something this runner may infer."
+        )
+    is_gld = frame[GLD_COL].astype(bool)
+    diag = {
+        "gld_exclude_from_analysis": exclude,
+        "n_gld_rows_in_frame": int(is_gld.sum()),
+        "n_gld_ciks_in_frame": int(frame.loc[is_gld, CIK_COL].nunique()),
+        "n_gld_rows_excluded": int(is_gld.sum()) if exclude else 0,
+        "gld_note": (
+            "decision 2 (owner 2026-09-11): GLD rows are removed from the analysis frame before "
+            "folds, dedup and every fit, in every arm (primary, secondary, no-same-day, rolling, "
+            "form ablation, scorecard)."
+            if exclude
+            else "decision 2's analysis-side exclusion is OFF in this parameter block; GLD rows "
+            "are scored like any other filing."
+        ),
+    }
+    if not exclude:
+        return frame, diag
+    kept = frame[~is_gld].reset_index(drop=True)
+    return kept, diag
 
 
 def dedup_keep_mask_cik(df: pd.DataFrame, gap_days: int) -> pd.Series:
@@ -1800,11 +1925,65 @@ def seed_band(
 # ---------------------------------------------------------------------------
 
 
+def train_overlap_diagnostics(frame: pd.DataFrame, overlap_col: str) -> dict:
+    """FILING-level train overlap on the analysis frame: how many of the
+    filings this run scores contain at least one chunk the labeler also saw in
+    its own fine-tuning split.
+
+    This is a DIFFERENT question from G2's chunk-level census (which counts
+    chunks over the whole corpus), and the scorecard prints both, labelled,
+    because neither bounds the other."""
+    if overlap_col not in frame.columns:
+        return {
+            "train_overlap_column": overlap_col,
+            "n_filings_with_train_overlap": None,
+            "share_filings_with_train_overlap": None,
+            "train_overlap_note": f"the analysis frame carries no {overlap_col!r} column.",
+        }
+    flagged = (frame[overlap_col].astype(float) > 0).sum()
+    return {
+        "train_overlap_column": overlap_col,
+        "n_filings_with_train_overlap": int(flagged),
+        "share_filings_with_train_overlap": float(flagged / len(frame)) if len(frame) else None,
+        "train_overlap_note": (
+            "FILING level, on this analysis frame; G2's census is CHUNK level over the whole "
+            "corpus. Different questions -- both are disclosed, neither substitutes."
+        ),
+    }
+
+
+def novelty_seq_diagnostics(params: dict, frame: pd.DataFrame) -> dict:
+    """Which `columns.exploratory_novelty_seq` columns the frame actually has.
+
+    Decision 23's sequential-prior novelty features are EXPLORATORY: they join
+    `text_and_numeric_exploratory` only, never the confirmatory block and never
+    the scorecard. Unlike every other pre-registered column list, an absent one
+    is a COUNTED DIAGNOSTIC rather than a refusal -- the family-A rebuild that
+    produces them lands on its own schedule, and a head-1 run without them is
+    still exactly the pre-registered confirmatory study."""
+    pinned = list(params["columns"]["exploratory_novelty_seq"])
+    present = [c for c in pinned if c in frame.columns]
+    missing = [c for c in pinned if c not in frame.columns]
+    return {
+        "exploratory_novelty_seq_pinned": pinned,
+        "exploratory_novelty_seq_present": present,
+        "exploratory_novelty_seq_missing": int(len(missing)),
+        "exploratory_novelty_seq_missing_columns": missing,
+        "exploratory_novelty_seq_note": (
+            "decision 23: exploratory block only -- never confirmatory, never the scorecard. "
+            "Missing columns are skipped and counted here, never a refusal."
+        ),
+    }
+
+
 def _blocks_from_params(params: dict, frame: pd.DataFrame) -> dict[str, list[str]]:
     numeric = [c for c in params["columns"]["numeric"] if c in frame.columns]
     text = [c for c in params["columns"]["confirmatory_text"] if c in frame.columns]
     fam = [c for c in params["columns"]["family_novelty"] if c in frame.columns]
     red = [c for c in params["columns"]["exploratory_red_flags"] if c in frame.columns]
+    # Exploratory-only, and the ONE list whose absence is a diagnostic rather
+    # than a refusal (see `novelty_seq_diagnostics`).
+    seq = [c for c in params["columns"]["exploratory_novelty_seq"] if c in frame.columns]
     missing = sorted(
         set(params["columns"]["numeric"] + params["columns"]["confirmatory_text"]
             + params["columns"]["family_novelty"] + params["columns"]["exploratory_red_flags"])
@@ -1818,7 +1997,7 @@ def _blocks_from_params(params: dict, frame: pd.DataFrame) -> dict[str, list[str
     return {
         "numeric_only": numeric,
         "text_and_numeric": numeric + text + fam,
-        "text_and_numeric_exploratory": numeric + text + fam + red,
+        "text_and_numeric_exploratory": numeric + text + fam + red + seq,
         # The zero-text comparator (decision 3): a fit on the size column
         # ALONE -- the predictor that beat both fitted models on E1. It is
         # fitted like any other block and its per-fold ICs are written, but it
@@ -1890,6 +2069,15 @@ def run_head1(
             "fitted."
         )
     started = datetime.now(timezone.utc)
+    # Decision 2, analysis side: GLD leaves the frame ONCE, here, before the
+    # folds, the dedup mask, the spec transforms and every fit. `frame_all`
+    # keeps the rows for the sensitivity arm below and is used nowhere else.
+    frame_all = frame
+    frame, gld_diag = exclude_gld_rows(frame, params)
+    frame_diag = dict(frame_diag)
+    frame_diag.update(gld_diag)
+    frame_diag.update(novelty_seq_diagnostics(params, frame))
+    frame_diag.update(train_overlap_diagnostics(frame, params["overlap"]["column"]))
     blocks = _blocks_from_params(params, frame)
     folds, purge = build_folds(frame, params["fold_quarters"], params["purge_rule"])
     keep_mask = dedup_keep_mask_cik(frame, int(params["dedup"]["gap_days"]))
@@ -1979,6 +2167,8 @@ def run_head1(
         {
             "scope_sentence": SCOPE_SENTENCE,
             "e1_e2_incomparable": INCOMPARABLE_SENTENCE,
+            # ONE constant, shared with the scorecard page and its JSON (S4).
+            "inference_sentence": INFERENCE_SENTENCE,
             "not_a_trading_signal": "Research screening only; no expected return, no trade.",
             "primary_metric": "dedup Spearman IC delta (text+numeric minus numeric-only), core stratum",
             "secondary": "form-controlled ablation; raw levels spec; raw (non-dedup) IC",
@@ -1991,7 +2181,8 @@ def run_head1(
                                  "n_train": int(len(f["train_idx"])),
                                  "n_test": int(len(f["test_idx"]))} for f in folds])
     writer.add_header("purge", purge)
-    writer.set_margin(margin_procedure(primary_deltas["delta"].values, params))
+    margin = margin_procedure(primary_deltas["delta"].values, params)
+    writer.set_margin(margin)
 
     # --- everything delta-bearing, only now ---------------------------------
     writer.add_delta_payload("per_fold_primary_delta_dedup", primary_deltas.to_dict("records"))
@@ -2067,6 +2258,59 @@ def run_head1(
         except G3Refusal as exc:
             arm["status"] = f"not run: {exc}"
         writer.add_delta_payload(f"per_fold_delta__rolling_{window_n}q", arm)
+
+    # GLD-included sensitivity (decision 2, owner 2026-09-11). The primary spec
+    # run once more on the frame WITH the gold-ETF rows: same folds rule, same
+    # purge, same metric, same seed -- the only change is the row set. Reported
+    # beside the primary; never selected in its place.
+    if bool(params["gld"]["included_sensitivity_arm"]):
+        gld_arm = {
+            "n_gld_rows": int(gld_diag.get("n_gld_rows_in_frame", 0)),
+            "note": "sensitivity arm, decision 2 (owner 2026-09-11): reported beside the "
+            "primary, never selected",
+        }
+        try:
+            g_folds, g_purge = build_folds(
+                frame_all, params["fold_quarters"], params["purge_rule"]
+            )
+            g_keep = dedup_keep_mask_cik(
+                frame_all, int(params["dedup"]["gap_days"])
+            ).values.astype(bool)
+            g_frame = S.pit_trailing_rank_frame(frame_all, all_cols, **spec_kwargs)
+            g_emb = embedding_matrix(frame_all)
+            if pinned_k > 0 and g_emb is None:
+                raise G3Refusal(
+                    f"BLOCKED: embedding.pca_k = {pinned_k} is ratified but the GLD-included "
+                    "frame carries no usable pooled-embedding column."
+                )
+            g_fframes = build_fold_frames(
+                g_frame, g_folds, g_emb, emb_k if g_emb is not None else 0,
+                rank_components, spec_kwargs,
+            )
+            assert_pinned_components(g_fframes, pinned_k, "gld_included")
+            g_rows, _ = evaluate_arm(
+                g_frame,
+                g_fframes,
+                {k: v for k, v in blocks.items() if k in ("numeric_only", "text_and_numeric")},
+                g_keep,
+                params["overlap"]["column"],
+                float(params["overlap"]["threshold"]),
+                int(params["seeds"]["primary"]),
+            )
+            g_deltas = fold_deltas(g_rows, "dedup", "text_and_numeric")
+            gld_arm.update(
+                {
+                    "records": g_deltas.to_dict("records"),
+                    "mean_fold_delta_dedup": float(g_deltas["delta"].mean())
+                    if len(g_deltas)
+                    else float("nan"),
+                    "k_folds": int(len(g_deltas)),
+                    "purge": g_purge,
+                }
+            )
+        except G3Refusal as exc:
+            gld_arm["status"] = f"not run: {exc}"
+        writer.add_delta_payload("per_fold_delta__gld_included", gld_arm)
 
     # form-controlled ablation (honest secondary)
     forms = set(params["form_ablation_forms"])
@@ -2145,7 +2389,13 @@ def run_head1(
     json_path = Path(scorecard_json_path) if scorecard_json_path else out_dir / SCORECARD_JSON_NAME
     parquet_path = Path(oof_path) if oof_path else out_dir / OOF_PREDICTIONS_NAME
     scorecard_summary, _scored = SC.build_scorecard(
-        pd.DataFrame(arm_records), params, md_path, json_path, parquet_path
+        pd.DataFrame(arm_records),
+        params,
+        margin,
+        build_disclosures(frame, frame_diag, g2_path=g2_path),
+        md_path,
+        json_path,
+        parquet_path,
     )
     writer.add_delta_payload("scorecard_summary", scorecard_summary)
 
@@ -2196,6 +2446,7 @@ def load_g2_caveats(path: Path = G2_RESULTS_PATH) -> dict:
     if not path.exists():
         return {"available": False, "path": str(path)}
     g2 = json.loads(path.read_text())
+    comparisons = g2.get("comparison_rows") or []
     return {
         "available": True,
         "path": str(path),
@@ -2205,6 +2456,14 @@ def load_g2_caveats(path: Path = G2_RESULTS_PATH) -> dict:
         "constants": g2.get("constants"),
         "guidance_active_precision": g2.get("guidance_active_precision"),
         "guidance_false_none_rate": g2.get("guidance_false_none_rate"),
+        # The v1.2 TEACHER spot-check row: the red-flag error of the labels the
+        # student was trained ON, which the scorecard's red-flag disclosure has
+        # to sit on top of. Read, never typed.
+        "teacher_spotcheck": next(
+            (r for r in comparisons if "TEACHER spot-check" in str(r.get("name", ""))), None
+        ),
+        # G2's own NEGATIVE row, quoted WITH its own "this is not recall" note.
+        "sentiment_negative": ((g2.get("secondaries") or {}).get("S-ERR") or {}).get("sentiment"),
         "verdicts": {
             field: {
                 "p_hat": entry.get("p_hat"),
@@ -2215,6 +2474,221 @@ def load_g2_caveats(path: Path = G2_RESULTS_PATH) -> dict:
             }
             for field, entry in (g2.get("primary") or {}).items()
         },
+    }
+
+
+def _find_key(obj, key):
+    """First value stored under `key` anywhere inside a nested dict/list, else
+    None. Used so a disclosure keeps working when an artifact's section names
+    move but its measured key does not."""
+    if isinstance(obj, dict):
+        if key in obj:
+            return obj[key]
+        for value in obj.values():
+            found = _find_key(value, key)
+            if found is not None:
+                return found
+    elif isinstance(obj, list):
+        for value in obj:
+            found = _find_key(value, key)
+            if found is not None:
+                return found
+    return None
+
+
+def labeler_negative_recall(path: Path = LABELER_EVAL_PATH) -> dict:
+    """Sentiment NEGATIVE recall from THE LABELER'S OWN held-out eval.
+
+    G2's NEGATIVE row is a one-directional verification and its own file says
+    it is NOT recall, so the recall number the scorecard discloses is the one
+    measured on the adapter that actually labeled this corpus. Absent file ->
+    {"available": False}; nothing is typed in."""
+    path = Path(path)
+    if not path.exists():
+        return {"available": False, "path": str(path)}
+    try:
+        entry = (
+            json.loads(path.read_text())
+            .get("headline", {})
+            .get("sentiment", {})
+            .get("per_class", {})
+            .get("NEGATIVE")
+        )
+    except (OSError, ValueError, AttributeError):
+        return {"available": False, "path": str(path)}
+    if not entry:
+        return {"available": False, "path": str(path)}
+    return {
+        "available": True,
+        "path": str(path),
+        "recall": entry.get("recall"),
+        "tp": entry.get("tp"),
+        "support": entry.get("support"),
+    }
+
+
+def _pct(value, digits: int = 2) -> str:
+    try:
+        return f"{100.0 * float(value):.{digits}f}%"
+    except (TypeError, ValueError):
+        return "n/a"
+
+
+def _label_disclosure(g2: dict, recall: dict) -> str:
+    if not g2.get("available"):
+        return (
+            f"G2 caveats unavailable -- {g2.get('path')} was not readable by this run, so NO "
+            "label-quality number is stated beside these calls and none should be assumed."
+        )
+    verdicts = g2.get("verdicts") or {}
+    sent = verdicts.get("sentiment") or {}
+    guid = verdicts.get("guidance_direction") or {}
+    ap = g2.get("guidance_active_precision") or {}
+    consts = g2.get("constants") or {}
+    rf = consts.get("redflag_exact_set_error") or {}
+    teacher = ((g2.get("teacher_spotcheck") or {}).get("other_value")) or {}
+    neg = (g2.get("sentiment_negative") or {}).get(
+        "share_of_reference_NEGATIVE_rows_whose_stored_value_was_NEGATIVE"
+    ) or {}
+    sent_ci = sent.get("wilson_95") or [None, None]
+    guid_ci = guid.get("wilson_95") or [None, None]
+    recall_txt = (
+        f"sentiment NEGATIVE recall {recall.get('recall')} ({recall.get('tp')}/"
+        f"{recall.get('support')}) on this labeler's own held-out eval"
+        if recall.get("available")
+        else "sentiment NEGATIVE recall unavailable to this run"
+    )
+    return (
+        "These labels are model-produced, not human ground truth. G2 (model-consensus with "
+        f"owner rulings): sentiment agreement {_pct(sent.get('p_hat'))} "
+        f"[{_pct(sent_ci[0])}, {_pct(sent_ci[1])}], n = {sent.get('n')} -- "
+        f"{sent.get('verdict')}; {recall_txt}, and G2's own NEGATIVE row "
+        f"({neg.get('k')}/{neg.get('n')} stored-NEGATIVE upheld) is explicitly NOT recall "
+        "against independent ground truth. Guidance agreement "
+        f"{_pct(guid.get('p_hat'))} [{_pct(guid_ci[0])}, {_pct(guid_ci[1])}], n = "
+        f"{guid.get('n')} is a statement about the NONE mass only and travels with ACTIVE "
+        f"precision {_pct(ap.get('point'))} [{_pct(ap.get('wilson_lo'))}, "
+        f"{_pct(ap.get('wilson_hi'))}]. Red flags: exact-set error {_pct(rf.get('point'))} "
+        f"[{_pct(rf.get('ci_lo'))}, {_pct(rf.get('ci_hi'))}], n = {rf.get('n')}, and the block "
+        f"is {str(g2.get('red_flags_status')).rstrip('. ')} -- measured on top of a v1.2 TEACHER "
+        f"spot-check exact-set error of {_pct(teacher.get('point'))} ({teacher.get('k')}/"
+        f"{teacher.get('n')}). Source: {SC.repo_relative(g2.get('path'))}, sha256 "
+        f"{str(g2.get('sha256'))[:12]}."
+    )
+
+
+def build_disclosures(
+    frame: pd.DataFrame,
+    frame_diag: dict,
+    g2_path: Path = G2_RESULTS_PATH,
+    census_path: Path = CENSUS_E2_PATH,
+    labeler_path: Path = LABELER_EVAL_PATH,
+    manifest_path: Path = TARGET_MANIFEST,
+) -> dict:
+    """The fixed disclosure block the scorecard page carries (red-team M5).
+
+    Every sentence is assembled HERE, from this repo's own artifacts and from
+    the run's own frame, and handed to `scorecard_e2` as plain strings: that
+    module reads no artifact of its own and imports no app code. A missing
+    artifact produces an explicit "unavailable" sentence -- never a silently
+    shorter block, because a disclosure that vanishes is indistinguishable
+    from one that was never needed."""
+    g2 = load_g2_caveats(g2_path)
+    recall = labeler_negative_recall(labeler_path)
+
+    # Filing level: READ from the frame diagnostics the run already wrote
+    # (recomputed here only if the caller handed in a diagnostics dict without
+    # them, so the sentence can never disagree with the run's own numbers).
+    overlap_col = frame_diag.get("train_overlap_column") or "train_overlap_share"
+    if "share_filings_with_train_overlap" not in frame_diag:
+        frame_diag = dict(frame_diag, **train_overlap_diagnostics(frame, overlap_col))
+    share = frame_diag.get("share_filings_with_train_overlap")
+    if share is not None:
+        filing_txt = (
+            f"filing level, {_pct(share)} of the {len(frame):,} filings in this analysis frame "
+            f"carry at least one such chunk ({overlap_col} > 0)"
+        )
+    else:
+        filing_txt = (
+            f"filing level, not available -- the analysis frame carries no {overlap_col!r} column"
+        )
+    chunk = ((g2.get("constants") or {}).get("train_overlap_census") or {}) if g2.get("available") else {}
+    chunk_n = chunk.get("n")
+    if isinstance(chunk_n, int):
+        chunk_txt = (
+            f"chunk level, {_pct(chunk.get('point'))} of {chunk_n:,} labeled chunks overlap the "
+            "labeler's own fine-tuning split (G2 census)"
+        )
+    else:
+        chunk_txt = "chunk level, not available to this run"
+
+    census = {}
+    try:
+        census = json.loads(Path(census_path).read_text())
+    except (OSError, ValueError):
+        census = {}
+    hole = _find_key(census, "never_extracted_periodic") or {}
+    if hole:
+        sectors = hole.get("sector_concentration") or {}
+        extraction = (
+            f"{hole.get('n_ciks')} universe CIKs have no extracted periodic sections at all "
+            f"({hole.get('n_filings')} 10-K/10-Q filings never extracted), "
+            f"{sectors.get('financials')} of them financials -- a sector-concentrated hole, not "
+            f"a random one ({Path(census_path).name}, never_extracted_periodic)."
+        )
+    else:
+        extraction = (
+            f"the never-extracted-CIK census was not readable by this run; see "
+            f"{Path(census_path).name}, section "
+            "`section_4_frame_decomposition_decisions_3_4.never_extracted_periodic`."
+        )
+
+    cad_cik = 895728
+    n_cad = int((frame[CIK_COL] == cad_cik).sum()) if CIK_COL in frame.columns else 0
+    fx = (
+        f"Enbridge (CIK {cad_cik}) reports in Canadian dollars and enters this run UNCONVERTED "
+        "-- the disclosed exception of decision 7 (owner 2026-09-11); no FX code path exists "
+        f"yet, and {n_cad} of the filings in this frame are that company's."
+    )
+
+    manifest = {}
+    try:
+        manifest = json.loads(Path(manifest_path).read_text())
+    except (OSError, ValueError):
+        manifest = {}
+    absent = _find_key(manifest, "n_universe_member_ciks_absent_from_price_matrix")
+    total = _find_key(manifest, "n_universe_member_ciks_all_strata")
+    price_censoring = (
+        f"{absent if absent is not None else 'n/a'} of "
+        f"{total if total is not None else 'n/a'} universe members are without usable prices, "
+        "disproportionately acquired or delisted names -- absence is outcome-correlated, so the "
+        "scored set is the surviving one and the missing companies are not missing at random."
+    )
+
+    return {
+        "labels": _label_disclosure(g2, recall),
+        "train_overlap": (
+            f"Two different questions, both stated: {chunk_txt}; {filing_txt}. "
+            "A chunk-level share and a filing-level share are not the same quantity and neither "
+            "bounds the other."
+        ),
+        "extraction": extraction,
+        "fx": fx,
+        "price_censoring": price_censoring,
+        "returns": (
+            "Price return only -- dividends not included; no transaction costs, taxes, slippage "
+            "or position sizing; out-of-fold, backtested, no money invested."
+        ),
+        "peer_benchmark": (
+            "The peer benchmark is the equal-weighted average of all universe members, both "
+            "strata, GLD excluded, excluding the company itself"
+            + (
+                f"; {frame_diag.get('n_gld_rows_excluded')} GLD rows were removed from this "
+                "analysis frame before any fold (decision 2)."
+                if frame_diag.get("gld_exclude_from_analysis")
+                else "."
+            )
+        ),
     }
 
 
@@ -2314,10 +2788,22 @@ def write_report(doc: dict, path: Path) -> str:
                 f"- rolling {arm['train_window_quarters']}-quarter training window: "
                 f"{arm.get('status', 'not run')}"
             )
+    gld_arm = doc.get("per_fold_delta__gld_included")
+    if gld_arm:
+        if "mean_fold_delta_dedup" in gld_arm:
+            lines.append(
+                f"- GLD-included arm: k = {gld_arm.get('k_folds')}, mean fold delta "
+                f"{gld_arm.get('mean_fold_delta_dedup', float('nan')):.4f} over a frame carrying "
+                f"the {gld_arm.get('n_gld_rows')} gold-ETF rows the primary excludes -- "
+                f"{gld_arm['note']}"
+            )
+        else:
+            lines.append(f"- GLD-included arm: {gld_arm.get('status', 'not run')}")
     lines += [
         "",
         "The primary training window is the EXPANDING one declared before the run; the rolling "
-        "arms above are sensitivities (decision 4) and are never selected in its place.",
+        "arms above are sensitivities (decision 4) and are never selected in its place. The "
+        "GLD-included arm is decision 2's sensitivity and is never selected either.",
         "",
         "## 4. Standing sections",
         "",
@@ -2374,7 +2860,10 @@ def write_report(doc: dict, path: Path) -> str:
             f"Built from this run's own out-of-fold predictions on the `{card.get('arm')}` arm's "
             f"`{card.get('eval_set')}` rows: {card.get('n_filings_scored')} filings, "
             f"{card.get('n_companies')} companies, {card.get('n_test_quarters')} test quarters. "
-            f"Full page: `{(card.get('files') or {}).get('markdown')}`."
+            f"Call rule `{card.get('call_rule')}`, tie rule `{card.get('tie_rule')}`. "
+            # repo-relative: this report is committed, a local absolute path is not
+            # a reference anyone else can follow (red-team S6).
+            f"Full page: `{SC.repo_relative((card.get('files') or {}).get('markdown'))}`."
         )
         lines.append("")
         lines += _table(
@@ -2386,21 +2875,28 @@ def write_report(doc: dict, path: Path) -> str:
                     "hit_rate": entry["hit_rate"],
                     "wilson_lo": entry["wilson_lo"],
                     "wilson_hi": entry["wilson_hi"],
+                    "n_no_call": entry.get("n_no_call"),
+                    "n_tied_no_call": entry.get("n_tied_no_call"),
+                    "n_unresolved": entry.get("n_unresolved"),
                 }
                 for name, entry in (card.get("blocks") or {}).items()
             ],
-            ["block", "n_calls", "n_correct", "hit_rate", "wilson_lo", "wilson_hi"],
+            ["block", "n_calls", "n_correct", "hit_rate", "wilson_lo", "wilson_hi",
+             "n_no_call", "n_tied_no_call", "n_unresolved"],
         )
         lines += [
             "",
-            "Base rate (share of scored filings with a positive excess return): "
-            + (
-                f"{card['base_rate_positive_excess']:.4f}."
-                if card.get("base_rate_positive_excess") is not None
-                else "n/a."
-            ),
+            card.get("chance_sentence", SC.CHANCE_SENTENCE),
             "",
-            f"**{card.get('inference_sentence')}**",
+            "Outcome mix (share of scored filings with positive excess): "
+            + (
+                f"{card['outcome_mix_positive_excess']:.4f}"
+                if card.get("outcome_mix_positive_excess") is not None
+                else "n/a"
+            )
+            + " -- what the period did, NOT the yardstick the hit rate is read against.",
+            "",
+            f"**{INFERENCE_SENTENCE}**",
             "",
             card.get("prices_sentence", ""),
         ]
@@ -2419,7 +2915,12 @@ def write_report(doc: dict, path: Path) -> str:
 
 def synthetic_frames(seed: int = 0, n_ciks: int = 24, n_quarters: int = 14, emb_dim: int = 8):
     """A seeded synthetic (target, text, numeric, families) quartet with the
-    same schemas as the real tables. No real return, price or filing is read."""
+    same schemas as the real tables. No real return, price or filing is read.
+
+    One synthetic company carries `is_gld = True` so decision 2's exclusion and
+    its sensitivity arm are exercised end to end rather than only in a unit
+    test, and the families frame carries the sequential-novelty columns so the
+    exploratory-only path is exercised too."""
     rng = np.random.default_rng(seed)
     start = pd.Timestamp("2016-01-15")
     sessions = pd.bdate_range(start, periods=n_quarters * 70 + 200)
@@ -2441,7 +2942,8 @@ def synthetic_frames(seed: int = 0, n_ciks: int = 24, n_quarters: int = 14, emb_
                         "window_open_session": sessions[min(pos + 1, len(sessions) - 1)],
                         "window_close_session": close,
                         "target_excess_63": float(0.02 * sig + rng.normal(0, 0.12)),
-                        "target_complete": True, "in_membership": True, "is_gld": False,
+                        "target_complete": True, "in_membership": True,
+                        "is_gld": bool(c == n_ciks - 1),
                     }
                 )
                 xrows.append(
@@ -2469,6 +2971,8 @@ def synthetic_frames(seed: int = 0, n_ciks: int = 24, n_quarters: int = 14, emb_
                         "cik": cik, "accession_number": acc,
                         "novelty_risk_factors_yoy": float(rng.uniform(0, 1)),
                         "novelty_mda_yoy": float(rng.uniform(0, 1)),
+                        "novelty_risk_factors_seq": float(rng.uniform(0, 1)),
+                        "novelty_mda_seq": float(rng.uniform(0, 1)),
                         "emb": list(rng.normal(size=emb_dim).astype(np.float32)),
                     }
                 )
@@ -2490,6 +2994,11 @@ def selftest_params(frame: pd.DataFrame) -> dict:
     ]
     params["columns"]["exploratory_red_flags"] = ["redflag_any_rate_press"]
     params["columns"]["family_novelty"] = ["novelty_risk_factors_yoy", "novelty_mda_yoy"]
+    # Exploratory-only (decision 23): these join `text_and_numeric_exploratory`
+    # and nothing else, and a frame without them is a diagnostic, not a refusal.
+    params["columns"]["exploratory_novelty_seq"] = [
+        "novelty_risk_factors_seq", "novelty_mda_seq",
+    ]
     return params
 
 
