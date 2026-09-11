@@ -1493,6 +1493,23 @@ externals; the em-dash heading pattern as an extractor case for the app lane
 (never the frozen research extractor); guidance imputation share disclosed on
 the page.
 
+**2026-09-11 — P1a.2 DONE (fundamentals for any CIK) + a PIT DEFECT FOUND (status).**
+`ingest_one.py --fundamentals` pulls a CIK's companyfacts and runs F2's own
+concept-resolution classifier by import; `report_filing.py --store` renders the
+point-in-time panel through the same resolver path as research companies.
+Ten external companies: 98/140 (CIK, family) pairs resolved, 43/50 panel
+cells populated (was 0), 3.1 s of EDGAR time in total, $0; UNRESOLVED cells
+show the classifier's own reason. Record: `data/app/status/L2_3_external_fundamentals.md`.
+**Defect:** `pit.value_as_of` groups by `period_end` alone, so same-end-date
+FY and Q4 facts in one filing can return the quarter where the year was
+wanted (2 of 43 cells); the research numeric features take the same path →
+recorded in `F5_PLAN.md` §3 decision 22 as a pre-ratification fix + rebuild
+(not yet done). The app page now prints each value's period length so the
+reader sees which it is. Also measured, owner call recorded in the status
+file §7: the ratified 75%-coverage window bar applied outside its measured
+regime for long-history externals (103/140 vs 98/140 families under the
+alternative window).
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual
