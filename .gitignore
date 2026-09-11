@@ -136,3 +136,11 @@ data/hardening/e1_relabel_student.parquet
 data/hardening/e1_relabel_student.jsonl
 data/hardening/h3v2/e1_relabel_student_v12.parquet
 data/hardening/h3v2/e1_relabel_student_v12.jsonl
+
+# --- F5 outputs (added 2026-09-10) ---
+# Feature / target tables built by features_e2.py, numeric_features_e2.py and
+# target_e2.py are regenerable from the F4 labels + F2 ingestion outputs at $0;
+# their sha256s are recorded in data/f5/*_manifest.json, which IS versioned,
+# as are the status reports, census, and the G3 pre-registration.
+data/f5/*.parquet
+data/f5/**/*.parquet

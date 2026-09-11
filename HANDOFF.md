@@ -433,7 +433,8 @@ current ones. Nothing here supersedes anything above it.*
 | Full run (6,747 requests, wrong config, 62.5% usable) | $18.05 |
 | Corrective run (2,528 requests) | $4.49 |
 | Re-label (4,219 requests) | $10.06 |
-| **Total** | **$33.51** |
+| **Total (E1 labeling, frozen)** | **$33.51** |
+| Rubric-v1.2 re-label of E1 (separately authorized 2026-08-26; see §5) | ~$24.92 + $0.0014 |
 
 The project's original $50 ceiling is **superseded**. Current rule, set by
 the owner: **no further Anthropic API spend, period** — not "spend the
@@ -1189,6 +1190,20 @@ from the artifacts rather than from any prior note:
 - Next: `F5_PLAN.md` (written 2026-09-07 evening, owner asked "lay out F5
   plan").
 
+**2026-09-10 — F5 STEP 1a STARTED (owner: "start F5 Step 1"); LICENSE + SPEND
+CORRECTION (owner, in chat).**
+- Owner confirmed total spend = $33.51 (E1 labeling, frozen) + ~$24.92 +
+  $0.0014 (rubric-v1.2 re-label, separately authorized 2026-08-26); §5 and
+  the §2 cost table corrected accordingly. README already stated it.
+- LICENSE: MIT added at the owner's request ("help me make"); main-session
+  default, swappable before push (Apache-2.0 if a patent grant is wanted).
+- F5 Step 1a launched as workflow `wf_582a40db-2e2`: three Opus builders in
+  parallel (target_e2 / features_e2 text side / numeric_features_e2) under
+  the §1 freeze, each with tests and a `data/f5/status/STEP1A_*.md` report,
+  then one red-team verification. `data/f5/*.parquet` git-excluded;
+  manifests versioned. Step 1b = `backtest_e2.py` with the G3 guard, heads
+  2/3, embeddings + novelty families.
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual
@@ -1221,8 +1236,12 @@ for the next session — the incident itself is closed.
 ## 5. New constraints and economy
 
 - **No further Anthropic API spend.** Not a budget to manage down — a hard
-  stop. The frozen $33.51 total is final. Nothing in this project should
-  call the Batch API or any Anthropic API again. `submit_labeling_batch.py`
+  stop. Total spent, corrected 2026-09-10 (owner, in chat): the E1 labeling
+  freeze of **$33.51** plus the separately authorized rubric-v1.2 re-label of
+  **about $24.92 + $0.0014** (2026-08-26, `HARDENING_PROGRESS.md`), so
+  roughly **$58.44** all-in; that re-label drained the account and the
+  freeze is re-sealed. Nothing in this project should call the Batch API or
+  any Anthropic API again. `submit_labeling_batch.py`
   and `build_batch_requests.py` stay in the repo as audited tooling and a
   record of the safety guards that were built, not as tools to run again.
 - **Subscription-only agent work.** The owner has a $200/mo Claude Max

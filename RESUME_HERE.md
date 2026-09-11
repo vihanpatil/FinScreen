@@ -4,9 +4,21 @@
 for depth). **STATE AS OF 2026-09-06 ~15:30 — handoff written by the main session at the
 owner's request (owner returns in a few hours).**
 
-**STATE AS OF 2026-09-07 ~20:30 — GATE G2 RULED "PROCEED UNDER THE LADDER";
-2(b) RULED "EXTEND (promotion waits on own spot-check)". NEXT PHASE = F5, plan
-in `F5_PLAN.md`. NOTHING IS RUNNING. READ `data/f4/g2/G2_FINAL_REPORT.md` §1.**
+**STATE AS OF 2026-09-10 — F5 STEP 1a IN FLIGHT (owner: "start F5 Step 1",
+2026-09-10). Workflow `wf_582a40db-2e2` builds `target_e2.py`,
+`features_e2.py`, `numeric_features_e2.py` + tests under the F5_PLAN.md §1
+freeze (no E2 text-feature IC), then a red-team pass. Outputs land under
+`data/f5/` (parquets git-excluded, manifests + `status/STEP1A_*.md` kept). If
+this block is still here and no `data/f5/status/STEP1A_*.md` exists, the
+workflow died: re-launch Step 1a from `F5_PLAN.md` §2 Step 1 — do not
+hand-build. Step 1b (backtest_e2 runner with the G3 guard, heads 2/3, the two
+zero-labeling families) follows. Gate G2 was RULED 2026-09-07 (proceed under
+the ladder; 2(b) extend). Repo committed on main; owner pushes. LICENSE = MIT
+(owner-confirmed 2026-09-10).**
+
+**PREVIOUS STATE (2026-09-07 ~20:30):** GATE G2 RULED "PROCEED UNDER THE LADDER";
+2(b) RULED "EXTEND (promotion waits on own spot-check)". Plan in `F5_PLAN.md`.
+Read `data/f4/g2/G2_FINAL_REPORT.md` §1.
 - Owner ruled all 39 Part A + 20 Part B rows in chat 2026-09-07 (HANDOFF
   §3 "G2 OWNER ROW RULINGS RECORDED"); files `data/f4/g2/owner_rulings.json`
   + `probe_rulings.json`; analyzer re-run once → `results_g2.json` /

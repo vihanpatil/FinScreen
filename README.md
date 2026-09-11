@@ -253,6 +253,10 @@ python3 data/f4/g2/analyze_g2.py --selftest
 Scripts under `data/f4/g2/` and `data/hardening/` locate the repository root
 from their own file location, so they run from any clone.
 
+## License
+
+MIT, see `LICENSE`.
+
 ## Provenance and honesty rules
 
 - **Every number in a report traces to a script and an artifact.** Reports are
