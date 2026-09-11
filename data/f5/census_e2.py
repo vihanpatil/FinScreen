@@ -715,9 +715,18 @@ def instrument_census(frame: pd.DataFrame) -> dict:
             "different_questions": "4.53% is the CHUNK-level accession-channel share; the filing-level figure beside it is the share "
                                   "of MODELING ROWS containing at least one such chunk. Never quote one "
                                   "as the other. The accession channel is a LOWER bound on labeler "
-                                  "exposure (CIK-level exposure is 15.85%).",
+                                  "exposure; the COMPANY-level share of this frame is measured in "
+                                  "section_1c_run_time_frame_overlap_and_coverage.train_overlap_*."
+                                  "cik_level_share (red-team MF-1 -- G2 §2.5's fine-tuning-corpus "
+                                  "figure is a different quantity and is not quoted here).",
             "arm_as_built": "an EVALUATION-side restriction: the fit is unchanged and the scored set "
-                            f"shrinks to {int((ov <= 0).sum())} rows (F5_PLAN §3 decision 3's overlap-arm note).",
+                            "shrinks to the DEDUP, NON-OVERLAPPING TEST ROWS INSIDE THE 33 RATIFIED "
+                            "FOLDS -- section_1b_ratified_folds_ex_gld."
+                            "overlap_arm_scored_rows_in_folds on the run-time frame, and "
+                            "section_1b_ratified_folds_gld_in.overlap_arm_scored_rows_in_folds with "
+                            "GLD in. It is NOT frame-level arithmetic over the whole modeling frame, "
+                            "which is what this key used to report (red-team NF-2 -> MF-1; "
+                            "F5_PLAN §3 decision 3's overlap-arm note).",
             "source": "data/f5/status/STEP1A_features_e2.md + STEP1B_backtest_e2.md §2 / §4 item 2",
         },
         "selfid": {"chunk_level_n": 146958, "chunk_level_share": 0.4646,

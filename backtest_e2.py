@@ -2567,8 +2567,12 @@ def missing_embedding_calls(records_df: pd.DataFrame, frame: pd.DataFrame, param
     and again inside `build_scorecard` to WRITE cannot disagree; counting after
     the page is built would need the disclosure block to exist before it, which
     is the one ordering this module refuses to invert."""
+    # Red-team N-g: BOTH branches carry the SAME keys -- an unavailable count is
+    # an explicit null, never an absent key, so a consumer cannot read "0" off a
+    # `.get()` that simply found nothing.
     out = {
         "available": False,
+        "n_rows_without_embedding_in_frame": None,
         "n_scorecard_rows_without_embedding": None,
         "n_calls_on_rows_without_embedding": None,
         "n_scored_calls_on_rows_without_embedding": None,
@@ -2579,7 +2583,9 @@ def missing_embedding_calls(records_df: pd.DataFrame, frame: pd.DataFrame, param
     keys = set(zip(missing[CIK_COL].astype(str), missing["accession_number"].astype(str)))
     called = SC.make_calls(records_df, params)
     if called.empty:
-        return dict(out, available=True, n_scorecard_rows_without_embedding=0,
+        return dict(out, available=True,
+                    n_rows_without_embedding_in_frame=int(len(missing)),
+                    n_scorecard_rows_without_embedding=0,
                     n_calls_on_rows_without_embedding=0,
                     n_scored_calls_on_rows_without_embedding=0)
     model = called[called["block"] == params["scorecard"]["model_block"]]
@@ -2591,6 +2597,7 @@ def missing_embedding_calls(records_df: pd.DataFrame, frame: pd.DataFrame, param
     has_call = (model["call"] != SC.CALL_NONE).values
     resolved = model[SC.OUTCOME_COL].astype(float).notna().values
     return {
+        **out,
         "available": True,
         "n_rows_without_embedding_in_frame": int(len(missing)),
         # The scorecard's own rows (the primary arm's deduplicated test rows in
@@ -2610,6 +2617,40 @@ def _pct(value, digits: int = 2) -> str:
         return "n/a"
 
 
+def stored_negative_precision(g2: dict) -> dict:
+    """§11's stored-NEGATIVE precision, COMPUTED from G2's own confusion block.
+
+    `results_g2.json` has no direct key for it. The neighbouring
+    `share_of_reference_NEGATIVE_rows_whose_stored_value_was_NEGATIVE` (25/25)
+    counts REFERENCE-NEGATIVE rows -- the other direction, and its own note says
+    a value near 1.0 there is near-structural. The quantity §11 mandates is the
+    precision of the STORED label, so it is summed here out of
+    `secondaries.S-ERR.sentiment.confusion_stored_x_reference`, whose keys are
+    "<stored>-><reference>": `NEGATIVE->NEGATIVE` over every `NEGATIVE->*` cell
+    (red-team MF-3). Absent block -> {"available": False}; nothing is typed."""
+    conf = (g2.get("sentiment_negative") or {}).get("confusion_stored_x_reference") or {}
+    k = n = 0
+    used = []
+    for key, count in conf.items():
+        parts = [part.strip() for part in str(key).split("->")]
+        if len(parts) != 2 or parts[0] != "NEGATIVE":
+            continue
+        used.append(str(key))
+        n += int(count)
+        if parts[1] == "NEGATIVE":
+            k += int(count)
+    if not n:
+        return {"available": False}
+    return {
+        "available": True,
+        "k": k,
+        "n": n,
+        "precision": float(k) / float(n),
+        "keys": sorted(used),
+        "source": "secondaries.S-ERR.sentiment.confusion_stored_x_reference",
+    }
+
+
 def _label_disclosure(g2: dict, recall: dict) -> str:
     if not g2.get("available"):
         return (
@@ -2624,9 +2665,10 @@ def _label_disclosure(g2: dict, recall: dict) -> str:
     consts = g2.get("constants") or {}
     rf = consts.get("redflag_exact_set_error") or {}
     teacher = ((g2.get("teacher_spotcheck") or {}).get("other_value")) or {}
-    neg = (g2.get("sentiment_negative") or {}).get(
-        "share_of_reference_NEGATIVE_rows_whose_stored_value_was_NEGATIVE"
-    ) or {}
+    # Red-team MF-3: the stored-NEGATIVE PRECISION (computed from the confusion
+    # counts), not G2's reference-NEGATIVE row -- that key counts the other
+    # direction and its own file says a value near 1.0 there is near-structural.
+    neg = stored_negative_precision(g2)
     sent_ci = sent.get("wilson_95") or [None, None]
     guid_ci = guid.get("wilson_95") or [None, None]
     fn_ci = fn.get("wilson_95") or [None, None]
@@ -2653,9 +2695,17 @@ def _label_disclosure(g2: dict, recall: dict) -> str:
         "These labels are model-produced, not human ground truth. G2 (model-consensus with "
         f"owner rulings): sentiment agreement {_pct(sent.get('p_hat'))} "
         f"[{_pct(sent_ci[0])}, {_pct(sent_ci[1])}], n = {sent.get('n')} -- "
-        f"{sent.get('verdict')}; {recall_txt}, and G2's own NEGATIVE row "
-        f"({neg.get('k')}/{neg.get('n')} stored-NEGATIVE upheld) is explicitly NOT recall "
-        "against independent ground truth. Guidance agreement "
+        f"{sent.get('verdict')}; {recall_txt}, and "
+        + (
+            f"G2 stored-NEGATIVE precision {neg['k']}/{neg['n']} "
+            f"({_pct(neg['precision'], 0)}) -- the share of chunks STORED NEGATIVE whose "
+            f"reference value was also NEGATIVE, summed from {neg['source']} -- is "
+            "one-directional verification of contested rows and is NOT recall against "
+            "independent ground truth"
+            if neg.get("available")
+            else "G2's stored-NEGATIVE precision was not readable by this run"
+        )
+        + ". Guidance agreement "
         f"{_pct(guid.get('p_hat'))} [{_pct(guid_ci[0])}, {_pct(guid_ci[1])}], n = "
         f"{guid.get('n')} is a statement about the NONE mass only and travels with ACTIVE "
         f"precision {_pct(ap.get('point'))} [{_pct(ap.get('wilson_lo'))}, "
@@ -2720,6 +2770,28 @@ def build_disclosures(
         census = json.loads(Path(census_path).read_text())
     except (OSError, ValueError):
         census = {}
+
+    # Red-team SH-6: a chunk-level share and a filing-level share both understate
+    # how many COMPANIES the labeler already saw. The company-level share is READ
+    # from the census's run-time (ex-GLD) block -- the frame this run actually
+    # scores -- never recomputed here and never G2 §2.5's fine-tuning-corpus
+    # figure, which is a different quantity.
+    cik_overlap = (
+        (census.get("section_1c_run_time_frame_overlap_and_coverage") or {})
+        .get("train_overlap_ex_gld_run_time")
+    ) or {}
+    if cik_overlap.get("cik_level_n") is not None and cik_overlap.get("n_ciks"):
+        company_txt = (
+            f"company level, {cik_overlap['cik_level_n']} of {cik_overlap['n_ciks']} companies "
+            f"({_pct(cik_overlap.get('cik_level_share'), 1)}) carry at least one overlapping "
+            "chunk"
+        )
+    else:
+        company_txt = (
+            "company level, not available to this run (census section "
+            "`section_1c_run_time_frame_overlap_and_coverage.train_overlap_ex_gld_run_time`)"
+        )
+
     hole = _find_key(census, "never_extracted_periodic") or {}
     if hole:
         sectors = hole.get("sector_concentration") or {}
@@ -2786,9 +2858,9 @@ def build_disclosures(
     return {
         "labels": _label_disclosure(g2, recall),
         "train_overlap": (
-            f"Two different questions, both stated: {chunk_txt}; {filing_txt}. "
-            "A chunk-level share and a filing-level share are not the same quantity and neither "
-            "bounds the other."
+            f"Three different questions, all stated: {chunk_txt}; {filing_txt}; {company_txt}. "
+            "A chunk-level share, a filing-level share and a company-level share are not the "
+            "same quantity and none of them bounds the others."
         ),
         "extraction": extraction,
         "fx": fx,

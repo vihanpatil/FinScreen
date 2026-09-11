@@ -15,6 +15,10 @@ What is pinned here (red-team NF-9):
     `heads_e2.load_ratified_params`), so the pin cannot brick the run;
   * `--show` is read-only -- byte-identical file before and after;
   * `--pin` without the owner's word refuses and writes nothing;
+  * `--pin` without an EXPLICIT `--date` refuses and writes nothing -- there is
+    no UTC default for the pin (red-team MF-6);
+  * the eight rules are lettered (a)-(h), the same letters §0 of the
+    pre-registration lists (red-team SH-3);
   * a document that has moved under the procedure refuses rather than being
     partially edited.
 """
@@ -70,6 +74,48 @@ def test_the_substitution_set_leaves_no_residue(scratch):
     assert f"**pinned at ratification on {DATE}**" in after
     assert f"the document is RATIFIED {DATE}" in after
     assert f"this document is ratified on {DATE}" in after
+
+
+def test_the_rules_are_lettered_a_to_h_like_the_document(scratch):
+    """Red-team SH-3: the script declares EIGHT rules and §0 of the
+    pre-registration lists eight letters. Each rule's `id` starts with its own
+    letter, in order, so the two lists can be read against each other -- and
+    the two signature lines are (f) and (g), not both (f)."""
+    rules = PG.substitutions(DATE)
+    assert len(rules) == 8
+    assert [r["id"][0] for r in rules] == list("abcdefgh")
+    by_letter = {r["id"][0]: r["id"] for r in rules}
+    assert by_letter["f"] == "f_signature_line_1"
+    assert by_letter["g"] == "g_signature_line_2"
+    assert by_letter["h"] == "h_header_paragraph_clause"
+    assert "EXACTLY THESE EIGHT RULES" in PG.__doc__
+    # the document says eight too, and names the same two signature lines
+    doc = scratch.read_text()
+    assert "EXACTLY the eight substitutions the script declares" in doc
+
+
+def test_pin_without_an_explicit_date_refuses(scratch, tmp_path, capsys):
+    """Red-team MF-6: `--date` has no default under `--pin`. The date is
+    written into the document, into `handoff_entry` and into the pinned sha, so
+    a UTC default would stamp a day the owner never said the moment the clock
+    rolls over. `--show` may default it, because `--show` writes nothing."""
+    ratified = tmp_path / "G3_RATIFIED.json"
+    before = scratch.read_bytes()
+
+    rc = PG.main(["--pin", "--owner-word", "ratify", "--doc", str(scratch),
+                  "--ratified", str(ratified)])
+    out = capsys.readouterr().out
+    assert rc == 2
+    assert "BLOCKED: --pin requires an explicit --date" in out
+    assert not ratified.exists()
+    assert scratch.read_bytes() == before
+
+    # the flag is not merely unset-by-accident: argparse carries no default
+    assert PG._parse_args(["--show"]).date == ""
+    # ... and --show still works without one, writing nothing
+    assert PG.main(["--show", "--doc", str(scratch)]) == 0
+    assert "STATUS: RATIFIED" in capsys.readouterr().out
+    assert scratch.read_bytes() == before
 
 
 def test_pinned_scratch_copy_is_accepted_by_every_guard(scratch, tmp_path):

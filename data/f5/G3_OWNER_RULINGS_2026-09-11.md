@@ -238,11 +238,20 @@ reports a **per-company, per-quarter historical scorecard**, pre-registered in a
   return, right/wrong, for the model and both comparators); a hit rate with a Wilson
   95% interval when the company has at least 6 calls; **below 6 calls, rows only — no
   rate, no count of correct, no interval** (the JSON carries null for all three);
-- the **comparison line is "chance under this call rule = 0.50 by construction"** — the
-  tercile rule forces ≈ equal "outperform" and "underperform" counts, so a
-  call-count-matched random rule scores exactly 0.50 whatever the outcome mix. That
-  company's share of scored rows with positive excess is printed as the **outcome mix**,
-  **never** as a base rate the model beat and never as a benchmark;
+- the **comparison line is the call-count-matched chance line, COMPUTED from that
+  block's own call counts as `(n_outperform·p + n_underperform·(1−p)) / n_calls`**
+  (p = the share of positive excess among the rows that received a call). It is
+  **exactly 0.50 when the calls are balanced**, which the tercile rule makes them in the
+  ideal case — but the straddle→no-call tie rule removes whole tie groups and can leave
+  them unbalanced, so the line is computed, **never a printed constant "0.50 by
+  construction"** (`scorecard_e2.chance_from_call_counts`; red-team M4 → NF-7). **Below
+  the 6-call minimum the chance line is withheld with the rate**, together with
+  `n_outperform`, `n_underperform` and the called-row outcome mix: on a small
+  ONE-DIRECTIONAL company `(n_calls·p + 0)/n_calls = p` **is** the withheld hit rate, so
+  printing it would publish the rate in another column (red-team MF-2). That company's
+  share of scored FILINGS with positive excess is still printed as the **outcome mix** —
+  a description of the period — and **never** as a base rate the model beat and never as
+  a benchmark;
 - across the universe: the model's hit rate with its interval, the two comparators'
   hit rates, the same chance line, and the inference sentence printed **verbatim** on
   every scorecard page from the `scorecard_e2.INFERENCE_SENTENCE` constant — *"Hit rates
@@ -485,13 +494,29 @@ whole-frame arithmetic (7,389 − 2,530) the package quoted; **company-level tra
 is 0.529 (64 of 121)**, the v1.2 adapter's own held-out eval, not the 0.487 the package
 carried (that was the v1.1 adapter, a different model); and **44 filings on the
 modeling frame (45 on the 7,618-row join) carry no embedding vector**, 25 of them among
-the rows the scorecard scores. **The sha is
+the rows the scorecard scores. **Three more CONSEQUENCES of the rules themselves — not
+corrections of anything, but effects of what ratifying these rules does, and the owner
+should see them before saying the word (red-team MF-5):** 23a/23b (the year-over-year
+same-form prior plus the 50-shingle floor) **cut `novelty_risk_factors_yoy` coverage from
+43.5% (3,357 rows) to 28.5% (2,179)** — the confirmatory block's thinnest column is thin
+*because* of a ruled rule, and the rule is right (the `_yoy` name asserts a year the
+as-built table did not have); decision 20 (same-CIK attribution) **grew the
+never-extracted hole from 145 to 148 filings**, with **US Bancorp going from 81% to 88%
+of its periodic filings never extracted and BNY Mellon from 56% to 63%** — the rule
+removed foreign-company chunks that had been papering over the hole; and **the 44/45
+filings with no embedding vector were 0 before 23d** took 8K_BODY out of the embeddings,
+so a filing whose only embedded section was an 8-K body now carries none and is fitted
+and scored with NaN embedding components. Each is the ruled rule working as ruled; none
+is a defect, and none was visible in the package. **The sha is
 pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
 text, and is shown the exact diff that the pin applies (`python3 data/f5/pin_g3.py --show`: eight declared substitutions — the header STATUS line, the block's `draft_status`, the 13 table headers, the two "unratified" sentences, the two signature lines, the header-paragraph clause — and nothing else)** (nothing else differs between the text the owner reads plus that diff and the text whose
 sha256 is pinned; the script refuses to pin if any "pending"/"unratified" residue survives). **The pin is
-`python3 data/f5/pin_g3.py --pin --owner-word ratify`; `--show` prints the exact diff
-first** — one procedure, never a hand edit, and it refuses to write anything if the
-pinned text would still read as un-ratified anywhere.
+`python3 data/f5/pin_g3.py --pin --owner-word ratify --date YYYY-MM-DD`; `--show` prints
+the exact diff first** — one procedure, never a hand edit, and it refuses to write
+anything if the pinned text would still read as un-ratified anywhere. **The date is the
+day the owner replies "ratify"**, and `--pin` **refuses without it**: there is no
+default, because a UTC default rolls over at midnight and would stamp a day the owner
+never said onto a document that `require_g3` forbids editing afterwards (red-team MF-6).
 
 **The scorecard cannot change the §13 outcome: if the IC margin comes back bounded-null
 or UNPOWERED, the text arm is closed regardless of how the hit rates read.** The
@@ -519,6 +544,7 @@ Reply **"ratify"** and the main session pins sha256(`G3_PREREGISTRATION.md`) int
 | 23a (the window and the fiscal-quarter reading) | **two main-session readings inside decision 23a, both ⚠ in the pre-registration and neither previously listed here** | the year-over-year prior is selected inside a **[300, 430]-day filing-date window**, the candidate **closest to 365 days**, ties on \|gap − 365\| broken by the **smallest accession number** (the window is a bound the pre-registration's cell did not state before the rebuild: without it, 52 of 6,973 scoped sections would have been labelled `_yoy` at gaps of 85–1,827 days); and **"same fiscal quarter" is read from the FILING-date window, not from the period fields** (`report_date` is read nowhere in `text_families_e2.py` — the PIT rule is filing_date, never report_date). Measured cost of the second reading, both rules run side by side: they select the **identical** prior on 6,905 of 6,905 scoped sections where both fire and differ in presence on 2 — **one late-filed Kraft Heinz FY2018 10-K** (`0001637459-19-000049`, its MDA and RISK_FACTORS), 476 filing-days after the previous 10-K but only 364 period days, **which now loses its `_yoy` value**. Main-session readings the owner confirms |
 | 21 (the scope of the duration match) | **decision 21 named one feature; which ratios are duration-matched is a main-session scope boundary** | only **`operating_cashflow_to_revenue`** is duration-matched. **`net_margin` (135 mismatched rows, 0.74%) and `operating_margin` (20 rows, 0.11%) divide by the same revenue and stay on the ported definition** — two orders of magnitude below the cash-flow ratio's 41.55%, which is why decision 21 was raised about that ratio and not these; they are listed in the manifest under `unruled_ratios_left_as_ported`. The criterion implemented is **bucket equality** (`(0,115] = Q`, `(115,210] = H1`, `(210,300] = 9M`, `(300,400] = FY`), which allows within-bucket slack; against E1's 20-day tolerance it **disposes every row identically — 0 differ**, computed on the 15,296 rows where both durations exist. Main-session readings the owner confirms |
 | 22 | *"Idk what default is, but I believe you know best. If it is fixed, then good."* — **"it" was undefined** | **"it" is read as the period-end defect, which is fixed** (2026-09-11, duration-aware resolver in `numeric_features_e2.py`), **and the 200-day staleness rule is kept** as the default |
+| round-3 measurement disclosures (⚠ in the pre-registration, no row here until now) | **three main-session measurement choices the round-3 red-team pass found unlisted** | (i) **the MDE table is computed at n_dd 135.97, the GLD-IN mean; the run's own per-quarter mean is 135.79** (ex-GLD) — the projection is therefore a hair optimistic, by 0.18 of a row per fold, and it is left as computed rather than re-derived so the pre-registered power table is the one the design was chosen against; (ii) **the `any_source_accession` train-overlap channel counts a filing as overlapping when ANY source accession carrying that chunk is in the labeler's fine-tuning split, INCLUDING filings dated after the subject filing** — it is therefore **not strictly point-in-time**. It is CONSERVATIVE (it can only flag more rows as contaminated, never fewer) and it is **evaluation-side only** (the fit never sees it), so it cannot leak into a prediction; it is disclosed because a non-PIT channel inside a PIT study has to be named, not because it changes a number; (iii) **the dedup keep-mask is computed over the whole frame**, so which filing inside a ≤ 5-day cluster keeps the call can depend on a **later** filing in that cluster. It is the frozen E1 rule applied identically to every block, so it cannot favour one arm — but it means the scorecard sometimes reports the call for the filing that survived dedup, not the first one the owner read (red-team N3 → MF-4). **Main-session readings the owner confirms** |
 | 4 (the range itself) | *"if you need to increase the quarterly range, you may. I have the luxury of having a lot of historical data"* | **extend the corpus backwards, or run the 33 folds now — the owner's choice, not the main session's.** Extending means **re-ingesting, re-extracting and re-labeling earlier filings for the same 144 companies** (days of machine time, **$0 API spend**, plus a **spot-check of the new labels**); the corpus starts 2016Q3. **The reading adopted is "run the 33 folds now."** The earlier justification ("the ingestion the owner declined under decision C") was a misattribution — decision C was the **mid-cap expansion** — and is withdrawn |
 
 **Owner's own action items (not the main session's to do):** subscribe to EODHD

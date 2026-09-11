@@ -83,8 +83,16 @@ the coverage consequences of 23a/23b and 20, pin command without an explicit --d
 withholding, disclosure label, pin --date required, docstring/letters, §4 rows + consequences paragraph, thin-columns list,
 packet banner, `test_census_e2.py` AST tripwire). Expected: those tests green; census JSON free of "4859" / unqualified
 "15.85"; if missing on resume, relaunch with the third-pass Disposition as the spec.
-**Then (main session):** verify each item by test + grep → full suite → commit → ask the owner for "ratify" showing
-`python3 data/f5/pin_g3.py --show --date <day>` → pin with that date → run heads → scorecard. Never pin on a model reading.
+**Round 4 DONE 2026-09-11 night — every item verified by the main session (tests + grep): suite 1,826 green; exit 2 holds;
+no G3_RATIFIED.json; pin --show fires 8 rules / 21 lines / no residue; §13 Option 1 byte-identical since 0972add.**
+**NOTHING IN FLIGHT. NEXT = THE OWNER'S WORD.** The owner reads `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §4 (the ⚠ list,
+the "what the owner should see before ratifying" paragraph, the consequences paragraph) and replies "ratify" (or corrects
+a line). On "ratify": (1) HANDOFF §3 entry dated that day; (2) `python3 data/f5/pin_g3.py --show --date <that day>` and keep
+the diff; (3) `python3 data/f5/pin_g3.py --pin --owner-word ratify --date <that day>`; (4) `python3 backtest_e2.py` (head 1 +
+scorecard; `data/f5/head1_scorecard.md` is git-excluded — only the universe block in the results is committed); (5)
+`python3 heads_e2.py --all`; (6) the owner reads the per-fold tables and the scorecard personally; (7) F6 write-up per the
+§13 branch. Never pin or run on a model reading. Owner action items unchanged: EODHD subscription + token; the EODHD
+written question about derived numbers before any public scorecard.
 **Then (main session):** second red-team pass on the diffs → commit → ask the owner for "ratify" (showing the exact two
 lines that change at the pin) → pin sha → run heads → scorecard. Never pin or run on a model reading.
 

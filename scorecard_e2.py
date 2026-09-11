@@ -34,9 +34,11 @@ Hard boundaries, all of them load-bearing:
     beside every hit rate is COMPUTED from that block's own call counts,
     `(n_out*p + n_under*(1-p)) / n_calls` with p the share of positive excess
     among the rows that received a call (red-team M4, NF-7); `n_outperform`
-    and `n_underperform` are printed per block and per company. The share of
-    scored filings with a positive excess return is the OUTCOME MIX, never a
-    benchmark.
+    and `n_underperform` are printed per block, and per company wherever the
+    hit rate itself is published -- below the §14 minimum they are withheld
+    WITH the rate, because the chance line reconstructs it (red-team MF-2).
+    The share of scored filings with a positive excess return is the OUTCOME
+    MIX, never a benchmark.
   * Every page carries the fixed disclosure block the caller hands in
     (label quality, train overlap, extraction coverage, currency, price
     censoring, what the returns are, what the peers are -- red-team M5).
@@ -124,8 +126,10 @@ INFERENCE_SENTENCE = (
 #: removes whole tie groups and can leave the counts UNBALANCED, so the printed
 #: line is COMPUTED from this block's own call counts
 #: ((n_out*p + n_under*(1-p)) / n_calls, p = the share of positive excess among
-#: the rows that received a call) and 0.50 is kept only as the documented
-#: balanced-case value.
+#: the rows that received a call). 0.50 is kept here ONLY as the documented
+#: balanced-case value: red-team SH-7 -- it used to ship in the payload beside
+#: the computed line, where two numbers claiming to be "chance" invited being
+#: read as one. It is documentation, never a key.
 CHANCE_UNDER_CALL_RULE = 0.5
 CHANCE_SENTENCE_PREFIX = (
     "Chance under this call rule: 0.50 when the calls are balanced; computed from the call "
@@ -414,7 +418,6 @@ def _hit_rate(sub: pd.DataFrame) -> dict:
         "outcome_mix_among_calls": p_called,
         "chance_from_call_counts": chance,
         "chance_sentence": chance_sentence(chance),
-        "chance_under_call_rule": CHANCE_UNDER_CALL_RULE,
         "denominator": (
             f"Denominator = {n_calls} scored calls out of {len(sub)} rows: {n_no_call} 'no call' "
             f"({n_tied} of them a tie group straddling a tercile boundary) and {n_unresolved} with "
@@ -423,15 +426,35 @@ def _hit_rate(sub: pd.DataFrame) -> dict:
     }
 
 
+#: Nulled together with the hit rate below `min_calls` (red-team M1 -> MF-2).
+#: The rate, its numerator and its interval are the obvious three; the chance
+#: line and the call counts go with them because they RECONSTRUCT the withheld
+#: rate on a small, one-directional company: with 3 calls all "outperform",
+#: chance = (3·p + 0·(1−p))/3 = p, and p -- the share of positive excess among
+#: the called rows -- IS that company's hit rate. Publishing the chance line
+#: under a "rows only" heading would have published the rate in another column.
+WITHHELD_WITH_THE_RATE: tuple[str, ...] = (
+    "hit_rate",
+    "n_correct",
+    "wilson_lo",
+    "wilson_hi",
+    "chance_from_call_counts",
+    "chance_sentence",
+    "outcome_mix_among_calls",
+    "n_outperform",
+    "n_underperform",
+)
+
+
 def _withhold_rate_below_min_calls(summary: dict, min_calls: int) -> dict:
-    """§14, red-team M1: below `min_calls` a company gets ROWS ONLY -- no hit
-    rate, no numerator, no interval, in the markdown AND in the JSON. Nulling
-    only the interval (as this module first did) still published the rate."""
+    """§14, red-team M1/MF-2: below `min_calls` a company gets ROWS ONLY -- no
+    hit rate, no numerator, no interval, AND no chance line, call counts or
+    called-row outcome mix, in the markdown and in the JSON. Nulling only the
+    interval (as this module first did) still published the rate; nulling only
+    the rate (as it then did) still published a quantity equal to it."""
     if summary["n_calls"] < int(min_calls):
-        summary["hit_rate"] = None
-        summary["n_correct"] = None
-        summary["wilson_lo"] = None
-        summary["wilson_hi"] = None
+        for key in WITHHELD_WITH_THE_RATE:
+            summary[key] = None
         summary["rate_withheld"] = f"rows only (fewer than {int(min_calls)} calls, §14)"
     return summary
 
@@ -489,9 +512,10 @@ def company_tables(
     the quarter, form, public filing date, the realized excess return AS A
     PERCENTAGE, and the call + right/wrong for the model and both comparators.
 
-    `summary`: the MODEL block's counts, with a hit rate, a numerator and a
-    Wilson 95% interval ONLY when n_calls >= `min_calls` -- otherwise all four
-    are None and the page prints "rows only" (§14, red-team M1), plus that
+    `summary`: the MODEL block's counts, with a hit rate, a numerator, a Wilson
+    95% interval, a chance line and the two call counts ONLY when n_calls >=
+    `min_calls` -- otherwise every one of `WITHHELD_WITH_THE_RATE` is None and
+    the page prints "rows only" (§14, red-team M1/MF-2), plus that
     company's OUTCOME MIX (the share of its scored filings whose excess return
     was positive), which is a description of the period and NOT the yardstick:
     the yardstick is the chance line computed from that company's own call
@@ -580,7 +604,6 @@ def universe_summary(
         "n_test_quarters": int(scored["test_quarter"].nunique()) if not scored.empty else 0,
         "outcome_mix_positive_excess": float((excess > 0).mean()) if len(excess) else None,
         "outcome_mix_label": "outcome mix (share of scored filings with positive excess)",
-        "chance_under_call_rule": CHANCE_UNDER_CALL_RULE,
         # The page-level line is the MODEL block's own computed chance (NF-7);
         # every block's line sits in its own row of the universe table.
         "chance_from_call_counts": model_entry.get("chance_from_call_counts"),
@@ -654,29 +677,30 @@ def _company_section(entry: dict) -> list[str]:
         title += f" ({entry['ticker']})"
     if entry["name"] != f"CIK {entry['cik']}":   # no "CIK x -- CIK x" fallback line
         title += f" -- CIK {entry['cik']}"
-    # The two call counts are printed whether or not the rate is withheld
-    # (red-team NF-7): they are counts, not a rate, and the chance line beside
-    # them is computed from them.
-    counts = (
-        f"({s.get('n_outperform')} outperform, {s.get('n_underperform')} underperform)"
-    )
     if s.get("hit_rate") is None:
-        # §14 / red-team M1: below the pre-registered minimum this company gets
-        # ROWS ONLY -- no rate, no numerator, no interval.
+        # §14 / red-team M1 + MF-2: below the pre-registered minimum this
+        # company gets ROWS ONLY -- no rate, no numerator, no interval, and no
+        # chance line or call counts either, because on a small one-directional
+        # company the chance line EQUALS the withheld rate.
         headline = (
-            f"The model: {s['n_calls']} calls {counts} -- "
+            f"The model: {s['n_calls']} calls -- "
             f"{s.get('rate_withheld', 'rows only (§14)')}."
         )
+        chance = ""
     else:
+        counts = (
+            f"({s.get('n_outperform')} outperform, {s.get('n_underperform')} underperform)"
+        )
         headline = (
             f"The model: {s['n_correct']}/{s['n_calls']} calls right {counts}, hit rate "
             f"{_fmt(s['hit_rate'])}, 95% Wilson "
             f"[{_fmt(s['wilson_lo'])}, {_fmt(s['wilson_hi'])}]."
         )
+        chance = f" {s.get('chance_sentence') or CHANCE_SENTENCE}"
     lines = [
         title,
         "",
-        f"{headline} {s.get('chance_sentence', CHANCE_SENTENCE)} Outcome mix (share of "
+        f"{headline}{chance} Outcome mix (share of "
         f"this company's scored filings with positive excess): {_fmt(s['outcome_mix'])} over "
         f"{s['n_filings']} filings. {s.get('denominator', '')}",
         "",

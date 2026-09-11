@@ -1655,6 +1655,19 @@ travel with the guidance line; the price-censoring sentence is §11's; `loco.max
 ratify` writing `G3_RATIFIED.json` only when no residue remains (7 tests); the stale families checkpoint was
 removed (bit-identical to the artifact; removed because resume=True is the module default). Document refresh
 for NF-1…NF-21 and a third, verification-only red-team pass follow before the owner is asked.
+**Third pass (verification-only): NO BLOCKER; 24 of 24 refreshed numbers re-derived exactly; the pin audited
+line by line (8 rules, 21 lines, no residue, guards accept the pinned scratch copy).** Six small MUST-FIX and
+eight SHOULD items, all document/rendering — fixed in round 4 the same night and verified by the main session:
+the census no longer asserts 15.85% / 4,859 (pointers to its own §1b/§1c blocks); below 6 calls the scorecard
+withholds the chance line and the call counts with the rate (nine keys null; rows still show call + right/wrong
+per filing, as pre-registered); the page prints G2 stored-NEGATIVE precision 25/49 (51%), read from the confusion
+counts, instead of the reference-direction 25/25; the company-level overlap 108 of 143 (75.5%) is on the page;
+`pin_g3.py --pin` refuses without an explicit `--date`; rules lettered (a)–(h) to match §0; `test_census_e2.py`
+AST tripwire (census never fits or correlates); §4 gained the round-3 disclosures row and a consequences-of-
+ratifying paragraph (23a/23b cut `novelty_risk_factors_yoy` coverage 43.5% → 28.5%; decision 20 grew the
+extraction hole 145 → 148 filings; the 44/45 missing embeddings were 0 before 23d). Suite 1,826 green.
+**State at close: RATIFICATION-READY; nothing in flight; the sha is pinned only on the owner's word "ratify"
+(`data/f5/G3_OWNER_RULINGS_2026-09-11.md` §4), by `pin_g3.py` with the day's date.**
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target

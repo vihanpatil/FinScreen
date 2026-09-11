@@ -22,27 +22,36 @@ Usage
 
     python3 data/f5/pin_g3.py --pin --owner-word ratify --date YYYY-MM-DD
         Apply the substitutions IN PLACE, then write G3_RATIFIED.json with the
-        pinned sha256 of the document and of its parameter block.
+        pinned sha256 of the document and of its parameter block. `--date` is
+        REQUIRED here and has NO default: it is the day the owner replied
+        "ratify", it is written into the document and into the ratification
+        record, and a UTC default would silently roll over at midnight and stamp
+        the wrong day on the one artifact that cannot be edited afterwards
+        (red-team MF-6). `--show` may default it, because `--show` writes
+        nothing.
 
-THE SUBSTITUTION SET IS EXACTLY THESE SEVEN RULES AND NOTHING ELSE. Every rule
-declares how many matches it expects; a rule that matches a different number of
-times REFUSES, because a document that moved under the pin is not the document
-the owner read.
+THE SUBSTITUTION SET IS EXACTLY THESE EIGHT RULES AND NOTHING ELSE. The letters
+are the SAME letters §0 of the pre-registration lists, and each rule's `id` is
+named for its letter, so the document and this script can be read against each
+other. Every rule declares how many matches it expects; a rule that matches a
+different number of times REFUSES, because a document that moved under the pin
+is not the document the owner read.
 
   (a) the header STATUS line
   (b) the parameter block's `draft_status`
   (c) every table header cell "RULED rule (dec.; owner 2026-09-11; ratification
       pending)"                                                       (13 cells)
-  (d) §0's "none pinned while this document is unratified" sentence
+  (d) the §0 sha-pinning row's status sentence
   (e) the "RATIFICATION-READY, not ratified" sentence beside the params block
-  (f) the two signature lines
-  (g) the header paragraph's "ratified only when the owner says so"
+  (f) the first signature line of §13
+  (g) the second signature line of §13
+  (h) the header paragraph's "ratified only when the owner says so"
 
-`--pin` additionally refuses when: the owner word is not exactly `ratify`; the
-date is not YYYY-MM-DD; `G3_RATIFIED.json` already exists (re-pinning is a new
-ratification, not a re-run); the pinned text still matches any of
-RESIDUE_PATTERNS; or the pinned text's parameter block no longer parses and
-validates. Nothing is written until every one of those checks has passed, and
+`--pin` additionally refuses when: `--date` was not given; the owner word is not
+exactly `ratify`; the date is not YYYY-MM-DD; `G3_RATIFIED.json` already exists
+(re-pinning is a new ratification, not a re-run); the pinned text still matches
+any of RESIDUE_PATTERNS; or the pinned text's parameter block no longer parses
+and validates. Nothing is written until every one of those checks has passed, and
 the written file is re-read and re-checked afterwards (restored on failure).
 
 $0, no network, no model, no association of any kind.
@@ -84,7 +93,8 @@ class PinRefusal(RuntimeError):
 
 
 def substitutions(date: str) -> list[dict]:
-    """The seven rules, in application order. `n` is the REQUIRED match count."""
+    """The eight rules, in application order -- lettered as §0 of the
+    pre-registration letters them (a)-(h). `n` is the REQUIRED match count."""
     return [
         {
             "id": "a_header_status",
@@ -142,14 +152,14 @@ def substitutions(date: str) -> list[dict]:
             "n": 1,
         },
         {
-            "id": "f_signature_line_2",
+            "id": "g_signature_line_2",
             "regex": re.escape("Signature: ______________________________"),
             "flags": 0,
             "new": f"Signature: the owner's word 'ratify' in chat (HANDOFF §3 {date})",
             "n": 1,
         },
         {
-            "id": "g_header_paragraph_clause",
+            "id": "h_header_paragraph_clause",
             # the clause is wrapped across two lines in the source
             "regex": r"ratified\s+only when the owner says so",
             "flags": 0,
@@ -283,8 +293,9 @@ def _parse_args(argv=None) -> argparse.Namespace:
                    help="apply the substitutions in place and write G3_RATIFIED.json")
     p.add_argument("--owner-word", default="",
                    help=f"must be exactly {OWNER_WORD!r}; required with --pin")
-    p.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                   help="ratification date, YYYY-MM-DD (the HANDOFF §3 entry's date)")
+    p.add_argument("--date", default="",
+                   help="ratification date, YYYY-MM-DD (the HANDOFF §3 entry's date). "
+                        "REQUIRED with --pin; --show defaults it to today (UTC)")
     p.add_argument("--doc", type=Path, default=DOC_PATH)
     p.add_argument("--ratified", type=Path, default=RATIFIED_PATH)
     return p.parse_args(argv)
@@ -294,11 +305,22 @@ def main(argv=None) -> int:
     args = _parse_args(argv)
     if not args.show and not args.pin:
         print(__doc__.split("Usage\n-----\n")[1].split("THE SUBSTITUTION SET")[0].rstrip())
-        print("Pass --show (read-only) or --pin --owner-word ratify --date YYYY-MM-DD.")
+        print("Pass --show (read-only) or --pin --owner-word ratify --date YYYY-MM-DD "
+          "(--date is required with --pin).")
         return 2
     try:
+        if args.pin and not args.date:
+            # Red-team MF-6: no UTC default for the pin. The date goes into the
+            # document, into `handoff_entry` and into the sha; a default that
+            # rolls at UTC midnight would stamp a day the owner never said.
+            raise PinRefusal(
+                "BLOCKED: --pin requires an explicit --date YYYY-MM-DD -- the day the owner "
+                "replied 'ratify'. There is no default: the date is written into the pinned "
+                "document and into G3_RATIFIED.json, and a UTC default rolls over at midnight. "
+                "Nothing was written."
+            )
         if args.show:
-            print(show(args.doc, args.date))
+            print(show(args.doc, args.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")))
         if args.pin:
             record = pin(args.doc, args.ratified, args.date, args.owner_word)
             print(f"pinned {args.doc}")

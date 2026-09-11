@@ -192,7 +192,11 @@ def test_chance_line_is_half_by_construction():
     model = summary["blocks"]["text_and_numeric"]
     assert summary["outcome_mix_positive_excess"] == pytest.approx(0.30, abs=0.03)
     assert model["hit_rate"] == pytest.approx(0.50, abs=0.04), "random calls score chance"
-    assert model["chance_under_call_rule"] == 0.5, "the documented balanced-case value"
+    # red-team SH-7: 0.50 is DOCUMENTATION, not a payload key -- it shipped
+    # beside the computed value and invited the two being read as one number
+    assert SC.CHANCE_UNDER_CALL_RULE == 0.5, "the documented balanced-case value"
+    assert "chance_under_call_rule" not in model
+    assert "chance_under_call_rule" not in summary
     # the calls really are balanced here -- that is where the computed 0.50 comes from
     assert model["n_outperform"] == model["n_underperform"]
     assert model["chance_from_call_counts"] == pytest.approx(0.50, abs=1e-9)
@@ -227,7 +231,8 @@ def test_chance_line_moves_when_calls_are_unbalanced():
     assert entry["outcome_mix_among_calls"] == pytest.approx(0.20)
     assert entry["chance_from_call_counts"] == pytest.approx(0.32)
     assert entry["chance_sentence"].endswith("0.320.")
-    assert entry["chance_under_call_rule"] == 0.5, "the balanced case is still documented"
+    assert "chance_under_call_rule" not in entry, "documented, never shipped (SH-7)"
+    assert SC.CHANCE_UNDER_CALL_RULE == 0.5, "the balanced case is still documented"
     # and the same computation reached through the public path
     assert SC.chance_from_call_counts(8, 2, 0.2, 10) == pytest.approx(0.32)
     assert SC.chance_from_call_counts(5, 5, 0.2, 10) == pytest.approx(0.50)
@@ -334,10 +339,15 @@ def test_wilson_interval_known_value():
 # ---------------------------------------------------------------------------
 
 
-def _scored_for_two_companies(n_a: int, n_b: int) -> pd.DataFrame:
+def _scored_for_two_companies(n_a: int, n_b: int, calls=None) -> pd.DataFrame:
     """Company A gets `n_a` scored model calls, company B gets `n_b`; each row
     is a separate test quarter so the tercile rule is bypassed and the calls
-    are set directly (this test is about the interval rule, not the calls)."""
+    are set directly (this test is about the interval rule, not the calls).
+
+    `calls` overrides the per-company call direction: `{cik: call}`. The default
+    is all-"outperform", which is exactly the ONE-DIRECTIONAL case red-team MF-2
+    is about."""
+    calls = calls or {}
     rows = []
     for cik, n in ((111, n_a), (222, n_b)):
         for i in range(n):
@@ -355,17 +365,23 @@ def _scored_for_two_companies(n_a: int, n_b: int) -> pd.DataFrame:
                     "in_dedup": True,
                     "in_dedup_no_overlap": True,
                     "percentile": 0.9,
-                    "call": SC.CALL_OUT,
+                    "call": calls.get(cik, SC.CALL_OUT),
                 }
             )
     return SC.score_calls(pd.DataFrame(rows))
 
 
 def test_company_below_min_calls_has_no_rate(tmp_path):
-    """§14, red-team M1: below `min_calls_for_company_hit_rate` a company gets
-    ROWS ONLY -- no hit rate, no numerator and no interval, in the JSON and on
-    the page. (This test used to assert the opposite: that the rate was still
-    shown while only the interval was withheld.)"""
+    """§14, red-team M1 + MF-2: below `min_calls_for_company_hit_rate` a company
+    gets ROWS ONLY -- no hit rate, no numerator, no interval, AND no chance
+    line, call counts or called-row outcome mix, in the JSON and on the page.
+
+    The fixture is the case that forced MF-2: company B makes 3 calls, all in
+    ONE direction. Then the chance line is (3·p + 0·(1−p))/3 = p, and p -- the
+    share of positive excess among the called rows -- is numerically the hit
+    rate that was just withheld. Publishing it would have published the rate in
+    a different column. (This test used to assert the opposite: that the rate
+    was still shown while only the interval was withheld.)"""
     scored = _scored_for_two_companies(n_a=6, n_b=3)
     tables = SC.company_tables(scored, names={}, min_calls=6)
     by_cik = {e["cik"]: e for e in tables}
@@ -381,7 +397,16 @@ def test_company_below_min_calls_has_no_rate(tmp_path):
     assert b["hit_rate"] is None and b["n_correct"] is None, "no rate, no numerator"
     assert b["wilson_lo"] is None and b["wilson_hi"] is None, "no interval"
     assert b["rate_withheld"] == "rows only (fewer than 6 calls, §14)"
-    # the outcome mix is that company's own share of positive excess returns
+    # red-team MF-2: every quantity that reconstructs the rate is null too
+    for key in ("chance_from_call_counts", "chance_sentence", "outcome_mix_among_calls",
+                "n_outperform", "n_underperform"):
+        assert key in b, f"{key} must be PRESENT and null, not absent"
+        assert b[key] is None, key
+    assert set(SC.WITHHELD_WITH_THE_RATE) == {
+        "hit_rate", "n_correct", "wilson_lo", "wilson_hi", "chance_from_call_counts",
+        "chance_sentence", "outcome_mix_among_calls", "n_outperform", "n_underperform",
+    }
+    # the outcome mix over that company's FILINGS is a different quantity and stays
     assert b["outcome_mix"] == pytest.approx(2 / 3)
 
     # ... and the rendered page prints no rate for that company either
@@ -390,8 +415,30 @@ def test_company_below_min_calls_has_no_rate(tmp_path):
         tmp_path / "s.md", tmp_path / "s.json", tmp_path / "s.parquet",
     )
     section = text.split("### CIK 222")[1]
+    head = section.split("| quarter |")[0]
     assert "rows only (fewer than 6 calls, §14)" in section
-    assert "hit rate" not in section.split("| quarter |")[0]
+    assert "hit rate" not in head
+    # MF-2 on the PAGE: no chance sentence, no call counts, no reconstruction
+    assert "Chance under this call rule" not in head, head
+    assert "outperform," not in head and "underperform)" not in head, head
+    # The OUTCOME MIX stays on the page by design: it is a property of the
+    # period (what this company's stock did), not of the model's calls, and §14
+    # requires it. On this deliberately degenerate fixture -- every row called,
+    # every call in one direction -- it happens to equal the withheld rate; that
+    # coincidence is a property of the fixture, not of the disclosure, and the
+    # ruled withholding set is `WITHHELD_WITH_THE_RATE` above.
+    assert "Outcome mix (share of this company's scored filings" in head
+    # the company that clears the threshold still gets all of it
+    a_head = text.split("### CIK 111")[1].split("| quarter |")[0]
+    assert "hit rate 0.5000" in a_head
+    assert "Chance under this call rule" in a_head
+    assert "(6 outperform, 0 underperform)" in a_head
+
+    # and the JSON twin carries the same nulls
+    written = json.loads((tmp_path / "s.json").read_text())
+    b_json = {e["cik"]: e for e in written["companies"]}[222]["summary"]
+    for key in SC.WITHHELD_WITH_THE_RATE:
+        assert b_json[key] is None, key
 
     # the threshold is the pre-registered parameter, not a constant here
     relaxed = {e["cik"]: e for e in SC.company_tables(scored, names={}, min_calls=3)}
@@ -540,9 +587,16 @@ def test_scorecard_page_carries_the_disclosure_block(tmp_path, synth):
         "model-produced, not human ground truth",
         "NEGATIVE recall",
         "TEACHER spot-check",
-        "Two different questions, both stated",
+        # red-team SH-6: three grains, and the company-level share is the one
+        # that says how many companies the labeler had already seen
+        "Three different questions, all stated",
         "chunk level",
         "filing level",
+        "companies (75.5%) carry at least one overlapping chunk",
+        # red-team MF-3: the STORED-NEGATIVE precision, computed from G2's
+        # confusion counts -- not the reference-NEGATIVE row that reads 25/25
+        "G2 stored-NEGATIVE precision 25/49 (51%)",
+        "summed from secondaries.S-ERR.sentiment.confusion_stored_x_reference",
         "never_extracted_periodic",
         "Enbridge (CIK 895728)",
         "decision 7",
@@ -574,8 +628,23 @@ def test_scorecard_page_carries_the_disclosure_block(tmp_path, synth):
         for number in ("86.94%", "INDETERMINATE", "96.64%", "68.67%", "28.00%", "42.00%",
                        "0.00% (0/80)", "4.58%"):
             assert number in text, number
+    assert "stored-NEGATIVE upheld" not in text, "the 25/25 reference row is gone (MF-3)"
+    # red-team MF-3: the precision is SUMMED from the confusion block, never typed
+    g2 = E.load_g2_caveats()
+    neg = E.stored_negative_precision(g2)
+    assert (neg["k"], neg["n"]) == (25, 49) and neg["keys"] == [
+        "NEGATIVE->NEGATIVE", "NEGATIVE->NEUTRAL"
+    ]
+    assert f"precision {neg['k']}/{neg['n']}" in text
     if E.CENSUS_E2_PATH.exists():
         assert "universe CIKs have no extracted periodic sections" in text
+        # red-team SH-6: the company-level share is READ from the census block
+        block = json.loads(E.CENSUS_E2_PATH.read_text())[
+            "section_1c_run_time_frame_overlap_and_coverage"
+        ]["train_overlap_ex_gld_run_time"]
+        assert (
+            f"company level, {block['cik_level_n']} of {block['n_ciks']} companies" in text
+        )
     if SC.TARGET_MANIFEST_PATH.exists():
         # the counts come from the manifest, so this asserts the shape, never a
         # number a parallel rebuild is free to move

@@ -4,7 +4,12 @@
 `data/f5/G3_OWNER_RULINGS_2026-09-11.md`). The sentence below that "nothing
 REPORTS a per-company score" is superseded by §14 of the pre-registration under
 the owner's core value statement; the rest of this packet is the historical
-record of what was asked.
+record of what was asked. **One measured number in it is also superseded: the
+0.487 NEGATIVE recall quoted below (decision 12's head-2 disclosure line) is the v1.1
+adapter's eval; the adapter that actually labeled this corpus is v1.2
+(`cadca849…`), whose own held-out eval measures 0.529 (64/121), and that is the
+number the pre-registration and every scorecard page carry (red-team NF-1).**
+The stored-NEGATIVE precision quoted beside it, 25/49, is unchanged.
 
 **G3 is the moment the experiment's rules get frozen, before any answer exists.**
 The machinery is built and tested: feature tables, the price target, three
