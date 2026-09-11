@@ -26,8 +26,9 @@ statement in this repo (`DISCOVERY.md` §7; restated in `HANDOFF.md` §1):
 
 - **Not a trading bot.** No component of this system places, queues, or
   recommends executing any trade.
-- **Not investment advice.** A screening score is a research signal, never
-  a recommendation to buy, hold, or sell anything.
+- **Not investment advice to anyone else.** Amended 2026-09-11 (HANDOFF §1): for the
+  owner's own use the tool may make calls that carry their historical scorecard and
+  labeler error beside them; it never tells anyone else what to do.
 - **Live capital: the owner's own capital only, after the pre-registered paper period has run and been read, never automated — no component places, queues, or routes a trade, and never anyone else's money.** (Owner amendment 2026-09-11, decision F; wording delegated to the main session from the owner's "my own capital after paper period and not automated"; record: `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §1 F. The original line "No live capital, in any phase, ever" is history.)
 - **No return guarantees**, expected-performance claims, or "beats the
   market" language anywhere in code, docs, README, or model card. Every
@@ -36,7 +37,10 @@ statement in this repo (`DISCOVERY.md` §7; restated in `HANDOFF.md` §1):
 
 FinScreen is a solo-owner research tool operating on a frozen historical
 snapshot of SEC filings for 25 mega-cap companies. It has no users, no
-deployment, no live data feed, and no money attached to it.
+deployment, no live data feed, and no money attached to it. *(Superseded in part
+2026-09-11: the charter's live-capital line is amended above; the E2 expansion covers
+244 filers; a full rewrite of this file is due at F6 — HANDOFF §1 governs where the two
+disagree.)*
 
 ---
 

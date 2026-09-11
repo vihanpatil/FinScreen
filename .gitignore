@@ -154,3 +154,10 @@ data/app/**/*.parquet
 data/app/companies/**/*.jsonl
 data/app/companies/**/*.db
 data/app/companies/**/*.log
+
+# Legal baseline 2026-09-11 (#4): per-company scorecard renders are a hypothetical-performance
+# presentation and stay off the public repo until the presentation rules are cleared;
+# only the universe-level block (inside the head-1 results) is committed. Shas pinned in the run log.
+data/f5/head1_scorecard.md
+data/f5/head1_scorecard.json
+

@@ -125,6 +125,22 @@ report disclosure block, the two data licences) is written to
 demo may be public before that review; a live tool, a waitlist, a ranked list or any
 track record may not.
 
+**Baseline memo received the same day (17 findings: 3 BLOCKER for public surfaces, 6
+REQUIRED, 8 ADVISORY).** Its answer to decision B: letting others use the **reading aid**
+(explainer site, recorded demo, a box that shows what a filing says with disclosed labeler
+error — no call, no price, no rank) is **"not much harder"**: hours of copy, a privacy
+notice, a terms page, one attorney review. Letting others use the **calls or the
+per-company scorecard** is **"materially harder"**: it is advising others (adviser-law
+facts the owner must keep true forever), a hypothetical-performance presentation to a
+retail audience, and outside every personal-tier data licence. Under the owner's own
+priority order (B), the product is built for the owner; others get the reading aid now
+and the scorecard only after the memo's §4 items are confirmed by a human attorney.
+Actions taken on the memo the same day: per-company scorecard renders git-excluded
+(#4); storyboard copy rules recorded (#1, #5, #8, #10, #11, #15, #16); README licence-scope
+line (#14); stale "no money attached" lines marked superseded (#9); position-disclosure /
+blackout / trade-log rule added to P5 and the "never automated" source-scan to P4 (#3, Q4);
+the "no licensed price series leaves the machine" rule made an execution condition (#6).
+
 ### F — live capital, in the owner's own words
 
 > **Owner:** "Change that line. I NEED LIVE CAPITAL. I do not care if I am changing
@@ -241,7 +257,7 @@ with every result. **⚠ INTERPRETED.**
 Reading — **⚠ INTERPRETED**: Yahoo's chart endpoint is keyless and free, so the condition
 is satisfied: **ratify** the price series already stored from it (snapshot 2026-08-24,
 `data/prices_e2.parquet`, $0) for the E2 run, with the split-adjusted-only caveat and
-the 32-of-244 no-price gap disclosed on every result. **No new fetch is made from
+the 31-of-244 no-price gap (measured: `target_e2_manifest.json` `n_universe_member_ciks_absent_from_price_matrix`; an earlier council summary said 32) disclosed on every result. **No new fetch is made from
 Yahoo** (its robots.txt disallows automated access; the stored snapshot is what E2
 uses). Prices for anything after the snapshot, and every product use, come from the
 decision-A feed.
@@ -358,7 +374,7 @@ Reply **"ratify"** and the main session pins sha256(`G3_PREREGISTRATION.md`) int
 
 | # | what was interpreted | the reading adopted |
 |---|---|---|
-| B | the identity sentence | the one-sentence draft in §1 B |
+| B | the identity sentence | the one-sentence draft in §1 B for internal use. **The legal baseline (#1) asks that the sentence quoted on any public surface avoid "investment tool"/"calls"; the public-safe form is:** *"a personal investing research tool that reads a company's filings and shows, beside each of its research signals, the historical record of what it would have said and what the stock then did — built for its owner first, opened to others only after legal review."* Confirm one, or both (internal / public) |
 | D | "if 8 quarters is not enough, increase it" | the walk-forward is the historical test (33 quarters, nothing synthetic); the paper period's length is derived from its measured dispersion, 8 quarters minimum, pre-registered before it starts |
 | F | the live-capital wording | "the owner's own capital only, after the paper period, never automated, never anyone else's money" |
 | 1 | "compare to other companies and ETFs" | peers = the default universe benchmark, in G3; an ETF comparator under P2 once the decision-A feed exists |
@@ -370,4 +386,9 @@ Reply **"ratify"** and the main session pins sha256(`G3_PREREGISTRATION.md`) int
 
 **Owner's own action items (not the main session's to do):** subscribe to EODHD
 "EOD Historical Data — All World" ($19.99/mo or $199/yr) and set `EODHD_API_TOKEN`;
-then say so. P2 starts on that word.
+then say so. P2 starts on that word. **Second owner action (legal memo Q3):** before any
+scorecard number goes on a public page, write to EODHD support asking for written
+confirmation that a public non-commercial page may show derived per-filing excess returns
+and an aggregate hit rate (no prices, no chart, no series, no visitor API access) under
+the Non-Professional plan, or a quote for the tier that permits it; file the reply under
+`data/legal/`.

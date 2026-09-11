@@ -37,7 +37,9 @@ sentiment / guidance direction / red flags / distress tier using an LLM
 bootstrap pass, turns those labels into features alongside point-in-time XBRL
 fundamentals, trains a screening score (XGBoost), and evaluates it with a
 walk-forward backtest against a numeric-only baseline. It has no users, no
-deployment, no live data feed, and no money attached to it.
+deployment, no live data feed, and no money attached to it. *(Superseded in part
+2026-09-11: the live-capital line below is the amended one; HANDOFF §1 governs; this
+card is rewritten at F6.)*
 
 ### Non-goals (contractual, not aspirational)
 
@@ -63,7 +65,9 @@ building it.
   25-company filing corpus; diagnosing whether LLM-labeled filing text adds
   ranking signal over numeric fundamentals; as an audit trail of how the
   labels and features were produced.
-- **Out of scope:** anything with capital attached; any use by a third party
+- **Out of scope:** anyone else's capital, and any automated trading (the owner's own
+  capital, after the pre-registered paper period, never automated, is the amended
+  charter line of 2026-09-11 — HANDOFF §1); any use by a third party
   as a signal source; any generalization claim beyond the 25 companies and the
   ~12-quarter window in §3; any commercial derivative (see the dataset-license
   restriction in §5.4).

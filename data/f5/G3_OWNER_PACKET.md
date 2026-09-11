@@ -1,5 +1,11 @@
 # G3 — the ruling packet (plain English)
 
+**RULINGS RECEIVED 2026-09-11** — the owner ruled all 23 (verbatim + readings:
+`data/f5/G3_OWNER_RULINGS_2026-09-11.md`). The sentence below that "nothing
+REPORTS a per-company score" is superseded by §14 of the pre-registration under
+the owner's core value statement; the rest of this packet is the historical
+record of what was asked.
+
 **G3 is the moment the experiment's rules get frozen, before any answer exists.**
 The machinery is built and tested: feature tables, the price target, three
 "heads" (the main return comparison, an earnings-volatility study, an

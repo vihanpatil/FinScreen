@@ -258,7 +258,9 @@ from their own file location, so they run from any clone.
 
 ## License
 
-MIT, see `LICENSE`.
+MIT, see `LICENSE`. **MIT covers the code only. Data, labels, model weights and the
+fine-tuned adapter are not distributed and are not under MIT** (legal baseline
+2026-09-11, `data/legal/LEGAL_REVIEW_baseline_2026-09-11.md`, finding #14).
 
 ## Provenance and honesty rules
 

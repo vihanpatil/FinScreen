@@ -1599,7 +1599,18 @@ is not written and no head has run — the sha is pinned only on the owner's "ra
 pre-amendment wording); it is rendered text with tests behind it and is changed with the
 legal reviewer's memo in hand, not silently. The owner also cancelled the auto-resume
 cron ("I will not run out of 5-hour usage anymore"); RESUME_HERE's protocol stays for
-fresh sessions, no cron is armed.
+fresh sessions, no cron is armed. **Legal baseline memo received and saved**
+(`data/legal/LEGAL_REVIEW_baseline_2026-09-11.md`; a model in the legal-reviewer role, not a
+lawyer): 17 findings — 3 BLOCKER for public surfaces ("investment advice tool"/"calls" as
+public copy; a live call box, ranked list, paper log or per-company scorecard for others;
+public calls while the owner trades without position disclosure), 6 REQUIRED, 8 ADVISORY.
+Decision-B answer: reading aid for others = not much harder; calls/scorecard for others =
+materially harder. Acted on the same day: per-company scorecard renders git-excluded
+before ratification (#4; prereg §14 updated); storyboard copy rules recorded; README
+licence-scope line; stale "no money attached" lines marked superseded; position-disclosure
+/ blackout / trade-log rule added to P5 and the "never automated" source-scan to P4; the
+"no licensed price series leaves the machine" rule made PRODUCT_PLAN execution condition 6.
+Owner action added: ask EODHD in writing about derived numbers before any public scorecard.
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target

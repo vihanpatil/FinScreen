@@ -89,6 +89,10 @@ everything was scrapped. **Rule for FinScreen, binding on every phase below:**
    new recurring spend and is the owner's decision (§4, decision A).
 5. **Everything pre-registered.** Signals, costs, universe, rebalance rule, and stopping
    rules are written before the data is seen, as the whole repository has done so far.
+6. **No licensed price series or chart leaves the machine in any public artifact**, and
+   the visitor path of any hosted box never touches the data token (adopted 2026-09-11
+   from `data/app/status/PRICE_SOURCE_OPTIONS_2026-09-11.md` §5 on the legal baseline's
+   finding #6). Derived numbers on a public page wait for the vendor's written position.
 
 ## 2. Where we are (what has been done) and why it is the right foundation
 
@@ -136,8 +140,10 @@ until that table is honest. This is also the demo's backbone (§P-S).
   joins → the walk-forward test → the evidence panel — told as a 3D/animated flow the
   viewer scrolls through, in the spirit of the supply-chain site the owner described.
   The owner leads direction. Content rule: §0.5 item 5 (no return claims); the site
-  invites interest, it does not give advice; a waitlist is fine, a recommendation is
-  not (P6).
+  invites interest, it does not give advice; a waitlist is allowed only with a privacy
+  notice, stated retention and no "get investment calls" promise (legal baseline
+  2026-09-11 #8); a recommendation is not (P6). Public copy follows the binding rules
+  in `site/STORYBOARD.md` ("Legal baseline" section).
 
 ### P2 — Build the missing half of the validation: a portfolio simulator. 3–4 sessions.
 The harness measures rank correlation. The owner's question is about money. New module
@@ -207,6 +213,18 @@ spot-check like G2 (580 rated rows, 59 owner rulings) — weeks of wall clock an
 owner reads, not "3–4 GPU nights".
 
 ### P4 — The product surface. 3–4 sessions.
+
+**Added 2026-09-11 from the legal baseline (Q4, #2, #9):** the surface is single-user
+(no multi-user login; the data account is never shared); every call carries the
+paper-period status beside it ("not started / running since D / read on D, sha …") and
+is watermarked *pre-paper — not for action under the charter* until the paper period has
+been read; a source-scan test asserts that no module imports or calls any brokerage,
+order or execution library and that nothing can be wired to an order; the report
+layer's identity and footer lines are rewritten to be true of the page the day calls
+appear (*"Research signals for the author's own use, with their historical scorecard
+and labeler error beside them. Nothing here places, queues or routes a trade. Not
+advice to anyone else."*); a ranked list exists for the owner only and never on a
+public page until the memo's §4 items are confirmed.
 `screen.py` + the reading aid: for a company, the validated signals and their evidence;
 a ranked watchlist where every rank carries its backtested track record, costs, and
 drawdown beside it; the "what this would have done" panel per recommendation; the
@@ -221,6 +239,12 @@ that run's measured per-quarter dispersion (8 quarters minimum) and pre-register
 P5 starts; if no feasible length reaches the walk-forward's detection threshold, every
 paper report says so and P5 is labelled a pipeline check. Live use afterwards is under
 the amended charter line (§1.1).
+
+**Pre-registered with P5 (legal baseline #3, Q4):** a position-disclosure and blackout
+rule — no public call or scorecard row on a company the owner holds or has traded
+within N days without a dated position disclosure on the same page; no trading against
+a public call within N sessions; an append-only personal trade log reconcilable against
+the paper log. N is fixed in P5's pre-registration before the paper period starts.
 Pre-registered: frozen model and rules, live-dated recommendations written to an
 append-only log before prices are known, scored quarterly against the same metrics,
 published either way. The owner's "test on modern data" is this, on paper. Live use

@@ -66,7 +66,53 @@ before any 3D asset is made.
   clock, the diff, the test), not one set of boxes reused.
 - Reference bar: the immersive Claude + Higgsfield-built sites; **smoothness** first.
 - Explain as if the viewer has **no prior understanding**.
-- Show the goal: **a personal investment advice tool** — and the centrepiece is the
-  historical scorecard: for a company's past reports, what the model would have said at
+- Show the goal: **a personal investing research tool** (the owner's internal words are
+  "personal investment tool"; on any public surface the legal baseline's finding #1 bars
+  "advice", "advice tool", "should I invest", "calls", "top companies") — and the
+  centrepiece is the historical scorecard: for a company's past reports, what the model would have said at
   the time, what the stock then did, and whether the call was right, across many
   companies. Every beat should lead to that.
+
+## Legal baseline (2026-09-11) — binding copy rules for v2
+
+Source: `data/legal/LEGAL_REVIEW_baseline_2026-09-11.md` (a language model in the
+legal-reviewer role; not a lawyer; its §4 lists what a human attorney must confirm).
+The rules below are adopted by the main session for every public surface (site, video,
+README top, resume/LinkedIn blurbs) until an attorney says otherwise.
+
+- **Words never used publicly:** "advice", "advice tool", "should I invest", "calls",
+  "top companies", "beats the market", "accuracy". Use "personal investing research
+  tool", "filing-reading aid", "research signals", "hit rate against a sign rule".
+- **Beat 2** (#5): drop "Nothing scraped from anywhere else." → *"Filings come straight
+  from the SEC, rate-limited and cached, with a declared contact address."* (Prices for
+  the research run came from a public keyless endpoint and are disclosed as such; the
+  product uses a licensed feed.)
+- **Beat 3** (#10): *"Three sections are read."* — not "carry the signal".
+- **Beat 4** (#10): *"It disagrees with a reference rater a measured share of the time,
+  and that share is printed on every report."* — agreement, never "error rate".
+- **Beat 5** (#11): *"This is where many backtests go wrong, and where this one is
+  careful."* — no "most backtests cheat".
+- **Beat 8**: keep "not yet proven" verbatim; no later edit softens it.
+- **Beat 9 / the box** (#2, #7, Q6): a hosted box, if any, returns the **reading aid
+  only** (labels beside passages, diffs, PIT fundamentals, disclosure block) — never a
+  call, a price, a rank. Disclosure sentence directly under the input and above the
+  result. Terms-of-use + disclaimer page before it ships.
+- **Waitlist / "email me a report"** (#8): only with a one-page privacy notice, stated
+  retention, no analytics without disclosure, and no "get investment calls" promise.
+  The prototype's "records the request" line is false today → *"In the prototype nothing
+  is sent or stored."*
+- **The scorecard on a public page** (#2, #4, Q2): withheld until the memo's Q2
+  conditions are met (attorney items §4-1/3/4/10, the data vendor's written position on
+  derived numbers, public returns recomputed on the licensed feed). When shown: all
+  companies, universe block first with both comparators and the base rate, methodology
+  beside every number, hypothetical-performance disclosures, Wilson intervals, no
+  forward statement, frozen and dated, position disclosure, never paired with a
+  "try your company" box.
+- **Footer wording on any public artifact** (#15): *"Rendered for the author's personal
+  use; shown here as a demonstration."*; prototype line "No live capital" → *"Nothing
+  here places a trade."*
+- **Example choice** (#16): the default company and the video's ticker are chosen
+  before any scorecard is seen, or by the viewer — never by hit rate.
+- **Attribution** (#13): every rendered passage names its filing (form, date,
+  accession) with an EDGAR link; the containment check stays.
+
