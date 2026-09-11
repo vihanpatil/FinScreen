@@ -1464,6 +1464,16 @@ direction of the website."*
   their own spot-check.
 - The site markets and explains; it does not give advice (P6 unchanged).
 
+**2026-09-11 06:53 PT — AUTO-RESUME CHECK #1 (cron, per the owner's standing
+instruction).** The P1a agent had died on the owner's session limit (reset
+05:40 PT) after fully labeling company 1 of the sealed 10-company draw (CIK
+1334036) and before writing `L2_2_external_companies.md`; no labeling process
+was alive. Relaunched with "resume from existing stores, do not redraw,
+append each company's row as you go". Note: the ledger commit `773f20c` had
+swept the agent's in-progress `ingest_one.py` / `label_filing.py` /
+`external_draw.json` into git via `git add -A`; harmless, superseded by the
+next commit. Nothing else changed.
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual
