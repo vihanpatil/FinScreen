@@ -15,9 +15,12 @@ after any action, update this block, HANDOFF §3 and memory BEFORE the next
 agent launch; (5) commit ledgers after each milestone (the owner pushes). Be
 frugal: if nothing is missing, do nothing.
 
-**IN FLIGHT:** nothing (as of 2026-09-11 ~07:45 PT). No agent running, no
-labeling process alive. The auto-resume cron (every ~2 h, session-only) has
-nothing to relaunch unless a new item is added to this table.
+**IN FLIGHT as of 2026-09-11 ~08:00 PT (two app-lane follow-ups from P1a, launched together, disjoint files):**
+| item | launched as | expected output | if missing on resume |
+|---|---|---|---|
+| P1a.2 fundamentals for arbitrary CIKs: `ingest_one.py --fundamentals` pulls the CIK's companyfacts via edgar_client, runs F2's concept-resolution classifier (`ingest_fundamentals.py`) for that CIK, writes `fundamentals.parquet` + `concept_resolution.csv` into the store; `report_filing.py --store` renders the PIT panel from the store | general-purpose Opus agent | `data/app/status/L2_3_external_fundamentals.md` with a 10-company coverage table | relaunch with "resume from existing stores; do not re-ingest what exists" |
+| P1a.3 diff + extractor case + imputation line: `ingest_one.py --per-form 2` (prior same-form filing so the diff works on externals), the em-dash / split-possessive heading case handled in the APP-LANE extraction path only (never `extract.py`), the guidance-imputation share printed in the disclosure block; re-run the 10 companies at per-form 2 | general-purpose Opus agent | `data/app/status/L2_4_diff_and_extraction.md` with CBKM re-tested and per-company diff counts | relaunch with "resume; re-label only filings without a labels.parquet" |
+Never run both labeling processes at once: P1a.3 labels; P1a.2 does not (fundamentals only) — if a resume finds a `label_filing` process alive, wait.
 
 **P1a DONE 2026-09-11 (auto-resume relaunch finished it):** `ingest_one.py`,
 `label_filing.py`, `report_filing.py --store`, `test_app_store.py`; sealed
