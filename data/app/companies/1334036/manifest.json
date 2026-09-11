@@ -1,0 +1,201 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1334036,
+  "ticker": "CROX",
+  "company_name": "Crocs, Inc.",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 1,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001334036-26-000052",
+      "form": "10-Q",
+      "filing_date": "2026-07-30",
+      "items": null,
+      "primary_document": "crox-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001334036-26-000050",
+      "form": "8-K",
+      "filing_date": "2026-07-30",
+      "items": "2.02,8.01,9.01",
+      "primary_document": "crox-20260730.htm",
+      "earnings_doc_filename": "croxq22026-pressrelease.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001334036-26-000006",
+      "form": "10-K",
+      "filing_date": "2026-02-12",
+      "items": null,
+      "primary_document": "crox-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 37,
+  "documents": {
+    "n_fetched": 3,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1334036/sections.parquet",
+    "sha256": "073dfbcc0f688131e1342e78c61e531f77b9f4fa406453aea719937f1f59d7f2",
+    "n_rows": 5,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 5
+  },
+  "extraction_audit": [
+    {
+      "cik": 1334036,
+      "company_name": "Crocs, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001334036-26-000052",
+      "form": "10-Q",
+      "filing_date": "2026-07-30",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7043,
+      "prose_word_share": 0.8052,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54835,
+      "source_document": "crox-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1334036,
+      "company_name": "Crocs, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001334036-26-000052",
+      "form": "10-Q",
+      "filing_date": "2026-07-30",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 29,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "crox-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1334036,
+      "company_name": "Crocs, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001334036-26-000050",
+      "form": "8-K",
+      "filing_date": "2026-07-30",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 5114,
+      "prose_word_share": 0.3878,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4784,
+      "source_document": "croxq22026-pressrelease.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1334036,
+      "company_name": "Crocs, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001334036-26-000006",
+      "form": "10-K",
+      "filing_date": "2026-02-12",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 10310,
+      "prose_word_share": 0.7919,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51435,
+      "source_document": "crox-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1334036,
+      "company_name": "Crocs, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001334036-26-000006",
+      "form": "10-K",
+      "filing_date": "2026-02-12",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 17795,
+      "prose_word_share": 0.864,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4786,
+      "source_document": "crox-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1334036/chunks.parquet",
+    "sha256": "f46eda9fee736ee3df5b43f6e4402f90889dd46b503a17c6b0cd0ad0100e1e64",
+    "n_chunks": 98,
+    "n_sections": 5,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1334036/metadata.db",
+    "sha256": "19934d053b90e0d996c9ed465295b71553c8cf59f3cd321df7fd251395a32231",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 5,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.47,
+    "documents_s": 0.31,
+    "extract_s": 0.77,
+    "chunk_s": 0.06,
+    "total_s": 1.63
+  }
+}

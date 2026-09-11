@@ -378,10 +378,14 @@ declared 4.0, and **70.7%** of quarters against a declared 75% — while the
 relation it tests is present (bootstrap CI **[+0.026, +0.105]**) and the stack is
 affirmatively verified (a 2.82× announcement-day volatility spike, post-close D+1
 dating confirmed). **T2a and T2b are AMBIGUOUS**, both CIs containing zero.
-Removing a diagnosed stale-Q4 matching defect drops T1 to **t = 1.58**. For
-scale: the anomaly T1 looks for registers only ~0.06–0.08 IC in this universe
-against a ~0.047 zero-information noise floor, so a weak pass is what a real
-effect looks like here. **Default: not triggered by the letter** — the taxonomy
+**Correction (2026-09-11, red-team):** removing the diagnosed stale-Q4 matching
+defect **raises** T1 to **t = 4.22 with 75.6% of quarters positive — both
+pre-declared bars met** (`controls_results.json` → `D3_stale_quarter_arm`,
+`T1_core_stale_removed`; `H1_controls.md` §4d). An earlier draft said "drops to
+1.58"; that figure belongs to T2a's stale-removed arm, not T1. For scale: the
+announcement-window relation T1 measures registers ~0.06–0.08 IC in this
+universe against a ~0.047 zero-information floor; measured post-earnings drift
+(T2a) is +0.028 [−0.020, +0.076]. **Default: not triggered by the letter** — the taxonomy
 stands, and the stale-Q4 defect is repaired only if that variable enters a head,
 which it does not. *RULE: default (not triggered) / triggered*
 
