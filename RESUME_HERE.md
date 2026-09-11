@@ -65,9 +65,16 @@ feature tables; scorecard page defects). **Round 2 IN FLIGHT (launched 2026-09-1
 (was 7,634 / 7,405); GLD 8 modeling rows excluded at run time (sensitivity arm adds them back); `n_emb_missing` 45;
 OCF/revenue coverage 0.84 → 0.42 under duration matching; novelty prior gap median 91 → 364 d.
 **Measured-cell refresh DONE 2026-09-11 evening** (commit ed457e2; 31 cells moved, each with its "(was X)" note;
-scorecard scores 4,481 rows over 33 folds / 139 CIKs ex-GLD; run-time frame 7,381 / 143). **IN FLIGHT:** second
-red-team pass on `git diff 3be52ca` (red-team-reviewer Opus; expected: per-item RESOLVED table + verdict; if missing on
-resume, relaunch it — it is read-only).
+scorecard scores 4,481 rows over 33 folds / 139 CIKs ex-GLD; run-time frame 7,381 / 143). **Second red-team pass DONE 2026-09-11 evening: still NOT safe** (22 of 24 first-pass items resolved; six new MUST-FIX —
+NEGATIVE recall 0.487 → 0.529 (v1.2 adapter's own eval), overlap arm scores ~2,694 rows in folds not 4,859, CIK-level overlap on
+the frame 75.0% not 15.85%, a forbidden "delisted names" sentence on the scorecard page, the OCF coverage cell unrefreshed,
+four ⚠ with no §4 row; details + disposition appended to `data/f5/status/REDTEAM_g3_package_2026-09-11.md`).
+**Round 3 IN FLIGHT:**
+| item | launched as | expected output | if missing on resume |
+|---|---|---|---|
+| A3: census additions (ex-GLD fold census, overlap-arm rows in folds, CIK-level overlap, set differences, per-column coverage, v1.2 NEGATIVE recall read not typed), disclosure wording, chance line from counts, false-NONE + §0 citation, `loco.max_ciks_per_fold` required, `data/f5/pin_g3.py` (full pin substitution set; `--show` diff; `--pin --owner-word ratify`), stale partial parquet removed; censuses re-run | quant-modeler Opus | `data/f5/pin_g3.py` + `test_pin_g3.py` exist; census JSONs carry `section_1b_ratified_folds_ex_gld`; suites green; exit 2 | relaunch "check what landed first; spec = REDTEAM file second-pass Disposition" |
+| C3 (after A3): document refresh for NF-1..NF-21 from the new census keys; §0 names `pin_g3.py` and the full substitution set | general-purpose Opus | no "0.487", "4,859", "15.85%" (unqualified) left in the pre-registration; §4 has the 23a-window and decision-21-scope rows | relaunch with the same brief |
+**Then:** third (verification-only) red-team pass → commit → ask the owner for "ratify" showing `python3 data/f5/pin_g3.py --show` → pin → run heads → scorecard.
 **Then (main session):** second red-team pass on the diffs → commit → ask the owner for "ratify" (showing the exact two
 lines that change at the pin) → pin sha → run heads → scorecard. Never pin or run on a model reading.
 
