@@ -1245,6 +1245,53 @@ CORRECTION (owner, in chat).**
   zero-labeling families (`text_families_e2.py`: YoY novelty + pooled
   embeddings, one small local model, $0).
 
+**2026-09-11 — F5 STEP 1b DONE (guarded runners + text families; status, not a ruling) and TECH-COUNCIL ADVISORY on the personal-use direction (advisory, not a ruling).**
+- Workflow `wf_f30c9596-31d` (3 Opus builders + red-team) then a 12-item fix
+  agent. New modules: `backtest_e2.py` (head 1; 53 tests), `heads_e2.py`
+  (heads 2/3; 58 tests), `text_families_e2.py` (YoY novelty + pooled
+  embeddings; 32 tests). **The G3 guard is real:** every fitting path is
+  unreachable without `data/f5/G3_RATIFIED.json` matching
+  sha256(`data/f5/G3_PREREGISTRATION.md`); neither exists; both runners exit
+  2 today; the red-team drove the guard through six adversarial states and
+  AST call-graphs from every census path reach no fitting function. **No E2
+  IC exists anywhere.** Every G3 parameter is read from one fenced
+  `json g3-params` block in the ratified document (schemas
+  `data/f5/G3_PARAMS_SCHEMA*.json`); unimplemented named rules refuse, never
+  fall back. Margin ladder executes inside the runner and is serialized
+  before any per-fold delta (structurally enforced). Full suite 1,555
+  passed.
+- Text families shipped (`data/f5/text_families_e2.parquet`, 7,723
+  in-membership filings, sha `acc2712e…`): novelty = 1 − Jaccard over 5-word
+  shingles vs the same CIK's most recent strictly-earlier same-section
+  filing; embeddings from sentence-transformers/all-MiniLM-L6-v2 (revision
+  `1110a243…`, weights sha `53aa5117…`, Apache-2.0 — the ONE permitted
+  download, 888 MB, cached outside the repo; torch 2.8.0 /
+  sentence-transformers 5.1.2 appended to `requirements-quant.txt`), 254-token
+  windows capped at 64 per section, 377,542 windows on MPS in 25 min.
+- Pre-G3 censuses on disk (no fitting): `census_head1.json` — joined frame
+  7,634 rows, 7,405 modeling rows, 144 CIKs; default 33 folds 2018Q1–2026Q1;
+  dedup n per fold 119–161 (mean 136.3, below the 158 planning assumption);
+  purge 6.17% of training rows on average. `census_heads.json` — head 2:
+  3,996 usable core events over 41 quarter clusters (last one partial);
+  head 3: 4,056 CIK-quarter panel rows, 70% without text under
+  `latest_in_quarter`; `distress_events` 668 rows but most default "exit"
+  kinds are NOT exits (285/360 Form 25 rows keep filing in-membership a year
+  later).
+- **Surfaced for G3 (added to `F5_PLAN.md` §3, nothing decided):** decision
+  23 (text-family conventions: the built novelty is quarter-over-quarter
+  under `_yoy` names; RISK_FACTORS novelty is stub-dominated; 8K_BODY
+  embedded; pooling; PCA k; the model as a §12 artifact); decision 13 now
+  carries the exit-kind, label-cut, feature-dating and purge findings;
+  decision 12 the partial terminal cluster; decision 3 the filing-level
+  overlap share (80.2% of modeling rows carry some overlap chunk).
+- Tech council convened at the owner's request on "position it for
+  personal use … utmost priority": advisory saved verbatim at
+  `data/f5/status/COUNCIL_ADVISORY_personal_use_2026-09-10.md` (5–0 for
+  interleaving a personal filing-reading aid with the E2 close; six-feature
+  MVP; refusal list; disclosure block; identity line; 14-day G3 deadline;
+  one dissent on ordering). **Nothing in it is ruled; the owner has been
+  asked to rule three items.**
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual

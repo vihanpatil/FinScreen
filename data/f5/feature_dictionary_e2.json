@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-11T03:46:10.590750+00:00",
+ "generated_utc": "2026-09-11T05:48:52.441154+00:00",
  "unit_of_observation": "one row per (cik, accession_number)",
  "company_key": "cik (E2 labels carry no ticker)",
  "partitions": {

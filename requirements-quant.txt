@@ -14,3 +14,20 @@ scipy==1.13.1   # scipy.stats.spearmanr for the per-fold Spearman rank IC
                  # environment (spotcheck/compute_agreement.py's Wilson CI
                  # uses it too) but is listed here explicitly since
                  # backtest.py imports it directly.
+
+# --- F5 Step 1b: the pooled-document-embedding family (text_families_e2.py) ---
+# EXPANSION_PLAN §8 item 4's second zero-labeling family needs one small open
+# embedding model run LOCALLY ($0, no API, weights cached outside the repo in
+# ~/.cache/huggingface). Installed 2026-09-10 on the owner's Mac into the same
+# user site-packages as the line above:
+#   python3 -m pip install --user torch sentence-transformers
+# `transformers`, `tokenizers`, `huggingface-hub` and `safetensors` are pulled
+# in by sentence-transformers; they are pinned here because the manifest
+# `data/f5/text_families_e2_manifest.json` records the exact versions the
+# shipped embeddings were produced with. torch runs on MPS on this machine.
+torch==2.8.0
+sentence-transformers==5.1.2
+transformers==4.57.6
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+safetensors==0.7.0

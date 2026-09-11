@@ -1,0 +1,224 @@
+{
+  "artifact": "data/f5/text_families_e2.parquet",
+  "module": "text_families_e2.py",
+  "module_sha256": "45e0df09e833e11a4685f4ab5b95fb3ed8ec14e7ad8ab2124f093588bbe6efe9",
+  "generated_at": "2026-09-11T05:05:13.250180+00:00",
+  "families": "EXPANSION_PLAN \u00a78 item 4 / F5_PLAN \u00a72 Step 1: (A) YoY Item 1A / Item 7 novelty; (B) pooled document embeddings",
+  "freeze": {
+    "no_ic_computed": true,
+    "no_correlation_or_model_fit_computed": true,
+    "target_columns_read": [
+      "cik",
+      "accession_number",
+      "filing_date",
+      "in_membership"
+    ],
+    "return_columns_read": [],
+    "note": "F5_PLAN \u00a71: no E2 feature-versus-outcome association may exist before data/f5/G3_RATIFIED.json."
+  },
+  "network_calls": "0 at build time (the embedding model is read from the local huggingface cache; it was downloaded once)",
+  "inputs": {
+    "measured": {
+      "data/filings_e2_v2.parquet": "15853e9f54902a933f0372869209a353ab3f052cb5c7dc1f897297f75b53f417",
+      "data/f5/target_e2.parquet": "c35956b784b9f0985796ed9dbb772360c043d2d77f1f300905c90b4d4757ece8"
+    },
+    "expected_sources": {
+      "data/filings_e2_v2.parquet": "data/f4/campaign_manifest.json inputs.corpus_parquet_sha256",
+      "data/f5/target_e2.parquet": "data/f5/target_e2_manifest.json output_sha256"
+    },
+    "matches_committed": true
+  },
+  "arguments": {
+    "family_a_novelty": {
+      "function": "novelty = 1 - jaccard(shingles(normalize(cur)), shingles(normalize(prior)))",
+      "shingle_n_words": 5,
+      "normalization": "str.lower(); remove all unicode digit runs (regex \\d+); split on whitespace and rejoin with single spaces (in that order)",
+      "tokenization": "whitespace split of the normalized text",
+      "shingle_identity": "64-bit polynomial hash of the 5 word ids (id = blake2b-8 of the word, P=1000003, arithmetic mod 2**64); set = np.unique of those hashes (a shingle's MULTIPLICITY is ignored)",
+      "jaccard": "|A \u2229 B| / |A \u222a B| over those sets",
+      "sections": [
+        "RISK_FACTORS",
+        "MDA"
+      ],
+      "prior_rule": "same cik AND same section_type AND filing_date STRICTLY EARLIER than the current filing_date; the MAXIMUM such filing_date; ties on that date broken by the SMALLEST accession_number",
+      "prior_candidate_pool": "every row of data/filings_e2_v2.parquet for that cik and section_type (not restricted to in-membership or scoped filings)",
+      "nan_rule": "NaN when the filing has no such section, when no prior exists, or when either side yields 0 shingles (fewer than 5 words after normalization)",
+      "prior_gap_days": "(current filing_date - prior filing_date).days"
+    },
+    "family_b_embeddings": {
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "dim": 384,
+      "max_seq_length": 256,
+      "window_content_tokens": 254,
+      "windowing": "tokenizer(text, add_special_tokens=False) then consecutive non-overlapping slices of 254 token ids, each decoded back to text and encoded with the special tokens added by the model (254 + [CLS] + [SEP] = 256 = max_seq_length, so no window is truncated)",
+      "max_windows_per_section": 64,
+      "window_vectors_l2_normalized": true,
+      "window_normalization_source": "the model's own Normalize module (all-MiniLM-L6-v2 ships mean pooling + L2 normalize)",
+      "section_pooling": "unweighted mean over that section's window vectors",
+      "filing_pooling": "unweighted mean over that filing's section vectors (sections weighted equally regardless of length)",
+      "renormalize_pooled": false,
+      "section_types_embedded": [
+        "MDA",
+        "RISK_FACTORS",
+        "EX99_PRESS_RELEASE",
+        "8K_BODY"
+      ],
+      "encode_batch_size": 128,
+      "dtype": "float32"
+    },
+    "scope": {
+      "rows": "in-membership core-stratum filings of data/f5/target_e2.parquet with >= 1 corpus section",
+      "join_key": [
+        "cik",
+        "accession_number"
+      ]
+    },
+    "checkpoint_every_filings": 500
+  },
+  "model": {
+    "name": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "license": "Apache-2.0",
+    "cache_path": "/Users/vihanpatil/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "in_repo": false,
+    "weight_file": "model.safetensors",
+    "weight_file_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "weight_file_bytes": 90868376,
+    "tokenizer_json_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+  },
+  "package_versions": {
+    "python": "3.9.6",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pyarrow": "21.0.0",
+    "torch": "2.8.0",
+    "sentence-transformers": "5.1.2",
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "0.36.2"
+  },
+  "coverage": {
+    "n_in_membership_target_rows": 16859,
+    "n_scoped_filings_with_text": 7723,
+    "n_in_membership_filings_without_text": 9136,
+    "n_rows_written": 7723,
+    "n_distinct_ciks": 148,
+    "filing_date_min": "2016-07-05",
+    "filing_date_max": "2026-08-20",
+    "n_novelty_risk_factors_yoy_present": 3357,
+    "share_novelty_risk_factors_yoy_present": 0.4347,
+    "n_novelty_mda_yoy_present": 3615,
+    "share_novelty_mda_yoy_present": 0.4681
+  },
+  "family_a_diagnostics": {
+    "n_pairs_considered": 6973,
+    "n_with_prior": 6972,
+    "n_without_prior": 1,
+    "n_ties_on_prior_date": 0,
+    "n_nan_from_empty_shingle_side": 0,
+    "n_sections_shingled": 7344,
+    "prior_gap_days_census": {
+      "MDA": {
+        "n": 3615,
+        "min": 56.0,
+        "p25": 86.5,
+        "median": 91.0,
+        "p75": 97.0,
+        "max": 375.0,
+        "median_by_form_of_the_current_filing": {
+          "10-K": 108.0,
+          "10-Q": 91.0
+        }
+      },
+      "RISK_FACTORS": {
+        "n": 3357,
+        "min": 57.0,
+        "p25": 87.0,
+        "median": 91.0,
+        "p75": 98.0,
+        "max": 379.0,
+        "median_by_form_of_the_current_filing": {
+          "10-K": 110.5,
+          "10-Q": 91.0
+        }
+      }
+    },
+    "novelty_degenerate_census": {
+      "MDA": {
+        "n": 3615,
+        "n_exactly_0": 10,
+        "n_exactly_1": 28,
+        "n_pairs_with_a_side_under_50_shingles": 82,
+        "min_shingles_median": 6697.0
+      },
+      "RISK_FACTORS": {
+        "n": 3357,
+        "n_exactly_0": 855,
+        "n_exactly_1": 516,
+        "n_pairs_with_a_side_under_50_shingles": 1309,
+        "min_shingles_median": 86.0
+      }
+    },
+    "runtimes_seconds": {
+      "pair_selection": 0.09,
+      "stream_and_shingle": 16.56,
+      "jaccard": 1.61
+    }
+  },
+  "family_b_diagnostics": {
+    "device": "mps",
+    "n_filings_embedded_this_run": 7723,
+    "n_filings_resumed_from_partial": 0,
+    "n_windows_this_run": 377542,
+    "n_windows_total": 377542,
+    "n_sections_embedded_total": 11020,
+    "n_sections_hitting_the_window_cap": 1888,
+    "n_windows_uncapped_this_run": 480070,
+    "sections_embedded_by_type_this_run": {
+      "EX99_PRESS_RELEASE": 3962,
+      "MDA": 3615,
+      "RISK_FACTORS": 3358,
+      "8K_BODY": 85
+    },
+    "runtime_seconds": 1514.4,
+    "throughput_windows_per_second": 249.3,
+    "throughput_filings_per_second": 5.1
+  },
+  "output_invariants_measured": {
+    "n_rows": 7723,
+    "n_duplicate_keys": 0,
+    "min_prior_gap_days_risk_factors": 57.0,
+    "n_prior_gap_days_risk_factors_non_null": 3357,
+    "min_prior_gap_days_mda": 56.0,
+    "n_prior_gap_days_mda_non_null": 3615,
+    "n_novelty_risk_factors_yoy_non_null": 3357,
+    "novelty_risk_factors_yoy_min": 0.0,
+    "novelty_risk_factors_yoy_max": 1.0,
+    "novelty_risk_factors_yoy_mean": 0.4916317445611444,
+    "novelty_risk_factors_yoy_median": 0.3143600336623059,
+    "n_novelty_mda_yoy_non_null": 3615,
+    "novelty_mda_yoy_min": 0.0,
+    "novelty_mda_yoy_max": 1.0,
+    "novelty_mda_yoy_mean": 0.5339608613832073,
+    "novelty_mda_yoy_median": 0.5096745027124774,
+    "emb_widths": [
+      384
+    ],
+    "n_sections_embedded_total": 11020,
+    "n_windows_embedded_total": 377542,
+    "emb_l2_norm": {
+      "min": 0.5587419867515564,
+      "max": 1.0000001192092896,
+      "mean": 0.6893360614776611
+    }
+  },
+  "runtimes_seconds": {
+    "sha_assert": 0.2,
+    "load_index_and_scope": 0.06,
+    "family_a_total": 18.26,
+    "family_b_total": 1514.4,
+    "total": 1534.7
+  },
+  "peak_rss_gb": 3.75,
+  "output_sha256": "acc2712e358fb0fa650e69392bce435799cfc9520179409e31d53bbde0a2346b"
+}

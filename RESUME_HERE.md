@@ -12,9 +12,17 @@ with `python3 target_e2.py` 1 s / `features_e2.py` 19 s /
 `numeric_features_e2.py` 4 min). Analysis frame after the three-way join is
 7,634 rows (161–202 per quarter) — Step 2 must use that, not 16,859. Four
 new G3 decisions (20–22 + benchmark member set) in `F5_PLAN.md` §3. NEXT =
-Step 1b (backtest_e2 with the G3 guard, heads 2/3, text families). Gate G2 was RULED 2026-09-07 (proceed under
-the ladder; 2(b) extend). Repo committed on main; owner pushes. LICENSE = MIT
-(owner-confirmed 2026-09-10).**
+**Step 1b DONE 2026-09-11** (HANDOFF §3): `backtest_e2.py`, `heads_e2.py`,
+`text_families_e2.py` built + 143 tests, red-teamed, fix pass applied; both
+runners refuse (exit 2) until `data/f5/G3_RATIFIED.json` matches
+sha256(`data/f5/G3_PREREGISTRATION.md`) — neither exists; no E2 IC exists.
+Suite 1,555 green. **NEXT = Step 2 census (`data/f5/census_e2.json`) then the
+G3 packet (23 decisions in `F5_PLAN.md` §3).** **OWNER-PENDING:** the three
+personal-use rulings in `data/f5/status/COUNCIL_ADVISORY_personal_use_2026-09-10.md`
+Q5 (sequence B / scope+disclosure block / 14-day G3 deadline) — nothing
+starts on the app lane until the owner types them. Gate G2 was RULED 2026-09-07
+(proceed under the ladder; 2(b) extend). Repo committed on main; owner
+pushes. LICENSE = MIT (owner-confirmed 2026-09-10).**
 
 **PREVIOUS STATE (2026-09-07 ~20:30):** GATE G2 RULED "PROCEED UNDER THE LADDER";
 2(b) RULED "EXTEND (promotion waits on own spot-check)". Plan in `F5_PLAN.md`.

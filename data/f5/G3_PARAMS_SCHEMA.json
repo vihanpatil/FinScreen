@@ -1,0 +1,212 @@
+{
+  "schema_version": "g3-params-1",
+  "consumer": "backtest_e2.py (head 1); heads 2 and 3 read head2.*/head3.*",
+  "location": "exactly one fenced code block with info string `json g3-params` inside data/f5/G3_PREREGISTRATION.md",
+  "guard": "data/f5/G3_RATIFIED.json.doc_sha256 == sha256(G3_PREREGISTRATION.md)",
+  "required_keys": [
+    {
+      "path": "params_version",
+      "type": "str"
+    },
+    {
+      "path": "fold_quarters",
+      "type": "list"
+    },
+    {
+      "path": "post_2019_first_quarter",
+      "type": "str"
+    },
+    {
+      "path": "purge_rule",
+      "type": "str"
+    },
+    {
+      "path": "spec.window_days",
+      "type": "int"
+    },
+    {
+      "path": "spec.min_comparators",
+      "type": "int"
+    },
+    {
+      "path": "spec.include_same_day",
+      "type": "bool"
+    },
+    {
+      "path": "spec.same_day_sensitivity_arm",
+      "type": "bool"
+    },
+    {
+      "path": "spec.secondary",
+      "type": "str"
+    },
+    {
+      "path": "columns.numeric",
+      "type": "list"
+    },
+    {
+      "path": "columns.confirmatory_text",
+      "type": "list"
+    },
+    {
+      "path": "columns.exploratory_red_flags",
+      "type": "list"
+    },
+    {
+      "path": "columns.family_novelty",
+      "type": "list"
+    },
+    {
+      "path": "columns.size_col",
+      "type": "str"
+    },
+    {
+      "path": "embedding.pca_k",
+      "type": "int"
+    },
+    {
+      "path": "embedding.rank_transform_components",
+      "type": "bool"
+    },
+    {
+      "path": "dedup.gap_days",
+      "type": "int"
+    },
+    {
+      "path": "form_ablation_forms",
+      "type": "list"
+    },
+    {
+      "path": "margin.ladder",
+      "type": "list"
+    },
+    {
+      "path": "margin.power_divisor",
+      "type": "int|float"
+    },
+    {
+      "path": "margin.mde_multiplier",
+      "type": "int|float"
+    },
+    {
+      "path": "margin.kc3_flag_above",
+      "type": "int|float"
+    },
+    {
+      "path": "se.method",
+      "type": "str"
+    },
+    {
+      "path": "se.block_length_rule",
+      "type": "str"
+    },
+    {
+      "path": "se.n_resamples",
+      "type": "int"
+    },
+    {
+      "path": "se.seed",
+      "type": "int"
+    },
+    {
+      "path": "se.alternative",
+      "type": "str"
+    },
+    {
+      "path": "tost.alpha",
+      "type": "int|float"
+    },
+    {
+      "path": "tost.ci_level",
+      "type": "int|float"
+    },
+    {
+      "path": "tost.reference_distribution",
+      "type": "str"
+    },
+    {
+      "path": "bootstrap_anchor.n_resamples",
+      "type": "int"
+    },
+    {
+      "path": "bootstrap_anchor.seed",
+      "type": "int"
+    },
+    {
+      "path": "seeds.primary",
+      "type": "int"
+    },
+    {
+      "path": "seeds.nuisance_band",
+      "type": "list"
+    },
+    {
+      "path": "loco.n_folds",
+      "type": "int"
+    },
+    {
+      "path": "loco.index_rule",
+      "type": "str"
+    },
+    {
+      "path": "loco.scope",
+      "type": "str"
+    },
+    {
+      "path": "overlap.column",
+      "type": "str"
+    },
+    {
+      "path": "overlap.threshold",
+      "type": "int|float"
+    },
+    {
+      "path": "head2.event_window_sessions",
+      "type": "list"
+    },
+    {
+      "path": "head2.trailing_sessions",
+      "type": "int"
+    },
+    {
+      "path": "head3.horizon_quarters",
+      "type": "int"
+    },
+    {
+      "path": "head3.metric",
+      "type": "str"
+    }
+  ],
+  "implemented_named_rules": {
+    "purge_rule": [
+      "target_window_close_on_or_after_test_quarter_start"
+    ],
+    "se.method": [
+      "moving_block_bootstrap"
+    ],
+    "se.block_length_rule": [
+      "ceil_k13_ac1"
+    ],
+    "se.alternative": [
+      "newey_west"
+    ],
+    "tost.reference_distribution": [
+      "normal",
+      "t"
+    ]
+  },
+  "optional_keys": [
+    {
+      "path": "loco.max_ciks_per_fold",
+      "type": "int|null",
+      "note": "LOCO budget cap; null means every training member of the selected folds."
+    }
+  ],
+  "notes": [
+    "Unknown keys are echoed into the results JSON and never consulted.",
+    "No value here is a default: the runner refuses without the ratified document.",
+    "F5_PLAN \u00a73's defaults are the SELFTEST's values only.",
+    "embedding.rank_transform_components applies to the PIT-ranked spec arms only; the raw_levels secondary arm always carries the untransformed PCA projection.",
+    "embedding.pca_k > 0 with no usable `emb` column in the analysis frame is a REFUSAL, as is any fold realizing fewer than pca_k components."
+  ]
+}

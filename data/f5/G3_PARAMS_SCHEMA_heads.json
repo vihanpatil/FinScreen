@@ -1,0 +1,253 @@
+{
+ "written_by": "heads_e2.py --write-schema",
+ "purpose": "The keys heads_e2.py READS from the single fenced ```json g3-params block inside data/f5/G3_PREREGISTRATION.md. heads_e2.py holds no default for any of them: a missing key is a refusal. This file documents what G3 must pin for heads 2 and 3; it is not itself a parameter source and is never read at run time. Head 1's keys are documented in G3_PARAMS_SCHEMA.json; the four shared keys (fold_quarters, columns.confirmatory_text, columns.numeric, embedding.pca_k) appear in both by design.",
+ "guard": {
+  "rule": "data/f5/G3_RATIFIED.json must exist and its doc_sha256 must equal sha256(data/f5/G3_PREREGISTRATION.md)",
+  "on_failure": "FreezeRefusal; exit code 2; nothing is computed"
+ },
+ "block_format": "Exactly one fenced block ```json g3-params ... ``` in the document; its parsed JSON object is the parameter root. Two such blocks is a refusal (parameters must have one unambiguous source). Parsed by backtest_e2.extract_params_block.",
+ "required_head2": [
+  {
+   "key": "head2.stratum",
+   "type": "string",
+   "meaning": "which stratum's events are in scope; the confirmatory arm is core",
+   "example": "core",
+   "allowed": null
+  },
+  {
+   "key": "head2.predictor",
+   "type": "string",
+   "meaning": "column of data/f5/text_features_e2.parquet used as the predictor",
+   "example": "sentiment_negative_share",
+   "allowed": null
+  },
+  {
+   "key": "head2.direction",
+   "type": "string",
+   "meaning": "pre-registered sign of the association; fixes the one-sided p",
+   "example": "positive",
+   "allowed": [
+    "positive",
+    "negative"
+   ]
+  },
+  {
+   "key": "head2.event_window_sessions",
+   "type": "[int, int]",
+   "meaning": "inclusive session offsets AFTER the news session for the DV numerator; the opening offset must be >= 1",
+   "example": [
+    1,
+    5
+   ],
+   "allowed": null
+  },
+  {
+   "key": "head2.trailing_sessions",
+   "type": "int",
+   "meaning": "number of daily returns in the DV denominator, ending at the pre-session",
+   "example": 60,
+   "allowed": null
+  },
+  {
+   "key": "head2.statistic",
+   "type": "string",
+   "meaning": "the estimator of the association",
+   "example": "ols_slope",
+   "allowed": [
+    "ols_slope"
+   ]
+  },
+  {
+   "key": "head2.bootstrap.weights",
+   "type": "string",
+   "meaning": "bootstrap weight family",
+   "example": "rademacher",
+   "allowed": [
+    "rademacher"
+   ]
+  },
+  {
+   "key": "head2.bootstrap.n_draws",
+   "type": "int",
+   "meaning": "bootstrap draws",
+   "example": 2000,
+   "allowed": null
+  },
+  {
+   "key": "head2.bootstrap.cluster",
+   "type": "string",
+   "meaning": "clustering unit for the wild bootstrap",
+   "example": "event_quarter",
+   "allowed": [
+    "event_quarter"
+   ]
+  },
+  {
+   "key": "head2.bootstrap.seed",
+   "type": "int",
+   "meaning": "bootstrap seed",
+   "example": 0,
+   "allowed": null
+  }
+ ],
+ "required_head3": [
+  {
+   "key": "fold_quarters",
+   "type": "[string]",
+   "meaning": "the HEAD-1 fold list, read from the same key head 1 reads; head 3 scores the same folds",
+   "example": [
+    "2018Q1",
+    "2018Q2"
+   ],
+   "allowed": null
+  },
+  {
+   "key": "head3.horizon_quarters",
+   "type": "int",
+   "meaning": "exit horizon after the feature date, as 3-month offsets",
+   "example": 4,
+   "allowed": null
+  },
+  {
+   "key": "head3.label_cut",
+   "type": "string (YYYY-MM-DD)",
+   "meaning": "last date on which an exit would have been observed; folds whose horizon closes after it are censored, not scored",
+   "example": "2026-08-17",
+   "allowed": null
+  },
+  {
+   "key": "head3.exit_event_kinds",
+   "type": "[string]",
+   "meaning": "which distress_events.event_kind values count as an exit",
+   "example": [
+    "delisting_form_25",
+    "deregistration_form_15"
+   ],
+   "allowed": null
+  },
+  {
+   "key": "head3.feature_filing_rule",
+   "type": "string",
+   "meaning": "which filing in the quarter supplies the features",
+   "example": "latest_in_quarter",
+   "allowed": [
+    "latest_in_quarter",
+    "latest_in_quarter_with_text"
+   ]
+  },
+  {
+   "key": "head3.train_label_purge",
+   "type": "string",
+   "meaning": "whether training rows whose exit horizon closes on or after the test quarter's start are purged. 'horizon_end_before_test_start' is the head-3 analogue of decision 5's label purge and is the ONLY implemented rule (as in head 1, one purge rule); a no-purge convention would train on rows whose labels resolve inside or after the test quarter and is a refusal here, not a selectable value. This module holds no default: the key is leakage-relevant and must be pinned explicitly",
+   "example": "horizon_end_before_test_start",
+   "allowed": [
+    "horizon_end_before_test_start"
+   ]
+  },
+  {
+   "key": "columns.confirmatory_text",
+   "type": "[string]",
+   "meaning": "the confirmatory text block (decision 3), shared with head 1; embedding columns are named emb_pc* and their count must equal embedding.pca_k",
+   "example": [
+    "sentiment_negative_share",
+    "guidance_any_present"
+   ],
+   "allowed": null
+  },
+  {
+   "key": "columns.numeric",
+   "type": "[string]",
+   "meaning": "the numeric baseline block, shared with head 1",
+   "example": [
+    "log_total_assets"
+   ],
+   "allowed": null
+  },
+  {
+   "key": "head3.missing_value_rule",
+   "type": "string",
+   "meaning": "how a missing feature is handled; imputation is computed on the training fold only",
+   "example": "train_median",
+   "allowed": [
+    "train_median",
+    "drop_row"
+   ]
+  },
+  {
+   "key": "head3.standardize",
+   "type": "bool",
+   "meaning": "standardise features by training-fold mean/sd",
+   "example": true,
+   "allowed": null
+  },
+  {
+   "key": "head3.model",
+   "type": "string",
+   "meaning": "the classifier",
+   "example": "logistic_l2",
+   "allowed": [
+    "logistic_l2"
+   ]
+  },
+  {
+   "key": "head3.model_params",
+   "type": "object",
+   "meaning": "l2 (ridge penalty), max_iter, tol",
+   "example": {
+    "l2": 1.0,
+    "max_iter": 50,
+    "tol": 1e-08
+   },
+   "allowed": null
+  },
+  {
+   "key": "head3.metric",
+   "type": "string",
+   "meaning": "the per-fold metric",
+   "example": "auc",
+   "allowed": [
+    "auc"
+   ]
+  },
+  {
+   "key": "seeds.primary",
+   "type": "int",
+   "meaning": "the primary seed recorded with the run",
+   "example": 0,
+   "allowed": null
+  }
+ ],
+ "conditionally_required": [
+  {
+   "key": "embedding.pca_k",
+   "type": "int",
+   "meaning": "number of pooled-embedding principal components; required when the confirmatory text block names any emb_pc* column",
+   "example": 16,
+   "allowed": null
+  }
+ ],
+ "read_by_head1_not_by_this_module": [
+  "spec.*",
+  "margin.*",
+  "purge_rule",
+  "loco.*",
+  "se.*",
+  "tost.*",
+  "dedup.*",
+  "overlap.*",
+  "form_ablation_forms",
+  "post_2019_first_quarter",
+  "bootstrap_anchor.*"
+ ],
+ "shared_with_head1": [
+  "fold_quarters",
+  "columns.confirmatory_text",
+  "columns.numeric",
+  "embedding.pca_k",
+  "seeds.primary",
+  "head2.trailing_sessions",
+  "head2.event_window_sessions",
+  "head3.horizon_quarters",
+  "head3.metric"
+ ]
+}
