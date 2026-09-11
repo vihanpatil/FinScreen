@@ -715,14 +715,42 @@ def families_restatement(man: dict) -> dict:
                     "share_with_a_side_under_50_shingles":
                         deg["MDA"]["n_pairs_with_a_side_under_50_shingles"] / deg["MDA"]["n"]},
         },
+        "decision_23a_prior_rule": {
+            "key": man["arguments"]["family_a_novelty"]["prior_rule_key"],
+            "value": man["arguments"]["family_a_novelty"]["prior_rule_value"],
+            "rule": man["arguments"]["family_a_novelty"]["prior_rule"],
+            "n_with_prior": fa["n_with_prior"], "n_without_prior": fa["n_without_prior"],
+        },
+        "decision_23b_min_shingles": {
+            "key": man["arguments"]["family_a_novelty"]["min_shingles_key"],
+            "value": man["arguments"]["family_a_novelty"]["min_shingles"],
+            "n_pairs_suppressed": fa["n_suppressed_by_min_shingles"],
+            "by_section": {sec: {k: v for k, v in d.items()
+                                 if k.startswith(("n_suppressed", "n_written", "n_exactly"))}
+                           for sec, d in deg.items()},
+        },
+        "decision_23_sequential_exploratory": {
+            "key": man["arguments"]["family_a_prime_sequential_novelty_EXPLORATORY"]["key"],
+            "columns": man["arguments"]["family_a_prime_sequential_novelty_EXPLORATORY"]["columns"],
+            "status": "EXPLORATORY -- never in columns.family_novelty, never in the headline",
+            "n_with_prior": fa["seq_n_with_prior"],
+            "n_pairs_suppressed": fa["seq_n_suppressed_by_min_shingles"],
+            "prior_gap_days": fa["prior_gap_days_census_seq"],
+            "present": {c: [cov[f"n_{c}_present"], cov[f"share_{c}_present"]]
+                        for c in man["arguments"]["family_a_prime_sequential_novelty_EXPLORATORY"]["columns"]},
+        },
         "decision_23c_prior_pool": man["arguments"]["family_a_novelty"]["prior_candidate_pool"],
         "decision_23d_8k_body_embedded": fb["sections_embedded_by_type_this_run"]["8K_BODY"],
+        "decision_23d_rows_lost_to_the_exclusion":
+            fb["n_scoped_filings_with_no_embeddable_section"],
         "decision_23e_filing_pooling": man["arguments"]["family_b_embeddings"]["filing_pooling"],
         "decision_23f_window_cap": {
             "cap": man["arguments"]["family_b_embeddings"]["max_windows_per_section"],
-            "n_sections_hitting_cap": fb["n_sections_hitting_the_window_cap"],
+            # renamed by the 2026-09-10 red-team pass; the rebuilt manifest
+            # (2026-09-11, decision 23) carries the THIS-RUN name only.
+            "n_sections_hitting_cap": fb["n_sections_hitting_the_window_cap_this_run"],
             "n_sections_total": fb["n_sections_embedded_total"],
-            "share": fb["n_sections_hitting_the_window_cap"] / fb["n_sections_embedded_total"],
+            "share": fb["n_sections_hitting_the_window_cap_this_run"] / fb["n_sections_embedded_total"],
             "windows_kept_vs_uncapped": [fb["n_windows_this_run"], fb["n_windows_uncapped_this_run"]],
             "share_of_windows_dropped_by_cap":
                 1 - fb["n_windows_this_run"] / fb["n_windows_uncapped_this_run"],
@@ -733,7 +761,7 @@ def families_restatement(man: dict) -> dict:
                          "is NOT renormalized (renormalize_pooled = false), so ||emb|| < 1 measures "
                          "within-filing section dispersion; a PCA on these is a PCA on unnormalized means.",
             "emb_width": inv["emb_widths"],
-            "n_emb_missing_on_the_frame": 0,
+            "n_emb_missing_on_the_frame": "measured in .chain.n_emb_missing (was a hard-coded 0 until 2026-09-11; non-zero after the decision-23d rebuild: filings whose only embeddable section was an 8K_BODY carry no vector)",
         },
         "decision_23h_model": man["model"],
         "novelty_distributions": {k: inv[k] for k in inv if k.startswith("novelty_")},
@@ -812,8 +840,8 @@ def main() -> int:
             "F5_PLAN §1: no information coefficient, correlation, model fit or feature-versus-outcome "
             "association was computed on E2 data. `target_excess_63` was read only to COUNT completeness "
             "and censoring. The §6 ICCs are feature-versus-COMPANY-IDENTITY statistics, which the brief "
-            "and the freeze both allow. data/f5/G3_PREREGISTRATION.md and data/f5/G3_RATIFIED.json do "
-            "NOT exist and were not created."
+            "and the freeze both allow. data/f5/G3_RATIFIED.json does NOT exist and was not created; "
+            "data/f5/G3_PREREGISTRATION.md exists UNRATIFIED (its sha is pinned only on the owner's word)."
         ),
         "scope_sentence": (
             "No text-vs-numeric IC improvement of economically relevant size is detectable in this "

@@ -2,7 +2,7 @@
  "computed_associations_with_outcomes": 0,
  "controls_py_sha256": "b44358c389134dd9f5fc80b9a0d00be624d829b67d3d7f10d7e5e636c71dc32c",
  "freeze_statement": "F5_PLAN.md \u00a71: this census fits nothing and computes no information coefficient, correlation, slope or any other feature-versus-outcome association. G3_RATIFIED.json exists=False.",
- "generated_utc": "2026-09-11T16:04:31Z",
+ "generated_utc": "2026-09-11T21:51:38Z",
  "head2": {
   "candidate_post_window": [
    1,
@@ -59,22 +59,22 @@
    "2026Q3": 97
   },
   "events_by_quarter_usable": {
-   "2016Q3": 90,
+   "2016Q3": 89,
    "2016Q4": 90,
    "2017Q1": 96,
    "2017Q2": 89,
    "2017Q3": 83,
    "2017Q4": 89,
-   "2018Q1": 93,
+   "2018Q1": 92,
    "2018Q2": 86,
    "2018Q3": 88,
-   "2018Q4": 91,
-   "2019Q1": 97,
-   "2019Q2": 89,
+   "2018Q4": 90,
+   "2019Q1": 96,
+   "2019Q2": 88,
    "2019Q3": 91,
    "2019Q4": 95,
-   "2020Q1": 97,
-   "2020Q2": 101,
+   "2020Q1": 96,
+   "2020Q2": 100,
    "2020Q3": 99,
    "2020Q4": 102,
    "2021Q1": 105,
@@ -82,9 +82,9 @@
    "2021Q3": 96,
    "2021Q4": 98,
    "2022Q1": 100,
-   "2022Q2": 103,
+   "2022Q2": 101,
    "2022Q3": 103,
-   "2022Q4": 103,
+   "2022Q4": 102,
    "2023Q1": 101,
    "2023Q2": 101,
    "2023Q3": 99,
@@ -94,11 +94,11 @@
    "2024Q3": 98,
    "2024Q4": 104,
    "2025Q1": 101,
-   "2025Q2": 103,
+   "2025Q2": 101,
    "2025Q3": 105,
    "2025Q4": 105,
    "2026Q1": 105,
-   "2026Q2": 107,
+   "2026Q2": 106,
    "2026Q3": 92
   },
   "events_core": 4374,
@@ -107,12 +107,12 @@
   "events_excluded_incomplete_prices": 17,
   "events_excluded_trailing_window_short": 0,
   "events_excluded_window_past_snapshot": 3,
-  "events_usable_for_head2": 3996,
+  "events_usable_for_head2": 3983,
   "events_with_a_flat_session_in_post_window": 81,
-  "events_with_text_row": 4016,
+  "events_with_text_row": 4003,
   "events_with_text_row_but_null_predictor": 0,
   "events_with_zero_trailing_denominator": 0,
-  "events_without_text_features": 38,
+  "events_without_text_features": 51,
   "membership_filter_note": "controls.load_earnings_events filters membership on filing_date; the F5 target table filters on info_date = max(filing_date, acceptance_ET). The two differ for filings accepted after the spell boundary; the ported loader is used unchanged."
  },
  "head3": {
@@ -198,7 +198,7 @@
   "panel_latest_in_quarter": {
    "numeric_ciks": 175,
    "numeric_rows": 18300,
-   "numeric_rows_with_text": 8212,
+   "numeric_rows_with_text": 8175,
    "panel_ciks": 175,
    "panel_rows": 4056,
    "panel_rows_by_quarter": {
@@ -249,7 +249,7 @@
   "panel_latest_in_quarter_with_text": {
    "numeric_ciks": 175,
    "numeric_rows": 18300,
-   "numeric_rows_with_text": 8212,
+   "numeric_rows_with_text": 8175,
    "panel_ciks": 175,
    "panel_rows": 4042,
    "panel_rows_by_quarter": {
@@ -343,9 +343,9 @@
  },
  "inputs": {
   "filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
-  "numeric_features_e2.parquet": "079715054f590515cdc119606aa65126777cfe557d1f9fb5d584e053498059bb",
+  "numeric_features_e2.parquet": "01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b",
   "prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
-  "text_features_e2.parquet": "f9084e95c5fa030cdea961733645970a5bb12cbbc4a54b06bb33319aae59d55c"
+  "text_features_e2.parquet": "143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88"
  },
  "mode": "census",
  "module": "heads_e2.py",
@@ -359,5 +359,5 @@
   "path": "data/prices_e2.parquet",
   "sha256": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343"
  },
- "runtime_seconds": 0.34
+ "runtime_seconds": 0.36
 }

@@ -1,5 +1,187 @@
 # F5 Step 1B — `text_families_e2.py`: the two zero-labeling text families
 
+> ## REBUILT 2026-09-11 under G3 decision 23 (owner ruling + reading) — read §0 first
+>
+> The artifact on disk is **no longer the 2026-09-10 build**. `§0` holds the
+> rebuild's rules, before/after counts and deviations; everything below §0 is
+> the original Step 1B record and is **superseded wherever the two disagree**
+> (the stale cells are marked inline). Nothing in this file is a backtest
+> number; no IC, correlation or feature-versus-outcome association was
+> computed at any point, and `data/f5/G3_RATIFIED.json` does not exist.
+
+---
+
+## 0. The 2026-09-11 rebuild (decision 23)
+
+**Why.** `REDTEAM_g3_package_2026-09-11.md` B2 ruled the package
+**rebuild-then-ratify**: the artifacts the run reads must implement the
+ratified rules *before* the pre-registration's sha is pinned. For this module
+that is decisions **23a** (prior-year same-form comparison), **23b**
+(minimum-length filter) and **23d** (8K_BODY out of the embeddings), plus the
+owner's exploratory sequential-prior feature. 23c, 23e, 23f and 23h are
+**unchanged**; 23g (embedding PCA k = 16) is downstream of this module and is
+not implemented here.
+
+### 0.1 Rules as implemented
+
+| # | rule now in the code | changed? |
+|---|---|---|
+| 23a | `families.novelty_prior_rule = "prior_year_same_form"` (module constant `NOVELTY_PRIOR_RULE`, named after the pre-registration key). Prior = same CIK **and** same `section_type` **and** **same `form`** **and** `filing_date` strictly earlier **and** a filing-date gap in **[300, 430] days**; among those, the candidate whose gap is **closest to 365**; ties on \|gap − 365\| broken by the smallest `accession_number`. A 10-K's prior is the previous 10-K; a 10-Q's prior is the same fiscal quarter's 10-Q a year earlier. | **YES** — was "most recent prior filing of the same section, any form" |
+| 23b | `families.novelty_min_shingles = 50` (constant `NOVELTY_MIN_SHINGLES`). A pair whose **shorter** side carries fewer than 50 shingles (≈ 54 words) is **NaN**; the gap column keeps the selected prior's gap, so *gap-count − value-count* **is** the suppressed-stub count per column. Counts are in the manifest per section type and per rule. | **YES** — nothing was filtered before |
+| 23c | prior-candidate pool = the whole corpus for that CIK (back to 2015-07), including out-of-membership filings | no |
+| 23d | `EMBED_SECTION_TYPES = ("MDA", "RISK_FACTORS", "EX99_PRESS_RELEASE")`; `EXCLUDED_EMBED_SECTION_TYPES = ("8K_BODY",)`. **0 8K_BODY sections embedded**, recorded as an explicit zero in `sections_embedded_by_type_this_run`. | **YES** — 85 were embedded before |
+| 23e | filing pooling = unweighted mean over **section** vectors, equal weights, not renormalized | no |
+| 23f | 64-window cap; its bite is counted (**1,888 of 10,935 sections, 17.3%**) | no |
+| 23g | embedding PCA k = 16 — **not this module** (`backtest_e2.py`) | n/a |
+| 23h | model pinned: `sentence-transformers/all-MiniLM-L6-v2`, revision `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`, weights sha `53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db`, Apache-2.0, loaded `local_files_only=True`. **Nothing was downloaded**; 0 network calls at build time. | no |
+| — | **EXPLORATORY sequential-prior novelty** (`families.novelty_sequential_exploratory = true`): `novelty_risk_factors_seq`, `novelty_mda_seq` = the same function against the CIK's most recent prior filing of that section type **whatever its form** — i.e. the as-built quarter-over-quarter behaviour, now under an honest name. Same 50-shingle rule. **Pre-registered under `columns.exploratory_novelty_seq`, NEVER under `columns.family_novelty`; exploratory, never in the headline**; dropped at the write-up if it adds nothing ("if not accurate then no"). | **NEW** |
+
+### 0.2 Two rules the module had to fix for itself — ⚠ for the owner
+
+**⚠ 1. The year-over-year window is a bound, and the pre-registration's cell
+is not.** `G3_PREREGISTRATION.md:61` states 23a as "same form, strictly
+earlier, **the candidate closest to 365 d before**" with no bound. Implemented
+with the **[300, 430]-day window** the brief names, because without a bound
+the rule still fires when the nearest same-form predecessor is nowhere near a
+year away: **52 of 6,973 scoped sections** would have been labelled `_yoy` at
+gaps of **85 to 1,827 days (median 184)** — the `_yoy` name asserts a year.
+With the window, the measured gaps are **min 338 / median 364 / max 389 days**.
+The pre-registration cell should be refreshed to state the window.
+
+**⚠ 2. "Same fiscal quarter" is taken from the filing-date window, not from
+the period fields.** The brief allows either. `report_date` is **not read
+anywhere in this module** (the PIT rule, and the module's own standing
+promise). Measured cost of that choice, both rules run side by side over the
+whole corpus: they select the **identical** prior on **6,905 / 6,905** scoped
+sections where both fire, and differ in presence on **2** — Kraft Heinz's
+FY2018 10-K (`0001637459-19-000049`, MDA + RISK_FACTORS), filed 2019-06-07,
+**476 filing-days** after the previous 10-K but only 364 *period* days. Those
+2 sections get no `_yoy` value.
+
+**⚠ 3. 23d costs 85 rows, which nobody had measured.** Every one of the 85
+scoped 8K_BODY sections belongs to a filing whose **only** embeddable section
+was that 8K_BODY. Excluding the register therefore removes those filings from
+the artifact entirely: **7,723 → 7,638 rows**. `backtest_e2.join_frames`
+joins this table LEFT, so those filings keep their row in the analysis frame
+and get NaN `emb` + NaN novelty: **`n_emb_missing` on the modeling frame goes
+0 → 44** (44 of 7,389 rows, 0.60%, measured against the `target_e2` /
+`text_features_e2` / `numeric_features_e2` artifacts as they stood at
+2026-09-11 14:30 — other rebuilds were in flight, so the main session should
+re-measure at census time). The census cell
+`decision_23g_embedding_norms.n_emb_missing_on_the_frame`, which is hard-coded
+to 0 in `census_e2.py`, is now wrong and needs the measured value.
+
+**Two readings worth stating, neither a deviation.** (i) The exploratory
+`_seq` prior is the most recent prior filing **that carries that section
+type** — "whatever its form" removes the *form* restriction, not the
+section-type match; that is exactly the as-built rule the pre-registration
+names for this column. (ii) 23a's tie-break never fires on this corpus:
+`n_yoy_with_more_than_one_candidate = 0`, i.e. no CIK/section ever had two
+same-form filings inside the [300, 430]-day window, so the "closest to 365"
+and "smallest accession" clauses are exercised only by the synthetic tests.
+
+### 0.3 Before / after
+
+| quantity | 2026-09-10 build | 2026-09-11 rebuild | why |
+|---|---|---|---|
+| rows written | 7,723 | **7,638** | −85, the 8K_BODY-only filings (23d) |
+| distinct CIKs | 148 | **148** | — |
+| filing-date span | 2016-07-05 → 2026-08-20 | **unchanged** | — |
+| scoped filings with text | 7,723 | 7,723 | scope rule unchanged |
+| novelty pairs considered | 6,973 | 6,973 | unchanged |
+| pairs **with** a confirmatory prior | 6,972 (any form, max date) | **6,905** (23a) | 52 outside the year window, 16 with no same-form predecessor at all |
+| `novelty_risk_factors_yoy` non-null | 3,357 (43.5%) | **2,179 (28.5%)** | 1,122 stub pairs filtered (23b) |
+| `novelty_mda_yoy` non-null | 3,615 (46.8%) | **3,552 (46.5%)** | 52 stub pairs filtered (23b) |
+| `novelty_risk_factors_seq` non-null | — | **2,048 (26.8%)** | new, exploratory |
+| `novelty_mda_seq` non-null | — | **3,533 (46.3%)** | new, exploratory |
+| prior-gap median (RISK_FACTORS / MDA) | 91 / 91 days | **364 / 364 days** (min 338, max 389) | 23a — the `_yoy` names are now truthful |
+| prior-gap median, `_seq` | — | **91 / 91 days** (the old object, honestly named) | — |
+| stub pairs filtered (RISK_FACTORS / MDA) | 0 / 0 | **1,122 / 52** (yoy); **1,309 / 82** (seq) | 23b |
+| sections embedded | 11,020 (incl. 8K_BODY 85) | **10,935** (8K_BODY **0**) | 23d |
+| windows embedded | 377,542 | **376,518** | −1,024 |
+| sections hitting the 64-window cap | 1,888 / 11,020 (17.1%) | **1,888 / 10,935 (17.3%)** | no 8K_BODY section ever hit the cap |
+| pooled ‖emb‖ (min / mean) | 0.5587 / 0.6893 | **0.5587 / 0.6885** | 85 single-section rows removed |
+| parquet sha256 | `acc2712e358fb0fa…` | **`3cee65649b708429…`** | |
+| manifest sha256 | (unrecorded) | **`523d2514cf16e683…`** | |
+| module sha256 | `45e0df09e833e11a…` (build), `d2631a11d38c82a8…` (after the red-team rename) | **`0c450a387c5e0c9c…`** | |
+| `text_families_e2.py` tests | 31 fast + 1 slow = **32** | **41 fast + 1 slow = 42**, all green | |
+
+**Inputs.** The corpus is unchanged (`filings_e2_v2.parquet`,
+`15853e9f5490…`). `target_e2.parquet` was rebuilt by another agent under
+decision 2 at 14:10, before this build started, and this build asserted the
+new sha `ef6befb2a69c…` against its own manifest (`matches_committed: true`).
+That rebuild did **not** move this module's scope — `n_in_membership_target_rows`
+is 16,859 and `n_scoped_filings_with_text` is 7,723 in both builds — so every
+difference in the table above is attributable to decision 23 alone.
+
+Stub-filter detail, measured (manifest `novelty_degenerate_census`; `n` and
+`n_pairs_with_a_side_under_50_shingles` keep their pre-filter meaning so the
+earlier 39% finding stays comparable):
+
+| rule | section | pairs with a prior | side < 50 shingles → **filtered** | exact 0 before → after | exact 1 before → after |
+|---|---|---|---|---|---|
+| yoy (23a) | RISK_FACTORS | 3,301 | **1,122 (34.0%)** | 777 → **195** | 16 → **1** |
+| yoy (23a) | MDA | 3,604 | **52 (1.4%)** | 37 → **2** | 2 → **1** |
+| seq (exploratory) | RISK_FACTORS | 3,357 | **1,309 (39.0%)** | 855 → 299 | 516 → 79 |
+| seq (exploratory) | MDA | 3,615 | **82 (2.3%)** | 10 → 2 | 28 → 1 |
+
+The `seq` row reproduces the 2026-09-10 build's census **exactly**
+(3,357 / 855 / 516 / 1,309, min-shingle median 86; MDA 3,615 / 10 / 28 / 82,
+median 6,697) — that is the regression check that the exploratory column is
+the old as-built rule under an honest name, and that only the *selection*
+changed for the confirmatory pair.
+
+### 0.4 Schema, verification, and cost
+
+Four columns were added (`novelty_*_seq` and their gap columns); the 10
+existing columns keep their names, types and meaning. Output schema:
+
+```
+cik int64 · accession_number string · filing_date timestamp[ns]
+novelty_risk_factors_yoy double · novelty_mda_yoy double
+prior_gap_days_risk_factors double · prior_gap_days_mda double
+novelty_risk_factors_seq double · novelty_mda_seq double
+prior_gap_days_risk_factors_seq double · prior_gap_days_mda_seq double
+emb fixed_size_list<float>[384] · n_sections_embedded int64
+n_windows_embedded int64
+```
+
+Verified after the rebuild, on the written artifact:
+
+* **Independent re-derivation** — 24 checks over 12 random rows (both
+  sections, both rules) recomputed in a separate process with **tuple-of-words
+  5-grams (no hashing)** and a direct pandas prior query: **24/24 exact**,
+  including the NaN cases the 50-shingle filter produces.
+* **PIT** — every gap ≥ 1 day; every *confirmatory* gap inside [300, 430]
+  (asserted in `assert_output_invariants`, so a future build cannot drift);
+  `_seq` gaps min 56–57 days.
+* **23d** — 0 filings with no embeddable section survive in the artifact, and
+  every row's `n_sections_embedded` equals its count of non-8K_BODY embeddable
+  sections (0 mismatches over 7,638 rows).
+* **Freeze** — `python3 backtest_e2.py` still exits **2**; no
+  `data/f5/G3_RATIFIED.json` exists; the module still passes its
+  no-association and no-return-column tripwires.
+
+Cost: **$0**, no API call, no download (`local_files_only=True`). Wall clock:
+family A **26.5 s**, family B (re-embed, MPS, 376,518 windows at 229.1
+windows/s) **1,643.3 s = 27.4 min**, whole build **1,672.6 s = 27.9 min**,
+peak RSS 3.29 GB. Run as `python3 text_families_e2.py --no-resume` — the
+`--no-resume` is **mandatory** here, because the checkpoint on disk held
+8K_BODY-containing embeddings from the previous rule.
+
+**One consumer edit was required** (outside this module, reported rather than
+hidden): `data/f5/census_e2.py` read the family-B diagnostic under its
+pre-red-team name `n_sections_hitting_the_window_cap`, which the rebuilt
+manifest no longer carries (it is `…_this_run`), so the census would have
+raised `KeyError` on its next run. Fixed in place, and the same
+`families_restatement` gained `decision_23a_prior_rule`,
+`decision_23b_min_shingles`, `decision_23_sequential_exploratory` and
+`decision_23d_rows_lost_to_the_exclusion` so the refreshed census shows the
+new facts. **The censuses were NOT run** — the main session runs them once,
+after all rebuilds.
+
+---
+
 Status: BUILT and on disk. Session of 2026-09-10. Scope: EXPANSION_PLAN §8
 item 4 / F5_PLAN §2 Step 1 — (A) year-over-year novelty of Item 1A / Item 7,
 (B) pooled document embeddings. **Zero information coefficients,
@@ -23,6 +205,11 @@ and manifest were not rebuilt** — see the module-sha paragraph in §1 and the
 resume bullet in §2. No number in this report changed.
 
 ## 1. What was built
+
+> **Superseded in part by §0** (2026-09-11 rebuild): the parquet sha, the row
+> count, the module sha, the Family A prior rule, the NaN rule and the embedded
+> section-type list below are the 2026-09-10 values. §0.3 carries the current
+> ones.
 
 | file | role |
 |---|---|
@@ -107,6 +294,12 @@ item 3. Device MPS, encode batch 128, float32.
 
 ## 2. Assertions enforced, with measured values
 
+> **Superseded in part by §0**: every number in the right-hand column is the
+> 2026-09-10 shipped run. The assertions themselves all still run, plus two
+> added by the rebuild (the confirmatory gap must lie inside 23a's
+> [300, 430]-day window; a gap without a value is counted as a 23b
+> suppression).
+
 `assert_output_invariants` runs inside every build; the structural checks
 below were additionally re-derived in a separate red-team pass over the
 shipped parquet.
@@ -166,6 +359,10 @@ shipped parquet.
   side (`searchsorted` right) → 3 fail.
 
 ## 3. Population, as measured
+
+> **Superseded by §0.3** (2026-09-11 rebuild). Kept as the record of what the
+> as-built quarter-over-quarter rule measured; the `_seq` columns of the
+> current artifact reproduce this section's novelty censuses exactly.
 
 | quantity | value |
 |---|---|
@@ -235,6 +432,9 @@ was available and used.
 | `python3 -m pytest -q test_text_families_e2.py` | **26 passed**, 8.4 s (25 fast + 1 slow real-data smoke) — before the red-team pass |
 | `python3 -m pytest -q test_text_families_e2.py -m "not slow"` | 25 passed, 1 deselected, 1.7 s — before the red-team pass |
 | `python3 -m pytest -q test_text_families_e2.py -m "not slow"` (after the red-team pass: **+6** tests for the `--limit-filings` refusal, the `--out` prefix and the renamed counter) | **31 passed**, 1 deselected, 1.8 s |
+| `python3 -m pytest -q test_text_families_e2.py -m "not slow"` (after the 2026-09-11 decision-23 rebuild: **+10** tests — the pinned-constant mirror, the exploratory/confirmatory column split, same-form prior selection, the year window, closest-to-365, the two rules on one row, stub filtering to NaN with its counts, the 8K_BODY exclusion, the window-bound invariant) | **41 passed**, 1 deselected, 2.1 s |
+| `python3 -m pytest -q test_text_families_e2.py` (2026-09-11, with the real-data smoke) | **42 passed**, 9.8 s |
+| **full `python3 text_families_e2.py --no-resume`** (2026-09-11 rebuild) | **1,672.6 s = 27.9 min** (family A 26.5 s; re-embed 1,643.3 s at 229.1 windows/s on MPS; peak RSS 3.29 GB) |
 
 Throughput: **249.3 windows/s** (5.1 filings/s) on MPS for the shipped run;
 270.4 windows/s (5.5 filings/s) on the first cold run, when the machine was
@@ -247,6 +447,10 @@ pytest config registering markers (`test_features_e2.py` carries the same
 warning). `-m "not slow"` works regardless.
 
 ## 5. Open questions for G3 (no recommendation attached)
+
+> **Items 1, 3 and 6 were RULED and are now implemented** (decision 23a / 23d /
+> 23b, owner 2026-09-11 + reading; see §0). Items 2, 4, 5, 7, 8, 9, 10 stand,
+> with item 5's denominator now 10,935 sections and item 9's row count 7,638.
 
 1. **The `_yoy` column names do not describe the measured comparison.** The
    brief's rule is "the most recent prior filing of the same section", which

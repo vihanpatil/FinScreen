@@ -44,12 +44,39 @@ def reference_jaccard(a: str, b: str, n: int = 5) -> float:
 
 
 def write_corpus(path: Path, rows) -> Path:
-    """A synthetic corpus parquet with the columns this module reads."""
+    """A synthetic corpus parquet with the columns this module reads.
+
+    A row is (cik, accession_number, section_type, filing_date, text) with an
+    optional 6th element, the `form` (default 10-Q).
+    """
+    rows = [r if len(r) == 6 else (*r, "10-Q") for r in rows]
     df = pd.DataFrame(rows, columns=["cik", "accession_number", "section_type",
-                                     "filing_date", "text"])
-    df["form"] = "10-Q"      # the corpus carries `form`; the index reads it
+                                     "filing_date", "text", "form"])
     df.to_parquet(path, index=False)
     return path
+
+
+def words(prefix: str, n_words: int, start: int = 0) -> str:
+    """`n_words` DISTINCT words -> `n_words - 4` distinct 5-word shingles.
+
+    The suffix is letters, not digits: `normalize_text` strips digit runs, so
+    "w0 w1 w2" would collapse to "w w w" and yield ONE shingle.
+    """
+    return " ".join(f"{prefix}{chr(97 + i // 26)}{chr(97 + i % 26)}"
+                    for i in range(start, start + n_words))
+
+
+def long_text(prefix: str = "w", n_words: int = 120) -> str:
+    """Comfortably above `NOVELTY_MIN_SHINGLES`, so a fixture is not
+    silently stub-filtered by 23b."""
+    assert n_words - T.SHINGLE_N + 1 >= T.NOVELTY_MIN_SHINGLES
+    return words(prefix, n_words)
+
+
+def stub_text(prefix: str = "s", n_words: int = 20) -> str:
+    """A 10-Q "no material changes" stub: under the 23b minimum."""
+    assert n_words - T.SHINGLE_N + 1 < T.NOVELTY_MIN_SHINGLES
+    return words(prefix, n_words)
 
 
 class StubTokenizer:
@@ -158,15 +185,45 @@ def test_text_shorter_than_the_shingle_is_nan():
 
 
 def _index(rows) -> pd.DataFrame:
+    """rows: (cik, accession, section_type, filing_date[, form])."""
+    rows = [r if len(r) == 5 else (*r, "10-Q") for r in rows]
     idx = pd.DataFrame(rows, columns=["cik", "accession_number", "section_type",
-                                      "filing_date"])
+                                      "filing_date", "form"])
     idx["filing_date"] = pd.to_datetime(idx["filing_date"])
-    idx["form"] = "10-Q"
     idx["row"] = np.arange(len(idx), dtype=np.int64)
     return idx
 
 
+SEQ = T.SEQUENTIAL_PRIOR_RULE
+
+
+def test_the_pinned_rule_constants_mirror_the_preregistration_keys():
+    # `families.novelty_prior_rule` / `families.novelty_min_shingles` /
+    # `families.novelty_sequential_exploratory`, decision 23.
+    assert T.NOVELTY_PRIOR_RULE == "prior_year_same_form"
+    assert T.NOVELTY_MIN_SHINGLES == 50
+    assert T.NOVELTY_SEQUENTIAL_EXPLORATORY is True
+    assert (T.YOY_GAP_DAYS_MIN, T.YOY_GAP_DAYS_TARGET, T.YOY_GAP_DAYS_MAX) == (300, 365, 430)
+    args = T.pinned_args()["family_a_novelty"]
+    assert args["prior_rule_key"] == "families.novelty_prior_rule"
+    assert args["prior_rule_value"] == T.NOVELTY_PRIOR_RULE
+    assert args["min_shingles_key"] == "families.novelty_min_shingles"
+    assert args["min_shingles"] == T.NOVELTY_MIN_SHINGLES
+
+
+def test_the_seq_columns_are_exploratory_and_never_in_the_family_list():
+    mirror = T.pinned_args()["columns_preregistration_mirror"]
+    assert mirror["columns.family_novelty"] == ["novelty_risk_factors_yoy",
+                                                "novelty_mda_yoy"]
+    assert mirror["columns.exploratory_novelty_seq"] == ["novelty_risk_factors_seq",
+                                                         "novelty_mda_seq"]
+    assert not set(T.COLUMNS_EXPLORATORY_NOVELTY_SEQ) & set(T.COLUMNS_FAMILY_NOVELTY)
+    assert set(T.COLUMNS_FAMILY_NOVELTY + T.COLUMNS_EXPLORATORY_NOVELTY_SEQ) \
+        <= set(T.OUTPUT_COLUMNS)
+
+
 def test_prior_is_same_cik_same_section_and_strictly_earlier():
+    """The EXPLORATORY sequential rule: most recent prior, any form."""
     idx = _index([
         (1, "a-old", "MDA", "2020-01-01"),          # the right answer
         (1, "a-older", "MDA", "2019-01-01"),        # earlier, but not the max
@@ -176,23 +233,71 @@ def test_prior_is_same_cik_same_section_and_strictly_earlier():
         (2, "b-old", "MDA", "2020-06-01"),          # other cik
         (1, "a-cur", "MDA", "2021-01-01"),
     ])
-    prior = T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"))
+    prior = T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"), rule=SEQ)
     assert prior["accession_number"] == "a-old"
+
+
+def test_the_yoy_prior_is_the_same_form_one_year_back_not_the_preceding_filing():
+    """23a: a 10-Q's prior is the 10-Q a year earlier, NOT the 10-K filed in
+    between, and NOT the previous quarter's 10-Q."""
+    idx = _index([
+        (1, "q-2019q3", "MDA", "2019-10-30", "10-Q"),   # 367 d back -> the answer
+        (1, "k-2019", "MDA", "2020-02-20", "10-K"),     # nearer, wrong form
+        (1, "q-2020q2", "MDA", "2020-07-30", "10-Q"),   # nearer, wrong quarter
+        (1, "q-2020q3", "MDA", "2020-11-01", "10-Q"),   # the current filing
+    ])
+    cur = pd.Timestamp("2020-11-01")
+    yoy = T.select_prior(idx, 1, "MDA", cur, form="10-Q")
+    assert yoy["accession_number"] == "q-2019q3"
+    assert (cur - yoy["filing_date"]).days == 368
+    # the 10-K in the same window is only reachable by a 10-K
+    k = T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-02-18"), form="10-K")
+    assert k["accession_number"] == "k-2019"
+    # ... while the exploratory sequential rule takes the immediately
+    # preceding filing whatever its form
+    seq = T.select_prior(idx, 1, "MDA", cur, rule=SEQ)
+    assert seq["accession_number"] == "q-2020q2"
+
+
+def test_a_prior_outside_the_year_window_is_not_a_yoy_prior():
+    idx = _index([
+        (1, "too-old", "MDA", "2018-01-01", "10-K"),    # 1096 d: > 430
+        (1, "too-near", "MDA", "2020-08-01", "10-K"),   # 153 d: < 300
+        (1, "cur", "MDA", "2021-01-01", "10-K"),
+    ])
+    assert T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"),
+                          form="10-K") is None
+    # the sequential rule still finds one -- that is the point of the pair
+    assert T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"),
+                          rule=SEQ)["accession_number"] == "too-near"
+
+
+def test_the_yoy_prior_is_the_candidate_closest_to_365_days():
+    idx = _index([
+        (1, "p310", "MDA", "2020-02-26", "10-Q"),   # 310 d
+        (1, "p400", "MDA", "2019-11-27", "10-Q"),   # 401 d
+        (1, "p370", "MDA", "2020-01-01", "10-Q"),   # 366 d -> closest
+        (1, "cur", "MDA", "2021-01-01", "10-Q"),
+    ])
+    got = T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"), form="10-Q")
+    assert got["accession_number"] == "p370"
 
 
 def test_no_prior_returns_none():
     idx = _index([(1, "a-cur", "MDA", "2021-01-01"),
                   (1, "a-later", "MDA", "2022-01-01")])
-    assert T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01")) is None
-    assert T.select_prior(idx, 99, "MDA", pd.Timestamp("2030-01-01")) is None
+    for kw in ({"rule": SEQ}, {"form": "10-Q"}):
+        assert T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"), **kw) is None
+        assert T.select_prior(idx, 99, "MDA", pd.Timestamp("2030-01-01"), **kw) is None
 
 
 def test_prior_date_ties_break_on_smallest_accession_number():
     idx = _index([(1, "zzz", "MDA", "2020-01-01"),
                   (1, "aaa", "MDA", "2020-01-01"),
                   (1, "cur", "MDA", "2021-01-01")])
-    assert T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"))[
-        "accession_number"] == "aaa"
+    for kw in ({"rule": SEQ}, {"form": "10-Q"}):
+        assert T.select_prior(idx, 1, "MDA", pd.Timestamp("2021-01-01"),
+                              **kw)["accession_number"] == "aaa"
 
 
 def test_build_prior_pairs_agrees_with_select_prior_and_gap_days():
@@ -205,26 +310,46 @@ def test_build_prior_pairs_agrees_with_select_prior_and_gap_days():
     ])
     scoped = {(1, "a3"), (2, "b1")}
     pairs = T.build_prior_pairs(idx, scoped)
-    got = {(r.cik, r.accession_number, r.section_type): (r.prior_row, r.prior_gap_days)
+    got = {(r.cik, r.accession_number, r.section_type):
+           (r.prior_row_yoy, r.prior_gap_days_yoy, r.prior_row_seq, r.prior_gap_days_seq)
            for r in pairs.itertuples(index=False)}
     assert set(got) == {(1, "a3", "MDA"), (1, "a3", "RISK_FACTORS"), (2, "b1", "MDA")}
-    # MDA of a3 -> a2 (row 1), 366 days (2020 is a leap year)
-    assert got[(1, "a3", "MDA")] == (1, 366.0)
+    # MDA of a3 -> a2 (row 1), 366 days (2020 is a leap year), under BOTH rules
+    assert got[(1, "a3", "MDA")] == (1, 366.0, 1, 366.0)
     # RISK_FACTORS of a3 has no prior; b1 is the cik's first MDA
     assert got[(1, "a3", "RISK_FACTORS")][0] == -1
     assert math.isnan(got[(1, "a3", "RISK_FACTORS")][1])
-    assert got[(2, "b1", "MDA")][0] == -1
+    assert got[(2, "b1", "MDA")][0] == -1 and got[(2, "b1", "MDA")][2] == -1
     for r in pairs.itertuples(index=False):
-        ref = T.select_prior(idx, r.cik, r.section_type,
-                             idx.loc[idx["row"] == r.row, "filing_date"].iloc[0])
-        assert (r.prior_row == -1) == (ref is None)
-        if ref is not None:
-            assert r.prior_row == ref["row"]
+        d = idx.loc[idx["row"] == r.row, "filing_date"].iloc[0]
+        for rule, kw in (("yoy", {"form": r.form}), ("seq", {"rule": SEQ})):
+            ref = T.select_prior(idx, r.cik, r.section_type, d, **kw)
+            prior_row = getattr(r, f"prior_row_{rule}")
+            assert (prior_row == -1) == (ref is None)
+            if ref is not None:
+                assert prior_row == ref["row"]
+
+
+def test_build_prior_pairs_separates_the_two_rules_on_a_quarterly_filer():
+    """The confirmatory prior is a year back; the exploratory one is the
+    preceding quarter -- on the same row."""
+    idx = _index([
+        (1, "q1", "RISK_FACTORS", "2019-11-01", "10-Q"),
+        (1, "k1", "RISK_FACTORS", "2020-02-20", "10-K"),
+        (1, "q2", "RISK_FACTORS", "2020-08-01", "10-Q"),
+        (1, "q3", "RISK_FACTORS", "2020-11-01", "10-Q"),
+    ])
+    pairs = T.build_prior_pairs(idx, {(1, "q3")})
+    r = pairs.iloc[0]
+    assert idx.loc[r["prior_row_yoy"], "accession_number"] == "q1"
+    assert r["prior_gap_days_yoy"] == 366.0
+    assert idx.loc[r["prior_row_seq"], "accession_number"] == "q2"
+    assert r["prior_gap_days_seq"] == 92.0
 
 
 def test_compute_novelty_end_to_end_on_a_synthetic_corpus(tmp_path):
-    base = " ".join(f"w{i}" for i in range(40))
-    changed = base + " " + " ".join(f"x{i}" for i in range(40))
+    base = long_text("w", 120)
+    changed = base + " " + long_text("x", 120)
     corpus = write_corpus(tmp_path / "corpus.parquet", [
         (1, "acc-2019", "MDA", "2019-02-01", base),
         (1, "acc-2020", "MDA", "2020-02-01", changed),
@@ -243,16 +368,18 @@ def test_compute_novelty_end_to_end_on_a_synthetic_corpus(tmp_path):
     assert math.isnan(r.loc["acc-2020", "prior_gap_days_risk_factors"])
     assert math.isnan(r.loc["acc-b", "novelty_mda_yoy"])
     assert diag["n_with_prior"] == 1 and diag["n_without_prior"] == 2
-    # the digits inside "w0 w1 ..." are stripped by normalization, so the
-    # measured value is a real number in [0, 1], not a degenerate 0/1
     assert 0.0 < r.loc["acc-2020", "novelty_mda_yoy"] < 1.0
+    # the single pair is a year apart, so both rules pick it
+    assert r.loc["acc-2020", "novelty_mda_seq"] == pytest.approx(expected)
+    assert diag["seq_n_with_prior"] == 1
+    assert diag["n_suppressed_by_min_shingles"] == 0
 
 
 def test_prior_text_is_never_from_a_later_filing(tmp_path):
     """A future filing that is nearly identical must NOT be chosen; the
     novelty must come from the earlier one."""
-    old = " ".join(f"o{i}" for i in range(30))
-    cur = " ".join(f"c{i}" for i in range(30))
+    old = long_text("o", 120)
+    cur = long_text("c", 120)
     corpus = write_corpus(tmp_path / "corpus.parquet", [
         (1, "old", "MDA", "2019-01-01", old),
         (1, "cur", "MDA", "2020-01-01", cur),
@@ -263,10 +390,74 @@ def test_prior_text_is_never_from_a_later_filing(tmp_path):
                           "filing_date": pd.to_datetime(["2020-01-01"])})
     nov, _ = T.compute_novelty(scope, idx, corpus_path=corpus)
     # if the future filing leaked in, novelty would be 0.0
-    assert nov.loc[0, "novelty_mda_yoy"] == pytest.approx(
-        1 - reference_jaccard(cur, old))
-    assert nov.loc[0, "novelty_mda_yoy"] > 0.9
-    assert nov.loc[0, "prior_gap_days_mda"] == 365.0
+    for col, gap in (("novelty_mda_yoy", "prior_gap_days_mda"),
+                     ("novelty_mda_seq", "prior_gap_days_mda_seq")):
+        assert nov.loc[0, col] == pytest.approx(1 - reference_jaccard(cur, old))
+        assert nov.loc[0, col] > 0.9
+        assert nov.loc[0, gap] == 365.0
+
+
+def test_the_yoy_and_seq_columns_disagree_when_the_forms_disagree(tmp_path):
+    """The `_seq` column is computed against the IMMEDIATELY preceding filing
+    whatever its form; the `_yoy` column against the same form a year back."""
+    y_ago = long_text("y", 120)
+    last_q = long_text("q", 120)
+    cur = long_text("y", 120) + " " + words("z", 20)       # close to y_ago
+    corpus = write_corpus(tmp_path / "corpus.parquet", [
+        (1, "q-2019q3", "MDA", "2019-11-01", y_ago, "10-Q"),
+        (1, "k-2019", "MDA", "2020-02-20", last_q, "10-K"),
+        (1, "q-2020q3", "MDA", "2020-11-01", cur, "10-Q"),
+    ])
+    idx = T.load_corpus_index(corpus)
+    scope = pd.DataFrame({"cik": [1], "accession_number": ["q-2020q3"],
+                          "filing_date": pd.to_datetime(["2020-11-01"])})
+    nov, diag = T.compute_novelty(scope, idx, corpus_path=corpus)
+    assert nov.loc[0, "novelty_mda_yoy"] == pytest.approx(1 - reference_jaccard(cur, y_ago))
+    assert nov.loc[0, "prior_gap_days_mda"] == 366.0
+    assert nov.loc[0, "novelty_mda_seq"] == pytest.approx(1 - reference_jaccard(cur, last_q))
+    assert nov.loc[0, "prior_gap_days_mda_seq"] == 255.0
+    # the year-ago text is mostly reused, the intervening 10-K shares nothing
+    assert nov.loc[0, "novelty_mda_yoy"] < 0.3 < nov.loc[0, "novelty_mda_seq"]
+    assert diag["prior_gap_days_census"]["MDA"]["median"] == 366.0
+    assert diag["prior_gap_days_census_seq"]["MDA"]["median"] == 255.0
+
+
+def test_a_stub_side_is_filtered_to_nan_and_counted(tmp_path):
+    """23b: a pair whose shorter side is under NOVELTY_MIN_SHINGLES shingles
+    (the 10-Q "no material changes" stubs) yields NaN, the gap survives, and
+    the suppressed count is reported per section type."""
+    body = long_text("r", 120)
+    stub = stub_text("s", 20)
+    assert len(T.shingle_hashes(stub)) < T.NOVELTY_MIN_SHINGLES <= len(T.shingle_hashes(body))
+    corpus = write_corpus(tmp_path / "corpus.parquet", [
+        (1, "y1", "RISK_FACTORS", "2019-11-01", body, "10-Q"),
+        (1, "y2", "RISK_FACTORS", "2020-11-01", stub, "10-Q"),    # stub current
+        (2, "y1", "RISK_FACTORS", "2019-11-01", stub, "10-Q"),    # stub prior
+        (2, "y2", "RISK_FACTORS", "2020-11-01", body, "10-Q"),
+        (3, "y1", "RISK_FACTORS", "2019-11-01", body, "10-Q"),
+        (3, "y2", "RISK_FACTORS", "2020-11-01", body, "10-Q"),    # neither side a stub
+    ])
+    idx = T.load_corpus_index(corpus)
+    scope = pd.DataFrame({"cik": [1, 2, 3], "accession_number": ["y2"] * 3,
+                          "filing_date": pd.to_datetime(["2020-11-01"] * 3)})
+    nov, diag = T.compute_novelty(scope, idx, corpus_path=corpus)
+    r = nov.set_index("cik")
+    assert math.isnan(r.loc[1, "novelty_risk_factors_yoy"])     # short current side
+    assert math.isnan(r.loc[2, "novelty_risk_factors_yoy"])     # short prior side
+    assert r.loc[3, "novelty_risk_factors_yoy"] == pytest.approx(0.0)
+    # the prior EXISTS for all three: the gap is kept, the value is suppressed
+    assert list(r["prior_gap_days_risk_factors"]) == [366.0] * 3
+    assert diag["n_with_prior"] == 3
+    assert diag["n_suppressed_by_min_shingles"] == 2
+    assert diag["seq_n_suppressed_by_min_shingles"] == 2
+    deg = diag["novelty_degenerate_census"]["RISK_FACTORS"]
+    assert deg["n"] == 3 and deg["n_suppressed_by_min_shingles"] == 2
+    assert deg["n_written"] == 1
+    assert deg["n_pairs_with_a_side_under_50_shingles"] == 2
+    # the degenerate 0/1 values the filter exists to remove are still counted
+    # BEFORE the filter, and the written column keeps only the real one
+    assert deg["n_exactly_1"] == 2 and deg["n_exactly_1_written"] == 0
+    assert deg["n_exactly_0"] == 1 and deg["n_exactly_0_written"] == 1
 
 
 # ---------------------------------------------------------------------------
@@ -322,6 +513,33 @@ def _emb_fixture(tmp_path):
     return corpus, idx, scope
 
 
+def test_8k_body_is_never_embedded_and_is_reported_as_a_zero(tmp_path):
+    """23d: the 8-K body register is out of family B, for symmetry with
+    decision 9.  A filing whose only section is an 8K_BODY gets no row."""
+    assert "8K_BODY" not in T.EMBED_SECTION_TYPES
+    assert T.EXCLUDED_EMBED_SECTION_TYPES == ("8K_BODY",)
+    text = " ".join(f"w{i}" for i in range(600))
+    corpus = write_corpus(tmp_path / "corpus.parquet", [
+        (1, "a", "8K_BODY", "2020-01-01", text, "8-K"),           # only section
+        (2, "b", "8K_BODY", "2020-02-01", text, "8-K"),
+        (2, "b", "EX99_PRESS_RELEASE", "2020-02-01", text, "8-K"),
+    ])
+    idx = T.load_corpus_index(corpus)
+    scope = pd.DataFrame({"cik": [1, 2], "accession_number": ["a", "b"],
+                          "filing_date": pd.to_datetime(["2020-01-01", "2020-02-01"])})
+    model = StubModel()
+    emb, diag = T.compute_embeddings(scope, idx, model=model, corpus_path=corpus,
+                                     partial_path=tmp_path / "partial.parquet",
+                                     progress=False)
+    assert list(emb["accession_number"]) == ["b"]           # filing "a" lost its row
+    assert emb.iloc[0]["n_sections_embedded"] == 1          # the press release only
+    counts = diag["sections_embedded_by_type_this_run"]
+    assert counts["8K_BODY"] == 0                           # an explicit zero
+    assert counts["EX99_PRESS_RELEASE"] == 1
+    assert diag["sections_excluded_from_embedding_in_scope"] == {"8K_BODY": 2}
+    assert diag["n_scoped_filings_with_no_embeddable_section"] == 1
+
+
 def test_embedding_counts_and_pooling_on_a_synthetic_corpus(tmp_path):
     corpus, idx, scope = _emb_fixture(tmp_path)
     model = StubModel()
@@ -372,7 +590,7 @@ def test_checkpoint_written_and_resume_skips_finished_filings(tmp_path):
 # ---------------------------------------------------------------------------
 
 
-def _frame(n=3, gap=365.0):
+def _frame(n=3, gap=365.0, seq_gap=91.0):
     rng = np.random.default_rng(0)
     return pd.DataFrame({
         "cik": np.arange(n, dtype=np.int64),
@@ -382,6 +600,10 @@ def _frame(n=3, gap=365.0):
         "novelty_mda_yoy": [0.2] * n,
         "prior_gap_days_risk_factors": [gap] * n,
         "prior_gap_days_mda": [gap] * n,
+        "novelty_risk_factors_seq": [0.3] * n,
+        "novelty_mda_seq": [0.4] * n,
+        "prior_gap_days_risk_factors_seq": [seq_gap] * n,
+        "prior_gap_days_mda_seq": [seq_gap] * n,
         "emb": [rng.normal(size=T.EMB_DIM).astype(np.float32) for _ in range(n)],
         "n_sections_embedded": np.full(n, 2, dtype=np.int64),
         "n_windows_embedded": np.full(n, 5, dtype=np.int64),
@@ -395,8 +617,7 @@ def test_output_schema_is_the_pinned_one(tmp_path):
     assert pa.types.is_fixed_size_list(tbl.schema.field("emb").type)
     assert tbl.schema.field("cik").type == pa.int64()
     assert tbl.schema.field("accession_number").type == pa.string()
-    for c in ("novelty_risk_factors_yoy", "novelty_mda_yoy",
-              "prior_gap_days_risk_factors", "prior_gap_days_mda"):
+    for c in T.NOVELTY_VALUE_COLUMNS + T.NOVELTY_GAP_COLUMNS:
         assert tbl.schema.field(c).type == pa.float64()
     out = tmp_path / "out.parquet"
     pq.write_table(tbl, out)
@@ -416,11 +637,25 @@ def test_invariants_reject_a_duplicate_filing_key():
         T.assert_output_invariants(f)
 
 
+def test_invariants_reject_a_yoy_gap_outside_the_year_window():
+    with pytest.raises(AssertionError, match="window"):
+        T.assert_output_invariants(_frame(gap=91.0))     # a quarter, not a year
+    # ... while the EXPLORATORY sequential gap is allowed to be a quarter
+    T.assert_output_invariants(_frame(seq_gap=91.0))
+
+
 def test_invariants_measure_what_they_promise():
     m = T.assert_output_invariants(_frame())
     assert m["n_rows"] == 3 and m["emb_widths"] == [T.EMB_DIM]
     assert m["min_prior_gap_days_mda"] == 365.0
     assert m["n_novelty_mda_yoy_non_null"] == 3
+    assert m["min_prior_gap_days_mda_seq"] == 91.0
+    assert m["n_novelty_mda_seq_non_null"] == 3
+    # a gap with no value is a 23b suppression, and is counted as one
+    f = _frame()
+    f.loc[0, "novelty_mda_yoy"] = np.nan
+    assert T.assert_output_invariants(f)[
+        "n_novelty_mda_yoy_suppressed_by_min_shingles"] == 1
 
 
 # ---------------------------------------------------------------------------
@@ -479,11 +714,12 @@ def test_real_data_smoke_twenty_filings(tmp_path):
     embs = np.vstack([np.asarray(v) for v in frame["emb"]])
     assert embs.shape[1] == T.EMB_DIM and np.isfinite(embs).all()
     assert (frame["n_windows_embedded"] >= 1).all()
-    gaps = pd.concat([frame["prior_gap_days_risk_factors"],
-                      frame["prior_gap_days_mda"]]).dropna()
+    gaps = pd.concat([frame[c] for c in T.NOVELTY_GAP_COLUMNS]).dropna()
     assert (gaps >= 1).all()                      # PIT: prior is strictly earlier
-    nov = pd.concat([frame["novelty_risk_factors_yoy"],
-                     frame["novelty_mda_yoy"]]).dropna()
+    yoy_gaps = pd.concat([frame["prior_gap_days_risk_factors"],
+                          frame["prior_gap_days_mda"]]).dropna()
+    assert yoy_gaps.between(T.YOY_GAP_DAYS_MIN, T.YOY_GAP_DAYS_MAX).all()
+    nov = pd.concat([frame[c] for c in T.NOVELTY_VALUE_COLUMNS]).dropna()
     assert nov.between(0.0, 1.0).all()
     assert (tmp_path / "smoke.parquet").exists()
     schema = pq.read_schema(tmp_path / "smoke.parquet")
@@ -549,7 +785,12 @@ def test_the_cli_out_prefix_names_all_three_artifacts(tmp_path, monkeypatch):
         captured.update(kw)
         return (pd.DataFrame(), {"coverage": {"n_distinct_ciks": 0,
                                               "n_novelty_risk_factors_yoy_present": 0,
-                                              "n_novelty_mda_yoy_present": 0},
+                                              "n_novelty_mda_yoy_present": 0,
+                                              "n_novelty_risk_factors_seq_present": 0,
+                                              "n_novelty_mda_seq_present": 0},
+                                 "family_a_diagnostics": {
+                                     "n_suppressed_by_min_shingles": 0,
+                                     "seq_n_suppressed_by_min_shingles": 0},
                                  "family_b_diagnostics": {"n_windows_total": 0,
                                                           "device": "cpu",
                                                           "throughput_windows_per_second": 0},

@@ -3,13 +3,21 @@
 EXPANSION_PLAN.md §8 item 4 / F5_PLAN.md §2 Step 1: two feature families that
 need no student label at all, built directly from the filing text.
 
-  FAMILY A -- year-over-year novelty.  For each scoped filing's
-  RISK_FACTORS (Item 1A) and MDA (Item 7) section: the novelty of that
-  section against the SAME CIK's most recent PRIOR filing of the SAME
-  section type, `novelty = 1 - Jaccard(5-word shingles)` over normalized
-  text.  Columns `novelty_risk_factors_yoy`, `novelty_mda_yoy`,
+  FAMILY A -- year-over-year novelty (CONFIRMATORY).  For each scoped
+  filing's RISK_FACTORS (Item 1A) and MDA (Item 7) section: the novelty of
+  that section against the SAME CIK's PRIOR-YEAR filing of the SAME FORM
+  and the same section type, `novelty = 1 - Jaccard(5-word shingles)` over
+  normalized text.  Columns `novelty_risk_factors_yoy`, `novelty_mda_yoy`,
   `prior_gap_days_risk_factors`, `prior_gap_days_mda`; NaN when there is no
-  prior.
+  such prior or when either side is shorter than `NOVELTY_MIN_SHINGLES`.
+
+  FAMILY A' -- sequential-prior novelty (EXPLORATORY, NEVER IN A HEADLINE).
+  The same function against the CIK's most recent prior filing of that
+  section type WHATEVER ITS FORM -- the owner's "accumulate progressively
+  ... adding a quarter".  Columns `novelty_risk_factors_seq`,
+  `novelty_mda_seq` (+ their gap columns).  These are pre-registered under
+  `columns.exploratory_novelty_seq` and are NEVER listed under
+  `columns.family_novelty`.
 
   FAMILY B -- pooled document embeddings.  Each section is embedded as the
   MEAN of its 256-token window embeddings (capped at the first
@@ -17,7 +25,26 @@ need no student label at all, built directly from the filing text.
   its sections.  Model: `sentence-transformers/all-MiniLM-L6-v2` (384-d,
   Apache-2.0), run locally on MPS if available, else CPU.  Column `emb`
   (fixed-width `list<float32>[384]`), with `n_sections_embedded` and
-  `n_windows_embedded` beside it.
+  `n_windows_embedded` beside it.  8K_BODY sections are NOT embedded
+  (decision 23d, symmetry with decision 9).
+
+-----------------------------------------------------------------------
+G3 decision 23 (owner's ruling + reading, 2026-09-11) -- what this build is
+-----------------------------------------------------------------------
+23a  prior = same CIK + same section_type + SAME FORM, strictly earlier,
+     filing-date gap in [300, 430] days, the candidate closest to 365 days;
+     ties on |gap - 365| broken by the smallest accession_number.
+     Pre-registration key: `families.novelty_prior_rule`.
+23b  a pair whose SHORTER side carries fewer than
+     `families.novelty_min_shingles` = 50 shingles is NaN, and the
+     suppressed count is disclosed per section type in the manifest.
+23c  prior-candidate pool = the whole corpus for that CIK (UNCHANGED).
+23d  8K_BODY excluded from the embedded set (CHANGED; 0 embedded).
+23e  sections weighted equally in the filing pooling (UNCHANGED).
+23f  64-window cap, its bite counted (UNCHANGED).
+23g  embedding PCA k = 16 -- downstream, not this module (UNCHANGED).
+23h  the embedding model, revision and weights sha are pinned (UNCHANGED).
+Exploratory: `families.novelty_sequential_exploratory` = the `_seq` pair.
 
 -----------------------------------------------------------------------
 The freeze (F5_PLAN §1) -- what this module does NOT do
@@ -37,8 +64,15 @@ Family A is the only place where one filing's row sees another filing's
 bytes, and the direction is strictly backwards: the comparison partner is
 selected with `filing_date` STRICTLY EARLIER than the current filing's
 `filing_date` (same CIK, same section type).  `prior_gap_days_* >= 1` is
-asserted on the written frame.  Family B touches only the filing's own
-text.  No `report_date` is read anywhere in this module.
+asserted on the written frame, for the confirmatory AND the exploratory
+pair.  Family B touches only the filing's own text.  No `report_date` is
+read anywhere in this module -- which is why 23a's "same fiscal quarter one
+year earlier" is implemented as a FILING-DATE window (300-430 days, closest
+to 365) and not from the period fields.  Measured on this corpus, the two
+selections are identical on every one of the 6,905 scoped sections where
+both fire; the filing-date rule additionally declines 2 sections (Kraft
+Heinz's late-filed FY2018 10-K, filing gap 476 days) that a period-field
+rule would have paired.
 
 -----------------------------------------------------------------------
 Scope
@@ -105,10 +139,39 @@ OUT_MANIFEST = OUT_DIR / "text_families_e2_manifest.json"
 
 SHINGLE_N = 5
 NOVELTY_SECTIONS = ("RISK_FACTORS", "MDA")
+
+# Named after the pre-registration keys they mirror (`G3_PREREGISTRATION.md`,
+# the `json g3-params` block).  This module does NOT parse that block -- the
+# constants below are the single source, and the manifest writes both the key
+# name and the value so a reader can diff them.
+NOVELTY_PRIOR_RULE = "prior_year_same_form"        # families.novelty_prior_rule
+NOVELTY_MIN_SHINGLES = 50                          # families.novelty_min_shingles
+NOVELTY_SEQUENTIAL_EXPLORATORY = True              # families.novelty_sequential_exploratory
+SEQUENTIAL_PRIOR_RULE = "sequential_prior_any_form"
+
+# 23a's year-over-year window, in FILING-date days (see the module docstring
+# for why it is not read off the period fields).
+YOY_GAP_DAYS_MIN = 300
+YOY_GAP_DAYS_MAX = 430
+YOY_GAP_DAYS_TARGET = 365
+
+# (novelty column, gap column) per section type, per rule.
 NOVELTY_COLUMN = {
     "RISK_FACTORS": ("novelty_risk_factors_yoy", "prior_gap_days_risk_factors"),
     "MDA": ("novelty_mda_yoy", "prior_gap_days_mda"),
 }
+NOVELTY_COLUMN_SEQ = {
+    "RISK_FACTORS": ("novelty_risk_factors_seq", "prior_gap_days_risk_factors_seq"),
+    "MDA": ("novelty_mda_seq", "prior_gap_days_mda_seq"),
+}
+NOVELTY_COLUMNS_BY_RULE = {"yoy": NOVELTY_COLUMN, "seq": NOVELTY_COLUMN_SEQ}
+
+# What the pre-registration's `columns.*` lists must contain -- mirrored here
+# so a reader can check the two against each other.  The `_seq` pair is
+# EXPLORATORY: it never appears in `columns.family_novelty`.
+COLUMNS_FAMILY_NOVELTY = ("novelty_risk_factors_yoy", "novelty_mda_yoy")
+COLUMNS_EXPLORATORY_NOVELTY_SEQ = ("novelty_risk_factors_seq", "novelty_mda_seq")
+
 SHINGLE_PRIME = np.uint64(1000003)  # polynomial rolling hash multiplier
 
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
@@ -116,7 +179,10 @@ EMB_DIM = 384
 MAX_SEQ_LENGTH = 256          # the model's own configured maximum
 WINDOW_CONTENT_TOKENS = 254   # 256 minus [CLS] and [SEP]: no silent truncation
 MAX_WINDOWS_PER_SECTION = 64
-EMBED_SECTION_TYPES = ("MDA", "RISK_FACTORS", "EX99_PRESS_RELEASE", "8K_BODY")
+EMBED_SECTION_TYPES = ("MDA", "RISK_FACTORS", "EX99_PRESS_RELEASE")
+# 23d: the 8-K body register is out of family B too, for symmetry with
+# decision 9 (the student saw 0 8K_BODY examples).  Counted, never embedded.
+EXCLUDED_EMBED_SECTION_TYPES = ("8K_BODY",)
 ENCODE_BATCH_SIZE = 128
 FILINGS_PER_ENCODE_GROUP = 32
 CHECKPOINT_EVERY = 500
@@ -126,8 +192,14 @@ OUTPUT_COLUMNS = [
     "cik", "accession_number", "filing_date",
     "novelty_risk_factors_yoy", "novelty_mda_yoy",
     "prior_gap_days_risk_factors", "prior_gap_days_mda",
+    "novelty_risk_factors_seq", "novelty_mda_seq",
+    "prior_gap_days_risk_factors_seq", "prior_gap_days_mda_seq",
     "emb", "n_sections_embedded", "n_windows_embedded",
 ]
+NOVELTY_VALUE_COLUMNS = [c for m in NOVELTY_COLUMNS_BY_RULE.values()
+                         for c, _ in m.values()]
+NOVELTY_GAP_COLUMNS = [g for m in NOVELTY_COLUMNS_BY_RULE.values()
+                       for _, g in m.values()]
 
 _DIGITS_RE = re.compile(r"\d+")
 
@@ -149,18 +221,63 @@ def pinned_args() -> dict:
                                 "hashes (a shingle's MULTIPLICITY is ignored)",
             "jaccard": "|A ∩ B| / |A ∪ B| over those sets",
             "sections": list(NOVELTY_SECTIONS),
-            "prior_rule": "same cik AND same section_type AND filing_date "
-                          "STRICTLY EARLIER than the current filing_date; the "
-                          "MAXIMUM such filing_date; ties on that date broken "
-                          "by the SMALLEST accession_number",
+            "prior_rule_key": "families.novelty_prior_rule",
+            "prior_rule_value": NOVELTY_PRIOR_RULE,
+            "prior_rule": "23a: same cik AND same section_type AND SAME FORM "
+                          "AND filing_date STRICTLY EARLIER than the current "
+                          f"filing_date AND a gap in [{YOY_GAP_DAYS_MIN}, "
+                          f"{YOY_GAP_DAYS_MAX}] days; among those, the "
+                          f"candidate whose gap is CLOSEST to "
+                          f"{YOY_GAP_DAYS_TARGET} days; ties on "
+                          "|gap - 365| broken by the SMALLEST "
+                          "accession_number",
+            "prior_rule_why_a_filing_date_window": (
+                "the fiscal quarter is not read off report_date anywhere in "
+                "this module (the PIT rule: filing_date, never report_date). "
+                "Measured on this corpus the two selections agree on every "
+                "one of the 6,905 scoped sections where both fire; the "
+                "filing-date window additionally declines 2 sections whose "
+                "same-form predecessor was filed 476 days earlier"),
             "prior_candidate_pool": "every row of data/filings_e2_v2.parquet "
                                     "for that cik and section_type (not "
                                     "restricted to in-membership or scoped "
                                     "filings)",
+            "min_shingles_key": "families.novelty_min_shingles",
+            "min_shingles": NOVELTY_MIN_SHINGLES,
             "nan_rule": "NaN when the filing has no such section, when no "
-                        "prior exists, or when either side yields 0 shingles "
-                        "(fewer than 5 words after normalization)",
+                        "prior exists, or when the SHORTER side carries fewer "
+                        f"than {NOVELTY_MIN_SHINGLES} shingles (23b; this "
+                        "subsumes the 0-shingle case, i.e. fewer than 5 words "
+                        "after normalization). The gap column still carries "
+                        "the selected prior's gap when a prior was selected "
+                        "and the pair was then suppressed, so the suppressed "
+                        "rows are countable per row as well as in the census",
             "prior_gap_days": "(current filing_date - prior filing_date).days",
+        },
+        "family_a_prime_sequential_novelty_EXPLORATORY": {
+            "key": "families.novelty_sequential_exploratory",
+            "enabled": NOVELTY_SEQUENTIAL_EXPLORATORY,
+            "rule_value": SEQUENTIAL_PRIOR_RULE,
+            "columns": list(COLUMNS_EXPLORATORY_NOVELTY_SEQ),
+            "prior_rule": "same cik AND same section_type AND filing_date "
+                          "STRICTLY EARLIER than the current filing_date, "
+                          "WHATEVER THE FORM; the MAXIMUM such filing_date; "
+                          "ties on that date broken by the SMALLEST "
+                          "accession_number",
+            "function_and_min_shingles": "identical to family A "
+                                         f"(min_shingles = {NOVELTY_MIN_SHINGLES})",
+            "status": "EXPLORATORY, never in the headline: the owner's "
+                      "\"accumulate progressively ... adding a quarter\" "
+                      "(decision 23, 2026-09-11). Pre-registered under "
+                      "columns.exploratory_novelty_seq, NEVER under "
+                      "columns.family_novelty; dropped at the write-up if it "
+                      "adds nothing.",
+        },
+        "columns_preregistration_mirror": {
+            "columns.family_novelty": list(COLUMNS_FAMILY_NOVELTY),
+            "columns.exploratory_novelty_seq": list(COLUMNS_EXPLORATORY_NOVELTY_SEQ),
+            "note": "mirrored from the pre-registration's json g3-params "
+                    "block; this module does not parse that block",
         },
         "family_b_embeddings": {
             "model_name": MODEL_NAME,
@@ -185,6 +302,15 @@ def pinned_args() -> dict:
                               "of length)",
             "renormalize_pooled": False,
             "section_types_embedded": list(EMBED_SECTION_TYPES),
+            "section_types_excluded": list(EXCLUDED_EMBED_SECTION_TYPES),
+            "section_types_excluded_why": "23d: the 8K_BODY register is out of "
+                                          "family B for symmetry with decision "
+                                          "9, which keeps it out of the "
+                                          "label-derived features. A filing "
+                                          "whose ONLY embeddable section was an "
+                                          "8K_BODY gets no embedding and "
+                                          "therefore no row; the count is in "
+                                          "coverage.",
             "encode_batch_size": ENCODE_BATCH_SIZE,
             "dtype": "float32",
         },
@@ -296,64 +422,116 @@ def novelty_from_texts(current: str, prior: str, n: int = SHINGLE_N) -> float:
 
 
 def select_prior(index: pd.DataFrame, cik: int, section_type: str,
-                 filing_date: pd.Timestamp) -> Optional[pd.Series]:
-    """The prior filing's index row: same cik, same section, STRICTLY earlier.
+                 filing_date: pd.Timestamp, form: Optional[str] = None,
+                 rule: str = NOVELTY_PRIOR_RULE) -> Optional[pd.Series]:
+    """The prior filing's index row, under one of the two pinned rules.
 
-    `index` needs columns cik, section_type, filing_date, accession_number.
-    Among candidates the MAXIMUM filing_date wins; ties on that date are
-    broken by the SMALLEST accession_number.  None when no candidate exists.
+    `index` needs columns cik, section_type, filing_date, accession_number,
+    form.  Both rules require the same cik, the same section_type and a
+    STRICTLY EARLIER filing_date; they differ in what they then pick:
+
+    `prior_year_same_form` (23a, CONFIRMATORY) -- the same `form`, a gap in
+    [YOY_GAP_DAYS_MIN, YOY_GAP_DAYS_MAX] days, and among those the gap
+    CLOSEST to YOY_GAP_DAYS_TARGET; ties on |gap - target| broken by the
+    SMALLEST accession_number.  `form` is required.
+
+    `sequential_prior_any_form` (EXPLORATORY) -- any form, the MAXIMUM such
+    filing_date; ties on that date broken by the SMALLEST accession_number.
+
+    None when no candidate exists.  This is the readable reference
+    implementation; `build_prior_pairs` is the batched one and is tested
+    against it.
     """
     cand = index[(index["cik"] == cik)
                  & (index["section_type"] == section_type)
                  & (index["filing_date"] < filing_date)]
+    if rule == SEQUENTIAL_PRIOR_RULE:
+        if cand.empty:
+            return None
+        cand = cand[cand["filing_date"] == cand["filing_date"].max()]
+        return cand.sort_values("accession_number").iloc[0]
+    if rule != NOVELTY_PRIOR_RULE:
+        raise ValueError(f"unknown prior rule {rule!r}")
+    if form is None:
+        raise ValueError(f"rule {rule!r} needs the current filing's form")
+    cand = cand[cand["form"] == form].copy()
     if cand.empty:
         return None
-    best_date = cand["filing_date"].max()
-    cand = cand[cand["filing_date"] == best_date]
-    return cand.sort_values("accession_number").iloc[0]
+    cand["gap"] = (filing_date - cand["filing_date"]).dt.days
+    cand = cand[(cand["gap"] >= YOY_GAP_DAYS_MIN) & (cand["gap"] <= YOY_GAP_DAYS_MAX)]
+    if cand.empty:
+        return None
+    cand["off"] = (cand["gap"] - YOY_GAP_DAYS_TARGET).abs()
+    return cand.sort_values(["off", "accession_number"]).iloc[0]
+
+
+PAIR_COLUMNS = ["cik", "accession_number", "section_type", "form", "row",
+                "prior_row_yoy", "prior_gap_days_yoy",
+                "prior_row_seq", "prior_gap_days_seq"]
 
 
 def build_prior_pairs(index: pd.DataFrame, scoped_keys: set) -> pd.DataFrame:
-    """Vectorized `select_prior` over every scoped (cik, section) row.
+    """Batched `select_prior` over every scoped (cik, section) row, for BOTH
+    rules in one pass.
 
-    Returns one row per scoped corpus row of a novelty section, with the
-    chosen prior's corpus row id (`prior_row`, -1 when none) and the gap in
-    days.  The selection rule is identical to `select_prior` (tested against
-    it on synthetic frames): the index is sorted by
-    (cik, section_type, filing_date, accession_number), so `searchsorted`
-    on filing_date gives the strictly-earlier block and its first row at the
-    maximum earlier date is the smallest accession_number at that date.
+    Returns one row per scoped corpus row of a novelty section, carrying the
+    confirmatory prior (`prior_row_yoy`, 23a) and the exploratory sequential
+    prior (`prior_row_seq`); -1 when that rule finds no candidate.  The index
+    is sorted by (cik, section_type, filing_date, accession_number), so
+    `searchsorted` on filing_date gives the strictly-earlier block, and its
+    first row at the maximum earlier date is the smallest accession_number at
+    that date.  Agreement with `select_prior` is a test.
     """
     idx = index.sort_values(["cik", "section_type", "filing_date",
                             "accession_number"], kind="stable").reset_index(drop=True)
     out = []
-    n_ties = 0
+    n_ties_seq = 0
+    n_ties_yoy = 0
+    n_yoy_multi_candidate = 0
     for (cik, sec), g in idx.groupby(["cik", "section_type"], sort=False):
         if sec not in NOVELTY_SECTIONS:
             continue
         dates = g["filing_date"].values
         rows = g["row"].values
         forms = g["form"].values
+        accs = g["accession_number"].values
         for pos in range(len(g)):
-            if (cik, g["accession_number"].values[pos]) not in scoped_keys:
+            if (cik, accs[pos]) not in scoped_keys:
                 continue
             d = dates[pos]
             hi = int(np.searchsorted(dates, d, side="left"))  # first row with date >= d
-            if hi == 0:
-                out.append((cik, g["accession_number"].values[pos], sec,
-                            forms[pos], int(rows[pos]), -1, np.nan))
-                continue
-            best_date = dates[hi - 1]
-            lo = int(np.searchsorted(dates, best_date, side="left"))
-            if hi - 1 > lo:
-                n_ties += 1
-            gap = (pd.Timestamp(d) - pd.Timestamp(best_date)).days
-            out.append((cik, g["accession_number"].values[pos], sec,
-                        forms[pos], int(rows[pos]), int(rows[lo]), float(gap)))
-    pairs = pd.DataFrame(out, columns=["cik", "accession_number", "section_type",
-                                       "form", "row", "prior_row",
-                                       "prior_gap_days"])
-    pairs.attrs["n_ties_on_prior_date"] = n_ties
+            prior_seq, gap_seq = -1, np.nan
+            prior_yoy, gap_yoy = -1, np.nan
+            if hi > 0:
+                # --- exploratory: the most recent prior, any form ----------
+                best_date = dates[hi - 1]
+                lo = int(np.searchsorted(dates, best_date, side="left"))
+                if hi - 1 > lo:
+                    n_ties_seq += 1
+                prior_seq = int(rows[lo])
+                gap_seq = float((pd.Timestamp(d) - pd.Timestamp(best_date)).days)
+
+                # --- confirmatory 23a: same form, one year back ------------
+                gaps = (pd.Timestamp(d) - pd.to_datetime(dates[:hi])).days.values
+                cand = [j for j in range(hi)
+                        if forms[j] == forms[pos]
+                        and YOY_GAP_DAYS_MIN <= gaps[j] <= YOY_GAP_DAYS_MAX]
+                if cand:
+                    if len(cand) > 1:
+                        n_yoy_multi_candidate += 1
+                    keys = [(abs(int(gaps[j]) - YOY_GAP_DAYS_TARGET), accs[j])
+                            for j in cand]
+                    best = min(range(len(cand)), key=lambda m: keys[m])
+                    if sum(1 for k in keys if k[0] == keys[best][0]) > 1:
+                        n_ties_yoy += 1
+                    j = cand[best]
+                    prior_yoy, gap_yoy = int(rows[j]), float(gaps[j])
+            out.append((cik, accs[pos], sec, forms[pos], int(rows[pos]),
+                        prior_yoy, gap_yoy, prior_seq, gap_seq))
+    pairs = pd.DataFrame(out, columns=PAIR_COLUMNS)
+    pairs.attrs["n_ties_on_prior_date_seq"] = n_ties_seq
+    pairs.attrs["n_ties_on_yoy_offset"] = n_ties_yoy
+    pairs.attrs["n_yoy_with_more_than_one_candidate"] = n_yoy_multi_candidate
     return pairs
 
 
@@ -530,7 +708,9 @@ def compute_novelty(scope: pd.DataFrame, index: pd.DataFrame,
     pairs = build_prior_pairs(index, scoped_keys)
     t_pairs = time.time() - t0
 
-    needed = set(pairs["row"].tolist()) | {r for r in pairs["prior_row"].tolist() if r >= 0}
+    needed = set(pairs["row"].tolist())
+    for c in ("prior_row_yoy", "prior_row_seq"):
+        needed |= {r for r in pairs[c].tolist() if r >= 0}
     t1 = time.time()
     shingles: Dict[int, np.ndarray] = {}
     for row, text in stream_texts(needed, corpus_path):
@@ -538,68 +718,115 @@ def compute_novelty(scope: pd.DataFrame, index: pd.DataFrame,
     t_shingle = time.time() - t1
 
     t2 = time.time()
-    vals = {}
-    n_empty_side = 0
+    vals: Dict[tuple, dict] = {}
+    n_empty_side = {"yoy": 0, "seq": 0}
+    n_suppressed = {"yoy": 0, "seq": 0}
     detail = []
     for rec in pairs.itertuples(index=False):
-        col, gap_col = NOVELTY_COLUMN[rec.section_type]
         d = vals.setdefault((rec.cik, rec.accession_number), {})
-        if rec.prior_row < 0:
-            d[col], d[gap_col] = np.nan, np.nan
-            continue
-        j = jaccard_from_hashes(shingles[rec.row], shingles[rec.prior_row])
-        if math.isnan(j):
-            n_empty_side += 1
-        d[col] = np.nan if math.isnan(j) else 1.0 - j
-        d[gap_col] = rec.prior_gap_days
-        detail.append((rec.section_type, rec.form, rec.prior_gap_days, d[col],
-                       min(shingles[rec.row].size, shingles[rec.prior_row].size)))
+        for rule in ("yoy", "seq"):
+            col, gap_col = NOVELTY_COLUMNS_BY_RULE[rule][rec.section_type]
+            prior_row = int(getattr(rec, f"prior_row_{rule}"))
+            gap = getattr(rec, f"prior_gap_days_{rule}")
+            if prior_row < 0:
+                d[col], d[gap_col] = np.nan, np.nan
+                continue
+            a, b = shingles[rec.row], shingles[prior_row]
+            min_sh = int(min(a.size, b.size))
+            j = jaccard_from_hashes(a, b)
+            raw = np.nan if math.isnan(j) else 1.0 - j
+            # 23b: the minimum-length filter. A pair whose shorter side is
+            # under NOVELTY_MIN_SHINGLES is NaN -- the "no material changes"
+            # 10-Q Item 1A stubs, which score exactly 0 or exactly 1 for
+            # reasons that have nothing to do with disclosure change.
+            written = not (min_sh < NOVELTY_MIN_SHINGLES)
+            if min_sh == 0:
+                n_empty_side[rule] += 1
+            if not written:
+                n_suppressed[rule] += 1
+            d[col] = raw if written else np.nan
+            d[gap_col] = gap        # the prior exists; the value was suppressed
+            detail.append((rule, rec.section_type, rec.form, gap, raw, min_sh,
+                           written))
     t_compare = time.time() - t2
 
     nov = pd.DataFrame(
         [{"cik": k[0], "accession_number": k[1], **v} for k, v in vals.items()],
-        columns=(["cik", "accession_number"]
-                 + [c for pair in NOVELTY_COLUMN.values() for c in pair]))
-    for _, (col, gap_col) in NOVELTY_COLUMN.items():
-        for c in (col, gap_col):
-            if c not in nov.columns:
-                nov[c] = np.nan
-    det = pd.DataFrame(detail, columns=["section_type", "form", "gap_days",
-                                        "novelty", "min_shingles"])
+        columns=["cik", "accession_number"] + NOVELTY_VALUE_COLUMNS
+                + NOVELTY_GAP_COLUMNS)
+    for c in NOVELTY_VALUE_COLUMNS + NOVELTY_GAP_COLUMNS:
+        if c not in nov.columns:
+            nov[c] = np.nan
+    det = pd.DataFrame(detail, columns=["rule", "section_type", "form",
+                                        "gap_days", "novelty", "min_shingles",
+                                        "written"])
+
+    def _gap_census(d: pd.DataFrame) -> dict:
+        return {sec: {"n": int(len(g)),
+                      "min": float(g["gap_days"].min()),
+                      "p25": float(g["gap_days"].quantile(0.25)),
+                      "median": float(g["gap_days"].median()),
+                      "p75": float(g["gap_days"].quantile(0.75)),
+                      "max": float(g["gap_days"].max()),
+                      "median_by_form_of_the_current_filing": {
+                          str(k): float(v) for k, v in
+                          g.groupby("form")["gap_days"].median().items()}}
+                for sec, g in d.groupby("section_type")} if len(d) else {}
+
+    def _degenerate_census(d: pd.DataFrame) -> dict:
+        # `n` and `n_pairs_with_a_side_under_50_shingles` keep their pre-23b
+        # meaning -- EVERY pair with a prior, before the filter -- so the 39%
+        # stub finding stays comparable; the `_written` counts are what the
+        # artifact carries after the filter.
+        out = {}
+        for sec, g in d.groupby("section_type"):
+            w = g[g["written"]]
+            out[sec] = {
+                "n": int(len(g)),
+                "n_exactly_0": int((g["novelty"] == 0.0).sum()),
+                "n_exactly_1": int((g["novelty"] == 1.0).sum()),
+                "n_pairs_with_a_side_under_50_shingles":
+                    int((g["min_shingles"] < NOVELTY_MIN_SHINGLES).sum()),
+                "min_shingles_median": float(g["min_shingles"].median()),
+                "n_suppressed_by_min_shingles": int((~g["written"]).sum()),
+                "n_written": int(len(w)),
+                "n_exactly_0_written": int((w["novelty"] == 0.0).sum()),
+                "n_exactly_1_written": int((w["novelty"] == 1.0).sum()),
+            }
+        return out if len(d) else {}
+
+    d_yoy = det[det["rule"] == "yoy"]
+    d_seq = det[det["rule"] == "seq"]
     diagnostics = {
         "n_pairs_considered": int(len(pairs)),
-        "n_with_prior": int((pairs["prior_row"] >= 0).sum()),
-        "n_without_prior": int((pairs["prior_row"] < 0).sum()),
-        "n_ties_on_prior_date": int(pairs.attrs.get("n_ties_on_prior_date", 0)),
-        "n_nan_from_empty_shingle_side": int(n_empty_side),
+        # 23a, confirmatory
+        "n_with_prior": int((pairs["prior_row_yoy"] >= 0).sum()),
+        "n_without_prior": int((pairs["prior_row_yoy"] < 0).sum()),
+        "n_ties_on_yoy_offset": int(pairs.attrs.get("n_ties_on_yoy_offset", 0)),
+        "n_yoy_with_more_than_one_candidate":
+            int(pairs.attrs.get("n_yoy_with_more_than_one_candidate", 0)),
+        "n_nan_from_empty_shingle_side": int(n_empty_side["yoy"]),
+        "n_suppressed_by_min_shingles": int(n_suppressed["yoy"]),
+        # exploratory sequential prior
+        "seq_n_with_prior": int((pairs["prior_row_seq"] >= 0).sum()),
+        "seq_n_without_prior": int((pairs["prior_row_seq"] < 0).sum()),
+        "seq_n_ties_on_prior_date":
+            int(pairs.attrs.get("n_ties_on_prior_date_seq", 0)),
+        "seq_n_nan_from_empty_shingle_side": int(n_empty_side["seq"]),
+        "seq_n_suppressed_by_min_shingles": int(n_suppressed["seq"]),
         "n_sections_shingled": int(len(shingles)),
-        # What the "most recent prior filing" rule actually compares, measured:
-        # for a quarterly filer the prior filing is the previous QUARTER, not
-        # the previous year.  The column name says "yoy"; the gap census below
-        # is the measured object (an open question for G3, not a defect this
-        # module decides).
-        "prior_gap_days_census": {
-            sec: {"n": int(len(g)),
-                  "min": float(g["gap_days"].min()),
-                  "p25": float(g["gap_days"].quantile(0.25)),
-                  "median": float(g["gap_days"].median()),
-                  "p75": float(g["gap_days"].quantile(0.75)),
-                  "max": float(g["gap_days"].max()),
-                  "median_by_form_of_the_current_filing": {
-                      str(k): float(v) for k, v in
-                      g.groupby("form")["gap_days"].median().items()}}
-            for sec, g in det.groupby("section_type")} if len(det) else {},
+        # 23a rebuilt: the gap census below is now a YEAR by construction
+        # (the window is [300, 430] days), which is what makes the `_yoy`
+        # column names truthful.  The `_seq` census beside it is the
+        # quarter-over-quarter object the as-built table used to carry.
+        "prior_gap_days_census": _gap_census(d_yoy),
+        "prior_gap_days_census_seq": _gap_census(d_seq),
         # Degenerate values concentrate on SHORT sections (10-Q Item 1A stubs
         # such as "no material changes"): a stub that shares no 5-gram with a
-        # full section scores 1.0, and an unchanged stub scores 0.0.
-        "novelty_degenerate_census": {
-            sec: {"n": int(len(g)),
-                  "n_exactly_0": int((g["novelty"] == 0.0).sum()),
-                  "n_exactly_1": int((g["novelty"] == 1.0).sum()),
-                  "n_pairs_with_a_side_under_50_shingles":
-                      int((g["min_shingles"] < 50).sum()),
-                  "min_shingles_median": float(g["min_shingles"].median())}
-            for sec, g in det.groupby("section_type")} if len(det) else {},
+        # full section scores 1.0, and an unchanged stub scores 0.0.  23b's
+        # filter removes exactly that tail.
+        "novelty_degenerate_census": _degenerate_census(d_yoy),
+        "novelty_degenerate_census_seq": _degenerate_census(d_seq),
         "runtimes_seconds": {
             "pair_selection": round(t_pairs, 2),
             "stream_and_shingle": round(t_shingle, 2),
@@ -646,6 +873,15 @@ def compute_embeddings(scope: pd.DataFrame, index: pd.DataFrame,
                                     sec["section_type"], sec["row"]):
         by_filing.setdefault((cik, acc), []).append((stype, int(row)))
 
+    scope_keys = set(zip(scope["cik"].tolist(), scope["accession_number"].tolist()))
+    excl = index[index["section_type"].isin(EXCLUDED_EMBED_SECTION_TYPES)]
+    excl_in_scope = {t: 0 for t in EXCLUDED_EMBED_SECTION_TYPES}
+    for cik, acc, stype in zip(excl["cik"], excl["accession_number"],
+                               excl["section_type"]):
+        if (cik, acc) in scope_keys:
+            excl_in_scope[stype] += 1
+    n_scoped_without_embeddable = sum(1 for k in scope_keys if not by_filing.get(k))
+
     todo = [k for k in zip(scope["cik"].tolist(), scope["accession_number"].tolist())
             if k not in done_keys]
     needed = {r for k in todo for _, r in by_filing.get(k, [])}
@@ -656,7 +892,10 @@ def compute_embeddings(scope: pd.DataFrame, index: pd.DataFrame,
     n_windows_total = int(done["n_windows_embedded"].sum()) if len(done) else 0
     n_capped_sections = 0
     n_windows_uncapped = 0
-    section_type_counts: Dict[str, int] = {}
+    # 23d: the excluded register is reported as an explicit ZERO, not as a
+    # missing key -- "0 8K_BODY sections embedded" is the disclosure.
+    section_type_counts: Dict[str, int] = {t: 0 for t in
+                                           EMBED_SECTION_TYPES + EXCLUDED_EMBED_SECTION_TYPES}
     n_done_here = 0
 
     def flush_group(group: List[Tuple[int, str]]):
@@ -742,6 +981,11 @@ def compute_embeddings(scope: pd.DataFrame, index: pd.DataFrame,
         "n_sections_hitting_the_window_cap_this_run": int(n_capped_sections),
         "n_windows_uncapped_this_run": int(n_windows_uncapped),
         "sections_embedded_by_type_this_run": section_type_counts,
+        # 23d, measured: excluded from family B, and the filings that lose
+        # their row because an excluded section was all they had.
+        "section_types_excluded_from_embedding": list(EXCLUDED_EMBED_SECTION_TYPES),
+        "sections_excluded_from_embedding_in_scope": excl_in_scope,
+        "n_scoped_filings_with_no_embeddable_section": int(n_scoped_without_embeddable),
         "runtime_seconds": round(elapsed, 1),
         "throughput_windows_per_second": round(
             (n_windows_total - (int(done["n_windows_embedded"].sum()) if len(done) else 0))
@@ -783,8 +1027,7 @@ def to_arrow(frame: pd.DataFrame) -> pa.Table:
         "n_windows_embedded": pa.array(
             frame["n_windows_embedded"].to_numpy(np.int64), type=pa.int64()),
     }
-    for c in ("novelty_risk_factors_yoy", "novelty_mda_yoy",
-              "prior_gap_days_risk_factors", "prior_gap_days_mda"):
+    for c in NOVELTY_VALUE_COLUMNS + NOVELTY_GAP_COLUMNS:
         arrays[c] = pa.array(frame[c].to_numpy(np.float64), type=pa.float64())
     return pa.table({c: arrays[c] for c in OUTPUT_COLUMNS})
 
@@ -799,15 +1042,21 @@ def assert_output_invariants(frame: pd.DataFrame) -> dict:
     measured["n_duplicate_keys"] = int(dup)
 
     # PIT: the comparison partner is strictly earlier, so every gap is >= 1 day.
-    for col in ("prior_gap_days_risk_factors", "prior_gap_days_mda"):
+    # The confirmatory gaps additionally live inside 23a's year window.
+    for col in NOVELTY_GAP_COLUMNS:
         g = frame[col].dropna()
         bad = int((g < 1).sum())
         assert bad == 0, f"{bad} rows with {col} < 1 (prior not strictly earlier)"
+        if not col.endswith("_seq"):
+            out = int(((g < YOY_GAP_DAYS_MIN) | (g > YOY_GAP_DAYS_MAX)).sum())
+            assert out == 0, (f"{out} rows with {col} outside 23a's "
+                              f"[{YOY_GAP_DAYS_MIN}, {YOY_GAP_DAYS_MAX}]-day window")
         measured[f"min_{col}"] = float(g.min()) if len(g) else None
+        measured[f"max_{col}"] = float(g.max()) if len(g) else None
         measured[f"n_{col}_non_null"] = int(len(g))
 
     # Novelty is a similarity complement: it lives in [0, 1].
-    for col in ("novelty_risk_factors_yoy", "novelty_mda_yoy"):
+    for col in NOVELTY_VALUE_COLUMNS:
         v = frame[col].dropna()
         assert v.between(0.0, 1.0).all(), f"{col} outside [0, 1]"
         measured[f"n_{col}_non_null"] = int(len(v))
@@ -816,11 +1065,15 @@ def assert_output_invariants(frame: pd.DataFrame) -> dict:
         measured[f"{col}_mean"] = float(v.mean()) if len(v) else None
         measured[f"{col}_median"] = float(v.median()) if len(v) else None
 
-    # A novelty value exists if and only if a gap exists (same pair).
-    for nov, gap in (("novelty_risk_factors_yoy", "prior_gap_days_risk_factors"),
-                     ("novelty_mda_yoy", "prior_gap_days_mda")):
-        mismatch = int((frame[nov].notna() & frame[gap].isna()).sum())
-        assert mismatch == 0, f"{mismatch} rows with {nov} but no {gap}"
+    # A novelty value implies its gap (the converse does NOT hold: 23b's
+    # minimum-length filter suppresses the value and keeps the gap, so
+    # gap-count minus value-count IS the suppressed-stub count per column).
+    for rule_map in NOVELTY_COLUMNS_BY_RULE.values():
+        for nov, gap in rule_map.values():
+            mismatch = int((frame[nov].notna() & frame[gap].isna()).sum())
+            assert mismatch == 0, f"{mismatch} rows with {nov} but no {gap}"
+            measured[f"n_{nov}_suppressed_by_min_shingles"] = int(
+                (frame[gap].notna() & frame[nov].isna()).sum())
 
     # Embeddings: fixed width, finite, at least one section and one window.
     widths = {len(v) for v in frame["emb"]}
@@ -874,10 +1127,12 @@ def build(limit_filings: Optional[int] = None, device: Optional[str] = None,
 
     coverage = dict(scope_counts)
     coverage["n_rows_written"] = int(len(frame))
+    coverage["n_scoped_filings_with_no_embeddable_section"] = int(
+        emb_diag["n_scoped_filings_with_no_embeddable_section"])
     coverage["n_distinct_ciks"] = int(frame["cik"].nunique())
     coverage["filing_date_min"] = str(frame["filing_date"].min().date())
     coverage["filing_date_max"] = str(frame["filing_date"].max().date())
-    for col in ("novelty_risk_factors_yoy", "novelty_mda_yoy"):
+    for col in NOVELTY_VALUE_COLUMNS:
         coverage[f"n_{col}_present"] = int(frame[col].notna().sum())
         coverage[f"share_{col}_present"] = round(
             float(frame[col].notna().mean()), 4)
@@ -890,7 +1145,17 @@ def build(limit_filings: Optional[int] = None, device: Optional[str] = None,
         "module_sha256": C._sha256_file(Path(__file__)),
         "generated_at": pd.Timestamp.utcnow().isoformat(),
         "families": "EXPANSION_PLAN §8 item 4 / F5_PLAN §2 Step 1: (A) YoY "
-                    "Item 1A / Item 7 novelty; (B) pooled document embeddings",
+                    "Item 1A / Item 7 novelty; (A') the EXPLORATORY "
+                    "sequential-prior novelty; (B) pooled document embeddings",
+        "build_note": "rebuilt 2026-09-11 under G3 decision 23 (owner ruling "
+                      "+ reading): 23a prior-year SAME-FORM comparison "
+                      "(filing-date window 300-430 d, closest to 365), 23b "
+                      "minimum-length filter at 50 shingles, 23d 8K_BODY "
+                      "excluded from the embeddings (0 embedded), plus the "
+                      "exploratory `_seq` sequential-prior pair. 23c, 23e, "
+                      "23f, 23h UNCHANGED; 23g (PCA k = 16) is downstream of "
+                      "this module. Pre-ratification feature-layer rebuild: "
+                      "no IC, no association, no G3_RATIFIED.json.",
         "freeze": {
             "no_ic_computed": True,
             "no_correlation_or_model_fit_computed": True,
@@ -952,11 +1217,17 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
 
     frame, man = build(limit_filings=args.limit_filings, device=args.device,
                        resume=not args.no_resume, **paths)
-    print(f"rows written: {len(frame)}  "
-          f"ciks: {man['coverage']['n_distinct_ciks']}")
-    print(f"novelty present: RISK_FACTORS "
-          f"{man['coverage']['n_novelty_risk_factors_yoy_present']}  "
-          f"MDA {man['coverage']['n_novelty_mda_yoy_present']}")
+    cov = man["coverage"]
+    print(f"rows written: {len(frame)}  ciks: {cov['n_distinct_ciks']}")
+    print(f"novelty (23a, yoy) present: RISK_FACTORS "
+          f"{cov['n_novelty_risk_factors_yoy_present']}  "
+          f"MDA {cov['n_novelty_mda_yoy_present']}")
+    print(f"novelty (seq, EXPLORATORY) present: RISK_FACTORS "
+          f"{cov['n_novelty_risk_factors_seq_present']}  "
+          f"MDA {cov['n_novelty_mda_seq_present']}")
+    print(f"suppressed by min_shingles={NOVELTY_MIN_SHINGLES}: "
+          f"yoy {man['family_a_diagnostics']['n_suppressed_by_min_shingles']}  "
+          f"seq {man['family_a_diagnostics']['seq_n_suppressed_by_min_shingles']}")
     print(f"embeddings: {man['family_b_diagnostics']['n_windows_total']} windows "
           f"on {man['family_b_diagnostics']['device']} at "
           f"{man['family_b_diagnostics']['throughput_windows_per_second']} windows/s")
