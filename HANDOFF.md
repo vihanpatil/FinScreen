@@ -1548,6 +1548,18 @@ set gained `ingest_fundamentals` (a call the renderer already made). 152 F5
 tests + 196 adjacent green; both runners exit 2. Record:
 `data/f5/status/STEP1A_numeric_features_e2.md` §6.
 
+**2026-09-11 — OWNER'S CORE VALUE STATEMENT (verbatim, all caps theirs) and website
+direction v1 feedback.** *"I NEED THIS TO BE A PERSONAL INVESTMENT TOOL THAT OTHERS CAN USE. I NEED YOU TO EMPHASIZE TESTING PREVIOUSLY PUBLISHED REPORTS FOR A COMPANY AND EVALUATING HOW THOSE STOCKS DID FOR THOSE CERTAIN QUARTERS (for example, if Google published reports in 2018, what would my model evaluate their stock to do, and historically, what did their stock do? Was my model correct or wrong? Do that for many many many companies. THIS IS THE VALUE!)"* Also: "Do not actually do anything" this turn;
+explain decisions A–F and the 23 G3 decisions in depth (done in chat). Consequences
+recorded, not yet built: the per-company per-quarter historical SCORECARD becomes the
+product's centrepiece (head 1's per-row fold predictions reported per company with a
+pre-registered "correct/incorrect" rule; the G3 packet's "nothing REPORTS a per-company
+score" line is superseded for the owner's own use — the pre-registration must add the
+scorecard as a reported output before ratification); distribution to others is
+INTENDED, so the §1.3 legal review moves ahead of any public tool and decision E's
+default changes accordingly; the honesty rules stand. Website: minimalist city, one
+3D model per stage, smoother, novice-clear, goal-forward (Higgsfield-grade reference).
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual

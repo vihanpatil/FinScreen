@@ -4,6 +4,26 @@
 for depth). **STATE AS OF 2026-09-06 ~15:30 — handoff written by the main session at the
 owner's request (owner returns in a few hours).**
 
+**THE OWNER'S CORE VALUE STATEMENT (2026-09-11, verbatim, all caps theirs; overrides
+any narrower framing in this file):** *"I NEED THIS TO BE A PERSONAL INVESTMENT TOOL THAT OTHERS CAN USE. I NEED YOU TO EMPHASIZE TESTING PREVIOUSLY PUBLISHED REPORTS FOR A COMPANY AND EVALUATING HOW THOSE STOCKS DID FOR THOSE CERTAIN QUARTERS (for example, if Google published reports in 2018, what would my model evaluate their stock to do, and historically, what did their stock do? Was my model correct or wrong? Do that for many many many companies. THIS IS THE VALUE!)"*
+**What it means for the work:** (1) the product's centrepiece is the per-company,
+per-quarter historical SCORECARD — for each past filing, what the model would have
+said using only data public at that time, what the stock then did over the following
+quarter(s), and whether the call was right — across as many companies as possible;
+head 1's walk-forward already produces those per-row predictions inside each fold, so
+the change is to REPORT them per company (pre-registered scoring rule for "correct":
+to be pinned) rather than only the aggregate IC; (2) "others can use it" means
+distribution is INTENDED — PRODUCT_PLAN decision E's default (explainer only) is
+superseded by the owner's intent; the legal review (§1.3) moves EARLIER, before any
+public tool, not "never"; (3) honesty rules unchanged: no claim before its evidence,
+paper before live, disclosed error on every page. Website direction 2026-09-11: the
+city stays but MORE MINIMALIST, a distinct 3D model per pipeline stage, smoother,
+explained for someone with no prior understanding, and it must show the goal (a
+personal investment advice tool with historical scorecards) — see `site/STORYBOARD.md`
+v1 feedback. **The owner asked that nothing be built until they rule; decisions A–F
+(PRODUCT_PLAN §4) and the 23 G3 decisions (data/f5/G3_OWNER_PACKET.md) were explained
+to them in chat on 2026-09-11.**
+
 **AUTO-RESUME PROTOCOL (owner, 2026-09-11: "auto-resume once usage resets; keep
 docs and memory updated so resuming is seamless").** A session cron fires every
 ~2 h with a resume prompt. On ANY resume (cron or fresh session): (1) read this

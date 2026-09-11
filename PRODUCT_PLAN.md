@@ -11,6 +11,12 @@ have worked in the past (factor in when reports are reported and if they would h
 the proper times). Then once everything is verified to have worked, I can test on
 modern and upcoming data to see if I make profit."* Then: *"REFACTOR."*
 
+**Owner's core value statement (2026-09-11, verbatim, all caps theirs):** *"I NEED THIS TO BE A PERSONAL INVESTMENT TOOL THAT OTHERS CAN USE. I NEED YOU TO EMPHASIZE TESTING PREVIOUSLY PUBLISHED REPORTS FOR A COMPANY AND EVALUATING HOW THOSE STOCKS DID FOR THOSE CERTAIN QUARTERS (for example, if Google published reports in 2018, what would my model evaluate their stock to do, and historically, what did their stock do? Was my model correct or wrong? Do that for many many many companies. THIS IS THE VALUE!)"* → the
+per-company, per-quarter historical scorecard is the centrepiece of P4 and must be a
+reported output in the G3 pre-registration (with a pinned rule for "correct"); "others
+can use it" makes distribution intended, so the legal review of §1.3 precedes any public
+tool and decision E's default no longer applies as written.
+
 **Status of this document:** the owner's decision supersedes the 2026-09-11 identity
 line ("never a score or a recommendation") and amends the charter's "not investment
 advice" non-goal **for the owner's own use**. The council's 2026-09-11 advisory

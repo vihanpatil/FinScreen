@@ -56,3 +56,17 @@ ScrollTrigger (or Lenis + native scroll) for the scroll choreography; no backend
 v1; the live demo, if chosen, is a separate small service the owner runs. Prototype
 first as a single page with placeholder geometry so the motion and copy can be judged
 before any 3D asset is made.
+
+
+## v1 feedback (owner, 2026-09-11) — binding for v2
+
+- Keep the city, but **more minimalist**; the v1 prototype "is hard to really understand
+  what is happening and not as fun to interact with."
+- **A distinct 3D model for each pipeline stage** (EDGAR, extraction, the reader, the
+  clock, the diff, the test), not one set of boxes reused.
+- Reference bar: the immersive Claude + Higgsfield-built sites; **smoothness** first.
+- Explain as if the viewer has **no prior understanding**.
+- Show the goal: **a personal investment advice tool** — and the centrepiece is the
+  historical scorecard: for a company's past reports, what the model would have said at
+  the time, what the stock then did, and whether the call was right, across many
+  companies. Every beat should lead to that.
