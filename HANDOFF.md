@@ -1351,6 +1351,23 @@ ticker (3–4 sessions, ~09-30); L2.3 one-line disclosure patch after F6.
 Ledger for the lane: `data/app/status/`. HTML reports under
 `data/app/reports/` (git-excluded).
 
+**2026-09-11 — F5 STEP 2 CENSUS DONE (status, not a ruling).** `data/f5/census_e2.json`
++ `data/f5/status/STEP2_census_e2.md` (research-statistician; first attempt
+died on the owner's usage limit, relaunched). Freeze clean (no IC, no delta,
+no margin selected). Headlines, all folded into `F5_PLAN.md` §3/§5: MDE at
+the default 33 folds with measured n_dd 136.3 = 0.0303 / 0.0408 (floor-free,
+ρ_f 0 / 0.3) and 0.057 / 0.077 (implied floor) — the seven extra folds buy ~5%
+because n_dd is 136 not 158; **every implied-floor branch is UNPOWERED at
+any fold count** (KC3 live); floor-free at k = 33 reaches Δ = 0.03 / 0.04.
+The PIT-rank transform does NOT reduce identity encoding on E2 (ICC 0.945 →
+0.942; raises six of thirteen features) — H2 §2's rationale must be restated
+at G3 §1, pair unchanged. Ten CIKs never had periodic filings extracted,
+seven of them financials (Citigroup 100%, Morgan Stanley 93%). Exit kinds:
+only 129 of 480 rows plausibly end membership; bankruptcy channel empty.
+WITHDRAWN n = 66 is 79% 2020. "post-2019" pinned as test quarters from
+2019Q1 (29 folds). Next: Step 3 — G3 document + owner packet (23 decisions);
+the owner's 14-day clock starts at packet receipt.
+
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
 ~15% eval; no single label value exceeds 35% of its eval share. The actual

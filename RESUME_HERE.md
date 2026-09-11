@@ -23,8 +23,10 @@ defaults, record it, start the app lane" — HANDOFF §3):** sequence B
 deadline from packet receipt. **APP LANE STARTED 2026-09-11:** L2.1 =
 `report_filing.py` (per-filing HTML report over already-labeled E2
 companies; ledger `data/app/status/`; outputs `data/app/reports/`,
-git-excluded). Step 2 census relaunched the same day (first attempt died
-on the owner's usage limit). Gate G2 was RULED 2026-09-07
+git-excluded). **Step 2 census DONE 2026-09-11** (`data/f5/census_e2.json`; MDE at k=33 =
+0.030–0.077 by branch; implied-floor branches UNPOWERED at any k). **NEXT on
+Lane 1 = Step 3: draft `data/f5/G3_PREREGISTRATION.md` + the owner packet
+(23 decisions).** Gate G2 was RULED 2026-09-07
 (proceed under the ladder; 2(b) extend). Repo committed on main; owner
 pushes. LICENSE = MIT (owner-confirmed 2026-09-10).**
 
