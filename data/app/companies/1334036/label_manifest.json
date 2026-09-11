@@ -28,36 +28,36 @@
     "seconds": 0.0
   },
   "generation": {
-    "started_utc": "2026-09-11T09:44:35.197326+00:00",
-    "ended_utc": "2026-09-11T09:44:54.013368+00:00",
-    "n_generated": 5,
+    "started_utc": "2026-09-11T09:46:53.532138+00:00",
+    "ended_utc": "2026-09-11T09:51:43.385552+00:00",
+    "n_generated": 98,
     "n_already_done": 0,
     "torn_final_line_repaired_before_append": false,
-    "model_load_seconds": 1.7,
-    "wall_seconds": 18.8,
-    "seconds_per_chunk": 3.76,
+    "model_load_seconds": 1.4,
+    "wall_seconds": 289.9,
+    "seconds_per_chunk": 2.96,
     "finish_reasons": {
-      "stop": 5
+      "stop": 98
     },
     "n_passages_head_truncated": 0,
-    "generate_seconds": 21.3
+    "generate_seconds": 292.4
   },
   "labels": {
     "path": "data/app/companies/1334036/labels.parquet",
-    "sha256": "c061fdf46cd2004b6c595ca359ebe9bd526c58601ccbb4318b9bfecc846748d3",
-    "n_rows": 5,
+    "sha256": "ffeeb96d9470be60644a30d71c3cd3e09c9863eb9d0f8e5b1745655a68e39529",
+    "n_rows": 98,
     "n_columns": 43,
     "schema_source": "label_e2.output_schema() -- columns 1-34 are data/labels_v12.parquet's arrow schema (SCHEMA ONLY, never a teacher), then the 9 F4 columns",
     "parse_failures": 0,
     "schema_violations": 0,
     "guidance": {
-      "n_applicable": 0,
-      "n_imputed_none": 0,
-      "n_explicitly_emitted": 0,
+      "n_applicable": 13,
+      "n_imputed_none": 4,
+      "n_explicitly_emitted": 9,
       "rule": "missing->NONE at the writer, flagged by guidance_imputed_none"
     },
     "sentiment": {
-      "n_emitted": 5
+      "n_emitted": 57
     },
     "head_truncation": {
       "n_truncated": 0,
@@ -87,7 +87,7 @@
     "chunks_parquet_sha256": "f46eda9fee736ee3df5b43f6e4402f90889dd46b503a17c6b0cd0ad0100e1e64"
   },
   "timings_seconds": {
-    "generate_s": 21.7,
-    "total_s": 22.2
+    "generate_s": 292.8,
+    "total_s": 293.3
   }
 }

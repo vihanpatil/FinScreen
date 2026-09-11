@@ -4,6 +4,33 @@
 for depth). **STATE AS OF 2026-09-06 ~15:30 — handoff written by the main session at the
 owner's request (owner returns in a few hours).**
 
+**AUTO-RESUME PROTOCOL (owner, 2026-09-11: "auto-resume once usage resets; keep
+docs and memory updated so resuming is seamless").** A session cron fires every
+~2 h with a resume prompt. On ANY resume (cron or fresh session): (1) read this
+block and the IN FLIGHT table; (2) `pgrep -fl "label_filing|ingest_one|label_e2"`
+— never start a second labeling process while one is alive; (3) for each IN
+FLIGHT item whose expected output is missing and whose agent is not running,
+relaunch it exactly as described (never hand-build in the main session); (4)
+after any action, update this block, HANDOFF §3 and memory BEFORE the next
+agent launch; (5) commit ledgers after each milestone (the owner pushes). Be
+frugal: if nothing is missing, do nothing.
+
+**IN FLIGHT as of 2026-09-11 (evening, Pacific):**
+| item | launched as | expected output | if missing on resume |
+|---|---|---|---|
+| P1a any-ticker ingest + label, 10 random external companies (draw in `data/app/status/external_draw.json`) | general-purpose Opus agent (brief = PRODUCT_PLAN §3 P1a; deliverables `ingest_one.py`, `label_filing.py`, `report_filing.py --store`, `data/app/status/L2_2_external_companies.md`) | `data/app/status/L2_2_external_companies.md` with the 10-row results table | if `data/app/companies/<cik>/` stores exist, relaunch with "resume from the existing stores; do not redraw"; the draw is sealed |
+
+**DONE 2026-09-11 (all committed on main; owner pushes):** G3 packet delivered
+(clock due 2026-09-25; decision-18 evidence corrected and re-sent); PRODUCT_PLAN.md
+with §0.5 real-data-first rule, P1a, P-S, decisions A–F; Filing City prototype
+published (artifact c5703ae7…; `site/prototype_city.html`; owner chose the
+city + kinetic tone; next = owner picks the variant, then free-roam + living-
+skyline interior); price-source comparison for decision A
+(`data/app/status/PRICE_SOURCE_OPTIONS_2026-09-11.md`, recommendation ~$25/mo
+Sharadar, nothing purchased). **OWNER-PENDING:** G3's 23 rulings; decisions A–F;
+prototype direction. **NOT STARTED:** P2 portfolio simulator (needs decision A),
+Track X extension labeling (needs wrapper lock fix), video/site build-out.
+
 **STATE AS OF 2026-09-10 — F5 STEP 1a DONE (HANDOFF §3 entry of this date):
 `target_e2.py`, `features_e2.py`, `numeric_features_e2.py` built, tested
 (+73 tests, suite 1,401 green), red-teamed, freeze verified (no E2 IC exists
