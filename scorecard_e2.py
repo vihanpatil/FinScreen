@@ -27,11 +27,16 @@ Hard boundaries, all of them load-bearing:
     NOT correct (`sign_match_nonzero`). "No call" rows (middle third or tie
     rule) and "unresolved outcome" rows (no realized excess) are counted
     SEPARATELY and neither is in the hit-rate denominator.
-  * CHANCE under this call rule is 0.50 BY CONSTRUCTION -- the terciles force
-    equal outperform/underperform counts, so a random assignment scores 0.50
-    whatever the outcome mix. That is the comparison line beside every hit
-    rate; the share of scored filings with a positive excess return is the
-    OUTCOME MIX, never a benchmark (red-team M4).
+  * CHANCE under this call rule is 0.50 when the calls are BALANCED -- the
+    terciles aim at equal outperform/underperform counts, so a random
+    assignment then scores 0.50 whatever the outcome mix. The straddle-tie
+    rule can remove whole tie groups and unbalance them, so the line printed
+    beside every hit rate is COMPUTED from that block's own call counts,
+    `(n_out*p + n_under*(1-p)) / n_calls` with p the share of positive excess
+    among the rows that received a call (red-team M4, NF-7); `n_outperform`
+    and `n_underperform` are printed per block and per company. The share of
+    scored filings with a positive excess return is the OUTCOME MIX, never a
+    benchmark.
   * Every page carries the fixed disclosure block the caller hands in
     (label quality, train overlap, extraction coverage, currency, price
     censoring, what the returns are, what the peers are -- red-team M5).
@@ -111,16 +116,45 @@ INFERENCE_SENTENCE = (
     "interval and proves nothing on its own."
 )
 
-#: The comparison line beside EVERY hit rate (red-team M4). Under the tercile
-#: rule the calls are balanced by construction, so the yardstick is 0.50 and
-#: NOT the outcome mix: a page that prints "hit rate 0.50 ... base rate 0.30"
-#: with no such line reads as a 20-point win over a benchmark when the model in
-#: fact matched chance.
-CHANCE_SENTENCE = (
-    "Chance under this call rule: 0.50 by construction (calls are balanced across "
-    "outperform/underperform; a random assignment scores 0.50 whatever the outcome mix)."
-)
+#: The comparison line beside EVERY hit rate (red-team M4/NF-7). The tercile
+#: rule makes the calls balanced in the ideal case, so the BALANCED-CASE
+#: yardstick is 0.50 and NOT the outcome mix: a page that prints "hit rate 0.50
+#: ... base rate 0.30" with no such line reads as a 20-point win over a
+#: benchmark when the model in fact matched chance. But the straddle-tie rule
+#: removes whole tie groups and can leave the counts UNBALANCED, so the printed
+#: line is COMPUTED from this block's own call counts
+#: ((n_out*p + n_under*(1-p)) / n_calls, p = the share of positive excess among
+#: the rows that received a call) and 0.50 is kept only as the documented
+#: balanced-case value.
 CHANCE_UNDER_CALL_RULE = 0.5
+CHANCE_SENTENCE_PREFIX = (
+    "Chance under this call rule: 0.50 when the calls are balanced; computed from the call "
+    "counts: "
+)
+#: The balanced-case sentence, used where no call counts exist (an empty block).
+CHANCE_SENTENCE = CHANCE_SENTENCE_PREFIX + "n/a (no calls)."
+
+
+def chance_from_call_counts(n_out: int, n_under: int, p_positive, n_calls: int):
+    """The call-count-matched random baseline (red-team NF-7).
+
+    A random rule that makes the SAME number of "outperform" and "underperform"
+    calls scores n_out*p + n_under*(1-p) hits in expectation, where p is the
+    share of positive excess among the rows that received a call. It is exactly
+    0.50 when n_out == n_under, whatever the outcome mix -- which is why 0.50 is
+    the documented balanced case and not a constant to print regardless."""
+    if not n_calls or p_positive is None or not np.isfinite(float(p_positive)):
+        return None
+    p = float(p_positive)
+    return float((int(n_out) * p + int(n_under) * (1.0 - p)) / int(n_calls))
+
+
+def chance_sentence(value) -> str:
+    """`CHANCE_SENTENCE_PREFIX` + this block's own computed chance line."""
+    if value is None or not np.isfinite(float(value)):
+        return CHANCE_SENTENCE
+    return f"{CHANCE_SENTENCE_PREFIX}{float(value):.3f}."
+
 
 #: The fixed disclosure block (red-team M5): (key, printed label), in print
 #: order. `build_scorecard` REQUIRES a non-empty dict; a key the caller did not
@@ -131,6 +165,7 @@ DISCLOSURE_ORDER: tuple[tuple[str, str], ...] = (
     ("train_overlap", "Train overlap"),
     ("extraction", "Extraction coverage"),
     ("fx", "Currency"),
+    ("missing_embedding", "Missing embeddings"),
     ("price_censoring", "Price censoring"),
     ("returns", "What these returns are"),
     ("peer_benchmark", "Peer benchmark"),
@@ -356,16 +391,29 @@ def _hit_rate(sub: pd.DataFrame) -> dict:
     n_no_call = _count(sub, "is_no_call") or int((sub["call"] == CALL_NONE).sum())
     n_tied = _count(sub, "tied_no_call")
     n_unresolved = _count(sub, "is_unresolved")
+    # Red-team NF-7: the two call counts are PRINTED, and the chance line is
+    # computed from them -- the straddle-tie rule drops whole tie groups and can
+    # leave "outperform" and "underperform" unequal.
+    n_out = int((scored["call"] == CALL_OUT).sum())
+    n_under = int((scored["call"] == CALL_UNDER).sum())
+    called_excess = scored[OUTCOME_COL].astype(float)
+    p_called = float((called_excess > 0).mean()) if n_calls else None
+    chance = chance_from_call_counts(n_out, n_under, p_called, n_calls)
     return {
         "n_rows": int(len(sub)),
         "n_calls": n_calls,
         "n_correct": n_correct,
+        "n_outperform": n_out,
+        "n_underperform": n_under,
         "hit_rate": float(n_correct / n_calls) if n_calls else None,
         "wilson_lo": lo if n_calls else None,
         "wilson_hi": hi if n_calls else None,
         "n_no_call": n_no_call,
         "n_tied_no_call": n_tied,
         "n_unresolved": n_unresolved,
+        "outcome_mix_among_calls": p_called,
+        "chance_from_call_counts": chance,
+        "chance_sentence": chance_sentence(chance),
         "chance_under_call_rule": CHANCE_UNDER_CALL_RULE,
         "denominator": (
             f"Denominator = {n_calls} scored calls out of {len(sub)} rows: {n_no_call} 'no call' "
@@ -446,7 +494,8 @@ def company_tables(
     are None and the page prints "rows only" (§14, red-team M1), plus that
     company's OUTCOME MIX (the share of its scored filings whose excess return
     was positive), which is a description of the period and NOT the yardstick:
-    the yardstick is 0.50 by construction (`CHANCE_SENTENCE`)."""
+    the yardstick is the chance line computed from that company's own call
+    counts (`chance_from_call_counts`), 0.50 when they are balanced."""
     entries = []
     if scored.empty:
         return entries
@@ -488,7 +537,8 @@ def company_tables(
         summary["outcome_mix"] = float((excess > 0).mean()) if len(excess) else None
         summary["n_filings"] = int(len(excess))
         summary["min_calls_for_hit_rate"] = int(min_calls)
-        summary["chance_sentence"] = CHANCE_SENTENCE
+        # `chance_sentence` is this company's OWN line, computed by `_hit_rate`
+        # from its own call counts (red-team NF-7) -- not a constant.
         summary["block"] = model_block
         entries.append(
             {
@@ -515,6 +565,7 @@ def universe_summary(
         entry = _hit_rate(scored[scored["block"] == block])
         entry["label"] = BLOCK_LABELS[block]
         blocks[block] = entry
+    model_entry = blocks.get("text_and_numeric") or (next(iter(blocks.values())) if blocks else {})
     filings = (
         scored.drop_duplicates(subset=["accession_number"]) if not scored.empty else scored
     )
@@ -530,7 +581,10 @@ def universe_summary(
         "outcome_mix_positive_excess": float((excess > 0).mean()) if len(excess) else None,
         "outcome_mix_label": "outcome mix (share of scored filings with positive excess)",
         "chance_under_call_rule": CHANCE_UNDER_CALL_RULE,
-        "chance_sentence": CHANCE_SENTENCE,
+        # The page-level line is the MODEL block's own computed chance (NF-7);
+        # every block's line sits in its own row of the universe table.
+        "chance_from_call_counts": model_entry.get("chance_from_call_counts"),
+        "chance_sentence": model_entry.get("chance_sentence", CHANCE_SENTENCE),
         "call_rule": "tercile_within_test_quarter",
         "tie_rule": tie_rule,
         "correct_rule": "sign_match_nonzero",
@@ -556,9 +610,9 @@ def _fmt(value, digits: int = 4) -> str:
 
 def _universe_table(summary: dict) -> list[str]:
     lines = [
-        "| block | n calls | n correct | hit rate | 95% Wilson interval | chance | no call "
-        "(of which tied) | unresolved |",
-        "|---|---|---|---|---|---|---|---|",
+        "| block | n calls | n outperform | n underperform | n correct | hit rate | "
+        "95% Wilson interval | chance (from call counts) | no call (of which tied) | unresolved |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     for block, entry in summary["blocks"].items():
         interval = (
@@ -567,9 +621,11 @@ def _universe_table(summary: dict) -> list[str]:
             else "n/a"
         )
         lines.append(
-            f"| {entry['label']} (`{block}`) | {entry['n_calls']} | {entry['n_correct']} | "
+            f"| {entry['label']} (`{block}`) | {entry['n_calls']} | "
+            f"{entry.get('n_outperform')} | {entry.get('n_underperform')} | "
+            f"{entry['n_correct']} | "
             f"{_fmt(entry['hit_rate'])} | {interval} | "
-            f"{_fmt(entry.get('chance_under_call_rule'), 2)} | "
+            f"{_fmt(entry.get('chance_from_call_counts'), 3)} | "
             f"{entry.get('n_no_call')} ({entry.get('n_tied_no_call')}) | "
             f"{entry.get('n_unresolved')} |"
         )
@@ -598,16 +654,22 @@ def _company_section(entry: dict) -> list[str]:
         title += f" ({entry['ticker']})"
     if entry["name"] != f"CIK {entry['cik']}":   # no "CIK x -- CIK x" fallback line
         title += f" -- CIK {entry['cik']}"
+    # The two call counts are printed whether or not the rate is withheld
+    # (red-team NF-7): they are counts, not a rate, and the chance line beside
+    # them is computed from them.
+    counts = (
+        f"({s.get('n_outperform')} outperform, {s.get('n_underperform')} underperform)"
+    )
     if s.get("hit_rate") is None:
         # §14 / red-team M1: below the pre-registered minimum this company gets
         # ROWS ONLY -- no rate, no numerator, no interval.
         headline = (
-            f"The model: {s['n_calls']} calls -- "
+            f"The model: {s['n_calls']} calls {counts} -- "
             f"{s.get('rate_withheld', 'rows only (§14)')}."
         )
     else:
         headline = (
-            f"The model: {s['n_correct']}/{s['n_calls']} calls right, hit rate "
+            f"The model: {s['n_correct']}/{s['n_calls']} calls right {counts}, hit rate "
             f"{_fmt(s['hit_rate'])}, 95% Wilson "
             f"[{_fmt(s['wilson_lo'])}, {_fmt(s['wilson_hi'])}]."
         )

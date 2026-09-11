@@ -468,6 +468,190 @@ def frame_decomposition(frame: pd.DataFrame, diag: dict) -> dict:
 
 
 # --------------------------------------------------------------------------
+# §1b/§1c The RATIFIED 33 folds, and the run-time frame
+# (red-team NF-2 / NF-3 / NF-10 / NF-13 / NF-14, 2026-09-11)
+# --------------------------------------------------------------------------
+
+def prereg_params() -> dict:
+    """The pre-registration's own parameter block, PARSED (not ratified).
+
+    `backtest_e2.extract_params_block` only reads the fenced block; it is
+    `require_g3` / `load_g3_params` that refuse without `G3_RATIFIED.json`, and
+    neither is called here. Counting the population the ratified fold list
+    selects is census work: no fit, no association, and no parameter is chosen
+    here -- every one is read out of the document."""
+    return BE.extract_params_block((ROOT / "data/f5/G3_PREREGISTRATION.md").read_text())
+
+
+def ratified_fold_population(fr: pd.DataFrame, params: dict, frame_label: str) -> dict:
+    """The population the RATIFIED fold list actually scores, on one frame.
+
+    Built with `backtest_e2.build_folds` on the ratified quarters, so these are
+    the same test rows the run will see -- not frame-level arithmetic. The
+    overlap-arm row count (red-team NF-2) is the one the document quotes as
+    "the overlap arm as built scores N rows": dedup test rows inside the folds
+    whose `overlap.column` is at or below `overlap.threshold`."""
+    quarters = [str(q) for q in params["fold_quarters"]]
+    gap = int(params["dedup"]["gap_days"])
+    ov_col = params["overlap"]["column"]
+    ov_thr = float(params["overlap"]["threshold"])
+
+    folds, purge = BE.build_folds(fr, quarters, params["purge_rule"])
+    keep = BE.dedup_keep_mask_cik(fr, gap).values.astype(bool)
+    overlapping = fr[ov_col].astype(float).values > ov_thr
+    no_emb = fr["emb"].isna().values if "emb" in fr.columns else np.zeros(len(fr), bool)
+
+    per, ciks = [], set()
+    for fold, pr in zip(folds, purge):
+        idx = fold["test_idx"]
+        sub_keep = keep[idx]
+        per.append({
+            "test_quarter": str(fold["test_quarter"]),
+            "n_test_raw": int(len(idx)),
+            "n_test_dedup": int(sub_keep.sum()),
+            "n_test_dedup_non_overlapping": int((sub_keep & ~overlapping[idx]).sum()),
+            "n_test_dedup_without_embedding": int((sub_keep & no_emb[idx]).sum()),
+            "n_test_ciks": int(fr.iloc[idx]["cik"].nunique()),
+            "n_train_expanding": int(pr["n_train_expanding"]),
+            "n_train_after_purge": int(pr["n_train_after_purge"]),
+            "n_purged": int(pr["n_purged"]),
+        })
+        ciks |= set(fr.iloc[idx]["cik"].tolist())
+
+    dd = np.array([r["n_test_dedup"] for r in per], float)
+    raw = np.array([r["n_test_raw"] for r in per], float)
+    return {
+        "frame": frame_label,
+        "n_frame_rows": int(len(fr)),
+        "n_frame_ciks": int(fr["cik"].nunique()),
+        "n_folds": len(per),
+        "fold_quarters": [r["test_quarter"] for r in per],
+        "sum_n_test_dedup": int(dd.sum()),
+        "sum_n_test_raw": int(raw.sum()),
+        "n_test_dedup_min": int(dd.min()), "n_test_dedup_max": int(dd.max()),
+        "n_test_dedup_mean": float(dd.mean()),
+        "n_dd_mean": float(dd.mean()),
+        "n_test_raw_min": int(raw.min()), "n_test_raw_max": int(raw.max()),
+        "n_distinct_ciks_in_folds": len(ciks),
+        "overlap_arm_scored_rows_in_folds":
+            int(sum(r["n_test_dedup_non_overlapping"] for r in per)),
+        "overlap_arm_rule": f"dedup test rows inside the 33 ratified folds with "
+                            f"{ov_col} <= {ov_thr} (evaluation-side restriction; the fit is "
+                            "unchanged)",
+        "n_test_dedup_rows_without_embedding_in_folds":
+            int(sum(r["n_test_dedup_without_embedding"] for r in per)),
+        "n_test_dedup_rows_without_embedding_note":
+            "red-team NF-8: the rows the scorecard scores that carry no pooled embedding vector. "
+            "How many of them receive a PUBLISHED call (the middle third and straddling tie "
+            "groups do not) is a run-time count, written by the run as "
+            "`missing_embedding_calls` and stated on the scorecard page.",
+        "n_purge_instances": int(sum(r["n_purged"] for r in per)),
+        "purge_rule": params["purge_rule"],
+        "dedup_gap_days": gap,
+        "per_fold": per,
+        "source": "backtest_e2.build_folds + dedup_keep_mask_cik on the ratified fold_quarters "
+                  "parsed from data/f5/G3_PREREGISTRATION.md (no ratification, no fit)",
+    }
+
+
+def run_time_frame_diagnostics(frame: pd.DataFrame, ex_gld: pd.DataFrame,
+                               params: dict, diag: dict) -> dict:
+    """Frame-level diagnostics the document quotes and had wrong.
+
+      * train overlap at CIK level and filing level, on BOTH frames (NF-3/NF-17:
+        the run-time frame is the GLD-excluded one, and 34.24% != 34.28%);
+      * per-column non-null coverage for every CONFIRMATORY column -- the
+        numeric block, the confirmatory text block and the family-novelty
+        columns, i.e. exactly `text_and_numeric` (NF-14);
+      * the families-vs-join set differences in BOTH directions (NF-10):
+        cardinality arithmetic (7,638 - 7,618 = 20) is not a set difference.
+    """
+    ov_col = params["overlap"]["column"]
+    ov_thr = float(params["overlap"]["threshold"])
+    conf_cols = (list(params["columns"]["numeric"])
+                 + list(params["columns"]["confirmatory_text"])
+                 + list(params["columns"]["family_novelty"]))
+
+    def overlap_block(fr: pd.DataFrame) -> dict:
+        flag = fr[ov_col].astype(float) > ov_thr
+        by_cik = fr.assign(_o=flag.values).groupby("cik")["_o"].any()
+        return {
+            "n_rows": int(len(fr)),
+            "n_ciks": int(len(by_cik)),
+            "filing_level_n": int(flag.sum()),
+            "filing_level_share": float(flag.mean()),
+            "cik_level_n": int(by_cik.sum()),
+            "cik_level_share": float(by_cik.mean()),
+        }
+
+    def coverage_block(fr: pd.DataFrame) -> list[dict]:
+        rows = []
+        for c in conf_cols:
+            if c not in fr.columns:
+                rows.append({"column": c, "present": None, "share_present": None,
+                             "note": "ABSENT from this frame"})
+                continue
+            n = int(fr[c].notna().sum())
+            rows.append({"column": c, "n_present": n, "n_missing": int(len(fr) - n),
+                         "share_present": float(n / len(fr)) if len(fr) else None})
+        return rows
+
+    fam = pd.read_parquet(ROOT / "data/f5/text_families_e2.parquet",
+                          columns=["cik", "accession_number"])
+    tgt = pd.read_parquet(ROOT / "data/f5/target_e2.parquet",
+                          columns=["cik", "accession_number", "in_membership"])
+    txt = pd.read_parquet(ROOT / "data/f5/text_features_e2.parquet",
+                          columns=["cik", "accession_number"])
+    num = pd.read_parquet(ROOT / "data/f5/numeric_features_e2.parquet",
+                          columns=["cik", "accession_number"])
+    for d in (fam, tgt, txt, num):
+        d["cik"] = d["cik"].astype(str)
+    im = tgt[tgt.in_membership.astype(bool)]
+    join_keys = (set(zip(im.cik, im.accession_number))
+                 & set(zip(txt.cik, txt.accession_number))
+                 & set(zip(num.cik, num.accession_number)))
+    fam_keys = set(zip(fam.cik, fam.accession_number))
+    model_keys = set(zip(frame.cik.astype(str), frame.accession_number))
+
+    return {
+        "train_overlap_gld_in": overlap_block(frame),
+        "train_overlap_ex_gld_run_time": overlap_block(ex_gld),
+        "train_overlap_note":
+            "the RUN-TIME frame is the GLD-excluded one (decision 2), so the run-time filing-level "
+            "share is the ex-GLD number; the CIK-level share counts CIKs with at least one filing "
+            "carrying at least one overlapping chunk, the same rule as the filing-level share. "
+            "G2 §2.5's 15.85% is a FINE-TUNING-CORPUS figure and is not this quantity.",
+        "confirmatory_column_coverage_gld_in": coverage_block(frame),
+        "confirmatory_column_coverage_ex_gld_run_time": coverage_block(ex_gld),
+        "confirmatory_column_coverage_note":
+            "every column of the confirmatory block `text_and_numeric` = columns.numeric + "
+            "columns.confirmatory_text + columns.family_novelty, non-null share on the frame "
+            "named in the key. XGBoost routes the missing ones; the shares are stated so the "
+            "document cannot imply a column is fully populated.",
+        "families_vs_join_set_differences": {
+            "n_families_rows": len(fam_keys),
+            "n_join_rows": len(join_keys),
+            "n_in_families_not_in_join": len(fam_keys - join_keys),
+            "n_in_join_not_in_families": len(join_keys - fam_keys),
+            "n_modeling_rows": len(model_keys),
+            "n_in_families_not_in_modeling_frame": len(fam_keys - model_keys),
+            "n_in_modeling_frame_not_in_families": len(model_keys - fam_keys),
+            "note": "BOTH directions, on (cik, accession_number) keys (red-team NF-10). The "
+                    "cardinality difference (n_families - n_join) nets these against each other "
+                    "and is not a count of anything.",
+        },
+        "embedding_coverage": {
+            "n_emb_missing_on_join": diag.get("n_emb_missing_on_join"),
+            "n_emb_missing_on_modeling_frame": diag.get("n_emb_missing_on_modeling_frame"),
+            "note": "red-team NF-8: the join count (before the 229 null targets drop) and the "
+                    "modeling-frame count are different numbers; the scorecard page states how "
+                    "many published calls sit on rows with no embedding.",
+            "source": "backtest_e2.load_analysis_frame diagnostics",
+        },
+    }
+
+
+# --------------------------------------------------------------------------
 # §5 Label-purge / instrument census
 # --------------------------------------------------------------------------
 
@@ -618,6 +802,35 @@ def icc_census(frame: pd.DataFrame) -> dict:
 # §7/§8 head 2, head 3, text families -- restatements of existing measurements
 # --------------------------------------------------------------------------
 
+def labeler_negative_recall_v12() -> dict:
+    """NF-1: sentiment NEGATIVE recall READ from the v1.2 adapter's own eval.
+
+    The census used to carry a hand-typed 0.487 -- the v1.1 student's number
+    (`finetune/runs/2026-08-22-eval-epoch2`, 55/113), a different adapter from
+    the one that labeled this corpus. The pinned labeler is the v1.2 adapter and
+    its own held-out eval is the only recall figure that describes these labels;
+    it is read through `backtest_e2.labeler_negative_recall`, from the path
+    `backtest_e2.LABELER_EVAL_PATH` already points at, and never typed."""
+    rec = BE.labeler_negative_recall()
+    path = Path(rec.get("path") or BE.LABELER_EVAL_PATH)
+    try:
+        rel_run = str(path.parent.relative_to(ROOT))
+    except ValueError:
+        rel_run = str(path.parent)
+    return {
+        "available": bool(rec.get("available")),
+        "recall": rec.get("recall"),
+        "tp": rec.get("tp"),
+        "support": rec.get("support"),
+        "run_dir": rel_run,
+        "source": f"{rel_run}/metrics.json (headline.sentiment.per_class.NEGATIVE), read via "
+                  "backtest_e2.labeler_negative_recall -- never hand-typed",
+        "not_this_number": "0.487 (55/113) is the v1.1 adapter's eval "
+                           "(finetune/runs/2026-08-22-eval-epoch2): a DIFFERENT model from the "
+                           "one that labeled this corpus, and not a 'teacher' figure either.",
+    }
+
+
 def heads_restatement(heads: dict) -> dict:
     h2, h3 = heads["head2"], heads["head3"]
     eq = h2["events_by_quarter_usable"]
@@ -656,7 +869,7 @@ def heads_restatement(heads: dict) -> dict:
                 "g2_sentiment_agreement_owner_ratified": {"k": 293, "n": 337, "point": 0.8694,
                                                           "wilson_ci95": [0.8293, 0.9013], "bar": 0.85},
                 "stored_negative_precision": {"k": 25, "n": 49, "point": 0.5102},
-                "teacher_negative_recall": 0.487,
+                "labeler_negative_recall_v12": labeler_negative_recall_v12(),
                 "epistemics": "HANDOFF §3: agreement over model-adjudicated fields is MODEL CONSENSUS "
                               "between a student and an adjudicating model -- not human validation of "
                               "ground truth.",
@@ -801,6 +1014,18 @@ def main() -> int:
     ladder = ladder_feasibility(mde)
     rt["mde_and_ladder"] = time.time() - t
 
+    # The RATIFIED fold list, on both frames (red-team NF-2/NF-3/NF-10/NF-13/
+    # NF-14). The parameters are PARSED from the document; the ratification
+    # guard is not called and nothing here fits or correlates anything.
+    t = time.time()
+    params = prereg_params()
+    ex_gld, gld_diag = BE.exclude_gld_rows(frame, params)
+    folds_gld_in = ratified_fold_population(frame, params, "gld_in")
+    folds_ex_gld = ratified_fold_population(ex_gld, params, "ex_gld_run_time")
+    run_time = run_time_frame_diagnostics(frame, ex_gld, params, diag)
+    run_time["gld_exclusion"] = gld_diag
+    rt["ratified_fold_census"] = time.time() - t
+
     t = time.time()
     decomp = frame_decomposition(frame, diag)
     rt["frame_decomposition"] = time.time() - t
@@ -868,6 +1093,9 @@ def main() -> int:
         "section_1b_price_censoring": {"summary": censor_summary,
                                        "per_candidate_quarter": json.loads(
                                            censor_tab.reset_index().to_json(orient="records"))},
+        "section_1b_ratified_folds_ex_gld": folds_ex_gld,
+        "section_1b_ratified_folds_gld_in": folds_gld_in,
+        "section_1c_run_time_frame_overlap_and_coverage": run_time,
         "section_2_mde_decision_15_KC3": mde,
         "section_3_ladder_feasibility_decision_15": ladder,
         "section_4_frame_decomposition_decisions_3_4": decomp,

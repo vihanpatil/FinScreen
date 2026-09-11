@@ -157,6 +157,10 @@
       "type": "str"
     },
     {
+      "path": "loco.max_ciks_per_fold",
+      "type": "int|null"
+    },
+    {
       "path": "overlap.column",
       "type": "str"
     },
@@ -273,15 +277,10 @@
       "wilson_95"
     ]
   },
-  "optional_keys": [
-    {
-      "path": "loco.max_ciks_per_fold",
-      "type": "int|null",
-      "note": "LOCO budget cap; null means every training member of the selected folds."
-    }
-  ],
+  "optional_keys": [],
   "notes": [
     "Unknown keys are echoed into the results JSON and never consulted.",
+    "loco.max_ciks_per_fold is REQUIRED and nullable (int|null): null is the explicit 'every training member of the selected folds', and an ABSENT key is a refusal, not a silent 'no cap' (red-team NF-20).",
     "No value here is a default: the runner refuses without the ratified document.",
     "F5_PLAN \u00a73's defaults are the SELFTEST's values only.",
     "embedding.rank_transform_components applies to the PIT-ranked spec arms only; the raw_levels secondary arm always carries the untransformed PCA projection.",

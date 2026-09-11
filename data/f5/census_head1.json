@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T21:51:37+00:00",
+  "generated_utc": "2026-09-11T22:52:58+00:00",
   "mode": "census",
   "freeze_statement": "No IC, correlation, model fit or feature-versus-outcome association was computed. Census mode is allowed before G3 ratification (F5_PLAN \u00a71).",
   "scope_sentence": "No text-vs-numeric IC improvement of economically relevant size is detectable in this universe through this labeling schema, these features, this labeler, and this feature specification.",
@@ -12,9 +12,11 @@
     "n_target_in_membership": 16859,
     "n_joined": 7618,
     "n_emb_missing": 45,
+    "n_emb_missing_on_join": 45,
     "n_after_families_join": 7618,
     "n_target_null": 229,
     "n_modeling_rows": 7389,
+    "n_emb_missing_on_modeling_frame": 44,
     "n_ciks": 144,
     "first_filing_date": "2016-07-05",
     "last_filing_date": "2026-05-21",
@@ -33,6 +35,11 @@
     "n_rows_joined_in_membership": 7618,
     "n_rows_with_target": 7389,
     "n_rows_target_null_dropped": 229
+  },
+  "embedding_coverage": {
+    "n_emb_missing_on_join": 45,
+    "n_emb_missing_on_modeling_frame": 44,
+    "note": "rows with no pooled embedding vector: on the three-way join (before the null-target drop) and on the modeling frame (after it). Such rows keep their row and carry NaN embedding components; the scorecard page states what that means for the calls that sit on them."
   },
   "per_candidate_quarter": [
     {

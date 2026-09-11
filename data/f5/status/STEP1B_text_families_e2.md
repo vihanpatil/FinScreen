@@ -204,6 +204,39 @@ precise restatement of what a mid-way resume reproduces. **The shipped parquet
 and manifest were not rebuilt** — see the module-sha paragraph in §1 and the
 resume bullet in §2. No number in this report changed.
 
+### 0.5 The resume checkpoint was removed (red-team NF-22, 2026-09-11)
+
+`data/f5/text_families_e2_partial.parquet` (12.4 MB, 7,638 rows, columns
+`cik / accession_number / emb / n_sections_embedded / n_windows_embedded`,
+sha256 `9b954e3e12ff4a9167be38103361261c55b3e8f0a009187934c246e0f85162be`) **was
+deleted on 2026-09-11**. It was the family-B crash-resume checkpoint of the
+same-day rebuild, written every 500 filings by `_write_partial`; it is
+git-ignored (`.gitignore:146`, `data/f5/**/*.parquet`), so nothing in version
+control changes.
+
+**Why it had to go, even though its contents were fine.**
+`compute_embeddings(..., resume: bool = True)` — and therefore
+`python3 text_families_e2.py` with no flags — **reads this checkpoint by
+default** and skips every `(cik, accession_number)` already in it
+(`text_families_e2.py:855-863`; `--no-resume` is the opt-out). A checkpoint
+that survives a rule change is a silent way for a *later* rebuild to inherit
+*earlier* vectors without anyone noticing: it carries no manifest, no module
+sha and no argument record, so nothing ties it to the rules that produced it,
+and the shipped artifact's own manifest is the only thing that does. The
+pinned pair is `text_families_e2.parquet` + `text_families_e2_manifest.json`;
+the checkpoint was a second, unverifiable copy of half of it sitting beside
+them while the G3 sha is about to be pinned.
+
+**Measured before deleting, and stated because it corrects the red-team's
+parenthetical.** The checkpoint did **not** contain old-rule vectors: its 7,638
+keys were exactly the shipped artifact's, `n_sections_embedded` and
+`n_windows_embedded` agreed on all 7,638 rows, and the 7,638 x 384 embedding
+matrices were **bit-identical** (max abs difference 0.0). It was a duplicate of
+the rebuilt family-B columns from the same run, not a stale build. Re-creating
+it costs nothing but a re-run of family B (~28 min on this machine, §4), and a
+re-run would rebuild it from scratch under whatever rules are then in the code
+— which is the point.
+
 ## 1. What was built
 
 > **Superseded in part by §0** (2026-09-11 rebuild): the parquet sha, the row
@@ -217,7 +250,7 @@ resume bullet in §2. No number in this report changed.
 | `/Users/vihanpatil/personal/projects/FinScreen/test_text_families_e2.py` | 32 tests: 31 synthetic (`tmp_path` only) + 1 real-data smoke marked `slow` (≤ 20 filings) |
 | `/Users/vihanpatil/personal/projects/FinScreen/data/f5/text_families_e2.parquet` | **7,723 rows × 10 columns**, sha256 `acc2712e358fb0fa650e69392bce435799cfc9520179409e31d53bbde0a2346b`, 12.7 MB (git-ignored by the existing `data/f5/**/*.parquet` rule) |
 | `/Users/vihanpatil/personal/projects/FinScreen/data/f5/text_families_e2_manifest.json` | input shas, model name/revision/weight sha, every pinned argument, coverage counts, gap and degeneracy censuses, runtimes, output sha |
-| `/Users/vihanpatil/personal/projects/FinScreen/data/f5/text_families_e2_partial.parquet` | the crash-resume checkpoint (written every 500 filings; 12.6 MB) |
+| ~~`data/f5/text_families_e2_partial.parquet`~~ | the crash-resume checkpoint (written every 500 filings) — **DELETED 2026-09-11, see §0.5**; `--resume` is the default, so it would have been read by the next unflagged run |
 | `/Users/vihanpatil/personal/projects/FinScreen/requirements-quant.txt` | appended: the six packages the embedding family needs, pinned, with a comment |
 
 Module sha256 at BUILD TIME

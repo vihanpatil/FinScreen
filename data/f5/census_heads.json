@@ -2,7 +2,7 @@
  "computed_associations_with_outcomes": 0,
  "controls_py_sha256": "b44358c389134dd9f5fc80b9a0d00be624d829b67d3d7f10d7e5e636c71dc32c",
  "freeze_statement": "F5_PLAN.md \u00a71: this census fits nothing and computes no information coefficient, correlation, slope or any other feature-versus-outcome association. G3_RATIFIED.json exists=False.",
- "generated_utc": "2026-09-11T21:51:38Z",
+ "generated_utc": "2026-09-11T22:53:02Z",
  "head2": {
   "candidate_post_window": [
    1,
@@ -359,5 +359,5 @@
   "path": "data/prices_e2.parquet",
   "sha256": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343"
  },
- "runtime_seconds": 0.36
+ "runtime_seconds": 0.37
 }

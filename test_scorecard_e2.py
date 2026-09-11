@@ -172,10 +172,13 @@ def test_tie_group_straddling_a_boundary_is_no_call():
 
 
 def test_chance_line_is_half_by_construction():
-    """Red-team M4: the comparison is 0.50 under this call rule, NOT the
-    outcome mix. A random call rule on a fixture whose outcome mix is 0.30
-    scores ~0.50, which is exactly why the base rate is not the yardstick."""
-    assert "0.50 by construction" in SC.CHANCE_SENTENCE
+    """Red-team M4: the comparison is 0.50 under this call rule when the calls
+    are balanced, NOT the outcome mix. A random call rule on a fixture whose
+    outcome mix is 0.30 scores ~0.50, which is exactly why the base rate is not
+    the yardstick. Red-team NF-7: the printed line is COMPUTED from the call
+    counts, and on a balanced fixture the computation returns 0.50."""
+    assert "0.50 when the calls are balanced" in SC.CHANCE_SENTENCE_PREFIX
+    assert "computed from the call counts" in SC.CHANCE_SENTENCE_PREFIX
     rng = np.random.default_rng(11)
     n = 3000
     excess = np.where(rng.random(n) < 0.30, 0.05, -0.05)   # outcome mix 0.30
@@ -189,11 +192,46 @@ def test_chance_line_is_half_by_construction():
     model = summary["blocks"]["text_and_numeric"]
     assert summary["outcome_mix_positive_excess"] == pytest.approx(0.30, abs=0.03)
     assert model["hit_rate"] == pytest.approx(0.50, abs=0.04), "random calls score chance"
-    assert model["chance_under_call_rule"] == 0.5
-    assert summary["chance_sentence"] == SC.CHANCE_SENTENCE
-    # the calls really are balanced by construction -- that is where 0.50 comes from
+    assert model["chance_under_call_rule"] == 0.5, "the documented balanced-case value"
+    # the calls really are balanced here -- that is where the computed 0.50 comes from
+    assert model["n_outperform"] == model["n_underperform"]
+    assert model["chance_from_call_counts"] == pytest.approx(0.50, abs=1e-9)
+    assert summary["chance_sentence"] == SC.chance_sentence(model["chance_from_call_counts"])
+    assert summary["chance_sentence"].endswith("0.500.")
     counts = scored["call"].value_counts()
     assert counts[SC.CALL_OUT] == pytest.approx(counts[SC.CALL_UNDER], rel=0.02)
+
+
+def test_chance_line_moves_when_calls_are_unbalanced():
+    """Red-team NF-7: `0.5` is not a constant to print. When the straddle-tie
+    rule (or any imbalance) leaves more "outperform" than "underperform" calls,
+    the call-count-matched random baseline moves off 0.50 toward the outcome
+    mix, and the printed sentence carries the computed value.
+
+    Fixture: an outcome mix of 0.20 among the called rows, 8 outperform calls
+    and 2 underperform calls -> (8*0.2 + 2*0.8)/10 = 0.32, not 0.50."""
+    calls = [SC.CALL_OUT] * 8 + [SC.CALL_UNDER] * 2
+    excess = [0.05, 0.05, -0.05, -0.05, -0.05, -0.05, -0.05, -0.05, -0.05, -0.05]
+    sub = pd.DataFrame(
+        {
+            "call": calls,
+            SC.OUTCOME_COL: excess,
+            "cik": list(range(10)),
+            "accession_number": [f"A{i}" for i in range(10)],
+            "tied_no_call": [False] * 10,
+        }
+    )
+    scored = SC.score_calls(sub)
+    entry = SC._hit_rate(scored)
+    assert (entry["n_outperform"], entry["n_underperform"]) == (8, 2)
+    assert entry["outcome_mix_among_calls"] == pytest.approx(0.20)
+    assert entry["chance_from_call_counts"] == pytest.approx(0.32)
+    assert entry["chance_sentence"].endswith("0.320.")
+    assert entry["chance_under_call_rule"] == 0.5, "the balanced case is still documented"
+    # and the same computation reached through the public path
+    assert SC.chance_from_call_counts(8, 2, 0.2, 10) == pytest.approx(0.32)
+    assert SC.chance_from_call_counts(5, 5, 0.2, 10) == pytest.approx(0.50)
+    assert SC.chance_from_call_counts(0, 0, None, 0) is None
 
 
 def test_only_the_primary_arms_deduplicated_rows_are_scored():
@@ -474,7 +512,18 @@ def test_scorecard_page_carries_the_disclosure_block(tmp_path, synth):
     from its own artifacts; this module types none of them."""
     frame, _diag = synth
     disclosures = E.build_disclosures(
-        frame, {"gld_exclude_from_analysis": True, "n_gld_rows_excluded": 28}
+        frame,
+        {
+            "gld_exclude_from_analysis": True,
+            "n_gld_rows_excluded": 28,
+            # red-team NF-8: the join count and the modeling-frame count are
+            # different numbers and the page states both
+            "n_emb_missing_on_join": 45,
+            "n_emb_missing_on_modeling_frame": 44,
+        },
+        emb_calls={"available": True, "n_scorecard_rows_without_embedding": 25,
+                   "n_calls_on_rows_without_embedding": 17,
+                   "n_scored_calls_on_rows_without_embedding": 17},
     )
     assert set(disclosures) == {key for key, _ in SC.DISCLOSURE_ORDER}
 
@@ -497,7 +546,21 @@ def test_scorecard_page_carries_the_disclosure_block(tmp_path, synth):
         "never_extracted_periodic",
         "Enbridge (CIK 895728)",
         "decision 7",
-        "absence is outcome-correlated",
+        # red-team NF-4: §11's own wording -- the cause is NOT measured, so the
+        # missing companies are never called delistings
+        "have no usable prices (counts from the target manifest)",
+        "the cause is not separately measured, so they are not described as delistings",
+        "dead-name exclusion understates downside dispersion and overstates the benchmark",
+        # red-team NF-8: the missing-embedding rows and calls are counted and disclosed
+        "25 of the rows this scorecard scores sit on filings with no embedding vector, and "
+        "17 of them received a published call",
+        "44 rows on the modeling frame carry none, 45 on the three-way join",
+        "fitted and scored with NaN embedding components under XGBoost's missing-value "
+        "handling -- numeric plus the legacy text columns only",
+        # red-team NF-12: the false-NONE rate and the §0 citation, every time
+        "false-NONE rate",
+        "G2_FINAL_REPORT.md §0 (the owner's binding interpretation: NONE may hide newly "
+        "issued guidance)",
         "Price return only -- dividends not included",
         "no transaction costs, taxes, slippage or position sizing",
         "out-of-fold, backtested, no money invested",
@@ -508,14 +571,15 @@ def test_scorecard_page_carries_the_disclosure_block(tmp_path, synth):
         assert phrase in text, phrase
     # the measured numbers come from the artifacts, when those exist
     if E.G2_RESULTS_PATH.exists():
-        for number in ("86.94%", "INDETERMINATE", "96.64%", "68.67%", "28.00%", "42.00%"):
+        for number in ("86.94%", "INDETERMINATE", "96.64%", "68.67%", "28.00%", "42.00%",
+                       "0.00% (0/80)", "4.58%"):
             assert number in text, number
     if E.CENSUS_E2_PATH.exists():
         assert "universe CIKs have no extracted periodic sections" in text
     if SC.TARGET_MANIFEST_PATH.exists():
         # the counts come from the manifest, so this asserts the shape, never a
         # number a parallel rebuild is free to move
-        assert "universe members are without usable prices" in text
+        assert "universe members have no usable prices" in text
         assert "n/a of n/a" not in text
 
     # an unreadable G2 file SAYS SO on the page -- it never drops the line

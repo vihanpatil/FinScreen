@@ -452,6 +452,10 @@ REQUIRED_PARAMS: tuple[tuple[str, object], ...] = (
     ("loco.n_folds", int),
     ("loco.index_rule", str),
     ("loco.scope", str),
+    # REQUIRED and nullable (red-team NF-20): read with `.get()` a missing key
+    # silently meant "no cap", which is a parameter the document never pinned.
+    # `null` is the explicit "every training member", typed as such.
+    ("loco.max_ciks_per_fold", (int, type(None))),
     ("overlap.column", str),
     ("overlap.threshold", (int, float)),
     ("fold_sensitivity.train_window_quarters", list),
@@ -746,6 +750,14 @@ def load_g3_params(
     return params, guard
 
 
+def _type_name(t) -> str:
+    """Schema spelling of a REQUIRED_PARAMS type. `None` prints as JSON's
+    `null`, so `loco.max_ciks_per_fold` reads `int|null` (red-team NF-20)."""
+    if isinstance(t, type):
+        return "null" if t is type(None) else t.__name__
+    return "|".join(_type_name(x) for x in t)
+
+
 def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
     """Materialize the machine-readable schema beside the runner."""
     schema = {
@@ -754,10 +766,7 @@ def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
         "location": "exactly one fenced code block with info string "
         f"`{FENCE_INFO}` inside data/f5/G3_PREREGISTRATION.md",
         "guard": "data/f5/G3_RATIFIED.json.doc_sha256 == sha256(G3_PREREGISTRATION.md)",
-        "required_keys": [
-            {"path": p, "type": (t.__name__ if isinstance(t, type) else "|".join(x.__name__ for x in t))}
-            for p, t in REQUIRED_PARAMS
-        ],
+        "required_keys": [{"path": p, "type": _type_name(t)} for p, t in REQUIRED_PARAMS],
         "implemented_named_rules": {
             "purge_rule": list(IMPLEMENTED_PURGE_RULES),
             "se.method": list(IMPLEMENTED_SE_METHODS),
@@ -771,12 +780,12 @@ def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
             "scorecard.correct_rule": list(IMPLEMENTED_CORRECT_RULES),
             "scorecard.ci": list(IMPLEMENTED_SCORECARD_CI),
         },
-        "optional_keys": [
-            {"path": "loco.max_ciks_per_fold", "type": "int|null",
-             "note": "LOCO budget cap; null means every training member of the selected folds."}
-        ],
+        "optional_keys": [],
         "notes": [
             "Unknown keys are echoed into the results JSON and never consulted.",
+            "loco.max_ciks_per_fold is REQUIRED and nullable (int|null): null is the explicit "
+            "'every training member of the selected folds', and an ABSENT key is a refusal, not "
+            "a silent 'no cap' (red-team NF-20).",
             "No value here is a default: the runner refuses without the ratified document.",
             "F5_PLAN §3's defaults are the SELFTEST's values only.",
             "embedding.rank_transform_components applies to the PIT-ranked spec arms only; "
@@ -851,11 +860,16 @@ def join_frames(
     diag["n_joined"] = int(len(df))
 
     diag["n_emb_missing"] = None
+    diag["n_emb_missing_on_join"] = None
     if families is not None:
         fam = families.drop(columns=[c for c in ("filing_date", "form") if c in families.columns])
         df = df.merge(fam, on=KEY, how="left")
         if "emb" in df.columns:
+            # Counted on the JOIN, before the null-target drop (red-team NF-8):
+            # `n_emb_missing_on_modeling_frame` below is the count on the rows
+            # that are actually fitted and scored, and the two differ.
             diag["n_emb_missing"] = int(df["emb"].isna().sum())
+            diag["n_emb_missing_on_join"] = diag["n_emb_missing"]
     diag["n_after_families_join"] = int(len(df))
 
     df[FILING_DATE_COL] = pd.to_datetime(df[FILING_DATE_COL])
@@ -868,6 +882,9 @@ def join_frames(
     diag["n_target_null"] = int(df[E2_TARGET_COL].isna().sum())
     modeling = df[df[E2_TARGET_COL].notna()].copy().reset_index(drop=True)
     diag["n_modeling_rows"] = int(len(modeling))
+    diag["n_emb_missing_on_modeling_frame"] = (
+        int(modeling["emb"].isna().sum()) if "emb" in modeling.columns else None
+    )
     diag["n_ciks"] = int(modeling[CIK_COL].nunique())
     if len(modeling):
         diag["first_filing_date"] = str(modeling[FILING_DATE_COL].min().date())
@@ -1691,6 +1708,17 @@ def run_census(
             "n_rows_with_target": int(len(df)),
             "n_rows_target_null_dropped": int(diag.get("n_target_null", 0)),
         },
+        # Red-team NF-8: the join count and the modeling-frame count are
+        # DIFFERENT numbers (the null-target drop sits between them) and the
+        # census states both rather than letting one stand for the other.
+        "embedding_coverage": {
+            "n_emb_missing_on_join": diag.get("n_emb_missing_on_join"),
+            "n_emb_missing_on_modeling_frame": diag.get("n_emb_missing_on_modeling_frame"),
+            "note": "rows with no pooled embedding vector: on the three-way join (before the "
+            "null-target drop) and on the modeling frame (after it). Such rows keep their row "
+            "and carry NaN embedding components; the scorecard page states what that means for "
+            "the calls that sit on them.",
+        },
         "per_candidate_quarter": rows,
         "mean_n_test_dedup": float(np.mean([r["n_test_dedup"] for r in rows])) if rows else float("nan"),
         "min_n_test_dedup": int(np.min([r["n_test_dedup"] for r in rows])) if rows else 0,
@@ -1827,7 +1855,7 @@ def loco_table(
     k = len(fold_frames)
     n_sel = int(params["loco"]["n_folds"])
     idxs = sorted({int(round(j * (k - 1) / max(n_sel - 1, 1))) for j in range(n_sel)})
-    max_ciks = params["loco"].get("max_ciks_per_fold")
+    max_ciks = params["loco"]["max_ciks_per_fold"]
     seed = int(params["seeds"]["primary"])
     rows, refits = [], 0
     for fi in idxs:
@@ -2388,11 +2416,14 @@ def run_head1(
     md_path = Path(scorecard_md_path) if scorecard_md_path else out_dir / SCORECARD_MD_NAME
     json_path = Path(scorecard_json_path) if scorecard_json_path else out_dir / SCORECARD_JSON_NAME
     parquet_path = Path(oof_path) if oof_path else out_dir / OOF_PREDICTIONS_NAME
+    records_df = pd.DataFrame(arm_records)
+    emb_calls = missing_embedding_calls(records_df, frame, params)
+    writer.add_delta_payload("missing_embedding_calls", emb_calls)
     scorecard_summary, _scored = SC.build_scorecard(
-        pd.DataFrame(arm_records),
+        records_df,
         params,
         margin,
-        build_disclosures(frame, frame_diag, g2_path=g2_path),
+        build_disclosures(frame, frame_diag, g2_path=g2_path, emb_calls=emb_calls),
         md_path,
         json_path,
         parquet_path,
@@ -2527,6 +2558,51 @@ def labeler_negative_recall(path: Path = LABELER_EVAL_PATH) -> dict:
     }
 
 
+def missing_embedding_calls(records_df: pd.DataFrame, frame: pd.DataFrame, params: dict) -> dict:
+    """How many of the scorecard's published calls sit on a filing with NO
+    pooled embedding vector (red-team NF-8).
+
+    `SC.make_calls` is a pure, deterministic function of the out-of-fold
+    records and the ratified scorecard parameters, so calling it here to COUNT
+    and again inside `build_scorecard` to WRITE cannot disagree; counting after
+    the page is built would need the disclosure block to exist before it, which
+    is the one ordering this module refuses to invert."""
+    out = {
+        "available": False,
+        "n_scorecard_rows_without_embedding": None,
+        "n_calls_on_rows_without_embedding": None,
+        "n_scored_calls_on_rows_without_embedding": None,
+    }
+    if "emb" not in frame.columns or records_df is None or len(records_df) == 0:
+        return out
+    missing = frame.loc[frame["emb"].isna(), [CIK_COL, "accession_number"]]
+    keys = set(zip(missing[CIK_COL].astype(str), missing["accession_number"].astype(str)))
+    called = SC.make_calls(records_df, params)
+    if called.empty:
+        return dict(out, available=True, n_scorecard_rows_without_embedding=0,
+                    n_calls_on_rows_without_embedding=0,
+                    n_scored_calls_on_rows_without_embedding=0)
+    model = called[called["block"] == params["scorecard"]["model_block"]]
+    on_missing = np.array(
+        [(str(c), str(a)) in keys
+         for c, a in zip(model[CIK_COL], model["accession_number"])],
+        dtype=bool,
+    )
+    has_call = (model["call"] != SC.CALL_NONE).values
+    resolved = model[SC.OUTCOME_COL].astype(float).notna().values
+    return {
+        "available": True,
+        "n_rows_without_embedding_in_frame": int(len(missing)),
+        # The scorecard's own rows (the primary arm's deduplicated test rows in
+        # the ratified folds) that carry no vector, and how many of them the
+        # tercile rule actually published a call on -- the middle third and the
+        # straddling tie groups are "no call" and are not published calls.
+        "n_scorecard_rows_without_embedding": int(on_missing.sum()),
+        "n_calls_on_rows_without_embedding": int((on_missing & has_call).sum()),
+        "n_scored_calls_on_rows_without_embedding": int((on_missing & has_call & resolved).sum()),
+    }
+
+
 def _pct(value, digits: int = 2) -> str:
     try:
         return f"{100.0 * float(value):.{digits}f}%"
@@ -2544,6 +2620,7 @@ def _label_disclosure(g2: dict, recall: dict) -> str:
     sent = verdicts.get("sentiment") or {}
     guid = verdicts.get("guidance_direction") or {}
     ap = g2.get("guidance_active_precision") or {}
+    fn = g2.get("guidance_false_none_rate") or {}
     consts = g2.get("constants") or {}
     rf = consts.get("redflag_exact_set_error") or {}
     teacher = ((g2.get("teacher_spotcheck") or {}).get("other_value")) or {}
@@ -2552,6 +2629,20 @@ def _label_disclosure(g2: dict, recall: dict) -> str:
     ) or {}
     sent_ci = sent.get("wilson_95") or [None, None]
     guid_ci = guid.get("wilson_95") or [None, None]
+    fn_ci = fn.get("wilson_95") or [None, None]
+    # Red-team NF-12: §11 makes the false-NONE rate and the §0 citation
+    # mandatory "every time" the guidance number appears. Both are READ here --
+    # the rate from the artifact, the citation as the literal reference §11
+    # names -- never typed as a value.
+    false_none_txt = (
+        f", and its false-NONE rate is {_pct(fn.get('p_hat'))} ({fn.get('k')}/{fn.get('n')}) "
+        f"[{_pct(fn_ci[0])}, {_pct(fn_ci[1])}] -- see G2_FINAL_REPORT.md §0 (the owner's binding "
+        "interpretation: NONE may hide newly issued guidance)"
+        if fn
+        else " (the false-NONE rate was not readable by this run; G2_FINAL_REPORT.md §0 -- the "
+        "owner's binding interpretation: NONE may hide newly issued guidance -- still governs "
+        "how the NONE mass is read)"
+    )
     recall_txt = (
         f"sentiment NEGATIVE recall {recall.get('recall')} ({recall.get('tp')}/"
         f"{recall.get('support')}) on this labeler's own held-out eval"
@@ -2568,7 +2659,8 @@ def _label_disclosure(g2: dict, recall: dict) -> str:
         f"{_pct(guid.get('p_hat'))} [{_pct(guid_ci[0])}, {_pct(guid_ci[1])}], n = "
         f"{guid.get('n')} is a statement about the NONE mass only and travels with ACTIVE "
         f"precision {_pct(ap.get('point'))} [{_pct(ap.get('wilson_lo'))}, "
-        f"{_pct(ap.get('wilson_hi'))}]. Red flags: exact-set error {_pct(rf.get('point'))} "
+        f"{_pct(ap.get('wilson_hi'))}]{false_none_txt}. "
+        f"Red flags: exact-set error {_pct(rf.get('point'))} "
         f"[{_pct(rf.get('ci_lo'))}, {_pct(rf.get('ci_hi'))}], n = {rf.get('n')}, and the block "
         f"is {str(g2.get('red_flags_status')).rstrip('. ')} -- measured on top of a v1.2 TEACHER "
         f"spot-check exact-set error of {_pct(teacher.get('point'))} ({teacher.get('k')}/"
@@ -2584,6 +2676,7 @@ def build_disclosures(
     census_path: Path = CENSUS_E2_PATH,
     labeler_path: Path = LABELER_EVAL_PATH,
     manifest_path: Path = TARGET_MANIFEST,
+    emb_calls: Optional[dict] = None,
 ) -> dict:
     """The fixed disclosure block the scorecard page carries (red-team M5).
 
@@ -2658,11 +2751,36 @@ def build_disclosures(
         manifest = {}
     absent = _find_key(manifest, "n_universe_member_ciks_absent_from_price_matrix")
     total = _find_key(manifest, "n_universe_member_ciks_all_strata")
+    # §11's own wording, verbatim (red-team NF-4): the earlier sentence called
+    # the missing companies delistings, which §11 forbids because the CAUSE was
+    # never measured. The counts are read from the manifest.
     price_censoring = (
         f"{absent if absent is not None else 'n/a'} of "
-        f"{total if total is not None else 'n/a'} universe members are without usable prices, "
-        "disproportionately acquired or delisted names -- absence is outcome-correlated, so the "
-        "scored set is the surviving one and the missing companies are not missing at random."
+        f"{total if total is not None else 'n/a'} universe members have no usable prices (counts "
+        "from the target manifest); the cause is not separately measured, so they are not "
+        "described as delistings; the direction is that dead-name exclusion understates downside "
+        "dispersion and overstates the benchmark."
+    )
+
+    emb = emb_calls or {}
+    n_join = frame_diag.get("n_emb_missing_on_join")
+    n_model = frame_diag.get("n_emb_missing_on_modeling_frame")
+    if emb.get("available"):
+        emb_head = (
+            f"{emb.get('n_scorecard_rows_without_embedding')} of the rows this scorecard scores "
+            "sit on filings with no embedding vector, and "
+            f"{emb.get('n_calls_on_rows_without_embedding')} of them received a published call"
+        )
+    else:
+        emb_head = (
+            "the number of scored rows and published calls on filings with no embedding vector "
+            "was not available to this run"
+        )
+    missing_embedding = (
+        f"{emb_head} ({n_model if n_model is not None else 'n/a'} rows on the modeling frame "
+        f"carry none, {n_join if n_join is not None else 'n/a'} on the three-way join before the "
+        "null-target drop); those rows are fitted and scored with NaN embedding components under "
+        "XGBoost's missing-value handling -- numeric plus the legacy text columns only."
     )
 
     return {
@@ -2674,6 +2792,7 @@ def build_disclosures(
         ),
         "extraction": extraction,
         "fx": fx,
+        "missing_embedding": missing_embedding,
         "price_censoring": price_censoring,
         "returns": (
             "Price return only -- dividends not included; no transaction costs, taxes, slippage "
@@ -2871,17 +2990,21 @@ def write_report(doc: dict, path: Path) -> str:
                 {
                     "block": name,
                     "n_calls": entry["n_calls"],
+                    "n_outperform": entry.get("n_outperform"),
+                    "n_underperform": entry.get("n_underperform"),
                     "n_correct": entry["n_correct"],
                     "hit_rate": entry["hit_rate"],
                     "wilson_lo": entry["wilson_lo"],
                     "wilson_hi": entry["wilson_hi"],
+                    "chance_from_call_counts": entry.get("chance_from_call_counts"),
                     "n_no_call": entry.get("n_no_call"),
                     "n_tied_no_call": entry.get("n_tied_no_call"),
                     "n_unresolved": entry.get("n_unresolved"),
                 }
                 for name, entry in (card.get("blocks") or {}).items()
             ],
-            ["block", "n_calls", "n_correct", "hit_rate", "wilson_lo", "wilson_hi",
+            ["block", "n_calls", "n_outperform", "n_underperform", "n_correct", "hit_rate",
+             "wilson_lo", "wilson_hi", "chance_from_call_counts",
              "n_no_call", "n_tied_no_call", "n_unresolved"],
         )
         lines += [

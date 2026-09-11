@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T22:12:41+00:00",
+  "generated_utc": "2026-09-11T22:56:31+00:00",
   "module": "data/f5/census_e2.py",
   "step": "F5_PLAN.md \u00a72 Step 2 -- pre-run census",
   "network_calls": 0,
@@ -15,8 +15,8 @@
     "EXPANSION_PLAN \u00a72a's published 0.019-0.037 bracket was SUPERSEDED on 2026-08-25 by the H2 honest restatement; quote the amendment, never the old bracket."
   ],
   "input_sha256": {
-    "data/f5/census_head1.json": "e5bdaf384dcbcbfb308630a562a0ee00d69369e31ae0be7af53c7e2557c83d0c",
-    "data/f5/census_heads.json": "82823db754a4512b06c07e7efdddcaf091ec7431defe186e7e7143841b8d4bfa",
+    "data/f5/census_head1.json": "0ded51fb074d202e5ca1c02447f547de43b121afe98fff44a99bb08e64fabf4c",
+    "data/f5/census_heads.json": "88035b0b8f68160234dda0f2c5997952111763e987b5fa3357721177fb89d5f9",
     "data/f5/text_families_e2_manifest.json": "523d2514cf16e683801ea7e654dc1521fc6673c6a9c04d85a03f49f3de592495",
     "data/f5/target_e2.parquet": "ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac",
     "data/f5/text_features_e2.parquet": "143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88",
@@ -26,7 +26,7 @@
     "data/filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
     "data/prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
     "data/f4/labels_e2_v1.parquet": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
-    "data/f5/census_e2.py": "4d693e66579fe2d9f304b75b1a6c947b1160305376e3c4bc4dbb9558724dd50e"
+    "data/f5/census_e2.py": "8617d3053965d3647a13906d4a850d706f87d56aad3051dc59732efaf7ec0f33"
   },
   "section_1_fold_options_decision_4": {
     "default_33": {
@@ -3298,6 +3298,1175 @@
       }
     ]
   },
+  "section_1b_ratified_folds_ex_gld": {
+    "frame": "ex_gld_run_time",
+    "n_frame_rows": 7381,
+    "n_frame_ciks": 143,
+    "n_folds": 33,
+    "fold_quarters": [
+      "2018Q1",
+      "2018Q2",
+      "2018Q3",
+      "2018Q4",
+      "2019Q1",
+      "2019Q2",
+      "2019Q3",
+      "2019Q4",
+      "2020Q1",
+      "2020Q2",
+      "2020Q3",
+      "2020Q4",
+      "2021Q1",
+      "2021Q2",
+      "2021Q3",
+      "2021Q4",
+      "2022Q1",
+      "2022Q2",
+      "2022Q3",
+      "2022Q4",
+      "2023Q1",
+      "2023Q2",
+      "2023Q3",
+      "2023Q4",
+      "2024Q1",
+      "2024Q2",
+      "2024Q3",
+      "2024Q4",
+      "2025Q1",
+      "2025Q2",
+      "2025Q3",
+      "2025Q4",
+      "2026Q1"
+    ],
+    "sum_n_test_dedup": 4481,
+    "sum_n_test_raw": 6184,
+    "n_test_dedup_min": 118,
+    "n_test_dedup_max": 161,
+    "n_test_dedup_mean": 135.78787878787878,
+    "n_dd_mean": 135.78787878787878,
+    "n_test_raw_min": 162,
+    "n_test_raw_max": 202,
+    "n_distinct_ciks_in_folds": 139,
+    "overlap_arm_scored_rows_in_folds": 2694,
+    "overlap_arm_rule": "dedup test rows inside the 33 ratified folds with train_overlap_share <= 0.0 (evaluation-side restriction; the fit is unchanged)",
+    "n_test_dedup_rows_without_embedding_in_folds": 25,
+    "n_test_dedup_rows_without_embedding_note": "red-team NF-8: the rows the scorecard scores that carry no pooled embedding vector. How many of them receive a PUBLISHED call (the middle third and straddling tie groups do not) is a run-time count, written by the run as `missing_embedding_calls` and stated on the scorecard page.",
+    "n_purge_instances": 6173,
+    "purge_rule": "target_window_close_on_or_after_test_quarter_start",
+    "dedup_gap_days": 5,
+    "per_fold": [
+      {
+        "test_quarter": "2018Q1",
+        "n_test_raw": 166,
+        "n_test_dedup": 144,
+        "n_test_dedup_non_overlapping": 86,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 81,
+        "n_train_expanding": 1011,
+        "n_train_after_purge": 844,
+        "n_purged": 167
+      },
+      {
+        "test_quarter": "2018Q2",
+        "n_test_raw": 162,
+        "n_test_dedup": 118,
+        "n_test_dedup_non_overlapping": 66,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 81,
+        "n_train_expanding": 1177,
+        "n_train_after_purge": 1010,
+        "n_purged": 167
+      },
+      {
+        "test_quarter": "2018Q3",
+        "n_test_raw": 168,
+        "n_test_dedup": 123,
+        "n_test_dedup_non_overlapping": 65,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1339,
+        "n_train_after_purge": 1174,
+        "n_purged": 165
+      },
+      {
+        "test_quarter": "2018Q4",
+        "n_test_raw": 170,
+        "n_test_dedup": 122,
+        "n_test_dedup_non_overlapping": 66,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1507,
+        "n_train_after_purge": 1338,
+        "n_purged": 169
+      },
+      {
+        "test_quarter": "2019Q1",
+        "n_test_raw": 175,
+        "n_test_dedup": 149,
+        "n_test_dedup_non_overlapping": 90,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1677,
+        "n_train_after_purge": 1507,
+        "n_purged": 170
+      },
+      {
+        "test_quarter": "2019Q2",
+        "n_test_raw": 167,
+        "n_test_dedup": 119,
+        "n_test_dedup_non_overlapping": 70,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1852,
+        "n_train_after_purge": 1677,
+        "n_purged": 175
+      },
+      {
+        "test_quarter": "2019Q3",
+        "n_test_raw": 175,
+        "n_test_dedup": 125,
+        "n_test_dedup_non_overlapping": 68,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 88,
+        "n_train_expanding": 2019,
+        "n_train_after_purge": 1850,
+        "n_purged": 169
+      },
+      {
+        "test_quarter": "2019Q4",
+        "n_test_raw": 179,
+        "n_test_dedup": 128,
+        "n_test_dedup_non_overlapping": 78,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 89,
+        "n_train_expanding": 2194,
+        "n_train_after_purge": 2019,
+        "n_purged": 175
+      },
+      {
+        "test_quarter": "2020Q1",
+        "n_test_raw": 180,
+        "n_test_dedup": 152,
+        "n_test_dedup_non_overlapping": 97,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 89,
+        "n_train_expanding": 2373,
+        "n_train_after_purge": 2194,
+        "n_purged": 179
+      },
+      {
+        "test_quarter": "2020Q2",
+        "n_test_raw": 187,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 80,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 89,
+        "n_train_expanding": 2553,
+        "n_train_after_purge": 2373,
+        "n_purged": 180
+      },
+      {
+        "test_quarter": "2020Q3",
+        "n_test_raw": 190,
+        "n_test_dedup": 127,
+        "n_test_dedup_non_overlapping": 78,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 93,
+        "n_train_expanding": 2740,
+        "n_train_after_purge": 2553,
+        "n_purged": 187
+      },
+      {
+        "test_quarter": "2020Q4",
+        "n_test_raw": 193,
+        "n_test_dedup": 129,
+        "n_test_dedup_non_overlapping": 74,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 93,
+        "n_train_expanding": 2930,
+        "n_train_after_purge": 2739,
+        "n_purged": 191
+      },
+      {
+        "test_quarter": "2021Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 161,
+        "n_test_dedup_non_overlapping": 102,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 93,
+        "n_train_expanding": 3123,
+        "n_train_after_purge": 2929,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2021Q2",
+        "n_test_raw": 188,
+        "n_test_dedup": 131,
+        "n_test_dedup_non_overlapping": 81,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 92,
+        "n_train_expanding": 3317,
+        "n_train_after_purge": 3122,
+        "n_purged": 195
+      },
+      {
+        "test_quarter": "2021Q3",
+        "n_test_raw": 188,
+        "n_test_dedup": 125,
+        "n_test_dedup_non_overlapping": 75,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 95,
+        "n_train_expanding": 3505,
+        "n_train_after_purge": 3315,
+        "n_purged": 190
+      },
+      {
+        "test_quarter": "2021Q4",
+        "n_test_raw": 190,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 95,
+        "n_train_expanding": 3693,
+        "n_train_after_purge": 3503,
+        "n_purged": 190
+      },
+      {
+        "test_quarter": "2022Q1",
+        "n_test_raw": 191,
+        "n_test_dedup": 160,
+        "n_test_dedup_non_overlapping": 99,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 95,
+        "n_train_expanding": 3883,
+        "n_train_after_purge": 3691,
+        "n_purged": 192
+      },
+      {
+        "test_quarter": "2022Q2",
+        "n_test_raw": 193,
+        "n_test_dedup": 128,
+        "n_test_dedup_non_overlapping": 79,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 95,
+        "n_train_expanding": 4074,
+        "n_train_after_purge": 3881,
+        "n_purged": 193
+      },
+      {
+        "test_quarter": "2022Q3",
+        "n_test_raw": 197,
+        "n_test_dedup": 134,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4267,
+        "n_train_after_purge": 4074,
+        "n_purged": 193
+      },
+      {
+        "test_quarter": "2022Q4",
+        "n_test_raw": 196,
+        "n_test_dedup": 137,
+        "n_test_dedup_non_overlapping": 80,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4464,
+        "n_train_after_purge": 4267,
+        "n_purged": 197
+      },
+      {
+        "test_quarter": "2023Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 159,
+        "n_test_dedup_non_overlapping": 103,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4660,
+        "n_train_after_purge": 4463,
+        "n_purged": 197
+      },
+      {
+        "test_quarter": "2023Q2",
+        "n_test_raw": 195,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4854,
+        "n_train_after_purge": 4660,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2023Q3",
+        "n_test_raw": 190,
+        "n_test_dedup": 131,
+        "n_test_dedup_non_overlapping": 81,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 94,
+        "n_train_expanding": 5049,
+        "n_train_after_purge": 4854,
+        "n_purged": 195
+      },
+      {
+        "test_quarter": "2023Q4",
+        "n_test_raw": 192,
+        "n_test_dedup": 135,
+        "n_test_dedup_non_overlapping": 81,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 94,
+        "n_train_expanding": 5239,
+        "n_train_after_purge": 5048,
+        "n_purged": 191
+      },
+      {
+        "test_quarter": "2024Q1",
+        "n_test_raw": 193,
+        "n_test_dedup": 154,
+        "n_test_dedup_non_overlapping": 92,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 94,
+        "n_train_expanding": 5431,
+        "n_train_after_purge": 5238,
+        "n_purged": 193
+      },
+      {
+        "test_quarter": "2024Q2",
+        "n_test_raw": 189,
+        "n_test_dedup": 126,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 94,
+        "n_train_expanding": 5624,
+        "n_train_after_purge": 5431,
+        "n_purged": 193
+      },
+      {
+        "test_quarter": "2024Q3",
+        "n_test_raw": 192,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 74,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 95,
+        "n_train_expanding": 5813,
+        "n_train_after_purge": 5624,
+        "n_purged": 189
+      },
+      {
+        "test_quarter": "2024Q4",
+        "n_test_raw": 198,
+        "n_test_dedup": 136,
+        "n_test_dedup_non_overlapping": 82,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 96,
+        "n_train_expanding": 6005,
+        "n_train_after_purge": 5813,
+        "n_purged": 192
+      },
+      {
+        "test_quarter": "2025Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 156,
+        "n_test_dedup_non_overlapping": 98,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 96,
+        "n_train_expanding": 6203,
+        "n_train_after_purge": 6005,
+        "n_purged": 198
+      },
+      {
+        "test_quarter": "2025Q2",
+        "n_test_raw": 195,
+        "n_test_dedup": 131,
+        "n_test_dedup_non_overlapping": 80,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 96,
+        "n_train_expanding": 6397,
+        "n_train_after_purge": 6203,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2025Q3",
+        "n_test_raw": 201,
+        "n_test_dedup": 134,
+        "n_test_dedup_non_overlapping": 81,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 99,
+        "n_train_expanding": 6592,
+        "n_train_after_purge": 6397,
+        "n_purged": 195
+      },
+      {
+        "test_quarter": "2025Q4",
+        "n_test_raw": 202,
+        "n_test_dedup": 132,
+        "n_test_dedup_non_overlapping": 83,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 99,
+        "n_train_expanding": 6793,
+        "n_train_after_purge": 6592,
+        "n_purged": 201
+      },
+      {
+        "test_quarter": "2026Q1",
+        "n_test_raw": 200,
+        "n_test_dedup": 155,
+        "n_test_dedup_non_overlapping": 101,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 99,
+        "n_train_expanding": 6995,
+        "n_train_after_purge": 6792,
+        "n_purged": 203
+      }
+    ],
+    "source": "backtest_e2.build_folds + dedup_keep_mask_cik on the ratified fold_quarters parsed from data/f5/G3_PREREGISTRATION.md (no ratification, no fit)"
+  },
+  "section_1b_ratified_folds_gld_in": {
+    "frame": "gld_in",
+    "n_frame_rows": 7389,
+    "n_frame_ciks": 144,
+    "n_folds": 33,
+    "fold_quarters": [
+      "2018Q1",
+      "2018Q2",
+      "2018Q3",
+      "2018Q4",
+      "2019Q1",
+      "2019Q2",
+      "2019Q3",
+      "2019Q4",
+      "2020Q1",
+      "2020Q2",
+      "2020Q3",
+      "2020Q4",
+      "2021Q1",
+      "2021Q2",
+      "2021Q3",
+      "2021Q4",
+      "2022Q1",
+      "2022Q2",
+      "2022Q3",
+      "2022Q4",
+      "2023Q1",
+      "2023Q2",
+      "2023Q3",
+      "2023Q4",
+      "2024Q1",
+      "2024Q2",
+      "2024Q3",
+      "2024Q4",
+      "2025Q1",
+      "2025Q2",
+      "2025Q3",
+      "2025Q4",
+      "2026Q1"
+    ],
+    "sum_n_test_dedup": 4487,
+    "sum_n_test_raw": 6190,
+    "n_test_dedup_min": 119,
+    "n_test_dedup_max": 161,
+    "n_test_dedup_mean": 135.96969696969697,
+    "n_dd_mean": 135.96969696969697,
+    "n_test_raw_min": 163,
+    "n_test_raw_max": 202,
+    "n_distinct_ciks_in_folds": 140,
+    "overlap_arm_scored_rows_in_folds": 2700,
+    "overlap_arm_rule": "dedup test rows inside the 33 ratified folds with train_overlap_share <= 0.0 (evaluation-side restriction; the fit is unchanged)",
+    "n_test_dedup_rows_without_embedding_in_folds": 25,
+    "n_test_dedup_rows_without_embedding_note": "red-team NF-8: the rows the scorecard scores that carry no pooled embedding vector. How many of them receive a PUBLISHED call (the middle third and straddling tie groups do not) is a run-time count, written by the run as `missing_embedding_calls` and stated on the scorecard page.",
+    "n_purge_instances": 6180,
+    "purge_rule": "target_window_close_on_or_after_test_quarter_start",
+    "dedup_gap_days": 5,
+    "per_fold": [
+      {
+        "test_quarter": "2018Q1",
+        "n_test_raw": 167,
+        "n_test_dedup": 145,
+        "n_test_dedup_non_overlapping": 87,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 82,
+        "n_train_expanding": 1013,
+        "n_train_after_purge": 845,
+        "n_purged": 168
+      },
+      {
+        "test_quarter": "2018Q2",
+        "n_test_raw": 163,
+        "n_test_dedup": 119,
+        "n_test_dedup_non_overlapping": 67,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 82,
+        "n_train_expanding": 1180,
+        "n_train_after_purge": 1012,
+        "n_purged": 168
+      },
+      {
+        "test_quarter": "2018Q3",
+        "n_test_raw": 168,
+        "n_test_dedup": 123,
+        "n_test_dedup_non_overlapping": 65,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1343,
+        "n_train_after_purge": 1177,
+        "n_purged": 166
+      },
+      {
+        "test_quarter": "2018Q4",
+        "n_test_raw": 170,
+        "n_test_dedup": 122,
+        "n_test_dedup_non_overlapping": 66,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1511,
+        "n_train_after_purge": 1342,
+        "n_purged": 169
+      },
+      {
+        "test_quarter": "2019Q1",
+        "n_test_raw": 175,
+        "n_test_dedup": 149,
+        "n_test_dedup_non_overlapping": 90,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1681,
+        "n_train_after_purge": 1511,
+        "n_purged": 170
+      },
+      {
+        "test_quarter": "2019Q2",
+        "n_test_raw": 167,
+        "n_test_dedup": 119,
+        "n_test_dedup_non_overlapping": 70,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 85,
+        "n_train_expanding": 1856,
+        "n_train_after_purge": 1681,
+        "n_purged": 175
+      },
+      {
+        "test_quarter": "2019Q3",
+        "n_test_raw": 175,
+        "n_test_dedup": 125,
+        "n_test_dedup_non_overlapping": 68,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 88,
+        "n_train_expanding": 2023,
+        "n_train_after_purge": 1854,
+        "n_purged": 169
+      },
+      {
+        "test_quarter": "2019Q4",
+        "n_test_raw": 179,
+        "n_test_dedup": 128,
+        "n_test_dedup_non_overlapping": 78,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 89,
+        "n_train_expanding": 2198,
+        "n_train_after_purge": 2023,
+        "n_purged": 175
+      },
+      {
+        "test_quarter": "2020Q1",
+        "n_test_raw": 180,
+        "n_test_dedup": 152,
+        "n_test_dedup_non_overlapping": 97,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 89,
+        "n_train_expanding": 2377,
+        "n_train_after_purge": 2198,
+        "n_purged": 179
+      },
+      {
+        "test_quarter": "2020Q2",
+        "n_test_raw": 187,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 80,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 89,
+        "n_train_expanding": 2557,
+        "n_train_after_purge": 2377,
+        "n_purged": 180
+      },
+      {
+        "test_quarter": "2020Q3",
+        "n_test_raw": 190,
+        "n_test_dedup": 127,
+        "n_test_dedup_non_overlapping": 78,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 93,
+        "n_train_expanding": 2744,
+        "n_train_after_purge": 2557,
+        "n_purged": 187
+      },
+      {
+        "test_quarter": "2020Q4",
+        "n_test_raw": 193,
+        "n_test_dedup": 129,
+        "n_test_dedup_non_overlapping": 74,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 93,
+        "n_train_expanding": 2934,
+        "n_train_after_purge": 2743,
+        "n_purged": 191
+      },
+      {
+        "test_quarter": "2021Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 161,
+        "n_test_dedup_non_overlapping": 102,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 93,
+        "n_train_expanding": 3127,
+        "n_train_after_purge": 2933,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2021Q2",
+        "n_test_raw": 188,
+        "n_test_dedup": 131,
+        "n_test_dedup_non_overlapping": 81,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 92,
+        "n_train_expanding": 3321,
+        "n_train_after_purge": 3126,
+        "n_purged": 195
+      },
+      {
+        "test_quarter": "2021Q3",
+        "n_test_raw": 188,
+        "n_test_dedup": 125,
+        "n_test_dedup_non_overlapping": 75,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 95,
+        "n_train_expanding": 3509,
+        "n_train_after_purge": 3319,
+        "n_purged": 190
+      },
+      {
+        "test_quarter": "2021Q4",
+        "n_test_raw": 190,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 95,
+        "n_train_expanding": 3697,
+        "n_train_after_purge": 3507,
+        "n_purged": 190
+      },
+      {
+        "test_quarter": "2022Q1",
+        "n_test_raw": 191,
+        "n_test_dedup": 160,
+        "n_test_dedup_non_overlapping": 99,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 95,
+        "n_train_expanding": 3887,
+        "n_train_after_purge": 3695,
+        "n_purged": 192
+      },
+      {
+        "test_quarter": "2022Q2",
+        "n_test_raw": 193,
+        "n_test_dedup": 128,
+        "n_test_dedup_non_overlapping": 79,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 95,
+        "n_train_expanding": 4078,
+        "n_train_after_purge": 3885,
+        "n_purged": 193
+      },
+      {
+        "test_quarter": "2022Q3",
+        "n_test_raw": 197,
+        "n_test_dedup": 134,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4271,
+        "n_train_after_purge": 4078,
+        "n_purged": 193
+      },
+      {
+        "test_quarter": "2022Q4",
+        "n_test_raw": 196,
+        "n_test_dedup": 137,
+        "n_test_dedup_non_overlapping": 80,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4468,
+        "n_train_after_purge": 4271,
+        "n_purged": 197
+      },
+      {
+        "test_quarter": "2023Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 159,
+        "n_test_dedup_non_overlapping": 103,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4664,
+        "n_train_after_purge": 4467,
+        "n_purged": 197
+      },
+      {
+        "test_quarter": "2023Q2",
+        "n_test_raw": 195,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 76,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 97,
+        "n_train_expanding": 4858,
+        "n_train_after_purge": 4664,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2023Q3",
+        "n_test_raw": 191,
+        "n_test_dedup": 132,
+        "n_test_dedup_non_overlapping": 82,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 95,
+        "n_train_expanding": 5053,
+        "n_train_after_purge": 4858,
+        "n_purged": 195
+      },
+      {
+        "test_quarter": "2023Q4",
+        "n_test_raw": 193,
+        "n_test_dedup": 136,
+        "n_test_dedup_non_overlapping": 82,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 95,
+        "n_train_expanding": 5244,
+        "n_train_after_purge": 5052,
+        "n_purged": 192
+      },
+      {
+        "test_quarter": "2024Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 155,
+        "n_test_dedup_non_overlapping": 93,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 95,
+        "n_train_expanding": 5437,
+        "n_train_after_purge": 5243,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2024Q2",
+        "n_test_raw": 190,
+        "n_test_dedup": 127,
+        "n_test_dedup_non_overlapping": 77,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 95,
+        "n_train_expanding": 5631,
+        "n_train_after_purge": 5437,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2024Q3",
+        "n_test_raw": 192,
+        "n_test_dedup": 130,
+        "n_test_dedup_non_overlapping": 74,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 95,
+        "n_train_expanding": 5821,
+        "n_train_after_purge": 5631,
+        "n_purged": 190
+      },
+      {
+        "test_quarter": "2024Q4",
+        "n_test_raw": 198,
+        "n_test_dedup": 136,
+        "n_test_dedup_non_overlapping": 82,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 96,
+        "n_train_expanding": 6013,
+        "n_train_after_purge": 5821,
+        "n_purged": 192
+      },
+      {
+        "test_quarter": "2025Q1",
+        "n_test_raw": 194,
+        "n_test_dedup": 156,
+        "n_test_dedup_non_overlapping": 98,
+        "n_test_dedup_without_embedding": 0,
+        "n_test_ciks": 96,
+        "n_train_expanding": 6211,
+        "n_train_after_purge": 6013,
+        "n_purged": 198
+      },
+      {
+        "test_quarter": "2025Q2",
+        "n_test_raw": 195,
+        "n_test_dedup": 131,
+        "n_test_dedup_non_overlapping": 80,
+        "n_test_dedup_without_embedding": 1,
+        "n_test_ciks": 96,
+        "n_train_expanding": 6405,
+        "n_train_after_purge": 6211,
+        "n_purged": 194
+      },
+      {
+        "test_quarter": "2025Q3",
+        "n_test_raw": 201,
+        "n_test_dedup": 134,
+        "n_test_dedup_non_overlapping": 81,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 99,
+        "n_train_expanding": 6600,
+        "n_train_after_purge": 6405,
+        "n_purged": 195
+      },
+      {
+        "test_quarter": "2025Q4",
+        "n_test_raw": 202,
+        "n_test_dedup": 132,
+        "n_test_dedup_non_overlapping": 83,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 99,
+        "n_train_expanding": 6801,
+        "n_train_after_purge": 6600,
+        "n_purged": 201
+      },
+      {
+        "test_quarter": "2026Q1",
+        "n_test_raw": 200,
+        "n_test_dedup": 155,
+        "n_test_dedup_non_overlapping": 101,
+        "n_test_dedup_without_embedding": 2,
+        "n_test_ciks": 99,
+        "n_train_expanding": 7003,
+        "n_train_after_purge": 6800,
+        "n_purged": 203
+      }
+    ],
+    "source": "backtest_e2.build_folds + dedup_keep_mask_cik on the ratified fold_quarters parsed from data/f5/G3_PREREGISTRATION.md (no ratification, no fit)"
+  },
+  "section_1c_run_time_frame_overlap_and_coverage": {
+    "train_overlap_gld_in": {
+      "n_rows": 7389,
+      "n_ciks": 144,
+      "filing_level_n": 2530,
+      "filing_level_share": 0.3424008661523887,
+      "cik_level_n": 108,
+      "cik_level_share": 0.75
+    },
+    "train_overlap_ex_gld_run_time": {
+      "n_rows": 7381,
+      "n_ciks": 143,
+      "filing_level_n": 2530,
+      "filing_level_share": 0.34277198211624443,
+      "cik_level_n": 108,
+      "cik_level_share": 0.7552447552447552
+    },
+    "train_overlap_note": "the RUN-TIME frame is the GLD-excluded one (decision 2), so the run-time filing-level share is the ex-GLD number; the CIK-level share counts CIKs with at least one filing carrying at least one overlapping chunk, the same rule as the filing-level share. G2 \u00a72.5's 15.85% is a FINE-TUNING-CORPUS figure and is not this quantity.",
+    "confirmatory_column_coverage_gld_in": [
+      {
+        "column": "log_total_assets",
+        "n_present": 7341,
+        "n_missing": 48,
+        "share_present": 0.9935038570848559
+      },
+      {
+        "column": "leverage_liabilities_to_assets",
+        "n_present": 5203,
+        "n_missing": 2186,
+        "share_present": 0.7041548247394775
+      },
+      {
+        "column": "equity_to_assets",
+        "n_present": 7331,
+        "n_missing": 58,
+        "share_present": 0.9921504939775342
+      },
+      {
+        "column": "cash_to_assets",
+        "n_present": 6976,
+        "n_missing": 413,
+        "share_present": 0.944106103667614
+      },
+      {
+        "column": "net_margin",
+        "n_present": 6446,
+        "n_missing": 943,
+        "share_present": 0.8723778589795642
+      },
+      {
+        "column": "operating_margin",
+        "n_present": 4434,
+        "n_missing": 2955,
+        "share_present": 0.6000812017864393
+      },
+      {
+        "column": "operating_cashflow_to_revenue",
+        "n_present": 3126,
+        "n_missing": 4263,
+        "share_present": 0.4230613073487617
+      },
+      {
+        "column": "revenue_yoy_growth",
+        "n_present": 6509,
+        "n_missing": 880,
+        "share_present": 0.8809040465556909
+      },
+      {
+        "column": "net_income_yoy_growth",
+        "n_present": 7304,
+        "n_missing": 85,
+        "share_present": 0.9884964135877656
+      },
+      {
+        "column": "eps_diluted_yoy_growth",
+        "n_present": 7143,
+        "n_missing": 246,
+        "share_present": 0.9667072675598863
+      },
+      {
+        "column": "momentum_126",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "realized_vol_63",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "book_to_market",
+        "n_present": 6214,
+        "n_missing": 1175,
+        "share_present": 0.840979834889701
+      },
+      {
+        "column": "n_text_chunks_attributed",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "share_chunks_risk_factors",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "share_chunks_mda",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "share_chunks_ex99_press_release",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "sentiment_mean_score",
+        "n_present": 7341,
+        "n_missing": 48,
+        "share_present": 0.9935038570848559
+      },
+      {
+        "column": "sentiment_negative_share",
+        "n_present": 7341,
+        "n_missing": 48,
+        "share_present": 0.9935038570848559
+      },
+      {
+        "column": "guidance_signed_mean",
+        "n_present": 2066,
+        "n_missing": 5323,
+        "share_present": 0.27960481797266207
+      },
+      {
+        "column": "guidance_any_present",
+        "n_present": 7389,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "novelty_risk_factors_yoy",
+        "n_present": 2116,
+        "n_missing": 5273,
+        "share_present": 0.28637163350927053
+      },
+      {
+        "column": "novelty_mda_yoy",
+        "n_present": 3442,
+        "n_missing": 3947,
+        "share_present": 0.4658275815401272
+      }
+    ],
+    "confirmatory_column_coverage_ex_gld_run_time": [
+      {
+        "column": "log_total_assets",
+        "n_present": 7333,
+        "n_missing": 48,
+        "share_present": 0.9934968161495732
+      },
+      {
+        "column": "leverage_liabilities_to_assets",
+        "n_present": 5195,
+        "n_missing": 2186,
+        "share_present": 0.7038341688118142
+      },
+      {
+        "column": "equity_to_assets",
+        "n_present": 7331,
+        "n_missing": 50,
+        "share_present": 0.9932258501558054
+      },
+      {
+        "column": "cash_to_assets",
+        "n_present": 6972,
+        "n_missing": 409,
+        "share_present": 0.9445874542744885
+      },
+      {
+        "column": "net_margin",
+        "n_present": 6446,
+        "n_missing": 935,
+        "share_present": 0.8733233979135618
+      },
+      {
+        "column": "operating_margin",
+        "n_present": 4434,
+        "n_missing": 2947,
+        "share_present": 0.6007316081831731
+      },
+      {
+        "column": "operating_cashflow_to_revenue",
+        "n_present": 3126,
+        "n_missing": 4255,
+        "share_present": 0.4235198482590435
+      },
+      {
+        "column": "revenue_yoy_growth",
+        "n_present": 6509,
+        "n_missing": 872,
+        "share_present": 0.881858826717247
+      },
+      {
+        "column": "net_income_yoy_growth",
+        "n_present": 7300,
+        "n_missing": 81,
+        "share_present": 0.9890258772524049
+      },
+      {
+        "column": "eps_diluted_yoy_growth",
+        "n_present": 7143,
+        "n_missing": 238,
+        "share_present": 0.9677550467416339
+      },
+      {
+        "column": "momentum_126",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "realized_vol_63",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "book_to_market",
+        "n_present": 6214,
+        "n_missing": 1167,
+        "share_present": 0.8418913426364991
+      },
+      {
+        "column": "n_text_chunks_attributed",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "share_chunks_risk_factors",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "share_chunks_mda",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "share_chunks_ex99_press_release",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "sentiment_mean_score",
+        "n_present": 7333,
+        "n_missing": 48,
+        "share_present": 0.9934968161495732
+      },
+      {
+        "column": "sentiment_negative_share",
+        "n_present": 7333,
+        "n_missing": 48,
+        "share_present": 0.9934968161495732
+      },
+      {
+        "column": "guidance_signed_mean",
+        "n_present": 2066,
+        "n_missing": 5315,
+        "share_present": 0.27990787156211894
+      },
+      {
+        "column": "guidance_any_present",
+        "n_present": 7381,
+        "n_missing": 0,
+        "share_present": 1.0
+      },
+      {
+        "column": "novelty_risk_factors_yoy",
+        "n_present": 2108,
+        "n_missing": 5273,
+        "share_present": 0.2855981574312424
+      },
+      {
+        "column": "novelty_mda_yoy",
+        "n_present": 3434,
+        "n_missing": 3947,
+        "share_present": 0.46524861129928197
+      }
+    ],
+    "confirmatory_column_coverage_note": "every column of the confirmatory block `text_and_numeric` = columns.numeric + columns.confirmatory_text + columns.family_novelty, non-null share on the frame named in the key. XGBoost routes the missing ones; the shares are stated so the document cannot imply a column is fully populated.",
+    "families_vs_join_set_differences": {
+      "n_families_rows": 7638,
+      "n_join_rows": 7618,
+      "n_in_families_not_in_join": 65,
+      "n_in_join_not_in_families": 45,
+      "n_modeling_rows": 7389,
+      "n_in_families_not_in_modeling_frame": 293,
+      "n_in_modeling_frame_not_in_families": 44,
+      "note": "BOTH directions, on (cik, accession_number) keys (red-team NF-10). The cardinality difference (n_families - n_join) nets these against each other and is not a count of anything."
+    },
+    "embedding_coverage": {
+      "n_emb_missing_on_join": 45,
+      "n_emb_missing_on_modeling_frame": 44,
+      "note": "red-team NF-8: the join count (before the 229 null targets drop) and the modeling-frame count are different numbers; the scorecard page states how many published calls sit on rows with no embedding.",
+      "source": "backtest_e2.load_analysis_frame diagnostics"
+    },
+    "gld_exclusion": {
+      "gld_exclude_from_analysis": true,
+      "n_gld_rows_in_frame": 8,
+      "n_gld_ciks_in_frame": 1,
+      "n_gld_rows_excluded": 8,
+      "gld_note": "decision 2 (owner 2026-09-11): GLD rows are removed from the analysis frame before folds, dedup and every fit, in every arm (primary, secondary, no-same-day, rolling, form ablation, scorecard)."
+    }
+  },
   "section_2_mde_decision_15_KC3": {
     "algebra": {
       "step_1": "sigma_samp(fold j) = sigma_boot * sqrt(n_dd_reference / n_dd(j))",
@@ -5751,7 +6920,15 @@
           "n": 49,
           "point": 0.5102
         },
-        "teacher_negative_recall": 0.487,
+        "labeler_negative_recall_v12": {
+          "available": true,
+          "recall": 0.529,
+          "tp": 64,
+          "support": 121,
+          "run_dir": "finetune/runs/2026-08-28-v12-eval-epoch2",
+          "source": "finetune/runs/2026-08-28-v12-eval-epoch2/metrics.json (headline.sentiment.per_class.NEGATIVE), read via backtest_e2.labeler_negative_recall -- never hand-typed",
+          "not_this_number": "0.487 (55/113) is the v1.1 adapter's eval (finetune/runs/2026-08-22-eval-epoch2): a DIFFERENT model from the one that labeled this corpus, and not a 'teacher' figure either."
+        },
         "epistemics": "HANDOFF \u00a73: agreement over model-adjudicated fields is MODEL CONSENSUS between a student and an adjudicating model -- not human validation of ground truth.",
         "dv_caveat": "prices are split-adjusted only, so the DV is not dividend-immune; an ex-dividend session inside [+1, +5] inflates it.",
         "source": "data/f4/g2/G2_FINAL_REPORT.md \u00a70 + the owner-ratified estimator table"
@@ -6077,15 +7254,16 @@
   },
   "section_9_what_the_census_cannot_say": "This census contains no information coefficient, no IC delta, no per-fold delta, no fold-delta autocorrelation, no block-bootstrap SE, and therefore no selected equivalence margin. Every SE and MDE in \u00a72 and \u00a73 is an EX-ANTE PROJECTION built from E1's within-fold bootstrap SD and E1's implied regime floor, rescaled to E2's measured per-fold n_dd; the real SE is a block bootstrap over E2's own fold deltas and is measured for the first time at Step 4, inside the runner, before any delta is printed. The ladder rows in \u00a73 say what the design could plausibly deliver, not what Delta will be -- selecting Delta from these projections, or from any realized SE, would be the post-hoc design choice decision 15 exists to forbid. The census also cannot say whether the rank-spec variance floor is real (unresolved at 6 folds, chi-square p = 0.16/0.13 in both directions), cannot say whether fold non-independence exceeds rho_f = 0.3, and says nothing about whether any text feature carries information about returns.",
   "runtimes_seconds": {
-    "read_existing_census_artifacts": 0.0002608299255371094,
-    "load_analysis_frame": 0.08721733093261719,
-    "price_censoring_census": 0.2423999309539795,
-    "fold_options": 0.003246784210205078,
-    "mde_and_ladder": 0.0013170242309570312,
-    "frame_decomposition": 0.05406594276428223,
-    "instrument_census": 0.039940834045410156,
-    "icc_census": 0.4416828155517578,
-    "heads_and_families_restatement": 3.62396240234375e-05,
-    "total": 1.0603652000427246
+    "read_existing_census_artifacts": 0.0005240440368652344,
+    "load_analysis_frame": 0.08644604682922363,
+    "price_censoring_census": 0.21680927276611328,
+    "fold_options": 0.002901792526245117,
+    "mde_and_ladder": 0.0008821487426757812,
+    "ratified_fold_census": 0.4744138717651367,
+    "frame_decomposition": 0.03300809860229492,
+    "instrument_census": 0.02420496940612793,
+    "icc_census": 0.4760289192199707,
+    "heads_and_families_restatement": 0.0002980232238769531,
+    "total": 1.5123400688171387
   }
 }
