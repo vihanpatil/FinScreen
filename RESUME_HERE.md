@@ -60,7 +60,15 @@ feature tables; scorecard page defects). **Round 2 IN FLIGHT (launched 2026-09-1
 | B1: decision 2 benchmark half (`target_e2.py` excludes GLD from the peer average), decision 20 (`features_e2.py` same-CIK attribution + `cross_cik_share`), decision 21 (`numeric_features_e2.py` duration-matched `operating_cashflow_to_revenue`); rebuild target → text features → numeric; manifests + tests | quant-modeler Opus | manifests carry new shas + a "rebuilt 2026-09-11 (G3 rulings)" note; STEP1A status files updated | relaunch "check each manifest's note before rebuilding" |
 | B2: decisions 23a/23b/23d + seq novelty in `text_families_e2.py` (YoY same-form prior, min 50 shingles, 8K_BODY out of the embedding, `novelty_*_seq` exploratory); re-embed (~25 min, background); manifest + tests | quant-modeler Opus | `data/f5/text_families_e2.parquet` rebuilt, manifest note; columns `novelty_risk_factors_seq`, `novelty_mda_seq` present | relaunch "check the manifest note; re-embed only if 8K_BODY is still in it" |
 | C: pre-registration + rulings-file fixes B1 M6 M7 M8 M9 S1 S2 S3 S4 N1 N5 N6 N7 (⚠ marks, §4 rows, pinning text, header wording); NOT M2 (measured cells refresh AFTER B1/B2) | general-purpose Opus | §14 rows and 23(b)–(h) marked ⚠; rulings §4 has rows for §14, 23(b)–(h), 13, 17, 22, "extend the corpus or 33 folds"; block has the new keys | relaunch "diff against the REDTEAM Disposition; finish only what is missing" |
-**Then (main session):** re-run both censuses → refresh every measured-population cell (M2) → second red-team pass on the diffs → full suite → commit → ask the owner for "ratify" (showing the exact two lines that change at the pin) → pin sha → run heads → scorecard. Never pin or run on a model reading.
+**Round 2 A/B1/B2/C DONE 2026-09-11 evening** (commits 2019acc, 1387113; suite 1,811 green; three censuses re-run;
+`python3 backtest_e2.py` exits 2; no G3_RATIFIED.json). Rebuild facts: frame 7,618 joined / 7,389 modeling / 144 CIKs
+(was 7,634 / 7,405); GLD 8 modeling rows excluded at run time (sensitivity arm adds them back); `n_emb_missing` 45;
+OCF/revenue coverage 0.84 → 0.42 under duration matching; novelty prior gap median 91 → 364 d.
+**IN FLIGHT:** measured-cell refresh of `G3_PREREGISTRATION.md` + rulings file (general-purpose Opus; expected: every
+stale count replaced with "(was X)" audit notes; if missing on resume, relaunch "diff the document's numbers against
+census_e2.json / census_head1.json / the four manifests").
+**Then (main session):** second red-team pass on the diffs → commit → ask the owner for "ratify" (showing the exact two
+lines that change at the pin) → pin sha → run heads → scorecard. Never pin or run on a model reading.
 
 **PREVIOUS IN FLIGHT: nothing (as of 2026-09-11 ~12:15 PT). The table below is that day's record; every row is DONE.**
 | item | launched as | expected output | if missing on resume |

@@ -64,7 +64,7 @@ was that 8K_BODY. Excluding the register therefore removes those filings from
 the artifact entirely: **7,723 → 7,638 rows**. `backtest_e2.join_frames`
 joins this table LEFT, so those filings keep their row in the analysis frame
 and get NaN `emb` + NaN novelty: **`n_emb_missing` on the modeling frame goes
-0 → 44** (44 of 7,389 rows, 0.60%, measured against the `target_e2` /
+0 → 45** (45 of 7,389 rows, 0.61% on the final census of 2026-09-11; 44 was measured mid-rebuild against the `target_e2` /
 `text_features_e2` / `numeric_features_e2` artifacts as they stood at
 2026-09-11 14:30 — other rebuilds were in flight, so the main session should
 re-measure at census time). The census cell

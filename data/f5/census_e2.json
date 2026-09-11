@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T21:53:48+00:00",
+  "generated_utc": "2026-09-11T22:12:41+00:00",
   "module": "data/f5/census_e2.py",
   "step": "F5_PLAN.md \u00a72 Step 2 -- pre-run census",
   "network_calls": 0,
@@ -26,7 +26,7 @@
     "data/filings_metadata_e2.db": "61dcefaae43ce05c3edbc0a3106339b34ef2f6c6e1f97ac6e7d6d107c29734a7",
     "data/prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
     "data/f4/labels_e2_v1.parquet": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
-    "data/f5/census_e2.py": "09b2131d0181465399871de9a000f8ad8e317658619dda20092a60615412bb14"
+    "data/f5/census_e2.py": "4d693e66579fe2d9f304b75b1a6c947b1160305376e3c4bc4dbb9558724dd50e"
   },
   "section_1_fold_options_decision_4": {
     "default_33": {
@@ -4739,7 +4739,7 @@
         "8-K": 9093
       },
       "n_without_numeric": 0,
-      "note": "numeric_features_e2 covers ALL 16,859 in-membership target rows; every join loss is a TEXT loss. 8-K losses are non-earnings-bearing 8-Ks (F3/F4 extracted text only for earnings-bearing 8-Ks); the 145 periodic losses are the never-extracted set."
+      "note": "numeric_features_e2 covers ALL 16,859 in-membership target rows; every join loss is a TEXT loss. 8-K losses are non-earnings-bearing 8-Ks (F3/F4 extracted text only for earnings-bearing 8-Ks); the periodic losses counted here are the never-extracted set (145 before the 2026-09-11 decision-20 rebuild; the measured count is in never_extracted_periodic)."
     },
     "never_extracted_periodic": {
       "n_filings": 148,
@@ -5145,7 +5145,7 @@
       "filing_level_n_modeling_rows": 2530,
       "filing_level_share": 0.3424008661523887,
       "filing_level_base": 7389,
-      "different_questions": "4.53% is the CHUNK-level accession-channel share; 80.2% is the share of MODELING ROWS containing at least one such chunk. Never quote one as the other. The accession channel is a LOWER bound on labeler exposure (CIK-level exposure is 15.85%).",
+      "different_questions": "4.53% is the CHUNK-level accession-channel share; the filing-level figure beside it is the share of MODELING ROWS containing at least one such chunk. Never quote one as the other. The accession channel is a LOWER bound on labeler exposure (CIK-level exposure is 15.85%).",
       "arm_as_built": "an EVALUATION-side restriction: the fit is unchanged and the scored set shrinks to 4859 rows (F5_PLAN \u00a73 decision 3's overlap-arm note).",
       "source": "data/f5/status/STEP1A_features_e2.md + STEP1B_backtest_e2.md \u00a72 / \u00a74 item 2"
     },
@@ -6077,15 +6077,15 @@
   },
   "section_9_what_the_census_cannot_say": "This census contains no information coefficient, no IC delta, no per-fold delta, no fold-delta autocorrelation, no block-bootstrap SE, and therefore no selected equivalence margin. Every SE and MDE in \u00a72 and \u00a73 is an EX-ANTE PROJECTION built from E1's within-fold bootstrap SD and E1's implied regime floor, rescaled to E2's measured per-fold n_dd; the real SE is a block bootstrap over E2's own fold deltas and is measured for the first time at Step 4, inside the runner, before any delta is printed. The ladder rows in \u00a73 say what the design could plausibly deliver, not what Delta will be -- selecting Delta from these projections, or from any realized SE, would be the post-hoc design choice decision 15 exists to forbid. The census also cannot say whether the rank-spec variance floor is real (unresolved at 6 folds, chi-square p = 0.16/0.13 in both directions), cannot say whether fold non-independence exceeds rho_f = 0.3, and says nothing about whether any text feature carries information about returns.",
   "runtimes_seconds": {
-    "read_existing_census_artifacts": 0.0002491474151611328,
-    "load_analysis_frame": 0.08633995056152344,
-    "price_censoring_census": 0.24083781242370605,
-    "fold_options": 0.0030121803283691406,
-    "mde_and_ladder": 0.0009081363677978516,
-    "frame_decomposition": 0.04802989959716797,
-    "instrument_census": 0.027010202407836914,
-    "icc_census": 0.4773728847503662,
-    "heads_and_families_restatement": 4.00543212890625e-05,
-    "total": 1.0922188758850098
+    "read_existing_census_artifacts": 0.0002608299255371094,
+    "load_analysis_frame": 0.08721733093261719,
+    "price_censoring_census": 0.2423999309539795,
+    "fold_options": 0.003246784210205078,
+    "mde_and_ladder": 0.0013170242309570312,
+    "frame_decomposition": 0.05406594276428223,
+    "instrument_census": 0.039940834045410156,
+    "icc_census": 0.4416828155517578,
+    "heads_and_families_restatement": 3.62396240234375e-05,
+    "total": 1.0603652000427246
   }
 }

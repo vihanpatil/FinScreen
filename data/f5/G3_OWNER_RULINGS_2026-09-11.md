@@ -88,7 +88,10 @@ and the owner has said they would rather not pay it. No further reading needed.
 the owner's priority attaches to the first:
 
 1. **The historical test** is head 1's walk-forward under G3: 33 scored quarters
-   (2018Q1–2026Q1), 144 companies, real filings and real prices, every model fitted only
+   (2018Q1–2026Q1), **144 companies in the analysis frame and 140 that actually appear
+   inside the 33 folds** (**143 / 139** once decision 2's `gld.exclude_from_analysis`
+   removes the gold ETF — re-counted 2026-09-11 on the rebuilt frame), real filings and
+   real prices, every model fitted only
    on data public before the quarter it is scored on. **Nothing in it is synthetic.**
    One escorting clause, so the word carries its true weight: **the filings and the
    prices are real; the text features are model-produced labels with disclosed error**
@@ -206,7 +209,13 @@ reports a **per-company, per-quarter historical scorecard**, pre-registered in a
 §14 with this rule, pinned before the sha:
 
 - rows: the primary arm's deduplicated test rows of every fold (one filing per company
-  per 5-day gap), exactly the rows the primary estimand uses;
+  per 5-day gap), exactly the rows the primary estimand uses — **measured 2026-09-11 on
+  the rebuilt frame: Σ n_test_dedup over the 33 ratified fold quarters = 4,487 rows,
+  4,481 once decision 2's GLD exclusion is applied, 119–161 per quarter (118–161 after
+  the exclusion), mean 135.97; 140 distinct companies, 139 after the exclusion.** The
+  earlier package said 5,383 rows / 161–202 a quarter / 144 companies; those were
+  whole-frame dedup over all 40 candidate quarters and raw in-fold counts, not the
+  scored population (red-team M2);
 - "the model" = the confirmatory `text_and_numeric` block's out-of-fold prediction;
   two comparators are printed beside it on the same rows: `numeric_only` (numbers,
   no text) and `size_only` (a model fitted on `log_total_assets` alone — the
@@ -298,7 +307,7 @@ with every result. **⚠ INTERPRETED.**
 Reading — **⚠ INTERPRETED**: Yahoo's chart endpoint is keyless and free, so the condition
 is satisfied: **ratify** the price series already stored from it (snapshot 2026-08-24,
 `data/prices_e2.parquet`, $0) for the E2 run, with the split-adjusted-only caveat and
-the 31-of-244 no-price gap (measured: `target_e2_manifest.json` `n_universe_member_ciks_absent_from_price_matrix`; an earlier council summary said 32) disclosed on every result. **No new fetch is made from
+the 31-of-244 no-price gap (measured: `target_e2_manifest.json` `n_universe_member_ciks_absent_from_price_matrix`; an earlier council summary said 32) disclosed on every result. **Re-measured 2026-09-11 on the rebuilt target manifest (`ef6befb2…`): still 31 of 244, 213 priced CIKs, 3,179 sessions — decision 2's GLD change moved none of them.** **No new fetch is made from
 Yahoo** (its robots.txt disallows automated access; the stored snapshot is what E2
 uses). Prices for anything after the snapshot, and every product use, come from the
 decision-A feed.
@@ -346,7 +355,7 @@ is a description of what happened, not an inference.
 
 Reading: default — keep the 200-day rule and disclose that accepted facts now reach it.
 The period-end defect the owner refers to **is fixed** (2026-09-11: duration-aware
-resolver in `numeric_features_e2.py`; table rebuilt, sha `07971505…`; censuses
+resolver in `numeric_features_e2.py`; table rebuilt, sha `07971505…`, superseded the same evening by the decision-21 rebuild `01fcaf4b…`; censuses
 identical; red-teamed). Both parts recorded.
 
 **23 — The two new text features.**
@@ -369,7 +378,7 @@ write-up, which is what "if not accurate then no" asks for.
 
 ## 3. What the rulings change in code and documents (the build spec)
 
-**0. Pre-run rebuilds (rebuild-then-ratify) — these run BEFORE the sha is pinned.**
+**0. Pre-run rebuilds (rebuild-then-ratify) — these run BEFORE the sha is pinned. DONE 2026-09-11.**
 Six ruled rules were not in the artifacts the runner reads, so ratifying first and
 running second would have run a study that violates six of its own ratified rules
 (red-team B2, 2026-09-11). The build list: decision **2** both halves (GLD out of the
@@ -377,8 +386,22 @@ peer average in the target table **and** out of the analysis frame in every arm)
 **20** (same-CIK attribution), **21** (duration-matched cash-flow ratio), **23a**
 (year-over-year same-form novelty prior), **23b** (min-shingle 50), **23d** (8K_BODY
 out of the embeddings), plus the **exploratory sequential-novelty feature** of the
-decision-23 reading. The censuses are re-run afterwards and every measured-population
-cell of `G3_PREREGISTRATION.md` is refreshed from the rebuilt artifacts. **The sha is
+decision-23 reading.
+
+**Status, 2026-09-11 — all executed, all on disk:**
+
+| rebuild | artifact | sha256 | module sha256 |
+|---|---|---|---|
+| decision 2, benchmark half | `data/f5/target_e2.parquet` | `ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac` | `0675ae34cb015718d16ba017c744b33b295e678e824f686a49205a4a5cba7cd5` |
+| decision 2, analysis half | `backtest_e2.exclude_gld_rows` + `gld.*` in the params block | (code, not an artifact) | — |
+| decision 20 | `data/f5/text_features_e2.parquet` | `143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88` | `8e8b749a063d3d9986c3777d9e9307319d573375e191fee386c2570908888d63` |
+| decision 21 | `data/f5/numeric_features_e2.parquet` | `01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b` | `0334c23cdcf1018b197145d77bcd9e5877e914453da549d9e5b9c03ea0326731` |
+| decisions 23a / 23b / 23d + `_seq` | `data/f5/text_families_e2.parquet` | `3cee65649b7084298297f2068253fd0df670dc84f8b496ab4e0209a75de8203e` | `0c450a387c5e0c9c4cca7e8f3b7fd0c74a2a2851e74fc01b33bce1a138b59ce8` |
+
+**The three censuses were re-run against those artifacts on 2026-09-11** (`census_e2.json`,
+`census_head1.json`, `census_heads.json`) **and every measured-population cell of
+`G3_PREREGISTRATION.md` was refreshed from them**, each moved number carrying its old
+value in parentheses as "(2026-09-10 build)" so the diff is auditable. **The sha is
 pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
 text, and is shown the exact two lines that change at the pin** (the header STATUS line
 and the parameter block's `draft_status` — nothing else differs between the text the
@@ -431,7 +454,7 @@ owner reads and the text whose sha256 is pinned).
 
 ## 4. The owner's confirmation list (one word ratifies all of them)
 
-**Pre-run rebuilds (rebuild-then-ratify) — these run BEFORE the sha is pinned.**
+**Pre-run rebuilds (rebuild-then-ratify) — these run BEFORE the sha is pinned. DONE 2026-09-11; nothing here is still outstanding.**
 Six ruled rules were not in the artifacts the runner reads, so ratifying first and
 running second would have run a study that violates six of its own ratified rules
 (red-team B2, 2026-09-11). The build list: decision **2** both halves (GLD out of the
@@ -439,8 +462,17 @@ peer average in the target table **and** out of the analysis frame in every arm)
 **20** (same-CIK attribution), **21** (duration-matched cash-flow ratio), **23a**
 (year-over-year same-form novelty prior), **23b** (min-shingle 50), **23d** (8K_BODY
 out of the embeddings), plus the **exploratory sequential-novelty feature** of the
-decision-23 reading. The censuses are re-run afterwards and every measured-population
-cell of `G3_PREREGISTRATION.md` is refreshed from the rebuilt artifacts. **The sha is
+decision-23 reading. **All were executed on 2026-09-11** (shas in §3 item 0), **the
+three censuses were re-run against the rebuilt artifacts on 2026-09-11**, and **every
+measured-population cell of `G3_PREREGISTRATION.md` was refreshed from them** — each
+moved number carries its old value in parentheses as "(2026-09-10 build)". **What the
+refresh changed that the owner should see before ratifying:** the modeling frame is
+**7,389** rows (was 7,405) and the run-time analysis frame **7,381 / 143 CIKs** after
+the GLD exclusion; the scorecard scores **4,481** rows over the 33 folds (the package
+had said 5,383); the filing-level train-overlap disclosure falls from **80.19% to
+34.24%** because decision 20 removed the foreign-company chunks that carried it; and
+`operating_cashflow_to_revenue` coverage falls from **0.8358 to 0.4204** because
+decision 21 NaNs the 7,603 duration-mismatched rows. **The sha is
 pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
 text, and is shown the exact two lines that change at the pin** (the header STATUS line
 and the parameter block's `draft_status` — nothing else differs between the text the

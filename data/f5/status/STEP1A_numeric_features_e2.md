@@ -561,7 +561,7 @@ Per-row reasons (all 18,300 rows carry one; the counts sum to 18,300):
 | `no_period_for_numerator` (cash flow) | 1,047 |
 | `no_period_for_either_flow` | 296 |
 
-The 4,088 `no_period_*` rows were **already** NaN under the ported definition —
+The 3,004 `no_period_*` rows (1,661 + 1,047 + 296 per the manifest's reason counts; an earlier draft of this line said 4,088) were **already** NaN under the ported definition —
 they are labelled, not newly lost. `value_unavailable:*` never fired: every
 duration-matched pair also had a finite value.
 

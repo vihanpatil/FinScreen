@@ -441,7 +441,7 @@ def frame_decomposition(frame: pd.DataFrame, diag: dict) -> dict:
             "n_without_numeric": int((~im.has_num).sum()),
             "note": "numeric_features_e2 covers ALL 16,859 in-membership target rows; every join loss "
                     "is a TEXT loss. 8-K losses are non-earnings-bearing 8-Ks (F3/F4 extracted text "
-                    "only for earnings-bearing 8-Ks); the 145 periodic losses are the never-extracted set.",
+                    "only for earnings-bearing 8-Ks); the periodic losses counted here are the never-extracted set (145 before the 2026-09-11 decision-20 rebuild; the measured count is in never_extracted_periodic).",
         },
         "never_extracted_periodic": {
             "n_filings": int(len(per)),
@@ -528,7 +528,7 @@ def instrument_census(frame: pd.DataFrame) -> dict:
             "filing_level_n_modeling_rows": int((ov > 0).sum()),
             "filing_level_share": float((ov > 0).mean()),
             "filing_level_base": int(len(frame)),
-            "different_questions": "4.53% is the CHUNK-level accession-channel share; 80.2% is the share "
+            "different_questions": "4.53% is the CHUNK-level accession-channel share; the filing-level figure beside it is the share "
                                   "of MODELING ROWS containing at least one such chunk. Never quote one "
                                   "as the other. The accession channel is a LOWER bound on labeler "
                                   "exposure (CIK-level exposure is 15.85%).",
