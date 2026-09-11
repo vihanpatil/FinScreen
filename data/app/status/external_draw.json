@@ -1,0 +1,255 @@
+{
+  "seed": 20260911,
+  "generator": "numpy.random.default_rng(seed).permutation over the ticker-sorted candidate list",
+  "source": "SEC company_tickers.json via edgar_client.get_company_tickers",
+  "n_in_ticker_file": 10407,
+  "n_research_universe_ciks_excluded": 244,
+  "n_candidates": 10062,
+  "eligibility": "in SEC company_tickers.json (exchange-listed, ticker-bearing); NOT one of the 244 research-universe CIKs; at least one 10-K filed in the last 730 days (this is what excludes funds, trusts and foreign private issuers, which file N-CSR / 20-F and never a 10-K).",
+  "n_examined": 20,
+  "examined": [
+    {
+      "ticker": "SIRI",
+      "cik": 908937,
+      "name": "SIRIUS XM HOLDINGS INC.",
+      "n_filings_seen": 1008,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "HWLDF",
+      "cik": 1483994,
+      "name": "H World Group Ltd",
+      "n_filings_seen": 427,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "NTB",
+      "cik": 1653242,
+      "name": "Bank of N.T. Butterfield & Son Ltd",
+      "n_filings_seen": 366,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "CBKM",
+      "cik": 1006830,
+      "name": "CONSUMERS BANCORP INC /OH/",
+      "n_filings_seen": 1005,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "TGLS",
+      "cik": 1534675,
+      "name": "Tecnoglass Holdings Inc.",
+      "n_filings_seen": 540,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "WIA",
+      "cik": 1254370,
+      "name": "WESTERN ASSET INFLATION-LINKED INCOME FUND",
+      "n_filings_seen": 578,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "CARG",
+      "cik": 1494259,
+      "name": "CarGurus, Inc.",
+      "n_filings_seen": 1001,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "BNR",
+      "cik": 1792267,
+      "name": "Burning Rock Biotech Ltd",
+      "n_filings_seen": 169,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "RNGE",
+      "cik": 1438943,
+      "name": "RANGE IMPACT, INC.",
+      "n_filings_seen": 404,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "DLXY",
+      "cik": 2025218,
+      "name": "Delixy Holdings Ltd",
+      "n_filings_seen": 59,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "PTHRF",
+      "cik": 1621910,
+      "name": "Pantheon Resources plc",
+      "n_filings_seen": 9,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "AETN",
+      "cik": 764630,
+      "name": "AETERNUM HEALTH, INC.",
+      "n_filings_seen": 221,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "STC",
+      "cik": 94344,
+      "name": "STEWART INFORMATION SERVICES CORP",
+      "n_filings_seen": 1000,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "DIDIY",
+      "cik": 1764757,
+      "name": "DiDi Global Inc.",
+      "n_filings_seen": 80,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "GBAB",
+      "cik": 1495825,
+      "name": "Guggenheim Taxable Municipal Bond & Investment Grade Debt Trust",
+      "n_filings_seen": 330,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "YSGL",
+      "cik": 2071489,
+      "name": "Yellowstone Group Ltd.",
+      "n_filings_seen": 13,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "EIIA",
+      "cik": 1896036,
+      "name": "Eagle Point Institutional Income Fund",
+      "n_filings_seen": 154,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "REAL",
+      "cik": 1573221,
+      "name": "TheRealReal, Inc.",
+      "n_filings_seen": 689,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "BOSC",
+      "cik": 1005516,
+      "name": "BOS BETTER ONLINE SOLUTIONS LTD",
+      "n_filings_seen": 563,
+      "accepted": false,
+      "reason": "no 10-K filed since 2024-09-11"
+    },
+    {
+      "ticker": "ODYS",
+      "cik": 1577445,
+      "name": "Odysight.ai Inc.",
+      "n_filings_seen": 319,
+      "accepted": true,
+      "reason": ""
+    }
+  ],
+  "drawn": [
+    {
+      "ticker": "SIRI",
+      "cik": 908937,
+      "name": "SIRIUS XM HOLDINGS INC.",
+      "n_filings_seen": 1008,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "CBKM",
+      "cik": 1006830,
+      "name": "CONSUMERS BANCORP INC /OH/",
+      "n_filings_seen": 1005,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "TGLS",
+      "cik": 1534675,
+      "name": "Tecnoglass Holdings Inc.",
+      "n_filings_seen": 540,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "CARG",
+      "cik": 1494259,
+      "name": "CarGurus, Inc.",
+      "n_filings_seen": 1001,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "RNGE",
+      "cik": 1438943,
+      "name": "RANGE IMPACT, INC.",
+      "n_filings_seen": 404,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "AETN",
+      "cik": 764630,
+      "name": "AETERNUM HEALTH, INC.",
+      "n_filings_seen": 221,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "STC",
+      "cik": 94344,
+      "name": "STEWART INFORMATION SERVICES CORP",
+      "n_filings_seen": 1000,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "YSGL",
+      "cik": 2071489,
+      "name": "Yellowstone Group Ltd.",
+      "n_filings_seen": 13,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "REAL",
+      "cik": 1573221,
+      "name": "TheRealReal, Inc.",
+      "n_filings_seen": 689,
+      "accepted": true,
+      "reason": ""
+    },
+    {
+      "ticker": "ODYS",
+      "cik": 1577445,
+      "name": "Odysight.ai Inc.",
+      "n_filings_seen": 319,
+      "accepted": true,
+      "reason": ""
+    }
+  ],
+  "drawn_utc": "2026-09-11T09:49:39Z"
+}
