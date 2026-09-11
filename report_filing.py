@@ -67,6 +67,21 @@ function is reachable from any render path (an AST call-graph test), and no
 outcome artifact is opened at render time (a file-open guard).
 
 -----------------------------------------------------------------------------
+`--store` (L2.2): the same report, a company the research corpus never covered
+-----------------------------------------------------------------------------
+`ingest_one.py` and `label_filing.py` write one company's chunks, labels,
+sections and filing metadata into data/app/companies/<cik>/ in the SAME four
+schemas this module reads. `--store` points the five readers at that directory
+(`chunks_path`, `labels_path`, `sections_path`, `metadata_db_path`,
+`cache_path`) and changes nothing else -- the containment filter, the section
+mask, the diff, the fundamentals resolution and every refusal are the same
+code on the same shapes. One sentence is ADDED to the disclosure header,
+`OUTSIDE_UNIVERSE_LINE`, because one thing genuinely is different: the labels
+are from a company the 244-company universe never covered and the G2
+spot-check never looked at. With no `--store`, every accessor returns the F4
+constant it always did.
+
+-----------------------------------------------------------------------------
 Determinism
 -----------------------------------------------------------------------------
 The rendered HTML carries NO wall-clock timestamp, so the same inputs produce a
@@ -118,6 +133,79 @@ TICKER_MAP_COLUMNS = ["cik", "name", "stratum", "chosen_ticker"]
 
 CACHE_VERSION = "app-index-v2"
 CHUNK_INDEX_CACHE = CACHE_DIR / "chunk_index_v1.parquet"
+
+# ---------------------------------------------------------------------------
+# L2.2 -- a per-company STORE as an alternative source of the same four tables
+# ---------------------------------------------------------------------------
+# `ingest_one.py` + `label_filing.py` write one company's chunks, labels,
+# sections and filing metadata into data/app/companies/<cik>/ using the SAME
+# four schemas this module already reads. `--store` swaps where the rows come
+# from and nothing else: the containment filter, the section mask, the diff,
+# the fundamentals resolution, every refusal and every disclosure number are
+# the F4 path's, unchanged. One sentence is ADDED to the disclosure header,
+# because one thing really is different -- the rows are from a company the
+# research universe never covered and the spot-check never looked at.
+OUTSIDE_UNIVERSE_LINE = (
+    "This company is outside the 244-company research universe; its labels have "
+    "no spot-check and carry the same model-consensus error at best")
+
+STORE_TABLES = ("chunks.parquet", "labels.parquet", "sections.parquet",
+                "metadata.db")
+
+
+class CompanyStore:
+    """The four store tables, located and checked for existence."""
+
+    def __init__(self, root):
+        self.root = Path(root)
+        self.chunks = self.root / "chunks.parquet"
+        self.labels = self.root / "labels.parquet"
+        self.sections = self.root / "sections.parquet"
+        self.metadata_db = self.root / "metadata.db"
+        self.cache = self.root / "chunk_index.parquet"
+        self.manifest = self.root / "manifest.json"
+        missing = [name for name in STORE_TABLES if not (self.root / name).exists()]
+        if missing:
+            raise SystemExit(
+                f"{self.root} is not a complete company store; missing "
+                f"{', '.join(missing)}. Run ingest_one.py, then label_filing.py.")
+
+    def identity(self) -> dict:
+        if not self.manifest.exists():
+            return {}
+        return json.loads(self.manifest.read_text())
+
+
+# The one piece of module state `--store` introduces. None = the F4 corpus, and
+# every accessor below returns the F4 constant unchanged in that case, so the
+# research path cannot be altered by a store that is not loaded.
+ACTIVE_STORE: Optional[CompanyStore] = None
+
+
+def use_store(root) -> Optional[CompanyStore]:
+    global ACTIVE_STORE
+    ACTIVE_STORE = CompanyStore(root) if root is not None else None
+    return ACTIVE_STORE
+
+
+def chunks_path() -> Path:
+    return ACTIVE_STORE.chunks if ACTIVE_STORE else CHUNKS_PATH
+
+
+def labels_path() -> Path:
+    return ACTIVE_STORE.labels if ACTIVE_STORE else LABELS_PATH
+
+
+def sections_path() -> Path:
+    return ACTIVE_STORE.sections if ACTIVE_STORE else SECTIONS_PATH
+
+
+def metadata_db_path() -> Path:
+    return ACTIVE_STORE.metadata_db if ACTIVE_STORE else METADATA_DB
+
+
+def cache_path() -> Path:
+    return ACTIVE_STORE.cache if ACTIVE_STORE else CHUNK_INDEX_CACHE
 
 # ---------------------------------------------------------------------------
 # Disclosure sources. Every number in the mandatory header is read from one of
@@ -391,6 +479,22 @@ def _cache_metadata(shas: dict) -> dict:
     }
 
 
+def input_shas(assertions: list[dict]) -> dict:
+    """The sha set stamped into the cache, so a stale cache is detected.
+
+    On the F4 corpus this is `features_e2.assert_input_shas` -- the project's
+    own gate, called and not reimplemented, which also asserts the campaign
+    manifest is COMPLETE and carries all 317,081 rows. A company store has no
+    campaign manifest to assert against (it is one company, ingested on
+    demand), so its two tables are hashed directly; the stale-cache detection
+    is the same comparison either way.
+    """
+    if ACTIVE_STORE is None:
+        return FE.assert_input_shas(assertions)
+    return {str(path): _sha256(path)
+            for path in (ACTIVE_STORE.chunks, ACTIVE_STORE.labels)}
+
+
 def build_cache(verbose: bool = True) -> pd.DataFrame:
     """One-time index over the chunk + label tables (no passage text).
 
@@ -401,10 +505,10 @@ def build_cache(verbose: bool = True) -> pd.DataFrame:
     comparison rather than by mtime.
     """
     assertions: list[dict] = []
-    shas = FE.assert_input_shas(assertions)
+    shas = input_shas(assertions)
 
-    chunks = pd.read_parquet(CHUNKS_PATH, columns=CHUNK_COLUMNS)
-    labels = pd.read_parquet(LABELS_PATH, columns=LABEL_COLUMNS)
+    chunks = pd.read_parquet(chunks_path(), columns=CHUNK_COLUMNS)
+    labels = pd.read_parquet(labels_path(), columns=LABEL_COLUMNS)
     if not (chunks.chunk_id.values == labels.chunk_id.values).all():
         raise RuntimeError("chunk_id order differs between the two F4 parquets")
 
@@ -429,28 +533,30 @@ def build_cache(verbose: bool = True) -> pd.DataFrame:
     chunks["train_overlap_accession"] = (
         chunks.train_overlap_home | chunks.train_overlap_source)
 
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    out = cache_path()
+    out.parent.mkdir(parents=True, exist_ok=True)
     table = pa.Table.from_pandas(chunks, preserve_index=False)
     table = table.replace_schema_metadata(_cache_metadata(shas))
-    pq.write_table(table, CHUNK_INDEX_CACHE, compression="zstd")
+    pq.write_table(table, out, compression="zstd")
     if verbose:
-        print(f"cache built: {CHUNK_INDEX_CACHE} "
+        print(f"cache built: {out} "
               f"({len(chunks):,} rows, {len(assertions)} input assertions passed)")
     assert_positional(chunks)
     return chunks
 
 
 def load_cache(rebuild: bool = False, verbose: bool = True) -> pd.DataFrame:
-    if rebuild or not CHUNK_INDEX_CACHE.exists():
+    path = cache_path()
+    if rebuild or not path.exists():
         return build_cache(verbose=verbose)
-    meta = pq.ParquetFile(CHUNK_INDEX_CACHE).schema_arrow.metadata or {}
+    meta = pq.ParquetFile(path).schema_arrow.metadata or {}
     if meta.get(b"app_cache_version") != CACHE_VERSION.encode():
         return build_cache(verbose=verbose)
     assertions: list[dict] = []
-    shas = FE.assert_input_shas(assertions)
+    shas = input_shas(assertions)
     if meta.get(b"input_sha256") != json.dumps(shas, sort_keys=True).encode():
         return build_cache(verbose=verbose)
-    index = pd.read_parquet(CHUNK_INDEX_CACHE)
+    index = pd.read_parquet(path)
     assert_positional(index)
     return index
 
@@ -489,7 +595,7 @@ def load_texts(row_indices) -> dict[int, str]:
         return {}
     out: dict[int, str] = {}
     pos, cursor = 0, 0
-    for batch in pq.ParquetFile(CHUNKS_PATH).iter_batches(
+    for batch in pq.ParquetFile(chunks_path()).iter_batches(
             batch_size=20000, columns=["text"]):
         end = pos + batch.num_rows
         if cursor < len(wanted) and wanted[cursor] < end:
@@ -546,10 +652,19 @@ def mask_flags(frame: pd.DataFrame) -> pd.DataFrame:
 # filing lookup
 # ---------------------------------------------------------------------------
 def db_connect() -> sqlite3.Connection:
-    return sqlite3.connect(f"file:{METADATA_DB}?mode=ro", uri=True)
+    return sqlite3.connect(f"file:{metadata_db_path()}?mode=ro", uri=True)
 
 
 def resolve_ticker(ticker: str) -> int:
+    if ACTIVE_STORE is not None:
+        # A store holds exactly one company and its manifest records the
+        # ticker EDGAR's own map resolved. No CSV, no universe lookup.
+        identity = ACTIVE_STORE.identity()
+        if str(identity.get("ticker") or "").upper() != ticker.upper():
+            raise SystemExit(
+                f"ticker {ticker!r} is not this store's company "
+                f"({identity.get('ticker')} / CIK {identity.get('cik')})")
+        return int(identity["cik"])
     if not TICKER_MAP_CSV.exists():
         raise SystemExit(
             f"--ticker needs {TICKER_MAP_CSV.relative_to(REPO_ROOT)}; it is "
@@ -617,7 +732,7 @@ SECTION_COLUMNS = ["accession_number", "section_type", "word_count",
                    "below_length_floor", "text"]
 
 
-def filing_sections(accession: str, path: Path = SECTIONS_PATH) -> pd.DataFrame:
+def filing_sections(accession: str, path: Optional[Path] = None) -> pd.DataFrame:
     """THIS filing's own extracted sections, text included, in ONE read.
 
     `filters=` pushes the accession predicate into the parquet reader, so the
@@ -626,6 +741,7 @@ def filing_sections(accession: str, path: Path = SECTIONS_PATH) -> pd.DataFrame:
     the containment filter below tests every candidate paragraph against, and
     the per-section extraction record the header table prints.
     """
+    path = sections_path() if path is None else Path(path)
     if not path.exists():
         return pd.DataFrame(columns=SECTION_COLUMNS)
     table = pq.read_table(path, columns=SECTION_COLUMNS,
@@ -1157,11 +1273,17 @@ def disclosure_html(d: dict, overlap: Optional[dict]) -> str:
             "Read every label on this page as a memorized fit, not as a "
             "held-out prediction.</li>")
 
+    # L2.2: the one line a store adds, and the only rendering difference
+    # between a store report and a research-corpus report.
+    outside = (f"<li><b>{esc(OUTSIDE_UNIVERSE_LINE)}.</b></li>"
+               if ACTIVE_STORE is not None else "")
+
     return f"""
 <section class="disclosure">
   <h1>Disclosure — read this before the report</h1>
   <p class="identity">{esc(IDENTITY_LINE)}</p>
   <ul>
+    {outside}
     <li><b>Labeler.</b> Every label on this page is <b>model output throughout</b>: the v1.2 local student
       (<code>{esc(d['labeler'])}</code>, adapter sha256
       <code>{esc(d['adapter_sha256'])}</code>). No human read these passages.
@@ -1487,7 +1609,10 @@ def main(argv: Optional[list[str]] = None) -> int:
     ap = argparse.ArgumentParser(
         description="Render one static HTML report for a filing already "
                     "labeled in the E2 corpus. Personal use only.")
-    who = ap.add_mutually_exclusive_group(required=True)
+    # Not `required=True`: with --store the company is the store's own, so
+    # neither flag is needed. Without --store one of them still is, and the
+    # check below says so.
+    who = ap.add_mutually_exclusive_group()
     who.add_argument("--cik", type=int)
     who.add_argument("--ticker", type=str)
     ap.add_argument("--accession", type=str)
@@ -1497,9 +1622,20 @@ def main(argv: Optional[list[str]] = None) -> int:
                     help="render the company's filing index instead")
     ap.add_argument("--out-dir", type=Path, default=REPORTS_DIR)
     ap.add_argument("--rebuild-cache", action="store_true")
+    ap.add_argument("--store", type=Path, default=None,
+                    help="read one company's own tables from a store written "
+                         "by ingest_one.py + label_filing.py "
+                         "(data/app/companies/<cik>) instead of the research "
+                         "corpus; the disclosure header gains one line saying "
+                         "the company is outside that universe")
     args = ap.parse_args(argv)
 
     started = time.time()
+    store = use_store(args.store)
+    if store is not None and args.cik is None and args.ticker is None:
+        args.cik = int(store.identity()["cik"])
+    if args.cik is None and args.ticker is None:
+        raise SystemExit("give --cik, --ticker, or --store")
     cik = args.cik if args.cik is not None else resolve_ticker(args.ticker)
     index = load_cache(rebuild=args.rebuild_cache)
     occ = occurrence_map(index)

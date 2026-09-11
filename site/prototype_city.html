@@ -1,0 +1,306 @@
+<title>FinScreen Filing City</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--ink:#060A14;--haze:#0E1730;--steel:#26324F;--edge:#6FA8FF;--accent:#FF6A1F;--text:#EAF0FF;--muted:#8B9BC3;--line:rgba(139,155,195,.28);
+--fin:#D9A441;--tech:#3FB8E6;--hc:#5FD1A0;--cons:#E56FA0;--en:#E8A05A;--ut:#9C8CE8;--ind:#7FB4E0;--mat:#B5CC5A;
+--display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--body:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.5;overflow-x:hidden}
+#stage{position:fixed;inset:0;z-index:0}
+#stage canvas{display:block;width:100%;height:100%}
+#vignette{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(6,10,20,.75) 100%)}
+.scroller{position:relative;z-index:2}
+.beat{height:100vh;position:relative}
+.beat:first-child{height:100vh}
+#rail{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:stretch;gap:0;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(6,10,20,.92),rgba(6,10,20,.55));backdrop-filter:blur(6px)}
+#rail .brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;border-right:1px solid var(--line);white-space:nowrap}
+#rail .brand b{color:var(--accent)}
+#rail ol{list-style:none;margin:0;padding:0;display:flex;flex:1;overflow-x:auto}
+#rail li{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 12px 0;position:relative;white-space:nowrap;flex:1;min-width:64px}
+#rail li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--line)}
+#rail li.on{color:var(--text)} #rail li.on::after{background:var(--accent)}
+#rail li.done::after{background:var(--edge)}
+#copy{position:fixed;left:clamp(18px,5vw,72px);top:50%;transform:translateY(-50%);z-index:4;width:min(38ch,86vw);pointer-events:none}
+.panel{position:absolute;left:0;top:0;transform:translateY(-50%);opacity:0;transition:opacity .35s ease,transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none;width:100%}
+.panel.on{opacity:1;pointer-events:auto}
+.panel .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.panel h1,.panel h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:.92;margin:0 0 14px;text-wrap:balance}
+.panel h1{font-size:clamp(52px,9vw,120px)}
+.panel h2{font-size:clamp(40px,6.4vw,84px)}
+.panel p{margin:0 0 12px;max-width:34ch;color:var(--text)}
+.panel p.muted{color:var(--muted);font-size:14px}
+.counters{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 6px}
+.counter{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.counter .n{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1;color:var(--text)}
+.counter .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--mono);font-size:12px;padding:6px 10px;border:1px solid var(--line);background:rgba(14,23,48,.75);width:max-content;max-width:100%;transform:translateX(-12px);opacity:0;transition:all .4s ease}
+.panel.on .chip{transform:none;opacity:1}
+.panel.on .chip:nth-child(2){transition-delay:.15s}.panel.on .chip:nth-child(3){transition-delay:.3s}.panel.on .chip:nth-child(4){transition-delay:.45s}
+.chip .tag{font-weight:500;color:var(--accent)} .chip .tag.neutral{color:var(--edge)} .chip .exp{color:var(--muted)}
+.chip q{quotes:"“" "”";color:var(--text)}
+.rail{display:flex;align-items:center;gap:0;margin:12px 0;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rail .seg{flex:1;height:2px;background:var(--line);position:relative}
+.rail .mark{padding:4px 8px;border:1px solid var(--line);background:rgba(14,23,48,.85);white-space:nowrap}
+.rail .mark.hot{border-color:var(--accent);color:var(--text)}
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.diff .col{border:1px solid var(--line);padding:8px;background:rgba(14,23,48,.75)}
+.diff .col h3{margin:0 0 6px;font:inherit;color:var(--muted)}
+.bars{display:flex;flex-direction:column;gap:3px}
+.bars i{display:block;height:5px;background:var(--line)}
+.bars i.new{background:#5FD1A0} .bars i.rem{background:#E5606F;opacity:.85}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:9px;height:9px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+#hud{position:fixed;right:18px;bottom:16px;z-index:5;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:1.6;pointer-events:none}
+#hud b{color:var(--text);font-weight:500}
+.cta{display:flex;gap:8px;margin-top:14px;pointer-events:auto}
+.cta input{flex:1;font:500 16px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--text);background:rgba(14,23,48,.85);border:1px solid var(--edge);padding:12px 14px;min-width:0}
+.cta button{font:800 16px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--accent);border:0;padding:12px 18px;cursor:pointer}
+.cta button:focus-visible,.cta input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}
+.disclose{border-left:3px solid var(--accent);padding:8px 12px;background:rgba(14,23,48,.75);font-size:13px;margin-top:12px}
+.disclose b{font-family:var(--mono);font-weight:500}
+#scrollhint{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:5;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:opacity .4s}
+#scrollhint.off{opacity:0}
+@media (max-width:720px){#copy{top:auto;bottom:6vh;transform:none;width:92vw;left:4vw}.panel{transform:none;top:auto;bottom:0}#hud{display:none}#rail .brand{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.panel,.chip{transition:none}}
+</style>
+
+<div id="stage"></div>
+<div id="vignette"></div>
+
+<nav id="rail" aria-label="story beats"><div class="brand">Fin<b>Screen</b></div><ol id="beats">
+<li class="on">City</li><li>EDGAR</li><li>District</li><li>Tower</li><li>Extract</li><li>Read</li><li>Time</li><li>Diff</li><li>Test</li><li>Try</li>
+</ol></nav>
+
+<div id="copy" aria-live="polite">
+ <section class="panel on" data-beat="0">
+  <p class="eyebrow">A city built from filings</p>
+  <h1>Every filer<br>is a tower.</h1>
+  <p>244 US companies, eleven years of SEC filings, one city. Scroll to fly in.</p>
+  <div class="counters"><div class="counter"><div class="n" data-count="244">244</div><div class="l">companies</div></div><div class="counter"><div class="n" data-count="45545">45,545</div><div class="l">filings</div></div><div class="counter"><div class="n" data-count="317081">317,081</div><div class="l">passages read</div></div></div>
+  <div class="legend"><span style="--c:var(--tech)">tech</span><span style="--c:var(--fin)">financials</span><span style="--c:var(--cons)">consumer</span><span style="--c:var(--hc)">healthcare</span><span style="--c:var(--en)">energy</span><span style="--c:var(--mat)">materials · real estate</span><span style="--c:var(--ut)">utilities</span><span style="--c:var(--ind)">industrials</span></div>
+ </section>
+ <section class="panel" data-beat="1">
+  <p class="eyebrow">01 · Source</p>
+  <h2>Straight from EDGAR.</h2>
+  <p>Every tower's height is its real filing count. Pulled from the SEC, rate-limited and cached, nothing scraped from anywhere else. Tallest: Wells Fargo, 880 filings. Shortest: LinkedIn, 17, before it left the map in 2016.</p>
+  <p class="muted">Delisted and acquired companies stay in the city. Survivorship is a bug this project counts, not hides.</p>
+ </section>
+ <section class="panel" data-beat="2">
+  <p class="eyebrow">02 · District</p>
+  <h2>Eight districts.<br>One per sector.</h2>
+  <p>Tech is the biggest district, 42 filers. Financials next with 37. We are flying into tech.</p>
+ </section>
+ <section class="panel" data-beat="3">
+  <p class="eyebrow">03 · Tower</p>
+  <h2>Apple Inc.</h2>
+  <p>149 filings since 2015. Every floor is a year; the floor's height is that year's filings. Fiscal 2017 was the busiest at 18.</p>
+  <p class="muted">Pick any tower. This one is Apple because its reports are the first ones the tool rendered.</p>
+ </section>
+ <section class="panel" data-beat="4">
+  <p class="eyebrow">04 · Extract</p>
+  <h2>Three sections carry the signal.</h2>
+  <div class="chips"><span class="chip"><span class="tag neutral">RISK FACTORS</span> 9,914 words</span><span class="chip"><span class="tag neutral">MD&amp;A</span> 2,441 words</span><span class="chip"><span class="tag neutral">EARNINGS RELEASE</span> 1,383 words</span></div>
+  <p class="muted">Apple's FY2024 10-K and its Q1 FY2025 release. Extraction is audited per company; misses are counted, not dropped.</p>
+ </section>
+ <section class="panel" data-beat="5">
+  <p class="eyebrow">05 · Read</p>
+  <h2>A reader that runs on a laptop.</h2>
+  <div class="chips">
+   <span class="chip"><span class="tag">NEGATIVE</span><q>net income decreased 37 percent</q></span>
+   <span class="chip"><span class="tag neutral">GUIDANCE · NONE</span><q>no direction versus prior guidance</q></span>
+   <span class="chip"><span class="tag">MARGIN PRESSURE</span><span class="exp">exploratory</span></span>
+  </div>
+  <div class="disclose">A 7-billion-parameter model reads every passage: tone, guidance direction, risk flags. It cost $0 to run. It is wrong a measured share of the time, and that share is printed on every report: sentiment agreement <b>86.9%</b>, guidance <b>96.6%</b> on the no-guidance mass, risk flags <b>28% error</b>, exploratory only.</div>
+ </section>
+ <section class="panel" data-beat="6">
+  <p class="eyebrow">06 · Time</p>
+  <h2>Reports land after the close.</h2>
+  <div class="rail"><span class="mark hot">accepted 16:30 ET</span><span class="seg"></span><span class="mark">next open 09:30</span><span class="seg"></span><span class="mark">63 sessions</span></div>
+  <p>The tool only ever knows what was public at that minute. 45% of filings arrive after 4 pm; the first session that could react is the next morning. This is where most backtests cheat, and where this one does not.</p>
+ </section>
+ <section class="panel" data-beat="7">
+  <p class="eyebrow">07 · Diff</p>
+  <h2>What changed since last time.</h2>
+  <div class="diff"><div class="col"><h3>FY2024 vs FY2023 10-K</h3><div class="bars"><i class="new"></i><i class="new"></i><i class="new"></i><i></i><i></i><i class="new"></i><i></i><i class="new"></i><i></i><i></i></div></div><div class="col"><h3>26 new · 24 removed · 47 kept</h3><div class="bars"><i class="rem"></i><i></i><i class="rem"></i><i class="rem"></i><i></i><i></i><i class="rem"></i><i></i><i class="rem"></i><i></i></div></div></div>
+  <p class="muted">Paragraph by paragraph: what the company added and what it quietly removed. Every rendered paragraph is verified to be in the filing itself.</p>
+ </section>
+ <section class="panel" data-beat="8">
+  <p class="eyebrow">08 · Test</p>
+  <h2>Does any of it predict what happens next?</h2>
+  <p>The wall is time. Everything behind it is known; everything ahead is future. The model is trained only on the past and scored only on what came after, quarter by quarter, rules frozen before the data.</p>
+  <div class="disclose">So far the honest answer: <b>not yet proven.</b> The first study on 25 companies found no robust text signal. The larger study is frozen until its rules are ratified, and its result gets published either way.</div>
+ </section>
+ <section class="panel" data-beat="9">
+  <p class="eyebrow">09 · Try</p>
+  <h2>Name a company.</h2>
+  <div class="cta"><input id="ticker" type="text" placeholder="TICKER" maxlength="6" aria-label="ticker"><button id="go" type="button">Watch it read</button></div>
+  <p class="note" id="ctanote">Live runs happen on the author's laptop for now, minutes per company. This prototype records the request; the real run is shown in the demo video.</p>
+  <p class="muted">Not investment advice. No recommendation. No live capital. Research with disclosed error.</p>
+ </section>
+</div>
+
+<div id="hud"><div>district <b id="hud-d">—</b></div><div>tower <b id="hud-t">—</b></div><div>beat <b id="hud-b">0 / 9</b></div></div>
+<div id="scrollhint">scroll ↓</div>
+
+<div class="scroller" id="scroller" aria-hidden="true">
+<div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div><div class="beat"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+const CITY = [[72971,"Wells Fargo & Company/Mn","financials",880,[59,144,140,138,157,105,31,20,23,21,26,16]],[927628,"Capital One Financial Corp","financials",463,[20,45,42,48,41,45,48,39,36,37,38,24]],[1039684,"Oneok Inc /New/","energy",421,[16,32,47,43,38,41,34,40,49,45,27,9]],[19617,"Jpmorgan Chase & Co","financials",388,[17,42,39,34,35,36,39,31,29,35,27,24]],[831001,"Citigroup Inc","financials",338,[23,50,34,26,28,29,28,30,20,26,32,12]],[732717,"At&T Inc.","utilities",337,[20,30,41,45,36,36,30,27,22,15,19,16]],[37996,"Ford Motor Co","consumer",331,[12,36,34,34,29,26,38,32,29,25,21,15]],[1053507,"American Tower Corp /Ma/","materials_realestate",317,[10,28,30,23,29,37,39,26,26,23,29,17]],[72903,"Xcel Energy Inc","utilities",306,[20,25,25,22,25,33,35,23,28,22,28,20]],[1099219,"Metlife Inc","financials",299,[14,28,38,33,26,25,22,20,25,21,31,16]],[922224,"Ppl Corp","utilities",295,[16,29,34,32,23,26,27,22,25,14,29,18]],[1413329,"Philip Morris International ","consumer",294,[9,19,19,18,23,26,34,39,29,28,30,20]],[1297996,"Digital Realty Trust, Inc.","materials_realestate",291,[17,24,27,25,37,35,25,27,20,20,21,13]],[3570,"Cheniere Energy, Inc.","utilities",286,[12,36,30,29,25,22,28,28,18,23,18,17]],[1051470,"Crown Castle Inc.","materials_realestate",282,[11,29,31,23,22,25,23,22,32,25,26,13]],[80424,"Procter & Gamble Co","consumer",281,[17,30,26,28,20,28,27,22,24,21,25,13]],[886982,"Goldman Sachs Group Inc","financials",281,[10,29,29,26,20,25,33,22,21,26,18,22]],[1283699,"T-Mobile Us, Inc.","utilities",277,[12,22,21,26,19,41,28,23,27,17,26,15]],[33213,"Eqt Corp","energy",275,[9,15,22,25,24,29,24,27,25,33,29,13]],[4281,"Howmet Aerospace Inc.","materials_realestate",270,[13,39,32,20,25,34,23,14,20,16,20,14]],[753308,"Nextera Energy Inc","utilities",270,[9,28,21,22,28,22,25,26,20,24,23,22]],[726728,"Realty Income Corp","materials_realestate",268,[13,14,18,18,22,25,34,21,29,25,27,22]],[5272,"American International Group","financials",267,[18,29,27,27,16,19,27,24,24,25,21,10]],[1032208,"Sempra","utilities",265,[10,19,25,32,24,24,20,21,23,23,23,21]],[92122,"Southern Co","utilities",259,[17,33,36,19,16,16,21,20,26,19,23,13]],[51143,"International Business Machi","tech",258,[9,27,22,24,31,25,29,20,19,20,18,14]],[1393612,"Discover Financial Services","financials",258,[17,29,29,28,23,23,22,20,25,29,13,0]],[713676,"Pnc Financial Services Group","financials",257,[11,21,28,22,21,22,24,26,22,21,24,15]],[1276187,"Energy Transfer Lp","energy",257,[20,28,22,27,25,16,22,20,20,24,21,12]],[1506307,"Kinder Morgan, Inc.","energy",257,[14,23,25,24,25,20,24,21,24,21,22,14]],[715957,"Dominion Energy, Inc","utilities",256,[6,22,17,32,26,32,17,19,23,25,22,15]],[1101239,"Equinix Inc","materials_realestate",255,[15,20,27,23,20,30,24,19,18,21,20,18]],[49071,"Humana Inc","healthcare",250,[13,20,34,16,23,21,22,27,23,20,18,13]],[92230,"Truist Financial Corp","financials",250,[14,38,20,18,32,22,18,19,19,19,16,15]],[936402,"Shire Plc","healthcare",250,[28,69,56,91,6,0,0,0,0,0,0,0]],[36104,"Us Bancorp \\De\\","financials",247,[11,25,26,26,24,18,22,21,21,23,17,13]],[1109357,"Exelon Corp","utilities",247,[25,31,20,20,19,19,24,29,21,13,17,9]],[106040,"Western Digital Corp","tech",246,[14,42,39,24,19,14,14,15,19,16,18,12]],[773840,"Honeywell International Inc","industrials",243,[9,27,22,26,19,18,17,21,17,22,27,18]],[732712,"Verizon Communications Inc","utilities",242,[8,21,33,19,22,25,21,16,11,26,20,20]],[1137774,"Prudential Financial Inc","financials",240,[6,20,22,23,22,21,18,20,23,23,23,19]],[827052,"Edison International","utilities",239,[14,21,23,19,24,18,22,21,25,17,22,13]],[66740,"3M Co","healthcare",237,[13,22,19,19,21,23,24,26,24,20,15,11]],[18230,"Caterpillar Inc","industrials",236,[15,28,27,30,26,29,15,15,14,12,14,11]],[1103982,"Mondelez International, Inc.","consumer",236,[15,23,19,29,18,27,23,22,17,19,14,10]],[895126,"Expand Energy Corp","energy",235,[14,30,27,23,23,15,23,20,14,22,11,13]],[50863,"Intel Corp","tech",234,[14,18,31,14,22,19,22,19,14,21,26,14]],[64803,"Cvs Health Corp","consumer",231,[10,17,13,28,19,28,18,24,29,22,14,9]],[1318605,"Tesla, Inc.","consumer",231,[8,26,27,27,26,25,19,16,16,14,18,9]],[1390777,"Bank Of New York Mellon Corp","financials",231,[7,25,20,17,19,24,21,22,20,17,22,17]],[106535,"Weyerhaeuser Co","materials_realestate",230,[7,30,17,12,16,28,21,23,22,19,23,12]],[1645590,"Hewlett Packard Enterprise C","tech",230,[5,21,31,18,20,20,16,16,24,22,24,13]],[80661,"Progressive Corp/Oh/","financials",228,[11,21,24,22,17,21,22,19,20,19,18,14]],[1091667,"Charter Communications, Inc.","consumer",228,[12,21,23,17,24,21,19,14,21,16,22,18]],[64040,"S&P Global Inc.","industrials",227,[15,24,13,17,16,20,27,35,17,13,15,15]],[1136893,"Fidelity National Informatio","financials",227,[17,19,20,19,27,15,23,19,18,20,15,15]],[885725,"Boston Scientific Corp","healthcare",226,[7,16,19,24,29,28,22,15,14,19,17,16]],[100885,"Union Pacific Corp","industrials",225,[10,20,18,23,25,27,32,17,16,10,20,7]],[10795,"Becton Dickinson & Co","healthcare",221,[7,17,21,20,16,19,24,23,19,17,18,20]],[731766,"Unitedhealth Group Inc","healthcare",221,[12,17,24,20,21,16,19,21,18,21,20,12]],[723125,"Micron Technology Inc","tech",220,[9,29,25,25,21,18,17,17,17,17,17,8]],[1618921,"Walgreens Boots Alliance, In","consumer",219,[14,25,22,18,15,18,31,22,19,17,18,0]],[1539838,"Diamondback Energy, Inc.","energy",217,[6,21,15,27,20,14,17,23,13,25,22,14]],[315189,"Deere & Co","industrials",216,[10,25,24,24,22,22,20,16,16,12,14,11]],[1389170,"Targa Resources Corp.","energy",216,[9,26,22,17,21,19,17,23,17,16,18,11]],[32604,"Emerson Electric Co","industrials",215,[12,22,25,22,23,24,20,13,17,11,18,8]],[1166691,"Comcast Corp","consumer",215,[8,20,21,24,19,19,17,13,20,14,26,14]],[1045609,"Prologis, Inc.","materials_realestate",214,[6,15,15,22,19,26,17,26,17,15,20,16]],[14272,"Bristol Myers Squibb Co","healthcare",213,[4,16,16,17,43,22,21,19,16,16,15,8]],[1038357,"Pioneer Natural Resources Co","energy",211,[13,26,18,23,17,28,32,22,24,8,0,0]],[1404912,"Kkr & Co. Inc.","financials",210,[5,14,13,19,20,22,22,25,19,18,20,13]],[766704,"Welltower Inc.","materials_realestate",209,[10,14,18,22,21,18,19,23,18,18,16,12]],[1637459,"Kraft Heinz Co","consumer",209,[10,18,15,16,27,22,18,18,15,18,17,15]],[1403161,"Visa Inc.","financials",208,[11,20,15,17,15,21,17,22,22,15,19,14]],[1510295,"Marathon Petroleum Corp","energy",207,[13,19,19,30,23,20,18,16,13,13,14,9]],[12927,"Boeing Co","industrials",206,[10,18,17,17,25,22,20,16,15,21,17,8]],[797468,"Occidental Petroleum Corp /D","energy",206,[6,17,14,10,24,31,17,14,16,25,19,13]],[1551152,"Abbvie Inc.","healthcare",205,[5,17,10,15,27,25,16,20,19,17,19,15]],[97745,"Thermo Fisher Scientific Inc","industrials",204,[11,25,22,13,16,27,23,15,15,10,17,10]],[1110803,"Illumina, Inc.","healthcare",204,[7,22,16,13,17,17,21,20,20,19,16,16]],[34088,"Exxon Mobil Corp","energy",203,[5,15,19,14,16,22,19,22,21,19,19,12]],[1137789,"Seagate Technology Holdings ","tech",203,[12,19,19,16,16,19,15,20,18,15,22,12]],[831259,"Freeport-Mcmoran Inc","materials_realestate",202,[16,29,15,17,21,22,16,15,13,11,16,11]],[1692819,"Vistra Corp.","utilities",202,[0,0,13,24,24,18,15,21,25,30,18,14]],[107263,"Williams Companies, Inc.","energy",201,[9,27,28,17,11,16,19,13,14,13,20,14]],[70858,"Bank Of America Corp /De/","financials",200,[10,23,18,19,21,13,19,17,14,16,20,10]],[104169,"Walmart Inc.","consumer",200,[6,15,20,23,19,17,19,18,16,17,19,11]],[1164727,"Newmont Corp /De/","materials_realestate",198,[8,14,15,12,35,14,15,11,37,15,11,11]],[788784,"Public Service Enterprise Gr","utilities",197,[12,27,16,14,17,16,16,20,21,18,10,10]],[849399,"Gen Digital Inc.","tech",197,[8,23,20,18,20,18,19,24,10,15,15,7]],[78003,"Pfizer Inc","healthcare",196,[10,20,21,16,17,28,14,14,18,16,13,9]],[858877,"Cisco Systems, Inc.","tech",196,[10,28,18,16,18,19,16,18,15,15,16,7]],[21344,"Coca Cola Co","consumer",195,[9,19,17,14,18,21,27,15,11,20,13,11]],[89800,"Sherwin Williams Co","consumer",195,[8,19,26,16,15,15,23,20,14,13,17,9]],[1075531,"Booking Holdings Inc.","industrials",194,[11,18,18,18,15,20,17,15,19,17,14,12]],[1318220,"Waste Connections, Inc.","utilities",194,[0,10,19,21,22,17,17,22,16,20,17,13]],[101829,"Rtx Corp","industrials",193,[13,22,16,15,19,21,21,12,20,14,12,8]],[1571949,"Intercontinental Exchange, I","financials",193,[17,16,22,14,10,23,15,19,20,14,13,10]],[31462,"Ecolab Inc.","consumer",192,[8,16,18,14,16,25,23,19,12,12,16,13]],[77476,"Pepsico Inc","consumer",192,[10,20,19,18,18,20,17,17,13,15,16,9]],[1467858,"General Motors Co","consumer",192,[7,18,18,25,15,19,16,18,16,15,14,11]],[313616,"Danaher Corp /De/","industrials",191,[12,20,14,14,22,19,18,13,17,13,15,14]],[927653,"Mckesson Corp","healthcare",191,[7,17,17,22,19,20,17,16,16,14,13,13]],[1047862,"Consolidated Edison Inc","utilities",190,[6,15,16,18,16,21,19,15,17,19,16,12]],[47217,"Hp Inc","tech",189,[17,16,13,18,15,19,19,19,16,14,16,7]],[79879,"Ppg Industries Inc","materials_realestate",189,[8,20,19,18,16,19,16,18,16,15,15,9]],[87347,"Slb Limited/Nv","energy",189,[11,20,13,15,18,22,16,18,17,13,16,10]],[764180,"Altria Group, Inc.","consumer",189,[8,18,16,16,19,23,20,15,16,14,16,8]],[1552000,"Mplx Lp","energy",189,[14,24,25,18,18,15,13,16,12,10,14,10]],[712515,"Electronic Arts Inc.","tech",188,[11,21,23,16,17,13,25,15,13,11,14,9]],[804328,"Qualcomm Inc/De","tech",188,[10,17,18,37,14,16,14,12,10,14,16,10]],[829224,"Starbucks Corp","consumer",188,[5,18,15,20,15,18,13,21,15,16,21,11]],[315293,"Aon Plc","financials",187,[7,12,15,15,15,23,21,17,14,22,16,10]],[1108524,"Salesforce, Inc.","tech",187,[7,20,16,21,20,17,21,16,11,12,15,11]],[1555280,"Zoetis Inc.","healthcare",187,[12,18,14,18,14,15,16,18,15,18,19,10]],[63908,"Mcdonalds Corp","consumer",186,[13,21,15,17,19,21,12,15,16,14,14,9]],[798354,"Fiserv Inc","financials",186,[5,14,10,16,24,18,14,14,20,18,20,13]],[821189,"Eog Resources Inc","energy",186,[8,18,18,15,13,19,16,14,17,15,23,10]],[1633917,"Paypal Holdings, Inc.","financials",186,[8,13,16,16,20,15,12,18,23,17,17,11]],[4904,"American Electric Power Co I","utilities",184,[7,14,12,11,12,18,15,20,21,20,23,11]],[93410,"Chevron Corp","energy",184,[6,15,17,12,18,21,14,17,17,16,19,12]],[316709,"Schwab Charles Corp","financials",184,[7,11,19,16,14,23,21,16,16,12,15,14]],[1035002,"Valero Energy Corp/Tx","energy",184,[7,24,16,20,16,19,18,16,12,11,16,9]],[1156039,"Elevance Health, Inc.","healthcare",182,[10,17,24,15,14,14,14,15,17,14,17,11]],[2488,"Advanced Micro Devices Inc","tech",181,[8,14,16,15,18,14,18,19,12,14,20,13]],[200406,"Johnson & Johnson","healthcare",180,[8,17,16,15,18,16,13,16,22,15,14,10]],[823768,"Waste Management Inc","utilities",180,[9,14,17,14,18,18,12,13,16,23,15,11]],[936468,"Lockheed Martin Corp","industrials",180,[11,22,17,14,13,15,18,19,13,17,14,7]],[1123360,"Global Payments Inc","financials",180,[8,17,13,16,18,13,15,17,15,13,21,14]],[1061219,"Enterprise Products Partners","energy",178,[7,20,13,18,18,21,14,14,12,14,19,8]],[72741,"Eversource Energy","utilities",176,[8,16,18,18,15,16,12,13,18,18,14,10]],[707549,"Lam Research Corp","tech",176,[10,24,16,18,19,21,12,11,12,14,12,7]],[1141391,"Mastercard Inc","financials",175,[8,18,14,17,13,21,18,15,13,13,14,11]],[1489393,"Lyondellbasell Industries N.","materials_realestate",175,[7,16,16,16,19,17,18,13,14,15,16,8]],[1512673,"Block, Inc.","tech",175,[1,15,18,16,15,22,21,16,14,13,13,11]],[1800,"Abbott Laboratories","healthcare",174,[6,19,22,18,17,15,14,14,11,12,13,13]],[1060391,"Republic Services, Inc.","utilities",174,[4,23,13,13,12,23,16,13,17,16,13,11]],[310764,"Stryker Corp","healthcare",172,[6,21,14,20,15,19,11,16,12,10,16,12]],[1065088,"Ebay Inc","financials",172,[8,14,13,12,15,22,23,12,14,18,11,10]],[1090012,"Devon Energy Corp/De","energy",172,[9,20,11,17,14,14,18,11,11,16,12,19]],[2969,"Air Products & Chemicals, In","materials_realestate",171,[8,22,20,13,11,13,15,11,16,16,18,8]],[60667,"Lowes Companies Inc","consumer",171,[8,20,13,23,14,19,15,17,13,10,13,6]],[318154,"Amgen Inc","healthcare",171,[4,20,17,11,15,18,15,19,22,9,9,12]],[1534701,"Phillips 66","energy",171,[5,10,12,12,13,20,19,17,13,20,19,11]],[27419,"Target Corp","consumer",169,[9,22,12,13,12,18,14,15,14,13,15,12]],[354950,"Home Depot, Inc.","consumer",169,[9,15,13,13,13,17,17,16,16,18,14,8]],[1099590,"Mercadolibre Inc","financials",169,[6,12,14,17,18,16,23,16,12,12,15,8]],[1133421,"Northrop Grumman Corp /De/","industrials",169,[7,15,15,18,14,18,18,13,15,13,14,9]],[895421,"Morgan Stanley","financials",167,[7,15,15,14,14,17,17,13,16,14,16,9]],[895728,"Enbridge Inc","energy",167,[0,0,0,29,16,22,18,18,22,17,15,10]],[1156375,"Cme Group Inc.","financials",166,[6,13,16,17,13,13,12,17,17,15,15,12]],[1613103,"Medtronic Plc","healthcare",166,[9,17,15,13,20,16,16,12,14,12,15,7]],[45012,"Halliburton Co","energy",165,[8,19,17,13,15,15,12,17,12,13,15,9]],[896159,"Chubb Ltd","financials",164,[11,20,12,14,14,15,15,13,11,16,13,10]],[915912,"Avalonbay Communities Inc","materials_realestate",164,[7,15,18,12,18,12,15,15,12,15,13,12]],[320187,"Nike, Inc.","consumer",162,[11,16,16,15,13,17,11,13,12,13,16,9]],[872589,"Regeneron Pharmaceuticals, I","healthcare",162,[10,22,13,14,12,15,13,14,15,13,11,10]],[882095,"Gilead Sciences, Inc.","healthcare",162,[6,14,17,14,17,18,10,15,12,15,14,10]],[62709,"Marsh & Mclennan Companies, ","financials",161,[8,15,14,13,18,12,13,13,14,18,10,13]],[1393818,"Blackstone Inc.","financials",161,[6,14,12,15,19,14,14,18,10,16,15,8]],[24741,"Corning Inc /Ny","materials_realestate",160,[11,14,11,14,11,12,15,12,16,18,15,11]],[906107,"Vivmark Residential","materials_realestate",160,[7,13,12,14,14,12,11,11,12,18,19,17]],[1666700,"Dupont De Nemours, Inc.","materials_realestate",160,[0,0,6,17,21,16,19,15,12,13,29,12]],[1739940,"Cigna Group","healthcare",160,[0,0,0,3,25,24,21,18,20,20,19,10]],[789019,"Microsoft Corp","tech",159,[12,17,14,11,10,20,16,11,16,12,12,8]],[875045,"Biogen Inc.","healthcare",159,[7,14,15,12,14,15,14,11,18,12,13,14]],[1090727,"United Parcel Service Inc","industrials",159,[9,17,18,14,14,16,11,10,12,12,14,12]],[769397,"Autodesk, Inc.","tech",157,[5,14,18,17,12,17,15,12,9,12,15,11]],[1018724,"Amazon Com Inc","consumer",157,[4,13,18,11,15,14,15,15,14,12,11,15]],[1065280,"Netflix Inc","consumer",157,[5,11,16,17,17,15,12,14,13,10,15,12]],[1652044,"Alphabet Inc.","tech",157,[3,14,11,10,15,16,12,13,13,16,17,17]],[59478,"Eli Lilly & Co","healthcare",156,[5,13,14,14,18,12,18,14,11,16,13,8]],[1161154,"Energy Transfer Operating, L","energy",156,[14,22,30,35,27,22,6,0,0,0,0,0]],[1551182,"Eaton Corp Plc","industrials",156,[6,12,14,11,13,14,15,16,12,15,15,13]],[6951,"Applied Materials Inc /De","tech",155,[12,11,14,10,12,20,14,16,10,11,17,8]],[97476,"Texas Instruments Inc","tech",155,[5,13,15,17,13,16,13,13,14,13,12,11]],[1034054,"Sba Communications Corp","materials_realestate",155,[7,16,14,12,12,15,18,13,13,15,9,11]],[1163165,"Conocophillips","energy",155,[5,12,15,15,10,15,16,17,11,19,11,9]],[1001250,"Estee Lauder Companies Inc","consumer",154,[7,15,10,13,13,14,15,15,12,17,15,8]],[1045810,"Nvidia Corp","tech",153,[4,17,14,10,14,16,14,14,13,12,13,12]],[1327567,"Palo Alto Networks Inc","tech",153,[7,11,9,13,15,17,16,12,15,13,15,10]],[1730168,"Broadcom Inc.","tech",153,[0,0,0,16,20,26,20,17,14,13,15,12]],[8670,"Automatic Data Processing In","tech",151,[8,15,11,16,12,16,14,14,10,14,13,8]],[55785,"Kimberly Clark Corp","materials_realestate",151,[7,13,12,13,16,15,12,12,11,13,17,10]],[109198,"Tjx Companies Inc /De/","consumer",149,[7,16,12,16,12,20,13,14,11,11,11,6]],[320193,"Apple Inc.","tech",149,[9,14,18,10,14,13,13,12,10,13,14,9]],[896878,"Intuit Inc.","tech",148,[6,12,13,14,11,16,16,12,13,13,12,10]],[1326801,"Meta Platforms, Inc.","tech",148,[5,12,11,14,11,13,11,18,15,13,15,10]],[21665,"Colgate Palmolive Co","consumer",147,[5,14,10,16,16,12,15,13,14,10,12,10]],[1063761,"Simon Property Group Inc.","materials_realestate",147,[5,12,13,13,11,21,13,10,12,14,12,11]],[73309,"Nucor Corp","materials_realestate",146,[6,12,12,12,15,17,14,16,11,9,13,9]],[875320,"Vertex Pharmaceuticals Inc /","healthcare",146,[7,13,15,11,18,12,11,12,12,14,11,10]],[1035267,"Intuitive Surgical Inc","healthcare",146,[6,13,15,13,13,13,13,12,12,12,13,11]],[1543151,"Uber Technologies, Inc","financials",146,[0,0,0,0,14,32,29,12,17,14,16,12]],[1058290,"Cognizant Technology Solutio","tech",145,[6,13,12,14,12,14,11,14,14,13,11,11]],[1373715,"Servicenow, Inc.","tech",143,[5,12,17,9,13,14,16,10,10,10,16,11]],[40533,"General Dynamics Corp","industrials",142,[6,12,13,17,12,12,12,10,12,13,14,9]],[1341439,"Oracle Corp","tech",142,[6,13,12,13,14,11,14,15,10,10,15,9]],[1364742,"Blackrock Finance, Inc.","financials",142,[6,12,15,12,15,20,15,12,16,19,0,0]],[1682852,"Moderna, Inc.","healthcare",142,[0,0,0,1,17,40,14,17,15,13,13,12]],[813672,"Cadence Design Systems Inc","tech",141,[5,9,13,11,10,13,14,15,13,16,14,8]],[86312,"Travelers Companies, Inc.","financials",139,[6,13,17,13,10,11,10,13,12,9,13,12]],[1099800,"Edwards Lifesciences Corp","healthcare",137,[8,13,11,14,10,11,10,12,11,15,13,9]],[49826,"Illinois Tool Works Inc","industrials",134,[6,16,10,10,15,10,13,11,12,11,10,10]],[1744489,"Walt Disney Co","consumer",134,[0,0,0,0,18,20,17,13,24,14,17,11]],[310158,"Merck & Co., Inc.","healthcare",133,[6,10,11,14,11,11,18,11,11,11,11,8]],[29915,"Dow Chemical Co /De/","materials_realestate",132,[15,21,16,7,14,10,9,7,6,8,14,5]],[1126975,"Magellan Midstream Partners,","energy",130,[6,17,14,11,17,20,11,14,20,0,0,0]],[4447,"Hess Corp","energy",129,[5,15,13,10,13,13,12,12,13,16,7,0]],[718877,"Activision Blizzard, Inc.","tech",128,[10,21,12,14,16,11,13,21,10,0,0,0]],[1596532,"Arista Networks, Inc.","tech",127,[4,11,15,11,9,11,10,12,11,14,12,7]],[1067983,"Berkshire Hathaway Inc","financials",125,[3,9,9,11,12,12,11,14,12,11,13,8]],[1564408,"Snap Inc","tech",124,[0,0,6,14,13,13,13,14,12,16,13,10]],[1578845,"Allergan Plc","healthcare",119,[19,27,21,21,21,10,0,0,0,0,0,0]],[1418091,"Twitter, Inc.","tech",117,[8,16,12,13,13,16,20,19,0,0,0,0]],[816284,"Celgene Corp /De/","healthcare",113,[16,21,22,35,19,0,0,0,0,0,0,0]],[1707925,"Linde Plc","materials_realestate",113,[0,0,1,5,15,13,13,13,14,16,15,8]],[804753,"Cerner Corp","tech",111,[6,13,12,14,19,20,18,9,0,0,0,0]],[701221,"Cigna Holding Co","healthcare",106,[12,19,38,37,0,0,0,0,0,0,0,0]],[6769,"Apache Corp","energy",99,[6,12,12,15,13,14,10,6,5,5,1,0]],[1358071,"Concho Resources Inc","energy",94,[6,18,18,19,12,19,2,0,0,0,0,0]],[1535527,"Crowdstrike Holdings, Inc.","tech",92,[0,0,0,0,7,13,18,11,11,11,14,7]],[30554,"Eidp, Inc.","materials_realestate",89,[10,18,16,5,7,4,4,4,4,4,6,7]],[1585521,"Zoom Communications, Inc.","tech",89,[0,0,0,0,7,14,12,11,15,11,12,7]],[1782754,"Azek Co Inc.","consumer",89,[0,0,0,0,0,10,21,13,15,16,14,0]],[1001039,"Twdc Enterprises 18 Corp.","consumer",84,[6,17,18,24,19,0,0,0,0,0,0,0]],[1122304,"Aetna Inc /Pa/","healthcare",84,[15,21,25,23,0,0,0,0,0,0,0,0]],[1532063,"Express Scripts Holding Co.","consumer",82,[11,25,21,25,0,0,0,0,0,0,0,0]],[1868275,"Constellation Energy Corp","utilities",81,[0,0,0,0,0,0,0,18,15,12,20,16]],[773910,"Anadarko Petroleum Corp","energy",70,[6,16,16,17,15,0,0,0,0,0,0,0]],[1321655,"Palantir Technologies Inc.","tech",68,[0,0,0,0,0,5,13,13,10,10,10,7]],[1640147,"Snowflake Inc.","tech",66,[0,0,0,0,0,4,9,9,10,12,14,8]],[1222333,"Spdr Gold Trust","financials",65,[3,6,6,5,5,5,4,9,8,6,4,4]],[1047122,"Raytheon Co/","industrials",63,[7,12,11,13,16,4,0,0,0,0,0,0]],[849395,"Crh Public Ltd Co","materials_realestate",61,[0,0,0,0,0,0,0,0,0,30,17,14]],[1012569,"Energy Transfer, Lp","energy",59,[18,25,16,0,0,0,0,0,0,0,0,0]],[884905,"Linde Inc","materials_realestate",57,[8,17,16,16,0,0,0,0,0,0,0,0]],[1751788,"Dow Inc.","materials_realestate",54,[0,0,0,0,8,8,6,6,7,8,5,6]],[1483096,"Williams Partners L.P.","energy",50,[8,12,17,13,0,0,0,0,0,0,0,0]],[1105705,"Warner Media, Llc","consumer",45,[8,17,14,6,0,0,0,0,0,0,0,0]],[1373835,"Spectra Energy Corp.","energy",33,[7,19,7,0,0,0,0,0,0,0,0,0]],[1996810,"Ge Vernova Inc.","industrials",28,[0,0,0,0,0,0,0,0,0,10,9,9]],[790070,"Emc Corp","tech",21,[9,12,0,0,0,0,0,0,0,0,0,0]],[1271024,"Linkedin Corp","tech",17,[4,13,0,0,0,0,0,0,0,0,0,0]]];
+const YEARS = [2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+const SECTORS = ["tech","financials","consumer","healthcare","energy","materials_realestate","utilities","industrials"];
+const SCOL = {tech:0x3FB8E6,financials:0xD9A441,consumer:0xE56FA0,healthcare:0x5FD1A0,energy:0xE8A05A,materials_realestate:0xB5CC5A,utilities:0x9C8CE8,industrials:0x7FB4E0};
+const SNAME = {tech:"tech · 42 filers",financials:"financials · 37",consumer:"consumer · 33",healthcare:"healthcare · 32",energy:"energy · 32",materials_realestate:"materials · real estate · 28",utilities:"utilities · 21",industrials:"industrials · 19"};
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const stage = document.getElementById("stage");
+const renderer = new THREE.WebGLRenderer({antialias:true, powerPreference:"high-performance"});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+stage.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x060A14);
+scene.fog = new THREE.FogExp2(0x0E1730, 0.018);
+const camera = new THREE.PerspectiveCamera(48, window.innerWidth/window.innerHeight, 0.1, 400);
+
+// ---------- city layout: 8 districts in a 4x2 grid, 7x7 slots each
+const SLOT = 1.15, GRIDN = 7, DIST = GRIDN*SLOT + 5.5;
+const districtOrigin = {};
+SECTORS.forEach((s,i)=>{ const col=i%4, row=Math.floor(i/4); districtOrigin[s] = {x:(col-1.5)*DIST, z:(row-0.5)*DIST}; });
+const bySector = {}; SECTORS.forEach(s=>bySector[s]=[]);
+CITY.forEach(r=>bySector[r[2]].push(r));
+const towers = []; // {cik,name,sector,n,years,x,z,h}
+const maxN = Math.max(...CITY.map(r=>r[3]));
+SECTORS.forEach(s=>{
+  const list = bySector[s].slice().sort((a,b)=>b[3]-a[3]);
+  // tallest at the centre of the district, spiralling out
+  const order = spiral(GRIDN);
+  list.forEach((r,i)=>{ const [gx,gz] = order[i]; const o = districtOrigin[s];
+    const h = 0.8 + 11*Math.log(1+r[3])/Math.log(1+maxN);
+    towers.push({cik:r[0],name:r[1],sector:s,n:r[3],years:r[4],x:o.x+(gx-(GRIDN-1)/2)*SLOT,z:o.z+(gz-(GRIDN-1)/2)*SLOT,h}); });
+});
+function spiral(n){ const c=(n-1)/2, cells=[]; for(let x=0;x<n;x++)for(let z=0;z<n;z++)cells.push([x,z]); cells.sort((a,b)=>Math.hypot(a[0]-c,a[1]-c)-Math.hypot(b[0]-c,b[1]-c)); return cells; }
+
+// ---------- ground + district glows
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(220,220), new THREE.MeshBasicMaterial({color:0x08101F}));
+ground.rotation.x = -Math.PI/2; ground.position.y = -0.01; scene.add(ground);
+const grid = new THREE.GridHelper(220, 110, 0x1A2540, 0x121B33); grid.position.y = 0; scene.add(grid);
+SECTORS.forEach(s=>{ const o=districtOrigin[s]; const m=new THREE.Mesh(new THREE.PlaneGeometry(GRIDN*SLOT+2.2,GRIDN*SLOT+2.2), new THREE.MeshBasicMaterial({color:SCOL[s],transparent:true,opacity:0.10}));
+  m.rotation.x=-Math.PI/2; m.position.set(o.x,0.02,o.z); scene.add(m); });
+
+// ---------- towers (instanced) + glow shells
+const geo = new THREE.BoxGeometry(0.62,1,0.62); geo.translate(0,0.5,0);
+const mat = new THREE.MeshStandardMaterial({color:0x26324F, roughness:0.55, metalness:0.35, emissive:0x0B1730, emissiveIntensity:1});
+const inst = new THREE.InstancedMesh(geo, mat, towers.length);
+const glowGeo = new THREE.BoxGeometry(0.72,1,0.72); glowGeo.translate(0,0.5,0);
+const glowMat = new THREE.MeshBasicMaterial({color:0x6FA8FF, transparent:true, opacity:0.10, blending:THREE.AdditiveBlending, depthWrite:false});
+const glow = new THREE.InstancedMesh(glowGeo, glowMat, towers.length);
+const dummy = new THREE.Object3D(); const tmpColor = new THREE.Color();
+const baseColors = [];
+towers.forEach((t,i)=>{ tmpColor.set(0x26324F).lerp(new THREE.Color(SCOL[t.sector]), 0.18); baseColors.push(tmpColor.clone()); inst.setColorAt(i, tmpColor); });
+scene.add(inst); scene.add(glow);
+let boot = reduce ? 1 : 0; // towers rise on load
+function placeTowers(){ towers.forEach((t,i)=>{ const hh = Math.max(0.02, t.h * easeOut(Math.min(1, Math.max(0, boot*1.6 - i/towers.length*0.6)))); dummy.position.set(t.x,0,t.z); dummy.scale.set(1,hh,1); dummy.updateMatrix(); inst.setMatrixAt(i,dummy.matrix); glow.setMatrixAt(i,dummy.matrix); }); inst.instanceMatrix.needsUpdate = true; glow.instanceMatrix.needsUpdate = true; }
+function easeOut(t){ return 1-Math.pow(1-t,3); }
+
+// ---------- the chosen tower: Apple, floors = years
+const apple = towers.find(t=>t.cik===320193); const ai = towers.indexOf(apple);
+const floorGroup = new THREE.Group(); floorGroup.position.set(apple.x,0,apple.z); floorGroup.visible=false; scene.add(floorGroup);
+const floorMeshes = []; let yAcc = 0; const maxY = Math.max(...apple.years);
+apple.years.forEach((n,i)=>{ const fh = 0.25 + 0.75*(n/maxY); const m = new THREE.Mesh(new THREE.BoxGeometry(1.2,fh*0.92,1.2), new THREE.MeshStandardMaterial({color:0x2E3E63,emissive:0x1E3A6E,emissiveIntensity:0.6,roughness:0.5,metalness:0.3}));
+  m.position.set(0,yAcc+fh/2,0); m.userData={year:YEARS[i],n,restZ:0,fh}; floorGroup.add(m); floorMeshes.push(m); yAcc += fh; });
+const slab = floorMeshes[YEARS.indexOf(2024)]; // FY2024 10-K
+const panels = new THREE.Group(); panels.visible=false; scene.add(panels);
+[[0x3FB8E6,-1.6],[0x6FA8FF,0],[0xFF6A1F,1.6]].forEach(([c,dx])=>{ const p=new THREE.Mesh(new THREE.PlaneGeometry(1.2,1.7), new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:0.55,side:THREE.DoubleSide})); p.position.set(dx,0,0); panels.add(p); });
+
+// ---------- the time wall (beat 8)
+const wall = new THREE.Mesh(new THREE.PlaneGeometry(0.15, 16, 1, 1), new THREE.MeshBasicMaterial({color:0xFF6A1F,transparent:true,opacity:0.55,blending:THREE.AdditiveBlending,depthWrite:false,side:THREE.DoubleSide}));
+wall.rotation.y = Math.PI/2; wall.position.set(-40,8,0); wall.visible=false; scene.add(wall);
+const wallGlow = new THREE.Mesh(new THREE.PlaneGeometry(2.5,16), new THREE.MeshBasicMaterial({color:0xFF6A1F,transparent:true,opacity:0.12,blending:THREE.AdditiveBlending,depthWrite:false,side:THREE.DoubleSide}));
+wallGlow.rotation.y = Math.PI/2; wall.add(wallGlow);
+
+// ---------- lights
+scene.add(new THREE.HemisphereLight(0x8FB4FF, 0x060A14, 0.9));
+const key = new THREE.DirectionalLight(0xFFE9D6, 0.9); key.position.set(-20,30,10); scene.add(key);
+const rim = new THREE.PointLight(0xFF6A1F, 0, 30); rim.position.set(apple.x+2, 6, apple.z+2); scene.add(rim);
+
+// ---------- camera keyframes per beat: [px,py,pz, lx,ly,lz]
+const ax=apple.x, az=apple.z, to=districtOrigin.tech;
+const KEYS = [
+  [0,26,46,   0,3,0],
+  [0,62,14,   0,0,0],
+  [to.x+2,12,to.z+18,  to.x,2,to.z],
+  [ax+4.5,5.5,az+6.5,  ax,3.2,az],
+  [ax+3.2,4.3,az+5.2,  ax+0.6,3.4,az],
+  [ax+3.2,4.3,az+5.2,  ax+0.6,3.4,az],
+  [ax+6,7,az+7,        ax,3,az],
+  [ax+2.4,4.4,az+5.6,  ax,3.2,az],
+  [0,34,52,            0,4,0],
+  [18,20,44,           0,3,0],
+];
+let p = 0, pSmooth = 0; // scroll progress 0..9
+const camPos = new THREE.Vector3(), camLook = new THREE.Vector3();
+function lerpKey(a,b,t){ const k=KEYS[a], m=KEYS[b]; const e = t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; return k.map((v,i)=>v+(m[i]-v)*e); }
+function setCamera(prog){ const i=Math.min(8,Math.floor(prog)); const t=prog-i; const v=lerpKey(i,Math.min(9,i+1),t);
+  const orbit = prog<0.999 ? 0 : (prog-9)*0; camPos.set(v[0],v[1],v[2]); camLook.set(v[3],v[4],v[5]);
+  if(prog<1){ const a=perfTime*0.05; camPos.x = v[0]*Math.cos(a)+v[2]*Math.sin(a)*0.0; } // gentle idle
+  camera.position.copy(camPos); camera.lookAt(camLook); }
+let perfTime = 0;
+
+// ---------- scroll → progress
+const scroller = document.getElementById("scroller");
+function readScroll(){ const max = scroller.offsetHeight - window.innerHeight; const y = Math.max(0, Math.min(max, window.scrollY)); p = max>0 ? 9*y/max : 0; }
+window.addEventListener("scroll", readScroll, {passive:true}); readScroll();
+
+// ---------- overlays
+const panelsHTML = Array.from(document.querySelectorAll(".panel"));
+const beatsLI = Array.from(document.querySelectorAll("#beats li"));
+const hudD = document.getElementById("hud-d"), hudT = document.getElementById("hud-t"), hudB = document.getElementById("hud-b");
+const hint = document.getElementById("scrollhint");
+let curBeat = -1;
+function setBeat(b){ if(b===curBeat) return; curBeat=b;
+  panelsHTML.forEach(el=>el.classList.toggle("on", +el.dataset.beat===b));
+  beatsLI.forEach((li,i)=>{ li.classList.toggle("on", i===b); li.classList.toggle("done", i<b); });
+  hudB.textContent = b + " / 9"; hint.classList.toggle("off", b>0);
+  hudD.textContent = b>=2 && b<=7 ? SNAME.tech : (b===0||b===1||b>=8 ? "all eight" : "—");
+  hudT.textContent = b>=3 && b<=7 ? "Apple Inc. · 149 filings" : "—";
+  floorGroup.visible = b>=3 && b<=7; inst.count = towers.length; panels.visible = (b===4 || b===5); wall.visible = b===8; rim.intensity = (b>=3&&b<=7)?1.4:0; }
+// counters (beat 1 ticks them)
+const counters = Array.from(document.querySelectorAll("[data-count]"));
+function tick(prog){ const t = Math.max(0, Math.min(1, prog/0.9)); counters.forEach(c=>{ const n=+c.dataset.count; c.textContent = Math.round(n*(reduce?1:easeOut(t))).toLocaleString("en-US"); }); }
+
+// ---------- per-frame scene state
+function updateScene(prog){
+  const b = Math.min(9, Math.floor(prog+0.0001)); setBeat(b);
+  // hide the instanced Apple tower while the floor stack is shown
+  dummy.position.set(apple.x,0,apple.z); dummy.scale.set(1, floorGroup.visible ? 0.02 : Math.max(0.02, apple.h*easeOut(Math.min(1,boot*1.6))), 1); dummy.updateMatrix(); inst.setMatrixAt(ai,dummy.matrix); glow.setMatrixAt(ai,dummy.matrix); inst.instanceMatrix.needsUpdate=true; glow.instanceMatrix.needsUpdate=true;
+  // floors rise in beat 3, slab pulls out in beat 4, panels fan in 4-5
+  const t3 = Math.max(0, Math.min(1, prog-3)); floorMeshes.forEach((m,i)=>{ const s = easeOut(Math.max(0, Math.min(1, t3*1.5 - i/floorMeshes.length*0.5))); m.scale.set(1, Math.max(0.01,s), 1); m.material.emissiveIntensity = (m===slab && prog>=4) ? 1.6 : 0.6; });
+  const t4 = Math.max(0, Math.min(1, prog-4)); slab.position.z = 1.6*easeOut(t4); slab.position.x = 0.4*easeOut(t4);
+  panels.position.set(ax+0.6, slab.position.y+1.9, az+1.6); panels.children.forEach((pl,i)=>{ const s=easeOut(Math.max(0,Math.min(1,t4*2-i*0.25))); pl.scale.set(Math.max(0.01,s),Math.max(0.01,s),1); pl.rotation.y = (i-1)*-0.35; });
+  // beat 8: the wall sweeps across x; towers behind it light up
+  const t8 = Math.max(0, Math.min(1, prog-8)); const wx = -34 + 68*t8; wall.position.x = wx;
+  if(b===8 || b===9){ towers.forEach((tw,i)=>{ const lit = tw.x < wx ? 1 : 0; tmpColor.copy(baseColors[i]).lerp(new THREE.Color(0xFF6A1F), lit*0.55); inst.setColorAt(i,tmpColor); }); inst.instanceColor.needsUpdate=true; }
+  else if(curBeat!==8){ /* restore once */ }
+  tick(prog>=1 ? 1 : prog);
+}
+function restoreColors(){ towers.forEach((tw,i)=>inst.setColorAt(i,baseColors[i])); inst.instanceColor.needsUpdate=true; }
+
+// ---------- CTA
+document.getElementById("go").addEventListener("click", ()=>{ const v=(document.getElementById("ticker").value||"").trim().toUpperCase(); const n=document.getElementById("ctanote"); n.textContent = v ? ("Request noted: " + v + ". In the prototype nothing is fetched; the live run happens on the author's machine and is shown in the demo video.") : "Type a ticker first."; });
+
+// ---------- loop
+const clock = new THREE.Clock(); let lastBeat=-1;
+function frame(){ const dt = Math.min(0.05, clock.getDelta()); perfTime += dt;
+  if(boot<1){ boot = Math.min(1, boot + dt*0.6); placeTowers(); }
+  pSmooth = reduce ? p : pSmooth + (p - pSmooth)*Math.min(1, dt*6);
+  const b = Math.floor(pSmooth+0.0001); if(lastBeat===8 && b<8) restoreColors(); lastBeat=b;
+  setCamera(pSmooth); updateScene(pSmooth); renderer.render(scene,camera); requestAnimationFrame(frame); }
+placeTowers(); tick(0); frame();
+window.addEventListener("resize", ()=>{ camera.aspect=window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth,window.innerHeight); readScroll(); });
+})();
+</script>

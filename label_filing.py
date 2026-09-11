@@ -44,10 +44,20 @@ THE THREE REFUSALS
    `run_campaign_chain.sh` process is alive, this exits rather than share the
    GPU or risk a double-drive.
 
-Cost: $0. No network, no API. Local GPU only.
+TWO INTERPRETERS, ON PURPOSE (exactly as `label_e2.py` splits them)
+------------------------------------------------------------------
+`finetune/.mlx_venv` carries mlx + transformers and has NO pandas or pyarrow;
+the system interpreter has pyarrow and no mlx. So every parquet read/write runs
+in SYSTEM python3 and the GPU step reads a plain JSONL:
 
-RUN IT IN THE MLX VENV:
-    finetune/.mlx_venv/bin/python label_filing.py --store data/app/companies/<cik>
+    --prepare    SYSTEM python3   chunks.parquet -> rows.jsonl
+    --generate   .mlx_venv        rows.jsonl     -> labels.jsonl  (the GPU half)
+    --write      SYSTEM python3   labels.jsonl   -> labels.parquet
+
+RUN IT AS ONE COMMAND, with the system interpreter -- it re-enters itself in
+the venv for the middle step:
+
+    python3 label_filing.py --store data/app/companies/<cik>
 """
 
 from __future__ import annotations
@@ -73,12 +83,24 @@ COMPANIES_DIR = DATA_DIR / "app" / "companies"
 CAMPAIGN_MANIFEST = DATA_DIR / "f4" / "campaign_manifest.json"
 CANARY_STATE = DATA_DIR / "app" / "cache" / "repro_canary_app.json"
 
+MLX_PYTHON = REPO_ROOT / "finetune" / ".mlx_venv" / "bin" / "python"
+
+ROWS_NAME = "rows.jsonl"
 JOURNAL_NAME = "labels.jsonl"
 LABELS_NAME = "labels.parquet"
+GEN_SIDECAR = "generation.json"
 MANIFEST_NAME = "label_manifest.json"
 
 RUN_ID = "L2.2-label-filing"
 CANARY_ROWS = 10
+
+# The one sentence that is true of every store this module labels and of no row
+# of the research corpus. It travels with the labels; `report_filing --store`
+# renders the same fact on the page.
+OUTSIDE_UNIVERSE_CAVEAT = (
+    "This company is outside the 244-company research universe. Its labels have "
+    "no spot-check of their own; the model-consensus error measured at G2 on the "
+    "research corpus is the best case, not a measurement of this company.")
 
 # Any of these alive means a labeling campaign owns the GPU.
 CAMPAIGN_PROCESS_PATTERNS = ("run_campaign_chain.sh", "label_e2.py")
@@ -214,31 +236,59 @@ def ensure_canary(args, adapter_sha: str, instruction_sha: str,
 
 
 # ---------------------------------------------------------------------------
-# the store
+# step A -- prepare (SYSTEM python3: needs pyarrow)
 # ---------------------------------------------------------------------------
-def load_store_chunks(store: Path) -> "object":
+def prepare_rows(store: Path) -> dict:
+    """chunks.parquet -> rows.jsonl, the GPU step's only input.
+
+    Two interpreters, exactly as `label_e2.py` splits them and for the same
+    reason: `finetune/.mlx_venv` carries mlx + transformers and no pandas or
+    pyarrow, so every parquet read and write happens in SYSTEM python3 and the
+    GPU step reads a plain JSONL. `rows.jsonl` carries the chunk id, the
+    passage, and the guidance applicability the writer needs -- nothing else,
+    and in particular no company name, CIK, date or section type, none of
+    which may enter a prompt (rubric v1.1).
+    """
     import pyarrow.parquet as pq
 
-    path = Path(store) / "chunks.parquet"
+    store = Path(store)
+    path = store / "chunks.parquet"
     if not path.exists():
         raise LabelRefusal(f"{path} is missing -- run ingest_one.py first")
-    return pq.read_table(path, columns=[
-        "chunk_id", "section_type", "text", "word_count", "n_paragraphs",
-        "paragraph_ids", "home_cik", "home_accession_number", "home_form",
-        "home_filing_date", "source_accession_numbers", "source_filing_dates",
-        "source_forms", "n_source_filings", "guidance_applicable"]).to_pandas()
+    table = pq.read_table(path, columns=["chunk_id", "text", "guidance_applicable"])
+    rows_path = store / ROWS_NAME
+    with open(rows_path, "w") as fh:
+        for cid, text, applicable in zip(table["chunk_id"].to_pylist(),
+                                         table["text"].to_pylist(),
+                                         table["guidance_applicable"].to_pylist()):
+            fh.write(json.dumps({"chunk_id": cid, "passage": text,
+                                 "guidance_applicable": bool(applicable)},
+                                ensure_ascii=False) + "\n")
+    return {"rows_jsonl": str(rows_path), "n_rows": table.num_rows,
+            "rows_jsonl_sha256": ev.sha256_file(rows_path),
+            "chunks_parquet_sha256": ev.sha256_file(path)}
+
+
+def load_rows(store: Path, limit: int = 0) -> list:
+    """rows.jsonl -> the generation list (stdlib only; runs in the MLX venv)."""
+    path = Path(store) / ROWS_NAME
+    if not path.exists():
+        raise LabelRefusal(f"{path} is missing -- run --prepare first")
+    rows = [json.loads(line) for line in open(path) if line.strip()]
+    return rows[:limit] if limit else rows
 
 
 # ---------------------------------------------------------------------------
-# generation -- label_e2.generate's loop, over a store instead of a segment
+# step B -- generation (MLX VENV: label_e2.generate's loop, over a store)
 # ---------------------------------------------------------------------------
 def generate(rows: list, args, journal_path: Path) -> dict:
     """One JSON answer per chunk, greedy, appended + fsync'd row by row.
 
     Byte-for-byte the same decode as `label_e2.generate`: the same renderer
-    tokenizer from the same snapshot, the same `fit_prompt`, the same
-    `make_sampler(temp=0.0)` argmax, the same `max_tokens`. Resumable: re-run
-    the identical command and finished chunks are skipped.
+    tokenizer from the same snapshot, the same `fit_prompt` with the same
+    answer-token reserve, the same `make_sampler(temp=0.0)` argmax, the same
+    `max_tokens`. Resumable: re-run the identical command and finished chunks
+    are skipped; a torn final line is repaired before anything is appended.
     """
     from mlx_lm import load as mlx_load
     from mlx_lm.generate import stream_generate
@@ -311,18 +361,82 @@ def generate(rows: list, args, journal_path: Path) -> dict:
     }
 
 
+def run_generate(store: Path, limit: int = 0, force_canary: bool = False,
+                 verbose: bool = True, **over) -> dict:
+    """The GPU half: the three refusals, then generation. MLX venv only."""
+    store = Path(store)
+    args = build_args(store, **over)
+    args.segment_id = f"app-{store.name}"
+
+    assert_no_campaign()
+
+    tman = json.loads(Path(args.train_manifest).read_text())
+    args.model = args.model or tman["model"]["resolved_snapshot_path"]
+    instruction = L2.read_instruction(Path(args.mlx_data_dir))
+    args.instruction_sha256 = ev.sha256_text(instruction)
+    identity = assert_labeler_identity(Path(args.adapter_path), args.model,
+                                       args.instruction_sha256)
+
+    t = time.perf_counter()
+    canary = ensure_canary(args, identity["adapter"]["adapters_sha256"],
+                           args.instruction_sha256, force=force_canary)
+    canary_s = time.perf_counter() - t
+    if verbose:
+        tail = " (cached)" if canary.get("from_cache") else f" ({canary_s:.0f}s)"
+        print(f"repro canary: {canary['n_identical']}/{canary['n_compared']} "
+              f"byte-identical against the G1 eval{tail}", file=sys.stderr)
+
+    rows = load_rows(store, limit)
+    t = time.perf_counter()
+    gen = generate(rows, args, store / JOURNAL_NAME)
+    gen["generate_seconds"] = round(time.perf_counter() - t, 1)
+
+    side = {
+        "labeler": {
+            "student": "qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+            "adapter_path": args.adapter_path,
+            "adapter_sha256": identity["adapter"]["adapters_sha256"],
+            "matches_campaign_adapter": True,
+            "instruction_sha256": args.instruction_sha256,
+            "model_snapshot": args.model,
+            "rubric_version": L2.RUBRIC_VERSION,
+            "decoding": f"greedy temp=0.0 (argmax), max_tokens {args.max_tokens}, "
+                        f"answer token reserve {args.answer_token_reserve}",
+        },
+        "repro_canary": {**canary, "seconds": round(canary_s, 1)},
+        "generation": gen,
+    }
+    (store / GEN_SIDECAR).write_text(json.dumps(side, indent=2, default=str) + "\n")
+    return side
+
+
 # ---------------------------------------------------------------------------
-# the writer -- label_e2's own schema and its own row mapping
+# step C -- the writer (SYSTEM python3: label_e2's own schema and row mapping)
 # ---------------------------------------------------------------------------
-def write_labels(corpus, journal_path: Path, out_path: Path, args) -> dict:
-    """journal -> labels.parquet, in the F4 label schema, columns and all."""
+def write_labels(store: Path, limit: int = 0, **over) -> dict:
+    """journal + chunks.parquet -> labels.parquet, in the F4 label schema."""
     import pandas as pd
     import pyarrow as pa
     import pyarrow.parquet as pq
 
+    store = Path(store)
+    args = build_args(store, **over)
+    side = json.loads((store / GEN_SIDECAR).read_text()) if (store / GEN_SIDECAR).exists() else {}
+    args.instruction_sha256 = (side.get("labeler", {}).get("instruction_sha256")
+                               or L2.INSTRUCTION_SHA256)
+
+    journal_path = store / JOURNAL_NAME
     records = ev.load_predictions(journal_path)
     if not records:
         raise LabelRefusal(f"{journal_path} has no usable records")
+
+    corpus = pq.read_table(store / "chunks.parquet", columns=[
+        "chunk_id", "section_type", "text", "word_count", "n_paragraphs",
+        "paragraph_ids", "home_cik", "home_accession_number", "home_form",
+        "home_filing_date", "source_accession_numbers", "source_filing_dates",
+        "source_forms", "n_source_filings", "guidance_applicable"]).to_pandas()
+    if limit:
+        corpus = corpus.iloc[:limit].copy()
     corpus = corpus[corpus["chunk_id"].isin(set(records))].copy()
 
     applicable = dict(zip(corpus["chunk_id"], corpus["guidance_applicable"]))
@@ -344,17 +458,17 @@ def write_labels(corpus, journal_path: Path, out_path: Path, args) -> dict:
     df = corpus.drop(columns=["guidance_applicable"]).set_index("chunk_id").join(
         labels, how="inner").reset_index()
     schema, n_teacher, _ = L2.output_schema()
-    table = pa.Table.from_pandas(df[[f.name for f in schema]], schema=schema,
-                                 preserve_index=False)
-    pq.write_table(table, out_path)
+    out_path = store / LABELS_NAME
+    pq.write_table(pa.Table.from_pandas(df[[f.name for f in schema]], schema=schema,
+                                        preserve_index=False), out_path)
 
     ga, gi = df["guidance_applicable"], df["guidance_imputed_none"]
-    return {
+    written = {
         "path": str(out_path), "sha256": ev.sha256_file(out_path),
         "n_rows": int(len(df)), "n_columns": len(schema),
         "schema_source": f"label_e2.output_schema() -- columns 1-{n_teacher} are "
-                         "data/labels_v12.parquet's arrow schema (SCHEMA ONLY), "
-                         "then the 9 F4 columns",
+                         "data/labels_v12.parquet's arrow schema (SCHEMA ONLY, never "
+                         "a teacher), then the 9 F4 columns",
         "parse_failures": int((~df["parse_ok"]).sum()),
         "schema_violations": int((~df["schema_valid"]).sum()),
         "guidance": {"n_applicable": int(ga.sum()),
@@ -371,9 +485,23 @@ def write_labels(corpus, journal_path: Path, out_path: Path, args) -> dict:
         "red_flags_status": L2.RED_FLAGS_STATUS,
     }
 
+    manifest = {
+        "run_id": RUN_ID,
+        "store": str(store),
+        "labeler": side.get("labeler"),
+        "repro_canary": side.get("repro_canary"),
+        "generation": side.get("generation"),
+        "labels": written,
+        "cost_usd": 0.0,
+        "anthropic_api_calls": 0,
+        "caveats": L2.CAVEATS + [OUTSIDE_UNIVERSE_CAVEAT],
+    }
+    (store / MANIFEST_NAME).write_text(json.dumps(manifest, indent=2, default=str) + "\n")
+    return manifest
+
 
 # ---------------------------------------------------------------------------
-# the whole thing
+# the orchestrator (SYSTEM python3 -> shells out to the MLX venv for the GPU)
 # ---------------------------------------------------------------------------
 def build_args(store: Path, **over) -> argparse.Namespace:
     """The knobs `label_e2`'s functions read, defaulted to the campaign's."""
@@ -397,76 +525,41 @@ def build_args(store: Path, **over) -> argparse.Namespace:
     return ns
 
 
-def label_store(store: Path, force_canary: bool = False, limit: int = 0,
-                verbose: bool = True, **over) -> dict:
+def label_store(store: Path, limit: int = 0, force_canary: bool = False,
+                venv_python: Path = MLX_PYTHON, verbose: bool = True) -> dict:
+    """prepare -> generate (in the MLX venv) -> write. One command, three steps."""
     t_all = time.perf_counter()
     store = Path(store)
-    args = build_args(store, **over)
-    args.segment_id = f"app-{store.name}"
-
-    assert_no_campaign()
-
-    tman = json.loads(Path(args.train_manifest).read_text())
-    args.model = args.model or tman["model"]["resolved_snapshot_path"]
-    instruction = L2.read_instruction(Path(args.mlx_data_dir))
-    args.instruction_sha256 = ev.sha256_text(instruction)
-    identity = assert_labeler_identity(Path(args.adapter_path), args.model,
-                                       args.instruction_sha256)
-
-    t = time.perf_counter()
-    canary = ensure_canary(args, identity["adapter"]["adapters_sha256"],
-                           args.instruction_sha256, force=force_canary)
-    canary_s = time.perf_counter() - t
+    prep = prepare_rows(store)
     if verbose:
-        print(f"repro canary: {canary['n_identical']}/{canary['n_compared']} "
-              f"byte-identical against the G1 eval"
-              f"{' (cached)' if canary.get('from_cache') else f' ({canary_s:.0f}s)'}")
+        print(f"prepared {prep['n_rows']} chunks -> {ROWS_NAME}")
 
-    corpus = load_store_chunks(store)
-    rows = [{"chunk_id": cid, "passage": text}
-            for cid, text in zip(corpus["chunk_id"], corpus["text"])]
+    if not Path(venv_python).exists():
+        raise LabelRefusal(
+            f"{venv_python} is missing. Generation needs mlx; the system "
+            "interpreter has pyarrow and no mlx, the venv has mlx and no "
+            "pyarrow, which is why the two halves are separate processes.")
+    cmd = [str(venv_python), str(REPO_ROOT / "label_filing.py"),
+           "--store", str(store), "--generate"]
     if limit:
-        rows = rows[:limit]
-        corpus = corpus.iloc[:limit].copy()
-
+        cmd += ["--limit", str(limit)]
+    if force_canary:
+        cmd += ["--force-canary"]
     t = time.perf_counter()
-    gen = generate(rows, args, store / JOURNAL_NAME)
+    proc = subprocess.run(cmd)
+    if proc.returncode != 0:
+        raise LabelRefusal(f"generation exited {proc.returncode}; nothing was written")
     generate_s = time.perf_counter() - t
 
-    written = write_labels(corpus, store / JOURNAL_NAME, store / LABELS_NAME, args)
-
-    manifest = {
-        "run_id": RUN_ID,
-        "store": str(store),
-        "labeler": {
-            "student": "qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
-            "adapter_path": args.adapter_path,
-            "adapter_sha256": identity["adapter"]["adapters_sha256"],
-            "matches_campaign_adapter": True,
-            "instruction_sha256": args.instruction_sha256,
-            "model_snapshot": args.model,
-            "rubric_version": L2.RUBRIC_VERSION,
-            "decoding": "greedy temp=0.0 (argmax), max_tokens "
-                        f"{args.max_tokens}, answer token reserve "
-                        f"{args.answer_token_reserve}",
-        },
-        "repro_canary": canary,
-        "generation": gen,
-        "labels": written,
-        "timings_seconds": {"canary_s": round(canary_s, 1),
-                            "generate_s": round(generate_s, 1),
-                            "total_s": round(time.perf_counter() - t_all, 1)},
-        "cost_usd": 0.0,
-        "anthropic_api_calls": 0,
-        "caveats": L2.CAVEATS + [
-            "This company is outside the 244-company research universe. Its "
-            "labels have no spot-check of their own; the model-consensus error "
-            "measured at G2 on the research corpus is the best case, not a "
-            "measurement of this company."],
-    }
+    manifest = write_labels(store, limit=limit)
+    manifest["prepare"] = prep
+    manifest["timings_seconds"] = {
+        "generate_s": round(generate_s, 1),
+        "total_s": round(time.perf_counter() - t_all, 1)}
     (store / MANIFEST_NAME).write_text(json.dumps(manifest, indent=2, default=str) + "\n")
     if verbose:
-        print(f"{written['n_rows']} labels -> {store / LABELS_NAME}  "
+        gen = manifest.get("generation") or {}
+        print(f"{manifest['labels']['n_rows']} labels -> {store / LABELS_NAME}  "
               f"({generate_s:.0f}s generation, "
               f"{gen.get('seconds_per_chunk') or 0:.2f}s/chunk)")
     return manifest
@@ -475,15 +568,33 @@ def label_store(store: Path, force_canary: bool = False, limit: int = 0,
 def main(argv: Optional[list[str]] = None) -> int:
     ap = argparse.ArgumentParser(
         description="Label one company store's chunks with the v1.2 student. "
-                    "Run under finetune/.mlx_venv/bin/python.")
+                    "Run with SYSTEM python3; the GPU half re-enters itself "
+                    "under finetune/.mlx_venv/bin/python.")
     ap.add_argument("--store", type=Path, required=True)
     ap.add_argument("--limit", type=int, default=0, help="first N chunks (smoke)")
     ap.add_argument("--force-canary", action="store_true",
                     help="re-run the repro canary even if a cached PASS covers "
                          "exactly these artifacts")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--prepare", action="store_true",
+                      help="SYSTEM python3: chunks.parquet -> rows.jsonl")
+    mode.add_argument("--generate", action="store_true",
+                      help="MLX venv: rows.jsonl -> labels.jsonl (the GPU half)")
+    mode.add_argument("--write", action="store_true",
+                      help="SYSTEM python3: labels.jsonl -> labels.parquet")
     args = ap.parse_args(argv)
     try:
-        label_store(args.store, force_canary=args.force_canary, limit=args.limit)
+        if args.prepare:
+            print(json.dumps(prepare_rows(args.store), indent=2))
+        elif args.generate:
+            run_generate(args.store, limit=args.limit,
+                         force_canary=args.force_canary)
+        elif args.write:
+            man = write_labels(args.store, limit=args.limit)
+            print(f"{man['labels']['n_rows']} labels -> {man['labels']['path']}")
+        else:
+            label_store(args.store, limit=args.limit,
+                        force_canary=args.force_canary)
     except LabelRefusal as exc:
         print(f"REFUSED: {exc}", file=sys.stderr)
         return 1
