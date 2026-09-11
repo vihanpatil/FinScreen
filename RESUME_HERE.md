@@ -25,8 +25,9 @@ v1 feedback. **The owner asked that nothing be built until they rule; decisions 
 to them in chat on 2026-09-11.**
 
 **AUTO-RESUME PROTOCOL (owner, 2026-09-11: "auto-resume once usage resets; keep
-docs and memory updated so resuming is seamless").** A session cron fires every
-~2 h with a resume prompt. On ANY resume (cron or fresh session): (1) read this
+docs and memory updated so resuming is seamless").** A session cron fired every
+~2 h with a resume prompt until the owner cancelled it on 2026-09-11 ("You may kill
+auto-resume, I will not run out of 5-hour usage anymore"); no cron is armed now. On ANY resume (cron or fresh session): (1) read this
 block and the IN FLIGHT table; (2) `pgrep -fl "label_filing|ingest_one|label_e2"`
 — never start a second labeling process while one is alive; (3) for each IN
 FLIGHT item whose expected output is missing and whose agent is not running,
@@ -35,7 +36,23 @@ after any action, update this block, HANDOFF §3 and memory BEFORE the next
 agent launch; (5) commit ledgers after each milestone (the owner pushes). Be
 frugal: if nothing is missing, do nothing.
 
-**IN FLIGHT: nothing (as of 2026-09-11 ~12:15 PT). The table below is the day's record; every row is DONE.**
+**OWNER RULED A–F AND ALL 23 G3 DECISIONS (chat, 2026-09-11 afternoon) — verbatim +
+readings in `data/f5/G3_OWNER_RULINGS_2026-09-11.md` (READ IT FIRST). Pre-registration is
+being edited DRAFT → RATIFICATION-READY; sha is pinned into `data/f5/G3_RATIFIED.json`
+ONLY when the owner replies "ratify" to that file's §4 list. Owner also killed the
+auto-resume cron ("I will not run out of 5-hour usage anymore") — no cron is armed; the
+protocol below still applies to any fresh session.**
+
+**IN FLIGHT (launched 2026-09-11 afternoon; every launch listed here):**
+| item | launched as | expected output | if missing on resume |
+|---|---|---|---|
+| QM: scorecard + rolling-window arms + size_only block + OOF export in `backtest_e2.py`, new `scorecard_e2.py`, schema regenerated, tests | quant-modeler Opus agent | `scorecard_e2.py` exists; `data/f5/G3_PARAMS_SCHEMA.json` lists `scorecard.*` and `fold_sensitivity.train_window_quarters`; `python3 -m pytest test_backtest_e2.py test_scorecard_e2.py -q` green; `python3 backtest_e2.py` still exits 2 | relaunch with "check what already landed in backtest_e2.py / scorecard_e2.py before editing; spec = G3_OWNER_RULINGS §3 item 2" |
+| DOC: `data/f5/G3_PREREGISTRATION.md` DRAFT → RATIFICATION-READY (§14 scorecard, decision-4 family, §13 signature, params block keys), packet banner | general-purpose Opus agent | header says RATIFICATION-READY; §14 exists; block parses with the new keys | relaunch with "diff the file against the spec in G3_OWNER_RULINGS §3 item 1; finish only what is missing" |
+| LEGAL: baseline memo (decision E) | legal-reviewer agent (fable) | `data/legal/LEGAL_REVIEW_baseline_2026-09-11.md` (main session saves the agent's memo) | relaunch the review; nothing else depends on it |
+| MAIN: charter amendment (decision F) in HANDOFF §1 / README / LIMITATIONS / MODEL_CARD / two agent files; PRODUCT_PLAN §4 + §1; F5_PLAN §3 rulings block; HANDOFF §3 entry; memory; commit | main session | the files say "amended 2026-09-11" | do it in the main session |
+**Then:** red-team review of prereg + scorecard code → full suite → commit → ask the owner for "ratify" → pin sha → run heads → scorecard.
+
+**PREVIOUS IN FLIGHT: nothing (as of 2026-09-11 ~12:15 PT). The table below is that day's record; every row is DONE.**
 | item | launched as | expected output | if missing on resume |
 |---|---|---|---|
 | P1a.2 fundamentals for arbitrary CIKs: `ingest_one.py --fundamentals` pulls the CIK's companyfacts via edgar_client, runs F2's concept-resolution classifier (`ingest_fundamentals.py`) for that CIK, writes `fundamentals.parquet` + `concept_resolution.csv` into the store; `report_filing.py --store` renders the PIT panel from the store | general-purpose Opus agent | `data/app/status/L2_3_external_fundamentals.md` with a 10-company coverage table | relaunch with "resume from existing stores; do not re-ingest what exists" |

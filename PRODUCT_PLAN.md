@@ -68,9 +68,9 @@ everything was scrapped. **Rule for FinScreen, binding on every phase below:**
 
 1. **Paper before live.** Any signal is paper-traded forward, pre-registered, for a
    stated number of quarters before it informs a real position. No live-capital hook
-   exists in the code in any phase. **The charter's own line is stronger — "No live
-   capital, in any phase, ever" — and P5's last sentence would narrow it. That is not
-   the main session's to change: it is decision F in §4, in the owner's own words.**
+   exists in the code in any phase. **RULED 2026-09-11 (decision F): the charter line is amended — the owner's own
+   capital only, after the pre-registered paper period has run and been read, never
+   automated, never anyone else's money (HANDOFF §1).**
 2. **No claim without out-of-sample evidence.** A recommendation surface shows its own
    backtested and paper record, with costs, or it does not exist.
 3. **Distribution requires legal review.** Personal use is the owner's business.
@@ -79,9 +79,12 @@ everything was scrapped. **Rule for FinScreen, binding on every phase below:**
    already public under MIT and the owner links it from a resume, LinkedIn and a
    personal site; the code being public is fine, but a hosted tool strangers can run,
    a waitlist, a ranked watchlist, a backtested track record or a paper log on a public
-   page is other people touching it — that is decision E in §4, and until it is ruled
-   those artifacts stay out of git and off any public page (authoring the site is fine;
-   deploying its live box is not).**
+   page is other people touching it — RULED 2026-09-11 (decisions B and E): the owner
+   first; others only if the legal reviewer (`.claude/agents/legal-reviewer.md`;
+   baseline memo `data/legal/LEGAL_REVIEW_baseline_2026-09-11.md`) finds it "not much
+   harder"; a live box, waitlist, ranked list or track record stays off any public page
+   until that review clears it (authoring the site is fine; deploying its live box is
+   not).**
 4. **No new API spend without owner sign-off** (unchanged). A licensed price feed is
    new recurring spend and is the owner's decision (§4, decision A).
 5. **Everything pre-registered.** Signals, costs, universe, rebalance rule, and stopping
@@ -211,6 +214,13 @@ disclosure block (labeler error, data limits, out-of-sample record, paper record
 Nothing is shown without its evidence.
 
 ### P5 — Paper forward test, then personal use. 8 quarters minimum, wall-clock.
+
+**Ruled 2026-09-11 (decision D reading, ⚠ owner confirms):** the walk-forward under G3 is
+the historical test the owner calls "the real world test"; P5's length is derived from
+that run's measured per-quarter dispersion (8 quarters minimum) and pre-registered before
+P5 starts; if no feasible length reaches the walk-forward's detection threshold, every
+paper report says so and P5 is labelled a pipeline check. Live use afterwards is under
+the amended charter line (§1.1).
 Pre-registered: frozen model and rules, live-dated recommendations written to an
 append-only log before prices are known, scored quarterly against the same metrics,
 published either way. The owner's "test on modern data" is this, on paper. Live use
@@ -222,6 +232,10 @@ and a re-ratification. Not scheduled.
 
 ## 4. Decisions only the owner can make now
 
+**ALL SIX RULED 2026-09-11 — see §4.1 below. The table's "default" column is now the
+historical proposal; the ruling governs. Verbatim rulings and the main session's readings:
+`data/f5/G3_OWNER_RULINGS_2026-09-11.md` §1.**
+
 | # | decision | why it gates the plan | default |
 |---|---|---|---|
 | A | **Price data source.** Yahoo's keyless endpoint is under a robots.txt disallow and is split-adjusted only (no dividends, no delisting returns). A terms-compliant source with total returns AND delisted-name history is needed for P2 and for any use beyond research. Options: a paid feed (tens of $/month; the owner approves the spend) or a free tier with acceptable terms. **Note: G3 decision 8 makes Yahoo ratify-or-refuse for the E2 run itself, so A gates P1 as well as P2** | P2 cannot report money-metrics honestly without total returns and delisted names; distribution is impossible on the current source | owner names the budget; candidates with terms in `data/app/status/PRICE_SOURCE_OPTIONS_2026-09-11.md` |
@@ -230,6 +244,17 @@ and a re-ratification. Not scheduled.
 | D | **What the paper period is for, and how long.** Eight quarterly observations at E1's measured per-fold dispersion (std 0.17) detect only an IC of about 0.17–0.20, three to six times coarser than E2's own threshold; no feasible paper period can confirm an effect of E2's size. The paper test's honest job is to catch a broken pipeline and gross failure, not to verify an edge | so the owner does not mistake "8 quarters of paper" for verification | 8 quarters, defined as a pipeline check, stated as such on every paper report |
 | E | **Repository visibility and public-site scope.** The repo is public under MIT (fine for code). A hosted "name a company" box, a waitlist, a ranked watchlist, a backtested track record or a paper log on a public page is other people using the tool — the §1.3 legal line. Options: keep the code public and deploy only an explainer site with a recorded demo (no live box, no waitlist) until legal review; or make the repo private until then | this is the distribution question, and it is already live | explainer + recorded demo public; live box, waitlist, track record and paper log withheld until legal review |
 | F | **Live capital, in the owner's own words.** The charter says "No live capital, in any phase, ever"; P5 would let the owner act personally after a paper period. Only the owner can narrow that line | it is the charter's most consequential non-goal | as the owner writes it; until then the charter line stands |
+
+### 4.1 Rulings received 2026-09-11 (owner verbatim → reading)
+
+| # | owner (verbatim) | reading adopted | status |
+|---|---|---|---|
+| A | "Cheaper feed without identifier." | EODHD "EOD Historical Data — All World" ($19.99/mo or $199/yr; ticker-keyed, CIK mapping ours; Non-Professional licence: no display/redistribution). The owner subscribes and sets `EODHD_API_TOKEN`; nothing is fetched before that; P2 starts on that word. The E2 run does not wait for it (G3 decision 8) | RULED; owner action pending |
+| B | "If legality and licensing is harder when involving others, prioritize this product for just myself. … if not much harder to have it available for others to use, that would be perfect." | Owner first; others if the legal reviewer finds it "not much harder". Identity sentence drafted from these words (HANDOFF §1), pending the owner's one-word confirmation | RULED; sentence ⚠ to confirm |
+| C | "Decide after E2 result. I would rather not spend many more days of the ingestion extraction labeling and spot checking." | Default: no mid-cap arm before the E2 result; its cost is a full F2+F3+F4+G2 repeat | RULED |
+| D | "HISTORICAL TEST IS UTMOST IMPORTANCE! If 8 quarters is not enough, increase it. I need this historical test to be used as a real test. All others are synthetic and takes me in loops." | The historical test = head 1's 33-quarter walk-forward on real filings and real prices (nothing synthetic), reported per company by the scorecard; it is the primary evidence. The paper period (P5) is forward calendar time: 8 quarters minimum, its length derived from the walk-forward's measured per-quarter dispersion and written into P5's pre-registration before it starts; if no feasible length reaches the threshold, every paper report says so | RULED; reading ⚠ to confirm |
+| E | "Create a virtualized lawyer agent. Have them review it before the public tool." | `.claude/agents/legal-reviewer.md` created (a language model, not a licensed attorney — stated on every memo); baseline memo `data/legal/LEGAL_REVIEW_baseline_2026-09-11.md`; explainer site + recorded demo may be public; live box, waitlist, ranked list, track record wait on its review | RULED; done |
+| F | "Change that line. I NEED LIVE CAPITAL. … If you think best, change it to my own capital after paper period and not automated. You know best." | Charter line amended (HANDOFF §1, README, LIMITATIONS, MODEL_CARD): the owner's own capital only, after the pre-registered paper period has run and been read, never automated, never anyone else's money | RULED; wording ⚠ to confirm |
 
 ## 5. What gets refactored, concretely
 

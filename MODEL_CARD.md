@@ -47,7 +47,7 @@ govern every downstream decision and every statement in this card:
 - **Not a trading bot.** No component places, queues, or recommends any trade.
 - **Not investment advice.** A screening score is a research signal, never a
   buy / hold / sell recommendation.
-- **No live capital**, ever, in any phase.
+- **Live capital: the owner's own capital only, after the pre-registered paper period has run and been read, never automated — no component places, queues, or routes a trade, and never anyone else's money.** (Owner amendment 2026-09-11, decision F; wording delegated to the main session from the owner's "my own capital after paper period and not automated"; record: `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §1 F. The original line "No live capital, in any phase, ever" is history.)
 - **No return guarantees**, expected-performance claims, or "beats the market"
   language anywhere. **Every performance number is reported with exactly how
   it was measured, next to it, every time.**

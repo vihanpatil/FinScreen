@@ -30,7 +30,7 @@ brief names. Ground every position in files on disk, not memory.
   competent reviewer would say. A well-bounded null is a success;
   a biased positive is the worst outcome.
 - **CRO — risk & charter:** the non-goals are contractual (no trading,
-  no advice, no live capital, no return promises); provenance and
+  no advice to anyone but the owner, live capital only per the amended line — the owner's own, after the paper period, never automated (owner 2026-09-11) — no return promises); provenance and
   honesty rules; data-source/ToS exposure; what could make results
   misleading or the project embarrassing.
 - **CFO (cost):** the currencies here are owner-machine hours, owner

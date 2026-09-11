@@ -17,17 +17,20 @@ second, larger run has finished labeling and has not yet been backtested.
 
 - **Not a trading bot.** No component in this repository places, queues, or
   recommends a trade. There is no brokerage integration and no order path.
-- **Not investment advice.** A screening score is a research signal, never a
-  buy, hold or sell recommendation.
-- **No live capital**, in any phase, ever.
+- **Not investment advice to anyone else.** Amended 2026-09-11: for the owner's own
+  use the tool makes calls ("outperform / underperform peers") that carry their
+  historical scorecard and labeler error rates beside them; it never tells anyone
+  else what to do, and any use by others waits on a legal review.
+- **Live capital: the owner's own capital only, after the pre-registered paper period has run and been read, never automated — no component places, queues, or routes a trade, and never anyone else's money.** (Owner amendment 2026-09-11, decision F; wording delegated to the main session from the owner's "my own capital after paper period and not automated"; record: `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §1 F. The original line "No live capital, in any phase, ever" is history.)
 - **No return claims and no "beats the market" language.** Every performance
   number is reported next to exactly how it was measured. Nothing in this
   repository estimates an expected return.
 
 These are contractual non-goals, not current limitations. They are stated in
-`HANDOFF.md` §1 and inherited unchanged by the expanded experiment
-(`EXPANSION_PLAN.md` §1). A request to add trade execution, real-money
-integration, or promotional performance claims conflicts with the charter.
+`HANDOFF.md` §1 (as amended by the owner on 2026-09-11; `EXPANSION_PLAN.md` §1 and
+`DISCOVERY.md` §7 carry the original wording as history). A request to add trade
+execution, automated order routing, anyone else's money, or promotional performance
+claims conflicts with the charter.
 
 Three hard rules govern everything else here:
 

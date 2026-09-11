@@ -50,25 +50,32 @@ against a numeric-only baseline.
 they govern every downstream decision):
 
 - Not a trading bot. No component places, queues, or recommends any trade.
-- Not investment advice. A screening score is a research signal, never a
-  buy/hold/sell recommendation.
-- No live capital, in any phase.
+- Not investment advice to anyone else. **Amended 2026-09-11 (decision B):** for the
+  owner's own use the tool makes calls ("outperform / underperform peers") that carry
+  their historical scorecard and labeler error rates beside them; it never tells anyone
+  else what to do, and any use by others waits on the legal review (decision E).
+- **Live capital: the owner's own capital only, after the pre-registered paper period has run and been read, never automated — no component places, queues, or routes a trade, and never anyone else's money.** (Owner amendment 2026-09-11, decision F; wording delegated to the main session from the owner's "my own capital after paper period and not automated"; record: `data/f5/G3_OWNER_RULINGS_2026-09-11.md` §1 F. The original line "No live capital, in any phase, ever" is history.)
 - No return guarantees or "beats the market" language anywhere — every
   performance number is reported with exactly how it was measured, next to
   it, every time.
 
-If a future session is ever asked to add trade execution, real-money
-integration, or promotional performance claims, that request conflicts with
-the project's own charter — flag it to the owner rather than building it.
+If a future session is ever asked to add trade execution, automated order routing,
+anyone else's money, or promotional performance claims, that request conflicts with
+the project's own charter as amended — flag it to the owner rather than building it.
 
 ---
 
 **Identity, as ruled 2026-09-11 (two rulings the same day; the later one
 governs — HANDOFF §3):** the owner reaffirmed the investing-product goal after
-concerns were raised. Working identity pending the owner's one-sentence
-confirmation (PRODUCT_PLAN §4 B): *"A personal investing research tool:
-validated screening signals with their measured track record beside them;
-personal use; distribution only after legal review."* The earlier line of the
+concerns were raised. Working identity, drafted from the owner's decision-B ruling of 2026-09-11 and
+pending their one-word confirmation (`data/f5/G3_OWNER_RULINGS_2026-09-11.md` §4):
+*"FinScreen is a personal investment tool that reads a company's filings and shows,
+beside every call, its historical scorecard — what it would have said from that
+company's past reports and what the stock then did — built to be right for its owner
+first, and opened to others only after a legal review says the extra burden is small."*
+(Owner, verbatim: "prioritize this product for just myself … I need this product to be
+perfect for me. However, if not much harder to have it available for others to use,
+that would be perfect.") The earlier line of the
 same day ("a personal filing-reading aid … never a score or a recommendation")
 is superseded for the owner's own use; the reading aid remains the product's
 front end. §1's "not investment advice" non-goal is amended for the owner's own
@@ -1559,6 +1566,40 @@ scorecard as a reported output before ratification); distribution to others is
 INTENDED, so the §1.3 legal review moves ahead of any public tool and decision E's
 default changes accordingly; the honesty rules stand. Website: minimalist city, one
 3D model per stage, smoother, novice-clear, goal-forward (Higgsfield-grade reference).
+
+**2026-09-11 (later) — OWNER RULED DECISIONS A–F AND ALL 23 G3 DECISIONS; charter
+amended; scorecard pre-registered; auto-resume cron cancelled.** Verbatim rulings and the
+main session's readings: `data/f5/G3_OWNER_RULINGS_2026-09-11.md` (the file to read;
+nine readings are marked ⚠ for the owner's one-word confirmation, its §4). Headlines:
+**A** EODHD ($19.99/mo or $199/yr; the owner subscribes, sets `EODHD_API_TOKEN`; nothing
+fetched before that). **B** owner first, others if "not much harder"; identity sentence
+drafted in §1 (pending confirmation). **C** no mid-caps before the E2 result. **D** the
+historical walk-forward is "the real world test" (33 quarters, nothing synthetic), reported
+per company by the scorecard; P5's length derived from its measured dispersion, 8 quarters
+minimum. **E** `.claude/agents/legal-reviewer.md` created (a model, not a lawyer; says so);
+baseline memo at `data/legal/LEGAL_REVIEW_baseline_2026-09-11.md`. **F** the charter line
+is AMENDED by the owner ("I NEED LIVE CAPITAL … my own capital after paper period and not
+automated. You know best."): §1 now reads *the owner's own capital only, after the
+pre-registered paper period has run and been read, never automated, never anyone else's
+money* — applied to README, LIMITATIONS, MODEL_CARD, tech-council and docs-writer agent
+files; DISCOVERY §7 / EXPANSION_PLAN §1 / ROADMAP / PRIOR_WORK keep the old line as
+history. **G3:** defaults everywhere except the readings on 1 (ETF comparator → P2), 3
+(+ the per-company SCORECARD as a reported head-1 output, §14, rule pinned: terciles
+within the quarter, sign of the 63-session excess return, `numeric_only` + `size_only`
+comparators, Wilson intervals at ≥ 6 calls, descriptive only), 4 (+ rolling 8/16-quarter
+training-window sensitivity arms), 7 (Enbridge unconverted, disclosed; FX to P2), 8
+(RATIFY the stored Yahoo snapshot, no new fetch), 13 (default; companies never dropped),
+17 (signed: "A positive proceeds to the signal program and null should not be used as
+signal. I agree with this."), 23 (+ sequential-prior novelty, exploratory). Built this
+turn: `backtest_e2.py` OOF export + `size_only` block + rolling arms, new
+`scorecard_e2.py`, schema regenerated, tests; `G3_PREREGISTRATION.md` DRAFT →
+RATIFICATION-READY with §14; packet banner. **Not done, by design:** `G3_RATIFIED.json`
+is not written and no head has run — the sha is pinned only on the owner's "ratify".
+**Follow-up noted:** the app-lane report footer still prints "no live capital" (the
+pre-amendment wording); it is rendered text with tests behind it and is changed with the
+legal reviewer's memo in hand, not silently. The owner also cancelled the auto-resume
+cron ("I will not run out of 5-hour usage anymore"); RESUME_HERE's protocol stays for
+fresh sessions, no cron is armed.
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target
