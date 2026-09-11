@@ -96,7 +96,8 @@ the owner's priority attaches to the first:
    One escorting clause, so the word carries its true weight: **the filings and the
    prices are real; the text features are model-produced labels with disclosed error**
    (red flags 42.00% teacher / 28.0% student exact-set error, ruled exploratory;
-   sentiment 86.94% INDETERMINATE) — **real data, imperfect labels**, never a synthetic
+   sentiment 86.94% INDETERMINATE; the labeling adapter's own held-out NEGATIVE
+   recall is 0.529, 64 of 121) — **real data, imperfect labels**, never a synthetic
    corpus.
    It is the largest historical test the corpus allows **as the corpus stands**: it
    begins in 2016Q3, and forwards it is bounded by today. **It can be lengthened
@@ -403,9 +404,8 @@ decision-23 reading.
 `G3_PREREGISTRATION.md` was refreshed from them**, each moved number carrying its old
 value in parentheses as "(2026-09-10 build)" so the diff is auditable. **The sha is
 pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
-text, and is shown the exact two lines that change at the pin** (the header STATUS line
-and the parameter block's `draft_status` — nothing else differs between the text the
-owner reads and the text whose sha256 is pinned).
+text, and is shown the exact diff that the pin applies (`python3 data/f5/pin_g3.py --show`: eight declared substitutions — the header STATUS line, the block's `draft_status`, the 13 table headers, the two "unratified" sentences, the two signature lines, the header-paragraph clause — and nothing else)** (nothing else differs between the text the owner reads plus that diff and the text whose
+sha256 is pinned; the script refuses to pin if any "pending"/"unratified" residue survives).
 
 1. **`data/f5/G3_PREREGISTRATION.md`** — every "DRAFT rule" becomes **"RULED rule
    (dec.; owner 2026-09-11; ratification pending)"** — a ruling is not a ratification,
@@ -470,13 +470,28 @@ refresh changed that the owner should see before ratifying:** the modeling frame
 **7,389** rows (was 7,405) and the run-time analysis frame **7,381 / 143 CIKs** after
 the GLD exclusion; the scorecard scores **4,481** rows over the 33 folds (the package
 had said 5,383); the filing-level train-overlap disclosure falls from **80.19% to
-34.24%** because decision 20 removed the foreign-company chunks that carried it; and
-`operating_cashflow_to_revenue` coverage falls from **0.8358 to 0.4204** because
-decision 21 NaNs the 7,603 duration-mismatched rows. **The sha is
+34.24%** (**34.28%** on the run-time frame, which is the figure the scorecard page
+prints) because decision 20 removed the foreign-company chunks that carried it; and
+`operating_cashflow_to_revenue` coverage falls from **0.8358 to 0.4204** on the
+18,300-row numeric table — **42.35% on the run-time analysis frame, now the
+worst-covered numeric feature** — because decision 21 NaNs the 7,603
+duration-mismatched rows. **Four more numbers the round-3 red-team pass corrected, and
+the owner should see them too:** the **without-overlap arm is much smaller than the
+package implied** — it scores **2,694 dedup, non-overlapping test rows inside the 33
+folds** (2,700 with GLD in), about 82 a quarter and ~60% of the primary's n_dd, not the
+whole-frame arithmetic (7,389 − 2,530) the package quoted; **company-level train overlap on this frame is 108 of
+144 CIKs = 75.0%** (108 of 143 = 75.5% on the run-time frame) — G2 §2.5's 15.85% was a
+*fine-tuning-corpus* figure and is not this quantity; the **labeler's NEGATIVE recall
+is 0.529 (64 of 121)**, the v1.2 adapter's own held-out eval, not the 0.487 the package
+carried (that was the v1.1 adapter, a different model); and **44 filings on the
+modeling frame (45 on the 7,618-row join) carry no embedding vector**, 25 of them among
+the rows the scorecard scores. **The sha is
 pinned only after the rebuilds and the census refresh; the owner ratifies the refreshed
-text, and is shown the exact two lines that change at the pin** (the header STATUS line
-and the parameter block's `draft_status` — nothing else differs between the text the
-owner reads and the text whose sha256 is pinned).
+text, and is shown the exact diff that the pin applies (`python3 data/f5/pin_g3.py --show`: eight declared substitutions — the header STATUS line, the block's `draft_status`, the 13 table headers, the two "unratified" sentences, the two signature lines, the header-paragraph clause — and nothing else)** (nothing else differs between the text the owner reads plus that diff and the text whose
+sha256 is pinned; the script refuses to pin if any "pending"/"unratified" residue survives). **The pin is
+`python3 data/f5/pin_g3.py --pin --owner-word ratify`; `--show` prints the exact diff
+first** — one procedure, never a hand edit, and it refuses to write anything if the
+pinned text would still read as un-ratified anywhere.
 
 **The scorecard cannot change the §13 outcome: if the IC margin comes back bounded-null
 or UNPOWERED, the text arm is closed regardless of how the hit rates read.** The
@@ -501,6 +516,8 @@ Reply **"ratify"** and the main session pins sha256(`G3_PREREGISTRATION.md`) int
 | 23(b)–(h) | **defaults adopted with no owner words**: min-shingle 50 (b), the corpus-wide prior pool (c), 8K_BODY out of the embeddings (d), unweighted filing pooling (e), PCA k = 16 fit on training rows only and rank-transformed on the ranked arms (f–g), and **the embedding model itself ratified as a third-party artifact (h)** | the owner's decision-23 text was a **question** about quarterly filings. It is answered by (a) and by the exploratory sequential feature; it says **nothing** about (b)–(h), which are main-session defaults adopted pending this confirmation |
 | 13 | "What this mean? I want to say default, but do not drop companies still filing a year later if they are still public." — a **question** | **companies are never dropped**: the screen removes mislabelled stored "exit" **rows** from the set of positives; the company stays in the panel and stays scored as a non-exit |
 | 17 | the owner's sentence **began** *"I am unsure of what this means."* | the following **"I agree with this" is taken as the signature on §13**, and **the UNPOWERED row of the outcome map is the main session's mapping** — the owner never used that word. This is the single line most likely to be repudiated later, so it is put plainly |
+| 23a (the window and the fiscal-quarter reading) | **two main-session readings inside decision 23a, both ⚠ in the pre-registration and neither previously listed here** | the year-over-year prior is selected inside a **[300, 430]-day filing-date window**, the candidate **closest to 365 days**, ties on \|gap − 365\| broken by the **smallest accession number** (the window is a bound the pre-registration's cell did not state before the rebuild: without it, 52 of 6,973 scoped sections would have been labelled `_yoy` at gaps of 85–1,827 days); and **"same fiscal quarter" is read from the FILING-date window, not from the period fields** (`report_date` is read nowhere in `text_families_e2.py` — the PIT rule is filing_date, never report_date). Measured cost of the second reading, both rules run side by side: they select the **identical** prior on 6,905 of 6,905 scoped sections where both fire and differ in presence on 2 — **one late-filed Kraft Heinz FY2018 10-K** (`0001637459-19-000049`, its MDA and RISK_FACTORS), 476 filing-days after the previous 10-K but only 364 period days, **which now loses its `_yoy` value**. Main-session readings the owner confirms |
+| 21 (the scope of the duration match) | **decision 21 named one feature; which ratios are duration-matched is a main-session scope boundary** | only **`operating_cashflow_to_revenue`** is duration-matched. **`net_margin` (135 mismatched rows, 0.74%) and `operating_margin` (20 rows, 0.11%) divide by the same revenue and stay on the ported definition** — two orders of magnitude below the cash-flow ratio's 41.55%, which is why decision 21 was raised about that ratio and not these; they are listed in the manifest under `unruled_ratios_left_as_ported`. The criterion implemented is **bucket equality** (`(0,115] = Q`, `(115,210] = H1`, `(210,300] = 9M`, `(300,400] = FY`), which allows within-bucket slack; against E1's 20-day tolerance it **disposes every row identically — 0 differ**, computed on the 15,296 rows where both durations exist. Main-session readings the owner confirms |
 | 22 | *"Idk what default is, but I believe you know best. If it is fixed, then good."* — **"it" was undefined** | **"it" is read as the period-end defect, which is fixed** (2026-09-11, duration-aware resolver in `numeric_features_e2.py`), **and the 200-day staleness rule is kept** as the default |
 | 4 (the range itself) | *"if you need to increase the quarterly range, you may. I have the luxury of having a lot of historical data"* | **extend the corpus backwards, or run the 33 folds now — the owner's choice, not the main session's.** Extending means **re-ingesting, re-extracting and re-labeling earlier filings for the same 144 companies** (days of machine time, **$0 API spend**, plus a **spot-check of the new labels**); the corpus starts 2016Q3. **The reading adopted is "run the 33 folds now."** The earlier justification ("the ingestion the owner declined under decision C") was a misattribution — decision C was the **mid-cap expansion** — and is withdrawn |
 
