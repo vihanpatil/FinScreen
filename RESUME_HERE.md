@@ -24,9 +24,21 @@ deadline from packet receipt. **APP LANE STARTED 2026-09-11:** L2.1 =
 `report_filing.py` (per-filing HTML report over already-labeled E2
 companies; ledger `data/app/status/`; outputs `data/app/reports/`,
 git-excluded). **Step 2 census DONE 2026-09-11** (`data/f5/census_e2.json`; MDE at k=33 =
-0.030–0.077 by branch; implied-floor branches UNPOWERED at any k). **NEXT on
-Lane 1 = Step 3: draft `data/f5/G3_PREREGISTRATION.md` + the owner packet
-(23 decisions).** Gate G2 was RULED 2026-09-07
+0.030–0.077 by branch; implied-floor branches UNPOWERED at any k). **Step 3
+DRAFTED 2026-09-11 and red-teamed:** `data/f5/G3_PREREGISTRATION.md` (DRAFT,
+not ratified, no sha pinned) + `data/f5/G3_OWNER_PACKET.md` (23 decisions);
+parameter block validates against both runners; heads_e2 gained
+`head2.last_event_quarter` and `head3.exit_screen`. **The packet has NOT been
+delivered and the 14-day clock has NOT started**, because the owner's
+2026-09-11 message ("can it tell me if I should invest / top companies /
+marketable product / accurate advice") triggered KC5 (product pivot); the
+council re-convened (`data/f5/status/COUNCIL_ADVISORY_product_truth_2026-09-11.md`)
+and **the owner's charter ruling is pending** (HANDOFF §3 2026-09-11, last
+entry). **App lane L2.1 DONE and red-teamed:** `report_filing.py` (98 tests;
+containment of every rendered paragraph in the filing's own text verified
+independently by the main session); reports under `data/app/reports/`.
+Do not build any score, rank, verdict or distribution feature until the owner
+rules the charter question. Gate G2 was RULED 2026-09-07
 (proceed under the ladder; 2(b) extend). Repo committed on main; owner
 pushes. LICENSE = MIT (owner-confirmed 2026-09-10).**
 

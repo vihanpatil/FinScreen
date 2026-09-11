@@ -682,8 +682,12 @@ def test_selftest_writes_nothing_into_the_repo_data_dir(tmp_path):
     before = sorted(p.name for p in E.F5_DIR.glob("*"))
     E.selftest(tmp_path)
     after = sorted(p.name for p in E.F5_DIR.glob("*"))
+    # The before==after listing IS the assertion: --selftest must not add,
+    # remove or overwrite anything under data/f5. (It intentionally says
+    # nothing about G3_PREREGISTRATION.md, which exists as a DRAFT and is
+    # covered by the before/after listing like every other file there.)
     assert before == after
-    assert not E.G3_DOC_PATH.exists() and not E.G3_RATIFIED_PATH.exists()
+    assert not E.G3_RATIFIED_PATH.exists()
 
 
 # ---------------------------------------------------------------------------

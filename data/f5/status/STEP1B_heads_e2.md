@@ -1,10 +1,12 @@
 # STEP 1B — `heads_e2.py`: the HEAD-2 and HEAD-3 runners
 
-Written 2026-09-10 by the quant-modeler session executing F5_PLAN §2 Step 1.
-Every number below was measured by the run that produced
-`data/f5/census_heads.json` (module sha
-`fd7d1399ced73552…`, recorded inside that file) or by the test run quoted in §4.
-Nothing is hand-carried from a prior session or document.
+Written 2026-09-10 by the quant-modeler session executing F5_PLAN §2 Step 1,
+**amended 2026-09-10 (red-team) and 2026-09-11 (G3 draft review) — both notes
+below.** Every number below was measured by a run that produced
+`data/f5/census_heads.json` (module sha `0bd3bac134021…` after the 2026-09-11
+re-run, `fd7d1399ced73552…` before it; the live value is recorded inside that
+file) or by the test run quoted in §4. Nothing is hand-carried from a prior
+session or document.
 
 **Amended 2026-09-10 (same day), after a red-team pass, by the session that
 applied its findings.** Three changes: (1) `head3.train_label_purge` no longer
@@ -18,11 +20,63 @@ was NOT re-run: no census input changed (`census_heads.json` still records
 module sha `fd7d1399ced73552…`, which is the pre-amendment module; the current
 `heads_e2.py` sha is `5f033339fd0fa392…`).
 
+**Amended 2026-09-11 — two PRE-RATIFICATION amendments from the G3 draft
+review, applied by the quant-modeler session that read
+`data/f5/status/STEP3_g3_draft.md`.** That review found two G3 rows that were
+`NOT EXPRESSIBLE` in this module's parameter schema — a document cannot pin a
+rule the runner has no key for. Both are now expressible, and both are
+**required** keys (no default anywhere outside `--selftest`):
+
+1. **Decision 12, "end at the last complete quarter" — new required key
+   `head2.last_event_quarter`** (string, `"2026Q2"`-shaped). `run_head2` drops
+   usable events in later quarters immediately after the usable-event filter and
+   reports `events_dropped_after_last_event_quarter`,
+   `clusters_event_quarters_scored` and `events_scored_head2` in the result's
+   census block. The boundary is the document's ruling: the runner holds no
+   "drop the final quarter" rule of its own, and quarter labels are compared as
+   pandas Periods (a mistyped pin refuses rather than comparing as strings).
+   Measured population this touches: the census's **41** clusters / **3,996**
+   usable events end at the PARTIAL 2026Q3 (92 events against a complete-quarter
+   range 83–107); pinning `2026Q2` would score **40** clusters / **3,904**
+   events and drop **92**, counted.
+2. **Decision 13, the exit screen — new required key `head3.exit_screen`**, with
+   `SUPPORTED["head3.exit_screen"] = ("none", "no_in_membership_filing_within_1y")`.
+   Under the named screen `label_exits` DROPS an exit row when the same CIK has
+   an in-membership panel feature_date more than 365 days after the exit's
+   `filing_date`; `run_head3` supplies
+   `panel.groupby("cik")["feature_date"].max().to_dict()`. The screen reuses the
+   predicate the census already counted with (`_exit_followed_by_later_filing`,
+   now shared by `label_exits` and `_exits_followed_by_later_filings`), so the
+   census's **480 on-panel rows / 351 dropped / 129 kept** reproduce exactly.
+   Two counters travel with every head-3 run: `exit_rows_dropped_by_screen` and
+   `exit_rows_unscreenable_within_365d_of_panel_end` — the latter counts exits
+   filed within 365 days of the panel's last feature date (**2026-08-24**),
+   where the screen *cannot* fire because no year of panel is left to observe.
+   Those rows are COUNTED, NEVER DROPPED: **31 of the 480**, of which **6** fall
+   in the draft's two-kind set (`delisting_form_25` 2 + `deregistration_form_15`
+   4). An unimplemented screen name refuses at both doors (`check_required` and
+   `label_exits` itself).
+
+Also in this amendment: two tests were narrowed because
+`data/f5/G3_PREREGISTRATION.md` now exists **as a DRAFT** —
+`test_the_real_repo_has_no_ratified_document_today` (heads) no longer asserts
+the document is absent and instead asserts `G3_RATIFIED.json` is absent AND that
+`--head2 / --head3 / --all` still exit 2 against the real paths;
+`test_selftest_writes_nothing_into_the_repo_data_dir` (head 1) dropped its
+`G3_DOC_PATH` clause, its before==after `data/f5` listing being the assertion
+that carries the purpose. **The freeze is `G3_RATIFIED.json`, which does not
+exist.** The census WAS re-run this time (`census_heads.json` now records module
+sha `0bd3bac134021…`); every pre-existing census number is unchanged and the
+file's only diff is the added counters plus its own stamps.
+`G3_PREREGISTRATION.md`, `G3_OWNER_PACKET.md` and `G3_RATIFIED.json` were NOT
+written by this session, and no IC, correlation, slope or model fit was computed.
+
 **Freeze status (F5_PLAN §1): clean.** No information coefficient, correlation,
 slope, model fit or any other feature-versus-outcome association was computed on
 E2 data — not in `heads_e2.py`'s executed paths, not in `test_heads_e2.py`, not
-interactively. `data/f5/G3_PREREGISTRATION.md` and `data/f5/G3_RATIFIED.json`
-do not exist and were not created. `python3 heads_e2.py --head2 / --head3 /
+interactively. `data/f5/G3_RATIFIED.json` does not exist and was
+not created (`G3_PREREGISTRATION.md` exists as a 2026-09-11 DRAFT written by
+another session; a draft ratifies nothing, and the guard reads the ratification). `python3 heads_e2.py --head2 / --head3 /
 --all` **refuse today with exit code 2**, and that refusal is a test
 (`test_cli_refuses_both_heads_today`, `test_the_real_repo_has_no_ratified_document_today`).
 `$0` — no network call, no API call.
@@ -38,7 +92,7 @@ do not propagate into it; head 3 uses no benchmark at all.
 | file | role |
 |---|---|
 | `/Users/vihanpatil/personal/projects/FinScreen/heads_e2.py` | the two runners + census + selftest + schema writer |
-| `/Users/vihanpatil/personal/projects/FinScreen/test_heads_e2.py` | 58 tests, all on synthetic frames |
+| `/Users/vihanpatil/personal/projects/FinScreen/test_heads_e2.py` | **66** tests (58 + 8 from the 2026-09-11 amendment), all on synthetic frames |
 | `/Users/vihanpatil/personal/projects/FinScreen/data/f5/census_heads.json` | the counts below (`--census`) |
 | `/Users/vihanpatil/personal/projects/FinScreen/data/f5/G3_PARAMS_SCHEMA_heads.json` | the document keys heads 2 and 3 read (`--write-schema`) |
 
@@ -72,11 +126,13 @@ refusal; there is no default anywhere outside `--selftest`). Full descriptions,
 types, examples and allowed values are in `G3_PARAMS_SCHEMA_heads.json`.
 
 * head 2: `head2.stratum`, `head2.predictor`, `head2.direction`,
-  `head2.event_window_sessions`, `head2.trailing_sessions`, `head2.statistic`,
+  `head2.event_window_sessions`, `head2.trailing_sessions`,
+  **`head2.last_event_quarter`** (2026-09-11), `head2.statistic`,
   `head2.bootstrap.weights`, `head2.bootstrap.n_draws`,
   `head2.bootstrap.cluster`, `head2.bootstrap.seed`.
 * head 3: `fold_quarters`, `head3.horizon_quarters`, `head3.label_cut`,
-  `head3.exit_event_kinds`, `head3.feature_filing_rule`,
+  `head3.exit_event_kinds`, **`head3.exit_screen`** (2026-09-11),
+  `head3.feature_filing_rule`,
   `head3.train_label_purge`, `columns.confirmatory_text`, `columns.numeric`,
   `head3.missing_value_rule`, `head3.standardize`, `head3.model`,
   `head3.model_params`, `head3.metric`, `seeds.primary`; plus
@@ -133,7 +189,7 @@ synthetic frames. All passed on the run reported here.
 | A6 | a document edited after ratification (sha mismatch) → refusal | test | refusal message names `doc_sha256` |
 | A7 | a ratification without its document → refusal | test | refused |
 | A8 | zero or two parameter blocks → refusal | test | "expected exactly one" |
-| A9 | dropping ANY single required key → refusal naming that key | test, looped over all 10 head-2 and all 14 head-3 keys | 24/24 refused, each message names the dropped key |
+| A9 | dropping ANY single required key → refusal naming that key | test, looped over all 11 head-2 and all 15 head-3 keys | 26/26 refused, each message names the dropped key (11 + 15 since the 2026-09-11 amendment) |
 | A10 | a pinned value this runner does not implement → refusal, never a fallback | test | `head3.model="gradient_boosting"` refused |
 | A11 | DV numerator = mean \|r\| over sessions `+lo..+hi` only | test | matches the hand-computed mean to 1e-12; poisoning every session < news, and every session ≥ +6, leaves it bit-identical; poisoning session +3 moves it |
 | A12 | DV denominator sees nothing at or after the news session | test | poisoning every session ≥ news leaves it bit-identical |
@@ -168,10 +224,12 @@ synthetic frames. All passed on the run reported here.
 | A41 | only the guard/provenance helpers are taken from head 1 | AST test | `BT.*` calls used = {`sha256_file`, `assert_input_shas`, `require_g3`, `extract_params_block`, `append_run_log`} |
 | A42 | the guard runs before any fit in `main`, and each runner checks its required keys | AST + source test | `load_ratified_params` precedes both runners; both call `check_required` |
 | A43 | no association statistic is imported from a library | source scan | none of `spearmanr`, `pearsonr`, `corrcoef`, `.corr(`, `linregress`, `sklearn` appears |
-| A44 | the census is byte-stable across runs | two runs, sha of the JSON minus timestamp/runtime | `212b5a51bf047a12…` both times |
+| A44 | the census is byte-stable across runs | two runs, sha of the JSON minus timestamp/runtime | `4ba9934f1d30894a…` both times (re-measured 2026-09-11 with the two new counters; it was `212b5a51bf047a12…` before them) |
 | A45 | the guarded runners assemble correctly (synthetic end-to-end) | 2 tests with every loader monkeypatched to synthetic fixtures | head 2 writes a results document + one run-log line keyed to the document sha, with `n_clusters`/`n_obs` matching the fixture and no raw draw array; head 3 writes per-fold rows, censored folds counted, prevalence present wherever there are observable rows |
 | A46 | each runner re-measures the ratified document itself; a fabricated `doc_sha` cannot reach a fit | `reverify_guard` at the top of `run_head2` / `run_head3` | tests (both runners): a forged sha against a real synthetic pair refuses ("not a ratification"); the same call against the repo's real paths refuses because nothing is ratified; in both cases no loader ran, no results file and no run-log line was written |
 | A47 | the re-check is the FIRST thing each runner does | source test | `reverify_guard(` precedes `check_required(`, `assert_input_shas(` and every `get_param(` in both runner bodies |
+| A48 | (2026-09-11) events after the pinned `head2.last_event_quarter` are dropped and COUNTED, and the boundary quarter itself is kept | test over a synthetic 5-quarter event world | pinning the middle quarter drops every later event, `events_dropped_after_last_event_quarter` equals that count, `clusters_event_quarters_scored` falls to the kept count, the estimate's `n_obs`/`n_clusters` follow, and the boundary quarter is still a cluster; a missing pin refuses before any loader runs; `"Q2-2026"` refuses instead of comparing as a string (`"2026-Q2" < "2026Q1"` lexicographically) |
+| A49 | (2026-09-11) the exit screen drops rows whose CIK keeps filing, counts the rows it cannot judge, and refuses an unimplemented name | 4 tests + `--selftest` | under `no_in_membership_filing_within_1y` a CIK still filing in membership two years later stops being a positive while a CIK never seen again stays one (`exit_rows_dropped_by_screen` 0 → 1); an exit filed inside the panel's last 365 days is counted in `exit_rows_unscreenable_within_365d_of_panel_end` and still labels its row; `run_head3` wiring flips `positives_observable` 2 → 1 on the same fixture; an unknown screen name refuses in `check_required` AND in `label_exits`; the screen's counts equal `_exits_followed_by_later_filings`'s on the same frame (one shared predicate) |
 
 ### Mutation checks (throw-away copies in the scratchpad; repo files never mutated)
 
@@ -194,6 +252,11 @@ sandbox is 1 failure (the schema-file test needs the real `data/f5` path).
 ---
 
 ## 3. Census, as measured (`data/f5/census_heads.json`)
+
+**Re-run 2026-09-11** after the amendment (module sha `0bd3bac134021…`
+recorded in the file; it was `fd7d1399ced73552…`). **Every number below that
+existed before is unchanged**; the run added the exit-screen counters marked
+(2026-09-11). It still fits nothing and computes no association.
 
 Nothing in this section is an association. The `candidate_*` values used to size
 the population (predictor `sentiment_negative_share`, window `[1, 5]`, trailing
@@ -219,6 +282,13 @@ reads none of them.
 | usable events per quarter | min 83, mean 97.5, max 107 |
 | events with a flat (exactly zero-return) session in the post window | 81 |
 | events with a zero trailing denominator | 0 |
+
+**Decision 12 is now expressible (2026-09-11).** With
+`head2.last_event_quarter = "2026Q2"` the scored span would be **40 clusters /
+3,904 usable events**, with the **92** 2026Q3 events dropped and reported in
+`events_dropped_after_last_event_quarter`; with `"2026Q3"` it is the 41/3,996
+span below. The runner still takes no position — the key has no default and a
+missing pin is a refusal.
 
 The 41 clusters exceed F5_PLAN decision 12's "~39" because a 5-session window
 closes under the 2026-08-24 snapshot for events well into 2026Q3, where a
@@ -262,14 +332,28 @@ never "distress") supports, and no more.
 
 **A stored exit row is frequently not a company exit.** Counting, per event
 kind, the rows on panel CIKs that are followed by that same CIK still filing
-in-membership more than 365 days later:
+in-membership more than 365 days later — and (2026-09-11) the rows filed so
+close to the panel's end that the question cannot be asked at all:
 
-| event_kind | rows on panel CIKs | still filing a year later |
-|---|---|---|
-| `delisting_form_25_nse_exchange_filed` | 360 | **285** |
-| `deregistration_form_15` | 93 | 50 |
-| `delisting_form_25` | 25 | 14 |
-| `bankruptcy_8k_item_1_03` | 2 | 2 |
+| event_kind | rows on panel CIKs | still filing a year later (= dropped by the screen) | unscreenable: filed within 365 d of the panel end (2026-09-11) |
+|---|---|---|---|
+| `delisting_form_25_nse_exchange_filed` | 360 | **285** | 25 |
+| `deregistration_form_15` | 93 | 50 | 4 |
+| `delisting_form_25` | 25 | 14 | 2 |
+| `bankruptcy_8k_item_1_03` | 2 | 2 | 0 |
+| **pooled** | **480** | **351** (→ **129** kept) | **31** |
+
+The middle column is exactly what `head3.exit_screen =
+"no_in_membership_filing_within_1y"` drops, because both are the one shared
+predicate. The right-hand column is what that screen CANNOT judge: the panel
+ends **2026-08-24**, so a row filed after 2025-08-24 has no year of panel left
+in which a later filing could appear — its "no later filing" is missing data,
+not evidence. Those **31** rows are counted and kept, never dropped; **6** of
+them are in the draft's pinned two-kind set (`delisting_form_25` 2 +
+`deregistration_form_15` 4), whose pooled figures are **118 rows on panel CIKs,
+64 dropped, 54 kept**. A run's own copies of these counts are
+`exit_rows_dropped_by_screen` and
+`exit_rows_unscreenable_within_365d_of_panel_end` in the head-3 census block.
 
 ### Censoring (candidate cut only)
 
@@ -286,16 +370,21 @@ The per-fold censored count itself is computed at run time from the document's
 
 | step | wall |
 |---|---|
-| `python3 heads_e2.py --census` | 1.5 s (0.5 s of work; ~1.0 s is interpreter + pandas/`backtest_e2` import) |
-| `python3 heads_e2.py --selftest` | 1.0 s |
+| `python3 heads_e2.py --census` | 1.6 s (0.4 s of work; ~1.2 s is interpreter + pandas/`backtest_e2` import) |
+| `python3 heads_e2.py --selftest` | 1.2 s — **15 checks, 0 failed** (11 before the amendment, +4) |
 | `python3 heads_e2.py --write-schema` | 1.0 s |
-| `python3 -m pytest -q test_heads_e2.py` | **58 passed in 1.1 s** (51 before the red-team pass, +7) |
-| `python3 -m pytest -q test_backtest_e2.py test_heads_e2.py test_text_families_e2.py -m "not slow"` | 9.6 s — **142 passed, 1 deselected** |
-| `python3 -m pytest -q test_target_e2.py test_features_e2.py test_numeric_features_e2.py test_controls.py` (sibling suites, unchanged by this session) | 105 passed in 39.2 s |
+| `python3 -m pytest -q test_heads_e2.py` | **66 passed in 1.2 s** (51 → 58 after the red-team pass → 66 after the 2026-09-11 amendment) |
+| `python3 -m pytest -q test_heads_e2.py test_backtest_e2.py` | 9.2 s — **119 passed** (66 + 53) |
+| `python3 -m pytest -q test_backtest_e2.py test_heads_e2.py test_text_families_e2.py -m "not slow"` | 12.2 s — **150 passed, 1 deselected** |
+| `python3 -m pytest -q test_target_e2.py test_features_e2.py test_numeric_features_e2.py test_controls.py` (sibling suites, unchanged by this session) | 105 passed in 39.2 s — **2026-09-10 measurement, not re-run on 2026-09-11** |
 
 No test was deleted or weakened. **No module and no `data/f4` or
 `data/hardening` artifact was touched by this work beyond `heads_e2.py` and its
-test file**: `features.py`, `backtest.py`, `diagnose.py`, `spec.py`, `pit.py`,
+test file** — the 2026-09-11 amendment additionally narrowed exactly one head-1
+test (`test_backtest_e2.py::test_selftest_writes_nothing_into_the_repo_data_dir`,
+its `G3_DOC_PATH` clause) and regenerated `G3_PARAMS_SCHEMA_heads.json`
+(`--write-schema`) and `census_heads.json` (`--census`) from this module's own
+writers; `backtest_e2.py` itself is still unedited by the heads work: `features.py`, `backtest.py`, `diagnose.py`, `spec.py`, `pit.py`,
 `controls.py`, `target_e2.py`, `features_e2.py` and `numeric_features_e2.py`
 are unmodified, and `backtest_e2.py` was not edited by the heads work (the
 same-day red-team pass edited it under its own report, `STEP1B_backtest_e2.md`).
@@ -311,7 +400,13 @@ report's scope.
    rows on panel CIKs are followed by the same company still filing
    in-membership a year later; so are 50 of 93 Form 15 rows, 14 of 25 Form 25
    rows, and both bankruptcy rows. Whatever list G3 pins is what the label
-   measures; the runner counts but does not judge.
+   measures; the runner counts but does not judge. **Amended 2026-09-11:** the
+   kinds are no longer the only lever — `head3.exit_screen` can also drop the
+   rows followed by continued in-membership filing (351 of 480 pooled; 64 of
+   118 in the draft's two-kind set). G3 must pin BOTH keys, and the screen's
+   own residual is disclosed with it: **31** of the 480 rows (6 in the two-kind
+   set) were filed inside the panel's last 365 days, where the screen cannot
+   fire either way, and are counted rather than dropped.
 2. **`head3.label_cut` has no measured source.** The census offers
    `max(distress_events.filing_date) = 2026-08-17` as a candidate, but that is
    the last exit that happened to be ingested, not a statement about when
@@ -337,6 +432,9 @@ report's scope.
    whether a LONGER embargo (purging rows whose horizon closes within some
    buffer of the test quarter's start) is wanted; only the exact-boundary rule
    exists here.
+
+   **Amended 2026-09-11:** unchanged by the amendment — the purge key is
+   separate from the new `head3.exit_screen`, and both are required.
 5. **Membership dating differs between head 2 and the rest of F5.**
    `controls.load_earnings_events` filters membership on `filing_date`; the F5
    target and numeric tables filter on `info_date = max(filing_date,
@@ -376,8 +474,16 @@ report's scope.
     1's open question 1 about the last test quarter**
     (`STEP1B_backtest_e2.md` §4 item 1). The runner takes no position: it
     reports the per-quarter counts and uses whatever span the document pins.
+    **Amended 2026-09-11: the ruling is now expressible.**
+    `head2.last_event_quarter` is a required key with no default — `"2026Q2"`
+    scores 40 clusters / 3,904 events and counts the 92 dropped; `"2026Q3"`
+    keeps the partial quarter. Before the amendment the runner could only use
+    all 41, so the default the G3 draft proposed could not be pinned at all.
 11. **One red-team pass has now happened** (2026-09-10; its three findings are
-    applied and listed in the amendment note at the top of this file). It
+    applied and listed in the amendment note at the top of this file), followed
+    by the 2026-09-11 G3-draft-review amendment (two new required keys, second
+    note at the top). Neither is an owner reading and neither is a
+    ratification. It
     precedes the owner's read and substitutes for neither it nor G3. The
     guarded paths have never run on E2 data by design, and no IC exists for any
     of it.

@@ -39,7 +39,7 @@ identity**; and the WITHDRAWN per-year distribution with its frame footprint.
 |---|---|---|---|
 | 1 | Benchmark (whole-universe, exclude-self) | benchmark members used on complete in-membership rows: median **128**, min 113, max 135; **31** universe member CIKs never appear in the price matrix (invisible to `n_benchmark_unpriced`); 10,926 member-cells counted unpriced | quoted from `STEP1A_target_e2.md` §3 |
 | 2 | GLD analysis-side treatment | **8 modeling rows**, 1 CIK, 6× 10-Q + 2× 10-K, one per quarter in 2017Q3–2018Q2 and 2023Q3–2024Q2; **6 of the 8 fall inside the 33 default folds**; 65 scoped / 14 in-membership target rows | `.section_5….gld` |
-| 3 | Primary metric, spec, confirmatory block | frame **7,405** modeling rows / 144 CIKs; dedup **5,383** (72.7%) at gap 5; 10-K/10-Q rows 3,508 (47.4%); **ICCs vs company identity in §G — the PIT-rank spec does NOT reduce them** (log_total_assets 0.945 raw → 0.942 ranked; six of thirteen features rise) | `.section_6…` |
+| 3 | Primary metric, spec, confirmatory block | frame **7,405** modeling rows / 144 CIKs; dedup **5,383** (72.7%) at gap 5; 10-K/10-Q rows 3,508 (47.4%); **ICCs vs company identity in §G — the PIT-rank spec does NOT reduce them** (log_total_assets 0.945 raw → 0.942 ranked; nine of thirteen (six sharply) features rise) | `.section_6…` |
 | 4 | Fold structure | three options with exact quarter lists in **§B**; default **k = 33** (2018Q1–2026Q1), n_dd 119–161 mean **136.3**; alt **k = 26** (2019Q4–2026Q1), n_dd mean 138.2; post-2019 arm **k = 29** under the plan's own arithmetic (see the flag in §B) | `.section_1_fold_options_decision_4` |
 | 5 | Label purge | over the 33 default folds **6,194** (row, fold) training instances purged; per-fold share mean **6.17%**, max 16.57% (2018Q1), min 2.89% (2026Q1); monotone decreasing. E1 comparator: 313/2,425 = 12.9% | `.section_1…per_fold[*].share_train_purged` |
 | 6 | C1 / `include_same_day` | 17,623 of 29,271 scoped rows (60.2%) treated post-close under the ported rule; **1,751** rows whose ET acceptance date precedes `filing_date`, of which **1,717** open one-to-two sessions late (conservative) | quoted from `STEP1A_target_e2.md` §3 |
@@ -479,8 +479,8 @@ change of sample.
    E1's 25 over three years; company identity explains slightly less.
 2. **The PIT-rank transform does not decorrelate features from company
    identity.** For the three levels-like features it leaves the ICC essentially
-   where it was (0.945 → 0.942, 0.910 → 0.901, 0.900 → 0.889); for six of the
-   thirteen it **raises** it, sharply (`net_margin` 0.314 → 0.649,
+   where it was (0.945 → 0.942, 0.910 → 0.901, 0.900 → 0.889); for nine of the
+   thirteen it **raises** it, six of them sharply (`net_margin` 0.314 → 0.649,
    `operating_margin` 0.355 → 0.723, `cash_to_assets` 0.625 → 0.801,
    `book_to_market` 0.683 → 0.835, `realized_vol_63` 0.265 → 0.483). The
    transform re-expresses a feature on a common trailing cross-sectional scale

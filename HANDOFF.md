@@ -1360,13 +1360,37 @@ the default 33 folds with measured n_dd 136.3 = 0.0303 / 0.0408 (floor-free,
 because n_dd is 136 not 158; **every implied-floor branch is UNPOWERED at
 any fold count** (KC3 live); floor-free at k = 33 reaches Δ = 0.03 / 0.04.
 The PIT-rank transform does NOT reduce identity encoding on E2 (ICC 0.945 →
-0.942; raises six of thirteen features) — H2 §2's rationale must be restated
+0.942; raises nine of thirteen features, sharply for six) — H2 §2's rationale must be restated
 at G3 §1, pair unchanged. Ten CIKs never had periodic filings extracted,
 seven of them financials (Citigroup 100%, Morgan Stanley 93%). Exit kinds:
 only 129 of 480 rows plausibly end membership; bankruptcy channel empty.
 WITHDRAWN n = 66 is 79% 2020. "post-2019" pinned as test quarters from
 2019Q1 (29 folds). Next: Step 3 — G3 document + owner packet (23 decisions);
 the owner's 14-day clock starts at packet receipt.
+
+**2026-09-11 — OWNER ASKS FOR AN INVESTING PRODUCT; KC5 TRIGGERED; COUNCIL
+RE-CONVENED (advisory, not a ruling).** Owner's words, verbatim, in
+`data/f5/status/COUNCIL_ADVISORY_product_truth_2026-09-11.md` (header):
+"Can I give it a company and will this engine let me know if I should invest?
+Can this engine give me top companies to invest? … I want to make a marketable
+product … give accurate advice … verified with real life stock market prices …
+then … test on modern and upcoming data to see if I make profit." Also: "I
+agree with your intended resolutions and I have pushed all commits" (the
+0.529 NEGATIVE-recall correction and the E1-numbers-as-constants change).
+- This is in tension with the charter (§1) and with the owner's own
+  2026-09-11 identity ruling; under H5 §5 KC5 it is a product-pivot trigger.
+  The council re-convened; main session and council agree on the evidence
+  answer (no engine here can honestly say whether to invest or rank
+  companies to invest in; E1 found no fold-robust text signal; E2's MDE is
+  0.03–0.08; the requested historical validation IS the walk-forward
+  harness already built) and on the proposed agreement (run E2 under G3
+  within 14 days as the exact test asked for; build L2.2 meanwhile; decide
+  any screen only after the result against a pre-committed bar; advice
+  verdicts, "top companies", return claims, live capital and distribution
+  without legal review off the table in every branch; any forward test =
+  paper, pre-registered, ≥ 8 quarters). CEO dissent: put the charter
+  re-ratification question to the owner explicitly first. **Owner's ruling
+  pending. No refactor, no ranking or scoring code, until it is given.**
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target

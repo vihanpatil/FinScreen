@@ -55,6 +55,9 @@ def minimal_params() -> dict:
             "direction": "positive",
             "event_window_sessions": [1, 5],
             "trailing_sessions": 60,
+            # late enough that the synthetic head-2 world (2018Q2-2019Q2) is
+            # scored whole; the quarter-cut tests pin an earlier one on purpose
+            "last_event_quarter": "2019Q2",
             "statistic": "ols_slope",
             "bootstrap": {"weights": "rademacher", "n_draws": 100,
                           "cluster": "event_quarter", "seed": 0},
@@ -63,6 +66,7 @@ def minimal_params() -> dict:
             "horizon_quarters": 4,
             "label_cut": "2020-12-31",
             "exit_event_kinds": ["delisting_form_25"],
+            "exit_screen": "none",
             "feature_filing_rule": "latest_in_quarter",
             "train_label_purge": "horizon_end_before_test_start",
             "missing_value_rule": "train_median",
@@ -185,10 +189,19 @@ def test_cli_refuses_both_heads_today(tmp_path, monkeypatch, capsys):
     assert "BLOCKED" in capsys.readouterr().err
 
 
-def test_the_real_repo_has_no_ratified_document_today():
-    """The freeze is in force; if this fails, G3 happened and that is news."""
+def test_the_real_repo_has_no_ratified_document_today(capsys):
+    """The freeze is in force; if this fails, G3 happened and that is news.
+
+    What the freeze is: `G3_RATIFIED.json`. `G3_PREREGISTRATION.md` exists as a
+    DRAFT from 2026-09-11 and ratifies nothing on its own -- the guard needs a
+    ratification whose `doc_sha256` matches the document -- so this test asserts
+    the ratification is absent AND that the real runners (real paths, no
+    monkeypatch) still refuse with exit code 2.
+    """
     assert not H.RATIFIED_PATH.exists()
-    assert not H.PREREG_PATH.exists()
+    for flag in ("--head2", "--head3", "--all"):
+        assert H.main([flag]) == 2
+    assert "BLOCKED" in capsys.readouterr().err
 
 
 # ---------------------------------------------------------------------------
@@ -361,7 +374,8 @@ def test_exit_is_labelled_only_inside_the_horizon_and_strictly_after_the_feature
         "feature_date": pd.to_datetime(["2019-02-01"] * 3),
     })
     out, counters = H.label_exits(panel, synthetic_exits(), 4,
-                                  ["delisting_form_25"], "2021-12-31")
+                                  ["delisting_form_25"], "2021-12-31",
+                                  "none", _last_panel_date(panel))
     # cik 1 exits 2019-05-01 (inside 4 quarters); cik 2 exits 2020-06-01
     # (outside); cik 4's exit is ON the feature date -> strictly after fails.
     assert out["exit_within_horizon"].tolist() == [1, 0, 0]
@@ -372,10 +386,11 @@ def test_only_the_pinned_event_kinds_count():
     panel = pd.DataFrame({"cik": [3], "quarter": ["2019Q1"],
                           "feature_date": pd.to_datetime(["2019-02-01"])})
     only_25, _ = H.label_exits(panel, synthetic_exits(), 4,
-                               ["delisting_form_25"], "2021-12-31")
+                               ["delisting_form_25"], "2021-12-31",
+                               "none", _last_panel_date(panel))
     both, _ = H.label_exits(panel, synthetic_exits(), 4,
                             ["delisting_form_25", "deregistration_form_15"],
-                            "2021-12-31")
+                            "2021-12-31", "none", _last_panel_date(panel))
     assert only_25["exit_within_horizon"].tolist() == [0]
     assert both["exit_within_horizon"].tolist() == [1]
 
@@ -384,7 +399,8 @@ def test_an_exit_exactly_at_the_horizon_end_counts():
     panel = pd.DataFrame({"cik": [1], "quarter": ["2018Q2"],
                           "feature_date": pd.to_datetime(["2018-05-01"])})
     out, _ = H.label_exits(panel, synthetic_exits(), 4,
-                           ["delisting_form_25"], "2021-12-31")
+                           ["delisting_form_25"], "2021-12-31",
+                           "none", _last_panel_date(panel))
     assert out["horizon_end"].iloc[0] == pd.Timestamp("2019-05-01")
     assert out["exit_within_horizon"].iloc[0] == 1
 
@@ -396,9 +412,120 @@ def test_unobservable_rows_are_flagged_and_counted_not_scored_as_zeros():
         "feature_date": pd.to_datetime(["2019-02-01", "2020-11-01"]),
     })
     out, counters = H.label_exits(panel, synthetic_exits(), 4,
-                                  ["delisting_form_25"], "2021-06-30")
+                                  ["delisting_form_25"], "2021-06-30",
+                                  "none", _last_panel_date(panel))
     assert out["label_observable"].tolist() == [True, False]
     assert counters["panel_rows_label_unobservable"] == 1
+
+
+def _last_panel_date(panel):
+    """What `run_head3` hands `label_exits`: cik -> latest panel feature_date."""
+    return panel.groupby("cik")["feature_date"].max().to_dict()
+
+
+def _screen_world():
+    """A panel and exits where the screen has something to bite on.
+
+    cik 1 files an exit row and then KEEPS FILING in membership two years later
+    (an exchange transfer or a single-class deregistration, not a company exit);
+    cik 2 files the same row and is never seen again. Panel end = 2021-01-21, so
+    both exit rows sit more than a year before it and are screenable.
+    """
+    panel = pd.DataFrame({
+        "cik": [1, 2, 1],
+        "quarter": ["2019Q1", "2019Q1", "2021Q1"],
+        "feature_date": pd.to_datetime(["2019-01-21", "2019-01-21", "2021-01-21"]),
+        "t1": [0.0, 1.0, 0.5],
+        "n1": [1.0, 2.0, 3.0],
+    })
+    exits = pd.DataFrame({
+        "cik": [1, 2],
+        "accession_number": ["a", "b"],
+        "form": ["25", "25"],
+        "filing_date": pd.to_datetime(["2019-05-01", "2019-05-01"]),
+        "items": [None, None],
+        "event_kind": ["delisting_form_25", "delisting_form_25"],
+    })
+    return panel, exits
+
+
+def test_the_exit_screen_drops_rows_whose_cik_keeps_filing():
+    """Decision 13: a stored row followed by continued in-membership filing is
+    not a company exit, and under the screen it stops labelling one."""
+    panel, exits = _screen_world()
+    kinds, cut = ["delisting_form_25"], "2023-12-31"
+    unscreened, c0 = H.label_exits(panel, exits, 4, kinds, cut, "none",
+                                   _last_panel_date(panel))
+    screened, c1 = H.label_exits(panel, exits, 4, kinds, cut,
+                                 "no_in_membership_filing_within_1y",
+                                 _last_panel_date(panel))
+    # Without the screen both 2019Q1 rows are positives; with it, only cik 2's.
+    assert unscreened["exit_within_horizon"].tolist() == [1, 1, 0]
+    assert screened["exit_within_horizon"].tolist() == [0, 1, 0]
+    assert c0["exit_rows_dropped_by_screen"] == 0
+    assert c1["exit_rows_dropped_by_screen"] == 1
+    assert c1["exit_rows_on_panel_ciks"] == 2
+    assert c1["exit_rows_kept_after_screen"] == 1
+    assert c1["exit_screen_used"] == "no_in_membership_filing_within_1y"
+    # Nothing here was unscreenable: both rows are over a year before the end.
+    assert c1["exit_rows_unscreenable_within_365d_of_panel_end"] == 0
+    assert c1["panel_end_feature_date"] == "2021-01-21"
+
+
+def test_rows_the_exit_screen_cannot_judge_are_counted_not_dropped():
+    """An exit filed inside the panel's last year has no year of panel left in
+    which a later filing could appear: the predicate's False is missing data,
+    not evidence, so the row is COUNTED and still labels its quarter."""
+    panel, exits = _screen_world()
+    late = exits.copy()
+    late["filing_date"] = pd.to_datetime(["2020-05-01", "2020-05-01"])
+    out, counters = H.label_exits(panel, late, 4, ["delisting_form_25"],
+                                  "2023-12-31",
+                                  "no_in_membership_filing_within_1y",
+                                  _last_panel_date(panel))
+    # panel end 2021-01-21 minus 365d = 2020-01-21 < 2020-05-01 -> unscreenable
+    assert counters["exit_rows_unscreenable_within_365d_of_panel_end"] == 2
+    assert counters["exit_rows_dropped_by_screen"] == 0
+    assert counters["exit_rows_kept_after_screen"] == 2
+    # cik 1's 2021Q1 row is the one whose horizon (to 2022-01-21) catches it.
+    assert out["exit_within_horizon"].tolist() == [0, 0, 0]
+    within = H.label_exits(panel, late, 8, ["delisting_form_25"], "2023-12-31",
+                           "no_in_membership_filing_within_1y",
+                           _last_panel_date(panel))[0]
+    assert within["exit_within_horizon"].tolist() == [1, 1, 0]
+
+
+def test_an_unimplemented_exit_screen_is_a_refusal():
+    """A named screen with no implementation pre-registers nothing -- at both
+    doors: the parameter check and the labeller itself."""
+    panel, exits = _screen_world()
+    with pytest.raises(H.FreezeRefusal) as e:
+        H.label_exits(panel, exits, 4, ["delisting_form_25"], "2023-12-31",
+                      "drop_rows_i_dislike", _last_panel_date(panel))
+    assert "no implementation" in str(e.value)
+
+    params = minimal_params()
+    params["head3"]["exit_screen"] = "drop_rows_i_dislike"
+    with pytest.raises(H.FreezeRefusal) as e2:
+        H.check_required(params, H.REQUIRED_HEAD3)
+    assert "does not implement" in str(e2.value)
+
+
+def test_the_screen_and_the_census_count_the_same_rows():
+    """The screen and the census read ONE predicate, so the screened population
+    and the census's 'still filing a year later' column cannot drift apart."""
+    panel, exits = _screen_world()
+    per_kind = H._exits_followed_by_later_filings(exits, panel)
+    _, counters = H.label_exits(panel, exits, 4, ["delisting_form_25"],
+                                "2023-12-31",
+                                "no_in_membership_filing_within_1y",
+                                _last_panel_date(panel))
+    assert counters["exit_rows_dropped_by_screen"] == sum(
+        v["rows_with_a_later_in_membership_filing"] for v in per_kind.values())
+    assert counters["exit_rows_on_panel_ciks"] == sum(
+        v["rows_on_panel_ciks"] for v in per_kind.values())
+    assert counters["exit_rows_unscreenable_within_365d_of_panel_end"] == sum(
+        v["rows_unscreenable_within_365d_of_panel_end"] for v in per_kind.values())
 
 
 def test_fold_censoring_boundary_is_exact():
@@ -784,6 +911,104 @@ def test_run_head2_assembles_a_result_document_on_synthetic_data(tmp_path, monke
     assert written["g3_doc_sha256"] == doc_sha
     logged = json.loads((tmp_path / "run_log.jsonl").read_text().splitlines()[0])
     assert logged["g3_doc_sha256"] == doc_sha and logged["head"] == 2
+
+
+def test_head2_ends_at_the_pinned_last_event_quarter(tmp_path, monkeypatch):
+    """Decision 12: usable events later than `head2.last_event_quarter` are
+    dropped and COUNTED, and the scored cluster count falls with them. The
+    boundary comes from the document -- there is no 'drop the final quarter'
+    rule in the runner to be right or wrong about a partial quarter."""
+    events, prices = _synthetic_head2_world()
+    quarters = sorted(events["event_quarter"].unique())
+    assert len(quarters) >= 3, quarters
+    last_q = quarters[len(quarters) // 2]
+    kept = events[events["event_quarter"] <= last_q]
+    dropped = events[events["event_quarter"] > last_q]
+    assert len(dropped) > 0 and len(kept) > 0
+
+    monkeypatch.setattr(H, "assert_input_shas", lambda: {"synthetic": "n/a"})
+    monkeypatch.setattr(H, "build_head2_events",
+                        lambda **kw: (events, {"events_core": len(events)}, prices))
+    monkeypatch.setattr(H, "head_disclosures", lambda: {"synthetic": True})
+    monkeypatch.setattr(H, "HEAD2_RESULTS", tmp_path / "results_head2.json")
+    monkeypatch.setattr(H, "RUN_LOG", tmp_path / "run_log.jsonl")
+    params = minimal_params()
+    params["head2"]["last_event_quarter"] = last_q
+    doc, rat = write_doc(tmp_path / "g3", [params])
+    out = H.run_head2(params, hashlib.sha256(doc.read_bytes()).hexdigest(),
+                      prereg=doc, ratified=rat)
+
+    assert out["census"]["events_dropped_after_last_event_quarter"] == len(dropped)
+    assert out["census"]["head2_last_event_quarter"] == last_q
+    assert out["census"]["events_scored_head2"] == len(kept)
+    assert out["census"]["clusters_event_quarters_scored"] == \
+        kept["event_quarter"].nunique() < events["event_quarter"].nunique()
+    # The estimate is computed on the kept span only.
+    assert out["estimate"]["n_obs"] == len(kept)
+    assert out["estimate"]["n_clusters"] == kept["event_quarter"].nunique()
+    # the boundary quarter itself is KEPT, not dropped with the ones after it
+    assert last_q in out["estimate"]["cluster_sizes"]
+
+
+def test_a_missing_last_event_quarter_is_a_refusal(tmp_path, monkeypatch):
+    """No default: without the pin, head 2 refuses before it loads anything."""
+    called = []
+    monkeypatch.setattr(H, "assert_input_shas", lambda: called.append("shas") or {})
+    monkeypatch.setattr(H, "build_head2_events",
+                        lambda **kw: called.append("events") or (None, {}, None))
+    monkeypatch.setattr(H, "HEAD2_RESULTS", tmp_path / "results_head2.json")
+    monkeypatch.setattr(H, "RUN_LOG", tmp_path / "run_log.jsonl")
+    params = minimal_params()
+    params["head2"].pop("last_event_quarter")
+    doc, rat = write_doc(tmp_path / "g3", [params])
+    with pytest.raises(H.FreezeRefusal) as e:
+        H.run_head2(params, hashlib.sha256(doc.read_bytes()).hexdigest(),
+                    prereg=doc, ratified=rat)
+    assert "head2.last_event_quarter" in str(e.value)
+    assert called == []
+    assert not (tmp_path / "results_head2.json").exists()
+
+
+def test_the_quarter_cut_compares_quarters_not_strings():
+    """Periods, not string order: `"2026-Q2" < "2026Q1"` lexicographically, so a
+    string compare would drop the wrong half of the span. An unparseable label
+    is a refusal rather than a silently empty or silently total mask."""
+    labels = pd.Series(["2026Q1", "2026Q2", "2026Q3"])
+    assert H._quarters_after(labels, "2026Q2").tolist() == [False, False, True]
+    assert H._quarters_after(labels, "2026-Q2").tolist() == [False, False, True]
+    assert H._quarters_after(pd.Series([], dtype=object), "2026Q2").tolist() == []
+    with pytest.raises(H.FreezeRefusal) as e:
+        H._quarters_after(labels, "Q2-2026")
+    assert "quarter label" in str(e.value)
+
+
+def test_run_head3_applies_the_pinned_exit_screen(tmp_path, monkeypatch):
+    """The wiring: `run_head3` reads `head3.exit_screen` AND hands the labeller
+    the panel's per-CIK last feature date, so the screen can actually fire."""
+    panel, exits = _screen_world()
+    monkeypatch.setattr(H, "assert_input_shas", lambda: {"synthetic": "n/a"})
+    monkeypatch.setattr(H, "build_head3_panel", lambda rule: (panel, {"rule": rule}))
+    monkeypatch.setattr(H, "load_exit_events", lambda: exits)
+    monkeypatch.setattr(H, "head_disclosures", lambda: {"synthetic": True})
+    monkeypatch.setattr(H, "HEAD3_RESULTS", tmp_path / "results_head3.json")
+    monkeypatch.setattr(H, "RUN_LOG", tmp_path / "run_log.jsonl")
+
+    def run(screen, where):
+        params = minimal_params()
+        params["fold_quarters"] = ["2019Q1"]
+        params["head3"]["label_cut"] = "2023-12-31"
+        params["head3"]["exit_screen"] = screen
+        doc, rat = write_doc(tmp_path / where, [params])
+        return H.run_head3(params, hashlib.sha256(doc.read_bytes()).hexdigest(),
+                           prereg=doc, ratified=rat)
+
+    off = run("none", "a")
+    on = run("no_in_membership_filing_within_1y", "b")
+    assert off["census"]["exit_rows_dropped_by_screen"] == 0
+    assert off["census"]["positives_observable"] == 2
+    assert on["census"]["exit_rows_dropped_by_screen"] == 1
+    assert on["census"]["positives_observable"] == 1
+    assert on["parameters"]["exit_screen"] == "no_in_membership_filing_within_1y"
 
 
 def test_run_head3_assembles_per_fold_rows_on_synthetic_data(tmp_path, monkeypatch):

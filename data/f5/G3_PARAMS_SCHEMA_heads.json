@@ -49,6 +49,13 @@
    "allowed": null
   },
   {
+   "key": "head2.last_event_quarter",
+   "type": "string (YYYYQn)",
+   "meaning": "the LAST event quarter scored (decision 12, 'end at the last complete quarter'): usable events in later quarters are dropped and counted in events_dropped_after_last_event_quarter. The snapshot's terminal quarter is partial, and WHICH quarter is the last complete one is a ruling this module must not infer -- it holds no default",
+   "example": "2026Q2",
+   "allowed": null
+  },
+  {
    "key": "head2.statistic",
    "type": "string",
    "meaning": "the estimator of the association",
@@ -124,6 +131,16 @@
     "deregistration_form_15"
    ],
    "allowed": null
+  },
+  {
+   "key": "head3.exit_screen",
+   "type": "string",
+   "meaning": "what a stored exit row is allowed to mean (decision 13). 'none' counts every stored row of the pinned kinds; 'no_in_membership_filing_within_1y' DROPS a row when the same CIK has an in-membership panel feature_date more than 365 days after the exit's filing date -- the company kept filing, so the row was an exchange transfer or a single-class deregistration, not a company exit. Rows filed within that window of the panel's last feature date cannot be judged either way and are COUNTED (exit_rows_unscreenable_within_365d_of_panel_end), never dropped",
+   "example": "no_in_membership_filing_within_1y",
+   "allowed": [
+    "none",
+    "no_in_membership_filing_within_1y"
+   ]
   },
   {
    "key": "head3.feature_filing_rule",

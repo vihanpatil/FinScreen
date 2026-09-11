@@ -422,10 +422,23 @@ def test_real_mask_and_applicable_census():
 
 
 @pytest.mark.slow
-def test_real_build_reproduces_every_pinned_census_number():
+def test_real_build_reproduces_every_pinned_census_number(tmp_path, monkeypatch):
     """Full build (~20 s): all module assertions pass and the G2 provenance
-    counts reproduce on the 316,291-row frame."""
+    counts reproduce on the 316,291-row frame.
+
+    The build WRITES its three artifacts, two of which are committed. Running a
+    test must not rewrite a committed artifact -- even a byte-identical rewrite
+    re-stamps `generated_utc` in the manifest and shows up as a dirty tree --
+    so the three output paths are redirected into `tmp_path` for the duration.
+    Nothing about the computation changes; only where the result lands.
+    """
+    for name in ("OUT_PARQUET", "OUT_MANIFEST", "OUT_DICTIONARY"):
+        monkeypatch.setattr(fe, name, tmp_path / getattr(fe, name).name)
+    monkeypatch.setattr(fe, "F5_DIR", tmp_path)
+
     feats, manifest, dictionary = fe.build()
+    assert {p.name for p in tmp_path.iterdir()} == {
+        fe.OUT_PARQUET.name, fe.OUT_MANIFEST.name, fe.OUT_DICTIONARY.name}
     assert all(a["passed"] for a in manifest["assertions"])
     assert len(manifest["assertions"]) >= 50
 

@@ -19,6 +19,10 @@ stack and one provenance block:
                   trailing 60 sessions ENDING AT THE PRE-SESSION. Benchmark-free
                   by construction, so G3 decisions 1-2 (benchmark, GLD) do not
                   propagate into this head.
+      scope     : the scored span ENDS at the document's
+                  `head2.last_event_quarter` (decision 12, "end at the last
+                  complete quarter"); events in later quarters are dropped and
+                  COUNTED, never silently trimmed.
       inference : wild-cluster bootstrap over EVENT QUARTERS, Rademacher
                   weights, draws pinned by the G3 document. ~39 clusters is a
                   FEW-CLUSTERS setting; the limitation is printed with the
@@ -28,7 +32,12 @@ stack and one provenance block:
       panel     : every (cik, quarter) that has at least one core in-membership
                   filing, features taken as of the CIK's LATEST filing in the
                   quarter (rule pinned by the G3 document).
-      label     : an exit event within `horizon_quarters` of the feature date.
+      label     : an exit event within `horizon_quarters` of the feature date,
+                  after the document's `head3.exit_screen` decides what a stored
+                  row is allowed to mean (decision 13): most stored "exit" rows
+                  are followed by the same company still filing in membership a
+                  year later, which is an exchange transfer or a single-class
+                  deregistration, not a company exit.
       metric    : AUC per fold under the HEAD-1 fold list from the G3 document,
                   with per-fold prevalence. A fold whose outcome window extends
                   past the label cut is reported CENSORED with its count and is
@@ -45,7 +54,8 @@ model fit -- is computed by any code path in this module unless
     data/f5/G3_RATIFIED.json  exists AND its `doc_sha256` equals
     sha256(data/f5/G3_PREREGISTRATION.md)
 
-Neither file exists as of 2026-09-10, so `--head2`, `--head3` and `--all`
+`G3_RATIFIED.json` does not exist (2026-09-11: the pre-registration exists as a
+DRAFT, which ratifies nothing on its own), so `--head2`, `--head3` and `--all`
 REFUSE today (exit code 2) and this is a test. The refusal is deliberate and is
 the same anti-shopping pattern `data/f4/g2/analyze_g2.py` uses for its bars: a
 default parameter that let the runner execute un-ratified would let the
@@ -155,6 +165,7 @@ REQUIRED_HEAD2 = (
     "head2.direction",
     "head2.event_window_sessions",
     "head2.trailing_sessions",
+    "head2.last_event_quarter",
     "head2.statistic",
     "head2.bootstrap.weights",
     "head2.bootstrap.n_draws",
@@ -166,6 +177,7 @@ REQUIRED_HEAD3 = (
     "head3.horizon_quarters",
     "head3.label_cut",
     "head3.exit_event_kinds",
+    "head3.exit_screen",
     "head3.feature_filing_rule",
     "head3.train_label_purge",
     "columns.confirmatory_text",
@@ -188,12 +200,22 @@ EMBEDDING_PREFIX = "emb_pc"
 # the ratified document and never falls back to this name.
 CENSUS_CANDIDATE_PREDICTOR = "sentiment_negative_share"
 
+#: Part of the NAME of decision 13's screen ("...within_1y"), not a tunable: the
+#: census measured the population with this window and the screen reproduces
+#: those counts. Changing it is a new screen name and a new pre-registration.
+EXIT_SCREEN_DAYS = 365
+
 SUPPORTED = {
     "head2.statistic": ("ols_slope",),
     "head2.direction": ("positive", "negative"),
     "head2.bootstrap.weights": ("rademacher",),
     "head2.bootstrap.cluster": ("event_quarter",),
     "head3.feature_filing_rule": ("latest_in_quarter", "latest_in_quarter_with_text"),
+    # Decision 13's exit screen. "none" takes every stored row of the pinned
+    # kinds at face value; the named screen drops the rows the census showed are
+    # not company exits at all. An unimplemented name is a refusal at both doors
+    # (check_required here, and label_exits itself).
+    "head3.exit_screen": ("none", "no_in_membership_filing_within_1y"),
     # One implemented rule, as in head 1 (`IMPLEMENTED_PURGE_RULES`): "none"
     # was removed on 2026-09-10 because a no-purge head-3 trains on rows whose
     # exit label resolves inside or after the test quarter, and an unimplemented
@@ -457,6 +479,25 @@ def attach_head2_dv(events: pd.DataFrame, prices: pd.DataFrame,
     return out
 
 
+def _quarters_after(quarters, last_quarter) -> np.ndarray:
+    """Boolean mask: which quarter labels are LATER than `last_quarter`.
+
+    Compared as pandas quarterly Periods rather than as strings, so a mistyped
+    pin ("2026-Q2", "2026q2 ") is a REFUSAL instead of a silent lexicographic
+    surprise that would keep or drop the wrong events.
+    """
+    try:
+        last = pd.Period(str(last_quarter), freq="Q")
+    except Exception as exc:                      # noqa: BLE001 -- reported, not swallowed
+        raise FreezeRefusal(
+            f"BLOCKED: head2.last_event_quarter = {last_quarter!r} is not a "
+            f"quarter label like '2026Q2' ({exc}).") from exc
+    labels = pd.Index(quarters).astype(str)
+    if len(labels) == 0:
+        return np.zeros(0, dtype=bool)
+    return np.asarray(pd.PeriodIndex(labels, freq="Q") > last)
+
+
 # ---------------------------------------------------------------------------
 # Head 2 inference: OLS slope + wild-cluster bootstrap (Rademacher)
 # ---------------------------------------------------------------------------
@@ -586,18 +627,101 @@ def build_head3_panel(feature_filing_rule: str,
     return panel.reset_index(drop=True), counters
 
 
+def _panel_end(last_panel_date_by_cik) -> pd.Timestamp | None:
+    """The panel's LAST feature date -- how far the screen can see."""
+    values = [pd.Timestamp(v) for v in dict(last_panel_date_by_cik).values()]
+    return max(values) if values else None
+
+
+def _exit_followed_by_later_filing(exits: pd.DataFrame, last_panel_date_by_cik,
+                                   days: int = EXIT_SCREEN_DAYS) -> np.ndarray:
+    """THE SCREEN'S PREDICATE, written once and used by both callers.
+
+    True where the same CIK has an in-membership panel feature_date MORE THAN
+    `days` after this exit row's filing_date -- i.e. the company kept filing, so
+    the stored row did not end its membership. `label_exits` drops those rows
+    under `no_in_membership_filing_within_1y`; the census counts them. Sharing
+    the predicate is why the screened population and the census agree by
+    construction rather than by coincidence. A CIK absent from the mapping is
+    not in the panel and can never label a panel row, so it is never "later".
+    """
+    last = {int(c): pd.Timestamp(v)
+            for c, v in dict(last_panel_date_by_cik).items()}
+    delta = pd.Timedelta(days=int(days))
+    return np.array(
+        [bool(int(c) in last and last[int(c)] > pd.Timestamp(d) + delta)
+         for c, d in zip(exits["cik"], exits["filing_date"])], dtype=bool)
+
+
+def _exit_unscreenable(exits: pd.DataFrame, last_panel_date_by_cik,
+                       days: int = EXIT_SCREEN_DAYS) -> np.ndarray:
+    """True where the screen CANNOT fire, whatever the company did next.
+
+    An exit filed within `days` of the panel's last feature date has no year of
+    panel left in which a later filing could appear, so the predicate above
+    returns False for a reason that is missing data, not evidence. These rows
+    are COUNTED and never dropped -- unscreenable is unknown, not clean -- and
+    they are disjoint from the dropped set by construction (a row with a later
+    in-membership filing is by definition more than `days` before the panel end).
+    """
+    end = _panel_end(last_panel_date_by_cik)
+    if end is None:
+        return np.zeros(len(exits), dtype=bool)
+    return np.asarray(
+        pd.to_datetime(exits["filing_date"]) > end - pd.Timedelta(days=int(days)))
+
+
 def label_exits(panel: pd.DataFrame, exits: pd.DataFrame, horizon_quarters: int,
-                exit_event_kinds, label_cut) -> tuple[pd.DataFrame, dict]:
+                exit_event_kinds, label_cut, exit_screen,
+                last_panel_date_by_cik) -> tuple[pd.DataFrame, dict]:
     """`exit_within_horizon` + `label_observable`.
 
     An exit counts when its filing_date is STRICTLY after the feature date and
     at most `horizon_quarters` (as 3-month offsets) after it. A row whose
     horizon end passes `label_cut` is UNOBSERVABLE: its zero is not a measured
     zero, so it is flagged and counted, never scored as a negative.
+
+    `exit_screen` (decision 13) decides what a stored row is allowed to MEAN:
+
+      "none"
+          every stored row of the pinned kinds counts as an exit.
+      "no_in_membership_filing_within_1y"
+          a row is DROPPED when the same CIK has an in-membership panel
+          feature_date more than EXIT_SCREEN_DAYS after the exit's filing_date
+          (`_exit_followed_by_later_filing`) -- the company kept filing, so the
+          row was an exchange transfer or a single-class deregistration, not a
+          company exit.
+
+    `last_panel_date_by_cik` maps cik -> that CIK's latest panel feature_date
+    and is the only thing the screen consults. Exit rows for CIKs outside the
+    panel can never label a panel row; they are excluded from the screened
+    population and counted separately (`exit_rows_matching_kinds` is every
+    stored row of the pinned kinds, `exit_rows_on_panel_ciks` the panel subset).
+    Rows the screen cannot judge are counted, never dropped -- see
+    `_exit_unscreenable`.
     """
+    if exit_screen not in SUPPORTED["head3.exit_screen"]:
+        raise FreezeRefusal(
+            f"REFUSED: head3.exit_screen = {exit_screen!r} has no implementation "
+            f"here (implemented: {list(SUPPORTED['head3.exit_screen'])}). A named "
+            "screen with no implementation pre-registers nothing.")
     cut = pd.Timestamp(label_cut)
     offset = pd.DateOffset(months=3 * int(horizon_quarters))
     ex = exits[exits["event_kind"].isin(list(exit_event_kinds))].copy()
+    n_rows_matching_kinds = int(len(ex))
+    n_ciks_matching_kinds = int(ex["cik"].nunique())
+    ex = ex[ex["cik"].astype(int).isin(
+        {int(c) for c in dict(last_panel_date_by_cik)})].copy()
+    n_rows_on_panel_ciks = int(len(ex))
+    n_ciks_on_panel = int(ex["cik"].nunique())
+
+    screened_out = _exit_followed_by_later_filing(ex, last_panel_date_by_cik)
+    unscreenable = _exit_unscreenable(ex, last_panel_date_by_cik)
+    n_dropped = 0
+    if exit_screen == "no_in_membership_filing_within_1y":
+        n_dropped = int(screened_out.sum())
+        ex = ex[~screened_out].copy()
+
     by_cik: dict[int, np.ndarray] = {
         int(c): np.sort(g["filing_date"].to_numpy())
         for c, g in ex.groupby("cik")}
@@ -619,12 +743,19 @@ def label_exits(panel: pd.DataFrame, exits: pd.DataFrame, horizon_quarters: int,
     out["horizon_end"] = horizon_end
     out["label_observable"] = horizon_end <= cut
 
+    end = _panel_end(last_panel_date_by_cik)
     counters = {
         "exit_event_kinds_used": list(exit_event_kinds),
-        "exit_rows_matching_kinds": int(len(ex)),
-        "exit_ciks_matching_kinds": int(ex["cik"].nunique()),
-        "exit_ciks_in_panel": int(len(set(ex["cik"].astype(int))
-                                      & set(out["cik"].astype(int)))),
+        "exit_screen_used": str(exit_screen),
+        "exit_screen_days": int(EXIT_SCREEN_DAYS),
+        "exit_rows_matching_kinds": n_rows_matching_kinds,
+        "exit_ciks_matching_kinds": n_ciks_matching_kinds,
+        "exit_rows_on_panel_ciks": n_rows_on_panel_ciks,
+        "exit_ciks_in_panel": n_ciks_on_panel,
+        "exit_rows_dropped_by_screen": n_dropped,
+        "exit_rows_unscreenable_within_365d_of_panel_end": int(unscreenable.sum()),
+        "exit_rows_kept_after_screen": int(len(ex)),
+        "panel_end_feature_date": None if end is None else str(end.date()),
         "label_cut": str(cut.date()),
         "panel_rows_label_observable": int(out["label_observable"].sum()),
         "panel_rows_label_unobservable": int((~out["label_observable"]).sum()),
@@ -840,6 +971,19 @@ def run_head2(params: dict, doc_sha: str, prereg: Path = PREREG_PATH,
         predictor=predictor)
     events = attach_head2_dv(events, prices, post_window, trailing)
     use = events[events["dv_relative_move"].notna() & events[predictor].notna()]
+    # Decision 12, "end at the last complete quarter". The snapshot's terminal
+    # event quarter is PARTIAL -- it holds only the events that fell before the
+    # price cut -- so scoring it mixes a part-quarter cluster in with full ones.
+    # WHICH quarter is the last complete one is the document's ruling, never a
+    # "drop the final one" rule inferred here, and the events after it are
+    # counted rather than quietly trimmed.
+    last_event_quarter = get_param(params, "head2.last_event_quarter")
+    after_last = _quarters_after(use["event_quarter"], last_event_quarter)
+    counters["head2_last_event_quarter"] = str(last_event_quarter)
+    counters["events_dropped_after_last_event_quarter"] = int(after_last.sum())
+    use = use[~after_last]
+    counters["events_scored_head2"] = int(len(use))
+    counters["clusters_event_quarters_scored"] = int(use["event_quarter"].nunique())
     boot = wild_cluster_bootstrap(
         use[predictor].to_numpy(), use["dv_relative_move"].to_numpy(),
         use["event_quarter"].to_numpy(),
@@ -877,7 +1021,9 @@ def run_head3(params: dict, doc_sha: str, prereg: Path = PREREG_PATH,
     panel, label_counters = label_exits(
         panel, exits, int(get_param(params, "head3.horizon_quarters")),
         get_param(params, "head3.exit_event_kinds"),
-        get_param(params, "head3.label_cut"))
+        get_param(params, "head3.label_cut"),
+        get_param(params, "head3.exit_screen"),
+        panel.groupby("cik")["feature_date"].max().to_dict())
     folds = run_head3_folds(panel, params)
     out = {
         "head": 3,
@@ -927,6 +1073,23 @@ def head_disclosures() -> dict:
             "coverage window, so a non-trading gap appears as a zero return and "
             "deflates both DV components; the count of events with a flat "
             "session in the post window is in the census block."),
+        "head2_scored_span": (
+            "The scored span ends at the document's head2.last_event_quarter "
+            "(decision 12): the snapshot's terminal event quarter is partial, "
+            "so scoring it would mix a part-quarter cluster with full ones. The "
+            "events dropped by that boundary are counted in the census block "
+            "(events_dropped_after_last_event_quarter), and the scored cluster "
+            "count is clusters_event_quarters_scored -- a few-clusters setting "
+            "either way."),
+        "head3_exit_screen_caveat": (
+            "head3.exit_screen is a PROXY, not a corporate record: a stored exit "
+            "row is treated as a non-exit when the same CIK keeps filing in "
+            "membership more than a year later. Rows filed within a year of the "
+            "panel's last feature date cannot be judged either way -- the "
+            "predicate's silence there is missing data, not evidence -- so they "
+            "are counted (exit_rows_unscreenable_within_365d_of_panel_end) and "
+            "kept. Every screened count is in the census block beside the "
+            "result."),
         "head3_claim_scope": (
             "The claim is 'exit', never 'distress': the stored distress_events "
             "table carries `items` only on 8-K rows, so Form 25 / Form 15 exits "
@@ -942,22 +1105,27 @@ def head_disclosures() -> dict:
 # ---------------------------------------------------------------------------
 
 def _exits_followed_by_later_filings(exits: pd.DataFrame, panel: pd.DataFrame,
-                                     days: int = 365) -> dict:
+                                     days: int = EXIT_SCREEN_DAYS) -> dict:
     """How many stored 'exit' rows are followed by the same CIK still filing.
 
     A pure count, no association. It exists because the census must tell G3
     what `exit_event_kinds` would actually label: a Form 25 can be filed for
     one security class while the company keeps filing, in which case the row
-    is not a company exit at all. Counted per event_kind.
+    is not a company exit at all. Counted per event_kind, with the SAME
+    predicate `label_exits` screens on (`_exit_followed_by_later_filing`) plus
+    the rows that predicate cannot judge at all (`_exit_unscreenable`), so the
+    census and decision 13's screened population cannot drift apart.
     """
-    last_seen = panel.groupby("cik")["feature_date"].max()
+    last_by_cik = {int(c): pd.Timestamp(v) for c, v in
+                   panel.groupby("cik")["feature_date"].max().items()}
     out = {}
     for kind, g in exits.groupby("event_kind"):
-        g = g[g["cik"].isin(last_seen.index)]
-        later = [bool(last_seen[int(c)] > d + pd.Timedelta(days=days))
-                 for c, d in zip(g["cik"], g["filing_date"])]
+        g = g[g["cik"].astype(int).isin(last_by_cik)]
+        later = _exit_followed_by_later_filing(g, last_by_cik, days)
+        blind = _exit_unscreenable(g, last_by_cik, days)
         out[kind] = {"rows_on_panel_ciks": int(len(g)),
-                     "rows_with_a_later_in_membership_filing": int(sum(later))}
+                     "rows_with_a_later_in_membership_filing": int(later.sum()),
+                     "rows_unscreenable_within_365d_of_panel_end": int(blind.sum())}
     return out
 
 
@@ -1030,8 +1198,27 @@ def run_census(candidate_post_window=(1, 5), candidate_trailing=60,
                  if not fold_censored(q, candidate_horizon_quarters, candidate_cut)),
                 None)
             head3["candidate_horizon_quarters"] = int(candidate_horizon_quarters)
-            head3["exit_rows_still_filing_a_year_later"] = \
-                _exits_followed_by_later_filings(exits, panel)
+            per_kind = _exits_followed_by_later_filings(exits, panel)
+            head3["exit_rows_still_filing_a_year_later"] = per_kind
+            # The two counters decision 13's screen emits, pooled over every
+            # stored kind so the G3 table can read the screened population
+            # without re-deriving it. Nothing here pins `exit_event_kinds`: a
+            # pinned subset's numbers are the sum over that subset's rows in
+            # the per-kind block above.
+            end = _panel_end({int(c): v for c, v in
+                              panel.groupby("cik")["feature_date"].max().items()})
+            head3["exit_screen_measured_here"] = "no_in_membership_filing_within_1y"
+            head3["exit_screen_days"] = int(EXIT_SCREEN_DAYS)
+            head3["panel_end_feature_date"] = None if end is None else str(end.date())
+            head3["exit_rows_on_panel_ciks"] = sum(
+                v["rows_on_panel_ciks"] for v in per_kind.values())
+            head3["exit_rows_dropped_by_screen"] = sum(
+                v["rows_with_a_later_in_membership_filing"] for v in per_kind.values())
+            head3["exit_rows_kept_after_screen"] = (
+                head3["exit_rows_on_panel_ciks"] - head3["exit_rows_dropped_by_screen"])
+            head3["exit_rows_unscreenable_within_365d_of_panel_end"] = sum(
+                v["rows_unscreenable_within_365d_of_panel_end"]
+                for v in per_kind.values())
 
     census = {
         "generated_utc": now_utc(),
@@ -1104,6 +1291,15 @@ def params_schema() -> dict:
                   "number of daily returns in the DV denominator, ending at the "
                   "pre-session",
                   60),
+            entry("head2.last_event_quarter", "string (YYYYQn)",
+                  "the LAST event quarter scored (decision 12, 'end at the last "
+                  "complete quarter'): usable events in later quarters are "
+                  "dropped and counted in "
+                  "events_dropped_after_last_event_quarter. The snapshot's "
+                  "terminal quarter is partial, and WHICH quarter is the last "
+                  "complete one is a ruling this module must not infer -- it "
+                  "holds no default",
+                  "2026Q2"),
             entry("head2.statistic", "string",
                   "the estimator of the association", "ols_slope"),
             entry("head2.bootstrap.weights", "string",
@@ -1127,6 +1323,19 @@ def params_schema() -> dict:
             entry("head3.exit_event_kinds", "[string]",
                   "which distress_events.event_kind values count as an exit",
                   ["delisting_form_25", "deregistration_form_15"]),
+            entry("head3.exit_screen", "string",
+                  "what a stored exit row is allowed to mean (decision 13). "
+                  "'none' counts every stored row of the pinned kinds; "
+                  "'no_in_membership_filing_within_1y' DROPS a row when the "
+                  "same CIK has an in-membership panel feature_date more than "
+                  f"{EXIT_SCREEN_DAYS} days after the exit's filing date -- the "
+                  "company kept filing, so the row was an exchange transfer or "
+                  "a single-class deregistration, not a company exit. Rows "
+                  "filed within that window of the panel's last feature date "
+                  "cannot be judged either way and are COUNTED "
+                  "(exit_rows_unscreenable_within_365d_of_panel_end), never "
+                  "dropped",
+                  "no_in_membership_filing_within_1y"),
             entry("head3.feature_filing_rule", "string",
                   "which filing in the quarter supplies the features",
                   "latest_in_quarter"),
@@ -1251,10 +1460,47 @@ def selftest() -> int:
         "cik": [1, 2], "accession_number": ["a", "b"], "form": ["25", "25"],
         "filing_date": pd.to_datetime(["2020-06-01", "2021-06-01"]),
         "items": [None, None], "event_kind": ["delisting_form_25"] * 2})
-    labelled, _ = label_exits(panel, exits, 4, ["delisting_form_25"], "2021-12-31")
+    last_by_cik = panel.groupby("cik")["feature_date"].max().to_dict()
+    labelled, _ = label_exits(panel, exits, 4, ["delisting_form_25"],
+                              "2021-12-31", "none", last_by_cik)
     checks.append(("exit inside the horizon is a 1, outside is a 0",
                    labelled["exit_within_horizon"].tolist() == [1, 0],
                    labelled["exit_within_horizon"].tolist()))
+
+    # Decision 13's screen, on the same synthetic frame: cik 1 keeps filing in
+    # membership well over a year after its stored exit row, so that row is not
+    # a company exit and its label goes to 0. cik 2's row is filed inside the
+    # last year of the panel and so is UNSCREENABLE: counted, never dropped.
+    panel2 = pd.concat([panel, pd.DataFrame({
+        "cik": [1], "quarter": ["2022Q1"],
+        "feature_date": pd.to_datetime(["2022-02-01"])})], ignore_index=True)
+    screened, sc = label_exits(
+        panel2, exits, 4, ["delisting_form_25"], "2023-12-31",
+        "no_in_membership_filing_within_1y",
+        panel2.groupby("cik")["feature_date"].max().to_dict())
+    checks.append(("the screen drops an exit row whose CIK keeps filing a year later",
+                   sc["exit_rows_dropped_by_screen"] == 1
+                   and screened.loc[screened["cik"] == 1,
+                                    "exit_within_horizon"].tolist() == [0, 0],
+                   sc["exit_rows_dropped_by_screen"]))
+    checks.append(("a row the screen cannot judge is counted, not dropped",
+                   sc["exit_rows_unscreenable_within_365d_of_panel_end"] == 1
+                   and sc["exit_rows_kept_after_screen"] == 1,
+                   sc["exit_rows_unscreenable_within_365d_of_panel_end"]))
+    try:
+        label_exits(panel2, exits, 4, ["delisting_form_25"], "2023-12-31",
+                    "drop_everything_that_looks_odd",
+                    {1: pd.Timestamp("2022-02-01")})
+        screen_refused = False
+    except FreezeRefusal:
+        screen_refused = True
+    checks.append(("an unimplemented exit screen name is a refusal",
+                   screen_refused, screen_refused))
+
+    # Decision 12's quarter cut: later quarters are dropped, earlier ones kept.
+    after = _quarters_after(pd.Series(["2026Q1", "2026Q2", "2026Q3"]), "2026Q2")
+    checks.append(("only quarters after the pinned last event quarter are dropped",
+                   after.tolist() == [False, False, True], after.tolist()))
     checks.append(("a fold whose horizon closes past the label cut is censored",
                    fold_censored("2021Q4", 4, "2021-12-31") is True
                    and fold_censored("2020Q1", 4, "2021-12-31") is False, True))
