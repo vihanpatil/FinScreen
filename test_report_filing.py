@@ -71,7 +71,8 @@ REFUSED_VOCABULARY = ACTION_VOCABULARY + QUANTITY_VOCABULARY + MARKET_VOCABULARY
 FORBIDDEN_NAMES = ["prices_e2", "target_e2", "backtest_e2", "heads_e2",
                    "controls", "data/f5"]
 FORBIDDEN_IMPORTS = {"prices_e2", "target_e2", "backtest_e2", "heads_e2",
-                     "controls", "price_client", "ingest_prices", "backtest"}
+                     "controls", "price_client", "ingest_prices", "backtest",
+                     "scorecard_e2"}
 
 # Item 5: the E1 outcome layer IS in the transitive closure (features_e2 ->
 # controls -> backtest) and is allowed to be -- the mask has to stay derived.
@@ -83,14 +84,16 @@ TRANSITIVE_CLOSURE = {
     "report_filing", "spec",
 }
 OUTCOME_MODULES = {"controls", "backtest", "prices_e2", "target_e2",
-                   "backtest_e2", "heads_e2", "price_client", "ingest_prices"}
+                   "backtest_e2", "heads_e2", "price_client", "ingest_prices",
+                   "scorecard_e2"}
 
 # Artifacts no render path may open, at all (council Q4's kill criterion:
 # "report layer found reading an outcome table or IC").
 FORBIDDEN_ARTIFACT_FRAGMENTS = [
     "prices_e2.parquet", "target_e2.parquet", "backtest_report.md",
     "/data/f5/", "text_features_e2", "numeric_features_e2.parquet",
-    "results_head", "backtest_e2", "heads_e2",
+    "results_head", "backtest_e2", "heads_e2", "scorecard_e2", "head1_scorecard",
+    "head1_oof_predictions",
 ]
 
 # Everything a render IS allowed to open. A new read cannot enter silently.

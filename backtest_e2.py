@@ -102,12 +102,26 @@ but never consulted):
     loco.max_ciks_per_fold    int | null
     overlap.column            "train_overlap_share"
     overlap.threshold         0.0
+    fold_sensitivity.train_window_quarters [8, 16]  rolling training-window
+                              sensitivity arms (decision 4); [] runs none
+    scorecard.arm             "pit_trailing_rank"   (decision 3 / §14)
+    scorecard.eval_set        "dedup"
+    scorecard.model_block     "text_and_numeric"
+    scorecard.comparators     ["numeric_only", "size_only"]
+    scorecard.call_rule       "tercile_within_test_quarter"
+    scorecard.outcome_col     "target_excess_63"
+    scorecard.correct_rule    "sign_match_nonzero"
+    scorecard.min_calls_for_company_hit_rate int
+    scorecard.ci              "wilson_95"
+    families.novelty_sequential_exploratory bool   (decision 23, exploratory)
     head2.*, head3.*          pinned for the other heads; head 1 validates
                               their presence and echoes them, uses neither.
 
 Any unimplemented named rule (`purge_rule`, `se.block_length_rule`,
-`tost.reference_distribution`, `se.method`, `se.alternative`) is a
-REFUSAL, not a silent fallback.
+`tost.reference_distribution`, `se.method`, `se.alternative`,
+`scorecard.arm`, `scorecard.eval_set`, `scorecard.call_rule`,
+`scorecard.correct_rule`, `scorecard.ci`) is a REFUSAL, not a silent
+fallback.
 
 -----------------------------------------------------------------------
 3. What the real run does (F5_PLAN Step 1 / §3 decisions 3-6, 14, 15)
@@ -136,7 +150,12 @@ Specifications, always as a pair, plus the named sensitivity arm:
 Blocks per fold: `numeric_only` and `text_and_numeric` (CONFIRMATORY), plus
 `text_and_numeric_exploratory` which adds the 13 red-flag columns and is
 tagged exploratory/disclosure-only (owner ruling 2026-08-27) in every
-table. The optional embedding block is reduced per fold by a PCA fit on
+table, plus `size_only` -- a fit on `columns.size_col` ALONE. `size_only` is
+the scorecard's zero-text comparator (decision 3): it is fitted like any
+other block and its per-fold ICs are written, but it takes no delta and it
+is excluded from the seed band and from LOCO (NON_CONFIRMATORY_BLOCKS),
+because the confirmatory estimand is text_and_numeric minus numeric_only and
+nothing else. The optional embedding block is reduced per fold by a PCA fit on
 that fold's TRAINING rows only -- never on test rows. A ratified pca_k > 0
 with no usable `emb` column, or any fold that realizes fewer than pca_k
 components, is a REFUSAL. The PIT-rank transform of those components is a
@@ -165,11 +184,25 @@ which raises if a delta-bearing payload is added before the margin block.
 Arms reported side by side: full window and the post-2019 sub-window; with
 and without filings whose `train_overlap_share > 0` (an evaluation-side
 restriction: the fit is unchanged, the scored set shrinks -- stated as an
-open question for G3). Primary seed 0 with a nuisance band over seeds
+open question for G3); and, per decision 4 (owner 2026-09-11), one ROLLING
+training-window arm per `fold_sensitivity.train_window_quarters` value --
+same folds, same purge, same metric, training rows restricted to the N
+quarters before the test quarter, written as
+`per_fold_delta__rolling_{N}q` after the primary payloads and never selected
+in place of the expanding primary. Primary seed 0 with a nuisance band over seeds
 1..100. LOCO per decision 14: 6 folds at round(j*(K-1)/5) over each fold's
 training members, DESCRIPTIVE ONLY -- no per-CIK inference at k = 6.
 
-Every run appends {utc, doc_sha256, params_sha256, results_sha256} to
+THE SCORECARD (decision 3 / pre-registration §14) is built inside the same
+guarded run, after the margin block, by `scorecard_e2.py`, from this run's
+own out-of-fold records: the primary arm's deduplicated test rows, a
+within-test-quarter tercile call, the sign of the realized 63-session excess
+return, and two zero-text comparators beside the model. It is DESCRIPTIVE --
+the inference is the margin ladder, and every page says so. It writes
+`data/f5/head1_scorecard.md`, `.json`, and a git-excluded per-row parquet.
+
+Every run appends {utc, doc_sha256, params_sha256, results_sha256,
+scorecard_md_sha256, scorecard_json_sha256, oof_predictions_sha256} to
 data/f5/run_log.jsonl, so a second run is visible. The markdown report is
 generated from the results JSON plus the G2 caveats read from
 data/f4/g2/results_g2.json; no number in it is hand-typed.
@@ -190,6 +223,9 @@ FROZEN, imported, never edited:
   backtest.fit_predict, quintile_spread, standing_section_lines,
   backtest.XGB_PARAMS, FORM_ABLATION_FORMS, COMPANY_QUARTER_DEDUP_GAP_DAYS
   controls.mde_from_se (the 2.8x MDE), controls.HOLDING_DAYS
+
+NOT frozen, written for this head: `scorecard_e2.py` (pure functions over the
+out-of-fold records; it fits nothing and reads no table of its own).
 
 Two frozen functions cannot be called directly and are NOT copied:
   * `backtest.run_backtest` / `run_form_controlled_ablation` bind E1's
@@ -230,6 +266,7 @@ from xgboost import XGBRegressor
 
 import backtest as B
 import controls as C
+import scorecard_e2 as SC
 import spec as S
 
 REPO_ROOT = Path(__file__).resolve().parent
@@ -252,6 +289,18 @@ RUN_LOG_PATH = F5_DIR / "run_log.jsonl"
 CENSUS_PATH = F5_DIR / "census_head1.json"
 RESULTS_PATH = F5_DIR / "results_head1.json"
 REPORT_PATH = F5_DIR / "report_head1.md"
+
+#: The scorecard's three artifacts (decision 3 / pre-registration §14). The
+#: .md and .json are committed like `report_head1.md` / `results_head1.json`;
+#: the per-row parquet is git-excluded by `.gitignore`'s `data/f5/*.parquet`.
+#: `run_head1` writes them BESIDE its results file (so the selftest and every
+#: test land in their own directory, and the real run lands here).
+SCORECARD_MD_NAME = "head1_scorecard.md"
+SCORECARD_JSON_NAME = "head1_scorecard.json"
+OOF_PREDICTIONS_NAME = "head1_oof_predictions.parquet"
+SCORECARD_MD_PATH = F5_DIR / SCORECARD_MD_NAME
+SCORECARD_JSON_PATH = F5_DIR / SCORECARD_JSON_NAME
+OOF_PREDICTIONS_PATH = F5_DIR / OOF_PREDICTIONS_NAME
 
 G2_RESULTS_PATH = REPO_ROOT / "data" / "f4" / "g2" / "results_g2.json"
 H1_CONTROLS_PATH = REPO_ROOT / "data" / "hardening" / "controls_results.json"
@@ -279,6 +328,25 @@ IMPLEMENTED_TOST_DISTS = ("normal", "t")
 #: longer matches its own budget is exactly the silent drift this file exists
 #: to prevent.
 IMPLEMENTED_LOCO_RULES = ("round(j*(K-1)/5)", "round(j*(K-1)/(n_folds-1))")
+#: Scorecard named rules (decision 3). `scorecard.arm` is the PRIMARY spec by
+#: name, not by position: a scorecard built on a sensitivity arm would not be
+#: describing the estimand's own rows.
+IMPLEMENTED_SCORECARD_ARMS = (S.PRIMARY_SPEC,)
+IMPLEMENTED_SCORECARD_EVAL_SETS = SC.IMPLEMENTED_EVAL_SETS
+IMPLEMENTED_CALL_RULES = SC.IMPLEMENTED_CALL_RULES
+IMPLEMENTED_CORRECT_RULES = SC.IMPLEMENTED_CORRECT_RULES
+IMPLEMENTED_SCORECARD_CI = SC.IMPLEMENTED_CI_RULES
+
+#: Blocks that carry NO text: the pooled-embedding components join the text
+#: blocks only, never these (`size_only` is the zero-text comparator -- a fit
+#: on the size column alone -- so an embedding block inside it would make it
+#: something else entirely).
+NO_TEXT_BLOCKS = ("numeric_only", "size_only")
+#: Blocks that are NOT part of the confirmatory estimand: the exploratory
+#: red-flag block (owner ruling 2026-08-27) and `size_only`, which is a
+#: scorecard comparator and a zero-information row, never a confirmatory arm.
+#: Both are excluded from the seed band and from LOCO.
+NON_CONFIRMATORY_BLOCKS = ("text_and_numeric_exploratory", "size_only")
 
 #: The fixed scope sentence every claim carries (F5_PLAN §2 Step 3).
 SCOPE_SENTENCE = (
@@ -333,6 +401,17 @@ REQUIRED_PARAMS: tuple[tuple[str, object], ...] = (
     ("loco.scope", str),
     ("overlap.column", str),
     ("overlap.threshold", (int, float)),
+    ("fold_sensitivity.train_window_quarters", list),
+    ("scorecard.arm", str),
+    ("scorecard.eval_set", str),
+    ("scorecard.model_block", str),
+    ("scorecard.comparators", list),
+    ("scorecard.call_rule", str),
+    ("scorecard.outcome_col", str),
+    ("scorecard.correct_rule", str),
+    ("scorecard.min_calls_for_company_hit_rate", int),
+    ("scorecard.ci", str),
+    ("families.novelty_sequential_exploratory", bool),
     ("head2.event_window_sessions", list),
     ("head2.trailing_sessions", int),
     ("head3.horizon_quarters", int),
@@ -386,6 +465,19 @@ SELFTEST_PARAMS: dict = {
         "max_ciks_per_fold": 3,
     },
     "overlap": {"column": "train_overlap_share", "threshold": 0.0},
+    "fold_sensitivity": {"train_window_quarters": [4]},
+    "scorecard": {
+        "arm": S.PRIMARY_SPEC,
+        "eval_set": "dedup",
+        "model_block": "text_and_numeric",
+        "comparators": ["numeric_only", "size_only"],
+        "call_rule": "tercile_within_test_quarter",
+        "outcome_col": E2_TARGET_COL,
+        "correct_rule": "sign_match_nonzero",
+        "min_calls_for_company_hit_rate": 3,
+        "ci": "wilson_95",
+    },
+    "families": {"novelty_sequential_exploratory": False},
     "head2": {"event_window_sessions": [1, 5], "trailing_sessions": 60},
     "head3": {"horizon_quarters": 4, "metric": "auc"},
 }
@@ -559,6 +651,11 @@ def validate_params(params: dict) -> dict:
         ),
         ("spec.secondary", params["spec"]["secondary"], (S.SECONDARY_SPEC,)),
         ("loco.index_rule", params["loco"]["index_rule"], IMPLEMENTED_LOCO_RULES),
+        ("scorecard.arm", params["scorecard"]["arm"], IMPLEMENTED_SCORECARD_ARMS),
+        ("scorecard.eval_set", params["scorecard"]["eval_set"], IMPLEMENTED_SCORECARD_EVAL_SETS),
+        ("scorecard.call_rule", params["scorecard"]["call_rule"], IMPLEMENTED_CALL_RULES),
+        ("scorecard.correct_rule", params["scorecard"]["correct_rule"], IMPLEMENTED_CORRECT_RULES),
+        ("scorecard.ci", params["scorecard"]["ci"], IMPLEMENTED_SCORECARD_CI),
     )
     for key, value, allowed in named:
         if value not in allowed:
@@ -607,6 +704,11 @@ def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
             "se.block_length_rule": list(IMPLEMENTED_BLOCK_RULES),
             "se.alternative": list(IMPLEMENTED_SE_ALTERNATIVES),
             "tost.reference_distribution": list(IMPLEMENTED_TOST_DISTS),
+            "scorecard.arm": list(IMPLEMENTED_SCORECARD_ARMS),
+            "scorecard.eval_set": list(IMPLEMENTED_SCORECARD_EVAL_SETS),
+            "scorecard.call_rule": list(IMPLEMENTED_CALL_RULES),
+            "scorecard.correct_rule": list(IMPLEMENTED_CORRECT_RULES),
+            "scorecard.ci": list(IMPLEMENTED_SCORECARD_CI),
         },
         "optional_keys": [
             {"path": "loco.max_ciks_per_fold", "type": "int|null",
@@ -620,6 +722,16 @@ def write_params_schema(path: Path = PARAMS_SCHEMA_PATH) -> dict:
             "the raw_levels secondary arm always carries the untransformed PCA projection.",
             "embedding.pca_k > 0 with no usable `emb` column in the analysis frame is a "
             "REFUSAL, as is any fold realizing fewer than pca_k components.",
+            "fold_sensitivity.train_window_quarters lists ROLLING training-window arms "
+            "(decision 4, owner 2026-09-11). They are reported beside the expanding-window "
+            "primary and are never selected in place of it; [] runs none.",
+            "scorecard.* pins the per-company historical scorecard (decision 3, "
+            "pre-registration §14): the primary arm's deduplicated test rows, a "
+            "within-test-quarter tercile call, a sign-match outcome, two zero-text "
+            "comparators, and Wilson 95% intervals. Hit rates are DESCRIPTIVE; the "
+            "inference is the margin ladder.",
+            "families.novelty_sequential_exploratory turns the sequential-prior novelty "
+            "feature on as an EXPLORATORY row (decision 23); it never enters the headline.",
         ],
     }
     Path(path).write_text(json.dumps(schema, indent=2) + "\n")
@@ -748,9 +860,10 @@ def build_folds(
     df: pd.DataFrame,
     quarters: list[str],
     purge_rule: str = IMPLEMENTED_PURGE_RULES[0],
+    train_window_quarters: Optional[int] = None,
 ) -> tuple[list[dict], list[dict]]:
-    """Expanding-window quarterly folds restricted to the ratified quarter
-    list, with the pre-registered purge applied to the training rows.
+    """Quarterly folds restricted to the ratified quarter list, with the
+    pre-registered purge applied to the training rows.
 
     The fold SET comes from the frozen `backtest.build_walk_forward_folds`
     (burn-in = the first ratified test quarter's start); this function only
@@ -759,9 +872,21 @@ def build_folds(
     session. `window_close_session` is always a trading session, so comparing
     against the quarter's first CALENDAR day selects exactly the same rows --
     pinned by `test_backtest_e2.py::test_purge_calendar_start_equals_first_session`.
+
+    `train_window_quarters=None` (the PRIMARY, ratified structure) is the
+    expanding window: every row filed before the test quarter trains. An
+    integer N runs decision 4's ROLLING sensitivity arm instead: a training row
+    must fall in the N quarters strictly before the test quarter -- filing
+    quarter in [q - N, q - 1] -- and the purge then applies on top, unchanged.
+    These arms are reported beside the primary and never in place of it.
     """
     if purge_rule not in IMPLEMENTED_PURGE_RULES:
         raise G3Refusal(f"BLOCKED: purge_rule {purge_rule!r} has no implementation here.")
+    if train_window_quarters is not None and int(train_window_quarters) < 1:
+        raise G3Refusal(
+            f"BLOCKED: train_window_quarters = {train_window_quarters!r}; a rolling window "
+            "shorter than one quarter trains on nothing."
+        )
     wanted = [quarter_of(q) for q in quarters]
     burn_in_end = wanted[0].start_time
     all_folds = B.build_walk_forward_folds(df, burn_in_end)
@@ -774,11 +899,17 @@ def build_folds(
             "after ratification; this is a data/ratification mismatch to be ruled on."
         )
     closes = pd.to_datetime(df[WINDOW_CLOSE_COL]).values if WINDOW_CLOSE_COL in df.columns else None
+    row_quarter = df[FILING_DATE_COL].dt.to_period("Q").values
 
     folds, purge_rows = [], []
     for q in wanted:
         fold = by_quarter[q]
         train_idx = fold["train_idx"]
+        n_expanding = len(train_idx)
+        if train_window_quarters is not None:
+            first = q - int(train_window_quarters)
+            tq = row_quarter[train_idx]
+            train_idx = train_idx[(tq >= first) & (tq < q)]
         n_before = len(train_idx)
         if closes is not None:
             cutoff = np.datetime64(q.start_time.to_datetime64())
@@ -792,6 +923,10 @@ def build_folds(
         purge_rows.append(
             {
                 "test_quarter": str(q),
+                "train_window_quarters": (
+                    None if train_window_quarters is None else int(train_window_quarters)
+                ),
+                "n_train_expanding": int(n_expanding),
                 "n_train_before_purge": int(n_before),
                 "n_train_after_purge": int(len(train_idx)),
                 "n_purged": int(n_before - len(train_idx)),
@@ -800,8 +935,10 @@ def build_folds(
         )
         if len(train_idx) == 0:
             raise G3Refusal(
-                f"BLOCKED: fold {q} has no training rows left after the purge. The purge "
-                "rule and the fold list are both pre-registered; neither is adjustable here."
+                f"BLOCKED: fold {q} has no training rows left after the purge (training "
+                f"window: {train_window_quarters or 'expanding'}). The purge rule, the fold "
+                "list and the sensitivity windows are all pre-registered; none is adjustable "
+                "here."
             )
         folds.append({"test_quarter": q, "train_idx": train_idx, "test_idx": fold["test_idx"]})
     B.assert_no_fold_leakage(df, folds)
@@ -940,9 +1077,10 @@ def build_fold_frames(
 
 def blocks_for_fold(blocks: dict[str, list[str]], emb_cols: list[str]) -> dict[str, list[str]]:
     """The embedding components join the text blocks (F5_PLAN: the pooled
-    embeddings are part of the confirmatory text block), never the baseline."""
+    embeddings are part of the confirmatory text block), never a zero-text
+    block (`numeric_only`, `size_only` -- see NO_TEXT_BLOCKS)."""
     return {
-        name: list(cols) + (list(emb_cols) if name != "numeric_only" else [])
+        name: list(cols) + (list(emb_cols) if name not in NO_TEXT_BLOCKS else [])
         for name, cols in blocks.items()
     }
 
@@ -958,8 +1096,18 @@ def evaluate_arm(
 ) -> tuple[list[dict], dict]:
     """Per-fold fit + IC for every block. Returns (rows, diagnostics).
 
+    `diagnostics["oof_records"]` carries ONE RECORD PER fold x block x test row
+    -- the out-of-fold prediction beside the realized target, with the filing's
+    identity (cik, accession_number, form, public filing_date), its test
+    quarter, its dedup flag and its without-overlap-arm flag. Those records are
+    what the §14 scorecard describes; they are produced here, inside the same
+    guarded run, so the scorecard can never be a second fit on different rows.
+    They are returned inside the diagnostics dict rather than as a third
+    element so every existing caller keeps working unchanged.
+
     Nothing here is printed or serialized; the caller decides ordering."""
     rows: list[dict] = []
+    records: list[dict] = []
     pca_diag = []
     for entry in fold_frames:
         fold = entry["fold"]
@@ -976,7 +1124,28 @@ def evaluate_arm(
                 fit_predict_seeded(fold_frame, cols, train_idx, test_idx, seed), dtype=float
             )
 
+        ident = frame.loc[test_idx]
+        ciks = ident[CIK_COL].astype(int).values
+        accessions = ident["accession_number"].astype(str).values
+        forms = ident["form"].astype(str).values
+        filed = pd.to_datetime(ident[FILING_DATE_COL]).values
+        quarter_label = str(fold["test_quarter"])
         for name, pred in preds.items():
+            for pos in range(len(test_idx)):
+                records.append(
+                    {
+                        "test_quarter": quarter_label,
+                        "block": name,
+                        "cik": int(ciks[pos]),
+                        "accession_number": accessions[pos],
+                        "form": forms[pos],
+                        "filing_date": filed[pos],
+                        "prediction": float(pred[pos]),
+                        SC.OUTCOME_COL: float(realized[pos]),
+                        "in_dedup": bool(masks["dedup"][pos]),
+                        "in_dedup_no_overlap": bool(masks["dedup_no_overlap"][pos]),
+                    }
+                )
             for mask_name, mask in masks.items():
                 ic, p, n_used = S._spearman_or_nan(pred[mask], realized[mask])
                 spread, n_top, n_bot = B.quintile_spread(pred[mask], realized[mask])
@@ -997,7 +1166,7 @@ def evaluate_arm(
                         "n_bottom": int(n_bot),
                     }
                 )
-    return rows, {"pca_per_fold": pca_diag}
+    return rows, {"pca_per_fold": pca_diag, "oof_records": records}
 
 
 def fold_deltas(rows: list[dict], eval_set: str, block: str, baseline: str = "numeric_only") -> pd.DataFrame:
@@ -1650,6 +1819,13 @@ def _blocks_from_params(params: dict, frame: pd.DataFrame) -> dict[str, list[str
         "numeric_only": numeric,
         "text_and_numeric": numeric + text + fam,
         "text_and_numeric_exploratory": numeric + text + fam + red,
+        # The zero-text comparator (decision 3): a fit on the size column
+        # ALONE -- the predictor that beat both fitted models on E1. It is
+        # fitted like any other block and its per-fold ICs are written, but it
+        # is NOT part of the confirmatory estimand: no delta is taken against
+        # it, and NON_CONFIRMATORY_BLOCKS keeps it out of the seed band and
+        # LOCO.
+        "size_only": [params["columns"]["size_col"]],
     }
 
 
@@ -1684,6 +1860,9 @@ def run_head1(
     results_path: Path,
     report_path: Path,
     run_log_path: Path,
+    scorecard_md_path: Optional[Path] = None,
+    scorecard_json_path: Optional[Path] = None,
+    oof_path: Optional[Path] = None,
     g2_path: Path = G2_RESULTS_PATH,
     h1_path: Path = H1_CONTROLS_PATH,
     doc_path: Path = G3_DOC_PATH,
@@ -1696,7 +1875,12 @@ def run_head1(
     pair, and the measured sha must equal the one the caller's `guard` dict
     carries. A `guard` dict is a caller's claim; the ratification on disk is
     the fact. `doc_path`/`ratified_path` exist so the selftest can point the
-    re-check at its own synthetic fixture -- they default to the real paths."""
+    re-check at its own synthetic fixture -- they default to the real paths.
+
+    The §14 scorecard's three artifacts default to `results_path`'s own
+    directory under the module's fixed file names, so the real run writes them
+    to `data/f5/` (SCORECARD_MD_PATH / SCORECARD_JSON_PATH /
+    OOF_PREDICTIONS_PATH) and the selftest writes them into its own outdir."""
     verified = require_g3(doc_path, ratified_path)
     if verified["doc_sha256"] != guard.get("doc_sha256"):
         raise G3Refusal(
@@ -1743,7 +1927,7 @@ def run_head1(
     # would stop being the pair the pre-registration describes.
     rank_components = bool(params["embedding"]["rank_transform_components"])
 
-    arm_rows, arm_diag, arm_fold_frames = {}, {}, {}
+    arm_rows, arm_diag, arm_fold_frames, arm_records = {}, {}, {}, []
     for arm_name, (aframe, akwargs) in arms.items():
         fframes = build_fold_frames(
             aframe, folds, emb, emb_k,
@@ -1761,6 +1945,10 @@ def run_head1(
             int(params["seeds"]["primary"]),
         )
         arm_rows[arm_name] = rows
+        # The per-row out-of-fold predictions are kept for EVERY arm (they are
+        # the same fits the IC rows above summarise); the scorecard consumes
+        # the primary arm's rows only, by name.
+        arm_records.extend(dict(rec, arm=arm_name) for rec in diag.pop("oof_records", []))
         arm_diag[arm_name] = diag
         arm_fold_frames[arm_name] = fframes
 
@@ -1838,6 +2026,48 @@ def run_head1(
         },
     )
 
+    # rolling training-window sensitivity (decision 4, owner 2026-09-11).
+    # Same folds, same purge, same metric, same PIT-ranked primary frame -- the
+    # ONLY change is that training rows must fall in the N quarters before the
+    # test quarter. Reported beside the expanding primary; never selected.
+    for window_n in [int(n) for n in params["fold_sensitivity"]["train_window_quarters"]]:
+        arm = {
+            "train_window_quarters": window_n,
+            "note": "sensitivity arm, decision 4 (owner 2026-09-11): reported beside the "
+            "expanding primary, never selected",
+        }
+        try:
+            w_folds, w_purge = build_folds(
+                frame, params["fold_quarters"], params["purge_rule"], window_n
+            )
+            w_fframes = build_fold_frames(
+                arms[S.PRIMARY_SPEC][0], w_folds, emb, emb_k, rank_components, spec_kwargs
+            )
+            assert_pinned_components(w_fframes, pinned_k, f"rolling_{window_n}q")
+            w_rows, _ = evaluate_arm(
+                arms[S.PRIMARY_SPEC][0],
+                w_fframes,
+                {k: v for k, v in blocks.items() if k in ("numeric_only", "text_and_numeric")},
+                keep_values,
+                params["overlap"]["column"],
+                float(params["overlap"]["threshold"]),
+                int(params["seeds"]["primary"]),
+            )
+            w_deltas = fold_deltas(w_rows, "dedup", "text_and_numeric")
+            arm.update(
+                {
+                    "records": w_deltas.to_dict("records"),
+                    "mean_fold_delta_dedup": float(w_deltas["delta"].mean())
+                    if len(w_deltas)
+                    else float("nan"),
+                    "k_folds": int(len(w_deltas)),
+                    "purge": w_purge,
+                }
+            )
+        except G3Refusal as exc:
+            arm["status"] = f"not run: {exc}"
+        writer.add_delta_payload(f"per_fold_delta__rolling_{window_n}q", arm)
+
     # form-controlled ablation (honest secondary)
     forms = set(params["form_ablation_forms"])
     fsub = frame[frame["form"].isin(forms)].reset_index(drop=True)
@@ -1886,7 +2116,10 @@ def run_head1(
     writer.add_delta_payload("standing", standing_to_records(standing))
     writer.add_delta_payload("noise_floor_h1", h1_noise_floor(h1_path))
     writer.add_delta_payload("embedding_pca", {"k_requested": emb_k, "per_arm": arm_diag})
-    confirmatory_blocks = {k: v for k, v in blocks.items() if k != "text_and_numeric_exploratory"}
+    # The confirmatory estimand is numeric_only vs text_and_numeric ONLY: the
+    # exploratory red-flag block and the size_only comparator are excluded
+    # here, explicitly, so neither can reach the seed band or LOCO.
+    confirmatory_blocks = {k: v for k, v in blocks.items() if k not in NON_CONFIRMATORY_BLOCKS}
     writer.add_delta_payload(
         "seed_band",
         seed_band(
@@ -1901,6 +2134,21 @@ def run_head1(
         loco_table(arm_fold_frames[S.PRIMARY_SPEC], confirmatory_blocks, keep_values, params),
     )
     writer.add_delta_payload("g2_caveats", load_g2_caveats(g2_path))
+
+    # --- the historical scorecard (decision 3 / §14) ------------------------
+    # Built from THIS run's out-of-fold records -- the primary arm's
+    # deduplicated test rows, the rows the estimand itself uses -- and written
+    # after the margin block like every other delta-bearing payload. It is a
+    # description of what happened, never an inference: the page says so.
+    out_dir = Path(results_path).parent
+    md_path = Path(scorecard_md_path) if scorecard_md_path else out_dir / SCORECARD_MD_NAME
+    json_path = Path(scorecard_json_path) if scorecard_json_path else out_dir / SCORECARD_JSON_NAME
+    parquet_path = Path(oof_path) if oof_path else out_dir / OOF_PREDICTIONS_NAME
+    scorecard_summary, _scored = SC.build_scorecard(
+        pd.DataFrame(arm_records), params, md_path, json_path, parquet_path
+    )
+    writer.add_delta_payload("scorecard_summary", scorecard_summary)
+
     writer.add_delta_payload(
         "runtime_seconds", (datetime.now(timezone.utc) - started).total_seconds()
     )
@@ -1915,12 +2163,17 @@ def run_head1(
             "doc_sha256": guard["doc_sha256"],
             "params_sha256": guard["params_sha256"],
             "results_sha256": results_sha,
+            # prereg §14: the git-excluded scorecard renders are pinned here
+            "scorecard_md_sha256": sha256_file(md_path),
+            "scorecard_json_sha256": sha256_file(json_path),
+            "oof_predictions_sha256": sha256_file(parquet_path),
         },
     )
     for line in writer.stdout_lines():
         print(line)
-    print(f"results: {results_path}")
-    print(f"report:  {report_path}")
+    print(f"results:   {results_path}")
+    print(f"report:    {report_path}")
+    print(f"scorecard: {md_path}")
     return doc
 
 
@@ -2040,13 +2293,31 @@ def write_report(doc: dict, path: Path) -> str:
     cens = doc.get("censoring_arms", {})
     lines += [
         "",
-        "## 3. Censoring arms, side by side",
+        "## 3. Censoring arms and the training-window sensitivity, side by side",
         "",
         f"- full window: k = {cens.get('full_window', {}).get('k_folds')}, mean fold delta "
         f"{cens.get('full_window', {}).get('mean_fold_delta_dedup', float('nan')):.4f}",
         f"- post-{cens.get('post_2019_sub_window', {}).get('first_quarter')} sub-window: k = "
         f"{cens.get('post_2019_sub_window', {}).get('k_folds')}, mean fold delta "
         f"{cens.get('post_2019_sub_window', {}).get('mean_fold_delta_dedup', float('nan')):.4f}",
+    ]
+    for key in [k for k in doc if k.startswith("per_fold_delta__rolling_")]:
+        arm = doc[key]
+        if "mean_fold_delta_dedup" in arm:
+            lines.append(
+                f"- rolling {arm['train_window_quarters']}-quarter training window: k = "
+                f"{arm.get('k_folds')}, mean fold delta "
+                f"{arm.get('mean_fold_delta_dedup', float('nan')):.4f} -- {arm['note']}"
+            )
+        else:
+            lines.append(
+                f"- rolling {arm['train_window_quarters']}-quarter training window: "
+                f"{arm.get('status', 'not run')}"
+            )
+    lines += [
+        "",
+        "The primary training window is the EXPANDING one declared before the run; the rolling "
+        "arms above are sensitivities (decision 4) and are never selected in its place.",
         "",
         "## 4. Standing sections",
         "",
@@ -2095,6 +2366,46 @@ def write_report(doc: dict, path: Path) -> str:
     else:
         lines.append("**G2 results file not available to this run** -- the caveats are NOT stated, "
                      "and no number above should be read as label-quality-qualified.")
+
+    card = doc.get("scorecard_summary", {})
+    lines += ["", "## 7. Historical scorecard (decision 3, pre-registration §14)", ""]
+    if card:
+        lines.append(
+            f"Built from this run's own out-of-fold predictions on the `{card.get('arm')}` arm's "
+            f"`{card.get('eval_set')}` rows: {card.get('n_filings_scored')} filings, "
+            f"{card.get('n_companies')} companies, {card.get('n_test_quarters')} test quarters. "
+            f"Full page: `{(card.get('files') or {}).get('markdown')}`."
+        )
+        lines.append("")
+        lines += _table(
+            [
+                {
+                    "block": name,
+                    "n_calls": entry["n_calls"],
+                    "n_correct": entry["n_correct"],
+                    "hit_rate": entry["hit_rate"],
+                    "wilson_lo": entry["wilson_lo"],
+                    "wilson_hi": entry["wilson_hi"],
+                }
+                for name, entry in (card.get("blocks") or {}).items()
+            ],
+            ["block", "n_calls", "n_correct", "hit_rate", "wilson_lo", "wilson_hi"],
+        )
+        lines += [
+            "",
+            "Base rate (share of scored filings with a positive excess return): "
+            + (
+                f"{card['base_rate_positive_excess']:.4f}."
+                if card.get("base_rate_positive_excess") is not None
+                else "n/a."
+            ),
+            "",
+            f"**{card.get('inference_sentence')}**",
+            "",
+            card.get("prices_sentence", ""),
+        ]
+    else:
+        lines.append("**No scorecard in this results document.**")
     lines += ["", f"_{doc['scope']['not_a_trading_signal']}_", ""]
     text = "\n".join(lines)
     Path(path).write_text(text + "\n")
@@ -2210,8 +2521,12 @@ def selftest(outdir: Optional[Path] = None) -> dict:
         out / "results_head1.json", out / "report_head1.md", out / "run_log.jsonl",
         doc_path=doc_path, ratified_path=rat_path,
     )
+    card = result.get("scorecard_summary", {})
+    model = (card.get("blocks") or {}).get("text_and_numeric", {})
     print(f"selftest OK: {census['n_rows']} synthetic rows, "
-          f"{len(result['per_fold_primary_delta_dedup'])} folds, artifacts in {out}")
+          f"{len(result['per_fold_primary_delta_dedup'])} folds, SYNTHETIC scorecard "
+          f"{model.get('n_correct')}/{model.get('n_calls')} model calls right, "
+          f"artifacts in {out}")
     return {"outdir": str(out), "census": census, "results": result}
 
 
@@ -2252,7 +2567,12 @@ def main(argv=None) -> int:
               "`python3 backtest_e2.py --census` and `python3 backtest_e2.py --selftest`.")
         return 2
     frame, diag = load_analysis_frame()
-    run_head1(params, guard, frame, diag, RESULTS_PATH, REPORT_PATH, RUN_LOG_PATH)
+    run_head1(
+        params, guard, frame, diag, RESULTS_PATH, REPORT_PATH, RUN_LOG_PATH,
+        scorecard_md_path=SCORECARD_MD_PATH,
+        scorecard_json_path=SCORECARD_JSON_PATH,
+        oof_path=OOF_PREDICTIONS_PATH,
+    )
     return 0
 
 

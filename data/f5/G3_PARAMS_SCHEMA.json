@@ -161,6 +161,50 @@
       "type": "int|float"
     },
     {
+      "path": "fold_sensitivity.train_window_quarters",
+      "type": "list"
+    },
+    {
+      "path": "scorecard.arm",
+      "type": "str"
+    },
+    {
+      "path": "scorecard.eval_set",
+      "type": "str"
+    },
+    {
+      "path": "scorecard.model_block",
+      "type": "str"
+    },
+    {
+      "path": "scorecard.comparators",
+      "type": "list"
+    },
+    {
+      "path": "scorecard.call_rule",
+      "type": "str"
+    },
+    {
+      "path": "scorecard.outcome_col",
+      "type": "str"
+    },
+    {
+      "path": "scorecard.correct_rule",
+      "type": "str"
+    },
+    {
+      "path": "scorecard.min_calls_for_company_hit_rate",
+      "type": "int"
+    },
+    {
+      "path": "scorecard.ci",
+      "type": "str"
+    },
+    {
+      "path": "families.novelty_sequential_exploratory",
+      "type": "bool"
+    },
+    {
       "path": "head2.event_window_sessions",
       "type": "list"
     },
@@ -193,6 +237,21 @@
     "tost.reference_distribution": [
       "normal",
       "t"
+    ],
+    "scorecard.arm": [
+      "pit_trailing_rank"
+    ],
+    "scorecard.eval_set": [
+      "dedup"
+    ],
+    "scorecard.call_rule": [
+      "tercile_within_test_quarter"
+    ],
+    "scorecard.correct_rule": [
+      "sign_match_nonzero"
+    ],
+    "scorecard.ci": [
+      "wilson_95"
     ]
   },
   "optional_keys": [
@@ -207,6 +266,9 @@
     "No value here is a default: the runner refuses without the ratified document.",
     "F5_PLAN \u00a73's defaults are the SELFTEST's values only.",
     "embedding.rank_transform_components applies to the PIT-ranked spec arms only; the raw_levels secondary arm always carries the untransformed PCA projection.",
-    "embedding.pca_k > 0 with no usable `emb` column in the analysis frame is a REFUSAL, as is any fold realizing fewer than pca_k components."
+    "embedding.pca_k > 0 with no usable `emb` column in the analysis frame is a REFUSAL, as is any fold realizing fewer than pca_k components.",
+    "fold_sensitivity.train_window_quarters lists ROLLING training-window arms (decision 4, owner 2026-09-11). They are reported beside the expanding-window primary and are never selected in place of it; [] runs none.",
+    "scorecard.* pins the per-company historical scorecard (decision 3, pre-registration \u00a714): the primary arm's deduplicated test rows, a within-test-quarter tercile call, a sign-match outcome, two zero-text comparators, and Wilson 95% intervals. Hit rates are DESCRIPTIVE; the inference is the margin ladder.",
+    "families.novelty_sequential_exploratory turns the sequential-prior novelty feature on as an EXPLORATORY row (decision 23); it never enters the headline."
   ]
 }

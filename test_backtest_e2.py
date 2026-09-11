@@ -413,7 +413,9 @@ def test_run_head1_results_put_margin_before_every_delta(tmp_path, synth, synth_
     assert min(delta_keys) > 0
     log = [json.loads(l) for l in (tmp_path / "run_log.jsonl").read_text().splitlines()]
     assert log[-1]["doc_sha256"] == guard["doc_sha256"]
-    assert set(log[-1]) == {"utc", "doc_sha256", "params_sha256", "results_sha256"}
+    assert set(log[-1]) == {"utc", "doc_sha256", "params_sha256", "results_sha256",
+                            "scorecard_md_sha256", "scorecard_json_sha256",
+                            "oof_predictions_sha256"}
 
 
 def _margin_block(se: float) -> dict:
@@ -664,17 +666,24 @@ def test_selftest_runs_end_to_end_on_synthetic_data(tmp_path):
         "loco",
         "noise_floor_h1",
         "g2_caveats",
+        "per_fold_delta__rolling_4q",
+        "scorecard_summary",
     ):
         assert key in results, key
     # the exploratory red-flag block is reported separately, never as the
     # confirmatory one
     blocks = {r["block"] for r in results["per_fold_ic__pit_trailing_rank"]}
-    assert blocks == {"numeric_only", "text_and_numeric", "text_and_numeric_exploratory"}
+    assert blocks == {
+        "numeric_only", "text_and_numeric", "text_and_numeric_exploratory", "size_only",
+    }
     evals = {r["eval_set"] for r in results["per_fold_ic__pit_trailing_rank"]}
     assert evals == {"raw", "dedup", "dedup_no_overlap"}
     assert results["loco"]["status"].startswith("DESCRIPTIVE ONLY")
     assert (tmp_path / "report_head1.md").exists()
     assert (tmp_path / "census_head1.json").exists()
+    assert (tmp_path / E.SCORECARD_MD_NAME).exists()
+    assert (tmp_path / E.SCORECARD_JSON_NAME).exists()
+    assert (tmp_path / E.OOF_PREDICTIONS_NAME).exists()
     assert out["outdir"] == str(tmp_path)
 
 
@@ -945,3 +954,137 @@ def test_the_census_path_cannot_reach_a_fitting_function():
         seen.add(fn)
         stack.extend(graph.get(fn, ()))
     assert FITTING_FUNCTIONS - {"run_head1"} <= seen
+
+
+# ---------------------------------------------------------------------------
+# 14. Owner rulings 2026-09-11: out-of-fold records, the size_only comparator,
+#     the rolling-window sensitivity arms, and the §14 scorecard
+# ---------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def head1_run(tmp_path_factory, synth, synth_params):
+    """ONE real (synthetic-data) head-1 invocation, shared by the ordering
+    tests below so they cost one fit rather than several."""
+    frame, diag = synth
+    out = tmp_path_factory.mktemp("head1_run")
+    doc_path, rat_path = _write_doc(out, synth_params)
+    params, guard = E.load_g3_params(doc_path, rat_path)
+    doc = E.run_head1(
+        params, guard, frame, diag,
+        out / "results_head1.json", out / "report_head1.md", out / "run_log.jsonl",
+        doc_path=doc_path, ratified_path=rat_path,
+    )
+    return doc, out, params
+
+
+def test_size_only_block_stays_out_of_seed_band_and_loco(tmp_path, synth, synth_params, monkeypatch):
+    """`size_only` is fitted and its per-fold ICs are written, but it is not
+    part of the confirmatory estimand: no delta is taken against it and it
+    never reaches the seed band or LOCO (which are the estimand's own
+    diagnostics)."""
+    frame, diag = synth
+    params = json.loads(json.dumps(synth_params))
+    assert E._blocks_from_params(params, frame)["size_only"] == [params["columns"]["size_col"]]
+
+    seen = {}
+    real_seed_band, real_loco = E.seed_band, E.loco_table
+
+    def seed_spy(fold_frames, blocks, *a, **kw):
+        seen["seed_band"] = set(blocks)
+        return real_seed_band(fold_frames, blocks, *a, **kw)
+
+    def loco_spy(fold_frames, blocks, *a, **kw):
+        seen["loco"] = set(blocks)
+        return real_loco(fold_frames, blocks, *a, **kw)
+
+    monkeypatch.setattr(E, "seed_band", seed_spy)
+    monkeypatch.setattr(E, "loco_table", loco_spy)
+    doc, _ = _run_head1(tmp_path, frame, diag, params)
+
+    assert seen["seed_band"] == {"numeric_only", "text_and_numeric"}
+    assert seen["loco"] == {"numeric_only", "text_and_numeric"}
+    # its own IC rows ARE written ...
+    blocks_written = {r["block"] for r in doc["per_fold_ic__pit_trailing_rank"]}
+    assert "size_only" in blocks_written
+    # ... and the embedding block never joins it (it is the ZERO-TEXT comparator)
+    size_rows = [r for r in doc["per_fold_ic__pit_trailing_rank"] if r["block"] == "size_only"]
+    assert size_rows and all(r["n_emb_components"] >= 0 for r in size_rows)
+    assert E.blocks_for_fold({"size_only": ["log_total_assets"]}, ["emb_pc1"])["size_only"] == [
+        "log_total_assets"
+    ]
+    # ... but no delta payload is ever taken against it
+    assert not [k for k in doc if k.startswith("per_fold_delta") and "size_only" in k]
+
+
+def test_rolling_window_restricts_training_rows(synth, synth_params):
+    """Decision 4: with `train_window_quarters=N` a training row must fall in
+    the N quarters strictly before the test quarter -- and the pre-registered
+    purge still applies on top."""
+    frame, _ = synth
+    quarters = json.loads(json.dumps(synth_params))["fold_quarters"]
+    n = 2
+    expanding, _ = E.build_folds(frame, quarters)
+    rolling, purge = E.build_folds(frame, quarters, E.IMPLEMENTED_PURGE_RULES[0], n)
+    assert [str(f["test_quarter"]) for f in rolling] == [str(f["test_quarter"]) for f in expanding]
+
+    row_q = frame["filing_date"].dt.to_period("Q")
+    tightened = 0
+    for roll, exp in zip(rolling, expanding):
+        q = E.quarter_of(str(roll["test_quarter"]))
+        train_q = row_q.iloc[roll["train_idx"]]
+        assert (train_q < q).all(), "no training row from the test quarter or later"
+        assert (train_q >= q - n).all(), f"no training row older than {n} quarters"
+        # the purge is still applied on top of the window
+        closes = frame.loc[roll["train_idx"], "window_close_session"]
+        assert (pd.to_datetime(closes) < q.start_time).all()
+        # and it is a genuine restriction of the expanding fold, not a relabel
+        assert set(roll["train_idx"]) <= set(exp["train_idx"])
+        tightened += int(len(exp["train_idx"]) > len(roll["train_idx"]))
+    assert tightened > 0, "the window never bound -- the test would be vacuous"
+    assert {r["train_window_quarters"] for r in purge} == {n}
+    assert all(r["n_train_before_purge"] <= r["n_train_expanding"] for r in purge)
+    assert all(r["n_purged"] >= 0 for r in purge)
+    # the expanding primary is untouched by the sensitivity arm
+    assert all(r["train_window_quarters"] is None for r in E.build_folds(frame, quarters)[1])
+    with pytest.raises(E.G3Refusal):
+        E.build_folds(frame, quarters, E.IMPLEMENTED_PURGE_RULES[0], 0)
+
+
+def test_rolling_window_arms_are_written_after_the_margin_block(head1_run):
+    doc, _out, params = head1_run
+    keys = list(doc.keys())
+    windows = [int(n) for n in params["fold_sensitivity"]["train_window_quarters"]]
+    assert windows, "the selftest fixture must exercise at least one rolling arm"
+    for n in windows:
+        key = f"per_fold_delta__rolling_{n}q"
+        assert key in doc
+        assert keys.index(key) > keys.index("per_fold_primary_delta_dedup") > keys.index("margin") == 0
+        arm = doc[key]
+        assert arm["train_window_quarters"] == n
+        assert arm["note"].startswith("sensitivity arm, decision 4 (owner 2026-09-11)")
+        assert "never selected" in arm["note"]
+        assert len(arm["records"]) == len(doc["per_fold_primary_delta_dedup"])
+        assert np.isfinite(arm["mean_fold_delta_dedup"])
+        assert {r["train_window_quarters"] for r in arm["purge"]} == {n}
+        assert all("n_purged" in r for r in arm["purge"])
+    # the rolling arm is an ARM, not the primary: the primary stays expanding
+    assert all(r["train_window_quarters"] is None for r in doc["purge"])
+
+
+def test_the_scorecard_is_reachable_only_from_run_head1():
+    """A hit rate is a feature-versus-outcome association, so the scorecard
+    may only ever be built inside the guarded run. Nothing else in this module
+    may call it (the census tripwire above covers the other direction)."""
+    tree = ast.parse(Path(E.__file__).read_text())
+    builders = set()
+    for node in tree.body:
+        if isinstance(node, ast.FunctionDef):
+            for call in ast.walk(node):
+                if (
+                    isinstance(call, ast.Call)
+                    and isinstance(call.func, ast.Attribute)
+                    and call.func.attr == "build_scorecard"
+                ):
+                    builders.add(node.name)
+    assert builders == {"run_head1"}, f"scorecard built from {sorted(builders)}"
