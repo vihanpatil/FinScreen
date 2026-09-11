@@ -63,11 +63,17 @@ the project's own charter — flag it to the owner rather than building it.
 
 ---
 
-**Identity, as ruled 2026-09-11 (HANDOFF §3 of that date), replacing "research +
-pipeline-as-asset (+app vision)":** *"A personal filing-reading aid for one
-user, backed by a bounded, closed research study — analysis with disclosed
-error, never a score or a recommendation."* Distribution is not pursued and
-would require re-ratification.
+**Identity, as ruled 2026-09-11 (two rulings the same day; the later one
+governs — HANDOFF §3):** the owner reaffirmed the investing-product goal after
+concerns were raised. Working identity pending the owner's one-sentence
+confirmation (PRODUCT_PLAN §4 B): *"A personal investing research tool:
+validated screening signals with their measured track record beside them;
+personal use; distribution only after legal review."* The earlier line of the
+same day ("a personal filing-reading aid … never a score or a recommendation")
+is superseded for the owner's own use; the reading aid remains the product's
+front end. §1's "not investment advice" non-goal is amended for the owner's own
+use only; the other non-goals (no live capital in the code, no unsupported
+performance claims) stand.
 
 ## 2. Exact current state
 
@@ -1391,6 +1397,44 @@ agree with your intended resolutions and I have pushed all commits" (the
   paper, pre-registered, ≥ 8 quarters). CEO dissent: put the charter
   re-ratification question to the owner explicitly first. **Owner's ruling
   pending. No refactor, no ranking or scoring code, until it is given.**
+
+**2026-09-11 — OWNER REAFFIRMS THE INVESTING-PRODUCT GOAL AFTER CONCERNS; CHARTER
+AMENDED FOR PERSONAL USE; G3 PACKET DELIVERED (clock starts).** After the main
+session's assessment and the council's advisory, the owner wrote, verbatim: *"I
+really want it to do this: 'to have product be useful and amazing, that if one
+looks at my portfolio, may ask to use as well. I know I cannot compete with huge
+tech firms and investment banks and their resources, but this should genuinely
+be useful and give accurate advice. Ensure that this is tested on older company
+reports which are then verified with real life stock market prices and how they
+moved up and down throughout. That should test and actually verify that the
+advice has and would have worked in the past (factor in when reports are
+reported and if they would help at the proper times). Then once everything is
+verified to have worked, I can test on modern and upcoming data to see if I make
+profit.' REFACTOR. How to fully research and finish current necessary work and
+transition and move to this goal?"*
+- Treated as the owner's decision (concern raised, goal reaffirmed). It
+  SUPERSEDES the 2026-09-11 identity line ("never a score or a
+  recommendation") and AMENDS §1's "not investment advice" non-goal for the
+  owner's own use. The council's same-day advisory stands as recorded
+  dissent. KC5 is discharged by this ruling.
+- Plan: `PRODUCT_PLAN.md` (P1 finish E2 as the first text-signal validation;
+  P2 portfolio simulator with costs, dividends, delisting returns, drawdowns,
+  multiple-testing control; P3 pre-registered signal program incl. numeric
+  factors and mid-cap expansion; P4 product surface with the evidence panel;
+  P5 paper forward test ≥ 8 quarters before personal use; P6 distribution
+  only after legal review). Execution conditions (main session; owner may
+  strike in writing): paper before live; no claim without out-of-sample
+  evidence; distribution requires legal review; no new spend without
+  sign-off; everything pre-registered.
+- Consequence for the stopping rule (H5 Option 1, 2026-08-26): "a positive is
+  never a signal to act on" is superseded by PRODUCT_PLAN P1's branch
+  consequences (positive → P3/P5; null/unpowered → text family not used as a
+  signal). The E2 protocol, freeze, guard and disclosures are unchanged.
+- **G3 packet delivered 2026-09-11 with this entry** (`data/f5/G3_OWNER_PACKET.md`
+  + `data/f5/G3_PREREGISTRATION.md`, DRAFT); the owner's 14-day clock runs
+  from today. Owner decisions that gate the plan: PRODUCT_PLAN §4 (A price
+  source + budget; B charter sentence; C mid-cap expansion; D paper period).
+- Not built until ruled: anything requiring new spend (A) or distribution.
 
 **Split philosophy (Week 4, no single ratification date — established
 across `finetune/SPLIT_DESIGN.md`):** protect the training set; target

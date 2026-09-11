@@ -37,8 +37,12 @@ and **the owner's charter ruling is pending** (HANDOFF §3 2026-09-11, last
 entry). **App lane L2.1 DONE and red-teamed:** `report_filing.py` (98 tests;
 containment of every rendered paragraph in the filing's own text verified
 independently by the main session); reports under `data/app/reports/`.
-Do not build any score, rank, verdict or distribution feature until the owner
-rules the charter question. Gate G2 was RULED 2026-09-07
+**RULED 2026-09-11 (later the same day): the owner REAFFIRMED the
+investing-product goal ("REFACTOR") — see HANDOFF §3 last entry and
+`PRODUCT_PLAN.md`. G3 packet DELIVERED 2026-09-11; 14-day clock running (due
+2026-09-25). Next: owner rules G3 (23 decisions) and PRODUCT_PLAN §4 A–D;
+main session starts P2 (portfolio simulator) design, which needs decision A
+(price source/budget) before money-metrics can be honest.** Gate G2 was RULED 2026-09-07
 (proceed under the ladder; 2(b) extend). Repo committed on main; owner
 pushes. LICENSE = MIT (owner-confirmed 2026-09-10).**
 
