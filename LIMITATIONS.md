@@ -552,10 +552,11 @@ returned a **bounded null**: mean per-fold dedup IC delta +0.0011, 90% CI
 seed 0; across 100 nuisance seeds, 32 fail the equivalence test at ±0.04, and none
 reaches the MDE (`F6_E2_RESULT.md` §1.4). (2) **One-fold fragility:** 2020Q1
 contributes +0.2204; without it the mean over the other 32 folds is -0.0058, so
-+0.0011 is not weakly positive (§1.6). (3) **The scorecard's hit-rate interval
-assumes independent calls:** the model's 0.5187 [0.5008, 0.5366] is descriptive
-only, and the reviewer's quarter-cluster and company-cluster bootstraps both include
-0.50 (§2). (4) **The owner's final read (gate G4) is pending**; nothing here is a
++0.0011 is not weakly positive (§1.6). (3) **The scorecard's hit-rate intervals
+assume independent calls**, which they are not; the reviewer's quarter-cluster and
+company-cluster bootstraps both include chance (§2). The scorecard's numbers are
+withheld from this public document pending the legal review's conditions (baseline memo
+#4, Q2). (4) **The owner's final read (gate G4) is pending**; nothing here is a
 final owner conclusion. E1 and E2 numbers are not comparable (different benchmark).
 The E1 text below is unchanged.
 

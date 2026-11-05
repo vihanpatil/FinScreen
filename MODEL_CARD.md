@@ -724,23 +724,15 @@ carries no information in general. Two further caveats are in `LIMITATIONS.md` �
 the equivalence label depends on the model seed, and one fold carries most of the
 point estimate.
 
-**Scorecard universe block (descriptive only).** Copied from `data/f5/head1_scorecard.md`
-via `G3_RUN_2026-11-05_owner_read.md` §2. "Call" is the pre-registered scorecard
-term for a top- or bottom-tercile label within a quarter.
-
-| block | n calls | n correct | hit rate | 95% Wilson interval | chance (from call counts) |
-|---|---|---|---|---|---|
-| model (`text_and_numeric`) | 2992 | 1552 | 0.5187 | [0.5008, 0.5366] | 0.500 |
-| numeric only | 2991 | 1525 | 0.5099 | [0.4919, 0.5278] | 0.500 |
-| size only | 2933 | 1425 | 0.4859 | [0.4678, 0.5039] | 0.500 |
-
-"Hit rates are descriptive. The inference is the pre-registered IC margin ladder
-(§1, decision 15); a per-company hit rate over at most 33 quarters has a wide
-interval and proves nothing on its own." The scorecard cannot change the §13
-outcome. The Wilson intervals assume independent calls, which they are not; the
-reviewer's quarter-cluster and company-cluster bootstrap intervals for the model's
-hit rate both include 0.50 (`F6_E2_RESULT.md` §2). The per-company pages are not
-reproduced here.
+**Scorecard (§14).** The run also produced the pre-registered per-company historical
+scorecard. Its numbers — universe-level hit rates and the per-company pages alike — are
+withheld from this public document until the legal review's conditions for a public
+track record are met (`data/legal/LEGAL_REVIEW_baseline_2026-09-11.md` #4, Q2). What can
+be said here: "Hit rates are descriptive. The inference is the pre-registered IC margin
+ladder (§1, decision 15); a per-company hit rate over at most 33 quarters has a wide
+interval and proves nothing on its own." The scorecard cannot change the §13 outcome,
+and its Wilson intervals assume independent calls, which they are not (the reviewer's
+clustered bootstrap intervals include chance; `F6_E2_RESULT.md` §2, private).
 
 **Label-quality escorts that travel with every E2 number** (G2, owner-ruled
 2026-09-07; `data/f4/g2/G2_FINAL_REPORT.md`, as quoted in `F6_E2_RESULT.md` §3(b)).

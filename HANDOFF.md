@@ -1755,6 +1755,33 @@ population and the exit-screen look-ahead in TRAINING labels; heads 2–3 run_lo
 mean; LOCO spans; tickers null on 114 of 139 scorecard companies). F6 (negative result + failure taxonomy) is the next
 build; the §13 branch stands.
 
+**2026-11-05 — F6 EXECUTED (owner: "Start F6"; then "once you are done, wrap up this session. i will resume in a
+new session"). Status, not a ruling; Gate G4 (the owner's final read) NOT yet given.** F6-A (`builder`): the
+decision-11 WITHDRAWN-exclusion arm run as a separate script `data/f5/sensitivity_decision11.py` under the pin,
+rebuilding the primary exactly first (max diff 0.0): **43 rows removed (same-company attribution; 26 CIKs; 25 of
+them 2020Q2), mean per-fold dedup delta −0.0052 vs the primary's +0.0011; under the census definition (35 rows,
+the ratified count) +0.0177** — opposite signs inside the 100-seed band, so unreadable; **labelled POST-HOC** (the
+43-row definition was chosen after the primary existed; pre-registration line 68) and never selectable; the
+35-vs-43 undercount of the ratified cell is recorded here as a fact about the census, not the rule.
+`report_head1_addendum.md` (always-reported arms, §11 escorts verbatim from the scorecard's own readers, override
+paragraph for the stale `spec.py` boilerplate), `heads_e2.head_disclosures` gains the NEGATIVE-recall escorts
+(the on-disk heads 2/3 JSONs predate it), run_log gained 7 append-only provenance lines; suite 1,614 green. F6-B
+(`scribe`, Opus): `data/f5/F6_E2_RESULT.md` — negative result + failure taxonomy, ~330 numbers re-derived by the
+reviewer with 0 mismatches. F6-C: README / MODEL_CARD §6.x / LIMITATIONS §4.1 updated. F6-D (`reviewer`):
+`data/f5/status/REVIEW_f6_2026-11-05.md` — 2 must-fix, 7 should, 11 note. **MF1** (H3v2 retention misquote)
+and S1–S7 (attenuation arithmetic, POST-HOC label, seed caveat beside every equivalence statement, head-2
+predictor wording, T1's pre-declared FAIL, stale §5 dispositions, the delta-vs-level sentence) applied to the
+write-up by a second scribe pass (`F6B2_fixes_2026-11-05.md`). **MF2 — main-session decision under touchpoint
+(b):** the scorecard's universe hit rates were removed from README, MODEL_CARD and LIMITATIONS (public pages;
+legal baseline #4 / Q2 and CLAUDE.md rule 9) and replaced by a withholding sentence; they remain in the tracked
+research record (`F6_E2_RESULT.md` §2, `results_head1.json`), which the legal memo's own fix for #4 permits
+("commit only the universe-level block") — **whether that record is pushed to the public repository is the
+owner's call (packet item G)**; nothing has been pushed. Open after F6: heads 2/3 JSONs without escorts (re-render
+only on a new ruling), MODEL_CARD §7 still a gated TODO, README §1 charter wording ("makes calls", "advice") is
+the owner's ruled text and conflicts with the public-copy rules — for the owner. E2 is CLOSED on the record as
+a bounded null per the ratified §13; the pipeline is archived as an asset; the product continues on the reading
+aid and the numeric families (PRODUCT_PLAN P1 null branch).
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters

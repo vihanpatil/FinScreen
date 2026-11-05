@@ -79,6 +79,18 @@ of September. Team cut from 15 agents to 7 (`TEAM.md`). **Recommendation: confir
 2. `git push` — main is 29 commits ahead of GitHub (you push by convention). Or reply
    "push" and I will.
 
+## G. Push, and what goes public with it (added after F6, 2026-11-05)
+
+Main is far ahead of GitHub and the repository is public. The tracked research record now contains the
+E2 result (an IC null, a research finding) and, in `data/f5/F6_E2_RESULT.md` and `results_head1.json`,
+the scorecard's **universe-level** hit rates (model 0.519 vs numeric-only 0.510 vs size-only 0.486, all
+with chance 0.500). The per-company pages are git-excluded and never leave this machine. I removed the
+hit rates from README, MODEL_CARD and LIMITATIONS (the pages people read); the legal memo's own fix for
+its item #4 permits committing the universe-level block, but a public track record of any kind is the
+item the memo says an attorney must confirm. **Recommendation: push as is** (a null result with its
+methodology is the honest public record, and no page states a track record); or say "hold" and I keep
+main unpushed, or "strip" and I move the universe block out of the tracked files before pushing.
+
 ## F. Optional: your watchlist
 
 Name 5–15 tickers you actually follow. I will build their reports now and keep them
