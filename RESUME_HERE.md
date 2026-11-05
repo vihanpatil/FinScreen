@@ -39,8 +39,16 @@ block: model 1552/2992 = 0.5187 [0.5008, 0.5366], numeric-only 0.5099, size-only
 owner's read file is `data/f5/status/G3_RUN_2026-11-05_owner_read.md` (per-fold table, universe block, heads
 2–3); per-company pages in `data/f5/head1_scorecard.md` (git-excluded). Reviewer pass DONE (`data/f5/status/REVIEW_g3_run_2026-11-05.md`: everything reproduces; M1 = decision-11
 sensitivity arm never built → recorded DEVIATION, run post-hoc-labelled in F6; M2 = tripwires inverted, suite 1,601
-green, `data/f5/status/M2_tripwire_inversion_2026-11-05.md`; the rest → F6 list in HANDOFF §3). **IN FLIGHT:
-nothing.** NEXT: owner reads; then F6 write-up (negative result + failure taxonomy; `builder` +
+green, `data/f5/status/M2_tripwire_inversion_2026-11-05.md`; the rest → F6 list in HANDOFF §3). **F6 STARTED 2026-11-05 (owner: "Start F6"; then "once you are done, wrap up this session. i will resume in a
+new session").** IN FLIGHT (every launch listed; relaunch any row whose output is missing and whose agent is not running):
+| item | launched as | expected output | if missing on resume |
+|---|---|---|---|
+| F6-A: decision-11 sensitivity arm as a separate post-hoc-labelled script (`data/f5/sensitivity_decision11.py`, never editing `backtest_e2.py`); heads 2/3 + report_head1 shas appended to run_log (S11); report_head1 arms + §11 escorts + purge/anchor override paragraphs (S4, S5); heads 2/3 disclosures gain the NEGATIVE-recall escorts (S6); tests | `builder` (Opus) | `data/f5/status/F6A_code_2026-11-05.md`; `data/f5/sensitivity_decision11.json`; suite green | relaunch "check what landed first; spec = REVIEW_g3_run M1, S4, S5, S6, S11" |
+| F6-B: the write-up `data/f5/F6_E2_RESULT.md` — negative result + failure taxonomy, every number from an artifact, decision-11 row filled from F6-A's JSON when present | `scribe` with model opus | the file exists with §1 result, §2 failure taxonomy, §3 instrument vs world, §4 what survives, §5 deviations/limitations, §6 file index | relaunch with the same brief (HANDOFF §3 F6 entry) |
+| F6-C (after A and B): README "Where the project stands", MODEL_CARD §6, LIMITATIONS §4.1 updated for E2 | `scribe` | the three files say E2 = bounded null with the numbers | relaunch |
+| F6-D (after C): `reviewer` pass over the write-up and doc edits | `reviewer` | `data/f5/status/REVIEW_f6_2026-11-05.md` | relaunch |
+| F6-E (main session): HANDOFF §3 F6 entry, this block, memory, commit; hand the owner the write-up for **Gate G4 (owner's final read)** | main | HANDOFF entry dated; commit | do it |
+NEXT: owner reads; then F6 write-up (negative result + failure taxonomy; `builder` +
 `scribe`), then the product continues on the reading aid and the numeric families (PRODUCT_PLAN P1 null
 branch). Decisions B–F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
 `.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled
