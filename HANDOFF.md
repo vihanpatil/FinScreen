@@ -1707,6 +1707,18 @@ reset by a macOS update; same interpreter runs at
 nothing there is recorded as a ruling until the owner replies. Nothing frozen was touched;
 no API call; $0.
 
+**2026-11-05 — G3 RATIFIED (owner ruling, verbatim).** After reading
+`OWNER_DECISIONS_2026-11-05.md` (decision A, which pointed at the §4 confirmation list in
+`data/f5/G3_OWNER_RULINGS_2026-09-11.md`), the owner replied in chat, verbatim and in full:
+*"ratify"*. That is the one word §4 asked for; it confirms every ⚠ reading listed there. The
+main session records it and runs, in this order and nothing else: `data/f5/pin_g3.py --show
+--date 2026-11-05` (diff kept at `data/f5/status/PIN_SHOW_2026-11-05.txt`), `pin_g3.py --pin
+--owner-word ratify --date 2026-11-05` (writes `data/f5/G3_RATIFIED.json`), `backtest_e2.py`
+(head 1 + §14 scorecard), `heads_e2.py --all` (heads 2 and 3), via `bin/fs g3`; the chain log
+is `data/f5/status/g3_chain_log.jsonl`. Decisions B–F of the packet are NOT ruled by this word
+and remain open. The owner reads the per-fold tables and the scorecard personally; no verdict
+is summarised for them first; no scorecard number goes on a public surface.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
