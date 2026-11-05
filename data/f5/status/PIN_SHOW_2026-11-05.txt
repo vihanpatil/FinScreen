@@ -1,0 +1,100 @@
+--- G3_PREREGISTRATION.md (as it stands: RATIFICATION-READY)
++++ G3_PREREGISTRATION.md (pinned form)
+@@ -2,3 +2,3 @@
+ 
+-**STATUS: RATIFICATION-READY 2026-09-11 — the owner's rulings (data/f5/G3_OWNER_RULINGS_2026-09-11.md) are applied to every rule below; NOT YET RATIFIED; no sha pinned. The sha is pinned into G3_RATIFIED.json only when the owner replies "ratify" to that file's §4 confirmation list.**
++**STATUS: RATIFIED 2026-11-05 — owner's word "ratify" in chat; HANDOFF §3 entry of that date. sha256 pinned in G3_RATIFIED.json.**
+ Instantiates the H5 §6 skeleton §0–§13 as a fill-in table, plus a **§14**
+@@ -12,4 +12,3 @@
+ file, and every ⚠ is listed again in that file's §4 so one word confirms or
+-corrects all of them. A ruling is not a ratification: this document is ratified
+-only when the owner says so and its sha is pinned. Measured populations are
++corrects all of them. A ruling is not a ratification: this document is ratified on 2026-11-05 and its sha is pinned. Measured populations are
+ re-derivations from `data/f5/census_e2.json`, **refreshed 2026-09-11 from the
+@@ -61,5 +60,5 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
+-|---|---|---|---|
+-| Doc sha pinned at ratification | — | `G3_RATIFIED.json.doc_sha256` = sha256 of this file; **none pinned while this document is unratified** — RATIFICATION-READY is not ratified, and the sha is written only when the owner replies "ratify" to §4 of the rulings file (H5 §0 + KC6 — a freeze convention, not decision 17) | BT `test_guard_refuses_when_ratification_file_absent`, `test_guard_refuses_on_sha_mismatch`; HE `test_guard_refuses_when_neither_file_exists` |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
++|---|---|---|---|
++| Doc sha pinned at ratification | — | `G3_RATIFIED.json.doc_sha256` = sha256 of this file; **pinned at ratification on 2026-11-05** — the owner replied "ratify" to §4 of the rulings file (H5 §0 + KC6 — a freeze convention, not decision 17) | BT `test_guard_refuses_when_ratification_file_absent`, `test_guard_refuses_on_sha_mismatch`; HE `test_guard_refuses_when_neither_file_exists` |
+ | No E2 IC before ratification (KC6) | 0 ICs exist (census `.freeze_statement`) | Unchanged; H1 T1 plumbing check allowed pre-ratification (19) | BT `test_real_run_refuses_today`, `test_the_census_path_cannot_reach_a_fitting_function`; FE/TG `test_module_computes_no_association_statistic` |
+@@ -76,3 +75,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -101,3 +100,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -108,3 +107,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -116,3 +115,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -122,3 +121,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -130,3 +129,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -139,3 +138,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -146,3 +145,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -155,3 +154,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -165,3 +164,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -199,3 +198,3 @@
+ 
+-| input | provenance | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| input | provenance | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -246,4 +245,4 @@
+ 
+-**Ratified by the owner on __________ (HANDOFF §3 entry: ____________________).**
+-Signature: ______________________________ *(the §13 outcome map is signed above,
++**Ratified by the owner on 2026-11-05 (HANDOFF §3 entry: 2026-11-05).**
++Signature: the owner's word 'ratify' in chat (HANDOFF §3 2026-11-05) *(the §13 outcome map is signed above,
+ 2026-09-11; this line is the ratification of the whole document, pinned into
+@@ -262,3 +261,3 @@
+ 
+-| convention | measured population | RULED rule (dec.; owner 2026-09-11; ratification pending) | enforcement |
++| convention | measured population | RATIFIED rule (dec.; owner 2026-09-11; ratified 2026-11-05) | enforcement |
+ |---|---|---|---|
+@@ -282,3 +281,3 @@
+ 
+-*Parameter block — exactly one, parsed by `backtest_e2.extract_params_block`; heads 2 and 3 read the same object. The owner's rulings of 2026-09-11 are applied; the document is RATIFICATION-READY, not ratified.*
++*Parameter block — exactly one, parsed by `backtest_e2.extract_params_block`; heads 2 and 3 read the same object. The owner's rulings of 2026-09-11 are applied; the document is RATIFIED 2026-11-05.*
+ 
+@@ -287,3 +286,3 @@
+   "params_version": "g3-params-1",
+-  "draft_status": "RATIFICATION-READY 2026-09-11 -- owner rulings applied; sha pinned only on the owner's word",
++  "draft_status": "RATIFIED 2026-11-05 -- owner's word 'ratify'; sha pinned",
+   "fold_quarters": ["2018Q1", "2018Q2", "2018Q3", "2018Q4", "2019Q1", "2019Q2", "2019Q3", "2019Q4", "2020Q1", "2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3", "2021Q4", "2022Q1", "2022Q2", "2022Q3", "2022Q4", "2023Q1", "2023Q2", "2023Q3", "2023Q4", "2024Q1", "2024Q2", "2024Q3", "2024Q4", "2025Q1", "2025Q2", "2025Q3", "2025Q4", "2026Q1"],
+
