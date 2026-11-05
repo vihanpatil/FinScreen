@@ -1,11 +1,16 @@
 """
 test_pin_g3.py -- tests for `data/f5/pin_g3.py`, the G3 ratification pin.
 
-EVERY test runs on a SCRATCH COPY of the pre-registration inside pytest's
-`tmp_path`. Nothing here writes to `data/f5`: the real
-`data/f5/G3_PREREGISTRATION.md` is only ever READ, the real
-`data/f5/G3_RATIFIED.json` is never created (the last test asserts it is still
-absent when the suite finishes), and no test passes `--pin` at the real paths.
+The owner ratified G3 on 2026-11-05 ("ratify", HANDOFF §3); the real
+`data/f5/G3_RATIFIED.json` and the pinned `data/f5/G3_PREREGISTRATION.md` are
+PERMANENT and must NEVER be deleted or re-written (re-pinning is forbidden).
+
+EVERY procedure test runs on a SCRATCH COPY of the PRE-PIN document (git
+`41829ad`, sha `42348bfc…`, the text the owner ratified) inside pytest's
+`tmp_path`. Nothing here writes to `data/f5`: the real files are only ever
+READ, and no test passes `--pin` at the real paths. The last test asserts the
+real pin is intact and that the real document is exactly the declared pin of
+the pre-pin text.
 
 What is pinned here (red-team NF-9):
   * the substitution set leaves NO residue -- none of "ratification pending",
@@ -25,9 +30,10 @@ What is pinned here (red-team NF-9):
 
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
-import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -47,12 +53,37 @@ REAL_DOC = ROOT / "data" / "f5" / "G3_PREREGISTRATION.md"
 REAL_RATIFIED = ROOT / "data" / "f5" / "G3_RATIFIED.json"
 DATE = "2026-09-30"
 
+# The owner ratified G3 on 2026-11-05 (HANDOFF §3). The pin is permanent.
+REAL_DOC_SHA256 = "6b99f65ea1da42e81afec2fef814800d18e5748ff7c2e025ec08862aa80c62c6"
+REAL_PARAMS_SHA256 = "9ac479818785b6fc835aaf63dc9d73bff9fc3cbb0c5b14a9dac2e3f185b1984f"
+PREPIN_COMMIT = "41829ad"
+PREPIN_DOC_SHA256 = "42348bfccbe30b14e1380bca9a02820fb1947233079d0bc48bcbb87893de4c7d"
+NEVER_DELETE_THE_PIN = (
+    "data/f5/G3_RATIFIED.json is the owner's G3 ratification (word 'ratify', HANDOFF §3 "
+    "2026-11-05). It and data/f5/G3_PREREGISTRATION.md must NEVER be deleted, edited or "
+    "re-written: re-pinning is forbidden (it would be a new pre-registration). If this fails, "
+    "restore both files from git commit fa9f5d9 and stop -- do not 'fix' this test."
+)
+
+
+@pytest.fixture(scope="module")
+def prepin_text() -> str:
+    """The pre-registration as it stood just before the pin (git object, read
+    offline from the local repo, sha-verified). Never the real file."""
+    out = subprocess.run(
+        ["git", "-C", str(ROOT), "show", f"{PREPIN_COMMIT}:data/f5/G3_PREREGISTRATION.md"],
+        capture_output=True, check=False)
+    assert out.returncode == 0, (
+        f"cannot read the pre-pin document from git {PREPIN_COMMIT}: {out.stderr!r}")
+    assert hashlib.sha256(out.stdout).hexdigest() == PREPIN_DOC_SHA256
+    return out.stdout.decode()
+
 
 @pytest.fixture()
-def scratch(tmp_path) -> Path:
-    """A copy of the real pre-registration, in tmp_path. Never the real file."""
+def scratch(tmp_path, prepin_text) -> Path:
+    """A copy of the PRE-PIN pre-registration, in tmp_path. Never the real file."""
     dst = tmp_path / "G3_PREREGISTRATION.md"
-    shutil.copyfile(REAL_DOC, dst)
+    dst.write_text(prepin_text)
     return dst
 
 
@@ -214,9 +245,19 @@ def test_an_existing_ratification_is_not_overwritten(scratch, tmp_path):
     assert scratch.read_bytes() == before
 
 
-def test_the_real_ratification_file_is_absent_and_the_real_document_untouched(scratch):
-    """The freeze itself: nothing in this suite may ratify the real document."""
-    assert not REAL_RATIFIED.exists(), "data/f5/G3_RATIFIED.json must not exist"
+def test_the_real_ratification_is_intact_and_pins_the_ratified_text(prepin_text):
+    """The pin itself (2026-11-05): the real ratification exists, carries the
+    owner's word and date, pins the real document's sha, and the real document
+    is EXACTLY the eight declared substitutions applied to the pre-pin text.
+    Nothing in this suite may delete, edit or re-pin either file."""
+    assert REAL_RATIFIED.exists(), NEVER_DELETE_THE_PIN
+    record = json.loads(REAL_RATIFIED.read_text())
+    assert record["doc_sha256"] == REAL_DOC_SHA256, NEVER_DELETE_THE_PIN
+    assert BE.sha256_file(REAL_DOC) == record["doc_sha256"], NEVER_DELETE_THE_PIN
+    assert record["params_sha256"] == REAL_PARAMS_SHA256, NEVER_DELETE_THE_PIN
+    assert record["owner_word"] == "ratify", NEVER_DELETE_THE_PIN
+    assert record["handoff_entry"] == "2026-11-05", NEVER_DELETE_THE_PIN
     assert PG.DOC_PATH == REAL_DOC and PG.RATIFIED_PATH == REAL_RATIFIED
-    assert PG.residue(REAL_DOC.read_text()), "the real document is still unratified"
-    assert REAL_DOC.read_text() == scratch.read_text(), "the real document was not edited"
+    assert PG.residue(REAL_DOC.read_text()) == {}, NEVER_DELETE_THE_PIN
+    pinned, _ = PG.pinned_text(prepin_text, record["handoff_entry"])
+    assert pinned == REAL_DOC.read_text(), NEVER_DELETE_THE_PIN

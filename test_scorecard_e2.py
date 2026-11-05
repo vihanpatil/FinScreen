@@ -31,6 +31,7 @@ What is pinned here:
 
 from __future__ import annotations
 
+import hashlib
 import json
 
 import numpy as np
@@ -727,11 +728,28 @@ def synth_params(synth):
     return E.selftest_params(frame)
 
 
+def _repo_scorecard_shas() -> dict:
+    """sha256 (or None if absent) of the REAL run's scorecard artifacts in
+    data/f5. Since the G3 run of 2026-11-05 these hold the real head-1 output
+    (git-excluded: not recoverable from git) and must never be deleted."""
+    return {
+        name: (hashlib.sha256((E.F5_DIR / name).read_bytes()).hexdigest()
+               if (E.F5_DIR / name).exists() else None)
+        for name in (E.SCORECARD_MD_NAME, E.SCORECARD_JSON_NAME, E.OOF_PREDICTIONS_NAME)
+    }
+
+
 @pytest.fixture(scope="module")
-def head1_run(tmp_path_factory, synth, synth_params):
+def repo_scorecard_before() -> dict:
+    return _repo_scorecard_shas()
+
+
+@pytest.fixture(scope="module")
+def head1_run(tmp_path_factory, synth, synth_params, repo_scorecard_before):
     """ONE head-1 invocation on the synthetic frame, against a SYNTHETIC
     pre-registration pair written into a temp directory -- never the repo's
-    (which has no ratification, and must keep refusing)."""
+    real (ratified 2026-11-05) pair. `repo_scorecard_before` is taken first,
+    so the real artifacts can be proven untouched by this run."""
     frame, diag = synth
     out = tmp_path_factory.mktemp("head1_scorecard_run")
     doc_path, rat_path = E.write_synthetic_g3(out, synth_params)
@@ -785,7 +803,7 @@ def test_oof_records_cover_every_test_row(synth, synth_params):
     }
 
 
-def test_scorecard_is_written_after_the_margin_block(head1_run, tmp_path):
+def test_scorecard_is_written_after_the_margin_block(head1_run, repo_scorecard_before, tmp_path):
     doc, out, params = head1_run
     keys = list(doc.keys())
     assert keys[0] == "margin"
@@ -829,9 +847,11 @@ def test_scorecard_is_written_after_the_margin_block(head1_run, tmp_path):
     assert card["blocks"]["text_and_numeric"]["n_calls"] == int(
         rows[(rows["block"] == "text_and_numeric") & (rows["call"] != SC.CALL_NONE)].shape[0]
     )
-    # ... and it never wrote into the repo's data/f5
-    assert not (E.F5_DIR / E.SCORECARD_MD_NAME).exists()
-    assert not (E.F5_DIR / E.OOF_PREDICTIONS_NAME).exists()
+    # ... and it never wrote into the repo's data/f5: the REAL run's scorecard
+    # artifacts (2026-11-05, git-excluded) are byte-unchanged. They must NEVER
+    # be deleted to make this pass -- they are the real head-1 output.
+    assert _repo_scorecard_shas() == repo_scorecard_before, (
+        "the synthetic head-1 run changed data/f5's real scorecard artifacts")
 
 
 def test_missing_scorecard_key_is_a_refusal(tmp_path, synth_params):

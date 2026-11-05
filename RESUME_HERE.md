@@ -37,9 +37,10 @@ delta +0.0011, SE 0.0149, 90% CI [−0.023, +0.026], margin 0.04 POWERED (honest
 TRUE → "Bounded null — text is not used as a signal; the study is written up and closed."** Scorecard universe
 block: model 1552/2992 = 0.5187 [0.5008, 0.5366], numeric-only 0.5099, size-only 0.4859, chance 0.500. The
 owner's read file is `data/f5/status/G3_RUN_2026-11-05_owner_read.md` (per-fold table, universe block, heads
-2–3); per-company pages in `data/f5/head1_scorecard.md` (git-excluded). IN FLIGHT: `reviewer` agent (Opus) →
-`data/f5/status/REVIEW_g3_run_2026-11-05.md`; if missing on resume, relaunch with the brief in HANDOFF §3's
-2026-11-05 run entry. NEXT: owner reads; then F6 write-up (negative result + failure taxonomy; `builder` +
+2–3); per-company pages in `data/f5/head1_scorecard.md` (git-excluded). Reviewer pass DONE (`data/f5/status/REVIEW_g3_run_2026-11-05.md`: everything reproduces; M1 = decision-11
+sensitivity arm never built → recorded DEVIATION, run post-hoc-labelled in F6; M2 = tripwires inverted, suite 1,601
+green, `data/f5/status/M2_tripwire_inversion_2026-11-05.md`; the rest → F6 list in HANDOFF §3). **IN FLIGHT:
+nothing.** NEXT: owner reads; then F6 write-up (negative result + failure taxonomy; `builder` +
 `scribe`), then the product continues on the reading aid and the numeric families (PRODUCT_PLAN P1 null
 branch). Decisions B–F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
 `.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled

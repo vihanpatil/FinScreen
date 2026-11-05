@@ -8,6 +8,9 @@ and these tests are part of how it is enforced rather than merely described.
 
 What is pinned here:
   * the freeze guard refuses without `G3_RATIFIED.json` and on a sha mismatch;
+  * the REAL pin (`data/f5/G3_RATIFIED.json`, owner's "ratify", HANDOFF §3
+    2026-11-05) is present and matches the document -- it must never be
+    deleted or re-written;
   * every parameter comes from the document's fenced block, not from code;
   * the purge rule, and its calendar-start == first-session equivalence;
   * the fold builder (expanding, ratified quarters only, no leakage);
@@ -98,10 +101,43 @@ def test_guard_refuses_when_ratification_pins_no_document(tmp_path, synth_params
         E.require_g3(doc, rat)
 
 
-def test_real_run_refuses_today(capsys):
-    """The repo state this test runs in has no ratified document; `main()`
-    must exit 2 without fitting anything."""
-    assert not E.G3_RATIFIED_PATH.exists(), "a ratified G3 file appeared; this test must be re-read"
+# The owner ratified G3 on 2026-11-05 (HANDOFF §3). The pin is permanent.
+REAL_DOC_SHA256 = "6b99f65ea1da42e81afec2fef814800d18e5748ff7c2e025ec08862aa80c62c6"
+NEVER_DELETE_THE_PIN = (
+    "data/f5/G3_RATIFIED.json is the owner's G3 ratification (word 'ratify', HANDOFF §3 "
+    "2026-11-05). It and data/f5/G3_PREREGISTRATION.md must NEVER be deleted, edited or "
+    "re-written: re-pinning is forbidden (it would be a new pre-registration). If this fails, "
+    "restore both files from git commit fa9f5d9 and stop -- do not 'fix' this test."
+)
+
+
+def assert_real_pin_intact():
+    assert E.G3_RATIFIED_PATH.exists(), NEVER_DELETE_THE_PIN
+    record = json.loads(E.G3_RATIFIED_PATH.read_text())
+    assert record["doc_sha256"] == REAL_DOC_SHA256, NEVER_DELETE_THE_PIN
+    assert E.sha256_file(E.G3_DOC_PATH) == record["doc_sha256"], NEVER_DELETE_THE_PIN
+    assert record["owner_word"] == "ratify", NEVER_DELETE_THE_PIN
+    assert record["handoff_entry"] == "2026-11-05", NEVER_DELETE_THE_PIN
+
+
+def test_real_pin_is_intact_and_an_unpinned_main_refuses(tmp_path, monkeypatch, capsys):
+    """Post-pin invariant: the real ratification exists and pins the real
+    document. The pre-pin refusal is still proven -- against the real document
+    with the pin pointed at an ABSENT tmp path, never by touching the real pin.
+    `load_analysis_frame` and `run_head1` are booby-trapped so that, should the
+    guard ever pass here, the test fails before anything real is read or fit."""
+    assert_real_pin_intact()
+    assert E.require_g3()["doc_sha256"] == REAL_DOC_SHA256   # the real guard passes
+
+    real_load = E.load_g3_params
+    monkeypatch.setattr(E, "load_g3_params",
+                        lambda: real_load(E.G3_DOC_PATH, tmp_path / "G3_RATIFIED.json"))
+
+    def _must_not_run(*a, **k):
+        raise AssertionError("an unpinned main() got past the guard")
+
+    monkeypatch.setattr(E, "load_analysis_frame", _must_not_run)
+    monkeypatch.setattr(E, "run_head1", _must_not_run)
     assert E.main([]) == 2
     out = capsys.readouterr().out
     assert "BLOCKED" in out and "no IC was computed" in out
@@ -699,15 +735,16 @@ def test_selftest_runs_end_to_end_on_synthetic_data(tmp_path):
 
 
 def test_selftest_writes_nothing_into_the_repo_data_dir(tmp_path):
+    pin_bytes = E.G3_RATIFIED_PATH.read_bytes()
     before = sorted(p.name for p in E.F5_DIR.glob("*"))
     E.selftest(tmp_path)
+    assert E.G3_RATIFIED_PATH.read_bytes() == pin_bytes, NEVER_DELETE_THE_PIN
     after = sorted(p.name for p in E.F5_DIR.glob("*"))
     # The before==after listing IS the assertion: --selftest must not add,
-    # remove or overwrite anything under data/f5. (It intentionally says
-    # nothing about G3_PREREGISTRATION.md, which exists as a DRAFT and is
-    # covered by the before/after listing like every other file there.)
+    # remove or overwrite anything under data/f5. The ratified pin and its
+    # document (both permanent since 2026-11-05) are also checked byte-for-byte.
     assert before == after
-    assert not E.G3_RATIFIED_PATH.exists()
+    assert_real_pin_intact()
 
 
 # ---------------------------------------------------------------------------
@@ -873,8 +910,9 @@ def test_assert_pinned_components_passes_when_every_fold_realizes_k(synth, synth
 
 def test_a_fabricated_guard_dict_cannot_reach_a_fit(tmp_path, synth, synth_params):
     """`run_head1` re-measures the ratified document itself. A caller that
-    hands it a made-up `doc_sha256` is refused, and the real repo has no
-    ratified document at all today, so the default paths refuse too."""
+    hands it a made-up `doc_sha256` is refused -- against a synthetic pin and
+    against the REAL pin (default paths) alike: a real ratification on disk does
+    not make a forged guard dict acceptable."""
     frame, diag = synth
     doc_path, rat_path = _write_doc(tmp_path, synth_params)
     params, guard = E.load_g3_params(doc_path, rat_path)
@@ -887,12 +925,13 @@ def test_a_fabricated_guard_dict_cannot_reach_a_fit(tmp_path, synth, synth_param
     assert "not a ratification" in str(exc.value)
     assert not (tmp_path / "r.json").exists()
 
-    # the same fabrication against the REAL paths: refused because no
-    # ratification exists in this repo today
-    assert not E.G3_RATIFIED_PATH.exists()
-    with pytest.raises(E.G3Refusal):
+    # the same fabrication against the REAL paths: the real pin exists, but it
+    # pins a different sha than the forged one, so the run is refused
+    assert_real_pin_intact()
+    with pytest.raises(E.G3Refusal) as exc:
         E.run_head1(params, {"doc_sha256": "0" * 64, "params_sha256": "x"}, frame, diag,
                     tmp_path / "r2.json", tmp_path / "rep2.md", tmp_path / "log2.jsonl")
+    assert "not a ratification" in str(exc.value)
     assert not (tmp_path / "r2.json").exists()
 
 

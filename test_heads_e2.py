@@ -6,9 +6,11 @@ metadata DB, the price snapshot, or any real return; no test computes an
 association on E2 data. That is the E2 freeze (F5_PLAN.md §1) applied to the
 test suite, where it is easiest to break by accident.
 
-The one real file any test opens is `heads_e2.py`'s own SOURCE, parsed with
+The real files any test opens are `heads_e2.py`'s own SOURCE, parsed with
 `ast` for the call-graph tripwire that proves the census path cannot reach a
-fitting function.
+fitting function, and -- read-only -- the G3 pin (`data/f5/G3_RATIFIED.json`)
+and the document it pins, which must NEVER be deleted or re-written (owner's
+"ratify", HANDOFF §3 2026-11-05).
 
 What is enforced here:
   * the guard: no ratified document, missing document, sha mismatch, zero or
@@ -189,19 +191,53 @@ def test_cli_refuses_both_heads_today(tmp_path, monkeypatch, capsys):
     assert "BLOCKED" in capsys.readouterr().err
 
 
-def test_the_real_repo_has_no_ratified_document_today(capsys):
-    """The freeze is in force; if this fails, G3 happened and that is news.
+# The owner ratified G3 on 2026-11-05 (HANDOFF §3). The pin is permanent.
+REAL_DOC_SHA256 = "6b99f65ea1da42e81afec2fef814800d18e5748ff7c2e025ec08862aa80c62c6"
+NEVER_DELETE_THE_PIN = (
+    "data/f5/G3_RATIFIED.json is the owner's G3 ratification (word 'ratify', HANDOFF §3 "
+    "2026-11-05). It and data/f5/G3_PREREGISTRATION.md must NEVER be deleted, edited or "
+    "re-written: re-pinning is forbidden (it would be a new pre-registration). If this fails, "
+    "restore both files from git commit fa9f5d9 and stop -- do not 'fix' this test."
+)
 
-    What the freeze is: `G3_RATIFIED.json`. `G3_PREREGISTRATION.md` exists as a
-    DRAFT from 2026-09-11 and ratifies nothing on its own -- the guard needs a
-    ratification whose `doc_sha256` matches the document -- so this test asserts
-    the ratification is absent AND that the real runners (real paths, no
-    monkeypatch) still refuse with exit code 2.
-    """
-    assert not H.RATIFIED_PATH.exists()
+
+def assert_real_pin_intact():
+    assert H.RATIFIED_PATH.exists(), NEVER_DELETE_THE_PIN
+    record = json.loads(H.RATIFIED_PATH.read_text())
+    assert record["doc_sha256"] == REAL_DOC_SHA256, NEVER_DELETE_THE_PIN
+    measured = hashlib.sha256(H.PREREG_PATH.read_bytes()).hexdigest()
+    assert measured == record["doc_sha256"], NEVER_DELETE_THE_PIN
+    assert record["owner_word"] == "ratify", NEVER_DELETE_THE_PIN
+    assert record["handoff_entry"] == "2026-11-05", NEVER_DELETE_THE_PIN
+
+
+def test_the_real_pin_is_intact_and_an_unpinned_cli_refuses(tmp_path, monkeypatch, capsys):
+    """Post-pin invariant: the real ratification exists, pins the real document,
+    and the real loader accepts it. The pre-pin refusal is still proven -- the
+    CLI is pointed at a tmp COPY of the real document with no pin beside it,
+    never by touching the real pin. The runners are booby-trapped so that,
+    should the guard ever pass here, the test fails before anything runs."""
+    assert_real_pin_intact()
+    _, sha = H.load_ratified_params()          # real paths, read-only
+    assert sha == REAL_DOC_SHA256
+
+    copy = tmp_path / "G3_PREREGISTRATION.md"
+    copy.write_bytes(H.PREREG_PATH.read_bytes())
+    monkeypatch.setattr(H, "PREREG_PATH", copy)
+    monkeypatch.setattr(H, "RATIFIED_PATH", tmp_path / "G3_RATIFIED.json")   # absent
+    monkeypatch.setattr(H, "HEAD2_RESULTS", tmp_path / "results_head2.json")
+    monkeypatch.setattr(H, "HEAD3_RESULTS", tmp_path / "results_head3.json")
+    monkeypatch.setattr(H, "RUN_LOG", tmp_path / "run_log.jsonl")
+
+    def _must_not_run(*a, **k):
+        raise AssertionError("an unpinned CLI got past the guard")
+
+    monkeypatch.setattr(H, "run_head2", _must_not_run)
+    monkeypatch.setattr(H, "run_head3", _must_not_run)
     for flag in ("--head2", "--head3", "--all"):
         assert H.main([flag]) == 2
     assert "BLOCKED" in capsys.readouterr().err
+    assert not (tmp_path / "G3_RATIFIED.json").exists()
 
 
 # ---------------------------------------------------------------------------
@@ -1073,18 +1109,19 @@ def test_a_fabricated_doc_sha_cannot_reach_a_fit(tmp_path, monkeypatch, runner):
 
 
 @pytest.mark.parametrize("runner", ["run_head2", "run_head3"])
-def test_the_runners_refuse_against_the_real_paths_today(tmp_path, monkeypatch, runner):
-    """With no ratified document in the repo, even a runner called directly
-    with a plausible sha refuses: the default paths are the real ones."""
+def test_a_forged_sha_is_refused_against_the_real_pin(tmp_path, monkeypatch, runner):
+    """The real pin exists, but a runner called directly (default = real paths)
+    with a sha that is not the pinned one still refuses before any input is read:
+    a ratification on disk does not make a forged sha acceptable."""
     called = []
     monkeypatch.setattr(H, "assert_input_shas", lambda: called.append("shas") or {})
     monkeypatch.setattr(H, "HEAD2_RESULTS", tmp_path / "results_head2.json")
     monkeypatch.setattr(H, "HEAD3_RESULTS", tmp_path / "results_head3.json")
     monkeypatch.setattr(H, "RUN_LOG", tmp_path / "run_log.jsonl")
-    assert not H.RATIFIED_PATH.exists()
+    assert_real_pin_intact()
     with pytest.raises(H.FreezeRefusal) as exc:
         getattr(H, runner)(minimal_params(), "0" * 64)
-    assert "BLOCKED" in str(exc.value)
+    assert "BLOCKED" in str(exc.value) and "not a ratification" in str(exc.value)
     assert called == []
 
 
