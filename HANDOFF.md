@@ -1681,6 +1681,32 @@ plainly in `SPLIT_DESIGN.md`, not an oversight).
 
 ---
 
+**2026-11-05 — OWNER RESUMES AFTER TWO MONTHS; LOW-TOUCH MODE ADOPTED (owner instruction,
+verbatim, + main-session decisions; no new owner ruling on A–F yet).** Owner, in chat:
+*"Ok, I need help resuming this project. It has been a while since I have even touched this
+project. Please examine current state, progress, and what is needed to push FinScreen to be a
+successful and most importantly usable product (for me and perhaps any friend who may be
+interested). I cannot be too hands on. Please automate what you can, and create or update the
+agentic team with more modern skills and keep the team as concise and tight and efficient as
+possible. For ultimate, critical decisions loop me in."* Main-session decisions taken under
+those words (each reversible, each in git): (1) `CLAUDE.md` created as the operating brief,
+including the owner-touchpoint policy (ask only for money, public/shared surfaces, "ratify" and
+the owner's read, direction/charter, destructive ops); (2) roster cut from 15 agents to 7 —
+`builder`, `reviewer`, `scribe` absorb eleven retired files, kept in `docs/retired_agents/`
+with the mapping; the owner-created `legal-reviewer`, `tech-council`, `label-rater-blind`,
+`label-adjudicator` are untouched; (3) project skills `/resume`, `/report`, `/g3-run`;
+(4) `bin/fs` + `finscreen.py` + `test_finscreen_cli.py` (builder agent, Opus): one command
+from ticker to reading-aid pages; the `g3` subcommand refuses without the literal owner word
+and an explicit date, mirroring `pin_g3.py`; (5) one reviewer pass per milestone replaces
+the September four-round red-team cycles — proposed to the owner as decision D, applied
+provisionally. Environment facts verified: `/usr/bin/python3` shim refuses (Xcode licence
+reset by a macOS update; same interpreter runs at
+`/Library/Developer/CommandLineTools/usr/bin/python3`), MLX venv healthy, adapter sha
+`cadca849…` matches, root suite 1,588 passed, runners exit 2, nothing running, no
+`G3_RATIFIED.json`. Decisions put to the owner in `OWNER_DECISIONS_2026-11-05.md` (A–F);
+nothing there is recorded as a ruling until the owner replies. Nothing frozen was touched;
+no API call; $0.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters

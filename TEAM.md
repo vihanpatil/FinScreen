@@ -1,68 +1,49 @@
-# TEAM — the FinScreen TIGER team
+# TEAM — the FinScreen roster (tightened 2026-11-05)
 
-**Established 2026-08-24** (owner, in chat). A standing roster of
-specialist Claude agents covering every responsibility this project has,
-each defined in `.claude/agents/<name>.md`. This file is the org chart;
-the agent files are the job descriptions.
+**History.** The TIGER team of fourteen agents was established 2026-08-24 (owner, in chat).
+On 2026-11-05 the owner, resuming after two months away, asked for the team to be kept
+"as concise and tight and efficient as possible" with "more modern skills" and for maximum
+automation. Eleven job descriptions were folded into three (record and mapping:
+`docs/retired_agents/README.md`); the shared operating protocol every agent used to carry
+now lives once, in `CLAUDE.md`, which Claude Code loads into every session automatically.
 
-## Model tiering (owner policy, 2026-08-20, reaffirmed 2026-08-24)
+## Model tiering (owner policy, 2026-08-20, unchanged)
 
-- **Fable 5 — main session only**: planning, orchestration, verification,
-  owner communication, ledger upkeep. Fable does not do brunt work.
-- **Opus 5**: execution — all engineering, research, review work.
-- **Sonnet 5**: the simplest delegations — mechanical, checklist-driven
-  tasks with clear escalation rules.
+- **Fable — the main session**: planning, orchestration, verification, owner communication,
+  ledgers. Fable does not do brunt work.
+- **Opus**: execution — engineering and review.
+- **Sonnet**: the simplest chores with clear stop rules.
 
-## Engineering philosophy: lazy-elite programming (owner, 2026-08-24)
-
-Simple, readable, easy-to-understand core logic. No over-engineering —
-the minimal work necessary to work correctly and as well as it can.
-Correct and low-latency beats clever. Extend existing modules rather than
-building frameworks. Every agent file carries this; every review checks
-for it in both directions (bugs AND needless complexity).
-
-## Roster
+## Roster (7)
 
 | Role | Agent | Model | Owns |
 |---|---|---|---|
-| Planner / orchestrator / verifier | (Fable 5, main session — no agent file) | Fable | Phases, gates, owner comms, `F2_PROGRESS.md`-class ledgers |
-| Data engineering | `data-engineer` | Opus | EDGAR ingestion, extraction plumbing, storage, universe artifacts; F2 (S1–S5) |
-| Extraction QA | `extraction-qa-engineer` | Opus | F3: extract.py at scale, per-filer triage, floor/ceiling recalibration |
-| ML / fine-tune engineering | `finetune-engineer` | Opus | `finetune/`, MLX QLoRA, evals, F4 labeling-campaign implementation |
-| Quant modeling | `quant-modeler` | Opus | features.py, backtest.py, numeric baseline; F5 under gate G3 |
-| Research statistics | `research-statistician` | Opus | Power/MDE, fold structure analysis, diagnosis (diagnose.py, e2_report.py), verifying statistical claims |
-| Test engineering / QA | `test-engineer` | Opus | pytest suites, tripwire re-pinning, regression tests per incident |
-| Red team | `red-team-reviewer` | Opus | Adversarial review: look-ahead, survivorship, overfitting, overstated claims |
-| Compliance | `compliance-officer` | Sonnet | Charter/spend/provenance/license checklist audits |
-| Documentation | `docs-writer` | Opus | README, MODEL_CARD, LIMITATIONS — honest-limitations discipline |
-| Ops scribe | `ops-scribe` | Sonnet | Mechanical doc upkeep: status flips, file maps, run/checkpoint inventories |
-| Tech council (C-suite advisory) | `tech-council` | Fable (spawn with model=fable; added 2026-08-25 at owner request) | Five-seat advisory panel (CEO/CTO/research/risk/cost) for high-stakes decisions, phase gates, pivots. Advisory only — never the owner's judgment |
-| Label second-rater | `label-auditor` | Opus | Blind re-judging of labels (ratified protocol 2026-08-11 — **file untouched by the 2026-08-24 refresh**; G2 reuse gets its own addendum at F4) |
-| Label adjudicator | `label-adjudicator` | inherit | Third-rater dispute resolution (ratified 2026-08-18 — **file untouched**) |
+| Planner / orchestrator / verifier | (main session, no file) | Fable | phases, gates, owner packets, `RESUME_HERE.md` and `HANDOFF.md` |
+| Engineering, all of it | `builder` | Opus | ingestion, extraction, the MLX labeler and its tooling, features and the guarded runners, the app lane (`ingest_one`, `label_filing`, `report_filing`, `finscreen.py`), the pytest suites |
+| Adversarial review | `reviewer` | Opus | look-ahead / survivorship / overfitting, statistical re-derivation, charter-spend-provenance-licence checklist, complexity findings |
+| Documentation chores | `scribe` | Sonnet | ledger flips, README / MODEL_CARD / LIMITATIONS updates from supplied facts, inventories |
+| Legal review (advisory) | `legal-reviewer` | Fable (`model: inherit`, spawn from the main session) | every public surface, disclosure, vendor and model licence before anyone but the owner touches the tool (owner ruling E, 2026-09-11). A language model, not a lawyer; says so on every memo |
+| Tech council (advisory) | `tech-council` | Fable (`model: inherit`) | five-seat counsel before owner-level decisions and gates; never the owner's judgment |
+| Blind label rater | `label-rater-blind` | Opus | the G2 spot-check protocol (owner-ruled 2026-09-07) for any new label population |
+| Label adjudicator | `label-adjudicator` | inherit | third-rater dispute resolution (owner-ruled 2026-08-18) |
 
-## Common operating protocol (embedded in every refreshed agent file)
+## Skills (project slash commands, `.claude/skills/`)
 
-1. **Read first, every task**: `HANDOFF.md` (state + §7 hard rules) →
-   `EXPANSION_PLAN.md` (E2 plan of record) → `F2_PROGRESS.md` when doing
-   F2 work. Files on disk beat any prior-session summary.
-2. **Hard constraints, always**: no Anthropic API spend, ever; long
-   compute (>~15 min) is never run inside an agent's own shell — design
-   it resumable, hand it to the main session (HANDOFF §4); loud failures
-   over silent fallbacks; every number reported with how it was measured;
-   model judgments are never recorded as the owner's.
-3. **Resumability**: before returning, write your completion report to
-   the path your brief names (F2: `data/f2/status/`). The report on disk
-   is the resume state if a session dies at the owner's token limit.
-4. **When stuck or misaligned**: escalate to the main session, which asks
-   the owner. The owner has explicitly offered to be a resource — use
-   them for genuine decision points, not routine judgment.
+| skill | what it does |
+|---|---|
+| `/resume` | the fresh-session protocol: read the top block, check for live processes, run `bin/fs doctor`, report what is in flight and what the owner owes |
+| `/report TICKER` | the product in one command: ingest → fundamentals → label → HTML reports, opened in the browser |
+| `/g3-run` | the pre-registration pin and head runs — refuses without the owner's literal word "ratify" and that day's date |
 
-## Roles deliberately NOT created
+## Common protocol (now in `CLAUDE.md`; summary)
 
-- Marketing/sales/promotion — the charter forbids promotional performance
-  claims (HANDOFF §1); a role whose job is promotion would fight the
-  charter.
-- Trading operations/brokerage integration — charter-prohibited,
-  unconditionally.
-- Legal — license checks sit with `compliance-officer`; real legal calls
-  belong to the owner.
+Read `CLAUDE.md` → the brief → the status file the brief names. No API spend; no two
+labeling processes; long compute from the main session only; every number with its
+measurement; model judgments never recorded as the owner's; completion report on disk
+before returning. Owner touchpoints follow the low-touch policy in `CLAUDE.md`.
+
+## Roles deliberately not created
+
+Marketing (the charter forbids promotional performance claims); trading operations or
+brokerage integration (charter-prohibited); a human-lawyer substitute (the `legal-reviewer`
+is advisory and says so; real legal calls are the owner's and an attorney's).

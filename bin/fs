@@ -1,0 +1,30 @@
+#!/bin/bash
+# bin/fs -- run finscreen.py under an interpreter that actually has pandas.
+# Order: $FINSCREEN_PYTHON, /usr/bin/python3, the CommandLineTools python3.
+# (The /usr/bin shim refuses to run until the Xcode licence is accepted.)
+set -u
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CLT=/Library/Developer/CommandLineTools/usr/bin/python3
+
+runs() {  # runs PY CODE: quiet, bounded to 10 s (macOS has no coreutils `timeout`)
+  [ -x "$1" ] || return 1
+  "$1" -c "$2" >/dev/null 2>&1 & local pid=$!
+  ( sleep 10; kill "$pid" 2>/dev/null ) >/dev/null 2>&1 & local guard=$!
+  wait "$pid"; local rc=$?
+  kill "$guard" 2>/dev/null; wait "$guard" 2>/dev/null
+  return $rc
+}
+
+if [ -n "${FINSCREEN_PYTHON:-}" ] && ! runs "$FINSCREEN_PYTHON" pass; then
+  echo "fs: FINSCREEN_PYTHON=$FINSCREEN_PYTHON does not run; trying the defaults" >&2
+fi
+if [ -n "${FINSCREEN_PYTHON:-}" ] && runs "$FINSCREEN_PYTHON" pass; then PYTHON="$FINSCREEN_PYTHON"
+elif runs /usr/bin/python3 'import pandas'; then PYTHON=/usr/bin/python3
+elif runs "$CLT" 'import pandas'; then PYTHON="$CLT"
+else
+  echo "fs: no python3 with pandas found. Tried:" >&2
+  echo "  \$FINSCREEN_PYTHON (${FINSCREEN_PYTHON:-unset}), /usr/bin/python3, $CLT" >&2
+  echo "fix: sudo xcodebuild -license accept   (or set FINSCREEN_PYTHON)" >&2
+  exit 3
+fi
+exec "$PYTHON" "$REPO/finscreen.py" "$@"

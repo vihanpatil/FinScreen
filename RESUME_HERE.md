@@ -1,4 +1,44 @@
-# RESUME_HERE — stopping point set 2026-09-06
+# RESUME_HERE — state as of 2026-11-05 (owner back after two months; LOW-TOUCH MODE)
+
+**If you are a fresh session: read `CLAUDE.md`, then this block, then `OWNER_DECISIONS_2026-11-05.md`.**
+Or run the `/resume` skill, which does exactly that.
+
+**What happened 2026-11-05.** The owner resumed (last activity 2026-09-11) and said, verbatim:
+*"I cannot be too hands on. Please automate what you can, and create or update the agentic team
+with more modern skills and keep the team as concise and tight and efficient as possible. For
+ultimate, critical decisions loop me in."* The main session (Fable) did the following, all
+committed on main:
+- **Environment re-verified.** `/usr/bin/python3` refuses to start (macOS update reset the
+  Xcode licence; owner fix `sudo xcodebuild -license accept`); the same interpreter works
+  directly at `/Library/Developer/CommandLineTools/usr/bin/python3` (pandas 2.2.3, xgboost,
+  pytest). MLX venv healthy (mlx_lm 0.31.3, Metal). Adapter sha matches the campaign manifest.
+  Root suite **1,588 passed** (4 min 57 s). `backtest_e2.py` still exits 2 (no pin). No process
+  running. Filings and prices on disk end 2026-08-24; `ingest_one.py` fetches current filings
+  on demand, so the reading aid is current for any ticker.
+- **`CLAUDE.md`** written: the operating brief every session and agent loads (interpreters,
+  commands, condensed hard rules, the **owner-touchpoint policy**: ask the owner only for money,
+  anything public/shared, the word "ratify" + their read, direction/charter changes,
+  destructive ops; everything else is a logged main-session decision).
+- **Team 15 → 7** (`TEAM.md`): `builder` (Opus), `reviewer` (Opus), `scribe` (Sonnet) absorb
+  eleven retired files (`docs/retired_agents/`); `legal-reviewer`, `tech-council`,
+  `label-rater-blind`, `label-adjudicator` kept. Skills `/resume`, `/report TICKER`, `/g3-run`.
+- **One-command product:** `bin/fs` (interpreter-selecting wrapper) + `finscreen.py`
+  (`doctor`, `report TICKER [--open]`, `index`, `g3 --date D --owner-word ratify`) +
+  `test_finscreen_cli.py` (13 tests). Built by the builder agent; report
+  `data/app/status/CLI_wrapper_2026-11-05.md`.
+- **Owner packet** `OWNER_DECISIONS_2026-11-05.md`: A "ratify" (recommended), B EODHD, C friends
+  scope (recommended: private reading-aid pages only), D confirm low-touch mode, E xcode licence +
+  git push (main was 29 ahead), F optional watchlist.
+
+**IN FLIGHT: nothing.** The scorecard has STILL NEVER RUN; it runs the day the owner types
+"ratify" (`/g3-run`). **NEXT = the owner's replies to A–F.** On "ratify": follow
+`.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled
+refresh. On "share with friends — yes": add the legal-baseline footer line to shared pages
+(builder), nothing else changes.
+
+---
+
+# (previous) RESUME_HERE — stopping point set 2026-09-06
 
 **If you are a fresh session: read this file first** (then `HANDOFF.md`
 for depth). **STATE AS OF 2026-09-06 ~15:30 — handoff written by the main session at the

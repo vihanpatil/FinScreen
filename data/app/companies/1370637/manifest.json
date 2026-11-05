@@ -1,0 +1,664 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1370637,
+  "ticker": "ETSY",
+  "company_name": "ETSY INC",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001370637-26-000092",
+      "form": "10-Q",
+      "filing_date": "2026-10-28",
+      "items": null,
+      "primary_document": "etsy-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001370637-26-000090",
+      "form": "8-K",
+      "filing_date": "2026-10-28",
+      "items": "2.02,5.02,7.01,9.01",
+      "primary_document": "etsy-20261023.htm",
+      "earnings_doc_filename": "q326shareholderletter.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001370637-26-000080",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "items": null,
+      "primary_document": "etsy-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001370637-26-000079",
+      "form": "8-K",
+      "filing_date": "2026-08-05",
+      "items": "2.02,2.05,7.01,8.01,9.01",
+      "primary_document": "etsy-20260803.htm",
+      "earnings_doc_filename": "q226shareholderletter.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001370637-26-000019",
+      "form": "10-K",
+      "filing_date": "2026-02-19",
+      "items": null,
+      "primary_document": "etsy-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001370637-25-000017",
+      "form": "10-K",
+      "filing_date": "2025-02-19",
+      "items": null,
+      "primary_document": "etsy-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 44,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1370637/sections.parquet",
+    "sha256": "7f424a9c45b2d629048256759effbba6834819176afcdb76859a714caa5ca7eb",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "FLAGGED": 8,
+    "OK": 2
+  },
+  "extraction_audit": [
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000092",
+      "form": "10-Q",
+      "filing_date": "2026-10-28",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 5965,
+      "prose_word_share": 0.5685,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55411,
+      "source_document": "etsy-20260930.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000092",
+      "form": "10-Q",
+      "filing_date": "2026-10-28",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 22197,
+      "prose_word_share": 0.841,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47172,
+      "source_document": "etsy-20260930.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000090",
+      "form": "8-K",
+      "filing_date": "2026-10-28",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 7277,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.438,
+      "source_document": "q326shareholderletter.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000080",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 6040,
+      "prose_word_share": 0.5376,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54792,
+      "source_document": "etsy-20260630.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000080",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 22418,
+      "prose_word_share": 0.8364,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47244,
+      "source_document": "etsy-20260630.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000079",
+      "form": "8-K",
+      "filing_date": "2026-08-05",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 8254,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.43991,
+      "source_document": "q226shareholderletter.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000019",
+      "form": "10-K",
+      "filing_date": "2026-02-19",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 6091,
+      "prose_word_share": 0.7148,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49872,
+      "source_document": "etsy-20251231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-26-000019",
+      "form": "10-K",
+      "filing_date": "2026-02-19",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 22232,
+      "prose_word_share": 0.8351,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47264,
+      "source_document": "etsy-20251231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-25-000017",
+      "form": "10-K",
+      "filing_date": "2025-02-19",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 7363,
+      "prose_word_share": 0.7114,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49515,
+      "source_document": "etsy-20241231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 1370637,
+      "company_name": "ETSY INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001370637-25-000017",
+      "form": "10-K",
+      "filing_date": "2025-02-19",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 23087,
+      "prose_word_share": 0.8603,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47354,
+      "source_document": "etsy-20241231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched."
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [
+      {
+        "accession_number": "0001370637-25-000017",
+        "form": "10-K",
+        "section_type": "RISK_FACTORS",
+        "extraction_status": "FLAGGED",
+        "reason_code": "heading_regex_fallback",
+        "word_count": 23087
+      }
+    ],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1370637/chunks.parquet",
+    "sha256": "cd5226bd5823cd274e9cebf0e31c70e393285f808266598abb358180f2dffdb9",
+    "n_chunks": 260,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1370637/metadata.db",
+    "sha256": "d2cf42ed6d7c0cc3dcf6521eac1847cafd4f8f667e18e72ef9f8a3a5c3283242",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 10,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.2,
+    "metadata_s": 0.48,
+    "documents_s": 1.29,
+    "extract_s": 3.52,
+    "chunk_s": 0.06,
+    "total_s": 5.56
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001370637.json",
+      "sha256": "f2fa649ea3b99ecd48386255ae45259b545549d51281f0a32f8b36036e14a3b8"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2012-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1370637/fundamentals.parquet",
+      "sha256": "6ab4c2b011a3bed9e0588f4e9a7a6f1f2e5ed39f2f93400f7c3512b138edef64",
+      "n_rows": 1807,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1370637/concept_resolution.csv",
+      "sha256": "b1695be7d2ea67e069458e49b16b3ebf37e343c20f8f8a820af8702bc51e914c",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8571,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:94",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 48/56 (86%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9464,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:177",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 53/56 (95%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 38/56 (68%, last 2025Q4), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 8/56 (14%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9286,
+        "n_target_quarters": 56,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:62|FY:27|9M:20|H1:20",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 45/56 (80%, last 2026Q3), EarningsPerShareBasicAndDiluted 14/56 (25%, last 2017Q1)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8929,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:198",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 50/56 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8571,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:94",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 48/56 (86%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8571,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:94",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 48/56 (86%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 56,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 56 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9286,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:78|FY:33|9M:24|H1:24",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 52/56 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.5536,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:38|9M:12|FY:12|H1:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 31/56 (55%, last 2026Q3)",
+        "reason": "net_income_to_common: PARTIAL over 56 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 31/56 (55%, last 2026Q3); union 55%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9286,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:33|9M:24|H1:24|Q:24",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 52/56 (93%, last 2026Q3), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 6/56 (11%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9286,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:72|FY:33|9M:24|H1:24",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 52/56 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9286,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:72|FY:33|9M:24|H1:24",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 52/56 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "Revenues",
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.9286,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:72|FY:33|9M:24|H1:24",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 39/56 (70%, last 2026Q3), Revenues 18/56 (32%, last 2018Q1) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8214,
+        "n_target_quarters": 56,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:47",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 46/56 (82%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 1,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.23,
+      "classify_s": 0.01,
+      "total_s": 0.24
+    }
+  }
+}
