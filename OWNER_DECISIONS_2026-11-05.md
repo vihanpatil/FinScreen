@@ -1,5 +1,7 @@
 # Owner decisions — 2026-11-05 (one page; reply with the letter and yes/no, or a correction)
 
+**Update, same day:** A was ruled ("ratify") and run — see `data/f5/status/G3_RUN_2026-11-05_owner_read.md`. B–F remain open. Two wordings in A below were corrected after the reviewer's pass (calls are within-quarter relative, not real-time; the outcome mix is not a base rate).
+
 **Where the project stands (verified today, nothing in flight).** The pipeline is complete
 and green (1,588 root tests pass; the sealed corpus, labels, feature tables and guarded
 runners are on disk; no process is running). The one-command product works:
@@ -23,10 +25,12 @@ so on). Five things to know before saying it:
    detectable edge over the numeric baseline in large caps. If the margin test comes back
    null or unpowered, the text arm closes automatically, by the stopping rule you ratified
    on 2026-08-26. The scorecard is still produced and shown to you in every branch.
-3. The scorecard is **descriptive**: for every filing, what the model would have said
-   from data public at that minute, what the stock then did over the next 63 sessions
+3. The scorecard is **descriptive**: for every filing, the model's out-of-fold call (a
+   within-quarter relative statement against that quarter's scored peers, drawn after the
+   quarter — not a real-time call), what the stock then did over the next 63 sessions
    against the universe average, right or wrong; per company with Wilson intervals, two
-   comparators (a size-only yardstick and a numeric-only model), and the base rate.
+   comparators (a size-only yardstick and a numeric-only model), and the outcome mix of
+   the period (not a benchmark).
 4. It stays private. `data/f5/head1_scorecard.md` is git-excluded; only the universe
    block is committed. Nothing goes on a public page (legal baseline #4).
 5. Runtime is tens of minutes to a few hours on this Mac (about 8,500 XGBoost fits);

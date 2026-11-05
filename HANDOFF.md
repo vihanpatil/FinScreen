@@ -1729,13 +1729,31 @@ BOUNDED-NULL row: "text is not used as a signal; the study is written up and clo
 failure taxonomy; pipeline archived as asset)."** Sensitivity arms: rolling-8q +0.0008, rolling-16q −0.0039,
 GLD-included −0.0046, form-controlled ablation +0.0061. Scorecard (§14, descriptive): model 1,552 correct of
 2,992 calls = 0.5187 [0.5008, 0.5366]; numeric-only 0.5099 [0.4919, 0.5278]; size-only 0.4859 [0.4678,
-0.5039]; chance from call counts 0.500; outcome mix 0.4751; 1,489 no-call rows. Head 2: slope −0.165, wild-cluster
-SE 0.088, p two-sided 0.0465, 40 clusters (approximate regime, stated). Head 3: 20 scored folds, 3 censored
+0.5039]; chance from call counts 0.500; outcome mix 0.4751; 1,489 no-call rows. Head 2: slope −0.165 AGAINST the pre-registered positive direction (one-sided p for that direction 0.974; two-sided 0.0465), wild-cluster SE 0.088, 40 clusters (approximate regime, stated). Head 3: 20 scored folds, 3 censored
 (2026Q1 counted not scored, decision 13), AUCs 0.40–1.00. Owner read file:
 `data/f5/status/G3_RUN_2026-11-05_owner_read.md`. Reviewer pass launched (brief: integrity of pin and shas,
 §13 applied mechanically, §14 fidelity, leakage spot checks on the OOF parquet, heads 2/3) →
 `data/f5/status/REVIEW_g3_run_2026-11-05.md`. Committed: results_head1/2/3.json, run_log, chain log, pin,
 ratified document, pin diff; the per-company scorecard stays git-excluded (legal baseline #4). $0, no API call.
+
+**2026-11-05 — REVIEWER PASS ON THE G3 RUN: dispositions (main-session decisions under the low-touch policy; not owner rulings).**
+`data/f5/status/REVIEW_g3_run_2026-11-05.md`: pin, shas, margin, bootstrap SE (seeds 1–50 all select 0.04), per-fold
+ICs from the OOF parquet (difference 0), fold/purge/dedup counts (Σ 4,481, 139 CIKs), window dating, scorecard
+calls/ties/intervals/chance line, heads 2–3 all REPRODUCE. 2 must-fix, 11 should, 9 note. Dispositions: **M1** — the
+ratified decision-11 sensitivity (one row excluding WITHDRAWN guidance, `G3_PREREGISTRATION.md:171`) was never built
+or run: **recorded here as a DEVIATION from the ratified document**; it will be run in F6 as a separate script and
+labelled "executed after the primary was seen" (POST-HOC per §0), never by editing `backtest_e2.py` whose sha the run
+logged. **M2** — five tripwires red post-pin with messages that could lead an agent to delete the pin: `builder`
+inverting them to "pin exists and sha matches; never delete" (report `data/f5/status/M2_tripwire_inversion_2026-11-05.md`).
+**S2 / S10** fixed the same hour (head-2 direction stated in the owner read file and above; packet wording corrected:
+calls are within-quarter relative, outcome mix is not a base rate). **S9** acknowledged: `--show` and `--pin` ran 1.9 s
+apart inside the chain, so the owner saw the §4 description of the diff, not the diff itself; the diff is on disk and
+verified byte-exact against the declared set — no action possible or needed. **S1, S3–S8, S11, N1–N9 → the F6 list**
+(seed-dependence of the equivalence label: 32/100 seeds fail at ±0.04, none reaches the MDE; clustered intervals for
+the scorecard; report_head1.md arms and stale E1 text; NEGATIVE-recall escorts on heads 2–3; head-3 aggregate, thin
+population and the exit-screen look-ahead in TRAINING labels; heads 2–3 run_log shas; 2020Q1 contributes +0.22 of the
+mean; LOCO spans; tickers null on 114 of 139 scorecard companies). F6 (negative result + failure taxonomy) is the next
+build; the §13 branch stands.
 
 ## 4. Incident history, compressed to lessons
 

@@ -79,6 +79,8 @@ The per-company pages (139 companies, each filing's call, what the stock did, ri
 
 ## 3. Head 2 — volatility / informativeness event study
 
+**Direction, stated:** the pre-registered hypothesis was a POSITIVE slope; the measured slope is −0.165 (wild-cluster SE 0.088), one-sided p for the pre-registered direction 0.974, two-sided p 0.0465. Read as: no evidence for the pre-registered direction; the two-sided value is reported because the pre-registration reports both, not as support.
+
 `{"few_clusters_limitation": "40 clusters (event quarters). The wild-cluster bootstrap is approximate in this regime; the SE and p-values are reported with this limitation attached, never alone.", "intercept": 1.1622125891145847, "n_clusters": 40, "n_draws": 2000, "n_obs": 3891, "p_one_sided_positive": 0.974, "p_two_sided": 0.0465, "se_wild_cluster": 0.08763202564286716, "seed": 0, "slope": -0.1652974418593817}`
 
 40 clusters (event quarters). The wild-cluster bootstrap is approximate in this regime; the SE and p-values are reported with this limitation attached, never alone.
@@ -125,4 +127,4 @@ The per-company pages (139 companies, each filing's call, what the stock did, ri
 
 `data/f5/results_head1.json` · `results_head2.json` · `results_head3.json` · `run_log.jsonl` (shas of every output) ·
 `status/g3_chain_log.jsonl` · `status/PIN_SHOW_2026-11-05.txt` (the pin diff) · `head1_scorecard.md` / `.json` (private, git-excluded) ·
-reviewer report `status/REVIEW_g3_run_2026-11-05.md` (in flight at the time of writing).
+reviewer report `status/REVIEW_g3_run_2026-11-05.md` — DONE: pin, shas, margin, folds, purge, dedup, scorecard and heads all reproduce exactly; 2 must-fix (M1 the ratified decision-11 WITHDRAWN-guidance sensitivity arm was never built or run — recorded as a DEVIATION, to be run post-hoc-labelled in F6; M2 five tripwire tests inverted so no agent deletes the pin), 11 should (seed sensitivity: 32 of 100 nuisance seeds fail equivalence at ±0.04 though none reaches the MDE; the scorecard's Wilson interval assumes independent calls and clustered bootstraps include 0.50; head-2 direction; head-3 aggregate and screen; report_head1.md gaps; heads 2/3 missing the NEGATIVE-recall escorts), 9 notes — all carried into F6.
