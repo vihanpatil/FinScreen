@@ -11,7 +11,9 @@ question is narrow and falsifiable: does anything in the filing text add
 screening information on top of a numeric-only baseline, measured by an
 expanding-window walk-forward backtest sorted by public filing date. The
 first, smaller run (25 companies) answered "no fold-robust text signal." The
-second, larger run has finished labeling and has not yet been backtested.
+second, larger run was run on 2026-11-05 under a ratified pre-registration and
+returned a bounded null: a mean per-fold IC delta of +0.0011 with a 90% CI of
+[-0.0234, +0.0256], inside the pre-registered ±0.04 equivalence margin (`data/f5/F6_E2_RESULT.md` §0–§1).
 
 ## What this is not
 
@@ -48,11 +50,12 @@ Three hard rules govern everything else here:
    a third model resolving disputes, and the owner ruling a small escalated
    subset. That measures model consensus, not label correctness.
 
-## Where the project stands (2026-09-07)
+## Where the project stands (2026-11-05)
 
 Two corpora exist. **E1** is the original 25-company study, complete.
-**E2** is the expanded study ratified 2026-08-20, currently between labeling
-and features.
+**E2** is the expanded study ratified 2026-08-20. Its pre-registered
+walk-forward was run on 2026-11-05 and returned a bounded null (F5 row below).
+The phase rows other than F5 and F6 were last written 2026-09-07 and are unchanged.
 
 | Phase | What it did | State |
 |---|---|---|
@@ -63,8 +66,8 @@ and features.
 | F3 extraction | 30,475 extraction attempts produced 28,900 sections, then a fix package rebuilt the corpus to 29,097 rows | **Complete.** `F3_PROGRESS.md`; corpus `data/filings_e2_v2.parquet` (sha256 `15853e9f…`) |
 | F4 labeling | The fine-tuned student labeled every chunk: 317,081 chunks across 24 chronological segments, 0 parse failures, 0 finish-reason truncations, 0 API calls, $0 | **Complete.** `data/f4/labels_e2_v1.parquet` (sha256 `f236f421…`), close-out `data/f4/status/F4_campaign.md` |
 | G2 spot-check | Blind model rater plus adjudicator over a pre-registered stratified draw, with the owner personally ruling 39 escalated rows and 20 probe rows | **Ruled 2026-09-07.** `data/f4/g2/G2_FINAL_REPORT.md` |
-| F5 features and backtest | Build E2 features, run the pre-registered walk-forward in three heads | **NEXT. Not started.** Plan: `F5_PLAN.md`. Rule: no E2 information coefficient is computed before gate G3 ratifies the pre-registration (benchmark, folds, primary metric, stopping rule) |
-| F6 diagnosis and docs | E2 diagnosis, independent red-team pass, model card and limitations updated for E1 plus E2 | Not started. Gate G4 is the owner's final read |
+| F5 features and backtest | Build E2 features, run the pre-registered walk-forward in three heads | **Run 2026-11-05** under gate G3 (pinned pre-registration sha256 `6b99f65e…`). Head 1: mean per-fold dedup IC delta (text+numeric minus numeric-only) **+0.0011**, 90% CI **[-0.0234, +0.0256]**, 33 folds, **POWERED** at margin 0.04, honest minimum detectable effect 0.0416. Pre-registered outcome: **bounded null, text is not used as a signal** (`data/f5/status/G3_RUN_2026-11-05_owner_read.md` §1; `data/f5/F6_E2_RESULT.md` §0–§1). Scorecard universe block (descriptive only): model 1,552 of 2,992 labeled filings = 0.5187 [0.5008, 0.5366]; numeric-only 0.5099 [0.4919, 0.5278]; size-only 0.4859 [0.4678, 0.5039]; chance 0.500 (same sources, §2). Those intervals assume independent observations; clustered bootstraps include 0.50 (`F6_E2_RESULT.md` §2). Plan: `F5_PLAN.md` |
+| F6 diagnosis and docs | E2 diagnosis, independent red-team pass, model card and limitations updated for E1 plus E2 | Write-up `data/f5/F6_E2_RESULT.md` drafted 2026-11-05; reviewer pass pending. Gate G4 (the owner's final read) pending |
 
 ### What G2 actually measured
 
@@ -139,7 +142,8 @@ Read in this order. Files on disk beat any summary, including this one.
 
 - **E1 / E2** are the two corpora and the two studies. E1 is 25 mega-caps,
   labeled by Claude, fully analyzed. E2 is the 136-member universe, labeled
-  by the local student model, not yet analyzed.
+  by the local student model, analyzed 2026-11-05 (bounded null; see the table
+  above). E1 and E2 numbers are not comparable: the excess-return benchmark differs.
 - **F0 to F6** are the E2 execution phases in order: fine-tune, universe,
   ingestion, extraction, labeling, features and backtest, diagnosis and docs.
   F2.5 is a hardening package inserted between F2 and F3.
@@ -279,7 +283,14 @@ fine-tuned adapter are not distributed and are not under MIT** (legal baseline
   "BLOCKED" until its ratified bars exist, so no one can shop for a bar after
   seeing the numbers. A pre-registered demotion rule fired against the
   project's own interests in August 2026 and was honored.
-- **Nothing here is a performance claim.** The one backtest that has been run
-  and read produced a mixed, sign-unstable result over six expanding-window
-  folds against a numeric-only baseline, and that is how it is reported. The
-  E2 backtest has not been run at all.
+- **Nothing here is a performance claim.** The E1 backtest produced a mixed,
+  sign-unstable result over six expanding-window folds against a numeric-only
+  baseline, and that is how it is reported. The E2 backtest was run on
+  2026-11-05 and returned a bounded null (see the F5 row above); the owner's
+  final read (gate G4) is pending. The only performance-related output is a
+  pre-registered historical scorecard; it is hypothetical, out-of-fold,
+  price-return-only, and shown only with its methodology; its per-company
+  pages are not in this repository. Its inference sentence: "Hit rates are
+  descriptive. The inference is the pre-registered IC margin ladder (§1,
+  decision 15); a per-company hit rate over at most 33 quarters has a wide
+  interval and proves nothing on its own." (2026-11-05)

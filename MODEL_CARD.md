@@ -689,6 +689,82 @@ Per the pre-committed honesty rule (`DISCOVERY.md` §5, ratified before any resu
 
 ---
 
+### 6.x E2 (2026-11-05): pre-registered walk-forward, bounded null
+
+Added 2026-11-05. Sections 6.1 and 6.2 above describe the E1 study (25 companies,
+6 folds, benchmark = equal-weighted average of the 25 tickers). **E1 and E2
+numbers are not comparable: the E2 benchmark is the membership-dated
+equal-weighted average over that date's members excluding the company itself, over
+a different universe.** Nothing below is set against an E1 number.
+
+**What was run.** The E2 walk-forward was run on 2026-11-05 under the ratified,
+pinned pre-registration (`data/f5/G3_PREREGISTRATION.md`, sha256 `6b99f65e…`):
+33 walk-forward test quarters (2018Q1–2026Q1), 4,481 deduplicated test filings,
+primary metric = cross-fold mean of the per-fold deduplicated Spearman IC delta
+(text+numeric minus numeric-only). Source: `data/f5/F6_E2_RESULT.md` §0–§1.1 and
+`data/f5/status/G3_RUN_2026-11-05_owner_read.md` §1, both copied from
+`data/f5/results_head1.json`.
+
+**Head 1: the pre-registered margin ladder, mechanically applied.**
+
+| quantity | value |
+|---|---|
+| mean per-fold dedup IC delta, 33 folds | +0.0011 |
+| SE (block bootstrap, block length 1, 4,000 resamples, seed 0) | 0.0149 |
+| 90% CI | [-0.0234, +0.0256] |
+| margin ladder [0.03, 0.04, 0.05] → selected | 0.04 (0.03 not satisfied: needs SE ≤ 0.0121) |
+| power status; honest minimum detectable effect; TOST at ±0.04 | POWERED; MDE 0.0416; equivalence true (p = 0.0045) |
+
+The ratified outcome map (§13) returns **bounded null**: *"text is not used as a
+signal; the study is written up and closed."* The honest MDE (0.0416) is a lower
+bound (expanding training windows are nested and 63-session target windows straddle
+fold boundaries, so the effective fold count is below 33). This is a statement about
+this universe, this labeler and these features. It is not a finding that filing text
+carries no information in general. Two further caveats are in `LIMITATIONS.md` §4.1:
+the equivalence label depends on the model seed, and one fold carries most of the
+point estimate.
+
+**Scorecard universe block (descriptive only).** Copied from `data/f5/head1_scorecard.md`
+via `G3_RUN_2026-11-05_owner_read.md` §2. "Call" is the pre-registered scorecard
+term for a top- or bottom-tercile label within a quarter.
+
+| block | n calls | n correct | hit rate | 95% Wilson interval | chance (from call counts) |
+|---|---|---|---|---|---|
+| model (`text_and_numeric`) | 2992 | 1552 | 0.5187 | [0.5008, 0.5366] | 0.500 |
+| numeric only | 2991 | 1525 | 0.5099 | [0.4919, 0.5278] | 0.500 |
+| size only | 2933 | 1425 | 0.4859 | [0.4678, 0.5039] | 0.500 |
+
+"Hit rates are descriptive. The inference is the pre-registered IC margin ladder
+(§1, decision 15); a per-company hit rate over at most 33 quarters has a wide
+interval and proves nothing on its own." The scorecard cannot change the §13
+outcome. The Wilson intervals assume independent calls, which they are not; the
+reviewer's quarter-cluster and company-cluster bootstrap intervals for the model's
+hit rate both include 0.50 (`F6_E2_RESULT.md` §2). The per-company pages are not
+reproduced here.
+
+**Label-quality escorts that travel with every E2 number** (G2, owner-ruled
+2026-09-07; `data/f4/g2/G2_FINAL_REPORT.md`, as quoted in `F6_E2_RESULT.md` §3(b)).
+All of it is model consensus (a blind model rater plus a model adjudicator, with
+owner rulings on escalated rows), not human validation of ground truth.
+
+- Sentiment: agreement 293/337 = 86.94% [82.93, 90.13], **INDETERMINATE** at the
+  0.85 bar. The labeler's NEGATIVE recall is **0.529** (64/121) on its own held-out
+  eval.
+- Guidance direction: agreement 115/119 = 96.64% [91.68, 98.69], **PASS**, and that
+  statement is about the NONE mass only. The active-guidance precision is
+  **68.67%** [58.17, 77.55]; the owner's reading is that much of the gap reflects a
+  label set with no representation for newly issued, directionless guidance
+  (`G2_FINAL_REPORT.md` §0).
+- Red flags: exploratory and disclosure-only (the pre-registered demotion fired).
+  The v1.2 teacher's exact-set error is 84/200 = 42.00% [35.37, 48.93]; the
+  student's is 112/400 = 28.0% [23.8, 32.6] against model consensus. The family is
+  config-sensitive and is not in the confirmatory block.
+- The extraction holes stand: 148 periodic filings from 10 companies (seven of them
+  financials) carry no text row. Prices are Yahoo split-adjusted closes without
+  dividends (§5.7).
+
+---
+
 ## 7. Fine-tuned model
 
 > ## 🚧 GATED TODO — whether a fine-tuned model exists at all

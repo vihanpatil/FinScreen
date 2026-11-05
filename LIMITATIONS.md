@@ -543,6 +543,22 @@ license question would need to be settled first.
 
 ### 4.1 Backtest results — run, but not yet read by the owner
 
+**E2 update, 2026-11-05.** The E2 walk-forward (33 test quarters, 4,481 deduplicated
+test filings) was run on 2026-11-05 under the ratified, pinned pre-registration and
+returned a **bounded null**: mean per-fold dedup IC delta +0.0011, 90% CI
+[-0.0234, +0.0256], POWERED at margin 0.04, honest minimum detectable effect 0.0416
+(`data/f5/status/G3_RUN_2026-11-05_owner_read.md` §1; `data/f5/F6_E2_RESULT.md`
+§0–§1). Four caveats travel with it. (1) **Seed dependence:** the primary uses model
+seed 0; across 100 nuisance seeds, 32 fail the equivalence test at ±0.04, and none
+reaches the MDE (`F6_E2_RESULT.md` §1.4). (2) **One-fold fragility:** 2020Q1
+contributes +0.2204; without it the mean over the other 32 folds is -0.0058, so
++0.0011 is not weakly positive (§1.6). (3) **The scorecard's hit-rate interval
+assumes independent calls:** the model's 0.5187 [0.5008, 0.5366] is descriptive
+only, and the reviewer's quarter-cluster and company-cluster bootstraps both include
+0.50 (§2). (4) **The owner's final read (gate G4) is pending**; nothing here is a
+final owner conclusion. E1 and E2 numbers are not comparable (different benchmark).
+The E1 text below is unchanged.
+
 **Results exist as of 2026-08-18** and live in `data/backtest_report.md`
 (with the feature-side documentation in `data/features_report.md`):
 `data/features.parquet` holds 630 (company, filing) observations, 581 with
