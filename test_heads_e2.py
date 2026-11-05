@@ -891,8 +891,12 @@ def test_only_guard_and_provenance_helpers_are_taken_from_head_1():
     used = {c.func.attr for c in ast.walk(tree)
             if isinstance(c, ast.Call) and isinstance(c.func, ast.Attribute)
             and isinstance(c.func.value, ast.Name) and c.func.value.id == "BT"}
+    # F6-A (review S6, 2026-11-05): the four §11 disclosure READERS join the
+    # list -- they read G2 / labeler-eval JSON and fit nothing.
     assert used <= {"sha256_file", "assert_input_shas", "require_g3",
-                    "extract_params_block", "append_run_log"}, used
+                    "extract_params_block", "append_run_log",
+                    "load_g2_caveats", "labeler_negative_recall",
+                    "stored_negative_precision", "_label_disclosure"}, used
 
 
 def test_no_association_statistic_is_imported_from_a_library():
@@ -1143,3 +1147,47 @@ def test_both_runners_reverify_before_anything_else():
         assert "reverify_guard(" in body, fn
         for later in ("check_required(", "assert_input_shas(", "get_param("):
             assert body.index("reverify_guard(") < body.index(later), (fn, later)
+
+
+# ---------------------------------------------------------------------------
+# Review S6 (2026-11-05): the sentiment escorts travel with heads 2/3, READ
+# ---------------------------------------------------------------------------
+
+def test_sentiment_escorts_are_read_from_the_files_not_typed(tmp_path):
+    """Synthetic values that exist nowhere in the code: if the escorts were
+    hand-typed, 0.123 / 7/9 / 3/5 could not come back."""
+    labeler = tmp_path / "metrics.json"
+    labeler.write_text(json.dumps({"headline": {"sentiment": {"per_class": {
+        "NEGATIVE": {"recall": 0.123, "tp": 7, "support": 9}}}}}))
+    g2 = tmp_path / "results_g2.json"
+    g2.write_text(json.dumps({"secondaries": {"S-ERR": {"sentiment": {
+        "confusion_stored_x_reference": {"NEGATIVE->NEGATIVE": 3, "NEGATIVE->NEUTRAL": 2,
+                                         "NEUTRAL->NEGATIVE": 11}}}}}))
+    esc = H.sentiment_escorts(g2_path=g2, labeler_path=labeler)
+    rec = esc["labeler_negative_recall"]
+    assert (rec["recall"], rec["tp"], rec["support"]) == (0.123, 7, 9)
+    prec = esc["g2_stored_negative_precision"]
+    assert (prec["k"], prec["n"]) == (3, 5)
+    assert "not human validation of ground truth" in esc["model_consensus"]
+    assert "0.123 (7/9)" in esc["label_quality_sentence"]
+    assert "3/5" in esc["label_quality_sentence"]
+
+
+def test_sentiment_escorts_say_unavailable_when_the_files_are_absent(tmp_path):
+    esc = H.sentiment_escorts(g2_path=tmp_path / "no.json", labeler_path=tmp_path / "no2.json")
+    assert esc["labeler_negative_recall"]["available"] is False
+    assert esc["g2_stored_negative_precision"]["available"] is False
+    assert "unavailable" in esc["label_quality_sentence"]
+    assert esc["model_consensus"] == H.MODEL_CONSENSUS_SENTENCE
+
+
+@pytest.mark.skipif(not (BT.G2_RESULTS_PATH.exists() and BT.LABELER_EVAL_PATH.exists()),
+                    reason="real G2 / labeler-eval artifacts absent")
+def test_head_disclosures_carry_the_real_escorts_head_1_carries():
+    """The numbers G3 §11 names (64/121 = 0.529, 25/49), on the real artifacts."""
+    esc = H.head_disclosures()["sentiment_escorts"]
+    rec = esc["labeler_negative_recall"]
+    assert (rec["recall"], rec["tp"], rec["support"]) == (0.529, 64, 121)
+    prec = esc["g2_stored_negative_precision"]
+    assert (prec["k"], prec["n"]) == (25, 49)
+    assert "model consensus" in esc["model_consensus"]

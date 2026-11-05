@@ -1046,10 +1046,33 @@ def run_head3(params: dict, doc_sha: str, prereg: Path = PREREG_PATH,
     return out
 
 
+#: G3 §11 "Model-rater epistemics", travelling with every sentiment-based row.
+MODEL_CONSENSUS_SENTENCE = (
+    "G2 agreement is model consensus over model-adjudicated fields -- not human "
+    "validation of ground truth -- except the 39 escalated + 20 probe rows the "
+    "owner ruled personally.")
+
+
+def sentiment_escorts(g2_path: Path = BT.G2_RESULTS_PATH,
+                      labeler_path: Path = BT.LABELER_EVAL_PATH) -> dict:
+    """§11's sentiment escorts (review S6), READ by head 1's own readers --
+    the same calls the scorecard's disclosure block makes -- never typed."""
+    g2 = BT.load_g2_caveats(g2_path)
+    recall = BT.labeler_negative_recall(labeler_path)
+    return {
+        "labeler_negative_recall": recall,
+        "g2_stored_negative_precision": BT.stored_negative_precision(g2),
+        "model_consensus": MODEL_CONSENSUS_SENTENCE,
+        "label_quality_sentence": BT._label_disclosure(g2, recall),
+    }
+
+
 def head_disclosures() -> dict:
-    """Regenerated from the Step 1a manifest, never hand-typed prose."""
+    """Regenerated from the Step 1a manifest and the G2 / labeler-eval
+    artifacts, never hand-typed prose."""
     caveats = json.loads(TEXT_MANIFEST.read_text())["caveat_constants"]
     return {
+        "sentiment_escorts": sentiment_escorts(),
         "validation": (
             "Walk-forward by construction: head 3 trains only on quarters "
             "strictly before the test quarter; head 2 is an event study whose "
@@ -1064,7 +1087,8 @@ def head_disclosures() -> dict:
             "sentiment is the field G2 ruled INDETERMINATE; the escorts that "
             "must travel with a sentiment-based row (including the stored "
             "NEGATIVE recall and precision) are enumerated in the G3 document, "
-            "§11."),
+            "§11, and carried, read from their artifacts, under "
+            "`sentiment_escorts`."),
         "head2_dividend_caveat": (
             "Prices are split-adjusted only. The DV is NOT dividend-immune: an "
             "ex-dividend session inside the post window inflates it."),

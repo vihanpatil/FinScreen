@@ -1,0 +1,670 @@
+{
+ "label": "EXECUTED AFTER THE PRIMARY WAS SEEN (2026-11-05); pre-registered arm run late; can never be selected as the primary",
+ "arm": "decision 11: the 2020Q2 sensitivity (WITHDRAWN-guidance rows excluded)",
+ "ratified_rule_row": "| WITHDRAWN guidance | **71** corpus \u2192 **66** on the frame (\u22121 8K_BODY, \u22124 MDA-masked), 54 filings / 38 CIKs. **52 of 66 are 2020, 41 in 2020Q2**; they touch **35 of 7,389 rows (0.47%)** (was 35 of 7,405 (2026-09-10 build); the count of touched rows is unchanged), 25 in one fold | Evaluable; WITHDRAWN = \u22121 in `guidance_signed_mean`; n disclosed; **one sensitivity row excluding it, labelled as the 2020Q2 sensitivity it is** (11) | FE `test_withdrawn_maps_to_minus_one_like_e1` |",
+ "never_the_primary": "Decision 11 makes this a sensitivity row. The \u00a713 branch is decided by the primary alone; this row can change no branch, no label and no scorecard.",
+ "definition": {
+  "arm": "rows whose guidance_signed_mean contains a WITHDRAWN -1: scored WITHDRAWN chunks (features_e2.score_labels masks, 8K_BODY dropped) attributed to same-CIK filings (decision 20). Fixed before the arm was run.",
+  "home_key_reconciliation": "census_e2.withdrawn_census's rule (the chunk's HOME filing only) -- the prereg's '35 of 7,389 rows'. It misses later same-CIK filings that re-attach the chunk.",
+  "removal": "rows leave the run-time frame (GLD already excluded) BEFORE folds, purge, dedup, PIT ranks, PCA and fits, so they leave both test and training sets."
+ },
+ "run": {
+  "utc": "2026-11-05T23:02:20+00:00",
+  "doc_sha256": "6b99f65ea1da42e81afec2fef814800d18e5748ff7c2e025ec08862aa80c62c6",
+  "params_sha256": "9ac479818785b6fc835aaf63dc9d73bff9fc3cbb0c5b14a9dac2e3f185b1984f",
+  "module_sha256": "5504cca784d81f063fa6bf9fda462ac154d9af61fbafe76513af274eab834413",
+  "backtest_e2_sha256": "746389ae0f903565e26a4396ac32ebafffc2e3db8b4e9ad0beb9bd4f863d0012",
+  "backtest_e2_sha256_in_head1_run": "746389ae0f903565e26a4396ac32ebafffc2e3db8b4e9ad0beb9bd4f863d0012",
+  "features_e2_sha256": "8e8b749a063d3d9986c3777d9e9307319d573375e191fee386c2570908888d63",
+  "input_sha256": {
+   "target_e2.parquet": "ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac",
+   "text_features_e2.parquet": "143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88",
+   "numeric_features_e2.parquet": "01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b",
+   "text_families_e2.parquet": "3cee65649b7084298297f2068253fd0df670dc84f8b496ab4e0209a75de8203e"
+  },
+  "labels_sha256": "f236f421096c665b373addb9ffdbb6cf45454027761838361cf179cbb7b538df",
+  "chunks_sha256": "d67395ece6126045e851e05f4b8fe5c8c49bd69069c44a08b9ee8f9d67bf0857",
+  "seed": 0
+ },
+ "frame": {
+  "n_run_time_rows": 7381,
+  "n_gld_rows_excluded": 8,
+  "n_scored_withdrawn_chunks": 66,
+  "n_attributed_filings": 80,
+  "n_home_filings": 54
+ },
+ "reproduction_check": {
+  "primary_recomposed_equals_results_head1": true,
+  "max_abs_diff_per_fold_delta": 0.0
+ },
+ "primary_mean_fold_delta_dedup": 0.0010935553753235697,
+ "primary_mean_source": "results_head1.json margin.mean_fold_delta",
+ "sensitivity": {
+  "n_rows_removed_total": 43,
+  "n_ciks_removed_from": 26,
+  "rows_removed_by_filing_quarter": {
+   "2020Q2": 25,
+   "2020Q3": 7,
+   "2020Q4": 5,
+   "2021Q3": 1,
+   "2021Q4": 1,
+   "2022Q1": 1,
+   "2022Q2": 1,
+   "2024Q4": 2
+  },
+  "k_folds": 33,
+  "mean_fold_delta_dedup": -0.005194005453255226,
+  "per_fold": [
+   {
+    "test_quarter": "2018Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 144,
+    "n_test_dedup_arm": 144,
+    "delta_primary": -0.07081826219757255,
+    "delta_arm": -0.07081826219757255
+   },
+   {
+    "test_quarter": "2018Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 118,
+    "n_test_dedup_arm": 118,
+    "delta_primary": -0.012504610709994562,
+    "delta_arm": -0.012504610709994562
+   },
+   {
+    "test_quarter": "2018Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 123,
+    "n_test_dedup_arm": 123,
+    "delta_primary": 0.008203170344765365,
+    "delta_arm": 0.008203170344765365
+   },
+   {
+    "test_quarter": "2018Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 122,
+    "n_test_dedup_arm": 122,
+    "delta_primary": 0.12050056010653588,
+    "delta_arm": 0.12050056010653588
+   },
+   {
+    "test_quarter": "2019Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 149,
+    "n_test_dedup_arm": 149,
+    "delta_primary": 0.034685289316161785,
+    "delta_arm": 0.034685289316161785
+   },
+   {
+    "test_quarter": "2019Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 119,
+    "n_test_dedup_arm": 119,
+    "delta_primary": 0.0216707021791768,
+    "delta_arm": 0.0216707021791768
+   },
+   {
+    "test_quarter": "2019Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 125,
+    "n_test_dedup_arm": 125,
+    "delta_primary": -0.052178187403993846,
+    "delta_arm": -0.052178187403993846
+   },
+   {
+    "test_quarter": "2019Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 128,
+    "n_test_dedup_arm": 128,
+    "delta_primary": 0.013350347921626066,
+    "delta_arm": 0.013350347921626066
+   },
+   {
+    "test_quarter": "2020Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 152,
+    "n_test_dedup_arm": 152,
+    "delta_primary": 0.2204089162186915,
+    "delta_arm": 0.2204089162186915
+   },
+   {
+    "test_quarter": "2020Q2",
+    "n_removed_test_rows": 25,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 117,
+    "delta_primary": 0.03212388534596955,
+    "delta_arm": 0.007125837342085162
+   },
+   {
+    "test_quarter": "2020Q3",
+    "n_removed_test_rows": 7,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 127,
+    "n_test_dedup_arm": 124,
+    "delta_primary": -0.0217589988751406,
+    "delta_arm": -0.024195121951219506
+   },
+   {
+    "test_quarter": "2020Q4",
+    "n_removed_test_rows": 5,
+    "n_removed_train_rows_after_purge": 25,
+    "n_test_dedup_primary": 129,
+    "n_test_dedup_arm": 126,
+    "delta_primary": 0.06505790340010983,
+    "delta_arm": -0.01595800524934382
+   },
+   {
+    "test_quarter": "2021Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 32,
+    "n_test_dedup_primary": 161,
+    "n_test_dedup_arm": 161,
+    "delta_primary": -0.0039622663428265925,
+    "delta_arm": -0.04483970062453285
+   },
+   {
+    "test_quarter": "2021Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 37,
+    "n_test_dedup_primary": 131,
+    "n_test_dedup_arm": 131,
+    "delta_primary": 0.14970373138312068,
+    "delta_arm": 0.16573426573426572
+   },
+   {
+    "test_quarter": "2021Q3",
+    "n_removed_test_rows": 1,
+    "n_removed_train_rows_after_purge": 37,
+    "n_test_dedup_primary": 125,
+    "n_test_dedup_arm": 125,
+    "delta_primary": -0.0664147465437788,
+    "delta_arm": -0.20073769691048635
+   },
+   {
+    "test_quarter": "2021Q4",
+    "n_removed_test_rows": 1,
+    "n_removed_train_rows_after_purge": 37,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 130,
+    "delta_primary": 0.008679621461442855,
+    "delta_arm": -0.05851743463941805
+   },
+   {
+    "test_quarter": "2022Q1",
+    "n_removed_test_rows": 1,
+    "n_removed_train_rows_after_purge": 38,
+    "n_test_dedup_primary": 160,
+    "n_test_dedup_arm": 159,
+    "delta_primary": -0.16301125043947032,
+    "delta_arm": -0.1392733460711727
+   },
+   {
+    "test_quarter": "2022Q2",
+    "n_removed_test_rows": 1,
+    "n_removed_train_rows_after_purge": 39,
+    "n_test_dedup_primary": 128,
+    "n_test_dedup_arm": 128,
+    "delta_primary": 0.09953243331234785,
+    "delta_arm": 0.16037290966050977
+   },
+   {
+    "test_quarter": "2022Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 40,
+    "n_test_dedup_primary": 134,
+    "n_test_dedup_arm": 134,
+    "delta_primary": -0.0725598317467466,
+    "delta_arm": -0.1920924438435062
+   },
+   {
+    "test_quarter": "2022Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 137,
+    "n_test_dedup_arm": 137,
+    "delta_primary": 0.02115124385472461,
+    "delta_arm": 0.042484356406686005
+   },
+   {
+    "test_quarter": "2023Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 159,
+    "n_test_dedup_arm": 159,
+    "delta_primary": -0.009545874520236496,
+    "delta_arm": 0.054505015524241696
+   },
+   {
+    "test_quarter": "2023Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 130,
+    "delta_primary": 0.11472236991725458,
+    "delta_arm": 0.08469592847959277
+   },
+   {
+    "test_quarter": "2023Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 131,
+    "n_test_dedup_arm": 131,
+    "delta_primary": 0.025302941333475673,
+    "delta_arm": 0.08213066935422138
+   },
+   {
+    "test_quarter": "2023Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 135,
+    "n_test_dedup_arm": 135,
+    "delta_primary": 0.1287237122675962,
+    "delta_arm": 0.01326165951342928
+   },
+   {
+    "test_quarter": "2024Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 154,
+    "n_test_dedup_arm": 154,
+    "delta_primary": -0.0769560610167821,
+    "delta_arm": -0.14046017233873023
+   },
+   {
+    "test_quarter": "2024Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 126,
+    "n_test_dedup_arm": 126,
+    "delta_primary": -0.019947506561679776,
+    "delta_arm": -0.012004499437570315
+   },
+   {
+    "test_quarter": "2024Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 130,
+    "delta_primary": -0.020254478793988256,
+    "delta_arm": 0.06742683909380164
+   },
+   {
+    "test_quarter": "2024Q4",
+    "n_removed_test_rows": 2,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 136,
+    "n_test_dedup_arm": 134,
+    "delta_primary": -0.06929306534637988,
+    "delta_arm": -0.05336223115954274
+   },
+   {
+    "test_quarter": "2025Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 41,
+    "n_test_dedup_primary": 156,
+    "n_test_dedup_arm": 156,
+    "delta_primary": 0.05433301425788886,
+    "delta_arm": 0.06471052389030571
+   },
+   {
+    "test_quarter": "2025Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 43,
+    "n_test_dedup_primary": 131,
+    "n_test_dedup_arm": 131,
+    "delta_primary": -0.1259168312603427,
+    "delta_arm": 0.008284551750540936
+   },
+   {
+    "test_quarter": "2025Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 43,
+    "n_test_dedup_primary": 134,
+    "n_test_dedup_arm": 134,
+    "delta_primary": -0.05061409743263634,
+    "delta_arm": -0.05590622058403291
+   },
+   {
+    "test_quarter": "2025Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 43,
+    "n_test_dedup_primary": 132,
+    "n_test_dedup_arm": 132,
+    "delta_primary": -0.11734228005823022,
+    "delta_arm": -0.19499825204927654
+   },
+   {
+    "test_quarter": "2026Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 43,
+    "n_test_dedup_primary": 155,
+    "n_test_dedup_arm": 155,
+    "delta_primary": -0.12898416598541065,
+    "delta_arm": -0.07310753762366665
+   }
+  ]
+ },
+ "home_key_reconciliation": {
+  "n_rows_removed_total": 35,
+  "n_ciks_removed_from": 25,
+  "rows_removed_by_filing_quarter": {
+   "2020Q2": 25,
+   "2020Q3": 5,
+   "2020Q4": 3,
+   "2024Q4": 2
+  },
+  "k_folds": 33,
+  "mean_fold_delta_dedup": 0.017733015447134983,
+  "per_fold": [
+   {
+    "test_quarter": "2018Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 144,
+    "n_test_dedup_arm": 144,
+    "delta_primary": -0.07081826219757255,
+    "delta_arm": -0.07081826219757255
+   },
+   {
+    "test_quarter": "2018Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 118,
+    "n_test_dedup_arm": 118,
+    "delta_primary": -0.012504610709994562,
+    "delta_arm": -0.012504610709994562
+   },
+   {
+    "test_quarter": "2018Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 123,
+    "n_test_dedup_arm": 123,
+    "delta_primary": 0.008203170344765365,
+    "delta_arm": 0.008203170344765365
+   },
+   {
+    "test_quarter": "2018Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 122,
+    "n_test_dedup_arm": 122,
+    "delta_primary": 0.12050056010653588,
+    "delta_arm": 0.12050056010653588
+   },
+   {
+    "test_quarter": "2019Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 149,
+    "n_test_dedup_arm": 149,
+    "delta_primary": 0.034685289316161785,
+    "delta_arm": 0.034685289316161785
+   },
+   {
+    "test_quarter": "2019Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 119,
+    "n_test_dedup_arm": 119,
+    "delta_primary": 0.0216707021791768,
+    "delta_arm": 0.0216707021791768
+   },
+   {
+    "test_quarter": "2019Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 125,
+    "n_test_dedup_arm": 125,
+    "delta_primary": -0.052178187403993846,
+    "delta_arm": -0.052178187403993846
+   },
+   {
+    "test_quarter": "2019Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 128,
+    "n_test_dedup_arm": 128,
+    "delta_primary": 0.013350347921626066,
+    "delta_arm": 0.013350347921626066
+   },
+   {
+    "test_quarter": "2020Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 152,
+    "n_test_dedup_arm": 152,
+    "delta_primary": 0.2204089162186915,
+    "delta_arm": 0.2204089162186915
+   },
+   {
+    "test_quarter": "2020Q2",
+    "n_removed_test_rows": 25,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 117,
+    "delta_primary": 0.03212388534596955,
+    "delta_arm": 0.007125837342085162
+   },
+   {
+    "test_quarter": "2020Q3",
+    "n_removed_test_rows": 5,
+    "n_removed_train_rows_after_purge": 0,
+    "n_test_dedup_primary": 127,
+    "n_test_dedup_arm": 125,
+    "delta_primary": -0.0217589988751406,
+    "delta_arm": -0.037062980030722004
+   },
+   {
+    "test_quarter": "2020Q4",
+    "n_removed_test_rows": 3,
+    "n_removed_train_rows_after_purge": 25,
+    "n_test_dedup_primary": 129,
+    "n_test_dedup_arm": 128,
+    "delta_primary": 0.06505790340010983,
+    "delta_arm": -0.027381660867972918
+   },
+   {
+    "test_quarter": "2021Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 30,
+    "n_test_dedup_primary": 161,
+    "n_test_dedup_arm": 161,
+    "delta_primary": -0.0039622663428265925,
+    "delta_arm": -0.06693675337454338
+   },
+   {
+    "test_quarter": "2021Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 131,
+    "n_test_dedup_arm": 131,
+    "delta_primary": 0.14970373138312068,
+    "delta_arm": 0.20172956814178183
+   },
+   {
+    "test_quarter": "2021Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 125,
+    "n_test_dedup_arm": 125,
+    "delta_primary": -0.0664147465437788,
+    "delta_arm": -0.14597235023041474
+   },
+   {
+    "test_quarter": "2021Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 130,
+    "delta_primary": 0.008679621461442855,
+    "delta_arm": -0.023624078734551524
+   },
+   {
+    "test_quarter": "2022Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 160,
+    "n_test_dedup_arm": 160,
+    "delta_primary": -0.16301125043947032,
+    "delta_arm": -0.15298546818235081
+   },
+   {
+    "test_quarter": "2022Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 128,
+    "n_test_dedup_arm": 128,
+    "delta_primary": 0.09953243331234785,
+    "delta_arm": 0.1812540310915096
+   },
+   {
+    "test_quarter": "2022Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 134,
+    "n_test_dedup_arm": 134,
+    "delta_primary": -0.0725598317467466,
+    "delta_arm": -0.1556831314860179
+   },
+   {
+    "test_quarter": "2022Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 137,
+    "n_test_dedup_arm": 137,
+    "delta_primary": 0.02115124385472461,
+    "delta_arm": 0.1427536527593112
+   },
+   {
+    "test_quarter": "2023Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 159,
+    "n_test_dedup_arm": 159,
+    "delta_primary": -0.009545874520236496,
+    "delta_arm": -0.0003642225937425525
+   },
+   {
+    "test_quarter": "2023Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 130,
+    "delta_primary": 0.11472236991725458,
+    "delta_arm": 0.011413523154516273
+   },
+   {
+    "test_quarter": "2023Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 131,
+    "n_test_dedup_arm": 131,
+    "delta_primary": 0.025302941333475673,
+    "delta_arm": 0.04364768641347221
+   },
+   {
+    "test_quarter": "2023Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 135,
+    "n_test_dedup_arm": 135,
+    "delta_primary": 0.1287237122675962,
+    "delta_arm": 0.11119361741411188
+   },
+   {
+    "test_quarter": "2024Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 154,
+    "n_test_dedup_arm": 154,
+    "delta_primary": -0.0769560610167821,
+    "delta_arm": -0.10889704855549259
+   },
+   {
+    "test_quarter": "2024Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 126,
+    "n_test_dedup_arm": 126,
+    "delta_primary": -0.019947506561679776,
+    "delta_arm": 0.09074465691788527
+   },
+   {
+    "test_quarter": "2024Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 130,
+    "n_test_dedup_arm": 130,
+    "delta_primary": -0.020254478793988256,
+    "delta_arm": 0.04729511550707227
+   },
+   {
+    "test_quarter": "2024Q4",
+    "n_removed_test_rows": 2,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 136,
+    "n_test_dedup_arm": 134,
+    "delta_primary": -0.06929306534637988,
+    "delta_arm": -0.03625494668881643
+   },
+   {
+    "test_quarter": "2025Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 33,
+    "n_test_dedup_primary": 156,
+    "n_test_dedup_arm": 156,
+    "delta_primary": 0.05433301425788886,
+    "delta_arm": 0.12346106502768114
+   },
+   {
+    "test_quarter": "2025Q2",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 35,
+    "n_test_dedup_primary": 131,
+    "n_test_dedup_arm": 131,
+    "delta_primary": -0.1259168312603427,
+    "delta_arm": 0.03296855815939781
+   },
+   {
+    "test_quarter": "2025Q3",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 35,
+    "n_test_dedup_primary": 134,
+    "n_test_dedup_arm": 134,
+    "delta_primary": -0.05061409743263634,
+    "delta_arm": 0.032284508289848496
+   },
+   {
+    "test_quarter": "2025Q4",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 35,
+    "n_test_dedup_primary": 132,
+    "n_test_dedup_arm": 132,
+    "delta_primary": -0.11734228005823022,
+    "delta_arm": 0.01393142815400751
+   },
+   {
+    "test_quarter": "2026Q1",
+    "n_removed_test_rows": 0,
+    "n_removed_train_rows_after_purge": 35,
+    "n_test_dedup_primary": 155,
+    "n_test_dedup_arm": 155,
+    "delta_primary": -0.12898416598541065,
+    "delta_arm": 0.01723097635200227
+   }
+  ]
+ },
+ "inference_note": "A mean of per-fold deltas, one fit per fold at seed 0. No SE, no TOST, no branch: the margin procedure applies to the primary only.",
+ "runtime_seconds": 44.9
+}
