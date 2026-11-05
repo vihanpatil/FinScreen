@@ -30,14 +30,18 @@ committed on main:
   scope (recommended: private reading-aid pages only), D confirm low-touch mode, E xcode licence +
   git push (main was 29 ahead), F optional watchlist.
 
-**G3 RATIFIED 2026-11-05 (owner typed "ratify"; HANDOFF §3).** IN FLIGHT: `bin/fs g3 --date
-2026-11-05 --owner-word ratify` launched by the main session as a background command (log
-`data/f5/status/g3_chain_log.jsonl`, console log in the session scratchpad). Expected outputs:
-`data/f5/G3_RATIFIED.json`, `data/f5/PIN_SHOW` diff under `data/f5/status/`, head-1 results +
-`data/f5/head1_scorecard.md` (git-excluded), heads 2/3 results, `data/f5/run_log.jsonl`. If a
-resume finds the chain dead with outputs missing: never re-pin (the JSON exists); re-run only the
-missing runner (`backtest_e2.py`, then `heads_e2.py --all`) from the main session. Then: reviewer
-pass, owner reads the tables, F6 write-up. Decisions B–F still open. On "ratify": follow
+**G3 RATIFIED AND RUN 2026-11-05 (owner typed "ratify"; HANDOFF §3).** Pin `data/f5/G3_RATIFIED.json`
+(doc sha `6b99f65e…`), chain `bin/fs g3` ran 9 min 5 s: head 1 + scorecard, heads 2 and 3, all outputs on disk
+and sha-logged in `data/f5/run_log.jsonl`. **Result, mechanically per the ratified §13: mean per-fold dedup IC
+delta +0.0011, SE 0.0149, 90% CI [−0.023, +0.026], margin 0.04 POWERED (honest MDE 0.0416), TOST equivalence
+TRUE → "Bounded null — text is not used as a signal; the study is written up and closed."** Scorecard universe
+block: model 1552/2992 = 0.5187 [0.5008, 0.5366], numeric-only 0.5099, size-only 0.4859, chance 0.500. The
+owner's read file is `data/f5/status/G3_RUN_2026-11-05_owner_read.md` (per-fold table, universe block, heads
+2–3); per-company pages in `data/f5/head1_scorecard.md` (git-excluded). IN FLIGHT: `reviewer` agent (Opus) →
+`data/f5/status/REVIEW_g3_run_2026-11-05.md`; if missing on resume, relaunch with the brief in HANDOFF §3's
+2026-11-05 run entry. NEXT: owner reads; then F6 write-up (negative result + failure taxonomy; `builder` +
+`scribe`), then the product continues on the reading aid and the numeric families (PRODUCT_PLAN P1 null
+branch). Decisions B–F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
 `.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled
 refresh. On "share with friends — yes": add the legal-baseline footer line to shared pages
 (builder), nothing else changes.

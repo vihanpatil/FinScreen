@@ -1719,6 +1719,24 @@ is `data/f5/status/g3_chain_log.jsonl`. Decisions B–F of the packet are NOT ru
 and remain open. The owner reads the per-fold tables and the scorecard personally; no verdict
 is summarised for them first; no scorecard number goes on a public surface.
 
+**2026-11-05 — G3 RUN COMPLETE (status, not a ruling).** `bin/fs g3 --date 2026-11-05 --owner-word ratify`:
+pin_show 1.9 s → pin 1.1 s (`G3_RATIFIED.json`, doc sha `6b99f65e…`, params sha `9ac47981…`) → `backtest_e2.py`
+~9 min → `heads_e2.py --all` 1.8 s; `run_log.jsonl` carries the sha of every output. Head 1 (33 folds,
+2018Q1–2026Q1, 4,481 dedup test rows, 139 CIKs ex-GLD): mean per-fold dedup IC delta +0.0011, block-bootstrap
+SE 0.0149 (NW 0.0149), 90% CI [−0.0234, +0.0256]; ladder selects 0.04 (0.03 unsatisfied), status POWERED,
+honest MDE 0.0416 (KC3 branch), TOST equivalence inside ±0.04 TRUE (p 0.0045). **§13 maps this to the
+BOUNDED-NULL row: "text is not used as a signal; the study is written up and closed (F6 negative result +
+failure taxonomy; pipeline archived as asset)."** Sensitivity arms: rolling-8q +0.0008, rolling-16q −0.0039,
+GLD-included −0.0046, form-controlled ablation +0.0061. Scorecard (§14, descriptive): model 1,552 correct of
+2,992 calls = 0.5187 [0.5008, 0.5366]; numeric-only 0.5099 [0.4919, 0.5278]; size-only 0.4859 [0.4678,
+0.5039]; chance from call counts 0.500; outcome mix 0.4751; 1,489 no-call rows. Head 2: slope −0.165, wild-cluster
+SE 0.088, p two-sided 0.0465, 40 clusters (approximate regime, stated). Head 3: 20 scored folds, 3 censored
+(2026Q1 counted not scored, decision 13), AUCs 0.40–1.00. Owner read file:
+`data/f5/status/G3_RUN_2026-11-05_owner_read.md`. Reviewer pass launched (brief: integrity of pin and shas,
+§13 applied mechanically, §14 fidelity, leakage spot checks on the OOF parquet, heads 2/3) →
+`data/f5/status/REVIEW_g3_run_2026-11-05.md`. Committed: results_head1/2/3.json, run_log, chain log, pin,
+ratified document, pin diff; the per-company scorecard stays git-excluded (legal baseline #4). $0, no API call.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
