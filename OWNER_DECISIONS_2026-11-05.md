@@ -3,7 +3,7 @@
 **Where the project stands (verified today, nothing in flight).** The pipeline is complete
 and green (1,588 root tests pass; the sealed corpus, labels, feature tables and guarded
 runners are on disk; no process is running). The one-command product works:
-`bin/fs report TICKER` turns any US filer's ticker into reading-aid pages in a few minutes
+`bin/fs report TICKER` turns any US filer's ticker into reading-aid pages (proved today on ETSY: 260 passages, 9 min 18 s, four pages, $0)
 on this Mac. The historical scorecard — the thing you called THE VALUE — is built, tested,
 red-teamed three times, and **has never run**, because the runners refuse to fit until you
 type one word. Nothing synthetic is involved: 7,381 real filing rows, 143 companies, 33
