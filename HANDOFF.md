@@ -1782,6 +1782,20 @@ the owner's ruled text and conflicts with the public-copy rules — for the owne
 a bounded null per the ratified §13; the pipeline is archived as an asset; the product continues on the reading
 aid and the numeric families (PRODUCT_PLAN P1 null branch).
 
+**2026-11-05 — GATE G4 GIVEN (owner ruling, verbatim).** In a fresh session the main session put the F6 write-up
+(`data/f5/F6_E2_RESULT.md`, §0–§2 digested in chat with every number from the file) to the owner. The owner typed
+**"accept g4"**. Main-session reading of those two words: the owner accepts the write-up as the close of E2; the
+bounded-null branch of the ratified §13 stands as read; no line of the write-up is disputed. Nothing else is read
+into it (not packet items B–G, not the push stance). Consequences (status, not rulings): the "G4 pending" markers
+in `F6_E2_RESULT.md` line 3, `README.md` (F6 row and "What G2 actually measured"), `LIMITATIONS.md` §4.1 (4) and
+`RESUME_HERE.md` are flipped to "given 2026-11-05"; E2 is closed on the record at every gate (G1–G4). Observed at
+resume, recorded as a fact and not as a ruling: `main` was already equal to `origin/main` (HEAD `4d4ee12`), so the
+push the previous entry left open had been made from this machine between sessions; the server could not be queried
+from the session (SSH key passphrase). Packet item G is therefore moot as a yes/no unless the owner says "strip".
+Open owner items after this entry: packet B (EODHD), C (friends scope), D (confirm low-touch), E1 (xcode licence),
+F (watchlist). Next engineering, no owner word needed: shorter plain-English disclosure block on the report pages
+(builder); numeric-families signal program (PRODUCT_PLAN P3 item 2) with money metrics waiting on B.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters

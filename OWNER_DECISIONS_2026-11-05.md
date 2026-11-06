@@ -1,5 +1,7 @@
 # Owner decisions — 2026-11-05 (one page; reply with the letter and yes/no, or a correction)
 
+**Update, later 2026-11-05:** G4 given ("accept g4"); E2 closed. `main` was found pushed (equal to `origin/main`), so G is moot unless you say "strip". Open: B, C, D, E1, F.
+
 **Update, same day:** A was ruled ("ratify") and run — see `data/f5/status/G3_RUN_2026-11-05_owner_read.md`. B–F remain open. Two wordings in A below were corrected after the reviewer's pass (calls are within-quarter relative, not real-time; the outcome mix is not a base rate).
 
 **Where the project stands (verified today, nothing in flight).** The pipeline is complete

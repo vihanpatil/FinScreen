@@ -41,17 +41,18 @@ owner's read file is `data/f5/status/G3_RUN_2026-11-05_owner_read.md` (per-fold 
 sensitivity arm never built → recorded DEVIATION, run post-hoc-labelled in F6; M2 = tripwires inverted, suite 1,601
 green, `data/f5/status/M2_tripwire_inversion_2026-11-05.md`; the rest → F6 list in HANDOFF §3). **F6 DONE 2026-11-05 (HANDOFF §3 "F6 EXECUTED"). NOTHING IN FLIGHT. The owner closed the session ("once you
 are done, wrap up this session. i will resume in a new session").** E2 is closed as a bounded null; the write-up
-`data/f5/F6_E2_RESULT.md` (reviewer-corrected) awaits **Gate G4 = the owner's final read**. On resume, run `/resume`
-and then put these to the owner, in this order: **G4 read** (the write-up §0–§2 is enough; §3 is the why);
-**packet items B–G** in `OWNER_DECISIONS_2026-11-05.md` (G added: push the research record with the universe-level
-scorecard block to the public repo, or keep main unpushed until the legal Q2 conditions are met). The product work
+`data/f5/F6_E2_RESULT.md` (reviewer-corrected) **passed Gate G4 on 2026-11-05 (owner, verbatim: "accept g4";
+HANDOFF §3). E2 is closed at every gate.** At that resume `main` was found equal to `origin/main` (the owner had
+pushed between sessions; fact, not ruling), so packet item G is moot unless the owner says "strip". Still open for
+the owner, all in `OWNER_DECISIONS_2026-11-05.md`: **B** (EODHD, money), **C** (friends scope), **D** (confirm
+low-touch mode), **E1** (xcode licence), **F** (watchlist tickers). The product work
 that needs no owner word: the reading aid is live (`bin/fs report TICKER`); next engineering under the null branch
 is the numeric-families signal program (PRODUCT_PLAN P3 item 2), which needs decision B (EODHD) before any money
 metric; a shorter plain-English disclosure block on the report pages (non-collapsible stays) is a builder task the
 main session proposed and the owner did not object to.
-NEXT: owner reads; then F6 write-up (negative result + failure taxonomy; `builder` +
-`scribe`), then the product continues on the reading aid and the numeric families (PRODUCT_PLAN P1 null
-branch). Decisions B–F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
+NEXT (no owner word needed): shorter plain-English disclosure block on the report pages (`builder`; the
+non-collapsible block stays), then the numeric-families signal program (PRODUCT_PLAN P3 item 2; money metrics
+wait on decision B). Decisions B, C, D, E1, F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
 `.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled
 refresh. On "share with friends — yes": add the legal-baseline footer line to shared pages
 (builder), nothing else changes.

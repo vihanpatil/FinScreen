@@ -1,6 +1,6 @@
 # F6: the E2 negative result and its failure taxonomy
 
-**Status: F6 write-up, 2026-11-05, main-session document; reviewer pass applied 2026-11-05 (REVIEW_f6); Gate G4 pending.**
+**Status: F6 write-up, 2026-11-05, main-session document; reviewer pass applied 2026-11-05 (REVIEW_f6); Gate G4 given 2026-11-05 (owner, verbatim: "accept g4"; HANDOFF §3). E2 closed.**
 
 This is a private research record. It quotes only universe-level scorecard numbers (the block committed as `results_head1.json` `scorecard_summary`), and no per-company row appears here. Nothing in it is advice, a forecast or a return claim. It is not public copy: the legal copy rules in `site/STORYBOARD.md` ("Legal baseline") govern every public surface, and "call" below is only the pre-registered §14 term for a tercile label. Two standing rules apply to every line. First, model-rater agreement is **model consensus, not human validation of ground truth** (`G3_PREREGISTRATION.md` §11, "Model-rater epistemics"). Second, *"E1 and E2 backtest numbers are numerically incomparable: E2's benchmark is the membership-dated equal-weighted average over that date's members excluding self"* (`results_head1.json` `scope.e1_e2_incomparable`). E1 appears below only as a cause in the taxonomy, never as a number set against E2's.
 

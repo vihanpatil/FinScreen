@@ -556,8 +556,8 @@ contributes +0.2204; without it the mean over the other 32 folds is -0.0058, so
 assume independent calls**, which they are not; the reviewer's quarter-cluster and
 company-cluster bootstraps both include chance (§2). The scorecard's numbers are
 withheld from this public document pending the legal review's conditions (baseline memo
-#4, Q2). (4) **The owner's final read (gate G4) is pending**; nothing here is a
-final owner conclusion. E1 and E2 numbers are not comparable (different benchmark).
+#4, Q2). (4) **The owner's final read (gate G4) was given on 2026-11-05** (HANDOFF §3): the
+write-up stands as the close of E2. Nothing here is a return claim. E1 and E2 numbers are not comparable (different benchmark).
 The E1 text below is unchanged.
 
 **Results exist as of 2026-08-18** and live in `data/backtest_report.md`

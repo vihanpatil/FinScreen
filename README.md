@@ -67,7 +67,7 @@ The phase rows other than F5 and F6 were last written 2026-09-07 and are unchang
 | F4 labeling | The fine-tuned student labeled every chunk: 317,081 chunks across 24 chronological segments, 0 parse failures, 0 finish-reason truncations, 0 API calls, $0 | **Complete.** `data/f4/labels_e2_v1.parquet` (sha256 `f236f421…`), close-out `data/f4/status/F4_campaign.md` |
 | G2 spot-check | Blind model rater plus adjudicator over a pre-registered stratified draw, with the owner personally ruling 39 escalated rows and 20 probe rows | **Ruled 2026-09-07.** `data/f4/g2/G2_FINAL_REPORT.md` |
 | F5 features and backtest | Build E2 features, run the pre-registered walk-forward in three heads | **Run 2026-11-05** under gate G3 (pinned pre-registration sha256 `6b99f65e…`). Head 1: mean per-fold dedup IC delta (text+numeric minus numeric-only) **+0.0011**, 90% CI **[-0.0234, +0.0256]**, 33 folds, **POWERED** at margin 0.04, honest minimum detectable effect 0.0416. Pre-registered outcome: **bounded null, text is not used as a signal** (`data/f5/status/G3_RUN_2026-11-05_owner_read.md` §1; `data/f5/F6_E2_RESULT.md` §0–§1). The pre-registered per-company scorecard (§14) was produced in the same run; its numbers, universe-level and per-company, are withheld from this page until the legal review's conditions for a public track record are met (`data/legal/LEGAL_REVIEW_baseline_2026-09-11.md` #4, Q2); the owner reads it privately. Plan: `F5_PLAN.md` |
-| F6 diagnosis and docs | E2 diagnosis, independent red-team pass, model card and limitations updated for E1 plus E2 | Write-up `data/f5/F6_E2_RESULT.md` drafted 2026-11-05; reviewer pass pending. Gate G4 (the owner's final read) pending |
+| F6 diagnosis and docs | E2 diagnosis, independent red-team pass, model card and limitations updated for E1 plus E2 | **Closed 2026-11-05.** Write-up `data/f5/F6_E2_RESULT.md`; reviewer pass applied (`data/f5/status/REVIEW_f6_2026-11-05.md`); gate G4 (the owner's final read) given 2026-11-05 (HANDOFF §3) |
 
 ### What G2 actually measured
 
@@ -287,7 +287,7 @@ fine-tuned adapter are not distributed and are not under MIT** (legal baseline
   sign-unstable result over six expanding-window folds against a numeric-only
   baseline, and that is how it is reported. The E2 backtest was run on
   2026-11-05 and returned a bounded null (see the F5 row above); the owner's
-  final read (gate G4) is pending. The only performance-related output is a
+  final read (gate G4) was given on 2026-11-05 and E2 is closed. The only performance-related output is a
   pre-registered historical scorecard; it is hypothetical, out-of-fold,
   price-return-only, and shown only with its methodology; its per-company
   pages are not in this repository. Its inference sentence: "Hit rates are
