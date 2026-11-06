@@ -377,7 +377,8 @@ IDENTITY_LINE = (
 )
 FOOTER_LINE = (
     "Not investment advice. No recommendation. No live capital. "
-    "Personal use only. Not for distribution."
+    "Rendered for the author’s personal use; shared only as a demonstration. "
+    "Not for redistribution."
 )
 NO_PRICE_LINE = "No price data is used anywhere in this report."
 
