@@ -57,10 +57,16 @@ hosting; if sharing is ever legally non-trivial the default is personal use. D l
 eight — SpaceX is SPCX in the SEC map — plus 10 non-tech; September proof set excluded). **NO OWNER ITEM IS OPEN.**
 
 **SESSION CLOSED 2026-11-05 ~21:00 CST (owner: "I pushed. Wrap things up. … I will continue in new session").**
-Main pushed and equal to `origin/main` at close (this close-out commit is the only one after it). The watchlist
-chain was alive at close with **9 of 30 done** (AAPL META MSFT GOOGL AMZN SPCX NVDA AMD AVGO; 1–12 min each, SpaceX
-67 s because it has few filings) and ORCL labeling. **The chain will die with this session; the first thing the next
-session does after `/resume` is relaunch it** (row 1 below): it skips the done tickers and continues.
+Main pushed and equal to `origin/main` at close. **Chain status at 03:11Z: 12 of 30 done** (AAPL META MSFT GOOGL
+AMZN SPCX NVDA AMD AVGO ORCL CRM ADBE; 1–12 min each, SpaceX 67 s because it has few filings). **The other 18 were
+REFUSED in one second each (exit 2) by a FALSE POSITIVE**: `finscreen.alive()` runs `pgrep -fl "label_filing|label_e2"`,
+which matched another Claude session's `/bin/bash -c … pgrep -fl "label_filing|…" … pytest …` wrapper (pid 13685,
+a different shell snapshot — the owner's new session starting up), not a labeler. No labeler was running. The chain
+then ended normally. **First thing the next session does after `/resume`: relaunch `bash data/app/run_watchlist.sh`
+in the background** — DONE.tsv keeps the exit-2 lines, so those 18 are retried and the 12 are skipped. **Builder fix
+(small, with a test):** `alive()` / `BUSY` in `finscreen.py` and the guard in `run_watchlist.sh` must match the
+labeler *process* (e.g. `python[^ ]* .*(label_filing|label_e2)\.py`), not any command line containing the word;
+until fixed, a refusal can be a false positive whenever another shell's command text contains "label_filing".
 
 **NEXT WORK, in order (none needs an owner word unless marked):**
 1. Relaunch `bash data/app/run_watchlist.sh` in the background; when `WATCHLIST_DONE.tsv` has 30 exit-0 lines,
