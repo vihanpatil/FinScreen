@@ -50,6 +50,20 @@ that needs no owner word: the reading aid is live (`bin/fs report TICKER`); next
 is the numeric-families signal program (PRODUCT_PLAN P3 item 2), which needs decision B (EODHD) before any money
 metric; a shorter plain-English disclosure block on the report pages (non-collapsible stays) is a builder task the
 main session proposed and the owner did not object to.
+**PACKET B–F RULED 2026-11-05 (HANDOFF §3 "PACKET ITEMS B–F RULED", owner's words verbatim there).** B no EODHD
+(no spend; prices stay the 2026-08-24 snapshot). C share reading-aid pages privately as a demonstration only; no
+hosting; if sharing is ever legally non-trivial the default is personal use. D low-touch confirmed. E1 done
+(`/usr/bin/python3` works again). F a 30-company watchlist (`data/app/watchlist.txt`: 20 tech incl. the owner's
+eight — SpaceX is SPCX in the SEC map — plus 10 non-tech; September proof set excluded). **NO OWNER ITEM IS OPEN.**
+
+**IN FLIGHT (2026-11-05 evening):**
+| what | how it runs | expected output | resume |
+|---|---|---|---|
+| Watchlist build, 30 tickers | `bash data/app/run_watchlist.sh` as a main-session background command (one labeler at a time; skips tickers marked done) | `data/app/status/WATCHLIST_DONE.tsv` with 30 exit-0 lines; pages under `data/app/reports/<cik>/`; log `data/app/status/WATCHLIST_BUILD.log` | if `pgrep -fl "label_filing\|ingest_one"` is empty and DONE.tsv has < 30 exit-0 lines, re-run the same command in the background |
+| Footer line for demonstration sharing (ruling C) | `builder` agent, `report_filing.py` `FOOTER_LINE` + tests | report `data/app/status/FOOTER_demo_2026-11-05.md`; root suite green | re-launch the builder with the same brief if the report is missing |
+| After both: re-render every watchlist page with the new footer | `bin/fs report T --skip-label` per ticker (seconds each) | all 30 index pages carry the new footer | — |
+| After the build: post-earnings refresh schedule (ruling F) | main session decides the mechanism (launchd/cron) and logs it | entry in HANDOFF §3 | — |
+
 NEXT (no owner word needed): shorter plain-English disclosure block on the report pages (`builder`; the
 non-collapsible block stays), then the numeric-families signal program (PRODUCT_PLAN P3 item 2; money metrics
 wait on decision B). Decisions B, C, D, E1, F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow

@@ -1,6 +1,7 @@
 # Owner decisions — 2026-11-05 (one page; reply with the letter and yes/no, or a correction)
 
-**Update, later 2026-11-05:** G4 given ("accept g4"); E2 closed. `main` was found pushed (equal to `origin/main`), so G is moot unless you say "strip". Open: B, C, D, E1, F.
+**Update, later 2026-11-05:** G4 given ("accept g4"); E2 closed. `main` was found pushed (equal to `origin/main`), so G is moot unless you say "strip".
+**Update, evening 2026-11-05: B–F RULED** (owner's words verbatim in HANDOFF §3 "PACKET ITEMS B–F RULED"): B no; C demonstration sharing only, no hosting; D yes; E1 done; F 30-company watchlist (`data/app/watchlist.txt`). **This packet is closed; no owner item is open.**
 
 **Update, same day:** A was ruled ("ratify") and run — see `data/f5/status/G3_RUN_2026-11-05_owner_read.md`. B–F remain open. Two wordings in A below were corrected after the reviewer's pass (calls are within-quarter relative, not real-time; the outcome mix is not a base rate).
 

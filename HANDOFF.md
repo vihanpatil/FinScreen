@@ -1796,6 +1796,33 @@ Open owner items after this entry: packet B (EODHD), C (friends scope), D (confi
 F (watchlist). Next engineering, no owner word needed: shorter plain-English disclosure block on the report pages
 (builder); numeric-families signal program (PRODUCT_PLAN P3 item 2) with money metrics waiting on B.
 
+**2026-11-05 — PACKET ITEMS B–F RULED (owner rulings, verbatim).** After the G4 entry the main session re-presented
+`OWNER_DECISIONS_2026-11-05.md` B–F in chat with recommendations. The owner replied, verbatim:
+> B. No
+> C. If sharing is problematic, keep it personal for me. Yes to only sharing for demonstration, no hosting.
+> D. Yes
+> E1. Done
+> F. I want Apple, Meta, Microsoft, Google, Amazon, SpaceX, Nvidia, AMD, and, including the ones I listed, give me
+> top 20 tech stocks, along with top 10 non-tech stocks as well. I want 30 total. Do not use the ten random
+> un-curated companies from Sept.
+
+Main-session readings (interpretations, marked as such): **B** — no EODHD subscription; no new spend; every price
+number stays the ratified 2026-08-24 snapshot; the numeric-families program may build features but reports no money
+metric until the owner reverses this. **C** — reading-aid pages may be shared privately as a demonstration only
+(legal tier b2); no hosted box (b3) and nothing from tiers b4–b6; the owner's first sentence is read as a standing
+instruction: if any sharing question turns out to be legally non-trivial, the default is personal use only, not a
+new owner question. Action: builder adds the legal-baseline footer line ("rendered for the author's personal use;
+shared as a demonstration") to every report page. **D** — low-touch policy in `CLAUDE.md` confirmed as written.
+**E1** — xcode licence accepted by the owner; verified by the main session (`/usr/bin/python3 --version`). **F** —
+a 30-company watchlist: 20 technology companies including the eight named, plus 10 non-technology companies; the
+September proof-set tickers are excluded. The composition beyond the eight named is a main-session decision (basis:
+largest US domestic SEC filers by market capitalisation as commonly ranked in 2026, not a price-data query; sector =
+GICS-style, with Tesla placed in the non-tech ten). SpaceX is resolved against EDGAR's ticker list before inclusion;
+if it has no SEC periodic filings it cannot be ingested and the next technology name takes its slot, stated to the
+owner. The list is `data/app/watchlist.txt`; the build runs as a resumable background chain, one labeler process at
+a time (rule 6), skipping companies whose report exists; the post-earnings refresh schedule is set up after the first
+build completes.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters

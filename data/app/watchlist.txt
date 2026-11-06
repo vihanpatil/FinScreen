@@ -1,0 +1,37 @@
+# FinScreen owner watchlist — ruled 2026-11-05 (HANDOFF §3 "PACKET ITEMS B–F RULED", item F).
+# Owner named: Apple, Meta, Microsoft, Google, Amazon, SpaceX, Nvidia, AMD. The other 22 are a
+# main-session decision: largest US domestic SEC filers by market capitalisation as commonly
+# ranked in 2026 (not a price-data query); Tesla placed in the non-tech ten (GICS-style).
+# The September proof-set tickers are excluded by the owner's word. One ticker per line.
+# --- technology (20) ---
+AAPL
+META
+MSFT
+GOOGL
+AMZN
+SPCX
+NVDA
+AMD
+AVGO
+ORCL
+CRM
+ADBE
+NFLX
+CSCO
+QCOM
+TXN
+IBM
+PLTR
+AMAT
+MU
+# --- non-technology (10) ---
+TSLA
+JPM
+LLY
+V
+XOM
+WMT
+MA
+JNJ
+PG
+COST
