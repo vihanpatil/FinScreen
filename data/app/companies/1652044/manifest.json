@@ -1,0 +1,637 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1652044,
+  "ticker": "GOOGL",
+  "company_name": "Alphabet Inc.",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001652044-26-000084",
+      "form": "10-Q",
+      "filing_date": "2026-10-29",
+      "items": null,
+      "primary_document": "goog-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001652044-26-000080",
+      "form": "8-K",
+      "filing_date": "2026-10-28",
+      "items": "2.02,9.01",
+      "primary_document": "goog-20261028.htm",
+      "earnings_doc_filename": "googexhibit991q32026.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001652044-26-000071",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "items": null,
+      "primary_document": "goog-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001652044-26-000066",
+      "form": "8-K",
+      "filing_date": "2026-07-22",
+      "items": "2.02,9.01",
+      "primary_document": "goog-20260722.htm",
+      "earnings_doc_filename": "googexhibit991q22026.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001652044-26-000018",
+      "form": "10-K",
+      "filing_date": "2026-02-05",
+      "items": null,
+      "primary_document": "goog-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001652044-25-000014",
+      "form": "10-K",
+      "filing_date": "2025-02-05",
+      "items": null,
+      "primary_document": "goog-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 53,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044/sections.parquet",
+    "sha256": "7e33a74f2f33d4b16243aaede70ad93f70ffb6eb78936707762cfa1ba5d74b68",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000084",
+      "form": "10-Q",
+      "filing_date": "2026-10-29",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8200,
+      "prose_word_share": 0.6361,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55594,
+      "source_document": "goog-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000084",
+      "form": "10-Q",
+      "filing_date": "2026-10-29",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4756,
+      "prose_word_share": 0.9603,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.45524,
+      "source_document": "goog-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000080",
+      "form": "8-K",
+      "filing_date": "2026-10-28",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3745,
+      "prose_word_share": 0.3466,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50221,
+      "source_document": "googexhibit991q32026.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000071",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8020,
+      "prose_word_share": 0.6446,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.549,
+      "source_document": "goog-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000071",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 2530,
+      "prose_word_share": 0.9439,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48241,
+      "source_document": "goog-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000066",
+      "form": "8-K",
+      "filing_date": "2026-07-22",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3822,
+      "prose_word_share": 0.3864,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49633,
+      "source_document": "googexhibit991q22026.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000018",
+      "form": "10-K",
+      "filing_date": "2026-02-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7956,
+      "prose_word_share": 0.5739,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50657,
+      "source_document": "goog-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-26-000018",
+      "form": "10-K",
+      "filing_date": "2026-02-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 12662,
+      "prose_word_share": 0.898,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47417,
+      "source_document": "goog-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-25-000014",
+      "form": "10-K",
+      "filing_date": "2025-02-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8876,
+      "prose_word_share": 0.5935,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5104,
+      "source_document": "goog-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1652044,
+      "company_name": "Alphabet Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001652044-25-000014",
+      "form": "10-K",
+      "filing_date": "2025-02-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 12422,
+      "prose_word_share": 0.893,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47705,
+      "source_document": "goog-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044/chunks.parquet",
+    "sha256": "6a8a2184f9e5420915b9b2c87df90924c5b806ea9634a04c181aba6750cd9b1b",
+    "n_chunks": 156,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044/metadata.db",
+    "sha256": "9c7ec10faa121bda72fe6d7103c3bdbabd815951829fde3173e52a7d32f81eca",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.22,
+    "documents_s": 0.3,
+    "extract_s": 1.59,
+    "chunk_s": 0.04,
+    "total_s": 2.18
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001652044.json",
+      "sha256": "f87bc183f74b45ecf9a0933e0e0a1b6b97ead51a9d29367a7dae436574e1c1d0"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2012-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044/fundamentals.parquet",
+      "sha256": "06423babd5fa85dbfa4b7cb7a58508acedd410753527a032cf27c9e1b5dcf294",
+      "n_rows": 1652,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044/concept_resolution.csv",
+      "sha256": "5656121e4e910c663f52a66580f27b55e5a8e3625e48e5d31d73b75ed86b8f8c",
+      "n_rows": 14,
+      "n_resolved": 11,
+      "n_unresolved": 3,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8214,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:92",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 46/56 (82%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9107,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:123",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 51/56 (91%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 36/56 (64%, last 2026Q3), Cash 11/56 (20%, last 2025Q1)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.8393,
+        "n_target_quarters": 56,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:62|FY:28|9M:21|H1:20",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 47/56 (84%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8571,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:196",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 48/56 (86%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.7857,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:86",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 44/56 (79%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8214,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:92",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 46/56 (82%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 56,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 56 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8929,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:69|FY:36|9M:24|H1:22",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 50/56 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.4464,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:22|FY:18|9M:10|H1:8",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 25/56 (45%, last 2026Q3)",
+        "reason": "net_income_to_common: PARTIAL over 56 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 25/56 (45%, last 2026Q3); union 45%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.8929,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:36|9M:24|H1:22|Q:22",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 50/56 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8929,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:68|FY:36|9M:24|H1:22",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 50/56 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8929,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:68|FY:42|9M:24|H1:22",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 29/56 (52%, last 2021Q2) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 28/56 (50%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.8929,
+        "n_target_quarters": 56,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:80|FY:36|9M:26|H1:26",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 38/56 (68%, last 2026Q3), RevenueFromContractWithCustomerExcludingAssessedTax 34/56 (61%, last 2025Q1) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 56,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "shares_outstanding: ABSENT over 56 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.04
+    }
+  }
+}

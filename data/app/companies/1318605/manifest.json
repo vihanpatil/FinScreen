@@ -1,0 +1,652 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1318605,
+  "ticker": "TSLA",
+  "company_name": "Tesla, Inc.",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001628280-26-066775",
+      "form": "10-Q",
+      "filing_date": "2026-10-22",
+      "items": null,
+      "primary_document": "tsla-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-066738",
+      "form": "8-K",
+      "filing_date": "2026-10-21",
+      "items": "2.02,9.01",
+      "primary_document": "tsla-20261021.htm",
+      "earnings_doc_filename": "exhibit9914.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-064366",
+      "form": "8-K",
+      "filing_date": "2026-10-02",
+      "items": "2.02,9.01",
+      "primary_document": "tsla-20261002.htm",
+      "earnings_doc_filename": "exhibit991111111.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-049270",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "items": null,
+      "primary_document": "tsla-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-003952",
+      "form": "10-K",
+      "filing_date": "2026-01-29",
+      "items": null,
+      "primary_document": "tsla-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-25-003063",
+      "form": "10-K",
+      "filing_date": "2025-01-30",
+      "items": null,
+      "primary_document": "tsla-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 45,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605/sections.parquet",
+    "sha256": "27163d4648b40d950120181b661ae31943de11b82965e6675fc596f043a5e16c",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 6,
+    "FLAGGED": 4
+  },
+  "extraction_audit": [
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-066775",
+      "form": "10-Q",
+      "filing_date": "2026-10-22",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "head_foreign_item",
+        "head_keyword_absent"
+      ],
+      "extraction_method": "anchor",
+      "extraction_confidence": "medium",
+      "word_count": 1160,
+      "prose_word_share": 0.5034,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4266,
+      "source_document": "tsla-20260930.htm",
+      "reason_code": "head_foreign_item",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-066775",
+      "form": "10-Q",
+      "filing_date": "2026-10-22",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 52,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "tsla-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-066738",
+      "form": "8-K",
+      "filing_date": "2026-10-21",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "earnings_population_gate"
+      ],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "medium",
+      "word_count": 6517,
+      "prose_word_share": 0.9549,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.41397,
+      "source_document": "exhibit9914.htm",
+      "reason_code": "earnings_population_gate",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-064366",
+      "form": "8-K",
+      "filing_date": "2026-10-02",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "earnings_population_gate"
+      ],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "medium",
+      "word_count": 315,
+      "prose_word_share": 0.5492,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.43542,
+      "source_document": "exhibit991111111.htm",
+      "reason_code": "earnings_population_gate",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-049270",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "below_length_floor",
+        "head_foreign_item",
+        "head_keyword_absent"
+      ],
+      "extraction_method": "anchor",
+      "extraction_confidence": "medium",
+      "word_count": 944,
+      "prose_word_share": 0.4894,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.44765,
+      "source_document": "tsla-20260630.htm",
+      "reason_code": "head_foreign_item",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-049270",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 52,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "tsla-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-003952",
+      "form": "10-K",
+      "filing_date": "2026-01-29",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8443,
+      "prose_word_share": 0.8425,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49974,
+      "source_document": "tsla-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-003952",
+      "form": "10-K",
+      "filing_date": "2026-01-29",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 12655,
+      "prose_word_share": 0.9102,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49133,
+      "source_document": "tsla-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-25-003063",
+      "form": "10-K",
+      "filing_date": "2025-01-30",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7478,
+      "prose_word_share": 0.8153,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51446,
+      "source_document": "tsla-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1318605,
+      "company_name": "Tesla, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-25-003063",
+      "form": "10-K",
+      "filing_date": "2025-01-30",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 12126,
+      "prose_word_share": 0.9057,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49432,
+      "source_document": "tsla-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605/chunks.parquet",
+    "sha256": "2865321397e89d2be2c3c1e3a33bfecee665a8585a7e371a21406360a4a9c60f",
+    "n_chunks": 104,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605/metadata.db",
+    "sha256": "45bae54f56e78a7c441bb4ec5343713285c324bff33731a1371243b2bf2089d9",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 6,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.43,
+    "documents_s": 0.48,
+    "extract_s": 1.14,
+    "chunk_s": 0.03,
+    "total_s": 2.11
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001318605.json",
+      "sha256": "c951e0ae2402dd8cf8f39319928adccc4196b997941fe40b0d4d6b8060802db1"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2008-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605/fundamentals.parquet",
+      "sha256": "4d76a9d9929db172c4d677be59cb510baf1e293f87bde4cfa31e53307085ba87",
+      "n_rows": 2804,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605/concept_resolution.csv",
+      "sha256": "60598e41cee852c0384a6939cecb029f7fd51cf25a4f87a3e2fc03f08844d89d",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.875,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:126",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 63/72 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9444,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:246",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 68/72 (94%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 38/72 (53%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 8/72 (11%, last 2018Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareBasicAndDiluted",
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.7917,
+        "n_target_quarters": 72,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:83|FY:36|9M:26|H1:26",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 46/72 (64%, last 2026Q3), EarningsPerShareBasicAndDiluted 17/72 (24%, last 2017Q2) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9028,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 65/72 (90%, last 2026Q3), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 39/72 (54%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.875,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:126",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 63/72 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.875,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:126",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 63/72 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.5556,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:79",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 40/72 (56%, last 2026Q3)",
+        "reason": "minority_interest: PARTIAL over 72 reportable quarters -- MinorityInterest 40/72 (56%, last 2026Q3); union 56%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9444,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:177|FY:48|9M:32|H1:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 68/72 (94%, last 2026Q3), ProfitLoss 45/72 (62%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.5972,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:48|FY:24|9M:18|H1:14",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 43/72 (60%, last 2026Q3)",
+        "reason": "net_income_to_common: PARTIAL over 72 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 43/72 (60%, last 2026Q3); union 60%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9306,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:36|9M:24|H1:24|Q:22",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 56/72 (78%, last 2026Q3), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 21/72 (29%, last 2018Q1)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9306,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:94|FY:48|9M:32|H1:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 67/72 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9306,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:94|FY:48|9M:32|H1:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 67/72 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.9444,
+        "n_target_quarters": 72,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:174|FY:48|9M:32|H1:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 68/72 (94%, last 2026Q3), RevenueFromContractWithCustomerExcludingAssessedTax 22/72 (31%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8472,
+        "n_target_quarters": 72,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:68",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 61/72 (85%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

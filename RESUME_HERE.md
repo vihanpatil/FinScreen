@@ -56,11 +56,15 @@ hosting; if sharing is ever legally non-trivial the default is personal use. D l
 (`/usr/bin/python3` works again). F a 30-company watchlist (`data/app/watchlist.txt`: 20 tech incl. the owner's
 eight — SpaceX is SPCX in the SEC map — plus 10 non-tech; September proof set excluded). **NO OWNER ITEM IS OPEN.**
 
-**SESSION 2026-11-05/06 (third of the day; the owner typed only "resume").** State at the last update of this
-block (~03:45Z 2026-11-06): **the watchlist chain is RUNNING, relaunched by this session at 03:21Z** after the
-previous chain refused 18 tickers on a false-positive labeler-alive match (HANDOFF §3 "WATCHLIST CHAIN INCIDENT…",
-§4 lesson row). Progress is `data/app/status/WATCHLIST_DONE.tsv` (exit-0 rows = done; 14 of 30 at 03:38Z; 5–12 min
-per ticker). **Committed this session (one commit, after a reviewer pass with 24 findings, all MUST/SHOULD fixed):**
+**SESSION 2026-11-05/06 (third of the day; the owner typed only "resume").** **WATCHLIST BUILD COMPLETE 2026-11-06
+05:43Z: 30 of 30 exit 0** (`data/app/status/WATCHLIST_DONE.tsv`; the 18 exit-2 rows are the 03:11Z false-positive
+refusals, all retried green; log `WATCHLIST_BUILD.log`). All 30 page sets re-rendered 05:5xZ with the labeler idle
+(`RERENDER_2026-11-06.log`, 5–7 s each, 0 failures): every index page carries the plain-English lead, the E2
+bounded-null line and the ruling-C footer (counted 30/30/30); `bin/fs index` rebuilt. Stores (the four versioned
+files per CIK) and the two status files committed. **Known leftover, not a bug:** pages for filings that fell out of
+the current `--per-form 2` window (2 AAPL accessions) and the 12 September proof-set companies still show the old
+"E2: not run" line on disk under `data/app/reports/` (git-ignored, unlinked from the current indexes); they refresh
+only if those filings are re-ingested. **NOTHING IN FLIGHT.** **Committed this session (one commit, after a reviewer pass with 24 findings, all MUST/SHOULD fixed):**
 (1) labeler-alive guard matches only a real interpreter invocation (`finscreen.py` `_SCRIPT_RE`, `run_watchlist.sh`;
 CLAUDE.md rule 6 and `/resume` updated); (2) ruling-F refresh: `run_watchlist.sh --refresh` (archives the ledger,
 passes `--refresh` to `bin/fs report`, which now re-ingests), a `mkdir` lock so chains never overlap, and the launchd
@@ -73,20 +77,14 @@ MDE and seed caveat, constants pinned to `F6_E2_RESULT.md` sha `06b86611…`. Ti
 suite 1,869 green before the fix pass; 233 in the four touched files after it.
 
 **NEXT WORK, in order (none needs an owner word):**
-1. When `WATCHLIST_DONE.tsv` has 30 exit-0 rows: re-render every page (`bin/fs report T --skip-label` per ticker,
-   seconds each — the pages built before this commit lack the new lead and E2 line), `bin/fs index`, then commit the
-   versioned store files (manifest.json, label_manifest.json, generation.json, concept_resolution.csv per CIK) and the
-   two status files. Spot-read two pages (one train-overlap, one outside-universe) for lead/list consistency.
+1. ~~Post-build re-render, index, store commit~~ DONE 2026-11-06 (see above).
 2. Numeric-families signal program (PRODUCT_PLAN P3 item 2): census and pre-registration draft first; **the
    pre-registration needs the owner's "ratify" before any fit**; no money metric (ruling B); prices = 2026-08-24.
 3. Carry-overs: heads 2/3 JSONs without escorts (re-render only on a new ruling); MODEL_CARD §7 gated TODO; **owner
    question for the next packet (touchpoint b): README §1 charter wording ("makes calls", "advice") vs public-copy
    rules.** Also offer, same packet: install the launchd refresh agent (yes/no).
 
-**IN FLIGHT:**
-| what | how it runs | expected output | resume |
-|---|---|---|---|
-| Watchlist build, 30 tickers | `bash data/app/run_watchlist.sh` as a main-session background command (pid 22969, old script inode — holds no lock) | `WATCHLIST_DONE.tsv` with 30 exit-0 rows; pages under `data/app/reports/<cik>/`; log `WATCHLIST_BUILD.log` | if `bin/fs doctor` shows no labeler alive and DONE.tsv has < 30 exit-0 rows, re-run the same command in the background (the new script takes the lock) |
+**IN FLIGHT:** nothing (chain complete; no agent running).
 
 Standing rules: NEVER re-pin; never re-run a head on a model reading. On a watchlist change: edit
 `data/app/watchlist.txt`, then `bash data/app/run_watchlist.sh` (background). Pages carry the legal-baseline

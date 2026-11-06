@@ -1,0 +1,633 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1018724,
+  "ticker": "AMZN",
+  "company_name": "AMAZON COM INC",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001018724-26-000040",
+      "form": "10-Q",
+      "filing_date": "2026-10-30",
+      "items": null,
+      "primary_document": "amzn-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001018724-26-000038",
+      "form": "8-K",
+      "filing_date": "2026-10-29",
+      "items": "2.02,9.01",
+      "primary_document": "amzn-20261029.htm",
+      "earnings_doc_filename": "amzn-20260930xex991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001018724-26-000026",
+      "form": "10-Q",
+      "filing_date": "2026-07-31",
+      "items": null,
+      "primary_document": "amzn-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001018724-26-000024",
+      "form": "8-K",
+      "filing_date": "2026-07-30",
+      "items": "2.02,9.01",
+      "primary_document": "amzn-20260730.htm",
+      "earnings_doc_filename": "amzn-20260630xex991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001018724-26-000004",
+      "form": "10-K",
+      "filing_date": "2026-02-06",
+      "items": null,
+      "primary_document": "amzn-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001018724-25-000004",
+      "form": "10-K",
+      "filing_date": "2025-02-07",
+      "items": null,
+      "primary_document": "amzn-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 43,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724/sections.parquet",
+    "sha256": "80b840b716a2bf718622532a66af516de71c0e82ac64f61865be77689dafe125",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000040",
+      "form": "10-Q",
+      "filing_date": "2026-10-30",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6366,
+      "prose_word_share": 0.8256,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.53996,
+      "source_document": "amzn-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000040",
+      "form": "10-Q",
+      "filing_date": "2026-10-30",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8870,
+      "prose_word_share": 0.8138,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47441,
+      "source_document": "amzn-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000038",
+      "form": "8-K",
+      "filing_date": "2026-10-29",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 6036,
+      "prose_word_share": 0.31,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42141,
+      "source_document": "amzn-20260930xex991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000026",
+      "form": "10-Q",
+      "filing_date": "2026-07-31",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6352,
+      "prose_word_share": 0.8147,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.53835,
+      "source_document": "amzn-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000026",
+      "form": "10-Q",
+      "filing_date": "2026-07-31",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8926,
+      "prose_word_share": 0.8187,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47496,
+      "source_document": "amzn-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000024",
+      "form": "8-K",
+      "filing_date": "2026-07-30",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 6130,
+      "prose_word_share": 0.3909,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42837,
+      "source_document": "amzn-20260630xex991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000004",
+      "form": "10-K",
+      "filing_date": "2026-02-06",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6883,
+      "prose_word_share": 0.828,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50008,
+      "source_document": "amzn-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-26-000004",
+      "form": "10-K",
+      "filing_date": "2026-02-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8875,
+      "prose_word_share": 0.8293,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47499,
+      "source_document": "amzn-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-25-000004",
+      "form": "10-K",
+      "filing_date": "2025-02-07",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7218,
+      "prose_word_share": 0.7991,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49643,
+      "source_document": "amzn-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1018724,
+      "company_name": "AMAZON COM INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001018724-25-000004",
+      "form": "10-K",
+      "filing_date": "2025-02-07",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8701,
+      "prose_word_share": 0.8245,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47572,
+      "source_document": "amzn-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724/chunks.parquet",
+    "sha256": "0c7998df5138804a5d4762d5ccbe12ffda0d1b8ec71d6fa37c8876bd32f22cdf",
+    "n_chunks": 123,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724/metadata.db",
+    "sha256": "45ff94523acfeb65ffd2802968095548f7301efd16211d7d32790bd59dc278e1",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.16,
+    "documents_s": 0.23,
+    "extract_s": 1.26,
+    "chunk_s": 0.04,
+    "total_s": 1.7
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001018724.json",
+      "sha256": "acddb7c0a6973a1fd08372de3b292298a34eae7f42a7eedc4bdebd3ac659c8fd"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2006-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724/fundamentals.parquet",
+      "sha256": "e700193f0563c92fb24643c0cf5d594ef6f9c6af5da3976103b525163d7be065",
+      "n_rows": 2918,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724/concept_resolution.csv",
+      "sha256": "df826f635bb7c3a78c1cb3daf4f9bb3e0c30fe80f9a08d29f5158704a8d06a85",
+      "n_rows": 14,
+      "n_resolved": 10,
+      "n_unresolved": 4,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:151",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:272",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 79/80 (99%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 44/80 (55%, last 2026Q3), Cash 4/80 (5%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:194|FY:51|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9125,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:254",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 73/80 (91%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "liabilities: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:194|FY:157|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:157|Q:106|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:170|FY:51|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:194|FY:51|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:74|FY:24|9M:18|H1:16",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 40/80 (50%, last 2026Q3)",
+        "reason": "revenue: PARTIAL over 80 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 40/80 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8625,
+        "n_target_quarters": 80,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:70",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/80 (86%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.04,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

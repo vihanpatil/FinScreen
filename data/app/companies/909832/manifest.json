@@ -1,0 +1,641 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 909832,
+  "ticker": "COST",
+  "company_name": "COSTCO WHOLESALE CORP /NEW",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000909832-26-000093",
+      "form": "10-K",
+      "filing_date": "2026-10-07",
+      "items": null,
+      "primary_document": "cost-20260830.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000909832-26-000084",
+      "form": "8-K",
+      "filing_date": "2026-09-24",
+      "items": "2.02,9.01",
+      "primary_document": "cost-20260924.htm",
+      "earnings_doc_filename": "costex9918-k92426.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000909832-26-000051",
+      "form": "10-Q",
+      "filing_date": "2026-06-03",
+      "items": null,
+      "primary_document": "cost-20260510.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000909832-26-000046",
+      "form": "8-K",
+      "filing_date": "2026-05-28",
+      "items": "2.02,9.01",
+      "primary_document": "cost-20260528.htm",
+      "earnings_doc_filename": "costex9918-k52826.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000909832-26-000029",
+      "form": "10-Q",
+      "filing_date": "2026-03-11",
+      "items": null,
+      "primary_document": "cost-20260215.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000909832-25-000101",
+      "form": "10-K",
+      "filing_date": "2025-10-08",
+      "items": null,
+      "primary_document": "cost-20250831.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 45,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832/sections.parquet",
+    "sha256": "cc27b07a02627494928336b5f1707e92bef0808594e34d49491da1ae4ea21597",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000093",
+      "form": "10-K",
+      "filing_date": "2026-10-07",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4419,
+      "prose_word_share": 0.7309,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48139,
+      "source_document": "cost-20260830.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000093",
+      "form": "10-K",
+      "filing_date": "2026-10-07",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6450,
+      "prose_word_share": 0.8986,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46049,
+      "source_document": "cost-20260830.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000084",
+      "form": "8-K",
+      "filing_date": "2026-09-24",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 1261,
+      "prose_word_share": 0.3672,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.453,
+      "source_document": "costex9918-k92426.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000051",
+      "form": "10-Q",
+      "filing_date": "2026-06-03",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5366,
+      "prose_word_share": 0.7639,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48491,
+      "source_document": "cost-20260510.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000051",
+      "form": "10-Q",
+      "filing_date": "2026-06-03",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 68,
+      "prose_word_share": 0.9412,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.58333,
+      "source_document": "cost-20260510.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000046",
+      "form": "8-K",
+      "filing_date": "2026-05-28",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 1224,
+      "prose_word_share": 0.3505,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46154,
+      "source_document": "costex9918-k52826.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000029",
+      "form": "10-Q",
+      "filing_date": "2026-03-11",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5139,
+      "prose_word_share": 0.7616,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47899,
+      "source_document": "cost-20260215.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-26-000029",
+      "form": "10-Q",
+      "filing_date": "2026-03-11",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 68,
+      "prose_word_share": 0.9412,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.58333,
+      "source_document": "cost-20260215.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-25-000101",
+      "form": "10-K",
+      "filing_date": "2025-10-08",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4192,
+      "prose_word_share": 0.7199,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48575,
+      "source_document": "cost-20250831.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 909832,
+      "company_name": "COSTCO WHOLESALE CORP /NEW",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000909832-25-000101",
+      "form": "10-K",
+      "filing_date": "2025-10-08",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6187,
+      "prose_word_share": 0.8489,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46776,
+      "source_document": "cost-20250831.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832/chunks.parquet",
+    "sha256": "0ce81ecdf2332e37ca8bd6129f92d11ae97e086eedf9abbf0b24f245ea604842",
+    "n_chunks": 72,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832/metadata.db",
+    "sha256": "f1c7291fbf8e06952399bbb71b4383db3e07cdae1aae922504b82c57f93b8bc0",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 9,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.41,
+    "documents_s": 0.65,
+    "extract_s": 0.75,
+    "chunk_s": 0.03,
+    "total_s": 1.86
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000909832.json",
+      "sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2007-09-02",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832/fundamentals.parquet",
+      "sha256": "baabf009ac2568a867e67a2619c5df3b556bbd4b1202479b00d12f6b002e7b57",
+      "n_rows": 3486,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832/concept_resolution.csv",
+      "sha256": "748a5c70670e24810924fd0b2f2b95dd3bb717f86be15b9fa908ff813ed5fb8c",
+      "n_rows": 14,
+      "n_resolved": 11,
+      "n_unresolved": 3,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.9091,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:183",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 70/77 (91%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.961,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:236",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 74/77 (96%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 24/77 (31%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9481,
+        "n_target_quarters": 77,
+        "unit": "USD/shares",
+        "units_mixed": true,
+        "duration_mix": "Q:186|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 73/77 (95%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "DOMINANT",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [
+          "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"
+        ],
+        "coverage": 0.9221,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:158",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 69/77 (90%, last 2026Q3), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 64/77 (83%, last 2025Q3) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8961,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:136",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 69/77 (90%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8961,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:136",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 69/77 (90%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.7403,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:112",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 57/77 (74%, last 2023Q3)",
+        "reason": "minority_interest: PARTIAL over 77 reportable quarters -- MinorityInterest 57/77 (74%, last 2023Q3); union 74%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "net_income",
+        "state": "DOMINANT",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [
+          "ProfitLoss"
+        ],
+        "coverage": 0.9481,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:186|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 73/77 (95%, last 2026Q3), ProfitLoss 66/77 (86%, last 2025Q3) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 77,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 77 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9481,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:39|9M:26|H1:26|Q:26",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 62/77 (81%, last 2026Q3), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 21/77 (27%, last 2019Q2)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9481,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:186|FY:96|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 73/77 (95%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8182,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:154|FY:48|H1:30|9M:26",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 63/77 (82%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.9481,
+        "n_target_quarters": 77,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:161|FY:93|H1:37|9M:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 71/77 (92%, last 2026Q1), RevenueFromContractWithCustomerExcludingAssessedTax 41/77 (53%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.7403,
+        "n_target_quarters": 77,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:68",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 57/77 (74%, last 2026Q3)",
+        "reason": "shares_outstanding: PARTIAL over 77 reportable quarters -- EntityCommonStockSharesOutstanding 57/77 (74%, last 2026Q3); union 74%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

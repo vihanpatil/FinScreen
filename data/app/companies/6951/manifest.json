@@ -1,0 +1,637 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 6951,
+  "ticker": "AMAT",
+  "company_name": "APPLIED MATERIALS INC /DE",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001628280-26-058235",
+      "form": "10-Q",
+      "filing_date": "2026-08-20",
+      "items": null,
+      "primary_document": "amat-20260726.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-056699",
+      "form": "8-K",
+      "filing_date": "2026-08-13",
+      "items": "2.02,9.01",
+      "primary_document": "amat-20260813.htm",
+      "earnings_doc_filename": "exhibit991q32026earningsre.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-037227",
+      "form": "10-Q",
+      "filing_date": "2026-05-21",
+      "items": null,
+      "primary_document": "amat-20260426.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-035071",
+      "form": "8-K",
+      "filing_date": "2026-05-14",
+      "items": "2.02,9.01",
+      "primary_document": "amat-20260514.htm",
+      "earnings_doc_filename": "exhibit991q22026earningsre.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-25-056742",
+      "form": "10-K",
+      "filing_date": "2025-12-12",
+      "items": null,
+      "primary_document": "amat-20251026.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000006951-24-000044",
+      "form": "10-K",
+      "filing_date": "2024-12-13",
+      "items": null,
+      "primary_document": "amat-20241027.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 41,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951/sections.parquet",
+    "sha256": "f4c3b3a239949965c580ae8eaee71df901deba508e075ac84f095cc4606054ac",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-058235",
+      "form": "10-Q",
+      "filing_date": "2026-08-20",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5872,
+      "prose_word_share": 0.7319,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51169,
+      "source_document": "amat-20260726.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-058235",
+      "form": "10-Q",
+      "filing_date": "2026-08-20",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9320,
+      "prose_word_share": 0.792,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48694,
+      "source_document": "amat-20260726.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-056699",
+      "form": "8-K",
+      "filing_date": "2026-08-13",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4495,
+      "prose_word_share": 0.3235,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42804,
+      "source_document": "exhibit991q32026earningsre.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-037227",
+      "form": "10-Q",
+      "filing_date": "2026-05-21",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5842,
+      "prose_word_share": 0.7239,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50997,
+      "source_document": "amat-20260426.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-037227",
+      "form": "10-Q",
+      "filing_date": "2026-05-21",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9401,
+      "prose_word_share": 0.7854,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48996,
+      "source_document": "amat-20260426.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-035071",
+      "form": "8-K",
+      "filing_date": "2026-05-14",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4266,
+      "prose_word_share": 0.3301,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.43844,
+      "source_document": "exhibit991q22026earningsre.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-25-056742",
+      "form": "10-K",
+      "filing_date": "2025-12-12",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6220,
+      "prose_word_share": 0.8006,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49656,
+      "source_document": "amat-20251026.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-25-056742",
+      "form": "10-K",
+      "filing_date": "2025-12-12",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9999,
+      "prose_word_share": 0.7971,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48832,
+      "source_document": "amat-20251026.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000006951-24-000044",
+      "form": "10-K",
+      "filing_date": "2024-12-13",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5861,
+      "prose_word_share": 0.7721,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48987,
+      "source_document": "amat-20241027.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 6951,
+      "company_name": "APPLIED MATERIALS INC /DE",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000006951-24-000044",
+      "form": "10-K",
+      "filing_date": "2024-12-13",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 10797,
+      "prose_word_share": 0.7427,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48068,
+      "source_document": "amat-20241027.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951/chunks.parquet",
+    "sha256": "1a3735c6e3b306941994195aa031dcdf5cb102470d6e6f41f64b44a94f1dc0df",
+    "n_chunks": 144,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951/metadata.db",
+    "sha256": "9f3399106ff27fa75698a518b1f2221b62e3961144c6a9bfcfd3344b5e018fae",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 1,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.14,
+    "documents_s": 0.0,
+    "extract_s": 1.72,
+    "chunk_s": 0.05,
+    "total_s": 1.93
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000006951.json",
+      "sha256": "65ecfedd5bfd3768d30286b52badee080c655cc8d1077524bdb6ca8928380fa7"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2006-10-29",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951/fundamentals.parquet",
+      "sha256": "20c4984ea0d034f50c0fa0d614c0fb652e44f24683afe1cd0e170a8551281467",
+      "n_rows": 2626,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951/concept_resolution.csv",
+      "sha256": "d93e7750f531fdc4c2700402162c6060936d1ec993f6020d54caa5a6a0b1094b",
+      "n_rows": 14,
+      "n_resolved": 11,
+      "n_unresolved": 3,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 70/80 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:246",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 75/80 (94%, last 2026Q3), Cash 54/80 (68%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 36/80 (45%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.925,
+        "n_target_quarters": 80,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:172|FY:54|9M:36|H1:28",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 74/80 (92%, last 2026Q3), EarningsPerShareBasicAndDiluted 11/80 (14%, last 2018Q1)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:276",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 71/80 (89%, last 2026Q3), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 4/80 (5%, last 2009Q4)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 70/80 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 70/80 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.925,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:192|FY:54|9M:36|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 74/80 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.925,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:54|9M:36|H1:34|Q:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 74/80 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.925,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:104|FY:54|9M:36|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 74/80 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.925,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:104|FY:54|9M:36|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 54/80 (68%, last 2021Q3) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 25/80 (31%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.525,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:76|FY:24|9M:20|H1:16",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 32/80 (40%, last 2026Q3), Revenues 19/80 (24%, last 2021Q1)",
+        "reason": "revenue: PARTIAL over 80 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 32/80 (40%, last 2026Q3), Revenues 19/80 (24%, last 2021Q1); union 52%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8625,
+        "n_target_quarters": 80,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:70",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/80 (86%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.04,
+      "classify_s": 0.01,
+      "total_s": 0.06
+    }
+  }
+}

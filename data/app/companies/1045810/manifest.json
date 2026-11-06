@@ -1,0 +1,636 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1045810,
+  "ticker": "NVDA",
+  "company_name": "NVIDIA CORP",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001045810-26-000075",
+      "form": "10-Q",
+      "filing_date": "2026-08-26",
+      "items": null,
+      "primary_document": "nvda-20260726.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001045810-26-000073",
+      "form": "8-K",
+      "filing_date": "2026-08-26",
+      "items": "2.02,9.01",
+      "primary_document": "nvda-20260826.htm",
+      "earnings_doc_filename": "q2fy27pr.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001045810-26-000052",
+      "form": "10-Q",
+      "filing_date": "2026-05-20",
+      "items": null,
+      "primary_document": "nvda-20260426.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001045810-26-000051",
+      "form": "8-K",
+      "filing_date": "2026-05-20",
+      "items": "2.02,9.01",
+      "primary_document": "nvda-20260520.htm",
+      "earnings_doc_filename": "q1fy27pr.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001045810-26-000021",
+      "form": "10-K",
+      "filing_date": "2026-02-25",
+      "items": null,
+      "primary_document": "nvda-20260125.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001045810-25-000023",
+      "form": "10-K",
+      "filing_date": "2025-02-26",
+      "items": null,
+      "primary_document": "nvda-20250126.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 42,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810/sections.parquet",
+    "sha256": "6940c0b337c4779bf10474f06c7e100ca585e4259216bf5ac2c8c8df456a937f",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000075",
+      "form": "10-Q",
+      "filing_date": "2026-08-26",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5895,
+      "prose_word_share": 0.7075,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51505,
+      "source_document": "nvda-20260726.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000075",
+      "form": "10-Q",
+      "filing_date": "2026-08-26",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5275,
+      "prose_word_share": 0.9572,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48397,
+      "source_document": "nvda-20260726.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000073",
+      "form": "8-K",
+      "filing_date": "2026-08-26",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3441,
+      "prose_word_share": 0.3124,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42868,
+      "source_document": "q2fy27pr.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000052",
+      "form": "10-Q",
+      "filing_date": "2026-05-20",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4462,
+      "prose_word_share": 0.6188,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52017,
+      "source_document": "nvda-20260426.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000052",
+      "form": "10-Q",
+      "filing_date": "2026-05-20",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6531,
+      "prose_word_share": 0.9211,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48377,
+      "source_document": "nvda-20260426.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000051",
+      "form": "8-K",
+      "filing_date": "2026-05-20",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3135,
+      "prose_word_share": 0.3726,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.44139,
+      "source_document": "q1fy27pr.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000021",
+      "form": "10-K",
+      "filing_date": "2026-02-25",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5255,
+      "prose_word_share": 0.7128,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49529,
+      "source_document": "nvda-20260125.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-26-000021",
+      "form": "10-K",
+      "filing_date": "2026-02-25",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 17218,
+      "prose_word_share": 0.8561,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48323,
+      "source_document": "nvda-20260125.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-25-000023",
+      "form": "10-K",
+      "filing_date": "2025-02-26",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5861,
+      "prose_word_share": 0.7521,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50019,
+      "source_document": "nvda-20250126.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1045810,
+      "company_name": "NVIDIA CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001045810-25-000023",
+      "form": "10-K",
+      "filing_date": "2025-02-26",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 16659,
+      "prose_word_share": 0.8481,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48285,
+      "source_document": "nvda-20250126.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810/chunks.parquet",
+    "sha256": "f71cc54e384b78383d9d23ca914c20987f05de835364932e696d0530b2f0a7b9",
+    "n_chunks": 148,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810/metadata.db",
+    "sha256": "2565780f1206113833f54f9ebfdde7af276da9b74a882b38186d3e2edea7fb45",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.16,
+    "documents_s": 0.5,
+    "extract_s": 1.11,
+    "chunk_s": 0.04,
+    "total_s": 1.83
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001045810.json",
+      "sha256": "19ef503a5770f5660964b3c3aea6937579d9b359da344afe6a9adf59c63d26ff"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2007-01-28",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810/fundamentals.parquet",
+      "sha256": "b72f9c31e69d7bbec4da55bdd25b0d4abbd4223bcd9aa95570d8b8201eda407c",
+      "n_rows": 2547,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810/concept_resolution.csv",
+      "sha256": "c479f9e22fb1758799d674ddea7d1ddae76b0ae52b0c5e8bdb7fa42aec4bf733",
+      "n_rows": 14,
+      "n_resolved": 11,
+      "n_unresolved": 3,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8861,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:138",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 70/79 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9494,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:219",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 75/79 (95%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 36/79 (46%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:185|FY:51|H1:39|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9114,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:248",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 72/79 (91%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.557,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:86",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 44/79 (56%, last 2026Q3)",
+        "reason": "liabilities: PARTIAL over 79 reportable quarters -- Liabilities 44/79 (56%, last 2026Q3); union 56%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8861,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:138",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 70/79 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 79,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 79 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:185|FY:51|H1:39|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 79,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 79 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:51|H1:38|Q:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:104|FY:51|H1:36|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8861,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:98|FY:48|H1:34|9M:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 50/79 (63%, last 2021Q3) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 25/79 (32%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:167|FY:42|H1:37|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 73/79 (92%, last 2026Q3), RevenueFromContractWithCustomerExcludingAssessedTax 15/79 (19%, last 2022Q1)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8734,
+        "n_target_quarters": 79,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:69",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/79 (87%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.04,
+      "classify_s": 0.01,
+      "total_s": 0.06
+    }
+  }
+}

@@ -1,0 +1,640 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 104169,
+  "ticker": "WMT",
+  "company_name": "Walmart Inc.",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000104169-26-000154",
+      "form": "10-Q",
+      "filing_date": "2026-08-28",
+      "items": null,
+      "primary_document": "wmt-20260731.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000104169-26-000145",
+      "form": "8-K",
+      "filing_date": "2026-08-20",
+      "items": "2.02,9.01",
+      "primary_document": "wmt-20260820.htm",
+      "earnings_doc_filename": "earningsreleasefy27q2.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000104169-26-000102",
+      "form": "10-Q",
+      "filing_date": "2026-05-29",
+      "items": null,
+      "primary_document": "wmt-20260430.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000104169-26-000095",
+      "form": "8-K",
+      "filing_date": "2026-05-21",
+      "items": "2.02,9.01",
+      "primary_document": "wmt-20260521.htm",
+      "earnings_doc_filename": "earningsreleasefy27q1.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000104169-26-000055",
+      "form": "10-K",
+      "filing_date": "2026-03-13",
+      "items": null,
+      "primary_document": "wmt-20260131.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000104169-25-000021",
+      "form": "10-K",
+      "filing_date": "2025-03-14",
+      "items": null,
+      "primary_document": "wmt-20250131.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 51,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169/sections.parquet",
+    "sha256": "1dac5102ee6e2c7916184c5b81373c432ff458794d2b7a7c1d2bb5f9bb87fd45",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000154",
+      "form": "10-Q",
+      "filing_date": "2026-08-28",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7331,
+      "prose_word_share": 0.7055,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52548,
+      "source_document": "wmt-20260731.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000154",
+      "form": "10-Q",
+      "filing_date": "2026-08-28",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 143,
+      "prose_word_share": 0.9441,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.63433,
+      "source_document": "wmt-20260731.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000145",
+      "form": "8-K",
+      "filing_date": "2026-08-20",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 7387,
+      "prose_word_share": 0.4322,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47189,
+      "source_document": "earningsreleasefy27q2.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000102",
+      "form": "10-Q",
+      "filing_date": "2026-05-29",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6501,
+      "prose_word_share": 0.7062,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5183,
+      "source_document": "wmt-20260430.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000102",
+      "form": "10-Q",
+      "filing_date": "2026-05-29",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 143,
+      "prose_word_share": 0.7413,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.63433,
+      "source_document": "wmt-20260430.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000095",
+      "form": "8-K",
+      "filing_date": "2026-05-21",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 6329,
+      "prose_word_share": 0.4617,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46942,
+      "source_document": "earningsreleasefy27q1.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000055",
+      "form": "10-K",
+      "filing_date": "2026-03-13",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9017,
+      "prose_word_share": 0.7624,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49585,
+      "source_document": "wmt-20260131.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-26-000055",
+      "form": "10-K",
+      "filing_date": "2026-03-13",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 13566,
+      "prose_word_share": 0.9465,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46579,
+      "source_document": "wmt-20260131.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-25-000021",
+      "form": "10-K",
+      "filing_date": "2025-03-14",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9156,
+      "prose_word_share": 0.749,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49641,
+      "source_document": "wmt-20250131.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 104169,
+      "company_name": "Walmart Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000104169-25-000021",
+      "form": "10-K",
+      "filing_date": "2025-03-14",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 14285,
+      "prose_word_share": 0.9472,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46878,
+      "source_document": "wmt-20250131.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169/chunks.parquet",
+    "sha256": "5f8dd2c15262fdd3e7f5094d478cf955e92f3d63b11d2cc9d8b5d9b514db53cd",
+    "n_chunks": 153,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169/metadata.db",
+    "sha256": "326bb470078ca3ca0fb5e920821b9c5ceeb24a1e95f4095212f3d17290c826d1",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 2,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.15,
+    "documents_s": 0.11,
+    "extract_s": 1.56,
+    "chunk_s": 0.05,
+    "total_s": 1.88
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000104169.json",
+      "sha256": "49330f98609f70fcef4054edc90bc811398a58c4bf26dc0b218d607967a8dbe4"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2007-01-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169/fundamentals.parquet",
+      "sha256": "08cef673bdfa80059e44e02ed474fdfefa69c0d2c5c92a1e91b39db25b515617",
+      "n_rows": 3520,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169/concept_resolution.csv",
+      "sha256": "1ca80cf6cb75e55e79206e6ea4c78608d093e27b8d2f183f6b7145dfb6668b55",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.9241,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:207",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 73/79 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9241,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:229",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 73/79 (92%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 40/79 (51%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 9/79 (11%, last 2021Q4), Cash 3/79 (4%, last 2012Q1)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD/shares",
+        "units_mixed": true,
+        "duration_mix": "Q:187|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "DOMINANT",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [
+          "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"
+        ],
+        "coverage": 0.9494,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:193",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 75/79 (95%, last 2026Q3), StockholdersEquity 73/79 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 79,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "liabilities: ABSENT over 79 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9241,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:193",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 73/79 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9241,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:193",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 73/79 (92%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income",
+        "state": "DOMINANT",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [
+          "ProfitLoss"
+        ],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:186|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 74/79 (94%, last 2026Q3), ProfitLoss 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 79,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 79 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:51|H1:38|9M:34|Q:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:106|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:106|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 54/79 (68%, last 2021Q3) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 25/79 (32%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:170|FY:51|H1:38|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 74/79 (94%, last 2026Q3), RevenueFromContractWithCustomerExcludingAssessedTax 39/79 (49%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8734,
+        "n_target_quarters": 79,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:70",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/79 (87%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.04,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

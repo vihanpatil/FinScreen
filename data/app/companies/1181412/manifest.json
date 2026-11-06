@@ -1,0 +1,541 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1181412,
+  "ticker": "SPCX",
+  "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+  "in_research_universe": false,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001628280-26-066880",
+      "form": "10-Q",
+      "filing_date": "2026-10-22",
+      "items": null,
+      "primary_document": "spcx-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-066482",
+      "form": "8-K",
+      "filing_date": "2026-10-20",
+      "items": "2.02,9.01",
+      "primary_document": "spcx-20261020.htm",
+      "earnings_doc_filename": "spaceexplorationtechnologi.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-052535",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "items": null,
+      "primary_document": "spcx-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001628280-26-052515",
+      "form": "8-K",
+      "filing_date": "2026-08-04",
+      "items": "2.02,9.01",
+      "primary_document": "spcx-20260804.htm",
+      "earnings_doc_filename": "earningsreleaseq22608042.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 12,
+  "documents": {
+    "n_fetched": 4,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412/sections.parquet",
+    "sha256": "6ebb156ef81f006ba4d8a61fa40dd70679aa86841160e7424689d4ab058e9953",
+    "n_rows": 2,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 2
+  },
+  "extraction_audit": [
+    {
+      "cik": 1181412,
+      "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-066880",
+      "form": "10-Q",
+      "filing_date": "2026-10-22",
+      "section_type": "MDA",
+      "extraction_status": "FAIL",
+      "flags": [
+        "item_absent_from_toc",
+        "item_body_heading_present"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "spcx-20260930.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 1181412,
+      "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-066880",
+      "form": "10-Q",
+      "filing_date": "2026-10-22",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc",
+        "item_body_heading_present"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "spcx-20260930.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 1181412,
+      "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-066482",
+      "form": "8-K",
+      "filing_date": "2026-10-20",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4376,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48395,
+      "source_document": "spaceexplorationtechnologi.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1181412,
+      "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-052535",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "section_type": "MDA",
+      "extraction_status": "FAIL",
+      "flags": [
+        "item_absent_from_toc",
+        "item_body_heading_present"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "spcx-20260630.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 1181412,
+      "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-052535",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc",
+        "item_body_heading_present"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "spcx-20260630.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 1181412,
+      "company_name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001628280-26-052515",
+      "form": "8-K",
+      "filing_date": "2026-08-04",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3392,
+      "prose_word_share": 0.9997,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48803,
+      "source_document": "earningsreleaseq22608042.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412/chunks.parquet",
+    "sha256": "a6936b717d31903f8a77d19c8a0019f30d4df1e54008da5055d54b160f6737ac",
+    "n_chunks": 19,
+    "n_sections": 2,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412/metadata.db",
+    "sha256": "1c201151fdcff53c7f008847c8b790ad98beae4fb628e5bbe0a730facc3716ac",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 7,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.3,
+    "documents_s": 0.58,
+    "extract_s": 2.58,
+    "chunk_s": 0.02,
+    "total_s": 3.51
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001181412.json",
+      "sha256": "286ce06020ae7184141be501b7106afaefae456380f804d56d1ff6466eb5a89a"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2024-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412/fundamentals.parquet",
+      "sha256": "813ec7a826de0b58154cb5b39600376c36c9b80e8a29a3fd3737c6073c35f2b3",
+      "n_rows": 88,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412/concept_resolution.csv",
+      "sha256": "2e6e05b37045d0ab8efab24120b7a26f1f24ea765b144f2a4758455cf215d285",
+      "n_rows": 14,
+      "n_resolved": 2,
+      "n_unresolved": 12,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.375,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:4",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 3/8 (38%, last 2026Q3)",
+        "reason": "assets: PARTIAL over 8 reportable quarters -- Assets 3/8 (38%, last 2026Q3); union 38%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"
+        ],
+        "alternates": [],
+        "coverage": 0.75,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:8",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 6/8 (75%, last 2026Q3), CashAndCashEquivalentsAtCarryingValue 3/8 (38%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:4|9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 4/8 (50%, last 2026Q3)",
+        "reason": "eps_diluted: PARTIAL over 8 reportable quarters -- EarningsPerShareDiluted 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 1.0,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 8/8 (100%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.375,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:4",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 3/8 (38%, last 2026Q3)",
+        "reason": "liabilities: PARTIAL over 8 reportable quarters -- Liabilities 3/8 (38%, last 2026Q3); union 38%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.375,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:4",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 3/8 (38%, last 2026Q3)",
+        "reason": "liabilities_and_equity: PARTIAL over 8 reportable quarters -- LiabilitiesAndStockholdersEquity 3/8 (38%, last 2026Q3); union 38%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 8,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 8 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:4|9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 4/8 (50%, last 2026Q3)",
+        "reason": "net_income: PARTIAL over 8 reportable quarters -- NetIncomeLoss 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:4|9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 4/8 (50%, last 2026Q3)",
+        "reason": "net_income_to_common: PARTIAL over 8 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 4/8 (50%, last 2026Q3)",
+        "reason": "operating_cash_flow: PARTIAL over 8 reportable quarters -- NetCashProvidedByUsedInOperatingActivities 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "operating_income",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:4|9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 4/8 (50%, last 2026Q3)",
+        "reason": "operating_income: PARTIAL over 8 reportable quarters -- OperatingIncomeLoss 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "pretax_income",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:4|9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 4/8 (50%, last 2026Q3)",
+        "reason": "pretax_income: PARTIAL over 8 reportable quarters -- IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 8,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:4|9M:2|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 4/8 (50%, last 2026Q3)",
+        "reason": "revenue: PARTIAL over 8 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 4/8 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 8,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "shares_outstanding: ABSENT over 8 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.0,
+      "classify_s": 0.01,
+      "total_s": 0.01
+    }
+  }
+}

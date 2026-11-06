@@ -1,0 +1,15 @@
+cik,family,state,tags,switch_quarter,coverage,severity,alternates,unit,units_mixed,duration_mix
+804328,assets,SINGLE,Assets,,0.8765,resolved,,USD,0,instant:154
+804328,cash,SINGLE,CashAndCashEquivalentsAtCarryingValue,,0.9383,resolved,,USD,0,instant:224
+804328,eps_diluted,SINGLE,EarningsPerShareDiluted,,0.9259,resolved,,USD/shares,0,Q:193|FY:59|9M:36|H1:34
+804328,equity,SINGLE,StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest,,0.9012,resolved,,USD,0,instant:243
+804328,liabilities,SINGLE,Liabilities,,0.8765,resolved,,USD,0,instant:143
+804328,liabilities_and_equity,SINGLE,LiabilitiesAndStockholdersEquity,,0.8765,resolved,,USD,0,instant:143
+804328,minority_interest,PARTIAL,MinorityInterest,,0.3457,UNRESOLVED,,USD,0,instant:54
+804328,net_income,SINGLE,NetIncomeLoss,,0.9259,resolved,,USD,0,Q:163|FY:59|H1:34|9M:32
+804328,net_income_to_common,ABSENT,,,0.0,UNRESOLVED,,,0,
+804328,operating_cash_flow,SINGLE,NetCashProvidedByUsedInOperatingActivities,,0.9259,resolved,,USD,0,FY:59|9M:29|Q:29|H1:27
+804328,operating_income,SINGLE,OperatingIncomeLoss,,0.9259,resolved,,USD,0,Q:197|FY:59|9M:36|H1:34
+804328,pretax_income,SINGLE,IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,,0.8272,resolved,,USD,0,Q:97|FY:50|9M:32|H1:30
+804328,revenue,SINGLE,Revenues,,0.9259,resolved,,USD,0,Q:197|FY:59|9M:36|H1:34
+804328,shares_outstanding,SINGLE,EntityCommonStockSharesOutstanding,,0.8395,resolved,,shares,0,instant:71

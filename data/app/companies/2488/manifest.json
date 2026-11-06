@@ -1,0 +1,638 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 2488,
+  "ticker": "AMD",
+  "company_name": "ADVANCED MICRO DEVICES INC",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000002488-26-000191",
+      "form": "10-Q",
+      "filing_date": "2026-11-04",
+      "items": null,
+      "primary_document": "amd-20260926.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000002488-26-000188",
+      "form": "8-K",
+      "filing_date": "2026-11-03",
+      "items": "2.02,7.01,9.01",
+      "primary_document": "amd-20261103.htm",
+      "earnings_doc_filename": "q32026991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000002488-26-000123",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "items": null,
+      "primary_document": "amd-20260627.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000002488-26-000121",
+      "form": "8-K",
+      "filing_date": "2026-08-04",
+      "items": "2.02,7.01,9.01",
+      "primary_document": "amd-20260804.htm",
+      "earnings_doc_filename": "q22026991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000002488-26-000018",
+      "form": "10-K",
+      "filing_date": "2026-02-04",
+      "items": null,
+      "primary_document": "amd-20251227.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000002488-25-000012",
+      "form": "10-K",
+      "filing_date": "2025-02-05",
+      "items": null,
+      "primary_document": "amd-20241228.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 51,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488/sections.parquet",
+    "sha256": "52da3043909fc79a6aa836e8f4ae99f4ce567f89b715db8a9f6e711216b33277",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000191",
+      "form": "10-Q",
+      "filing_date": "2026-11-04",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5515,
+      "prose_word_share": 0.8375,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.60093,
+      "source_document": "amd-20260926.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000191",
+      "form": "10-Q",
+      "filing_date": "2026-11-04",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 22155,
+      "prose_word_share": 0.91,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48597,
+      "source_document": "amd-20260926.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000188",
+      "form": "8-K",
+      "filing_date": "2026-11-03",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4950,
+      "prose_word_share": 0.3808,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.43338,
+      "source_document": "q32026991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000123",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4826,
+      "prose_word_share": 0.8143,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.62063,
+      "source_document": "amd-20260627.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000123",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 21089,
+      "prose_word_share": 0.9052,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48798,
+      "source_document": "amd-20260627.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000121",
+      "form": "8-K",
+      "filing_date": "2026-08-04",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4948,
+      "prose_word_share": 0.3981,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42788,
+      "source_document": "q22026991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000018",
+      "form": "10-K",
+      "filing_date": "2026-02-04",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5785,
+      "prose_word_share": 0.7869,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.53164,
+      "source_document": "amd-20251227.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-26-000018",
+      "form": "10-K",
+      "filing_date": "2026-02-04",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 19963,
+      "prose_word_share": 0.8992,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48969,
+      "source_document": "amd-20251227.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-25-000012",
+      "form": "10-K",
+      "filing_date": "2025-02-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5093,
+      "prose_word_share": 0.7903,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54224,
+      "source_document": "amd-20241228.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 2488,
+      "company_name": "ADVANCED MICRO DEVICES INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000002488-25-000012",
+      "form": "10-K",
+      "filing_date": "2025-02-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 19077,
+      "prose_word_share": 0.8932,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49182,
+      "source_document": "amd-20241228.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488/chunks.parquet",
+    "sha256": "54a863ae925d29a202ac1d40b7c38af66ad3ddaefb6b53ae1c3ae4700683625a",
+    "n_chunks": 190,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488/metadata.db",
+    "sha256": "e5f9f25d2cf4b8c52d8fdd8eadd2088542e0ef02e0189f3b78cca1731f9055df",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.19,
+    "documents_s": 0.25,
+    "extract_s": 1.28,
+    "chunk_s": 0.06,
+    "total_s": 1.8
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000002488.json",
+      "sha256": "4c29484ff062a77b0dde3a0d0b3439f807ccd2d44f9b568a52b5eabbc2b2464c"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2007-12-29",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488/fundamentals.parquet",
+      "sha256": "bf20eb6cea68d373bed20ce037dbef5e6e747fa612f6409f16bd3e2b39b44ab1",
+      "n_rows": 2403,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488/concept_resolution.csv",
+      "sha256": "26d33229ab6c868d561d3cfa724978f1c25934dbc11219e4319eb8d573a1a8b4",
+      "n_rows": 14,
+      "n_resolved": 10,
+      "n_unresolved": 4,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8421,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:132",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 64/76 (84%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9079,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:210",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 69/76 (91%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 35/76 (46%, last 2025Q4), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 11/76 (14%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.8947,
+        "n_target_quarters": 76,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:180|FY:48|9M:34|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 68/76 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8684,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:181",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 66/76 (87%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 76,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "liabilities: ABSENT over 76 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8421,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:132",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 64/76 (84%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.0395,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:6",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 3/76 (4%, last 2011Q4)",
+        "reason": "minority_interest: PARTIAL over 76 reportable quarters -- MinorityInterest 3/76 (4%, last 2011Q4); union 4%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8947,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:148|FY:42|9M:28|H1:28",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 61/76 (80%, last 2026Q3), ProfitLoss 14/76 (18%, last 2012Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.1447,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:8|FY:6|H1:4|9M:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 11/76 (14%, last 2013Q1)",
+        "reason": "net_income_to_common: PARTIAL over 76 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 11/76 (14%, last 2013Q1); union 14%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.8947,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:48|9M:34|H1:34|Q:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 68/76 (89%, last 2026Q3), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 9/76 (12%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8947,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:180|FY:48|9M:34|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 68/76 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"
+        ],
+        "alternates": [],
+        "coverage": 0.8947,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:116|FY:48|9M:34|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 68/76 (89%, last 2026Q3), IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 43/76 (57%, last 2025Q4)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 76,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:78|FY:24|9M:19|H1:19",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 38/76 (50%, last 2026Q3), Revenues 1/76 (1%, last 2017Q3)",
+        "reason": "revenue: PARTIAL over 76 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 38/76 (50%, last 2026Q3), Revenues 1/76 (1%, last 2017Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8553,
+        "n_target_quarters": 76,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:67",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 65/76 (86%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

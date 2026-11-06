@@ -1,0 +1,658 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 97476,
+  "ticker": "TXN",
+  "company_name": "TEXAS INSTRUMENTS INC",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000097476-26-000169",
+      "form": "10-Q",
+      "filing_date": "2026-10-23",
+      "items": null,
+      "primary_document": "txn-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000097476-26-000165",
+      "form": "8-K",
+      "filing_date": "2026-10-21",
+      "items": "2.02,9.01",
+      "primary_document": "txn-20261021.htm",
+      "earnings_doc_filename": "q32026txnex99-eredgar.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000097476-26-000152",
+      "form": "10-Q",
+      "filing_date": "2026-07-24",
+      "items": null,
+      "primary_document": "txn-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000097476-26-000148",
+      "form": "8-K",
+      "filing_date": "2026-07-22",
+      "items": "2.02,9.01",
+      "primary_document": "txn-20260722.htm",
+      "earnings_doc_filename": "q22026txnex99-eredgar.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000097476-26-000059",
+      "form": "10-K",
+      "filing_date": "2026-02-06",
+      "items": null,
+      "primary_document": "txn-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000097476-25-000007",
+      "form": "10-K",
+      "filing_date": "2025-02-14",
+      "items": null,
+      "primary_document": "txn-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 39,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476/sections.parquet",
+    "sha256": "aa2e12b1a857967601c9176bb57d1297552d3039568ba5c3c72c46b07a2e43eb",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "FLAGGED": 9,
+    "OK": 1
+  },
+  "extraction_audit": [
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000169",
+      "form": "10-Q",
+      "filing_date": "2026-10-23",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 3277,
+      "prose_word_share": 0.538,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54269,
+      "source_document": "txn-20260930.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000169",
+      "form": "10-Q",
+      "filing_date": "2026-10-23",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 31,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "txn-20260930.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000165",
+      "form": "8-K",
+      "filing_date": "2026-10-21",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "earnings_supplemental_diluted"
+      ],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "medium",
+      "word_count": 2223,
+      "prose_word_share": 0.3041,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46955,
+      "source_document": "q32026txnex99-eredgar.htm",
+      "reason_code": "earnings_supplemental_diluted",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000152",
+      "form": "10-Q",
+      "filing_date": "2026-07-24",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 3111,
+      "prose_word_share": 0.5725,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54168,
+      "source_document": "txn-20260630.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000152",
+      "form": "10-Q",
+      "filing_date": "2026-07-24",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 31,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "txn-20260630.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000148",
+      "form": "8-K",
+      "filing_date": "2026-07-22",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 2226,
+      "prose_word_share": 0.3037,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46902,
+      "source_document": "q22026txnex99-eredgar.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000059",
+      "form": "10-K",
+      "filing_date": "2026-02-06",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 2902,
+      "prose_word_share": 0.7061,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54577,
+      "source_document": "txn-20251231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-26-000059",
+      "form": "10-K",
+      "filing_date": "2026-02-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 4046,
+      "prose_word_share": 0.9073,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48023,
+      "source_document": "txn-20251231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-25-000007",
+      "form": "10-K",
+      "filing_date": "2025-02-14",
+      "section_type": "MDA",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 2334,
+      "prose_word_share": 0.638,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5554,
+      "source_document": "txn-20241231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    },
+    {
+      "cik": 97476,
+      "company_name": "TEXAS INSTRUMENTS INC",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000097476-25-000007",
+      "form": "10-K",
+      "filing_date": "2025-02-14",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "FLAGGED",
+      "flags": [
+        "heading_regex_fallback"
+      ],
+      "extraction_method": "heading_regex",
+      "extraction_confidence": "low",
+      "word_count": 3955,
+      "prose_word_share": 0.9128,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48068,
+      "source_document": "txn-20241231.htm",
+      "reason_code": "heading_regex_fallback",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476/chunks.parquet",
+    "sha256": "1ff73db1157a996dd9dfa86102348af881fa004dfbc836cd576edd2d66c22a36",
+    "n_chunks": 49,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476/metadata.db",
+    "sha256": "34c2915829da49a0cf4f9fd7140d298c09d0cf1356702b6d382b5ead890a72cc",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.59,
+    "documents_s": 0.26,
+    "extract_s": 2.03,
+    "chunk_s": 0.03,
+    "total_s": 2.92
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000097476.json",
+      "sha256": "5ac0e3044f2368fe3dcce665440317bda9ce766feb27fd382e563593192ee80d"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2006-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476/fundamentals.parquet",
+      "sha256": "d232012afa3a085767fd96d7df7c556f342c9dc0fbc3f6475c5d9ac4b4ff834e",
+      "n_rows": 2602,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476/concept_resolution.csv",
+      "sha256": "a2edc9bbdcd25f61c497af371652da881dec0cc50b28d190ffaa430b1d62a9b5",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.95,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:227",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 76/80 (95%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 31/80 (39%, last 2025Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 10/80 (12%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:162|FY:54|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:138",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 69/80 (86%, last 2026Q3), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 3/80 (4%, last 2009Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "minority_interest: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:158|FY:54|9M:34|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 73/80 (91%, last 2026Q3), ProfitLoss 8/80 (10%, last 2018Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:100|FY:51|9M:34|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations",
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:54|9M:36|H1:36|Q:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 43/80 (54%, last 2026Q3), NetCashProvidedByUsedInOperatingActivitiesContinuingOperations 39/80 (49%, last 2018Q1) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:162|FY:54|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:106|FY:60|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 58/80 (72%, last 2026Q3), IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 24/80 (30%, last 2014Q4) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.5,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:76|FY:24|9M:18|H1:18",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 40/80 (50%, last 2026Q3)",
+        "reason": "revenue: PARTIAL over 80 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 40/80 (50%, last 2026Q3); union 50%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8125,
+        "n_target_quarters": 80,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:70",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 65/80 (81%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

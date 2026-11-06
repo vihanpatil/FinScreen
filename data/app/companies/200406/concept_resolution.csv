@@ -1,0 +1,15 @@
+cik,family,state,tags,switch_quarter,coverage,severity,alternates,unit,units_mixed,duration_mix
+200406,assets,SINGLE,Assets,,0.8375,resolved,,USD,0,instant:145
+200406,cash,SINGLE,CashAndCashEquivalentsAtCarryingValue,,0.9,resolved,,USD,0,instant:222
+200406,eps_diluted,SINGLE,EarningsPerShareDiluted,,0.8875,resolved,,USD/shares,0,Q:194|FY:51|9M:36|H1:36
+200406,equity,SINGLE,StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest,,0.8625,resolved,,USD,0,instant:254
+200406,liabilities,SINGLE,Liabilities,,0.8375,resolved,,USD,0,instant:140
+200406,liabilities_and_equity,SINGLE,LiabilitiesAndStockholdersEquity,,0.8375,resolved,,USD,0,instant:140
+200406,minority_interest,PARTIAL,MinorityInterest,,0.0375,UNRESOLVED,,USD,0,instant:3
+200406,net_income,SINGLE,NetIncomeLoss,,0.8875,resolved,,USD,0,Q:174|FY:42|9M:30|H1:28
+200406,net_income_to_common,ABSENT,,,0.0,UNRESOLVED,,,0,
+200406,operating_cash_flow,SINGLE,NetCashProvidedByUsedInOperatingActivities,,0.8875,resolved,,USD,0,FY:51|9M:36|H1:36|Q:34
+200406,operating_income,PARTIAL,OperatingIncomeLoss,,0.25,UNRESOLVED,,USD,0,Q:24|FY:12|9M:8|H1:8
+200406,pretax_income,MIGRATION,IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments|IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,2021Q4,0.8875,resolved,,USD,0,Q:194|FY:51|9M:36|H1:36
+200406,revenue,PARTIAL,RevenueFromContractWithCustomerExcludingAssessedTax|Revenues,,0.55,UNRESOLVED,,USD,0,Q:84|FY:24|9M:22|H1:20
+200406,shares_outstanding,SINGLE,EntityCommonStockSharesOutstanding,,0.8625,resolved,,shares,0,instant:70

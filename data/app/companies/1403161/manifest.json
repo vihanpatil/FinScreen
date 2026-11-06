@@ -1,0 +1,641 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1403161,
+  "ticker": "V",
+  "company_name": "VISA INC.",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001403161-26-000134",
+      "form": "10-K",
+      "filing_date": "2026-11-05",
+      "items": null,
+      "primary_document": "v-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001403161-26-000126",
+      "form": "8-K",
+      "filing_date": "2026-10-27",
+      "items": "2.02,8.01,9.01",
+      "primary_document": "v-20261027.htm",
+      "earnings_doc_filename": "q42026earningsrelease.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001403161-26-000104",
+      "form": "10-Q",
+      "filing_date": "2026-07-29",
+      "items": null,
+      "primary_document": "v-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001403161-26-000103",
+      "form": "8-K",
+      "filing_date": "2026-07-28",
+      "items": "2.02,8.01,9.01",
+      "primary_document": "v-20260728.htm",
+      "earnings_doc_filename": "q32026earningsrelease.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001403161-26-000079",
+      "form": "10-Q",
+      "filing_date": "2026-04-29",
+      "items": null,
+      "primary_document": "v-20260331.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001403161-25-000089",
+      "form": "10-K",
+      "filing_date": "2025-11-06",
+      "items": null,
+      "primary_document": "v-20250930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 52,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161/sections.parquet",
+    "sha256": "de93b14b702cd87d7e6b28d71e1f5f7f16e4f3a661f6a44babb26e545ead2775",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000134",
+      "form": "10-K",
+      "filing_date": "2026-11-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7727,
+      "prose_word_share": 0.5152,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47611,
+      "source_document": "v-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000134",
+      "form": "10-K",
+      "filing_date": "2026-11-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9883,
+      "prose_word_share": 0.8688,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42169,
+      "source_document": "v-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000126",
+      "form": "8-K",
+      "filing_date": "2026-10-27",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 5436,
+      "prose_word_share": 0.3986,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49507,
+      "source_document": "q42026earningsrelease.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000104",
+      "form": "10-Q",
+      "filing_date": "2026-07-29",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5984,
+      "prose_word_share": 0.4828,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50757,
+      "source_document": "v-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000104",
+      "form": "10-Q",
+      "filing_date": "2026-07-29",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 35,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "v-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000103",
+      "form": "8-K",
+      "filing_date": "2026-07-28",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4534,
+      "prose_word_share": 0.3544,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4786,
+      "source_document": "q32026earningsrelease.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000079",
+      "form": "10-Q",
+      "filing_date": "2026-04-29",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5626,
+      "prose_word_share": 0.4753,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50078,
+      "source_document": "v-20260331.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-26-000079",
+      "form": "10-Q",
+      "filing_date": "2026-04-29",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 35,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "v-20260331.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-25-000089",
+      "form": "10-K",
+      "filing_date": "2025-11-06",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7489,
+      "prose_word_share": 0.5125,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48163,
+      "source_document": "v-20250930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1403161,
+      "company_name": "VISA INC.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001403161-25-000089",
+      "form": "10-K",
+      "filing_date": "2025-11-06",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 12081,
+      "prose_word_share": 0.8937,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.42911,
+      "source_document": "v-20250930.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161/chunks.parquet",
+    "sha256": "fdca3f4df10235d5762c9e3236c05cce67cc7c21eb8b762f66689d418a9862c2",
+    "n_chunks": 136,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161/metadata.db",
+    "sha256": "337e4cb50198d02d05fc78255d47aa69b40230b7393c46d40ade15933c0d0457",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.23,
+    "documents_s": 0.26,
+    "extract_s": 1.61,
+    "chunk_s": 0.04,
+    "total_s": 2.16
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001403161.json",
+      "sha256": "ac85fe9b07ad93c9794908d5537c5ebe2f3551af882c3b84fba87bd1b0d76023"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2006-09-30",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161/fundamentals.parquet",
+      "sha256": "9928189e880a30d3d285d6cac97085691fc2a21e518fdebfa21c313166a7a352",
+      "n_rows": 2299,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161/concept_resolution.csv",
+      "sha256": "ae6bbb2dbc8eac55c26e399944588e0e971390bc31e9697eaed85fe32a4441e7",
+      "n_rows": 14,
+      "n_resolved": 9,
+      "n_unresolved": 5,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8765,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 71/81 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9383,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:224",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 76/81 (94%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 38/81 (47%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 81,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "eps_diluted: ABSENT over 81 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9012,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:248",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 71/81 (88%, last 2026Q3), StockholdersEquity 13/81 (16%, last 2011Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8765,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 71/81 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8765,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 71/81 (88%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.1235,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:19",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 10/81 (12%, last 2011Q2)",
+        "reason": "minority_interest: PARTIAL over 81 reportable quarters -- MinorityInterest 10/81 (12%, last 2011Q2); union 12%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "net_income",
+        "state": "DOMINANT",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [
+          "ProfitLoss"
+        ],
+        "coverage": 0.9259,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:110|FY:54|9M:36|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 75/81 (93%, last 2026Q3), ProfitLoss 70/81 (86%, last 2025Q4) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.0247,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 2/81 (2%, last 2013Q2)",
+        "reason": "net_income_to_common: PARTIAL over 81 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 2/81 (2%, last 2013Q2); union 2%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9259,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:54|9M:36|H1:34|Q:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 75/81 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9259,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:112|FY:54|9M:36|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 75/81 (93%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"
+        ],
+        "alternates": [],
+        "coverage": 0.6543,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:70|FY:42|9M:24|H1:24",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 33/81 (41%, last 2026Q3), IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 28/81 (35%, last 2021Q2)",
+        "reason": "pretax_income: PARTIAL over 81 reportable quarters -- IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 33/81 (41%, last 2026Q3), IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 28/81 (35%, last 2021Q2); union 65%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "revenue",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "Revenues",
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.9259,
+        "n_target_quarters": 81,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:112|FY:54|9M:36|H1:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 48/81 (59%, last 2020Q3) [STALE], RevenueFromContractWithCustomerExcludingAssessedTax 32/81 (40%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.0247,
+        "n_target_quarters": 81,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 2/81 (2%, last 2010Q1)",
+        "reason": "shares_outstanding: PARTIAL over 81 reportable quarters -- EntityCommonStockSharesOutstanding 2/81 (2%, last 2010Q1); union 2%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

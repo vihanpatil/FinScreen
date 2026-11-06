@@ -1,0 +1,43 @@
+{
+  "labeler": {
+    "student": "qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "adapter_path": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "adapter_sha256": "cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3",
+    "matches_campaign_adapter": true,
+    "instruction_sha256": "ebc45a856bff58a562535867e5a1f4173519fe77c58a47b16bfa28e6eea8efe2",
+    "model_snapshot": "/Users/vihanpatil/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "rubric_version": "v1.2",
+    "decoding": "greedy temp=0.0 (argmax), max_tokens 520, answer token reserve 256"
+  },
+  "repro_canary": {
+    "purpose": "F4 verify-artifact check: the artifact being run is the artifact the epoch-2 eval tested and gate G1 was ruled on",
+    "reference": "/Users/vihanpatil/personal/projects/FinScreen/finetune/runs/2026-08-28-v12-eval-epoch2/predictions.jsonl",
+    "reference_sha256": "e32dc481fcca5fd3c69020ecb8caa30d5d9bb047a6d38a0589cdb1c589e39da0",
+    "adapter": "/Users/vihanpatil/personal/projects/FinScreen/finetune/checkpoints/qwen2.5-7b-finscreen-lora-mlx-v12-epoch2",
+    "prompt_renderer_matches_eval_path": true,
+    "n_compared": 10,
+    "n_identical": 10,
+    "verified": true,
+    "n_eval_rows_skipped_as_too_long_for_the_F4_budget": 0,
+    "prompt_token_budget": 1792,
+    "differing": [],
+    "checked_utc": "2026-09-11T09:42:42.179465+00:00",
+    "from_cache": true,
+    "seconds": 0.0
+  },
+  "generation": {
+    "started_utc": "2026-11-06T04:05:25.189780+00:00",
+    "ended_utc": "2026-11-06T04:12:46.149758+00:00",
+    "n_generated": 144,
+    "n_already_done": 0,
+    "torn_final_line_repaired_before_append": false,
+    "model_load_seconds": 1.4,
+    "wall_seconds": 441.0,
+    "seconds_per_chunk": 3.06,
+    "finish_reasons": {
+      "stop": 144
+    },
+    "n_passages_head_truncated": 0,
+    "generate_seconds": 443.4
+  }
+}

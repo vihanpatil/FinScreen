@@ -1,0 +1,639 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1321655,
+  "ticker": "PLTR",
+  "company_name": "Palantir Technologies Inc.",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001321655-26-000048",
+      "form": "10-Q",
+      "filing_date": "2026-11-03",
+      "items": null,
+      "primary_document": "pltr-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001321655-26-000045",
+      "form": "8-K",
+      "filing_date": "2026-11-02",
+      "items": "2.02,7.01,9.01",
+      "primary_document": "pltr-20261102.htm",
+      "earnings_doc_filename": "a2026q3ex991pressrelease.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001321655-26-000041",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "items": null,
+      "primary_document": "pltr-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001321655-26-000039",
+      "form": "8-K",
+      "filing_date": "2026-08-03",
+      "items": "2.02,7.01,9.01",
+      "primary_document": "pltr-20260803.htm",
+      "earnings_doc_filename": "a2026q2ex991pressrelease.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001321655-26-000011",
+      "form": "10-K",
+      "filing_date": "2026-02-17",
+      "items": null,
+      "primary_document": "pltr-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001321655-25-000022",
+      "form": "10-K",
+      "filing_date": "2025-02-18",
+      "items": null,
+      "primary_document": "pltr-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 31,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655/sections.parquet",
+    "sha256": "81f20e79794b6a7e3ccbf701c2886759321ff723704212c3e24e686ee72f8337",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000048",
+      "form": "10-Q",
+      "filing_date": "2026-11-03",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7232,
+      "prose_word_share": 0.7349,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55604,
+      "source_document": "pltr-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000048",
+      "form": "10-Q",
+      "filing_date": "2026-11-03",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 46349,
+      "prose_word_share": 0.8718,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50042,
+      "source_document": "pltr-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000045",
+      "form": "8-K",
+      "filing_date": "2026-11-02",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3401,
+      "prose_word_share": 0.4863,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49192,
+      "source_document": "a2026q3ex991pressrelease.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000041",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7158,
+      "prose_word_share": 0.7272,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.55407,
+      "source_document": "pltr-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000041",
+      "form": "10-Q",
+      "filing_date": "2026-08-04",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 46414,
+      "prose_word_share": 0.8781,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49971,
+      "source_document": "pltr-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000039",
+      "form": "8-K",
+      "filing_date": "2026-08-03",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 3296,
+      "prose_word_share": 0.4824,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49006,
+      "source_document": "a2026q2ex991pressrelease.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000011",
+      "form": "10-K",
+      "filing_date": "2026-02-17",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7745,
+      "prose_word_share": 0.7113,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52376,
+      "source_document": "pltr-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-26-000011",
+      "form": "10-K",
+      "filing_date": "2026-02-17",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 45423,
+      "prose_word_share": 0.8704,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50035,
+      "source_document": "pltr-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-25-000022",
+      "form": "10-K",
+      "filing_date": "2025-02-18",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8037,
+      "prose_word_share": 0.7116,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52889,
+      "source_document": "pltr-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1321655,
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001321655-25-000022",
+      "form": "10-K",
+      "filing_date": "2025-02-18",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 45105,
+      "prose_word_share": 0.8717,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50128,
+      "source_document": "pltr-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655/chunks.parquet",
+    "sha256": "cd4fc8839fc44ab29f3bf6ac8d176bd4c071577b3d4655ac2dacc5c50156a49a",
+    "n_chunks": 288,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655/metadata.db",
+    "sha256": "3512a819cb35bda04762c993f7dfba60bd7064b88605efb5f99d6757c309bab7",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.38,
+    "documents_s": 0.44,
+    "extract_s": 1.48,
+    "chunk_s": 0.12,
+    "total_s": 2.43
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001321655.json",
+      "sha256": "2065b0809667e777bd4d328054beef84f271da4ec2f29481765a63009f19f7f8"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2017-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655/fundamentals.parquet",
+      "sha256": "126a00fa8f4bcd3daea5f82cff008b76e2804ebc8f2f789a6fc05df89a410a0f",
+      "n_rows": 1061,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655/concept_resolution.csv",
+      "sha256": "1354885bcd853fc19438f7e6c0bc9e944f30d3e19f70761258a3cc2d64630114",
+      "n_rows": 14,
+      "n_resolved": 8,
+      "n_unresolved": 6,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.7222,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:50",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 26/36 (72%, last 2026Q3)",
+        "reason": "assets: PARTIAL over 36 reportable quarters -- Assets 26/36 (72%, last 2026Q3); union 72%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "cash",
+        "state": "DOMINANT",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [
+          "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"
+        ],
+        "coverage": 0.8611,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:75",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 31/36 (86%, last 2026Q3), CashAndCashEquivalentsAtCarryingValue 30/36 (83%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.8333,
+        "n_target_quarters": 36,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:38|FY:18|9M:14|H1:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 30/36 (83%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8889,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:82",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 32/36 (89%, last 2026Q3), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 21/36 (58%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.7222,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:50",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 26/36 (72%, last 2026Q3)",
+        "reason": "liabilities: PARTIAL over 36 reportable quarters -- Liabilities 26/36 (72%, last 2026Q3); union 72%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.7222,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:50",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 26/36 (72%, last 2026Q3)",
+        "reason": "liabilities_and_equity: PARTIAL over 36 reportable quarters -- LiabilitiesAndStockholdersEquity 26/36 (72%, last 2026Q3); union 72%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.4722,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:32",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 17/36 (47%, last 2026Q3)",
+        "reason": "minority_interest: PARTIAL over 36 reportable quarters -- MinorityInterest 17/36 (47%, last 2026Q3); union 47%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8333,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:38|FY:18|9M:14|H1:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 30/36 (83%, last 2026Q3), ProfitLoss 21/36 (58%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.3333,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:9|Q:8|9M:4|H1:2",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 12/36 (33%, last 2022Q4)",
+        "reason": "net_income_to_common: PARTIAL over 36 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 12/36 (33%, last 2022Q4); union 33%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.8333,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:18|9M:14|H1:12|Q:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 30/36 (83%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8333,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:38|FY:18|9M:14|H1:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 30/36 (83%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8333,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:38|FY:18|9M:14|H1:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 30/36 (83%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.8333,
+        "n_target_quarters": 36,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:36|FY:18|9M:12|H1:12",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 29/36 (81%, last 2026Q3), RevenueFromContractWithCustomerIncludingAssessedTax 2/36 (6%, last 2020Q3)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 36,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "shares_outstanding: ABSENT over 36 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.01,
+      "classify_s": 0.01,
+      "total_s": 0.02
+    }
+  }
+}

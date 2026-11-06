@@ -1,0 +1,636 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 59478,
+  "ticker": "LLY",
+  "company_name": "ELI LILLY & Co",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000059478-26-000108",
+      "form": "10-Q",
+      "filing_date": "2026-10-29",
+      "items": null,
+      "primary_document": "lly-20260930.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000059478-26-000104",
+      "form": "8-K",
+      "filing_date": "2026-10-29",
+      "items": "2.02,9.01",
+      "primary_document": "lly-20261029.htm",
+      "earnings_doc_filename": "q326lillysalesandearningsp.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000059478-26-000081",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "items": null,
+      "primary_document": "lly-20260630.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000059478-26-000077",
+      "form": "8-K",
+      "filing_date": "2026-08-05",
+      "items": "2.02,9.01",
+      "primary_document": "lly-20260805.htm",
+      "earnings_doc_filename": "q226lillysalesandearningsp.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000059478-26-000013",
+      "form": "10-K",
+      "filing_date": "2026-02-12",
+      "items": null,
+      "primary_document": "lly-20251231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000059478-25-000067",
+      "form": "10-K",
+      "filing_date": "2025-02-19",
+      "items": null,
+      "primary_document": "lly-20241231.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 41,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478/sections.parquet",
+    "sha256": "3ef0be345c916e360a7a2fc3531aeb2febf6f45bd071d3032be626959c2dec5f",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000108",
+      "form": "10-Q",
+      "filing_date": "2026-10-29",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4506,
+      "prose_word_share": 0.6753,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.50984,
+      "source_document": "lly-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000108",
+      "form": "10-Q",
+      "filing_date": "2026-10-29",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 58,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "lly-20260930.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000104",
+      "form": "8-K",
+      "filing_date": "2026-10-29",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4299,
+      "prose_word_share": 0.4859,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.43438,
+      "source_document": "q326lillysalesandearningsp.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000081",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 4521,
+      "prose_word_share": 0.7131,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51053,
+      "source_document": "lly-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000081",
+      "form": "10-Q",
+      "filing_date": "2026-08-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 58,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": null,
+      "source_document": "lly-20260630.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000077",
+      "form": "8-K",
+      "filing_date": "2026-08-05",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 4112,
+      "prose_word_share": 0.5221,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.43433,
+      "source_document": "q226lillysalesandearningsp.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000013",
+      "form": "10-K",
+      "filing_date": "2026-02-12",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7263,
+      "prose_word_share": 0.7591,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47244,
+      "source_document": "lly-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-26-000013",
+      "form": "10-K",
+      "filing_date": "2026-02-12",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 10933,
+      "prose_word_share": 0.959,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.45246,
+      "source_document": "lly-20251231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-25-000067",
+      "form": "10-K",
+      "filing_date": "2025-02-19",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8521,
+      "prose_word_share": 0.7305,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.46841,
+      "source_document": "lly-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 59478,
+      "company_name": "ELI LILLY & Co",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000059478-25-000067",
+      "form": "10-K",
+      "filing_date": "2025-02-19",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9683,
+      "prose_word_share": 0.953,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.45423,
+      "source_document": "lly-20241231.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478/chunks.parquet",
+    "sha256": "682965bd3d3e0f5ba7b9d598274ff811e64b0849b479ad4839795d28138d73af",
+    "n_chunks": 115,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478/metadata.db",
+    "sha256": "c9a37cc6de77e15bfd2ecd21b64af669b0803c49b91a5edda67d4857d5dabe0b",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.27,
+    "documents_s": 0.37,
+    "extract_s": 1.22,
+    "chunk_s": 0.03,
+    "total_s": 1.92
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000059478.json",
+      "sha256": "72ec001637e16887021c76251eaf05056bdaaf9a4e68ef62316b9be99861dbdc"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2006-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478/fundamentals.parquet",
+      "sha256": "561b08a16045293f40563db2ef7e8ec441e73cb602e66c1e2ca9605caabcdac7",
+      "n_rows": 2432,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478/concept_resolution.csv",
+      "sha256": "b965434794aa82e39d6a67e99b8af28f3873509bb38f305f4e314fd79db416a6",
+      "n_rows": 14,
+      "n_resolved": 10,
+      "n_unresolved": 4,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:144",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.95,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:223",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 75/80 (94%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 32/80 (40%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 3/80 (4%, last 2020Q1)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.8625,
+        "n_target_quarters": 80,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:146|FY:51|9M:28|H1:28",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 63/80 (79%, last 2026Q3), EarningsPerShareBasicAndDiluted 13/80 (16%, last 2013Q1)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:252",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 67/80 (84%, last 2025Q3) [STALE], StockholdersEquity 55/80 (69%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "liabilities: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:144",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:136",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 67/80 (84%, last 2025Q3) [STALE]",
+        "reason": "minority_interest: PARTIAL over 80 reportable quarters -- MinorityInterest 67/80 (84%, last 2025Q3) [STALE]; union 84%. every tag that cleared the 75% coverage bar is STALE -- its coverage stops more than 2 quarter(s) before 2026Q3, this company's own last quarter with fundamentals data. A tag can clear a bar computed over an 11-year window and still have died years ago; resolving to it is exactly how E1 froze JNJ's operating income at 2015. Stale: MinorityInterest."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:140|FY:54|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 75/80 (94%, last 2026Q3), ProfitLoss 24/80 (30%, last 2021Q2)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "NetIncomeLossAvailableToCommonStockholdersBasic"
+        ],
+        "alternates": [],
+        "coverage": 0.0625,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:9",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLossAvailableToCommonStockholdersBasic 5/80 (6%, last 2012Q4)",
+        "reason": "net_income_to_common: PARTIAL over 80 reportable quarters -- NetIncomeLossAvailableToCommonStockholdersBasic 5/80 (6%, last 2012Q4); union 6%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:54|9M:36|H1:36|Q:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "operating_income: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "pretax_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:88|FY:39|9M:30|H1:30",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 63/80 (79%, last 2026Q3), IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 48/80 (60%, last 2019Q4)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.9375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:172|FY:54|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Revenues 75/80 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8625,
+        "n_target_quarters": 80,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:71",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/80 (86%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

@@ -1,0 +1,750 @@
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/320193 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker AAPL --fundamentals
+  AAPL (CIK 320193): 2591 fact rows
+Apple Inc. (CIK 320193) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/320193
+  2,591 facts · 11/14 families resolved · window 2006-09-30..2026-11-05 · 0.0s
+  -> exit 0 in 0.4s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/320193 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/320193 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/0000320193-26-000026.html  (0.4s)
+  -> exit 0 in 1.2s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/320193 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/0000320193-26-000020.html  (0.4s)
+  -> exit 0 in 1.2s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/320193 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/0000320193-26-000024.html  (0.4s)
+  -> exit 0 in 1.2s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/0000320193-26-000026.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/0000320193-26-000020.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/320193/0000320193-26-000024.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1326801 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker META --fundamentals
+  META (CIK 1326801): 2152 fact rows
+Meta Platforms, Inc. (CIK 1326801) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1326801
+  2,152 facts · 11/14 families resolved · window 2009-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.4s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1326801 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1326801 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/0001628280-26-003942.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1326801 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/0001628280-26-066773.html  (0.5s)
+  -> exit 0 in 1.4s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1326801 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/0001628280-26-066700.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/0001628280-26-003942.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/0001628280-26-066773.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1326801/0001628280-26-066700.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/789019 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker MSFT --fundamentals
+  MSFT (CIK 789019): 2727 fact rows
+MICROSOFT CORP (CIK 789019) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/789019
+  2,727 facts · 11/14 families resolved · window 2007-06-30..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/789019 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/789019 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/0001193125-26-323660.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/789019 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/0001193125-26-436133.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/789019 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/0001193125-26-436122.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/0001193125-26-323660.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/0001193125-26-436133.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/789019/0001193125-26-436122.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker GOOGL --fundamentals
+  GOOGL (CIK 1652044): 1652 fact rows
+Alphabet Inc. (CIK 1652044) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1652044
+  1,652 facts · 11/14 families resolved · window 2012-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1652044 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1652044 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/0001652044-26-000018.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1652044 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/0001652044-26-000084.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1652044 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/0001652044-26-000080.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/0001652044-26-000018.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/0001652044-26-000084.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1652044/0001652044-26-000080.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker AMZN --fundamentals
+  AMZN (CIK 1018724): 2918 fact rows
+AMAZON COM INC (CIK 1018724) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1018724
+  2,918 facts · 10/14 families resolved · window 2006-12-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1018724 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1018724 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/0001018724-26-000004.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1018724 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/0001018724-26-000040.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1018724 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/0001018724-26-000038.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/0001018724-26-000004.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/0001018724-26-000040.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1018724/0001018724-26-000038.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker SPCX --fundamentals
+  SPCX (CIK 1181412): 88 fact rows
+SPACE EXPLORATION TECHNOLOGIES CORP (CIK 1181412) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1181412
+  88 facts · 2/14 families resolved · window 2024-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1181412 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1181412/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1181412 --latest 10-K
+CIK 1181412 has no labeled 10-K in the corpus
+  -> exit 1 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1181412 --latest 10-Q
+CIK 1181412 has no labeled 10-Q in the corpus
+  -> exit 1 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1181412 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1181412/0001628280-26-066482.html  (0.4s)
+  -> exit 0 in 1.2s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1181412/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1181412/0001628280-26-066482.html
+  10-K: no page
+  10-Q: no page
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker NVDA --fundamentals
+  NVDA (CIK 1045810): 2547 fact rows
+NVIDIA CORP (CIK 1045810) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1045810
+  2,547 facts · 11/14 families resolved · window 2007-01-28..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1045810 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1045810 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/0001045810-26-000021.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1045810 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/0001045810-26-000075.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1045810 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/0001045810-26-000073.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/0001045810-26-000021.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/0001045810-26-000075.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1045810/0001045810-26-000073.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker AMD --fundamentals
+  AMD (CIK 2488): 2403 fact rows
+ADVANCED MICRO DEVICES INC (CIK 2488) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2488
+  2,403 facts · 10/14 families resolved · window 2007-12-29..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2488 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2488 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/0000002488-26-000018.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2488 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/0000002488-26-000191.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2488 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/0000002488-26-000188.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/0000002488-26-000018.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/0000002488-26-000191.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2488/0000002488-26-000188.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1730168 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker AVGO --fundamentals
+  AVGO (CIK 1730168): 1585 fact rows
+Broadcom Inc. (CIK 1730168) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1730168
+  1,585 facts · 12/14 families resolved · window 2015-11-01..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1730168 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1730168 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/0001730168-25-000121.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1730168 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/0001730168-26-000080.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1730168 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/0001730168-26-000076.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/0001730168-25-000121.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/0001730168-26-000080.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1730168/0001730168-26-000076.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1341439 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker ORCL --fundamentals
+  ORCL (CIK 1341439): 2364 fact rows
+ORACLE CORP (CIK 1341439) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1341439
+  2,364 facts · 10/14 families resolved · window 2007-05-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1341439 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1341439 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/0001193125-26-277521.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1341439 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/0001193125-26-389274.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1341439 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/0001193125-26-387905.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/0001193125-26-277521.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/0001193125-26-389274.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1341439/0001193125-26-387905.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker CRM --fundamentals
+  CRM (CIK 1108524): 3013 fact rows
+Salesforce, Inc. (CIK 1108524) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524
+  3,013 facts · 12/14 families resolved · window 2007-01-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1108524 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1108524 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/0001108524-26-000060.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1108524 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/0001108524-26-000190.html  (0.4s)
+  -> exit 0 in 1.4s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1108524 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/0001108524-26-000187.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/0001108524-26-000060.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/0001108524-26-000190.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1108524/0001108524-26-000187.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/796343 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker ADBE --fundamentals
+  ADBE (CIK 796343): 2735 fact rows
+ADOBE INC. (CIK 796343) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/796343
+  2,735 facts · 11/14 families resolved · window 2006-12-01..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/796343 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/796343 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/0000796343-26-000003.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/796343 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/0000796343-26-000156.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/796343 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/0000796343-26-000147.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/0000796343-26-000003.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/0000796343-26-000156.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/796343/0000796343-26-000147.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1065280 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker NFLX --fundamentals
+  NFLX (CIK 1065280): 2919 fact rows
+NETFLIX INC (CIK 1065280) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1065280
+  2,919 facts · 12/14 families resolved · window 2006-12-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1065280 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1065280 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/0001065280-26-000034.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1065280 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/0001065280-26-000291.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1065280 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/0001065280-26-000290.html  (0.4s)
+  -> exit 0 in 1.2s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/0001065280-26-000034.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/0001065280-26-000291.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1065280/0001065280-26-000290.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/858877 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker CSCO --fundamentals
+  CSCO (CIK 858877): 2628 fact rows
+CISCO SYSTEMS, INC. (CIK 858877) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/858877
+  2,628 facts · 11/14 families resolved · window 2007-07-28..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/858877 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/858877 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/0000858877-26-000132.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/858877 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/0000858877-26-000078.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/858877 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/0000858877-26-000106.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/0000858877-26-000132.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/0000858877-26-000078.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/858877/0000858877-26-000106.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/804328 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker QCOM --fundamentals
+  QCOM (CIK 804328): 3116 fact rows
+QUALCOMM INC/DE (CIK 804328) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/804328
+  3,116 facts · 12/14 families resolved · window 2006-09-24..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/804328 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/804328 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/0000804328-26-000128.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/804328 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/0000804328-26-000086.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/804328 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/0000804328-26-000127.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/0000804328-26-000128.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/0000804328-26-000086.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/804328/0000804328-26-000127.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker TXN --fundamentals
+  TXN (CIK 97476): 2602 fact rows
+TEXAS INSTRUMENTS INC (CIK 97476) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/97476
+  2,602 facts · 12/14 families resolved · window 2006-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/97476 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/97476 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/0000097476-26-000059.html  (0.4s)
+  -> exit 0 in 1.2s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/97476 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/0000097476-26-000169.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/97476 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/0000097476-26-000165.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/0000097476-26-000059.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/0000097476-26-000169.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/97476/0000097476-26-000165.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/51143 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker IBM --fundamentals
+  IBM (CIK 51143): 2757 fact rows
+INTERNATIONAL BUSINESS MACHINES CORP (CIK 51143) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/51143
+  2,757 facts · 11/14 families resolved · window 2006-12-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/51143 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/51143 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/0000051143-26-000010.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/51143 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/0000051143-26-000095.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/51143 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/0000051143-26-000093.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/0000051143-26-000010.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/0000051143-26-000095.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/51143/0000051143-26-000093.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker PLTR --fundamentals
+  PLTR (CIK 1321655): 1061 fact rows
+Palantir Technologies Inc. (CIK 1321655) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1321655
+  1,061 facts · 8/14 families resolved · window 2017-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.4s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1321655 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1321655 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/0001321655-26-000011.html  (0.5s)
+  -> exit 0 in 1.4s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1321655 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/0001321655-26-000048.html  (0.6s)
+  -> exit 0 in 1.5s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1321655 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/0001321655-26-000045.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/0001321655-26-000011.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/0001321655-26-000048.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1321655/0001321655-26-000045.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker AMAT --fundamentals
+  AMAT (CIK 6951): 2626 fact rows
+APPLIED MATERIALS INC /DE (CIK 6951) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/6951
+  2,626 facts · 11/14 families resolved · window 2006-10-29..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/6951 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/6951 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/0001628280-25-056742.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/6951 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/0001628280-26-058235.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/6951 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/0001628280-26-056699.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/0001628280-25-056742.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/0001628280-26-058235.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/6951/0001628280-26-056699.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/723125 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker MU --fundamentals
+  MU (CIK 723125): 2993 fact rows
+MICRON TECHNOLOGY INC (CIK 723125) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/723125
+  2,993 facts · 11/14 families resolved · window 2008-08-28..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/723125 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/723125 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/0000723125-26-000023.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/723125 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/0000723125-26-000015.html  (0.4s)
+  -> exit 0 in 1.4s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/723125 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/0000723125-26-000018.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/0000723125-26-000023.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/0000723125-26-000015.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/723125/0000723125-26-000018.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker TSLA --fundamentals
+  TSLA (CIK 1318605): 2804 fact rows
+Tesla, Inc. (CIK 1318605) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1318605
+  2,804 facts · 12/14 families resolved · window 2008-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1318605 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1318605 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/0001628280-26-003952.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1318605 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/0001628280-26-066775.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1318605 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/0001628280-26-066738.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/0001628280-26-003952.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/0001628280-26-066775.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1318605/0001628280-26-066738.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/19617 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker JPM --fundamentals
+  JPM (CIK 19617): 2743 fact rows
+JPMORGAN CHASE & CO (CIK 19617) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/19617
+  2,743 facts · 11/14 families resolved · window 2006-12-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/19617 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/19617 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/0001628280-26-008131.html  (0.7s)
+  -> exit 0 in 1.6s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/19617 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/0001628280-26-069523.html  (1.0s)
+  -> exit 0 in 1.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/19617 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/0001628280-26-065582.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/0001628280-26-008131.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/0001628280-26-069523.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/19617/0001628280-26-065582.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker LLY --fundamentals
+  LLY (CIK 59478): 2432 fact rows
+ELI LILLY & Co (CIK 59478) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/59478
+  2,432 facts · 10/14 families resolved · window 2006-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/59478 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/59478 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/0000059478-26-000013.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/59478 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/0000059478-26-000108.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/59478 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/0000059478-26-000104.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/0000059478-26-000013.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/0000059478-26-000108.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/59478/0000059478-26-000104.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker V --fundamentals
+  V (CIK 1403161): 2299 fact rows
+VISA INC. (CIK 1403161) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1403161
+  2,299 facts · 9/14 families resolved · window 2006-09-30..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1403161 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1403161 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/0001403161-26-000134.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1403161 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/0001403161-26-000104.html  (0.4s)
+  -> exit 0 in 1.4s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1403161 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/0001403161-26-000126.html  (0.4s)
+  -> exit 0 in 1.2s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/0001403161-26-000134.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/0001403161-26-000104.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1403161/0001403161-26-000126.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2115436 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker XOM --fundamentals
+  XOM (CIK 2115436): 90 fact rows
+ExxonMobil Holdings Corp (CIK 2115436) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/2115436
+  90 facts · 2/14 families resolved · window 2024-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.4s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2115436 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2115436/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2115436 --latest 10-K
+CIK 2115436 has no labeled 10-K in the corpus
+  -> exit 1 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2115436 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2115436/0002115436-26-000020.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/2115436 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2115436/0002115436-26-000018.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2115436/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2115436/0002115436-26-000020.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/2115436/0002115436-26-000018.html
+  10-K: no page
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker WMT --fundamentals
+  WMT (CIK 104169): 3520 fact rows
+Walmart Inc. (CIK 104169) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/104169
+  3,520 facts · 12/14 families resolved · window 2007-01-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/104169 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/104169 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/0000104169-26-000055.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/104169 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/0000104169-26-000154.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/104169 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/0000104169-26-000145.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/0000104169-26-000055.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/0000104169-26-000154.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/104169/0000104169-26-000145.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1141391 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker MA --fundamentals
+  MA (CIK 1141391): 3065 fact rows
+Mastercard Inc (CIK 1141391) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1141391
+  3,065 facts · 12/14 families resolved · window 2006-12-31..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1141391 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1141391 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/0001141391-26-000013.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1141391 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/0001141391-26-000124.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/1141391 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/0001141391-26-000122.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/0001141391-26-000013.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/0001141391-26-000124.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/1141391/0001141391-26-000122.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker JNJ --fundamentals
+  JNJ (CIK 200406): 2479 fact rows
+JOHNSON & JOHNSON (CIK 200406) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406
+  2,479 facts · 10/14 families resolved · window 2006-12-31..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/200406 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/index.html  (0.0s)
+  -> exit 0 in 1.0s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/200406 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/0000200406-26-000016.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/200406 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/0000200406-26-000197.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/200406 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/0000200406-26-000189.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/0000200406-26-000016.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/0000200406-26-000197.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/200406/0000200406-26-000189.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/80424 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker PG --fundamentals
+  PG (CIK 80424): 3069 fact rows
+PROCTER & GAMBLE Co (CIK 80424) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/80424
+  3,069 facts · 10/14 families resolved · window 2006-06-30..2026-11-05 · 0.1s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/80424 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/80424 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/0000080424-26-000103.html  (0.4s)
+  -> exit 0 in 1.4s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/80424 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/0000080424-26-000256.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/80424 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/0000080424-26-000250.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/0000080424-26-000103.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/0000080424-26-000256.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/80424/0000080424-26-000250.html
+ingest: store /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832 already has per_form=2; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/ingest_one.py --ticker COST --fundamentals
+  COST (CIK 909832): 3486 fact rows
+COSTCO WHOLESALE CORP /NEW (CIK 909832) fundamentals -> /Users/vihanpatil/personal/projects/FinScreen/data/app/companies/909832
+  3,486 facts · 11/14 families resolved · window 2007-09-02..2026-11-05 · 0.0s
+  -> exit 0 in 0.5s
+label: --skip-label given; skipped
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/909832 --index
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/index.html  (0.0s)
+  -> exit 0 in 0.9s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/909832 --latest 10-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/0000909832-26-000093.html  (0.4s)
+  -> exit 0 in 1.3s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/909832 --latest 10-Q
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/0000909832-26-000051.html  (0.4s)
+  -> exit 0 in 1.2s
+$ /Applications/Xcode.app/Contents/Developer/usr/bin/python3 /Users/vihanpatil/personal/projects/FinScreen/report_filing.py --store data/app/companies/909832 --latest 8-K
+/Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/0000909832-26-000084.html  (0.4s)
+  -> exit 0 in 1.3s
+
+pages written:
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/index.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/0000909832-26-000093.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/0000909832-26-000051.html
+  /Users/vihanpatil/personal/projects/FinScreen/data/app/reports/909832/0000909832-26-000084.html

@@ -1,0 +1,15 @@
+cik,family,state,tags,switch_quarter,coverage,severity,alternates,unit,units_mixed,duration_mix
+1181412,assets,PARTIAL,Assets,,0.375,UNRESOLVED,,USD,0,instant:4
+1181412,cash,SINGLE,CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents,,0.75,resolved,,USD,0,instant:8
+1181412,eps_diluted,PARTIAL,EarningsPerShareDiluted,,0.5,UNRESOLVED,,USD/shares,0,Q:4|9M:2|H1:2
+1181412,equity,SINGLE,StockholdersEquity,,1.0,resolved,,USD,0,instant:12
+1181412,liabilities,PARTIAL,Liabilities,,0.375,UNRESOLVED,,USD,0,instant:4
+1181412,liabilities_and_equity,PARTIAL,LiabilitiesAndStockholdersEquity,,0.375,UNRESOLVED,,USD,0,instant:4
+1181412,minority_interest,ABSENT,,,0.0,UNRESOLVED,,,0,
+1181412,net_income,PARTIAL,NetIncomeLoss,,0.5,UNRESOLVED,,USD,0,Q:4|9M:2|H1:2
+1181412,net_income_to_common,PARTIAL,NetIncomeLossAvailableToCommonStockholdersBasic,,0.5,UNRESOLVED,,USD,0,Q:4|9M:2|H1:2
+1181412,operating_cash_flow,PARTIAL,NetCashProvidedByUsedInOperatingActivities,,0.5,UNRESOLVED,,USD,0,9M:2|H1:2
+1181412,operating_income,PARTIAL,OperatingIncomeLoss,,0.5,UNRESOLVED,,USD,0,Q:4|9M:2|H1:2
+1181412,pretax_income,PARTIAL,IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,,0.5,UNRESOLVED,,USD,0,Q:4|9M:2|H1:2
+1181412,revenue,PARTIAL,RevenueFromContractWithCustomerExcludingAssessedTax,,0.5,UNRESOLVED,,USD,0,Q:4|9M:2|H1:2
+1181412,shares_outstanding,ABSENT,,,0.0,UNRESOLVED,,,0,

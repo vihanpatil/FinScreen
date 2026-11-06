@@ -1,0 +1,640 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 1108524,
+  "ticker": "CRM",
+  "company_name": "Salesforce, Inc.",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0001108524-26-000190",
+      "form": "10-Q",
+      "filing_date": "2026-08-27",
+      "items": null,
+      "primary_document": "crm-20260731.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001108524-26-000187",
+      "form": "8-K",
+      "filing_date": "2026-08-26",
+      "items": "2.02,9.01",
+      "primary_document": "crm-20260826.htm",
+      "earnings_doc_filename": "crm-q2fy27xexhibit991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001108524-26-000127",
+      "form": "10-Q",
+      "filing_date": "2026-05-28",
+      "items": null,
+      "primary_document": "crm-20260430.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001108524-26-000125",
+      "form": "8-K",
+      "filing_date": "2026-05-27",
+      "items": "2.02,9.01",
+      "primary_document": "crm-20260527.htm",
+      "earnings_doc_filename": "crm-q1fy27xexhibit991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001108524-26-000060",
+      "form": "10-K",
+      "filing_date": "2026-03-02",
+      "items": null,
+      "primary_document": "crm-20260131.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0001108524-25-000006",
+      "form": "10-K",
+      "filing_date": "2025-03-05",
+      "items": null,
+      "primary_document": "crm-20250131.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 45,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524/sections.parquet",
+    "sha256": "269a369b52a77a7bb72d96dec7ddfd0b47da440ea6950bab5646e74f21fb9298",
+    "n_rows": 10,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 10
+  },
+  "extraction_audit": [
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000190",
+      "form": "10-Q",
+      "filing_date": "2026-08-27",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8088,
+      "prose_word_share": 0.6821,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.54064,
+      "source_document": "crm-20260731.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000190",
+      "form": "10-Q",
+      "filing_date": "2026-08-27",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 17502,
+      "prose_word_share": 0.8501,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47822,
+      "source_document": "crm-20260731.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000187",
+      "form": "8-K",
+      "filing_date": "2026-08-26",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 7229,
+      "prose_word_share": 0.415,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47509,
+      "source_document": "crm-q2fy27xexhibit991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000127",
+      "form": "10-Q",
+      "filing_date": "2026-05-28",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7178,
+      "prose_word_share": 0.7364,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.53665,
+      "source_document": "crm-20260430.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000127",
+      "form": "10-Q",
+      "filing_date": "2026-05-28",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 17285,
+      "prose_word_share": 0.849,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47864,
+      "source_document": "crm-20260430.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000125",
+      "form": "8-K",
+      "filing_date": "2026-05-27",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 6466,
+      "prose_word_share": 0.4309,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47372,
+      "source_document": "crm-q1fy27xexhibit991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000060",
+      "form": "10-K",
+      "filing_date": "2026-03-02",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 8276,
+      "prose_word_share": 0.7099,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51612,
+      "source_document": "crm-20260131.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-26-000060",
+      "form": "10-K",
+      "filing_date": "2026-03-02",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 16691,
+      "prose_word_share": 0.84,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.48179,
+      "source_document": "crm-20260131.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-25-000006",
+      "form": "10-K",
+      "filing_date": "2025-03-05",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7832,
+      "prose_word_share": 0.7213,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.51608,
+      "source_document": "crm-20250131.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 1108524,
+      "company_name": "Salesforce, Inc.",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0001108524-25-000006",
+      "form": "10-K",
+      "filing_date": "2025-03-05",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 17807,
+      "prose_word_share": 0.7953,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4881,
+      "source_document": "crm-20250131.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524/chunks.parquet",
+    "sha256": "1ddf66e215e0c8a956691e6c393c8df74a50809f1346c27a4e4b9ea6b5a22e68",
+    "n_chunks": 198,
+    "n_sections": 10,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524/metadata.db",
+    "sha256": "b7b57bbcd8b0653ea1f555398679a2e35f8cbfbf42c1959368bf4394f968bc9e",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.3,
+    "documents_s": 0.25,
+    "extract_s": 1.71,
+    "chunk_s": 0.05,
+    "total_s": 2.34
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0001108524.json",
+      "sha256": "a89be8715e056f1cadffdcd9616676ec1949107233b11f430a8183f88ca4ae15"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2007-01-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524/fundamentals.parquet",
+      "sha256": "afd1ab9a892173e01472d31903643833458908325b90cf8891461e8fbae0c4bc",
+      "n_rows": 3013,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/1108524/concept_resolution.csv",
+      "sha256": "703c569976e33db77ad10de87a5ba0410c747087273e5a9dc842a5b325a91a83",
+      "n_rows": 14,
+      "n_resolved": 12,
+      "n_unresolved": 2,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8861,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 70/79 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.962,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:262",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 76/79 (96%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 36/79 (46%, last 2026Q3), Cash 4/79 (5%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD/shares",
+        "units_mixed": true,
+        "duration_mix": "Q:192|FY:57|H1:36|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.9114,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:264",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquity 70/79 (89%, last 2026Q3), StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 11/79 (14%, last 2013Q1)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8861,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 70/79 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8861,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:142",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 70/79 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.1013,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:14",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 8/79 (10%, last 2011Q1)",
+        "reason": "minority_interest: PARTIAL over 79 reportable quarters -- MinorityInterest 8/79 (10%, last 2011Q1); union 10%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:235|FY:57|H1:36|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 74/79 (94%, last 2026Q3), ProfitLoss 20/79 (25%, last 2013Q2)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 79,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 79 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:104|FY:57|H1:36|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:192|FY:57|H1:36|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 74/79 (94%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:104|FY:57|H1:36|9M:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 54/79 (68%, last 2021Q3) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 25/79 (32%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "Revenues",
+          "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "RevenueFromContractWithCustomerExcludingAssessedTax"
+        ],
+        "alternates": [],
+        "coverage": 0.9367,
+        "n_target_quarters": 79,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:168|FY:52|H1:31|9M:29",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 39/79 (49%, last 2026Q3), Revenues 36/79 (46%, last 2017Q1) [STALE], RevenueFromContractWithCustomerIncludingAssessedTax 4/79 (5%, last 2018Q1) [STALE]",
+        "reason": null
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8734,
+        "n_target_quarters": 79,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:70",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/79 (87%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.04,
+      "classify_s": 0.01,
+      "total_s": 0.06
+    }
+  }
+}

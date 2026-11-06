@@ -1,0 +1,643 @@
+{
+  "store_version": "app-store-v1",
+  "run_id": "L2.2-ingest-one",
+  "cik": 200406,
+  "ticker": "JNJ",
+  "company_name": "JOHNSON & JOHNSON",
+  "in_research_universe": true,
+  "window": {
+    "lookback_days": 1100,
+    "per_form": 2,
+    "forms": [
+      "10-K",
+      "10-Q",
+      "8-K"
+    ]
+  },
+  "filings": [
+    {
+      "accession_number": "0000200406-26-000197",
+      "form": "10-Q",
+      "filing_date": "2026-10-21",
+      "items": null,
+      "primary_document": "jnj-20260927.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000200406-26-000189",
+      "form": "8-K",
+      "filing_date": "2026-10-13",
+      "items": "2.02,9.01",
+      "primary_document": "jnj-20261013.htm",
+      "earnings_doc_filename": "a2026q3exhibit991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000200406-26-000153",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "items": null,
+      "primary_document": "jnj-20260628.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000200406-26-000146",
+      "form": "8-K",
+      "filing_date": "2026-07-15",
+      "items": "2.02,9.01",
+      "primary_document": "jnj-20260715.htm",
+      "earnings_doc_filename": "a2026q2exhibit991.htm",
+      "earnings_doc_section_type": "EX99_PRESS_RELEASE",
+      "earnings_doc_selection_confidence": "high",
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000200406-26-000016",
+      "form": "10-K",
+      "filing_date": "2026-02-11",
+      "items": null,
+      "primary_document": "jnj-20251228.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    },
+    {
+      "accession_number": "0000200406-25-000038",
+      "form": "10-K",
+      "filing_date": "2025-02-13",
+      "items": null,
+      "primary_document": "jnj-20241229.htm",
+      "earnings_doc_filename": null,
+      "earnings_doc_section_type": null,
+      "earnings_doc_selection_confidence": null,
+      "earnings_doc_unresolved_reason": null
+    }
+  ],
+  "n_filings_in_history": 45,
+  "documents": {
+    "n_fetched": 6,
+    "failures": []
+  },
+  "sections": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406/sections.parquet",
+    "sha256": "e20039aca5b9cc2197943c7ab8b44af97944e8b07663bc296e96af45a2228fd4",
+    "n_rows": 8,
+    "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/filings_e2_v2.parquet"
+  },
+  "sections_by_status": {
+    "OK": 8
+  },
+  "extraction_audit": [
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000197",
+      "form": "10-Q",
+      "filing_date": "2026-10-21",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 7475,
+      "prose_word_share": 0.6148,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.52157,
+      "source_document": "jnj-20260927.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000197",
+      "form": "10-Q",
+      "filing_date": "2026-10-21",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "jnj-20260927.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000189",
+      "form": "8-K",
+      "filing_date": "2026-10-13",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 2360,
+      "prose_word_share": 0.372,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.33808,
+      "source_document": "a2026q3exhibit991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000153",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6944,
+      "prose_word_share": 0.6048,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.5275,
+      "source_document": "jnj-20260628.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000153",
+      "form": "10-Q",
+      "filing_date": "2026-07-23",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "ITEM_ABSENT_FROM_TOC",
+      "flags": [
+        "item_absent_from_toc"
+      ],
+      "extraction_method": "none",
+      "extraction_confidence": "low",
+      "word_count": 0,
+      "prose_word_share": 0.0,
+      "ctrl_ratio": null,
+      "eng_word_share": null,
+      "source_document": "jnj-20260628.htm",
+      "reason_code": "item_absent_from_toc",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000146",
+      "form": "8-K",
+      "filing_date": "2026-07-15",
+      "section_type": "EX99_PRESS_RELEASE",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "whole_document",
+      "extraction_confidence": "high",
+      "word_count": 2549,
+      "prose_word_share": 0.3978,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.32665,
+      "source_document": "a2026q2exhibit991.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000016",
+      "form": "10-K",
+      "filing_date": "2026-02-11",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 9951,
+      "prose_word_share": 0.6821,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.4959,
+      "source_document": "jnj-20251228.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-26-000016",
+      "form": "10-K",
+      "filing_date": "2026-02-11",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 6293,
+      "prose_word_share": 0.8695,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47792,
+      "source_document": "jnj-20251228.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-25-000038",
+      "form": "10-K",
+      "filing_date": "2025-02-13",
+      "section_type": "MDA",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 10261,
+      "prose_word_share": 0.6906,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.49939,
+      "source_document": "jnj-20241229.htm",
+      "reason_code": "ok",
+      "note": ""
+    },
+    {
+      "cik": 200406,
+      "company_name": "JOHNSON & JOHNSON",
+      "sector": "UNCLASSIFIED",
+      "stratum": "external",
+      "accession_number": "0000200406-25-000038",
+      "form": "10-K",
+      "filing_date": "2025-02-13",
+      "section_type": "RISK_FACTORS",
+      "extraction_status": "OK",
+      "flags": [],
+      "extraction_method": "anchor",
+      "extraction_confidence": "high",
+      "word_count": 5970,
+      "prose_word_share": 0.8724,
+      "ctrl_ratio": 0.0,
+      "eng_word_share": 0.47359,
+      "source_document": "jnj-20241229.htm",
+      "reason_code": "ok",
+      "note": ""
+    }
+  ],
+  "dialect_retry": {
+    "rescued": [],
+    "rule": "APP-LANE RETRY: the frozen extractor failed this attempt on the document as filed; it was re-run on HTML normalized by ingest_one.normalize_filer_dialect (inline formatting tags dropped, em/en-dash item separators rewritten as 'Item N.'). extract.py is unchanged and the research corpus is untouched.",
+    "retry_reason_codes": [
+      "anchor_span_below_min_chars",
+      "empty_after_extraction",
+      "item_absent_from_toc",
+      "no_toc_and_no_heading_match",
+      "toc_recovery_declined"
+    ]
+  },
+  "chunks": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406/chunks.parquet",
+    "sha256": "8daeff7230d271926e0359d023f345e57f2ca0cf435757c176a717b6f42c3865",
+    "n_chunks": 113,
+    "n_sections": 8,
+    "window_rule": "APP_single_company",
+    "line_rule": "reflow_v1",
+    "schema_source": "finetune/build_f4_chunks._arrow_schema (the schema data/f4/chunks_v1.parquet was written with)"
+  },
+  "metadata_db": {
+    "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406/metadata.db",
+    "sha256": "c70cb1147f2b7df8f06bcb8a847e3b46f3c0b95cec7d574b430978abf973e5e0",
+    "schema_source": "ingest_metadata.init_db"
+  },
+  "dedup_universe": "THIS COMPANY'S ingested filings only -- not the 244-company corpus. n_source_filings counts occurrences inside this store.",
+  "network": {
+    "edgar_requests": 4,
+    "user_agent": "FinScreen Research vihanpatil7@gmail.com",
+    "cost_usd": 0.0
+  },
+  "timings_seconds": {
+    "resolve_s": 0.01,
+    "metadata_s": 0.19,
+    "documents_s": 0.45,
+    "extract_s": 5.04,
+    "chunk_s": 0.04,
+    "total_s": 5.73
+  },
+  "fundamentals": {
+    "source": "SEC XBRL companyfacts via edgar_client.get_companyfacts -- the same rate-limited client and the same data/raw/ cache F2 filled for the 244 research CIKs",
+    "companyfacts_cache": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/raw/companyfacts/CIK0000200406.json",
+      "sha256": "9ce98e50414e9a6704eaf485e1868c2298c6ae36acc85a82c0a3737485303be7"
+    },
+    "reused_modules": [
+      "ingest_fundamentals.build_fundamentals / extract_concept_facts",
+      "ingest_fundamentals.CONCEPT_FAMILIES / CONCEPTS",
+      "ingest_fundamentals.classify_universe / classify_family",
+      "ingest_fundamentals.resolution_problems",
+      "ingest_fundamentals.write_concept_resolution"
+    ],
+    "n_tags_pulled": 30,
+    "n_families": 14,
+    "window": {
+      "start": "2006-12-31",
+      "end": "2026-11-05",
+      "rule": "the company's own XBRL life; see ingest_one.fundamentals_window"
+    },
+    "coverage_bar": 0.75,
+    "stale_tail_max_quarters": 2,
+    "parquet": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406/fundamentals.parquet",
+      "sha256": "967ba469da7e86dcdb0659fac04548b0d83d5f2dfd34f7ea953f606223e3dba6",
+      "n_rows": 2479,
+      "schema_pinned_to": "/Users/vihanpatil/personal/projects/FinScreen/data/fundamentals_e2.parquet",
+      "schema_pin_error": null
+    },
+    "concept_resolution": {
+      "path": "/Users/vihanpatil/personal/projects/FinScreen/data/app/companies/200406/concept_resolution.csv",
+      "sha256": "794492e22ca5c4e6283b6e749ee106503ab2b6c5f16e7ea6eb7aa383b10b18b5",
+      "n_rows": 14,
+      "n_resolved": 10,
+      "n_unresolved": 4,
+      "schema_source": "ingest_fundamentals.concept_resolution_frame (the columns data/f2/concept_resolution.csv has)"
+    },
+    "families": [
+      {
+        "family": "assets",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Assets"
+        ],
+        "alternates": [],
+        "coverage": 0.8375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:145",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Assets 67/80 (84%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "cash",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "CashAndCashEquivalentsAtCarryingValue"
+        ],
+        "alternates": [],
+        "coverage": 0.9,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:222",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "CashAndCashEquivalentsAtCarryingValue 72/80 (90%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents 34/80 (42%, last 2026Q3), CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations 12/80 (15%, last 2025Q4), Cash 5/80 (6%, last 2014Q4)",
+        "reason": null
+      },
+      {
+        "family": "eps_diluted",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EarningsPerShareDiluted"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD/shares",
+        "units_mixed": false,
+        "duration_mix": "Q:194|FY:51|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EarningsPerShareDiluted 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8625,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:254",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest 69/80 (86%, last 2026Q3), StockholdersEquity 14/80 (18%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "Liabilities"
+        ],
+        "alternates": [],
+        "coverage": 0.8375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "Liabilities 67/80 (84%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "liabilities_and_equity",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "LiabilitiesAndStockholdersEquity"
+        ],
+        "alternates": [],
+        "coverage": 0.8375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:140",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "LiabilitiesAndStockholdersEquity 67/80 (84%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "minority_interest",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "MinorityInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.0375,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "instant:3",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "MinorityInterest 3/80 (4%, last 2023Q3)",
+        "reason": "minority_interest: PARTIAL over 80 reportable quarters -- MinorityInterest 3/80 (4%, last 2023Q3); union 4%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "net_income",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:174|FY:42|9M:30|H1:28",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetIncomeLoss 67/80 (84%, last 2026Q3), ProfitLoss 24/80 (30%, last 2014Q4)",
+        "reason": null
+      },
+      {
+        "family": "net_income_to_common",
+        "state": "ABSENT",
+        "severity": "UNRESOLVED",
+        "tags": [],
+        "alternates": [],
+        "coverage": 0.0,
+        "n_target_quarters": 80,
+        "unit": "",
+        "units_mixed": false,
+        "duration_mix": "",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "(no tag has an in-window operating-form row)",
+        "reason": "net_income_to_common: ABSENT over 80 reportable quarters -- (no tag has an in-window operating-form row); union 0%. no tag in this family has a single in-window row from an operating form (10-K/10-Q/8-K + /A). Non-operating forms -- DEF 14A proxy compensation tables above all -- are excluded by design and never count as coverage."
+      },
+      {
+        "family": "operating_cash_flow",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "NetCashProvidedByUsedInOperatingActivities"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "FY:51|9M:36|H1:36|Q:34",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "NetCashProvidedByUsedInOperatingActivities 71/80 (89%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "operating_income",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "OperatingIncomeLoss"
+        ],
+        "alternates": [],
+        "coverage": 0.25,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:24|FY:12|9M:8|H1:8",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "OperatingIncomeLoss 20/80 (25%, last 2015Q1)",
+        "reason": "operating_income: PARTIAL over 80 reportable quarters -- OperatingIncomeLoss 20/80 (25%, last 2015Q1); union 25%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped. It is below the 40% floor where F2_SPEC \u00a75.3's PARTIAL band starts, and is reported as PARTIAL rather than ABSENT because the family does have in-window operating-form rows."
+      },
+      {
+        "family": "pretax_income",
+        "state": "MIGRATION",
+        "severity": "resolved",
+        "tags": [
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+          "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+        ],
+        "alternates": [],
+        "coverage": 0.8875,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:194|FY:51|9M:36|H1:36",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments 51/80 (64%, last 2021Q3) [STALE], IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest 25/80 (31%, last 2026Q3)",
+        "reason": null
+      },
+      {
+        "family": "revenue",
+        "state": "PARTIAL",
+        "severity": "UNRESOLVED",
+        "tags": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "Revenues"
+        ],
+        "alternates": [],
+        "coverage": 0.55,
+        "n_target_quarters": 80,
+        "unit": "USD",
+        "units_mixed": false,
+        "duration_mix": "Q:84|FY:24|9M:22|H1:20",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "RevenueFromContractWithCustomerExcludingAssessedTax 37/80 (46%, last 2026Q3), Revenues 7/80 (9%, last 2014Q3)",
+        "reason": "revenue: PARTIAL over 80 reportable quarters -- RevenueFromContractWithCustomerExcludingAssessedTax 37/80 (46%, last 2026Q3), Revenues 7/80 (9%, last 2014Q3); union 55%. the tags' union does not reach the 75% coverage bar, so any series built from them would be silently gapped."
+      },
+      {
+        "family": "shares_outstanding",
+        "state": "SINGLE",
+        "severity": "resolved",
+        "tags": [
+          "EntityCommonStockSharesOutstanding"
+        ],
+        "alternates": [],
+        "coverage": 0.8625,
+        "n_target_quarters": 80,
+        "unit": "shares",
+        "units_mixed": false,
+        "duration_mix": "instant:70",
+        "last_data_quarter": "2026Q3",
+        "tag_coverage": "EntityCommonStockSharesOutstanding 69/80 (86%, last 2026Q3)",
+        "reason": null
+      }
+    ],
+    "warnings": [],
+    "failure": null,
+    "network": {
+      "edgar_requests": 0,
+      "cost_usd": 0.0
+    },
+    "timings_seconds": {
+      "fetch_parse_s": 0.03,
+      "classify_s": 0.01,
+      "total_s": 0.05
+    }
+  }
+}

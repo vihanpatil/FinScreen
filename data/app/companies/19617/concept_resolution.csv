@@ -1,0 +1,15 @@
+cik,family,state,tags,switch_quarter,coverage,severity,alternates,unit,units_mixed,duration_mix
+19617,assets,SINGLE,Assets,,0.8875,resolved,,USD,0,instant:209
+19617,cash,SINGLE,CashAndDueFromBanks,,0.95,resolved,,USD,0,instant:226
+19617,eps_diluted,SINGLE,EarningsPerShareDiluted,,0.9375,resolved,,USD/shares,0,Q:112|FY:54|H1:38|9M:36
+19617,equity,SINGLE,StockholdersEquity,,0.9375,resolved,,USD,0,instant:193
+19617,liabilities,SINGLE,Liabilities,,0.8875,resolved,,USD,0,instant:149
+19617,liabilities_and_equity,SINGLE,LiabilitiesAndStockholdersEquity,,0.8875,resolved,,USD,0,instant:145
+19617,minority_interest,ABSENT,,,0.0,UNRESOLVED,,,0,
+19617,net_income,SINGLE,NetIncomeLoss,,0.9375,resolved,,USD,0,Q:112|FY:54|H1:38|9M:36
+19617,net_income_to_common,SINGLE,NetIncomeLossAvailableToCommonStockholdersBasic,,0.9375,resolved,,USD,0,Q:112|FY:54|H1:38|9M:36
+19617,operating_cash_flow,SINGLE,NetCashProvidedByUsedInOperatingActivities,,0.9375,resolved,,USD,0,FY:54|H1:38|Q:38|9M:36
+19617,operating_income,ABSENT,,,0.0,UNRESOLVED,,,0,
+19617,pretax_income,SINGLE,IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest,,0.9375,resolved,,USD,0,Q:98|FY:44|H1:34|9M:32
+19617,revenue,MIGRATION,InterestAndDividendIncomeOperating|Revenues|RevenuesNetOfInterestExpense,2012Q3;2026Q1,0.9375,resolved,,USD,0,Q:138|FY:99|H1:48|9M:42
+19617,shares_outstanding,PARTIAL,EntityCommonStockSharesOutstanding,,0.7,UNRESOLVED,,shares,0,instant:74
