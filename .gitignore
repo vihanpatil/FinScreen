@@ -161,3 +161,7 @@ data/app/companies/**/*.log
 data/f5/head1_scorecard.md
 data/f5/head1_scorecard.json
 
+# E3 (numeric families) scorecard pages: per-company calls stay off the public repo (legal baseline #4)
+data/f5/e3_scorecard.md
+data/f5/e3_scorecard.json
+data/f5/e3_oof_scores.parquet
