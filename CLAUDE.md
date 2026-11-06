@@ -42,7 +42,11 @@ the owner's own after a paper period and never automated, no return claims.
 3. Verify the artifact you use (sha256, diff, inspection) — never trust a filename or a note.
 4. Point-in-time discipline everywhere: `filing_date`, never `report_date`; walk-forward, never shuffled; dedup beside raw; every number printed with how it was measured.
 5. Frozen: E1 artifacts, `extract.py` and the sealed E2 corpus (`data/filings_e2_v2.parquet` sha `15853e9f…`), the v1.2 adapter (`cadca849…`), the train/eval split, `data/f4/labels_e2_v1.parquet`. App-lane fixes live in the app-lane modules.
-6. Never run two labeling processes at once (`pgrep -fl "label_filing|label_e2|ingest_one"` first).
+6. Never run two labeling processes at once. Check with `bin/fs doctor` or
+   `pgrep -fl "[Pp]ython[^ ]* ([^ ]*/)?(label_filing|label_e2|ingest_one)\.py"` — the interpreter form,
+   never the bare names: a shell whose own command text contains `label_filing` matched the old
+   bare check and refused 18 watchlist tickers (2026-11-06, HANDOFF §4). While a chain is live, run
+   no shell command whose text contains a labeler script name.
 7. Long compute (> ~15 min) runs as a resumable main-session background command, never inside a subagent.
 8. Synthetic data is for unit tests only; every feature is proven on real, un-curated inputs (PRODUCT_PLAN §0.5). Never fake evidence.
 9. Public surfaces (site, README top, anything shared) follow the legal copy rules in `site/STORYBOARD.md` ("Legal baseline"); the scorecard and any call stay off public pages until `data/legal/` clears them.

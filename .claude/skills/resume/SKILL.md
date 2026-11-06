@@ -7,7 +7,7 @@ Do these in order, then report in under 15 lines.
 
 1. Read `CLAUDE.md`, then the top block of `RESUME_HERE.md` (down to the first
    "PREVIOUS" heading). The IN FLIGHT table and the "owner owes" list there are the state.
-2. `pgrep -fl "label_filing|label_e2|ingest_one|mlx_lm|run_campaign"` — if anything is
+2. `pgrep -fl "[Pp]ython[^ ]* ([^ ]*/)?(label_filing|label_e2|ingest_one)\.py|run_watchlist|run_campaign"` — if anything is
    alive, say so and do not start a second labeling or training process.
 3. `bin/fs doctor` — paste its FAIL/WARN lines, if any.
 4. `git status -sb` and `git log --oneline -5` — note anything uncommitted or unpushed.

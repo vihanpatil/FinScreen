@@ -56,49 +56,41 @@ hosting; if sharing is ever legally non-trivial the default is personal use. D l
 (`/usr/bin/python3` works again). F a 30-company watchlist (`data/app/watchlist.txt`: 20 tech incl. the owner's
 eight — SpaceX is SPCX in the SEC map — plus 10 non-tech; September proof set excluded). **NO OWNER ITEM IS OPEN.**
 
-**SESSION CLOSED 2026-11-05 ~21:00 CST (owner: "I pushed. Wrap things up. … I will continue in new session").**
-Main pushed and equal to `origin/main` at close. **Chain status at 03:11Z: 12 of 30 done** (AAPL META MSFT GOOGL
-AMZN SPCX NVDA AMD AVGO ORCL CRM ADBE; 1–12 min each, SpaceX 67 s because it has few filings). **The other 18 were
-REFUSED in one second each (exit 2) by a FALSE POSITIVE**: `finscreen.alive()` runs `pgrep -fl "label_filing|label_e2"`,
-which matched another Claude session's `/bin/bash -c … pgrep -fl "label_filing|…" … pytest …` wrapper (pid 13685,
-a different shell snapshot — the owner's new session starting up), not a labeler. No labeler was running. The chain
-then ended normally. **First thing the next session does after `/resume`: relaunch `bash data/app/run_watchlist.sh`
-in the background** — DONE.tsv keeps the exit-2 lines, so those 18 are retried and the 12 are skipped. **Builder fix
-(small, with a test):** `alive()` / `BUSY` in `finscreen.py` and the guard in `run_watchlist.sh` must match the
-labeler *process* (e.g. `python[^ ]* .*(label_filing|label_e2)\.py`), not any command line containing the word;
-until fixed, a refusal can be a false positive whenever another shell's command text contains "label_filing".
+**SESSION 2026-11-05/06 (third of the day; the owner typed only "resume").** State at the last update of this
+block (~03:45Z 2026-11-06): **the watchlist chain is RUNNING, relaunched by this session at 03:21Z** after the
+previous chain refused 18 tickers on a false-positive labeler-alive match (HANDOFF §3 "WATCHLIST CHAIN INCIDENT…",
+§4 lesson row). Progress is `data/app/status/WATCHLIST_DONE.tsv` (exit-0 rows = done; 14 of 30 at 03:38Z; 5–12 min
+per ticker). **Committed this session (one commit, after a reviewer pass with 24 findings, all MUST/SHOULD fixed):**
+(1) labeler-alive guard matches only a real interpreter invocation (`finscreen.py` `_SCRIPT_RE`, `run_watchlist.sh`;
+CLAUDE.md rule 6 and `/resume` updated); (2) ruling-F refresh: `run_watchlist.sh --refresh` (archives the ledger,
+passes `--refresh` to `bin/fs report`, which now re-ingests), a `mkdir` lock so chains never overlap, and the launchd
+agent `data/app/launchd/com.finscreen.watchlist-refresh.plist` (1st and 15th, 03:00, under `caffeinate`) — **NOT
+installed; the owner installs it with the two commands in `data/app/launchd/README.md`** (a persistent job on their
+machine is theirs to install; no owner question is open about it, it is simply offered); (3) the plain-English lead
+at the top of the disclosure block (`PLAIN_ENGLISH_TEMPLATE`, every figure from `load_disclosure()`, no guidance
+number per the G2 ruling); (4) the F6 carry-over: `PREDICTIVE_VALIDITY_TEMPLATE` carries the E2 bounded null with
+MDE and seed caveat, constants pinned to `F6_E2_RESULT.md` sha `06b86611…`. Timing tests pass idle (4 s). Root
+suite 1,869 green before the fix pass; 233 in the four touched files after it.
 
-**NEXT WORK, in order (none needs an owner word unless marked):**
-1. Relaunch `bash data/app/run_watchlist.sh` in the background; when `WATCHLIST_DONE.tsv` has 30 exit-0 lines,
-   re-render every page with the new footer (`bin/fs report T --skip-label` per ticker), commit the versioned
-   store files (manifest.json, label_manifest.json, generation.json, concept_resolution.csv per CIK) and the two
-   status files, and `bin/fs index` for the owner's summary.
-2. Re-run `pytest test_report_filing.py -k under_ten_seconds` with the labeler idle (2 timing failures under load).
-3. Post-earnings refresh schedule for the 30 (ruling F): main-session decision on mechanism (launchd plist or a
-   scheduled task that runs the chain with a fresh `--per-form` window); log in HANDOFF §3.
-4. Shorter plain-English disclosure block on the report pages (`builder`; non-collapsible stays; every number still
-   read from an artifact) — proposed 2026-11-05, owner did not object.
-5. Numeric-families signal program (PRODUCT_PLAN P3 item 2). It is an E3 under the stopping rule: census and
-   pre-registration draft first; **the pre-registration needs the owner's "ratify" before any fit**; no money metric
-   (ruling B); prices = the 2026-08-24 snapshot.
-6. Carry-overs from the F6 entry: heads 2/3 JSONs without escorts (re-render only on a new ruling); MODEL_CARD §7
-   gated TODO; **one owner question for the next packet (public surface, touchpoint b): README §1 charter wording
-   ("makes calls", "advice") is the owner's ruled text and conflicts with the public-copy rules.**
+**NEXT WORK, in order (none needs an owner word):**
+1. When `WATCHLIST_DONE.tsv` has 30 exit-0 rows: re-render every page (`bin/fs report T --skip-label` per ticker,
+   seconds each — the pages built before this commit lack the new lead and E2 line), `bin/fs index`, then commit the
+   versioned store files (manifest.json, label_manifest.json, generation.json, concept_resolution.csv per CIK) and the
+   two status files. Spot-read two pages (one train-overlap, one outside-universe) for lead/list consistency.
+2. Numeric-families signal program (PRODUCT_PLAN P3 item 2): census and pre-registration draft first; **the
+   pre-registration needs the owner's "ratify" before any fit**; no money metric (ruling B); prices = 2026-08-24.
+3. Carry-overs: heads 2/3 JSONs without escorts (re-render only on a new ruling); MODEL_CARD §7 gated TODO; **owner
+   question for the next packet (touchpoint b): README §1 charter wording ("makes calls", "advice") vs public-copy
+   rules.** Also offer, same packet: install the launchd refresh agent (yes/no).
 
-**IN FLIGHT (2026-11-05 evening):**
+**IN FLIGHT:**
 | what | how it runs | expected output | resume |
 |---|---|---|---|
-| Watchlist build, 30 tickers | `bash data/app/run_watchlist.sh` as a main-session background command (one labeler at a time; skips tickers marked done) | `data/app/status/WATCHLIST_DONE.tsv` with 30 exit-0 lines; pages under `data/app/reports/<cik>/`; log `data/app/status/WATCHLIST_BUILD.log` | if `pgrep -fl "label_filing\|ingest_one"` is empty and DONE.tsv has < 30 exit-0 lines, re-run the same command in the background |
-| Footer line for demonstration sharing (ruling C) — **DONE, committed** | `FOOTER_LINE` changed (U+2019 apostrophe so `esc()` leaves it intact); report `data/app/status/FOOTER_demo_2026-11-05.md` | 114 of 116 report+CLI tests pass; the 2 failures are `test_real_filing_renders_under_ten_seconds` (14–18 s under labeler load) | re-run `pytest test_report_filing.py -k under_ten_seconds` once the chain is idle; if still > 10 s, it is a performance regression to investigate, not a footer issue |
-| After both: re-render every watchlist page with the new footer | `bin/fs report T --skip-label` per ticker (seconds each) | all 30 index pages carry the new footer | — |
-| After the build: post-earnings refresh schedule (ruling F) | main session decides the mechanism (launchd/cron) and logs it | entry in HANDOFF §3 | — |
+| Watchlist build, 30 tickers | `bash data/app/run_watchlist.sh` as a main-session background command (pid 22969, old script inode — holds no lock) | `WATCHLIST_DONE.tsv` with 30 exit-0 rows; pages under `data/app/reports/<cik>/`; log `WATCHLIST_BUILD.log` | if `bin/fs doctor` shows no labeler alive and DONE.tsv has < 30 exit-0 rows, re-run the same command in the background (the new script takes the lock) |
 
-NEXT (no owner word needed): shorter plain-English disclosure block on the report pages (`builder`; the
-non-collapsible block stays), then the numeric-families signal program (PRODUCT_PLAN P3 item 2; money metrics
-wait on decision B). Decisions B, C, D, E1, F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
-`.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled
-refresh. On "share with friends — yes": add the legal-baseline footer line to shared pages
-(builder), nothing else changes.
+Standing rules: NEVER re-pin; never re-run a head on a model reading. On a watchlist change: edit
+`data/app/watchlist.txt`, then `bash data/app/run_watchlist.sh` (background). Pages carry the legal-baseline
+footer line (ruling C); nothing is hosted.
 
 ---
 

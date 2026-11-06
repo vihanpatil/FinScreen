@@ -3,6 +3,7 @@
 
     bin/fs doctor                       environment checks (no network)
     bin/fs report SIRI [--open]         ingest -> fundamentals -> label -> HTML pages
+    bin/fs report SIRI --refresh        same, but re-ingest even a current store (new filings)
     bin/fs g3 --date D --owner-word W   pin G3 + run head 1 and heads 2/3 (owner's word only)
     bin/fs index                        list the per-company stores
 
@@ -33,8 +34,13 @@ ADAPTER = (REPO / "finetune" / "checkpoints" / "qwen2.5-7b-finscreen-lora-mlx-v1
            / "adapters.safetensors")
 CAMPAIGN_MANIFEST = REPO / "data" / "f4" / "campaign_manifest.json"
 DATA_FILES = [REPO / "data" / "filings_e2_v2.parquet", REPO / "data" / "f4" / "labels_e2_v1.parquet"]
-LABELERS = "label_filing|label_e2"
-BUSY = LABELERS + "|ingest_one"
+# Match a real interpreter running the script, not the bare name: an agent shell running
+# CLAUDE.md rule 6's `pgrep -fl "label_filing|label_e2|ingest_one"` has those names in its own
+# command line and made 18 `report`s refuse (2026-11-06 watchlist-chain incident). ERE, as
+# `pgrep -f` reads it (no \S); mirrored in data/app/run_watchlist.sh.
+_SCRIPT_RE = r"[Pp]ython[^ ]* ([^ ]*/)?(%s)\.py"
+LABELERS = _SCRIPT_RE % "label_filing|label_e2"
+BUSY = _SCRIPT_RE % "label_filing|label_e2|ingest_one"
 CIK_RE = re.compile(r"\(CIK (\d+)\)")
 PAGE_RE = re.compile(r"^(.+\.html)\s+\([\d.]+s\)\s*$")
 
@@ -102,7 +108,11 @@ def cmd_report(a):
         print("REFUSED: a labeling process is alive; never run two:\n  " + "\n  ".join(busy))
         return 2
     store, man = find_store(a.ticker)
-    if store is not None and man.get("window", {}).get("per_form") == a.per_form:
+    # --refresh re-runs the per-form ingest so a newly filed report enters the store.
+    # ingest_one rewrites the store in place (metadata.db rebuilt, parquets and manifest
+    # overwritten, fundamentals block carried), and label_filing's journal skips chunks
+    # already labeled, so an unchanged store costs only the EDGAR submissions fetch.
+    if not a.refresh and store is not None and man.get("window", {}).get("per_form") == a.per_form:
         print(f"ingest: store {store} already has per_form={a.per_form}; skipped")
     else:
         proc = run(py("ingest_one.py", "--ticker", a.ticker, "--per-form", a.per_form), capture=True)
@@ -243,6 +253,8 @@ def main(argv=None):
     r.add_argument("--per-form", type=int, default=2)
     r.add_argument("--open", action="store_true")
     r.add_argument("--skip-label", action="store_true")
+    r.add_argument("--refresh", action="store_true",
+                   help="re-ingest even when the store already has --per-form (fetch new filings)")
     r.set_defaults(fn=cmd_report)
     g = sub.add_parser("g3")
     g.add_argument("--date", required=True)

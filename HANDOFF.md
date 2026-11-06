@@ -1823,6 +1823,44 @@ owner. The list is `data/app/watchlist.txt`; the build runs as a resumable backg
 a time (rule 6), skipping companies whose report exists; the post-earnings refresh schedule is set up after the first
 build completes.
 
+**2026-11-05/06 — WATCHLIST CHAIN INCIDENT, GUARD FIX, REFRESH SCHEDULE, DISCLOSURE LEAD, E2 LINE (main-session
+decisions; no owner word involved).** Resume found the previous session's chain still alive (10/30, CRM). At
+03:10:55Z, after ADBE (12/30), `bin/fs report` refused NFLX through COST (18 tickers, exit 2, ten seconds in all):
+`finscreen.alive()` ran `pgrep -fl "label_filing|label_e2"`, which matched a builder agent's own `bash -c '… pgrep
+-fl "label_filing|label_e2|ingest_one" …'` shell (pid 13685), not a labeler; the chain then ended normally. No data
+was harmed: exit-2 rows are not "done", so the relaunch (03:3xZ, this session, new guard) resumed at NFLX.
+**Decision 1 (guard):** the alive-check in `finscreen.py` (`LABELERS`/`BUSY`, one `_SCRIPT_RE`) and the `pgrep` in
+`data/app/run_watchlist.sh` now match only a real interpreter invocation,
+`[Pp]ython[^ ]* ([^ ]*/)?(label_filing|label_e2|ingest_one)\.py` (macOS ERE, no `\S`); regression test in
+`test_finscreen_cli.py` (7 cases) and `test_run_watchlist.py`. `label_filing.py`'s own `campaign_is_alive` was
+not changed (it already requires the `.py` suffix). **Decision 2 (ruling F refresh mechanism):** a macOS launchd
+user agent, `data/app/launchd/com.finscreen.watchlist-refresh.plist`, runs `run_watchlist.sh --refresh` on the
+1st and 15th of each month at 03:00 local (covers every earnings window within ~two weeks; refresh passes `--refresh` to `bin/fs report`, which
+re-ingests `--per-form 2` — reviewer MF1 found the first version never fetched new filings — and labels only new
+passages; the labeler-alive guard still refuses). `--refresh` moves the done-ledger to
+`data/app/status/archive/WATCHLIST_DONE_<UTC>.tsv` (nothing deleted) and re-runs the list. **The main session did
+NOT install the agent** — a persistent job on the owner's machine is the owner's to install; the two-line install,
+the uninstall and a manual trigger are in `data/app/launchd/README.md`. If the owner never installs it, the chain
+is run by hand from a session (`bash data/app/run_watchlist.sh --refresh`). **Decision 3 (disclosure lead; the item
+proposed 2026-11-05 that the owner did not object to):** a plain-English paragraph ("In plain English", 135 words,
+`PLAIN_ENGLISH_TEMPLATE`) now opens the mandatory disclosure block; every figure (sentiment agreement, missed
+negatives = 1 − NEGATIVE recall, guidance agreement, active-value precision) is formatted from `load_disclosure()`,
+never typed; the detailed list below it is unchanged and still non-collapsible; vocabulary test bans advice / call /
+recommend / signal / predict / score / rank in the lead. **Decision 4 (F6 carry-over):** `PREDICTIVE_VALIDITY_TEMPLATE`
+no longer says "E2: not run"; it carries the ratified §13 outcome — "E2 (139 companies, 33 walk-forward quarters,
+pre-registered, run 2026-11-05): bounded null — +0.0011 mean per-fold dedup IC delta, 90% CI [−0.0234, +0.0256],
+inside the ratified 0.04 margin; text is not used as a signal" — with the three figures as module constants pinned
+by `test_e2_ic_numbers_match_the_f6_write_up_they_came_from` to `data/f5/F6_E2_RESULT.md` sha256 `06b86611…`
+(the E1 pattern; the renderer still opens no outcome artifact). IC deltas already appear on README; hit rates stay
+off every page (MF2). Timing tests `test_real_filing_renders_under_ten_seconds` re-run with the labeler idle: 4.1 s
+and 4.0 s, pass — the 2026-11-05 failures were load, not a regression. Reviewer pass:
+`data/app/status/REVIEW_disclosure_refresh_2026-11-05.md`: 24 findings (2 MUST-FIX, 10 SHOULD, 12 NOTE); every figure recomputed exactly from its artifact; guard verified against real `pgrep`. **Dispositions (main session):** MF1 — `bin/fs report` skipped ingest whenever a store already had `per_form == 2`, so `--refresh` would never have fetched a new filing: FIXED with a `--refresh` flag on `bin/fs report` that forces the ingest step (labeling still skips when chunks sha == labels sha), passed through by the chain in refresh mode. MF2 — the lead quoted the guidance figures without the escorts the owner's G2 ruling requires (active precision, false-NONE 0/80, §0): FIXED by quoting NO guidance number in the lead (one qualitative sentence pointing to the list). S3/S4/S7 — sentiment sentence rewritten so the G2 spot-check (337 passages, model consensus, INDETERMINATE) and the held-out NEGATIVE-recall figure are two measurements, "accuracy" removed and banned (legal baseline). S5 — closing sentence points to this company's own warnings. S8/S9/S10 — E2 clause now carries the honest MDE and the nuisance-seed caveat as pinned constants, the full §13 branch sentence, and the E1/E2 "not numerically comparable" rule. S11 — `mkdir` lock on the chain so two chains (or launchd + a session) cannot overlap. S12 — plist runs under `caffeinate -dims`, `ProcessType` dropped. NOTES fixed: README awake wording, `< /dev/null` for `bin/fs` inside the read loop, unknown flag → usage/exit 2, launchd logs and lock dir git-ignored, CLAUDE.md rule 6 and the `/resume` skill now give the interpreter-form pgrep. NOTES logged, not fixed: `FS_SKIP_PROCESS_GUARD` stays (test-only, documented); guard still misses `python -m` / `-u` and paths with spaces (none used); the lead's "another model" omits the 59 owner-ruled rows (the detailed list has them). Fix report: `data/app/status/FIXES_disclosure_refresh_2026-11-05.md`.
+Builder reports: `DISCLOSURE_summary_2026-11-05.md`, `DISCLOSURE_e2_line_2026-11-05.md`,
+`REFRESH_schedule_2026-11-05.md` (all `data/app/status/`). Already-rendered pages show the new block only after
+the post-build re-render (`bin/fs report T --skip-label`), which follows the chain end. A second session ("Resume
+work", the previous one) was alive at the same time and committed `600baea` (ledger + log + RESUME_HERE note); it
+was asked to stop writing to this checkout. Lesson → §4.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
@@ -1837,6 +1875,7 @@ for the next session — the incident itself is closed.
 | 50-chunk canary runs measured per-request correctness but not distributional stability — the 22.2% red-flag config-sensitivity was completely invisible at canary scale and only showed up comparing two full-corpus passes. | Canaries validate mechanics (does the request format work, does parsing succeed), not full-corpus label distributions. A canary passing is not evidence a labeling config produces the same *labels* as another config would — only a full comparison run (or an explicit spot-check) can show that. |
 | The 2026-08-20 epoch-1 MLX run was SIGTERMed TWICE by process-lifecycle machinery, not by any fault of its own: (1) launched detached (`nohup … &`) from *inside a finetune-engineer subagent's shell*, killed at iter ~520, ~34 min after that subagent completed — the orphaned tree was reaped with the finished subagent's session (`nohup` shields SIGHUP, not SIGTERM); (2) relaunched as a main-session background task, killed again (exit 143) at 2h58m of task runtime — consistent with a ~3-hour cap on harness background tasks. Both times checkpoint-every-250 bounded the loss (~50 min, ~4 min); both resumes used the runbook's LR-continuation fix. | **Long-running local compute runs as an AUTO-RESUME CHAIN of main-session background tasks: assume any task can be SIGTERMed at any time, checkpoint aggressively (`save_every` ≈ 10 min of work), and treat every kill notification as the trigger to resume from the latest checkpoint.** A third kill (6.5 min in) disproved the ~3h-cap theory — kill timing is unpredictable, so robustness comes from cheap resumability, not from segment sizing. Full daemonization (setsid double-fork) is classifier-blocked in this environment — do not attempt workarounds; the chain converges anyway (worst observed cycle still nets ~80% training throughput). Never spawn long compute from inside a subagent. The F4 labeling campaign must use the same pattern: per-row append-checkpointed output, resume-on-notification. Recipe: `finetune/runs/2026-08-21-epoch1-final-from-2250/RESUME_RECIPE.md`. |
 | 2026-09-07 — Appending the owner's G2 Rule 9 to `data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md` broke `finetune/test_g2_spotcheck.py::test_draw_reproduces_byte_for_byte`: that file is a sha-pinned pre-registration INPUT of the G2 draw (`build_draw_g2.py` INPUT_SHA256). Reverted byte-exact within minutes; draw artifacts were never touched. | **Every path in a builder's INPUT_SHA256 block is frozen for the life of that draw — record later owner rulings in a NEW dated file (here `data/f4/g2/G2_FINAL_REPORT.md` §3), never by editing a pinned input.** Run the full suite after any doc edit under `data/hardening/` or `data/f4/`. |
+| 2026-11-06 — `finscreen.alive()` guarded with `pgrep -fl "label_filing|label_e2"`; an agent's shell whose command text contained that pattern (its own rule-6 pgrep) matched, and `bin/fs report` refused 18 watchlist tickers in ten seconds. | A process guard matches the **interpreter running the script** (`[Pp]ython[^ ]* ([^ ]*/)?name\.py`), never the bare script name; and no agent runs a shell whose text contains a labeler name while a chain is live. |
 
 ---
 

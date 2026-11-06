@@ -1,6 +1,7 @@
 """Offline tests for finscreen.py: subprocess.run is faked, paths point at tmp_path."""
 import hashlib
 import json
+import re
 import subprocess
 
 import pytest
@@ -127,6 +128,19 @@ def test_report_skips_ingest_and_label_when_current(paths, monkeypatch):
     assert fake.calls[-1][0] == "open" and fake.calls[-1][1].endswith("--index.html")
 
 
+# Regression, 2026-11-05 review finding 1: `--refresh` must fetch new filings, i.e. run the
+# per-form ingest even on a store that is already current; labeling still keys on the chunks sha.
+def test_report_refresh_reingests_a_current_store(paths, monkeypatch):
+    make_store(paths, per_form=2, labeled=True)
+    fake = FakeRun(report_respond)
+    monkeypatch.setattr(fs.subprocess, "run", fake)
+    assert fs.main(["report", "SIRI", "--refresh"]) == 0
+    s = fake.scripts()
+    assert s[:2] == ["ingest_one.py --ticker SIRI --per-form 2",
+                     "ingest_one.py --ticker SIRI --fundamentals"]
+    assert not any(x.startswith("label_filing") for x in s)  # chunks sha unchanged
+
+
 def test_report_relabels_when_labels_are_stale(paths, monkeypatch):
     store = make_store(paths, per_form=2, labeled=True)
     (store / "label_manifest.json").write_text(json.dumps({"prepare": {"chunks_parquet_sha256": "old"}}))
@@ -142,6 +156,23 @@ def test_report_refuses_when_labeler_alive(paths, monkeypatch):
     monkeypatch.setattr(fs.subprocess, "run", fake)
     assert fs.main(["report", "SIRI"]) == 2
     assert fake.calls == []
+
+
+# Regression, 2026-11-06: an agent shell whose command line merely contained the guard's
+# bare names made `report` refuse 18 watchlist tickers. Python's re agrees with pgrep's ERE
+# on this pattern (verified live against macOS pgrep with a probe script).
+@pytest.mark.parametrize("command, hit", [
+    ("/x/MacOS/Python /repo/label_filing.py --store s", True),
+    ("/repo/finetune/.mlx_venv/bin/python /repo/label_filing.py --store s --generate", True),
+    ("caffeinate -dims /v/bin/python /repo/finetune/label_e2.py --segment 3", True),
+    ("python3 ingest_one.py --ticker X", True),
+    ('/bin/bash -c pgrep -fl "label_filing|label_e2|ingest_one"', False),
+    ("vim test_label_filing.py", False),
+    ("python3 -m pytest test_label_filing.py", False),
+])
+def test_busy_guard_matches_only_a_real_interpreter_invocation(command, hit):
+    assert bool(re.search(fs.BUSY, command)) is hit
+    assert bool(re.search(fs.LABELERS, command)) is (hit and "ingest_one" not in command)
 
 
 # --- doctor -----------------------------------------------------------------

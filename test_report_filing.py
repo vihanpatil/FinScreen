@@ -122,7 +122,7 @@ DISCLOSURE_CONSTANT_NAMES = {
     "PREDICTIVE_VALIDITY_TEMPLATE", "CONFIG_SENSITIVITY_TEXT",
     "CONFIG_SENSITIVITY_COUNT", "CONFIG_SENSITIVITY_SUBJECT",
     "SELFID_STRICT_TEXT", "SELFID_LOOSE_TEXT", "SELFID_SUBJECT",
-    "SENTIMENT_ESTIMAND", "CSS",
+    "SENTIMENT_ESTIMAND", "PLAIN_ENGLISH_TEMPLATE", "CSS",
 }
 
 MODULE_SOURCE = (REPO_ROOT / "report_filing.py").read_text()
@@ -787,7 +787,9 @@ def test_disclosure_header_renders_every_ruled_number():
         "115/119", "96.6%", "91.7", "98.7", "68.7%", "58.2", "77.6", "0/80",
         "84/200", "42.0%", "35.4", "48.9", "112/400", "28.0%", "23.8", "32.6",
         "22.2%", "935/4,219 chunks", "26.8%", "46.0%",
-        "+0.0177", "-0.0097", "E2: not run",
+        "+0.0177", "-0.0097", "+0.0011", "-0.0234", "+0.0256", "bounded null",
+        "honest MDE 0.0416", "about 32 of 100 nuisance seeds",
+        "E1 and E2 deltas are not numerically comparable",
         "cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3",
         "model output throughout", "model consensus, not human validation",
         "NONE mass only",
@@ -838,6 +840,74 @@ def test_disclosure_header_is_not_collapsible():
     assert html.lstrip().startswith('<section class="disclosure">')
     assert "<details" not in html
     assert "<summary" not in html
+
+
+def _plain_paragraph(html: str) -> str:
+    match = re.search(r'<p class="plain">(.*?)</p>', html, re.S)
+    assert match, "the plain-English lead is missing"
+    return unescape(match.group(1))
+
+
+def test_disclosure_plain_english_lead_renders_before_the_detailed_list():
+    html = RF.disclosure_html(RF.load_disclosure(), None)
+    assert "<h2>In plain English</h2>" in html
+    plain_at = html.index('<p class="plain">')
+    assert html.index("<h1>") < html.index('class="identity"') < plain_at
+    assert plain_at < html.index("<ul>")
+    words = len(_plain_paragraph(html).split())
+    assert 80 <= words <= 140, words
+
+
+def test_disclosure_plain_english_figures_are_read_from_the_artifacts():
+    """Rounded for prose, but every figure comes off load_disclosure(): change
+    the dict and the sentence changes with it."""
+    d = RF.load_disclosure()
+    s = d["sentiment"]
+    plain = _plain_paragraph(RF.disclosure_html(d, None))
+    assert f"In a {s['n']:,}-passage spot-check" in plain
+    assert f"about {s['pct']:.0f}%" in plain
+    assert f"rated {s['verdict'].lower()}" in plain
+    assert f"about {(1 - s['negative_recall']) * 100:.0f}%" in plain
+    # the artifacts' values today, so a silent template edit cannot pass
+    for today in ("337-passage", "about 87%", "rated indeterminate", "about 47%"):
+        assert today in plain, today
+    d["sentiment"] = dict(s, pct=12.0, n=55, negative_recall=0.66)
+    moved = _plain_paragraph(RF.disclosure_html(d, None))
+    assert "about 12%" in moved and "55-passage" in moved and "about 34%" in moved
+    fields_removed = re.sub(r"\{\w+(:[^}]*)?\}", "", RF.PLAIN_ENGLISH_TEMPLATE)
+    assert not re.search(r"\d", fields_removed), "a literal number"
+
+
+def test_disclosure_plain_english_lead_quotes_no_guidance_figure():
+    """G2 (owner-ruled 2026-09-07): guidance is never quoted without active
+    precision, the false-NONE rate and §0. The lead carries none of them, so it
+    carries no guidance figure at all; the detailed list does."""
+    d = RF.load_disclosure()
+    g = d["guidance"]
+    plain = _plain_paragraph(RF.disclosure_html(d, None))
+    for figure in (g["pct"], g["active_precision_pct"]):
+        assert f"{figure:.0f}%" not in plain and f"{figure:.1f}%" not in plain
+    assert "{guid" not in RF.PLAIN_ENGLISH_TEMPLATE
+    assert "{active" not in RF.PLAIN_ENGLISH_TEMPLATE
+    assert "Most passages give no guidance at all" in plain
+    assert "Warnings specific to this company and this filing" in plain
+
+
+def test_disclosure_plain_english_lead_carries_no_banned_vocabulary():
+    plain = _plain_paragraph(RF.disclosure_html(RF.load_disclosure(), None))
+    banned = ["advice", "call", "calls", "recommend", "recommends", "signal",
+              "signals", "predict", "predicts", "prediction", "predictions",
+              "score", "rank", "summary", "accuracy"]
+    assert word_hits(plain, banned) == []
+    # "recommendation" is allowed only as what the page is NOT
+    low = plain.lower()
+    assert low.count("recommendation") == low.count(
+        "nothing here is a recommendation")
+    assert "nothing here is a recommendation to buy, sell or hold" in low
+    assert "model-consensus reference" in low
+    assert "agreement between models, not a human check" in low
+    # the G2 spot-check is not held out; only the v1.2 eval (the 47%) is
+    assert low.count("held-out") == 1 and low.index("spot-check") < low.index("held-out")
 
 
 # ---------------------------------------------------------------------------
@@ -927,8 +997,45 @@ def test_e1_ic_deltas_match_the_backtest_report_they_came_from():
     assert float(dedup.group(1)) == RF.E1_IC_DELTA_DEDUP
 
 
+E2_RESULT_WRITE_UP = REPO_ROOT / "data" / "f5" / "F6_E2_RESULT.md"
+E2_RESULT_WRITE_UP_SHA256 = (
+    "06b86611a44021f40e9a0c901c1edf287d883592578a33d1f67c75aacebf66ba")
+
+
+def test_e2_ic_numbers_match_the_f6_write_up_they_came_from():
+    """Same pattern as E1: the six E2 figures are module constants, and the
+    regex that lifts them out of the F6 headline table (section 1.1) lives here
+    beside that write-up's sha256."""
+    assert RF._sha256(E2_RESULT_WRITE_UP) == E2_RESULT_WRITE_UP_SHA256, (
+        "data/f5/F6_E2_RESULT.md changed; re-read the six E2 figures into "
+        "report_filing.E2_IC_DELTA_DEDUP / E2_IC_CI_LO / E2_IC_CI_HI / "
+        "E2_HONEST_MDE / E2_SEEDS_NOT_EQUIVALENT / E2_SEEDS_N and "
+        "re-pin this sha")
+    text = E2_RESULT_WRITE_UP.read_text().replace("\u2212", "-")
+    mean = re.search(
+        r"^\| mean per-fold dedup IC delta \| \*\*([+-]?\d+\.\d+)\*\* \|$",
+        text, re.M)
+    ci = re.search(
+        r"^\| 90% CI \(normal reference\) \| "
+        r"\*\*\[([+-]?\d+\.\d+), ([+-]?\d+\.\d+)\]\*\* \|$", text, re.M)
+    mde = re.search(
+        r"^\| status; honest MDE \(2\.8 × SE\) \| \*\*POWERED; (\d+\.\d+)\*\*",
+        text, re.M)
+    seeds = re.search(
+        r"^\| TOST at ±0\.04 \| .*About (\d+) of (\d+) nuisance seeds would "
+        r"not reach equivalence \(approximate\)", text, re.M)
+    assert mean and ci and mde and seeds, "the E2 headline-table rows did not parse"
+    assert float(mean.group(1)) == RF.E2_IC_DELTA_DEDUP
+    assert float(ci.group(1)) == RF.E2_IC_CI_LO
+    assert float(ci.group(2)) == RF.E2_IC_CI_HI
+    assert float(mde.group(1)) == RF.E2_HONEST_MDE
+    assert int(seeds.group(1)) == RF.E2_SEEDS_NOT_EQUIVALENT
+    assert int(seeds.group(2)) == RF.E2_SEEDS_N
+
+
 def test_the_module_never_names_the_backtest_report():
     assert "backtest_report" not in MODULE_SOURCE
+    assert "F6_E2_RESULT" not in MODULE_SOURCE
 
 
 def test_predictive_validity_is_one_replaceable_constant():
@@ -939,9 +1046,15 @@ def test_predictive_validity_is_one_replaceable_constant():
     assert names == ["PREDICTIVE_VALIDITY_TEMPLATE"]
     assert MODULE_SOURCE.count("PREDICTIVE_VALIDITY_TEMPLATE") == 2
     line = RF.PREDICTIVE_VALIDITY_TEMPLATE.format(
-        raw=RF.E1_IC_DELTA_RAW, dedup=RF.E1_IC_DELTA_DEDUP)
-    assert line.endswith("E2: not run")
+        raw=RF.E1_IC_DELTA_RAW, dedup=RF.E1_IC_DELTA_DEDUP,
+        e2=RF.E2_IC_DELTA_DEDUP, e2_lo=RF.E2_IC_CI_LO, e2_hi=RF.E2_IC_CI_HI,
+        mde=RF.E2_HONEST_MDE, seeds_fail=RF.E2_SEEDS_NOT_EQUIVALENT,
+        seeds_n=RF.E2_SEEDS_N)
+    assert line.endswith("not numerically comparable.")
+    assert ("text is not used as a signal; the study is written up and closed."
+            in line)
     assert "E1 (25 companies)" in line
+    assert "E2 (139 companies" in line
 
 
 # ---------------------------------------------------------------------------

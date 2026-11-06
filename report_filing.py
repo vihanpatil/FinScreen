@@ -325,7 +325,14 @@ DISCLOSURE_SOURCE_SHA256 = {
 # The ONE constant the F6 branch sentence replaces (council Q4 / ruling item 2).
 PREDICTIVE_VALIDITY_TEMPLATE = (
     "E1 (25 companies): no fold-robust text signal "
-    "({raw:+.4f} raw / {dedup:+.4f} dedup IC delta); E2: not run"
+    "({raw:+.4f} raw / {dedup:+.4f} dedup IC delta); "
+    "E2 (139 companies, 33 walk-forward quarters, pre-registered, "
+    "run 2026-11-05): bounded null — {e2:+.4f} mean per-fold dedup IC "
+    "delta, 90% CI [{e2_lo:+.4f}, {e2_hi:+.4f}], equivalent to zero at the "
+    "0.04 margin the ratified ladder reached (honest MDE {mde:.4f}; "
+    "equivalence not reached under about {seeds_fail} of {seeds_n} nuisance "
+    "seeds); text is not used as a signal; the study is written up and closed. "
+    "E1 and E2 deltas are not numerically comparable."
 )
 
 # The two E1 IC deltas the ruled disclosure sentence must carry. They are
@@ -336,6 +343,18 @@ PREDICTIVE_VALIDITY_TEMPLATE = (
 # asserts these two numbers still match it.
 E1_IC_DELTA_RAW = 0.0177
 E1_IC_DELTA_DEDUP = -0.0097
+# The E2 headline (mean per-fold dedup IC delta and its 90% CI), held the same
+# way and for the same reason: constants here, the regex and the F6 write-up's
+# sha256 in test_report_filing.py.
+E2_IC_DELTA_DEDUP = 0.0011
+E2_IC_CI_LO = -0.0234
+E2_IC_CI_HI = 0.0256
+# The caveats the F6 write-up says travel with that line: the honest MDE
+# (2.8 x SE) and the seed band ("about 32 of 100 nuisance seeds would not
+# reach equivalence (approximate)"). Pinned by the same test, same sha.
+E2_HONEST_MDE = 0.0416
+E2_SEEDS_NOT_EQUIVALENT = 32
+E2_SEEDS_N = 100
 
 # Prose-documented constants with no machine-readable source, pinned by a test
 # that greps HANDOFF.md for the exact SENTENCES they come from (not for a bare
@@ -381,6 +400,26 @@ FOOTER_LINE = (
     "Not for redistribution."
 )
 NO_PRICE_LINE = "No price data is used anywhere in this report."
+
+# The plain-English lead of the disclosure block, for a reader who will not
+# parse the detailed list below it. Every figure is a format field filled from
+# load_disclosure(), never typed here; the detailed list stays the record.
+# It quotes NO guidance figure: G2 rules guidance is never quoted without active
+# precision, the false-NONE rate and §0, and those travel in the list below.
+PLAIN_ENGLISH_TEMPLATE = (
+    "Every label on this page was written by a small model the owner runs "
+    "locally; no person read these passages. In a {n:,}-passage spot-check its "
+    "sentiment labels agreed with a model-consensus reference about {sent:.0f}% "
+    "of the time, a level the pre-registered check rated {verdict} (agreement "
+    "between models, not a human check); on its own held-out evaluation it "
+    "missed about {miss:.0f}% of the passages that evaluation's reference "
+    "marked negative. Most passages give no guidance at all; the model's "
+    "guidance-direction figures and the caveats that must travel with them are "
+    "in the list below. Red flags are experimental: do not rely on them. These "
+    "labels have not been shown to say anything about future stock prices, and "
+    "nothing here is a recommendation to buy, sell or hold. Warnings specific "
+    "to this company and this filing, if any, follow in the list."
+)
 
 # Columns read from the two F4 parquets. The distress column ruled out of every
 # headline (HANDOFF §7) is deliberately absent and is never loaded.
@@ -540,7 +579,10 @@ def load_disclosure() -> dict:
             "config_sensitivity_subject": CONFIG_SENSITIVITY_SUBJECT,
         },
         "predictive_validity": PREDICTIVE_VALIDITY_TEMPLATE.format(
-            raw=E1_IC_DELTA_RAW, dedup=E1_IC_DELTA_DEDUP),
+            raw=E1_IC_DELTA_RAW, dedup=E1_IC_DELTA_DEDUP,
+            e2=E2_IC_DELTA_DEDUP, e2_lo=E2_IC_CI_LO, e2_hi=E2_IC_CI_HI,
+            mde=E2_HONEST_MDE, seeds_fail=E2_SEEDS_NOT_EQUIVALENT,
+            seeds_n=E2_SEEDS_N),
         "selfid_strict": SELFID_STRICT_TEXT,
         "selfid_loose": SELFID_LOOSE_TEXT,
         "selfid_subject": SELFID_SUBJECT,
@@ -1323,6 +1365,7 @@ a { color: var(--mark); }
 .disclosure ul { margin:0 0 10px; padding-left:20px; }
 .disclosure li { margin-bottom:7px; font-size:13px; }
 .identity { font-style:italic; font-size:13.5px; margin-bottom:12px; }
+.plain { font-size:15px; font-weight:400; margin-bottom:14px; }
 blockquote { margin:8px 0; padding:8px 12px; border-left:3px solid var(--line);
              background:#fafafa; font-size:12.5px; color:#333; }
 .footer-line { font-weight:600; font-size:13px; margin-top:12px;
@@ -1526,10 +1569,16 @@ def disclosure_html(d: dict, overlap: Optional[dict],
            f" — {esc(GUIDANCE_NONE_APPLICABLE)}")
         + f"<blockquote>{esc(g['section_zero_sentence'])}</blockquote></li>")
 
+    plain = esc(PLAIN_ENGLISH_TEMPLATE.format(
+        n=s["n"], sent=s["pct"], verdict=s["verdict"].lower(),
+        miss=(1 - s["negative_recall"]) * 100))
+
     return f"""
 <section class="disclosure">
   <h1>Disclosure — read this before the report</h1>
   <p class="identity">{esc(IDENTITY_LINE)}</p>
+  <h2>In plain English</h2>
+  <p class="plain">{plain}</p>
   <ul>
     {outside}
     <li><b>Labeler.</b> Every label on this page is <b>model output throughout</b>: the v1.2 local student
