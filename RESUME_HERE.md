@@ -56,6 +56,29 @@ hosting; if sharing is ever legally non-trivial the default is personal use. D l
 (`/usr/bin/python3` works again). F a 30-company watchlist (`data/app/watchlist.txt`: 20 tech incl. the owner's
 eight — SpaceX is SPCX in the SEC map — plus 10 non-tech; September proof set excluded). **NO OWNER ITEM IS OPEN.**
 
+**SESSION CLOSED 2026-11-05 ~21:00 CST (owner: "I pushed. Wrap things up. … I will continue in new session").**
+Main pushed and equal to `origin/main` at close (this close-out commit is the only one after it). The watchlist
+chain was alive at close with **9 of 30 done** (AAPL META MSFT GOOGL AMZN SPCX NVDA AMD AVGO; 1–12 min each, SpaceX
+67 s because it has few filings) and ORCL labeling. **The chain will die with this session; the first thing the next
+session does after `/resume` is relaunch it** (row 1 below): it skips the done tickers and continues.
+
+**NEXT WORK, in order (none needs an owner word unless marked):**
+1. Relaunch `bash data/app/run_watchlist.sh` in the background; when `WATCHLIST_DONE.tsv` has 30 exit-0 lines,
+   re-render every page with the new footer (`bin/fs report T --skip-label` per ticker), commit the versioned
+   store files (manifest.json, label_manifest.json, generation.json, concept_resolution.csv per CIK) and the two
+   status files, and `bin/fs index` for the owner's summary.
+2. Re-run `pytest test_report_filing.py -k under_ten_seconds` with the labeler idle (2 timing failures under load).
+3. Post-earnings refresh schedule for the 30 (ruling F): main-session decision on mechanism (launchd plist or a
+   scheduled task that runs the chain with a fresh `--per-form` window); log in HANDOFF §3.
+4. Shorter plain-English disclosure block on the report pages (`builder`; non-collapsible stays; every number still
+   read from an artifact) — proposed 2026-11-05, owner did not object.
+5. Numeric-families signal program (PRODUCT_PLAN P3 item 2). It is an E3 under the stopping rule: census and
+   pre-registration draft first; **the pre-registration needs the owner's "ratify" before any fit**; no money metric
+   (ruling B); prices = the 2026-08-24 snapshot.
+6. Carry-overs from the F6 entry: heads 2/3 JSONs without escorts (re-render only on a new ruling); MODEL_CARD §7
+   gated TODO; **one owner question for the next packet (public surface, touchpoint b): README §1 charter wording
+   ("makes calls", "advice") is the owner's ruled text and conflicts with the public-copy rules.**
+
 **IN FLIGHT (2026-11-05 evening):**
 | what | how it runs | expected output | resume |
 |---|---|---|---|
