@@ -1936,6 +1936,12 @@ numeric-only and 0.486 size-only; the per-company intervals are wide and Apple's
 nothing hidden. **E3 packet** (`data/f5/E3_OWNER_PACKET.md`, decisions 1–4) put to the owner in chat with the
 recommendation that it is lower priority than using what now exists; the inference is pre-declared unpowered.
 
+**2026-11-09 — E3 DEFERRED (owner ruling, verbatim).** After the scorecard pages went live the main session put
+the E3 packet (`data/f5/E3_OWNER_PACKET.md`, decisions 1–4) to the owner with the recommendation to defer it until
+they had used the pages. The owner typed: **"Defer E3"**. Main-session reading: the numeric-families program stays
+at Steps 1–2 (census, DRAFT pre-registration, packet, all on main); no Step 3 build, no pin, no run, until the owner
+re-opens it in chat; nothing else is read into the two words. No owner item is open.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
