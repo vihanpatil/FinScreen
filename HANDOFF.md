@@ -1860,6 +1860,34 @@ Builder reports: `DISCLOSURE_summary_2026-11-05.md`, `DISCLOSURE_e2_line_2026-11
 the post-build re-render (`bin/fs report T --skip-label`), which follows the chain end. A second session ("Resume
 work", the previous one) was alive at the same time and committed `600baea` (ledger + log + RESUME_HERE note); it
 was asked to stop writing to this checkout. Lesson → §4.
+**2026-11-06 — E3 (NUMERIC FAMILIES, PRODUCT_PLAN P3 ITEM 2) STEPS 1–2 DONE (side session on branch
+`claude/dazzling-villani-438b33`, not merged; side-session decisions under the low-touch policy — NOT owner
+rulings; nothing fit, nothing pinned, nothing frozen touched, $0).** Delivered: `data/f5/census_e3.py` +
+`census_e3.json` (sha `4bc57d85…`; status `data/f5/status/E3_CENSUS_2026-11-06.md`), `data/f5/E3_PREREGISTRATION.md`
+(DRAFT, G3 structure, one ```json e3-params``` block), `data/f5/E3_OWNER_PACKET.md`, `test_census_e3.py` (tripwire;
+pin check absent-or-matching, never "must be absent"), `.gitignore` lines for the E3 scorecard pages. Census facts:
+frame A (one 10-K/10-Q per company-quarter) 3,642 rows / 3,053 in the 33 ratified folds / 80–99 companies a
+quarter; frame B reproduces the E2 run-time frame (7,381) exactly; honest MDE for a single-family level IC
+0.069–0.163 on the measured anchors (size-rank anchor n-adjusted to A: 0.081); no rung of G3's ladder {0.03, 0.04,
+0.05} is reachable at any measured anchor → the expected branch is UNPOWERED, stated before the run. Prior exposure
+disclosed (§12): G3's fitted numeric-only block on the 10-K/10-Q rows (96% of frame A) = +0.0250 dedup; H1 T2a/T2b
+ambiguous at ≈ +0.03. Reviewer pass `data/f5/status/REVIEW_e3_prereg_2026-11-06.md`: 3 must-fix, 11 should, 15
+notes — every number re-derived and matched; all M/S applied, N1–N15 applied or carried (dispositions in the census
+status §H). Side-session design decisions, logged (veto by name): primary frame A with B as the one sensitivity arm
+(C censused, not run); families momentum (+) `momentum_126`, value (+) `book_to_market`, profitability (+) three
+margins, low volatility (−) `realized_vol_63`; growth and balance sheet NOT tested; no-fit composite = mean of
+signed PIT trailing ranks, ≥ 3 of 4 families; one two-sided test at α 0.05, positive branch needs the 95% CI to
+exclude 0 and the point estimate ≥ the H1 floor (min over T0 arms); families Holm-4 as secondaries; project-wide
+Holm column dropped (not computable); G3 ladder inherited unchanged; same 33 folds; channel A per fold + post-2019
+arm; outcome map ordered bounded null → positive → wrong-sign → unpowered; `quintile_spread` suppressed (return
+aggregate); scorecard via a thin `scorecard_e3` wrapper (G3 §14 rules), comparators size rank + G3 `numeric_only`
+OOF read from disk on the 3,497 A∩B rows, no refit; private pages git-ignored. **Reading of the owner's "B. No"
+(2026-11-05) restated as a main-session reading, never as the owner's words: no money metric; per-row realized
+excess return stays as the outcome label — put to the owner as packet 4b.** **OWNER ITEMS OPEN (packet):** 1 unit =
+frame A; 2 run knowing the inference is expected UNPOWERED; 3 keep `momentum_126` vs build 12-1; 4a accept the
+prior-exposure limitation; 4b confirm the "B. No" reading. After the rulings: builder Step 3 (`backtest_e3.py`
+guarded like `backtest_e2`, `pin_e3.py`, `scorecard_e3.py`, tests), reviewer pass, `pin_e3.py --show` diff delivered
+in chat, THEN the owner's word "ratify" + that day's date, then the run. Never re-pin G3; E2 stays closed.
 
 ## 4. Incident history, compressed to lessons
 

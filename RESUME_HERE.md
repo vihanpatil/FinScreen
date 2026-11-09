@@ -89,6 +89,34 @@ suite 1,869 green before the fix pass; 233 in the four touched files after it.
 Standing rules: NEVER re-pin; never re-run a head on a model reading. On a watchlist change: edit
 `data/app/watchlist.txt`, then `bash data/app/run_watchlist.sh` (background). Pages carry the legal-baseline
 footer line (ruling C); nothing is hosted.
+**E3 STEPS 1–2 DONE 2026-11-06 (side session, branch `claude/dazzling-villani-438b33`, committed there, NOT
+merged to main; HANDOFF §3 entry of that date).** Numeric-families census + DRAFT pre-registration + owner packet +
+reviewer pass, all on disk under `data/f5/` (`census_e3.json`, `E3_PREREGISTRATION.md`, `E3_OWNER_PACKET.md`,
+`status/E3_CENSUS_2026-11-06.md`, `status/REVIEW_e3_prereg_2026-11-06.md`), tripwire `test_census_e3.py`. Nothing
+fit, nothing pinned, `E3_RATIFIED.json` does not exist. Honest expectation stated in the documents: the inference
+branch is UNPOWERED at this universe size (single-family MDE 0.07–0.16 vs G3's ladder cap 0.05); the deliverable
+either way is the descriptive per-company-quarter scorecard of a no-fit factor composite, $0, minutes.
+**OWNER ITEM OPEN: rule on `data/f5/E3_OWNER_PACKET.md` decisions 1–4 (unit; run knowing it is unpowered; 12-1 or
+keep `momentum_126`; two readings of the owner's own words incl. "B. No" → no money metric).** Then: builder Step 3
+(`backtest_e3.py` guarded, `pin_e3.py`, `scorecard_e3.py` wrapper, tests) → reviewer → `pin_e3.py --show` diff in
+chat → the owner's word **"ratify"** + date → pin → run. Merge the branch into main first, or the main checkout
+will not see these files.
+
+**IN FLIGHT (2026-11-05 evening):**
+| what | how it runs | expected output | resume |
+|---|---|---|---|
+| Watchlist build, 30 tickers | `bash data/app/run_watchlist.sh` as a main-session background command (one labeler at a time; skips tickers marked done) | `data/app/status/WATCHLIST_DONE.tsv` with 30 exit-0 lines; pages under `data/app/reports/<cik>/`; log `data/app/status/WATCHLIST_BUILD.log` | if `pgrep -fl "label_filing\|ingest_one"` is empty and DONE.tsv has < 30 exit-0 lines, re-run the same command in the background |
+| Footer line for demonstration sharing (ruling C) — **DONE, committed** | `FOOTER_LINE` changed (U+2019 apostrophe so `esc()` leaves it intact); report `data/app/status/FOOTER_demo_2026-11-05.md` | 114 of 116 report+CLI tests pass; the 2 failures are `test_real_filing_renders_under_ten_seconds` (14–18 s under labeler load) | re-run `pytest test_report_filing.py -k under_ten_seconds` once the chain is idle; if still > 10 s, it is a performance regression to investigate, not a footer issue |
+| After both: re-render every watchlist page with the new footer | `bin/fs report T --skip-label` per ticker (seconds each) | all 30 index pages carry the new footer | — |
+| After the build: post-earnings refresh schedule (ruling F) | main session decides the mechanism (launchd/cron) and logs it | entry in HANDOFF §3 | — |
+
+NEXT (no owner word needed): shorter plain-English disclosure block on the report pages (`builder`; the
+non-collapsible block stays). The numeric-families signal program (PRODUCT_PLAN P3 item 2) is at Steps 1–2 DONE
+(see the E3 paragraph above); its next step waits on the owner's packet rulings; no money metric under the
+reading of "B. No". Decisions B, C, D, E1, F still open. NEVER re-pin; never re-run a head on a model reading. On "ratify": follow
+`.claude/skills/g3-run/SKILL.md`. On a watchlist: `bin/fs report T` per ticker, then a scheduled
+refresh. On "share with friends — yes": add the legal-baseline footer line to shared pages
+(builder), nothing else changes.
 
 ---
 

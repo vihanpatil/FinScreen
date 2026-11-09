@@ -1,0 +1,6881 @@
+{
+ "generated_utc": "2026-11-06T07:35:18+00:00",
+ "module": "data/f5/census_e3.py",
+ "step": "E3 Step 1 -- numeric-families pre-registration census (PRODUCT_PLAN P3 item 2)",
+ "data_root": "/Users/vihanpatil/personal/projects/FinScreen/data",
+ "network_calls": 0,
+ "api_spend_usd": 0.0,
+ "freeze_statement": "No information coefficient, correlation, model fit or feature-versus-outcome association was computed. target_excess_63 was read only to COUNT completeness (.isna()/.notna()). The PIT rank transform reads no outcome. data/f5/E3_RATIFIED.json does NOT exist and was not created. The 'prior_exposure' block is READ from results already committed under the ratified G3 run and H1; its arithmetic is a mean of committed per-fold numbers.",
+ "ruling_b_statement": "Owner ruling B (2026-11-05): no EODHD, no new spend; prices stay the 2026-08-24 snapshot. No money metric (portfolio return, Sharpe, drawdown, P&L) appears here or in E3.",
+ "input_sha256": {
+  "data/f5/target_e2.parquet": "ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac",
+  "data/f5/numeric_features_e2.parquet": "01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b",
+  "data/f5/text_features_e2.parquet": "143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88",
+  "data/f5/target_e2_manifest.json": "83df54a85cad979b96fe0853cc59a5d1390ef302e9ebf4afa92db9fd3f05ecdc",
+  "data/f5/numeric_features_e2_manifest.json": "fc7a9fca96e0102175cf3d7eaf19abdfa195f328ccf8a231e3cf344b99dbe3d3",
+  "data/f5/text_features_e2_manifest.json": "2c1d20532b303a129028e8ba7435b4bb9249a12d0358468ac2a7a02eeb05b52a",
+  "data/f5/results_head1.json": "6836fb90487508d7aceb354fbc08de95538a81b6ba0c4cdd9c60d0c0abf390db",
+  "data/f5/census_e2.json": "2a7dd0d27c8244d005d9fcc56e48ce9f18b2a08c550b205736992cf3e2d00558",
+  "data/f5/G3_PREREGISTRATION.md": "6b99f65ea1da42e81afec2fef814800d18e5748ff7c2e025ec08862aa80c62c6",
+  "data/f5/G3_RATIFIED.json": "f27141e529088bbe54b32d627bd6bf1a5b122f842d859f483d70146317ffc16a",
+  "data/hardening/controls_results.json": "5497ff3c2bdf11a6e2c02a0449f089619312edf76feb199ff32e7ac9595a92f6",
+  "backtest_e2.py": "746389ae0f903565e26a4396ac32ebafffc2e3db8b4e9ad0beb9bd4f863d0012",
+  "backtest.py": "9183753177d87ea8d48fe2ae1c68cc0cd5771ebe3f967964ce114dc096c449e3",
+  "spec.py": "e8396d8e0fb295b476365dee53cff61a1f714b162383bdbadde8af44f6a6e55d",
+  "numeric_features_e2.py": "0334c23cdcf1018b197145d77bcd9e5877e914453da549d9e5b9c03ea0326731",
+  "data/f5/census_e3.py": "67489a346dacf69af0234e6c44bb56d54321cb8dec7debd440a95fa3bb13e476"
+ },
+ "g3_parameters_read": {
+  "fold_quarters": [
+   "2018Q1",
+   "2018Q2",
+   "2018Q3",
+   "2018Q4",
+   "2019Q1",
+   "2019Q2",
+   "2019Q3",
+   "2019Q4",
+   "2020Q1",
+   "2020Q2",
+   "2020Q3",
+   "2020Q4",
+   "2021Q1",
+   "2021Q2",
+   "2021Q3",
+   "2021Q4",
+   "2022Q1",
+   "2022Q2",
+   "2022Q3",
+   "2022Q4",
+   "2023Q1",
+   "2023Q2",
+   "2023Q3",
+   "2023Q4",
+   "2024Q1",
+   "2024Q2",
+   "2024Q3",
+   "2024Q4",
+   "2025Q1",
+   "2025Q2",
+   "2025Q3",
+   "2025Q4",
+   "2026Q1"
+  ],
+  "spec": {
+   "window_days": 180,
+   "min_comparators": 2,
+   "include_same_day": true,
+   "same_day_sensitivity_arm": true,
+   "secondary": "raw_levels",
+   "ticker_col": "cik",
+   "date_col": "filing_date"
+  },
+  "dedup": {
+   "gap_days": 5
+  },
+  "purge_rule": "target_window_close_on_or_after_test_quarter_start",
+  "source": "data/f5/G3_PREREGISTRATION.md ```json g3-params``` block, sha-checked against G3_RATIFIED.json"
+ },
+ "families": {
+  "momentum": {
+   "members": {
+    "momentum_126": 1
+   },
+   "tier": "confirmatory",
+   "note": "126-session (~6-month) price momentum ending before the news session; P3 names 12-1 momentum, which the artifact does not carry (see \u00a75)."
+  },
+  "value": {
+   "members": {
+    "book_to_market": 1
+   },
+   "tier": "confirmatory",
+   "note": "book equity / market cap at pre_session; earnings yield is not in the artifact."
+  },
+  "profitability": {
+   "members": {
+    "net_margin": 1,
+    "operating_margin": 1,
+    "operating_cashflow_to_revenue": 1
+   },
+   "tier": "confirmatory",
+   "note": "three margin ratios; accruals are not in the artifact. operating_margin is ~20% covered for financials (manifest coverage_by_sector)."
+  },
+  "low_volatility": {
+   "members": {
+    "realized_vol_63": -1
+   },
+   "tier": "confirmatory",
+   "note": "63-session realized volatility (ddof 1); sign negative = low-vol anomaly."
+  },
+  "growth": {
+   "members": {
+    "revenue_yoy_growth": null,
+    "net_income_yoy_growth": null,
+    "eps_diluted_yoy_growth": null
+   },
+   "tier": "exploratory",
+   "note": "literature sign is contested; no pre-registered direction."
+  },
+  "balance_sheet": {
+   "members": {
+    "leverage_liabilities_to_assets": null,
+    "equity_to_assets": null,
+    "cash_to_assets": null
+   },
+   "tier": "exploratory",
+   "note": "no pre-registered direction."
+  },
+  "size": {
+   "members": {
+    "log_total_assets": null
+   },
+   "tier": "comparator",
+   "note": "G3's zero-information comparator (size_only), not a family under test."
+  }
+ },
+ "families_note": "MODEL JUDGMENT (main-session design); the owner rules on it in E3_OWNER_PACKET.md decision 2.",
+ "section_1_frames": {
+  "C_all_forms_numeric": {
+   "n_rows": 16383,
+   "n_ciks": 143,
+   "forms": {
+    "8-K": 12741,
+    "10-Q": 2732,
+    "10-K": 910
+   },
+   "sectors": {
+    "financials": 4197,
+    "consumer": 3379,
+    "healthcare": 3013,
+    "energy": 2955,
+    "tech": 2839
+   },
+   "first_filing_date": "2016-07-01",
+   "last_filing_date": "2026-05-21",
+   "n_fx_blocked_rows": 112,
+   "target_complete_share": 1.0,
+   "join_diagnostics": {
+    "n_target_rows": 29271,
+    "n_numeric_rows": 18300,
+    "n_target_in_membership": 16859,
+    "n_joined": 16859,
+    "n_target_null_dropped": 462,
+    "n_modeling_rows": 16397,
+    "n_ciks": 144,
+    "forms": {
+     "8-K": 12747,
+     "10-Q": 2738,
+     "10-K": 912
+    },
+    "first_filing_date": "2016-07-01",
+    "last_filing_date": "2026-05-21"
+   },
+   "gld_exclusion": {
+    "gld_exclude_from_analysis": true,
+    "n_gld_rows_in_frame": 14,
+    "n_gld_ciks_in_frame": 1,
+    "n_gld_rows_excluded": 14,
+    "gld_note": "decision 2 (owner 2026-09-11): GLD rows are removed from the analysis frame before folds, dedup and every fit, in every arm (primary, secondary, no-same-day, rolling, form ablation, scorecard)."
+   }
+  },
+  "A_periodic_10K_10Q": {
+   "n_rows": 3642,
+   "n_ciks": 143,
+   "forms": {
+    "10-Q": 2732,
+    "10-K": 910
+   },
+   "sectors": {
+    "consumer": 760,
+    "financials": 752,
+    "tech": 739,
+    "healthcare": 735,
+    "energy": 656
+   },
+   "first_filing_date": "2016-07-06",
+   "last_filing_date": "2026-05-20",
+   "n_fx_blocked_rows": 24,
+   "target_complete_share": 1.0
+  },
+  "B_e2_run_time_frame": {
+   "n_rows": 7381,
+   "n_ciks": 143,
+   "forms": {
+    "8-K": 3884,
+    "10-Q": 2629,
+    "10-K": 868
+   },
+   "sectors": {
+    "consumer": 1557,
+    "healthcare": 1537,
+    "tech": 1500,
+    "financials": 1436,
+    "energy": 1351
+   },
+   "first_filing_date": "2016-07-05",
+   "last_filing_date": "2026-05-21",
+   "n_fx_blocked_rows": 48,
+   "target_complete_share": 1.0
+  },
+  "chain": "29271 target rows -> 16859 in-membership -> 16859 joined to the numeric table -> 16397 after 462 null targets -> 16383 after 14 GLD rows (C); A = 3642 10-K/10-Q rows of C; B = 7381 rows of C that also carry a text row"
+ },
+ "section_1_reproduction_checks": {
+  "n_frame_A_rows_also_in_frame_B": 3497,
+  "n_frame_A_rows_also_in_frame_B_note": "periodic rows that also carry a text row: the rows on which G3's numeric_only out-of-fold predictions exist and can be read as a same-rows comparator (red-team N13); the in-fold dedup subset is counted by Step 3",
+  "e2_run_time_frame_rows_expected": 7381,
+  "frame_B_rows_measured": 7381,
+  "frame_B_reproduces_e2_run_time_frame": true,
+  "e2_in_membership_target_rows_expected": 16859,
+  "in_membership_target_rows_measured": 16859
+ },
+ "section_2_coverage": {
+  "C_all_forms_numeric": {
+   "raw_levels": {
+    "frame": "C_all_forms_numeric",
+    "n_rows": 16383,
+    "families": {
+     "momentum": {
+      "tier": "confirmatory",
+      "members": {
+       "momentum_126": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 16383
+     },
+     "value": {
+      "tier": "confirmatory",
+      "members": {
+       "book_to_market": 0.8484
+      },
+      "any_member": 0.8484,
+      "all_members": 0.8484,
+      "n_any_member": 13899
+     },
+     "profitability": {
+      "tier": "confirmatory",
+      "members": {
+       "net_margin": 0.888,
+       "operating_margin": 0.5577,
+       "operating_cashflow_to_revenue": 0.4225
+      },
+      "any_member": 0.8937,
+      "all_members": 0.2788,
+      "n_any_member": 14642
+     },
+     "low_volatility": {
+      "tier": "confirmatory",
+      "members": {
+       "realized_vol_63": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 16383
+     },
+     "growth": {
+      "tier": "exploratory",
+      "members": {
+       "revenue_yoy_growth": 0.8942,
+       "net_income_yoy_growth": 0.9909,
+       "eps_diluted_yoy_growth": 0.9708
+      },
+      "any_member": 0.9996,
+      "all_members": 0.8601,
+      "n_any_member": 16377
+     },
+     "balance_sheet": {
+      "tier": "exploratory",
+      "members": {
+       "leverage_liabilities_to_assets": 0.7241,
+       "equity_to_assets": 0.994,
+       "cash_to_assets": 0.9407
+      },
+      "any_member": 0.9996,
+      "all_members": 0.6817,
+      "n_any_member": 16377
+     },
+     "size": {
+      "tier": "comparator",
+      "members": {
+       "log_total_assets": 0.9932
+      },
+      "any_member": 0.9932,
+      "all_members": 0.9932,
+      "n_any_member": 16271
+     }
+    },
+    "confirmatory_families_present_per_row": {
+     "2": 232,
+     "3": 3761,
+     "4": 12390
+    },
+    "share_rows_with_all_4_confirmatory_families": 0.7563,
+    "share_rows_with_at_least_3_confirmatory_families": 0.9858
+   },
+   "raw_by_form": {
+    "10-K": {
+     "n_rows": 910,
+     "momentum": 1.0,
+     "value": 0.8396,
+     "profitability": 0.8912,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8396,
+      "cash_to_assets": 0.9451,
+      "eps_diluted_yoy_growth": 0.9703,
+      "equity_to_assets": 0.9956,
+      "leverage_liabilities_to_assets": 0.7099,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9956,
+      "net_margin": 0.8868,
+      "operating_cashflow_to_revenue": 0.8462,
+      "operating_margin": 0.5967,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8879
+     }
+    },
+    "10-Q": {
+     "n_rows": 2732,
+     "momentum": 1.0,
+     "value": 0.8389,
+     "profitability": 0.8876,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8389,
+      "cash_to_assets": 0.9455,
+      "eps_diluted_yoy_growth": 0.9674,
+      "equity_to_assets": 0.9949,
+      "leverage_liabilities_to_assets": 0.7094,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.989,
+      "net_margin": 0.8803,
+      "operating_cashflow_to_revenue": 0.3184,
+      "operating_margin": 0.5977,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8891
+     }
+    },
+    "8-K": {
+     "n_rows": 12741,
+     "momentum": 1.0,
+     "value": 0.851,
+     "profitability": 0.8952,
+     "low_volatility": 1.0,
+     "growth": 0.9995,
+     "balance_sheet": 0.9995,
+     "size": 0.9931,
+     "members": {
+      "book_to_market": 0.851,
+      "cash_to_assets": 0.9394,
+      "eps_diluted_yoy_growth": 0.9715,
+      "equity_to_assets": 0.9936,
+      "leverage_liabilities_to_assets": 0.7283,
+      "log_total_assets": 0.9931,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.991,
+      "net_margin": 0.8897,
+      "operating_cashflow_to_revenue": 0.4146,
+      "operating_margin": 0.5463,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8958
+     }
+    }
+   },
+   "raw_by_sector": {
+    "consumer": {
+     "n_rows": 3379,
+     "momentum": 1.0,
+     "value": 0.8396,
+     "profitability": 0.8745,
+     "low_volatility": 1.0,
+     "growth": 0.9982,
+     "balance_sheet": 0.9982,
+     "size": 0.9982,
+     "members": {
+      "book_to_market": 0.8396,
+      "cash_to_assets": 0.9094,
+      "eps_diluted_yoy_growth": 0.9796,
+      "equity_to_assets": 0.9953,
+      "leverage_liabilities_to_assets": 0.6031,
+      "log_total_assets": 0.9982,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.992,
+      "net_margin": 0.8683,
+      "operating_cashflow_to_revenue": 0.4569,
+      "operating_margin": 0.8106,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8745
+     }
+    },
+    "energy": {
+     "n_rows": 2955,
+     "momentum": 1.0,
+     "value": 0.887,
+     "profitability": 0.9134,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9641,
+     "members": {
+      "book_to_market": 0.887,
+      "cash_to_assets": 0.9276,
+      "eps_diluted_yoy_growth": 0.9723,
+      "equity_to_assets": 0.9861,
+      "leverage_liabilities_to_assets": 0.5333,
+      "log_total_assets": 0.9641,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9817,
+      "net_margin": 0.9073,
+      "operating_cashflow_to_revenue": 0.4582,
+      "operating_margin": 0.576,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9117
+     }
+    },
+    "financials": {
+     "n_rows": 4197,
+     "momentum": 1.0,
+     "value": 0.7589,
+     "profitability": 0.9602,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.7589,
+      "cash_to_assets": 0.9769,
+      "eps_diluted_yoy_growth": 0.9252,
+      "equity_to_assets": 0.9995,
+      "leverage_liabilities_to_assets": 0.9776,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9921,
+      "net_margin": 0.9523,
+      "operating_cashflow_to_revenue": 0.3729,
+      "operating_margin": 0.1858,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9602
+     }
+    },
+    "healthcare": {
+     "n_rows": 3013,
+     "momentum": 1.0,
+     "value": 0.9057,
+     "profitability": 0.8755,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.9057,
+      "cash_to_assets": 0.9515,
+      "eps_diluted_yoy_growth": 1.0,
+      "equity_to_assets": 0.99,
+      "leverage_liabilities_to_assets": 0.609,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9944,
+      "net_margin": 0.8699,
+      "operating_cashflow_to_revenue": 0.3963,
+      "operating_margin": 0.6289,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8755
+     }
+    },
+    "tech": {
+     "n_rows": 2839,
+     "momentum": 1.0,
+     "value": 0.8901,
+     "profitability": 0.8172,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8901,
+      "cash_to_assets": 0.9267,
+      "eps_diluted_yoy_growth": 0.9951,
+      "equity_to_assets": 0.9965,
+      "leverage_liabilities_to_assets": 0.814,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9937,
+      "net_margin": 0.8154,
+      "operating_cashflow_to_revenue": 0.4456,
+      "operating_margin": 0.7119,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8218
+     }
+    }
+   },
+   "pit_trailing_rank": {
+    "frame": "C_all_forms_numeric_ranked",
+    "n_rows": 16383,
+    "families": {
+     "momentum": {
+      "tier": "confirmatory",
+      "members": {
+       "momentum_126": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 16383
+     },
+     "value": {
+      "tier": "confirmatory",
+      "members": {
+       "book_to_market": 0.8483
+      },
+      "any_member": 0.8483,
+      "all_members": 0.8483,
+      "n_any_member": 13898
+     },
+     "profitability": {
+      "tier": "confirmatory",
+      "members": {
+       "net_margin": 0.888,
+       "operating_margin": 0.5577,
+       "operating_cashflow_to_revenue": 0.4225
+      },
+      "any_member": 0.8937,
+      "all_members": 0.2787,
+      "n_any_member": 14642
+     },
+     "low_volatility": {
+      "tier": "confirmatory",
+      "members": {
+       "realized_vol_63": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 16383
+     },
+     "growth": {
+      "tier": "exploratory",
+      "members": {
+       "revenue_yoy_growth": 0.8942,
+       "net_income_yoy_growth": 0.9909,
+       "eps_diluted_yoy_growth": 0.9708
+      },
+      "any_member": 0.9996,
+      "all_members": 0.8601,
+      "n_any_member": 16377
+     },
+     "balance_sheet": {
+      "tier": "exploratory",
+      "members": {
+       "leverage_liabilities_to_assets": 0.7241,
+       "equity_to_assets": 0.994,
+       "cash_to_assets": 0.9407
+      },
+      "any_member": 0.9996,
+      "all_members": 0.6817,
+      "n_any_member": 16377
+     },
+     "size": {
+      "tier": "comparator",
+      "members": {
+       "log_total_assets": 0.9932
+      },
+      "any_member": 0.9932,
+      "all_members": 0.9932,
+      "n_any_member": 16271
+     }
+    },
+    "confirmatory_families_present_per_row": {
+     "2": 232,
+     "3": 3762,
+     "4": 12389
+    },
+    "share_rows_with_all_4_confirmatory_families": 0.7562,
+    "share_rows_with_at_least_3_confirmatory_families": 0.9858
+   },
+   "rank_by_form": {
+    "10-K": {
+     "n_rows": 910,
+     "momentum": 1.0,
+     "value": 0.8396,
+     "profitability": 0.8912,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8396,
+      "cash_to_assets": 0.9451,
+      "eps_diluted_yoy_growth": 0.9703,
+      "equity_to_assets": 0.9956,
+      "leverage_liabilities_to_assets": 0.7099,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9956,
+      "net_margin": 0.8868,
+      "operating_cashflow_to_revenue": 0.8462,
+      "operating_margin": 0.5967,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8879
+     }
+    },
+    "10-Q": {
+     "n_rows": 2732,
+     "momentum": 1.0,
+     "value": 0.8389,
+     "profitability": 0.8876,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8389,
+      "cash_to_assets": 0.9455,
+      "eps_diluted_yoy_growth": 0.9674,
+      "equity_to_assets": 0.9949,
+      "leverage_liabilities_to_assets": 0.7094,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.989,
+      "net_margin": 0.8803,
+      "operating_cashflow_to_revenue": 0.3184,
+      "operating_margin": 0.5977,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8891
+     }
+    },
+    "8-K": {
+     "n_rows": 12741,
+     "momentum": 1.0,
+     "value": 0.851,
+     "profitability": 0.8952,
+     "low_volatility": 1.0,
+     "growth": 0.9995,
+     "balance_sheet": 0.9995,
+     "size": 0.9931,
+     "members": {
+      "book_to_market": 0.851,
+      "cash_to_assets": 0.9394,
+      "eps_diluted_yoy_growth": 0.9715,
+      "equity_to_assets": 0.9936,
+      "leverage_liabilities_to_assets": 0.7283,
+      "log_total_assets": 0.9931,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.991,
+      "net_margin": 0.8897,
+      "operating_cashflow_to_revenue": 0.4146,
+      "operating_margin": 0.5463,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8958
+     }
+    }
+   },
+   "rank_by_sector": {
+    "consumer": {
+     "n_rows": 3379,
+     "momentum": 1.0,
+     "value": 0.8396,
+     "profitability": 0.8745,
+     "low_volatility": 1.0,
+     "growth": 0.9982,
+     "balance_sheet": 0.9982,
+     "size": 0.9982,
+     "members": {
+      "book_to_market": 0.8396,
+      "cash_to_assets": 0.9094,
+      "eps_diluted_yoy_growth": 0.9796,
+      "equity_to_assets": 0.9953,
+      "leverage_liabilities_to_assets": 0.6031,
+      "log_total_assets": 0.9982,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.992,
+      "net_margin": 0.8683,
+      "operating_cashflow_to_revenue": 0.4569,
+      "operating_margin": 0.8103,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8745
+     }
+    },
+    "energy": {
+     "n_rows": 2955,
+     "momentum": 1.0,
+     "value": 0.887,
+     "profitability": 0.9134,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9641,
+     "members": {
+      "book_to_market": 0.887,
+      "cash_to_assets": 0.9276,
+      "eps_diluted_yoy_growth": 0.9723,
+      "equity_to_assets": 0.9861,
+      "leverage_liabilities_to_assets": 0.5333,
+      "log_total_assets": 0.9641,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9817,
+      "net_margin": 0.9073,
+      "operating_cashflow_to_revenue": 0.4582,
+      "operating_margin": 0.576,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9117
+     }
+    },
+    "financials": {
+     "n_rows": 4197,
+     "momentum": 1.0,
+     "value": 0.7586,
+     "profitability": 0.9602,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.7586,
+      "cash_to_assets": 0.9769,
+      "eps_diluted_yoy_growth": 0.9252,
+      "equity_to_assets": 0.9995,
+      "leverage_liabilities_to_assets": 0.9776,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9921,
+      "net_margin": 0.9523,
+      "operating_cashflow_to_revenue": 0.3729,
+      "operating_margin": 0.1858,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9602
+     }
+    },
+    "healthcare": {
+     "n_rows": 3013,
+     "momentum": 1.0,
+     "value": 0.9057,
+     "profitability": 0.8755,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.9057,
+      "cash_to_assets": 0.9515,
+      "eps_diluted_yoy_growth": 1.0,
+      "equity_to_assets": 0.99,
+      "leverage_liabilities_to_assets": 0.609,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9944,
+      "net_margin": 0.8699,
+      "operating_cashflow_to_revenue": 0.3963,
+      "operating_margin": 0.6289,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8755
+     }
+    },
+    "tech": {
+     "n_rows": 2839,
+     "momentum": 1.0,
+     "value": 0.8901,
+     "profitability": 0.8172,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8901,
+      "cash_to_assets": 0.9267,
+      "eps_diluted_yoy_growth": 0.9951,
+      "equity_to_assets": 0.9965,
+      "leverage_liabilities_to_assets": 0.814,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9937,
+      "net_margin": 0.8154,
+      "operating_cashflow_to_revenue": 0.4456,
+      "operating_margin": 0.7119,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8218
+     }
+    }
+   },
+   "rank_loss": {
+    "spec": {
+     "window_days": 180,
+     "min_comparators": 2,
+     "include_same_day": true,
+     "same_day_sensitivity_arm": true,
+     "secondary": "raw_levels",
+     "ticker_col": "cik",
+     "date_col": "filing_date"
+    },
+    "rank_pool": "this frame's own rows only (each frame is ranked within itself; red-team S6)",
+    "per_column": {
+     "book_to_market": {
+      "raw_nonnull": 13899,
+      "rank_nonnull": 13898,
+      "lost_to_min_comparators": 1
+     },
+     "cash_to_assets": {
+      "raw_nonnull": 15412,
+      "rank_nonnull": 15412,
+      "lost_to_min_comparators": 0
+     },
+     "eps_diluted_yoy_growth": {
+      "raw_nonnull": 15904,
+      "rank_nonnull": 15904,
+      "lost_to_min_comparators": 0
+     },
+     "equity_to_assets": {
+      "raw_nonnull": 16284,
+      "rank_nonnull": 16284,
+      "lost_to_min_comparators": 0
+     },
+     "leverage_liabilities_to_assets": {
+      "raw_nonnull": 11863,
+      "rank_nonnull": 11863,
+      "lost_to_min_comparators": 0
+     },
+     "log_total_assets": {
+      "raw_nonnull": 16271,
+      "rank_nonnull": 16271,
+      "lost_to_min_comparators": 0
+     },
+     "momentum_126": {
+      "raw_nonnull": 16383,
+      "rank_nonnull": 16383,
+      "lost_to_min_comparators": 0
+     },
+     "net_income_yoy_growth": {
+      "raw_nonnull": 16234,
+      "rank_nonnull": 16234,
+      "lost_to_min_comparators": 0
+     },
+     "net_margin": {
+      "raw_nonnull": 14548,
+      "rank_nonnull": 14548,
+      "lost_to_min_comparators": 0
+     },
+     "operating_cashflow_to_revenue": {
+      "raw_nonnull": 6922,
+      "rank_nonnull": 6922,
+      "lost_to_min_comparators": 0
+     },
+     "operating_margin": {
+      "raw_nonnull": 9137,
+      "rank_nonnull": 9136,
+      "lost_to_min_comparators": 1
+     },
+     "realized_vol_63": {
+      "raw_nonnull": 16383,
+      "rank_nonnull": 16383,
+      "lost_to_min_comparators": 0
+     },
+     "revenue_yoy_growth": {
+      "raw_nonnull": 14650,
+      "rank_nonnull": 14650,
+      "lost_to_min_comparators": 0
+     }
+    },
+    "seconds": 0.75
+   }
+  },
+  "A_periodic_10K_10Q": {
+   "raw_levels": {
+    "frame": "A_periodic_10K_10Q",
+    "n_rows": 3642,
+    "families": {
+     "momentum": {
+      "tier": "confirmatory",
+      "members": {
+       "momentum_126": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 3642
+     },
+     "value": {
+      "tier": "confirmatory",
+      "members": {
+       "book_to_market": 0.8391
+      },
+      "any_member": 0.8391,
+      "all_members": 0.8391,
+      "n_any_member": 3056
+     },
+     "profitability": {
+      "tier": "confirmatory",
+      "members": {
+       "net_margin": 0.8819,
+       "operating_margin": 0.5975,
+       "operating_cashflow_to_revenue": 0.4503
+      },
+      "any_member": 0.8885,
+      "all_members": 0.3086,
+      "n_any_member": 3236
+     },
+     "low_volatility": {
+      "tier": "confirmatory",
+      "members": {
+       "realized_vol_63": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 3642
+     },
+     "growth": {
+      "tier": "exploratory",
+      "members": {
+       "revenue_yoy_growth": 0.8888,
+       "net_income_yoy_growth": 0.9907,
+       "eps_diluted_yoy_growth": 0.9681
+      },
+      "any_member": 1.0,
+      "all_members": 0.8515,
+      "n_any_member": 3642
+     },
+     "balance_sheet": {
+      "tier": "exploratory",
+      "members": {
+       "leverage_liabilities_to_assets": 0.7095,
+       "equity_to_assets": 0.9951,
+       "cash_to_assets": 0.9454
+      },
+      "any_member": 1.0,
+      "all_members": 0.6694,
+      "n_any_member": 3642
+     },
+     "size": {
+      "tier": "comparator",
+      "members": {
+       "log_total_assets": 0.9934
+      },
+      "any_member": 0.9934,
+      "all_members": 0.9934,
+      "n_any_member": 3618
+     }
+    },
+    "confirmatory_families_present_per_row": {
+     "2": 53,
+     "3": 886,
+     "4": 2703
+    },
+    "share_rows_with_all_4_confirmatory_families": 0.7422,
+    "share_rows_with_at_least_3_confirmatory_families": 0.9854
+   },
+   "raw_by_form": {
+    "10-K": {
+     "n_rows": 910,
+     "momentum": 1.0,
+     "value": 0.8396,
+     "profitability": 0.8912,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8396,
+      "cash_to_assets": 0.9451,
+      "eps_diluted_yoy_growth": 0.9703,
+      "equity_to_assets": 0.9956,
+      "leverage_liabilities_to_assets": 0.7099,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9956,
+      "net_margin": 0.8868,
+      "operating_cashflow_to_revenue": 0.8462,
+      "operating_margin": 0.5967,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8879
+     }
+    },
+    "10-Q": {
+     "n_rows": 2732,
+     "momentum": 1.0,
+     "value": 0.8389,
+     "profitability": 0.8876,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8389,
+      "cash_to_assets": 0.9455,
+      "eps_diluted_yoy_growth": 0.9674,
+      "equity_to_assets": 0.9949,
+      "leverage_liabilities_to_assets": 0.7094,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.989,
+      "net_margin": 0.8803,
+      "operating_cashflow_to_revenue": 0.3184,
+      "operating_margin": 0.5977,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8891
+     }
+    }
+   },
+   "raw_by_sector": {
+    "consumer": {
+     "n_rows": 760,
+     "momentum": 1.0,
+     "value": 0.8447,
+     "profitability": 0.8724,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8447,
+      "cash_to_assets": 0.9289,
+      "eps_diluted_yoy_growth": 0.9829,
+      "equity_to_assets": 0.9974,
+      "leverage_liabilities_to_assets": 0.5763,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9921,
+      "net_margin": 0.8645,
+      "operating_cashflow_to_revenue": 0.4711,
+      "operating_margin": 0.8079,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8724
+     }
+    },
+    "energy": {
+     "n_rows": 656,
+     "momentum": 1.0,
+     "value": 0.8857,
+     "profitability": 0.9085,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9634,
+     "members": {
+      "book_to_market": 0.8857,
+      "cash_to_assets": 0.9192,
+      "eps_diluted_yoy_growth": 0.9771,
+      "equity_to_assets": 0.9832,
+      "leverage_liabilities_to_assets": 0.561,
+      "log_total_assets": 0.9634,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9817,
+      "net_margin": 0.9024,
+      "operating_cashflow_to_revenue": 0.4771,
+      "operating_margin": 0.5366,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.907
+     }
+    },
+    "financials": {
+     "n_rows": 752,
+     "momentum": 1.0,
+     "value": 0.6915,
+     "profitability": 0.9428,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.6915,
+      "cash_to_assets": 0.9694,
+      "eps_diluted_yoy_growth": 0.887,
+      "equity_to_assets": 1.0,
+      "leverage_liabilities_to_assets": 0.9614,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9894,
+      "net_margin": 0.9322,
+      "operating_cashflow_to_revenue": 0.4309,
+      "operating_margin": 0.2606,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9428
+     }
+    },
+    "healthcare": {
+     "n_rows": 735,
+     "momentum": 1.0,
+     "value": 0.9007,
+     "profitability": 0.883,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.9007,
+      "cash_to_assets": 0.9605,
+      "eps_diluted_yoy_growth": 1.0,
+      "equity_to_assets": 0.9932,
+      "leverage_liabilities_to_assets": 0.6027,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9932,
+      "net_margin": 0.8762,
+      "operating_cashflow_to_revenue": 0.419,
+      "operating_margin": 0.6259,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.883
+     }
+    },
+    "tech": {
+     "n_rows": 739,
+     "momentum": 1.0,
+     "value": 0.8809,
+     "profitability": 0.8376,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8809,
+      "cash_to_assets": 0.9459,
+      "eps_diluted_yoy_growth": 0.9959,
+      "equity_to_assets": 1.0,
+      "leverage_liabilities_to_assets": 0.8281,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9959,
+      "net_margin": 0.8363,
+      "operating_cashflow_to_revenue": 0.456,
+      "operating_margin": 0.7497,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8403
+     }
+    }
+   },
+   "pit_trailing_rank": {
+    "frame": "A_periodic_10K_10Q_ranked",
+    "n_rows": 3642,
+    "families": {
+     "momentum": {
+      "tier": "confirmatory",
+      "members": {
+       "momentum_126": 0.9997
+      },
+      "any_member": 0.9997,
+      "all_members": 0.9997,
+      "n_any_member": 3641
+     },
+     "value": {
+      "tier": "confirmatory",
+      "members": {
+       "book_to_market": 0.8388
+      },
+      "any_member": 0.8388,
+      "all_members": 0.8388,
+      "n_any_member": 3055
+     },
+     "profitability": {
+      "tier": "confirmatory",
+      "members": {
+       "net_margin": 0.8817,
+       "operating_margin": 0.5972,
+       "operating_cashflow_to_revenue": 0.45
+      },
+      "any_member": 0.8882,
+      "all_members": 0.3086,
+      "n_any_member": 3235
+     },
+     "low_volatility": {
+      "tier": "confirmatory",
+      "members": {
+       "realized_vol_63": 0.9997
+      },
+      "any_member": 0.9997,
+      "all_members": 0.9997,
+      "n_any_member": 3641
+     },
+     "growth": {
+      "tier": "exploratory",
+      "members": {
+       "revenue_yoy_growth": 0.8885,
+       "net_income_yoy_growth": 0.9904,
+       "eps_diluted_yoy_growth": 0.9679
+      },
+      "any_member": 0.9997,
+      "all_members": 0.8512,
+      "n_any_member": 3641
+     },
+     "balance_sheet": {
+      "tier": "exploratory",
+      "members": {
+       "leverage_liabilities_to_assets": 0.7092,
+       "equity_to_assets": 0.9948,
+       "cash_to_assets": 0.9451
+      },
+      "any_member": 0.9997,
+      "all_members": 0.6691,
+      "n_any_member": 3641
+     },
+     "size": {
+      "tier": "comparator",
+      "members": {
+       "log_total_assets": 0.9931
+      },
+      "any_member": 0.9931,
+      "all_members": 0.9931,
+      "n_any_member": 3617
+     }
+    },
+    "confirmatory_families_present_per_row": {
+     "0": 1,
+     "2": 53,
+     "3": 886,
+     "4": 2702
+    },
+    "share_rows_with_all_4_confirmatory_families": 0.7419,
+    "share_rows_with_at_least_3_confirmatory_families": 0.9852
+   },
+   "rank_by_form": {
+    "10-K": {
+     "n_rows": 910,
+     "momentum": 1.0,
+     "value": 0.8396,
+     "profitability": 0.8912,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9934,
+     "members": {
+      "book_to_market": 0.8396,
+      "cash_to_assets": 0.9451,
+      "eps_diluted_yoy_growth": 0.9703,
+      "equity_to_assets": 0.9956,
+      "leverage_liabilities_to_assets": 0.7099,
+      "log_total_assets": 0.9934,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9956,
+      "net_margin": 0.8868,
+      "operating_cashflow_to_revenue": 0.8462,
+      "operating_margin": 0.5967,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8879
+     }
+    },
+    "10-Q": {
+     "n_rows": 2732,
+     "momentum": 0.9996,
+     "value": 0.8386,
+     "profitability": 0.8873,
+     "low_volatility": 0.9996,
+     "growth": 0.9996,
+     "balance_sheet": 0.9996,
+     "size": 0.993,
+     "members": {
+      "book_to_market": 0.8386,
+      "cash_to_assets": 0.9451,
+      "eps_diluted_yoy_growth": 0.9671,
+      "equity_to_assets": 0.9945,
+      "leverage_liabilities_to_assets": 0.709,
+      "log_total_assets": 0.993,
+      "momentum_126": 0.9996,
+      "net_income_yoy_growth": 0.9887,
+      "net_margin": 0.8799,
+      "operating_cashflow_to_revenue": 0.3181,
+      "operating_margin": 0.5974,
+      "realized_vol_63": 0.9996,
+      "revenue_yoy_growth": 0.8887
+     }
+    }
+   },
+   "rank_by_sector": {
+    "consumer": {
+     "n_rows": 760,
+     "momentum": 1.0,
+     "value": 0.8447,
+     "profitability": 0.8724,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8447,
+      "cash_to_assets": 0.9289,
+      "eps_diluted_yoy_growth": 0.9829,
+      "equity_to_assets": 0.9974,
+      "leverage_liabilities_to_assets": 0.5763,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9921,
+      "net_margin": 0.8645,
+      "operating_cashflow_to_revenue": 0.4697,
+      "operating_margin": 0.8079,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8724
+     }
+    },
+    "energy": {
+     "n_rows": 656,
+     "momentum": 1.0,
+     "value": 0.8857,
+     "profitability": 0.9085,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9634,
+     "members": {
+      "book_to_market": 0.8857,
+      "cash_to_assets": 0.9192,
+      "eps_diluted_yoy_growth": 0.9771,
+      "equity_to_assets": 0.9832,
+      "leverage_liabilities_to_assets": 0.561,
+      "log_total_assets": 0.9634,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9817,
+      "net_margin": 0.9024,
+      "operating_cashflow_to_revenue": 0.4771,
+      "operating_margin": 0.5366,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.907
+     }
+    },
+    "financials": {
+     "n_rows": 752,
+     "momentum": 1.0,
+     "value": 0.6915,
+     "profitability": 0.9428,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.6915,
+      "cash_to_assets": 0.9694,
+      "eps_diluted_yoy_growth": 0.887,
+      "equity_to_assets": 1.0,
+      "leverage_liabilities_to_assets": 0.9614,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9894,
+      "net_margin": 0.9322,
+      "operating_cashflow_to_revenue": 0.4309,
+      "operating_margin": 0.2606,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9428
+     }
+    },
+    "healthcare": {
+     "n_rows": 735,
+     "momentum": 1.0,
+     "value": 0.9007,
+     "profitability": 0.883,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.9007,
+      "cash_to_assets": 0.9605,
+      "eps_diluted_yoy_growth": 1.0,
+      "equity_to_assets": 0.9932,
+      "leverage_liabilities_to_assets": 0.6027,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9932,
+      "net_margin": 0.8762,
+      "operating_cashflow_to_revenue": 0.419,
+      "operating_margin": 0.6259,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.883
+     }
+    },
+    "tech": {
+     "n_rows": 739,
+     "momentum": 0.9986,
+     "value": 0.8796,
+     "profitability": 0.8363,
+     "low_volatility": 0.9986,
+     "growth": 0.9986,
+     "balance_sheet": 0.9986,
+     "size": 0.9986,
+     "members": {
+      "book_to_market": 0.8796,
+      "cash_to_assets": 0.9445,
+      "eps_diluted_yoy_growth": 0.9946,
+      "equity_to_assets": 0.9986,
+      "leverage_liabilities_to_assets": 0.8268,
+      "log_total_assets": 0.9986,
+      "momentum_126": 0.9986,
+      "net_income_yoy_growth": 0.9946,
+      "net_margin": 0.8349,
+      "operating_cashflow_to_revenue": 0.456,
+      "operating_margin": 0.7483,
+      "realized_vol_63": 0.9986,
+      "revenue_yoy_growth": 0.839
+     }
+    }
+   },
+   "rank_loss": {
+    "spec": {
+     "window_days": 180,
+     "min_comparators": 2,
+     "include_same_day": true,
+     "same_day_sensitivity_arm": true,
+     "secondary": "raw_levels",
+     "ticker_col": "cik",
+     "date_col": "filing_date"
+    },
+    "rank_pool": "this frame's own rows only (each frame is ranked within itself; red-team S6)",
+    "per_column": {
+     "book_to_market": {
+      "raw_nonnull": 3056,
+      "rank_nonnull": 3055,
+      "lost_to_min_comparators": 1
+     },
+     "cash_to_assets": {
+      "raw_nonnull": 3443,
+      "rank_nonnull": 3442,
+      "lost_to_min_comparators": 1
+     },
+     "eps_diluted_yoy_growth": {
+      "raw_nonnull": 3526,
+      "rank_nonnull": 3525,
+      "lost_to_min_comparators": 1
+     },
+     "equity_to_assets": {
+      "raw_nonnull": 3624,
+      "rank_nonnull": 3623,
+      "lost_to_min_comparators": 1
+     },
+     "leverage_liabilities_to_assets": {
+      "raw_nonnull": 2584,
+      "rank_nonnull": 2583,
+      "lost_to_min_comparators": 1
+     },
+     "log_total_assets": {
+      "raw_nonnull": 3618,
+      "rank_nonnull": 3617,
+      "lost_to_min_comparators": 1
+     },
+     "momentum_126": {
+      "raw_nonnull": 3642,
+      "rank_nonnull": 3641,
+      "lost_to_min_comparators": 1
+     },
+     "net_income_yoy_growth": {
+      "raw_nonnull": 3608,
+      "rank_nonnull": 3607,
+      "lost_to_min_comparators": 1
+     },
+     "net_margin": {
+      "raw_nonnull": 3212,
+      "rank_nonnull": 3211,
+      "lost_to_min_comparators": 1
+     },
+     "operating_cashflow_to_revenue": {
+      "raw_nonnull": 1640,
+      "rank_nonnull": 1639,
+      "lost_to_min_comparators": 1
+     },
+     "operating_margin": {
+      "raw_nonnull": 2176,
+      "rank_nonnull": 2175,
+      "lost_to_min_comparators": 1
+     },
+     "realized_vol_63": {
+      "raw_nonnull": 3642,
+      "rank_nonnull": 3641,
+      "lost_to_min_comparators": 1
+     },
+     "revenue_yoy_growth": {
+      "raw_nonnull": 3237,
+      "rank_nonnull": 3236,
+      "lost_to_min_comparators": 1
+     }
+    },
+    "seconds": 0.08
+   }
+  },
+  "B_e2_run_time_frame": {
+   "raw_levels": {
+    "frame": "B_e2_run_time_frame",
+    "n_rows": 7381,
+    "families": {
+     "momentum": {
+      "tier": "confirmatory",
+      "members": {
+       "momentum_126": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 7381
+     },
+     "value": {
+      "tier": "confirmatory",
+      "members": {
+       "book_to_market": 0.8419
+      },
+      "any_member": 0.8419,
+      "all_members": 0.8419,
+      "n_any_member": 6214
+     },
+     "profitability": {
+      "tier": "confirmatory",
+      "members": {
+       "net_margin": 0.8733,
+       "operating_margin": 0.6007,
+       "operating_cashflow_to_revenue": 0.4235
+      },
+      "any_member": 0.8806,
+      "all_members": 0.2945,
+      "n_any_member": 6500
+     },
+     "low_volatility": {
+      "tier": "confirmatory",
+      "members": {
+       "realized_vol_63": 1.0
+      },
+      "any_member": 1.0,
+      "all_members": 1.0,
+      "n_any_member": 7381
+     },
+     "growth": {
+      "tier": "exploratory",
+      "members": {
+       "revenue_yoy_growth": 0.8819,
+       "net_income_yoy_growth": 0.989,
+       "eps_diluted_yoy_growth": 0.9678
+      },
+      "any_member": 1.0,
+      "all_members": 0.843,
+      "n_any_member": 7381
+     },
+     "balance_sheet": {
+      "tier": "exploratory",
+      "members": {
+       "leverage_liabilities_to_assets": 0.7038,
+       "equity_to_assets": 0.9932,
+       "cash_to_assets": 0.9446
+      },
+      "any_member": 1.0,
+      "all_members": 0.6629,
+      "n_any_member": 7381
+     },
+     "size": {
+      "tier": "comparator",
+      "members": {
+       "log_total_assets": 0.9935
+      },
+      "any_member": 0.9935,
+      "all_members": 0.9935,
+      "n_any_member": 7333
+     }
+    },
+    "confirmatory_families_present_per_row": {
+     "2": 133,
+     "3": 1782,
+     "4": 5466
+    },
+    "share_rows_with_all_4_confirmatory_families": 0.7406,
+    "share_rows_with_at_least_3_confirmatory_families": 0.982
+   },
+   "raw_by_form": {
+    "10-K": {
+     "n_rows": 868,
+     "momentum": 1.0,
+     "value": 0.8433,
+     "profitability": 0.8871,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9931,
+     "members": {
+      "book_to_market": 0.8433,
+      "cash_to_assets": 0.9447,
+      "eps_diluted_yoy_growth": 0.9689,
+      "equity_to_assets": 0.9954,
+      "leverage_liabilities_to_assets": 0.697,
+      "log_total_assets": 0.9931,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9954,
+      "net_margin": 0.8825,
+      "operating_cashflow_to_revenue": 0.8456,
+      "operating_margin": 0.6256,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8836
+     }
+    },
+    "10-Q": {
+     "n_rows": 2629,
+     "momentum": 1.0,
+     "value": 0.844,
+     "profitability": 0.8855,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9932,
+     "members": {
+      "book_to_market": 0.844,
+      "cash_to_assets": 0.9445,
+      "eps_diluted_yoy_growth": 0.9661,
+      "equity_to_assets": 0.9947,
+      "leverage_liabilities_to_assets": 0.698,
+      "log_total_assets": 0.9932,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9886,
+      "net_margin": 0.8779,
+      "operating_cashflow_to_revenue": 0.3195,
+      "operating_margin": 0.6173,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.887
+     }
+    },
+    "8-K": {
+     "n_rows": 3884,
+     "momentum": 1.0,
+     "value": 0.8401,
+     "profitability": 0.8759,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9938,
+     "members": {
+      "book_to_market": 0.8401,
+      "cash_to_assets": 0.9446,
+      "eps_diluted_yoy_growth": 0.9686,
+      "equity_to_assets": 0.9918,
+      "leverage_liabilities_to_assets": 0.7093,
+      "log_total_assets": 0.9938,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9879,
+      "net_margin": 0.8682,
+      "operating_cashflow_to_revenue": 0.3996,
+      "operating_margin": 0.5839,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.878
+     }
+    }
+   },
+   "raw_by_sector": {
+    "consumer": {
+     "n_rows": 1557,
+     "momentum": 1.0,
+     "value": 0.842,
+     "profitability": 0.8696,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.842,
+      "cash_to_assets": 0.9306,
+      "eps_diluted_yoy_growth": 0.9814,
+      "equity_to_assets": 0.9968,
+      "leverage_liabilities_to_assets": 0.5787,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9923,
+      "net_margin": 0.8619,
+      "operating_cashflow_to_revenue": 0.4432,
+      "operating_margin": 0.8067,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8696
+     }
+    },
+    "energy": {
+     "n_rows": 1351,
+     "momentum": 1.0,
+     "value": 0.8853,
+     "profitability": 0.9023,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9645,
+     "members": {
+      "book_to_market": 0.8853,
+      "cash_to_assets": 0.9201,
+      "eps_diluted_yoy_growth": 0.9719,
+      "equity_to_assets": 0.9822,
+      "leverage_liabilities_to_assets": 0.5603,
+      "log_total_assets": 0.9645,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9771,
+      "net_margin": 0.8956,
+      "operating_cashflow_to_revenue": 0.4515,
+      "operating_margin": 0.5337,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9053
+     }
+    },
+    "financials": {
+     "n_rows": 1436,
+     "momentum": 1.0,
+     "value": 0.7061,
+     "profitability": 0.9359,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.7061,
+      "cash_to_assets": 0.9673,
+      "eps_diluted_yoy_growth": 0.8858,
+      "equity_to_assets": 0.9993,
+      "leverage_liabilities_to_assets": 0.9603,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9861,
+      "net_margin": 0.922,
+      "operating_cashflow_to_revenue": 0.3969,
+      "operating_margin": 0.273,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9359
+     }
+    },
+    "healthcare": {
+     "n_rows": 1537,
+     "momentum": 1.0,
+     "value": 0.8953,
+     "profitability": 0.8738,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8953,
+      "cash_to_assets": 0.9571,
+      "eps_diluted_yoy_growth": 1.0,
+      "equity_to_assets": 0.9902,
+      "leverage_liabilities_to_assets": 0.5953,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9928,
+      "net_margin": 0.8666,
+      "operating_cashflow_to_revenue": 0.3813,
+      "operating_margin": 0.6213,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8738
+     }
+    },
+    "tech": {
+     "n_rows": 1500,
+     "momentum": 1.0,
+     "value": 0.878,
+     "profitability": 0.8267,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.878,
+      "cash_to_assets": 0.9467,
+      "eps_diluted_yoy_growth": 0.9953,
+      "equity_to_assets": 0.9967,
+      "leverage_liabilities_to_assets": 0.8287,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9953,
+      "net_margin": 0.8253,
+      "operating_cashflow_to_revenue": 0.4467,
+      "operating_margin": 0.74,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.83
+     }
+    }
+   },
+   "pit_trailing_rank": {
+    "frame": "B_e2_run_time_frame_ranked",
+    "n_rows": 7381,
+    "families": {
+     "momentum": {
+      "tier": "confirmatory",
+      "members": {
+       "momentum_126": 0.9999
+      },
+      "any_member": 0.9999,
+      "all_members": 0.9999,
+      "n_any_member": 7380
+     },
+     "value": {
+      "tier": "confirmatory",
+      "members": {
+       "book_to_market": 0.8419
+      },
+      "any_member": 0.8419,
+      "all_members": 0.8419,
+      "n_any_member": 6214
+     },
+     "profitability": {
+      "tier": "confirmatory",
+      "members": {
+       "net_margin": 0.8732,
+       "operating_margin": 0.6006,
+       "operating_cashflow_to_revenue": 0.4234
+      },
+      "any_member": 0.8805,
+      "all_members": 0.2944,
+      "n_any_member": 6499
+     },
+     "low_volatility": {
+      "tier": "confirmatory",
+      "members": {
+       "realized_vol_63": 0.9999
+      },
+      "any_member": 0.9999,
+      "all_members": 0.9999,
+      "n_any_member": 7380
+     },
+     "growth": {
+      "tier": "exploratory",
+      "members": {
+       "revenue_yoy_growth": 0.8817,
+       "net_income_yoy_growth": 0.9889,
+       "eps_diluted_yoy_growth": 0.9676
+      },
+      "any_member": 0.9999,
+      "all_members": 0.8428,
+      "n_any_member": 7380
+     },
+     "balance_sheet": {
+      "tier": "exploratory",
+      "members": {
+       "leverage_liabilities_to_assets": 0.7038,
+       "equity_to_assets": 0.9931,
+       "cash_to_assets": 0.9445
+      },
+      "any_member": 0.9999,
+      "all_members": 0.6629,
+      "n_any_member": 7380
+     },
+     "size": {
+      "tier": "comparator",
+      "members": {
+       "log_total_assets": 0.9934
+      },
+      "any_member": 0.9934,
+      "all_members": 0.9934,
+      "n_any_member": 7332
+     }
+    },
+    "confirmatory_families_present_per_row": {
+     "0": 1,
+     "2": 132,
+     "3": 1783,
+     "4": 5465
+    },
+    "share_rows_with_all_4_confirmatory_families": 0.7404,
+    "share_rows_with_at_least_3_confirmatory_families": 0.982
+   },
+   "rank_by_form": {
+    "10-K": {
+     "n_rows": 868,
+     "momentum": 1.0,
+     "value": 0.8433,
+     "profitability": 0.8871,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9931,
+     "members": {
+      "book_to_market": 0.8433,
+      "cash_to_assets": 0.9447,
+      "eps_diluted_yoy_growth": 0.9689,
+      "equity_to_assets": 0.9954,
+      "leverage_liabilities_to_assets": 0.697,
+      "log_total_assets": 0.9931,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9954,
+      "net_margin": 0.8825,
+      "operating_cashflow_to_revenue": 0.8456,
+      "operating_margin": 0.6256,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8836
+     }
+    },
+    "10-Q": {
+     "n_rows": 2629,
+     "momentum": 1.0,
+     "value": 0.844,
+     "profitability": 0.8855,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9932,
+     "members": {
+      "book_to_market": 0.844,
+      "cash_to_assets": 0.9445,
+      "eps_diluted_yoy_growth": 0.9661,
+      "equity_to_assets": 0.9947,
+      "leverage_liabilities_to_assets": 0.698,
+      "log_total_assets": 0.9932,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9886,
+      "net_margin": 0.8779,
+      "operating_cashflow_to_revenue": 0.3195,
+      "operating_margin": 0.6173,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.887
+     }
+    },
+    "8-K": {
+     "n_rows": 3884,
+     "momentum": 0.9997,
+     "value": 0.8401,
+     "profitability": 0.8756,
+     "low_volatility": 0.9997,
+     "growth": 0.9997,
+     "balance_sheet": 0.9997,
+     "size": 0.9936,
+     "members": {
+      "book_to_market": 0.8401,
+      "cash_to_assets": 0.9444,
+      "eps_diluted_yoy_growth": 0.9683,
+      "equity_to_assets": 0.9915,
+      "leverage_liabilities_to_assets": 0.7093,
+      "log_total_assets": 0.9936,
+      "momentum_126": 0.9997,
+      "net_income_yoy_growth": 0.9876,
+      "net_margin": 0.8679,
+      "operating_cashflow_to_revenue": 0.3993,
+      "operating_margin": 0.5837,
+      "realized_vol_63": 0.9997,
+      "revenue_yoy_growth": 0.8777
+     }
+    }
+   },
+   "rank_by_sector": {
+    "consumer": {
+     "n_rows": 1557,
+     "momentum": 0.9994,
+     "value": 0.842,
+     "profitability": 0.8696,
+     "low_volatility": 0.9994,
+     "growth": 0.9994,
+     "balance_sheet": 0.9994,
+     "size": 0.9994,
+     "members": {
+      "book_to_market": 0.842,
+      "cash_to_assets": 0.93,
+      "eps_diluted_yoy_growth": 0.9807,
+      "equity_to_assets": 0.9961,
+      "leverage_liabilities_to_assets": 0.5787,
+      "log_total_assets": 0.9994,
+      "momentum_126": 0.9994,
+      "net_income_yoy_growth": 0.9917,
+      "net_margin": 0.8619,
+      "operating_cashflow_to_revenue": 0.4432,
+      "operating_margin": 0.8067,
+      "realized_vol_63": 0.9994,
+      "revenue_yoy_growth": 0.8696
+     }
+    },
+    "energy": {
+     "n_rows": 1351,
+     "momentum": 1.0,
+     "value": 0.8853,
+     "profitability": 0.9023,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 0.9645,
+     "members": {
+      "book_to_market": 0.8853,
+      "cash_to_assets": 0.9201,
+      "eps_diluted_yoy_growth": 0.9719,
+      "equity_to_assets": 0.9822,
+      "leverage_liabilities_to_assets": 0.5603,
+      "log_total_assets": 0.9645,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9771,
+      "net_margin": 0.8956,
+      "operating_cashflow_to_revenue": 0.4515,
+      "operating_margin": 0.5337,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9053
+     }
+    },
+    "financials": {
+     "n_rows": 1436,
+     "momentum": 1.0,
+     "value": 0.7061,
+     "profitability": 0.9352,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.7061,
+      "cash_to_assets": 0.9673,
+      "eps_diluted_yoy_growth": 0.8858,
+      "equity_to_assets": 0.9993,
+      "leverage_liabilities_to_assets": 0.9603,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9861,
+      "net_margin": 0.9213,
+      "operating_cashflow_to_revenue": 0.3962,
+      "operating_margin": 0.273,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.9352
+     }
+    },
+    "healthcare": {
+     "n_rows": 1537,
+     "momentum": 1.0,
+     "value": 0.8953,
+     "profitability": 0.8738,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.8953,
+      "cash_to_assets": 0.9571,
+      "eps_diluted_yoy_growth": 1.0,
+      "equity_to_assets": 0.9902,
+      "leverage_liabilities_to_assets": 0.5953,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9928,
+      "net_margin": 0.8666,
+      "operating_cashflow_to_revenue": 0.3813,
+      "operating_margin": 0.6207,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.8738
+     }
+    },
+    "tech": {
+     "n_rows": 1500,
+     "momentum": 1.0,
+     "value": 0.878,
+     "profitability": 0.8267,
+     "low_volatility": 1.0,
+     "growth": 1.0,
+     "balance_sheet": 1.0,
+     "size": 1.0,
+     "members": {
+      "book_to_market": 0.878,
+      "cash_to_assets": 0.9467,
+      "eps_diluted_yoy_growth": 0.9953,
+      "equity_to_assets": 0.9967,
+      "leverage_liabilities_to_assets": 0.8287,
+      "log_total_assets": 1.0,
+      "momentum_126": 1.0,
+      "net_income_yoy_growth": 0.9953,
+      "net_margin": 0.8253,
+      "operating_cashflow_to_revenue": 0.4467,
+      "operating_margin": 0.74,
+      "realized_vol_63": 1.0,
+      "revenue_yoy_growth": 0.83
+     }
+    }
+   },
+   "rank_loss": {
+    "spec": {
+     "window_days": 180,
+     "min_comparators": 2,
+     "include_same_day": true,
+     "same_day_sensitivity_arm": true,
+     "secondary": "raw_levels",
+     "ticker_col": "cik",
+     "date_col": "filing_date"
+    },
+    "rank_pool": "this frame's own rows only (each frame is ranked within itself; red-team S6)",
+    "per_column": {
+     "book_to_market": {
+      "raw_nonnull": 6214,
+      "rank_nonnull": 6214,
+      "lost_to_min_comparators": 0
+     },
+     "cash_to_assets": {
+      "raw_nonnull": 6972,
+      "rank_nonnull": 6971,
+      "lost_to_min_comparators": 1
+     },
+     "eps_diluted_yoy_growth": {
+      "raw_nonnull": 7143,
+      "rank_nonnull": 7142,
+      "lost_to_min_comparators": 1
+     },
+     "equity_to_assets": {
+      "raw_nonnull": 7331,
+      "rank_nonnull": 7330,
+      "lost_to_min_comparators": 1
+     },
+     "leverage_liabilities_to_assets": {
+      "raw_nonnull": 5195,
+      "rank_nonnull": 5195,
+      "lost_to_min_comparators": 0
+     },
+     "log_total_assets": {
+      "raw_nonnull": 7333,
+      "rank_nonnull": 7332,
+      "lost_to_min_comparators": 1
+     },
+     "momentum_126": {
+      "raw_nonnull": 7381,
+      "rank_nonnull": 7380,
+      "lost_to_min_comparators": 1
+     },
+     "net_income_yoy_growth": {
+      "raw_nonnull": 7300,
+      "rank_nonnull": 7299,
+      "lost_to_min_comparators": 1
+     },
+     "net_margin": {
+      "raw_nonnull": 6446,
+      "rank_nonnull": 6445,
+      "lost_to_min_comparators": 1
+     },
+     "operating_cashflow_to_revenue": {
+      "raw_nonnull": 3126,
+      "rank_nonnull": 3125,
+      "lost_to_min_comparators": 1
+     },
+     "operating_margin": {
+      "raw_nonnull": 4434,
+      "rank_nonnull": 4433,
+      "lost_to_min_comparators": 1
+     },
+     "realized_vol_63": {
+      "raw_nonnull": 7381,
+      "rank_nonnull": 7380,
+      "lost_to_min_comparators": 1
+     },
+     "revenue_yoy_growth": {
+      "raw_nonnull": 6509,
+      "rank_nonnull": 6508,
+      "lost_to_min_comparators": 1
+     }
+    },
+    "seconds": 0.22
+   }
+  }
+ },
+ "section_3_folds": {
+  "C_all_forms_numeric": {
+   "frame": "C_all_forms_numeric",
+   "n_frame_rows": 16383,
+   "n_frame_ciks": 143,
+   "n_folds": 33,
+   "fold_quarters": [
+    "2018Q1",
+    "2018Q2",
+    "2018Q3",
+    "2018Q4",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2020Q2",
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1"
+   ],
+   "purge_rule": "target_window_close_on_or_after_test_quarter_start",
+   "dedup_gap_days": 5,
+   "dedup_rule": "backtest.company_quarter_dedup_keep_mask wrapped on cik (backtest_e2.dedup_keep_mask_cik)",
+   "n_rows_in_folds_raw": 13610,
+   "n_rows_in_folds_dedup": 9264,
+   "dedup_share_in_folds": 0.6807,
+   "n_whole_frame_dedup": 11066,
+   "n_distinct_ciks_in_folds": 139,
+   "n_test_dedup_min": 238,
+   "n_test_dedup_max": 343,
+   "n_test_dedup_mean": 280.73,
+   "n_test_raw_min": 345,
+   "n_test_raw_max": 518,
+   "n_purge_instances": 13782,
+   "purge_note": "no E3 arm fits anything, so no E3 arm has a training set; the purge figures are what backtest_e2.build_folds computes on this frame and are recorded for comparability only",
+   "n_folds_with_more_rows_than_ciks": 33,
+   "folds_with_more_rows_than_ciks": [
+    "2018Q1",
+    "2018Q2",
+    "2018Q3",
+    "2018Q4",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2020Q2",
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1"
+   ],
+   "n_dedup_rows_in_folds_with_all_4_confirmatory_ranks": 7438,
+   "n_dedup_rows_in_folds_with_ge_3_confirmatory_ranks": 9219,
+   "per_fold": [
+    {
+     "test_quarter": "2018Q1",
+     "n_test_raw": 400,
+     "n_test_dedup": 285,
+     "n_test_ciks": 81,
+     "n_test_dedup_ciks": 81,
+     "n_train_expanding": 2446,
+     "n_train_after_purge": 2058,
+     "share_train_purged": 0.1586,
+     "forms_dedup": {
+      "8-K": 214,
+      "10-K": 55,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8561,
+      "profitability": 0.4912,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8561,
+      "profitability": 0.4912,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 123,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 261
+    },
+    {
+     "test_quarter": "2018Q2",
+     "n_test_raw": 432,
+     "n_test_dedup": 272,
+     "n_test_ciks": 81,
+     "n_test_dedup_ciks": 81,
+     "n_train_expanding": 2846,
+     "n_train_after_purge": 2438,
+     "share_train_purged": 0.1434,
+     "forms_dedup": {
+      "8-K": 211,
+      "10-Q": 57,
+      "10-K": 4
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8824,
+      "profitability": 0.5551,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8824,
+      "profitability": 0.5551,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 126,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 265
+    },
+    {
+     "test_quarter": "2018Q3",
+     "n_test_raw": 377,
+     "n_test_dedup": 252,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 3278,
+     "n_train_after_purge": 2838,
+     "share_train_purged": 0.1342,
+     "forms_dedup": {
+      "8-K": 174,
+      "10-Q": 72,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8294,
+      "profitability": 0.7857,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8294,
+      "profitability": 0.7857,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 161,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 246
+    },
+    {
+     "test_quarter": "2018Q4",
+     "n_test_raw": 390,
+     "n_test_dedup": 257,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 3655,
+     "n_train_after_purge": 3268,
+     "share_train_purged": 0.1059,
+     "forms_dedup": {
+      "8-K": 182,
+      "10-Q": 68,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8599,
+      "profitability": 0.9144,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8599,
+      "profitability": 0.9144,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 202,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 254
+    },
+    {
+     "test_quarter": "2019Q1",
+     "n_test_raw": 413,
+     "n_test_dedup": 278,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 4045,
+     "n_train_after_purge": 3647,
+     "share_train_purged": 0.0984,
+     "forms_dedup": {
+      "8-K": 209,
+      "10-K": 54,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8741,
+      "profitability": 0.9496,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8741,
+      "profitability": 0.9496,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 231,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 276
+    },
+    {
+     "test_quarter": "2019Q2",
+     "n_test_raw": 446,
+     "n_test_dedup": 287,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 4458,
+     "n_train_after_purge": 4039,
+     "share_train_purged": 0.094,
+     "forms_dedup": {
+      "8-K": 220,
+      "10-Q": 65,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8432,
+      "profitability": 0.9826,
+      "low_volatility": 1.0,
+      "growth": 0.9895,
+      "balance_sheet": 0.9895,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8432,
+      "profitability": 0.9826,
+      "low_volatility": 1.0,
+      "growth": 0.9895,
+      "balance_sheet": 0.9895,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 240,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 284
+    },
+    {
+     "test_quarter": "2019Q3",
+     "n_test_raw": 412,
+     "n_test_dedup": 275,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 4904,
+     "n_train_after_purge": 4452,
+     "share_train_purged": 0.0922,
+     "forms_dedup": {
+      "8-K": 190,
+      "10-Q": 79,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8655,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8655,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 238,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 275
+    },
+    {
+     "test_quarter": "2019Q4",
+     "n_test_raw": 440,
+     "n_test_dedup": 261,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 5316,
+     "n_train_after_purge": 4902,
+     "share_train_purged": 0.0779,
+     "forms_dedup": {
+      "8-K": 186,
+      "10-Q": 68,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8276,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8276,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 216,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 261
+    },
+    {
+     "test_quarter": "2020Q1",
+     "n_test_raw": 518,
+     "n_test_dedup": 325,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 5756,
+     "n_train_after_purge": 5314,
+     "share_train_purged": 0.0768,
+     "forms_dedup": {
+      "8-K": 252,
+      "10-K": 59,
+      "10-Q": 14
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8308,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8308,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 270,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 325
+    },
+    {
+     "test_quarter": "2020Q2",
+     "n_test_raw": 518,
+     "n_test_dedup": 343,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 6274,
+     "n_train_after_purge": 5751,
+     "share_train_purged": 0.0834,
+     "forms_dedup": {
+      "8-K": 274,
+      "10-Q": 67,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.828,
+      "profitability": 0.9913,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.828,
+      "profitability": 0.9913,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 281,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 343
+    },
+    {
+     "test_quarter": "2020Q3",
+     "n_test_raw": 386,
+     "n_test_dedup": 249,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 6792,
+     "n_train_after_purge": 6261,
+     "share_train_purged": 0.0782,
+     "forms_dedup": {
+      "8-K": 166,
+      "10-Q": 79,
+      "10-K": 4
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8514,
+      "profitability": 0.9759,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.992
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8514,
+      "profitability": 0.9759,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.992
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 206,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 249
+    },
+    {
+     "test_quarter": "2020Q4",
+     "n_test_raw": 424,
+     "n_test_dedup": 287,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 7178,
+     "n_train_after_purge": 6790,
+     "share_train_purged": 0.0541,
+     "forms_dedup": {
+      "8-K": 199,
+      "10-Q": 82,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8571,
+      "profitability": 0.9756,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8571,
+      "profitability": 0.9756,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 239,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 287
+    },
+    {
+     "test_quarter": "2021Q1",
+     "n_test_raw": 461,
+     "n_test_dedup": 328,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 7602,
+     "n_train_after_purge": 7176,
+     "share_train_purged": 0.056,
+     "forms_dedup": {
+      "8-K": 246,
+      "10-K": 69,
+      "10-Q": 13
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8506,
+      "profitability": 0.9909,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9878
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8506,
+      "profitability": 0.9909,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9878
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 276,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 328
+    },
+    {
+     "test_quarter": "2021Q2",
+     "n_test_raw": 437,
+     "n_test_dedup": 286,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 8063,
+     "n_train_after_purge": 7595,
+     "share_train_purged": 0.058,
+     "forms_dedup": {
+      "8-K": 212,
+      "10-Q": 73,
+      "10-K": 1
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8566,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8566,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 245,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 286
+    },
+    {
+     "test_quarter": "2021Q3",
+     "n_test_raw": 381,
+     "n_test_dedup": 265,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 8500,
+     "n_train_after_purge": 8054,
+     "share_train_purged": 0.0525,
+     "forms_dedup": {
+      "8-K": 179,
+      "10-Q": 81,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8604,
+      "profitability": 0.9925,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9925
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8604,
+      "profitability": 0.9925,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9925
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 226,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 265
+    },
+    {
+     "test_quarter": "2021Q4",
+     "n_test_raw": 392,
+     "n_test_dedup": 271,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 8881,
+     "n_train_after_purge": 8495,
+     "share_train_purged": 0.0435,
+     "forms_dedup": {
+      "8-K": 184,
+      "10-Q": 79,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8229,
+      "profitability": 0.9926,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9889
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8229,
+      "profitability": 0.9926,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9889
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 221,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 271
+    },
+    {
+     "test_quarter": "2022Q1",
+     "n_test_raw": 424,
+     "n_test_dedup": 309,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 9273,
+     "n_train_after_purge": 8877,
+     "share_train_purged": 0.0427,
+     "forms_dedup": {
+      "8-K": 230,
+      "10-K": 64,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8123,
+      "profitability": 0.9903,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9838
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8123,
+      "profitability": 0.9903,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9838
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 248,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 309
+    },
+    {
+     "test_quarter": "2022Q2",
+     "n_test_raw": 435,
+     "n_test_dedup": 285,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 9697,
+     "n_train_after_purge": 9267,
+     "share_train_purged": 0.0443,
+     "forms_dedup": {
+      "8-K": 205,
+      "10-Q": 79,
+      "10-K": 1
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8386,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.993
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8386,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.993
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 236,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 285
+    },
+    {
+     "test_quarter": "2022Q3",
+     "n_test_raw": 374,
+     "n_test_dedup": 258,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 10132,
+     "n_train_after_purge": 9687,
+     "share_train_purged": 0.0439,
+     "forms_dedup": {
+      "8-K": 167,
+      "10-Q": 86,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8217,
+      "profitability": 0.9922,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9922
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8217,
+      "profitability": 0.9922,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9922
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 210,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 258
+    },
+    {
+     "test_quarter": "2022Q4",
+     "n_test_raw": 400,
+     "n_test_dedup": 285,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 10506,
+     "n_train_after_purge": 10132,
+     "share_train_purged": 0.0356,
+     "forms_dedup": {
+      "8-K": 198,
+      "10-Q": 80,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8175,
+      "profitability": 0.9825,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8175,
+      "profitability": 0.9825,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 228,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 285
+    },
+    {
+     "test_quarter": "2023Q1",
+     "n_test_raw": 417,
+     "n_test_dedup": 308,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 10906,
+     "n_train_after_purge": 10497,
+     "share_train_purged": 0.0375,
+     "forms_dedup": {
+      "8-K": 225,
+      "10-K": 70,
+      "10-Q": 13
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8052,
+      "profitability": 0.9805,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9903
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8052,
+      "profitability": 0.9805,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9903
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 242,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 308
+    },
+    {
+     "test_quarter": "2023Q2",
+     "n_test_raw": 441,
+     "n_test_dedup": 284,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 11323,
+     "n_train_after_purge": 10901,
+     "share_train_purged": 0.0373,
+     "forms_dedup": {
+      "8-K": 204,
+      "10-Q": 79,
+      "10-K": 1
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.7993,
+      "profitability": 0.9859,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9965
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.7993,
+      "profitability": 0.9859,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9965
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 223,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 284
+    },
+    {
+     "test_quarter": "2023Q3",
+     "n_test_raw": 345,
+     "n_test_dedup": 238,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 11764,
+     "n_train_after_purge": 11312,
+     "share_train_purged": 0.0384,
+     "forms_dedup": {
+      "8-K": 148,
+      "10-Q": 82,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8445,
+      "profitability": 0.9916,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9832
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8445,
+      "profitability": 0.9916,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9832
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 199,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 238
+    },
+    {
+     "test_quarter": "2023Q4",
+     "n_test_raw": 368,
+     "n_test_dedup": 260,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 12109,
+     "n_train_after_purge": 11752,
+     "share_train_purged": 0.0295,
+     "forms_dedup": {
+      "8-K": 173,
+      "10-Q": 80,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8423,
+      "profitability": 0.9846,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9846
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8423,
+      "profitability": 0.9846,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9846
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 215,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 260
+    },
+    {
+     "test_quarter": "2024Q1",
+     "n_test_raw": 398,
+     "n_test_dedup": 289,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 12477,
+     "n_train_after_purge": 12107,
+     "share_train_purged": 0.0297,
+     "forms_dedup": {
+      "8-K": 203,
+      "10-K": 70,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8685,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8685,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 248,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 289
+    },
+    {
+     "test_quarter": "2024Q2",
+     "n_test_raw": 435,
+     "n_test_dedup": 286,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 12875,
+     "n_train_after_purge": 12474,
+     "share_train_purged": 0.0311,
+     "forms_dedup": {
+      "8-K": 203,
+      "10-Q": 81,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 241,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 286
+    },
+    {
+     "test_quarter": "2024Q3",
+     "n_test_raw": 368,
+     "n_test_dedup": 259,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 13310,
+     "n_train_after_purge": 12868,
+     "share_train_purged": 0.0332,
+     "forms_dedup": {
+      "8-K": 167,
+      "10-Q": 86,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8687,
+      "profitability": 0.9846,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9961
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8687,
+      "profitability": 0.9846,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9961
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 221,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 259
+    },
+    {
+     "test_quarter": "2024Q4",
+     "n_test_raw": 346,
+     "n_test_dedup": 248,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 13678,
+     "n_train_after_purge": 13301,
+     "share_train_purged": 0.0276,
+     "forms_dedup": {
+      "8-K": 154,
+      "10-Q": 87,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8508,
+      "profitability": 0.9919,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9879
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8508,
+      "profitability": 0.9919,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9879
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 209,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 248
+    },
+    {
+     "test_quarter": "2025Q1",
+     "n_test_raw": 405,
+     "n_test_dedup": 300,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 14024,
+     "n_train_after_purge": 13678,
+     "share_train_purged": 0.0247,
+     "forms_dedup": {
+      "8-K": 211,
+      "10-K": 73,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.87,
+      "profitability": 0.9867,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.99
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.87,
+      "profitability": 0.9867,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.99
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 257,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 300
+    },
+    {
+     "test_quarter": "2025Q2",
+     "n_test_raw": 436,
+     "n_test_dedup": 299,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 14429,
+     "n_train_after_purge": 14021,
+     "share_train_purged": 0.0283,
+     "forms_dedup": {
+      "8-K": 216,
+      "10-Q": 82,
+      "10-K": 1
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8562,
+      "profitability": 0.9866,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9933
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8562,
+      "profitability": 0.9866,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9933
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 252,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 299
+    },
+    {
+     "test_quarter": "2025Q3",
+     "n_test_raw": 387,
+     "n_test_dedup": 266,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 14865,
+     "n_train_after_purge": 14420,
+     "share_train_purged": 0.0299,
+     "forms_dedup": {
+      "8-K": 169,
+      "10-Q": 90,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8835,
+      "profitability": 0.985,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9962
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8835,
+      "profitability": 0.985,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9962
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 231,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 266
+    },
+    {
+     "test_quarter": "2025Q4",
+     "n_test_raw": 398,
+     "n_test_dedup": 272,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 15252,
+     "n_train_after_purge": 14863,
+     "share_train_purged": 0.0255,
+     "forms_dedup": {
+      "8-K": 178,
+      "10-Q": 87,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8235,
+      "profitability": 0.9963,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9853
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8235,
+      "profitability": 0.9963,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9853
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 223,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 272
+    },
+    {
+     "test_quarter": "2026Q1",
+     "n_test_raw": 406,
+     "n_test_dedup": 297,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 15650,
+     "n_train_after_purge": 15247,
+     "share_train_purged": 0.0258,
+     "forms_dedup": {
+      "8-K": 209,
+      "10-K": 73,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.862,
+      "profitability": 0.9933,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9865
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.862,
+      "profitability": 0.9933,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9865
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 254,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 297
+    }
+   ]
+  },
+  "A_periodic_10K_10Q": {
+   "frame": "A_periodic_10K_10Q",
+   "n_frame_rows": 3642,
+   "n_frame_ciks": 143,
+   "n_folds": 33,
+   "fold_quarters": [
+    "2018Q1",
+    "2018Q2",
+    "2018Q3",
+    "2018Q4",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2020Q2",
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1"
+   ],
+   "purge_rule": "target_window_close_on_or_after_test_quarter_start",
+   "dedup_gap_days": 5,
+   "dedup_rule": "backtest.company_quarter_dedup_keep_mask wrapped on cik (backtest_e2.dedup_keep_mask_cik)",
+   "n_rows_in_folds_raw": 3053,
+   "n_rows_in_folds_dedup": 3053,
+   "dedup_share_in_folds": 1.0,
+   "n_whole_frame_dedup": 3642,
+   "n_distinct_ciks_in_folds": 139,
+   "n_test_dedup_min": 80,
+   "n_test_dedup_max": 100,
+   "n_test_dedup_mean": 92.52,
+   "n_test_raw_min": 80,
+   "n_test_raw_max": 100,
+   "n_purge_instances": 3050,
+   "purge_note": "no E3 arm fits anything, so no E3 arm has a training set; the purge figures are what backtest_e2.build_folds computes on this frame and are recorded for comparability only",
+   "n_folds_with_more_rows_than_ciks": 2,
+   "folds_with_more_rows_than_ciks": [
+    "2018Q2",
+    "2025Q4"
+   ],
+   "n_dedup_rows_in_folds_with_all_4_confirmatory_ranks": 2438,
+   "n_dedup_rows_in_folds_with_ge_3_confirmatory_ranks": 3040,
+   "per_fold": [
+    {
+     "test_quarter": "2018Q1",
+     "n_test_raw": 80,
+     "n_test_dedup": 80,
+     "n_test_ciks": 80,
+     "n_test_dedup_ciks": 80,
+     "n_train_expanding": 499,
+     "n_train_after_purge": 418,
+     "share_train_purged": 0.1623,
+     "forms_dedup": {
+      "10-K": 64,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.85,
+      "profitability": 0.45,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.85,
+      "profitability": 0.45,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 30,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 74
+    },
+    {
+     "test_quarter": "2018Q2",
+     "n_test_raw": 81,
+     "n_test_dedup": 81,
+     "n_test_ciks": 80,
+     "n_test_dedup_ciks": 80,
+     "n_train_expanding": 579,
+     "n_train_after_purge": 499,
+     "share_train_purged": 0.1382,
+     "forms_dedup": {
+      "10-Q": 77,
+      "10-K": 4
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8519,
+      "profitability": 0.5432,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8519,
+      "profitability": 0.5432,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 35,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 78
+    },
+    {
+     "test_quarter": "2018Q3",
+     "n_test_raw": 85,
+     "n_test_dedup": 85,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 660,
+     "n_train_after_purge": 578,
+     "share_train_purged": 0.1242,
+     "forms_dedup": {
+      "10-Q": 79,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8235,
+      "profitability": 0.7882,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8235,
+      "profitability": 0.7882,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 54,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 83
+    },
+    {
+     "test_quarter": "2018Q4",
+     "n_test_raw": 85,
+     "n_test_dedup": 85,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 745,
+     "n_train_after_purge": 660,
+     "share_train_purged": 0.1141,
+     "forms_dedup": {
+      "10-Q": 78,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8353,
+      "profitability": 0.9294,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8353,
+      "profitability": 0.9294,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 66,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 84
+    },
+    {
+     "test_quarter": "2019Q1",
+     "n_test_raw": 84,
+     "n_test_dedup": 84,
+     "n_test_ciks": 84,
+     "n_test_dedup_ciks": 84,
+     "n_train_expanding": 830,
+     "n_train_after_purge": 745,
+     "share_train_purged": 0.1024,
+     "forms_dedup": {
+      "10-K": 69,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8333,
+      "profitability": 0.9881,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8333,
+      "profitability": 0.9881,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 70,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 83
+    },
+    {
+     "test_quarter": "2019Q2",
+     "n_test_raw": 85,
+     "n_test_dedup": 85,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 914,
+     "n_train_after_purge": 830,
+     "share_train_purged": 0.0919,
+     "forms_dedup": {
+      "10-Q": 82,
+      "10-K": 3
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8353,
+      "profitability": 0.9882,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8353,
+      "profitability": 0.9882,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 70,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 85
+    },
+    {
+     "test_quarter": "2019Q3",
+     "n_test_raw": 89,
+     "n_test_dedup": 89,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 999,
+     "n_train_after_purge": 912,
+     "share_train_purged": 0.0871,
+     "forms_dedup": {
+      "10-Q": 83,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 75,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 89
+    },
+    {
+     "test_quarter": "2019Q4",
+     "n_test_raw": 89,
+     "n_test_dedup": 89,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 1088,
+     "n_train_after_purge": 999,
+     "share_train_purged": 0.0818,
+     "forms_dedup": {
+      "10-Q": 82,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 75,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 89
+    },
+    {
+     "test_quarter": "2020Q1",
+     "n_test_raw": 89,
+     "n_test_dedup": 89,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 1177,
+     "n_train_after_purge": 1088,
+     "share_train_purged": 0.0756,
+     "forms_dedup": {
+      "10-K": 74,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 75,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 89
+    },
+    {
+     "test_quarter": "2020Q2",
+     "n_test_raw": 89,
+     "n_test_dedup": 89,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 1266,
+     "n_train_after_purge": 1177,
+     "share_train_purged": 0.0703,
+     "forms_dedup": {
+      "10-Q": 87,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 0.9888,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8427,
+      "profitability": 0.9888,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 74,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 89
+    },
+    {
+     "test_quarter": "2020Q3",
+     "n_test_raw": 93,
+     "n_test_dedup": 93,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 1355,
+     "n_train_after_purge": 1266,
+     "share_train_purged": 0.0657,
+     "forms_dedup": {
+      "10-Q": 88,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8387,
+      "profitability": 0.9785,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8387,
+      "profitability": 0.9785,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 76,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 93
+    },
+    {
+     "test_quarter": "2020Q4",
+     "n_test_raw": 93,
+     "n_test_dedup": 93,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 1448,
+     "n_train_after_purge": 1354,
+     "share_train_purged": 0.0649,
+     "forms_dedup": {
+      "10-Q": 86,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8387,
+      "profitability": 0.9785,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8387,
+      "profitability": 0.9785,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 76,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 93
+    },
+    {
+     "test_quarter": "2021Q1",
+     "n_test_raw": 93,
+     "n_test_dedup": 93,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 1541,
+     "n_train_after_purge": 1447,
+     "share_train_purged": 0.061,
+     "forms_dedup": {
+      "10-K": 79,
+      "10-Q": 14
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8387,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8387,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 78,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 93
+    },
+    {
+     "test_quarter": "2021Q2",
+     "n_test_raw": 93,
+     "n_test_dedup": 93,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 1634,
+     "n_train_after_purge": 1540,
+     "share_train_purged": 0.0575,
+     "forms_dedup": {
+      "10-Q": 91,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8495,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8495,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9892
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 79,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 93
+    },
+    {
+     "test_quarter": "2021Q3",
+     "n_test_raw": 95,
+     "n_test_dedup": 95,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 1727,
+     "n_train_after_purge": 1632,
+     "share_train_purged": 0.055,
+     "forms_dedup": {
+      "10-Q": 90,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8316,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8316,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 78,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 95
+    },
+    {
+     "test_quarter": "2021Q4",
+     "n_test_raw": 95,
+     "n_test_dedup": 95,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 1822,
+     "n_train_after_purge": 1725,
+     "share_train_purged": 0.0532,
+     "forms_dedup": {
+      "10-Q": 87,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8211,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8211,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 77,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 95
+    },
+    {
+     "test_quarter": "2022Q1",
+     "n_test_raw": 95,
+     "n_test_dedup": 95,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 1917,
+     "n_train_after_purge": 1820,
+     "share_train_purged": 0.0506,
+     "forms_dedup": {
+      "10-K": 80,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8211,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8211,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 77,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 95
+    },
+    {
+     "test_quarter": "2022Q2",
+     "n_test_raw": 95,
+     "n_test_dedup": 95,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 2012,
+     "n_train_after_purge": 1915,
+     "share_train_purged": 0.0482,
+     "forms_dedup": {
+      "10-Q": 93,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8316,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8316,
+      "profitability": 0.9895,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9895
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 78,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 95
+    },
+    {
+     "test_quarter": "2022Q3",
+     "n_test_raw": 97,
+     "n_test_dedup": 97,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 2107,
+     "n_train_after_purge": 2012,
+     "share_train_purged": 0.0451,
+     "forms_dedup": {
+      "10-Q": 92,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8041,
+      "profitability": 0.9794,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8041,
+      "profitability": 0.9794,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 76,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 97
+    },
+    {
+     "test_quarter": "2022Q4",
+     "n_test_raw": 97,
+     "n_test_dedup": 97,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 2204,
+     "n_train_after_purge": 2107,
+     "share_train_purged": 0.044,
+     "forms_dedup": {
+      "10-Q": 89,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8041,
+      "profitability": 0.9691,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8041,
+      "profitability": 0.9691,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 75,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 97
+    },
+    {
+     "test_quarter": "2023Q1",
+     "n_test_raw": 97,
+     "n_test_dedup": 97,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 2301,
+     "n_train_after_purge": 2204,
+     "share_train_purged": 0.0422,
+     "forms_dedup": {
+      "10-K": 82,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8144,
+      "profitability": 0.9794,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8144,
+      "profitability": 0.9794,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 77,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 97
+    },
+    {
+     "test_quarter": "2023Q2",
+     "n_test_raw": 97,
+     "n_test_dedup": 97,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 2398,
+     "n_train_after_purge": 2301,
+     "share_train_purged": 0.0405,
+     "forms_dedup": {
+      "10-Q": 95,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8144,
+      "profitability": 0.9794,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8144,
+      "profitability": 0.9794,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9897
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 77,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 97
+    },
+    {
+     "test_quarter": "2023Q3",
+     "n_test_raw": 94,
+     "n_test_dedup": 94,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 2495,
+     "n_train_after_purge": 2398,
+     "share_train_purged": 0.0389,
+     "forms_dedup": {
+      "10-Q": 86,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 0.9894,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 0.9894,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 78,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 94
+    },
+    {
+     "test_quarter": "2023Q4",
+     "n_test_raw": 94,
+     "n_test_dedup": 94,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 2589,
+     "n_train_after_purge": 2495,
+     "share_train_purged": 0.0363,
+     "forms_dedup": {
+      "10-Q": 86,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 0.9894,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 0.9894,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 78,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 94
+    },
+    {
+     "test_quarter": "2024Q1",
+     "n_test_raw": 94,
+     "n_test_dedup": 94,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 2683,
+     "n_train_after_purge": 2589,
+     "share_train_purged": 0.035,
+     "forms_dedup": {
+      "10-K": 76,
+      "10-Q": 18
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 79,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 94
+    },
+    {
+     "test_quarter": "2024Q2",
+     "n_test_raw": 94,
+     "n_test_dedup": 94,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 2777,
+     "n_train_after_purge": 2683,
+     "share_train_purged": 0.0338,
+     "forms_dedup": {
+      "10-Q": 92,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8404,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9894
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 79,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 94
+    },
+    {
+     "test_quarter": "2024Q3",
+     "n_test_raw": 96,
+     "n_test_dedup": 96,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 2871,
+     "n_train_after_purge": 2777,
+     "share_train_purged": 0.0327,
+     "forms_dedup": {
+      "10-Q": 90,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 81,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 96
+    },
+    {
+     "test_quarter": "2024Q4",
+     "n_test_raw": 96,
+     "n_test_dedup": 96,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 2967,
+     "n_train_after_purge": 2871,
+     "share_train_purged": 0.0324,
+     "forms_dedup": {
+      "10-Q": 88,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 81,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 96
+    },
+    {
+     "test_quarter": "2025Q1",
+     "n_test_raw": 96,
+     "n_test_dedup": 96,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 3063,
+     "n_train_after_purge": 2967,
+     "share_train_purged": 0.0313,
+     "forms_dedup": {
+      "10-K": 80,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 81,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 96
+    },
+    {
+     "test_quarter": "2025Q2",
+     "n_test_raw": 96,
+     "n_test_dedup": 96,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 3159,
+     "n_train_after_purge": 3063,
+     "share_train_purged": 0.0304,
+     "forms_dedup": {
+      "10-Q": 94,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8542,
+      "profitability": 0.9896,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9896
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 81,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 96
+    },
+    {
+     "test_quarter": "2025Q3",
+     "n_test_raw": 99,
+     "n_test_dedup": 99,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 3255,
+     "n_train_after_purge": 3159,
+     "share_train_purged": 0.0295,
+     "forms_dedup": {
+      "10-Q": 92,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8586,
+      "profitability": 0.9899,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9899
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8586,
+      "profitability": 0.9899,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9899
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 84,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 99
+    },
+    {
+     "test_quarter": "2025Q4",
+     "n_test_raw": 100,
+     "n_test_dedup": 100,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 3354,
+     "n_train_after_purge": 3255,
+     "share_train_purged": 0.0295,
+     "forms_dedup": {
+      "10-Q": 92,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.85,
+      "profitability": 0.99,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.99
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.85,
+      "profitability": 0.99,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.99
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 84,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 100
+    },
+    {
+     "test_quarter": "2026Q1",
+     "n_test_raw": 98,
+     "n_test_dedup": 98,
+     "n_test_ciks": 98,
+     "n_test_dedup_ciks": 98,
+     "n_train_expanding": 3454,
+     "n_train_after_purge": 3354,
+     "share_train_purged": 0.029,
+     "forms_dedup": {
+      "10-K": 81,
+      "10-Q": 17
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8673,
+      "profitability": 0.9898,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9898
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8673,
+      "profitability": 0.9898,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9898
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 84,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 98
+    }
+   ]
+  },
+  "B_e2_run_time_frame": {
+   "frame": "B_e2_run_time_frame",
+   "n_frame_rows": 7381,
+   "n_frame_ciks": 143,
+   "n_folds": 33,
+   "fold_quarters": [
+    "2018Q1",
+    "2018Q2",
+    "2018Q3",
+    "2018Q4",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2020Q2",
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1"
+   ],
+   "purge_rule": "target_window_close_on_or_after_test_quarter_start",
+   "dedup_gap_days": 5,
+   "dedup_rule": "backtest.company_quarter_dedup_keep_mask wrapped on cik (backtest_e2.dedup_keep_mask_cik)",
+   "n_rows_in_folds_raw": 6184,
+   "n_rows_in_folds_dedup": 4481,
+   "dedup_share_in_folds": 0.7246,
+   "n_whole_frame_dedup": 5362,
+   "n_distinct_ciks_in_folds": 139,
+   "n_test_dedup_min": 118,
+   "n_test_dedup_max": 161,
+   "n_test_dedup_mean": 135.79,
+   "n_test_raw_min": 162,
+   "n_test_raw_max": 202,
+   "n_purge_instances": 6173,
+   "purge_note": "no E3 arm fits anything, so no E3 arm has a training set; the purge figures are what backtest_e2.build_folds computes on this frame and are recorded for comparability only",
+   "n_folds_with_more_rows_than_ciks": 33,
+   "folds_with_more_rows_than_ciks": [
+    "2018Q1",
+    "2018Q2",
+    "2018Q3",
+    "2018Q4",
+    "2019Q1",
+    "2019Q2",
+    "2019Q3",
+    "2019Q4",
+    "2020Q1",
+    "2020Q2",
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1"
+   ],
+   "n_dedup_rows_in_folds_with_all_4_confirmatory_ranks": 3599,
+   "n_dedup_rows_in_folds_with_ge_3_confirmatory_ranks": 4454,
+   "per_fold": [
+    {
+     "test_quarter": "2018Q1",
+     "n_test_raw": 166,
+     "n_test_dedup": 144,
+     "n_test_ciks": 81,
+     "n_test_dedup_ciks": 81,
+     "n_train_expanding": 1011,
+     "n_train_after_purge": 844,
+     "share_train_purged": 0.1652,
+     "forms_dedup": {
+      "8-K": 71,
+      "10-K": 57,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8403,
+      "profitability": 0.4375,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8403,
+      "profitability": 0.4375,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 55,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 129
+    },
+    {
+     "test_quarter": "2018Q2",
+     "n_test_raw": 162,
+     "n_test_dedup": 118,
+     "n_test_ciks": 81,
+     "n_test_dedup_ciks": 81,
+     "n_train_expanding": 1177,
+     "n_train_after_purge": 1010,
+     "share_train_purged": 0.1419,
+     "forms_dedup": {
+      "10-Q": 71,
+      "8-K": 43,
+      "10-K": 4
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8814,
+      "profitability": 0.5254,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8814,
+      "profitability": 0.5254,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 52,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 114
+    },
+    {
+     "test_quarter": "2018Q3",
+     "n_test_raw": 168,
+     "n_test_dedup": 123,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 1339,
+     "n_train_after_purge": 1174,
+     "share_train_purged": 0.1232,
+     "forms_dedup": {
+      "10-Q": 74,
+      "8-K": 43,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8293,
+      "profitability": 0.7154,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8293,
+      "profitability": 0.7154,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 71,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 119
+    },
+    {
+     "test_quarter": "2018Q4",
+     "n_test_raw": 170,
+     "n_test_dedup": 122,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 1507,
+     "n_train_after_purge": 1338,
+     "share_train_purged": 0.1121,
+     "forms_dedup": {
+      "10-Q": 73,
+      "8-K": 42,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8443,
+      "profitability": 0.9098,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8443,
+      "profitability": 0.9098,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 94,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 120
+    },
+    {
+     "test_quarter": "2019Q1",
+     "n_test_raw": 175,
+     "n_test_dedup": 149,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 1677,
+     "n_train_after_purge": 1507,
+     "share_train_purged": 0.1014,
+     "forms_dedup": {
+      "8-K": 71,
+      "10-K": 63,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8456,
+      "profitability": 0.953,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8456,
+      "profitability": 0.953,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 121,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 147
+    },
+    {
+     "test_quarter": "2019Q2",
+     "n_test_raw": 167,
+     "n_test_dedup": 119,
+     "n_test_ciks": 85,
+     "n_test_dedup_ciks": 85,
+     "n_train_expanding": 1852,
+     "n_train_after_purge": 1677,
+     "share_train_purged": 0.0945,
+     "forms_dedup": {
+      "10-Q": 75,
+      "8-K": 41,
+      "10-K": 3
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8403,
+      "profitability": 0.9916,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8403,
+      "profitability": 0.9916,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 99,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 119
+    },
+    {
+     "test_quarter": "2019Q3",
+     "n_test_raw": 175,
+     "n_test_dedup": 125,
+     "n_test_ciks": 88,
+     "n_test_dedup_ciks": 88,
+     "n_train_expanding": 2019,
+     "n_train_after_purge": 1850,
+     "share_train_purged": 0.0837,
+     "forms_dedup": {
+      "10-Q": 78,
+      "8-K": 41,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.856,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.856,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 107,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 125
+    },
+    {
+     "test_quarter": "2019Q4",
+     "n_test_raw": 179,
+     "n_test_dedup": 128,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 2194,
+     "n_train_after_purge": 2019,
+     "share_train_purged": 0.0798,
+     "forms_dedup": {
+      "10-Q": 75,
+      "8-K": 46,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8516,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8516,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 109,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 128
+    },
+    {
+     "test_quarter": "2020Q1",
+     "n_test_raw": 180,
+     "n_test_dedup": 152,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 2373,
+     "n_train_after_purge": 2194,
+     "share_train_purged": 0.0754,
+     "forms_dedup": {
+      "8-K": 69,
+      "10-K": 68,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8553,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8553,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 130,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 152
+    },
+    {
+     "test_quarter": "2020Q2",
+     "n_test_raw": 187,
+     "n_test_dedup": 130,
+     "n_test_ciks": 89,
+     "n_test_dedup_ciks": 89,
+     "n_train_expanding": 2553,
+     "n_train_after_purge": 2373,
+     "share_train_purged": 0.0705,
+     "forms_dedup": {
+      "10-Q": 83,
+      "8-K": 45,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8538,
+      "profitability": 0.9923,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8538,
+      "profitability": 0.9923,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 1.0
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 110,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 130
+    },
+    {
+     "test_quarter": "2020Q3",
+     "n_test_raw": 190,
+     "n_test_dedup": 127,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 2740,
+     "n_train_after_purge": 2553,
+     "share_train_purged": 0.0682,
+     "forms_dedup": {
+      "10-Q": 85,
+      "8-K": 37,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8425,
+      "profitability": 0.9685,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9921
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8425,
+      "profitability": 0.9685,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9921
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 103,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 127
+    },
+    {
+     "test_quarter": "2020Q4",
+     "n_test_raw": 193,
+     "n_test_dedup": 129,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 2930,
+     "n_train_after_purge": 2739,
+     "share_train_purged": 0.0652,
+     "forms_dedup": {
+      "10-Q": 84,
+      "8-K": 38,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.845,
+      "profitability": 0.969,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9922
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.845,
+      "profitability": 0.969,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9922
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 105,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 129
+    },
+    {
+     "test_quarter": "2021Q1",
+     "n_test_raw": 194,
+     "n_test_dedup": 161,
+     "n_test_ciks": 93,
+     "n_test_dedup_ciks": 93,
+     "n_train_expanding": 3123,
+     "n_train_after_purge": 2929,
+     "share_train_purged": 0.0621,
+     "forms_dedup": {
+      "10-K": 75,
+      "8-K": 72,
+      "10-Q": 14
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8509,
+      "profitability": 0.9814,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9938
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8509,
+      "profitability": 0.9814,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9938
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 134,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 161
+    },
+    {
+     "test_quarter": "2021Q2",
+     "n_test_raw": 188,
+     "n_test_dedup": 131,
+     "n_test_ciks": 92,
+     "n_test_dedup_ciks": 92,
+     "n_train_expanding": 3317,
+     "n_train_after_purge": 3122,
+     "share_train_purged": 0.0588,
+     "forms_dedup": {
+      "10-Q": 86,
+      "8-K": 43,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8626,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8626,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 113,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 131
+    },
+    {
+     "test_quarter": "2021Q3",
+     "n_test_raw": 188,
+     "n_test_dedup": 125,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 3505,
+     "n_train_after_purge": 3315,
+     "share_train_purged": 0.0542,
+     "forms_dedup": {
+      "10-Q": 87,
+      "8-K": 33,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.84,
+      "profitability": 0.992,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.992
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.84,
+      "profitability": 0.992,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.992
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 104,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 125
+    },
+    {
+     "test_quarter": "2021Q4",
+     "n_test_raw": 190,
+     "n_test_dedup": 130,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 3693,
+     "n_train_after_purge": 3503,
+     "share_train_purged": 0.0514,
+     "forms_dedup": {
+      "10-Q": 84,
+      "8-K": 38,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8308,
+      "profitability": 0.9923,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9923
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8308,
+      "profitability": 0.9923,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9923
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 107,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 130
+    },
+    {
+     "test_quarter": "2022Q1",
+     "n_test_raw": 191,
+     "n_test_dedup": 160,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 3883,
+     "n_train_after_purge": 3691,
+     "share_train_purged": 0.0494,
+     "forms_dedup": {
+      "10-K": 74,
+      "8-K": 71,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8313,
+      "profitability": 0.9875,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9938
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8313,
+      "profitability": 0.9875,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9938
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 131,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 160
+    },
+    {
+     "test_quarter": "2022Q2",
+     "n_test_raw": 193,
+     "n_test_dedup": 128,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 4074,
+     "n_train_after_purge": 3881,
+     "share_train_purged": 0.0474,
+     "forms_dedup": {
+      "10-Q": 89,
+      "8-K": 37,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8438,
+      "profitability": 0.9922,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9922
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8438,
+      "profitability": 0.9922,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9922
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 107,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 128
+    },
+    {
+     "test_quarter": "2022Q3",
+     "n_test_raw": 197,
+     "n_test_dedup": 134,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 4267,
+     "n_train_after_purge": 4074,
+     "share_train_purged": 0.0452,
+     "forms_dedup": {
+      "10-Q": 89,
+      "8-K": 40,
+      "10-K": 5
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8134,
+      "profitability": 0.9851,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9925
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8134,
+      "profitability": 0.9851,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9925
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 107,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 134
+    },
+    {
+     "test_quarter": "2022Q4",
+     "n_test_raw": 196,
+     "n_test_dedup": 137,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 4464,
+     "n_train_after_purge": 4267,
+     "share_train_purged": 0.0441,
+     "forms_dedup": {
+      "10-Q": 84,
+      "8-K": 45,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8175,
+      "profitability": 0.9781,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9927
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8175,
+      "profitability": 0.9781,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9927
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 109,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 137
+    },
+    {
+     "test_quarter": "2023Q1",
+     "n_test_raw": 194,
+     "n_test_dedup": 159,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 4660,
+     "n_train_after_purge": 4463,
+     "share_train_purged": 0.0423,
+     "forms_dedup": {
+      "10-K": 77,
+      "8-K": 67,
+      "10-Q": 15
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8302,
+      "profitability": 0.9811,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9937
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8302,
+      "profitability": 0.9811,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9937
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 129,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 159
+    },
+    {
+     "test_quarter": "2023Q2",
+     "n_test_raw": 195,
+     "n_test_dedup": 130,
+     "n_test_ciks": 97,
+     "n_test_dedup_ciks": 97,
+     "n_train_expanding": 4854,
+     "n_train_after_purge": 4660,
+     "share_train_purged": 0.04,
+     "forms_dedup": {
+      "10-Q": 91,
+      "8-K": 37,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8231,
+      "profitability": 0.9846,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9923
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8231,
+      "profitability": 0.9846,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9923
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 105,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 130
+    },
+    {
+     "test_quarter": "2023Q3",
+     "n_test_raw": 190,
+     "n_test_dedup": 131,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 5049,
+     "n_train_after_purge": 4854,
+     "share_train_purged": 0.0386,
+     "forms_dedup": {
+      "10-Q": 83,
+      "8-K": 40,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.855,
+      "profitability": 0.9924,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.855,
+      "profitability": 0.9924,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 111,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 131
+    },
+    {
+     "test_quarter": "2023Q4",
+     "n_test_raw": 192,
+     "n_test_dedup": 135,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 5239,
+     "n_train_after_purge": 5048,
+     "share_train_purged": 0.0365,
+     "forms_dedup": {
+      "10-Q": 82,
+      "8-K": 45,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8519,
+      "profitability": 0.9852,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9926
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8519,
+      "profitability": 0.9852,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9926
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 113,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 135
+    },
+    {
+     "test_quarter": "2024Q1",
+     "n_test_raw": 193,
+     "n_test_dedup": 154,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 5431,
+     "n_train_after_purge": 5238,
+     "share_train_purged": 0.0355,
+     "forms_dedup": {
+      "10-K": 72,
+      "8-K": 64,
+      "10-Q": 18
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8506,
+      "profitability": 0.9935,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9935
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8506,
+      "profitability": 0.9935,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9935
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 130,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 154
+    },
+    {
+     "test_quarter": "2024Q2",
+     "n_test_raw": 189,
+     "n_test_dedup": 126,
+     "n_test_ciks": 94,
+     "n_test_dedup_ciks": 94,
+     "n_train_expanding": 5624,
+     "n_train_after_purge": 5431,
+     "share_train_purged": 0.0343,
+     "forms_dedup": {
+      "10-Q": 88,
+      "8-K": 36,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8492,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9921
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8492,
+      "profitability": 1.0,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9921
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 107,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 126
+    },
+    {
+     "test_quarter": "2024Q3",
+     "n_test_raw": 192,
+     "n_test_dedup": 130,
+     "n_test_ciks": 95,
+     "n_test_dedup_ciks": 95,
+     "n_train_expanding": 5813,
+     "n_train_after_purge": 5624,
+     "share_train_purged": 0.0325,
+     "forms_dedup": {
+      "10-Q": 88,
+      "8-K": 36,
+      "10-K": 6
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8769,
+      "profitability": 0.9923,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9923
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8769,
+      "profitability": 0.9923,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9923
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 113,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 130
+    },
+    {
+     "test_quarter": "2024Q4",
+     "n_test_raw": 198,
+     "n_test_dedup": 136,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 6005,
+     "n_train_after_purge": 5813,
+     "share_train_purged": 0.032,
+     "forms_dedup": {
+      "10-Q": 86,
+      "8-K": 42,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8529,
+      "profitability": 0.9926,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9926
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8529,
+      "profitability": 0.9926,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9926
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 115,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 136
+    },
+    {
+     "test_quarter": "2025Q1",
+     "n_test_raw": 194,
+     "n_test_dedup": 156,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 6203,
+     "n_train_after_purge": 6005,
+     "share_train_purged": 0.0319,
+     "forms_dedup": {
+      "10-K": 77,
+      "8-K": 63,
+      "10-Q": 16
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8654,
+      "profitability": 0.9872,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9936
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8654,
+      "profitability": 0.9872,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9936
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 133,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 156
+    },
+    {
+     "test_quarter": "2025Q2",
+     "n_test_raw": 195,
+     "n_test_dedup": 131,
+     "n_test_ciks": 96,
+     "n_test_dedup_ciks": 96,
+     "n_train_expanding": 6397,
+     "n_train_after_purge": 6203,
+     "share_train_purged": 0.0303,
+     "forms_dedup": {
+      "10-Q": 91,
+      "8-K": 38,
+      "10-K": 2
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8626,
+      "profitability": 0.9924,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8626,
+      "profitability": 0.9924,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 112,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 131
+    },
+    {
+     "test_quarter": "2025Q3",
+     "n_test_raw": 201,
+     "n_test_dedup": 134,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 6592,
+     "n_train_after_purge": 6397,
+     "share_train_purged": 0.0296,
+     "forms_dedup": {
+      "10-Q": 89,
+      "8-K": 38,
+      "10-K": 7
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8806,
+      "profitability": 0.9925,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9925
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8806,
+      "profitability": 0.9925,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9925
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 117,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 134
+    },
+    {
+     "test_quarter": "2025Q4",
+     "n_test_raw": 202,
+     "n_test_dedup": 132,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 99,
+     "n_train_expanding": 6793,
+     "n_train_after_purge": 6592,
+     "share_train_purged": 0.0296,
+     "forms_dedup": {
+      "10-Q": 89,
+      "8-K": 35,
+      "10-K": 8
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8561,
+      "profitability": 0.9924,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8561,
+      "profitability": 0.9924,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9924
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 112,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 132
+    },
+    {
+     "test_quarter": "2026Q1",
+     "n_test_raw": 200,
+     "n_test_dedup": 155,
+     "n_test_ciks": 99,
+     "n_test_dedup_ciks": 98,
+     "n_train_expanding": 6995,
+     "n_train_after_purge": 6792,
+     "share_train_purged": 0.029,
+     "forms_dedup": {
+      "10-K": 78,
+      "8-K": 60,
+      "10-Q": 17
+     },
+     "target_complete_share_dedup": 1.0,
+     "coverage_dedup_raw": {
+      "momentum": 1.0,
+      "value": 0.8774,
+      "profitability": 0.9871,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9935
+     },
+     "coverage_dedup_rank": {
+      "momentum": 1.0,
+      "value": 0.8774,
+      "profitability": 0.9871,
+      "low_volatility": 1.0,
+      "growth": 1.0,
+      "balance_sheet": 1.0,
+      "size": 0.9935
+     },
+     "n_dedup_rows_with_all_4_confirmatory_ranks": 134,
+     "n_dedup_rows_with_ge_3_confirmatory_ranks": 155
+    }
+   ]
+  }
+ },
+ "section_4_mde": {
+  "algebra": {
+   "step_1": "sigma_anchor = cross-fold SD of a single-predictor per-fold LEVEL IC, READ from a committed artifact",
+   "step_2": "SE(mean fold IC) = sigma_anchor / sqrt(k) * sqrt(1 + 2*sum_{l=1}^{k-1}(1-l/k)*rho_f^l)",
+   "step_3": "MDE (one test) = 2.8 * SE; MDE (Holm worst case over n tests) = (z_(1-0.05/(2n)) + z_0.80) * SE",
+   "step_4": "equivalence margin Delta = smallest rung of [0.03, 0.04, 0.05] with SE <= Delta/2.487; none -> UNPOWERED",
+   "why_not_the_h2_delta_anchor": "census_e2 \u00a72 anchors a DELTA between two fitted blocks sharing the numeric features (H2 within-fold bootstrap SD 0.1149 at n_dd 39.5). A level IC of one family has no shared component to cancel; its cross-fold dispersion is the anchor's, not the delta's.",
+   "caveats": [
+    "Every MDE is a LOWER bound: folds are not independent (overlapping 63-session windows, common regimes). The AR(1) rho is an assumption at 0.3; E2 measured the fold-delta lag-1 autocorrelation at -0.042 (results_head1.json .margin.measured_lag1_autocorrelation) -- for a DELTA, not a level.",
+    "The anchors are single-predictor ICs. A 4-family equal-weight composite may be less dispersed per fold; no measurement of that exists before the run, so no smaller anchor is claimed.",
+    "The t-correction at k=33 (t_.975(32)+t_.80(32) = 2.890 vs 2.8) is NOT applied, matching census_e2.",
+    "The two E2 anchors were measured at frame B's per-fold size (n_dd 135.79); the *_n_adjusted_to_this_frame rows swap the 1/(n-1) sampling component to each frame's own n_dd (red-team S11). The H1 anchors were measured at 80-97 events per quarter, close to frame A's 92.5, and are not adjusted."
+   ]
+  },
+  "anchors": {
+   "size_only_rank_e2": {
+    "sd": 0.1542736750709287,
+    "k": 33,
+    "source": "results_head1.json .standing.zero_information_summary[size_only_rank].std_ic_dedup",
+    "what": "cross-fold SD of the dedup per-fold Spearman IC of the one-feature size rank on the E2 33 folds",
+    "measured_at_n_dd_mean": 135.79
+   },
+   "ticker_training_mean_e2": {
+    "sd": 0.2016085644241648,
+    "k": 33,
+    "source": "results_head1.json .standing.zero_information_summary[ticker_training_mean_rank].std_ic_dedup",
+    "what": "cross-fold SD of the dedup per-fold IC of the ticker-training-mean zero-information predictor",
+    "measured_at_n_dd_mean": 135.79
+   },
+   "h1_t2a_pead_core": {
+    "sd": 0.1603870804731594,
+    "k": 40,
+    "source": "data/hardening/controls_results.json .controls.T2a_pead_core.dedup.sd_ic_ddof1",
+    "what": "cross-quarter SD of the dedup per-quarter IC of SUE at earnings 8-Ks (H1, 40 quarters)",
+    "measured_at_n_per_period_mean": 84.2
+   },
+   "h1_t2b_momentum_core": {
+    "sd": 0.24838143638897728,
+    "k": 40,
+    "source": "data/hardening/controls_results.json .controls.T2b_momentum_core.dedup.sd_ic_ddof1",
+    "what": "cross-quarter SD of the dedup per-quarter IC of 12-1 momentum at earnings 8-Ks (H1, 40 quarters)",
+    "measured_at_n_per_period_mean": 97.0
+   }
+  },
+  "h1_zero_information_floor": {
+   "floor_lo": 0.046589441360495115,
+   "floor_hi": 0.04882994153570576,
+   "definition": "2.8 x the T0 placebo cross-period SE (controls.mde_from_se), i.e. the |IC| a zero-information predictor reaches on these folds.",
+   "source": "results_head1.json .noise_floor_h1 (from controls_results.json T0 placebo arms)"
+  },
+  "by_frame": {
+   "C_all_forms_numeric": {
+    "k": 33,
+    "n_dd_mean": 280.73,
+    "n_dd_min": 238,
+    "n_dd_max": 343,
+    "rows": [
+     {
+      "anchor": "independence_lower_bound_1_over_sqrt_ndd",
+      "rho_f": 0.0,
+      "k": 33,
+      "sigma_fold_mean": 0.0599,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0104,
+      "MDE_single_test_2p8": 0.0292,
+      "MDE_holm_worst_case_4_tests": 0.0349,
+      "null_bound_95": 0.0205,
+      "ladder_selected": 0.03
+     },
+     {
+      "anchor": "independence_lower_bound_1_over_sqrt_ndd",
+      "rho_f": 0.3,
+      "k": 33,
+      "sigma_fold_mean": 0.0599,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0141,
+      "MDE_single_test_2p8": 0.0395,
+      "MDE_holm_worst_case_4_tests": 0.0471,
+      "null_bound_95": 0.0276,
+      "ladder_selected": 0.04
+     },
+     {
+      "anchor": "size_only_rank_e2",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0269,
+      "MDE_single_test_2p8": 0.0752,
+      "MDE_holm_worst_case_4_tests": 0.0897,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0526,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0362,
+      "MDE_single_test_2p8": 0.1014,
+      "MDE_holm_worst_case_4_tests": 0.121,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.071,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0351,
+      "MDE_single_test_2p8": 0.0983,
+      "MDE_holm_worst_case_4_tests": 0.1172,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0688,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0473,
+      "MDE_single_test_2p8": 0.1326,
+      "MDE_holm_worst_case_4_tests": 0.1581,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0928,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2a_pead_core",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1604,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0279,
+      "MDE_single_test_2p8": 0.0782,
+      "MDE_holm_worst_case_4_tests": 0.0932,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0547,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2a_pead_core",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1604,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0377,
+      "MDE_single_test_2p8": 0.1055,
+      "MDE_holm_worst_case_4_tests": 0.1258,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0738,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2b_momentum_core",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2484,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0432,
+      "MDE_single_test_2p8": 0.1211,
+      "MDE_holm_worst_case_4_tests": 0.1444,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0847,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2b_momentum_core",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2484,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0583,
+      "MDE_single_test_2p8": 0.1633,
+      "MDE_holm_worst_case_4_tests": 0.1948,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.1143,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1413,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0246,
+      "MDE_single_test_2p8": 0.0689,
+      "MDE_holm_worst_case_4_tests": 0.0821,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0482,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1413,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0332,
+      "MDE_single_test_2p8": 0.0929,
+      "MDE_holm_worst_case_4_tests": 0.1108,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.065,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1918,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0334,
+      "MDE_single_test_2p8": 0.0935,
+      "MDE_holm_worst_case_4_tests": 0.1115,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0655,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1918,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0451,
+      "MDE_single_test_2p8": 0.1261,
+      "MDE_holm_worst_case_4_tests": 0.1504,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0883,
+      "ladder_selected": null
+     }
+    ]
+   },
+   "A_periodic_10K_10Q": {
+    "k": 33,
+    "n_dd_mean": 92.52,
+    "n_dd_min": 80,
+    "n_dd_max": 100,
+    "rows": [
+     {
+      "anchor": "independence_lower_bound_1_over_sqrt_ndd",
+      "rho_f": 0.0,
+      "k": 33,
+      "sigma_fold_mean": 0.1047,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0182,
+      "MDE_single_test_2p8": 0.051,
+      "MDE_holm_worst_case_4_tests": 0.0609,
+      "null_bound_95": 0.0357,
+      "ladder_selected": 0.05
+     },
+     {
+      "anchor": "independence_lower_bound_1_over_sqrt_ndd",
+      "rho_f": 0.3,
+      "k": 33,
+      "sigma_fold_mean": 0.1047,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0246,
+      "MDE_single_test_2p8": 0.0689,
+      "MDE_holm_worst_case_4_tests": 0.0821,
+      "null_bound_95": 0.0482,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0269,
+      "MDE_single_test_2p8": 0.0752,
+      "MDE_holm_worst_case_4_tests": 0.0897,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0526,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0362,
+      "MDE_single_test_2p8": 0.1014,
+      "MDE_holm_worst_case_4_tests": 0.121,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.071,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0351,
+      "MDE_single_test_2p8": 0.0983,
+      "MDE_holm_worst_case_4_tests": 0.1172,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0688,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0473,
+      "MDE_single_test_2p8": 0.1326,
+      "MDE_holm_worst_case_4_tests": 0.1581,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0928,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2a_pead_core",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1604,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0279,
+      "MDE_single_test_2p8": 0.0782,
+      "MDE_holm_worst_case_4_tests": 0.0932,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0547,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2a_pead_core",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1604,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0377,
+      "MDE_single_test_2p8": 0.1055,
+      "MDE_holm_worst_case_4_tests": 0.1258,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0738,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2b_momentum_core",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2484,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0432,
+      "MDE_single_test_2p8": 0.1211,
+      "MDE_holm_worst_case_4_tests": 0.1444,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0847,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2b_momentum_core",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2484,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0583,
+      "MDE_single_test_2p8": 0.1633,
+      "MDE_holm_worst_case_4_tests": 0.1948,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.1143,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1653,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0288,
+      "MDE_single_test_2p8": 0.0805,
+      "MDE_holm_worst_case_4_tests": 0.0961,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0564,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1653,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0388,
+      "MDE_single_test_2p8": 0.1087,
+      "MDE_holm_worst_case_4_tests": 0.1296,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0761,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2101,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0366,
+      "MDE_single_test_2p8": 0.1024,
+      "MDE_holm_worst_case_4_tests": 0.1221,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0717,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2101,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0493,
+      "MDE_single_test_2p8": 0.1382,
+      "MDE_holm_worst_case_4_tests": 0.1648,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0967,
+      "ladder_selected": null
+     }
+    ]
+   },
+   "B_e2_run_time_frame": {
+    "k": 33,
+    "n_dd_mean": 135.79,
+    "n_dd_min": 118,
+    "n_dd_max": 161,
+    "rows": [
+     {
+      "anchor": "independence_lower_bound_1_over_sqrt_ndd",
+      "rho_f": 0.0,
+      "k": 33,
+      "sigma_fold_mean": 0.0864,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0151,
+      "MDE_single_test_2p8": 0.0422,
+      "MDE_holm_worst_case_4_tests": 0.0503,
+      "null_bound_95": 0.0295,
+      "ladder_selected": 0.04
+     },
+     {
+      "anchor": "independence_lower_bound_1_over_sqrt_ndd",
+      "rho_f": 0.3,
+      "k": 33,
+      "sigma_fold_mean": 0.0864,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0203,
+      "MDE_single_test_2p8": 0.0569,
+      "MDE_holm_worst_case_4_tests": 0.0678,
+      "null_bound_95": 0.0398,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0269,
+      "MDE_single_test_2p8": 0.0752,
+      "MDE_holm_worst_case_4_tests": 0.0897,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0526,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0362,
+      "MDE_single_test_2p8": 0.1014,
+      "MDE_holm_worst_case_4_tests": 0.121,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.071,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0351,
+      "MDE_single_test_2p8": 0.0983,
+      "MDE_holm_worst_case_4_tests": 0.1172,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0688,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0473,
+      "MDE_single_test_2p8": 0.1326,
+      "MDE_holm_worst_case_4_tests": 0.1581,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0928,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2a_pead_core",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1604,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0279,
+      "MDE_single_test_2p8": 0.0782,
+      "MDE_holm_worst_case_4_tests": 0.0932,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0547,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2a_pead_core",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1604,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0377,
+      "MDE_single_test_2p8": 0.1055,
+      "MDE_holm_worst_case_4_tests": 0.1258,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0738,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2b_momentum_core",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2484,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0432,
+      "MDE_single_test_2p8": 0.1211,
+      "MDE_holm_worst_case_4_tests": 0.1444,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0847,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "h1_t2b_momentum_core",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2484,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0583,
+      "MDE_single_test_2p8": 0.1633,
+      "MDE_holm_worst_case_4_tests": 0.1948,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.1143,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0269,
+      "MDE_single_test_2p8": 0.0752,
+      "MDE_holm_worst_case_4_tests": 0.0897,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0526,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "size_only_rank_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.1543,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0362,
+      "MDE_single_test_2p8": 0.1014,
+      "MDE_holm_worst_case_4_tests": 0.121,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.071,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.0,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.0,
+      "SE": 0.0351,
+      "MDE_single_test_2p8": 0.0983,
+      "MDE_holm_worst_case_4_tests": 0.1172,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0688,
+      "ladder_selected": null
+     },
+     {
+      "anchor": "ticker_training_mean_e2_n_adjusted_to_this_frame",
+      "rho_f": 0.3,
+      "k": 33,
+      "anchor_sd": 0.2016,
+      "ar1_se_multiplier": 1.3491,
+      "SE": 0.0473,
+      "MDE_single_test_2p8": 0.1326,
+      "MDE_holm_worst_case_4_tests": 0.1581,
+      "holm_worst_case_multiplier": 3.339,
+      "null_bound_95": 0.0928,
+      "ladder_selected": null
+     }
+    ]
+   }
+  }
+ },
+ "section_4b_survivorship_price_censoring": {
+  "n_core_ciks": 176,
+  "n_core_ciks_no_price_column": 27,
+  "n_core_ciks_no_price_column_by_sector": {
+   "energy": 10,
+   "consumer": 5,
+   "healthcare": 5,
+   "tech": 5,
+   "financials": 2
+  },
+  "n_ciks_in_target_table": 149,
+  "n_core_filings_excluded_solely_missing_subject_prices": 3016,
+  "n_complete_window_missing_subject_price": 324,
+  "channel_A_per_fold": [
+   {
+    "test_quarter": "2018Q1",
+    "n_ciks_channel_A": 16,
+    "n_rows_channel_A": 36
+   },
+   {
+    "test_quarter": "2018Q2",
+    "n_ciks_channel_A": 16,
+    "n_rows_channel_A": 31
+   },
+   {
+    "test_quarter": "2018Q3",
+    "n_ciks_channel_A": 13,
+    "n_rows_channel_A": 26
+   },
+   {
+    "test_quarter": "2018Q4",
+    "n_ciks_channel_A": 12,
+    "n_rows_channel_A": 23
+   },
+   {
+    "test_quarter": "2019Q1",
+    "n_ciks_channel_A": 10,
+    "n_rows_channel_A": 19
+   },
+   {
+    "test_quarter": "2019Q2",
+    "n_ciks_channel_A": 9,
+    "n_rows_channel_A": 17
+   },
+   {
+    "test_quarter": "2019Q3",
+    "n_ciks_channel_A": 10,
+    "n_rows_channel_A": 20
+   },
+   {
+    "test_quarter": "2019Q4",
+    "n_ciks_channel_A": 9,
+    "n_rows_channel_A": 18
+   },
+   {
+    "test_quarter": "2020Q1",
+    "n_ciks_channel_A": 8,
+    "n_rows_channel_A": 15
+   },
+   {
+    "test_quarter": "2020Q2",
+    "n_ciks_channel_A": 8,
+    "n_rows_channel_A": 14
+   },
+   {
+    "test_quarter": "2020Q3",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 10
+   },
+   {
+    "test_quarter": "2020Q4",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 10
+   },
+   {
+    "test_quarter": "2021Q1",
+    "n_ciks_channel_A": 4,
+    "n_rows_channel_A": 8
+   },
+   {
+    "test_quarter": "2021Q2",
+    "n_ciks_channel_A": 4,
+    "n_rows_channel_A": 8
+   },
+   {
+    "test_quarter": "2021Q3",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 10
+   },
+   {
+    "test_quarter": "2021Q4",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 10
+   },
+   {
+    "test_quarter": "2022Q1",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 10
+   },
+   {
+    "test_quarter": "2022Q2",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 10
+   },
+   {
+    "test_quarter": "2022Q3",
+    "n_ciks_channel_A": 3,
+    "n_rows_channel_A": 6
+   },
+   {
+    "test_quarter": "2022Q4",
+    "n_ciks_channel_A": 3,
+    "n_rows_channel_A": 7
+   },
+   {
+    "test_quarter": "2023Q1",
+    "n_ciks_channel_A": 3,
+    "n_rows_channel_A": 7
+   },
+   {
+    "test_quarter": "2023Q2",
+    "n_ciks_channel_A": 3,
+    "n_rows_channel_A": 7
+   },
+   {
+    "test_quarter": "2023Q3",
+    "n_ciks_channel_A": 5,
+    "n_rows_channel_A": 11
+   },
+   {
+    "test_quarter": "2023Q4",
+    "n_ciks_channel_A": 4,
+    "n_rows_channel_A": 8
+   },
+   {
+    "test_quarter": "2024Q1",
+    "n_ciks_channel_A": 4,
+    "n_rows_channel_A": 9
+   },
+   {
+    "test_quarter": "2024Q2",
+    "n_ciks_channel_A": 4,
+    "n_rows_channel_A": 7
+   },
+   {
+    "test_quarter": "2024Q3",
+    "n_ciks_channel_A": 3,
+    "n_rows_channel_A": 6
+   },
+   {
+    "test_quarter": "2024Q4",
+    "n_ciks_channel_A": 2,
+    "n_rows_channel_A": 4
+   },
+   {
+    "test_quarter": "2025Q1",
+    "n_ciks_channel_A": 2,
+    "n_rows_channel_A": 4
+   },
+   {
+    "test_quarter": "2025Q2",
+    "n_ciks_channel_A": 2,
+    "n_rows_channel_A": 4
+   },
+   {
+    "test_quarter": "2025Q3",
+    "n_ciks_channel_A": 0,
+    "n_rows_channel_A": 0
+   },
+   {
+    "test_quarter": "2025Q4",
+    "n_ciks_channel_A": 0,
+    "n_rows_channel_A": 0
+   },
+   {
+    "test_quarter": "2026Q1",
+    "n_ciks_channel_A": 0,
+    "n_rows_channel_A": 0
+   }
+  ],
+  "channel_A_definition": "core CIK absent from data/prices_e2.parquet; no target row exists at all",
+  "null_target_rows_dropped_before_ranking": {
+   "C_all_forms_numeric": 462
+  },
+  "direction_by_family_statement": "Dead-name exclusion removes the worst outcomes from the scored set. Its direction differs by family: dropping dead high-volatility / low-momentum losers biases the low_volatility and momentum ICs DOWN (their worst confirming cases are missing); dropping dead distressed high-book-to-market names biases the value IC UP (its worst disconfirming cases are missing); profitability is ambiguous. The cause of the missing prices is not separately measured, so none of this is called delisting (G3 \u00a711).",
+  "source": "census_e2.json .section_1b_price_censoring (summary, per_candidate_quarter); target_e2_manifest.json .row_counts"
+ },
+ "section_5_prior_exposure": {
+  "g3_form_controlled_ablation_10K_10Q_rows": {
+   "what": "G3's fitted blocks scored on the 10-K/10-Q rows of the E2 frame ONLY -- 3,497 rows, 96% of frame A -- ranked within that periodic-only pool, exactly as the census ranks frame A (red-team M1). This is the closest existing observation to E3's primary frame.",
+   "n_rows": 3497,
+   "numeric_only_dedup": {
+    "mean_of_committed_per_fold_ic": 0.025,
+    "n_folds": 33,
+    "positive_folds": 20
+   },
+   "numeric_only_raw": {
+    "mean_of_committed_per_fold_ic": 0.025,
+    "n_folds": 33,
+    "positive_folds": 20
+   },
+   "text_and_numeric_dedup": {
+    "mean_of_committed_per_fold_ic": 0.0311,
+    "n_folds": 33,
+    "positive_folds": 19
+   },
+   "size_only_fitted_dedup": {
+    "mean_of_committed_per_fold_ic": -0.0001,
+    "n_folds": 33,
+    "positive_folds": 17
+   },
+   "source": "results_head1.json .form_controlled_ablation.per_fold_ic"
+  },
+  "g3_numeric_only_raw_levels_spec_dedup": {
+   "mean_of_committed_per_fold_ic": 0.0207,
+   "n_folds": 33,
+   "positive_folds": 20,
+   "source": "results_head1.json .per_fold_ic__raw_levels"
+  },
+  "g3_numeric_only_no_same_day_arm_dedup": {
+   "mean_of_committed_per_fold_ic": 0.022,
+   "n_folds": 33,
+   "positive_folds": 17,
+   "what": "the include_same_day=False arm, which E3 also runs",
+   "source": "results_head1.json .per_fold_ic__pit_trailing_rank_no_same_day"
+  },
+  "g3_per_fold_quintile_spread_exists": "every G3 per-fold IC row also carries `quintile_spread` (top-minus-bottom quintile mean realized excess return) for every block; E3 suppresses that column (red-team S3)",
+  "g3_scorecard_hit_rates_frame_B": {
+   "numeric_only": {
+    "hit_rate": 0.5099,
+    "wilson_95": [
+     0.4919,
+     0.5278
+    ],
+    "n_calls": 2991
+   },
+   "size_only": {
+    "hit_rate": 0.4859,
+    "wilson_95": [
+     0.4678,
+     0.5039
+    ],
+    "n_calls": 2933
+   },
+   "text_and_numeric": {
+    "hit_rate": 0.5187,
+    "wilson_95": [
+     0.5008,
+     0.5366
+    ],
+    "n_calls": 2992
+   },
+   "source": "results_head1.json .scorecard_summary.blocks (universe block; per-company rows are on disk, git-excluded)"
+  },
+  "statement": "These associations EXIST ON DISK before E3 is pre-registered. They were produced under the ratified G3 pre-registration (2026-11-05) and under H1 (2026-08-25), not by this census. E3's primary is a different estimand (a no-fit, sign-fixed family composite's LEVEL IC) and has not been computed; the numbers below are prior knowledge the owner holds when ruling.",
+  "g3_numeric_only_block_dedup": {
+   "mean_of_committed_per_fold_ic": 0.0251,
+   "n_folds": 33,
+   "positive_folds": 19,
+   "what": "XGBoost on all 13 numeric features (PIT ranks), out-of-fold, 33 folds",
+   "source": "results_head1.json .per_fold_ic__pit_trailing_rank[block=numeric_only, eval_set=dedup].spearman_ic"
+  },
+  "g3_numeric_only_block_raw": {
+   "mean_of_committed_per_fold_ic": 0.0162,
+   "n_folds": 33,
+   "positive_folds": 19
+  },
+  "g3_size_only_block_dedup": {
+   "mean_of_committed_per_fold_ic": -0.0289,
+   "n_folds": 33,
+   "positive_folds": 13,
+   "what": "XGBoost on log_total_assets alone (PIT rank), out-of-fold"
+  },
+  "g3_zero_information_size_rank_dedup": {
+   "mean_ic": 0.0191,
+   "positive_folds": 21,
+   "source": "results_head1.json .standing.zero_information_summary"
+  },
+  "g3_zero_information_ticker_mean_dedup": {
+   "mean_ic": 0.0362,
+   "positive_folds": 21
+  },
+  "h1_t2b_momentum_12_1_core_dedup": {
+   "mean_ic": 0.0287,
+   "se_ic": 0.0393,
+   "t_stat": 0.73,
+   "block_bootstrap_ci95": [
+    -0.0481,
+    0.1034
+   ],
+   "n_periods": 40,
+   "n_events": 3879,
+   "verdict": "AMBIGUOUS",
+   "implied_mde": 0.11,
+   "what": "12-1 momentum at earnings 8-Ks vs forward excess return, H1 (2026-08-25); a different construct (12-1, event panel) from momentum_126 on all filings",
+   "source": "data/hardening/controls_results.json .controls.T2b_momentum_core.dedup"
+  },
+  "h1_t2a_pead_core_dedup": {
+   "mean_ic": 0.0279,
+   "se_ic": 0.0254,
+   "t_stat": 1.101,
+   "block_bootstrap_ci95": [
+    -0.0204,
+    0.0764
+   ],
+   "n_periods": 40,
+   "n_events": 3368,
+   "verdict": "AMBIGUOUS",
+   "implied_mde": 0.071,
+   "what": "SUE (seasonal random walk) at earnings 8-Ks vs forward excess return, H1; PEAD is NOT in numeric_features_e2.parquet and would be a build item",
+   "source": "data/hardening/controls_results.json .controls.T2a_pead_core.dedup"
+  },
+  "f6_statement": "F6_E2_RESULT.md \u00a74: 'This run did not test them as a signal. Numeric-only's mean IC of +0.0251 sits below the ticker-mean benchmark (+0.0362) and the H1 noise floor (\u00a71.7). Nothing here is evidence for them.'"
+ },
+ "section_6_not_on_the_artifact": {
+  "momentum_12_1": "P3 names 12-1 momentum; the artifact carries momentum_126 (126 sessions, ending at pre_session). A 12-1 column is a numeric_features_e2.py build (price-only, PIT by construction) -- Step 3 at the earliest, and H1 T2b has already measured 12-1 at earnings events (see prior_exposure).",
+  "earnings_yield": "not built; needs PIT net income / market cap -- the same machinery as book_to_market.",
+  "accruals": "not built; needs PIT net income minus operating cash flow over assets; operating_cash_flow coverage is 42% (period-mismatch filter).",
+  "pead_sue": "not in the artifact; controls.py computes SUE at earnings 8-Ks for H1 and already reported T2a (AMBIGUOUS). Porting it is a build item; its E2 association is already observed."
+ },
+ "runtimes_seconds": {
+  "load_and_sha": 0.05,
+  "frames": 0.04,
+  "coverage_and_ranks": 1.16,
+  "folds": 1.1,
+  "total": 2.36
+ }
+}
