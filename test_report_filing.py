@@ -1866,3 +1866,61 @@ def test_render_opens_no_outcome_artifact(tmp_path, monkeypatch, what):
                          if not any(a in p for a in ALLOWED_ARTIFACT_FRAGMENTS)
                          and not p.startswith("data/app/reports")})
     assert not unexpected, unexpected
+
+
+# ---------------------------------------------------------------------------
+# 2026-11-09 regression: Apple's store page said it was "outside the 244-company
+# research universe". A store of a member carries IN_UNIVERSE_LINE; a non-member
+# or a machine without the research db keeps the OUTSIDE line.
+# ---------------------------------------------------------------------------
+class _FakeStore:
+    def __init__(self, cik):
+        self.cik = cik
+
+    def identity(self):
+        return {"cik": self.cik}
+
+
+def _universe_db(path, ciks):
+    with sqlite3.connect(path) as con:
+        con.execute("CREATE TABLE universe_membership (cik INTEGER, member_from TEXT)")
+        con.executemany("INSERT INTO universe_membership VALUES (?, '2016-07-01')",
+                        [(c,) for c in ciks])
+    return path
+
+
+_IMPUTED = {"n_imputed": 0, "n_applicable": 0, "pct": 0.0, "n_labels": 0,
+            "scope": "this company's store"}
+
+
+def _store_disclosure(monkeypatch, cik, db):
+    monkeypatch.setattr(RF, "UNIVERSE_DB", db)
+    monkeypatch.setattr(RF, "ACTIVE_STORE", _FakeStore(cik))
+    return unescape(RF.disclosure_html(RF.load_disclosure(), None, _IMPUTED))
+
+
+def test_a_universe_member_store_says_in_universe_not_outside(tmp_path, monkeypatch):
+    html = _store_disclosure(monkeypatch, 320193, _universe_db(tmp_path / "u.db", [320193, 1]))
+    assert RF.IN_UNIVERSE_LINE in html
+    assert RF.OUTSIDE_UNIVERSE_LINE not in html
+    assert "outside the 244-company research universe" not in html
+    # former members (MU left in 2017) are covered too: "is or was", point-in-time
+    assert "is or was a member of the 244-company point-in-time research universe" in html
+
+
+def test_a_non_member_store_keeps_the_outside_line(tmp_path, monkeypatch):
+    html = _store_disclosure(monkeypatch, 5550001, _universe_db(tmp_path / "u.db", [320193]))
+    assert RF.OUTSIDE_UNIVERSE_LINE in html and RF.IN_UNIVERSE_LINE not in html
+
+
+def test_without_the_research_db_the_outside_line_stays(tmp_path, monkeypatch):
+    html = _store_disclosure(monkeypatch, 320193, tmp_path / "absent.db")
+    assert RF.universe_member_ciks() is None
+    assert RF.OUTSIDE_UNIVERSE_LINE in html and RF.IN_UNIVERSE_LINE not in html
+
+
+def test_the_real_universe_db_has_244_members_including_apple():
+    if not RF.UNIVERSE_DB.exists():
+        pytest.skip("research metadata db not on this machine")
+    members = RF.universe_member_ciks()
+    assert len(members) == 244 and 320193 in members

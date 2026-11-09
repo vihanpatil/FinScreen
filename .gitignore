@@ -169,3 +169,5 @@ data/f5/head1_scorecard.json
 data/f5/e3_scorecard.md
 data/f5/e3_scorecard.json
 data/f5/e3_oof_scores.parquet
+# archived rendered pages (same rule as data/app/reports/)
+data/app/status/archive/stale_pages_*/

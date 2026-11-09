@@ -90,7 +90,10 @@ ingested before P1a.2 carries neither fundamentals file; its five families say
 so rather than printing a blank. One sentence is ADDED to the disclosure header,
 `OUTSIDE_UNIVERSE_LINE`, because one thing genuinely is different: the labels
 are from a company the 244-company universe never covered and the G2
-spot-check never looked at. With no `--store`, every accessor returns the F4
+spot-check never looked at. A store of a universe MEMBER carries
+`IN_UNIVERSE_LINE` instead (its passages were labeled now, outside the sealed
+corpus, and were not spot-checked either); membership is read from
+`universe_membership`, and without that db the OUTSIDE line stays. With no `--store`, every accessor returns the F4
 constant it always did.
 
 -----------------------------------------------------------------------------
@@ -106,6 +109,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import functools
 import hashlib
 import html
 import json
@@ -162,6 +166,35 @@ CHUNK_INDEX_CACHE = CACHE_DIR / "chunk_index_v1.parquet"
 OUTSIDE_UNIVERSE_LINE = (
     "This company is outside the 244-company research universe; its labels have "
     "no spot-check and carry the same model-consensus error at best")
+# A store of a universe member (Apple, 2026-11-09) used to print the OUTSIDE
+# line too, which was false. Membership truth is `universe_membership` in the
+# research metadata db; when that db is absent the OUTSIDE line stays.
+IN_UNIVERSE_LINE = (
+    "This company is or was a member of the 244-company point-in-time research "
+    "universe; the passages on this page were ingested and labeled now, outside the "
+    "sealed corpus, and were not themselves spot-checked")
+UNIVERSE_DB = DATA_DIR / "filings_metadata_e2.db"
+
+
+@functools.lru_cache(maxsize=None)
+def _member_ciks(db: Path) -> frozenset:
+    with contextlib.closing(sqlite3.connect(Path(db).resolve().as_uri() + "?mode=ro", uri=True)) as con:
+        return frozenset(int(c) for (c,) in
+                         con.execute("SELECT DISTINCT cik FROM universe_membership"))
+
+
+def universe_member_ciks() -> Optional[frozenset]:
+    """The universe's CIKs, or None when the research db is not on this machine."""
+    return _member_ciks(UNIVERSE_DB) if UNIVERSE_DB.exists() else None
+
+
+def store_universe_line() -> str:
+    """IN for a store of a universe member, OUTSIDE otherwise (db absent included)."""
+    cik = ACTIVE_STORE.identity().get("cik") if ACTIVE_STORE is not None else None
+    members = universe_member_ciks()
+    if cik is not None and members is not None and int(cik) in members:
+        return IN_UNIVERSE_LINE
+    return OUTSIDE_UNIVERSE_LINE
 
 STORE_TABLES = ("chunks.parquet", "labels.parquet", "sections.parquet",
                 "metadata.db")
@@ -355,6 +388,16 @@ E2_IC_CI_HI = 0.0256
 E2_HONEST_MDE = 0.0416
 E2_SEEDS_NOT_EQUIVALENT = 32
 E2_SEEDS_N = 100
+
+
+def predictive_validity_sentence() -> str:
+    """The E1/E2 outcome sentence, filled from the pinned constants above."""
+    return PREDICTIVE_VALIDITY_TEMPLATE.format(
+        raw=E1_IC_DELTA_RAW, dedup=E1_IC_DELTA_DEDUP,
+        e2=E2_IC_DELTA_DEDUP, e2_lo=E2_IC_CI_LO, e2_hi=E2_IC_CI_HI,
+        mde=E2_HONEST_MDE, seeds_fail=E2_SEEDS_NOT_EQUIVALENT,
+        seeds_n=E2_SEEDS_N)
+
 
 # Prose-documented constants with no machine-readable source, pinned by a test
 # that greps HANDOFF.md for the exact SENTENCES they come from (not for a bare
@@ -578,11 +621,7 @@ def load_disclosure() -> dict:
             "config_sensitivity_count": CONFIG_SENSITIVITY_COUNT,
             "config_sensitivity_subject": CONFIG_SENSITIVITY_SUBJECT,
         },
-        "predictive_validity": PREDICTIVE_VALIDITY_TEMPLATE.format(
-            raw=E1_IC_DELTA_RAW, dedup=E1_IC_DELTA_DEDUP,
-            e2=E2_IC_DELTA_DEDUP, e2_lo=E2_IC_CI_LO, e2_hi=E2_IC_CI_HI,
-            mde=E2_HONEST_MDE, seeds_fail=E2_SEEDS_NOT_EQUIVALENT,
-            seeds_n=E2_SEEDS_N),
+        "predictive_validity": predictive_validity_sentence(),
         "selfid_strict": SELFID_STRICT_TEXT,
         "selfid_loose": SELFID_LOOSE_TEXT,
         "selfid_subject": SELFID_SUBJECT,
@@ -1556,7 +1595,7 @@ def disclosure_html(d: dict, overlap: Optional[dict],
 
     # L2.2: the one line a store adds, and the only rendering difference
     # between a store report and a research-corpus report.
-    outside = (f"<li><b>{esc(OUTSIDE_UNIVERSE_LINE)}.</b></li>"
+    outside = (f"<li><b>{esc(store_universe_line())}.</b></li>"
                if ACTIVE_STORE is not None else "")
 
     imputed_line = (
@@ -1929,7 +1968,7 @@ def main(argv: Optional[list[str]] = None) -> int:
                          "by ingest_one.py + label_filing.py "
                          "(data/app/companies/<cik>) instead of the research "
                          "corpus; the disclosure header gains one line saying "
-                         "the company is outside that universe")
+                         "whether the company is in that universe")
     args = ap.parse_args(argv)
 
     started = time.time()

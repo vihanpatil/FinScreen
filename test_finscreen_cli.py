@@ -192,3 +192,55 @@ def test_doctor_fails_on_adapter_sha_mismatch(paths, monkeypatch, capsys):
     manifest.write_text(json.dumps({"inputs": {"adapter_sha256_expected": "cadca849" + "0" * 56}}))
     assert fs.main(["doctor"]) == 1
     assert "FAIL  adapter sha256" in capsys.readouterr().out
+
+
+# --- landing page (2026-11-09) ------------------------------------------------
+def _rendered(paths, cik, ticker, name, scorecard=False):
+    store = make_store(paths, cik=cik, ticker=ticker)
+    man = json.loads((store / "manifest.json").read_text())
+    (store / "manifest.json").write_text(json.dumps(dict(man, company_name=name)))
+    rep = paths / "reports" / str(cik)
+    rep.mkdir(parents=True)
+    (rep / "index.html").write_text("x")
+    (rep / "0000000000-26-000001.html").write_text("x")
+    if scorecard:
+        (rep / "scorecard.html").write_text("hit rate 0.7143 [0.5294, 0.8475] 71.43%")
+
+
+def test_landing_page_is_alphabetical_by_ticker_with_scorecard_links_only_when_present(paths):
+    _rendered(paths, 320193, "AAPL", "Apple Inc.", scorecard=True)
+    _rendered(paths, 908937, "SIRI", "Sirius XM")
+    _rendered(paths, 1018724, "AMZN", "Amazon")
+    make_store(paths, cik=5, ticker="NOPG")  # a store with no rendered pages is not listed
+    html = fs.write_landing().read_text()
+    assert html.index("AAPL") < html.index("AMZN") < html.index("SIRI")
+    assert "NOPG" not in html
+    assert html.count(fs.SCORECARD_LINK) == 1
+    assert 'href="320193/scorecard.html"' in html and 'href="908937/scorecard.html"' not in html
+    assert 'href="908937/index.html">labeled filings</a>' in html
+    assert fs.LANDING_IDENTITY in html.replace("&quot;", '"').replace("&#x27;", "'")
+    assert "Rendered for the author&#x27;s personal use only" in html
+    body = html.split("<body>")[1]
+    assert not re.search(r"\d%|\d\.\d{2,}", body), "no scorecard number on the landing page"
+
+
+def test_index_writes_the_landing_page(paths, capsys):
+    _rendered(paths, 908937, "SIRI", "Sirius XM")
+    assert fs.main(["index"]) == 0
+    assert (paths / "reports" / "index.html").exists()
+    assert "landing page:" in capsys.readouterr().out
+
+
+def test_report_refreshes_the_landing_page(paths, monkeypatch):
+    make_store(paths, per_form=2, labeled=True)
+    monkeypatch.setattr(fs.subprocess, "run", FakeRun(report_respond))
+    assert fs.main(["report", "SIRI"]) == 0
+    assert (paths / "reports" / "index.html").exists()
+
+
+def test_scorecard_runs_the_page_writer(paths, monkeypatch):
+    fake = FakeRun()
+    monkeypatch.setattr(fs.subprocess, "run", fake)
+    assert fs.main(["scorecard", "--cik", "320193"]) == 0
+    assert fake.scripts() == ["scorecard_page.py --cik 320193"]
+    assert (paths / "reports" / "index.html").exists()

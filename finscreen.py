@@ -5,10 +5,11 @@
     bin/fs report SIRI [--open]         ingest -> fundamentals -> label -> HTML pages
     bin/fs report SIRI --refresh        same, but re-ingest even a current store (new filings)
     bin/fs g3 --date D --owner-word W   pin G3 + run head 1 and heads 2/3 (owner's word only)
-    bin/fs index                        list the per-company stores
+    bin/fs index                        list the per-company stores; write the landing page
+    bin/fs scorecard [--cik N]          private historical-scorecard pages (head 1 JSON)
 
-It only chains ingest_one.py, label_filing.py, report_filing.py, data/f5/pin_g3.py,
-backtest_e2.py and heads_e2.py as subprocesses under this interpreter; every rule
+It only chains ingest_one.py, label_filing.py, report_filing.py, scorecard_page.py,
+data/f5/pin_g3.py, backtest_e2.py and heads_e2.py as subprocesses under this interpreter; every rule
 (adapter sha, repro canary, G3 guard) stays inside those modules.
 """
 import argparse
@@ -148,6 +149,7 @@ def cmd_report(a):
     print("\npages written:\n  " + "\n  ".join(pages))
     for form in missing:
         print(f"  {form}: no page")
+    print(f"landing page: {write_landing()}")
     if a.open:
         subprocess.run(["open", pages[0]], cwd=REPO)
     return 0
@@ -183,6 +185,55 @@ def cmd_g3(a):
     return 0
 
 
+LANDING_IDENTITY = (
+    "The owner's private home page for FinScreen. Only the per-company reading-aid pages "
+    "(\"labeled filings\") may be shown to someone else, as a demonstration (ruling C); the "
+    "historical scorecard pages are for the owner's personal use only and are never shown.")
+LANDING_NOTE = ("Every company with rendered pages, alphabetical by ticker. This page carries "
+                "no label-derived or scorecard-derived quantity and is not ordered by one.")
+SCORECARD_LINK = "historical scorecard (personal use only)"
+
+
+def write_landing():
+    """REPORTS/index.html: one row per store with a rendered <cik>/index.html."""
+    import report_filing as RF  # lazy: pandas is needed only to render, not for doctor
+    from scorecard_page import SCORECARD_FOOTER_LINE
+    rows = []
+    for store, m in manifests():
+        rep = REPORTS / store.name
+        if not (rep / "index.html").exists():
+            continue
+        n = len([p for p in rep.glob("*.html") if p.name != "scorecard.html"])
+        links = f'<a href="{store.name}/index.html">labeled filings</a>'
+        if (rep / "scorecard.html").exists():
+            links += f' · <a href="{store.name}/scorecard.html">{SCORECARD_LINK}</a>'
+        rows.append((str(m.get("ticker") or "").upper(), store.name,
+                     f"<tr><td>{RF.esc(m.get('ticker', '?'))}</td><td>{RF.esc(m.get('company_name', '?'))}"
+                     f"</td><td>{RF.esc(store.name)}</td><td>{n}</td><td>{links}</td></tr>"))
+    rows.sort(key=lambda r: (r[0], int(r[1])))
+    universe = ""
+    if (REPORTS / "scorecard.html").exists():
+        universe = f'<p><a href="scorecard.html">{SCORECARD_LINK}, every company</a></p>'
+    body = ("<h1>FinScreen — companies</h1>"
+            f'<p class="identity">{RF.esc(LANDING_IDENTITY)}</p>'
+            f'<p class="small">{RF.esc(LANDING_NOTE)}</p>'
+            "<table><thead><tr><th>Ticker</th><th>Company</th><th>CIK</th><th>Pages</th>"
+            "<th>Links</th></tr></thead><tbody>" + "".join(r[2] for r in rows) + "</tbody></table>"
+            + universe + f'<p class="footer-line">{RF.esc(SCORECARD_FOOTER_LINE)}</p>')
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    out = REPORTS / "index.html"
+    out.write_text(RF.page("FinScreen — companies", body))
+    return out
+
+
+def cmd_scorecard(a):
+    proc = run(py("scorecard_page.py", *(["--cik", a.cik] if a.cik else [])))
+    if proc.returncode:
+        return proc.returncode
+    print(f"landing page: {write_landing()}")
+    return 0
+
+
 def cmd_index(a):
     print(f"{'ticker':<8}{'cik':<10}{'chunks':>7}  {'labeled':<8}{'pages':>5}  name")
     for store, m in manifests():
@@ -192,6 +243,7 @@ def cmd_index(a):
         print(f"{m.get('ticker', '?'):<8}{store.name:<10}{m.get('chunks', {}).get('n_chunks', 0):>7}  "
               f"{'yes' if (store / 'labels.parquet').exists() else 'no':<8}{n:>5}  "
               f"{m.get('company_name', '?')}{idx}")
+    print(f"\nlanding page: {write_landing()}")
     return 0
 
 
@@ -248,6 +300,9 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("doctor").set_defaults(fn=cmd_doctor)
     sub.add_parser("index").set_defaults(fn=cmd_index)
+    sc = sub.add_parser("scorecard")
+    sc.add_argument("--cik", type=int)
+    sc.set_defaults(fn=cmd_scorecard)
     r = sub.add_parser("report")
     r.add_argument("ticker")
     r.add_argument("--per-form", type=int, default=2)

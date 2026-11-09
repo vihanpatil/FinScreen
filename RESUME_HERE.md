@@ -1,4 +1,4 @@
-# RESUME_HERE — state as of 2026-11-05 (owner back after two months; LOW-TOUCH MODE)
+# RESUME_HERE — state as of 2026-11-09 (LOW-TOUCH MODE; scorecard pages live privately)
 
 **If you are a fresh session: read `CLAUDE.md`, then this block, then `OWNER_DECISIONS_2026-11-05.md`.**
 Or run the `/resume` skill, which does exactly that.
@@ -89,6 +89,21 @@ suite 1,869 green before the fix pass; 233 in the four touched files after it.
 Standing rules: NEVER re-pin; never re-run a head on a model reading. On a watchlist change: edit
 `data/app/watchlist.txt`, then `bash data/app/run_watchlist.sh` (background). Pages carry the legal-baseline
 footer line (ruling C); nothing is hosted.
+**SESSION 2026-11-09 (owner: "What's the next move? Continue work … usable by me … no unnecessary slop … brutally
+honest").** HANDOFF §3 entry of this date. **The scorecard is now in the product, privately:** open
+`data/app/reports/index.html` (the owner's private home page; `bin/fs index` rewrites it) → a company's "historical
+scorecard (personal use only)" → `data/app/reports/<cik>/scorecard.html`; every company: `data/app/reports/scorecard.html`.
+Rendered from `data/f5/head1_scorecard.json` only (`bin/fs scorecard`), 139 companies, 24 of the 30 watchlist names;
+the universe-level result is a coin flip (0.519 [0.501, 0.537]) and the pages say so. False "outside the universe"
+line fixed (member stores now say "is or was a member … labeled now, outside the sealed corpus"). Reviewer pass
+clean after the fix pass; suite 1,908 green; E3 branch merged into main (docs only). Scorecard pages are NEVER
+shared, not even as a demonstration (legal #2/#4/Q2); reading-aid pages remain the ruling-C demo surface.
+**OWNER ITEM OPEN: the E3 packet (`data/f5/E3_OWNER_PACKET.md`, decisions 1–4), put to the owner in chat with the
+recommendation that it is lower priority than using the scorecard pages; the inference is pre-declared unpowered.**
+Known gaps (HANDOFF §3): XOM store = successor CIK 2115436 vs scorecard CIK 34088; PLTR/MU members without scored
+filings; SPCX/ADBE/XOM/COST not members; launchd refresh agent still not installed (owner's choice;
+`data/app/launchd/README.md`). **IN FLIGHT: nothing.**
+
 **E3 STEPS 1–2 DONE 2026-11-06 (side session, branch `claude/dazzling-villani-438b33`, committed there, NOT
 merged to main; HANDOFF §3 entry of that date).** Numeric-families census + DRAFT pre-registration + owner packet +
 reviewer pass, all on disk under `data/f5/` (`census_e3.json`, `E3_PREREGISTRATION.md`, `E3_OWNER_PACKET.md`,

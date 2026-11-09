@@ -1889,6 +1889,53 @@ prior-exposure limitation; 4b confirm the "B. No" reading. After the rulings: bu
 guarded like `backtest_e2`, `pin_e3.py`, `scorecard_e3.py`, tests), reviewer pass, `pin_e3.py --show` diff delivered
 in chat, THEN the owner's word "ratify" + that day's date, then the run. Never re-pin G3; E2 stays closed.
 
+**2026-11-09 — SCORECARD SURFACED IN THE PRODUCT; FALSE UNIVERSE LINE FIXED; LANDING PAGE; E3 BRANCH MERGED
+(main-session decisions under the low-touch policy; no owner word involved; the owner's words this session:
+"What's the next move? Continue work. Ensure that real progress is being made towards this product being usable by
+me. I do not want unnecessary slop. Be brutally honest and strict with your work.").** Assessment that drove the
+work: the owner's stated value (2026-09-11) is the per-company, per-quarter historical scorecard; it existed only as
+`data/f5/head1_scorecard.md` (567 KB, git-ignored), unlinked from any page, although 24 of the 30 watchlist companies
+(Apple, Alphabet, Microsoft, Amazon, Meta, Nvidia, …) are among its 139; Apple's page said it was "outside the
+244-company research universe", which is false (`universe_membership`, `data/filings_metadata_e2.db`, 244 CIKs,
+Apple among them: `OUTSIDE_UNIVERSE_LINE` fired on every store page); and there was no landing page. **Decision 1
+(bug):** `report_filing.store_universe_line()` reads membership once from the db (read-only URI); a member store
+prints `IN_UNIVERSE_LINE` ("is or was a member of the 244-company point-in-time research universe; the passages on
+this page were ingested and labeled now, outside the sealed corpus, and were not themselves spot-checked"), a
+non-member or a machine without the db prints OUTSIDE as before. Verified by the reviewer against the db: 42 stores,
+26 members, 0 mismatches; 104 member pages re-rendered. **Decision 2 (landing page):** `bin/fs index` and `bin/fs
+report` write `data/app/reports/index.html` (git-ignored): every store with pages, alphabetical by ticker, no
+label- or scorecard-derived number; it is the OWNER'S PRIVATE home page (footer = the personal-use-only line) and
+says which linked pages may be shown as a demonstration (reading-aid pages, ruling C) and which never (scorecards).
+**Decision 3 (scorecard pages):** new `scorecard_page.py` (`bin/fs scorecard [--cik N]`) renders
+`data/app/reports/<cik>/scorecard.html` for all 139 companies plus `data/app/reports/scorecard.html` (universe
+block, all companies alphabetical by name, never by a number), reading ONLY `head1_scorecard.json` (sha
+`028f34f5…` printed on every page), computing nothing; every page carries the identity paragraph (fundamentals and
+prices as public at the filing date; text labels from a labeler trained in 2026; the self-identification look-ahead
+sentence from the pinned constants), the run's own scope/inference/prices/margin sentences, the E2 outcome
+sentence, a plain-words call-rule and return-window paragraph checked against `scorecard_e2.make_calls` and
+`target_e2.py`, the universe block beside the per-company figures, the 8 disclosures verbatim, and the footer
+"Rendered for the author's personal use only. Not for sharing, not even as a demonstration: a per-company historical
+scorecard stays off every shared surface until the items in data/legal/ are cleared" (legal baseline #2/#4/Q2;
+ruling C covers reading-aid pages only; the owner's "if sharing is problematic, keep it personal for me" is the
+standing default). Hit rates stay off README/MODEL_CARD/LIMITATIONS (MF2 of 2026-11-05 unchanged). **Reviewer pass**
+`data/app/status/REVIEW_scorecard_pages_2026-11-09.md`: five companies and the universe page recomputed from the
+JSON with 0 mismatches; 2 MUST-FIX (a look-ahead claim in the identity paragraph; an unsupported coverage
+sentence), 5 SHOULD, 8 NOTE; dispositions at the end of that file, all FIX items applied by the builder
+(`SCORECARD_PAGES_2026-11-09.md`, fix-pass section). Suite 1,908 green. **Also:** the E3 side branch
+`claude/dazzling-villani-438b33` (Steps 1–2, docs and census only) merged into main (`98a673e`; ledger conflicts
+resolved by keeping both texts); two stale Apple pages whose filings left the `--per-form 2` window
+(`0000320193-24-000123`, `-25-000007`, still carrying the old OUTSIDE line) were ARCHIVED, not deleted, to
+`data/app/status/archive/stale_pages_2026-11-09/`. **Known limitations logged, not fixed:** XOM's store is the 2026
+successor registrant CIK 2115436 (ExxonMobil Holdings Corp; not a universe member) while the scorecard knows Exxon
+under CIK 34088 — no link between them; PLTR and MU are members with no scored filings; SPCX, ADBE, XOM, COST are
+not members; `label_filing.py`'s `OUTSIDE_UNIVERSE_CAVEAT` in label manifests still says "outside" for every store;
+scorecard links are decided at render time (`bin/fs scorecard` after new pages). **Honest read for the owner, as
+stated in chat:** the text model's calls are a coin flip at the universe level (0.519 [0.501, 0.537] vs 0.510
+numeric-only and 0.486 size-only; the per-company intervals are wide and Apple's 0.71 travels with an outcome mix of
+0.62, i.e. Apple mostly outperformed, so "outperform" was mostly right); the pages now show exactly that, with
+nothing hidden. **E3 packet** (`data/f5/E3_OWNER_PACKET.md`, decisions 1–4) put to the owner in chat with the
+recommendation that it is lower priority than using what now exists; the inference is pre-declared unpowered.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
