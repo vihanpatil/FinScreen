@@ -365,6 +365,11 @@ PREDICTIVE_VALIDITY_TEMPLATE = (
     "0.04 margin the ratified ladder reached (honest MDE {mde:.4f}; "
     "equivalence not reached under about {seeds_fail} of {seeds_n} nuisance "
     "seeds); text is not used as a signal; the study is written up and closed. "
+    "Erratum 2026-11-10: one numeric input to that study, book-to-market, carried "
+    "a stock-split look-ahead that inflated the level of both fitted models "
+    "(numeric-only and text-and-numeric); measured afterwards at matched model "
+    "seeds, the outcome above is unchanged (the erratum is filed beside the E2 "
+    "write-up and summarised on every scorecard page). "
     "E1 and E2 deltas are not numerically comparable."
 )
 

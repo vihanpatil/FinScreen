@@ -790,6 +790,7 @@ def test_disclosure_header_renders_every_ruled_number():
         "+0.0177", "-0.0097", "+0.0011", "-0.0234", "+0.0256", "bounded null",
         "honest MDE 0.0416", "about 32 of 100 nuisance seeds",
         "E1 and E2 deltas are not numerically comparable",
+        "Erratum 2026-11-10", "summarised on every scorecard page",
         "cadca8499b66b2e7d60a161f2021a5c5dac51ddd3a0bccea52d055cefb159de3",
         "model output throughout", "model consensus, not human validation",
         "NONE mass only",
@@ -1068,6 +1069,14 @@ def test_predictive_validity_is_one_replaceable_constant():
             in line)
     assert "E1 (25 companies)" in line
     assert "E2 (139 companies" in line
+    # The 2026-11-10 erratum travels with the outcome it qualifies: after the
+    # closing sentence, before the comparability sentence, pointing at a file
+    # that exists.
+    closed = line.index("written up and closed.")
+    erratum = line.index("Erratum 2026-11-10:")
+    assert closed < erratum < line.index("E1 and E2 deltas are not")
+    assert "the outcome above is unchanged" in line
+    assert (REPO_ROOT / "data/f5/F6_ERRATUM_2026-11-10.md").is_file()
 
 
 # ---------------------------------------------------------------------------
