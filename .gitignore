@@ -166,6 +166,8 @@ data/f5/head1_scorecard.md
 data/f5/head1_scorecard.json
 # post-hoc split arm (HANDOFF §3 2026-11-10): the affected companies' calls, per company
 data/f5/sensitivity_split_lookahead_private.json
+# its seed-matched mode's per-seed resume cache (rule 6); the tracked artifact is ..._seeds.json
+data/f5/split_seeds_cache/
 
 # E3 (numeric families) scorecard pages: per-company calls stay off the public repo (legal baseline #4)
 data/f5/e3_scorecard.md

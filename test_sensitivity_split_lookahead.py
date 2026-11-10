@@ -191,3 +191,117 @@ def test_last_split_on_or_before():
     assert SL.last_split_on_or_before(splits, "2024-06-09") is None
     assert SL.last_split_on_or_before(splits, "2024-07-02") == {
         "effective": "2024-06-10", "ratio": 10.0, "days_before_event": 22}
+
+
+# --- rule 6: the seed-matched mode (synthetic) ---------------------------------------
+
+def test_matched_stats():
+    m = SL.matched_stats([0.01, -0.02, 0.03, 0.02])
+    x = np.array([0.01, -0.02, 0.03, 0.02])
+    assert m["n_seeds"] == 4 and m["mean"] == pytest.approx(x.mean())
+    assert m["sd"] == pytest.approx(x.std(ddof=1))
+    assert m["se"] == pytest.approx(x.std(ddof=1) / 2.0)
+    assert m["share_positive"] == 0.75
+
+
+def test_matched_stats_zero_is_not_positive():
+    assert SL.matched_stats([0.0, 0.0, 1.0])["share_positive"] == pytest.approx(1 / 3)
+
+
+def test_percentile_in_band():
+    band = [0.0, 0.1, 0.2, 0.3]
+    assert SL.percentile_in_band(-1.0, band) == 0.0
+    assert SL.percentile_in_band(0.15, band) == 50.0
+    assert SL.percentile_in_band(0.1, band) == pytest.approx(37.5)  # ties count half
+    assert SL.percentile_in_band(9.0, band) == 100.0
+
+
+def test_churn_summary_and_call_count():
+    assert SL.churn_summary([5, 1, 9, 3]) == {"min": 1, "median": 4.0, "max": 9}
+    ratified = pd.DataFrame({"block": ["numeric_only"] * 3 + ["text_and_numeric"] * 3,
+                             "test_quarter": ["2018Q1"] * 6, "cik": [1, 2, 3] * 2,
+                             "accession_number": ["a", "b", "c"] * 2,
+                             "call": ["no call", "outperform peers", "underperform peers"] * 2})
+    seed_s = ratified.assign(call=["no call", "underperform peers", "outperform peers",
+                                   "no call", "outperform peers", "underperform peers"])
+    assert SL.calls_changed(seed_s, ratified) == {"text_and_numeric": 0, "numeric_only": 2,
+                                                  "size_only": 0}
+
+
+def test_seed_gate_refuses_a_mismatched_or_missing_seed():
+    recorded = [{"seed": 1, "mean_fold_delta_dedup": 0.012}, {"seed": 2, "mean_fold_delta_dedup": -0.003}]
+    assert SL.seed_gate({1: 0.012, 2: -0.003}, recorded) == []
+    bad = SL.seed_gate({1: 0.012, 2: np.nextafter(-0.003, 0.0)}, recorded)  # one ulp off
+    assert len(bad) == 1 and bad[0].startswith("seed 2")
+    assert len(SL.seed_gate({1: 0.012}, recorded)) == 1          # seed 2 missing
+    assert len(SL.seed_gate({1: 0.012, 2: -0.003, 3: 0.0}, recorded)) == 1  # extra seed
+
+
+def test_seed_band_mean_is_backtest_e2_seed_band_arithmetic():
+    d = [0.1, np.nan, -0.05, 0.02]
+    x = np.asarray([v for v in d if np.isfinite(v)], dtype=float)
+    assert SL.seed_band_mean(d) == float(x.mean())
+
+
+def test_cache_is_used_only_under_the_same_fingerprint(tmp_path):
+    p = tmp_path / "seed_001.json"
+    assert SL.load_cached(p, "abc") is None
+    SL.save_cached(p, {"seed": 1, "fingerprint": "abc"})
+    assert SL.load_cached(p, "abc")["seed"] == 1
+    assert SL.load_cached(p, "other") is None
+
+
+def test_factor_reach_splits_large_and_small_factors():
+    rows = pd.DataFrame({"cik": [1, 1, 2, 3, 4], "accession_number": ["a", "b", "c", "d", "e"]})
+    fac = pd.DataFrame({"cik": [1, 1, 2, 3, 4], "accession_number": ["a", "b", "c", "d", "e"],
+                        "factor": [10.0, 1.0, 1.05, 0.1, 1.0],
+                        "has_bm": [True, True, False, True, True]})
+    r = SL.factor_reach(rows, fac)
+    assert r["n_scored_dedup_rows"] == 5
+    assert r["factor_not_1"] == {"n_rows": 3, "n_companies": 3}
+    assert r["factor_ge_1.8_or_le_1/1.8"] == {"n_rows": 2, "n_companies": 2}
+    assert r["factor_other_not_1"] == {"n_rows": 1, "n_companies": 1}
+    assert r["factor_not_1_with_book_to_market"] == {"n_rows": 2, "n_companies": 2}
+
+
+def test_assemble_seed_band_shapes_and_seed0_percentile():
+    def arm(delta, ic_n, ic_t, churn):
+        return {"mean_fold_delta_dedup": delta,
+                "mean_fold_dedup_ic": {"numeric_only": ic_n, "text_and_numeric": ic_t},
+                "universe_calls": {b: {"n_calls": 10, "n_correct": 5, "hit_rate": 0.5}
+                                   for b in SL.SCORECARD_BLOCKS},
+                "n_dedup_rows_call_differs_from_ratified_seed0": {"numeric_only": churn,
+                                                                   "text_and_numeric": churn},
+                "margin_procedure": {"status": "POWERED", "equivalence": True, "ci_lo": -0.01}}
+    recs = [{"seed": s, "primary": arm(0.01 * s, 0.02, 0.03, 100 + s),
+             "arm_a": arm(0.01 * s + 0.002, 0.01, 0.02, 200), "arm_b": arm(0.01 * s - 0.001, 0.0, 0.03, 300)}
+            for s in (1, 2, 3)]
+    head1 = {"margin": {"mean_fold_delta": 0.01 * 2}}  # ties the middle seed
+    seed0 = {"ratified": {"mean_fold_dedup_ic": {"numeric_only": 0.02, "text_and_numeric": 0.03}},
+             "arm_a_book_to_market_removed": {"mean_fold_delta_dedup": 0.5,
+                                              "mean_fold_dedup_ic": {"numeric_only": 0, "text_and_numeric": 0}},
+             "arm_b_book_to_market_as_printed": {"mean_fold_delta_dedup": -0.5,
+                                                 "mean_fold_dedup_ic": {"numeric_only": 0, "text_and_numeric": 0}}}
+    out = SL.assemble_seed_band(recs, head1, seed0)
+    m = out["seed_matched_arm_minus_primary"]
+    assert m["arm_a"]["delta"]["mean"] == pytest.approx(0.002) and m["arm_a"]["delta"]["share_positive"] == 1.0
+    assert m["arm_b"]["delta"]["mean"] == pytest.approx(-0.001) and m["arm_b"]["delta"]["share_positive"] == 0.0
+    assert m["arm_a"]["ic_numeric_only"]["mean"] == pytest.approx(-0.01)
+    assert out["seed0_in_band"]["primary"]["delta"]["percentile"] == 50.0
+    assert out["seed0_in_band"]["arm_a"]["delta"]["percentile"] == 100.0
+    assert out["seed0_in_band"]["arm_b"]["delta"]["percentile"] == 0.0
+    assert out["calls_differing_from_ratified_seed0"]["primary"]["numeric_only"] == \
+        {"min": 101, "median": 102.0, "max": 103}
+    assert out["margin_procedure_per_seed"]["arm_a"] == {"n_seeds": 3, "n_equivalent": 3,
+                                                        "n_unpowered": 0, "n_ci_lo_above_0": 0}
+    assert out["universe_calls_band_mean"]["arm_b"]["size_only"]["hit_rate"] == 0.5
+
+
+def test_seed_cache_is_git_ignored_and_seed_artifact_is_not():
+    p = SL.SEEDS_CACHE_DIR / "seed_001.json"
+    assert subprocess.run(["git", "check-ignore", "-q", str(p)], cwd=ROOT).returncode == 0
+    assert subprocess.run(["git", "check-ignore", "-q", str(SL.SEEDS_OUT_PATH)], cwd=ROOT).returncode == 1
+
+
+def test_margin_procedure_is_the_unchanged_backtest_e2_function():
+    assert SL.BE.margin_procedure.__module__ == "backtest_e2"
