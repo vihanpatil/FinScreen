@@ -164,6 +164,8 @@ data/app/status/.chain.lock/
 # only the universe-level block (inside the head-1 results) is committed. Shas pinned in the run log.
 data/f5/head1_scorecard.md
 data/f5/head1_scorecard.json
+# post-hoc split arm (HANDOFF §3 2026-11-10): the affected companies' calls, per company
+data/f5/sensitivity_split_lookahead_private.json
 
 # E3 (numeric families) scorecard pages: per-company calls stay off the public repo (legal baseline #4)
 data/f5/e3_scorecard.md

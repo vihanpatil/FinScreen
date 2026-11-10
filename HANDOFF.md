@@ -2055,6 +2055,26 @@ intervals beside them and no adjective. **Already seen before these rules were w
 counts, and a descriptive comparison of calls on the 251 affected rows against the rest (reported to the owner in
 chat). No fit of either arm exists as of this entry.
 
+**2026-11-10 — SPLIT ARM: WHAT THE BUILD FOUND BEFORE THE RUN (no fit of either arm exists as of this entry).**
+`data/f5/sensitivity_split_lookahead.py` is written to the rules above and run only with `--gate-only` (PASS in
+24 s; the gate was made stricter than written — besides the exact per-fold delta and `size_only`, all three
+blocks' universe counts and every row's call must equal the ratified artifacts — adopted). Two facts change the
+description of the defect, not the rules. **(a) The defect has a second part, and arm B does not remove it.** The
+share count is the last one reported; for a filing after a split takes effect but before the next reported count,
+a pre-split count meets a post-split close, so `book_to_market` is too large by the split factor there as well —
+in the stored feature and in arm B alike (NVDA's 8-K of 2024-07-02 is the worked case). That value is computable
+on the day, so it is an error but not look-ahead. Arm B therefore isolates the look-ahead part; arm A removes
+both. **(b) The main session's stated expectation for the validity check was wrong.** The rules said the
+split-like jump count should "fall from 15"; on the corrected feature it is **25**: 11 opposite pairs marking
+those stale windows (WMT, SHW, AAPL, AMZN, ISRG, NVDA 2021, NVDA 2024, NFLX, TSLA 2022, NOW, AVGO) plus the 3
+events no split record explains (the Wells Fargo pair, Energy Transfer). This is a feature-level count, seen
+before the run; no IC, call or hit rate of either arm has been computed. Also noted: the cached records include
+small ratios (1.03–1.32, spin-off adjustments the source records as splits); rule 1 says every split, so they are
+un-adjusted too — 675 of the 7,381 run-time rows in 20 companies carry a factor other than 1. **Decision: run
+exactly as specified. No third arm** (a fully consistent share count would need the count's own as-of date
+re-derived from the frozen fundamentals; the stale windows are a handful of filings, and arm A already bounds
+them). Code and this note are committed before the run.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
