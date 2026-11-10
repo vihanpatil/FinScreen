@@ -2023,6 +2023,38 @@ amount columns sorted a year against a quarter); one claimed ruling breach refut
 (above). **Verification:** root suite 1,932 passed, 0 failed (6 min 24 s; the 10-second render timing test fails only under the load of parallel agents and passes alone in 7.6 s); all 31 rendered companies re-rendered offline (index + latest 10-K/10-Q/8-K each, 0 failures); Revenue now
 shows a value for 31 of 31 watchlist companies (was 18); pages checked in the browser.
 
+**2026-11-10 — POST-HOC SPLIT ARM AUTHORISED (owner ruling, verbatim) AND ITS RULES, FIXED BEFORE ANY NUMBER.** The
+main session put one yes/no to the owner: run a post-hoc arm to measure how much the split defect moved the E2
+result. The owner typed: **"Run it"**. Reading: authorises one separately labelled sensitivity script under the
+existing pin, as F6-A did for decision 11; it does not authorise re-pinning, re-running a head, changing the §13
+branch, or re-opening the text arm. **Rules, written before the script exists (main-session design, not owner
+rulings).** Script `data/f5/sensitivity_split_lookahead.py`, output `sensitivity_split_lookahead.json` + one
+`run_log.jsonl` line; every figure labelled EXECUTED AFTER THE PRIMARY WAS SEEN, never selectable as the primary;
+the ratified G3 result stands whatever it shows. (0) REPRODUCTION GATE: the primary's per-fold dedup delta must be
+rebuilt exactly (max diff 0.0 against `results_head1.json`) or nothing is written. (1) ARM B, the headline —
+`book_to_market` as printed on the day: the close before the filing is un-adjusted by multiplying it by the product
+of the ratios of every split in that ticker's cached Yahoo `events.splits` (`data/raw/prices/yahoo/`, fetched
+2026-08-24, no new fetch) effective after that session; shares and equity unchanged; tickers whose payload has no
+events block are treated as split-free, counted and named. Validity check, reported not gated: split-like
+share-count jumps ≥ 1.8× (the census method) recomputed on the corrected feature, expected to fall from 15 to the
+events the split records do not explain. (2) ARM A, robustness — `book_to_market` removed from the numeric columns
+of both fitted blocks. (3) Everything else is the primary's own composition: same frame, GLD exclusion, 33 folds,
+purge, dedup mask, PIT trailing rank, per-fold PCA, seed 0. (4) Reported per arm, beside the ratified value:
+mean per-fold dedup IC delta (text_and_numeric − numeric_only; ratified +0.0011); mean per-fold dedup IC of each
+fitted block (numeric_only ratified +0.0251); the universe call counts and hit rates of the three blocks under the
+ratified §14 call rule (`size_only` must reproduce exactly — its feature is untouched — as a second gate); the
+number of rows whose call changed. Per-company figures go only to a git-ignored private file. (5) HOW IT IS READ,
+fixed now: the delta is compared with the ratified nuisance-seed band (sd 0.0096, `results_head1.json`
+`seed_band.band_sd`): a move of at most 2 sd (0.019) from +0.0011 is reported as "inside seed noise — the text
+conclusion is unaffected at this run's resolution"; a larger move is reported as "moved beyond seed noise", and if
+the arm's delta lies outside ±0.04 the page says the bounded-null label would not have been reached under the
+corrected feature. In no case is a branch re-labelled; the outcome is an erratum
+(`data/f5/F6_ERRATUM_2026-11-10.md`, a separate file so the G4-accepted `F6_E2_RESULT.md` stays byte-identical) and
+the owner's read. Level ICs and hit rates carry no pre-set threshold: they are reported with the ratified
+intervals beside them and no adjective. **Already seen before these rules were written (disclosed):** the census
+counts, and a descriptive comparison of calls on the 251 affected rows against the rest (reported to the owner in
+chat). No fit of either arm exists as of this entry.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
