@@ -2075,6 +2075,39 @@ exactly as specified. No third arm** (a fully consistent share count would need 
 re-derived from the frozen fundamentals; the stale windows are a handful of filings, and arm A already bounds
 them). Code and this note are committed before the run.
 
+**2026-11-10 — SPLIT ARM: SEED-0 RESULT, AND WHY ITS PRE-SET READING IS NOT A FINDING (main-session record; no owner
+word involved).** Result as produced (`sensitivity_split_lookahead.json`, commit `759e1d8`; reproduction gate exact):
+mean per-fold dedup delta ratified +0.0011, arm B (as printed) +0.0310, arm A (removed) +0.0218; `numeric_only` mean
+dedup IC +0.0251 → −0.0010 / +0.0068; `text_and_numeric` +0.0262 → +0.0300 / +0.0286; calls differing from ratified
+1,313 and 1,465 of 4,481. **By the letter of rule 5 both arms read "moved beyond seed noise" (0.0300 and 0.0207
+against 0.0193); neither delta is outside ±0.04.** Reviewer pass (Opus; report in the session transcript, summarised
+here): the artifact reproduces to full precision from an independent implementation of both arms; **the rule-5
+yardstick, designed by the main session, is invalid** — it compares one seed with one seed. The ratified seed 0 sits
+at the 16th percentile of its own 100-seed band (band mean +0.0110), and with no feature change at all 20 of the 100
+ratified seeds differ from seed 0 by more than the 0.0193 bound; dropping a column also moves XGBoost's
+`colsample_bytree` stream, so an arm at seed 0 is in effect a fresh draw. **The reviewer went beyond its brief and
+fitted the primary and both arms at seeds 1–100 in the session scratchpad (nothing written to the repository; not a
+committed artifact; REVIEWER, POST-HOC, never selectable):** seed-matched, arm minus primary delta ≈ +0.0016 (A) and
++0.0026 (B); both block levels fall by ≈ 0.010–0.013 IC; changing only the seed changes 1,324–1,469 of 4,481 calls.
+If that holds, the defect inflated both fitted blocks about equally and left the text-versus-numeric estimand
+essentially where it was, and the main session's draft readings (numeric baseline alone lifted; text level
+unchanged; bounded null "rested on" the defect; call churn caused by the defect; a company-identity hypothesis) are
+wrong and are withdrawn. The reviewer also found the defect's reach understated: 417 scored rows in 18 companies
+carry a factor other than 1 (257 in 12 from splits incl. LRCX and TJX; 160 in 6 from spin-off adjustments), against
+the census's 251 in 11; and the stale windows are 2 scored rows. **Main-session decision: a figure that decides how
+the ratified result is read must be a committed, gated artifact, so the arm script gains a seed-matched mode — rule
+6, ADDED AFTER the seed-0 result and the reviewer's scratch figures were seen, therefore not pre-specified in any
+meaningful sense and labelled so.** For each seed of the ratified nuisance band (1–100): the primary, arm A and arm
+B, same composition; GATE: the primary's per-seed mean dedup delta must equal `results_head1.json`
+`seed_band.per_seed` exactly for all 100 seeds or nothing is written. Reported: per-seed deltas; the seed-matched
+difference arm − primary (mean, sd, se, share positive) for the delta and for each fitted block's mean dedup IC;
+band means; seed 0's percentile in each band; universe hit rates as band means; the number of calls that differ from
+seed 0 when only the seed changes (min, median, max) beside each arm's count; the ratified margin procedure applied
+per seed (counts only), if `backtest_e2` exposes it as a function; the scored-row counts carrying a factor ≠ 1.
+Output `sensitivity_split_lookahead_seeds.json`. No threshold and no adjective: the seed-matched mean and its se are
+the measurement. This stays within the owner's "Run it" (measure how much the defect moved the E2 result): same
+script, same two arms, nothing re-pinned, no head re-run as a primary, no branch re-labelled. Lesson → §4.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
@@ -2091,6 +2124,7 @@ for the next session — the incident itself is closed.
 | 2026-09-07 — Appending the owner's G2 Rule 9 to `data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md` broke `finetune/test_g2_spotcheck.py::test_draw_reproduces_byte_for_byte`: that file is a sha-pinned pre-registration INPUT of the G2 draw (`build_draw_g2.py` INPUT_SHA256). Reverted byte-exact within minutes; draw artifacts were never touched. | **Every path in a builder's INPUT_SHA256 block is frozen for the life of that draw — record later owner rulings in a NEW dated file (here `data/f4/g2/G2_FINAL_REPORT.md` §3), never by editing a pinned input.** Run the full suite after any doc edit under `data/hardening/` or `data/f4/`. |
 | 2026-11-06 — `finscreen.alive()` guarded with `pgrep -fl "label_filing|label_e2"`; an agent's shell whose command text contained that pattern (its own rule-6 pgrep) matched, and `bin/fs report` refused 18 watchlist tickers in ten seconds. | A process guard matches the **interpreter running the script** (`[Pp]ython[^ ]* ([^ ]*/)?name\.py`), never the bare script name; and no agent runs a shell whose text contains a labeler name while a chain is live. |
 | 2026-11-10 — `book_to_market` multiplied an as-reported share count by a retroactively split-adjusted close: every pre-split filing carried the feature inflated by a split that had not happened yet. Three red-team passes checked dates (`filing_date`, purge, membership) and missed it, because the leak is in the UNITS of a vendor series, not in a date. Found only when a forward design asked "what would this feature be on the day?" | For every feature that mixes two sources, ask what each value would have been **as printed on that day**; any series a vendor restates backwards (split- or dividend-adjusted prices, restated fundamentals) may only be combined with quantities adjusted to the same basis. A train/serve question — "can I compute this live and get the same number?" — is a look-ahead test and belongs in every red-team brief. |
+| 2026-11-10 — The post-hoc split arm's pre-set reading compared the arm at seed 0 with the ratified seed 0 and called a 0.02–0.03 move "beyond seed noise". Seed 0 was a 16th-percentile draw of its own band, and removing a column changes the model's random stream, so the comparison was one draw against another; seed-matched over the band the move was ≈ 0.002. The main session had already shown the owner the seed-0 table. | A sensitivity arm is compared with the primary **seed-matched over the whole nuisance band**, never seed against seed; the yardstick for a single-seed difference is the sd of seed-matched differences, not the band sd of one arm. Raw arm output goes to the owner only after the reviewer's pass, with no table before it. |
 ---
 
 ## 5. New constraints and economy
