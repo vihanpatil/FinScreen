@@ -468,6 +468,27 @@ and there are **zero null-close rows anywhere in the file**. A consumer
 guarding with `.isna()` will not catch this; guard on missing dates per
 ticker instead.
 
+### 3.5a Known defect (found 2026-11-10): `book_to_market` carries later stock splits
+
+`numeric_features_e2.py` computes `book_to_market` as equity / (shares outstanding × the closing
+price before the filing). The share count is the one the company reported at the time; the closing
+price comes from a series the source adjusts retroactively for every split up to the day it was
+fetched (2026-08-24). For a filing made before a split, the product understates market value by the
+split factor, so the feature is too large by that factor — and it reflects an event that was not
+public on the filing date. That is a look-ahead channel inside the numeric block, which both fitted
+arms of the E2 walk-forward (`numeric_only` and `text_and_numeric`) were trained and evaluated with.
+
+What is measured (a census, no model fit; `data/f5/census_split_lookahead.py`,
+`data/f5/split_lookahead_census.json`): rows filed before a later split-like change in the share
+count of 1.8× or more — 251 of the 4,481 deduplicated test filings, 11 of 139 companies. The count
+is approximate: one company's pair of opposite changes nine days apart (Wells Fargo, one row) looks
+like a reporting error rather than a split, and a split is invisible where the feature is missing.
+What is **not** measured: how much the defect moved any E2 number. The primary E2
+estimand is a difference between two arms that both carry the feature, which limits but does not
+bound the effect on it; level ICs and the descriptive scorecard are exposed directly. The ratified
+run is not re-run and its artifacts are unchanged; any re-measurement would be a separately
+labelled post-hoc arm. Three red-team passes before ratification did not find this.
+
 ### 3.6 Numeric fundamentals have structural gaps and tag migrations
 
 From the validated ingestion of `data/fundamentals.parquet` (42,158 rows,

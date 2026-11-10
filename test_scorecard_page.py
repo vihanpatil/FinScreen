@@ -80,10 +80,23 @@ FIXTURE = {
 }
 
 
+CENSUS = {"n_rows": 10, "n_rows_before_later_event": 3, "n_companies": 2,
+          "n_companies_affected": 1, "threshold": 1.8, "affected_rows_by_cik": {"333": 2},
+          "events": [{"cik": 333, "filing_date": "2020-06-01", "ratio": 4.0}]}
+
+
+def _write(tmp_path, data, name="head1_scorecard.json", census=CENSUS):
+    """The scorecard JSON, with the split census beside it (as on disk)."""
+    js = tmp_path / name
+    js.write_text(json.dumps(data))
+    if census is not None:
+        (tmp_path / SP.CENSUS_NAME).write_text(json.dumps(census))
+    return js
+
+
 @pytest.fixture
 def rendered(tmp_path):
-    js = tmp_path / "head1_scorecard.json"
-    js.write_text(json.dumps(FIXTURE))
+    js = _write(tmp_path, FIXTURE)
     out, companies = tmp_path / "reports", tmp_path / "companies"
     (out / "333").mkdir(parents=True)
     (out / "333" / "0000000333-20-000001.html").write_text("filing page")
@@ -180,8 +193,7 @@ def test_rendering_is_deterministic(tmp_path, rendered):
 def test_missing_disclosure_refuses(tmp_path):
     bad = json.loads(json.dumps(FIXTURE))
     del bad["universe"]["disclosures"]["fx"]
-    js = tmp_path / "bad.json"
-    js.write_text(json.dumps(bad))
+    js = _write(tmp_path, bad, "bad.json")
     with pytest.raises(SystemExit, match="disclosures missing"):
         SP.render_all(js, tmp_path / "out", tmp_path / "companies")
 
@@ -226,10 +238,33 @@ def test_company_pages_explain_the_call_rule_and_the_linked_pages(rendered):
     assert "16:00 ET" in rule and "63 sessions" in rule and "never a real-time one" in rule
 
 
+def _in_order(html, *marks):
+    at = [html.index(m) for m in marks]
+    return at == sorted(at)
+
+
+def test_own_result_comes_before_universe_provenance_and_disclosures(rendered):
+    _, pages = rendered
+    for key in ("333", "222"):
+        assert _in_order(pages[key], "<h1>", 'class="identity"', SP.RF.SELFID_STRICT_TEXT,
+                         "Known defect", "<h2>Summary</h2>",
+                         "<h2>Filing by filing", SP.LINKED_PAGES_LINE, "<table>",
+                         "<h2>Universe, for comparison</h2>", "<h2>How a call is made</h2>",
+                         "Source: <code>", "E2 outcome:",
+                         'class="disclosure"', 'class="footer-line"')
+    assert _in_order(pages["universe"], "<h1>", 'class="identity"', SP.RF.SELFID_STRICT_TEXT,
+                     "Known defect", "<h2>Universe</h2>",
+                     "<h2>Companies, alphabetical", "<th>Hit rate [95% Wilson]</th>", "Source: <code>",
+                     "E2 outcome:",
+                     'class="disclosure"', 'class="footer-line"')
+
+
 def test_identity_scopes_public_data_and_carries_self_identification(rendered):
     _, pages = rendered
     for html in pages.values():
-        assert "fundamentals and prices as they were public at that filing date" in html
+        assert ("fundamentals and prices dated on or before that filing date (with one known "
+                "exception, the book-to-market defect stated below)") in html
+        assert "as they were public at that filing date" not in html
         assert "only data public" not in html
         assert SP.RF.SELFID_STRICT_TEXT in html and SP.RF.SELFID_LOOSE_TEXT in html
         assert SP.RF.SELFID_SUBJECT in html
@@ -246,9 +281,63 @@ def test_coverage_sentence_does_not_claim_a_full_decomposition(rendered):
 def test_one_call_is_singular(tmp_path):
     one = json.loads(json.dumps(FIXTURE))
     one["companies"][0]["summary"]["n_calls"] = 1
-    js = tmp_path / "one.json"
-    js.write_text(json.dumps(one))
+    js = _write(tmp_path, one, "one.json")
     SP.render_all(js, tmp_path / "out", tmp_path / "companies")
     html = unescape((tmp_path / "out" / "222" / "scorecard.html").read_text())
     assert "no hit rate: 1 call, fewer than the 6" in html and "1 calls" not in html
     assert "no hit rate (1 call < 6)" in unescape((tmp_path / "out" / "scorecard.html").read_text())
+
+
+# --- the book-to-market split look-ahead (REVIEW_p5_packet_2026-11-10 M3) -----------
+def test_known_defect_paragraph_with_census_numbers_on_every_page(rendered):
+    _, pages = rendered
+    text = SP.DEFECT_TEMPLATE.format(n=3, total=10, k=1, K=2, threshold=1.8)
+    assert "3 of the 10 rows in this run (1 of 2 companies)" in text
+    assert "a later change of 1.8 times or more in the reported share count" in text
+    for html in pages.values():
+        assert text in html
+        # directly after the identity paragraph, ahead of every figure
+        assert html.index("Known defect, found 2026-11-10") < html.index("<h2>")
+        assert html.index('class="identity"') < html.index("Known defect")
+
+
+def test_the_one_of_them_sentence_only_on_an_affected_company(rendered):
+    _, pages = rendered
+    line = SP.DEFECT_COMPANY_TEMPLATE.format(m=2)
+    assert line == "This company is one of them: 2 of its rows below were filed before a later change of that kind."
+    assert line in pages["333"]
+    assert "This company is one of them" not in pages["222"]
+    assert "This company is one of them" not in pages["universe"]
+
+
+def test_census_sha_is_in_the_provenance_line(rendered, tmp_path):
+    _, pages = rendered
+    sha = hashlib.sha256((tmp_path / SP.CENSUS_NAME).read_bytes()).hexdigest()
+    for html in pages.values():
+        assert f"Book-to-market census: <code>{SP.CENSUS_NAME}</code>, sha256 <code>{sha}</code>" in html
+
+
+def test_missing_census_refuses(tmp_path):
+    js = _write(tmp_path, FIXTURE, census=None)
+    with pytest.raises(SystemExit, match="census_split_lookahead.py"):
+        SP.render_all(js, tmp_path / "out", tmp_path / "companies")
+    assert not (tmp_path / "out" / "scorecard.html").exists()
+
+
+def test_incomplete_census_refuses(tmp_path):
+    js = _write(tmp_path, FIXTURE, census={"n_rows": 10})
+    with pytest.raises(SystemExit, match="missing"):
+        SP.render_all(js, tmp_path / "out", tmp_path / "companies")
+
+
+def test_real_apple_page_carries_the_census_counts(tmp_path):
+    census = SP.SCORECARD_JSON.parent / SP.CENSUS_NAME
+    if not (SP.SCORECARD_JSON.exists() and census.exists()):
+        pytest.skip("real scorecard JSON or census not on this machine")
+    c = json.loads(census.read_text())
+    SP.render_all(SP.SCORECARD_JSON, tmp_path, SP.COMPANIES_DIR, cik=320193)
+    html = unescape((tmp_path / "320193" / "scorecard.html").read_text())
+    assert (f"{c['n_rows_before_later_event']} of the {c['n_rows']} rows in this run "
+            f"({c['n_companies_affected']} of {c['n_companies']} companies)") in html
+    assert (f"This company is one of them: {c['affected_rows_by_cik']['320193']} of its rows "
+            "below were filed before a later change of that kind.") in html

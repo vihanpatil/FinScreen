@@ -1,0 +1,120 @@
+{
+ "what": "book_to_market split look-ahead census (REVIEW_p5_packet_2026-11-10 M3); no call, outcome or hit rate is recorded here",
+ "method": "shares_as_used = equity / book_to_market / close at pre_session (equity = equity_to_assets * exp(log_total_assets)); one value per (cik, filing_date), the median; a ratio >= threshold or <= 1/threshold between consecutive filing dates of a company is a split-like event, dated at the first filing date showing it; a row is before a later event when the product of the ratios of that company's events dated strictly after its filing date is >= threshold or <= 1/threshold. Counted over the deduplicated rows (in_dedup) of head1_oof_predictions, per block. A lower bound: splits below the threshold, and rows whose book_to_market is NaN, are not seen.",
+ "threshold": 1.8,
+ "input_sha256": {
+  "numeric_features_e2.parquet": "01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b",
+  "prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
+  "head1_oof_predictions.parquet": "378b0b711ae817529b4bb4d9337f260ac38682449f8f27f383316cf13e27be7e"
+ },
+ "n_events": 15,
+ "n_event_companies": 12,
+ "events": [
+  {
+   "cik": 72971,
+   "filing_date": "2023-08-01",
+   "ratio": 0.4859
+  },
+  {
+   "cik": 72971,
+   "filing_date": "2023-08-10",
+   "ratio": 2.007
+  },
+  {
+   "cik": 89800,
+   "filing_date": "2021-04-28",
+   "ratio": 2.9681
+  },
+  {
+   "cik": 104169,
+   "filing_date": "2024-03-15",
+   "ratio": 2.9931
+  },
+  {
+   "cik": 320193,
+   "filing_date": "2020-10-30",
+   "ratio": 3.9764
+  },
+  {
+   "cik": 1018724,
+   "filing_date": "2022-07-29",
+   "ratio": 20.0258
+  },
+  {
+   "cik": 1035267,
+   "filing_date": "2021-10-20",
+   "ratio": 3.0084
+  },
+  {
+   "cik": 1045810,
+   "filing_date": "2021-08-20",
+   "ratio": 4.0128
+  },
+  {
+   "cik": 1045810,
+   "filing_date": "2024-08-28",
+   "ratio": 9.9715
+  },
+  {
+   "cik": 1065280,
+   "filing_date": "2026-01-23",
+   "ratio": 9.9642
+  },
+  {
+   "cik": 1276187,
+   "filing_date": "2020-08-05",
+   "ratio": 2.4966
+  },
+  {
+   "cik": 1318605,
+   "filing_date": "2021-07-02",
+   "ratio": 5.1968
+  },
+  {
+   "cik": 1318605,
+   "filing_date": "2022-10-24",
+   "ratio": 3.0232
+  },
+  {
+   "cik": 1373715,
+   "filing_date": "2026-01-29",
+   "ratio": 5.0288
+  },
+  {
+   "cik": 1730168,
+   "filing_date": "2024-09-11",
+   "ratio": 10.0337
+  }
+ ],
+ "n_rows": 4481,
+ "n_rows_before_later_event": 251,
+ "n_companies": 139,
+ "n_companies_affected": 11,
+ "affected_rows_by_cik": {
+  "72971": 1,
+  "89800": 4,
+  "104169": 49,
+  "320193": 12,
+  "1018724": 18,
+  "1035267": 14,
+  "1045810": 35,
+  "1065280": 38,
+  "1318605": 22,
+  "1373715": 26,
+  "1730168": 32
+ },
+ "per_block": {
+  "text_and_numeric": {
+   "n_rows": 4481,
+   "n_rows_before_later_event": 251
+  },
+  "numeric_only": {
+   "n_rows": 4481,
+   "n_rows_before_later_event": 251
+  },
+  "size_only": {
+   "n_rows": 4481,
+   "n_rows_before_later_event": 251
+  }
+ }
+}

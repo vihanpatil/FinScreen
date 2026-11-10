@@ -1,4 +1,4 @@
-# RESUME_HERE — state as of 2026-11-09 (LOW-TOUCH MODE; scorecard pages live privately)
+# RESUME_HERE — state as of 2026-11-10 (LOW-TOUCH MODE; split look-ahead defect found, owner item open)
 
 **If you are a fresh session: read `CLAUDE.md`, then this block, then `OWNER_DECISIONS_2026-11-05.md`.**
 Or run the `/resume` skill, which does exactly that.
@@ -89,6 +89,19 @@ suite 1,869 green before the fix pass; 233 in the four touched files after it.
 Standing rules: NEVER re-pin; never re-run a head on a model reading. On a watchlist change: edit
 `data/app/watchlist.txt`, then `bash data/app/run_watchlist.sh` (background). Pages carry the legal-baseline
 footer line (ruling C); nothing is hosted.
+**SESSION 2026-11-10 (owner asked "Is this product being built the correct way?", then "Draft it").** HANDOFF §3
+entry of this date. **A look-ahead defect was found in the ratified numeric features:** `book_to_market` uses the
+as-reported share count with a retroactively split-adjusted close (`numeric_features_e2.py:844`), so pre-split
+filings carry it inflated by a later split; 251 of 4,481 scored rows, 11 of 139 companies (AAPL, AMZN, AVGO, NFLX,
+NVDA, TSLA, WMT among them); effect on E2 and the scorecard UNMEASURED; nothing ratified was touched or re-run.
+Disclosed in LIMITATIONS §3.5a and on every scorecard page; census `data/f5/split_lookahead_census.json`.
+**The P5 forward-loop packet (`data/f5/P5_OWNER_PACKET.md`) is WITHDRAWN — failed review
+(`data/f5/status/REVIEW_p5_packet_2026-11-10.md`); do not put it to the owner; redraft only after the defect is
+resolved, as a quarterly batch on the core stratum with the `legal-reviewer` reconvened on a recurring price fetch.**
+**OWNER ITEM OPEN: run a POST-HOC sensitivity arm (share count split-adjusted, or `book_to_market` dropped) under
+the existing pin to measure the defect's effect — yes/no.** `F6_E2_RESULT.md` needs one erratum after that answer.
+**IN FLIGHT: nothing.**
+
 **SESSION 2026-11-09 (owner: "What's the next move? Continue work … usable by me … no unnecessary slop … brutally
 honest").** HANDOFF §3 entry of this date. **The scorecard is now in the product, privately:** open
 `data/app/reports/index.html` (the owner's private home page; `bin/fs index` rewrites it) → a company's "historical

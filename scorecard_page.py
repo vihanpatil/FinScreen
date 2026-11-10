@@ -5,10 +5,12 @@
     python3 scorecard_page.py --cik N    one company page
 
 Reads ONLY data/f5/head1_scorecard.json (written by backtest_e2.py on the
-ratified G3 run, 2026-11-05). It computes nothing: every number on a page is
-copied from that JSON, rows keep the JSON's order, and the only ordering this
-module applies is alphabetical by company name. The JSON's sha256 is printed on
-every page as provenance. No wall clock: the same JSON gives the same bytes.
+ratified G3 run, 2026-11-05) and, beside it, data/f5/split_lookahead_census.json
+(the book-to-market known-defect counts; it refuses to render without it). It
+computes nothing: every number on a page is copied from those two JSONs, rows
+keep the JSON's order, and the only ordering this module applies is
+alphabetical by company name. Both sha256s are printed on every page as
+provenance. No wall clock: the same JSONs give the same bytes.
 
 Personal use only. These pages are not a demonstration surface either: a
 per-company historical scorecard stays off every shared surface until the
@@ -39,12 +41,30 @@ SCORECARD_FOOTER_LINE = (
     "surface until the items in data/legal/ are cleared.")
 IDENTITY_TEMPLATE = (
     "For each past filing{whose}: what the ratified E2 model would have said, "
-    "using fundamentals and prices as they were public at that filing date, and "
+    "using fundamentals and prices dated on or before that filing date (with one "
+    "known exception, the book-to-market defect stated below), and "
     "text labels from a labeler trained in 2026; what the stock then did over "
     "the next {sessions} trading sessions relative to the equal-weighted average "
     "of its universe peers; and whether that call was right. Out-of-fold, "
     "backtested and hypothetical; price return only; no money invested; "
     "descriptive only.")
+# REVIEW_p5_packet_2026-11-10 M3, recorded and disclosed, never patched: every
+# count is filled from data/f5/split_lookahead_census.json.
+CENSUS_NAME = "split_lookahead_census.json"
+DEFECT_TEMPLATE = (
+    "Known defect, found 2026-11-10. One input, book-to-market, multiplied the share "
+    "count as reported at the time by a closing price that the price source later "
+    "adjusted for every stock split up to 2026-08-24. For a filing made before a split, "
+    "that input is therefore too large by the split factor and reflects an event that "
+    "was not public at the filing date. Both fitted columns (the model and numeric only) "
+    "were trained and evaluated with it. {n} of the {total} rows in this run ({k} of {K} "
+    "companies) were filed before a later change of {threshold:g} times or more in the reported "
+    "share count: stock splits, and at least one probable reporting error. The count is "
+    "approximate. How much this moved any figure on this page has not been "
+    "measured; the run is ratified and is not re-run.")
+DEFECT_COMPANY_TEMPLATE = (
+    "This company is one of them: {m} of its rows below were filed before a later change "
+    "of that kind.")
 DISCLOSURE_HEADING = "Disclosures — these travel with every number on this page"
 # The labeler can recognise a company and know what happened to it later; the
 # figures are report_filing's pinned E1 constants, never retyped here.
@@ -99,6 +119,32 @@ def load(path: Path = SCORECARD_JSON) -> dict:
     return data
 
 
+def load_census(path: Path) -> dict:
+    """The split look-ahead census beside the scorecard JSON; refuse without it."""
+    if not path.exists():
+        raise SystemExit(f"{path} is missing; run data/f5/census_split_lookahead.py. "
+                         "The pages state a known defect from it and refuse to render "
+                         "without it.")
+    census = json.loads(path.read_text())
+    keys = ("n_rows", "n_rows_before_later_event", "n_companies", "n_companies_affected",
+            "threshold", "affected_rows_by_cik")
+    missing = [k for k in keys if k not in census]
+    if missing:
+        raise SystemExit(f"{path}: missing {missing}; refusing to render")
+    return dict(census, _path=path, _sha256=sha256(path))
+
+
+def defect_html(census: dict, cik: Optional[int] = None) -> str:
+    text = DEFECT_TEMPLATE.format(
+        n=census["n_rows_before_later_event"], total=census["n_rows"],
+        k=census["n_companies_affected"], K=census["n_companies"],
+        threshold=census["threshold"])
+    m = census["affected_rows_by_cik"].get(str(cik)) if cik is not None else None
+    if m:
+        text += " " + DEFECT_COMPANY_TEMPLATE.format(m=m)
+    return f'<p class="defect"><b>{esc(text)}</b></p>'
+
+
 def calls(n: int) -> str:
     return "call" if n == 1 else "calls"
 
@@ -114,30 +160,42 @@ def ticker_of(entry: dict, companies_dir: Path = COMPANIES_DIR) -> Optional[str]
     return json.loads(manifest.read_text()).get("ticker") if manifest.exists() else None
 
 
-def provenance(u: dict, json_path: Path, sha: str) -> str:
+def shown(path: Path):
     try:
-        shown = json_path.resolve().relative_to(RF.REPO_ROOT)
+        return path.resolve().relative_to(RF.REPO_ROOT)
     except ValueError:
-        shown = json_path.name
-    return (f'<p class="small">Source: <code>{esc(shown)}</code>, sha256 '
+        return path.name
+
+
+def provenance(u: dict, json_path: Path, sha: str, census: dict) -> str:
+    return (f'<p class="small">Source: <code>{esc(shown(json_path))}</code>, sha256 '
             f"<code>{esc(sha)}</code>; generated {esc(u['generated_utc'])} UTC by the "
             f"run itself. Call rule <code>{esc(u['call_rule'])}</code>, tie rule "
             f"<code>{esc(u['tie_rule'])}</code>, correct rule "
             f"<code>{esc(u['correct_rule'])}</code>, intervals "
-            f"<code>{esc(u['ci'])}</code>.</p>")
+            f"<code>{esc(u['ci'])}</code>. Book-to-market census: "
+            f"<code>{esc(shown(census['_path']))}</code>, sha256 "
+            f"<code>{esc(census['_sha256'])}</code>.</p>")
 
 
-def framing(u: dict, whose: str) -> str:
-    """Identity paragraph, then the run's own sentences verbatim, then E2's outcome."""
-    quotes = [u["scope_sentence"], u["inference_sentence"], u["prices_sentence"],
-              f"Margin ({u['margin']['status']}, {u['margin']['delta_selected']}): "
-              f"{u['margin']['note']}",
-              "E2 outcome: " + RF.predictive_validity_sentence()]
+def framing(u: dict, whose: str, census: dict, cik: Optional[int] = None) -> str:
+    """The identity paragraph with its two known exceptions beside it (the labeler's
+    self-identification channel and the split defect): a claim and what qualifies it
+    are never separated. The remaining caveats sit at the foot."""
     identity = IDENTITY_TEMPLATE.format(whose=whose, sessions=C.HOLDING_DAYS)
     selfid = SELFID_TEMPLATE.format(strict=RF.SELFID_STRICT_TEXT,
                                     loose=RF.SELFID_LOOSE_TEXT, subject=RF.SELFID_SUBJECT)
     return (f'<p class="identity">{esc(identity)}</p><p>{esc(selfid)}</p>'
-            + "".join(f"<blockquote>{esc(q)}</blockquote>" for q in quotes))
+            + defect_html(census, cik))
+
+
+def caveats(u: dict) -> str:
+    """The run's own sentences verbatim, then E2's outcome."""
+    quotes = [u["scope_sentence"], u["inference_sentence"], u["prices_sentence"],
+              f"Margin ({u['margin']['status']}, {u['margin']['delta_selected']}): "
+              f"{u['margin']['note']}",
+              "E2 outcome: " + RF.predictive_validity_sentence()]
+    return "".join(f"<blockquote>{esc(q)}</blockquote>" for q in quotes)
 
 
 def disclosures(u: dict) -> str:
@@ -190,7 +248,7 @@ def rows_html(entry: dict, blocks: dict, here: Path) -> str:
     return f"<table><thead><tr>{head}</tr></thead><tbody>{''.join(out)}</tbody></table>"
 
 
-def render_company(entry: dict, u: dict, json_path: Path, sha: str,
+def render_company(entry: dict, u: dict, json_path: Path, sha: str, census: dict,
                    out_dir: Path = REPORTS_DIR, companies_dir: Path = COMPANIES_DIR) -> Path:
     here = out_dir / str(int(entry["cik"]))
     here.mkdir(parents=True, exist_ok=True)
@@ -202,14 +260,16 @@ def render_company(entry: dict, u: dict, json_path: Path, sha: str,
         links.append('<a href="index.html">labeled filings</a>')
     body = [f"<h1>{esc(title)}</h1>",
             f'<p class="small">CIK {int(entry["cik"])} · {" · ".join(links)}</p>',
-            framing(u, " of this company"), provenance(u, json_path, sha),
+            framing(u, " of this company", census, int(entry["cik"])),
             "<h2>Summary</h2>", summary_html(s, u["blocks"][s["block"]]["label"]),
+            "<h2>Filing by filing, in the run's own order</h2>",
+            f'<p class="small">{esc(LINKED_PAGES_LINE)}</p>',
+            rows_html(entry, u["blocks"], here),
             "<h2>Universe, for comparison</h2>", blocks_html(u),
             f"<p>{esc(u['chance_sentence'])}</p>",
-            "<h2>Filing by filing, in the run's own order</h2>",
+            "<h2>How a call is made</h2>",
             f"<p>{esc(CALL_RULE_TEMPLATE.format(sessions=C.HOLDING_DAYS))}</p>",
-            f'<p class="small">{esc(LINKED_PAGES_LINE)}</p>',
-            rows_html(entry, u["blocks"], here), disclosures(u), footer()]
+            provenance(u, json_path, sha, census), caveats(u), disclosures(u), footer()]
     out = here / "scorecard.html"
     out.write_text(page(title, "".join(body)))
     return out
@@ -242,7 +302,7 @@ def company_row(entry: dict, companies_dir: Path) -> str:
             f"<td>{s['n_calls']}</td><td>{correct}</td><td>{esc(rate)}</td></tr>")
 
 
-def render_universe(data: dict, json_path: Path, sha: str, out_dir: Path = REPORTS_DIR,
+def render_universe(data: dict, json_path: Path, sha: str, census: dict, out_dir: Path = REPORTS_DIR,
                     companies_dir: Path = COMPANIES_DIR) -> Path:
     u = data["universe"]
     clause = PRICE_CLAUSE_RE.search(u["prices_sentence"])
@@ -251,7 +311,7 @@ def render_universe(data: dict, json_path: Path, sha: str, out_dir: Path = REPOR
                          "without usable prices'; refusing to type the count here")
     title = "E2 head 1 — historical scorecard, every company"
     companies = sorted(data["companies"], key=lambda c: (c["name"].lower(), int(c["cik"])))
-    body = [f"<h1>{esc(title)}</h1>", framing(u, ""), provenance(u, json_path, sha),
+    body = [f"<h1>{esc(title)}</h1>", framing(u, "", census),
             "<h2>Universe</h2>", blocks_html(u),
             f"<p>{esc(u['chance_sentence'])}</p>",
             f"<p>{esc(u['outcome_mix_label'].capitalize())}: "
@@ -261,7 +321,7 @@ def render_universe(data: dict, json_path: Path, sha: str, out_dir: Path = REPOR
             "<table><thead><tr><th>Company</th><th>Ticker</th><th>CIK</th><th>Calls</th>"
             "<th>Correct</th><th>Hit rate [95% Wilson]</th></tr></thead><tbody>"
             + "".join(company_row(c, companies_dir) for c in companies) + "</tbody></table>",
-            disclosures(u), footer()]
+            provenance(u, json_path, sha, census), caveats(u), disclosures(u), footer()]
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / "scorecard.html"
     out.write_text(page(title, "".join(body)))
@@ -271,14 +331,15 @@ def render_universe(data: dict, json_path: Path, sha: str, out_dir: Path = REPOR
 def render_all(json_path: Path = SCORECARD_JSON, out_dir: Path = REPORTS_DIR,
                companies_dir: Path = COMPANIES_DIR, cik: Optional[int] = None) -> list[Path]:
     data, sha = load(json_path), sha256(json_path)
+    census = load_census(json_path.parent / CENSUS_NAME)
     chosen = [c for c in data["companies"] if cik is None or int(c["cik"]) == cik]
     if cik is not None and not chosen:
         raise SystemExit(f"CIK {cik} is not among the {len(data['companies'])} companies "
                          f"in {json_path}")
-    pages = [render_company(c, data["universe"], json_path, sha, out_dir, companies_dir)
+    pages = [render_company(c, data["universe"], json_path, sha, census, out_dir, companies_dir)
              for c in chosen]
     if cik is None:
-        pages.append(render_universe(data, json_path, sha, out_dir, companies_dir))
+        pages.append(render_universe(data, json_path, sha, census, out_dir, companies_dir))
     return pages
 
 

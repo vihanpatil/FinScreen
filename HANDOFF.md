@@ -1942,6 +1942,41 @@ they had used the pages. The owner typed: **"Defer E3"**. Main-session reading: 
 at Steps 1–2 (census, DRAFT pre-registration, packet, all on main); no Step 3 build, no pin, no run, until the owner
 re-opens it in chat; nothing else is read into the two words. No owner item is open.
 
+**2026-11-10 — DESIGN ASSESSMENT; P5 PACKET DRAFTED AND WITHDRAWN; LOOK-AHEAD DEFECT FOUND IN A RATIFIED FEATURE
+(main-session decisions and findings; the owner's words this session: the question "Is this product being built the
+correct way?" and, on the offer of a one-page forward-loop design, "Draft it").** (1) Assessment given in chat:
+sound as a research study, not yet a product — the scorecard is a snapshot with no append path (prices end
+2026-08-24, last test quarter 2026Q1, no fitted model saved); measured proportions (app lane 4,372 lines, research
+33,729, tests 24,890, tracked markdown 59,402 lines in 178 files; new-ticker build median 6.4 min, ~98% labeling).
+A claim made in that assessment — that a wider universe would restore power — was **corrected the next turn**: the
+numeric-only per-quarter IC has sd 0.186 over 33 quarters against roughly 0.09–0.10 for independent rows, an
+unseparable mix of regime variation and within-quarter dependence, so widening helps by an unknown amount less than
+√N. (2) `data/f5/P5_OWNER_PACKET.md` was drafted and **WITHDRAWN the same day, never put to the owner for ruling**:
+reviewer pass `data/f5/status/REVIEW_p5_packet_2026-11-10.md`, 7 MUST-FIX (extension stratum never scored; the
+ratified frame's text-join eligibility; the split defect below; the call does not precede the outcome under a
+quarter-close tercile; legal memo Q5 assessed a one-time fetch only; "no new Yahoo fetch" is ratified text
+(G3_PREREGISTRATION.md:201) and the owner answered "B. No" after being told the feed was needed for a forward
+period; §14 forbids rows for unclosed windows on the scorecard itself), 9 SHOULD incl. a simpler quarterly-batch
+design. A redraft waits on (3). **(3) FINDING, verified by the main session in code and data (no model fit):**
+`numeric_features_e2.py:844` computes `book_to_market = equity / (shares × pre_close)` with the as-reported share
+count and a Yahoo close adjusted retroactively for every split up to 2026-08-24, so every filing before a split
+carries B/M inflated by the split factor — information not public at the filing date, inside the numeric block of
+both fitted arms. Census (`data/f5/census_split_lookahead.py` → `split_lookahead_census.json`): split-like
+share-count changes ≥ 1.8× in 12 companies (15 events, matching real splits by date and ratio); **251 of the 4,481
+scored deduplicated rows (5.6%), 11 of 139 companies**, filed before a later one; watchlist names AAPL, AMZN, AVGO,
+NFLX, NVDA, TSLA, WMT. The builder's independent census reproduced every count and flagged three of the 15
+events as probable share-count reporting errors, not splits (Wells Fargo's opposite pair nine days apart, which
+accounts for 1 of the 251 rows and 1 of the 11 companies; Energy Transfer's, which touches no scored row); the
+counts are kept as the method defines them and the pages say "stock splits, and at least one probable reporting
+error". **The effect on the E2 primary and on every scorecard figure is UNMEASURED**; the primary is
+a difference of two arms that both carry the feature. G3 is not re-pinned or re-run; `numeric_features_e2.py` and
+every ratified artifact are untouched. **Dispositions:** LIMITATIONS §3.5a added; the scorecard pages carry a
+known-defect paragraph and no longer say prices were as public at the filing date without exception (builder,
+`data/f5/status/SPLIT_LOOKAHEAD_2026-11-10.md`); `F6_E2_RESULT.md` (sha-pinned by a test) gets ONE erratum, after
+the owner decides on a post-hoc arm, not two. **OWNER ITEM OPEN (touchpoint c): whether to run a POST-HOC
+sensitivity arm under the existing pin (as F6-A did for decision 11) with the share count split-adjusted or
+`book_to_market` dropped, to measure the effect.** Lesson → §4.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
@@ -1957,7 +1992,7 @@ for the next session — the incident itself is closed.
 | The 2026-08-20 epoch-1 MLX run was SIGTERMed TWICE by process-lifecycle machinery, not by any fault of its own: (1) launched detached (`nohup … &`) from *inside a finetune-engineer subagent's shell*, killed at iter ~520, ~34 min after that subagent completed — the orphaned tree was reaped with the finished subagent's session (`nohup` shields SIGHUP, not SIGTERM); (2) relaunched as a main-session background task, killed again (exit 143) at 2h58m of task runtime — consistent with a ~3-hour cap on harness background tasks. Both times checkpoint-every-250 bounded the loss (~50 min, ~4 min); both resumes used the runbook's LR-continuation fix. | **Long-running local compute runs as an AUTO-RESUME CHAIN of main-session background tasks: assume any task can be SIGTERMed at any time, checkpoint aggressively (`save_every` ≈ 10 min of work), and treat every kill notification as the trigger to resume from the latest checkpoint.** A third kill (6.5 min in) disproved the ~3h-cap theory — kill timing is unpredictable, so robustness comes from cheap resumability, not from segment sizing. Full daemonization (setsid double-fork) is classifier-blocked in this environment — do not attempt workarounds; the chain converges anyway (worst observed cycle still nets ~80% training throughput). Never spawn long compute from inside a subagent. The F4 labeling campaign must use the same pattern: per-row append-checkpointed output, resume-on-notification. Recipe: `finetune/runs/2026-08-21-epoch1-final-from-2250/RESUME_RECIPE.md`. |
 | 2026-09-07 — Appending the owner's G2 Rule 9 to `data/hardening/spotcheck_v12/OWNER_POLICY_RULINGS.md` broke `finetune/test_g2_spotcheck.py::test_draw_reproduces_byte_for_byte`: that file is a sha-pinned pre-registration INPUT of the G2 draw (`build_draw_g2.py` INPUT_SHA256). Reverted byte-exact within minutes; draw artifacts were never touched. | **Every path in a builder's INPUT_SHA256 block is frozen for the life of that draw — record later owner rulings in a NEW dated file (here `data/f4/g2/G2_FINAL_REPORT.md` §3), never by editing a pinned input.** Run the full suite after any doc edit under `data/hardening/` or `data/f4/`. |
 | 2026-11-06 — `finscreen.alive()` guarded with `pgrep -fl "label_filing|label_e2"`; an agent's shell whose command text contained that pattern (its own rule-6 pgrep) matched, and `bin/fs report` refused 18 watchlist tickers in ten seconds. | A process guard matches the **interpreter running the script** (`[Pp]ython[^ ]* ([^ ]*/)?name\.py`), never the bare script name; and no agent runs a shell whose text contains a labeler name while a chain is live. |
-
+| 2026-11-10 — `book_to_market` multiplied an as-reported share count by a retroactively split-adjusted close: every pre-split filing carried the feature inflated by a split that had not happened yet. Three red-team passes checked dates (`filing_date`, purge, membership) and missed it, because the leak is in the UNITS of a vendor series, not in a date. Found only when a forward design asked "what would this feature be on the day?" | For every feature that mixes two sources, ask what each value would have been **as printed on that day**; any series a vendor restates backwards (split- or dividend-adjusted prices, restated fundamentals) may only be combined with quantities adjusted to the same basis. A train/serve question — "can I compute this live and get the same number?" — is a look-ahead test and belongs in every red-team brief. |
 ---
 
 ## 5. New constraints and economy
