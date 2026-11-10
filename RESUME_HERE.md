@@ -12,14 +12,15 @@ operating cash flow, total assets, equity) with links to each company's labeled 
 
 **Research state.** E2 text signal: bounded null, closed at every gate (2026-11-05); the scorecard is a coin flip at the
 universe level (0.519 [0.501, 0.537]) and its pages say so. E3 (numeric families) deferred by the owner 2026-11-09.
-**Known defect (found 2026-11-10 by the parallel session; LIMITATIONS §3.5a):** `book_to_market` mixed an as-reported
-share count with a split-adjusted close, so pre-split filings carry it inflated (251 of 4,481 scored rows, 11 of 139
-companies); effect on E2 and the scorecard UNMEASURED; nothing ratified was re-run. The home page carries filed facts
-only and does not inherit it. The P5 forward-loop packet is WITHDRAWN (failed review); do not put it to the owner.
+**Known defect, measured (2026-11-10; `data/f5/F6_ERRATUM_2026-11-10.md`, LIMITATIONS §3.5a):** `book_to_market` mixed an
+as-reported share count with a back-adjusted close (417 of 4,481 scored rows, 18 companies). Post-hoc arm on the
+owner's "Run it", gated and seed-matched over the 100 ratified seeds: both fitted blocks' level was inflated by about
+0.01 IC; the E2 delta moved +0.002, so the outcome stands; nothing ratified was re-run or re-labelled. A third of
+scorecard calls change with the model seed alone; the pages now say so. The home page carries filed facts only and
+does not inherit the defect. P5 forward-loop packet WITHDRAWN (failed review); E3 must not re-open on that column.
 
-**Owner owes (touchpoint c).** Yes/no: run a POST-HOC sensitivity arm under the existing pin (share count
-split-adjusted, or `book_to_market` dropped) to measure the defect's effect. Optional: install the launchd refresh
-agent (`data/app/launchd/README.md`).
+**Owner owes (touchpoint b).** Yes/no: correct `site/prototype_city.html:122`, which says this backtest does not
+look ahead (public, now false). Optional: install the launchd refresh agent (`data/app/launchd/README.md`).
 
 **IN FLIGHT:** nothing. Standing rules: NEVER re-pin; never re-run a head on a model reading; rule 6 before any labeler.
 **Next work (no owner word needed):** whatever the owner reports missing after using `bin/fs open`.

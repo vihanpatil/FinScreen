@@ -478,16 +478,17 @@ split factor, so the feature is too large by that factor — and it reflects an 
 public on the filing date. That is a look-ahead channel inside the numeric block, which both fitted
 arms of the E2 walk-forward (`numeric_only` and `text_and_numeric`) were trained and evaluated with.
 
-What is measured (a census, no model fit; `data/f5/census_split_lookahead.py`,
-`data/f5/split_lookahead_census.json`): rows filed before a later split-like change in the share
-count of 1.8× or more — 251 of the 4,481 deduplicated test filings, 11 of 139 companies. The count
-is approximate: one company's pair of opposite changes nine days apart (Wells Fargo, one row) looks
-like a reporting error rather than a split, and a split is invisible where the feature is missing.
-What is **not** measured: how much the defect moved any E2 number. The primary E2
-estimand is a difference between two arms that both carry the feature, which limits but does not
-bound the effect on it; level ICs and the descriptive scorecard are exposed directly. The ratified
-run is not re-run and its artifacts are unchanged; any re-measurement would be a separately
-labelled post-hoc arm. Three red-team passes before ratification did not find this.
+Reach: 417 of the 4,481 deduplicated test filings, in 18 companies, carry an adjustment factor other
+than 1 (splits and spin-off adjustments; `data/f5/sensitivity_split_lookahead_seeds.json`). The source
+also adjusts for spin-offs, which §3.5 does not say.
+
+Measured afterwards, post-hoc and never selectable as the primary (`data/f5/F6_ERRATUM_2026-11-10.md`):
+over the run's 100 nuisance seeds, correcting the feature lowers the mean rank correlation of both
+fitted arms by about 0.010 to 0.013 and moves their difference, the quantity E2 tested, by about
++0.002. The E2 outcome is unaffected; the reported level of each arm was inflated. The same
+measurement shows that about a third of the per-filing scorecard calls change when only the model
+seed changes. The ratified run is not re-run and its artifacts are unchanged. Three red-team passes
+before ratification did not find this.
 
 ### 3.6 Numeric fundamentals have structural gaps and tag migrations
 
@@ -563,6 +564,9 @@ license question would need to be settled first.
 ## 4. Modeling and evaluation
 
 ### 4.1 Backtest results — run, but not yet read by the owner
+
+**Erratum, 2026-11-10.** A defect in one numeric feature inflated the reported level of both arms; the
+outcome below is unaffected. See §3.5a and `data/f5/F6_ERRATUM_2026-11-10.md`.
 
 **E2 update, 2026-11-05.** The E2 walk-forward (33 test quarters, 4,481 deduplicated
 test filings) was run on 2026-11-05 under the ratified, pinned pre-registration and

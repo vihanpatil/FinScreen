@@ -2108,6 +2108,26 @@ Output `sensitivity_split_lookahead_seeds.json`. No threshold and no adjective: 
 the measurement. This stays within the owner's "Run it" (measure how much the defect moved the E2 result): same
 script, same two arms, nothing re-pinned, no head re-run as a primary, no branch re-labelled. Lesson → §4.
 
+**2026-11-10 — SPLIT ARM CLOSED: SEED-MATCHED RESULT, ERRATUM, PAGES (main-session record).** `--seed-band` run by the
+main session (21 min, resumable cache): gate exact at all 100 ratified seeds, `band_sd` recomputed; all 300 per-seed
+means equal the reviewer's independent scratch run (max diff 0.0). `sensitivity_split_lookahead_seeds.json`:
+seed-matched change in the E2 delta **+0.0026 (se over seeds 0.0012) with the feature corrected, +0.0016 (0.0015)
+with it removed**; `numeric_only` mean dedup IC 0.0213 → 0.0080 / 0.0100 and `text_and_numeric` 0.0324 → 0.0217 /
+0.0226 (band means); margin procedure returns equivalence at 72 / 62 / 45 of 100 seeds (primary / B / A); only the
+seed changing alters 1,324–1,469 of 4,481 `text_and_numeric` calls (median 1,412); reach 417 scored rows in 18
+companies. **Reading: the defect inflated both fitted blocks' level by about 0.01 IC and left the tested difference
+essentially where it was; the §13 outcome "text is not used as a signal" stands; nothing is re-labelled.** Written
+up in `data/f5/F6_ERRATUM_2026-11-10.md` (`F6_E2_RESULT.md` byte-identical), including the wrong seed-0 reading and
+that the main session showed the owner the seed-0 table before review. Dispositions: LIMITATIONS §3.5a and §4.1,
+README and MODEL_CARD §6.x carry a pointer and the level inflation; every scorecard page states the reach, the
+measured effect and the seed dependence (`scorecard_page.py`, numbers read from the seeds artifact). **Open, not
+done:** (i) `report_filing.py`'s predictive-validity sentence has no pointer (the other session's file; outcome
+unchanged, so not urgent); (ii) `site/prototype_city.html:122` says "where most backtests cheat, and where this one
+does not" on a public surface — now false and already barred by the storyboard's legal baseline; put to the owner
+(touchpoint b); (iii) E3 must not be re-opened on the stored `book_to_market`; (iv) the P5 redraft waits on a
+feature computed on one basis and, per the measured levels, on there being a model worth tracking: the numeric
+block's corrected seed-mean IC is 0.008.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters

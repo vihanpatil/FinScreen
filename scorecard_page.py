@@ -6,8 +6,10 @@
 
 Reads ONLY data/f5/head1_scorecard.json (written by backtest_e2.py on the
 ratified G3 run, 2026-11-05) and, beside it, data/f5/split_lookahead_census.json
-(the book-to-market known-defect counts; it refuses to render without it). It
-computes nothing: every number on a page is copied from those two JSONs, rows
+(the book-to-market known-defect counts) and sensitivity_split_lookahead_seeds.json
+(the post-hoc measurement of that defect and of seed dependence); it refuses to
+render without either. It computes nothing: every number on a page is copied from
+those JSONs (a fall is printed as a positive size, a median is rounded), rows
 keep the JSON's order, and the only ordering this module applies is
 alphabetical by company name. Both sha256s are printed on every page as
 provenance. No wall clock: the same JSONs give the same bytes.
@@ -54,17 +56,25 @@ CENSUS_NAME = "split_lookahead_census.json"
 DEFECT_TEMPLATE = (
     "Known defect, found 2026-11-10. One input, book-to-market, multiplied the share "
     "count as reported at the time by a closing price that the price source later "
-    "adjusted for every stock split up to 2026-08-24. For a filing made before a split, "
-    "that input is therefore too large by the split factor and reflects an event that "
-    "was not public at the filing date. Both fitted columns (the model and numeric only) "
-    "were trained and evaluated with it. {n} of the {total} rows in this run ({k} of {K} "
-    "companies) were filed before a later change of {threshold:g} times or more in the reported "
-    "share count: stock splits, and at least one probable reporting error. The count is "
-    "approximate. How much this moved any figure on this page has not been "
-    "measured; the run is ratified and is not re-run.")
+    "adjusted for every stock split and spin-off up to 2026-08-24. For a filing made "
+    "before such an event, that input is too large by the adjustment factor and reflects "
+    "an event that was not public at the filing date. Both fitted columns (the model and "
+    "numeric only) were trained and evaluated with it; {n:,} of the {total:,} rows in this "
+    "run ({k} companies) carried an inflated value. Measured afterwards over the run's "
+    "{seeds} model seeds, and labelled post-hoc: with the input corrected, the IC of the "
+    "model falls by {d_model:.3f} and of numeric only by {d_numeric:.3f}, and the "
+    "difference between the two, which is what the study tested, moves by {d_delta:+.4f}. "
+    "The ratified run is not re-run and its figures on this page are unchanged.")
 DEFECT_COMPANY_TEMPLATE = (
-    "This company is one of them: {m} of its rows below were filed before a later change "
-    "of that kind.")
+    "The share-count census flags this company: {m} of its rows below were filed before "
+    "a later change of {threshold:g} times or more in its reported share count.")
+# How much one row depends on the model seed alone (the same post-hoc artifact).
+SEED_TEMPLATE = (
+    "How stable one row is. Refitting the same model with only its random seed changed "
+    "alters about {median:,} of the {total:,} calls in the model column (between {lo:,} "
+    "and {hi:,} across {seeds} seeds). Read any single row, and any one company's tally, "
+    "as illustrative; the universe figures are the steadier ones.")
+SEEDS_NAME = "sensitivity_split_lookahead_seeds.json"
 DISCLOSURE_HEADING = "Disclosures — these travel with every number on this page"
 # The labeler can recognise a company and know what happened to it later; the
 # figures are report_filing's pinned E1 constants, never retyped here.
@@ -131,18 +141,37 @@ def load_census(path: Path) -> dict:
     missing = [k for k in keys if k not in census]
     if missing:
         raise SystemExit(f"{path}: missing {missing}; refusing to render")
-    return dict(census, _path=path, _sha256=sha256(path))
+    seeds_path = path.parent / SEEDS_NAME
+    if not seeds_path.exists():
+        raise SystemExit(f"{seeds_path} is missing; run data/f5/sensitivity_split_lookahead.py "
+                         "--seed-band. The pages state the measured effect from it and "
+                         "refuse to render without it.")
+    s = json.loads(seeds_path.read_text())
+    try:
+        b = s["seed_matched_arm_minus_primary"]["arm_b"]
+        reach = s["factor_reach"]["factor_not_1_with_book_to_market"]
+        churn = s["calls_differing_from_ratified_seed0"]["primary"]["text_and_numeric"]
+        measured = {"n": reach["n_rows"], "k": reach["n_companies"],
+                    "total": s["factor_reach"]["n_scored_dedup_rows"],
+                    "seeds": b["delta"]["n_seeds"], "d_delta": b["delta"]["mean"],
+                    "d_model": -b["ic_text_and_numeric"]["mean"],
+                    "d_numeric": -b["ic_numeric_only"]["mean"],
+                    "lo": churn["min"], "median": round(churn["median"]), "hi": churn["max"]}
+    except KeyError as exc:
+        raise SystemExit(f"{seeds_path}: missing {exc}; refusing to render")
+    return dict(census, _path=path, _sha256=sha256(path), _measured=measured,
+                _seeds_path=seeds_path, _seeds_sha256=sha256(seeds_path))
 
 
 def defect_html(census: dict, cik: Optional[int] = None) -> str:
-    text = DEFECT_TEMPLATE.format(
-        n=census["n_rows_before_later_event"], total=census["n_rows"],
-        k=census["n_companies_affected"], K=census["n_companies"],
-        threshold=census["threshold"])
+    ms = census["_measured"]
+    text = DEFECT_TEMPLATE.format(**{k: ms[k] for k in
+                                     ("n", "total", "k", "seeds", "d_model", "d_numeric", "d_delta")})
     m = census["affected_rows_by_cik"].get(str(cik)) if cik is not None else None
     if m:
-        text += " " + DEFECT_COMPANY_TEMPLATE.format(m=m)
-    return f'<p class="defect"><b>{esc(text)}</b></p>'
+        text += " " + DEFECT_COMPANY_TEMPLATE.format(m=m, threshold=census["threshold"])
+    seed = SEED_TEMPLATE.format(**{k: ms[k] for k in ("median", "total", "lo", "hi", "seeds")})
+    return f'<p class="defect"><b>{esc(text)}</b></p><p class="defect">{esc(seed)}</p>'
 
 
 def calls(n: int) -> str:
@@ -175,7 +204,9 @@ def provenance(u: dict, json_path: Path, sha: str, census: dict) -> str:
             f"<code>{esc(u['correct_rule'])}</code>, intervals "
             f"<code>{esc(u['ci'])}</code>. Book-to-market census: "
             f"<code>{esc(shown(census['_path']))}</code>, sha256 "
-            f"<code>{esc(census['_sha256'])}</code>.</p>")
+            f"<code>{esc(census['_sha256'])}</code>. Post-hoc measurement: "
+            f"<code>{esc(shown(census['_seeds_path']))}</code>, sha256 "
+            f"<code>{esc(census['_seeds_sha256'])}</code>.</p>")
 
 
 def framing(u: dict, whose: str, census: dict, cik: Optional[int] = None) -> str:

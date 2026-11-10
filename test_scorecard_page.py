@@ -85,12 +85,25 @@ CENSUS = {"n_rows": 10, "n_rows_before_later_event": 3, "n_companies": 2,
           "events": [{"cik": 333, "filing_date": "2020-06-01", "ratio": 4.0}]}
 
 
-def _write(tmp_path, data, name="head1_scorecard.json", census=CENSUS):
-    """The scorecard JSON, with the split census beside it (as on disk)."""
+# The post-hoc seed-matched measurement, in the committed artifact's own shape.
+SEEDS = {"seed_matched_arm_minus_primary": {"arm_b": {
+             "delta": {"n_seeds": 100, "mean": 0.0026},
+             "ic_text_and_numeric": {"mean": -0.0107},
+             "ic_numeric_only": {"mean": -0.0133}}},
+         "factor_reach": {"n_scored_dedup_rows": 10,
+                          "factor_not_1_with_book_to_market": {"n_rows": 4, "n_companies": 2}},
+         "calls_differing_from_ratified_seed0": {"primary": {"text_and_numeric": {
+             "min": 2, "median": 3.5, "max": 5}}}}
+
+
+def _write(tmp_path, data, name="head1_scorecard.json", census=CENSUS, seeds=SEEDS):
+    """The scorecard JSON, with the split census and the post-hoc measurement beside it."""
     js = tmp_path / name
     js.write_text(json.dumps(data))
     if census is not None:
         (tmp_path / SP.CENSUS_NAME).write_text(json.dumps(census))
+    if seeds is not None:
+        (tmp_path / SP.SEEDS_NAME).write_text(json.dumps(seeds))
     return js
 
 
@@ -291,11 +304,17 @@ def test_one_call_is_singular(tmp_path):
 # --- the book-to-market split look-ahead (REVIEW_p5_packet_2026-11-10 M3) -----------
 def test_known_defect_paragraph_with_census_numbers_on_every_page(rendered):
     _, pages = rendered
-    text = SP.DEFECT_TEMPLATE.format(n=3, total=10, k=1, K=2, threshold=1.8)
-    assert "3 of the 10 rows in this run (1 of 2 companies)" in text
-    assert "a later change of 1.8 times or more in the reported share count" in text
+    text = SP.DEFECT_TEMPLATE.format(n=4, total=10, k=2, seeds=100, d_model=0.0107,
+                                     d_numeric=0.0133, d_delta=0.0026)
+    assert "4 of the 10 rows in this run (2 companies) carried an inflated value" in text
+    # a fall is printed as a positive size; the tested difference keeps its sign
+    assert "the IC of the model falls by 0.011 and of numeric only by 0.013" in text
+    assert "moves by +0.0026" in text and "labelled post-hoc" in text
+    seed = SP.SEED_TEMPLATE.format(median=4, total=10, lo=2, hi=5, seeds=100)
+    assert "alters about 4 of the 10 calls in the model column (between 2 and 5 across 100 seeds)" in seed
     for html in pages.values():
-        assert text in html
+        assert text in html and seed in html
+        assert html.index("Known defect") < html.index("How stable one row is") < html.index("<h2>")
         # directly after the identity paragraph, ahead of every figure
         assert html.index("Known defect, found 2026-11-10") < html.index("<h2>")
         assert html.index('class="identity"') < html.index("Known defect")
@@ -303,11 +322,12 @@ def test_known_defect_paragraph_with_census_numbers_on_every_page(rendered):
 
 def test_the_one_of_them_sentence_only_on_an_affected_company(rendered):
     _, pages = rendered
-    line = SP.DEFECT_COMPANY_TEMPLATE.format(m=2)
-    assert line == "This company is one of them: 2 of its rows below were filed before a later change of that kind."
+    line = SP.DEFECT_COMPANY_TEMPLATE.format(m=2, threshold=1.8)
+    assert line == ("The share-count census flags this company: 2 of its rows below were filed "
+                    "before a later change of 1.8 times or more in its reported share count.")
     assert line in pages["333"]
-    assert "This company is one of them" not in pages["222"]
-    assert "This company is one of them" not in pages["universe"]
+    assert "The share-count census flags this company" not in pages["222"]
+    assert "The share-count census flags this company" not in pages["universe"]
 
 
 def test_census_sha_is_in_the_provenance_line(rendered, tmp_path):
@@ -334,10 +354,26 @@ def test_real_apple_page_carries_the_census_counts(tmp_path):
     census = SP.SCORECARD_JSON.parent / SP.CENSUS_NAME
     if not (SP.SCORECARD_JSON.exists() and census.exists()):
         pytest.skip("real scorecard JSON or census not on this machine")
-    c = json.loads(census.read_text())
+    seeds = SP.SCORECARD_JSON.parent / SP.SEEDS_NAME
+    if not seeds.exists():
+        pytest.skip("the post-hoc seed-matched artifact is not on this machine")
+    c, s = json.loads(census.read_text()), json.loads(seeds.read_text())
+    reach = s["factor_reach"]["factor_not_1_with_book_to_market"]
     SP.render_all(SP.SCORECARD_JSON, tmp_path, SP.COMPANIES_DIR, cik=320193)
     html = unescape((tmp_path / "320193" / "scorecard.html").read_text())
-    assert (f"{c['n_rows_before_later_event']} of the {c['n_rows']} rows in this run "
-            f"({c['n_companies_affected']} of {c['n_companies']} companies)") in html
-    assert (f"This company is one of them: {c['affected_rows_by_cik']['320193']} of its rows "
-            "below were filed before a later change of that kind.") in html
+    assert (f"{reach['n_rows']:,} of the {s['factor_reach']['n_scored_dedup_rows']:,} rows in this run "
+            f"({reach['n_companies']} companies) carried an inflated value") in html
+    assert (f"The share-count census flags this company: {c['affected_rows_by_cik']['320193']} of its "
+            "rows below were filed before a later change of 1.8 times or more") in html
+
+
+def test_missing_post_hoc_measurement_refuses(tmp_path):
+    js = _write(tmp_path, FIXTURE, seeds=None)
+    with pytest.raises(SystemExit, match="--seed-band"):
+        SP.render_all(js, tmp_path / "out", tmp_path / "companies")
+
+
+def test_incomplete_post_hoc_measurement_refuses(tmp_path):
+    js = _write(tmp_path, FIXTURE, seeds={"factor_reach": {}})
+    with pytest.raises(SystemExit, match="refusing to render"):
+        SP.render_all(js, tmp_path / "out", tmp_path / "companies")

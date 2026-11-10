@@ -691,6 +691,10 @@ Per the pre-committed honesty rule (`DISCOVERY.md` §5, ratified before any resu
 
 ### 6.x E2 (2026-11-05): pre-registered walk-forward, bounded null
 
+**Erratum, 2026-11-10** (`data/f5/F6_ERRATUM_2026-11-10.md`, post-hoc): the `book_to_market` feature carried later stock
+splits and spin-offs. Corrected over the run's 100 seeds, both arms' mean rank correlation falls by about 0.010 to 0.013 and
+their difference moves by about +0.002, so the outcome below stands while each arm's reported level was inflated.
+
 Added 2026-11-05. Sections 6.1 and 6.2 above describe the E1 study (25 companies,
 6 folds, benchmark = equal-weighted average of the 25 tickers). **E1 and E2
 numbers are not comparable: the E2 benchmark is the membership-dated

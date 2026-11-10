@@ -14,6 +14,8 @@ first, smaller run (25 companies) answered "no fold-robust text signal." The
 second, larger run was run on 2026-11-05 under a ratified pre-registration and
 returned a bounded null: a mean per-fold IC delta of +0.0011 with a 90% CI of
 [-0.0234, +0.0256], inside the pre-registered ±0.04 equivalence margin (`data/f5/F6_E2_RESULT.md` §0–§1).
+An erratum of 2026-11-10 (`data/f5/F6_ERRATUM_2026-11-10.md`) records a look-ahead defect in one numeric feature: it
+inflated the reported level of both arms and left this outcome unchanged.
 
 ## What this is not
 
