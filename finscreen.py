@@ -6,6 +6,7 @@
     bin/fs report SIRI --refresh        same, but re-ingest even a current store (new filings)
     bin/fs g3 --date D --owner-word W   pin G3 + run head 1 and heads 2/3 (owner's word only)
     bin/fs index                        list the per-company stores; write the landing page
+    bin/fs open                         write the landing page (fundamentals table) and open it
     bin/fs scorecard [--cik N]          private historical-scorecard pages (head 1 JSON)
 
 It only chains ingest_one.py, label_filing.py, report_filing.py, scorecard_page.py,
@@ -189,37 +190,136 @@ LANDING_IDENTITY = (
     "The owner's private home page for FinScreen. Only the per-company reading-aid pages "
     "(\"labeled filings\") may be shown to someone else, as a demonstration (ruling C); the "
     "historical scorecard pages are for the owner's personal use only and are never shown.")
-LANDING_NOTE = ("Every company with rendered pages, alphabetical by ticker. This page carries "
-                "no label-derived or scorecard-derived quantity and is not ordered by one.")
+LANDING_NOTE = ("Click a column heading to sort by it; click again to reverse. Revenue, net income and "
+                "operating cash flow cover each company's latest reported span (a quarter, a year, or "
+                "year to date, shown beneath), so those columns sort by span first, then by amount. "
+                "Every number is an XBRL fact as filed, point-in-time as of {as_of}, with its own "
+                "period shown beneath it. \"partial\" marks a fact the research path does not use as a time "
+                "series (the family is unresolved as a series, or the fact's tag is one the stored "
+                "resolution does not list); \"stale\" marks a resolved family whose latest fact is "
+                "older than {days} days. No label-derived or "
+                "scorecard-derived quantity appears on this page.")
 SCORECARD_LINK = "historical scorecard (personal use only)"
+FUNDAMENTAL_COLUMNS = ("revenue", "net_income", "operating_cash_flow", "assets", "equity")
+SORT_JS = """<script>
+const cmp = (i, dir) => (a, b) => {
+  const c = a.cells[i], d = b.cells[i];
+  const x = c.dataset.v !== undefined ? c.dataset.v : c.textContent.trim();
+  const y = d.dataset.v !== undefined ? d.dataset.v : d.textContent.trim();
+  if (x === "" || y === "") return (x === "") - (y === "");  // blanks last, either direction
+  if (c.dataset.g && d.dataset.g && c.dataset.g !== d.dataset.g) return dir * (c.dataset.g - d.dataset.g);  // span first
+  return dir * (isNaN(x) || isNaN(y) ? x.localeCompare(y) : x - y);
+};
+document.querySelectorAll("th").forEach((th, i) => th.onclick = () => {
+  const body = th.closest("table").tBodies[0];
+  const dir = th.dataset.dir = th.dataset.dir === "1" ? "-1" : "1";
+  [...body.rows].sort(cmp(i, dir)).forEach(r => body.appendChild(r));
+});
+</script>"""
+
+
+def latest_filing_cell(RF, store, m):
+    """The store's newest filing by public filing_date, linked to its page when rendered."""
+    filings = [f for f in m.get("filings") or [] if f.get("filing_date")]
+    if not filings:
+        return '<td data-v="">—</td>'
+    f = max(filings, key=lambda f: f["filing_date"])
+    page = f"{f.get('accession_number')}.html"
+    href = f"{store.name}/{page if (REPORTS / store.name / page).exists() else 'index.html'}"
+    return (f'<td data-v="{RF.esc(f["filing_date"])}"><a href="{RF.esc(href)}">'
+            f'{RF.esc(f.get("form", "?"))} {RF.esc(f["filing_date"])}</a></td>')
+
+
+def revenue_yoy(slices, cik, item, as_of):
+    """NF.yoy_growth_family over the panel's own revenue fact (same concept, same duration,
+    period one year earlier, filed by as_of); None when no comparable prior fact exists."""
+    import pandas as pd
+    import numeric_features_e2 as NF
+    sub = slices.get((cik, item["concept"]))
+    if sub is None:
+        return None
+    cur = sub[(sub["period_end"] == pd.Timestamp(item["period_end"])) & (sub["value"] == item["value"])]
+    if cur.empty:
+        return None
+    growth, _ = NF.yoy_growth_family(slices, [item["concept"]], cik, as_of,
+                                     cur.iloc[-1].to_dict(), item["concept"])
+    return None if pd.isna(growth) else growth
+
+
+def store_fundamentals(store, cik, as_of):
+    """({family: panel item}, revenue YoY or None); ({}, None) on any failure, said on stderr."""
+    import report_filing as RF
+    try:
+        RF.use_store(store)
+        items = {i["family"]: i for i in RF.fundamentals_panel(cik, as_of)}
+        rev = items.get("revenue") or {}
+        yoy = None
+        if rev.get("value") is not None and rev.get("concept") and rev.get("period_end"):
+            yoy = revenue_yoy(RF.fundamentals_slices(cik), cik, rev, as_of)
+        return items, yoy
+    except (Exception, SystemExit) as exc:  # CompanyStore raises SystemExit on a partial store
+        print(f"landing page: {store.name}: fundamentals unavailable: {exc!r}", file=sys.stderr)
+        return {}, None
+    finally:
+        RF.use_store(None)
+
+
+def pct_cell(x, signed=True):
+    if x is None:
+        return '<td data-v="">—</td>'
+    return f'<td data-v="{float(x)}">{(f"{x:+.1%}" if signed else f"{x:.1%}").replace("-", "−")}</td>'
+
+
+def amount_cell(RF, item):
+    if not item or item.get("value") is None:
+        return '<td data-v="">—</td>'
+    state = item.get("state", "resolved")
+    tag = f' <span class="tag">{RF.esc(state)}</span>' if state != "resolved" else ""
+    span = re.match(r"(\d+) months", item.get("period") or "")  # instants ("as at ...") carry none
+    group = f' data-g="{span.group(1)}"' if span else ""
+    return (f'<td data-v="{float(item["value"])}"{group}>{RF.esc(RF.format_amount(item["value"], item.get("unit", "")))}'
+            f'{tag}<br><span class="small">{RF.esc(item.get("period", ""))}</span></td>')
 
 
 def write_landing():
-    """REPORTS/index.html: one row per store with a rendered <cik>/index.html."""
+    """REPORTS/index.html: a sortable fundamentals table, one row per store with a rendered
+    <cik>/index.html. XBRL facts only; nothing label- or scorecard-derived."""
     import report_filing as RF  # lazy: pandas is needed only to render, not for doctor
+    import numeric_features_e2 as NF
     from scorecard_page import SCORECARD_FOOTER_LINE
+    as_of = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     rows = []
     for store, m in manifests():
         rep = REPORTS / store.name
         if not (rep / "index.html").exists():
             continue
-        n = len([p for p in rep.glob("*.html") if p.name != "scorecard.html"])
         links = f'<a href="{store.name}/index.html">labeled filings</a>'
         if (rep / "scorecard.html").exists():
             links += f' · <a href="{store.name}/scorecard.html">{SCORECARD_LINK}</a>'
+        items, yoy = store_fundamentals(store, int(store.name), as_of)
+        rev, ni = items.get("revenue") or {}, items.get("net_income") or {}
+        margin = None
+        if (rev.get("value") and ni.get("value") is not None and rev.get("unit") == ni.get("unit")
+                and (rev.get("period_end"), rev.get("period")) == (ni.get("period_end"), ni.get("period"))):
+            margin = ni["value"] / rev["value"]
+        amount = {f: amount_cell(RF, items.get(f)) for f in FUNDAMENTAL_COLUMNS}
+        cells = [amount["revenue"], pct_cell(yoy), amount["net_income"], pct_cell(margin, signed=False),
+                 amount["operating_cash_flow"], amount["assets"], amount["equity"]]
         rows.append((str(m.get("ticker") or "").upper(), store.name,
                      f"<tr><td>{RF.esc(m.get('ticker', '?'))}</td><td>{RF.esc(m.get('company_name', '?'))}"
-                     f"</td><td>{RF.esc(store.name)}</td><td>{n}</td><td>{links}</td></tr>"))
+                     f"</td>{latest_filing_cell(RF, store, m)}{''.join(cells)}<td>{links}</td></tr>"))
     rows.sort(key=lambda r: (r[0], int(r[1])))
     universe = ""
     if (REPORTS / "scorecard.html").exists():
         universe = f'<p><a href="scorecard.html">{SCORECARD_LINK}, every company</a></p>'
+    heads = ("Ticker", "Company", "Latest filing", "Revenue", "Revenue YoY", "Net income",
+             "Net margin", "Operating cash flow", "Total assets", "Equity", "Pages")
     body = ("<h1>FinScreen — companies</h1>"
             f'<p class="identity">{RF.esc(LANDING_IDENTITY)}</p>'
-            f'<p class="small">{RF.esc(LANDING_NOTE)}</p>'
-            "<table><thead><tr><th>Ticker</th><th>Company</th><th>CIK</th><th>Pages</th>"
-            "<th>Links</th></tr></thead><tbody>" + "".join(r[2] for r in rows) + "</tbody></table>"
-            + universe + f'<p class="footer-line">{RF.esc(SCORECARD_FOOTER_LINE)}</p>')
+            f'<p class="small">{RF.esc(LANDING_NOTE.format(as_of=as_of, days=NF.F1.STALENESS_MAX_DAYS))}</p>'
+            "<table><thead><tr>" + "".join(f"<th>{h}</th>" for h in heads) + "</tr></thead><tbody>"
+            + "".join(r[2] for r in rows) + "</tbody></table>"
+            + universe + f'<p class="footer-line">{RF.esc(SCORECARD_FOOTER_LINE)}</p>' + SORT_JS)
     REPORTS.mkdir(parents=True, exist_ok=True)
     out = REPORTS / "index.html"
     out.write_text(RF.page("FinScreen — companies", body))
@@ -244,6 +344,13 @@ def cmd_index(a):
               f"{'yes' if (store / 'labels.parquet').exists() else 'no':<8}{n:>5}  "
               f"{m.get('company_name', '?')}{idx}")
     print(f"\nlanding page: {write_landing()}")
+    return 0
+
+
+def cmd_open(a):
+    path = write_landing()
+    print(f"landing page: {path}")
+    subprocess.run(["open", str(path)])
     return 0
 
 
@@ -300,6 +407,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("doctor").set_defaults(fn=cmd_doctor)
     sub.add_parser("index").set_defaults(fn=cmd_index)
+    sub.add_parser("open").set_defaults(fn=cmd_open)
     sc = sub.add_parser("scorecard")
     sc.add_argument("--cik", type=int)
     sc.set_defaults(fn=cmd_scorecard)

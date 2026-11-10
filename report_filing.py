@@ -445,10 +445,10 @@ FOOTER_LINE = (
 NO_PRICE_LINE = "No price data is used anywhere in this report."
 
 # The plain-English lead of the disclosure block, for a reader who will not
-# parse the detailed list below it. Every figure is a format field filled from
+# parse the detailed list at the foot of the page. Every figure is a format field filled from
 # load_disclosure(), never typed here; the detailed list stays the record.
 # It quotes NO guidance figure: G2 rules guidance is never quoted without active
-# precision, the false-NONE rate and §0, and those travel in the list below.
+# precision, the false-NONE rate and §0, and those travel in that list.
 PLAIN_ENGLISH_TEMPLATE = (
     "Every label on this page was written by a small model the owner runs "
     "locally; no person read these passages. In a {n:,}-passage spot-check its "
@@ -458,10 +458,11 @@ PLAIN_ENGLISH_TEMPLATE = (
     "missed about {miss:.0f}% of the passages that evaluation's reference "
     "marked negative. Most passages give no guidance at all; the model's "
     "guidance-direction figures and the caveats that must travel with them are "
-    "in the list below. Red flags are experimental: do not rely on them. These "
-    "labels have not been shown to say anything about future stock prices, and "
-    "nothing here is a recommendation to buy, sell or hold. Warnings specific "
-    "to this company and this filing, if any, follow in the list."
+    "in the disclosures at the foot of this page. Red flags are experimental: "
+    "do not rely on them. These labels have not been shown to say anything "
+    "about future stock prices, and nothing here is a recommendation to buy, "
+    "sell or hold. Warnings specific to this company and this filing, if any, "
+    "appear directly below or in the disclosures at the foot of this page."
 )
 
 # Columns read from the two F4 parquets. The distress column ruled out of every
@@ -1059,6 +1060,47 @@ def unresolved_detail(row, reasons: dict) -> str:
             f"union coverage {float(row.coverage):.0%} ({seen})")
 
 
+def freshest_fact(slices: dict, tags: list[str], cik: int, as_of):
+    """`NF.resolve_family_value` without its staleness refusal: the freshest
+    knowable fact across `tags` (latest `period_end`, ties by `filed`, then
+    by the earlier tag in `tags`), as (row, tag), or (None, None). For showing a reader the latest filed number
+    of a family the research path cannot use as a time series; it never feeds
+    a feature."""
+    candidates = []
+    for rank, tag in enumerate(tags):
+        sub = slices.get((int(cik), tag))
+        if sub is None or sub.empty:
+            continue
+        row, _ = NF.value_as_of_duration_aware(
+            sub, tag, as_of, cik, NF.TAXONOMY_OF_TAG.get(tag), "annual")
+        if row is not None:
+            candidates.append((row, tag, rank))
+    if not candidates:
+        return None, None
+    # A tie on period_end and filed (one filing carrying two aliases) goes to
+    # the tag listed first: the list is in the family's preference order.
+    candidates.sort(key=lambda item: (pd.Timestamp(item[0]["period_end"]),
+                                      pd.Timestamp(item[0]["filed"]), -item[2]))
+    row, tag, _ = candidates[-1]
+    row = dict(row)
+    row["_days_stale"] = (pd.Timestamp(as_of) - pd.Timestamp(row["period_end"])).days
+    return row, tag
+
+
+def fact_entry(family: str, label: str, state: str, row: dict, tag: str) -> dict:
+    return {
+        "family": family, "label": label, "state": state,
+        "value": row["value"], "unit": row["unit"], "concept": tag,
+        "period": period_label(row),
+        "period_end": str(pd.Timestamp(row["period_end"]).date()),
+        "filed": str(pd.Timestamp(row["filed"]).date()),
+        "form": row.get("form"), "accession": row.get("accession_number"),
+        "days_stale": row.get("_days_stale"),
+        "period_start": (str(pd.Timestamp(row["period_start"]).date())
+                         if pd.notna(row.get("period_start")) else None),
+    }
+
+
 def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
     """Five point-in-time families, resolved exactly as the F5 numeric feature
     table resolves them: `numeric_features_e2.resolve_family_value` over
@@ -1069,6 +1111,12 @@ def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
     --fundamentals` writes it with F2's own classifier). Which file is read is
     the only difference; the resolver, the point-in-time rule, the staleness
     guard and the refusal are one code path for both.
+
+    The reader is then shown the freshest fact under any of the family's
+    aliases when it is newer than that answer (or there is none), marked
+    "partial" (a tag the resolution does not list, or a family PARTIAL /
+    OVERLAP as a series) or "stale" (a resolved tag past the staleness limit).
+    "unresolved" is left for no knowable fact at all.
     """
     if store_has_no_fundamentals():
         return [{"family": family, "label": label, "state": "unresolved",
@@ -1077,10 +1125,8 @@ def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
     with fundamentals_source():
         resolution = NF.load_resolution({int(cik)})
     reasons = ACTIVE_STORE.unresolved_reasons() if ACTIVE_STORE else {}
-    # Loaded lazily: a company that resolves no family never opens the fact
-    # table at all (622k rows on the research path).
+    # Loaded once, on the first family the resolution has a row for.
     slices: Optional[dict] = None
-    staleness: list[dict] = []
 
     panel: list[dict] = []
     for family, label in FUNDAMENTAL_FAMILIES:
@@ -1090,35 +1136,48 @@ def fundamentals_panel(cik: int, as_of: str) -> list[dict]:
                           "detail": ("this company has no row for this family "
                                      "in the concept resolution that was read")})
             continue
-        if not bool(hit.iloc[0].resolved):
-            panel.append({"family": family, "label": label, "state": "unresolved",
-                          "detail": unresolved_detail(hit.iloc[0], reasons)})
-            continue
-        tags = list(hit.iloc[0].tag_list)
+        res = hit.iloc[0]
+        tags = list(res.tag_list)
         if slices is None:
             slices = fundamentals_slices(int(cik))
-        row, tag = NF.resolve_family_value(slices, tags, int(cik), as_of,
-                                           staleness_log=staleness, family=family)
-        if row is None:
-            stale = [s for s in staleness if s["family"] == family]
-            detail = ("no fact was knowable as of this filing date"
-                      if not stale else
-                      f"the freshest knowable fact ended "
-                      f"{stale[-1]['period_end'].date()}, "
-                      f"{stale[-1]['days_stale']} days before the filing date, "
-                      f"and was discarded as stale")
+        # The research path's answer: None when the family is not resolved as
+        # a series, or its freshest fact is stale.
+        row, tag = (NF.resolve_family_value(slices, tags, int(cik), as_of)
+                    if bool(res.resolved) else (None, None))
+        # What a reader needs: the freshest fact under ANY alias of the family,
+        # so a page never shows an older period than the filer has reported.
+        aliases = [t for _, t in IF.CONCEPT_FAMILIES.get(family, [])]
+        fresh, fresh_tag = freshest_fact(slices, list(dict.fromkeys(aliases + tags)),
+                                         int(cik), as_of)
+        if fresh is not None and (row is None or pd.Timestamp(fresh["period_end"])
+                                  > pd.Timestamp(row["period_end"])):
+            days = fresh["_days_stale"]
+            too_old = days > NF.F1.STALENESS_MAX_DAYS
+            if fresh_tag not in tags:
+                note = (f"filed under {fresh_tag}, a tag the stored concept "
+                        f"resolution does not list for this family "
+                        f"({', '.join(tags) or 'none'}); single fact as filed")
+            elif not bool(res.resolved):
+                note = (f"single fact as filed; as a time series this family is "
+                        f"{res.state} (union coverage {float(res.coverage):.0%}), "
+                        f"so the research path leaves it unresolved")
+            else:                    # a resolved tag, discarded only as stale
+                note = (f"{days} days old at this filing date; the research path "
+                        f"discards facts older than {NF.F1.STALENESS_MAX_DAYS} days")
+            state = ("stale" if bool(res.resolved) and fresh_tag in tags
+                     else "partial")
+            if state == "partial" and too_old:
+                note += f"; {days} days old at this filing date"
+            entry = fact_entry(family, label, state, fresh, fresh_tag)
+            entry["note"] = note
+            panel.append(entry)
+        elif row is not None:
+            panel.append(fact_entry(family, label, "resolved", row, tag))
+        else:
             panel.append({"family": family, "label": label, "state": "unresolved",
-                          "detail": detail})
-            continue
-        panel.append({
-            "family": family, "label": label, "state": "resolved",
-            "value": row["value"], "unit": row["unit"], "concept": tag,
-            "period": period_label(row),
-            "period_end": str(pd.Timestamp(row["period_end"]).date()),
-            "filed": str(pd.Timestamp(row["filed"]).date()),
-            "form": row.get("form"), "accession": row.get("accession_number"),
-            "days_stale": row.get("_days_stale"),
-        })
+                          "detail": (unresolved_detail(res, reasons)
+                                     if not bool(res.resolved) else
+                                     "no fact was knowable as of this filing date")})
     return panel
 
 
@@ -1403,6 +1462,7 @@ a { color: var(--mark); }
                  letter-spacing:.04em; border:0; padding:0; color:var(--muted); }
 .disclosure ul { margin:0 0 10px; padding-left:20px; }
 .disclosure li { margin-bottom:7px; font-size:13px; }
+.disclosure-head { margin: 10px 0 22px; }
 .identity { font-style:italic; font-size:13.5px; margin-bottom:12px; }
 .plain { font-size:15px; font-weight:400; margin-bottom:14px; }
 blockquote { margin:8px 0; padding:8px 12px; border-left:3px solid var(--line);
@@ -1556,42 +1616,72 @@ def label_html(row, disclosure_note: str) -> str:
 
 def disclosure_html(d: dict, overlap: Optional[dict],
                     imputed: Optional[dict] = None) -> str:
+    """The whole disclosure block: the short header (which carries the footer
+    line) and the detailed list. The renderers place the header under the
+    <h1> and the details at the foot of the page; this wrapper is kept for
+    the tests, which read the whole block in one string."""
+    return disclosure_header_html(d, overlap) + disclosure_details_html(d, imputed)
+
+
+def overlap_banner(overlap: Optional[dict]) -> str:
+    """The TRAIN-OVERLAP WARNING text, or "" when it does not fire."""
+    if not (overlap and overlap["fires"]):
+        return ""
+    reasons = []
+    if overlap["cik_in_train"]:
+        reasons.append(
+            f"this company is one of the {overlap['n_train_ciks']} CIKs in "
+            "the v1.2 training split")
+    if overlap["accession_in_train"]:
+        reasons.append("this accession is in the v1.2 training split")
+    if overlap.get("n_chunks_home_channel"):
+        reasons.append(
+            f"{overlap['n_chunks_home_channel']} of {overlap['n_chunks']} "
+            "passages are stored under a filing that is itself in the v1.2 "
+            "training split")
+    inherited = (overlap["n_chunks_accession_channel"]
+                 - overlap.get("n_chunks_home_channel", 0))
+    if inherited > 0:
+        reasons.append(
+            f"{inherited} of {overlap['n_chunks']} passages are also "
+            "attributed to a training filing by the corpus (a shared "
+            "paragraph, not this filing's own text)")
+    if overlap["n_chunks_text_channel"]:
+        reasons.append(
+            f"{overlap['n_chunks_text_channel']} of {overlap['n_chunks']} "
+            "passages are text-identical to a training passage")
+    return (
+        '<p><b>TRAIN-OVERLAP WARNING.</b> The labels below are not '
+        "out-of-sample for this filing: " + esc("; ".join(reasons)) + ". "
+        "Read every label on this page as a memorized fit, not as a "
+        "held-out prediction.</p>")
+
+
+def disclosure_header_html(d: dict, overlap: Optional[dict]) -> str:
+    """Under the <h1>: who this is for, the plain-English lead, the overlap
+    warning when it fires, a link to the full list at the foot, and the footer
+    line -- ruling C: the not-advice line precedes any content."""
+    s = d["sentiment"]
+    plain = esc(PLAIN_ENGLISH_TEMPLATE.format(
+        n=s["n"], sent=s["pct"], verdict=s["verdict"].lower(),
+        miss=(1 - s["negative_recall"]) * 100))
+    return f"""
+<div class="disclosure disclosure-head">
+  <p class="identity">{esc(IDENTITY_LINE)}</p>
+  <p class="plain">{plain}</p>
+  {overlap_banner(overlap)}
+  <p class="small">Full disclosures, with every number's source, are at the <a href="#disclosures">foot of this page</a>.</p>
+  <p class="footer-line">{esc(FOOTER_LINE)}</p>
+</div>"""
+
+
+def disclosure_details_html(d: dict, imputed: Optional[dict] = None) -> str:
     s, g, r = d["sentiment"], d["guidance"], d["red_flags"]
     # L2.4: how much of the guidance field is the writer's default rather than
     # the model's judgment, computed from the labels this page renders. A
     # render path hands in the figure it already holds; anyone calling this
     # directly gets it read off the active label table.
     imp = imputed if imputed is not None else guidance_imputation()
-    banner = ""
-    if overlap and overlap["fires"]:
-        reasons = []
-        if overlap["cik_in_train"]:
-            reasons.append(
-                f"this company is one of the {overlap['n_train_ciks']} CIKs in "
-                "the v1.2 training split")
-        if overlap["accession_in_train"]:
-            reasons.append("this accession is in the v1.2 training split")
-        if overlap.get("n_chunks_home_channel"):
-            reasons.append(
-                f"{overlap['n_chunks_home_channel']} of {overlap['n_chunks']} "
-                "passages are stored under a filing that is itself in the v1.2 "
-                "training split")
-        inherited = (overlap["n_chunks_accession_channel"]
-                     - overlap.get("n_chunks_home_channel", 0))
-        if inherited > 0:
-            reasons.append(
-                f"{inherited} of {overlap['n_chunks']} passages are also "
-                "attributed to a training filing by the corpus (a shared "
-                "paragraph, not this filing's own text)")
-        if overlap["n_chunks_text_channel"]:
-            reasons.append(
-                f"{overlap['n_chunks_text_channel']} of {overlap['n_chunks']} "
-                "passages are text-identical to a training passage")
-        banner = (
-            '<li><b>TRAIN-OVERLAP WARNING.</b> The labels below are not '
-            "out-of-sample for this filing: " + esc("; ".join(reasons)) + ". "
-            "Read every label on this page as a memorized fit, not as a "
-            "held-out prediction.</li>")
 
     # L2.2: the one line a store adds, and the only rendering difference
     # between a store report and a research-corpus report.
@@ -1608,23 +1698,15 @@ def disclosure_html(d: dict, overlap: Optional[dict],
            f" — {esc(GUIDANCE_NONE_APPLICABLE)}")
         + f"<blockquote>{esc(g['section_zero_sentence'])}</blockquote></li>")
 
-    plain = esc(PLAIN_ENGLISH_TEMPLATE.format(
-        n=s["n"], sent=s["pct"], verdict=s["verdict"].lower(),
-        miss=(1 - s["negative_recall"]) * 100))
-
     return f"""
 <section class="disclosure">
-  <h1>Disclosure — read this before the report</h1>
-  <p class="identity">{esc(IDENTITY_LINE)}</p>
-  <h2>In plain English</h2>
-  <p class="plain">{plain}</p>
+  <h2 id="disclosures">Disclosures — these travel with every label on this page</h2>
   <ul>
     {outside}
     <li><b>Labeler.</b> Every label on this page is <b>model output throughout</b>: the v1.2 local student
       (<code>{esc(d['labeler'])}</code>, adapter sha256
       <code>{esc(d['adapter_sha256'])}</code>). No human read these passages.
       {esc(d['provenance'])}</li>
-    {banner}
     <li><b>Sentiment.</b> {s['k']}/{s['n']} = {s['pct']:.1f}%
       [{s['lo']:.1f}, {s['hi']:.1f}] — <b>{esc(s['verdict'])}</b> at the
       {s['bar']} bar. What that number is: {esc(s['estimand'])}. It is
@@ -1664,7 +1746,6 @@ def disclosure_html(d: dict, overlap: Optional[dict],
       a FLAGGED section may be truncated, mis-anchored, or thin.</li>
     <li><b>{esc(NO_PRICE_LINE)}</b></li>
   </ul>
-  <p class="footer-line">{esc(FOOTER_LINE)}</p>
 </section>"""
 
 
@@ -1736,14 +1817,20 @@ def fundamentals_html(panel: list[dict], as_of: str) -> str:
                 f'<td class="masked">unresolved</td><td colspan="3" '
                 f'class="small">{esc(item["detail"])}</td></tr>')
             continue
+        # partial / stale: a real filed fact the research path does not use;
+        # shown like a resolved one, with the reason it is not resolved.
+        tag = (f' <span class="tag">{esc(item["state"])}</span>'
+               if item["state"] != "resolved" else "")
+        note = (f' <span class="small">{esc(item["note"])}</span>'
+                if item.get("note") else "")
         rows.append(
             f'<tr><td>{esc(item["label"])}</td>'
-            f'<td>{esc(format_amount(item["value"], item["unit"]))}</td>'
+            f'<td>{esc(format_amount(item["value"], item["unit"]))}{tag}</td>'
             f'<td>{esc(item["concept"])}</td>'
             f'<td>{esc(item["period"])}</td>'
             f'<td class="small">latest filed as of {esc(as_of)}: '
             f'{esc(item["filed"])} ({esc(item["form"])} '
-            f'{esc(item["accession"])})</td></tr>')
+            f'{esc(item["accession"])}){note}</td></tr>')
     return (
         f'<p class="small">Point-in-time as of the filing date {esc(as_of)}: '
         "only facts already filed by that date are visible. Where a "
@@ -1838,15 +1925,15 @@ def render_filing(index: pd.DataFrame, occ: dict[str, list[int]], cik: int,
     overlap = train_overlap(frame, raw_texts, cik, accession)
     imputed_note = disclosure["guidance"]["section_zero_sentence"]
 
-    body = [disclosure_html(disclosure, overlap, guidance_imputation(index))]
-    body.append(
+    body = [
         f"<h1>{esc(name)} — {esc(meta.form)} filed {esc(meta.filing_date)}</h1>"
         f'<p class="small">CIK {int(cik)} · accession {esc(accession)} · '
         f"accepted {esc(meta.acceptance_datetime)} · period ending "
         f"{esc(meta.report_date)}"
         # `meta.items` would resolve to pandas' own Series.items method.
         + (f" · 8-K items {esc(meta['items'])}" if meta["items"] else "")
-        + "</p>")
+        + "</p>",
+        disclosure_header_html(disclosure, overlap)]
 
     body.append("<h2>Sections present</h2>")
     body.append(sections_table_html(frame, records, accession))
@@ -1884,6 +1971,7 @@ def render_filing(index: pd.DataFrame, occ: dict[str, list[int]], cik: int,
             body.append(passage_html(row, texts.get(int(row.row_index), ""),
                                      accession, imputed_note))
 
+    body.append(disclosure_details_html(disclosure, guidance_imputation(index)))
     body.append(f'<p class="footer-line">{esc(FOOTER_LINE)}</p>')
 
     out = out_dir / str(int(cik)) / f"{accession}.html"
@@ -1920,12 +2008,11 @@ def render_index(index: pd.DataFrame, occ: dict[str, list[int]], cik: int,
             f"<td>{esc(sections)}</td>"
             f"<td>{row.n_chunks} ({homed} homed here)</td></tr>")
 
-    body = [disclosure_html(disclosure, train_cik_overlap(cik),
-                            guidance_imputation(index))]
-    body.append(f"<h1>{esc(name)} — labeled filings</h1>"
-                f'<p class="small">CIK {int(cik)} · {len(rows)} filings in '
-                "the E2 labeled corpus. Listed by form and date only: this page "
-                "carries no label-derived quantity and is not sorted by one.</p>")
+    body = [f"<h1>{esc(name)} — labeled filings</h1>"
+            f'<p class="small">CIK {int(cik)} · {len(rows)} filings in '
+            "the E2 labeled corpus. Listed by form and date only: this page "
+            "carries no label-derived quantity and is not sorted by one.</p>",
+            disclosure_header_html(disclosure, train_cik_overlap(cik))]
     body.append("<table><thead><tr><th>Form</th><th>Filed</th>"
                 "<th>Accession</th><th>Sections</th><th>Passages</th>"
                 "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>")
@@ -1935,6 +2022,7 @@ def render_index(index: pd.DataFrame, occ: dict[str, list[int]], cik: int,
         "under their own accession — every paragraph was deduplicated into an "
         f"earlier filing — so {'it is' if skipped == 1 else 'they are'} counted "
         "here and not listed.</p>")
+    body.append(disclosure_details_html(disclosure, guidance_imputation(index)))
     body.append(f'<p class="footer-line">{esc(FOOTER_LINE)}</p>')
 
     out = out_dir / str(int(cik)) / "index.html"

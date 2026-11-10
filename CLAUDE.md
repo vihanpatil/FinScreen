@@ -28,6 +28,8 @@ the owner's own after a paper period and never automated, no return claims.
 
 ## Commands
 
+- `bin/fs open` — rewrite the private home page (a sortable point-in-time fundamentals table over
+  every rendered company, links to each company's labeled filings and scorecard) and open it.
 - `bin/fs doctor` — environment and artifact checks (offline).
 - `bin/fs report TICKER [--open]` — ingest → fundamentals → label → HTML reports for one company (any US filer).
 - `bin/fs index` — every per-company store and its pages.
@@ -62,6 +64,25 @@ charter or product direction; (e) destructive or irreversible operations on data
 Everything else the main session decides, logs in `HANDOFF.md` §3 as a *main-session
 decision* (never as the owner's), and does. Owner packets are one page, each decision a
 yes/no with a recommendation first. Do not re-open a decision the owner has ruled.
+
+## How we work from 2026-11-10 (owner, verbatim: "reduce slop, and directly work towards making this Financial Screening app usable by me")
+
+1. **Product first.** A session's first deliverable is something the owner can open or run
+   (`bin/fs open`). Ledgers, reports and research artefacts come after, and only when they
+   change what someone does next.
+2. **One ledger, rewritten not appended.** `RESUME_HERE.md` top block stays under 25 lines:
+   what works, what is in flight, what the owner owes. Owner rulings still go to `HANDOFF.md`
+   §3 verbatim. Nothing is duplicated across files.
+3. **No agent report files for routine changes.** The commit message is the report (what
+   changed, tests run, evidence). A file is for a run that may need resuming (> 15 min) or a
+   research result the owner will read.
+4. **Reviewer only where a mistake would mislead:** research numbers, public copy, anything
+   the owner will decide on. Not layout, wording or chores.
+5. **No pre-registration, census or council for descriptive product features** (tables of
+   filed facts, pages, CLI). Those stay for anything that claims predictive value.
+6. **Measure, then the smallest change.** A feature starts as one sentence saying what the
+   owner will see or do differently; then the minimal change that makes it true, proven on
+   real stores, not fixtures.
 
 ## Team and models
 

@@ -2,6 +2,7 @@
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 
 import pytest
@@ -221,7 +222,102 @@ def test_landing_page_is_alphabetical_by_ticker_with_scorecard_links_only_when_p
     assert fs.LANDING_IDENTITY in html.replace("&quot;", '"').replace("&#x27;", "'")
     assert "Rendered for the author&#x27;s personal use only" in html
     body = html.split("<body>")[1]
-    assert not re.search(r"\d%|\d\.\d{2,}", body), "no scorecard number on the landing page"
+    for number in ("0.7143", "71.43%", "0.5294"):
+        assert number not in body, "no scorecard number on the landing page"
+
+
+def _with_fundamentals(paths, cik=320193, ticker="AAPL", days=364, scale=1.0):
+    """A rendered store with the four store tables (existence is all the panel checks) and two
+    years of Revenues + NetIncomeLoss covering `days` each (364 = a fiscal year, 90 = a quarter),
+    the newest ending 60 days ago so none is stale."""
+    import pandas as pd
+    _rendered(paths, cik, ticker, f"{ticker} Inc.")
+    store = paths / "companies" / str(cik)
+    for name in ("chunks.parquet", "labels.parquet", "sections.parquet", "metadata.db"):
+        (store / name).write_bytes(b"")
+    end = pd.Timestamp.utcnow().tz_localize(None).normalize() - pd.Timedelta(days=60)
+    rows = []
+    for years_back, revenue, income in ((1, 100e6 * scale, 20e6), (0, 110e6 * scale, 22e6)):
+        e = end - pd.DateOffset(years=years_back)
+        for concept, value in (("Revenues", revenue), ("NetIncomeLoss", income)):
+            rows.append(dict(ticker=ticker, cik=cik, taxonomy="us-gaap", concept=concept, unit="USD",
+                             value=value, fy=float(e.year), fp="FY",
+                             period_start=str((e - pd.Timedelta(days=days)).date()),
+                             period_end=str(e.date()), form="10-K",
+                             accession_number=f"0000000000-{e.year % 100}-000001",
+                             filed=str((e + pd.Timedelta(days=30)).date())))
+    pd.DataFrame(rows).to_parquet(store / "fundamentals.parquet", index=False)
+    man = json.loads((store / "manifest.json").read_text())
+    man["filings"] = [{"accession_number": "0000000000-26-000001", "form": "10-K", "filing_date": "2026-02-10"},
+                      {"accession_number": "0000000000-26-000009", "form": "8-K", "filing_date": "2026-01-05"}]
+    (store / "manifest.json").write_text(json.dumps(man))
+    (store / "concept_resolution.csv").write_text(
+        "cik,family,state,tags,severity\n"
+        f"{cik},revenue,SINGLE,Revenues,resolved\n{cik},net_income,SINGLE,NetIncomeLoss,resolved\n")
+    return end
+
+
+def test_landing_page_shows_point_in_time_fundamentals_yoy_and_margin(paths):
+    end = _with_fundamentals(paths)
+    html = fs.write_landing().read_text()
+    assert fs.SORT_JS in html
+    assert "older than 200 days" in html  # NF.F1.STALENESS_MAX_DAYS, formatted in
+    row = html.split("<tbody>")[1].split("</tr>")[0]
+    assert '<td data-v="110000000.0" data-g="12">110.00 m USD' in row  # raw value and span in months
+    assert row.count('<td data-v="">—</td>') == 3  # blanks sort last
+    assert "110.00 m USD" in row and "22.00 m USD" in row
+    assert ">+10.0%<" in row, "revenue YoY = 110 / 100 - 1"
+    assert ">20.0%<" in row, "net margin = 22 / 110"
+    assert f"12 months ending {end.date()}" in row
+    assert '<a href="320193/0000000000-26-000001.html">10-K 2026-02-10</a>' in row
+    assert row.count(">—<") == 3  # operating cash flow, assets, equity: no row in the resolution
+
+
+def test_landing_page_sorts_flow_columns_by_span_before_amount(paths):
+    """A year is never ranked against a quarter: the flow cells carry their span in months as
+    data-g, and the page's own comparator (run in node when present) groups by it first."""
+    _with_fundamentals(paths, cik=1, ticker="YEAR", days=364)
+    _with_fundamentals(paths, cik=2, ticker="BIGQ", days=90, scale=5.0)   # 550 m quarter
+    _with_fundamentals(paths, cik=3, ticker="SMLQ", days=90, scale=0.5)   # 55 m quarter
+    html = fs.write_landing().read_text()
+    assert "so those columns sort by span first, then by amount" in html
+    rows = re.findall(r"<tr>(.*?)</tr>", html.split("<tbody>")[1])
+    revenue = {re.search(r"<td>(\w+)</td>", r).group(1): re.findall(r"<td ([^>]*)>", r)[1] for r in rows}
+    assert 'data-g="12"' in revenue["YEAR"] and 'data-g="3"' in revenue["BIGQ"]
+    node = shutil.which("node")
+    if node is None:
+        return  # comparator: equal-or-missing data-g falls through to data-v, so grouping holds
+    cells = [[dict(d=dict(re.findall(r'data-(\w)="([^"]*)"', attrs)), t=re.sub(r"<[^>]+>", "", text))
+              for attrs, text in re.findall(r"<td([^>]*)>(.*?)</td>", r)] for r in rows]
+    script = ("const document = {querySelectorAll: () => []};"
+        + html.split("<script>")[1].split("</script>")[0]
+        + f"const rows = {json.dumps(cells)}.map(r => ({{cells: r.map(c => ({{dataset: c.d, textContent: c.t}}))}}));"
+        + 'console.log(rows.sort(cmp(3, "-1")).map(r => r.cells[0].textContent).join(" "));')
+    out = subprocess.run([node, "-e", script], capture_output=True, text=True, check=True).stdout
+    assert out.split() == ["YEAR", "BIGQ", "SMLQ"]  # by raw value it would be BIGQ, YEAR, SMLQ
+
+
+def test_landing_page_survives_a_store_whose_panel_raises(paths, monkeypatch, capsys):
+    import report_filing as RF
+    _with_fundamentals(paths)
+
+    def boom(cik, as_of):
+        raise RuntimeError("broken store")
+    monkeypatch.setattr(RF, "fundamentals_panel", boom)
+    row = fs.write_landing().read_text().split("<tbody>")[1].split("</tr>")[0]
+    assert "AAPL" in row and row.count(">—<") == 7  # every number; the filing link stays
+    assert "broken store" in capsys.readouterr().err
+    assert RF.ACTIVE_STORE is None
+
+
+def test_open_writes_the_landing_page_and_opens_it(paths, monkeypatch, capsys):
+    _rendered(paths, 908937, "SIRI", "Sirius XM")
+    fake = FakeRun()
+    monkeypatch.setattr(fs.subprocess, "run", fake)
+    assert fs.main(["open"]) == 0
+    out = paths / "reports" / "index.html"
+    assert fake.calls == [["open", str(out)]] and "SIRI" in out.read_text()
+    assert str(out) in capsys.readouterr().out
 
 
 def test_index_writes_the_landing_page(paths, capsys):

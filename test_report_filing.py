@@ -836,10 +836,14 @@ def test_disclosure_header_carries_the_g2_section_zero_paragraph():
 
 
 def test_disclosure_header_is_not_collapsible():
-    html = RF.disclosure_html(RF.load_disclosure(), None)
-    assert html.lstrip().startswith('<section class="disclosure">')
-    assert "<details" not in html
-    assert "<summary" not in html
+    d = RF.load_disclosure()
+    head = RF.disclosure_header_html(d, _overlap(cik_in_train=True))
+    details = RF.disclosure_details_html(d)
+    assert head.lstrip().startswith('<div class="disclosure disclosure-head">')
+    assert details.lstrip().startswith('<section class="disclosure">')
+    for html in (head, details):
+        assert "<details" not in html
+        assert "<summary" not in html
 
 
 def _plain_paragraph(html: str) -> str:
@@ -848,14 +852,23 @@ def _plain_paragraph(html: str) -> str:
     return unescape(match.group(1))
 
 
-def test_disclosure_plain_english_lead_renders_before_the_detailed_list():
-    html = RF.disclosure_html(RF.load_disclosure(), None)
-    assert "<h2>In plain English</h2>" in html
-    plain_at = html.index('<p class="plain">')
-    assert html.index("<h1>") < html.index('class="identity"') < plain_at
-    assert plain_at < html.index("<ul>")
-    words = len(_plain_paragraph(html).split())
-    assert 80 <= words <= 140, words
+def test_disclosure_plain_english_lead_renders_before_the_detailed_list(page):
+    """Content first: h1, then the short header (identity, plain lead, link to
+    the foot), then the report, then the full list, then the footer line."""
+    plain_at = page.index('<p class="plain">')
+    assert page.index("<h1>") < page.index('class="identity"') < plain_at
+    assert plain_at < page.index('href="#disclosures"')
+    assert plain_at < page.index("<table>") < page.index('id="disclosures"')
+    assert page.index('id="disclosures"') < page.index("<ul>", plain_at)
+    # the footer line is in the header (ruling C: before any content) and at
+    # the foot
+    footers = [m.start() for m in re.finditer('class="footer-line"', page)]
+    assert len(footers) == 2
+    assert plain_at < footers[0] < page.index("<table>")
+    assert page.rindex("<ul>") < footers[1]
+    words = len(_plain_paragraph(page).split())
+    # 139 words before the lead pointed at the foot of the page; 153 after
+    assert 80 <= words <= 160, words
 
 
 def test_disclosure_plain_english_figures_are_read_from_the_artifacts():
@@ -1337,7 +1350,8 @@ def test_no_outcome_layer_function_is_reachable_from_a_render():
 # 8. rendered-output refusal scan
 # ---------------------------------------------------------------------------
 DISCLOSURE_BLOCK = re.compile(
-    r'<section class="disclosure">.*?</section>', re.S)
+    r'<section class="disclosure">.*?</section>'
+    r'|<div class="disclosure disclosure-head">.*?</div>', re.S)
 DISCLOSURE_FOOTER = re.compile(r'<p class="footer-line">.*?</p>', re.S)
 TEXT_COL = re.compile(r'(<div class="text-col">)(.*?)(</div>)', re.S)
 QUOTED_PARAGRAPH = re.compile(r"<p>.*?</p>", re.S)
@@ -1374,8 +1388,8 @@ def _synthetic_page(index, occ, texts, sections, prior_sections) -> str:
     prior_row = pd.Series({"accession_number": PRIOR, "form": "10-K",
                            "filing_date": "2023-11-03"})
     body = [
-        RF.disclosure_html(RF.load_disclosure(), _overlap()),
         "<h1>Synthetic Industries Inc — 10-K filed 2024-11-01</h1>",
+        RF.disclosure_header_html(RF.load_disclosure(), _overlap()),
         RF.sections_table_html(frame, pd.DataFrame(), HERE),
         RF.fundamentals_html(
             [{"family": "assets", "label": "Total assets",
@@ -1393,6 +1407,7 @@ def _synthetic_page(index, occ, texts, sections, prior_sections) -> str:
     for row in frame.itertuples():
         body.append(RF.passage_html(row, rendered[int(row.row_index)], HERE,
                                     "note"))
+    body.append(RF.disclosure_details_html(RF.load_disclosure()))
     body.append(f'<p class="footer-line">{RF.esc(RF.FOOTER_LINE)}</p>')
     return RF.page("Synthetic Industries Inc 10-K 2024-11-01", "".join(body))
 
@@ -1521,8 +1536,9 @@ def test_rendered_html_quotes_only_this_filings_own_words(page, sections,
 
 
 def test_disclosure_block_is_the_only_allow_listed_region(page):
-    assert len(DISCLOSURE_BLOCK.findall(page)) == 1
-    assert "recommendation" in DISCLOSURE_BLOCK.findall(page)[0]
+    head, details = DISCLOSURE_BLOCK.findall(page)
+    assert "recommendation" in head
+    assert "Disclosures — these travel with every label" in details
     # the footer line is the ONLY other allow-listed region, and it is the
     # ruled footer sentence verbatim -- nothing else hides behind the allow-list
     for footer in DISCLOSURE_FOOTER.findall(page):
@@ -1834,6 +1850,32 @@ def test_real_masks_hold_on_the_corpus():
     mda = frame[frame.section_type == "MDA"]
     assert mda.guidance_masked.all()
     assert not mda.sentiment_masked.any()
+
+
+AAPL_STORE = REPO_ROOT / "data" / "app" / "companies" / str(AAPL_CIK)
+
+
+@pytest.mark.skipif(not (AAPL_STORE / "fundamentals.parquet").exists(),
+                    reason="Apple's app store fundamentals are not on disk")
+def test_real_apple_store_revenue_is_the_10ks_own_fact_marked_partial():
+    """Apple's revenue is PARTIAL as a time series; the 10-K page must still
+    show the fiscal-year figure that 10-K filed, read here off the store."""
+    facts = pd.read_parquet(AAPL_STORE / "fundamentals.parquet")
+    tag = "RevenueFromContractWithCustomerExcludingAssessedTax"
+    fy = facts[(facts.concept == tag)
+               & (pd.to_datetime(facts.period_end) == "2026-09-26")
+               & (pd.to_datetime(facts.period_start) == "2025-09-28")]
+    assert len(fy) == 1
+    try:
+        RF.use_store(AAPL_STORE)
+        revenue = {e["family"]: e for e in
+                   RF.fundamentals_panel(AAPL_CIK, "2026-11-03")}["revenue"]
+    finally:
+        RF.use_store(None)
+    assert revenue["state"] == "partial"
+    assert revenue["concept"] == tag
+    assert revenue["period"] == "12 months ending 2026-09-26"
+    assert revenue["value"] == fy.value.iloc[0]
 
 
 @pytest.mark.slow

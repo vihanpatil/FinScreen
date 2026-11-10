@@ -988,7 +988,7 @@ def test_the_classifier_states_are_f2s_own(fundamentals_store):
     assert res.loc["net_income", "severity"] == IO.IF.SEVERITY_UNRESOLVED
 
 
-def test_an_unresolved_family_is_never_handed_a_tag(fundamentals_store):
+def test_an_unresolved_family_is_never_called_resolved(fundamentals_store):
     """`resolved_tags` is empty by construction for an UNRESOLVED pair: no
     store-side fallback, no "most rows wins", no override map."""
     res = pd.read_csv(fundamentals_store / IO.CONCEPT_RESOLUTION_NAME)
@@ -998,11 +998,18 @@ def test_an_unresolved_family_is_never_handed_a_tag(fundamentals_store):
     with RF.fundamentals_source():
         loaded = RF.NF.load_resolution({FUND_CIK})
     assert not loaded[~loaded.resolved].resolved.any()
-    # ...and the panel never puts a number beside one of them.
+    # ...and the panel never calls one of them resolved: a PARTIAL family may
+    # show its latest filed fact, marked partial; an ABSENT one shows nothing.
     unresolved_families = set(unresolved.family)
+    absent = set(res[res.state == IO.IF.STATE_ABSENT].family)
     panel = RF.fundamentals_panel(FUND_CIK, "2026-02-10")
     for entry in panel:
         if entry["family"] in unresolved_families:
+            assert entry["state"] in ("unresolved", "partial")
+        if entry["state"] == "partial":
+            state = res[res.family == entry["family"]].state.iloc[0]
+            assert f"this family is {state} " in entry["note"]
+        if entry["family"] in absent:
             assert entry["state"] == "unresolved"
             assert "value" not in entry and "concept" not in entry
 
@@ -1097,11 +1104,120 @@ def test_a_fact_filed_after_the_as_of_date_is_invisible(fundamentals_store):
 def test_an_unresolved_family_renders_unresolved_with_its_reason(fundamentals_store):
     RF.use_store(fundamentals_store)
     panel = {e["family"]: e for e in RF.fundamentals_panel(FUND_CIK, "2026-02-10")}
-    assert panel["equity"]["state"] == "unresolved"
-    assert "PARTIAL" in panel["equity"]["detail"]
     assert panel["net_income"]["state"] == "unresolved"
     assert "ABSENT" in panel["net_income"]["detail"]
     assert "value" not in panel["net_income"]
+
+
+def test_a_partial_family_shows_its_latest_filed_fact_marked_partial(
+        fundamentals_store):
+    """(b) PARTIAL is a time-series verdict, not "no fact": the reader is shown
+    the freshest knowable fact, with the classifier's state and coverage."""
+    RF.use_store(fundamentals_store)
+    res = pd.read_csv(fundamentals_store / IO.CONCEPT_RESOLUTION_NAME)
+    coverage = float(res[res.family == "equity"].coverage.iloc[0])
+    equity = {e["family"]: e for e in
+              RF.fundamentals_panel(FUND_CIK, "2024-01-01")}["equity"]
+    assert equity["state"] == "partial"
+    assert equity["value"] == 400_000_002.0          # 2023Q3, filed 2023-11-14
+    assert equity["concept"] == "StockholdersEquity"
+    assert equity["period_end"] == "2023-09-30"
+    assert equity["note"] == (
+        "single fact as filed; as a time series this family is PARTIAL "
+        f"(union coverage {coverage:.0%}), so the research path leaves it "
+        "unresolved")
+    # older than the staleness limit: still partial, and the age is said
+    old = {e["family"]: e for e in
+           RF.fundamentals_panel(FUND_CIK, "2026-02-10")}["equity"]
+    assert old["state"] == "partial"
+    assert old["note"].endswith("; 864 days old at this filing date")
+    html = RF.fundamentals_html([old], "2026-02-10")
+    assert '<span class="tag">partial</span>' in html
+    assert "864 days old at this filing date" in html
+    assert "masked" not in html
+
+
+def test_a_stale_resolved_family_shows_the_fact_marked_stale(fundamentals_store):
+    """(c) resolved, but the freshest knowable fact is past the research
+    path's staleness limit: shown, with its age and the limit."""
+    RF.use_store(fundamentals_store)
+    assets = {e["family"]: e for e in
+              RF.fundamentals_panel(FUND_CIK, "2027-06-01")}["assets"]
+    assert assets["state"] == "stale"
+    assert assets["period_end"] == "2025-12-31"
+    assert assets["value"] == 1_000_000_011.0
+    assert assets["note"] == (
+        f"517 days old at this filing date; the research path discards facts "
+        f"older than {RF.NF.F1.STALENESS_MAX_DAYS} days")
+    html = RF.fundamentals_html([assets], "2027-06-01")
+    assert '<span class="tag">stale</span>' in html and "517 days old" in html
+
+
+def test_a_fresher_alias_fact_beats_the_resolved_tag(fundamentals_store,
+                                                     monkeypatch):
+    """Costco's 10-Q: the resolution lists only `Revenues`, whose last quarter
+    is still inside the staleness limit, while the filing itself reports a
+    later quarter under another alias of the family. The page must show the
+    later period, marked partial, and say which tag it came from."""
+    RF.use_store(fundamentals_store)
+    alias = "RevenueFromContractWithCustomerExcludingAssessedTax"
+    real = RF.fundamentals_slices
+
+    def with_alias(cik):
+        slices = real(cik)
+        fresh = slices[(FUND_CIK, "Revenues")].copy()
+        fresh["concept"] = alias
+        fresh["period_start"] = pd.Timestamp("2026-01-01")
+        fresh["period_end"] = pd.Timestamp("2026-03-31")
+        fresh["filed"] = pd.Timestamp("2026-04-20")
+        return {**slices, (FUND_CIK, alias): fresh}
+    monkeypatch.setattr(RF, "fundamentals_slices", with_alias)
+    # as of 2026-04-25 the resolved Revenues quarter (2025-12-31) is 115 days
+    # old -- fresh enough for the research path -- but older than the alias
+    revenue = {e["family"]: e for e in
+               RF.fundamentals_panel(FUND_CIK, "2026-04-25")}["revenue"]
+    assert revenue["state"] == "partial"
+    assert revenue["concept"] == alias
+    assert revenue["period_end"] == "2026-03-31"
+    assert revenue["note"] == (
+        f"filed under {alias}, a tag the stored concept resolution does not "
+        "list for this family (Revenues); single fact as filed")
+    # without the alias the same date shows the resolved listed-tag fact
+    monkeypatch.setattr(RF, "fundamentals_slices", real)
+    resolved = {e["family"]: e for e in
+                RF.fundamentals_panel(FUND_CIK, "2026-04-25")}["revenue"]
+    assert resolved["state"] == "resolved" and resolved["concept"] == "Revenues"
+
+
+def test_freshest_fact_breaks_a_tie_toward_the_first_listed_alias():
+    """One filing carrying two aliases for the same period and filed date
+    (XOM's NetIncomeLoss and ProfitLoss): the family's preferred tag, listed
+    first, wins -- not whichever happens to sort last."""
+    def fact(tag, value):
+        return pd.DataFrame([{
+            "ticker": "SYN", "cik": FUND_CIK, "taxonomy": "us-gaap",
+            "concept": tag, "unit": "USD", "value": value, "fy": 2026.0,
+            "fp": "Q3", "period_start": pd.Timestamp("2026-07-01"),
+            "period_end": pd.Timestamp("2026-09-30"), "form": "10-Q",
+            "accession_number": "0000000001-26-000001",
+            "filed": pd.Timestamp("2026-11-02")}])
+    slices = {(FUND_CIK, "NetIncomeLoss"): fact("NetIncomeLoss", 15.0),
+              (FUND_CIK, "ProfitLoss"): fact("ProfitLoss", 16.0)}
+    for order in (["NetIncomeLoss", "ProfitLoss"], ["ProfitLoss", "NetIncomeLoss"]):
+        row, tag = RF.freshest_fact(slices, order, FUND_CIK, "2026-11-05")
+        assert tag == order[0]
+        assert row["value"] == {"NetIncomeLoss": 15.0, "ProfitLoss": 16.0}[order[0]]
+
+
+def test_a_family_with_no_knowable_fact_stays_unresolved(fundamentals_store):
+    """(d) nothing filed yet -- PARTIAL or resolved -- is still "unresolved"."""
+    RF.use_store(fundamentals_store)
+    panel = {e["family"]: e for e in RF.fundamentals_panel(FUND_CIK, "2023-01-01")}
+    assert panel["equity"]["state"] == "unresolved"
+    assert "PARTIAL" in panel["equity"]["detail"]
+    assert panel["assets"]["state"] == "unresolved"
+    assert panel["assets"]["detail"] == "no fact was knowable as of this filing date"
+    assert "value" not in panel["equity"] and "value" not in panel["assets"]
 
 
 def test_the_panel_says_how_long_each_facts_period_is(fundamentals_store):

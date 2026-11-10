@@ -1977,6 +1977,52 @@ the owner decides on a post-hoc arm, not two. **OWNER ITEM OPEN (touchpoint c): 
 sensitivity arm under the existing pin (as F6-A did for decision 11) with the share count split-adjusted or
 `book_to_market` dropped, to measure the effect.** Lesson → §4.
 
+**2026-11-10 — OWNER: USABILITY OVER PROCESS (owner's words verbatim; main-session decisions under the low-touch
+policy, not owner rulings).** The owner typed: *"Ok do your best to get this product to be usable by me. What is
+taking so long. What work is even being done? What are our blockers? What progress has been made? Is work going in
+loops. I need you to draw from best engineering methods, reduce slop, and directly work towards making this
+Financial Screening app usable by me."* Main-session diagnosis, from the repo (numbers measured that day): no
+external blocker and no owner item open; the drag was process weight (≈60k lines of Markdown against ≈63k of Python;
+14 of the 23 commits since 2026-11-05 docs-only; a 139-line `RESUME_HERE.md` top block that declared "nothing in
+flight" five times and still listed decisions B–F as open; reviewer passes on a footer; a census + pre-registration
+for a numeric screen the owner then deferred) and research-grade rules applied to a display (13 of 31 watchlist
+companies showed Revenue "unresolved" because the family failed the 75% series-coverage bar, although the latest
+10-K fact was in the store; every page opened with ≈900 words of caveats before any content; the home page
+screened nothing). **Decisions and what shipped (all app-lane, frozen modules only called):**
+**Decision 1 (fundamentals display):** `report_filing.fundamentals_panel` shows the freshest knowable fact as of
+the filing date even when the family is PARTIAL/OVERLAP as a series or older than the 200-day research limit,
+marked `partial` / `stale` with the reason beside it; "unresolved" remains only for ABSENT families and dates with
+no knowable fact. The research path (`numeric_features_e2`, `pit`) is unchanged; no F5 number can move.
+**Decision 2 (page order):** on every reading-aid page the content comes first; a short non-collapsible header under
+the title carries the identity line, the plain-English lead, the train-overlap warning when it fires, a link to the
+foot and the not-advice footer line; the full detailed disclosure list, unchanged sentence for sentence and still
+non-collapsible, sits at the foot under "Disclosures", followed by the footer line again. The scorecard pages put the
+company's own result before the universe comparison (the parallel session kept its known-defect paragraph and the
+self-identification sentence beside the identity claim, commit fc83c69). Reading of the 2026-09-11 ruling ("a
+non-collapsible disclosure header … mandatory disclosure block on every report"): both remain true; nothing was removed
+or collapsed; the legal-reviewer agent read the rendered page the same day and found nothing required ("the governing
+texts fix prominence, not position"; advisory, not legal advice). **Reading of "PIT fundamentals … with UNRESOLVED
+shown":** a family the research path leaves unresolved as a series may show its latest filed fact when the unresolved
+state stays visible beside it (the `partial` tag and its note name the state and coverage), which is what Decision 1 does.
+**Decision 3 (home page = screen):** `data/app/reports/index.html`
+is a one-table point-in-time fundamentals screen over every rendered company (latest filing, revenue, revenue YoY,
+net income, net margin, operating cash flow, total assets, equity; period shown under each number; sortable by any
+column client-side; default alphabetical). No label-derived or scorecard-derived quantity, no price, no return: the
+2026-09-11 refusal of "a cross-company table sorted by a label-derived quantity" is respected; a table of filed
+XBRL facts is not a score. `bin/fs open` writes it and opens it. Reading of the 2026-09-11 boundary sentence ("never rank, score, compare … even when the only reader is the owner"):
+superseded the same day by the owner's "REFACTOR" ruling (HANDOFF §3, which "SUPERSEDES the 2026-09-11 identity
+line" and discharges KC5) and by PRODUCT_PLAN §5; the surviving refusal is the one about label-derived quantities, and
+the page carries none. Amount columns sort by reported span first, then amount, so a fiscal year is never ranked
+against a quarter. **Decision 4 (process):** CLAUDE.md "How we work
+from 2026-11-10": product first; one ledger under 25 lines, rewritten not appended; no agent report files for
+routine changes; reviewer only for research numbers, public copy and owner decisions; no pre-registration for
+descriptive features; smallest change proven on real stores. `RESUME_HERE.md` top block rewritten under that rule.
+**Review (adversarial workflow, 4 lenses + 6 skeptics; the same day):** two real defects found and fixed before commit (the
+freshest-fact tie-break chose the least-preferred alias, so XOM's net income showed ProfitLoss instead of NetIncomeLoss;
+amount columns sorted a year against a quarter); one claimed ruling breach refuted with citations (above); one nit logged
+(above). **Verification:** root suite 1,932 passed, 0 failed (6 min 24 s; the 10-second render timing test fails only under the load of parallel agents and passes alone in 7.6 s); all 31 rendered companies re-rendered offline (index + latest 10-K/10-Q/8-K each, 0 failures); Revenue now
+shows a value for 31 of 31 watchlist companies (was 18); pages checked in the browser.
+
 ## 4. Incident history, compressed to lessons
 
 Each incident below produced one standing rule. The rule is what matters
