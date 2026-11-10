@@ -1,0 +1,1095 @@
+{
+ "label": "POST-HOC \u2014 EXECUTED AFTER THE PRIMARY WAS SEEN; never selectable",
+ "specification": "HANDOFF.md \u00a73, 2026-11-10 -- POST-HOC SPLIT ARM AUTHORISED, rules 0-5 (main-session design written before this script; owner ruling \"Run it\")",
+ "never_the_primary": "The ratified G3 result stands whatever this shows; no branch is re-labelled; the outcome is an erratum and the owner's read.",
+ "run": {
+  "utc": "2026-11-10T18:37:22+00:00",
+  "doc_sha256": "6b99f65ea1da42e81afec2fef814800d18e5748ff7c2e025ec08862aa80c62c6",
+  "params_sha256": "9ac479818785b6fc835aaf63dc9d73bff9fc3cbb0c5b14a9dac2e3f185b1984f",
+  "seed": 0,
+  "module_sha256": {
+   "data/f5/sensitivity_split_lookahead.py": "fc7dfa7b39bfbe0fa0cbdfd3721bf27292c2f85621fd7f15aed16ef313309441",
+   "backtest_e2.py": "746389ae0f903565e26a4396ac32ebafffc2e3db8b4e9ad0beb9bd4f863d0012",
+   "scorecard_e2.py": "6b5263eded13d35ee4758d4d33d0ef899802233cae983ea8385d8d222a4d4fa3",
+   "spec.py": "e8396d8e0fb295b476365dee53cff61a1f714b162383bdbadde8af44f6a6e55d",
+   "numeric_features_e2.py": "0334c23cdcf1018b197145d77bcd9e5877e914453da549d9e5b9c03ea0326731",
+   "data/f5/census_split_lookahead.py": "852d881a601ac450f77a3e36a97608d813dd5b9610b64eafabdbcd40f609c5e8"
+  },
+  "backtest_e2_sha256_in_head1_run": "746389ae0f903565e26a4396ac32ebafffc2e3db8b4e9ad0beb9bd4f863d0012",
+  "input_sha256": {
+   "target_e2.parquet": "ef6befb2a69c9741b8d3028778283f4cc2dddfd056c120b3532eb0b9a42b6fac",
+   "text_features_e2.parquet": "143dd720c9e09ba08f044016fa5177f18421b67883a8939825ee993094c6ef88",
+   "numeric_features_e2.parquet": "01fcaf4b94d421a77aa4937a0af4896265e8990b0869bf2b10e875d74f93f57b",
+   "text_families_e2.parquet": "3cee65649b7084298297f2068253fd0df670dc84f8b496ab4e0209a75de8203e",
+   "prices_e2.parquet": "744e1cc5ccc2bfad9640f51962edbb87bbd4d7076491262d650cfee70d5e6343",
+   "results_head1.json": "6836fb90487508d7aceb354fbc08de95538a81b6ba0c4cdd9c60d0c0abf390db",
+   "head1_scorecard.json": "028f34f5f5f57a6c7ba36c6f92193dcc802b6e686ff37164dac550063296a6e3",
+   "head1_oof_predictions.parquet": "378b0b711ae817529b4bb4d9337f260ac38682449f8f27f383316cf13e27be7e",
+   "split_lookahead_census.json": "3fac8f2457c0ef5ac146450a56c81d454ba265d076b111db111ce6bcd27b1a6c",
+   "yahoo_payloads_sha256_of_shas": "aea3513d733f0c7e05295f4c4cf4cade09622e0cd49a703e53ad9c7266cf4adf"
+  }
+ },
+ "frame": {
+  "n_run_time_rows": 7381,
+  "n_gld_rows_excluded": 8
+ },
+ "reproduction_gate": {
+  "pass": true,
+  "quarters_equal": true,
+  "max_abs_diff_per_fold_delta": 0.0,
+  "universe_mismatches": [],
+  "calls_differing_from_ratified": {
+   "text_and_numeric": 0,
+   "numeric_only": 0,
+   "size_only": 0
+  }
+ },
+ "size_only_gate": "each arm's size_only n_calls / n_correct / hit_rate equal head1_scorecard.json universe.blocks.size_only (else nothing is written): passed",
+ "ratified": {
+  "mean_fold_delta_dedup": 0.0010935553753235697,
+  "per_fold_delta_dedup": [
+   {
+    "test_quarter": "2018Q1",
+    "delta": -0.07081826219757255
+   },
+   {
+    "test_quarter": "2018Q2",
+    "delta": -0.012504610709994562
+   },
+   {
+    "test_quarter": "2018Q3",
+    "delta": 0.008203170344765365
+   },
+   {
+    "test_quarter": "2018Q4",
+    "delta": 0.12050056010653588
+   },
+   {
+    "test_quarter": "2019Q1",
+    "delta": 0.034685289316161785
+   },
+   {
+    "test_quarter": "2019Q2",
+    "delta": 0.0216707021791768
+   },
+   {
+    "test_quarter": "2019Q3",
+    "delta": -0.052178187403993846
+   },
+   {
+    "test_quarter": "2019Q4",
+    "delta": 0.013350347921626066
+   },
+   {
+    "test_quarter": "2020Q1",
+    "delta": 0.2204089162186915
+   },
+   {
+    "test_quarter": "2020Q2",
+    "delta": 0.03212388534596955
+   },
+   {
+    "test_quarter": "2020Q3",
+    "delta": -0.0217589988751406
+   },
+   {
+    "test_quarter": "2020Q4",
+    "delta": 0.06505790340010983
+   },
+   {
+    "test_quarter": "2021Q1",
+    "delta": -0.0039622663428265925
+   },
+   {
+    "test_quarter": "2021Q2",
+    "delta": 0.14970373138312068
+   },
+   {
+    "test_quarter": "2021Q3",
+    "delta": -0.0664147465437788
+   },
+   {
+    "test_quarter": "2021Q4",
+    "delta": 0.008679621461442855
+   },
+   {
+    "test_quarter": "2022Q1",
+    "delta": -0.16301125043947032
+   },
+   {
+    "test_quarter": "2022Q2",
+    "delta": 0.09953243331234785
+   },
+   {
+    "test_quarter": "2022Q3",
+    "delta": -0.0725598317467466
+   },
+   {
+    "test_quarter": "2022Q4",
+    "delta": 0.02115124385472461
+   },
+   {
+    "test_quarter": "2023Q1",
+    "delta": -0.009545874520236496
+   },
+   {
+    "test_quarter": "2023Q2",
+    "delta": 0.11472236991725458
+   },
+   {
+    "test_quarter": "2023Q3",
+    "delta": 0.025302941333475673
+   },
+   {
+    "test_quarter": "2023Q4",
+    "delta": 0.1287237122675962
+   },
+   {
+    "test_quarter": "2024Q1",
+    "delta": -0.0769560610167821
+   },
+   {
+    "test_quarter": "2024Q2",
+    "delta": -0.019947506561679776
+   },
+   {
+    "test_quarter": "2024Q3",
+    "delta": -0.020254478793988256
+   },
+   {
+    "test_quarter": "2024Q4",
+    "delta": -0.06929306534637988
+   },
+   {
+    "test_quarter": "2025Q1",
+    "delta": 0.05433301425788886
+   },
+   {
+    "test_quarter": "2025Q2",
+    "delta": -0.1259168312603427
+   },
+   {
+    "test_quarter": "2025Q3",
+    "delta": -0.05061409743263634
+   },
+   {
+    "test_quarter": "2025Q4",
+    "delta": -0.11734228005823022
+   },
+   {
+    "test_quarter": "2026Q1",
+    "delta": -0.12898416598541065
+   }
+  ],
+  "mean_fold_dedup_ic": {
+   "numeric_only": 0.025077371090755876,
+   "text_and_numeric": 0.026170926466079446
+  },
+  "universe_calls": {
+   "text_and_numeric": {
+    "n_calls": 2992,
+    "n_correct": 1552,
+    "hit_rate": 0.5187165775401069,
+    "wilson_lo": 0.5008007551971962,
+    "wilson_hi": 0.5365844007054872
+   },
+   "numeric_only": {
+    "n_calls": 2991,
+    "n_correct": 1525,
+    "hit_rate": 0.5098629220996322,
+    "wilson_lo": 0.4919464066681133,
+    "wilson_hi": 0.5277541353505747
+   },
+   "size_only": {
+    "n_calls": 2933,
+    "n_correct": 1425,
+    "hit_rate": 0.4858506648482782,
+    "wilson_lo": 0.46779309850614387,
+    "wilson_hi": 0.5039452465281106
+   }
+  },
+  "seed_band_sd": 0.00962722529486905,
+  "source": "results_head1.json (margin.mean_fold_delta, per_fold_primary_delta_dedup, per_fold_ic__pit_trailing_rank, seed_band.band_sd); head1_scorecard.json universe.blocks"
+ },
+ "arm_b_book_to_market_as_printed": {
+  "columns": {
+   "numeric_only": [
+    "log_total_assets",
+    "leverage_liabilities_to_assets",
+    "equity_to_assets",
+    "cash_to_assets",
+    "net_margin",
+    "operating_margin",
+    "operating_cashflow_to_revenue",
+    "revenue_yoy_growth",
+    "net_income_yoy_growth",
+    "eps_diluted_yoy_growth",
+    "momentum_126",
+    "realized_vol_63",
+    "book_to_market"
+   ],
+   "text_and_numeric": [
+    "log_total_assets",
+    "leverage_liabilities_to_assets",
+    "equity_to_assets",
+    "cash_to_assets",
+    "net_margin",
+    "operating_margin",
+    "operating_cashflow_to_revenue",
+    "revenue_yoy_growth",
+    "net_income_yoy_growth",
+    "eps_diluted_yoy_growth",
+    "momentum_126",
+    "realized_vol_63",
+    "book_to_market",
+    "n_text_chunks_attributed",
+    "share_chunks_risk_factors",
+    "share_chunks_mda",
+    "share_chunks_ex99_press_release",
+    "sentiment_mean_score",
+    "sentiment_negative_share",
+    "guidance_signed_mean",
+    "guidance_any_present",
+    "novelty_risk_factors_yoy",
+    "novelty_mda_yoy"
+   ]
+  },
+  "k_folds": 33,
+  "mean_fold_delta_dedup": 0.03104884661062837,
+  "per_fold_delta_dedup": [
+   {
+    "test_quarter": "2018Q1",
+    "delta_ratified": -0.07081826219757255,
+    "delta_arm": -0.06256731773973154
+   },
+   {
+    "test_quarter": "2018Q2",
+    "delta_ratified": -0.012504610709994562,
+    "delta_arm": -0.01070049923489605
+   },
+   {
+    "test_quarter": "2018Q3",
+    "delta_ratified": 0.008203170344765365,
+    "delta_arm": -0.04945381081148004
+   },
+   {
+    "test_quarter": "2018Q4",
+    "delta_ratified": 0.12050056010653588,
+    "delta_arm": 0.07008105848569662
+   },
+   {
+    "test_quarter": "2019Q1",
+    "delta_ratified": 0.034685289316161785,
+    "delta_arm": 0.09746417558498095
+   },
+   {
+    "test_quarter": "2019Q2",
+    "delta_ratified": 0.0216707021791768,
+    "delta_arm": 0.010753453923942446
+   },
+   {
+    "test_quarter": "2019Q3",
+    "delta_ratified": -0.052178187403993846,
+    "delta_arm": -0.032055347486312724
+   },
+   {
+    "test_quarter": "2019Q4",
+    "delta_ratified": 0.013350347921626066,
+    "delta_arm": 0.10558391320271013
+   },
+   {
+    "test_quarter": "2020Q1",
+    "delta_ratified": 0.2204089162186915,
+    "delta_arm": 0.17863025307718067
+   },
+   {
+    "test_quarter": "2020Q2",
+    "delta_ratified": 0.03212388534596955,
+    "delta_arm": -0.01847901787543188
+   },
+   {
+    "test_quarter": "2020Q3",
+    "delta_ratified": -0.0217589988751406,
+    "delta_arm": -0.003386295463067096
+   },
+   {
+    "test_quarter": "2020Q4",
+    "delta_ratified": 0.06505790340010983,
+    "delta_arm": 0.039490161001788926
+   },
+   {
+    "test_quarter": "2021Q1",
+    "delta_ratified": -0.0039622663428265925,
+    "delta_arm": 0.014744538713494654
+   },
+   {
+    "test_quarter": "2021Q2",
+    "delta_ratified": 0.14970373138312068,
+    "delta_arm": 0.17708856029466716
+   },
+   {
+    "test_quarter": "2021Q3",
+    "delta_ratified": -0.0664147465437788,
+    "delta_arm": -0.03212903225806449
+   },
+   {
+    "test_quarter": "2021Q4",
+    "delta_ratified": 0.008679621461442855,
+    "delta_arm": -0.03490966693523062
+   },
+   {
+    "test_quarter": "2022Q1",
+    "delta_ratified": -0.16301125043947032,
+    "delta_arm": -0.13061057072541893
+   },
+   {
+    "test_quarter": "2022Q2",
+    "delta_ratified": 0.09953243331234785,
+    "delta_arm": 0.16453894190965276
+   },
+   {
+    "test_quarter": "2022Q3",
+    "delta_ratified": -0.0725598317467466,
+    "delta_arm": -0.09523085129075261
+   },
+   {
+    "test_quarter": "2022Q4",
+    "delta_ratified": 0.02115124385472461,
+    "delta_arm": 0.12407825713592324
+   },
+   {
+    "test_quarter": "2023Q1",
+    "delta_ratified": -0.009545874520236496,
+    "delta_arm": 0.056545670558138236
+   },
+   {
+    "test_quarter": "2023Q2",
+    "delta_ratified": 0.11472236991725458,
+    "delta_arm": 0.20014214278576414
+   },
+   {
+    "test_quarter": "2023Q3",
+    "delta_ratified": 0.025302941333475673,
+    "delta_arm": 0.08170608017936261
+   },
+   {
+    "test_quarter": "2023Q4",
+    "delta_ratified": 0.1287237122675962,
+    "delta_arm": 0.15132388469273134
+   },
+   {
+    "test_quarter": "2024Q1",
+    "delta_ratified": -0.0769560610167821,
+    "delta_arm": -0.06561029103723601
+   },
+   {
+    "test_quarter": "2024Q2",
+    "delta_ratified": -0.019947506561679776,
+    "delta_arm": -0.011398836405879548
+   },
+   {
+    "test_quarter": "2024Q3",
+    "delta_ratified": -0.020254478793988256,
+    "delta_arm": 0.14193830313127315
+   },
+   {
+    "test_quarter": "2024Q4",
+    "delta_ratified": -0.06929306534637988,
+    "delta_arm": 0.02357711941224178
+   },
+   {
+    "test_quarter": "2025Q1",
+    "delta_ratified": 0.05433301425788886,
+    "delta_arm": 0.07281060833557237
+   },
+   {
+    "test_quarter": "2025Q2",
+    "delta_ratified": -0.1259168312603427,
+    "delta_arm": -0.017072149054902147
+   },
+   {
+    "test_quarter": "2025Q3",
+    "delta_ratified": -0.05061409743263634,
+    "delta_arm": -0.030519083779099482
+   },
+   {
+    "test_quarter": "2025Q4",
+    "delta_ratified": -0.11734228005823022,
+    "delta_arm": -0.008551914136486233
+   },
+   {
+    "test_quarter": "2026Q1",
+    "delta_ratified": -0.12898416598541065,
+    "delta_arm": -0.08321050004039578
+   }
+  ],
+  "mean_fold_dedup_ic": {
+   "numeric_only": -0.001036903751497994,
+   "text_and_numeric": 0.030011942859130374
+  },
+  "universe_calls": {
+   "text_and_numeric": {
+    "n_calls": 2992,
+    "n_correct": 1553,
+    "hit_rate": 0.5190508021390374,
+    "wilson_lo": 0.5011350029800951,
+    "wilson_hi": 0.5369177449922792
+   },
+   "numeric_only": {
+    "n_calls": 2992,
+    "n_correct": 1476,
+    "hit_rate": 0.49331550802139035,
+    "wilson_lo": 0.47542132212849364,
+    "wilson_hi": 0.5112268364776907
+   },
+   "size_only": {
+    "n_calls": 2933,
+    "n_correct": 1425,
+    "hit_rate": 0.4858506648482782,
+    "wilson_lo": 0.46779309850614387,
+    "wilson_hi": 0.5039452465281106
+   }
+  },
+  "n_dedup_rows_call_differs_from_ratified": {
+   "text_and_numeric": 1313,
+   "numeric_only": 1289,
+   "size_only": 0
+  },
+  "rule5_reading": {
+   "abs_move_from_ratified_delta": 0.0299552912353048,
+   "two_seed_band_sd": 0.0192544505897381,
+   "abs_move_at_most_two_seed_band_sd": false,
+   "margin": 0.04,
+   "arm_delta_outside_plus_minus_margin": false
+  },
+  "definition": "book_to_market / f, f = product of splitRatio of every split in the ticker's cached Yahoo events.splits effective strictly after the pre-session (New York date); shares and equity unchanged",
+  "split_factors": {
+   "n_tickers": 213,
+   "n_tickers_no_payload": 0,
+   "tickers_no_payload": [],
+   "n_tickers_no_events_block": 47,
+   "tickers_no_events_block": [
+    "ABBV",
+    "AEP",
+    "AMT",
+    "BX",
+    "CCI",
+    "CEG",
+    "CHTR",
+    "DLR",
+    "DOW",
+    "EA",
+    "ES",
+    "EXE",
+    "FANG",
+    "FIS",
+    "GEV",
+    "GLD",
+    "GM",
+    "GS",
+    "HWM",
+    "KHC",
+    "KKR",
+    "KMI",
+    "LYB",
+    "MDLZ",
+    "MELI",
+    "META",
+    "MPLX",
+    "MRNA",
+    "PLD",
+    "PLTR",
+    "PM",
+    "PRU",
+    "PSX",
+    "PYPL",
+    "REGN",
+    "SBAC",
+    "SNAP",
+    "SNOW",
+    "STX",
+    "TRGP",
+    "UBER",
+    "UPS",
+    "VST",
+    "WM",
+    "XYZ",
+    "ZM",
+    "ZTS"
+   ],
+   "n_ciks_without_ticker": 27,
+   "ciks_without_ticker": [
+    4447,
+    6769,
+    701221,
+    718877,
+    773910,
+    790070,
+    804753,
+    816284,
+    936402,
+    1001039,
+    1012569,
+    1038357,
+    1105705,
+    1122304,
+    1126975,
+    1161154,
+    1271024,
+    1358071,
+    1364742,
+    1373835,
+    1393612,
+    1418091,
+    1483096,
+    1532063,
+    1578845,
+    1618921,
+    1782754
+   ],
+   "treatment": "factor 1 (split-free) for all three kinds, counted and named here",
+   "n_frame_rows_factor_not_1_with_bm": 675,
+   "n_frame_ciks_factor_not_1_with_bm": 20
+  },
+  "validity_check": {
+   "method": "shares_as_used = equity / book_to_market / close at pre_session (equity = equity_to_assets * exp(log_total_assets)); one value per (cik, filing_date), the median; a ratio >= threshold or <= 1/threshold between consecutive filing dates of a company is a split-like event, dated at the first filing date showing it; a row is before a later event when the product of the ratios of that company's events dated strictly after its filing date is >= threshold or <= 1/threshold. Counted over the deduplicated rows (in_dedup) of head1_oof_predictions, per block. A lower bound: splits below the threshold, and rows whose book_to_market is NaN, are not seen.",
+   "threshold": 1.8,
+   "n_events_stored_feature": 15,
+   "n_events_corrected_feature": 25,
+   "residual_events": [
+    {
+     "cik": 72971,
+     "ticker": "WFC",
+     "filing_date": "2023-08-01",
+     "ratio": 0.4859,
+     "last_split_record_on_or_before": {
+      "effective": "2006-08-14",
+      "ratio": 2.0,
+      "days_before_event": 6196
+     }
+    },
+    {
+     "cik": 72971,
+     "ticker": "WFC",
+     "filing_date": "2023-08-10",
+     "ratio": 2.007,
+     "last_split_record_on_or_before": {
+      "effective": "2006-08-14",
+      "ratio": 2.0,
+      "days_before_event": 6205
+     }
+    },
+    {
+     "cik": 89800,
+     "ticker": "SHW",
+     "filing_date": "2021-04-26",
+     "ratio": 0.3333,
+     "last_split_record_on_or_before": {
+      "effective": "2021-04-01",
+      "ratio": 3.0,
+      "days_before_event": 25
+     }
+    },
+    {
+     "cik": 89800,
+     "ticker": "SHW",
+     "filing_date": "2021-04-28",
+     "ratio": 2.9681,
+     "last_split_record_on_or_before": {
+      "effective": "2021-04-01",
+      "ratio": 3.0,
+      "days_before_event": 27
+     }
+    },
+    {
+     "cik": 104169,
+     "ticker": "WMT",
+     "filing_date": "2024-02-28",
+     "ratio": 0.3333,
+     "last_split_record_on_or_before": {
+      "effective": "2024-02-26",
+      "ratio": 3.0,
+      "days_before_event": 2
+     }
+    },
+    {
+     "cik": 104169,
+     "ticker": "WMT",
+     "filing_date": "2024-03-15",
+     "ratio": 2.9931,
+     "last_split_record_on_or_before": {
+      "effective": "2024-02-26",
+      "ratio": 3.0,
+      "days_before_event": 18
+     }
+    },
+    {
+     "cik": 320193,
+     "ticker": "AAPL",
+     "filing_date": "2020-10-29",
+     "ratio": 0.25,
+     "last_split_record_on_or_before": {
+      "effective": "2020-08-31",
+      "ratio": 4.0,
+      "days_before_event": 59
+     }
+    },
+    {
+     "cik": 320193,
+     "ticker": "AAPL",
+     "filing_date": "2020-10-30",
+     "ratio": 3.9764,
+     "last_split_record_on_or_before": {
+      "effective": "2020-08-31",
+      "ratio": 4.0,
+      "days_before_event": 60
+     }
+    },
+    {
+     "cik": 1018724,
+     "ticker": "AMZN",
+     "filing_date": "2022-07-28",
+     "ratio": 0.05,
+     "last_split_record_on_or_before": {
+      "effective": "2022-06-06",
+      "ratio": 20.0,
+      "days_before_event": 52
+     }
+    },
+    {
+     "cik": 1018724,
+     "ticker": "AMZN",
+     "filing_date": "2022-07-29",
+     "ratio": 20.0258,
+     "last_split_record_on_or_before": {
+      "effective": "2022-06-06",
+      "ratio": 20.0,
+      "days_before_event": 53
+     }
+    },
+    {
+     "cik": 1035267,
+     "ticker": "ISRG",
+     "filing_date": "2021-10-19",
+     "ratio": 0.3333,
+     "last_split_record_on_or_before": {
+      "effective": "2021-10-05",
+      "ratio": 3.0,
+      "days_before_event": 14
+     }
+    },
+    {
+     "cik": 1035267,
+     "ticker": "ISRG",
+     "filing_date": "2021-10-20",
+     "ratio": 3.0084,
+     "last_split_record_on_or_before": {
+      "effective": "2021-10-05",
+      "ratio": 3.0,
+      "days_before_event": 15
+     }
+    },
+    {
+     "cik": 1045810,
+     "ticker": "NVDA",
+     "filing_date": "2021-08-18",
+     "ratio": 0.25,
+     "last_split_record_on_or_before": {
+      "effective": "2021-07-20",
+      "ratio": 4.0,
+      "days_before_event": 29
+     }
+    },
+    {
+     "cik": 1045810,
+     "ticker": "NVDA",
+     "filing_date": "2021-08-20",
+     "ratio": 4.0128,
+     "last_split_record_on_or_before": {
+      "effective": "2021-07-20",
+      "ratio": 4.0,
+      "days_before_event": 31
+     }
+    },
+    {
+     "cik": 1045810,
+     "ticker": "NVDA",
+     "filing_date": "2024-07-02",
+     "ratio": 0.1,
+     "last_split_record_on_or_before": {
+      "effective": "2024-06-10",
+      "ratio": 10.0,
+      "days_before_event": 22
+     }
+    },
+    {
+     "cik": 1045810,
+     "ticker": "NVDA",
+     "filing_date": "2024-08-28",
+     "ratio": 9.9715,
+     "last_split_record_on_or_before": {
+      "effective": "2024-06-10",
+      "ratio": 10.0,
+      "days_before_event": 79
+     }
+    },
+    {
+     "cik": 1065280,
+     "ticker": "NFLX",
+     "filing_date": "2025-12-05",
+     "ratio": 0.1,
+     "last_split_record_on_or_before": {
+      "effective": "2025-11-17",
+      "ratio": 10.0,
+      "days_before_event": 18
+     }
+    },
+    {
+     "cik": 1065280,
+     "ticker": "NFLX",
+     "filing_date": "2026-01-23",
+     "ratio": 9.9642,
+     "last_split_record_on_or_before": {
+      "effective": "2025-11-17",
+      "ratio": 10.0,
+      "days_before_event": 67
+     }
+    },
+    {
+     "cik": 1276187,
+     "ticker": "ET",
+     "filing_date": "2020-08-05",
+     "ratio": 2.4966,
+     "last_split_record_on_or_before": {
+      "effective": "2015-07-27",
+      "ratio": 2.0,
+      "days_before_event": 1836
+     }
+    },
+    {
+     "cik": 1318605,
+     "ticker": "TSLA",
+     "filing_date": "2022-09-28",
+     "ratio": 0.3333,
+     "last_split_record_on_or_before": {
+      "effective": "2022-08-25",
+      "ratio": 3.0,
+      "days_before_event": 34
+     }
+    },
+    {
+     "cik": 1318605,
+     "ticker": "TSLA",
+     "filing_date": "2022-10-24",
+     "ratio": 3.0232,
+     "last_split_record_on_or_before": {
+      "effective": "2022-08-25",
+      "ratio": 3.0,
+      "days_before_event": 60
+     }
+    },
+    {
+     "cik": 1373715,
+     "ticker": "NOW",
+     "filing_date": "2025-12-23",
+     "ratio": 0.2,
+     "last_split_record_on_or_before": {
+      "effective": "2025-12-18",
+      "ratio": 5.0,
+      "days_before_event": 5
+     }
+    },
+    {
+     "cik": 1373715,
+     "ticker": "NOW",
+     "filing_date": "2026-01-29",
+     "ratio": 5.0288,
+     "last_split_record_on_or_before": {
+      "effective": "2025-12-18",
+      "ratio": 5.0,
+      "days_before_event": 42
+     }
+    },
+    {
+     "cik": 1730168,
+     "ticker": "AVGO",
+     "filing_date": "2024-09-05",
+     "ratio": 0.1,
+     "last_split_record_on_or_before": {
+      "effective": "2024-07-15",
+      "ratio": 10.0,
+      "days_before_event": 52
+     }
+    },
+    {
+     "cik": 1730168,
+     "ticker": "AVGO",
+     "filing_date": "2024-09-11",
+     "ratio": 10.0337,
+     "last_split_record_on_or_before": {
+      "effective": "2024-07-15",
+      "ratio": 10.0,
+      "days_before_event": 58
+     }
+    }
+   ],
+   "note": "Rule 1 un-adjusts the close only; the share count is the one reported as of the filing. A filing after a split's effective date but before the next reported share count therefore pairs a pre-split count with a post-split close under both the stored and the corrected feature; such rows show as an event pair (ratio ~1/r on the first such filing, ~r when the new count is reported). That value is computable on the day (no look-ahead) and is left as rule 1 defines it.",
+   "gated": false
+  }
+ },
+ "arm_a_book_to_market_removed": {
+  "columns": {
+   "numeric_only": [
+    "log_total_assets",
+    "leverage_liabilities_to_assets",
+    "equity_to_assets",
+    "cash_to_assets",
+    "net_margin",
+    "operating_margin",
+    "operating_cashflow_to_revenue",
+    "revenue_yoy_growth",
+    "net_income_yoy_growth",
+    "eps_diluted_yoy_growth",
+    "momentum_126",
+    "realized_vol_63"
+   ],
+   "text_and_numeric": [
+    "log_total_assets",
+    "leverage_liabilities_to_assets",
+    "equity_to_assets",
+    "cash_to_assets",
+    "net_margin",
+    "operating_margin",
+    "operating_cashflow_to_revenue",
+    "revenue_yoy_growth",
+    "net_income_yoy_growth",
+    "eps_diluted_yoy_growth",
+    "momentum_126",
+    "realized_vol_63",
+    "n_text_chunks_attributed",
+    "share_chunks_risk_factors",
+    "share_chunks_mda",
+    "share_chunks_ex99_press_release",
+    "sentiment_mean_score",
+    "sentiment_negative_share",
+    "guidance_signed_mean",
+    "guidance_any_present",
+    "novelty_risk_factors_yoy",
+    "novelty_mda_yoy"
+   ]
+  },
+  "k_folds": 33,
+  "mean_fold_delta_dedup": 0.021787425893506508,
+  "per_fold_delta_dedup": [
+   {
+    "test_quarter": "2018Q1",
+    "delta_ratified": -0.07081826219757255,
+    "delta_arm": -0.054203842134876626
+   },
+   {
+    "test_quarter": "2018Q2",
+    "delta_ratified": -0.012504610709994562,
+    "delta_arm": 0.005792147367421535
+   },
+   {
+    "test_quarter": "2018Q3",
+    "delta_ratified": 0.008203170344765365,
+    "delta_arm": -0.030310456462576296
+   },
+   {
+    "test_quarter": "2018Q4",
+    "delta_ratified": 0.12050056010653588,
+    "delta_arm": 0.1574775048658223
+   },
+   {
+    "test_quarter": "2019Q1",
+    "delta_ratified": 0.034685289316161785,
+    "delta_arm": 0.07847632867767096
+   },
+   {
+    "test_quarter": "2019Q2",
+    "delta_ratified": 0.0216707021791768,
+    "delta_arm": 0.1637872097991739
+   },
+   {
+    "test_quarter": "2019Q3",
+    "delta_ratified": -0.052178187403993846,
+    "delta_arm": -0.21813824884792626
+   },
+   {
+    "test_quarter": "2019Q4",
+    "delta_ratified": 0.013350347921626066,
+    "delta_arm": 0.25541910822193736
+   },
+   {
+    "test_quarter": "2020Q1",
+    "delta_ratified": 0.2204089162186915,
+    "delta_arm": 0.20257795638763065
+   },
+   {
+    "test_quarter": "2020Q2",
+    "delta_ratified": 0.03212388534596955,
+    "delta_arm": 0.028993977795682052
+   },
+   {
+    "test_quarter": "2020Q3",
+    "delta_ratified": -0.0217589988751406,
+    "delta_arm": 0.10189351331083614
+   },
+   {
+    "test_quarter": "2020Q4",
+    "delta_ratified": 0.06505790340010983,
+    "delta_arm": 0.051065358864499366
+   },
+   {
+    "test_quarter": "2021Q1",
+    "delta_ratified": -0.0039622663428265925,
+    "delta_arm": 0.010508844906358589
+   },
+   {
+    "test_quarter": "2021Q2",
+    "delta_ratified": 0.14970373138312068,
+    "delta_arm": 0.09910852506272358
+   },
+   {
+    "test_quarter": "2021Q3",
+    "delta_ratified": -0.0664147465437788,
+    "delta_arm": -0.15898003072196618
+   },
+   {
+    "test_quarter": "2021Q4",
+    "delta_ratified": 0.008679621461442855,
+    "delta_arm": -0.025230441491758793
+   },
+   {
+    "test_quarter": "2022Q1",
+    "delta_ratified": -0.16301125043947032,
+    "delta_arm": -0.12242763389194891
+   },
+   {
+    "test_quarter": "2022Q2",
+    "delta_ratified": 0.09953243331234785,
+    "delta_arm": 0.209456961660355
+   },
+   {
+    "test_quarter": "2022Q3",
+    "delta_ratified": -0.0725598317467466,
+    "delta_arm": -0.09454253975587933
+   },
+   {
+    "test_quarter": "2022Q4",
+    "delta_ratified": 0.02115124385472461,
+    "delta_arm": 0.06944134123856163
+   },
+   {
+    "test_quarter": "2023Q1",
+    "delta_ratified": -0.009545874520236496,
+    "delta_arm": -0.02752111262329232
+   },
+   {
+    "test_quarter": "2023Q2",
+    "delta_ratified": 0.11472236991725458,
+    "delta_arm": 0.15798934200423628
+   },
+   {
+    "test_quarter": "2023Q3",
+    "delta_ratified": 0.025302941333475673,
+    "delta_arm": -0.00430256766134628
+   },
+   {
+    "test_quarter": "2023Q4",
+    "delta_ratified": 0.1287237122675962,
+    "delta_arm": 0.1402253438688909
+   },
+   {
+    "test_quarter": "2024Q1",
+    "delta_ratified": -0.0769560610167821,
+    "delta_arm": -0.11731191010128393
+   },
+   {
+    "test_quarter": "2024Q2",
+    "delta_ratified": -0.019947506561679776,
+    "delta_arm": -0.06587176602924634
+   },
+   {
+    "test_quarter": "2024Q3",
+    "delta_ratified": -0.020254478793988256,
+    "delta_arm": 0.18510699313113654
+   },
+   {
+    "test_quarter": "2024Q4",
+    "delta_ratified": -0.06929306534637988,
+    "delta_arm": -0.07854361010479943
+   },
+   {
+    "test_quarter": "2025Q1",
+    "delta_ratified": 0.05433301425788886,
+    "delta_arm": 0.09471161224680949
+   },
+   {
+    "test_quarter": "2025Q2",
+    "delta_ratified": -0.1259168312603427,
+    "delta_arm": -0.006425120129724099
+   },
+   {
+    "test_quarter": "2025Q3",
+    "delta_ratified": -0.05061409743263634,
+    "delta_arm": -0.03228967942243666
+   },
+   {
+    "test_quarter": "2025Q4",
+    "delta_ratified": -0.11734228005823022,
+    "delta_arm": -0.05928422722315849
+   },
+   {
+    "test_quarter": "2026Q1",
+    "delta_ratified": -0.12898416598541065,
+    "delta_arm": -0.19766382832181173
+   }
+  ],
+  "mean_fold_dedup_ic": {
+   "numeric_only": 0.006820579514225785,
+   "text_and_numeric": 0.028608005407732288
+  },
+  "universe_calls": {
+   "text_and_numeric": {
+    "n_calls": 2992,
+    "n_correct": 1538,
+    "hit_rate": 0.5140374331550802,
+    "wilson_lo": 0.49612212667809397,
+    "wilson_hi": 0.5319167402489187
+   },
+   "numeric_only": {
+    "n_calls": 2992,
+    "n_correct": 1482,
+    "hit_rate": 0.49532085561497324,
+    "wilson_lo": 0.4774232833193572,
+    "wilson_hi": 0.5132304277049718
+   },
+   "size_only": {
+    "n_calls": 2933,
+    "n_correct": 1425,
+    "hit_rate": 0.4858506648482782,
+    "wilson_lo": 0.46779309850614387,
+    "wilson_hi": 0.5039452465281106
+   }
+  },
+  "n_dedup_rows_call_differs_from_ratified": {
+   "text_and_numeric": 1465,
+   "numeric_only": 1462,
+   "size_only": 0
+  },
+  "rule5_reading": {
+   "abs_move_from_ratified_delta": 0.020693870518182937,
+   "two_seed_band_sd": 0.0192544505897381,
+   "abs_move_at_most_two_seed_band_sd": false,
+   "margin": 0.04,
+   "arm_delta_outside_plus_minus_margin": false
+  },
+  "definition": "book_to_market removed from the numeric columns of numeric_only and text_and_numeric"
+ },
+ "rule5_text": "|arm delta - ratified delta| <= 2 x seed_band.band_sd -> \"inside seed noise -- the text conclusion is unaffected at this run's resolution\"; larger -> \"moved beyond seed noise\"; arm delta outside \u00b10.04 -> the bounded-null label would not have been reached under the corrected feature. Level ICs and hit rates: no threshold.",
+ "inference_note": "A mean of per-fold deltas, one fit per fold at seed 0. No SE, no TOST, no branch: the margin procedure applies to the primary only.",
+ "private_file": "data/f5/sensitivity_split_lookahead_private.json (git-ignored): the 11 census-affected companies' calls, ratified vs each arm",
+ "runtime_seconds": 211.9
+}
